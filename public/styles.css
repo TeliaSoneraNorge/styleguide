@@ -1,0 +1,46 @@
+/* Styleguide */
+body {
+    border-top: 10px solid #990AE3;
+    margin: 0;
+    padding: 0;
+}
+.page-wrapper {
+    border: 1px solid #ccc;
+    border-top: none;
+    margin: 0 auto;
+    width: 960px;
+}
+
+.sg-header {
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+}
+.sg-header__title {
+    background: transparent url('telia-logo-animated-transparent.gif') no-repeat scroll left center;
+    margin: 0;
+    padding: 0.25em 0 0.25em 120px;
+}
+
+.sg-nav {
+    margin-left: 2em;
+}
+.sg-nav__nav-item {
+    border: 1px solid #ccc;
+    padding: 0.25em 1em;
+    margin-right: 0.25em;
+}
+
+.sg-footer {
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+.sg-footer__smallprint {
+}
+
+.sg-component {
+    border: 1px solid #ccc;
+    margin: 1em;
+}
+
+/* Components */

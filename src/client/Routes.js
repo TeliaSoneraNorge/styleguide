@@ -4,8 +4,8 @@ import { Route } from 'react-router-dom';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
-import HomePage from './styleguide/HomePage';
-import ComponentsPage from './styleguide/ComponentsPage';
+import HomePage from './components/HomePage';
+import ComponentsPage from './components/ComponentsPage';
 
 const Routes = (props) =>
     <div>

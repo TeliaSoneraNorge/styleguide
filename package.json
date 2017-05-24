@@ -8,6 +8,7 @@
     "build-css": "postcss src/client/css/post-css-file.css -o src/client/css/build/bundle.css",
     "build-server": "webpack --config webpack-server.config.js",
     "dev": "run-p start-dev-server start-server",
+    "gen": "react-docgen ./src/components -x jsx -o doc-components.json --pretty",
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -26,15 +27,18 @@
     "postcss-cli": "^4.0.0",
     "postcss-loader": "^2.0.5",
     "postcss-nested": "^2.0.2",
+    "react-docgen": "^2.15.0",
     "webpack": "^2.5.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
     "express": "^4.15.2",
+    "htmlencode": "0.0.4",
     "lodash": "^4.17.4",
     "proxy-middleware": "^0.15.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",
+    "react-element-to-jsx-string": "^7.0.0",
     "react-hot-loader": "^3.0.0-beta.7",
     "react-router-dom": "^4.1.1"
   }

@@ -43,13 +43,16 @@ module.exports = {
                 ],
                 exclude: /node_modules/
             }
-        ],
+        ]
+    },
+    resolve: {
+        extensions: ['.js', '.jsx']
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
         // enable HMR globally
 
-        new webpack.NamedModulesPlugin(),
+        new webpack.NamedModulesPlugin()
         // prints more readable module names in the browser console on HMR updates
-    ],
+    ]
 };
