@@ -1,0 +1,16 @@
+{
+  "src/components/atoms/BulletList/BulletList.html": {
+    "isHtmlComponent": true,
+    "documentation": "<p>This is some markdown <em>documentation</em> for <em>BulletList</em>. Isn&#39;t it <strong>cool</strong>!</p>\n",
+    "examples": [
+      {
+        "html": "<ul class=\"list list--bullet\">\n    <li>A list item</li>\n    <li>Another list item</li>\n</ul>",
+        "name": "BulletList"
+      },
+      {
+        "html": "<ul class=\"list list--bullet list--some-other-variant\">\n    <li>Lorem ipsum dolor sit amet</li>\n    <li>Consectetur adipisicing elit</li>\n    <li>Accusamus dolorum voluptates</li>\n</ul>",
+        "name": "BulletList - Other variant"
+      }
+    ]
+  }
+}
