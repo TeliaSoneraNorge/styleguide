@@ -4,6 +4,7 @@ import ReactDOMServer from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import { htmlEncode } from 'htmlencode';
 import { Link } from 'react-router-dom';
+import pretty from 'pretty';
 
 import { getMergedMetadata } from '../../componentMetadata';
 import * as ReactComponents from '../../components/index';
@@ -32,7 +33,7 @@ const StyleguideHtmlComponent = ({ path, metadata }) => {
 };
 
 function getMarkupStrings(componentWithProps) {
-    const htmlString = ReactDOMServer.renderToStaticMarkup(componentWithProps);
+    const htmlString = pretty(ReactDOMServer.renderToStaticMarkup(componentWithProps));
     const jsxString = reactElementToJSXString(componentWithProps, {
         showFunctions: false,
         functionValue: (fn) => `${fn.name}Fn`
@@ -93,7 +94,7 @@ const Component = ({ path, metadata }) => {
 };
 
 const ComponentsPage = () =>
-    <div>
+    <div className="content-wrapper">
         <h1>Components</h1>
         {Object.keys(componentMetadata).map((path) =>
             <Component key={path} path={path} metadata={componentMetadata[path]} />)}

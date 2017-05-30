@@ -1,0 +1,36 @@
+.page-header {
+    align-items: center;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    padding: 1em;
+
+    &__site-name-and-logo {
+        color: yellow;
+        order: 2;
+        text-align: center;
+        width: 100%;
+    }
+    &__site-name {
+        display: none;
+    }
+    &__site-logo {
+    }
+
+    &__site-nav {
+        order: 1;
+    }
+    &__site-nav-burger {
+    }
+
+    &__site-tools {
+        order: 2;
+        width: 150px;
+    }
+    &__site-tool {
+        background-color: #ccc;
+        display: inline-block;
+        height: 50px;
+        margin-left: 1em;
+        width: 50px;
+    }
+}

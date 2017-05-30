@@ -6,5 +6,13 @@
   "src/components/atoms/Label/Label.jsx": {
     "description": "This is a Label!",
     "methods": []
+  },
+  "src/components/molecules/PageFooter/PageFooter.jsx": {
+    "description": "The PageFooter is the main footer on the page, and should be included only once.\nIt contains a small number of important, side-wide links.",
+    "methods": []
+  },
+  "src/components/molecules/PageHeader/PageHeader.jsx": {
+    "description": "The PageHeader is the main header on the page, and should be included only once.\nIt contains the Telia logo, the main navigation, and tools such as log-in info\nand shopping cart.",
+    "methods": []
   }
 }

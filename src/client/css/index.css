@@ -1,11 +1,13 @@
 /* Styleguide */
 body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
     margin: 0;
     padding: 0;
 }
 
 .sg-component {
-    margin: 1em;
+    margin: 1em 0 3em 0;
 }
 .sg-component__example {
     border: 1px solid #ccc;
@@ -17,14 +19,12 @@ body {
 .sg-component__example-code {
     background-color: #f9fafc;
     border-top: 1px solid #ccc;
+    overflow: scroll;
     padding: 1em;
     position: relative;
 }
 .sg-component__example-name,
 .sg-component__example-language {
     color: #777;
-    font-size: 0.875em;
     font-weight: bold;
 }
-
-/* Components */

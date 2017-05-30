@@ -1,5 +1,8 @@
 pre.prettyprint {
-	font-family: monospace;
+	font-family: Consolas, "Liberation Mono", Courier, monospace;
+	font-size: 16px;
+    font-weight: normal;
+	line-height: 1.3em;
 	margin: 1em 0 0 0;
 }
 .prettyprint .str {

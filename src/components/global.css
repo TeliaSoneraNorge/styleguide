@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'pebble';
+    src: url('/public/fonts/Pebble_W_Rg.woff') format('woff');
+}
+
+.content-wrapper {
+    margin: 0 auto;
+    width: 1000px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: #990ae3;
+    font-family: pebble;
+    text-transform: uppercase;
+}
+
+h1 {
+    color: black;
+}

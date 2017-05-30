@@ -14,7 +14,7 @@
     "dev": "run-p start-dev-server start-server css:components:watch css:custom:watch",
     "gen": "npm run generate-html-doc && npm run generate-react-doc",
     "generate-html-doc": "babel-node ./scripts/html-docgen.js",
-    "generate-react-doc": "react-docgen ./src/components -e ReactExampleProps.js -e index.js -o doc-react-components.json --pretty",
+    "generate-react-doc": "react-docgen ./src/components -e ReactExampleProps.js -e index.js -o component-metadata--react.json --pretty",
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -44,6 +44,7 @@
     "htmlencode": "0.0.4",
     "lodash": "^4.17.4",
     "marked": "^0.3.6",
+    "pretty": "^2.0.0",
     "proxy-middleware": "^0.15.0",
     "react": "^15.5.4",
     "react-dom": "^15.5.4",

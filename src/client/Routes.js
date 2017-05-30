@@ -1,20 +1,20 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import Header from './components/Header';
-import Footer from './components/Footer';
+import PageHeader from '../components/molecules/PageHeader/PageHeader';
+import PageFooter from '../components/molecules/PageFooter/PageFooter';
 
 import HomePage from './components/HomePage';
 import ComponentsPage from './components/ComponentsPage';
 
 const Routes = (props) =>
     <div>
-        <Header />
+        <PageHeader />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/components" component={ComponentsPage} />
 
-        <Footer />
+        <PageFooter />
     </div>;
 
 export default Routes;

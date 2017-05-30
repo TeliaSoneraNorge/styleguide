@@ -1,0 +1,21 @@
+.page-footer {
+    background-color: #AD00E5;
+    padding: 2em 0;
+
+    &__link {
+        border-right: 1px solid white;
+        color: white;
+        padding: 0 1em;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+        &:first-child {
+            padding-left: 0;
+        }
+        &:last-child {
+            border-right: none;
+        }
+    }
+}
