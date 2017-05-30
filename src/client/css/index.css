@@ -1,0 +1,30 @@
+/* Styleguide */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.sg-component {
+    margin: 1em;
+}
+.sg-component__example {
+    border: 1px solid #ccc;
+    margin-bottom: 0.5em;
+}
+.sg-component__example-rendered {
+    padding: 1em;
+}
+.sg-component__example-code {
+    background-color: #f9fafc;
+    border-top: 1px solid #ccc;
+    padding: 1em;
+    position: relative;
+}
+.sg-component__example-name,
+.sg-component__example-language {
+    color: #777;
+    font-size: 0.875em;
+    font-weight: bold;
+}
+
+/* Components */
