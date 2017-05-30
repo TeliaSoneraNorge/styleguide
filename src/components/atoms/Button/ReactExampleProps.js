@@ -1,4 +1,6 @@
 export default [
-    { text: "Example button 1", onClick: () => console.log("foo") },
-    { text: "Another example button 2", onClick: () => console.log("bar") }
+    { text: 'Default button', onClick: () => console.log('foo') },
+    { text: 'Positive button', kind: 'positive', onClick: () => console.log('bar') },
+    { text: 'Alternate button', kind: 'alternate', onClick: () => console.log('bar') },
+    { text: 'Action button', kind: 'action', onClick: () => console.log('bar') }
 ];
