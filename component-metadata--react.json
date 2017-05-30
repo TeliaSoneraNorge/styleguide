@@ -3,6 +3,10 @@
     "description": "This is a Button. Use it when you want people to click it. HELLO?",
     "methods": []
   },
+  "src/components/atoms/Heading/Heading.jsx": {
+    "description": "This is a Heading, which renders the h1, h2, h3, etc. tags.",
+    "methods": []
+  },
   "src/components/atoms/Label/Label.jsx": {
     "description": "This is a Label!",
     "methods": []

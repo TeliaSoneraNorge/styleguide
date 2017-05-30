@@ -9,12 +9,14 @@ import pretty from 'pretty';
 import { getMergedMetadata } from '../../componentMetadata';
 import * as ReactComponents from '../../components/index';
 
+import Heading from '../../components/atoms/Heading/Heading';
+
 const componentMetadata = getMergedMetadata();
 
 const StyleguideHtmlComponent = ({ path, metadata }) => {
     return (
         <div className="sg-component">
-            <h2>{extractComponentNameFromPath(path)}</h2>
+            <Heading level={2} text={extractComponentNameFromPath(path)} />
             <div dangerouslySetInnerHTML={{ __html: metadata.documentation }}></div>
             {_.map(metadata.examples, (example, i) =>
                 <div key={i} className="sg-component__example">
@@ -55,7 +57,7 @@ const StyleguideReactComponent = ({ path, metadata }) => {
     const exampleProps = ReactComponents.default[path + '/ReactExampleProps.js'] || [];
     return (
         <div className="sg-component">
-            <h2>{extractComponentNameFromPath(path)}</h2>
+            <Heading level={2} text={extractComponentNameFromPath(path)} />
             <p>{metadata.description}</p>
             {_.isEmpty(exampleProps) ?
                 <div className="sg-component__example">
@@ -95,7 +97,7 @@ const Component = ({ path, metadata }) => {
 
 const ComponentsPage = () =>
     <div className="content-wrapper">
-        <h1>Components</h1>
+        <Heading level={1} text="Components" />
         {Object.keys(componentMetadata).map((path) =>
             <Component key={path} path={path} metadata={componentMetadata[path]} />)}
     </div>;

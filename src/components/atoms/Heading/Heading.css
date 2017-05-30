@@ -1,0 +1,9 @@
+.heading {
+    color: #990ae3;
+    font-family: pebble;
+    text-transform: uppercase;
+
+    &--level-1 {
+        color: black;
+    }
+}

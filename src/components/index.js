@@ -7,6 +7,9 @@ const componentMetadata = getReactComponentsMetadata();
 import Button from './atoms/Button/Button';
 import ButtonExampleProps from './atoms/Button/ReactExampleProps';
 
+import Heading from './atoms/Heading/Heading';
+import HeadingExampleProps from './atoms/Heading/ReactExampleProps';
+
 import PageHeader from './molecules/PageHeader/PageHeader';
 import PageHeaderExampleProps from './molecules/PageHeader/ReactExampleProps';
 
@@ -16,6 +19,9 @@ import PageFooterExampleProps from './molecules/PageFooter/ReactExampleProps';
 export default {
     'src/components/atoms/Button/Button.jsx': Button,
     'src/components/atoms/Button/Button.jsx/ReactExampleProps.js': ButtonExampleProps,
+
+    'src/components/atoms/Heading/Heading.jsx': Heading,
+    'src/components/atoms/Heading/Heading.jsx/ReactExampleProps.js': HeadingExampleProps,
 
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
     'src/components/molecules/PageHeader/PageHeader.jsx/ReactExampleProps.js': PageHeaderExampleProps,
