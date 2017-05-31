@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Default",
+        "props": {
+            "text": "Default button"
+        }
+    },
+    {
+        "name": "Positive",
+        "props": {
+            "text": "Positive button",
+            "kind": "positive"
+        }
+    },
+    {
+        "name": "Alternate",
+        "props": {
+            "text": "Alternate button",
+            "kind": "alternate"
+        }
+    },
+    {
+        "name": "Action",
+        "props": {
+            "text": "Action button",
+            "kind": "action"
+        }
+    }
+]

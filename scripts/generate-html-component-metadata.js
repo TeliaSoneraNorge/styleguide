@@ -4,8 +4,6 @@ import fs from 'fs';
 import marked from 'marked';
 import path from 'path';
 
-
-
 function readComponentsFromDirectory(directoryPath) {
     const htmlComponents = {};
     const itemsInDirectory = fs.readdirSync(directoryPath);

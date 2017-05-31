@@ -1,0 +1,23 @@
+[
+    {
+        "name": "<h1>",
+        "props": {
+            "text": "This is a level 1 heading",
+            "level": 1
+        }
+    },
+    {
+        "name": "<h2>",
+        "props": {
+            "text": "And this is a level 2 heading",
+            "level": 2
+        }
+    },
+    {
+        "name": "<h3>",
+        "props": {
+            "text": "Third level heading",
+            "level": 3
+        }
+    }
+]

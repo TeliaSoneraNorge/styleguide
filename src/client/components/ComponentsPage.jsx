@@ -54,23 +54,23 @@ function extractComponentNameFromPath(path) {
 
 const StyleguideReactComponent = ({ path, metadata }) => {
     const ComponentToRender = ReactComponents.default[path];
-    const exampleProps = ReactComponents.default[path + '/ReactExampleProps.js'] || [];
+    const examples = metadata.examples || [];
     return (
         <div className="sg-component">
             <Heading level={2} text={extractComponentNameFromPath(path)} />
             <p>{metadata.description}</p>
-            {_.isEmpty(exampleProps) ?
+            {_.isEmpty(examples) ?
                 <div className="sg-component__example">
                     <div className="sg-component__example-rendered">
                         <p>No examples</p>
                     </div>
                 </div> : null}
-            {_.map(exampleProps, (props, i) => {
-                const markupStrings = getMarkupStrings(<ComponentToRender {...props} />);
+            {_.map(examples, (example, i) => {
+                const markupStrings = getMarkupStrings(<ComponentToRender {...example.props} />);
                 return (
                     <div key={i} className="sg-component__example">
                         <div className="sg-component__example-rendered">
-                            <ComponentToRender {...props} />
+                            <ComponentToRender {...example.props} />
                         </div>
                         <div className="sg-component__example-code">
                             <span className="sg-component__example-language">HTML</span>
@@ -99,7 +99,12 @@ const ComponentsPage = () =>
     <div className="content-wrapper">
         <Heading level={1} text="Components" />
         {Object.keys(componentMetadata).map((path) =>
-            <Component key={path} path={path} metadata={componentMetadata[path]} />)}
+            <div key={path}>
+                <p>{path}</p>
+                <Component path={path} metadata={componentMetadata[path]} />
+            </div>
+        )}
+
     </div>;
 
 export default ComponentsPage;
