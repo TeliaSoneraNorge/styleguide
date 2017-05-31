@@ -6,6 +6,21 @@ body {
     padding: 0;
 }
 
+.sg-site-navigation {
+    border-bottom: 1px solid #ccc;
+    padding: 1em 0;
+
+    a {
+        color: #555;
+        margin-right: 1em;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
 .sg-component {
     margin: 1em 0 3em 0;
 }

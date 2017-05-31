@@ -6,10 +6,12 @@ import PageFooter from '../components/molecules/PageFooter/PageFooter';
 
 import HomePage from './pages/HomePage';
 import ComponentsPage from './pages/ComponentsPage';
+import SiteNavigation from './components/SiteNavigation';
 
 const Routes = (props) =>
     <div>
         <PageHeader />
+        <SiteNavigation />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/components" component={ComponentsPage} />
