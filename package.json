@@ -12,7 +12,7 @@
     "css:components:watch": "nodemon --ext css --watch src/components --exec \"npm run build-css:components\"",
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
     "dev": "run-p start-dev-server start-server css:components:watch css:custom:watch",
-    "gen": "npm run generate-html-doc && npm run generate-react-doc",
+    "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc",
     "generate-html-doc": "babel-node ./scripts/generate-html-component-metadata.js",
     "generate-react-doc": "react-docgen ./src/components -e index.js -o component-metadata--react.json --pretty",
     "generate-react-example-props-doc": "babel-node ./scripts/generate-react-component-example-props.js",
