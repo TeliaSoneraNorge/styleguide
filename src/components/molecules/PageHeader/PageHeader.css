@@ -24,13 +24,12 @@
 
     &__site-tools {
         order: 2;
-        width: 150px;
+        width: 50px;
     }
     &__site-tool {
-        background-color: #ccc;
+        border: 1px solid #AD00E5;
         display: inline-block;
         height: 50px;
-        margin-left: 1em;
         width: 50px;
     }
 }

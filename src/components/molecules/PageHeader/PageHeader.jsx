@@ -16,7 +16,6 @@ const PageHeader = ({ text, onClick }) =>
         </div>
         <div className="page-header__site-tools">
             <div className="page-header__site-tool"></div>
-            <div className="page-header__site-tool"></div>
         </div>
     </header>;
 
