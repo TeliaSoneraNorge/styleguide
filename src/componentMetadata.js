@@ -1,8 +1,20 @@
 import _ from 'lodash';
 
-import componentMetadataHtml from '../component-metadata--html.json';
-import componentMetadataReact from '../component-metadata--react.json';
-import componentExamplesMetadataReact from '../component-metadata--react-examples.json';
+import componentMetadataHtmlRaw from '../component-metadata--html.json';
+import componentMetadataReactRaw from '../component-metadata--react.json';
+import componentExamplesMetadataReactRaw from '../component-metadata--react-examples.json';
+
+function fix(metadata) {
+    const fixedMetadata = {};
+    Object.keys(metadata).forEach((key) => {
+        fixedMetadata[key.replace(/\\/gi, '/')] = metadata[key];
+    });
+    return fixedMetadata;
+}
+
+const componentMetadataHtml = fix(componentMetadataHtmlRaw);
+const componentMetadataReact = fix(componentMetadataReactRaw);
+const componentExamplesMetadataReact = fix(componentExamplesMetadataReactRaw);
 
 export function getHtmlComponentMetadata() {
     return componentMetadataHtml;
