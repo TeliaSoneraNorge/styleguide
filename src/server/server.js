@@ -2,14 +2,23 @@ import express from 'express';
 import path from 'path';
 import proxy from 'proxy-middleware';
 
-const app = express();
-app.use('/public', express.static('./public'));
-app.use('/public', proxy('http://localhost:8080/public'));
+import { getConfig } from './config';
 
+const app = express();
+const config = getConfig();
+
+// Configure the '/public' folder
+app.use('/public', express.static('./public'));
+if (config.environment === 'development') {
+    app.use('/public', proxy('http://localhost:8080/public')); // for webpack-dev-server
+}
+
+// Send all requests to the .html file where the React app will start on the client
 app.get('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, 'index.html'))
+    res.sendFile(path.join(__dirname, 'views/index.html'))
 });
 
-app.listen(3000, () => {
-    console.log('Styleguide app listening on port 3000!');
+const port = (process.env.PORT || 3000);
+app.listen(port, () => {
+    console.log(`Styleguide app listening on port ${port}!`);
 });
