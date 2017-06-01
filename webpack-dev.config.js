@@ -42,6 +42,10 @@ module.exports = {
                     { loader: 'postcss-loader' }
                 ],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.(jpe?g|png|ttf|eot|svg)(\?[a-z0-9=&.]+)?$/,
+                use: 'base64-inline-loader?name=[name].[ext]'
             }
         ]
     },

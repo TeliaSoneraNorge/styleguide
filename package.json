@@ -13,13 +13,14 @@
     "css:components:watch": "nodemon --ext css --watch src/components --exec \"npm run build-css:components\"",
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
     "dev": "run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
-    "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc",
+    "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc && npm run svgo",
     "generate-html-doc": "babel-node ./scripts/generate-html-component-metadata.js",
     "generate-react-doc": "react-docgen ./src/components -e index.js -o component-metadata--react.json --pretty",
     "generate-react-example-props-doc": "babel-node ./scripts/generate-react-component-example-props.js",
     "html:components:watch": "nodemon --ext html --watch src/components --exec \"npm run generate-html-doc\"",
     "postinstall": "npm run build",
     "start": "node dist/server/server.js",
+    "svgo": "svgo -f ./src/unoptimized-icons -o ./public/icons --config=./svgo.config.json --multipass",
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server --config webpack-dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,10 +28,12 @@
   "author": "Telia Norge",
   "license": "ISC",
   "devDependencies": {
+    "base64-inline-loader": "^1.x",
     "css-loader": "^0.28.4",
     "nodemon": "^1.11.0",
     "npm-run-all": "^4.0.2",
     "style-loader": "^0.18.1",
+    "svgo": "^0.7.2",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
