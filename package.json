@@ -19,6 +19,7 @@
     "generate-react-example-props-doc": "babel-node ./scripts/generate-react-component-example-props.js",
     "html:components:watch": "nodemon --ext html --watch src/components --exec \"npm run generate-html-doc\"",
     "postinstall": "npm run build",
+    "start": "node dist/server/server.js",
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server --config webpack-dev.config.js",
     "test": "echo \"Error: no test specified\" && exit 1"
