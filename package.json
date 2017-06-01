@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && webpack --config webpack-prod.config.js && npm run build-css && npm run build-server",
+    "build": "npm run gen && npm run clean && webpack --config webpack-prod.config.js && npm run build-css && npm run build-server",
     "build-css": "npm run build-css:components && npm run build-css:custom",
     "build-css:components": "postcss src/components/index.css -o public/css/bundle.components.css",
     "build-css:custom": "postcss src/client/css/index.css -o public/css/bundle.custom.css",
