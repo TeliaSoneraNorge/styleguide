@@ -20,7 +20,7 @@ function readComponentsFromDirectory(directoryPath) {
 
         const htmlExamples = [{
             html: fs.readFileSync(htmlComponentPath, 'utf8'),
-            name: componentName
+            name: `${componentName} (default)`
         }];
 
         const itemsInComponentDirectory = fs.readdirSync(componentDirectory);
