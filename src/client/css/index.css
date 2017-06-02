@@ -24,18 +24,13 @@ body {
 .sg-component {
     margin: 1em 0 3em 0;
 }
-.sg-component__example {
-    border: 1px solid #e5e5e5;
-    margin-bottom: 0.5em;
-}
 .sg-component__example-rendered {
+    border: 1px solid #e5e5e5;
+	border-radius: 4px;
     padding: 1em;
 }
 .sg-component__example-code {
-    background-color: #f7f7f7;
-    border-top: 1px solid #e5e5e5;
     overflow: scroll;
-    padding: 1em;
     position: relative;
 }
 .sg-component__example-name,

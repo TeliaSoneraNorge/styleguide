@@ -13,8 +13,8 @@ const HtmlComponent = ({ path, metadata }) => {
             <div dangerouslySetInnerHTML={{ __html: metadata.documentation }}></div>
             {_.map(metadata.examples, (example, i) =>
                 <div key={i} className="sg-component__example">
+                    <Heading level={3} text={example.name} />
                     <div className="sg-component__example-rendered">
-                        <span className="sg-component__example-name">{example.name}</span>
                         <div dangerouslySetInnerHTML={{ __html: example.html }}></div>
                     </div>
                     <div className="sg-component__example-code">
