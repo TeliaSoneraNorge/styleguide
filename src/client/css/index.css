@@ -7,7 +7,7 @@ body {
 }
 
 .sg-site-navigation {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #e5e5e5;
     padding: 1em 0;
 
     a {
@@ -25,15 +25,15 @@ body {
     margin: 1em 0 3em 0;
 }
 .sg-component__example {
-    border: 1px solid #ccc;
+    border: 1px solid #e5e5e5;
     margin-bottom: 0.5em;
 }
 .sg-component__example-rendered {
     padding: 1em;
 }
 .sg-component__example-code {
-    background-color: #f9fafc;
-    border-top: 1px solid #ccc;
+    background-color: #f7f7f7;
+    border-top: 1px solid #e5e5e5;
     overflow: scroll;
     padding: 1em;
     position: relative;
@@ -42,4 +42,9 @@ body {
 .sg-component__example-language {
     color: #777;
     font-weight: bold;
+}
+.sg-component__example-language {
+    position: absolute;
+    right: 1em;
+    top: 1em;
 }

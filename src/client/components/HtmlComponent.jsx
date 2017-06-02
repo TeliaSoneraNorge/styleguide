@@ -19,7 +19,7 @@ const HtmlComponent = ({ path, metadata }) => {
                     </div>
                     <div className="sg-component__example-code">
                         <span className="sg-component__example-language">HTML</span>
-                        <pre className="prettyprint"><code>{example.html}</code></pre>
+                        <pre><code className="language-markup">{example.html}</code></pre>
                     </div>
                 </div>
             )}

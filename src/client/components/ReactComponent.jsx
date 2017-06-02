@@ -44,11 +44,11 @@ const ReactComponent = ({ path, metadata }) => {
                         </div>
                         <div className="sg-component__example-code">
                             <span className="sg-component__example-language">HTML</span>
-                            <pre className="prettyprint"><code dangerouslySetInnerHTML={{ __html: markupStrings.html }}></code></pre>
+                            <pre><code className="language-markup" dangerouslySetInnerHTML={{ __html: markupStrings.html }}></code></pre>
                         </div>
                         <div className="sg-component__example-code">
                             <span className="sg-component__example-language">JSX</span>
-                            <pre className="prettyprint"><code dangerouslySetInnerHTML={{ __html: markupStrings.jsx }}></code></pre>
+                            <pre><code className="language-jsx" dangerouslySetInnerHTML={{ __html: markupStrings.jsx }}></code></pre>
                         </div>
                     </div>
                 );
