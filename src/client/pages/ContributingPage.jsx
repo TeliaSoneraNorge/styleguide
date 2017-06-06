@@ -38,6 +38,10 @@ const HomePage = () =>
             )}
         </div>
 
+        <Heading level={2} text="Sizes and units (px, em, rem)" />
+        <p>When writing CSS, the styleguide uses these rules:</p>
+        <p>TODO</p>
+
     </div>;
 
 export default HomePage;
