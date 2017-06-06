@@ -1,5 +1,7 @@
+@import "../../colors.css";
+
 .heading {
-    color: #990ae3;
+    color: var(--brand-color);
     font-family: pebble;
     text-transform: uppercase;
 
