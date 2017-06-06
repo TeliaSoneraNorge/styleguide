@@ -1,23 +1,17 @@
-.accordion-content-area {
-    padding: 50px 0;
-    max-width: 600px;
-    margin: 0 auto;
-
-}
-
 .accordion {
-    border-top: 1px solid #3CD9FF;
+    border-top: 1px solid $turqoise;
 
     &:last-child {
-        border-bottom: 1px solid #3CD9FF;
+        border-bottom: 1px solid $turqoise;
     }
 
     &__header {
+        margin: 0;
         button:after {
             content: url('../icons/ico_add_purple.svg');
             position: absolute;
             right: 15px;
-            top: 0;
+            top: 20px;
             display: block;
         }
      }
@@ -26,12 +20,13 @@
          position: relative;
          width: 100%;
          display: block;
-         padding: 0;
+         padding: 20px 0;
          background-color: white;
          border: none;
          text-align: left;
          font-size: 22px;
          font-weight: 600;
+         cursor: pointer;
      }
 
     &__body {
@@ -41,5 +36,9 @@
         &--open > .accordion__body {
             display: block;
          }
+
+        &--open button:after {
+            content: url('../icons/ico_minus_purple.svg');
+        }
      }
 }
