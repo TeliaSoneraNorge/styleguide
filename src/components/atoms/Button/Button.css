@@ -22,14 +22,17 @@
         background-color: var(--brand-color);
         color: #fff;
     }
+
     &--alternate {
         background-color: #f2f2f2;
         color: var(--brand-color);
     }
+
     &--positive {
         background-color: #0c6;
         color: #000;
     }
+
     &--action {
         background-color: var(--brand-color);
         color: #fff;
