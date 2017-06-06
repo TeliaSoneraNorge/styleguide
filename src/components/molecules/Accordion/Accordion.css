@@ -2,7 +2,6 @@
     padding: 50px 0;
     max-width: 600px;
     margin: 0 auto;
-
 }
 
 .accordion {
@@ -14,7 +13,7 @@
 
     &__header {
         button:after {
-            content: url('../icons/ico_add_purple.svg');
+            content: url('/public/icons/ico_add_purple.svg');
             position: absolute;
             right: 15px;
             top: 0;

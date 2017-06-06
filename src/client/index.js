@@ -17,5 +17,8 @@ render(App);
 
 // Hot Module Replacement API
 if (module.hot) {
+    require('../components/index.css');
+    require('./css/index.css');
+
     module.hot.accept('./App', () => render(App));
 }
