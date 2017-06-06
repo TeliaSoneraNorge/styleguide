@@ -27,9 +27,11 @@ body {
 .sg-component__example-rendered {
     border: 1px solid #e5e5e5;
 	border-radius: 4px;
-    padding: 1em;
+    margin-bottom: 1rem;
+    padding: 1rem;
 }
 .sg-component__example-code {
+    margin-bottom: 1rem;
     overflow: scroll;
     position: relative;
 }

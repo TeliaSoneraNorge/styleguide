@@ -1,44 +1,49 @@
+:root {
+    --accordion-border: 1px solid var(--turquoise);
+}
+
 .accordion {
-    border-top: 1px solid $turqoise;
+    border-top: var(--accordion-border);
 
     &:last-child {
-        border-bottom: 1px solid $turqoise;
+        border-bottom: var(--accordion-border);
     }
 
     &__header {
         margin: 0;
-        button:after {
-            content: url('../icons/ico_add_purple.svg');
+    }
+
+    &__header-button {
+        background-color: white;
+        border: none;
+        cursor: pointer;
+        display: block;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 20px 0;
+        position: relative;
+        text-align: left;
+        width: 100%;
+
+        &:after {
+            content: url('/public/icons/ico_add_purple.svg');
+            display: block;
             position: absolute;
             right: 15px;
             top: 20px;
-            display: block;
         }
-     }
-
-    &__header-button {
-         position: relative;
-         width: 100%;
-         display: block;
-         padding: 20px 0;
-         background-color: white;
-         border: none;
-         text-align: left;
-         font-size: 22px;
-         font-weight: 600;
-         cursor: pointer;
-     }
+    }
 
     &__body {
+        display: none;
         padding: 20px;
-         display: none;
+    }
 
-        &--open > .accordion__body {
-            display: block;
-         }
+    &--open .accordion__body {
+        display: block;
+    }
 
-        &--open button:after {
-            content: url('../icons/ico_minus_purple.svg');
-        }
+    &--open button:after {
+         content: url('/public/icons/ico_minus_purple.svg');
      }
 }

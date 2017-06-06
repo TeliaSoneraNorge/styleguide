@@ -39,6 +39,7 @@ const ReactComponent = ({ path, metadata }) => {
                 const markupStrings = getMarkupStrings(<ComponentToRender {...example.props} />);
                 return (
                     <div key={i} className="sg-component__example">
+                        <Heading level={3} text={example.name} />
                         <div className="sg-component__example-rendered">
                             <ComponentToRender {...example.props} />
                         </div>
