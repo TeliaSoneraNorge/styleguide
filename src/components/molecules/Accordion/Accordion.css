@@ -1,44 +1,43 @@
-.accordion-content-area {
-    padding: 50px 0;
-    max-width: 600px;
-    margin: 0 auto;
+:root {
+    --accordion-border: 1px solid #3CD9FF;
 }
 
 .accordion {
-    border-top: 1px solid #3CD9FF;
+    border-top: var(--accordion-border);
 
     &:last-child {
-        border-bottom: 1px solid #3CD9FF;
+        border-bottom: var(--accordion-border);
     }
 
     &__header {
-        button:after {
+    }
+
+    &__header-button {
+        background-color: white;
+        border: none;
+        display: block;
+        font-size: 22px;
+        font-weight: 600;
+        padding: 0;
+        position: relative;
+        text-align: left;
+        width: 100%;
+
+        &:after {
             content: url('/public/icons/ico_add_purple.svg');
+            display: block;
             position: absolute;
             right: 15px;
             top: 0;
-            display: block;
         }
-     }
-
-    &__header-button {
-         position: relative;
-         width: 100%;
-         display: block;
-         padding: 0;
-         background-color: white;
-         border: none;
-         text-align: left;
-         font-size: 22px;
-         font-weight: 600;
-     }
+    }
 
     &__body {
+        display: none;
         padding: 20px;
-         display: none;
+    }
 
-        &--open > .accordion__body {
-            display: block;
-         }
-     }
+    &--open .accordion__body {
+        display: block;
+    }
 }
