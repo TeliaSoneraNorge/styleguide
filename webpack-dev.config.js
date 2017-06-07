@@ -35,7 +35,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.css$/,
+                test: /\.pcss$/,
                 use: [
                     { loader: 'style-loader' },
                     { loader: 'css-loader', options: { importLoaders: 1 } },

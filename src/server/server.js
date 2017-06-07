@@ -20,7 +20,7 @@ if (config.environment === 'development') {
 // Send all requests to the same index.ejs view where the React app will start on the client
 app.get('/*', (req, res) => {
     const initialState = {
-        colors: getColorsFromFilePath('src/components', 'colors.css')
+        colors: getColorsFromFilePath('src/components', 'colors.pcss')
     };
     res.render('index', {
         initialState: JSON.stringify(initialState)

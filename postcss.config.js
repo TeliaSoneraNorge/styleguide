@@ -1,6 +1,8 @@
 module.exports = {
   plugins: {
-    'postcss-easy-import': {},
+    'postcss-easy-import': {
+      extensions: '.pcss'
+    },
     'postcss-nested': {},
     'postcss-custom-properties': {}
   }
