@@ -59,7 +59,7 @@ body {
     &__name {
         text-transform: capitalize;
     }
-    &__variable {
+    &__hex {
         color: #777;
         font-size: 0.875rem;
     }
