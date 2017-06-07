@@ -45,3 +45,22 @@ body {
     right: 1em;
     top: 1em;
 }
+
+.sg-color {
+    display: inline-block;
+    margin-right: 1rem;
+    text-align: center;
+
+    &__sample {
+        border: 1px solid #ccc;
+        height: 40px;
+        width: 100px;
+    }
+    &__name {
+        text-transform: capitalize;
+    }
+    &__variable {
+        color: #777;
+        font-size: 0.875rem;
+    }
+}

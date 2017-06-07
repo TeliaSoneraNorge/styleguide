@@ -1,6 +1,8 @@
 import _ from 'lodash';
 import React from 'react';
+import { connect } from 'react-redux';
 
+import Color from '../components/Color';
 import Heading from '../../components/atoms/Heading/Heading';
 import { getMergedMetadata } from '../../componentMetadata';
 import { extractComponentNameFromPath, groupComponentMetadataByType } from '../utils/componentUtil';
@@ -12,7 +14,7 @@ const pageSnippets = {
     bem: ".block {}\n.block__element {}\n.block__element--modifier {}"
 };
 
-const HomePage = () =>
+const ContributingPage = ({ colors }) =>
     <div className="content-wrapper">
         <Heading level={1} text="Contributing to the Styleguide" />
         <p>We welcome all frontend developers - in collaboration with designers - to contribute to the styleguide.</p>
@@ -46,6 +48,15 @@ const HomePage = () =>
             <li>Pixels should not avoided.</li>
         </ul>
         <p>Source: <a href="http://engageinteractive.co.uk/blog/em-vs-rem-vs-px">EM vs REM vs PX – Why you shouldn't “just use pixels”</a></p>
+
+        <Heading level={2} text="Colors" />
+        {_.map(colors, (color) =>
+            <Color {...color} />
+        )}
     </div>;
 
-export default HomePage;
+const mapStateToProps = (state) => ({
+    colors: state.colors
+});
+
+export default connect(mapStateToProps)(ContributingPage);

@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
 
 import App from './App';
+import rootReducer from './reducers';
+
+const initialState = window.__INITIAL_STATE__;
+const store = createStore(rootReducer, initialState);
 
 const render = (Component) => {
     ReactDOM.render(
-        <AppContainer>
-            <Component />
-        </AppContainer>,
+        <Provider store={store}>
+            <AppContainer>
+                <Component />
+            </AppContainer>
+        </Provider>,
         document.getElementById('root')
     );
 };
