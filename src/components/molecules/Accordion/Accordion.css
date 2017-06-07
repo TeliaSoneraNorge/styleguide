@@ -1,5 +1,5 @@
 :root {
-    --accordion-border: 1px solid #3CD9FF;
+    --accordion-border: 1px solid var(--turquoise);
 }
 
 .accordion {
@@ -10,15 +10,17 @@
     }
 
     &__header {
+        margin: 0;
     }
 
     &__header-button {
         background-color: white;
         border: none;
+        cursor: pointer;
         display: block;
         font-size: 22px;
         font-weight: 600;
-        padding: 0;
+        padding: 20px 0;
         position: relative;
         text-align: left;
         width: 100%;
@@ -28,7 +30,7 @@
             display: block;
             position: absolute;
             right: 15px;
-            top: 0;
+            top: 20px;
         }
     }
 
@@ -40,4 +42,8 @@
     &--open .accordion__body {
         display: block;
     }
+
+    &--open button:after {
+         content: url('/public/icons/ico_minus_purple.svg');
+     }
 }
