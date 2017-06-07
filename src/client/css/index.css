@@ -32,7 +32,7 @@ body {
 }
 .sg-component__example-code {
     margin-bottom: 1rem;
-    overflow: scroll;
+    overflow: auto;
     position: relative;
 }
 .sg-component__example-name,
