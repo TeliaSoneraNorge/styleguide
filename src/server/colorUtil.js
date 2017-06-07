@@ -4,7 +4,6 @@ import path from 'path';
 
 export function getColorsFromFilePath(folderPath, fileName) {
     const fileContents = fs.readFileSync(path.join(folderPath, fileName), 'utf8');
-    console.log("fileContents", fileContents);
     return getColorsFromFileContents(fileContents);
 }
 
