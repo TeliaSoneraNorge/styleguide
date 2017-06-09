@@ -1,3 +1,33 @@
+@keyframes footer-pebble-animation-0 {
+    0%   { right: 200px; top: -55px; }
+    50%  { right: 195px; top: -65px; }
+    100% { right: 200px; top: -55px; }
+}
+
+@keyframes footer-pebble-animation-1 {
+    0%   { right: 290px; top: -50px; }
+    50%  { right: 305px; top: -55px; }
+    100% { right: 290px; top: -50px; }
+}
+
+@keyframes footer-pebble-animation-2 {
+    0%   { right: 155px; top: -90px; }
+    50%  { right: 160px; top: -75px; }
+    100% { right: 155px; top: -90px; }
+}
+
+@keyframes footer-pebble-animation-3 {
+    0%   { transform: rotate(20deg); }
+    50%  { transform: rotate(00deg); }
+    100% { transform: rotate(20deg); }
+}
+
+@keyframes footer-pebble-animation-4 {
+    0%   { right: 30px; top: -90px; }
+    50%  { right: 25px; top: -75px; }
+    100% { right: 30px; top: -90px; }
+}
+
 .page-footer {
     margin-top: 4rem;
     padding-top: 6rem;
@@ -18,6 +48,7 @@
                 top: -40px;
             }
             @media screen and (min-width: 60em) {
+                animation: footer-pebble-animation-0 8s infinite;
                 height: 70px;
                 right: 200px;
                 top: -55px;
@@ -39,6 +70,7 @@
                 top: -60px;
             }
             @media screen and (min-width: 60em) {
+                animation: footer-pebble-animation-1 5s infinite;
                 height: 90px;
                 right: 290px;
                 top: -50px;
@@ -59,6 +91,7 @@
                 right: 100px;
             }
             @media screen and (min-width: 60em) {
+                animation: footer-pebble-animation-2 15s infinite;
                 height: 50px;
                 right: 155px;
                 width: 50px;
@@ -77,6 +110,7 @@
                 right: 20px;
             }
             @media screen and (min-width: 60em) {
+                animation: footer-pebble-animation-3 15s infinite;
                 height: 80px;
                 right: 90px;
                 top: -65px;
@@ -96,6 +130,7 @@
                 top: -20px;
             }
             @media screen and (min-width: 60em) {
+                animation: footer-pebble-animation-4 10s infinite;
                 height: 60px;
                 top: -90px;
                 width: 60px;
