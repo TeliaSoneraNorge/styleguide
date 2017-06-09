@@ -3,20 +3,27 @@
 .button {
     background-color: #fff;
     border: 0;
-    border-bottom: 3px solid rgba(0,0,0,.2);
     border-radius: 2rem;
     color: var(--brand-color);
     cursor: pointer;
     display: inline-block;
-    font-size: 1rem;
     font-weight: 500;
     letter-spacing: .05rem;
     margin: 0;
-    padding: 1.0625rem 1.875rem;
     text-decoration: none;
     text-transform: uppercase;
     -webkit-transition: background-color .15s,color .15s;
     transition: background-color .15s,color .15s;
+
+    &--big {
+        font-size: 1rem;
+        padding: 1.0625rem 1.875rem;
+    }
+
+    &--small {
+        font-size: 0.8rem;
+        padding: 0.7rem 2.8rem;
+    }
 
     &--action {
         background-color: var(--brand-color);

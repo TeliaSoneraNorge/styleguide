@@ -2,12 +2,29 @@
     {
         "name": "Default",
         "props": {
+            "size": "big",
+            "text": "Default button"
+        }
+    },
+    {
+        "name": "Default",
+        "props": {
+            "size": "small",
             "text": "Default button"
         }
     },
     {
         "name": "Positive",
         "props": {
+            "size": "big",
+            "text": "Positive button",
+            "kind": "positive"
+        }
+    },
+    {
+        "name": "Positive",
+        "props": {
+            "size": "small",
             "text": "Positive button",
             "kind": "positive"
         }
@@ -15,6 +32,15 @@
     {
         "name": "Alternate",
         "props": {
+            "size": "big",
+            "text": "Alternate button",
+            "kind": "alternate"
+        }
+    },
+    {
+        "name": "Alternate",
+        "props": {
+            "size": "small",
             "text": "Alternate button",
             "kind": "alternate"
         }
@@ -22,6 +48,15 @@
     {
         "name": "Action",
         "props": {
+            "size": "big",
+            "text": "Action button",
+            "kind": "action"
+        }
+    },
+    {
+        "name": "Action",
+        "props": {
+            "size": "small",
             "text": "Action button",
             "kind": "action"
         }
