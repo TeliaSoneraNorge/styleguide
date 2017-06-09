@@ -6,8 +6,8 @@ import Heading from '../../components/atoms/Heading/Heading';
 const ColorsSection = ({ colors }) =>
     <div>
         <Heading level={2} text="Colors" />
-        {_.map(colors, (color) =>
-            <Color {...color} />
+        {_.map(colors, (color, name) =>
+            <Color name={name} {...color} />
         )}
     </div>;
 

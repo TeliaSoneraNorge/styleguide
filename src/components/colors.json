@@ -1,0 +1,41 @@
+{
+    "Black": { "hex": "#000000", "textColor": "#FFFFFF" },
+    "White": { "hex": "#FFFFFF", "textColor": "#000000" },
+    "Grey": { "hex": "#F2F2F2", "textColor": "#000000" },
+
+    "Core Purple": { "hex": "#990AE3", "textColor": "#FFFFFF" },
+    "Dark Core Purple": { "hex": "#9B009B", "textColor": "#FFFFFF" },
+    "Light Core Purple": { "hex": "#CC00FF", "textColor": "#000000" },
+
+    "Purple 2": { "hex": "#9933FF", "textColor": "#FFFFFF" },
+    "Dark Purple 2": { "hex": "#642C96", "textColor": "#FFFFFF" },
+    "Light Purple 2": { "hex": "#AF5AFF", "textColor": "#000000" },
+
+    "Blue": { "hex": "#00CDFF", "textColor": "#000000" },
+    "Dark Blue": { "hex": "#0099FF", "textColor": "#000000" },
+    "Light Blue": { "hex": "#00FFFF", "textColor": "#000000" },
+
+    "Teal": { "hex": "#00CDFF", "textColor": "#000000" },
+    "Dark Teal": { "hex": "#009999", "textColor": "#000000" },
+    "Light Teal": { "hex": "#00FFCD", "textColor": "#000000" },
+
+    "Green": { "hex": "#32FF00", "textColor": "#000000" },
+    "Dark Green": { "hex": "#00CC66", "textColor": "#000000" },
+    "Light Green": { "hex": "#00FF64", "textColor": "#000000" },
+
+    "Lime": { "hex": "#CDFF32", "textColor": "#000000" },
+    "Dark Grey": { "hex": "#A0A0A0", "textColor": "#000000" },
+    "Light Lime": { "hex": "#CDFF99", "textColor": "#000000" },
+
+    "Pink": { "hex": "#FF00CD", "textColor": "#000000" },
+    "Dark Pink": { "hex": "#D22DB9", "textColor": "#000000" },
+    "Light Pink": { "hex": "#FF64CD", "textColor": "#000000" },
+
+    "Orange": { "hex": "#FF00CD", "textColor": "#000000" },
+    "Dark Grey 2": { "hex": "#A0A0A0", "textColor": "#000000" },
+    "Light Orange": { "hex": "#FFCD65", "textColor": "#000000" },
+
+    "Red": { "hex": "#FF3264", "textColor": "#000000" },
+    "Dark Red": { "hex": "#FF2364", "textColor": "#000000" },
+    "Light Red": { "hex": "#FF6464", "textColor": "#000000" }
+}

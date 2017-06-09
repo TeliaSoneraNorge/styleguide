@@ -2,7 +2,7 @@ import express from 'express';
 import proxy from 'proxy-middleware';
 
 import { getConfig } from './config';
-import { getColorsFromFilePath } from './colorUtil';
+import { getColors } from './colorUtil';
 
 const app = express();
 const config = getConfig();
@@ -20,7 +20,7 @@ if (config.environment === 'development') {
 // Send all requests to the same index.ejs view where the React app will start on the client
 app.get('/*', (req, res) => {
     const initialState = {
-        colors: getColorsFromFilePath('src/components', 'colors.pcss')
+        colors: getColors()
     };
     res.render('index', {
         initialState: JSON.stringify(initialState)
