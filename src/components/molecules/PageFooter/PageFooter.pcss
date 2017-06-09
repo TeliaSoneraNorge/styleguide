@@ -1,12 +1,152 @@
 .page-footer {
-    background-color: #AD00E5;
-    padding: 2em 0;
+    margin-top: 4rem;
+    padding-top: 6rem;
+
+    &__pebble {
+        position: absolute;
+
+        &--0 {
+            content: url('/public/pebbles/pebble-0.svg');
+            height: 60px;
+            right: 70px;
+            top: -60px;
+            transform: rotate(-20deg);
+            width: 60px;
+
+            @media screen and (min-width: 42em) {
+                right: 90px;
+                top: -40px;
+            }
+            @media screen and (min-width: 60em) {
+                height: 70px;
+                right: 200px;
+                top: -55px;
+                width: 70px;
+            }
+        }
+
+        &--1 {
+            content: url('/public/pebbles/pebble-1.svg');
+            height: 80px;
+            left: -20px;
+            top: -70px;
+            transform: rotate(20deg);
+            width: 80px;
+
+            @media screen and (min-width: 42em) {
+                left: auto;
+                right: 170px;
+                top: -60px;
+            }
+            @media screen and (min-width: 60em) {
+                height: 90px;
+                right: 290px;
+                top: -50px;
+                width: 90px;
+            }
+        }
+
+        &--2 {
+            content: url('/public/pebbles/pebble-2.svg');
+            height: 40px;
+            right: 130px;
+            top: -20px;
+            transform: rotate(-20deg);
+            width: 40px;
+
+            @media screen and (min-width: 42em) {
+                top: -90px;
+                right: 100px;
+            }
+            @media screen and (min-width: 60em) {
+                height: 50px;
+                right: 155px;
+                width: 50px;
+            }
+        }
+
+        &--3 {
+            content: url('/public/pebbles/pebble-3.svg');
+            height: 60px;
+            right: -20px;
+            top: -90px;
+            transform: rotate(20deg);
+            width: 60px;
+
+            @media screen and (min-width: 42em) {
+                right: 20px;
+            }
+            @media screen and (min-width: 60em) {
+                height: 80px;
+                right: 90px;
+                top: -65px;
+                width: 80px;
+            }
+        }
+
+        &--4 {
+            content: url('/public/pebbles/pebble-4.svg');
+            height: 50px;
+            right: 30px;
+            top: -30px;
+            transform: rotate(-20deg);
+            width: 50px;
+
+            @media screen and (min-width: 42em) {
+                top: -20px;
+            }
+            @media screen and (min-width: 60em) {
+                height: 60px;
+                top: -90px;
+                width: 60px;
+            }
+        }
+    }
+
+    &__content {
+        background-color: #AD00E5;
+    }
+
+    &__content-wrapper {
+        position: relative;
+
+        @media screen and (min-width: 60em) {
+            display: flex;
+            flex-direction: row;
+        }
+    }
+
+    &__main-nav {
+        background-color: #AD00E5;
+        padding: 1.25rem 1rem;
+
+        @media screen and (min-width: 60em) {
+            width: 75%;
+        }
+    }
+
+    &__special-nav {
+        background-color: #700097;
+        padding: 1rem;
+
+        @media screen and (min-width: 60em) {
+            background-color: #AD00E5;
+            padding: 1.25rem 1rem;
+            width: 25%;
+        }
+    }
 
     &__link {
-        border-right: 1px solid white;
         color: white;
-        padding: 0 1em;
+        display: block;
+        padding: 0.5rem 0;
         text-decoration: none;
+
+        @media screen and (min-width: 42em) {
+            border-right: 1px solid white;
+            display: inline;
+            padding: 0 1rem;
+        }
 
         &:hover {
             text-decoration: underline;
