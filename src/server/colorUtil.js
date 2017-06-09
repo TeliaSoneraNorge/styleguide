@@ -1,4 +1,4 @@
-import colors from '../components/colors.json';
+import colors from './colors.json';
 
 export function getColors() {
     return colors;
