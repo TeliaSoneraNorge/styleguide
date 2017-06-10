@@ -8,7 +8,7 @@
     "build-css": "npm run build-css:components && npm run build-css:custom",
     "build-css:components": "postcss src/components/index.pcss -o public/css/bundle.components.css",
     "build-css:custom": "postcss src/client/css/index.pcss -o public/css/bundle.custom.css",
-    "build-server": "babel ./src/server --out-dir ./dist/server && cp -r public dist/public && cp -r src/server/views dist/server/views",
+    "build-server": "babel ./src/server --out-dir ./dist/server --copy-files && cp -r public dist/public",
     "clean": "rm -rf dist && mkdir -p dist",
     "css:components:watch": "nodemon --ext css --watch src/components --exec \"npm run build-css:components\"",
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
