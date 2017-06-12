@@ -15,7 +15,7 @@
     "Dark Blue": { "hex": "#0099FF", "textColor": "#000000" },
     "Light Blue": { "hex": "#00FFFF", "textColor": "#000000" },
 
-    "Teal": { "hex": "#00CDFF", "textColor": "#000000" },
+    "Teal": { "hex": "#00CDCD", "textColor": "#000000" },
     "Dark Teal": { "hex": "#009999", "textColor": "#000000" },
     "Light Teal": { "hex": "#00FFCD", "textColor": "#000000" },
 
@@ -31,8 +31,8 @@
     "Dark Pink": { "hex": "#D22DB9", "textColor": "#000000" },
     "Light Pink": { "hex": "#FF64CD", "textColor": "#000000" },
 
-    "Orange": { "hex": "#FF00CD", "textColor": "#000000" },
-    "Dark Grey 2": { "hex": "#A0A0A0", "textColor": "#000000" },
+    "Orange": { "hex": "#FF9B00", "textColor": "#000000" },
+    "Dark Grey 2": { "hex": "#726E6E", "textColor": "#000000" },
     "Light Orange": { "hex": "#FFCD65", "textColor": "#000000" },
 
     "Red": { "hex": "#FF3264", "textColor": "#000000" },
