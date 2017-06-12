@@ -14,36 +14,29 @@
     }
 
     &__header-button {
-        background-color: white;
+        background: white url('/public/icons/ico_add_purple.svg') no-repeat center right;
         border: none;
         cursor: pointer;
         display: block;
-        font-size: 22px;
+        font-size: 1.375rem;
         font-weight: 600;
-        padding: 20px 0;
+        padding: 1rem 1.25rem 1rem 0;
         position: relative;
         text-align: left;
         width: 100%;
-
-        &:after {
-            content: url('/public/icons/ico_add_purple.svg');
-            display: block;
-            position: absolute;
-            right: 15px;
-            top: 20px;
-        }
     }
 
     &__body {
         display: none;
-        padding: 20px;
+        padding: 1rem 0;
     }
 
-    &--open .accordion__body {
-        display: block;
+    &--open {
+        .accordion__header-button {
+            background-image: url('/public/icons/ico_minus_purple.svg');
+        }
+        .accordion__body {
+            display: block;
+        }
     }
-
-    &--open button:after {
-         content: url('/public/icons/ico_minus_purple.svg');
-     }
 }
