@@ -9,7 +9,7 @@ body {
 }
 
 .sg-site-navigation {
-    border-bottom: 1px solid #e5e5e5;
+    border-bottom: 1px solid var(--dark-grey);
     padding: 1em 0;
 
     a {
@@ -23,29 +23,12 @@ body {
     }
 }
 
-.sg-component {
-    margin: 1em 0 3em 0;
-}
-.sg-component__example-rendered {
-    border: 1px solid #e5e5e5;
-	border-radius: 4px;
-    margin-bottom: 1rem;
+.inner-content {
     padding: 1rem;
 }
-.sg-component__example-code {
-    margin-bottom: 1rem;
-    overflow: auto;
-    position: relative;
-}
-.sg-component__example-name,
-.sg-component__example-language {
-    color: #777;
-    font-weight: bold;
-}
-.sg-component__example-language {
-    position: absolute;
-    right: 1em;
-    top: 1em;
+
+.sg-component {
+    margin: 1em 0 3em 0;
 }
 
 .sg-color {
@@ -60,10 +43,6 @@ body {
     &__hex {
         font-size: 0.875rem;
     }
-}
-
-.inner-content {
-    padding: 1rem;
 }
 
 /* Tabs come from react-simpletabs */

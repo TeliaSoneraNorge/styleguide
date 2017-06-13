@@ -2,23 +2,22 @@ import _ from 'lodash';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
-import { htmlEncode } from 'htmlencode';
+import Tabs from 'react-simpletabs';
 import pretty from 'pretty';
 
 import * as ReactComponents from '../../components/index';
+import CodeSnippet from './CodeSnippet';
 import Heading from '../../components/atoms/Heading/Heading';
 
 import { extractComponentNameFromPath } from '../utils/componentUtil';
 
 function getMarkupStrings(componentWithProps) {
-    const htmlString = pretty(ReactDOMServer.renderToStaticMarkup(componentWithProps));
-    const jsxString = reactElementToJSXString(componentWithProps, {
-        showFunctions: false,
-        functionValue: (fn) => `${fn.name}Fn`
-    });
     return {
-        html: htmlEncode(htmlString),
-        jsx: htmlEncode(jsxString)
+        html: pretty(ReactDOMServer.renderToStaticMarkup(componentWithProps)),
+        jsx: reactElementToJSXString(componentWithProps, {
+            showFunctions: false,
+            functionValue: (fn) => `${fn.name}Fn`
+        })
     };
 }
 
@@ -40,17 +39,19 @@ const ReactComponent = ({ path, metadata }) => {
                 return (
                     <div key={i} className="sg-component__example">
                         <Heading level={3} text={example.name} />
-                        <div className="sg-component__example-rendered">
-                            <ComponentToRender {...example.props} />
-                        </div>
-                        <div className="sg-component__example-code">
-                            <span className="sg-component__example-language">HTML</span>
-                            <pre><code className="language-markup" dangerouslySetInnerHTML={{ __html: markupStrings.html }}></code></pre>
-                        </div>
-                        <div className="sg-component__example-code">
-                            <span className="sg-component__example-language">JSX</span>
-                            <pre><code className="language-jsx" dangerouslySetInnerHTML={{ __html: markupStrings.jsx }}></code></pre>
-                        </div>
+                        <Tabs>
+                            <Tabs.Panel title="Example">
+                                <div className="inner-content">
+                                    <ComponentToRender {...example.props} />
+                                </div>
+                            </Tabs.Panel>
+                            <Tabs.Panel title="HTML">
+                                <CodeSnippet code={markupStrings.html} language="markup" />
+                            </Tabs.Panel>
+                            <Tabs.Panel title="JSX">
+                                <CodeSnippet code={markupStrings.jsx} language="jsx" />
+                            </Tabs.Panel>
+                        </Tabs>
                     </div>
                 );
             })}
