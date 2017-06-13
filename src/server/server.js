@@ -1,8 +1,8 @@
 import express from 'express';
 import proxy from 'proxy-middleware';
 
+import colors from './colors.json';
 import { getConfig } from './config';
-import { getColors } from './colorUtil';
 
 const app = express();
 const config = getConfig();
@@ -19,9 +19,7 @@ if (config.environment === 'development') {
 
 // Send all requests to the same index.ejs view where the React app will start on the client
 app.get('/*', (req, res) => {
-    const initialState = {
-        colors: getColors()
-    };
+    const initialState = { colors };
     res.render('index', {
         initialState: JSON.stringify(initialState)
     });
