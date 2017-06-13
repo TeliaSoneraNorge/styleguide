@@ -21,7 +21,8 @@ if (config.environment === 'development') {
 app.get('/*', (req, res) => {
     const initialState = { colors };
     res.render('index', {
-        initialState: JSON.stringify(initialState)
+        initialState: JSON.stringify(initialState),
+        environment: config.environment
     });
 });
 
