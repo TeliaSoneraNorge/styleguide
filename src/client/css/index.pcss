@@ -1,3 +1,5 @@
+@import "../../components/colors.pcss";
+
 /* Styleguide */
 body {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -50,12 +52,51 @@ body {
     display: inline-block;
     padding: 1rem;
     text-align: center;
-    width: 33%;
+    width: 33.333333333333%;
 
     &__name {
         text-transform: capitalize;
     }
     &__hex {
         font-size: 0.875rem;
+    }
+}
+
+.inner-content {
+    padding: 1rem;
+}
+
+/* Tabs come from react-simpletabs */
+.tabs {
+    .tabs-navigation {
+        border: 1px solid var(--dark-grey);
+        border-bottom: 0;
+
+        .tabs-menu {
+            margin: 0;
+            padding: 0;
+
+            .tabs-menu-item {
+                border-right: 1px solid var(--dark-grey);
+                display: inline-block;
+
+                &:hover {
+                    cursor: pointer;
+                }
+                a {
+                    color: var(--dark-grey);
+                    display: block;
+                    font-size: 14px;
+                    padding: 0.75rem 1.5rem;
+                }
+                a:hover,
+                &.is-active a {
+                    color: var(--black);
+                }
+            }
+        }
+    }
+    .tab-panel {
+        border: 1px solid var(--dark-grey);
     }
 }
