@@ -23,7 +23,7 @@
     "svgo": "svgo -f ./src/unoptimized-icons -o ./public/icons --config=./svgo.config.json --multipass",
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server --config webpack-dev.config.js",
-    "test": "mocha test --recursive --compilers js:babel-core/register"
+    "test": "mocha --opts test/mocha.opts --compilers js:babel-core/register test"
   },
   "author": "Telia Norge",
   "license": "ISC",
