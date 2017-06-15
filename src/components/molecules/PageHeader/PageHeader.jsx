@@ -18,6 +18,9 @@ const PageHeader = ({ logoUrl, logoTitle, logoImagePath, menuImagePath }) =>
         <div className="page-header__site-tools">
             <div className="page-header__site-tool"></div>
         </div>
+        <div className="page-header__wip-message">
+            The header component is work-in-progress, i.e. the menu button doesn't work yet, etc.
+        </div>
     </header>;
 
 export default PageHeader;
