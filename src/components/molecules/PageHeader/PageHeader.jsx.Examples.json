@@ -1,6 +1,11 @@
 [
     {
         "name": "Standard",
-        "props": {}
+        "props": {
+            "logoUrl": "/",
+            "logoTitle": "Telia",
+            "logoImagePath": "/public/images/telia-logo-animated-transparent.gif",
+            "menuImagePath": "/public/images/header-burger.png"
+        }
     }
 ]

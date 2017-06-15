@@ -12,7 +12,11 @@ import SiteNavigation from './components/SiteNavigation';
 
 const Routes = (props) =>
     <div>
-        <PageHeader />
+        <PageHeader
+            logoUrl="/"
+            logoTitle="Telia"
+            logoImagePath="/public/images/telia-logo-animated-transparent.gif"
+            menuImagePath="/public/images/header-burger.png" />
         <SiteNavigation />
 
         <Route exact path="/" component={HomePage} />
