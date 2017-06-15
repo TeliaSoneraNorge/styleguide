@@ -8,22 +8,8 @@
     {
         "name": "Default (small)",
         "props": {
-            "size": "small",
-            "text": "Default button"
-        }
-    },
-    {
-        "name": "Positive",
-        "props": {
-            "text": "Positive button",
-            "kind": "positive"
-        }
-    },
-    {
-        "name": "Negative",
-        "props": {
-            "text": "Negative button",
-            "kind": "negative"
+            "text": "Default button",
+            "size": "small"
         }
     },
     {
@@ -34,17 +20,11 @@
         }
     },
     {
-        "name": "Alternate 1",
+        "name": "Action (small)",
         "props": {
-            "text": "Alternate 1 button",
-            "kind": "alternate-1"
-        }
-    },
-    {
-        "name": "Alternate 2",
-        "props": {
-            "text": "Alternate 2 button",
-            "kind": "alternate-2"
+            "text": "Action button",
+            "kind": "action",
+            "size": "small"
         }
     }
 ]
