@@ -5,7 +5,7 @@ import React from 'react';
  * It contains the Telia logo, the main navigation, and tools such as log-in info
  * and shopping cart.
  */
-const PageHeader = ({ logoUrl, logoTitle, logoImagePath, menuImagePath }) =>
+const PageHeader = ({ logoUrl, logoTitle, logoImagePath }) =>
     <header className="page-header">
         <div className="page-header__site-name-and-logo">
             <a className="page-header__site-logo" href={logoUrl} title={logoTitle}>
@@ -13,10 +13,10 @@ const PageHeader = ({ logoUrl, logoTitle, logoImagePath, menuImagePath }) =>
             </a>
         </div>
         <div className="page-header__site-nav">
-            <img className="page-header__site-nav-burger" src={menuImagePath} alt="Telia" />
+            <div className="page-header__placeholder">TODO</div>
         </div>
         <div className="page-header__site-tools">
-            <div className="page-header__site-tool"></div>
+            <div className="page-header__placeholder">TODO</div>
         </div>
     </header>;
 

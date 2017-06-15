@@ -15,8 +15,7 @@ const Routes = (props) =>
         <PageHeader
             logoUrl="/"
             logoTitle="Telia"
-            logoImagePath="/public/images/telia-logo-animated-transparent.gif"
-            menuImagePath="/public/images/header-burger.png" />
+            logoImagePath="/public/images/telia-logo-animated-transparent.gif" />
         <SiteNavigation />
 
         <Route exact path="/" component={HomePage} />
