@@ -20,7 +20,14 @@ const Routes = (props) =>
         <Route exact path="/contributing" component={ContributingPage} />
         <Route exact path="/download" component={DownloadPage} />
 
-        <PageFooter />
+        <PageFooter
+            links={[
+                { text: "Om Telia", url: "#" },
+                { text: "Telia butikker", url: "#" },
+                { text: "Presse", url: "#" },
+                { text: "Jobb i Telia", url: "#" }
+            ]}
+            specialLink={{ text: "Personvern og Cookies", url: "#" }} />
     </div>;
 
 export default Routes;

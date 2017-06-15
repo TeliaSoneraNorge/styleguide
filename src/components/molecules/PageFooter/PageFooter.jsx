@@ -1,28 +1,25 @@
+import _ from 'lodash';
 import React from 'react';
 
 /**
  * The PageFooter is the main footer on the page, and should be included only once.
  * It contains a small number of important, side-wide links.
  */
-const PageFooter = () =>
+const PageFooter = ({ links, specialLink }) =>
     <footer className="page-footer">
         <div className="page-footer__content">
             <div className="page-footer__content-wrapper content-wrapper">
                 <nav className="page-footer__main-nav">
-                    <a className="page-footer__link" href="#">Om Telia</a>
-                    <a className="page-footer__link" href="#">Telia butikker</a>
-                    <a className="page-footer__link" href="#">Presse</a>
-                    <a className="page-footer__link" href="#">Jobb i Telia</a>
+                    {_.map(links, (link) =>
+                        <a className="page-footer__link" href={link.url}>{link.text}</a>
+                    )}
                 </nav>
                 <nav className="page-footer__special-nav">
-                    <a className="page-footer__link" href="#">Personvern og Cookies</a>
+                    <a className="page-footer__link" href={specialLink.url}>{specialLink.text}</a>
                 </nav>
-
-                <div className="page-footer__pebble page-footer__pebble--0"></div>
-                <div className="page-footer__pebble page-footer__pebble--1"></div>
-                <div className="page-footer__pebble page-footer__pebble--2"></div>
-                <div className="page-footer__pebble page-footer__pebble--3"></div>
-                <div className="page-footer__pebble page-footer__pebble--4"></div>
+                {_.map([0, 1, 2, 3, 4], (i) =>
+                    <div className={`page-footer__pebble page-footer__pebble--${i}`}></div>
+                )}
             </div>
         </div>
     </footer>;
