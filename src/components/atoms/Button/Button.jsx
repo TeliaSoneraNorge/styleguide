@@ -12,7 +12,11 @@ function classNames(kind, size) {
 }
 
 /**
- * This is a Button. Use it when you want people to click it.
+ * Status: *in progress*.
+ *
+ * Work remaining: more variants.
+ *
+ * The Button component is still work-in-progress.
  */
 const Button = ({ text, kind, size, onClick }) =>
     <button className={classNames(kind, size)} onClick={onClick}>{text}</button>;

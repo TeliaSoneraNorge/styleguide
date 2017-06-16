@@ -1,6 +1,10 @@
 import React from 'react';
 
 /**
+ * Status: *in progress*.
+ *
+ * Work remaining: menu, toolbar, responsiveness.
+ *
  * The PageHeader is the main header on the page, and should be included only once.
  * It contains the Telia logo, the main navigation, and tools such as log-in info
  * and shopping cart.

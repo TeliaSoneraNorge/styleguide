@@ -1,9 +1,10 @@
 import _ from 'lodash';
+import marked from 'marked';
+import pretty from 'pretty';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 import reactElementToJSXString from 'react-element-to-jsx-string';
 import Tabs from 'react-simpletabs';
-import pretty from 'pretty';
 
 import * as ReactComponents from '../../components/index';
 import CodeSnippet from './CodeSnippet';
@@ -27,7 +28,7 @@ const ReactComponent = ({ path, metadata }) => {
     return (
         <div className="sg-component">
             <Heading level={2} text={extractComponentNameFromPath(path)} />
-            <p>{metadata.description}</p>
+            <div dangerouslySetInnerHTML={{ __html: marked(metadata.description) }}></div>
             {_.isEmpty(examples) ?
                 <div className="sg-component__example">
                     <div className="sg-component__example-rendered">

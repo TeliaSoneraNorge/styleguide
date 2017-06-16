@@ -10,7 +10,12 @@ const levels = {
 };
 
 /**
- * This is a Heading, which renders the h1, h2, h3, etc. tags.
+ * Status: *in progress*.
+ *
+ * Work remaining: correct fonts & colors.
+ *
+ * The Heading component should be used for page titles, sub-titles, etc.
+ * Currently, only h1, h2, h3 and h4 headings have been defined.
  */
 const Heading = ({ text, level }) => {
     const tagName = levels[level.toString()];

@@ -2,6 +2,10 @@ import _ from 'lodash';
 import React from 'react';
 
 /**
+ * Status: *finished*.
+ *
+ * Future work: improved animations.
+ *
  * The PageFooter is the main footer on the page, and should be included only once.
  * It contains a small number of important, side-wide links.
  */
