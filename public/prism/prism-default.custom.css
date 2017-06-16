@@ -49,25 +49,18 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
+	background: #F2F2F2;
 	margin: 0;
 	overflow: auto;
-}
-
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-	background: #F2F2F2;
-	/*
-	border: 1px solid #e5e5e5;
-	border-radius: 4px;
-	*/
+	padding: 1em;
 }
 
 /* Inline code */
+:not(pre) > code,
 :not(pre) > code[class*="language-"] {
-	padding: .1em;
-	border-radius: .3em;
-	white-space: normal;
+	background: #F2F2F2;
+	border-radius: 1px;
+	padding: 1px 6px;
 }
 
 .token.comment,
