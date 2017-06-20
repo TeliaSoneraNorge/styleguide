@@ -1,4 +1,5 @@
 @import "../../components/colors.pcss";
+@import "../../components/grid.pcss";
 
 /* Styleguide */
 body {
@@ -42,6 +43,30 @@ body {
     }
     &__hex {
         font-size: 0.875rem;
+    }
+}
+
+.sg-grid-example {
+    &__content {
+        background-color: var(--core-purple);
+        color: white;
+        margin: 0 auto 0.5rem;
+        padding: 1rem;
+        text-align: center;
+
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
+    &__width-large {
+        max-width: var(--width-large);
+    }
+    &__width-medium {
+        max-width: var(--width-medium);
+    }
+    &__width-small {
+        max-width: var(--width-small);
     }
 }
 

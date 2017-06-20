@@ -4,6 +4,7 @@ module.exports = {
       extensions: '.pcss'
     },
     'postcss-nested': {},
-    'postcss-custom-properties': {}
+    'postcss-custom-properties': {},
+    'postcss-calc': {}
   }
 };

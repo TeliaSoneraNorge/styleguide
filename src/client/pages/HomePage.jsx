@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import ColorsSection from '../components/ColorsSection';
+import GridSection from '../components/GridSection';
 import SizesAndUnitsSection from '../components/SizesAndUnitsSection';
 import TypographySection from '../components/TypographySection';
 
@@ -14,6 +15,7 @@ const HomePage = ({ colors }) =>
 
         <ColorsSection colors={colors} />
         <TypographySection />
+        <GridSection />
         <SizesAndUnitsSection />
     </div>;
 
