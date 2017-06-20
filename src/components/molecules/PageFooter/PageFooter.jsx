@@ -19,7 +19,7 @@ const PageFooter = ({ links, specialLink }) =>
                     )}
                 </nav>
                 <nav className="page-footer__special-nav">
-                    <a className="page-footer__link" href={specialLink.url}>{specialLink.text}</a>
+                    <a className="page-footer__special-link page-footer__link" href={specialLink.url}>{specialLink.text}</a>
                 </nav>
                 {_.map([0, 1, 2, 3, 4], (i) =>
                     <div className={`page-footer__pebble page-footer__pebble--${i}`}></div>
