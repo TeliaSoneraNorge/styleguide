@@ -1,38 +1,119 @@
 @import "../../colors.pcss";
 
+:root {
+    --logo-size-small-screens: 50px;
+    --icon-size-small: 20px;
+    --icon-size-large: 32px;
+}
+
 .page-header {
     align-items: center;
     border-bottom: 1px solid var(--dark-grey);
     display: flex;
     padding: 1em;
 
+    &__icon-with_text {
+        background: none;
+        border: none;
+        font-size: 0.8125rem;
+        text-decoration: none;
+
+        img {
+            display: block;
+            height: var(--icon-size-small);
+            margin: 0 auto 0.25rem auto;
+            width: var(--icon-size-small);
+
+            @media screen and (min-width: 42em) {
+                height: var(--icon-size-large);
+                width: var(--icon-size-large);
+            }
+        }
+    }
+
     &__site-name-and-logo {
         color: yellow;
         order: 2;
         text-align: center;
-        width: 100%;
+        width: 33.33333333333%;
     }
     &__site-name {
         display: none;
     }
     &__site-logo {
+        height: var(--logo-size-small-screens);
     }
 
     &__site-nav {
         order: 1;
+        width: 33.33333333333%;
     }
+    &__menu-button {
+        text-transform: uppercase;
+    }
+    &__menu-button-image {
+    }
+
     &__site-tools {
+        align-items: center;
+        display: flex;
+        justify-content: flex-end;
         order: 2;
-        width: 50px;
+        text-align: right;
+        width: 33.33333333333%;
     }
-    &__placeholder {
-        border: 1px solid var(--core-purple);
-        color: #ccc;
+    &__cart-button {
+        background: none;
+        position: relative;
+    }
+    &__cart-button-image {
+        height: var(--icon-size-small);
+        width: var(--icon-size-small);
+
+        @media screen and (min-width: 42em) {
+            height: var(--icon-size-large);
+            width: var(--icon-size-large);
+        }
+    }
+    &__cart-item-count {
+        background-color: red;
+        border: 1px solid white;
+        border-radius: 0.5rem;
+        color: white;
         display: inline-block;
-        font-size: 0.875rem;
-        height: 50px;
-        line-height: 50px;
+        font-size: 0.75rem;
+        height: 1rem;
+        line-height: 1rem;
         text-align: center;
-        width: 50px;
+        position: absolute;
+        right: -10px;
+        top: -10px;
+        width: 1rem;
+    }
+    &__log-in-button {
+        border-bottom: 1px solid var(--core-purple);
+        font-size: 0.8125rem;
+        margin-left: 1rem;
+        padding-bottom: 0.25rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+            border-bottom-width: 2px;
+        }
+
+        @media screen and (min-width: 42em) {
+            font-size: 1rem;
+        }
+    }
+    &__my-account-button {
+        margin-left: 1rem;
+    }
+    &__user-name {
+        display: none;
+
+        @media screen and (min-width: 42em) {
+            display: block;
+        }
     }
 }

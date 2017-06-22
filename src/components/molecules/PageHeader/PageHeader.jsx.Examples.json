@@ -1,10 +1,43 @@
 [
     {
-        "name": "Standard",
+        "name": "Logged out, no items in cart",
         "props": {
             "logoUrl": "/",
-            "logoTitle": "Telia",
-            "logoImagePath": "/public/images/telia-logo-animated-transparent.gif"
+            "logoTitle": "Telia logo",
+            "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
+            "logoImageMobilePath": "/public/icons/logo_mob.svg",
+            "cartItemCount": 0
+        }
+    }, {
+        "name": "Logged out, 3 items in cart",
+        "props": {
+            "logoUrl": "/",
+            "logoTitle": "Telia logo",
+            "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
+            "logoImageMobilePath": "/public/icons/logo_mob.svg",
+            "cartItemCount": 3
+        }
+    }, {
+        "name": "Logged in, no items in cart",
+        "props": {
+            "logoUrl": "/",
+            "logoTitle": "Telia logo",
+            "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
+            "logoImageMobilePath": "/public/icons/logo_mob.svg",
+            "cartItemCount": 0,
+            "isLoggedIn": true,
+            "loggedInUserName": "Maria"
+        }
+    }, {
+        "name": "Logged in, 1 item in cart",
+        "props": {
+            "logoUrl": "/",
+            "logoTitle": "Telia logo",
+            "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
+            "logoImageMobilePath": "/public/icons/logo_mob.svg",
+            "cartItemCount": 1,
+            "isLoggedIn": true,
+            "loggedInUserName": "Maria"
         }
     }
 ]
