@@ -22,8 +22,11 @@ function getMarkupStrings(componentWithProps) {
     };
 }
 
+const NoComponentFound = () =>
+    <p>Component not found. It must be exported via the index.js file.</p>;
+
 const ReactComponent = ({ path, metadata }) => {
-    const ComponentToRender = ReactComponents.default[path];
+    const ComponentToRender = ReactComponents.default[path] || NoComponentFound;
     const examples = metadata.examples || [];
     return (
         <div className="sg-component">
