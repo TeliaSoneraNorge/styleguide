@@ -14,15 +14,15 @@ const PageFooter = ({ links, specialLink }) =>
         <div className="page-footer__content">
             <div className="page-footer__content-wrapper content-wrapper">
                 <nav className="page-footer__main-nav">
-                    {_.map(links, (link) =>
-                        <a className="page-footer__link" href={link.url}>{link.text}</a>
+                    {_.map(links, (link, i) =>
+                        <a key={i} className="page-footer__link" href={link.url}>{link.text}</a>
                     )}
                 </nav>
                 <nav className="page-footer__special-nav">
                     <a className="page-footer__special-link page-footer__link" href={specialLink.url}>{specialLink.text}</a>
                 </nav>
                 {_.map([0, 1, 2, 3, 4], (i) =>
-                    <div className={`page-footer__pebble page-footer__pebble--${i}`}></div>
+                    <div key={i} className={`page-footer__pebble page-footer__pebble--${i}`}></div>
                 )}
             </div>
         </div>
