@@ -9,7 +9,7 @@ import ReactComponent from '../components/ReactComponent';
 const componentMetadata = getMergedMetadata();
 
 const ComponentsPage = () =>
-    <div className="content-wrapper">
+    <div className="sg-components content-wrapper">
         <Heading level={1} text="Components" />
         {Object.keys(componentMetadata).map((path) => {
             const metadata = componentMetadata[path];
