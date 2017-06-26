@@ -24,19 +24,19 @@ const PageHeader = ({ logoUrl, logoTitle, logoImageDesktopPath, logoImageMobileP
             </div>
             <div className="page-header__site-nav">
                 <button className="page-header__menu-button page-header__icon-with_text" aria-expanded={false} aria-controls="id-to-main-navbar" aria-pressed="false">
-                    <img className="page-header__menu-button-image" src="/public/icons/ico_menu.svg" alt="" role="presentation" />
+                    <img className="page-header__menu-button-image" src="/public/icons/ico_menu_purple.svg" alt="" role="presentation" />
                     Meny
                 </button>
             </div>
             <div className="page-header__site-tools">
                 {cartShouldBeShown ?
                     <a className="page-header__cart-button" href="#">
-                        <img className="page-header__cart-button-image" src="/public/icons/ico_buy.svg" alt="Handlekurv" />
+                        <img className="page-header__cart-button-image" src="/public/icons/ico_buy_purple.svg" alt="Handlekurv" />
                         <span className="page-header__cart-item-count">{cartItemCount}</span>
                     </a> : null}
                 {isLoggedIn ?
                     <a className="page-header__my-account-button page-header__icon-with_text" href="#">
-                        <img className="page-header__cart-button-image" src="/public/icons/ico_enduser.svg" alt="" role="presentation" />
+                        <img className="page-header__cart-button-image" src="/public/icons/ico_enduser_purple.svg" alt="" role="presentation" />
                         <span className="page-header__user-name">Hei, {loggedInUserName}</span>
                     </a> :
                     <a className="page-header__log-in-button" href="#">
