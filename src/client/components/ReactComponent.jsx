@@ -39,14 +39,20 @@ const ReactComponent = ({ path, metadata }) => {
                     </div>
                 </div> : null}
             {_.map(examples, (example, i) => {
-                const markupStrings = getMarkupStrings(<ComponentToRender {...example.props} />);
+                const componentWithProps = example.props.children ?
+                    <ComponentToRender {...example.props}>
+                        <div dangerouslySetInnerHTML={{ __html: example.props.children }} />
+                    </ComponentToRender> :
+                    <ComponentToRender {...example.props} />;
+
+                const markupStrings = getMarkupStrings(componentWithProps);
                 return (
                     <div key={i} className="sg-component__example">
                         <Heading level={3} text={example.name} />
                         <Tabs>
                             <Tabs.Panel title="Example">
                                 <div className="inner-content">
-                                    <ComponentToRender {...example.props} />
+                                    {componentWithProps}
                                 </div>
                             </Tabs.Panel>
                             <Tabs.Panel title="HTML">

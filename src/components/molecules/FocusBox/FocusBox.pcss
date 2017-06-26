@@ -1,0 +1,20 @@
+.focus-box {
+    background: transparent url('/public/pebbles/pebble-13.svg') no-repeat -1000px -1000px;
+    background-size: 3000px;
+    margin: 0 auto;
+    max-width: var(--width-medium);
+    padding: 1rem;
+
+    &__content-outer {
+        background-color: white;
+        padding: 1rem;
+
+        @media screen and (min-width: 42em) {
+            padding: 3rem 0;
+        }
+    }
+    &__content-inner {
+        margin: 0 auto;
+        max-width: var(--width-small);
+    }
+}
