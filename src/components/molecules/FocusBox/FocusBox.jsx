@@ -18,6 +18,4 @@ const FocusBox = ({ children }) =>
         </div>
     </div>;
 
-// dangerouslySetInnerHTML={{ __html: contentHtml }}
-
 export default FocusBox;

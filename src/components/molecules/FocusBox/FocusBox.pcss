@@ -1,9 +1,20 @@
+@keyframes focus-box-animation {
+    0%   { background-position: -1000px -1000px; }
+    25%   { background-position: -1000px -1000px; }
+    100% { background-position: -600px -1000px; }
+}
+
 .focus-box {
-    background: transparent url('/public/pebbles/pebble-13.svg') no-repeat -1000px -1000px;
-    background-size: 3000px;
+    animation: focus-box-animation 4s 1;
+    background: transparent url('/public/pebbles/pebble-14.svg') no-repeat -600px -1000px;
+    background-size: 2000px;
     margin: 0 auto;
     max-width: var(--width-medium);
-    padding: 1rem;
+    padding: 0.5rem 0;
+
+    @media screen and (min-width: 42em) {
+        padding: 0.5rem;
+    }
 
     &__content-outer {
         background-color: white;
