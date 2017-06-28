@@ -10,6 +10,8 @@ import ContributingPage from './pages/ContributingPage';
 import DownloadPage from './pages/DownloadPage';
 import SiteNavigation from './components/SiteNavigation';
 
+import SamplePage1 from './pages/SamplePage1';
+
 const Routes = (props) =>
     <div>
         <PageHeader
@@ -23,6 +25,7 @@ const Routes = (props) =>
         <Route exact path="/components" component={ComponentsPage} />
         <Route exact path="/contributing" component={ContributingPage} />
         <Route exact path="/download" component={DownloadPage} />
+        <Route exact path="/sample-page-1" component={SamplePage1} />
 
         <PageFooter
             links={[
