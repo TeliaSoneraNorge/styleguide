@@ -1,0 +1,22 @@
+.full-width-image {
+    position: relative;
+
+    &__image {
+        display: block;
+        width: 100%;
+    }
+
+    &--with-mask {
+        &:after {
+            background: transparent url('/public/images/clip-image.svg') no-repeat bottom left;
+            background-size: 105%;
+            bottom: -1px;
+            content: "";
+            display: block;
+            height: 100%;
+            left: -1px;
+            position: absolute;
+            width: 101%;
+        }
+    }
+}
