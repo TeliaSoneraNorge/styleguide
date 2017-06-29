@@ -1,8 +1,16 @@
 .download-buttons {
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
     &__button {
         text-decoration: none;
+        display: block; /*Needed by certain rendering engines*/
     }
 
+    &__image {
+        display: block;
+        max-width: 100%;
+        width: 235px;
+    }
 }
