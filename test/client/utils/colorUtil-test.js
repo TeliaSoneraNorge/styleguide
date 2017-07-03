@@ -21,7 +21,8 @@ describe('colorUtil', () => {
 
         it('should return some variables when colors are passed in', () => {
             const result = colorUtil.fromColorsToCssVariables(colors);
-            expect(result).to.equal(':root {\n' +
+            expect(result).to.equal(
+                ':root {\n' +
                 '    --black: #000000;\n' +
                 '    --white: #FFFFFF;\n' +
                 '    --grey: #F2F2F2;\n' +
@@ -29,7 +30,7 @@ describe('colorUtil', () => {
                 '    --core-purple: #990AE3;\n' +
                 '    --dark-core-purple: #9B009B;\n' +
                 '    --light-core-purple: #CC00FF;\n' +
-            '}');
+                '}');
         });
 
     });
@@ -72,6 +73,40 @@ describe('colorUtil', () => {
                 '$core-purple: #990AE3;\n' +
                 '$dark-core-purple: #9B009B;\n' +
                 '$light-core-purple: #CC00FF;');
+        });
+
+    });
+
+    describe('fromPostCssVariablesToSass', () => {
+
+        it('should convert a simple variable', () => {
+            const postCss =
+                ':root {\n' +
+                '    --grid-column-width: 82px;\n' +
+                '}';
+            const result = colorUtil.fromPostCssVariablesToSass(postCss);
+            expect(result).to.equal('$grid-column-width: 82px;');
+        });
+
+        it('should convert multiple simple variables', () => {
+            const postCss =
+                ':root {\n' +
+                '    --grid-column-width: 82px;\n' +
+                '    --grid-gutter-width: 20px;\n' +
+                '}';
+            const result = colorUtil.fromPostCssVariablesToSass(postCss);
+            expect(result).to.equal(
+                '$grid-column-width: 82px;\n' +
+                '$grid-gutter-width: 20px;');
+        });
+
+        xit('should convert a variable which uses other variables', () => {
+            const postCss =
+                ':root {\n' +
+                '    --width-large: calc((var(--grid-column-width) * 12) + (var(--grid-gutter-width) * 11));\n' +
+                '}';
+            const result = colorUtil.fromPostCssVariablesToSass(postCss);
+            expect(result).to.equal('$width-large: calc(($grid-column-width * 12) + ($grid-gutter-width * 11));');
         });
 
     });

@@ -40,7 +40,10 @@ app.get('/download-zip', (req, res) => {
 
 // Send all requests to the same index.ejs view where the React app will start on the client
 app.get('/*', (req, res) => {
-    const initialState = { colors };
+    const initialState = {
+        colors,
+        variablesCss: fs.readFileSync('src/components/variables.pcss', 'utf8')
+    };
     res.render('index', {
         initialState: JSON.stringify(initialState),
         environment: config.environment

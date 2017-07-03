@@ -3,16 +3,9 @@ import Tabs from 'react-simpletabs';
 
 import CodeSnippet from './CodeSnippet';
 import Heading from '../../components/atoms/Heading/Heading';
+import * as colorUtil from '../utils/colorUtil';
 
 const codeSnippets = {
-    gridCss:
-        ':root {\n' +
-        '    --grid-column-width: 82px;\n' +
-        '    --grid-gutter-width: 20px;\n\n' +
-        '    --width-large: 1204px; /* 12 cols, 11 gutters */ \n' +
-        '    --width-medium: 796px; /* 8 cols, 7 gutters */ \n' +
-        '    --width-small: 592px; /* 6 cols, 5 gutters */ \n' +
-        '}',
     exampleCss:
         '.my-component {\n' +
         '    margin: 0 auto;\n' +
@@ -20,9 +13,9 @@ const codeSnippets = {
         '}'
 };
 
-const GridSection = () =>
+const VariablesSection = ({ variablesCss }) =>
     <div>
-        <Heading level={2} text="Grid" />
+        <Heading level={2} text="CSS Variables & Grid" />
         <p>
             Since we are using BEM for our CSS naming-conventions, the only class names we see in
             the HTML should be our BEM component classes. We do not wish to clutter up the HTML
@@ -35,7 +28,7 @@ const GridSection = () =>
         </p>
 
         <Tabs>
-            <Tabs.Panel title="Rendered">
+            <Tabs.Panel title="Different Widths">
                 <div className="inner-content">
                     <div className="sg-grid-example">
                         <div className="sg-grid-example__content sg-grid-example__width-large">
@@ -51,7 +44,10 @@ const GridSection = () =>
                 </div>
             </Tabs.Panel>
             <Tabs.Panel title="CSS">
-                <CodeSnippet code={codeSnippets.gridCss} language="css" />
+                <CodeSnippet code={variablesCss} language="css" />
+            </Tabs.Panel>
+            <Tabs.Panel title="SASS">
+                <CodeSnippet code={colorUtil.fromPostCssVariablesToSass(variablesCss)} language="sass" />
             </Tabs.Panel>
         </Tabs>
 
@@ -61,4 +57,4 @@ const GridSection = () =>
         <CodeSnippet code={codeSnippets.exampleCss} language="css" />
     </div>;
 
-export default GridSection;
+export default VariablesSection;
