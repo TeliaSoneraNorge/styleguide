@@ -1,5 +1,6 @@
 .full-width-image {
     position: relative;
+    z-index: -1;
 
     &__image {
         display: block;
@@ -8,15 +9,19 @@
 
     &--with-mask {
         &:after {
-            background: transparent url('/public/images/clip-image.svg') no-repeat bottom left;
-            background-size: 105%;
-            bottom: -1px;
+            background: transparent url('/public/images/full-screen-image-mask.svg') no-repeat bottom left;
+            background-size: 100%;
+            bottom: 0;
             content: "";
             display: block;
             height: 100%;
-            left: -1px;
+            left: 0;
             position: absolute;
-            width: 101%;
+            width: 100%;
         }
+    }
+
+    &--with-content-overlap {
+        margin-bottom: -10rem;
     }
 }
