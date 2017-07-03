@@ -57,6 +57,7 @@
     "postcss-cli": "^4.0.0",
     "postcss-custom-properties": "^6.0.1",
     "postcss-easy-import": "^2.1.0",
+    "postcss-functions": "2.1.1",
     "postcss-loader": "^2.0.5",
     "postcss-nested": "^2.0.2",
     "pretty": "^2.0.0",
