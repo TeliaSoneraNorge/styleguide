@@ -12,7 +12,6 @@ const componentMetadata = getMergedMetadata();
 
 const ComponentList = ({ groupName, groupedComponentMetadata }) => {
     const componentPaths = _.chain(groupedComponentMetadata[groupName]).keys().sortBy().value();
-
     return (
         <ul>
             {_.map(componentPaths, (path) => {
