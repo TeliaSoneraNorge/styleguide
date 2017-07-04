@@ -118,4 +118,55 @@
             display: block;
         }
     }
+
+
+    /* The side navigation menu */
+    &__menu {
+        background-color: #fff;
+        border: none;
+        border-right: 5px solid var(--core-purple);
+        height: 100%;
+        left: -5px;
+        overflow-x: hidden;
+        position: fixed;
+        top: 0;
+        transition: 0.15s;
+        width: 0; /* changed with JavaScript */
+        z-index: 1;
+    }
+
+    &--menu-expanded {
+        .page-header__menu {
+            width: 350px;
+        }
+    }
+
+    &__search {
+        background-color: var(--grey);
+        border: 1px solid var(--dark-grey);
+        border-radius: 25px;
+        color: var(--dark-grey);
+        margin: 1rem;
+        padding: 0.75rem 1.5rem;
+    }
+
+    &__menu-item {
+        border-bottom: 1px solid var(--dark-grey);
+        color: var(--black);
+        display: block;
+        padding: 1rem 1rem 1rem 2rem;
+        text-decoration: none;
+        transition: 0.3s;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &__close-menu {
+        color: var(--core-purple);
+        font-size: 2rem;
+        padding: 1rem 1rem 1rem 2rem;
+        text-decoration: none;
+    }
 }
