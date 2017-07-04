@@ -52,3 +52,30 @@ export function fromColorsToLessVariables(colors) {
 export function fromColorsToSassVariables(colors) {
     return fromColorsToSassLikeVariables(colors, '$');
 }
+
+export function fromPostCssVariablesToSass(postCss) {
+    const postCssLines = postCss.split('\n');
+
+    let sassString = '';
+    _.forEach(postCssLines, (postCssLine) => {
+        if (_.includes(postCssLine, ':root') || _.includes(postCssLine, '{') || _.includes(postCssLine, '}')) {
+            return;
+        }
+
+        let sassLine = postCssLine.replace(/--/g, '$').trim();
+
+        /* ARGH! Trying to turn var(x) into x is hard
+        const regex = /var\((.+)\)/g;
+        const matches = regex.exec(sassLine);
+        sassLine = sassLine.replace(matches[0], matches[1]);
+        */
+
+        sassString += (sassLine + '\n');
+    });
+
+    while (_.endsWith(sassString, '\n')) {
+        sassString = sassString.substr(0, sassString.length - 1);
+    }
+
+    return sassString;
+}
