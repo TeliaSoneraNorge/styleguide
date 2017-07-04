@@ -6,6 +6,7 @@ import PageFooter from '../components/molecules/PageFooter/PageFooter';
 
 import HomePage from './pages/HomePage';
 import ComponentsPage from './pages/ComponentsPage';
+import ComponentsByTypePage from './pages/ComponentsByTypePage';
 import ContributingPage from './pages/ContributingPage';
 import DownloadPage from './pages/DownloadPage';
 import SiteNavigation from './components/SiteNavigation';
@@ -23,6 +24,7 @@ const Routes = (props) =>
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/components" component={ComponentsPage} />
+        <Route exact path="/components/:componentType" component={ComponentsByTypePage} />
         <Route exact path="/contributing" component={ContributingPage} />
         <Route exact path="/download" component={DownloadPage} />
         <Route exact path="/sample-page-1" component={SamplePage1} />

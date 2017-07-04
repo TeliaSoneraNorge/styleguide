@@ -8,9 +8,10 @@ import Heading from '../../components/atoms/Heading/Heading';
 import { extractComponentNameFromPath } from '../utils/componentUtil';
 
 const HtmlComponent = ({ path, metadata }) => {
+    const componentName = extractComponentNameFromPath(path);
     return (
-        <div className="sg-component">
-            <Heading level={2} text={extractComponentNameFromPath(path)} />
+        <div className="sg-component" id={componentName}>
+            <Heading level={2} text={componentName} />
             <div dangerouslySetInnerHTML={{ __html: metadata.documentation }}></div>
 
             {_.map(metadata.examples, (example, i) =>

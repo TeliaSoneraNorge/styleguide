@@ -28,12 +28,13 @@ const NoComponentFound = () =>
 const ReactComponent = ({ path, metadata }) => {
     const ComponentToRender = ReactComponents.default[path] || NoComponentFound;
     const examples = metadata.examples || [];
+    const componentName = extractComponentNameFromPath(path);
     return (
-        <div className="sg-component">
-            <Heading level={2} text={extractComponentNameFromPath(path)} />
+        <div className="sg-component" id={componentName}>
+            <Heading level={2} text={componentName} />
             <div dangerouslySetInnerHTML={{ __html: marked(metadata.description) }}></div>
             {_.isEmpty(examples) ?
-                <div className="sg-component__example">
+                <div className="sg-component__example" id={componentName}>
                     <div className="sg-component__example-rendered">
                         <p>No examples</p>
                     </div>
