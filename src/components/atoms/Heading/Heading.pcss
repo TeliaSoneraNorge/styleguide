@@ -5,25 +5,23 @@
     &--level-1 {
         color: var(--core-purple);
         font-family: 'pebble';
-        font-size: rem(55);
-        line-height: 1;
-        margin-bottom: rem(20);
-        margin: 0;
-        padding: 1rem 0;
+        font-size: rem(30);
+        line-height: rem(30);
+        margin-bottom: rem(5);
+        margin-top: 0;
         text-transform: uppercase;
 
-        @include mobile() {
+        @media all and (min-width: em(360)) {
             font-size: rem(45);
             line-height: rem(45);
             margin-bottom: rem(10);
             margin-top: rem(5);
         }
 
-        @include mini() {
-            font-size: rem(30);
-            line-height: rem(30);
-            margin-bottom: rem(5);
-            margin-top: 0;
+        @media all and (min-width: em(768)) {
+            font-size: rem(55);
+            line-height: 1;
+            margin-bottom: rem(20);
         }
     }
 
@@ -42,6 +40,6 @@
     &--level-4 {
         color: var(--black);
         font-family: 'Helvetica Neue Regular';
-        font-size: 1rem; /* 16px */
+        font-size: rem(16);
     }
 }

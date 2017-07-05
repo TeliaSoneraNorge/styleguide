@@ -5,7 +5,10 @@ module.exports = {
         },
         'postcss-functions': {
             functions: {
-                rem: value => `${value / 16}rem`
+                // Pixels to rem
+                rem: px => `${px / 16}rem`,
+                // Pixels to em
+                em: (px, base = 16) => `${px / base}em`
             }
         },
         'postcss-nested': {},
