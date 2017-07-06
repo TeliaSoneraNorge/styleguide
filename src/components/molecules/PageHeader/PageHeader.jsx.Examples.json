@@ -2,6 +2,7 @@
     {
         "name": "Logged out, no items in cart",
         "props": {
+            "menuId": "page-header-menu--example-1",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
@@ -11,6 +12,7 @@
     }, {
         "name": "Logged out, 3 items in cart",
         "props": {
+            "menuId": "page-header-menu--example-2",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
@@ -20,6 +22,7 @@
     }, {
         "name": "Logged in, no items in cart",
         "props": {
+            "menuId": "page-header-menu--example-3",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
@@ -31,6 +34,7 @@
     }, {
         "name": "Logged in, 1 item in cart",
         "props": {
+            "menuId": "page-header-menu--example-4",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
