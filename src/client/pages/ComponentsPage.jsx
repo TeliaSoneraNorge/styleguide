@@ -26,7 +26,7 @@ const ComponentsPage = (props) => {
     const groupedComponentMetadata = groupComponentMetadataByType(componentMetadata);
     return (
         <div className="sg-components content-wrapper">
-            <Heading level={1} text="Components" />
+            <Heading level={1} children="Components" />
             <ul>
                 <li>
                     <a href="/components/atoms">Atoms</a>

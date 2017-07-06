@@ -19,7 +19,7 @@ const ComponentsPage = (props) => {
 
     return (
         <div className="sg-components content-wrapper">
-            <Heading level={1} text={`Components: ${componentType}`} />
+            <Heading level={1} children={`Components: ${componentType}`} />
 
             {_.map(componentPaths, (path) => {
                 const metadata = componentMetadata[path];

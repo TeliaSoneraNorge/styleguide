@@ -11,12 +11,12 @@ const HtmlComponent = ({ path, metadata }) => {
     const componentName = extractComponentNameFromPath(path);
     return (
         <div className="sg-component" id={componentName}>
-            <Heading level={2} text={componentName} />
+            <Heading level={2} children={componentName} />
             <div dangerouslySetInnerHTML={{ __html: metadata.documentation }}></div>
 
             {_.map(metadata.examples, (example, i) =>
                 <div key={i} className="sg-component__example">
-                    <Heading level={3} text={example.name} />
+                    <Heading level={3} children={example.name} />
                     <Tabs>
                         <Tabs.Panel title="Example">
                             <div className="inner-content" dangerouslySetInnerHTML={{ __html: example.html }}></div>

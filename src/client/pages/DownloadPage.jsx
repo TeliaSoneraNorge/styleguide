@@ -9,7 +9,7 @@ const codeSnippets = {
 
 const DownloadPage = ({ colors }) =>
     <div className="content-wrapper">
-        <Heading level={1} text="Download" />
+        <Heading level={1} children="Download" />
         <p>To use the Telia Styleguide in your project, follow these steps:</p>
         <p>1) Download the styleguide assets and include them in your project.</p>
         <p>2) Link to the downloaded CSS file in your HTML:</p>

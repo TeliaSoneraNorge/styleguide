@@ -15,7 +15,7 @@ const ColorGrid = ({ colors }) =>
 
 const ColorsSection = ({ colors }) =>
     <div>
-        <Heading level={2} text="Colors" />
+        <Heading level={2} children="Colors" />
 
         <Tabs>
             <Tabs.Panel title="Color Palette">

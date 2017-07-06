@@ -4,7 +4,7 @@ import Heading from '../../components/atoms/Heading/Heading';
 
 const SizesAndUnitsSection = () =>
     <div>
-        <Heading level={2} text="Sizes and units (px, em, rem)" />
+        <Heading level={2} children="Sizes and units (px, em, rem)" />
         <p>When writing CSS, the styleguide uses these rules:</p>
         <ul>
             <li>Sizes and spacing should be in REM's.</li>

@@ -2,28 +2,28 @@
     {
         "name": "h1. Heading level 1",
         "props": {
-            "text": "This is a level 1 heading",
+            "children": "This is a level 1 heading",
             "level": 1
         }
     },
     {
         "name": "h2. Heading level 2",
         "props": {
-            "text": "And this is a level 2 heading",
+            "children": "And this is a level 2 heading",
             "level": 2
         }
     },
     {
         "name": "h3. Heading level 3",
         "props": {
-            "text": "Third level heading",
+            "children": "Third level heading",
             "level": 3
         }
     },
     {
         "name": "h4. Heading level 4",
         "props": {
-            "text": "Fourth level heading",
+            "children": "Fourth level heading",
             "level": 4
         }
     }
