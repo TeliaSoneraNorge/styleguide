@@ -38,13 +38,21 @@ export default class PageHeader extends React.Component {
                             <span className="page-header__icon-box-text">Lukk</span>
                         </button>
                     </div>
-                    <div className="page-header__search">Spøk, neida... søk</div>
-                    {_.map(this.props.menuLinks, (menuLink) =>
-                        <a className="page-header__menu-item" href={menuLink.url}>
-                            {menuLink.icon ? <img className="page-header__menu-item-icon" src={menuLink.icon} alt="" role="presentation" /> : null}
-                            {menuLink.text}
-                        </a>
-                    )}
+                    <div className="page-header__search">
+                        <input className="page-header__search-input" type="text" placeholder="Spøk, neida... søk" />
+                    </div>
+                    <nav className="page-header__menu-nav">
+                        <ul className="page-header__menu-item-list">
+                            {_.map(this.props.menuLinks, (menuLink) =>
+                                <li className="page-header__menu-item">
+                                    <a className="page-header__menu-item-link" href={menuLink.url}>
+                                        {menuLink.icon ? <img className="page-header__menu-item-icon" src={menuLink.icon} alt="" role="presentation" /> : null}
+                                        {menuLink.text}
+                                    </a>
+                                </li>
+                            )}
+                        </ul>
+                    </nav>
                 </div>
                 <div className={ClassNames('page-header__overlay', { 'page-header__overlay--active': this.state.menuIsExpanded })} onClick={this.closeMenu}></div>
 
