@@ -7,7 +7,10 @@
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
             "logoImageMobilePath": "/public/icons/logo_mob.svg",
-            "cartItemCount": 0
+            "cartItemCount": 0,
+            "menuLinks": [
+                { "text": "A fake menu item", "url": "/", "icon": "/public/icons/ico_mobile.svg" }
+            ]
         }
     }, {
         "name": "Logged out, 3 items in cart",
@@ -17,7 +20,10 @@
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/icons/logo_desktop.svg",
             "logoImageMobilePath": "/public/icons/logo_mob.svg",
-            "cartItemCount": 3
+            "cartItemCount": 3,
+            "menuLinks": [
+                { "text": "A fake menu item", "url": "/", "icon": "/public/icons/ico_mobile.svg" }
+            ]
         }
     }, {
         "name": "Logged in, no items in cart",
@@ -29,7 +35,10 @@
             "logoImageMobilePath": "/public/icons/logo_mob.svg",
             "cartItemCount": 0,
             "isLoggedIn": true,
-            "loggedInUserName": "Maria"
+            "loggedInUserName": "Maria",
+            "menuLinks": [
+                { "text": "A fake menu item", "url": "/", "icon": "/public/icons/ico_mobile.svg" }
+            ]
         }
     }, {
         "name": "Logged in, 1 item in cart",
@@ -41,7 +50,10 @@
             "logoImageMobilePath": "/public/icons/logo_mob.svg",
             "cartItemCount": 1,
             "isLoggedIn": true,
-            "loggedInUserName": "Maria"
+            "loggedInUserName": "Maria",
+            "menuLinks": [
+                { "text": "A fake menu item", "url": "/", "icon": "/public/icons/ico_mobile.svg" }
+            ]
         }
     }
 ]
