@@ -9,7 +9,6 @@ import ComponentsPage from './pages/ComponentsPage';
 import ComponentsByTypePage from './pages/ComponentsByTypePage';
 import ContributingPage from './pages/ContributingPage';
 import DownloadPage from './pages/DownloadPage';
-import SiteNavigation from './components/SiteNavigation';
 
 import SamplePage1 from './pages/SamplePage1';
 
@@ -19,8 +18,13 @@ const Routes = (props) =>
             logoUrl="/"
             logoTitle="Telia logo"
             logoImageDesktopPath="/public/icons/logo_desktop.svg"
-            logoImageMobilePath="/public/icons/logo_mob.svg" />
-        <SiteNavigation />
+            logoImageMobilePath="/public/icons/logo_mob.svg"
+            menuLinks={[
+                { text: "Home", url: "/", icon: "/public/icons/ico_mobile.svg" },
+                { text: "Components", url: "/components", icon: "/public/icons/ico_wireless.svg" },
+                { text: "Contributing", url: "/contributing", icon: "/public/icons/ico_edit.svg" },
+                { text: "Download", url: "/download", icon: "/public/icons/ico_content.svg" }
+            ]} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/components" component={ComponentsPage} />
