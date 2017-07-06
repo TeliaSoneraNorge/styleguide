@@ -11,20 +11,17 @@ import Header from '../../components/molecules/Header/Header';
 const HomePage = ({ colors, variablesCss }) =>
     <div>
         <Header
-            iconUrl="/public/icons/ico_favourites.svg"
-            runningTitle="Welcome to the"
+            iconUrl="/public/ico_code-2.svg"
+            runningTitle="Greetings, Earthlings!"
             pageTitle="Telia Norge Styleguide"
-            withMask
-        >
+            withMask={true}>
             <p>
-                Have a look around! See something you like?
+                This is a not-yet-ready-for-production, work-in-progress, pre-alpha version of the new Styleguide. You can look, but don't touch (yet).
             </p>
             <p>
-                You can download the styleguide and use the styles
-                in your own project. You can even make a contribution to it if there is something missing that other
-                channels would also benefit from.
+                When we roll this out to production, you will be the first to know. Until then, take a look around, and if you have any questions or
+                suggestions we are available on the #styleguide channel on Slack. Peace.
             </p>
-
         </Header>
 
         <div className="content-wrapper">
