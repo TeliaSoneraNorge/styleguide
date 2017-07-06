@@ -1,9 +1,0 @@
-<header class="header header--with-mask header--with-content-overlap">
-    <img class="header__icon" src="/public/icons/ico_favourites.svg" role="presentation" />
-    <span class="header__subtitle ">Pre-title</span>
-    <h1 class="heading heading--level-1">Page Title</h1>
-    <section class="header__preamble rich-text-area">
-        Preamble; an introductory and expressionary statement in a document
-        that explains the document's purpose and underlying philosophy
-    </section>
-</header>

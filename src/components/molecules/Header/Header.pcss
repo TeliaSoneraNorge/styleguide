@@ -5,33 +5,35 @@
     text-align: center;
     z-index: -1;
 
-    &--with-mask {
-        height: rem(640);
-
-        &:after {
-            background-size: 100%;
-            background: transparent url('/public/images/full-screen-image-mask.svg') no-repeat bottom left;
-            bottom: 0;
-            content: "";
-            display: block;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            width: 100%;
-        }
-    }
-
-    &--with-content-overlap {
-        margin-bottom: rem(-20);
-    }
-
     @media all and (min-width: em(360)) {
         padding: rem(40);
     }
 
     @media all and (min-width: em(768)) {
-        padding-top: rem(50) rem(80) rem(40);
+        padding: rem(50) rem(80) rem(40);
+
+        &--with-mask {
+            padding-bottom: rem(200);
+
+            &:after {
+                background-size: 100%;
+                background: transparent url('/public/images/full-screen-image-mask.svg') no-repeat bottom left;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
+        }
+
+        &--with-content-overlap {
+            margin-bottom: rem(-260);
+            padding-bottom: rem(300);
+        }
     }
+
 
     &__icon {
         margin-bottom: rem(10);
