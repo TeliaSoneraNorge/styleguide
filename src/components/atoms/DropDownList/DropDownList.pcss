@@ -1,0 +1,22 @@
+.dropdown-list {
+    background: transparent url('/public/icons/ico_linkarrow_purple.svg') no-repeat right 5px center;
+    border: 1px solid var(--core-purple);
+    border-radius: 0;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
+    -webkit-appearance: none;
+
+    &:after {
+        border: solid 1px red;
+        content: "";
+        display: block;
+        height: 20px;
+        position: absolute;
+        width: 20px;
+    }
+
+    option {
+        padding: 0;
+    }
+}
