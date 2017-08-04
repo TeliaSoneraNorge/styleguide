@@ -7,6 +7,8 @@ const componentMetadata = getReactComponentsMetadata();
 import Button from './atoms/Button/Button';
 import Heading from './atoms/Heading/Heading';
 import Link from './atoms/Link/Link';
+import LabelledCheckbox from './atoms/LabelledCheckbox/LabelledCheckbox';
+
 import FocusBox from './molecules/FocusBox/FocusBox';
 import Header from './molecules/Header/Header'
 import PageFooter from './molecules/PageFooter/PageFooter';
@@ -16,6 +18,8 @@ export default {
     'src/components/atoms/Button/Button.jsx': Button,
     'src/components/atoms/Heading/Heading.jsx': Heading,
     'src/components/atoms/Link/Link.jsx': Link,
+    'src/components/atoms/LabelledCheckbox/LabelledCheckbox.jsx': LabelledCheckbox,
+
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
