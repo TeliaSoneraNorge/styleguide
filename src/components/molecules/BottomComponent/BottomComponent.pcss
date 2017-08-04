@@ -1,0 +1,67 @@
+.bottom-component {
+    &__wrapper {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: row wrap;
+        margin: 0 auto;
+        max-width: var(--width-medium);
+        padding: 50px 20px 96px;
+        position: relative;
+
+        @media all and (min-width: em(var(--width-medium))) {
+            padding: 50px 0 96px;
+        }
+    }
+
+    &__text-content {
+        flex-grow: 1;
+        padding-right: 40px;
+        width: 100%;
+
+        @media all and (min-width: em(768)) {
+            width: 50%;
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        top: -26px;
+        width: 64px;
+    }
+
+    &__heading {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 5px;
+        margin-top: 0;
+    }
+
+    &__text {
+        max-width: 550px;
+        margin-bottom: 20px;
+    }
+
+    &__image {
+        width: 100%;
+
+        @media all and (min-width: em(768))  {
+            width: 50%;
+        }
+    }
+
+    &--light-blue {
+        background-color: var(--light-blue);
+    }
+
+    &--light-teal {
+        background-color: var(--light-teal);
+    }
+
+    &--light-lime {
+        background-color: var(--light-lime);
+    }
+
+    &--light-orange {
+        background-color: var(--light-orange);
+    }
+}
