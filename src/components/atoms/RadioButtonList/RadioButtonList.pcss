@@ -1,54 +1,65 @@
 .radio-button-list {
-    &__item {
-        margin-bottom: 0.75rem;
-        position: relative;
-    }
     &__radio {
-        left: 7px;
-        margin: 0;
-        padding: 0;
+        height: .0625rem;
+        left: .3125em;
+        outline: none;
         position: absolute;
-        top: 7px;
+        top: .3125em;
+        width: .0625rem;
 
-        &:checked + .radio-button-list__label {
-            &:before {
+        &:checked {
+            + .radio-button-list__label-text:before {
                 border: 2px solid var(--core-purple);
             }
-            &:after {
-                background-color: purple;
+            + .radio-button-list__label-text:after {
+                background-repeat: no-repeat;
+                background-color: var(--core-purple);
+                border-radius: 50%;
+                content: '';
+                height: 1em;
+                left: .3125em;
+                margin-top: -.0625em;
+                position: absolute;
+                top: .375em;
+                transition: all .15s ease;
+                width: 1em;
+                z-index: 2;
             }
         }
     }
     &__label {
         cursor: pointer;
-        display: block;
-        padding: 0.25rem 0 0.25rem 2rem;
+        display: inline-block;
+        margin: 0 1rem 1rem 0;
+        padding-left: 2em;
+        position: relative;
+    }
+
+    &__label-text {
+        display: inline-block;
+        min-height: 1.625em;
 
         &:before {
-            content: "";
+            background-color: #fff;
             border: 2px solid var(--dark-grey);
-            border-radius: 100%;
-            display: block;
-            height: 26px;
-            left: 0;
-            position: absolute;
-            top: 0;
-            transition: border .25s linear;
-            width: 26px;
-            z-index: 5;
+            border-radius: 50%;
+            content: '';
+            display: inline-block;
+            height: 1.625em;
+            margin-top: -.0625em;
+            margin-right: .3125em;
+            margin-left: -2em;
+            position: relative;
+            transition: all .15s ease;
+            vertical-align: middle;
+            width: 1.625em;
+            z-index: 1;
         }
-        &:after {
-            background-color: var(--white);
-            border-radius: 100%;
-            content: "";
+    }
+
+    &--vertical {
+        .radio-button-list__label {
             display: block;
-            height: 16px;
-            left: 5px;
-            margin: auto;
-            position: absolute;
-            top: 5px;
-            transition: background 0.25s linear;
-            width: 16px;
         }
     }
 }
