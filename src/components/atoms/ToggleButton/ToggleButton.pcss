@@ -1,7 +1,7 @@
 /*
 Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
 */
-.labelled-checkbox {
+.toggle-button {
     position: relative;
 
     &__checkbox {
@@ -9,11 +9,11 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
         position: absolute;
         right: 5px;
 
-        &:checked + .labelled-checkbox__label:after {
+        &:checked + .toggle-button__label:after {
             background: var(--core-purple);
             right: 0px;
         }
-        &:checked + .labelled-checkbox__label:before {
+        &:checked + .toggle-button__label:before {
             background: #d7acff; /* Um, this is not on the color chart... */
         }
     }
