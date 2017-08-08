@@ -1,0 +1,32 @@
+.unique-selling-points {
+    padding: 0 20px 20px;
+    max-width: 810px;
+    margin: 0 auto 20px;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+    &__block {
+        list-style: none;
+        flex-grow: 0;
+        flex-shrink: 0;
+        flex-basis: 100%;
+        margin-bottom: 20px;
+
+        @media all and (min-width: em(450)) {
+            flex-basis: 47%;
+        }
+
+        @media all and (min-width: em(810)) {
+            flex-basis: 22%;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 0;
+
+        @media all and (min-width: em(450)) {
+            margin-bottom: 5px;
+        }
+    }
+}
