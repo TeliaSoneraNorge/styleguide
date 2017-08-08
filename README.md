@@ -1,3 +1,20 @@
+# Development
+
+## Getting started
+
+- Clone the repository
+- Install dependencies: `npm install`
+- Run in development mode: `npm run dev`
+- Go to this URL in your browser: `http://localhost:3000/`
+
+## Adding a new component
+
+- Add a folder called `YourComponentName` in `src/components/atoms|molecules|organisms`
+- Inside the new folder, add a `YourComponentName.jsx` file for a React component, or a `YourComponentName.html` for a HTML component (you currently cannot mix the two)
+  - React components also must be exposed via `src/components/index.js`
+- Add a `YourComponent.pcss` file for your PostCSS
+- Once you have a first draft, run `npm run dev` (you may need to stop/start that process if it was already running, or run `npm run gen` to refresh the meta-info)
+
 # Deploy
 
 ## Heroku
