@@ -1,0 +1,37 @@
+@import "../../colors.pcss";
+
+.link {
+    border-bottom: 1px solid var(--black);
+    color: var(--black);
+    text-decoration: none;
+    transition: all .3s ease;
+
+    &:hover {
+        border-color: var(--core-purple);
+        color: var(--core-purple);
+    }
+
+    &--with-icon {
+        border-bottom: none;
+
+        &:hover .link__icon {
+            fill: #990ae3;
+            transition: all .3s ease;
+        }
+    }
+
+    &__icon {
+        height: 1.30769em;
+        margin-right: .76923em;
+        vertical-align: text-bottom;
+        width: 1.30769em;
+    }
+
+    &--purple {
+        &:hover {
+            background-color: var(--core-purple);
+            border-bottom: none;
+            color: var(--white);
+        }
+    }
+}

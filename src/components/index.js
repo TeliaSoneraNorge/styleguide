@@ -6,7 +6,7 @@ const componentMetadata = getReactComponentsMetadata();
 
 import Button from './atoms/Button/Button';
 import Heading from './atoms/Heading/Heading';
-
+import Link from './atoms/Link/Link';
 import FocusBox from './molecules/FocusBox/FocusBox';
 import Header from './molecules/Header/Header'
 import PageFooter from './molecules/PageFooter/PageFooter';
@@ -15,7 +15,7 @@ import PageHeader from './molecules/PageHeader/PageHeader';
 export default {
     'src/components/atoms/Button/Button.jsx': Button,
     'src/components/atoms/Heading/Heading.jsx': Heading,
-
+    'src/components/atoms/Link/Link.jsx': Link,
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
