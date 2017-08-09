@@ -58,7 +58,7 @@ export default class PageHeader extends React.Component {
 
                 <div className="page-header__site-name-and-logo">
                     <a className="page-header__site-logo" href={this.props.logoUrl} title={this.props.logoTitle}>
-                        <picture>
+                        <picture className="page-header__site-logo-picture">
                             <source media="(min-width: 42em)" srcSet={this.props.logoImageDesktopPath} />
                             <img src={this.props.logoImageMobilePath} alt={this.props.logoTitle} />
                         </picture>

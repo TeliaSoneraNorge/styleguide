@@ -2,6 +2,7 @@
 
 :root {
     --logo-size-small-screens: 50px;
+    --logo-size-large-screens: 120px;
     --icon-size-small: 20px;
     --icon-size-large: 32px;
 }
@@ -50,6 +51,16 @@
     }
     &__site-logo {
         height: var(--logo-size-small-screens);
+    }
+
+    &__site-logo-picture {
+        display: block;
+        margin: 0 auto;
+        max-width: var(--logo-size-small-screens);
+
+        @media screen and (min-width: 42em) {
+            max-width: var(--logo-size-large-screens);
+        }
     }
 
     &__site-nav {
@@ -155,6 +166,7 @@
     }
     &__search-input {
         background: var(--grey) url('/public/icons/ico_search.svg') no-repeat 95% 50%;
+        background-size: var(--icon-size-small) var(--icon-size-small);
         border: 1px solid var(--dark-grey);
         border-radius: 25px;
         font-size: 1rem;
@@ -194,7 +206,9 @@
         }
     }
     &__menu-item-icon {
+        height: var(--icon-size-small);
         margin-right: 1rem;
+        width: var(--icon-size-small);
     }
 
     &__close-menu {

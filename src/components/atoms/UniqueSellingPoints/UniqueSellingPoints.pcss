@@ -1,3 +1,10 @@
+:root {
+    --logo-size-small-screens: 50px;
+    --logo-size-large-screens: 120px;
+    --icon-size-small: 20px;
+    --icon-size-large: 32px;
+}
+
 .unique-selling-points {
     padding: 0 20px 20px;
     max-width: 810px;
@@ -24,6 +31,8 @@
 
     &__icon {
         margin-bottom: 0;
+        width: var(--icon-size-small);
+        height: var(--icon-size-small);
 
         @media all and (min-width: em(450)) {
             margin-bottom: 5px;
