@@ -1,0 +1,61 @@
+/*
+Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
+*/
+.toggle-button {
+    position: relative;
+
+    &__checkbox {
+        margin: 7px 0 0 0;
+        position: absolute;
+        right: 5px;
+
+        &:checked + .toggle-button__label:after {
+            background: var(--core-purple);
+            right: 0px;
+        }
+        &:checked + .toggle-button__label:before {
+            background: #d7acff; /* Um, this is not on the color chart... */
+        }
+    }
+    &__label {
+        cursor: pointer;
+        display: block;
+        padding: 4px 48px 4px 0;
+
+        &:before {
+            background: #c6c5c5;
+            border-radius: 16px;
+            content: "";
+            display: block;
+            height: 16px;
+            position: absolute;
+            right: 0px;
+            top: 4px;
+            transition: all 0.3s;
+            width: 40px;
+        }
+        &:after {
+            background: #f1f1f1;
+            border-radius: 16px;
+            box-shadow: 2px 2px 4px #999;
+            content: "";
+            display: block;
+            height: 24px;
+            position: absolute;
+            right: 16px;
+            top: 0px;
+            transition: all 0.3s;
+            width: 24px;
+        }
+
+        &:hover {
+            &:after {
+                box-shadow: 2px 2px 6px #666;
+            }
+        }
+    }
+    &__description {
+        color: var(--dark-grey-2);
+        font-style: italic;
+    }
+}

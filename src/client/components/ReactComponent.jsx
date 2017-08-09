@@ -23,7 +23,7 @@ function getMarkupStrings(componentWithProps) {
 }
 
 const NoComponentFound = () =>
-    <p>Component not found. It must be exported via the index.js file.</p>;
+    <p>Component not found. It must be exported via the src/components/index.js file.</p>;
 
 const ReactComponent = ({ path, metadata }) => {
     const ComponentToRender = ReactComponents.default[path] || NoComponentFound;

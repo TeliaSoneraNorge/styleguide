@@ -61,6 +61,7 @@
     "postcss-loader": "^2.0.5",
     "postcss-nested": "^2.0.2",
     "pretty": "^2.0.0",
+    "prop-types": "^15.5.10",
     "proxy-middleware": "^0.15.0",
     "react": "^15.6.1",
     "react-docgen": "^2.15.0",
