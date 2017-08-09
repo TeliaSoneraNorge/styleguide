@@ -1,11 +1,20 @@
 .link-list {
-    padding-left: 1rem;
     font-size: 0.875rem;
     font-weight: bold;
+    list-style: none;
+    padding-left: 0;
 
     &__item {
-        list-style-image: url('/public/icons/ico_linkarrow_purple.svg');
         padding-bottom: 0.5rem;
+
+        &:before {
+            background-image: url('/public/icons/ico_linkarrow_purple.svg');
+            background-repeat: no-repeat;
+            content: '';
+            display: inline-block;
+            height: 13px;
+            width: 13px;
+        }
     }
 
     &__link {
