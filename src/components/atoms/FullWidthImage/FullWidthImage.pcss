@@ -1,4 +1,5 @@
 .full-width-image {
+    margin-bottom: var(--margin-bottom);
     position: relative;
     z-index: -1;
 
@@ -9,7 +10,7 @@
 
     &--with-mask {
         &:after {
-            background: transparent url('/public/images/full-screen-image-mask.svg') no-repeat bottom left;
+            background: transparent url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
             background-size: 100%;
             bottom: 0;
             content: "";
@@ -22,6 +23,6 @@
     }
 
     &--with-content-overlap {
-        margin-bottom: -10rem;
+        margin-bottom: -12rem;
     }
 }
