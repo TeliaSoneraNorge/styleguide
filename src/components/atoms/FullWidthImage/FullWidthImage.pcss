@@ -8,21 +8,23 @@
         width: 100%;
     }
 
-    &--with-mask {
-        &:after {
-            background: transparent url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
-            background-size: 100%;
-            bottom: 0;
-            content: "";
-            display: block;
-            height: 100%;
-            left: 0;
-            position: absolute;
-            width: 100%;
+    @media all and (min-width: em(1000)) {
+        &--with-mask {
+            &:after {
+                background: transparent url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
+                background-size: 100%;
+                bottom: 0;
+                content: "";
+                display: block;
+                height: 100%;
+                left: 0;
+                position: absolute;
+                width: 100%;
+            }
         }
-    }
 
-    &--with-content-overlap {
-        margin-bottom: -16rem;
+        &--with-content-overlap {
+            margin-bottom: -18%;
+        }
     }
 }
