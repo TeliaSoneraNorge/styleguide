@@ -9,7 +9,7 @@ const SizesAndUnitsSection = () =>
         <ul>
             <li>Sizes and spacing should be in REM's.</li>
             <li>Media queries should be in EM's.</li>
-            <li>Pixels should not avoided.</li>
+            <li>Pixels should be avoided, where possible.</li>
         </ul>
         <p>Source: <a href="http://engageinteractive.co.uk/blog/em-vs-rem-vs-px">EM vs REM vs PX – Why you shouldn't “just use pixels”</a></p>
     </div>;
