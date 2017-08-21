@@ -26,5 +26,12 @@
             "kind": "action",
             "size": "small"
         }
+    },
+    {
+        "name": "Cancel",
+        "props": {
+            "text": "Cancel button",
+            "kind": "cancel"
+        }
     }
 ]
