@@ -1,0 +1,25 @@
+.list {
+    list-style: none;
+    padding-left: 0;
+
+    &__item {
+        background: transparent url('/public/icons/ico_check_purple.svg') no-repeat left 0.5rem;
+        background-size: 1rem 1rem;
+        padding: 0.25rem 0 0.25rem 1.5rem;
+    }
+
+    &__link {
+        color: var(--core-purple);
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    &--links {
+        .list__item {
+            background-image: url('/public/icons/ico_linkarrow_purple.svg');
+        }
+    }
+}
