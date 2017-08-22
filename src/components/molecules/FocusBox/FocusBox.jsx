@@ -12,9 +12,9 @@ import React from 'react';
 const FocusBox = ({ children }) =>
     <div className="focus-box">
         <div className="focus-box__content-outer">
-            <div className="focus-box__content-inner">
+            <section className="focus-box__content-inner">
                 {children}
-            </div>
+            </section>
         </div>
     </div>;
 
