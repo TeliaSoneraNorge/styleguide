@@ -1,9 +1,7 @@
 .header {
     background: var(--grey);
     padding: rem(20);
-    position: relative;
     text-align: center;
-    z-index: -1;
 
     @media all and (min-width: em(360)) {
         padding: rem(40);
@@ -14,18 +12,8 @@
 
         &--with-mask {
             padding-bottom: rem(200);
-
-            &:after {
-                background-size: 100%;
-                background: transparent url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
-                bottom: 0;
-                content: "";
-                display: block;
-                height: 100%;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }
+            background: var(--grey) url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
+            background-size: 100%;
         }
 
         &--with-content-overlap {
@@ -33,7 +21,6 @@
             padding-bottom: rem(300);
         }
     }
-
 
     &__icon {
         margin-bottom: rem(10);
