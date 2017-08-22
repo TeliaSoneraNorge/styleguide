@@ -5,23 +5,5 @@
             "text": "Standard text link",
             "href": "#"
         }
-    },
-    {
-        "name": "Link with icon",
-        "props": {
-            "text": "Link with icon",
-            "icon": "mobile",
-            "href": "#"
-        }
-    },
-    {
-        "name": "Link with emphasized hover effect",
-        "props": {
-            "text": "Link with emphasized hover effect",
-            "modifier": "purple",
-            "href": "#",
-            "target": "_blank"
-            
-        }
     }
 ]
