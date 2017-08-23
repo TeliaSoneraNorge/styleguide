@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Subscription - collapsed",
+        "props": {
+            "name": "SMART Basis",
+            "dataAmount": 3,
+            "dataUnit": "GB"
+        }
+    },
+    {
+        "name": "Subscription - expanded",
+        "props": {
+            "name": "SMART Super",
+            "dataAmount": 6,
+            "dataUnit": "GB",
+            "expanded": true
+        }
+    }
+]

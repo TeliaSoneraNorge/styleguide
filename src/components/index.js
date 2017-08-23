@@ -13,6 +13,7 @@ import FocusBox from './molecules/FocusBox/FocusBox';
 import Header from './molecules/Header/Header'
 import PageFooter from './molecules/PageFooter/PageFooter';
 import PageHeader from './molecules/PageHeader/PageHeader';
+import Subscription from './molecules/Subscription/Subscription';
 
 export default {
     'src/components/atoms/Button/Button.jsx': Button,
@@ -23,5 +24,6 @@ export default {
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
-    'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader
+    'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
+    'src/components/molecules/Subscription/Subscription.jsx': Subscription
 };
