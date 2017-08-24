@@ -1,7 +1,6 @@
 .main-content {
-    background-color: var(--white);
     margin: 0 auto 120px;
-    max-width: 796px;
+    max-width: var(--width-medium);
 
     @media all and (min-width: 28.125em) {
         padding-top: 20px;
@@ -14,5 +13,9 @@
 
     &--no-padding-top {
         padding-top: 0;
+    }
+
+    &--bg-color-white {
+        background-color: var(--white);
     }
 }

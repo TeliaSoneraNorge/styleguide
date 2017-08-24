@@ -11,6 +11,7 @@ import ContributingPage from './pages/ContributingPage';
 import DownloadPage from './pages/DownloadPage';
 
 import InformationArticleSample1 from './pages/InformationArticleSample1';
+import SubscriptionSamplePage from './pages/SubscriptionSamplePage';
 
 const Routes = (props) =>
     <div>
@@ -32,6 +33,7 @@ const Routes = (props) =>
         <Route exact path="/contributing" component={ContributingPage} />
         <Route exact path="/download" component={DownloadPage} />
         <Route exact path="/information-article" component={InformationArticleSample1} />
+        <Route exact path="/subscription" component={SubscriptionSamplePage} />
 
         <PageFooter
             links={[

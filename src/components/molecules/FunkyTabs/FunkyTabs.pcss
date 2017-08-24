@@ -1,10 +1,99 @@
 .funky-tabs {
-    border: 1px solid red;
-    padding: 1rem;
+    text-align: center;
+
+    &__tabs {
+        margin-bottom: -14rem;
+        margin-top: 0;
+        padding-left: 0;
+        padding-top: 11rem;
+        position: relative;
+
+        @media all and (min-width: 49.750em) {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin-bottom: -17.5rem;
+            padding-top: 0;
+        }
+    }
 
     &__tab {
-        border: 1px solid blue;
+        display: block;
+        margin-bottom: 1rem;
+
+        &--selected {
+            .funky-tabs__tab-image {
+                display: block;
+                margin: 0 auto 1rem;
+                z-index: 1;
+                top: -1.25rem;
+                left: 0;
+                position: absolute;
+                right: 0;
+            }
+            .funky-tabs__tab-text {
+                .link {
+                    border-bottom: 1px solid var(--core-purple);
+                    color: var(--core-purple);
+                }
+            }
+        }
+
+        @media all and (min-width: 49.750em) {
+            flex: 0 1 auto;
+            position: relative;
+            width: 220px;
+
+            &--selected {
+                .funky-tabs__tab-image {
+                    position: static;
+                }
+                .funky-tabs__tab-text {
+                    position: static;
+                }
+            }
+        }
+    }
+
+    &__tab-image {
+        display: none;
+        height: 60%;
+
+        @media all and (min-width: 49.750em) {
+            display: block;
+            margin: 0 auto 1rem;
+            position: relative;
+            z-index: -1;
+            height: 50%;
+        }
+    }
+
+    &__tab-text {
         display: inline-block;
-        padding: 0.5rem 2rem;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        @media all and (min-width: 49.750em) {
+            left: 0;
+            position: absolute;
+            top: 40%;
+            width: 100%;
+        }
+    }
+
+    &__content {
+        background-color: var(--grey);
+        border-top: 1px solid var(--core-purple);
+        display: none;
+        padding: 15rem 0 2rem;
+
+        @media all and (min-width: 49.750em) {
+            padding: 10rem 0 2rem 0;
+        }
+
+        &--open {
+            display: block;
+        }
     }
 }
