@@ -1,12 +1,196 @@
 .subscription {
-    border: 1px solid red;
     display: inline-block;
-    padding: 3rem 1rem;
-    text-align: center;
-    width: 33%;
+    position: relative;
+    width: 250px;
 
+    &--pink {
+        border: 3px solid var(--pink);
+
+        &.subscription--is-expanded {
+            .subscription__teaser {
+                border: 3px solid var(--pink);
+            }
+            .subscription__teaser-content {
+                background-color: var(--pink);
+            }
+        }
+        .subscription__speech-bubble {
+            border: 3px dotted var(--pink);
+        }
+    }
+
+    &--light-orange {
+        border: 3px solid var(--light-orange);
+
+        &.subscription--is-expanded {
+            .subscription__teaser {
+                border: 3px solid var(--light-orange);
+            }
+            .subscription__teaser-content {
+                background-color: var(--light-orange);
+            }
+        }
+        .subscription__speech-bubble {
+            border: 3px dotted var(--light-orange);
+        }
+    }
+
+    &--green {
+        border: 3px solid var(--green);
+
+        &.subscription--is-expanded {
+            .subscription__teaser {
+                border: 3px solid var(--green);
+            }
+            .subscription__teaser-content {
+                background-color: var(--green);
+            }
+        }
+        .subscription__speech-bubble {
+            border: 3px dotted var(--green);
+        }
+    }
+
+    &--teal {
+        border: 3px solid var(--teal);
+
+        &.subscription--is-expanded {
+            .subscription__teaser {
+                border: 3px solid var(--teal);
+            }
+            .subscription__teaser-content {
+                background-color: var(--teal);
+            }
+        }
+        .subscription__speech-bubble {
+            border: 3px dotted var(--teal);
+        }
+    }
+
+    &--blue {
+        border: 3px solid var(--blue);
+
+        &.subscription--is-expanded {
+            .subscription__teaser {
+                border: 3px solid var(--blue);
+            }
+            .subscription__teaser-content {
+                background-color: var(--blue);
+            }
+        }
+        .subscription__speech-bubble {
+            border: 3px dotted var(--blue);
+        }
+    }
+
+    /* Close button */
+    &__close-expanded-info {
+        display: none;
+    }
+
+    /* Teaser */
+    &__teaser {
+        text-align: center;
+        width: 250px;
+    }
+    &__teaser-content {
+        padding: 0.5rem;
+    }
+    &__name {
+        font-size: 1rem;
+        font-weight: 500;
+        margin: 0;
+        text-transform: uppercase;
+    }
     &__data-amount {
+        display: block;
         font-family: 'pebble';
-        font-size: 6rem;
+        font-size: 7rem;
+        line-height: 7rem;
+        margin-top: 2rem;
+    }
+    &__data-unit {
+        display: block;
+        font-family: 'pebble';
+        font-size: 2rem;
+    }
+    &__price {
+        display: block;
+        font-family: 'pebble';
+        font-size: 2rem;
+    }
+    &__price-info {
+        display: block;
+        font-size: 0.875rem;
+    }
+    &__teaser-links {
+        display: none;
+    }
+
+    /* Features */
+    &__features {
+        display: none;
+    }
+    &__speech-bubble {
+        background-color: var(--white);
+        border-radius: 50%;
+        font-style: italic;
+        height: 125px;
+        margin: -2rem auto 2rem;
+        padding: 1rem;
+        width: 125px;
+    }
+    &__highlighted-feature {
+    }
+    &__highlighted-feature-icon {
+        height: 32px;
+        width: 32px;
+    }
+    &__highlighted-feature-text {
+        display: block;
+    }
+    &--is-expanded,
+    &--is-showing-features {
+        display: flex;
+        width: 500px;
+
+        .subscription__teaser {
+        }
+        .subscription__features {
+            display: block;
+            padding: 1rem;
+            text-align: center;
+            width: 50%;
+        }
+    }
+
+    /* Expanded info */
+    &__expanded-info {
+        display: none;
+    }
+    &--is-expanded {
+        flex-wrap: wrap;
+        padding: 5rem;
+        width: 100%;
+
+        .subscription__close-expanded-info {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .subscription__features {
+            flex-grow: 2;
+        }
+        .subscription__teaser-links {
+            background-color: var(--white);
+            display: block;
+            padding: 0.5rem;
+        }
+        .subscription__expanded-info {
+            display: block;
+            padding-top: 2rem;
+            width: 1000px;
+        }
     }
 }
