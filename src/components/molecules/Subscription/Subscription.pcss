@@ -1,9 +1,8 @@
 .subscription {
     background-color: var(--white);
     display: inline-block;
-    margin: 1rem;
+    margin: 0.75rem;
     position: relative;
-    width: 250px;
 
     &--pink {
         border: 3px solid var(--pink);
@@ -88,15 +87,26 @@
     /* Close button */
     &__close-expanded-info {
         display: none;
+        padding: 1rem;
+        width: 135px;
+    }
+
+    &__close-text {
+        vertical-align: super;
+        padding: 1rem;
+    }
+
+    &__close-image {
+        width: 25px;
     }
 
     /* Teaser */
     &__teaser {
         text-align: center;
-        width: 250px;
+        width: 150px;
     }
     &__teaser-content {
-        padding: 0.5rem;
+        padding: 1rem;
     }
     &__name {
         font-size: 1rem;
@@ -154,7 +164,7 @@
     &--is-expanded,
     &--is-showing-features {
         display: flex;
-        width: 500px;
+        width: 400px;
 
         .subscription__teaser {
         }
