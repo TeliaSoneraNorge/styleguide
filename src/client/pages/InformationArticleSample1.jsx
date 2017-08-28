@@ -15,12 +15,12 @@ const InformationArticleSample1 = ({ colors }) =>
         <div className="full-width-image full-width-image--with-mask full-width-image--with-content-overlap">
             <img className="full-width-image__image" src="https://placekitten.com/1600/600" />
         </div>
-        <div className="main-content main-content--no-padding-top">
+        <div className="main-content main-content--padded-sides">
             <div className="focus-box">
                 <div className="focus-box__content-outer">
                     <div className="focus-box__content-inner">
-                        <p>In the case where there is a Focus Box overlapping the image, there should be no
-                            padding on top in the main content wrapper. This is specified like this: <code>&lt;div class="main-content main-content--no-padding-top"&gt;</code></p>
+                        <p>In the case where there is a Focus Box overlapping the image, the content should be padded on the sides. This is specified like this: <code>&lt;div class="main-content main-content--padded-sides"&gt;</code></p>
+                        <p>If some other content is used to overlap the image, you can specify the class <code>main-content--padding-top"</code> to add padding on top if you need to.</p>
                         <button className="button">Click me</button>
                     </div>
                 </div>

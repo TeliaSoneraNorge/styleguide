@@ -3,12 +3,14 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    padding: 0 0.5rem;
 }
 
 .subscription {
     background-color: var(--white);
     display: inline-block;
     margin: 0.75rem;
+    min-width: 168px;
     position: relative;
 
     &--pink {
@@ -94,13 +96,21 @@
     /* Close button */
     &__close-expanded-info {
         display: none;
-        padding: 1rem;
-        width: 135px;
+        padding: 10% 0;
+        width: 55px;
+
+        @media all and (min-width: 21em) {
+            padding: 1rem;
+            width: 135px;
+        }
     }
 
     &__close-text {
         vertical-align: super;
-        padding: 1rem;
+
+        @media all and (min-width: 21em) {
+            padding: 1rem;
+        }
     }
 
     &__close-image {
@@ -110,7 +120,7 @@
     /* Teaser */
     &__teaser {
         text-align: center;
-        width: 169px;
+        width: 165px;
     }
     &__teaser-content {
         padding: 1rem;
@@ -155,9 +165,14 @@
         border-radius: 50%;
         font-style: italic;
         height: 125px;
-        margin: -2rem auto 2rem;
+        margin: 2rem auto 2rem;
         padding: 1rem;
         width: 125px;
+
+        @media all and (min-width: 30.4em) {
+            margin: -2rem auto 2rem;
+        }
+
     }
     &__highlighted-feature {
     }
@@ -171,7 +186,7 @@
     &--is-expanded,
     &--is-showing-features {
         display: flex;
-        max-width: 374px;
+        max-width: 366px;
         width: 100%;
 
         .subscription__teaser {

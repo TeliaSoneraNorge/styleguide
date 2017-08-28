@@ -2,17 +2,20 @@
     margin: 0 auto 120px;
     max-width: var(--width-medium);
 
-    @media all and (min-width: 28.125em) {
-        padding-top: 20px;
-        width: 80%;
+    &--padding-top {
+        @media all and (min-width: 28.125em) {
+            padding-top: 20px;
+        }
+
+        @media all and (min-width: 50em) {
+            padding-top: 3%;
+        }
     }
 
-    @media all and (min-width: 50em) {
-        padding-top: 3%;
-    }
-
-    &--no-padding-top {
-        padding-top: 0;
+    &--padded-sides {
+        @media all and (min-width: 28.125em) {
+            width: 80%;
+        }
     }
 
     &--bg-color-white {
