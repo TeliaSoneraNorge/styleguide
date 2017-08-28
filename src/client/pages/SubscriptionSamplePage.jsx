@@ -52,6 +52,20 @@ const forAlleSubscriptionProps = [
         "color": "light-orange"
     },
     {
+        "name": "SMART Mini",
+        "dataAmount": 1,
+        "dataUnit": "GB",
+        "price": 249,
+        "color": "pink"
+    },
+    {
+        "name": "SMART Basis",
+        "dataAmount": 3,
+        "dataUnit": "GB",
+        "price": 299,
+        "color": "light-orange"
+    },
+    {
         "name": "SMART Pluss",
         "dataAmount": 6,
         "dataUnit": "GB",
@@ -173,25 +187,25 @@ export default class SubscriptionSamplePage extends React.Component {
                         </li>
                     </ul>
                     <div className="funky-tabs__panel funky-tabs__panel--open" id="tab-panel-1" role="tabpanel" aria-labelledby="tab-1" aria-expanded="true">
-                        <section className="main-content">
+                        <section className="main-content subscription-wrapper">
                             {underFemtenSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
                     </div>
                     <div className="funky-tabs__panel" id="tab-panel-2" role="tabpanel" aria-labelledby="tab-2" aria-expanded="false">
-                        <section className="main-content">
+                        <section className="main-content subscription-wrapper">
                             {underTjueAatteSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
                     </div>
                     <div className="funky-tabs__panel" id="tab-panel-3" role="tabpanel" aria-labelledby="tab-3" aria-expanded="false">
-                        <section className="main-content">
+                        <section className="main-content subscription-wrapper">
                             {forAlleSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
                     </div>
                     <div className="funky-tabs__panel" id="tab-panel-4" role="tabpanel" aria-labelledby="tab-4" aria-expanded="false">
-                        <section className="main-content">
+                        <section className="main-content subscription-wrapper">
                             {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
