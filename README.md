@@ -28,3 +28,4 @@
 
 - [Telia Company full guidelines](http://brandhub.teliacompany.com/)
 - [Telia Company styleguide](http://digitalstyle.teliacompany.com/)
+
