@@ -1,3 +1,10 @@
+.subscription-wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .subscription {
     background-color: var(--white);
     display: inline-block;
@@ -103,13 +110,13 @@
     /* Teaser */
     &__teaser {
         text-align: center;
-        width: 150px;
+        width: 169px;
     }
     &__teaser-content {
         padding: 1rem;
     }
     &__name {
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 500;
         margin: 0;
         text-transform: uppercase;
@@ -117,7 +124,7 @@
     &__data-amount {
         display: block;
         font-family: 'pebble';
-        font-size: 7rem;
+        font-size: 6rem;
         line-height: 7rem;
         margin-top: 2rem;
     }
@@ -164,7 +171,8 @@
     &--is-expanded,
     &--is-showing-features {
         display: flex;
-        width: 400px;
+        max-width: 374px;
+        width: 100%;
 
         .subscription__teaser {
         }
@@ -172,7 +180,7 @@
             display: block;
             padding: 1rem;
             text-align: center;
-            width: 50%;
+            width: 200px;
         }
     }
 
@@ -182,8 +190,8 @@
     }
     &--is-expanded {
         flex-wrap: wrap;
-        padding: 5rem;
-        width: 100%;
+        padding: 10% 8%;
+        max-width: inherit;
 
         .subscription__close-expanded-info {
             display: block;

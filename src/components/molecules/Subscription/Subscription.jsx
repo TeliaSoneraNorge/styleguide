@@ -36,7 +36,7 @@ export default class Subscription extends React.Component {
                     </div> : null}
                 <div className="subscription__teaser">
                     <div className="subscription__teaser-content">
-                        <h1 className="subscription__name">{name}</h1>
+                        <h1 className="subscription__name">{this.props.name}</h1>
                         <span className="subscription__data-amount">{this.props.dataAmount}</span>
                         <span className="subscription__data-unit">{this.props.dataUnit}</span>
                         <span className="subscription__price">{this.props.price},-</span>
