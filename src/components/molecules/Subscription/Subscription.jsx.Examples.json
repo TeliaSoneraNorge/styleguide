@@ -1,6 +1,6 @@
 [
     {
-        "name": "Subscription - Mini",
+        "name": "Subscription - Small",
         "props": {
             "name": "SMART Mini",
             "dataAmount": 1,
@@ -10,39 +10,7 @@
         }
     },
     {
-        "name": "Subscription - Basis",
-        "props": {
-            "name": "SMART Basis",
-            "dataAmount": 3,
-            "dataUnit": "GB",
-            "price": 299,
-            "color": "light-orange"
-        }
-    },
-    {
-        "name": "Subscription - Pluss",
-        "props": {
-            "name": "SMART Pluss",
-            "dataAmount": 6,
-            "dataUnit": "GB",
-            "price": 399,
-            "color": "green",
-            "isExpanded": true
-        }
-    },
-    {
-        "name": "Subscription - Super",
-        "props": {
-            "name": "SMART Super",
-            "dataAmount": 15,
-            "dataUnit": "GB",
-            "price": 449,
-            "color": "teal",
-            "isShowingFeatures": true
-        }
-    },
-    {
-        "name": "Subscription - Total",
+        "name": "Subscription - Showing features",
         "props": {
             "name": "SMART Total",
             "dataAmount": 40,
@@ -50,6 +18,17 @@
             "price": 699,
             "color": "blue",
             "isShowingFeatures": true
+        }
+    },
+    {
+        "name": "Subscription - Fully expanded",
+        "props": {
+            "name": "SMART Pluss",
+            "dataAmount": 6,
+            "dataUnit": "GB",
+            "price": 399,
+            "color": "green",
+            "isExpanded": true
         }
     }
 ]
