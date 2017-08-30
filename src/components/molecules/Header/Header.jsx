@@ -7,7 +7,7 @@ const Header = ({ iconUrl, runningTitle, pageTitle, withMask, withContentOverlap
     <header className={classNames('header', { 'header--with-mask': withMask, 'header--with-content-overlap': withContentOverlap })}>
         <img className="header__icon" src={iconUrl} role="presentation" />
         <span className="header__subtitle ">{runningTitle}</span>
-        <Heading level={1} children={pageTitle} />
+        <Heading level={1} text={pageTitle} />
         <section className="header__preamble">{children}</section>
     </header>;
 

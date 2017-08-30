@@ -15,7 +15,7 @@ const codeSnippets = {
 
 const VariablesSection = ({ variablesCss }) =>
     <div>
-        <Heading level={2} children="CSS Variables & Grid" />
+        <Heading level={2} text="CSS Variables & Grid" />
         <p>
             Since we are using BEM for our CSS naming-conventions, the only class names we see in
             the HTML should be our BEM component classes. We do not wish to clutter up the HTML

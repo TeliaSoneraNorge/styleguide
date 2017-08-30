@@ -31,7 +31,7 @@ const ReactComponent = ({ path, metadata }) => {
     const componentName = extractComponentNameFromPath(path);
     return (
         <div className="sg-component" id={componentName}>
-            <Heading level={2} children={componentName} />
+            <Heading level={2} text={componentName} />
             <div dangerouslySetInnerHTML={{ __html: marked(metadata.description) }}></div>
             {_.isEmpty(examples) ?
                 <div className="sg-component__example" id={componentName}>
@@ -49,7 +49,7 @@ const ReactComponent = ({ path, metadata }) => {
                 const markupStrings = getMarkupStrings(componentWithProps);
                 return (
                     <div key={i} className="sg-component__example">
-                        <Heading level={3} children={example.name} />
+                        <Heading level={3} text={example.name} />
                         <Tabs>
                             <Tabs.Panel title="Example">
                                 <div className="inner-content">

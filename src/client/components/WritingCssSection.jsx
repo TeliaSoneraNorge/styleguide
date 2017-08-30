@@ -9,7 +9,7 @@ const codeSnippets = {
 
 const WritingCssSection = () =>
     <div>
-        <Heading level={2} children="Writing CSS" />
+        <Heading level={2} text="Writing CSS" />
         <p>For our own components, follow the <b>BEM</b> (Block, Element, Modifier) method for writing &amp; organising CSS. BEM helps keep our CSS logical and predictable. The naming convention follows this pattern:</p>
         <CodeSnippet code={codeSnippets.bem} language="css" />
         <ul>
