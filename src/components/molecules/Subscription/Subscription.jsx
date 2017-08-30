@@ -7,7 +7,8 @@ function classNames(color, isShowingFeatures, isExpanded) {
     }
     if (isShowingFeatures) {
         classNames.push('subscription--is-showing-features');
-    } else if (isExpanded) {
+    }
+    if (isExpanded) {
         classNames.push('subscription--is-expanded');
     }
     return classNames.join(' ');
@@ -18,23 +19,29 @@ export default class Subscription extends React.Component {
 
         this.state = {
             isExpanded: this.props.isExpanded ? this.props.isExpanded : false
-        }
+        };
 
-        this.openCloseSubscription = this.openCloseSubscription.bind(this);
+        this.subscriptionContainerClick = this.subscriptionContainerClick.bind(this);
+        this.closeSubscriptionClick = this.closeSubscriptionClick.bind(this);
     }
-    openCloseSubscription(e) {
-        this.setState({ isExpanded: !this.state.isExpanded });
-        e.currentTarget.classList.toggle("subscription--is-expanded");
+    subscriptionContainerClick() {
+        if (!this.state.isExpanded) {
+            this.setState({ isExpanded: true });
+        }
+    }
+    closeSubscriptionClick(e) {
+        e.stopPropagation();
+        this.setState({ isExpanded: false });
     }
     render() {
         return (
-            <div className={classNames(this.props.color, this.props.isShowingFeatures, this.props.isExpanded)} onClick={this.openCloseSubscription}>
+            <article className={classNames(this.props.color, this.props.isShowingFeatures, this.state.isExpanded)} onClick={this.subscriptionContainerClick}>
                 {this.state.isExpanded ?
-                    <div className="subscription__close-expanded-info" role="button">
+                    <button className="subscription__close-expanded-info" onClick={this.closeSubscriptionClick}>
                         <span className="subscription__close-text">LUKK</span>
                         <img className="subscription__close-image" src="/public/icons/ico_delete.svg" role="presentation" alt="Lukk ekspandert innhold" />
-                    </div> : null}
-                <div className="subscription__teaser">
+                    </button> : null}
+                <section className="subscription__teaser">
                     <div className="subscription__teaser-content">
                         <h1 className="subscription__name">{this.props.name}</h1>
                         <span className="subscription__data-amount">{this.props.dataAmount}</span>
@@ -47,9 +54,9 @@ export default class Subscription extends React.Component {
                         <div><a href="#" className="link">Utenlandspriser</a></div>
                         <div><a href="#" className="link">Se alle priser</a></div>
                     </div>
-                </div>
+                </section>
                 {(this.state.isExpanded || this.props.isShowingFeatures) ?
-                    <div className="subscription__features">
+                    <section className="subscription__features">
                         <div className="subscription__speech-bubble">Some speech bubble text!</div>
                         <div className="subscription__highlighted-feature">
                             <img className="subscription__highlighted-feature-icon" src="/public/icons/ico_music.svg" role="presentation" alt="" />
@@ -62,9 +69,9 @@ export default class Subscription extends React.Component {
                                 </strong>
                                 <button className="button button--action button--small">Gå videre</button>
                             </div>: null}
-                    </div> : null}
+                    </section> : null}
                 {this.state.isExpanded ?
-                    <div className="subscription__expanded-info">
+                    <section className="subscription__expanded-info">
                         <h2 className="heading heading--level-2">Om abonnement</h2>
                         <h3 className="heading heading--level-3">Skanning, texting og MMS</h3>
                         <p>Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right?</p>
@@ -77,8 +84,8 @@ export default class Subscription extends React.Component {
                                 <a className="list__link" href="#">Last ned abonnementsvilkår</a>
                             </li>
                         </ul>
-                    </div> : null}
-            </div>
+                    </section> : null}
+            </article>
         );
     }
 }
