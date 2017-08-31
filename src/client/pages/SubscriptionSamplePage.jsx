@@ -7,6 +7,7 @@ import FunkyPanel from '../components/FunkyPanel';
 const underFemtenSubscriptionProps = [
     {
         "name": "SMART Barn",
+        "id": "smartBarn200MB",
         "dataAmount": 200,
         "dataUnit": "MB",
         "price": 99,
@@ -14,6 +15,7 @@ const underFemtenSubscriptionProps = [
     },
     {
         "name": "SMART Barn",
+        "id": "smartBarn1GB",
         "dataAmount": 1,
         "dataUnit": "GB",
         "price": 169,
@@ -24,6 +26,7 @@ const underFemtenSubscriptionProps = [
 const underTjueAatteSubscriptionProps = [
     {
         "name": "SMART Ung",
+        "id": "smartUng2GB",
         "dataAmount": 2,
         "dataUnit": "GB",
         "price": 249,
@@ -31,6 +34,7 @@ const underTjueAatteSubscriptionProps = [
     },
     {
         "name": "SMART Ung",
+        "id": "smartUng5GB",
         "dataAmount": 5,
         "dataUnit": "GB",
         "price": 299,
@@ -41,6 +45,7 @@ const underTjueAatteSubscriptionProps = [
 const forAlleSubscriptionProps = [
     {
         "name": "SMART Mini",
+        "id": "smartMini1GB",
         "dataAmount": 1,
         "dataUnit": "GB",
         "price": 249,
@@ -48,6 +53,7 @@ const forAlleSubscriptionProps = [
     },
     {
         "name": "SMART Basis",
+        "id": "smartBasis3GB",
         "dataAmount": 3,
         "dataUnit": "GB",
         "price": 299,
@@ -55,13 +61,15 @@ const forAlleSubscriptionProps = [
     },
     {
         "name": "SMART Mini",
-        "dataAmount": 1,
+        "id": "smartMini2GB",
+        "dataAmount": 2,
         "dataUnit": "GB",
-        "price": 249,
-        "color": "pink"
+        "price": 279,
+        "color": "teal"
     },
     {
         "name": "SMART Basis",
+        "id": "smartBasis3GB",
         "dataAmount": 3,
         "dataUnit": "GB",
         "price": 299,
@@ -69,6 +77,7 @@ const forAlleSubscriptionProps = [
     },
     {
         "name": "SMART Pluss",
+        "id": "smartPluss6GB",
         "dataAmount": 6,
         "dataUnit": "GB",
         "price": 399,
@@ -77,6 +86,7 @@ const forAlleSubscriptionProps = [
     },
     {
         "name": "SMART Super",
+        "id": "smartSuper15GB",
         "dataAmount": 15,
         "dataUnit": "GB",
         "price": 449,
@@ -85,6 +95,7 @@ const forAlleSubscriptionProps = [
     },
     {
         "name": "SMART Total",
+        "id": "smartTotal40GB",
         "dataAmount": 40,
         "dataUnit": "GB",
         "price": 699,
@@ -96,6 +107,7 @@ const forAlleSubscriptionProps = [
 const kontantkortSubscriptionProps = [
     {
         "name": "Kontantkort",
+        "id": "kontantkort2GB",
         "dataAmount": 2,
         "dataUnit": "GB",
         "price": 249,
@@ -103,6 +115,7 @@ const kontantkortSubscriptionProps = [
     },
     {
         "name": "Kontantkort",
+        "id": "kontantkort5GB",
         "dataAmount": 5,
         "dataUnit": "GB",
         "price": 299,

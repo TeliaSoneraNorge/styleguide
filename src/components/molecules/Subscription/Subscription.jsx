@@ -35,9 +35,9 @@ export default class Subscription extends React.Component {
     }
     render() {
         return (
-            <article className={classNames(this.props.color, this.props.isShowingFeatures, this.state.isExpanded)} onClick={this.subscriptionContainerClick}>
+            <article className={classNames(this.props.color, this.props.isShowingFeatures, this.state.isExpanded)} onClick={this.subscriptionContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
                 {this.state.isExpanded ?
-                    <button className="subscription__close-expanded-info" onClick={this.closeSubscriptionClick}>
+                    <button className="subscription__close-expanded-info" onClick={this.closeSubscriptionClick} aria-controls={this.props.id}>
                         <span className="subscription__close-text">LUKK</span>
                         <img className="subscription__close-image" src="/public/icons/ico_delete.svg" role="presentation" alt="Lukk ekspandert innhold" />
                     </button> : null}

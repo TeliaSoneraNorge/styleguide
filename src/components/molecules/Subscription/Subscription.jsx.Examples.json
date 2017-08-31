@@ -3,6 +3,7 @@
         "name": "Subscription - Small",
         "props": {
             "name": "SMART Mini",
+            "id": "smartMini",
             "dataAmount": 1,
             "dataUnit": "GB",
             "price": 249,
@@ -13,6 +14,7 @@
         "name": "Subscription - Showing features",
         "props": {
             "name": "SMART Total",
+            "id": "smartTotal",
             "dataAmount": 40,
             "dataUnit": "GB",
             "price": 699,
@@ -24,6 +26,7 @@
         "name": "Subscription - Fully expanded",
         "props": {
             "name": "SMART Pluss",
+            "id": "smartPluss",
             "dataAmount": 6,
             "dataUnit": "GB",
             "price": 399,
