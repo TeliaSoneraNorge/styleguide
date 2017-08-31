@@ -7,20 +7,14 @@
         display: block;
         width: 100%;
     }
-
+    
     @media all and (min-width: 28.125em) {
-        &--with-mask {
-            &:after {
-                background: transparent url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
-                background-size: 100%;
-                bottom: -1px;
-                content: "";
-                display: block;
-                height: 100%;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }
+        &__mask {
+            bottom: -1px;
+            display: block;
+            left: 0;
+            position: absolute;
+            width: 100%;
         }
 
         &--with-content-overlap {
