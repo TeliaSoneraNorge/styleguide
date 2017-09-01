@@ -3,7 +3,6 @@ import marked from 'marked';
 import pretty from 'pretty';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
-import reactElementToJSXString from 'react-element-to-jsx-string';
 import Tabs from 'react-simpletabs';
 
 import * as ReactComponents from '../../components/index';
@@ -11,16 +10,6 @@ import CodeSnippet from './CodeSnippet';
 import Heading from '../../components/atoms/Heading/Heading';
 
 import { extractComponentNameFromPath } from '../utils/componentUtil';
-
-function getMarkupStrings(componentWithProps) {
-    return {
-        html: pretty(ReactDOMServer.renderToStaticMarkup(componentWithProps)),
-        jsx: reactElementToJSXString(componentWithProps, {
-            showFunctions: false,
-            functionValue: (fn) => `${fn.name}Fn`
-        })
-    };
-}
 
 const NoComponentFound = () =>
     <p>Component not found. It must be exported via the src/components/index.js file.</p>;
@@ -46,7 +35,7 @@ const ReactComponent = ({ path, metadata }) => {
                     </ComponentToRender> :
                     <ComponentToRender {...example.props} />;
 
-                const markupStrings = getMarkupStrings(componentWithProps);
+                const markupString = pretty(ReactDOMServer.renderToStaticMarkup(componentWithProps));
                 return (
                     <div key={i} className="sg-component__example">
                         <Heading level={3} text={example.name} />
@@ -57,10 +46,7 @@ const ReactComponent = ({ path, metadata }) => {
                                 </div>
                             </Tabs.Panel>
                             <Tabs.Panel title="HTML">
-                                <CodeSnippet code={markupStrings.html} language="markup" />
-                            </Tabs.Panel>
-                            <Tabs.Panel title="JSX">
-                                <CodeSnippet code={markupStrings.jsx} language="jsx" />
+                                <CodeSnippet code={markupString} language="markup" />
                             </Tabs.Panel>
                         </Tabs>
                     </div>
