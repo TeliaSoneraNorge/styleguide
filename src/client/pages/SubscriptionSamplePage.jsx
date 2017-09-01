@@ -149,25 +149,25 @@ export default class SubscriptionSamplePage extends React.Component {
                             selectedTabIndex={this.state.selectedTabIndex}
                             tabText="Under 15 år"
                             tabIconPath="/public/images/under15.png"
-                            onClick={this.handleClick.bind(this, 1)}/>
+                            onClick={this.handleClick.bind(this, 1)} />
                         <FunkyTab
                             tabIndex={2}
                             selectedTabIndex={this.state.selectedTabIndex}
                             tabText="Under 28 år"
                             tabIconPath="/public/images/under28.png"
-                            onClick={this.handleClick.bind(this, 2)}/>
+                            onClick={this.handleClick.bind(this, 2)} />
                         <FunkyTab
                             tabIndex={3}
                             selectedTabIndex={this.state.selectedTabIndex}
                             tabText="For alle"
                             tabIconPath="/public/images/for-alle.png"
-                            onClick={this.handleClick.bind(this, 3)}/>
+                            onClick={this.handleClick.bind(this, 3)} />
                         <FunkyTab
                             tabIndex={4}
                             selectedTabIndex={this.state.selectedTabIndex}
                             tabText="Kontantkort"
                             tabIconPath="/public/images/under15.png"
-                            onClick={this.handleClick.bind(this, 4)}/>
+                            onClick={this.handleClick.bind(this, 4)} />
                     </ul>
                     <FunkyPanel
                         tabPanelIndex={1}
