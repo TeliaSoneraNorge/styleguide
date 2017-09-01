@@ -6,7 +6,7 @@ import VariablesSection from '../components/VariablesSection';
 import SizesAndUnitsSection from '../components/SizesAndUnitsSection';
 import TypographySection from '../components/TypographySection';
 
-import Header from '../../components/molecules/Header/Header.jsx';
+import Header from '../../components/molecules/Header/Header';
 
 const HomePage = ({ colors, variablesCss }) =>
     <div>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Heading from '../../components/atoms/Heading/Heading';
+import Header from '../../components/molecules/Header/Header';
 
 import HtmlComponent from '../components/HtmlComponent';
 import ReactComponent from '../components/ReactComponent';
@@ -25,22 +25,38 @@ const ComponentList = ({ groupName, groupedComponentMetadata }) => {
 const ComponentsPage = (props) => {
     const groupedComponentMetadata = groupComponentMetadataByType(componentMetadata);
     return (
-        <div className="sg-components content-wrapper">
-            <Heading level={1} text="Components" />
-            <ul>
-                <li>
-                    <a href="/components/atoms">Atoms</a>
-                    <ComponentList groupName="atoms" groupedComponentMetadata={groupedComponentMetadata} />
-                </li>
-                <li>
-                    <a href="/components/molecules">Molecules</a>
-                    <ComponentList groupName="molecules" groupedComponentMetadata={groupedComponentMetadata} />
-                </li>
-                <li>
-                    <a href="/components/organisms">Organisms</a>
-                    <ComponentList groupName="organisms" groupedComponentMetadata={groupedComponentMetadata} />
-                </li>
-            </ul>
+        <div>
+            <Header
+                iconUrl="/public/ico_code-2.svg"
+                pageTitle="Components"
+                withMask={true}
+                withContentOverlap={true}>
+                <div>
+                    Here are the <a className="link" href="http://bradfrost.com/blog/post/atomic-web-design/">Atom Design</a> components, split by category.
+                </div>
+            </Header>
+            <div className="sg-components content-wrapper">
+                <div className="focus-box">
+                    <div className="focus-box__content-outer">
+                        <div className="focus-box__content-inner">
+                            <ul>
+                                <li>
+                                    <a href="/components/atoms">Atoms</a>
+                                    <ComponentList groupName="atoms" groupedComponentMetadata={groupedComponentMetadata} />
+                                </li>
+                                <li>
+                                    <a href="/components/molecules">Molecules</a>
+                                    <ComponentList groupName="molecules" groupedComponentMetadata={groupedComponentMetadata} />
+                                </li>
+                                <li>
+                                    <a href="/components/organisms">Organisms</a>
+                                    <ComponentList groupName="organisms" groupedComponentMetadata={groupedComponentMetadata} />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     );
 }
