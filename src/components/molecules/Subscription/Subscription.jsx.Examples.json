@@ -11,6 +11,17 @@
         }
     },
     {
+        "name": "Subscription - 3-digit MB",
+        "props": {
+            "name": "SMART Kontant",
+            "id": "smartKontant",
+            "dataAmount": 200,
+            "dataUnit": "MB",
+            "price": 99,
+            "color": "light-orange"
+        }
+    },
+    {
         "name": "Subscription - Showing features",
         "props": {
             "name": "SMART Total",
