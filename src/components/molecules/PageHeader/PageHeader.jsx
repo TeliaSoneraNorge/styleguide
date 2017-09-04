@@ -9,6 +9,9 @@ import React from 'react';
  * The PageHeader is the main header on the page, and should be included only once.
  * It contains the Telia logo, the main navigation, and tools such as log-in info
  * and shopping cart.
+ *
+ * This component requires that you also import the 'Picturefill' polyfill -
+ * that enables support for the <picture/> element in browsers that do not yet support it.
  */
 export default class PageHeader extends React.Component {
     constructor(props) {
