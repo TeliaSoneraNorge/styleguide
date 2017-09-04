@@ -8,6 +8,7 @@
 
 .subscription {
     background-color: var(--white);
+    cursor: pointer;
     display: inline-block;
     margin: 0.75rem;
     min-width: 168px;
@@ -207,11 +208,13 @@
         display: none;
     }
     &--is-expanded {
+        cursor: default;
         flex-wrap: wrap;
         padding: 10% 8%;
         max-width: inherit;
 
         .subscription__close-expanded-info {
+            cursor: pointer;
             display: block;
             position: absolute;
             right: 0;
