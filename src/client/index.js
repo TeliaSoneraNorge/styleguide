@@ -4,6 +4,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
 
+import 'picturefill';
 import App from './App';
 import rootReducer from './reducers';
 
