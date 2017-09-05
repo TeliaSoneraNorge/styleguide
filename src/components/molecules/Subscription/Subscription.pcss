@@ -2,17 +2,29 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: left;
     padding: 0 0.5rem;
+
+    @media all and (min-width: 25.3125em) {
+        flex-wrap: wrap;
+    }
 }
 
 .subscription {
     background-color: var(--white);
     cursor: pointer;
     display: inline-block;
-    margin: 0.75rem;
-    min-width: 168px;
+    flex-basis: 44%;
+    margin: 0.5rem;
     position: relative;
+    width: 50%;
+
+    @media all and (min-width: 25.3125em) {
+        flex-basis: auto;
+        margin: 0.75rem;
+        min-width: 168px;
+        width: auto;
+    }
 
     &--pink {
         border: 3px solid var(--pink);
@@ -99,7 +111,7 @@
         background: none;
         border: none;
         display: none;
-        padding: 10% 0;
+        padding: 10% 2%;
         width: 55px;
 
         @media all and (min-width: 21em) {
@@ -122,25 +134,33 @@
 
     /* Teaser */
     &__teaser {
-        text-align: center;
-        width: 165px;
         box-sizing: content-box;
+        text-align: center;
+
+        @media all and (min-width: 25.3125em) {
+            width: 165px;
+        }
     }
     &__teaser-content {
-        padding: 1rem;
+        padding: 1rem 0;
     }
     &__name {
-        font-size: 0.9rem;
-        font-weight: 600;
+        font-size: 0.75rem;
+        font-weight: 400;
         margin: 0;
         text-transform: uppercase;
     }
     &__data-amount {
         display: block;
         font-family: 'pebble';
-        font-size: 5rem;
-        line-height: 7rem;
+        font-size: 4rem;
+        line-height: 4rem;
         margin-top: 1rem;
+
+        @media all and (min-width: 25.3125em) {
+            font-size: 5rem;
+            line-height: 5rem;
+        }
     }
     &__data-unit {
         display: block;
@@ -154,7 +174,7 @@
     }
     &__price-info {
         display: block;
-        font-size: 0.875rem;
+        font-size: 0.75rem;
     }
     &__teaser-links {
         display: none;
@@ -169,14 +189,9 @@
         border-radius: 50%;
         font-style: italic;
         height: 125px;
-        margin: 2rem auto 2rem;
+        margin: -2rem auto 2rem;
         padding: 1rem;
         width: 125px;
-
-        @media all and (min-width: 30.4em) {
-            margin: -2rem auto 2rem;
-        }
-
     }
     &__highlighted-feature {
     }
@@ -194,6 +209,7 @@
         width: 100%;
 
         .subscription__teaser {
+            width: 165px;
         }
         .subscription__features {
             display: block;
@@ -208,6 +224,7 @@
         display: none;
     }
     &--is-expanded {
+        align-items: flex-start;
         cursor: default;
         flex-wrap: wrap;
         padding: 10% 8%;
@@ -220,8 +237,19 @@
             right: 0;
             top: 0;
         }
+        .subscription__data-amount {
+            font-size: 5rem;
+            line-height: 5rem;
+        }
         .subscription__features {
             flex-grow: 2;
+        }
+        .subscription__speech-bubble {
+            margin: 2rem auto 2rem;
+
+            @media all and (min-width: 30.4em) {
+                margin: -2rem auto 2rem;
+            }
         }
         .subscription__teaser-links {
             background-color: var(--white);

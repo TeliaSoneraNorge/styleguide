@@ -51,7 +51,6 @@ export default class Subscription extends React.Component {
                         <span className="subscription__price-info">Ingen bindingstid.</span>
                     </div>
                     <div className="subscription__teaser-links">
-                        <div><a href="#" className="link">Utenlandspriser</a></div>
                         <div><a href="#" className="link">Se alle priser</a></div>
                     </div>
                 </section>
