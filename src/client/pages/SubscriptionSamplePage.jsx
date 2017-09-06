@@ -166,7 +166,7 @@ export default class SubscriptionSamplePage extends React.Component {
                             tabIndex={4}
                             selectedTabIndex={this.state.selectedTabIndex}
                             tabText="Kontantkort"
-                            tabIconPath="/public/images/under15.png"
+                            tabIconPath="/public/images/kontantkort.png"
                             onClick={this.handleClick.bind(this, 4)} />
                     </ul>
                     <FunkyPanel
