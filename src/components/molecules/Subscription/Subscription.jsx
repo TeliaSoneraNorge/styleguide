@@ -61,13 +61,10 @@ export default class Subscription extends React.Component {
                             <img className="subscription__highlighted-feature-icon" src="/public/icons/ico_music.svg" role="presentation" alt="" />
                             <span className="subscription__highlighted-feature-text">Music Freedom</span>
                         </div>
-                        {this.state.isExpanded ?
-                            <div>
-                                <strong className="special-message">
-                                    Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.
-                                </strong>
-                                <button className="button button--action button--small">Gå videre</button>
-                            </div>: null}
+                        <strong className="special-message">
+                            Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.
+                        </strong>
+                        <button className="button button--action button--small">Gå videre</button>
                     </section> : null}
                 {this.state.isExpanded ?
                     <section className="subscription__expanded-info">

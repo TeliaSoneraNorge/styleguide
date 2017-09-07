@@ -183,6 +183,10 @@
     /* Features */
     &__features {
         display: none;
+
+        .special-message, .button {
+            display: none;
+        }
     }
     &__speech-bubble {
         background-color: var(--white);
@@ -243,6 +247,10 @@
         }
         .subscription__features {
             flex-grow: 2;
+
+            .special-message, .button {
+                display: inline-block;
+            }
         }
         .subscription__speech-bubble {
             margin: 2rem auto 2rem;
