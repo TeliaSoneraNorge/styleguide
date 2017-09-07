@@ -1,0 +1,22 @@
+[
+    {
+        "name": "Default",
+        "props": {
+            "kind": "positive",
+            "headingText": "This is an important alert",
+            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        }
+    },
+    {
+        "name": "With Links",
+        "props": {
+            "kind": "positive",
+            "headingText": "This is an important alert",
+            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "links": [
+                { "text": "This link might be of interest", "url": "#" },
+                { "text": "And this one too", "url": "#" }
+            ]
+        }
+    }
+]

@@ -1,0 +1,32 @@
+.alert {
+    background-color: #ddf1e7;
+    border: 2px solid var(--dark-green);
+    border-left: none;
+    border-right: none;
+    padding: 1rem;
+
+    @media screen and (min-width: 60em) {
+        border: 2px solid var(--dark-green);
+        border-radius: 5px;
+        display: flex;
+        margin: 0 auto;
+        width: var(--width-small);
+    }
+
+    &__icon {
+        height: 2rem;
+        width: 2rem;
+
+        @media screen and (min-width: 60em) {
+            height: 4rem;
+            width: 4rem;
+        }
+    }
+
+    &__content {
+        @media screen and (min-width: 60em) {
+            display: inline-block;
+            padding-left: 1rem;
+        }
+    }
+}
