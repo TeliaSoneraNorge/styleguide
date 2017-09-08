@@ -21,10 +21,10 @@ const Routes = (props) =>
             logoImageDesktopPath="/public/icons/logo_desktop.svg"
             logoImageMobilePath="/public/icons/logo_mob.svg"
             menuLinks={[
-                { text: "Home", url: "/", icon: "/public/icons/ico_mobile.svg" },
-                { text: "Components", url: "/components", icon: "/public/icons/ico_wireless.svg" },
-                { text: "Contributing", url: "/contributing", icon: "/public/icons/ico_edit.svg" },
-                { text: "Download", url: "/download", icon: "/public/icons/ico_content.svg" }
+                { text: "Home", url: "/" },
+                { text: "Components", url: "/components" },
+                { text: "Contributing", url: "/contributing" },
+                { text: "Download", url: "/download" }
             ]} />
 
         <Route exact path="/" component={HomePage} />

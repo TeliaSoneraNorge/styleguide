@@ -49,7 +49,6 @@ export default class PageHeader extends React.Component {
                             {_.map(this.props.menuLinks, (menuLink) =>
                                 <li className="page-header__menu-item">
                                     <a className="page-header__menu-item-link" href={menuLink.url}>
-                                        {menuLink.icon ? <img className="page-header__menu-item-icon" src={menuLink.icon} role="presentation" /> : null}
                                         {menuLink.text}
                                     </a>
                                 </li>
