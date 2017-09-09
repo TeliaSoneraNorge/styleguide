@@ -60,22 +60,6 @@ const forAlleSubscriptionProps = [
         "color": "light-orange"
     },
     {
-        "name": "SMART Mini",
-        "id": "smartMini2GB",
-        "dataAmount": 2,
-        "dataUnit": "GB",
-        "price": 279,
-        "color": "teal"
-    },
-    {
-        "name": "SMART Basis",
-        "id": "smartBasis3GB",
-        "dataAmount": 3,
-        "dataUnit": "GB",
-        "price": 299,
-        "color": "light-orange"
-    },
-    {
         "name": "SMART Pluss",
         "id": "smartPluss6GB",
         "dataAmount": 6,
