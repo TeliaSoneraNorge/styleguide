@@ -2,8 +2,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: left;
-    padding: 0 0.5rem;
+    justify-content: center;
 
     @media all and (min-width: 25.3125em) {
         flex-wrap: wrap;
@@ -13,10 +12,10 @@
 .subscription {
     background-color: var(--white);
     cursor: pointer;
-    display: inline-block;
-    margin: 1%;
+    display: flex;
+    margin: 3%;
     position: relative;
-    width: 48%;
+    width: 44%;
 
     @media all and (min-width: 25.3125em) {
         flex-basis: auto;
@@ -36,9 +35,6 @@
                 background-color: var(--pink);
             }
         }
-        .subscription__speech-bubble {
-            border: 3px dotted var(--pink);
-        }
     }
 
     &--light-orange {
@@ -51,9 +47,6 @@
             .subscription__teaser-content {
                 background-color: var(--light-orange);
             }
-        }
-        .subscription__speech-bubble {
-            border: 3px dotted var(--light-orange);
         }
     }
 
@@ -68,9 +61,6 @@
                 background-color: var(--green);
             }
         }
-        .subscription__speech-bubble {
-            border: 3px dotted var(--green);
-        }
     }
 
     &--teal {
@@ -83,9 +73,6 @@
             .subscription__teaser-content {
                 background-color: var(--teal);
             }
-        }
-        .subscription__speech-bubble {
-            border: 3px dotted var(--teal);
         }
     }
 
@@ -100,9 +87,6 @@
                 background-color: var(--blue);
             }
         }
-        .subscription__speech-bubble {
-            border: 3px dotted var(--blue);
-        }
     }
 
     /* Close button */
@@ -110,20 +94,20 @@
         background: none;
         border: none;
         display: none;
-        padding: 10% 2%;
-        width: 55px;
+        padding: .5rem;
 
         @media all and (min-width: 21em) {
             padding: 1rem;
-            width: 135px;
         }
     }
 
     &__close-text {
-        vertical-align: super;
+        display: none;
 
-        @media all and (min-width: 21em) {
+        @media all and (min-width: 25.3125em) {
+            display: inline;
             padding: 1rem;
+            vertical-align: super;
         }
     }
 
@@ -133,8 +117,8 @@
 
     /* Teaser */
     &__teaser {
-        box-sizing: content-box;
         text-align: center;
+        width: 100%;
 
         @media all and (min-width: 25.3125em) {
             width: 165px;
@@ -187,15 +171,6 @@
             display: none;
         }
     }
-    &__speech-bubble {
-        background-color: var(--white);
-        border-radius: 50%;
-        font-style: italic;
-        height: 125px;
-        margin: -2rem auto 2rem;
-        padding: 1rem;
-        width: 125px;
-    }
     &__highlighted-feature {
     }
     &__highlighted-feature-icon {
@@ -207,19 +182,22 @@
     }
     &--is-expanded,
     &--is-showing-features {
-        display: flex;
         max-width: 366px;
-        width: 98%;
 
         .subscription__teaser {
-            width: 165px;
+            display: inline-block;
+            width: 50%;
         }
         .subscription__features {
-            display: block;
-            padding: 1rem;
+            display: inline-block;
+            padding: 5rem 0 0 1rem;
             text-align: center;
-            width: 200px;
+            width: 50%;
         }
+    }
+
+    &--is-showing-features {
+        width: 94%;
     }
 
     /* Expanded info */
@@ -230,8 +208,14 @@
         align-items: flex-start;
         cursor: default;
         flex-wrap: wrap;
-        padding: 10% 8%;
+        padding: 1rem;
+        margin: 1%;
         max-width: inherit;
+        width: 98%;
+
+        @media all and (min-width: 25.3125em) {
+            padding: 2rem;
+        }
 
         .subscription__close-expanded-info {
             cursor: pointer;
@@ -240,6 +224,16 @@
             right: 0;
             top: 0;
         }
+        .subscription__teaser {
+            @media all and (min-width: 25.3125em) {
+                width: 165px;
+            }
+        }
+        .subscription__teaser-links {
+            background-color: var(--white);
+            display: block;
+            padding: 0.5rem;
+        }
         .subscription__data-amount {
             font-size: 5rem;
             line-height: 5rem;
@@ -247,21 +241,14 @@
         .subscription__features {
             flex-grow: 2;
 
-            .special-message, .button {
+            .special-message {
+                display: block;
+                margin-bottom: 0;
+            }
+            .button {
                 display: inline-block;
+                margin: 2rem 0 0 0;
             }
-        }
-        .subscription__speech-bubble {
-            margin: 2rem auto 2rem;
-
-            @media all and (min-width: 30.4em) {
-                margin: -2rem auto 2rem;
-            }
-        }
-        .subscription__teaser-links {
-            background-color: var(--white);
-            display: block;
-            padding: 0.5rem;
         }
         .subscription__expanded-info {
             display: block;
