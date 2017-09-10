@@ -56,14 +56,12 @@ export default class Subscription extends React.Component {
                 </section>
                 {(this.state.isExpanded || this.props.isShowingFeatures) ?
                     <section className="subscription__features">
-                        <div className="subscription__speech-bubble">Some speech bubble text!</div>
-                        <div className="subscription__highlighted-feature">
-                            <img className="subscription__highlighted-feature-icon" src="/public/icons/ico_music.svg" role="presentation" alt="" />
-                            <span className="subscription__highlighted-feature-text">Music Freedom</span>
-                        </div>
-                        <strong className="special-message">
-                            Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.
-                        </strong>
+                        {this.props.highlightedFeature ?
+                            <div className="subscription__highlighted-feature">
+                                <img className="subscription__highlighted-feature-icon" src={this.props.highlightedFeature.icon} role="presentation" alt="" />
+                                <span className="subscription__highlighted-feature-text">{this.props.highlightedFeature.name}</span>
+                            </div> : null}
+                        {this.props.specialMessageText ? <strong className="special-message">{this.props.specialMessageText}</strong> : null}
                         <button className="button button--action button--small">Gå videre</button>
                     </section> : null}
                 {this.state.isExpanded ?

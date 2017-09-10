@@ -11,7 +11,8 @@ const underFemtenSubscriptionProps = [
         "dataAmount": 200,
         "dataUnit": "MB",
         "price": 99,
-        "color": "blue"
+        "color": "blue",
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     },
     {
         "name": "SMART Barn",
@@ -19,7 +20,8 @@ const underFemtenSubscriptionProps = [
         "dataAmount": 1,
         "dataUnit": "GB",
         "price": 169,
-        "color": "green"
+        "color": "green",
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     }
 ];
 
@@ -30,7 +32,8 @@ const underTjueAatteSubscriptionProps = [
         "dataAmount": 2,
         "dataUnit": "GB",
         "price": 249,
-        "color": "pink"
+        "color": "pink",
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     },
     {
         "name": "SMART Ung",
@@ -38,7 +41,8 @@ const underTjueAatteSubscriptionProps = [
         "dataAmount": 5,
         "dataUnit": "GB",
         "price": 299,
-        "color": "teal"
+        "color": "teal",
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     }
 ];
 
@@ -50,7 +54,12 @@ const forAlleSubscriptionProps = [
         "dataUnit": "GB",
         "price": 699,
         "color": "blue",
-        "isShowingFeatures": true
+        "isShowingFeatures": true,
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
+        "highlightedFeature": {
+            "icon": "/public/icons/ico_music.svg",
+            "name": "Music Freedom"
+        }
     },
     {
         "name": "SMART Super",
@@ -59,7 +68,12 @@ const forAlleSubscriptionProps = [
         "dataUnit": "GB",
         "price": 449,
         "color": "teal",
-        "isShowingFeatures": true
+        "isShowingFeatures": true,
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
+        "highlightedFeature": {
+            "icon": "/public/icons/ico_music.svg",
+            "name": "Music Freedom"
+        }
     },
     {
         "name": "SMART Pluss",
@@ -68,7 +82,12 @@ const forAlleSubscriptionProps = [
         "dataUnit": "GB",
         "price": 399,
         "color": "green",
-        "isShowingFeatures": true
+        "isShowingFeatures": true,
+        "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
+        "highlightedFeature": {
+            "icon": "/public/icons/ico_music.svg",
+            "name": "Music Freedom"
+        }
     },
     {
         "name": "SMART Basis",
@@ -91,19 +110,16 @@ const forAlleSubscriptionProps = [
 const kontantkortSubscriptionProps = [
     {
         "name": "Kontantkort",
-        "id": "kontantkort2GB",
-        "dataAmount": 2,
-        "dataUnit": "GB",
-        "price": 249,
-        "color": "pink"
-    },
-    {
-        "name": "Kontantkort",
-        "id": "kontantkort5GB",
-        "dataAmount": 5,
-        "dataUnit": "GB",
-        "price": 299,
-        "color": "teal"
+        "id": "kontantkort",
+        "dataAmount": 200,
+        "dataUnit": "MB",
+        "price": 99,
+        "color": "pink",
+        "isExpanded": true,
+        "highlightedFeature": {
+            "icon": "/public/icons/ico_info.svg",
+            "name": "For deg som liker å betale på forhånd"
+        }
     }
 ];
 
