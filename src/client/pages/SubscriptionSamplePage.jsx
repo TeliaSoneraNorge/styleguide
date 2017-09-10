@@ -44,29 +44,13 @@ const underTjueAatteSubscriptionProps = [
 
 const forAlleSubscriptionProps = [
     {
-        "name": "SMART Mini",
-        "id": "smartMini1GB",
-        "dataAmount": 1,
+        "name": "SMART Total",
+        "id": "smartTotal40GB",
+        "dataAmount": 40,
         "dataUnit": "GB",
-        "price": 249,
-        "color": "pink"
-    },
-    {
-        "name": "SMART Basis",
-        "id": "smartBasis3GB",
-        "dataAmount": 3,
-        "dataUnit": "GB",
-        "price": 299,
-        "color": "light-orange"
-    },
-    {
-        "name": "SMART Pluss",
-        "id": "smartPluss6GB",
-        "dataAmount": 6,
-        "dataUnit": "GB",
-        "price": 399,
-        "color": "green",
-        "isExpanded": true
+        "price": 699,
+        "color": "blue",
+        "isShowingFeatures": true
     },
     {
         "name": "SMART Super",
@@ -78,13 +62,29 @@ const forAlleSubscriptionProps = [
         "isShowingFeatures": true
     },
     {
-        "name": "SMART Total",
-        "id": "smartTotal40GB",
-        "dataAmount": 40,
+        "name": "SMART Pluss",
+        "id": "smartPluss6GB",
+        "dataAmount": 6,
         "dataUnit": "GB",
-        "price": 699,
-        "color": "blue",
+        "price": 399,
+        "color": "green",
         "isShowingFeatures": true
+    },
+    {
+        "name": "SMART Basis",
+        "id": "smartBasis3GB",
+        "dataAmount": 3,
+        "dataUnit": "GB",
+        "price": 299,
+        "color": "light-orange"
+    },
+    {
+        "name": "SMART Mini",
+        "id": "smartMini1GB",
+        "dataAmount": 1,
+        "dataUnit": "GB",
+        "price": 249,
+        "color": "pink"
     }
 ];
 
