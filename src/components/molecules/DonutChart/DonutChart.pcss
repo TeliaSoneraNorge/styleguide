@@ -1,0 +1,118 @@
+.donut-chart {
+    position: relative;
+
+    &__spinner {
+        margin: 0 auto;
+    }
+
+    &__slice {
+        position: absolute;
+        transform: rotate(-90deg);
+    }
+
+    &__arc {
+        fill: none;
+
+        stroke-width: 6%;
+        stroke-linecap: round;
+        stroke-dasharray: 5.652;
+
+        stroke: var(--emerald);
+
+        transition:
+            opacity .5s linear 0s,
+            stroke .5s cubic-bezier(0.075, 0.820, 0.070, 0.825) .5s,
+            stroke-dashoffset .5s cubic-bezier(0.075, 0.820, 0.070, 0.825) .5s;
+
+        &--red {
+            stroke: var(--venetian-red);
+        }
+
+        &--orange {
+            stroke: var(--orange);
+        }
+
+        &--green {
+            stroke: var(--emerald);
+        }
+
+        &--disabled {
+            opacity: 0;
+            stroke: var(--emerald);
+
+            transition:
+                stroke-dashoffset .0s linear .0s;
+        }
+    }
+
+    &__background {
+        fill: none;
+        stroke: var(--light-grey);
+        stroke-width: 6%;
+    }
+
+    &__hole {
+        width: 100%;
+        height: 100%;
+        top: 0;
+
+        position: absolute;
+        display: flex;
+
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 1;
+
+        pointer-events: none;
+
+        transition:
+            top .2s linear .2s,
+            opacity .2s linear .2s;
+
+        &--hidden-top, &--hidden-bottom {
+            transition:
+                top .2s linear .0s,
+                opacity .2s linear .0s;
+        }
+
+        &--hidden-top {
+            top: -30%;
+            opacity: 0;
+        }
+
+        &--hidden-bottom {
+            top: 30%;
+            opacity: 0;
+        }
+    }
+
+    &__value {
+        font-family: 'pebble';
+        font-weight: 600;
+        font-size: 2.583rem;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    &__value-caption {
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.4rem;
+        font-weight: 300;
+
+        padding: 0;
+        margin: 0;
+    }
+
+    &__loading-caption {
+        text-align: center;
+        font-size: 0.9rem;
+        font-weight: 300;
+
+        padding: 0.2em 0 0 0;
+        margin: 0;
+    }
+}
