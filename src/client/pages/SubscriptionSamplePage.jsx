@@ -143,7 +143,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <h1 className="heading heading--level-1">Subscription</h1>
                 </div>
                 <div className="funky-tabs">
-                    <ul className="funky-tabs__tabs" role="tablist">
+                    <ul className="funky-tabs__tabs">
                         <FunkyTab
                             tabIndex={1}
                             selectedTabIndex={this.state.selectedTabIndex}

@@ -15,10 +15,7 @@ const FunkyTab = (props) => {
     return (
         <li className={getTabClassNames(isSelected)}
             id={"tab-" + props.tabIndex}
-            onClick={props.onClick}
-            aria-selected={isSelected}
-            role="tab"
-            aria-controls={"tab-panel-" + props.tabIndex}>
+            onClick={props.onClick}>
             <a href="#">
                 <img className="funky-tabs__tab-image" src={props.tabIconPath} />
                 <div className="funky-tabs__tab-text">
