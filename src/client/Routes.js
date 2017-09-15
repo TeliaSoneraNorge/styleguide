@@ -12,6 +12,7 @@ import DownloadPage from './pages/DownloadPage';
 
 import InformationArticleSample1 from './pages/InformationArticleSample1';
 import InformationArticleSample2 from './pages/InformationArticleSample2';
+import InformationArticleSample3 from './pages/InformationArticleSample3';
 import SubscriptionSamplePage from './pages/SubscriptionSamplePage';
 
 const Routes = (props) =>
@@ -35,6 +36,7 @@ const Routes = (props) =>
         <Route exact path="/download" component={DownloadPage} />
         <Route exact path="/information-article-1" component={InformationArticleSample1} />
         <Route exact path="/information-article-2" component={InformationArticleSample2} />
+        <Route exact path="/information-article-3" component={InformationArticleSample3} />
         <Route exact path="/subscription" component={SubscriptionSamplePage} />
 
         <PageFooter
