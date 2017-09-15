@@ -5,7 +5,7 @@ describe('colorUtil', () => {
     const colors = {
         "Black": { "hex": "#000000", "textColor": "#FFFFFF" },
         "White": { "hex": "#FFFFFF", "textColor": "#000000" },
-        "Grey": { "hex": "#F2F2F2", "textColor": "#000000" },
+        "Light Grey": { "hex": "#F2F2F2", "textColor": "#000000" },
 
         "Core Purple": { "hex": "#990AE3", "textColor": "#FFFFFF" },
         "Dark Core Purple": { "hex": "#9B009B", "textColor": "#FFFFFF" },
@@ -25,7 +25,7 @@ describe('colorUtil', () => {
                 ':root {\n' +
                 '    --black: #000000;\n' +
                 '    --white: #FFFFFF;\n' +
-                '    --grey: #F2F2F2;\n' +
+                '    --light-grey: #F2F2F2;\n' +
                 '\n' +
                 '    --core-purple: #990AE3;\n' +
                 '    --dark-core-purple: #9B009B;\n' +
@@ -47,7 +47,7 @@ describe('colorUtil', () => {
             expect(result).to.equal(
                 '@black: #000000;\n' +
                 '@white: #FFFFFF;\n' +
-                '@grey: #F2F2F2;\n' +
+                '@light-grey: #F2F2F2;\n' +
                 '\n' +
                 '@core-purple: #990AE3;\n' +
                 '@dark-core-purple: #9B009B;\n' +
@@ -68,7 +68,7 @@ describe('colorUtil', () => {
             expect(result).to.equal(
                 '$black: #000000;\n' +
                 '$white: #FFFFFF;\n' +
-                '$grey: #F2F2F2;\n' +
+                '$light-grey: #F2F2F2;\n' +
                 '\n' +
                 '$core-purple: #990AE3;\n' +
                 '$dark-core-purple: #9B009B;\n' +
