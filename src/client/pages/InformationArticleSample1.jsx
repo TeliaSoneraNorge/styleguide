@@ -15,7 +15,17 @@ const InformationArticleSample1 = ({ colors }) =>
         <div className="full-width-image full-width-image--with-mask full-width-image--with-content-overlap">
             <img className="full-width-image__image" src="https://placekitten.com/1600/600" />
         </div>
-        <div className="main-content main-content--padded-sides">
+        <div className="main-content main-content--padded-sides main-content--bg-color-white main-content--padding-top">
+            <div className="body-text-container">
+                <p>
+                    Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                </p>
+                <ul className="list">
+                    <li className="list__item">First item in list</li>
+                    <li className="list__item">Second link in list</li>
+                    <li className="list__item">Third link in list</li>
+                </ul>
+            </div>
             <div className="focus-box">
                 <div className="focus-box__content-outer">
                     <div className="focus-box__content-inner">
