@@ -14,9 +14,9 @@ const ComponentList = ({ groupName, groupedComponentMetadata }) => {
     const componentPaths = _.chain(groupedComponentMetadata[groupName]).keys().sortBy().value();
     return (
         <ul>
-            {_.map(componentPaths, (path) => {
+            {_.map(componentPaths, (path, i) => {
                 const componentName = extractComponentNameFromPath(path);
-                return <li><a href={`/components/${groupName}#${componentName}`}>{componentName}</a></li>;
+                return <li key={i}><a className="link" href={`/components/${groupName}#${componentName}`}>{componentName}</a></li>;
             })}
         </ul>
     );
@@ -29,32 +29,31 @@ const ComponentsPage = (props) => {
             <Header
                 iconUrl="/public/ico_code-2.svg"
                 pageTitle="Components"
-                withMask={true}
-                withContentOverlap={true}>
+                withMask={false}
+                withContentOverlap={false}>
                 <div>
                     Here are the <a className="link" href="http://bradfrost.com/blog/post/atomic-web-design/">Atom Design</a> components, split by category.
                 </div>
             </Header>
             <div className="sg-components content-wrapper">
-                <div className="focus-box">
-                    <div className="focus-box__content-outer">
-                        <div className="focus-box__content-inner">
-                            <ul>
-                                <li>
-                                    <a href="/components/atoms">Atoms</a>
-                                    <ComponentList groupName="atoms" groupedComponentMetadata={groupedComponentMetadata} />
-                                </li>
-                                <li>
-                                    <a href="/components/molecules">Molecules</a>
-                                    <ComponentList groupName="molecules" groupedComponentMetadata={groupedComponentMetadata} />
-                                </li>
-                                <li>
-                                    <a href="/components/organisms">Organisms</a>
-                                    <ComponentList groupName="organisms" groupedComponentMetadata={groupedComponentMetadata} />
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
+                <div className="main-content main-content--padded-sides main-content--padding-top main-content--bg-color-white">
+
+                    <h2 className="heading heading--level2"><a className="link" href="/components/atoms">Atoms</a></h2>
+                    <ComponentList groupName="atoms" groupedComponentMetadata={groupedComponentMetadata} />
+
+                    <h2 className="heading heading--level2"><a className="link" href="/components/molecules">Molecules</a></h2>
+                    <ComponentList groupName="molecules" groupedComponentMetadata={groupedComponentMetadata} />
+
+                    <h2 className="heading heading--level2"><a className="link" href="/components/organisms">Organisms</a></h2>
+                    <ComponentList groupName="organisms" groupedComponentMetadata={groupedComponentMetadata} />
+
+                    <h2 className="heading heading--level2">Pages</h2>
+                    <ul>
+                        <li><a className="link" href="/information-article-1">Information article 1</a> - basic components (FullWidthImage, Accordion, BottomComponent, etc)</li>
+                        <li><a className="link" href="/information-article-2">Information article 2</a> - with NumberBoxes</li>
+                        <li><a className="link" href="/information-article-3">Information article 3</a> - with StepByStep</li>
+                        <li><a className="link" href="/information-article-4">Information article 4</a> - with table</li>
+                    </ul>
                 </div>
             </div>
         </div>

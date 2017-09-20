@@ -17,7 +17,7 @@ const WritingCssSection = () =>
             <li><code className="language-css">.block__element</code> represents a descendent of <code className="language-css">.block</code> that helps form <code className="language-css">.block</code> as a whole.</li>
             <li><code className="language-css">.block--modifier</code> represents a different state or version of <code className="language-css">.block</code>.</li>
         </ul>
-        <p>For more information on BEM, <a href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article</a>.</p>
+        <p>For more information on BEM, <a className="link" href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article</a>.</p>
     </div>;
 
 export default WritingCssSection;

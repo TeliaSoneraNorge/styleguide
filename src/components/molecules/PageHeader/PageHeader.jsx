@@ -46,8 +46,8 @@ export default class PageHeader extends React.Component {
                     </form>
                     <nav className="page-header__menu-nav">
                         <ul className="page-header__menu-item-list">
-                            {_.map(this.props.menuLinks, (menuLink) =>
-                                <li className="page-header__menu-item">
+                            {_.map(this.props.menuLinks, (menuLink, i) =>
+                                <li key={i} className="page-header__menu-item">
                                     <a className="page-header__menu-item-link" href={menuLink.url}>
                                         {menuLink.text}
                                     </a>

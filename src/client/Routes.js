@@ -28,7 +28,9 @@ const Routes = (props) =>
                 { text: "Components", url: "/components" },
                 { text: "Contributing", url: "/contributing" },
                 { text: "Download", url: "/download" }
-            ]} />
+            ]}
+            isLoggedIn={true}
+            loggedInUserName={"Code Monkey"} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/components" component={ComponentsPage} />

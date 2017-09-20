@@ -11,7 +11,7 @@ const SizesAndUnitsSection = () =>
             <li>Media queries should be in EM's.</li>
             <li>Pixels should be avoided, where possible.</li>
         </ul>
-        <p>Source: <a href="http://engageinteractive.co.uk/blog/em-vs-rem-vs-px">EM vs REM vs PX – Why you shouldn't “just use pixels”</a></p>
+        <p>Source: <a className="link" href="http://engageinteractive.co.uk/blog/em-vs-rem-vs-px">EM vs REM vs PX – Why you shouldn't “just use pixels”</a></p>
     </div>;
 
 export default SizesAndUnitsSection;

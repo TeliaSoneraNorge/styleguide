@@ -15,7 +15,7 @@ const DownloadPage = ({ colors }) =>
         <p>2) Link to the downloaded CSS file in your HTML:</p>
         <CodeSnippet code={codeSnippets.stylesheetHtmlTag} language="markup" />
         <p><strong>Do not link directly to anything on the styleguide website!</strong></p>
-        <p><a className="button" href="/download-zip" target="_blank">Download</a></p>
+        <p><a className="button button--action" href="/download-zip" target="_blank">Download</a></p>
     </div>;
 
 export default DownloadPage;
