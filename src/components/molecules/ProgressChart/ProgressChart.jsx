@@ -29,16 +29,24 @@ const ProgressChart = ({
             value={loading ? 1 : percent}
         />
         <div className="progress-chart__side">
-            <div className={classNames('progress-chart__caption', { 'progress-chart__caption--hidden-top': loading })}>
-                <span className="progress-chart__caption-value">
-                    {value}&nbsp;{valueCaption}
-                </span>
-            </div>
-            <div className={classNames('progress-chart__caption', { 'progress-chart__caption--hidden-bottom': !loading })}>
-                <Spinner className="progress-chart__spinner" type="sm" />
-                <span className="progress-chart__caption-loading">
-                    {loadingCaption}
-                </span>
+            <div className={classNames(
+                'progress-chart__side-inner',
+                {
+                    'progress-chart__side-inner--hidden-top': loading,
+                    'progress-chart__side-inner--hidden-bottom': !loading,
+                }
+                )}>
+                <div className={classNames('progress-chart__caption', { 'progress-chart__caption--hidden': loading })}>
+                    <span className="progress-chart__caption-value">
+                        {value}&nbsp;{valueCaption}
+                    </span>
+                </div>
+                <div className={classNames('progress-chart__caption', { 'progress-chart__caption--hidden': !loading })}>
+                    <Spinner className="progress-chart__spinner" type="sm" />
+                    <span className="progress-chart__caption-loading">
+                        {loadingCaption}
+                    </span>
+                </div>
             </div>
         </div>
     </div>
