@@ -1,10 +1,10 @@
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const classNames = (additionalClassName, type) =>
     [ 'spinner', `spinner--${type}`, additionalClassName ]
         .filter(cls => !!cls)
-        .join(' ')
+        .join(' ');
 
 /**
  * Status: *in progress*.
@@ -29,15 +29,15 @@ const Spinner = ({ className, type }) => (
         <div className="spinner__blade spinner__blade--12" />
         <div className="spinner__blade spinner__blade--13" />
     </div>
-)
+);
 
 Spinner.propTypes = {
     className: PropTypes.string,
     type: PropTypes.string
-}
+};
 
 Spinner.defaultProps = {
     type: 'lg'
-}
+};
 
-export default Spinner
+export default Spinner;

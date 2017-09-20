@@ -1,13 +1,13 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const clamp = (min, max, value) => {
-    if (value < min) return min
-    if (value > max) return max
+    if (value < min) return min;
+    if (value > max) return max;
 
-    return value
-}
+    return value;
+};
 
 const ProgressBar = ({
     value,
@@ -29,7 +29,7 @@ const ProgressBar = ({
             style={{ width: `${(clamp(min, max, value) - min) / (max - min) * 100}%` }}
         />
     </div>
-)
+);
 
 ProgressBar.propTypes = {
     value: PropTypes.number.isRequired,
@@ -37,10 +37,10 @@ ProgressBar.propTypes = {
     max: PropTypes.number.isRequired,
     barColor: PropTypes.string,
     disabled: PropTypes.bool
-}
+};
 
 ProgressBar.defaultProps = {
     barColor: 'green'
-}
+};
 
-export default ProgressBar
+export default ProgressBar;

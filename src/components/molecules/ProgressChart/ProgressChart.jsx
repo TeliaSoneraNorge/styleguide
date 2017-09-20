@@ -1,10 +1,10 @@
-import React from 'react'
-import classNames from 'classnames'
-import PropTypes from 'prop-types'
+import React from 'react';
+import classNames from 'classnames';
+import PropTypes from 'prop-types';
 
-import ProgressBar from '../../atoms/ProgressBar/ProgressBar'
-import Spinner from '../../atoms/Spinner/Spinner'
-import { getThresholdFromValue } from '../DonutChart/DonutChart'
+import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
+import Spinner from '../../atoms/Spinner/Spinner';
+import { getThresholdFromValue } from '../DonutChart/DonutChart';
 
 /**
  * Status: *in progress*.
@@ -42,7 +42,7 @@ const ProgressChart = ({
             </div>
         </div>
     </div>
-)
+);
 
 ProgressChart.propTypes = {
     loading: PropTypes.bool,
@@ -50,15 +50,15 @@ ProgressChart.propTypes = {
     value: PropTypes.string,
     percent: (props, propName) => {
         if(props[propName] === undefined || props[propName] === null) {
-            return null
+            return null;
         }
 
         if(typeof props[propName] !== 'number') {
-            return new Error(`${propName} has to be a number`)
+            return new Error(`${propName} has to be a number`);
         }
 
         if(props[propName] < 0 || props[propName] > 1) {
-            return new Error(`${propName} has to be within interval 0..1`)
+            return new Error(`${propName} has to be within interval 0..1`);
         }
     },
     valueCaption: PropTypes.string,
@@ -66,7 +66,7 @@ ProgressChart.propTypes = {
       to: React.PropTypes.number.isRequired,
       type: React.PropTypes.string.isRequired
     }))
-}
+};
 
 
 ProgressChart.defaultProps = {
@@ -77,6 +77,6 @@ ProgressChart.defaultProps = {
         { to: 0.6, type: 'orange' },
         { to: 1, type: 'green' }
     ]
-}
+};
 
-export default ProgressChart
+export default ProgressChart;

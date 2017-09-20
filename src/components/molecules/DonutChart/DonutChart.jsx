@@ -1,24 +1,24 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import classNames from 'classnames'
+import React from 'react';
+import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
-import Spinner from '../../atoms/Spinner/Spinner'
+import Spinner from '../../atoms/Spinner/Spinner';
 
-const radius = 0.9
-const circumference = 2 * Math.PI * radius
+const radius = 0.9;
+const circumference = 2 * Math.PI * radius;
 
 export const getThresholdFromValue = (thresholds, value) =>
     thresholds
         .sort((a, b) => b.to - a.to)
-        .reduce((prev, curr) => curr.to >= value ? curr : prev, null)
+        .reduce((prev, curr) => curr.to >= value ? curr : prev, null);
 
 const getDashOffsetFromPercentage = (percentage) =>
-    circumference * (1 - percentage)
+    circumference * (1 - percentage);
 
 const getDashOffsetIfLoading = (loading, percentage) =>
     loading
     ? 0
-    : getDashOffsetFromPercentage(percentage)
+    : getDashOffsetFromPercentage(percentage);
 
 /**
  * Status: *in progress*.
@@ -67,7 +67,7 @@ const DonutChart = ({
             <p className="donut-chart__value-caption">{valueCaption}</p>
         </div>
     </div>
-)
+);
 
 DonutChart.propTypes = {
     loading: PropTypes.bool,
@@ -76,15 +76,15 @@ DonutChart.propTypes = {
     value: PropTypes.string,
     percent: (props, propName) => {
         if(props[propName] === undefined || props[propName] === null) {
-            return null
+            return null;
         }
 
         if(typeof props[propName] !== 'number') {
-            return new Error(`${propName} has to be a number`)
+            return new Error(`${propName} has to be a number`);
         }
 
         if(props[propName] < 0 || props[propName] > 1) {
-            return new Error(`${propName} has to be within interval 0..1`)
+            return new Error(`${propName} has to be within interval 0..1`);
         }
     },
     valueCaption: PropTypes.string,
@@ -92,7 +92,7 @@ DonutChart.propTypes = {
       to: React.PropTypes.number.isRequired,
       type: React.PropTypes.string.isRequired
     }))
-}
+};
 
 DonutChart.defaultProps = {
     size: 266,
@@ -103,6 +103,6 @@ DonutChart.defaultProps = {
         { to: 0.6, type: 'orange' },
         { to: 1, type: 'green' }
     ]
-}
+};
 
-export default DonutChart
+export default DonutChart;
