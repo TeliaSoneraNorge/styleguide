@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Default",
+        "props": {
+            "min": 20,
+            "max": 40,
+            "value": 35
+        }
+    }
+]
