@@ -24,16 +24,16 @@ export default {
     'src/components/atoms/Button/Button.jsx': Button,
     'src/components/atoms/Heading/Heading.jsx': Heading,
     'src/components/atoms/Link/Link.jsx': Link,
-    'src/components/atoms/ToggleButton/ToggleButton.jsx': ToggleButton,
-    'src/components/atoms/Spinner/Spinner.jsx': Spinner,
     'src/components/atoms/ProgressBar/ProgressBar.jsx': ProgressBar,
+    'src/components/atoms/Spinner/Spinner.jsx': Spinner,
+    'src/components/atoms/ToggleButton/ToggleButton.jsx': ToggleButton,
 
     'src/components/molecules/Alert/Alert.jsx': Alert,
+    'src/components/molecules/DonutChart/DonutChart.jsx': DonutChart,
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
-    'src/components/molecules/Subscription/Subscription.jsx': Subscription,
-    'src/components/molecules/DonutChart/DonutChart.jsx': DonutChart,
-    'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart
+    'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
+    'src/components/molecules/Subscription/Subscription.jsx': Subscription
 };

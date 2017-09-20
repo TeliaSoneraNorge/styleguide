@@ -49,25 +49,24 @@ ProgressChart.propTypes = {
     loadingCaption: PropTypes.string,
     value: PropTypes.string,
     percent: (props, propName) => {
-        if(props[propName] === undefined || props[propName] === null) {
+        if (props[propName] === undefined || props[propName] === null) {
             return null;
         }
 
-        if(typeof props[propName] !== 'number') {
+        if (typeof props[propName] !== 'number') {
             return new Error(`${propName} has to be a number`);
         }
 
-        if(props[propName] < 0 || props[propName] > 1) {
+        if (props[propName] < 0 || props[propName] > 1) {
             return new Error(`${propName} has to be within interval 0..1`);
         }
     },
     valueCaption: PropTypes.string,
     thresholds: PropTypes.arrayOf(PropTypes.shape({
-      to: React.PropTypes.number.isRequired,
-      type: React.PropTypes.string.isRequired
+        to: React.PropTypes.number.isRequired,
+        type: React.PropTypes.string.isRequired
     }))
 };
-
 
 ProgressChart.defaultProps = {
     loadingCaption: "Henter data...",
