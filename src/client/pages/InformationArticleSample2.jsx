@@ -10,48 +10,48 @@ const InformationArticleSample2 = () =>
             <p>On this page you can have a look at a template for an Information Article Page
                 and some of the components in the styleguide combined with each other.</p>
         </Header>
-        <ul className="number-boxes">
-            <li className="number-box">
-                <span className="number-box__title"></span>
-                <span className="number-box__number"></span>
-                <span className="number-box__unit"></span>
-                <span className="number-box__text"></span>
+        <ul className="fact-boxes">
+            <li className="fact-box">
+                <span className="fact-box__title"></span>
+                <span className="fact-box__number"></span>
+                <span className="fact-box__unit"></span>
+                <span className="fact-box__text"></span>
             </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
+            <li className="fact-box">
+                <span className="fact-box__title">A small title</span>
+                <span className="fact-box__number">45 609</span>
+                <span className="fact-box__unit">Unit</span>
+                <span className="fact-box__text">a short descriptive text</span>
             </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
+            <li className="fact-box">
+                <span className="fact-box__title">A small title</span>
+                <span className="fact-box__number">45 609</span>
+                <span className="fact-box__unit">Unit</span>
+                <span className="fact-box__text">a short descriptive text</span>
             </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
+            <li className="fact-box">
+                <span className="fact-box__title">A small title</span>
+                <span className="fact-box__number">45 609</span>
+                <span className="fact-box__unit">Unit</span>
+                <span className="fact-box__text">a short descriptive text</span>
             </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
+            <li className="fact-box">
+                <span className="fact-box__title">A small title</span>
+                <span className="fact-box__number">45 609</span>
+                <span className="fact-box__unit">Unit</span>
+                <span className="fact-box__text">a short descriptive text</span>
             </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
+            <li className="fact-box">
+                <span className="fact-box__title">A small title</span>
+                <span className="fact-box__number">45 609</span>
+                <span className="fact-box__unit">Unit</span>
+                <span className="fact-box__text">a short descriptive text</span>
             </li>
-            <li className="number-box">
-                <span className="number-box__title"></span>
-                <span className="number-box__number"></span>
-                <span className="number-box__unit"></span>
-                <span className="number-box__text"></span>
+            <li className="fact-box">
+                <span className="fact-box__title"></span>
+                <span className="fact-box__number"></span>
+                <span className="fact-box__unit"></span>
+                <span className="fact-box__text"></span>
             </li>
         </ul>
         <div className="main-content main-content--padded-sides">
