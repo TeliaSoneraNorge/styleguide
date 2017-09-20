@@ -34,6 +34,6 @@ const ComponentsPage = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default ComponentsPage;

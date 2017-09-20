@@ -24,6 +24,6 @@ const FunkyTab = (props) => {
             </a>
         </li>
     );
-}
+};
 
 export default FunkyTab;

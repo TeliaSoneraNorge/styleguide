@@ -13,7 +13,7 @@ import ProgressBar from './atoms/ProgressBar/ProgressBar';
 
 import Alert from './molecules/Alert/Alert';
 import FocusBox from './molecules/FocusBox/FocusBox';
-import Header from './molecules/Header/Header'
+import Header from './molecules/Header/Header';
 import PageFooter from './molecules/PageFooter/PageFooter';
 import PageHeader from './molecules/PageHeader/PageHeader';
 import Subscription from './molecules/Subscription/Subscription';
