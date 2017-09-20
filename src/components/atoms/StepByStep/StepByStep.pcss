@@ -1,0 +1,80 @@
+.step-by-step {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0 0 2rem;
+    padding: 0;
+
+    &__step {
+        display: flex;
+        flex: 1 1 100%;
+        flex-wrap: wrap;
+
+        &:not(:last-of-type):after {
+            border-left: 1px solid var(--grey);
+            content: '';
+            display: block;
+            flex: 1 1 100%;
+            margin: -30px 0 0 38px;
+            min-height: 65px;
+        }
+    }
+
+    &__circle {
+        background-color: var(--light-grey);
+        border-radius: 50%;
+        border: 1px solid var(--grey);
+        display: inline-block;
+        height: 75px;
+        position: relative;
+        text-align: center;
+        vertical-align: top;
+        width: 75px;
+        z-index: 1; /*To make the circle lay on top of the vertical border */
+
+        &--no-border {
+            border: none;
+        }
+    }
+
+    &__icon {
+        height: 75px;
+        padding: 15px;
+        width: 75px;
+    }
+
+    &__image {
+        border-radius: 50%;
+        height: 75px;
+        width: 75px;
+    }
+
+    &__number {
+        font-size: 3rem;
+        height: 75px;
+        padding: 15px;
+        width: 75px;
+    }
+
+    &__line {
+        border-left: 1px solid var(--grey);
+        height: 50px;
+        margin: -9px 0 0 50%;
+    }
+
+    &__text {
+        display: inline-block;
+        flex: 6 0 0%;
+        padding: 0 0 0 0.5rem;
+    }
+
+    &__heading {
+        display: block;
+        font-weight: 600;
+    }
+
+    &__description {
+        display: block;
+        font-size: 0.85rem;
+    }
+}

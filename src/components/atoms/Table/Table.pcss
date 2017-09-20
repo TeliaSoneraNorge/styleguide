@@ -1,0 +1,53 @@
+.table {
+    border-collapse: collapse;
+    position: relative;
+    width: 100%;
+
+    /*Border on top and on bottom of table body*/
+    &:before, &:after {
+        content: "";
+        position: absolute;
+        left: -9999px;
+        right: -9999px;
+        border-top: 1px solid var(--grey);
+    }
+
+    &__header {
+        line-height: 50px;
+
+        /*Border on top of table*/
+        &:before{
+            content: "";
+            position: absolute;
+            left: -9999px;
+            right: -9999px;
+            border-bottom: 1px solid var(--grey);
+        }
+    }
+
+    &__body {
+        .table__row:nth-child(odd) {
+                background-color: var(--white);
+        }
+    }
+
+    &__row {
+        background-color: var(--light-grey);
+        display: flex;
+        margin: 0 -9999rem;
+        /* add back negative margin value */
+        padding: 0 9999rem;
+    }
+
+    &__cell {
+        display: inline;
+        flex: 0 1 auto;
+        padding: 0.5rem 0;
+        text-align: right;
+        width: 100%;
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+}
