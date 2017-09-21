@@ -1,4 +1,4 @@
-.table {
+.full-width-table {
     border-collapse: collapse;
     position: relative;
     width: 100%;
@@ -12,8 +12,9 @@
         border-top: 1px solid var(--grey);
     }
 
-    &__header {
+    &__header, thead {
         line-height: 50px;
+        font-weight: 600;
 
         /*Border on top of table*/
         &:before{
@@ -25,13 +26,13 @@
         }
     }
 
-    &__body {
-        .table__row:nth-child(odd) {
+    &__body, tbody {
+        .full-width-table__row:nth-child(odd), tr:nth-child(odd) {
                 background-color: var(--white);
         }
     }
 
-    &__row {
+    &__row, tr {
         background-color: var(--light-grey);
         display: flex;
         margin: 0 -9999rem;
@@ -39,7 +40,7 @@
         padding: 0 9999rem;
     }
 
-    &__cell {
+    &__cell, th, td {
         display: inline;
         flex: 0 1 auto;
         padding: 0.5rem 0;
