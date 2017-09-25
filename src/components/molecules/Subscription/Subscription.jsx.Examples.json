@@ -1,6 +1,7 @@
 [
     {
         "name": "Subscription - Small",
+        "containerCssClass": "subscription-wrapper",
         "props": {
             "name": "SMART Mini",
             "id": "smartMini",
@@ -12,6 +13,7 @@
     },
     {
         "name": "Subscription - 3-digit MB",
+        "containerCssClass": "subscription-wrapper",
         "props": {
             "name": "SMART Kontant",
             "id": "smartKontant",
@@ -23,6 +25,7 @@
     },
     {
         "name": "Subscription - Showing features",
+        "containerCssClass": "subscription-wrapper",
         "props": {
             "name": "SMART Total",
             "id": "smartTotal",
@@ -30,11 +33,16 @@
             "dataUnit": "GB",
             "price": 699,
             "color": "blue",
-            "isShowingFeatures": true
+            "isShowingFeatures": true,
+            "highlightedFeature": {
+                "icon": "/public/icons/ico_music.svg",
+                "name": "Music Freedom"
+            }
         }
     },
     {
         "name": "Subscription - Fully expanded",
+        "containerCssClass": "subscription-wrapper",
         "props": {
             "name": "SMART Pluss",
             "id": "smartPluss",
@@ -42,7 +50,12 @@
             "dataUnit": "GB",
             "price": 399,
             "color": "green",
-            "isExpanded": true
+            "isExpanded": true,
+            "highlightedFeature": {
+                "icon": "/public/icons/ico_music.svg",
+                "name": "Music Freedom"
+            },
+            "specialMessageText": "Listen to as music as you want without using your data quota!"
         }
     }
 ]

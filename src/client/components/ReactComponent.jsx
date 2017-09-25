@@ -41,7 +41,7 @@ const ReactComponent = ({ path, metadata }) => {
                         <Heading level={3} text={example.name} />
                         <Tabs>
                             <Tabs.Panel title="Example">
-                                <div className="inner-content">
+                                <div className={`inner-content ${example.containerCssClass || ''}`}>
                                     {componentWithProps}
                                 </div>
                             </Tabs.Panel>
