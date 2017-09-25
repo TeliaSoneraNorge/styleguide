@@ -1,24 +1,62 @@
 .fact-boxes {
+    background-color: var(--grey);
     cursor: all-scroll;
     display: flex;
     flex-wrap: nowrap;
     list-style: none;
-    margin: 0.3rem 0;
+    margin: 4px 0;
     overflow: hidden;
     overflow-x: auto;
     padding: 0;
     text-align: center;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+
+    @media all and (min-width: em(768)) {
+        &::-webkit-scrollbar-track {
+            background-color: var(--light-grey);
+        }
+
+        &::-webkit-scrollbar {
+            display: block;
+            width: 20px;
+            background-color: var(--grey);
+        }
+
+        &::-webkit-scrollbar-thumb {
+            border-radius: 5px;
+            background-color: var(--dark-grey);
+            border-bottom: 2px solid var(--light-grey);
+            border-top: 2px solid var(--light-grey);
+        }
+    }
 }
 
 .fact-box {
     background-color: var(--grey);
-    margin: 0 0.3rem 0 0;
-    flex: 0 0 200px;
+    border-left: 4px solid var(--white);
+    flex: 0 0 180px;
     padding: 1.5rem 1rem;
+
+    @media all and (min-width: em(768)) {
+        flex: 0 0 250px;
+        padding: 2rem 1rem;
+    }
+
+    &:first-child {
+        margin-left: auto;
+    }
+
+    &:last-child {
+        border-right: 4px solid var(--white);
+        margin-right: auto;
+    }
 
     &__title {
         display: block;
-        font-size: 0.6rem;
+        font-size: 0.75rem;
         font-weight: 600;
         text-transform: uppercase;
     }
@@ -26,20 +64,30 @@
     &__number {
         display: block;
         font-family: 'pebble';
-        font-size: 2rem;
+        font-size: 2.5rem;
         line-height: 2.5rem;
+
+        @media all and (min-width: em(768)) {
+            font-size: 3.75rem;
+            line-height: 3.75rem;
+        }
     }
 
     &__unit {
         display: block;
         font-family: 'pebble';
-        font-size: 1rem;
-        line-height: 1rem;
+        font-size: 1.25rem;
+        line-height: 1.25rem;
         text-transform: uppercase;
+
+        @media all and (min-width: em(768)) {
+            font-size: 1.875rem;
+            line-height: 1.875rem;
+        }
     }
 
     &__text {
         display: block;
-        font-size: 0.6rem;
+        font-size: 0.75rem;
     }
 }
