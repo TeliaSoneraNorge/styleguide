@@ -25,13 +25,13 @@ const InformationArticleSample1 = ({ colors }) =>
                     <li className="list__item">Second link in list</li>
                     <li className="list__item">Third link in list</li>
                 </ul>
-            </div>
-            <div className="focus-box">
-                <div className="focus-box__content-outer">
-                    <div className="focus-box__content-inner">
-                        <p>In the case where there is a Focus Box overlapping the image, the content should be padded on the sides. This is specified like this: <code>&lt;div class="main-content main-content--padded-sides"&gt;</code></p>
-                        <p>If some other content is used to overlap the image, you can specify the class <code>main-content--padding-top"</code> to add padding on top if you need to.</p>
-                        <button className="button">Click me</button>
+                <div className="focus-box focus-box--expanded-width">
+                    <div className="focus-box__content-outer">
+                        <div className="focus-box__content-inner">
+                            <p>In the case where there is a Focus Box overlapping the image, the content should be padded on the sides. This is specified like this: <code>&lt;div class="main-content main-content--padded-sides"&gt;</code></p>
+                            <p>If some other content is used to overlap the image, you can specify the class <code>main-content--padding-top"</code> to add padding on top if you need to.</p>
+                            <button className="button">Click me</button>
+                        </div>
                     </div>
                 </div>
             </div>
