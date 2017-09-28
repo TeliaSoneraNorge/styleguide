@@ -1,0 +1,70 @@
+.page-pebbles {
+    background: none;
+
+    @media all and (min-width: em(768)){
+        min-height: 300px;
+        position: relative;
+
+        &:before {
+            background-image: url('/public/pebbles/pebble-5.svg'),
+                              url('/public/pebbles/pebble-6.svg'),
+                              url('/public/pebbles/pebble-7.svg'),
+                              url('/public/pebbles/pebble-8.svg'),
+                              url('/public/pebbles/pebble-9.svg');
+            background-position: 2% 40%, 93% 100%, -3% 70%, 105% 90%, 100% 30%;
+            background-repeat: no-repeat;
+            background-size: 5%, 8%, 10%, 12%, 15%;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &--variant-1:before {
+            background-image: url('/public/pebbles/pebble-10.svg'),
+                              url('/public/pebbles/pebble-11.svg'),
+                              url('/public/pebbles/pebble-12.svg'),
+                              url('/public/pebbles/pebble-13.svg'),
+                              url('/public/pebbles/pebble-19.svg');
+            background-position: 98% 40%, 6% 100%, 103% 70%, -5% 90%, 0% 31%;
+        }
+
+        &--variant-2:before {
+            background-image: url('/public/pebbles/pebble-18.svg'),
+                              url('/public/pebbles/pebble-16.svg'),
+                              url('/public/pebbles/pebble-17.svg'),
+                              url('/public/pebbles/pebble-15.svg'),
+                              url('/public/pebbles/pebble-14.svg');
+            background-position: 95% 45%, 5% 40%, 94% 85%, -5% 65%, 105% 25%;
+        }
+
+        &--variant-3:before {
+            background-image: url('/public/pebbles/pebble-23.svg'),
+                              url('/public/pebbles/pebble-20.svg'),
+                              url('/public/pebbles/pebble-24.svg'),
+                              url('/public/pebbles/pebble-22.svg'),
+                              url('/public/pebbles/pebble-21.svg');
+            background-position: 5% 45%, 95% 40%, 4% 85%, 105% 65%, -5% 25%;
+        }
+
+        &--variant-4:before {
+            background-image: url('/public/pebbles/pebble-25.svg'),
+                              url('/public/pebbles/pebble-26.svg'),
+                              url('/public/pebbles/pebble-27.svg'),
+                              url('/public/pebbles/pebble-28.svg'),
+                              url('/public/pebbles/pebble-29.svg');
+            background-position: 10% 95%, 1% 40%, 99% 35%, -5% 65%, 105% 85%;
+        }
+
+        &--variant-5:before {
+            background-image: url('/public/pebbles/pebble-32.svg'),
+                              url('/public/pebbles/pebble-31.svg'),
+                              url('/public/pebbles/pebble-34.svg'),
+                              url('/public/pebbles/pebble-36.svg'),
+                              url('/public/pebbles/pebble-30.svg');
+            background-position: 90% 90%, 99% 40%, 1% 35%, 105% 65%, -5% 85%;
+        }
+    }
+}

@@ -3,7 +3,7 @@ import React from 'react';
 import Header from '../../components/molecules/Header/Header';
 
 const InformationArticleSample4 = () =>
-    <div className="page-pebbels">
+    <div className="page-pebbles">
         <Header pageTitle="Information Article" withMask={false} withContentOverlap={false}>
             <p>
                 On this page you can have a look at a template for an Information Article Page
