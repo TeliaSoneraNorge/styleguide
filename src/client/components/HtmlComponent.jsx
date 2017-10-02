@@ -9,7 +9,7 @@ import { extractComponentNameFromPath, isFullWidthComponent } from '../utils/com
 const HtmlComponent = ({ path, metadata }) => {
     const componentName = extractComponentNameFromPath(path);
     return (
-        <div id={componentName}>
+        <div id={componentName} className="sg-component">
             <div className="container container--medium container--no-margin">
                 <Heading level={2} text={componentName} />
                 <div dangerouslySetInnerHTML={{ __html: metadata.documentation }}></div>
@@ -27,7 +27,7 @@ const HtmlComponent = ({ path, metadata }) => {
                     </div>
                 ) :
                 _.map(metadata.examples, (example, i) =>
-                    <div key={i} className="container container--medium">
+                    <div key={i} className="container container--medium container--no-margin">
                         <Heading level={3} text={example.name} />
                         <div dangerouslySetInnerHTML={{ __html: example.html }}></div>
                         <CodeSnippet code={example.html} language="markup" />
