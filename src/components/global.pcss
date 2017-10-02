@@ -4,10 +4,10 @@ html {
     font-family: 'Neue Helvetica W01', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 }
 body {
-    margin: 0;
-    padding: 0;
     font-size: 16px;
     line-height: 1.5;
+    margin: 0;
+    padding: 0;
 }
 *, :after, :before {
     box-sizing: inherit;
@@ -18,7 +18,33 @@ body {
     src: url('/public/fonts/Pebble_W_Rg.woff') format('woff');
 }
 
-.content-wrapper {
-    margin: 0 auto;
-    max-width: var(--width-large);
+.container {
+    color: var(--black);
+    letter-spacing: 0;
+    margin: 0 auto 2.5rem;
+    padding: var(--padding);
+    text-align: left;
+
+    &--small {
+        max-width: var(--width-small);
+    }
+    &--medium {
+        max-width: var(--width-medium);
+    }
+    &--large {
+        max-width: var(--width-large);
+    }
+
+    &--main-wrapper {
+        padding: 2.5rem 0 0 0;
+    }
+    &--no-margin {
+        margin: 0 auto;
+    }
+    &--no-padding {
+        padding: 0;
+    }
+    &--white-bg {
+        background-color: var(--white);
+    }
 }

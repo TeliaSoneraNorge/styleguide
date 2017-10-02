@@ -25,3 +25,19 @@ export function groupComponentMetadataByType(componentMetadata) {
 
     return groupedMetadata;
 }
+
+export function isFullWidthComponent(componentName) {
+    const fullWidthComponents = [
+        // Atoms
+        'FactBoxes',
+        'FullWidthImage',
+
+        // Molecules
+        'BottomComponent',
+        'FunkyTabs',
+        'Header',
+        'PageHeader',
+        'PageFooter'
+    ];
+    return _.includes(fullWidthComponents, componentName);
+}

@@ -172,7 +172,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={1}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="main-content subscription-wrapper">
+                        <section className="subscription-wrapper">
                             {underFemtenSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -180,7 +180,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={2}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="main-content subscription-wrapper">
+                        <section className="subscription-wrapper">
                             {underTjueAatteSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -188,7 +188,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={3}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="main-content subscription-wrapper">
+                        <section className="subscription-wrapper">
                             {forAlleSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -196,7 +196,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={4}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="main-content subscription-wrapper">
+                        <section className="subscription-wrapper">
                             {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>

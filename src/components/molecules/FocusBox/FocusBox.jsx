@@ -12,7 +12,7 @@ import React from 'react';
 const FocusBox = ({ children }) =>
     <div className="focus-box">
         <div className="focus-box__content-outer">
-            <section className="focus-box__content-inner">
+            <section className="container container--small container--no-margin">
                 {children}
             </section>
         </div>

@@ -29,17 +29,15 @@ const VariablesSection = ({ variablesCss }) =>
 
         <Tabs>
             <Tabs.Panel title="Different Widths">
-                <div className="inner-content">
-                    <div className="sg-grid-example">
-                        <div className="sg-grid-example__content sg-grid-example__width-large">
-                            <p>This content uses: --width-large.</p>
-                        </div>
-                        <div className="sg-grid-example__content sg-grid-example__width-medium">
-                            <p>This content uses: --width-medium.</p>
-                        </div>
-                        <div className="sg-grid-example__content sg-grid-example__width-small">
-                            <p>This content uses: --width-small.</p>
-                        </div>
+                <div className="sg-grid-example">
+                    <div className="sg-grid-example__content sg-grid-example__width-large">
+                        <p>This content uses: --width-large.</p>
+                    </div>
+                    <div className="sg-grid-example__content sg-grid-example__width-medium">
+                        <p>This content uses: --width-medium.</p>
+                    </div>
+                    <div className="sg-grid-example__content sg-grid-example__width-small">
+                        <p>This content uses: --width-small.</p>
                     </div>
                 </div>
             </Tabs.Panel>

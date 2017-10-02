@@ -5,6 +5,7 @@ import PageHeader from '../components/molecules/PageHeader/PageHeader';
 import PageFooter from '../components/molecules/PageFooter/PageFooter';
 
 import HomePage from './pages/HomePage';
+import LayoutPage from './pages/LayoutPage';
 import ComponentsPage from './pages/ComponentsPage';
 import ComponentsByTypePage from './pages/ComponentsByTypePage';
 import ContributingPage from './pages/ContributingPage';
@@ -25,6 +26,7 @@ const Routes = (props) =>
             logoImageMobilePath="/public/images/logo/logo_mob.svg"
             menuLinks={[
                 { text: "Home", url: "/" },
+                { text: "Layout", url: "/layout" },
                 { text: "Components", url: "/components" },
                 { text: "Contributing", url: "/contributing" },
                 { text: "Download", url: "/download" }
@@ -33,6 +35,7 @@ const Routes = (props) =>
             loggedInUserName={"Code Monkey"} />
 
         <Route exact path="/" component={HomePage} />
+        <Route exact path="/layout" component={LayoutPage} />
         <Route exact path="/components" component={ComponentsPage} />
         <Route exact path="/components/:componentType" component={ComponentsByTypePage} />
         <Route exact path="/contributing" component={ContributingPage} />

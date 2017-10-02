@@ -12,7 +12,7 @@ import React from 'react';
 const PageFooter = ({ links, specialLink }) =>
     <footer className="page-footer">
         <div className="page-footer__content">
-            <div className="page-footer__content-wrapper content-wrapper">
+            <div className="page-footer__content-wrapper">
                 <nav className="page-footer__main-nav">
                     {_.map(links, (link, i) =>
                         <a key={i} className="page-footer__link" href={link.url}>{link.text}</a>

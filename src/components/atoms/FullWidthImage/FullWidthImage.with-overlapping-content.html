@@ -2,27 +2,33 @@
     <img class="full-width-image__image" src="https://placekitten.com/1600/500" alt="Kitten" />
 </div>
 
-<div class="main-content main-content--bg-color-white main-content--padding-top main-content--padded-sides">
-    <section class="body-text-container">
-        <p>If you add the <code>--with-content-overlap</code> CSS class then the
+<div class="container container--medium container--white-bg">
+    <div class="container container--small">
+        <p>
+            If you add the <code>--with-content-overlap</code> CSS class then the
             next piece of content will overlap the image.
         </p>
-        <p>It's recommended to wrap the overlapping content in a <code><span><</span>div class="main-content"></code>
-            to make it responsive and <code><span><</span>section class="body-text-container"></code>
+        <p>
+            It's recommended to wrap the overlapping content in a <code>&lt;div class="main-content"&gt;</code>
+            to make it responsive and <code>&lt;section class="body-text-container"&gt;</code>
             to give the content a max-width to restrict the line length in the text for readability (accessibility) reasons.
         </p>
-        <p>If you also specify the <code>main-content--padding-top</code> CSS class
+        <p>
+            If you also specify the <code>main-content--padding-top</code> CSS class
             the main-content element will be padded on top. This is solved with a modifier class
             because not all elements within the main-content element should have padding on top.
         </p>
-        <p>If you specify the <code>main-content--padded-sides</code> CSS class
+        <p>
+            If you specify the <code>main-content--padded-sides</code> CSS class
             the overlapping content will look the same on smaller devices until it wraps
             beneath the image on the smallest devices.
         </p>
-        <p>Add <code>main-content--bg-color-white</code> if you want the background-color to be white.
+        <p>
+            Add <code>main-content--bg-color-white</code> if you want the background-color to be white.
         </p>
-        <p>It's also recommended to keep the height of the next piece of content tall enough
+        <p>
+            It's also recommended to keep the height of the next piece of content tall enough
             to cover the mask.
         </p>
-    </section>
+    </div>
 </div>
