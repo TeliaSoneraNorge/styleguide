@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Box - Default Small",
+        "props": {
+            "id": "box-1",
+            "color": "pink",
+            "children": "Example 1 - Default Small Box"
+        }
+    },
+    {
+        "name": "Box - Medium",
+        "props": {
+            "id": "box-2",
+            "color": "teal",
+            "isMediumBox": true,
+            "children": "Example 2 - Medium Box"
+        }
+    }
+]

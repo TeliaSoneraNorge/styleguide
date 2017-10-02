@@ -9,7 +9,11 @@ export default class BoxGrid extends React.Component {
     render() {
         return (
             <section className="box-grid">
-                <Box/>
+                <Box color="pink" isMediumBox/>
+                <Box color="green" isMediumBox/>
+                <Box color="blue" isMediumBox/>
+                <Box color="light-orange"/>
+                <Box color="teal"/>
             </section>
         );
     }

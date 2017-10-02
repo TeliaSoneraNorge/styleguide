@@ -4,6 +4,7 @@ const componentMetadata = getReactComponentsMetadata();
 
 // TODO: loop over 'doc' and auto-generate the code below
 
+import Box from './atoms/Box/Box';
 import Button from './atoms/Button/Button';
 import Heading from './atoms/Heading/Heading';
 import Link from './atoms/Link/Link';
@@ -21,6 +22,7 @@ import DonutChart from './molecules/DonutChart/DonutChart';
 import ProgressChart from './molecules/ProgressChart/ProgressChart';
 
 export default {
+    'src/components/atoms/Box/Box.jsx': Box,
     'src/components/atoms/Button/Button.jsx': Button,
     'src/components/atoms/Heading/Heading.jsx': Heading,
     'src/components/atoms/Link/Link.jsx': Link,

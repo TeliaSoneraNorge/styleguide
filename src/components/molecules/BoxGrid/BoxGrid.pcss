@@ -1,3 +1,23 @@
 .box-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
 
+    @media all and (min-width: 25.3125em) {
+        flex-wrap: wrap;
+    }
+
+    .box {
+        display: flex;
+
+        @media all and (min-width: 25.3125em) {
+            flex-basis: auto;
+        }
+
+        &--is-expanded {
+            align-items: flex-start;
+            flex-wrap: wrap;
+        }
+    }
 }
