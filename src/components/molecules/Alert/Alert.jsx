@@ -10,11 +10,7 @@ function classNames(kind) {
 }
 
 /**
- * Status: *in progress*.
- *
- * Work remaining: more variants.
- *
- * The Alert component is still work-in-progress.
+ * Status: *finished*.
  */
 const Alert = ({ kind = "positive", headingText, bodyHtml, links = [] }) =>
     <div className={classNames(kind)}>
@@ -24,8 +20,8 @@ const Alert = ({ kind = "positive", headingText, bodyHtml, links = [] }) =>
             <div dangerouslySetInnerHTML={{ __html: bodyHtml }}></div>
             {links.length > 0 ?
                 <ul className="list list--links list--black">
-                    {_.map(links, (link) =>
-                        <li className="list__item">
+                    {_.map(links, (link, i) =>
+                        <li key={i} className="list__item">
                             <a className="list__link" href={link.url}>{link.text}</a>
                         </li>
                     )}
