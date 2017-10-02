@@ -1,6 +1,6 @@
 <p>
     Use the CSS class <code>.page-pebbles</code> if you want pebbles as decoration on your page.
-    This applies to devices wider than or equal to 768px.
+    This applies to devices wider than or equal to 900px.
 </p>
 <p>
     If you want another pattern of the pebbles, add a second class like this:

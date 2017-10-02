@@ -1,9 +1,12 @@
 .page-pebbles {
+    :first-child {
+        pointer-events: auto;
+    }
+
+    pointer-events: none;
     background: none;
 
     @media all and (min-width: em(900)){
-        min-height: 300px;
-        position: relative;
 
         &:before {
             background-image: url('/public/pebbles/pebble-5.svg'),
@@ -11,13 +14,13 @@
                               url('/public/pebbles/pebble-7.svg'),
                               url('/public/pebbles/pebble-8.svg'),
                               url('/public/pebbles/pebble-9.svg');
-            background-position: -2% 10rem, 100% 15rem, -3% 20rem, 100% 25rem, 100% 35rem;
+            background-position: -2% 3rem, 100% 15rem, -3% 20rem, 100% 25rem, 100% 35rem;
             background-repeat: no-repeat;
             background-size: 15vw, 10vw, 6vw, 4vw, 8vw;
-            background-blend-mode: ;
             content: '';
             display: block;
-            height: 100%;
+            height: 1000px;
+            overflow: hidden;
             position: absolute;
             width: 100%;
             z-index: 0;
@@ -69,3 +72,4 @@
         }
     }
 }
+
