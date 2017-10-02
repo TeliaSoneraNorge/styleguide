@@ -16,8 +16,8 @@ const ProgressBar = ({
     barColor,
     disabled,
 }) => (
-   <div className="progress">
-       <div
+    <div className="progress">
+        <div
             className={classNames(
                 'progress__bar',
                 `progress__bar--${barColor}`,

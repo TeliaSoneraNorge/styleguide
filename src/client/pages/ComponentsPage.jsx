@@ -20,7 +20,7 @@ const ComponentList = ({ groupName, groupedComponentMetadata }) => {
             })}
         </ul>
     );
-}
+};
 
 const ComponentsPage = (props) => {
     const groupedComponentMetadata = groupComponentMetadataByType(componentMetadata);
@@ -55,6 +55,6 @@ const ComponentsPage = (props) => {
             </div>
         </div>
     );
-}
+};
 
 export default ComponentsPage;

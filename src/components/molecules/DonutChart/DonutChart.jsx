@@ -17,8 +17,8 @@ const getDashOffsetFromPercentage = (percentage) =>
 
 const getDashOffsetIfLoading = (loading, percentage) =>
     loading
-    ? 0
-    : getDashOffsetFromPercentage(percentage);
+        ? 0
+        : getDashOffsetFromPercentage(percentage);
 
 /**
  * Status: *in progress*.

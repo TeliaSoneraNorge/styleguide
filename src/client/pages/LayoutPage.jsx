@@ -14,7 +14,7 @@ const containerStyles = {
 const LayoutPage = ({ colors, variablesCss }) =>
     <div>
         <Header iconUrl="/public/ico_code-2.svg" pageTitle="Page Layout & Grid">
-        <p className="paragraph">
+            <p className="paragraph">
                 You will notice that this is at the top of the page and is full-width.
             </p>
         </Header>

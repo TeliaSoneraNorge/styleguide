@@ -1,0 +1,29 @@
+{
+    "env": {
+        "node": true,
+        "es6": true,
+        "browser": true
+    },
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "jsx": true
+        }
+    },
+    "rules": {
+        "semi": "warn",
+        "indent": ["warn", 4],
+        "no-multiple-empty-lines": "warn",
+        "react/react-in-jsx-scope": "warn",
+        "func-call-spacing": "warn",
+        "arrow-spacing": "warn",
+        "no-mixed-spaces-and-tabs": "warn",
+        "eqeqeq": "warn",
+        "camelcase": "warn",
+        "keyword-spacing": "warn"
+    },
+    "plugins": [
+        "react"
+    ]
+}

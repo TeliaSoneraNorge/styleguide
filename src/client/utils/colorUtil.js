@@ -6,7 +6,7 @@ export function fromColorsToCssVariables(colors) {
     let counter = 0;
     _.forEach(colors, (color, name) => {
         const variableName = name.toLowerCase().replace(/\s/g, '-');
-        cssString += `\n    --${variableName}: ${color.hex};`
+        cssString += `\n    --${variableName}: ${color.hex};`;
 
         counter++;
         if (counter === 3) {
@@ -29,7 +29,7 @@ function fromColorsToSassLikeVariables(colors, variablePrefix = '$') {
     let counter = 0;
     _.forEach(colors, (color, name) => {
         const variableName = name.toLowerCase().replace(/\s/g, '-');
-        cssString += `${variablePrefix}${variableName}: ${color.hex};\n`
+        cssString += `${variablePrefix}${variableName}: ${color.hex};\n`;
 
         counter++;
         if (counter === 3) {
