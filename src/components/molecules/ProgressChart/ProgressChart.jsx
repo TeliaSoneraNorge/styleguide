@@ -69,8 +69,8 @@ ProgressChart.propTypes = {
     },
     valueCaption: PropTypes.string,
     thresholds: PropTypes.arrayOf(PropTypes.shape({
-        to: React.PropTypes.number.isRequired,
-        type: React.PropTypes.string.isRequired
+        to: PropTypes.number.isRequired,
+        type: PropTypes.string.isRequired
     }))
 };
 
