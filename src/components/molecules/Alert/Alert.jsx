@@ -10,11 +10,7 @@ function classNames(kind) {
 }
 
 /**
- * Status: *in progress*.
- *
- * Work remaining: more variants.
- *
- * The Alert component is still work-in-progress.
+ * Status: *finished*.
  */
 const Alert = ({ kind = "positive", headingText, bodyHtml, links = [] }) =>
     <div className={classNames(kind)}>
