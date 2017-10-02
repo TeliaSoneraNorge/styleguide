@@ -1,6 +1,4 @@
 .alert {
-    background-color: #ddf1e7;
-    border: 2px solid var(--dark-green);
     border-left: none;
     border-right: none;
     margin-bottom: 1rem;
@@ -30,4 +28,19 @@
             padding-left: 1rem;
         }
     }
+}
+
+.alert--positive {
+    background-color: var(--alert-green);
+    border: 2px solid var(--dark-green);
+}
+
+.alert--negative {
+    background-color: var(--alert-red);
+    border: 2px solid var(--alert-dark-red);;
+}
+
+.alert--warning {
+    background-color: var(--alert-yellow);
+    border: 2px solid var(--alert-dark-yellow);
 }

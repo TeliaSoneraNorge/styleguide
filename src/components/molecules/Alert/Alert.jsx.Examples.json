@@ -1,9 +1,25 @@
 [
     {
-        "name": "Default",
+        "name": "Positive",
         "props": {
             "kind": "positive",
-            "headingText": "This is an important alert",
+            "headingText": "This is a positive alert",
+            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        }
+    },
+    {
+        "name": "Negative",
+        "props": {
+            "kind": "negative",
+            "headingText": "This is a negative alert",
+            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        }
+    },
+    {
+        "name": "Warning",
+        "props": {
+            "kind": "warning",
+            "headingText": "This is a warning alert",
             "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
         }
     },
