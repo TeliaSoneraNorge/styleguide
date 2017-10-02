@@ -26,16 +26,14 @@ const ProgressChart = ({
             max={1}
             min={0}
             disabled={loading}
-            value={loading ? 1 : percent}
-        />
+            value={loading ? 1 : percent} />
         <div className="progress-chart__side">
             <div className={classNames(
                 'progress-chart__side-inner',
                 {
                     'progress-chart__side-inner--hidden-top': loading,
                     'progress-chart__side-inner--hidden-bottom': !loading,
-                }
-                )}>
+                })}>
                 <div className={classNames('progress-chart__caption', { 'progress-chart__caption--hidden': loading })}>
                     <span className="progress-chart__caption-value">
                         {value}&nbsp;{valueCaption}
