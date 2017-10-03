@@ -13,8 +13,8 @@ const InformationArticleSample3 = () =>
         <div className="full-width-image full-width-image--with-mask full-width-image--with-content-overlap">
             <img className="full-width-image__image" src="https://placekitten.com/1600/600" />
         </div>
-        <div className="container container--medium container--no-padding container--white-bg">
-            <div className="container container--small container--no-margin">
+        <div className="container container--medium container--no-padding container--extra-margin-bottom container--white-bg">
+            <div className="container container--small">
                 <p>
                     Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Sed porttitor lectus nibh.
                 </p>

@@ -10,7 +10,7 @@ const InformationArticleSample4 = () =>
                 and some of the components in the styleguide combined with each other.
             </p>
         </Header>
-        <div className="container container--small container--no-padding-top">
+        <div className="container container--small container--no-padding-top container--extra-margin-bottom">
 
             <table className="full-width-table">
                 <thead className="full-width-table__header">

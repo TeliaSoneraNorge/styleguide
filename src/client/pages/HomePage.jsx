@@ -21,7 +21,7 @@ const HomePage = ({ colors }) =>
             </p>
         </Header>
 
-        <div className="container container--small container--no-margin">
+        <div className="container container--small container--extra-padding-top">
             <Heading level={2} text="Color Palette" />
             <p>The color palette below was taken from the Telia Company design document (TODO: source) and shows the recommended font color to give the correct contrast.</p>
         </div>
@@ -29,7 +29,7 @@ const HomePage = ({ colors }) =>
             {_.map(colors, (color, name) => <Color key={name} name={name} {...color} />)}
         </div>
 
-        <div className="container container--small container--no-margin">
+        <div className="container container--small">
             <Heading level={2} text="Typography" />
             <p>TODO: explain the rules for when to use each font (Pebble, Helvetica Neue), etc.</p>
             {_.map([1, 2, 3, 4], (level) =>
@@ -37,7 +37,7 @@ const HomePage = ({ colors }) =>
             )}
         </div>
 
-        <div className="container container--small">
+        <div className="container container--small container--extra-margin-bottom">
             <Heading level={2} text="Sizes and units (px, em, rem)" />
             <p>When writing CSS, the styleguide uses these rules:</p>
             <ul>

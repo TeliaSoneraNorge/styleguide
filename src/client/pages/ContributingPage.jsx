@@ -14,7 +14,7 @@ const ContributingPage = ({ colors }) =>
             <p>We welcome all frontend developers - in collaboration with designers - to contribute to the styleguide.</p>
             <p>Together, we can Make Telia's Frontend Great Again&trade;!</p>
         </Header>
-        <div className="container container--small container--no-margin">
+        <div className="container container--small container--extra-padding-top">
             <Heading level={2} text="The repository" />
             <p>
                 The repository can be found on TeliaSoneraNorge's GitHub
@@ -22,7 +22,7 @@ const ContributingPage = ({ colors }) =>
                 Ask someone in #styleguide if you need access.
             </p>
         </div>
-        <div className="container container--small container--no-margin">
+        <div className="container container--small">
             <Heading level={2} text="Writing CSS" />
             <p>
                 Use <b>BEM</b> (Block, Element, Modifier) for writing &amp; organising CSS.
@@ -39,7 +39,7 @@ const ContributingPage = ({ colors }) =>
             </ul>
             <p>For more information on BEM, <a className="link" href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article</a>.</p>
         </div>
-        <div className="container container--small container--no-margin">
+        <div className="container container--small">
             <Heading level={2} text="Code style" />
             <p>
                 Be <strong>consistent</strong>. Copy the code style, formatting, etc. that all other files use.
@@ -47,7 +47,7 @@ const ContributingPage = ({ colors }) =>
                 Also, don't reformat lots of code at the same time as a feature commit.
             </p>
         </div>
-        <div className="container container--small">
+        <div className="container container--small container--extra-margin-bottom">
             <Heading level={2} text="Feature branches & Pull Requests" />
             <p>
                 All changes must be done in feature branches with this naming convention:
