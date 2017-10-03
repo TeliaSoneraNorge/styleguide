@@ -32,7 +32,7 @@ const ComponentsPage = (props) => {
                 withMask={false}
                 withContentOverlap={false}>
                 <div>
-                    Here are the <a className="link" href="http://bradfrost.com/blog/post/atomic-web-design/">Atom Design</a> components, split by category.
+                    Here are the <a className="link" href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a> components, split by category.
                 </div>
             </Header>
             <div className="container container--small container--extra-padding-top container--extra-margin-bottom">
