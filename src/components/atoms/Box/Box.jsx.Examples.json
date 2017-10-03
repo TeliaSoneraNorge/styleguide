@@ -1,6 +1,6 @@
 [
     {
-        "name": "Box - Default Small",
+        "name": "Box - Default",
         "props": {
             "id": "box-1",
             "color": "pink",
@@ -8,12 +8,21 @@
         }
     },
     {
-        "name": "Box - Medium",
+        "name": "Box - Small",
         "props": {
             "id": "box-2",
             "color": "teal",
-            "isMediumBox": true,
-            "children": "Example 2 - Medium Box"
+            "size": "small",
+            "children": "Example 2 - Small Box"
+        }
+    },
+    {
+        "name": "Box - Medium",
+        "props": {
+            "id": "box-3",
+            "color": "light-orange",
+            "size": "medium",
+            "children": "Example 3 - Medium Box"
         }
     }
 ]

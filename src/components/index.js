@@ -17,6 +17,7 @@ import FocusBox from './molecules/FocusBox/FocusBox';
 import Header from './molecules/Header/Header';
 import PageFooter from './molecules/PageFooter/PageFooter';
 import PageHeader from './molecules/PageHeader/PageHeader';
+import PersonBox from './molecules/PersonBox/PersonBox';
 import Subscription from './molecules/Subscription/Subscription';
 import DonutChart from './molecules/DonutChart/DonutChart';
 import ProgressChart from './molecules/ProgressChart/ProgressChart';
@@ -36,6 +37,7 @@ export default {
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
+    'src/components/molecules/PersonBox/PersonBox.jsx': PersonBox,
     'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
     'src/components/molecules/Subscription/Subscription.jsx': Subscription
 };

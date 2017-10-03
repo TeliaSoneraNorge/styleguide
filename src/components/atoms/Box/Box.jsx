@@ -1,12 +1,12 @@
 import React from 'react';
 
-function classNames(color, isMediumBox, isExpanded) {
+function classNames(color, size, isExpanded) {
     const classNames = ['box'];
     if (color) {
         classNames.push(`box--${color}`);
     }
-    if (isMediumBox) {
-        classNames.push('box--medium-box');
+    if (size) {
+        classNames.push(`box--${size}`);
     }
     if (isExpanded) {
         classNames.push('box--is-expanded');
@@ -36,7 +36,7 @@ export default class Box extends React.Component {
     }
     render() {
         return (
-            <article className={classNames(this.props.color, this.props.isMediumBox, this.state.isExpanded)} onClick={this.boxContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
+            <article className={classNames(this.props.color, this.props.size, this.state.isExpanded)} onClick={this.boxContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
                         <span className="box__close-text">LUKK</span>

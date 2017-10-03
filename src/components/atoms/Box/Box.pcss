@@ -1,12 +1,21 @@
 .box {
     background-color: var(--white);
     cursor: pointer;
+    display: inline-block;
     margin: 3%;
-    max-width: 10.5rem;
     position: relative;
-    width: 44%;
 
-    @media all and (min-width: 25.3125em) {
+    &--small {
+        max-width: 10.5rem;
+        width: 44%;
+    }
+
+    &--medium {
+        max-width: 22.875rem;
+        width: 94%;
+    }
+
+    @media all and (min-width: 26.875em) {
         margin: 0.75rem;
         min-width: 10.6875rem;
     }
@@ -91,7 +100,7 @@
     &__close-text {
         display: none;
 
-        @media all and (min-width: 25.3125em) {
+        @media all and (min-width: 26.875em) {
             display: inline;
             padding: 1rem;
             vertical-align: super;
@@ -102,11 +111,6 @@
         width: 25px;
     }
 
-    &--medium-box {
-        max-width: 22.875rem;
-        width: 94%;
-    }
-
     &--is-expanded {
         cursor: default;
         margin: 1%;
@@ -114,8 +118,14 @@
         padding: 1rem;
         width: 98%;
 
-        @media all and (min-width: 25.3125em) {
-            padding: 2rem;
+        @media all and (min-width: 26.875em) {
+            &.box--small {
+                padding: 3.5rem;
+            }
+
+            &.box--medium {
+                padding: 3.5rem;
+            }
         }
 
         .box__close-expanded-info {
