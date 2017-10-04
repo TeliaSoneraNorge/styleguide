@@ -2,87 +2,64 @@
     background-color: var(--white);
     cursor: pointer;
     display: inline-block;
-    margin: 3%;
+    margin: 0 0 1rem 0;
     position: relative;
+    width: 100%;
 
     &--small {
+        margin: 3%;
         max-width: 10.5rem;
         width: 44%;
     }
 
     &--medium {
+        margin: 3%;
         max-width: 22.875rem;
         width: 94%;
     }
 
-    @media all and (min-width: 26.875em) {
+    @media all and (min-width: 27.875em) {
+        &--small {
+            margin: 0.75rem;
+            min-width: 10.93rem;
+        }
+
+        &--medium {
+            margin: 0.75rem;
+            min-width: 23.37rem;
+        }
+    }
+
+    @media all and (min-width: 40em) {
         margin: 0.75rem;
-        min-width: 10.6875rem;
+        width: inherit;
+
+        &--small {
+            width: 44%;
+        }
+        &--medium {
+            width: 94%;
+        }
     }
 
     &--pink {
         border: 3px solid var(--pink);
-
-        &.subscription--is-expanded {
-            .subscription__teaser {
-                border: 3px solid var(--pink);
-            }
-            .subscription__teaser-content {
-                background-color: var(--pink);
-            }
-        }
     }
 
     &--light-orange {
         border: 3px solid var(--light-orange);
-
-        &.subscription--is-expanded {
-            .subscription__teaser {
-                border: 3px solid var(--light-orange);
-            }
-            .subscription__teaser-content {
-                background-color: var(--light-orange);
-            }
-        }
     }
 
     &--green {
         border: 3px solid var(--green);
-
-        &.subscription--is-expanded {
-            .subscription__teaser {
-                border: 3px solid var(--green);
-            }
-            .subscription__teaser-content {
-                background-color: var(--green);
-            }
-        }
     }
 
     &--teal {
         border: 3px solid var(--teal);
-
-        &.subscription--is-expanded {
-            .subscription__teaser {
-                border: 3px solid var(--teal);
-            }
-            .subscription__teaser-content {
-                background-color: var(--teal);
-            }
-        }
     }
 
     &--blue {
         border: 3px solid var(--blue);
-
-        &.subscription--is-expanded {
-            .subscription__teaser {
-                border: 3px solid var(--blue);
-            }
-            .subscription__teaser-content {
-                background-color: var(--blue);
-            }
-        }
     }
 
     /* Close button */
@@ -100,7 +77,7 @@
     &__close-text {
         display: none;
 
-        @media all and (min-width: 26.875em) {
+        @media all and (min-width: 27.875em) {
             display: inline;
             padding: 1rem;
             vertical-align: super;
@@ -113,17 +90,24 @@
 
     &--is-expanded {
         cursor: default;
-        margin: 1%;
         max-width: inherit;
         padding: 1rem;
-        width: 98%;
+        width: 100%;
 
-        @media all and (min-width: 26.875em) {
+        &.box--small,
+        &.box--medium {
+            margin: 1%;
+            width: 98%;
+        }
+
+        @media all and (min-width: 27.875em) {
             &.box--small {
+                margin: 0.75rem;
                 padding: 3.5rem;
             }
 
             &.box--medium {
+                margin: 0.75rem;
                 padding: 3.5rem;
             }
         }

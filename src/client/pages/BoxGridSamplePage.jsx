@@ -70,7 +70,7 @@ export default class BoxGridSamplePage extends React.Component {
                     <p>On this page you can have a look at a page with Box Grid layout
                         and how it can be used.</p>
                 </Header>
-                <section className="box-grid container container--medium container--no-padding container--extra-margin-bottom">
+                <section className="box-grid container container--medium container--extra-margin-bottom">
                     {personBoxesProps.map((personProps, i) =>
                         <PersonBox key={i} {...personProps} />)}
                 </section>
