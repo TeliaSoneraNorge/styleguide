@@ -4,7 +4,7 @@
         "props": {
             "id": "box-1",
             "color": "pink",
-            "children": "Example 1 - Default Small Box"
+            "children": "Example 1 - Default Box"
         }
     },
     {

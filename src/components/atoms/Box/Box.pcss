@@ -8,36 +8,39 @@
 
     &--small {
         margin: 3%;
-        max-width: 10.5rem;
+        max-width: 10.938rem;
         width: 44%;
     }
 
     &--medium {
         margin: 3%;
-        max-width: 22.875rem;
+        max-width: 23.375rem;
         width: 94%;
     }
 
-    @media all and (min-width: 27.875em) {
+    @media all and (min-width: 27.375rem) {
         &--small {
             margin: 0.75rem;
-            min-width: 10.93rem;
+            min-width: 10.938rem;
         }
 
         &--medium {
             margin: 0.75rem;
-            min-width: 23.37rem;
+            min-width: 23.375rem;
         }
     }
 
-    @media all and (min-width: 40em) {
-        margin: 0.75rem;
+    @media all and (min-width: 39.8125em) {
+        margin: 1rem;
+        min-width: 10.438rem;
         width: inherit;
 
         &--small {
+            margin: 0.75rem;
             width: 44%;
         }
         &--medium {
+            margin: 0.75rem;
             width: 94%;
         }
     }
@@ -77,7 +80,7 @@
     &__close-text {
         display: none;
 
-        @media all and (min-width: 27.875em) {
+        @media all and (min-width: 27.375rem) {
             display: inline;
             padding: 1rem;
             vertical-align: super;
@@ -94,13 +97,7 @@
         padding: 1rem;
         width: 100%;
 
-        &.box--small,
-        &.box--medium {
-            margin: 1%;
-            width: 98%;
-        }
-
-        @media all and (min-width: 27.875em) {
+        @media all and (min-width: 27.375rem) {
             &.box--small {
                 margin: 0.75rem;
                 padding: 3.5rem;

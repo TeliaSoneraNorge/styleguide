@@ -2,6 +2,15 @@ import React from 'react';
 
 import Box from '../../atoms/Box/Box';
 
+/**
+ * Status: *finished*.
+ *
+ * A PersonBox component use the default <a href="/components/atoms#Box">Box</a> component.
+ * The content within this Box presents a person with an image, name, job title, description and
+ * links to profiles on social media.
+ *
+ * One or more PersonBoxes can be used inside a <a href="/components/molecules#BoxGrid">BoxGrid</a> component.
+ */
 const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description, linkedInProfile, twitterProfile }) => {
     const imageAltText = `${name} - ${title}`;
     return (
