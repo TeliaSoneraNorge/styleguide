@@ -7,40 +7,41 @@
     width: 100%;
 
     &--small {
-        margin: 3%;
-        max-width: 10.938rem;
-        width: 44%;
+        margin: 4.5%;
+        max-width: 11.563rem;
+        width: 41%;
     }
 
     &--medium {
-        margin: 3%;
-        max-width: 23.375rem;
+        margin: 4.5%;
+        max-width: 24.625rem;
         width: 94%;
     }
 
-    @media all and (min-width: 27.375rem) {
+    @media all and (min-width: 24.9375rem) {
         &--small {
             margin: 0.75rem;
             min-width: 10.938rem;
+            width: 44%;
         }
 
         &--medium {
             margin: 0.75rem;
             min-width: 23.375rem;
+            width: 94%;
         }
     }
 
     @media all and (min-width: 39.8125em) {
-        margin: 1rem;
-        min-width: 10.438rem;
+        margin: 0.75rem;
+        min-width: 10.938rem;
         width: inherit;
 
         &--small {
-            margin: 0.75rem;
             width: 44%;
         }
+
         &--medium {
-            margin: 0.75rem;
             width: 94%;
         }
     }
@@ -80,7 +81,7 @@
     &__close-text {
         display: none;
 
-        @media all and (min-width: 27.375rem) {
+        @media all and (min-width: 24.9375rem) {
             display: inline;
             padding: 1rem;
             vertical-align: super;
@@ -94,10 +95,18 @@
     &--is-expanded {
         cursor: default;
         max-width: inherit;
-        padding: 1rem;
+        padding: 2%;
         width: 100%;
 
-        @media all and (min-width: 27.375rem) {
+        &.box--small {
+            margin: 0.75rem 0.3rem;
+        }
+
+        &.box--medium {
+            margin: 0.75rem 0.3rem;
+        }
+
+        @media all and (min-width: 24.9375rem) {
             &.box--small {
                 margin: 0.75rem;
                 padding: 3.5rem;

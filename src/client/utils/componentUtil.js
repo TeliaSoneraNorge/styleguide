@@ -35,6 +35,7 @@ export function isFullWidthComponent(componentName) {
 
         // Molecules
         'BottomComponent',
+        'BoxGrid',
         'FunkyTabs',
         'Header',
         'PageHeader',
