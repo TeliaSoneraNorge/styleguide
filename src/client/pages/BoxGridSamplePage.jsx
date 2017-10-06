@@ -64,11 +64,8 @@ export default class BoxGridSamplePage extends React.Component {
     render() {
         return (
             <article>
-                <Header pageTitle="Box Grid"
-                        withMask={false}
-                        withContentOverlap={false}>
-                    <p>On this page you can have a look at a page with Box Grid layout
-                        and how it can be used.</p>
+                <Header pageTitle="Box Grid" withMask={false} withContentOverlap={false}>
+                    <p>On this page you can have a look at a page with Box Grid layout and how it can be used.</p>
                 </Header>
                 <section className="box-grid container container--medium container--extra-margin-bottom">
                     {personBoxesProps.map((personProps, i) =>
