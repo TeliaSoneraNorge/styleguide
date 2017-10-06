@@ -1,0 +1,75 @@
+.page-pebbles {
+   > * {
+        pointer-events: auto;
+    }
+
+    pointer-events: none;
+    background: none;
+
+    @media all and (min-width: em(900)){
+
+        &:before {
+            background-image: url('/public/pebbles/pebble-5.svg'),
+                              url('/public/pebbles/pebble-6.svg'),
+                              url('/public/pebbles/pebble-7.svg'),
+                              url('/public/pebbles/pebble-8.svg'),
+                              url('/public/pebbles/pebble-9.svg');
+            background-position: -2% 3rem, 100% 15rem, -3% 20rem, 100% 25rem, 100% 35rem;
+            background-repeat: no-repeat;
+            background-size: 15vw, 10vw, 6vw, 4vw, 8vw;
+            content: '';
+            display: block;
+            height: 1000px;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+            z-index: 1;
+        }
+
+        &--variant-1:before {
+            background-image: url('/public/pebbles/pebble-10.svg'),
+                              url('/public/pebbles/pebble-11.svg'),
+                              url('/public/pebbles/pebble-12.svg'),
+                              url('/public/pebbles/pebble-13.svg'),
+                              url('/public/pebbles/pebble-19.svg');
+            background-position: 100% 15rem, -1% 15rem, 103% 25rem, -1% 25rem, 0% 35rem;
+        }
+
+        &--variant-2:before {
+            background-image: url('/public/pebbles/pebble-18.svg'),
+                              url('/public/pebbles/pebble-16.svg'),
+                              url('/public/pebbles/pebble-17.svg'),
+                              url('/public/pebbles/pebble-15.svg'),
+                              url('/public/pebbles/pebble-14.svg');
+            background-position: 100% 40rem, 0% 42rem, 100% 10rem, -1% 35rem, 105% 25rem;
+        }
+
+        &--variant-3:before {
+            background-image: url('/public/pebbles/pebble-23.svg'),
+                              url('/public/pebbles/pebble-20.svg'),
+                              url('/public/pebbles/pebble-24.svg'),
+                              url('/public/pebbles/pebble-22.svg'),
+                              url('/public/pebbles/pebble-21.svg');
+            background-position: 0% 30rem, 100% 20rem, -3% 40rem, 102% 30rem, -5% 15rem;
+        }
+
+        &--variant-4:before {
+            background-image: url('/public/pebbles/pebble-25.svg'),
+                              url('/public/pebbles/pebble-26.svg'),
+                              url('/public/pebbles/pebble-27.svg'),
+                              url('/public/pebbles/pebble-28.svg'),
+                              url('/public/pebbles/pebble-29.svg');
+            background-position: 0% 40rem, -1% 25rem, 101% 35rem, -2% 15rem, 102% 25rem;
+        }
+
+        &--variant-5:before {
+            background-image: url('/public/pebbles/pebble-32.svg'),
+                              url('/public/pebbles/pebble-31.svg'),
+                              url('/public/pebbles/pebble-34.svg'),
+                              url('/public/pebbles/pebble-36.svg'),
+                              url('/public/pebbles/pebble-30.svg');
+            background-position: 100% 45rem, 101% 20rem, -1% 25rem, 102% 40rem, -2% 40rem;
+        }
+    }
+}
+

@@ -52,6 +52,7 @@ const ComponentsPage = (props) => {
                     <li><a className="link" href="/information-article-2">Information article 2</a> - with NumberBoxes</li>
                     <li><a className="link" href="/information-article-3">Information article 3</a> - with StepByStep</li>
                     <li><a className="link" href="/information-article-4">Information article 4</a> - with table</li>
+                    <li><a className="link" href="/pebbles-page">Pebble page</a></li>
                 </ul>
             </div>
         </div>
