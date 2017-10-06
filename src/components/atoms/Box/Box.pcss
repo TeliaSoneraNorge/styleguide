@@ -1,0 +1,129 @@
+.box {
+    background-color: var(--white);
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0 1rem 0;
+    position: relative;
+    width: 100%;
+
+    &--small {
+        margin: 4.5%;
+        max-width: 11.563rem;
+        width: 41%;
+    }
+
+    &--medium {
+        margin: 4.5%;
+        max-width: 24.625rem;
+        width: 94%;
+    }
+
+    @media all and (min-width: 24.9375rem) {
+        &--small {
+            margin: 0.75rem;
+            min-width: 10.938rem;
+            width: 44%;
+        }
+
+        &--medium {
+            margin: 0.75rem;
+            min-width: 23.375rem;
+            width: 94%;
+        }
+    }
+
+    @media all and (min-width: 39.8125em) {
+        margin: 0.75rem;
+        min-width: 10.938rem;
+        width: inherit;
+
+        &--small {
+            width: 44%;
+        }
+
+        &--medium {
+            width: 94%;
+        }
+    }
+
+    &--pink {
+        border: 3px solid var(--pink);
+    }
+
+    &--light-orange {
+        border: 3px solid var(--light-orange);
+    }
+
+    &--green {
+        border: 3px solid var(--green);
+    }
+
+    &--teal {
+        border: 3px solid var(--teal);
+    }
+
+    &--blue {
+        border: 3px solid var(--blue);
+    }
+
+    /* Close button */
+    &__close-expanded-info {
+        background: none;
+        border: none;
+        display: none;
+        padding: .5rem;
+
+        @media all and (min-width: 21em) {
+            padding: 1rem;
+        }
+    }
+
+    &__close-text {
+        display: none;
+
+        @media all and (min-width: 24.9375rem) {
+            display: inline;
+            padding: 1rem;
+            vertical-align: super;
+        }
+    }
+
+    &__close-image {
+        width: 25px;
+    }
+
+    &--is-expanded {
+        cursor: default;
+        max-width: inherit;
+        padding: 2%;
+        width: 100%;
+
+        &.box--small {
+            margin: 0.75rem 0.3rem;
+        }
+
+        &.box--medium {
+            margin: 0.75rem 0.3rem;
+        }
+
+        @media all and (min-width: 24.9375rem) {
+            &.box--small {
+                margin: 0.75rem;
+                padding: 3.5rem;
+            }
+
+            &.box--medium {
+                margin: 0.75rem;
+                padding: 3.5rem;
+            }
+        }
+
+        .box__close-expanded-info {
+            cursor: pointer;
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+    }
+}

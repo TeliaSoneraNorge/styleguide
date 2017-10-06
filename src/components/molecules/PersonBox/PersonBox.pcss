@@ -1,0 +1,139 @@
+.person-box {
+    display: inline-block;
+
+    @media all and (min-width: 39.8125em){
+        max-width: 10.55rem;
+    }
+
+    &__image-label {
+    }
+
+    &__image {
+        vertical-align: middle;
+        width: 35%;
+
+        @media all and (min-width: 39.8125em){
+            margin-bottom: 1rem;
+            vertical-align: baseline;
+            width: 100%;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        vertical-align: bottom;
+        width: 65%;
+
+        @media all and (min-width: 39.8125em) {
+            margin-bottom: 1rem;
+            vertical-align: baseline;
+            width: 100%;
+        }
+    }
+
+    &__name {
+        display: block;
+        font-weight: 600;
+        padding: 0 0.5rem;
+
+        @media all and (min-width: 39.8125em) {
+            padding: 0 0.5rem 0.5rem;
+        }
+    }
+
+    &__title {
+        color: var(--dark-grey);
+        display: block;
+        font-style: italic;
+        padding: 0 0.5rem;
+    }
+
+    &__text-links {
+
+    }
+
+    &__description {
+        display: none;
+        margin-bottom: 1rem;
+    }
+
+    &__social-links {
+        display: none;
+    }
+
+    &__social-link {
+        &:first-of-type {
+            margin-right: 1rem;
+        }
+
+        &-icon {
+            height: 30px;
+            width: 30px;
+        }
+    }
+}
+
+.box--is-expanded {
+    .person-box {
+        @media all and (min-width: 39.8125em) {
+            display: flex;
+            flex-flow: row wrap;
+            max-width: 100%;
+            padding: 2.5rem;
+        }
+
+        &__image-label {
+            border-bottom: 1px solid var(--dark-grey);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+
+            @media all and (min-width: 39.8125em) {
+                border-bottom: none;
+                flex: 0 1 27%;
+                margin-bottom: 0;
+                margin-right: 3rem;
+                padding-bottom: 0;
+            }
+        }
+
+        &__image {
+            max-width: 165px;
+        }
+
+        &__label {
+            margin-bottom: 0;
+        }
+
+        &__name {
+            @media all and (min-width: 39.8125em) {
+                padding: 0 0 0.5rem;
+            }
+        }
+
+        &__title {
+            @media all and (min-width: 39.8125em) {
+                padding: 0;
+            }
+        }
+
+        &__text-links {
+            @media all and (min-width: 39.8125em) {
+                flex: 0 1 60%;
+            }
+        }
+
+        &__description {
+            display: block;
+        }
+
+        &__social-links {
+            display: block;
+        }
+
+        &__social-link {
+            &-icon {
+            }
+        }
+    }
+}

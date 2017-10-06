@@ -1,0 +1,15 @@
+.box-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: left;
+
+    .box {
+        display: flex;
+        flex: 0 1 auto;
+
+        &--is-expanded {
+            flex-wrap: wrap;
+        }
+    }
+}
