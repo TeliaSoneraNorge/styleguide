@@ -1,5 +1,5 @@
 .page-pebbles {
-    :first-child {
+   > * {
         pointer-events: auto;
     }
 
@@ -23,7 +23,7 @@
             overflow: hidden;
             position: absolute;
             width: 100%;
-            z-index: 0;
+            z-index: 1;
         }
 
         &--variant-1:before {
