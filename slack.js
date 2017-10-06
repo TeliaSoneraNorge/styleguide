@@ -1,17 +1,11 @@
-var Git = require('nodegit');
+var gitUsername = require('git-user-name');
 var https = require('https');
 var path = require('path');
 
 var repositoryPath = path.resolve('./');
 
 function getGitUsername() {
-    return Git.Config.openDefault()
-        .then((config) => {
-            return config.getStringBuf('user.name');
-        })
-        .then((buffer) => {
-            return buffer.toString();
-        });
+    return Promise.resolve(gitUsername());
 }
 
 function postMessageToSlack(slackChannel, options = {}) {
