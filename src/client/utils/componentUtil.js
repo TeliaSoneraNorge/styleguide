@@ -31,6 +31,7 @@ export function isFullWidthComponent(componentName) {
         // Atoms
         'FactBoxes',
         'FullWidthImage',
+        'PagePebbles',
 
         // Molecules
         'BottomComponent',
