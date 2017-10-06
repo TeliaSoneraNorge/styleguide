@@ -1,3 +1,5 @@
+Status: *finished*.
+
 <p>
     The FunkyTabs component are implemented as a list, where each tab is a list element with a link inside.
     The link has a href; <code>&lt;a href=""&gt;</code>, with the intention that the href also is a part of the URL.

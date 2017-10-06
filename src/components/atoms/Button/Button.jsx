@@ -12,11 +12,7 @@ function classNames(kind, size) {
 }
 
 /**
- * Status: *in progress*.
- *
- * Work remaining: more variants.
- *
- * The Button component is still work-in-progress.
+ * Status: *finished*.
  */
 const Button = ({ text, kind, size, onClick }) =>
     <button className={classNames(kind, size)} onClick={onClick}>{text}</button>;

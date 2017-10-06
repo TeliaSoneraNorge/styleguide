@@ -5,7 +5,6 @@ import React from 'react';
  *
  * Remaining work:
  *
- * - Add more variations
  * - Handle target
  */
 const Link = ({ text, href }) =>
