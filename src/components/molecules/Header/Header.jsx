@@ -3,6 +3,9 @@ import React from 'react';
 
 import Heading from '../../atoms/Heading/Heading';
 
+/**
+ * Status: *finished*.
+ */
 const Header = ({ iconUrl, runningTitle, pageTitle, withMask, withContentOverlap, children }) =>
     <header className={classNames('header', { 'header--with-mask': withMask, 'header--with-content-overlap': withContentOverlap })}>
         <img className="header__icon" src={iconUrl} role="presentation" />

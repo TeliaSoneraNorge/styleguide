@@ -9,6 +9,9 @@ const clamp = (min, max, value) => {
     return value;
 };
 
+/**
+ * Status: *in progress*.
+ */
 const ProgressBar = ({
     value,
     min,
