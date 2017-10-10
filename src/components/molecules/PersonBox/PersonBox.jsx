@@ -13,6 +13,8 @@ import Box from '../../atoms/Box/Box';
  */
 const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description, linkedInProfile, twitterProfile }) => {
     const imageAltText = `${name} - ${title}`;
+    const titleLinkedInProfile = `${name}'s LinkedIn profile`;
+    const titleTwitterProfile = `${name}'s Twitter profile`;
     return (
         <Box color={color} id={id} isExpanded={isExpanded}>
             <div className="person-box">
@@ -26,11 +28,11 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
                 <div className="person-box__text-links">
                     <div className="person-box__description">{description}</div>
                     <div className="person-box__social-links">
-                        <a className="person-box__social-link" href={linkedInProfile}>
-                            <img className="person-box__social-link-icon" src="/public/icons/linkedin_icon.svg"/>
+                        <a className="person-box__social-link" href={linkedInProfile} target="_self" title={titleLinkedInProfile}>
+                            <img className="person-box__social-link-icon" src="/public/icons/linkedin_icon.svg" alt={titleLinkedInProfile}/>
                         </a>
-                        <a className="person-box__social-link" href={twitterProfile}>
-                            <img className="person-box__social-link-icon" src="/public/icons/twitter_icon.svg"/>
+                        <a className="person-box__social-link" href={twitterProfile} target="_self" title={titleTwitterProfile}>
+                            <img className="person-box__social-link-icon" src="/public/icons/twitter_icon.svg" alt={titleTwitterProfile}/>
                         </a>
                     </div>
                 </div>
