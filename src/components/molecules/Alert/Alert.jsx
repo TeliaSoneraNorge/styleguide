@@ -22,7 +22,7 @@ const Alert = ({ kind = "positive", headingText, bodyHtml, links = [] }) =>
                 <ul className="list list--links list--black">
                     {_.map(links, (link, i) =>
                         <li key={i} className="list__item">
-                            <a className="list__link" href={link.url}>{link.text}</a>
+                            <a className="list__link" href={link.url} target="_self">{link.text}</a>
                         </li>
                     )}
                 </ul> : null}

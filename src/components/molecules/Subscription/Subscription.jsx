@@ -55,7 +55,7 @@ export default class Subscription extends React.Component {
                         <span className="subscription__price-info">Ingen bindingstid.</span>
                     </div>
                     <div className="subscription__teaser-links">
-                        <div><a href="#" className="link">Se alle priser</a></div>
+                        <div><a href="#" className="link" target="_self">Se alle priser</a></div>
                     </div>
                 </section>
                 {(this.state.isExpanded || this.props.isShowingFeatures) ?
@@ -79,7 +79,7 @@ export default class Subscription extends React.Component {
                         <p>We have so many things that we have to do better... and certainly ipsum is one of them. Despite the constant negative ipsum covfefe. Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
                         <ul className="list list--links">
                             <li className="list__item">
-                                <a className="list__link" href="#">Last ned abonnementsvilkår</a>
+                                <a className="list__link" href="#" target="_self">Last ned abonnementsvilkår</a>
                             </li>
                         </ul>
                     </section> : null}
