@@ -7,12 +7,16 @@
     @media all and (min-width: 25.3125em) {
         flex-wrap: wrap;
     }
+
+    .subscription {
+        display: flex;
+    }
 }
 
 .subscription {
     background-color: var(--white);
     cursor: pointer;
-    display: flex;
+    display: inline-block;
     margin: 3%;
     position: relative;
     width: 44%;
@@ -53,7 +57,8 @@
     &--green {
         border: 3px solid var(--green);
 
-        &.subscription--is-expanded {
+        &.subscription--is-expanded,
+        &.subscription--is-standalone {
             .subscription__teaser {
                 border: 3px solid var(--green);
             }
@@ -259,6 +264,18 @@
             padding-top: 2rem;
             text-align: left;
             width: 1000px;
+        }
+    }
+
+    &--is-standalone {
+        border: none;
+        cursor: auto;
+        margin: 0;
+
+        .subscription__teaser-links {
+            background-color: var(--white);
+            display: block;
+            padding: 0.5rem;
         }
     }
 }

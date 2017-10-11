@@ -1,6 +1,6 @@
 import React from 'react';
 
-function classNames(color, isShowingFeatures, isExpanded) {
+function classNames(color, isShowingFeatures, isExpanded, isStandalone) {
     const classNames = ['subscription'];
     if (color) {
         classNames.push(`subscription--${color}`);
@@ -10,6 +10,9 @@ function classNames(color, isShowingFeatures, isExpanded) {
     }
     if (isExpanded) {
         classNames.push('subscription--is-expanded');
+    }
+    if (isStandalone) {
+        classNames.push('subscription--is-standalone');
     }
     return classNames.join(' ');
 }
@@ -29,7 +32,7 @@ export default class Subscription extends React.Component {
         this.closeSubscriptionClick = this.closeSubscriptionClick.bind(this);
     }
     subscriptionContainerClick() {
-        if (!this.state.isExpanded) {
+        if (!this.state.isExpanded && !this.props.isStandalone) {
             this.setState({ isExpanded: true });
         }
     }
@@ -39,7 +42,7 @@ export default class Subscription extends React.Component {
     }
     render() {
         return (
-            <article className={classNames(this.props.color, this.props.isShowingFeatures, this.state.isExpanded)} onClick={this.subscriptionContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
+            <article className={classNames(this.props.color, this.props.isShowingFeatures, this.state.isExpanded, this.props.isStandalone)} onClick={this.subscriptionContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
                 {this.state.isExpanded ?
                     <button className="subscription__close-expanded-info" onClick={this.closeSubscriptionClick} aria-controls={this.props.id}>
                         <span className="subscription__close-text">LUKK</span>
