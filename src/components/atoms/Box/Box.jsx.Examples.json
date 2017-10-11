@@ -1,28 +1,57 @@
 [
     {
-        "name": "Box - Default",
+        "name": "Default Collapsed",
         "props": {
             "id": "box-1",
             "color": "pink",
-            "children": "Example 1 - Default Box"
+            "children": "Example 1 - Default Collapsed Box"
         }
     },
     {
-        "name": "Box - Small",
+        "name": "Default Expanded",
         "props": {
             "id": "box-2",
-            "color": "teal",
-            "size": "small",
-            "children": "Example 2 - Small Box"
+            "color": "pink",
+            "children": "Example 2 - Default Expanded Box",
+            "isExpanded": true
         }
     },
     {
-        "name": "Box - Medium",
+        "name": "Small Collapsed",
         "props": {
             "id": "box-3",
+            "color": "teal",
+            "size": "small",
+            "children": "Example 3 - Small Collapsed Box"
+        }
+    },
+    {
+        "name": "Small Expanded",
+        "props": {
+            "id": "box-4",
+            "color": "teal",
+            "size": "small",
+            "children": "Example 4 - Small Expanded Box",
+            "isExpanded": true
+        }
+    },
+    {
+        "name": "Medium Collapsed",
+        "props": {
+            "id": "box-5",
             "color": "light-orange",
             "size": "medium",
-            "children": "Example 3 - Medium Box"
+            "children": "Example 5 - Medium Collapsed Box"
+        }
+    },
+    {
+        "name": "Medium Expanded",
+        "props": {
+            "id": "box-6",
+            "color": "light-orange",
+            "size": "medium",
+            "children": "Example 6 - Medium Expanded Box",
+            "isExpanded": true
         }
     }
 ]
