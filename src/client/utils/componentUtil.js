@@ -39,7 +39,10 @@ export function isFullWidthComponent(componentName) {
         'FunkyTabs',
         'Header',
         'PageHeader',
-        'PageFooter'
+        'PageFooter',
+
+        // Organisms
+        'FocusSubscription'
     ];
     return _.includes(fullWidthComponents, componentName);
 }

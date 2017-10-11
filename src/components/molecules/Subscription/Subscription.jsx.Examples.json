@@ -1,5 +1,17 @@
 [
     {
+        "name": "Subscription - Standalone",
+        "props": {
+            "name": "SMART Foobar",
+            "id": "smartFoobar",
+            "dataAmount": 1,
+            "dataUnit": "GB",
+            "price": 249,
+            "color": "green",
+            "isStandalone": true
+        }
+    },
+    {
         "name": "Subscription - Small",
         "containerCssClass": "subscription-wrapper",
         "props": {

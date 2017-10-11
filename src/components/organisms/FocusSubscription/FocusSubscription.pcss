@@ -1,0 +1,49 @@
+.focus-subscription {
+    &__main {
+        display: flex;
+        margin-bottom: 2rem;
+    }
+
+    .subscription {
+        margin-right: 5%;
+        width: 45%;
+
+        @media screen and (min-width: 28.125em) {
+            width: auto;
+        }
+    }
+    &__main-content {
+        width: 50%;
+
+        @media screen and (min-width: 28.125em) {
+            flex-grow: 2;
+            width: auto;
+        }
+    }
+    &__owner-content {
+        margin-bottom: 2rem;
+
+        @media screen and (min-width: 40.625em) {
+            margin-bottom: 4rem;
+        }
+    }
+    &__owner-info-line {
+        margin-bottom: 0.5rem;
+    }
+    &__owner-info-label {
+        display: block;
+        font-weight: bold;
+
+        @media screen and (min-width: 40.625em) {
+            display: inline-block;
+            width: 35%;
+        }
+    }
+    &__owner-info-value {
+        display: block;
+
+        @media screen and (min-width: 40.625em) {
+            display: inline-block;
+        }
+    }
+}
