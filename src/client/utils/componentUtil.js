@@ -34,6 +34,7 @@ export function isFullWidthComponent(componentName) {
         'PagePebbles',
 
         // Molecules
+        'ArticleMetaData',
         'BottomComponent',
         'BoxGrid',
         'FunkyTabs',
