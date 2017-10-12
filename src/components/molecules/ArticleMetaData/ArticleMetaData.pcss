@@ -6,7 +6,8 @@
         display: flex;
         flex-flow: row wrap;
         justify-content: space-between;
-        padding: 10px 20px;
+        padding: 0.5rem 1rem;
+        position: relative;
     }
 
     &__date-author {
@@ -15,7 +16,7 @@
         font-size: 0.9rem;
         order: 0;
         padding-bottom: 0.3rem;
-        padding-right: 1rem;
+        padding-right: 2rem;
     }
 
     &__date {
@@ -26,31 +27,29 @@
     }
 
     .tags {
-        flex: 0 1 auto;
+        flex: 0 1 90%;
         order: 2;
     }
 
     &__share {
-        flex: 0 1 auto;
         height: 1.2rem;
-        order: 1;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
         width: 1.2rem;
     }
 
-    @media all and (min-width: 544px){
+    @media all and (min-width: 609px){
         &__date-author {
             flex: 0 1 auto;
-            padding-bottom: 0;
         }
 
         .tags {
-            order: 1;
+            flex: 0 1 50%;
+            padding-right: 2rem;
         }
 
         &__share {
-            order: 2;
-            padding-left: 1rem;
-            width: 2.2rem;
         }
     }
 }
