@@ -1,0 +1,56 @@
+.article-meta-data {
+    border-bottom: 1px solid var(--light-grey);
+    border-top: 1px solid var(--light-grey);
+
+    &__wrapper {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+
+    &__date-author {
+        color: var(--dark-grey);
+        flex: 0 1 90%;
+        font-size: 0.9rem;
+        order: 0;
+        padding-bottom: 0.3rem;
+        padding-right: 1rem;
+    }
+
+    &__date {
+        padding-right: 0.6rem;
+    }
+
+    &__author {
+    }
+
+    .tags {
+        flex: 0 1 auto;
+        order: 2;
+    }
+
+    &__share {
+        flex: 0 1 auto;
+        height: 1.2rem;
+        order: 1;
+        width: 1.2rem;
+    }
+
+    @media all and (min-width: 544px){
+        &__date-author {
+            flex: 0 1 auto;
+            padding-bottom: 0;
+        }
+
+        .tags {
+            order: 1;
+        }
+
+        &__share {
+            order: 2;
+            padding-left: 1rem;
+            width: 2.2rem;
+        }
+    }
+}
