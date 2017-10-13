@@ -38,20 +38,21 @@ const ReactComponent = ({ path, metadata }) => {
             {_.map(examples, (example, i) => {
                 const componentWithProps = ReactComponentWithProps(ComponentToRender, example.props);
                 const markupString = pretty(ReactDOMServer.renderToStaticMarkup(componentWithProps));
+                const renderedComponent = (example.render === false) ? "This component is not possible to render within the StyleGuide. Please look for a link to an example page in the component description." : ReactComponentWithProps(ComponentToRender, example.props);
 
                 return (isFullWidthComponent(componentName) ?
                     <div key={i}>
                         <div className="container container--medium container--no-margin">
                             <Heading level={3} text={example.name} />
                         </div>
-                        <div className={example.containerCssClass || ''}>{componentWithProps}</div>
+                        <div className={example.containerCssClass || ''}>{renderedComponent}</div>
                         <div className="container container--medium container--no-margin">
                             <CodeSnippet code={markupString} language="markup" />
                         </div>
                     </div> :
                     <div key={i} className="container container--medium container--no-margin">
                         <Heading level={3} text={example.name} />
-                        <div className={example.containerCssClass || ''}>{componentWithProps}</div>
+                        <div className={example.containerCssClass || ''}>{renderedComponent}</div>
                         <CodeSnippet code={markupString} language="markup" />
                     </div>);
             })}

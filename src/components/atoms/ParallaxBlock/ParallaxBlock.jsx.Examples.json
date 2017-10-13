@@ -1,0 +1,29 @@
+[
+    {
+        "name": "Default - image background",
+        "render": false,
+        "props": {
+            "backgroundFile": "http://placekitten.com/1920/1000",
+            "backgroundType": "image",
+            "index": 1
+        }
+    },
+    {
+        "name": "Video background",
+        "render": false,
+        "props": {
+            "backgroundFile": "https://video.telia.no/19476793/19483281/343246028c3dd0e42d5949fde807ce09/video_hd/av1-pa-konsert-med-marcus-martinus-video.mp4?referer=https%3A%2F%2Ftelia.no%2Fmagasinet%2Fsyke-barn-kan-sende-robot-til-skolen&uuid=aba86041-268f-08a1-80ea-d3d6b7de283e",
+            "backgroundType": "video",
+            "index": 1
+        }
+    },
+    {
+        "name": "First in the stack",
+        "render": false,
+        "props": {
+            "backgroundFile": "http://placekitten.com/1920/1000",
+            "backgroundType": "image",
+            "index": 0
+        }
+    }
+]

@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Default - auto height",
+        "render": false,
+        "props": {
+
+        }
+    },
+    {
+        "name": "Full - autoResized to full screen height",
+        "render": false,
+        "props": {
+            "size": "full"
+        }
+    },
+    {
+        "name": "Half - autoResized to half screen height",
+        "render": false,
+        "props": {
+            "size": "half"
+        }
+    },
+    {
+        "name": "Small - 400px height",
+        "render": false,
+        "props": {
+            "size": "small"
+        }
+    },
+    {
+        "name": "Large - 800px height",
+        "render": false,
+        "props": {
+            "size": "half"
+        }
+    }
+]
