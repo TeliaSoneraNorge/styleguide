@@ -21,6 +21,7 @@ import PebblesPage from "./pages/PebblesPage";
 import BoxGridSamplePage from './pages/BoxGridSamplePage';
 import BlogSamplePage1 from './pages/BlogSamplePage1';
 import BlogSamplePage2 from './pages/BlogSamplePage2';
+import ParallaxPage from './pages/ParallaxPage';
 
 const Routes = (props) =>
     <div>
@@ -54,6 +55,7 @@ const Routes = (props) =>
         <Route exact path="/box-grid" component={BoxGridSamplePage} />
         <Route exact path="/blog-1" component={BlogSamplePage1} />
         <Route exact path="/blog-2" component={BlogSamplePage2} />
+        <Route exact path="/parallax-page" component={ParallaxPage} />
 
         <div className="container container--medium container--extra-margin-bottom">
             <ContentRatingWrapper />
