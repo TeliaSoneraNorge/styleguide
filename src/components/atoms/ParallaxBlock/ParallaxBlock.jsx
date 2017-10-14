@@ -17,7 +17,7 @@ function background(backgroundFile, backgroundType) {
     if (backgroundType === 'image') {
         background = '<img src=\"' + backgroundFile + '" />';
     } else {
-        background = '<video><source src=\"' + backgroundFile + '\" type=\"video/mp4\">Some fallback scenario if video tag is not supported.</video>';
+        background = '<video muted x-webkit-airplay=\"allow\" webkit-playsinline=\"true\" playsinline=\"true\"><source src=\"' + backgroundFile + '\" type=\"video/mp4\">Some fallback scenario if video tag is not supported.</video>';
     }
     return background;
 }
@@ -34,9 +34,9 @@ const ParallaxBlock = ({ index, backgroundFile, backgroundType, children }) =>
         </div>
         {children}
         {(backgroundType === 'video')
-            ? <div dangerouslySetInnerHTML={{ __html: '<div onclick=\"toggleSound(this)\" class=\"parallax-block__mute-button parallax-block__background--hidden\">'}}></div>
+            ? <a dangerouslySetInnerHTML={{ __html: '<div onclick=\"toggleSound(this)\" class=\"parallax-block__mute-button parallax-block__mute-button--unmuted parallax-block__background--hidden\">Skru på lyd'}}></a>
             : null
-            }
+        }
     </div>;
 
 export default ParallaxBlock;

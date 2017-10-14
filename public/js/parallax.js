@@ -49,15 +49,17 @@ function initVideo() {
     });
 }
 
-function toggleSound(el) { // Currently not in use
+function toggleSound(el) { 
 
-    var video = el.parentNode.parentNode.parentNode.querySelector('video'); //must be modified when mute button is in place
+    var video = el.parentNode.parentNode.parentNode.querySelector('video'); 
     if (video.muted) {
         video.muted = false;
-        el.classList.remove('parallax-block__mute-button--muted')
+        el.classList.add('parallax-block__mute-button--unmuted');
+        el.innerText = 'Skru av lyden';
     } else {
         video.muted = true;
-        el.classList.add('parallax-block__mute-button--muted')
+        el.classList.remove('parallax-block__mute-button--unmuted');
+        el.innerText = 'Skru på lyd';
     }
 }
 
@@ -86,7 +88,7 @@ var DOMReady = function(){
                 var video = el.querySelector('video');
                 // this conditioned chunk could be refactored to eliminate calculations
 
-                if (index == 0) {
+                if (index === 0) {
                     
                     if (topDiff < 0 && bottomDiff >= scrollBreak) {
 
@@ -105,20 +107,20 @@ var DOMReady = function(){
                            
                         } else if (bottomDiff < scrollBreak) {
                             el.querySelector('.parallax-block__background').classList.add('parallax-block__background--hidden');
-                            if (video != null) {
+                            if (video !== null) {
                                 el.querySelector('.parallax-block__mute-button').classList.add('parallax-block__background--hidden');
                             }
                         }
-                        if (video != null) {
+                        if (video !== null) {
                             video.pause();
                         }
                     }
-                } else if (index == array.length - 1) {
+                } else if (index === array.length - 1) {
                     if (topDiff < scrollBreak && bottomDiff >= window.innerHeight) {
                         el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--hidden');
                         el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--absolute-bottom');
                         el.querySelector('.parallax-block__background').classList.add('parallax-block__background--fixed');
-                        if (video != null && video.classList.contains('stopped') !== true) {
+                        if (video !== null && video.classList.contains('stopped') !== true) {
                             video.play();
                             el.querySelector('.parallax-block__mute-button').classList.remove('parallax-block__background--hidden');
                         }
@@ -132,21 +134,21 @@ var DOMReady = function(){
                             el.querySelector('.parallax-block__background').classList.add('parallax-block__background--absolute-bottom');
                             el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--fixed');
                         }
-                        if (video != null) {
+                        if (video !== null) {
                             video.pause();
                         }
                     }
                 } else {
                 if (topDiff < scrollBreak && bottomDiff >= scrollBreak) {
                         el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--hidden');
-                        if (video != null && video.classList.contains('stopped') !== true) {
+                        if (video !== null && video.classList.contains('stopped') !== true) {
                             video.play();
                             el.querySelector('.parallax-block__mute-button').classList.remove('parallax-block__background--hidden');
                         }
 
                     } else {
                         el.querySelector('.parallax-block__background').classList.add('parallax-block__background--hidden');
-                        if (video != null) {
+                        if (video !== null) {
                             video.pause();
                             el.querySelector('.parallax-block__mute-button').classList.add('parallax-block__background--hidden');
                         }

@@ -55,18 +55,19 @@
     &__mute-button {
         position: fixed;
         z-index: 2;
-        bottom: 30px;
-        right: 30px;
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
+        top: 0px;
+        right: 0px;
+        width: 150px;
+        height: 50px;
         background-color: var(--white);;
         background-repeat: no-repeat;
-        background-size: 40px 40px;
-        background-position: center;
+        background-size: 26px;
+        background-position: 10px;
         background-image: url('/public/icons/silent_icon.svg');
+        padding-left: 50px;
+        line-height: 50px;
         
-        &--muted {
+        &--unmuted {
             background-image: url('/public/icons/volume_icon.svg')
         }
         
