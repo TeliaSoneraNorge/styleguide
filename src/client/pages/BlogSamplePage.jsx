@@ -49,6 +49,66 @@ const BlogSamplePage = () =>
 
             <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Curabitur aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </section>
+        <section className="related-articles">
+            <div className="container container--large container--no-padding container--extra-margin-bottom">
+                <h2 className="heading heading--level-2 related-articles__heading">Related articles</h2>
+                <hr className="related-articles__line"/>
+                <ul className="related-articles__list">
+                    <li className="related-articles__list-item">
+                        <section className="related-article">
+                            <img className="related-article__image" src="/public/website-images/boy-ipad.jpg"></img>
+                                <div className="related-article__text">
+                                    <h4 className="heading heading--level-4 related-article__heading">This is the article's heading</h4>
+                                    <div className="tags tags--dark-grey">
+                                        <span className="tags__tag">Related</span>
+                                        <span className="tags__tag">Article</span>
+                                        <span className="tags__tag">Tag</span>
+                                    </div>
+                                </div>
+                        </section>
+                    </li>
+                    <li className="related-articles__list-item">
+                        <section className="related-article">
+                            <img className="related-article__image" src="/public/website-images/woman-mobile.jpg"></img>
+                                <div className="related-article__text">
+                                    <h4 className="heading heading--level-4 related-article__heading">This is the article's heading</h4>
+                                    <div className="tags tags--dark-grey">
+                                        <span className="tags__tag">Related</span>
+                                        <span className="tags__tag">Article</span>
+                                        <span className="tags__tag">Tag</span>
+                                    </div>
+                                </div>
+                        </section>
+                    </li>
+                    <li className="related-articles__list-item">
+                        <section className="related-article">
+                            <img className="related-article__image" src="/public/website-images/kids-ipad.jpg"></img>
+                                <div className="related-article__text">
+                                    <h4 className="heading heading--level-4 related-article__heading">This is the article's heading</h4>
+                                    <div className="tags tags--dark-grey">
+                                        <span className="tags__tag">Related</span>
+                                        <span className="tags__tag">Article</span>
+                                        <span className="tags__tag">Tag</span>
+                                    </div>
+                                </div>
+                        </section>
+                    </li>
+                    <li className="related-articles__list-item">
+                        <section className="related-article">
+                            <img className="related-article__image" src="/public/website-images/woman-holding-ipad.jpg"></img>
+                                <div className="related-article__text">
+                                    <h4 className="heading heading--level-4 related-article__heading">This is the article's heading</h4>
+                                    <div className="tags tags--dark-grey">
+                                        <span className="tags__tag">Related</span>
+                                        <span className="tags__tag">Article</span>
+                                        <span className="tags__tag">Tag</span>
+                                    </div>
+                                </div>
+                        </section>
+                    </li>
+                </ul>
+            </div>
+        </section>
     </div>;
 
 export default BlogSamplePage;
