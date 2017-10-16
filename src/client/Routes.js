@@ -18,6 +18,7 @@ import InformationArticleSample4 from './pages/InformationArticleSample4';
 import SubscriptionSamplePage from './pages/SubscriptionSamplePage';
 import PebblesPage from "./pages/PebblesPage";
 import BoxGridSamplePage from './pages/BoxGridSamplePage';
+import BlogSamplePage from './pages/BlogSamplePage';
 
 const Routes = (props) =>
     <div>
@@ -49,6 +50,7 @@ const Routes = (props) =>
         <Route exact path="/pebbles-page" component={PebblesPage} />
         <Route exact path="/subscription" component={SubscriptionSamplePage} />
         <Route exact path="/box-grid" component={BoxGridSamplePage} />
+        <Route exact path="/blog" component={BlogSamplePage} />
 
         <PageFooter
             links={[
