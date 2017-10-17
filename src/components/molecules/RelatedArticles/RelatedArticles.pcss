@@ -1,0 +1,51 @@
+.related-articles {
+    background-color: var(--light-grey);
+    padding: 20px 0;
+
+    &__heading {
+        margin: 1rem 1rem 0.3rem 2.5rem;
+    }
+
+    &__line {
+        border: 1px solid var(--core-purple);
+        margin: 0 0 0 2.5rem;
+        width: 50px;
+    }
+
+    &__list {
+        display: flex;
+        flex-flow: row nowrap;
+        list-style: none;
+        margin: 0;
+        overflow-x: scroll;
+        padding: 0 1.5rem;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        @media all and (min-width: em(768)) {
+            &::-webkit-scrollbar-track {
+                background-color: var(--light-grey);
+            }
+
+            &::-webkit-scrollbar {
+                display: block;
+                width: 20px;
+                background-color: var(--grey);
+            }
+
+            &::-webkit-scrollbar-thumb {
+                border-radius: 5px;
+                background-color: var(--dark-grey);
+                border-bottom: 2px solid var(--light-grey);
+                border-top: 2px solid var(--light-grey);
+            }
+        }
+    }
+
+    &__list-item {
+        flex: 0 0 auto;
+        margin: 1rem;
+    }
+}
