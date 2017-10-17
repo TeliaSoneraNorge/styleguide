@@ -1,0 +1,32 @@
+.image {
+    margin: 0;
+
+    &--inline-left, &--inline-right {
+        display: inline;
+        margin-bottom: .75em;
+        margin-top: .25em;
+        width: 50%;
+    }
+
+    &--inline-left {
+        float: left;
+        margin-right: 1em;
+    }
+
+    &--inline-right {
+        float: right;
+        margin-left: 1em;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+    }
+
+    &__caption {
+        background-color: var(--light-grey);
+        font-size: 0.8rem;
+        font-style: italic;
+        padding: 0.3rem 0.5rem;
+    }
+}
