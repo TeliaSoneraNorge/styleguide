@@ -16,8 +16,8 @@ const HtmlComponent = ({ path, metadata }) => {
             </div>
             {isFullWidthComponent(componentName) ?
                 _.map(metadata.examples, (example, i) =>
-                    <div>
-                        <div key={i} className="container container--medium container--no-margin">
+                    <div key={i}>
+                        <div className="container container--medium container--no-margin">
                             <Heading level={3} text={example.name} />
                         </div>
                         <div dangerouslySetInnerHTML={{ __html: example.html }}></div>
