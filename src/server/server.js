@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 // Configure the '/public' folder
 app.use('/public', express.static('./public'));
 if (config.environment === 'development') {
-    app.use('/public', proxy('http://localhost:8080/public')); // for webpack-dev-server
+    app.use('/public', proxy('http://localhost:8090/public')); // for webpack-dev-server
 }
 
 app.get('/download-zip', (req, res) => {

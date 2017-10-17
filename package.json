@@ -15,7 +15,7 @@
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
     "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc && npm run svgo",
     "deploy:prod": "git push heroku master && node slack.js",
-    "dev": "npm run gen && run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
+    "dev": "npm run clean && npm run gen && run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
     "dev:fast": "run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
     "generate-html-doc": "babel-node ./scripts/generate-html-component-metadata.js",
     "generate-react-doc": "react-docgen ./src/components -e index.js -o component-metadata--react.json --pretty",
@@ -25,7 +25,7 @@
     "start": "node dist/server/server.js",
     "svgo": "svgo -f ./src/unoptimized-icons -o ./public/icons --config=./svgo.config.yml --multipass",
     "start-server": "babel-node src/server/server.js",
-    "start-dev-server": "webpack-dev-server --config webpack-dev.config.js",
+    "start-dev-server": "webpack-dev-server --port 8090 --config webpack-dev.config.js",
     "test": "mocha --opts test/mocha.opts --compilers js:babel-core/register test",
     "test:watch": "nodemon --watch test/ --watch src/ --ext js,jsx --exec \"npm --silent run test\""
   },
