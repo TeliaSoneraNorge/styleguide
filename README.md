@@ -16,7 +16,7 @@
 - Once you have a first draft, run `npm run dev` (you may need to stop/start that process if it was already running, or run `npm run gen` to refresh the meta-info)
 
 # Deploy
-
+- npm run deploy:prod
 ## Heroku
 
 - Install the heroku CLI. See the [Heroku Website](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) for details
