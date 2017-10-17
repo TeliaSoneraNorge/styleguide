@@ -10,7 +10,7 @@
     "build-css:components": "postcss src/components/index.pcss -o public/css/bundle.components.css",
     "build-css:custom": "postcss src/client/css/index.pcss -o public/css/bundle.custom.css",
     "build-server": "babel ./src/server --out-dir ./dist/server --copy-files && cp -r public dist/public",
-    "clean": "rm -rf public/*/bundle.* && rm -rf dist && mkdir -p dist",
+    "clean": "npm run rimraf --  public/*/bundle.* dist && mkdirp dist -p",
     "css:components:watch": "nodemon --ext css --watch src/components --exec \"npm run build-css:components\"",
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
     "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc && npm run svgo",
@@ -27,7 +27,8 @@
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server --port 8090 --config webpack-dev.config.js",
     "test": "mocha --opts test/mocha.opts --compilers js:babel-core/register test",
-    "test:watch": "nodemon --watch test/ --watch src/ --ext js,jsx --exec \"npm --silent run test\""
+    "test:watch": "nodemon --watch test/ --watch src/ --ext js,jsx --exec \"npm --silent run test\"",
+    "rimraf": "rimraf"
   },
   "author": "Telia Norge",
   "license": "ISC",
