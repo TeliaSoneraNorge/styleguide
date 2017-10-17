@@ -1,3 +1,4 @@
+/* IE10 & IE11*/
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
     .focus-box {
         background: var(--core-purple);
@@ -9,5 +10,16 @@
 
     .header--with-mask {
         background: var(--grey);
+    }
+
+    .related-articles__line {
+        display: inline-block;
+    }
+}
+
+/* Microsoft Edge Browser 12+ (All) - @supports method */
+@supports (-ms-ime-align:auto) {
+    .related-articles__line {
+        display: inline-block;
     }
 }
