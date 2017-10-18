@@ -55,7 +55,7 @@ const BlogSamplePage = () =>
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
             <figure className="image image--inline-left">
-                <img className="image__image" src="/public/website-images/woman-holding-ipad.jpg" alt="Woman looking at tablet"/>
+                <img className="image__img" src="/public/website-images/woman-holding-ipad.jpg" alt="Woman looking at tablet"/>
                 <figcaption className="image__caption">Woman looking at tablet</figcaption>
             </figure>
 
@@ -68,7 +68,7 @@ const BlogSamplePage = () =>
                 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
 
             <figure className="image image--inline-right">
-                <img className="image__image" src="/public/website-images/woman-mobile.jpg" alt="Woman looking at mobile"/>
+                <img className="image__img" src="/public/website-images/woman-mobile.jpg" alt="Woman looking at mobile"/>
                 <figcaption className="image__caption">Woman looking at mobile</figcaption>
             </figure>
 
@@ -79,7 +79,7 @@ const BlogSamplePage = () =>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             <figure className="image">
-                <img className="image__image" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet"/>
+                <img className="image__img" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet"/>
                 <figcaption className="image__caption">
                     Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
                 </figcaption>
