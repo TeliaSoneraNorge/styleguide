@@ -4,9 +4,12 @@ import Header from '../../components/molecules/Header/Header';
 
 const BlogSamplePage = () =>
     <div>
-        <div className="full-width-image full-width-image--no-margin">
-            <img className="full-width-image__image" src="https://placekitten.com/1600/600"/>
-        </div>
+        <figure className="full-width-image full-width-image--no-margin">
+            <img className="full-width-image__image" src="https://placekitten.com/1600/300"  alt="Kitten" />
+            <figcaption className="full-width-image__caption container container--no-padding container--no-margin container--large">
+                Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
+            </figcaption>
+        </figure>
         <Header
             pageTitle="Blog"
             withMask={false}

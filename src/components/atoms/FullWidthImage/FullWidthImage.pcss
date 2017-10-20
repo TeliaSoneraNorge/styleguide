@@ -1,11 +1,18 @@
 .full-width-image {
-    margin-bottom: var(--margin-bottom);
+    background-color: var(--grey);
+    margin: 0 0 var(--margin-bottom) 0;
     position: relative;
     z-index: -1;
 
     &__image {
         display: block;
         width: 100%;
+    }
+
+    &__caption {
+        font-size: 0.8rem;
+        font-style: italic;
+        padding: 0.3rem 0.5rem;
     }
 
     @media all and (min-width: 28.125em) {
