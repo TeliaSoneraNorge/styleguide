@@ -29,7 +29,7 @@ export function groupComponentMetadataByType(componentMetadata) {
 export function isFullWidthComponent(componentName) {
     const fullWidthComponents = [
         // Atoms
-        'FactBoxes',
+        'NumberBoxes',
         'FullWidthImage',
         'PagePebbles',
 
