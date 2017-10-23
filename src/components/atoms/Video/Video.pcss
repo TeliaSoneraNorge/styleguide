@@ -1,0 +1,22 @@
+.video {
+    margin-bottom: var(--margin-bottom);
+
+    &__iframe-wrapper {
+        height: 0;
+        padding-bottom: 56.25%; /* 16:9 */
+        position: relative;
+    }
+
+    &--no-margin-bottom {
+        margin-bottom: 0;
+    }
+
+    &__iframe {
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+

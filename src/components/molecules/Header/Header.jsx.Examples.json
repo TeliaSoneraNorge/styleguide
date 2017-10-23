@@ -17,5 +17,13 @@
             "children": "Preamble; an introductory and <a class='link'>expressionary</a> statement in a document that explains the document's purpose and underlying philosophy",
             "withMask": true
         }
+    },
+    {
+        "name": "Header with video",
+        "props": {
+            "videoSrc": "https://www.youtube.com/embed/-yWZdilQQnk?rel=1&amp;controls=1&amp;showinfo=1&amp;autoplay=0",
+            "pageTitle": "Page Title",
+            "children": "Preamble; an introductory and <a class='link'>expressionary</a> statement in a document that explains the document's purpose and underlying philosophy"
+        }
     }
 ]
