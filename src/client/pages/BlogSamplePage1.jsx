@@ -6,7 +6,7 @@ const BlogSamplePage = () =>
     <div>
         <figure className="full-width-image full-width-image--no-margin">
             <img className="full-width-image__image" src="https://placekitten.com/1600/300"  alt="Kitten" />
-            <figcaption className="full-width-image__caption container container--no-padding container--no-margin container--large">
+            <figcaption className="caption container container--no-padding container--no-margin container--large">
                 Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
             </figcaption>
         </figure>
@@ -59,7 +59,7 @@ const BlogSamplePage = () =>
 
             <figure className="image image--inline-left">
                 <img className="image__img" src="/public/website-images/woman-holding-ipad.jpg" alt="Woman looking at tablet"/>
-                <figcaption className="image__caption">Woman looking at tablet</figcaption>
+                <figcaption className="caption">Woman looking at tablet</figcaption>
             </figure>
 
             <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
@@ -72,7 +72,7 @@ const BlogSamplePage = () =>
 
             <figure className="image image--inline-right">
                 <img className="image__img" src="/public/website-images/woman-mobile.jpg" alt="Woman looking at mobile"/>
-                <figcaption className="image__caption">Woman looking at mobile</figcaption>
+                <figcaption className="caption">Woman looking at mobile</figcaption>
             </figure>
 
             <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
@@ -83,7 +83,7 @@ const BlogSamplePage = () =>
 
             <figure className="image">
                 <img className="image__img" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet"/>
-                <figcaption className="image__caption">
+                <figcaption className="caption">
                     Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
                 </figcaption>
             </figure>

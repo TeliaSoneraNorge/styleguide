@@ -54,7 +54,8 @@ const ComponentsPage = (props) => {
                     <li><a className="link" href="/information-article-4">Information article 4</a> - with table</li>
                     <li><a className="link" href="/pebbles-page">Pebble page</a></li>
                     <li><a className="link" href="/box-grid">Box Grid page</a></li>
-                    <li><a className="link" href="/blog">Blog page</a></li>
+                    <li><a className="link" href="/blog-1">Blog page 1</a></li>
+                    <li><a className="link" href="/blog-2">Blog page 2</a></li>
                 </ul>
             </div>
         </div>
