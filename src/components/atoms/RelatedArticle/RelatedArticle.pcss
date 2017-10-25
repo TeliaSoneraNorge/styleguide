@@ -1,5 +1,26 @@
 .related-article {
+    background-color: var(--white);
+    color: var(--black);
+    display: block;
+    text-decoration: none;
     width: 267px;
+
+    &:hover {
+        .related-article__heading {
+            color: var(--core-purple);
+        }
+    }
+
+    &:active, &:focus {
+        background-color: var(--core-purple);
+        color: var(--white);
+        outline: none;
+
+        .related-article__heading,
+        .tags {
+            color: var(--white);
+        }
+    }
 
     &__image {
         display: block;
@@ -7,7 +28,6 @@
     }
 
     &__text {
-        background-color: var(--white);
         padding: 0.5rem 1rem 1rem;
     }
 
