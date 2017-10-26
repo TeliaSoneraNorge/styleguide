@@ -85,61 +85,61 @@ const BlogSamplePage = () =>
                 <hr className="related-articles__line"/>
                 <ul className="related-articles__list">
                     <li className="related-articles__list-item">
-                        <section className="related-article">
+                        <a className="related-article" href="#">
                             <img className="related-article__image" src="/public/website-images/boy-ipad.jpg"></img>
                             <div className="related-article__text">
-                                <h4 className="heading heading--level-4 related-article__heading">This is the article's
-                                    heading</h4>
+                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
+                                    heading</h3>
                                 <div className="tags tags--dark-grey">
                                     <span className="tags__tag">Related</span>
                                     <span className="tags__tag">Article</span>
                                     <span className="tags__tag">Tag</span>
                                 </div>
                             </div>
-                        </section>
+                        </a>
                     </li>
                     <li className="related-articles__list-item">
-                        <section className="related-article">
+                        <a className="related-article" href="#">
                             <img className="related-article__image" src="/public/website-images/woman-mobile.jpg"></img>
                             <div className="related-article__text">
-                                <h4 className="heading heading--level-4 related-article__heading">This is the article's
-                                    heading</h4>
+                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
+                                    heading</h3>
                                 <div className="tags tags--dark-grey">
                                     <span className="tags__tag">Related</span>
                                     <span className="tags__tag">Article</span>
                                     <span className="tags__tag">Tag</span>
                                 </div>
                             </div>
-                        </section>
+                        </a>
                     </li>
                     <li className="related-articles__list-item">
-                        <section className="related-article">
+                        <a className="related-article" href="#">
                             <img className="related-article__image" src="/public/website-images/kids-ipad.jpg"></img>
                             <div className="related-article__text">
-                                <h4 className="heading heading--level-4 related-article__heading">This is the article's
-                                    heading</h4>
+                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
+                                    heading</h3>
                                 <div className="tags tags--dark-grey">
                                     <span className="tags__tag">Related</span>
                                     <span className="tags__tag">Article</span>
                                     <span className="tags__tag">Tag</span>
                                 </div>
                             </div>
-                        </section>
+                        </a>
                     </li>
                     <li className="related-articles__list-item">
-                        <section className="related-article">
+                        <a className="related-article" href="#">
                             <img className="related-article__image" src="/public/website-images/woman-holding-ipad.jpg">
                             </img>
                             <div className="related-article__text">
-                                <h4 className="heading heading--level-4 related-article__heading">This is the article's
-                                    heading</h4>
+                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
+                                    heading</h3>
                                 <div className="tags tags--dark-grey">
                                     <span className="tags__tag">Related</span>
                                     <span className="tags__tag">Article</span>
                                     <span className="tags__tag">Tag</span>
                                 </div>
                             </div>
-                        </section>
+                        </a>
                     </li>
                 </ul>
             </div>
