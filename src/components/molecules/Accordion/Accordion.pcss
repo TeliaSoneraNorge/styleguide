@@ -9,6 +9,7 @@
 
     &:last-of-type {
         border-bottom: var(--accordion-border);
+        margin-bottom: var(--margin-bottom);
     }
 
     &__header {
@@ -24,25 +25,17 @@
         border: none;
         cursor: pointer;
         display: block;
-        font-size: 1.375rem;
-        font-weight: 600;
-        padding: 1rem 1.25rem;
+        font-size: inherit;
+        font-weight: inherit;
+        padding: 1rem 1.25rem 1rem 0;
         position: relative;
         text-align: left;
         width: 100%;
-
-        @media all and (min-width: 28.125em) {
-            padding: 1rem 1.25rem 1rem 0;
-        }
     }
 
     &__panel {
         display: none;
-        padding: 1rem;
-
-        @media all and (min-width: 28.125em) {
-            padding: 1rem 0;
-        }
+        padding: 1rem 0;
     }
 
     &--open {
