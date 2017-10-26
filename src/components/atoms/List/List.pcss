@@ -9,23 +9,41 @@
     }
 
     &__link {
-        color: var(--core-purple);
+        color: var(--black);
+        padding: 0.325rem 0.25rem 0.325rem 1.25rem;
         text-decoration: none;
 
         &:hover {
-            text-decoration: underline;
+            color: var(--core-purple);
+        }
+
+        &:focus, &:active {
+            background: var(--core-purple) url('/public/icons/ico_linkarrow_white.svg') no-repeat left 0.5rem;
+            background-size: 0.875rem 0.875rem;
+            color: var(--white);
+            outline: none;
         }
     }
 
     &--links {
+
         .list__item {
             background-image: url('/public/icons/ico_linkarrow_purple.svg');
+            padding: 0.25rem 0 0.25rem 0;
         }
     }
 
     &--black {
         .list__link {
             color: var(--black);
+
+            &:hover {
+                text-decoration: underline;
+            }
+
+            &:focus, &:active {
+                color: var(--white);
+            }
         }
         .list__item {
             background-image: url('/public/icons/ico_linkarrow_black.svg');
