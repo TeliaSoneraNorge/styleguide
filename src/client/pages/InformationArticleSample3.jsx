@@ -26,8 +26,10 @@ const InformationArticleSample3 = () =>
                             <img className="step-by-step__icon" src="/public/icons/ico_buy_purple.svg" alt=""/>
                         </div>
                         <div className="step-by-step__text">
-                            <span className="step-by-step__heading">Heading</span>
-                            <span className="step-by-step__description">This is a short descriptive text. This is a short descriptive text. This is a short descriptive text. This is a short descriptive text. </span>
+                            <h2 className="step-by-step__heading heading heading--level-2">Lorem</h2>
+                            <div className="step-by-step__description">
+                                Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus.
+                            </div>
                         </div>
                     </li>
                     <li className="step-by-step__step">
@@ -35,8 +37,8 @@ const InformationArticleSample3 = () =>
                             <img className="step-by-step__image" src="/public/website-images/boy-ipad.jpg" alt=""/>
                         </div>
                         <div className="step-by-step__text">
-                            <span className="step-by-step__heading">Heading</span>
-                            <span className="step-by-step__description">This is a short descriptive text</span>
+                            <h2 className="step-by-step__heading heading heading--level-2">Ipsum</h2>
+                            <div className="step-by-step__description">Nulla quis lorem ut libero malesuada feugiat.</div>
                         </div>
                     </li>
                     <li className="step-by-step__step">
@@ -44,8 +46,14 @@ const InformationArticleSample3 = () =>
                             <img className="step-by-step__icon" src="/public/icons/ico_buy_purple.svg" alt=""/>
                         </div>
                         <div className="step-by-step__text">
-                            <span className="step-by-step__heading">Heading</span>
-                            <span className="step-by-step__description">This is a short descriptive text</span>
+                            <h2 className="step-by-step__heading heading heading--level-2">Sit dolor</h2>
+                            <div className="step-by-step__description">
+                                Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta. Proin eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in ipsum id orci porta dapibus.
+
+                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
+
+                                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Curabitur aliquet quam id dui posuere blandit. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+                            </div>
                         </div>
                     </li>
                 </ul>
