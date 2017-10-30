@@ -1,0 +1,78 @@
+.product-promo-box {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    text-align: center;
+
+    @media all and (min-width: 31em){
+        display: block;
+        padding: var(--padding);
+        text-align: left;
+    }
+
+    &__image {
+        height: 100%;
+        margin: 0 auto 1rem;
+        width: 20%;
+
+        @media all and (min-width: 31em){
+            clear: left;
+            float: left;
+            margin: 0;
+            width: 140px;
+        }
+    }
+
+    &__product-name {
+        flex: 0 1 100%;
+        margin-bottom: 1.5rem;
+        order: -1;
+
+        @media all and (min-width: 31em){
+            height: 100%;
+            margin-bottom: 10px;
+            overflow: auto;
+            padding: 0.5rem 0 0 1.5rem;
+        }
+    }
+
+    &__text {
+        flex: 0 1 100%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+
+        @media all and (min-width: 31em){
+            margin: 0;
+            min-height: 235px;
+            overflow: auto;
+            padding: 0 0 0.5rem 1.5rem;
+        }
+    }
+
+    &__description {
+        display: none;
+        margin-bottom: 2.5rem;
+
+        @media all and (min-width: 31em){
+            display: block;
+        }
+    }
+
+    &__monthly-price {
+    }
+
+    &__monthly-price-number {
+        font-family: 'pebble';
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    &__total-price {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    &__button {
+        margin: 0;
+    }
+}

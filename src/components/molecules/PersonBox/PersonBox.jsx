@@ -16,7 +16,7 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
     const titleLinkedInProfile = `${name}'s LinkedIn profile`;
     const titleTwitterProfile = `${name}'s Twitter profile`;
     return (
-        <Box color={color} id={id} isExpanded={isExpanded}>
+        <Box color={color} id={id} canExpand={true} isExpanded={isExpanded}>
             <div className="person-box">
                 <div className="person-box__image-label">
                     <img className="person-box__image" src={imagePath} alt={imageAltText}/>

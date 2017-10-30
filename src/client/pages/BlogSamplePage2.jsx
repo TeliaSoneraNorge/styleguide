@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Header from '../../components/molecules/Header/Header';
+import ProductPromoBox from '../../components/molecules/ProductPromoBox/ProductPromoBox';
 
 const BlogSamplePage = () =>
     <div>
@@ -71,12 +72,15 @@ const BlogSamplePage = () =>
                 posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
-            <figure className="image">
-                <img className="image__img" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet"/>
-                <figcaption className="caption">
-                    Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
-                </figcaption>
-            </figure>
+            <ProductPromoBox
+                id="blog-promo"
+                productName="Sony Xperia XZ Premium"
+                imagePath="http://via.placeholder.com/140x280"
+                description="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+                monthlyPrice="329"
+                totalPrice="7896"
+                buttonText="Les mer">
+            </ProductPromoBox>
 
         </section>
         <section className="related-articles">

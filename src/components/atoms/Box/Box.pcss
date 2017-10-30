@@ -1,10 +1,14 @@
 .box {
     background-color: var(--white);
-    cursor: pointer;
+    cursor: default;
     display: inline-block;
     margin: 0 0 1rem 0;
     position: relative;
     width: 100%;
+
+    &--expandable {
+        cursor: pointer;
+    }
 
     &--small {
         margin: 4.5%;
@@ -33,7 +37,6 @@
     }
 
     @media all and (min-width: 39.8125em) {
-        margin: 0.75rem;
         min-width: 10.938rem;
         width: inherit;
 
@@ -64,6 +67,10 @@
 
     &--blue {
         border: 3px solid var(--blue);
+    }
+
+    &--grey {
+        border: 3px solid var(--grey);
     }
 
     /* Close button */

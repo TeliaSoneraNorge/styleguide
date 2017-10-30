@@ -1,12 +1,15 @@
 import React from 'react';
 
-function classNames(color, size, isExpanded) {
+function classNames(color, size, canExpand, isExpanded) {
     const classNames = ['box'];
     if (color) {
         classNames.push(`box--${color}`);
     }
     if (size) {
         classNames.push(`box--${size}`);
+    }
+    if (canExpand) {
+        classNames.push(`box--expandable`);
     }
     if (isExpanded) {
         classNames.push('box--is-expanded');
@@ -31,8 +34,10 @@ export default class Box extends React.Component {
             isExpanded: this.props.isExpanded ? this.props.isExpanded : false
         };
 
-        this.boxContainerClick = this.boxContainerClick.bind(this);
-        this.closeBoxClick = this.closeBoxClick.bind(this);
+        if (this.props.canExpand){
+            this.boxContainerClick = this.boxContainerClick.bind(this);
+            this.closeBoxClick = this.closeBoxClick.bind(this);
+        }
     }
     boxContainerClick() {
         if (!this.state.isExpanded) {
@@ -45,7 +50,7 @@ export default class Box extends React.Component {
     }
     render() {
         return (
-            <article className={classNames(this.props.color, this.props.size, this.state.isExpanded)} onClick={this.boxContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
+            <article className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)} onClick={this.props.canExpand ? this.boxContainerClick : null} aria-expanded={this.props.canExpand ? this.state.isExpanded : null} id={this.props.id}>
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
                         <span className="box__close-text">LUKK</span>
