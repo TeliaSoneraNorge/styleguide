@@ -63,6 +63,9 @@ export default class Subscription extends React.Component {
                 </section>
                 {(this.state.isExpanded || this.props.isShowingFeatures) ?
                     <section className="subscription__features">
+                        {this.props.speechBubbleText
+                            ? <div className="subscription__speech-bubble">{this.props.speechBubbleText}</div>
+                            : <div className="subscription__speech-bubble subscription__speech-bubble--empty"></div>}
                         {this.props.highlightedFeature ?
                             <div className="subscription__highlighted-feature">
                                 <img className="subscription__highlighted-feature-icon" src={this.props.highlightedFeature.icon} role="presentation" alt="" />

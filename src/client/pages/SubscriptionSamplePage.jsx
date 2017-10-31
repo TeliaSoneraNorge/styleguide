@@ -55,6 +55,7 @@ const forAlleSubscriptionProps = [
         "price": 699,
         "color": "blue",
         "isShowingFeatures": true,
+        "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
         "highlightedFeature": {
             "icon": "/public/icons/ico_music.svg",
@@ -69,6 +70,7 @@ const forAlleSubscriptionProps = [
         "price": 449,
         "color": "teal",
         "isShowingFeatures": true,
+        "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
         "highlightedFeature": {
             "icon": "/public/icons/ico_music.svg",
@@ -83,6 +85,7 @@ const forAlleSubscriptionProps = [
         "price": 399,
         "color": "green",
         "isShowingFeatures": true,
+        "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
         "highlightedFeature": {
             "icon": "/public/icons/ico_music.svg",
