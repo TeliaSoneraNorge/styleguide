@@ -35,17 +35,12 @@ const BlogSamplePage = () =>
             <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula
-                elementum sed sit amet dui.
-            </p>
+                elementum sed sit amet dui.</p>
 
             <p>Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
                 a. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in
                 faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
                 ullamcorper sit amet ligula.</p>
-
-            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
-                tincidunt. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
-                Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
             <div className="video">
                 <div className="video__iframe-wrapper">
@@ -58,9 +53,23 @@ const BlogSamplePage = () =>
                 <div className="caption">Videotext here</div>
             </div>
 
+            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
+                tincidunt. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
+                Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+
             <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
                 eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur
                 arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
+
+            <ProductPromoBox
+                id="blog-promo"
+                productName="Sony Xperia XZ Premium"
+                imagePath="http://via.placeholder.com/140x280"
+                description="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+                monthlyPrice="329"
+                totalPrice="7896"
+                buttonText="Les mer">
+            </ProductPromoBox>
 
             <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
                 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus.
@@ -76,10 +85,11 @@ const BlogSamplePage = () =>
                 id="blog-promo"
                 productName="Sony Xperia XZ Premium"
                 imagePath="http://via.placeholder.com/140x280"
-                description="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
+                description="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus."
                 monthlyPrice="329"
                 totalPrice="7896"
-                buttonText="Les mer">
+                buttonText="Les mer"
+                isShowingFeature={true}>
             </ProductPromoBox>
 
         </section>

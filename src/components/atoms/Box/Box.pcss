@@ -1,13 +1,13 @@
 .box {
     background-color: var(--white);
     cursor: default;
-    display: inline-block;
     margin: 0 0 1rem 0;
     position: relative;
     width: 100%;
 
     &--expandable {
         cursor: pointer;
+        display: inline-block;
     }
 
     &--small {
@@ -51,26 +51,64 @@
 
     &--pink {
         border: 3px solid var(--pink);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--pink);
+        }
     }
 
     &--light-orange {
         border: 3px solid var(--light-orange);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--light-orange);
+        }
     }
 
     &--green {
         border: 3px solid var(--green);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--green);
+        }
     }
 
     &--teal {
         border: 3px solid var(--teal);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--teal);
+        }
     }
 
     &--blue {
         border: 3px solid var(--blue);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--blue);
+        }
     }
 
     &--grey {
         border: 3px solid var(--grey);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--grey);
+        }
+    }
+
+    &__speech-bubble {
+        background-color: var(--white);
+        border-radius: 50%;
+        font-style: italic;
+        height: 125px;
+        margin: -2rem auto 2rem;
+        padding: 1rem;
+        width: 125px;
+        position: absolute;
+        right: 5%;
+        top: 0;
+        text-align: center;
     }
 
     /* Close button */

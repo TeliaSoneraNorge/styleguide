@@ -51,6 +51,9 @@ export default class Box extends React.Component {
     render() {
         return (
             <article className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)} onClick={this.props.canExpand ? this.boxContainerClick : null} aria-expanded={this.props.canExpand ? this.state.isExpanded : null} id={this.props.id}>
+                {this.props.isShowingFeature ?
+                    <div className="box__speech-bubble">Some speech bubble text!</div> : null
+                }
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
                         <span className="box__close-text">LUKK</span>

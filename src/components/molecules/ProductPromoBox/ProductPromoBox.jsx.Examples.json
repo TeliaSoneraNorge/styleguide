@@ -17,11 +17,11 @@
             "id": "box-2",
             "productName": "Sony Xperia XZ Premium",
             "imagePath": "http://via.placeholder.com/140x280",
-            "description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
+            "description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
             "monthlyPrice": "329",
             "totalPrice": "7896",
             "buttonText": "Les mer",
-            "isShowingCampaign": true
+            "isShowingFeature": true
         }
     }
 ]

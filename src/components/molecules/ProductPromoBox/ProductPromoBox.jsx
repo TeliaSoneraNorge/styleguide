@@ -2,10 +2,10 @@ import React from 'react';
 
 import Box from '../../atoms/Box/Box';
 
-function classNames(isShowingCampaign) {
+function classNames(isShowingFeature) {
     const classNames = ['product-promo-box'];
-    if (isShowingCampaign) {
-        classNames.push('product-promo-box--is-showing-campaign');
+    if (isShowingFeature) {
+        classNames.push('product-promo-box--is-showing-feature');
     }
     return classNames.join(' ');
 }
@@ -15,11 +15,11 @@ function classNames(isShowingCampaign) {
  * A ProductPromoBox component use the default <a href="/components/atoms#Box">Box</a> component.
  * The content within this box presents a product with a name, image, price and short description.
  */
-const ProductPromoBox = ({ id, productName, productColor, imagePath, description, monthlyPrice, totalPrice, buttonText, isShowingCampaign }) => {
+const ProductPromoBox = ({ id, productName, productColor, imagePath, description, monthlyPrice, totalPrice, buttonText, isShowingFeature }) => {
     const imageAltText = `${productName}`;
     return (
-        <Box color="grey" id={id} canExpand={false}>
-            <section className={classNames(isShowingCampaign)}>
+        <Box color="grey" id={id} canExpand={false} isShowingFeature={isShowingFeature}>
+            <section className={classNames(isShowingFeature)}>
                 <img className="product-promo-box__image" src={imagePath} alt={imageAltText}/>
                 <h2 className="heading heading--level-2 product-promo-box__product-name">{productName}</h2>
                 <div className="product-promo-box__text">
