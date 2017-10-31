@@ -36,7 +36,7 @@
         }
     },
     {
-        "name": "Subscription - Showing features",
+        "name": "Subscription - Showing features, no speech bubble",
         "containerCssClass": "subscription-wrapper",
         "props": {
             "name": "SMART Total",
@@ -53,7 +53,25 @@
         }
     },
     {
-        "name": "Subscription - Fully expanded",
+        "name": "Subscription - Showing features & speech bubble",
+        "containerCssClass": "subscription-wrapper",
+        "props": {
+            "name": "SMART Total",
+            "id": "smartTotal2",
+            "dataAmount": 40,
+            "dataUnit": "GB",
+            "price": 699,
+            "color": "blue",
+            "isShowingFeatures": true,
+            "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
+            "highlightedFeature": {
+                "icon": "/public/icons/ico_music.svg",
+                "name": "Music Freedom"
+            }
+        }
+    },
+    {
+        "name": "Subscription - Fully expanded, no speech bubble",
         "containerCssClass": "subscription-wrapper",
         "props": {
             "name": "SMART Pluss",
@@ -63,6 +81,25 @@
             "price": 399,
             "color": "green",
             "isExpanded": true,
+            "highlightedFeature": {
+                "icon": "/public/icons/ico_music.svg",
+                "name": "Music Freedom"
+            },
+            "specialMessageText": "Listen to as music as you want without using your data quota!"
+        }
+    },
+    {
+        "name": "Subscription - Fully expanded & speech bubble",
+        "containerCssClass": "subscription-wrapper",
+        "props": {
+            "name": "SMART Pluss",
+            "id": "smartPluss2",
+            "dataAmount": 6,
+            "dataUnit": "GB",
+            "price": 399,
+            "color": "green",
+            "isExpanded": true,
+            "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
             "highlightedFeature": {
                 "icon": "/public/icons/ico_music.svg",
                 "name": "Music Freedom"
