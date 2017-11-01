@@ -34,12 +34,14 @@ export default class Box extends React.Component {
             isExpanded: this.props.isExpanded ? this.props.isExpanded : false
         };
 
-        if (this.props.canExpand){
+        if (this.props.canExpand) {
             this.boxContainerClick = this.boxContainerClick.bind(this);
             this.closeBoxClick = this.closeBoxClick.bind(this);
         }
     }
     boxContainerClick(e) {
+        if (!this.props.canExpand) return;
+
         if (e.type === "click" || (e.type === "keyup" && (e.which === 13 || e.which === 32))) {
             if (!this.state.isExpanded) {
                 this.setState({ isExpanded: true });
@@ -51,14 +53,16 @@ export default class Box extends React.Component {
         this.setState({ isExpanded: false });
     }
     render() {
-        const boxContainerEvent = this.props.canExpand ? this.boxContainerClick : null;
-        const ariaExpanded = this.props.canExpand ? this.state.isExpanded : null;
-        const tabIndex = this.props.canExpand ? "0" : null;
         return (
-            <article className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)} onClick={boxContainerEvent} onKeyUp={boxContainerEvent} aria-expanded={ariaExpanded} id={this.props.id} tabIndex={tabIndex}>
+            <article
+                id={this.props.id}
+                className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)}
+                onClick={this.boxContainerClick}
+                onKeyUp={this.boxContainerClick}
+                aria-expanded={this.props.canExpand ? this.state.isExpanded : null}
+                tabIndex={this.props.canExpand ? "0" : null}>
                 {this.props.isShowingFeature ?
-                    <div className="box__speech-bubble">Some speech bubble text!</div> : null
-                }
+                    <div className="box__speech-bubble">Some speech bubble text!</div> : null}
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
                         <span className="box__close-text">LUKK</span>
