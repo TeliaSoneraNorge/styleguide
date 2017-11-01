@@ -39,9 +39,11 @@ export default class Box extends React.Component {
             this.closeBoxClick = this.closeBoxClick.bind(this);
         }
     }
-    boxContainerClick() {
-        if (!this.state.isExpanded) {
-            this.setState({ isExpanded: true });
+    boxContainerClick(e) {
+        if (e.type === "click" || (e.type === "keyup" && (e.which === 13 || e.which === 32))) {
+            if (!this.state.isExpanded) {
+                this.setState({ isExpanded: true });
+            }
         }
     }
     closeBoxClick(e) {
@@ -49,8 +51,11 @@ export default class Box extends React.Component {
         this.setState({ isExpanded: false });
     }
     render() {
+        const boxContainerEvent = this.props.canExpand ? this.boxContainerClick : null;
+        const ariaExpanded = this.props.canExpand ? this.state.isExpanded : null;
+        const tabIndex = this.props.canExpand ? "0" : null;
         return (
-            <article className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)} onClick={this.props.canExpand ? this.boxContainerClick : null} aria-expanded={this.props.canExpand ? this.state.isExpanded : null} id={this.props.id}>
+            <article className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)} onClick={boxContainerEvent} onKeyUp={boxContainerEvent} aria-expanded={ariaExpanded} id={this.props.id} tabIndex={tabIndex}>
                 {this.props.isShowingFeature ?
                     <div className="box__speech-bubble">Some speech bubble text!</div> : null
                 }
