@@ -13,17 +13,17 @@
         }
     },
     {
-        "name": "Action",
-        "props": {
-            "text": "Action button",
-            "kind": "action"
-        }
+      "name": "Green",
+      "props": {
+          "text": "Green button",
+          "kind": "green"
+      }
     },
     {
-        "name": "Action (small)",
+        "name": "Green (small)",
         "props": {
-            "text": "Action button",
-            "kind": "action",
+            "text": "Green button",
+            "kind": "green",
             "size": "small"
         }
     },

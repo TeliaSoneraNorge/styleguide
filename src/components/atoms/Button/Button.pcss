@@ -7,33 +7,31 @@
     color: var(--core-purple);
     cursor: pointer;
     display: inline-block;
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-weight: 500;
     letter-spacing: .05rem;
     margin: 0 0 var(--margin-bottom) 0;
-    padding: 1.0625rem 1.875rem;
+    padding: 0.7rem 1.8rem;
     text-decoration: none;
     text-transform: uppercase;
     transition: background-color .15s, color .15s;
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
         background-color: var(--core-purple);
         color: var(--white);
+        outline: none;
     }
 
     &--small {
-        font-size: 0.8rem;
-        padding: 0.7rem 1.5rem;
+        padding: 0.4rem 1.3rem;
     }
 
-    &--action {
-        background-color: var(--core-purple);
+    &--green {
+        background-color: var(--dark-green);
         border: none;
-        color: var(--white);
-
-        &:hover {
-            background-color: var(--dark-purple-2);
-        }
+        color: var(--black);
     }
 
     &--cancel {

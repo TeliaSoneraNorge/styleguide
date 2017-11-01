@@ -78,7 +78,7 @@ const InformationArticleSample1 = ({ colors }) =>
                         If the content in this section is used for tangentially related content, we recommend
                         to wrap the outer html section-element for this component in an aside-element.
                     </div>
-                    <a className="button button--small button--action" href="">Button link</a>
+                    <a className="button button--small" href="">Button link</a>
                 </div>
             </div>
         </section>
