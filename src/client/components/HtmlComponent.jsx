@@ -29,7 +29,7 @@ const HtmlComponent = ({ path, metadata }) => {
                 _.map(metadata.examples, (example, i) =>
                     <div key={i} className="container container--medium container--no-margin">
                         <Heading level={3} text={example.name} />
-                        <div dangerouslySetInnerHTML={{ __html: example.html }}></div>
+                        <div className="sg-margin-top" dangerouslySetInnerHTML={{ __html: example.html }}></div>
                         <CodeSnippet code={example.html} language="markup" />
                     </div>
                 )}
