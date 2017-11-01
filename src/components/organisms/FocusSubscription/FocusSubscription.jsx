@@ -74,7 +74,7 @@ export default class FocusSubscription extends React.Component {
                     </div>
 
                     <section className="accordion accordion--open">
-                        <h3 className="accordion__header">
+                        <h3 className="accordion__header heading heading--level-3">
                             <button className="accordion__header-button" aria-expanded="true" aria-controls="focus-subscription-accordion">
                                 Om abonnement
                             </button>

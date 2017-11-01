@@ -45,21 +45,21 @@ const InformationArticleSample1 = ({ colors }) =>
             </div>
             <div className="container container--small">
                 <section className="accordion accordion--open">
-                    <h2 className="accordion__header heading heading--level-2">
+                    <h3 className="accordion__header heading heading--level-3">
                         <button className="accordion__header-button" aria-expanded="true" aria-controls="accordion-multiple-example-1">
                             An open accordion heading
                         </button>
-                    </h2>
+                    </h3>
                     <div className="accordion__panel" id="accordion-multiple-example-1">
                         This is the body of the accordion.
                     </div>
                 </section>
                 <section className="accordion">
-                    <h2 className="accordion__header heading heading--level-2">
+                    <h3 className="accordion__header heading heading--level-3">
                         <button className="accordion__header-button" aria-expanded="false" aria-controls="accordion-multiple-example-2">
                             Another closed accordion heading
                         </button>
-                    </h2>
+                    </h3>
                     <div className="accordion__panel" id="accordion-multiple-example-2">
                         This is the body of the accordion.
                     </div>

@@ -3,26 +3,28 @@
 }
 
 .accordion {
-    border-top: var(--accordion-border);
     margin: 0 auto;
     max-width: var(--width-medium);
 
     &:last-of-type {
-        border-bottom: var(--accordion-border);
         margin-bottom: var(--margin-bottom);
+
+        .accordion__header-button {
+            border-bottom: var(--accordion-border);
+        }
     }
 
     &__header {
-        margin: 0 0 1px 0;
     }
 
     &__header-button {
-        background-color: white;
+        background-color: var(--white);
         background-image: url(/public/icons/ico_add_purple.svg);
         background-position: right 1rem center;
         background-repeat: no-repeat;
         background-size: 15px 15px;
         border: none;
+        border-top: var(--accordion-border);
         cursor: pointer;
         display: block;
         font-size: inherit;
@@ -31,16 +33,33 @@
         position: relative;
         text-align: left;
         width: 100%;
+
+        &:hover {
+            color: var(--core-purple);
+        }
+
+        &:focus,
+        &:active {
+            background-color: var(--core-purple);
+            background-image: url(/public/icons/ico_add_white.svg);
+            color: var(--white);
+            outline: none;
+        }
     }
 
     &__panel {
         display: none;
-        padding: 1rem 0;
+        padding: 0 0 2rem 0;
     }
 
     &--open {
         .accordion__header-button {
             background-image: url('/public/icons/ico_minus_purple.svg');
+
+            &:focus,
+            &:active {
+                background-image: url(/public/icons/ico_minus_white.svg);
+            }
         }
         .accordion__panel {
             display: block;
