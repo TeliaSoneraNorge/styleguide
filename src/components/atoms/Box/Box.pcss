@@ -1,39 +1,38 @@
 .box {
     background-color: var(--white);
-    cursor: pointer;
-    display: inline-block;
+    cursor: default;
     margin: 0 0 1rem 0;
     position: relative;
     width: 100%;
 
+    &--expandable {
+        cursor: pointer;
+        display: inline-block;
+    }
+
     &--small {
-        margin: 4.5%;
         max-width: 11.563rem;
         width: 41%;
     }
 
     &--medium {
-        margin: 4.5%;
         max-width: 24.625rem;
         width: 94%;
     }
 
     @media all and (min-width: 24.9375rem) {
         &--small {
-            margin: 0.75rem;
             min-width: 10.938rem;
             width: 44%;
         }
 
         &--medium {
-            margin: 0.75rem;
             min-width: 23.375rem;
             width: 94%;
         }
     }
 
     @media all and (min-width: 39.8125em) {
-        margin: 0.75rem;
         min-width: 10.938rem;
         width: inherit;
 
@@ -48,22 +47,64 @@
 
     &--pink {
         border: 3px solid var(--pink);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--pink);
+        }
     }
 
     &--light-orange {
         border: 3px solid var(--light-orange);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--light-orange);
+        }
     }
 
     &--green {
         border: 3px solid var(--green);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--green);
+        }
     }
 
     &--teal {
         border: 3px solid var(--teal);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--teal);
+        }
     }
 
     &--blue {
         border: 3px solid var(--blue);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--blue);
+        }
+    }
+
+    &--grey {
+        border: 3px solid var(--grey);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--grey);
+        }
+    }
+
+    &__speech-bubble {
+        background-color: var(--white);
+        border-radius: 50%;
+        font-style: italic;
+        height: 125px;
+        margin: -2rem auto 2rem;
+        padding: 1rem;
+        width: 125px;
+        position: absolute;
+        right: 5%;
+        top: 0;
+        text-align: center;
     }
 
     /* Close button */
@@ -98,22 +139,12 @@
         padding: 2%;
         width: 100%;
 
-        &.box--small {
-            margin: 0.75rem 0.3rem;
-        }
-
-        &.box--medium {
-            margin: 0.75rem 0.3rem;
-        }
-
         @media all and (min-width: 24.9375rem) {
             &.box--small {
-                margin: 0.75rem;
                 padding: 3.5rem;
             }
 
             &.box--medium {
-                margin: 0.75rem;
                 padding: 3.5rem;
             }
         }

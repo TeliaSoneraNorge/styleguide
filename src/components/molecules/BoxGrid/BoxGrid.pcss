@@ -8,8 +8,39 @@
         display: flex;
         flex: 0 1 auto;
 
+        @media all and (min-width: 39.8125em) {
+            margin: 0.75rem;
+        }
+
         &--is-expanded {
             flex-wrap: wrap;
+        }
+    }
+
+    .box--small,
+    .box--medium {
+        margin: 4.5%;
+    }
+
+    @media all and (min-width: 24.9375rem) {
+        .box--small,
+        .box--medium {
+            margin: 0.75rem;
+        }
+    }
+
+    .box--is-expanded {
+
+        &.box--small,
+        &.box--medium {
+            margin: 0.75rem 0.3rem;
+        }
+
+        @media all and (min-width: 24.9375rem) {
+            &.box--small,
+            &.box--medium {
+                margin: 0.75rem;
+            }
         }
     }
 }

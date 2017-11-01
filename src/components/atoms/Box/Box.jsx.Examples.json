@@ -4,7 +4,8 @@
         "props": {
             "id": "box-1",
             "color": "pink",
-            "children": "Example 1 - Default Collapsed Box"
+            "children": "Example 1 - Default Collapsed Box",
+            "canExpand": true
         }
     },
     {
@@ -13,44 +14,58 @@
             "id": "box-2",
             "color": "pink",
             "children": "Example 2 - Default Expanded Box",
+            "canExpand": true,
             "isExpanded": true
+        }
+    },
+    {
+        "name": "Default Not Expandable",
+        "props": {
+            "id": "box-3",
+            "color": "grey",
+            "children": "Example 3 - Default Not Expandable Box",
+            "canExpand": false
         }
     },
     {
         "name": "Small Collapsed",
         "props": {
-            "id": "box-3",
+            "id": "box-4",
             "color": "teal",
             "size": "small",
-            "children": "Example 3 - Small Collapsed Box"
+            "children": "Example 4 - Small Collapsed Box",
+            "canExpand": true
         }
     },
     {
         "name": "Small Expanded",
         "props": {
-            "id": "box-4",
+            "id": "box-5",
             "color": "teal",
             "size": "small",
-            "children": "Example 4 - Small Expanded Box",
+            "children": "Example 5 - Small Expanded Box",
+            "canExpand": true,
             "isExpanded": true
         }
     },
     {
         "name": "Medium Collapsed",
         "props": {
-            "id": "box-5",
+            "id": "box-6",
             "color": "light-orange",
             "size": "medium",
-            "children": "Example 5 - Medium Collapsed Box"
+            "children": "Example 6 - Medium Collapsed Box",
+            "canExpand": true
         }
     },
     {
         "name": "Medium Expanded",
         "props": {
-            "id": "box-6",
+            "id": "box-7",
             "color": "light-orange",
             "size": "medium",
-            "children": "Example 6 - Medium Expanded Box",
+            "children": "Example 7 - Medium Expanded Box",
+            "canExpand": true,
             "isExpanded": true
         }
     }

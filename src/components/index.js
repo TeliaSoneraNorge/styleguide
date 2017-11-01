@@ -21,6 +21,7 @@ import Header from './molecules/Header/Header';
 import PageFooter from './molecules/PageFooter/PageFooter';
 import PageHeader from './molecules/PageHeader/PageHeader';
 import PersonBox from './molecules/PersonBox/PersonBox';
+import ProductPromoBox from './molecules/ProductPromoBox/ProductPromoBox';
 import ProgressChart from './molecules/ProgressChart/ProgressChart';
 import Subscription from './molecules/Subscription/Subscription';
 
@@ -45,6 +46,7 @@ export default {
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
     'src/components/molecules/PersonBox/PersonBox.jsx': PersonBox,
+    'src/components/molecules/ProductPromoBox/ProductPromoBox.jsx' : ProductPromoBox,
     'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
     'src/components/molecules/Subscription/Subscription.jsx': Subscription,
 

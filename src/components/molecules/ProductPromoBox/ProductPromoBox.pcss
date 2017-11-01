@@ -1,0 +1,111 @@
+.product-promo-box {
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+    text-align: center;
+
+    @media all and (min-width: 37em) {
+        display: block;
+        padding: var(--padding);
+        text-align: left;
+    }
+
+    &__image {
+        height: 100%;
+        margin: 0 auto 1rem;
+        max-height: 16rem;
+        max-width: 100%;
+        width: 20%;
+
+        @media all and (min-width: 37em) {
+            clear: left;
+            float: left;
+            height: auto;
+            margin: 0;
+            width: auto;
+        }
+    }
+
+    &__product-name {
+        flex: 0 1 100%;
+        margin: 0 auto 1.5rem;
+        order: -1;
+
+        @media all and (min-width: 37em) {
+            height: 100%;
+            margin: 0 0 10px;
+            overflow: auto;
+            padding: 1rem 1.5rem 0 1.5rem;
+        }
+    }
+
+    &__text {
+        flex: 0 1 100%;
+        margin: 0 auto;
+        padding: 0.5rem 0;
+
+        @media all and (min-width: 37em) {
+            margin: 0;
+            min-height: 203px;
+            overflow: auto;
+            padding: 0 0 0.5rem 1.5rem;
+        }
+    }
+
+    &__description {
+        display: none;
+        margin-bottom: 1.5rem;
+
+        @media all and (min-width: 37em) {
+            display: block;
+        }
+    }
+
+    &__monthly-price {
+    }
+
+    &__monthly-price-number {
+        font-family: 'pebble';
+        font-size: 2rem;
+        line-height: 1;
+    }
+
+    &__total-price {
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+    }
+
+    &__button {
+        margin: 0;
+    }
+
+    &--is-showing-feature {
+        width: 50%;
+
+        @media all and (min-width: 37em) {
+            width: 80%;
+        }
+
+        .product-promo-box__image {
+            width: 45%;
+
+            @media all and (min-width: 37em) {
+                height: auto;
+                width: auto;
+            }
+        }
+
+        .product-promo-box__description {
+            display: block;
+            position: absolute;
+            right: 5%;
+            top: 40%;
+            width: 45%;
+
+            @media all and (min-width: 37em) {
+                position: static;
+                width: 100%;
+            }
+        }
+    }
+}
