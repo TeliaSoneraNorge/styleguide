@@ -16,4 +16,31 @@
             flex-wrap: wrap;
         }
     }
+
+    .box--small,
+    .box--medium {
+        margin: 4.5%;
+    }
+
+    @media all and (min-width: 24.9375rem) {
+        .box--small,
+        .box--medium {
+            margin: 0.75rem;
+        }
+    }
+
+    .box--is-expanded {
+
+        &.box--small,
+        &.box--medium {
+            margin: 0.75rem 0.3rem;
+        }
+
+        @media all and (min-width: 24.9375rem) {
+            &.box--small,
+            &.box--medium {
+                margin: 0.75rem;
+            }
+        }
+    }
 }
