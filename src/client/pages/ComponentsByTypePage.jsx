@@ -24,7 +24,7 @@ const ComponentsPage = (props) => {
                 pageTitle={`Components: ${componentType}`}
                 withMask={false}
                 withContentOverlap={false} />
-            <div className="container container--no-padding container--extra-padding-top container--extra-margin-bottom">
+            <div className="container container--no-padding container--extra-margin-bottom">
                 {_.map(componentPaths, (path) => {
                     const metadata = componentMetadata[path];
                     return metadata.isHtmlComponent

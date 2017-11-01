@@ -35,7 +35,7 @@ const ComponentsPage = (props) => {
                     Here are the <a className="link" href="http://bradfrost.com/blog/post/atomic-web-design/">Atomic Design</a> components, split by category.
                 </div>
             </Header>
-            <div className="container container--small container--extra-padding-top container--extra-margin-bottom">
+            <div className="container container--small container--extra-margin-bottom">
                 <h2 className="heading heading--level2"><a className="link" href="/components/atoms">Atoms</a></h2>
                 <ComponentList groupName="atoms" groupedComponentMetadata={groupedComponentMetadata} />
 

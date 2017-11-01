@@ -14,7 +14,7 @@ const ContributingPage = ({ colors }) =>
             <p>We welcome all frontend developers - in collaboration with designers - to contribute to the styleguide.</p>
             <p>Together, we can Make Telia's Frontend Great Again&trade;!</p>
         </Header>
-        <div className="container container--small container--extra-padding-top">
+        <div className="container container--small">
             <Heading level={2} text="The repository" />
             <p>
                 The repository can be found on TeliaSoneraNorge's GitHub

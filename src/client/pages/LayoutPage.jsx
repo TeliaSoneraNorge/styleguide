@@ -19,7 +19,7 @@ const LayoutPage = ({ colors, variablesCss }) =>
             </p>
         </Header>
 
-        <div className="container container--no-padding container--extra-padding-top">
+        <div className="container container--no-padding container--extra-margin-bottom">
 
             <div className="container container--small container--no-margin">
                 <Heading level={2} text="No grid system!" />

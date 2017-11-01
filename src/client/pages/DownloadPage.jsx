@@ -12,7 +12,7 @@ const DownloadPage = ({ colors }) =>
     <div>
         <Header pageTitle="Download Styleguide" />
 
-        <div className="container container--small container--extra-padding-top container--extra-margin-bottom">
+        <div className="container container--small container--extra-margin-bottom">
             <p>To use the Telia Styleguide in your project, follow these steps:</p>
             <p>1) Download the styleguide assets and include them in your project.</p>
             <p>2) Link to the downloaded CSS file in your HTML:</p>
