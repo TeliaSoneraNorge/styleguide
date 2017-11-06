@@ -1,23 +1,24 @@
 .dropdown-list {
-    background: transparent url('/public/icons/ico_linkarrow_purple.svg') no-repeat right 5px center;
+    background: transparent url('/public/icons/ico_dropArrow.svg') no-repeat right 5px center;
     background-size: 15px 15px;
-    border: 1px solid var(--core-purple);
+    border: 1px solid var(--grey);
     border-radius: 0;
     font-size: 1rem;
     margin: 0;
     padding: 0.5rem 2rem 0.5rem 0.5rem;
     -webkit-appearance: none;
 
-    &:after {
-        border: solid 1px red;
-        content: "";
-        display: block;
-        height: 20px;
-        position: absolute;
-        width: 20px;
+    &:focus,
+    &:active {
+        background-color: var(--white);
+        background-image: url('/public/icons/ico_dropArrow_purple.svg');
+        border-color: var(--core-purple);
+        color: var(--core-purple);
+        outline: none;
     }
 
-    option {
+    &__option {
+        color: var(--black);
         padding: 0;
     }
 }
