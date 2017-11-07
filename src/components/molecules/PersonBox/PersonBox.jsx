@@ -28,12 +28,8 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
                 <div className="person-box__text-links">
                     <div className="person-box__description">{description}</div>
                     <div className="person-box__social-links">
-                        <a className="person-box__social-link" href={linkedInProfile} target="_self" title={titleLinkedInProfile}>
-                            <img className="person-box__social-link-icon" src="/public/icons/linkedin_icon.svg" alt={titleLinkedInProfile}/>
-                        </a>
-                        <a className="person-box__social-link" href={twitterProfile} target="_self" title={titleTwitterProfile}>
-                            <img className="person-box__social-link-icon" src="/public/icons/twitter_icon.svg" alt={titleTwitterProfile}/>
-                        </a>
+                        <a className="person-box__social-link person-box__social-link-linkedIn" href={linkedInProfile} target="_self" title={titleLinkedInProfile}></a>
+                        <a className="person-box__social-link person-box__social-link-twitter" href={twitterProfile} target="_self" title={titleTwitterProfile}></a>
                     </div>
                 </div>
             </div>

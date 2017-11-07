@@ -60,13 +60,12 @@ export default class Box extends React.Component {
                 onClick={this.boxContainerClick}
                 onKeyUp={this.boxContainerClick}
                 aria-expanded={this.props.canExpand ? this.state.isExpanded : null}
-                tabIndex={this.props.canExpand ? "0" : null}>
+                tabIndex={this.props.canExpand && !this.state.isExpanded ? "0" : null}>
                 {this.props.isShowingFeature ?
                     <div className="box__speech-bubble">Some speech bubble text!</div> : null}
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
-                        <span className="box__close-text">LUKK</span>
-                        <img className="box__close-image" src="/public/icons/ico_delete.svg" role="presentation" alt="Lukk ekspandert innhold" />
+                        LUKK
                     </button> : null}
                 {this.props.children}
             </article>

@@ -64,6 +64,8 @@
 
     &__social-link {
         display: inline-block;
+        height: 25px;
+        width: 25px;
 
         &:first-of-type {
             margin-right: 1rem;
@@ -72,6 +74,41 @@
         &-icon {
             height: 30px;
             width: 30px;
+        }
+    }
+
+    &__social-link-linkedIn {
+        background: transparent url('/public/icons/linkedIn_icon.svg') no-repeat left;
+        background-size: 25px 25px;
+    }
+
+    &__social-link-twitter {
+        background: transparent url('/public/icons/twitter_icon.svg') no-repeat left;
+        background-size: 25px 25px;
+    }
+}
+
+.box--expandable:hover {
+    .person-box {
+        .person-box__title {
+            color: var(--black);
+        }
+    }
+}
+
+.box--is-expanded:hover {
+    .person-box {
+        .person-box__title {
+        color: var(--dark-grey);
+        }
+    }
+}
+
+.box--expandable:focus,
+.box--expandable:active {
+    .person-box {
+        .person-box__title {
+            color: var(--white);
         }
     }
 }
@@ -133,8 +170,21 @@
             display: block;
         }
 
-        &__social-link {
-            &-icon {
+        &__social-link-linkedIn {
+            &:focus,
+            &:active {
+                background-color: inherit;
+                background-image: url('/public/icons/linkedIn_icon_purple.svg');
+                outline: none;
+            }
+        }
+
+        &__social-link-twitter {
+            &:focus,
+            &:active {
+                background-color: inherit;
+                background-image: url('/public/icons/twitter_icon_purple.svg');
+                outline: none;
             }
         }
     }
