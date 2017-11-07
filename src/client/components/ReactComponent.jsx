@@ -44,14 +44,14 @@ const ReactComponent = ({ path, metadata }) => {
                         <div className="container container--medium container--no-margin">
                             <Heading level={3} text={example.name} />
                         </div>
-                        <div className={example.containerCssClass + ' sg-margin-top ' || 'sg-margin-top'}>{componentWithProps}</div>
+                        <div className={example.containerCssClass ? example.containerCssClass + ' sg-margin-top' : 'sg-margin-top'}>{componentWithProps}</div>
                         <div className="container container--medium container--no-margin">
                             <CodeSnippet code={markupString} language="markup" />
                         </div>
                     </div> :
                     <div key={i} className="container container--medium container--no-margin">
                         <Heading level={3} text={example.name} />
-                        <div className={example.containerCssClass + ' sg-margin-top ' || 'sg-margin-top'}>{componentWithProps}</div>
+                        <div className={example.containerCssClass ? example.containerCssClass + ' sg-margin-top' : 'sg-margin-top'}>{componentWithProps}</div>
                         <CodeSnippet code={markupString} language="markup" />
                     </div>);
             })}
