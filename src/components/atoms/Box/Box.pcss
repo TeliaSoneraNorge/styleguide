@@ -8,6 +8,14 @@
     &--expandable {
         cursor: pointer;
         display: inline-block;
+
+        &:focus,
+        &:active {
+            background-color: var(--core-purple);
+            border-color: var(--core-purple);
+            color: var(--white);
+            outline: none;
+        }
     }
 
     &--small {
@@ -43,14 +51,6 @@
         &--medium {
             width: 94%;
         }
-    }
-
-    &:focus,
-    &:active {
-        background-color: var(--core-purple);
-        border-color: var(--core-purple);
-        color: var(--white);
-        outline: none;
     }
 
     &--pink {
