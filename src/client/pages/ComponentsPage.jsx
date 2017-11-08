@@ -36,16 +36,16 @@ const ComponentsPage = (props) => {
                 </div>
             </Header>
             <div className="container container--small container--extra-margin-bottom">
-                <h2 className="heading heading--level2"><a className="link" href="/components/atoms">Atoms</a></h2>
+                <h2 className="heading heading--level-2"><a className="link" href="/components/atoms">Atoms</a></h2>
                 <ComponentList groupName="atoms" groupedComponentMetadata={groupedComponentMetadata} />
 
-                <h2 className="heading heading--level2"><a className="link" href="/components/molecules">Molecules</a></h2>
+                <h2 className="heading heading--level-2"><a className="link" href="/components/molecules">Molecules</a></h2>
                 <ComponentList groupName="molecules" groupedComponentMetadata={groupedComponentMetadata} />
 
-                <h2 className="heading heading--level2"><a className="link" href="/components/organisms">Organisms</a></h2>
+                <h2 className="heading heading--level-2"><a className="link" href="/components/organisms">Organisms</a></h2>
                 <ComponentList groupName="organisms" groupedComponentMetadata={groupedComponentMetadata} />
 
-                <h2 className="heading heading--level2">Pages</h2>
+                <h2 className="heading heading--level-2">Pages</h2>
                 <ul>
                     <li><a className="link" href="/subscription">Subscription list page</a></li>
                     <li><a className="link" href="/information-article-1">Information article 1</a> - basic components (FullWidthImage, Accordion, BottomComponent, etc)</li>
