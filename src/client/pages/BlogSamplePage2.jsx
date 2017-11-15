@@ -47,8 +47,8 @@ const BlogSamplePage = () =>
                     <iframe
                         src="https://www.youtube.com/embed/-yWZdilQQnk?rel=1&amp;controls=1&amp;showinfo=1&amp;autoplay=0"
                         className="video__iframe"
-                        frameborder="0"
-                        allowfullscreen></iframe>
+                        frameBorder="0"
+                        allowFullScreen></iframe>
                 </div>
                 <div className="caption">Videotext here</div>
             </div>

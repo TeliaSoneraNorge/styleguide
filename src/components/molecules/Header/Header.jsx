@@ -14,8 +14,8 @@ const Header = ({ videoSrc, iconUrl, runningTitle, pageTitle, withMask, withCont
                     <iframe
                         src={videoSrc}
                         className="video__iframe"
-                        frameborder="0"
-                        allowfullscreen></iframe>
+                        frameBorder="0"
+                        allowFullScreen></iframe>
                 </div>
             </div> : null
         }
