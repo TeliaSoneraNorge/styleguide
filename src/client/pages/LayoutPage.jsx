@@ -64,29 +64,6 @@ const LayoutPage = ({ colors, variablesCss }) =>
             </FocusBox>
 
         </div>
-
-        <section className="bottom-component bottom-component--light-orange">
-            <div className="bottom-component__wrapper container container--medium">
-                <img className="bottom-component__icon" src="/public/icons/ico_wireless.svg" role="presentation" />
-                <div className="bottom-component__text-content">
-                    <h1 className="heading heading--level-2">Bottom Component</h1>
-                    <div className="bottom-component__text">
-                        This component should be on a page 0-1 times and always at the bottom.
-                        It should live outside of layout containers and be full-width.
-                    </div>
-
-                    <ul className="list list--links">
-                        <li className="list__item">
-                            <a className="list__link" target="" href="#">This is a link in a list</a>
-                        </li>
-                        <li className="list__item">
-                            <a className="list__link" target="" href="#">And another link</a>
-                        </li>
-                    </ul>
-                </div>
-                <img className="bottom-component__image" src="https://placekitten.com/378/253" alt="" title=""/>
-            </div>
-        </section>
     </div>;
 
 const mapStateToProps = (state) => ({

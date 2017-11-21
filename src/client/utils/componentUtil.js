@@ -35,7 +35,6 @@ export function isFullWidthComponent(componentName) {
 
         // Molecules
         'ArticleMetaData',
-        'BottomComponent',
         'BoxGrid',
         'FunkyTabs',
         'Header',

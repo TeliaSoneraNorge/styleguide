@@ -66,22 +66,6 @@ const InformationArticleSample1 = ({ colors }) =>
                 </section>
             </div>
         </div>
-        <section className="bottom-component bottom-component--light-orange">
-            <div className="bottom-component__wrapper container container--medium">
-                <img className="bottom-component__icon" src="/public/icons/ico_wireless.svg" role="presentation" />
-                <div className="bottom-component__text-content">
-                    <h1 className="bottom-component__heading">Bottom Component</h1>
-                    <div className="bottom-component__text">
-                        The intention of this component is to have a section on a page where the user could
-                        read about related content of the main content on the page.
-                        Such related information is relevant to put on the bottom of a page.
-                        If the content in this section is used for tangentially related content, we recommend
-                        to wrap the outer html section-element for this component in an aside-element.
-                    </div>
-                    <a className="button button--small" href="">Button link</a>
-                </div>
-            </div>
-        </section>
     </div>;
 
 export default InformationArticleSample1;
