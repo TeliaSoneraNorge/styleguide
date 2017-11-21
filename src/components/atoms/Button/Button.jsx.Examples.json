@@ -13,17 +13,17 @@
         }
     },
     {
-      "name": "Green",
+      "name": "Primary",
       "props": {
-          "text": "Green button",
-          "kind": "green"
+          "text": "Primary button",
+          "kind": "primary"
       }
     },
     {
-        "name": "Green (small)",
+        "name": "Primary (small)",
         "props": {
-            "text": "Green button",
-            "kind": "green",
+            "text": "Primary button",
+            "kind": "primary",
             "size": "small"
         }
     },
