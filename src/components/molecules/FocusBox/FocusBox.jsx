@@ -1,5 +1,10 @@
 import React from 'react';
 
+const classNames = (additionalClassName) =>
+    ['focus-box', additionalClassName]
+        .filter(cls => !!cls)
+        .join(' ');
+
 /**
  * Status: *in progress*.
  *
@@ -9,8 +14,8 @@ import React from 'react';
  *
  * The FocusBox should be used one per-page to highlight the main content on that page.
  */
-const FocusBox = ({ children }) =>
-    <div className="focus-box">
+const FocusBox = ({ className, children }) =>
+    <div className={classNames(className)}>
         <div className="focus-box__content-outer">
             <section className="container container--small container--no-margin focus-box__content-inner">
                 {children}

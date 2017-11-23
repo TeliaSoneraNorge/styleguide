@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const classNames = (additionalClassName, type) =>
-    [ 'spinner', `spinner--${type}`, additionalClassName ]
+    ['spinner', `spinner--${type}`, additionalClassName]
         .filter(cls => !!cls)
         .join(' ');
 

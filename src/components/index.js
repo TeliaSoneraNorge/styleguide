@@ -17,6 +17,7 @@ import ToggleButton from './atoms/ToggleButton/ToggleButton';
 import Alert from './molecules/Alert/Alert';
 import DonutChart from './molecules/DonutChart/DonutChart';
 import FocusBox from './molecules/FocusBox/FocusBox';
+import FocusSpinner from './molecules/FocusSpinner/FocusSpinner';
 import Header from './molecules/Header/Header';
 import PageFooter from './molecules/PageFooter/PageFooter';
 import PageHeader from './molecules/PageHeader/PageHeader';
@@ -42,6 +43,7 @@ export default {
     'src/components/molecules/Alert/Alert.jsx': Alert,
     'src/components/molecules/DonutChart/DonutChart.jsx': DonutChart,
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
+    'src/components/molecules/FocusSpinner/FocusSpinner.jsx': FocusSpinner,
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
