@@ -14,7 +14,7 @@
     "css:components:watch": "nodemon --ext css --watch src/components --exec \"npm run build-css:components\"",
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
     "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc && npm run svgo",
-    "deploy:prod": "git push heroku master && node slack.js",
+    "deploy:prod": "git push heroku master && babel-node deploy-slack.js",
     "dev": "npm run clean && npm run gen && run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
     "dev:fast": "run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
     "generate-html-doc": "babel-node ./scripts/generate-html-component-metadata.js",
@@ -54,6 +54,7 @@
     "babel-preset-es2015": "6.24.1",
     "babel-preset-react": "6.24.1",
     "babel-preset-stage-2": "6.24.1",
+    "body-parser": "1.18.2",
     "classnames": "2.2.5",
     "ejs": "2.5.7",
     "express": "4.16.1",
@@ -82,6 +83,7 @@
     "redux": "3.7.2",
     "rimraf": "^2.6.2",
     "svgo": "0.7.2",
-    "webpack": "3.6.0"
+    "webpack": "3.6.0",
+    "whatwg-fetch": "2.0.3"
   }
 }

@@ -13,8 +13,11 @@ module.exports = {
         'webpack/hot/only-dev-server',
         // bundle the client for hot reloading. only- means to only hot reload for successful updates
 
-        './index.js'
+        './index.js',
         // the entry point of our app
+
+        'whatwg-fetch'
+        // a Promise-based mechanism for programmatically making web requests in the browser
     ],
     output: {
         filename: 'bundle.js', // the output bundle

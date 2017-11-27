@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
+import ContentFeedbackWrapper from './components/ContentFeedbackWrapper';
 import PageHeader from '../components/molecules/PageHeader/PageHeader';
 import PageFooter from '../components/molecules/PageFooter/PageFooter';
 
@@ -53,6 +54,8 @@ const Routes = (props) =>
         <Route exact path="/box-grid" component={BoxGridSamplePage} />
         <Route exact path="/blog-1" component={BlogSamplePage1} />
         <Route exact path="/blog-2" component={BlogSamplePage2} />
+
+        <ContentFeedbackWrapper />
 
         <PageFooter
             links={[
