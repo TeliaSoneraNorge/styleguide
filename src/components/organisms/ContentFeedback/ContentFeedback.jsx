@@ -7,8 +7,8 @@ export default class ContentFeedback extends React.Component {
                 <h3 className="heading heading--level-3 content-feedback__heading">Var denne siden nyttig?</h3>
                 {this.props.feedbackState === "initial" ?
                     <div>
-                        <button className="content-feedback__button" onClick={this.props.positiveFeedbackClick}>JA</button>
-                        <button className="content-feedback__button" onClick={this.props.negativeFeedbackClick}>NEI</button>
+                        <button className="button button--small" onClick={this.props.positiveFeedbackClick}>JA</button>
+                        <button className="button button--small" onClick={this.props.negativeFeedbackClick}>NEI</button>
                     </div> : null
                 }
 
