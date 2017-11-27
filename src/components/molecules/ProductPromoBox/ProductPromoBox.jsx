@@ -28,7 +28,7 @@ const ProductPromoBox = ({ id, productName, productColor, imagePath, description
                         <span className="product-promo-box__monthly-price-number">{monthlyPrice}</span>/mnd
                     </div>
                     <div className="product-promo-box__total-price">{totalPrice},- totalt</div>
-                    <button className="button button--small product-promo-box__button">{buttonText}</button>
+                    <button className="button button--small">{buttonText}</button>
                 </div>
             </section>
         </Box>);
