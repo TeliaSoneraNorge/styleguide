@@ -5,9 +5,12 @@ import proxy from 'proxy-middleware';
 
 import colors from './colors.json';
 import { getConfig } from './config';
+import { postMessageToSlack } from './slack';
+import bodyParser from 'body-parser';
 
 const app = express();
 const config = getConfig();
+const jsonParser = bodyParser.json();
 
 // Configure view engine
 app.set('views', './src/server/views');
@@ -36,6 +39,29 @@ app.get('/download-zip', (req, res) => {
         .directory('public/images/', 'images')
         .directory('public/pebbles/', 'pebbles')
         .finalize();
+});
+
+
+app.post('/api/feedback', jsonParser, (req, res) => {
+    let message = '';
+
+    if(req.body.feedbackType === 'receipt-positive'){
+        message = `User thinks ${req.body.url} is a useful page.`;
+    }
+    else if(req.body.feedbackType === 'negative-feedback'){
+        message = `User does not think ${req.body.url} is a useful page.`;
+    }
+    else if(req.body.feedbackType === 'receipt-negative'){
+        message = `User thinks this could have been better on ${req.body.url}: ${req.body.feedbackText}`;
+    }
+
+    postMessageToSlack(
+        '#styleguide',
+        message
+    )
+    .then(() => {
+        res.send();
+    });
 });
 
 // Send all requests to the same index.ejs view where the React app will start on the client
