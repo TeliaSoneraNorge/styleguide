@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentFeedback from '../../components/organisms/ContentFeedback/ContentFeedback';
+import ContentRating from '../../components/organisms/ContentRating/ContentRating';
 
 function postFeedbackToSlack(feedbackState, feedbackText = ''){
     fetch(`${window.location.origin}/api/feedback`, {
@@ -15,7 +15,7 @@ function postFeedbackToSlack(feedbackState, feedbackText = ''){
     });
 }
 
-export default class ContentFeedbackWrapper extends React.Component {
+export default class ContentRatingWrapper extends React.Component {
     constructor(props) {
         super(props);
 
@@ -47,7 +47,7 @@ export default class ContentFeedbackWrapper extends React.Component {
     }
     render() {
         return (
-            <ContentFeedback
+            <ContentRating
                 feedbackState={this.state.feedbackState}
                 positiveFeedbackClick={this.positiveFeedbackClick}
                 negativeFeedbackClick={this.negativeFeedbackClick}

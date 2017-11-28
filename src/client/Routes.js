@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import ContentFeedbackWrapper from './components/ContentFeedbackWrapper';
+import ContentRatingWrapper from './components/ContentRatingWrapper';
 import PageHeader from '../components/molecules/PageHeader/PageHeader';
 import PageFooter from '../components/molecules/PageFooter/PageFooter';
 
@@ -55,7 +55,9 @@ const Routes = (props) =>
         <Route exact path="/blog-1" component={BlogSamplePage1} />
         <Route exact path="/blog-2" component={BlogSamplePage2} />
 
-        <ContentFeedbackWrapper />
+        <div className="container container--medium container--extra-margin-bottom">
+            <ContentRatingWrapper />
+        </div>
 
         <PageFooter
             links={[

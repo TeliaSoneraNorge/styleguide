@@ -28,7 +28,7 @@ import Subscription from './molecules/Subscription/Subscription';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
-import ContentFeedback from './organisms/ContentFeedback/ContentFeedback';
+import ContentRating from './organisms/ContentRating/ContentRating';
 
 export default {
     // Atoms
@@ -55,5 +55,5 @@ export default {
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
-    'src/components/organisms/ContentFeedback/ContentFeedback.jsx' : ContentFeedback
+    'src/components/organisms/ContentRating/ContentRating.jsx' : ContentRating
 };
