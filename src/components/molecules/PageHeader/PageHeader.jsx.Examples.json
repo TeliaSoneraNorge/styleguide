@@ -5,8 +5,8 @@
             "menuId": "page-header-menu--example-1",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
-            "logoImageDesktopPath": "/public/images/logo/logo_animated-transparent.gif",
-            "logoImageMobilePath": "/public/images/logo/logo_mob.svg",
+            "logoImageDesktopPath": "/public/images/logo/logo.svg",
+            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 0,
             "menuLinks": [
                 { "text": "A fake menu item", "url": "/" }
@@ -18,8 +18,8 @@
             "menuId": "page-header-menu--example-2",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
-            "logoImageDesktopPath": "/public/images/logo/logo_animated-transparent.gif",
-            "logoImageMobilePath": "/public/images/logo/logo_mob.svg",
+            "logoImageDesktopPath": "/public/images/logo/logo.svg",
+            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 3,
             "menuLinks": [
                 { "text": "A fake menu item", "url": "/" }
@@ -31,8 +31,8 @@
             "menuId": "page-header-menu--example-3",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
-            "logoImageDesktopPath": "/public/images/logo/logo_animated-transparent.gif",
-            "logoImageMobilePath": "/public/images/logo/logo_mob.svg",
+            "logoImageDesktopPath": "/public/images/logo/logo.svg",
+            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 0,
             "isLoggedIn": true,
             "loggedInUserName": "Maria",
@@ -46,8 +46,8 @@
             "menuId": "page-header-menu--example-4",
             "logoUrl": "/",
             "logoTitle": "Telia logo",
-            "logoImageDesktopPath": "/public/images/logo/logo_animated-transparent.gif",
-            "logoImageMobilePath": "/public/images/logo/logo_mob.svg",
+            "logoImageDesktopPath": "/public/images/logo/logo.svg",
+            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 1,
             "isLoggedIn": true,
             "loggedInUserName": "Maria",

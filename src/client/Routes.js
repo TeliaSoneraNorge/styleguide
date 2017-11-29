@@ -27,8 +27,8 @@ const Routes = (props) =>
         <PageHeader
             logoUrl="/"
             logoTitle="Telia logo"
-            logoImageDesktopPath="/public/images/logo/logo_animated-transparent.gif"
-            logoImageMobilePath="/public/images/logo/logo_mob.svg"
+            logoImageDesktopPath="/public/images/logo/logo.svg"
+            logoImageMobilePath="/public/images/logo/pebble.svg"
             menuLinks={[
                 { text: "Home", url: "/" },
                 { text: "Layout", url: "/layout" },
