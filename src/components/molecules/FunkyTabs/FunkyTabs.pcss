@@ -50,6 +50,21 @@
     }
 
     &__link {
+        &:hover .link,
+        &:active .link {
+            color: var(--core-purple);
+            border-bottom: 1px solid var(--core-purple);
+        }
+
+        &:focus {
+            outline: none;
+
+            .funky-tabs__tab-text,
+            .link {
+                color: var(--white);
+                background-color: var(--core-purple);
+            }
+        }
     }
 
     &__tab-image {

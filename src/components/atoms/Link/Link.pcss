@@ -1,12 +1,18 @@
 @import "../../colors.pcss";
 
 .link {
-    border-bottom: 1px dotted var(--core-purple);
+    border-bottom: 1px solid var(--core-purple);
     color: var(--black);
     text-decoration: none;
 
     &:hover, &:active {
         color: var(--core-purple);
         border-bottom: 1px solid var(--core-purple);
+    }
+
+    &:focus {
+        color: var(--white);
+        background-color: var(--core-purple);
+        outline: none;
     }
 }
