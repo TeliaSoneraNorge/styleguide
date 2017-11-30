@@ -1,8 +1,36 @@
 .hero {
+    color: var(--black);
     display: block;
     position: relative;
     text-decoration: none;
     text-align: center;
+
+    &:hover {
+        color: var(--core-purple);
+
+        .hero__line {
+            width: 220px;
+        }
+    }
+
+    &:active,
+    &:focus {
+        color: var(--white);
+
+        .hero__box {
+            background-color: var(--core-purple);
+        }
+
+        .hero__heading {
+            color: var(--white);
+        }
+
+        .hero__line {
+            background-color: var(--white);
+            color: var(--white);
+            width: 220px;
+        }
+    }
 
     @media all and (min-width: 48em) {
         text-align: left;
@@ -48,7 +76,6 @@
     }
 
     &__subheading {
-        color: var(--black);
 
         @media all and (min-width: 48em) {
             font-size: 18px;
@@ -56,8 +83,10 @@
     }
 
     &__line {
-        border: 2px solid var(--core-purple);
-        height: 2px;
+        background-color: var(--core-purple);
+        border: none;
+        color: var(--core-purple);
+        height: 3px;
         margin: 10px auto;
         width: 50px;
 
