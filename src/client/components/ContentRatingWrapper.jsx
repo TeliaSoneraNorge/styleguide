@@ -20,7 +20,7 @@ export default class ContentRatingWrapper extends React.Component {
         super(props);
 
         this.state = {
-            feedbackState: "initial"
+            feedbackState: 'initial'
         };
 
         this.positiveFeedbackClick = this.positiveFeedbackClick.bind(this);
@@ -29,19 +29,19 @@ export default class ContentRatingWrapper extends React.Component {
     }
     positiveFeedbackClick() {
         this.setState(
-            { feedbackState: "receipt-positive" },
+            { feedbackState: 'receipt-positive' },
             () => { postFeedbackToSlack(this.state.feedbackState); }
         );
     }
     negativeFeedbackClick() {
         this.setState(
-            { feedbackState: "negative-feedback" },
+            { feedbackState: 'negative-feedback' },
             () => { postFeedbackToSlack(this.state.feedbackState); }
         );
     }
     negativeFeedbackSubmitText(feedbackText) {
         this.setState(
-            { feedbackState: "receipt-negative" },
+            { feedbackState: 'receipt-negative' },
             () => { postFeedbackToSlack(this.state.feedbackState, feedbackText); }
         );
     }
