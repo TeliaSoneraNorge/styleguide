@@ -1,21 +1,17 @@
-// Remaining: 
+// Remaining:
 // Make it possible to have more than 1 .parallax-container on a page
 // Try to use JS for transitions instead of CSS
-//
 
-function preloadImages() 
-{
+function preloadImages() {
     var imageList = document.querySelectorAll('.parallax-container img');
-    for(var i = 0; i < imageList.length; i++ ) 
-    {
+    for (var i = 0; i < imageList.length; i++) {
         var imageObject = new Image();
         imageObject.src = imageList[i].getAttribute('src');
     }
 }
 
-
 function calculateScrollBreak() {
-    scrollBreak = (window.innerHeight * 3) / 4;
+    var scrollBreak = (window.innerHeight * 3) / 4;
     return scrollBreak;
 }
 
@@ -31,12 +27,11 @@ function togglePlay(el) {
 }
 
 function resizeSpacers() {
-    
     [].map.call(document.querySelectorAll('.parallax-block__spacer--full'), function(el) {
-        el.style.height = window.innerHeight.toString() + "px"; 
+        el.style.height = window.innerHeight.toString() + "px";
     });
     [].map.call(document.querySelectorAll('.parallax-block__spacer--half'), function(el) {
-       el.style.height = (window.innerHeight / 2).toString + "px"; 
+        el.style.height = (window.innerHeight / 2).toString + "px";
     });
 }
 
@@ -49,9 +44,8 @@ function initVideo() {
     });
 }
 
-function toggleSound(el) { 
-
-    var video = el.parentNode.parentNode.parentNode.querySelector('video'); 
+function toggleSound(el) {
+    var video = el.parentNode.parentNode.parentNode.querySelector('video');
     if (video.muted) {
         video.muted = false;
         el.classList.add('parallax-block__mute-button--unmuted');
@@ -63,48 +57,42 @@ function toggleSound(el) {
     }
 }
 
-var DOMReady = function(){
+var DOMReady = function() {
     var parallax = document.querySelector('.parallax-container');
-    if (parallax != undefined && parallax != null) {
-        var containerPosition;
-        var scrollBreak;
-        preloadImages(); 
-        containerPosition = document.querySelector('.parallax-container').offsetTop;
-        scrollBreak = calculateScrollBreak();
+    if (parallax) {
+        preloadImages();
+        var containerPosition = document.querySelector('.parallax-container').offsetTop;
+        var scrollBreak = calculateScrollBreak();
         resizeSpacers();
         initVideo();
         window.onresize = function() {
             scrollBreak = calculateScrollBreak();
             resizeSpacers();
-        }; 
-        
-        window.onscroll = function(){
+        };
+
+        window.onscroll = function() {
             var scrollPos = window.pageYOffset;
             [].map.call(document.querySelectorAll('.parallax-block'), function(el, index, array) {
                 var yTopPos = el.offsetTop + containerPosition;
-                var yBottomPos = yTopPos + el.offsetHeight; 
+                var yBottomPos = yTopPos + el.offsetHeight;
                 var topDiff = yTopPos - scrollPos;
                 var bottomDiff = yBottomPos - scrollPos;
                 var video = el.querySelector('video');
                 // this conditioned chunk could be refactored to eliminate calculations
 
                 if (index === 0) {
-                    
                     if (topDiff < 0 && bottomDiff >= scrollBreak) {
-
                         el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--hidden');
                         el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--absolute-top');
                         el.querySelector('.parallax-block__background').classList.add('parallax-block__background--fixed');
-                        if (video != null && video.classList.contains('stopped') !== true) {
+                        if (video !== null && video.classList.contains('stopped') !== true) {
                             video.play();
                             el.querySelector('.parallax-block__mute-button').classList.remove('parallax-block__background--hidden');
                         }
                     } else {
-
                         if (topDiff >= 0) {
                             el.querySelector('.parallax-block__background').classList.add('parallax-block__background--absolute-top');
                             el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--fixed');
-                           
                         } else if (bottomDiff < scrollBreak) {
                             el.querySelector('.parallax-block__background').classList.add('parallax-block__background--hidden');
                             if (video !== null) {
@@ -139,13 +127,12 @@ var DOMReady = function(){
                         }
                     }
                 } else {
-                if (topDiff < scrollBreak && bottomDiff >= scrollBreak) {
+                    if (topDiff < scrollBreak && bottomDiff >= scrollBreak) {
                         el.querySelector('.parallax-block__background').classList.remove('parallax-block__background--hidden');
                         if (video !== null && video.classList.contains('stopped') !== true) {
                             video.play();
                             el.querySelector('.parallax-block__mute-button').classList.remove('parallax-block__background--hidden');
                         }
-
                     } else {
                         el.querySelector('.parallax-block__background').classList.add('parallax-block__background--hidden');
                         if (video !== null) {
@@ -154,14 +141,13 @@ var DOMReady = function(){
                         }
                     }
                 }
-
-              });   
-            };
-    }; 
+            });
+        };
+    };
 };
 
 if (document.readyState === "complete" || (document.readyState !== "loading" && !document.documentElement.doScroll)) {
-  DOMReady();
+    DOMReady();
 } else {
-  document.addEventListener("DOMContentLoaded", DOMReady);
+    document.addEventListener("DOMContentLoaded", DOMReady);
 }
