@@ -38,6 +38,7 @@ export function isFullWidthComponent(componentName) {
         'BoxGrid',
         'FunkyTabs',
         'Header',
+        'Hero',
         'PageHeader',
         'PageFooter',
         'RelatedArticles',

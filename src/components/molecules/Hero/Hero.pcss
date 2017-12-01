@@ -1,0 +1,97 @@
+.hero {
+    color: var(--black);
+    display: block;
+    position: relative;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover {
+        color: var(--core-purple);
+
+        .hero__line {
+            width: 220px;
+        }
+    }
+
+    &:active,
+    &:focus {
+        color: var(--white);
+
+        .hero__box {
+            background-color: var(--core-purple);
+        }
+
+        .hero__heading {
+            color: var(--white);
+        }
+
+        .hero__line {
+            background-color: var(--white);
+            color: var(--white);
+            width: 220px;
+        }
+    }
+
+    @media all and (min-width: 48em) {
+        text-align: left;
+    }
+
+    &__image {
+    }
+
+    &__box {
+        background-color: var(--white);
+        bottom: 8%;
+        height: 150px;
+        left: 0;
+        margin: 0 auto;
+        max-width: 320px;
+        padding: 20px 10px 30px;
+        position: absolute;
+        right: 0;
+        width: 100%;
+
+        @media all and (min-width: 48em) {
+            bottom: 15%;
+            height: 280px;
+            left: 15%;
+            margin: 0;
+            max-width: 490px;
+            padding: 30px;
+        }
+    }
+
+    &__heading {
+        color: var(--core-purple);
+        font-family: Pebble;
+        font-size: 25px;
+        line-height: 27px;
+        margin: 0 0 15px;
+        text-transform: uppercase;
+
+        @media all and (min-width: 48em) {
+            font-size: 45px;
+            line-height: 45px;
+        }
+    }
+
+    &__subheading {
+
+        @media all and (min-width: 48em) {
+            font-size: 18px;
+        }
+    }
+
+    &__line {
+        background-color: var(--core-purple);
+        border: none;
+        color: var(--core-purple);
+        height: 3px;
+        margin: 10px auto;
+        width: 50px;
+
+        @media all and (min-width: 48em) {
+            margin: 10px 0;
+        }
+    }
+}
