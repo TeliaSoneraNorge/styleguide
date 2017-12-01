@@ -56,6 +56,7 @@ const ComponentsPage = (props) => {
                     <li><a className="link" href="/box-grid">Box Grid page</a></li>
                     <li><a className="link" href="/blog-1">Blog page 1</a></li>
                     <li><a className="link" href="/blog-2">Blog page 2</a></li>
+                    <li><a className="link" href="/parallax-page">Parallax page</a></li>
                 </ul>
             </div>
         </div>
