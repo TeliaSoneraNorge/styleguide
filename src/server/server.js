@@ -41,27 +41,20 @@ app.get('/download-zip', (req, res) => {
         .finalize();
 });
 
-
 app.post('/api/feedback', jsonParser, (req, res) => {
     let message = '';
 
-    if(req.body.feedbackType === 'receipt-positive'){
-        message = `User thinks ${req.body.url} is a useful page.`;
+    if (req.body.feedbackType === 'receipt-positive') {
+        message = `:check: ${req.body.url}`;
     }
-    else if(req.body.feedbackType === 'negative-feedback'){
-        message = `User does not think ${req.body.url} is a useful page.`;
+    else if (req.body.feedbackType === 'negative-feedback') {
+        message = `:x: ${req.body.url}`;
     }
-    else if(req.body.feedbackType === 'receipt-negative'){
-        message = `User thinks this could have been better on ${req.body.url}: ${req.body.feedbackText}`;
+    else if (req.body.feedbackType === 'receipt-negative') {
+        message = `:speech_balloon: "${req.body.feedbackText}"\n${req.body.url}`;
     }
 
-    postMessageToSlack(
-        '#styleguide',
-        message
-    )
-    .then(() => {
-        res.send();
-    });
+    postMessageToSlack('#styleguide', message).then(() => res.send());
 });
 
 // Send all requests to the same index.ejs view where the React app will start on the client
