@@ -6,7 +6,6 @@
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/images/logo/logo.svg",
-            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 0,
             "menuLinks": [
                 { "text": "A fake menu item", "url": "/" }
@@ -19,7 +18,6 @@
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/images/logo/logo.svg",
-            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 3,
             "menuLinks": [
                 { "text": "A fake menu item", "url": "/" }
@@ -32,7 +30,6 @@
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/images/logo/logo.svg",
-            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 0,
             "isLoggedIn": true,
             "loggedInUserName": "Maria",
@@ -47,7 +44,6 @@
             "logoUrl": "/",
             "logoTitle": "Telia logo",
             "logoImageDesktopPath": "/public/images/logo/logo.svg",
-            "logoImageMobilePath": "/public/images/logo/pebble.svg",
             "cartItemCount": 1,
             "isLoggedIn": true,
             "loggedInUserName": "Maria",

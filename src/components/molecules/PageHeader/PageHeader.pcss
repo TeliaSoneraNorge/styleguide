@@ -1,7 +1,7 @@
 @import "../../colors.pcss";
 
 :root {
-    --logo-size-small-screens: 50px;
+    --logo-size-small-screens: 80px;
     --logo-size-large-screens: 120px;
     --icon-size-small: 20px;
     --icon-size-large: 32px;
@@ -39,22 +39,16 @@
         color: var(--black);
         text-transform: uppercase;
     }
-
-    &__site-name-and-logo {
-        color: yellow;
-        order: 2;
-        text-align: center;
-        width: 33.33333333333%;
-    }
-    &__site-name {
-        display: none;
-    }
     &__site-logo {
-        height: var(--logo-size-small-screens);
+        order: 2;
+        width: 33.33333333333%;
+
+        @media screen and (min-width: 42em) {
+            align-self: center;
+        }
     }
 
-    &__site-logo-picture,
-    &__site-logo-picture img {
+    &__site-logo-img {
         display: block;
         margin: 0 auto;
         max-width: var(--logo-size-small-screens);
