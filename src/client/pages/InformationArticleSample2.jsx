@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Accordion from '../../components/molecules/Accordion/Accordion';
 import Header from '../../components/molecules/Header/Header';
 
 const InformationArticleSample2 = () =>
@@ -62,26 +63,18 @@ const InformationArticleSample2 = () =>
                     <a className="list__link" href="#">Third link in list</a>
                 </li>
             </ul>
-            <section className="accordion">
-                <h3 className="accordion__header heading heading--level-3">
-                    <button className="accordion__header-button" aria-expanded="true" aria-controls="accordion-multiple-example-1">
-                        A closed accordion heading
-                    </button>
-                </h3>
-                <div className="accordion__panel" id="accordion-multiple-example-1">
-                    This is the body of the accordion.
-                </div>
-            </section>
-            <section className="accordion">
-                <h3 className="accordion__header heading heading--level-3">
-                    <button className="accordion__header-button" aria-expanded="false" aria-controls="accordion-multiple-example-2">
-                        Another closed accordion heading
-                    </button>
-                </h3>
-                <div className="accordion__panel" id="accordion-multiple-example-2">
-                    This is the body of the accordion.
-                </div>
-            </section>
+            <Accordion
+                id="1"
+                title="A closed accordion heading"
+                isExpanded={false}>
+                <p>This is the body of the accordion.</p>
+            </Accordion>
+            <Accordion
+                id="2"
+                title="An open accordion heading"
+                isExpanded={true}>
+                <p>This is the body of the accordion.</p>
+            </Accordion>
             <h3 className="heading heading--level-3">Heading</h3>
             <p>
                 Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
