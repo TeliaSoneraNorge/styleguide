@@ -10,16 +10,6 @@
         }
     }
 
-    &__line {
-        border: 1px solid var(--core-purple);
-        margin: 0 0 0 1rem;
-        width: 50px;
-
-        @media all and (min-width: em(1244)) {
-            margin: 0 0 0 2.5rem;
-        }
-    }
-
     &__list {
         display: flex;
         flex-flow: row nowrap;
@@ -59,5 +49,9 @@
     &__list-item {
         flex: 0 0 auto;
         padding: 1rem;
+    }
+
+    &--bg-white {
+        background-color: var(--white);
     }
 }

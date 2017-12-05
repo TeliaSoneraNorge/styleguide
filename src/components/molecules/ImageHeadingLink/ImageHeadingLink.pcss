@@ -1,33 +1,13 @@
 .image-heading-link {
-    color: var(--black);
-    display: block;
     height: 250px;
-    text-decoration: none;
     text-align: center;
     width: 200px;
 
-    &:hover {
-        color: var(--core-purple);
-
-        .image-heading-link__line {
-            width: 100%;
-        }
-    }
     &:active,
     &:focus {
-        color: var(--white);
-        outline: none;
 
-        .image-heading-link__box {
-            background-color: var(--core-purple);
-        }
-        .image-heading-link__heading {
-            color: var(--white);
-        }
-        .image-heading-link__line {
-            background-color: var(--white);
-            color: var(--white);
-            width: 100%;
+        .horizontal-rule {
+            border-color: var(--white);
         }
     }
 
@@ -53,6 +33,7 @@
         }
 
         &--small {
+            display: block;
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-size: 12px;
             font-weight: 100;
@@ -62,14 +43,5 @@
                 font-size: 16px;
             }
         }
-    }
-
-    &__line {
-        background-color: var(--core-purple);
-        border: none;
-        color: var(--core-purple);
-        height: 3px;
-        margin: 10px auto;
-        width: 50px;
     }
 }

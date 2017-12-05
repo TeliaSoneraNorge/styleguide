@@ -5,35 +5,24 @@
     text-decoration: none;
     text-align: center;
 
-    &:hover {
-        color: var(--core-purple);
-
-        .hero__line {
-            width: 220px;
-        }
+    .horizontal-rule {
+        margin: 0 auto;
     }
 
     &:active,
     &:focus {
-        color: var(--white);
 
-        .hero__box {
-            background-color: var(--core-purple);
-        }
-
-        .hero__heading {
-            color: var(--white);
-        }
-
-        .hero__line {
-            background-color: var(--white);
-            color: var(--white);
-            width: 220px;
+        .horizontal-rule {
+            border-color: var(--white);
         }
     }
 
     @media all and (min-width: 48em) {
         text-align: left;
+
+        .horizontal-rule {
+            margin: 0;
+        }
     }
 
     &__image {
@@ -76,22 +65,11 @@
     }
 
     &__subheading {
+        display: inline-block;
+        line-height: 40px;
 
         @media all and (min-width: 48em) {
             font-size: 18px;
-        }
-    }
-
-    &__line {
-        background-color: var(--core-purple);
-        border: none;
-        color: var(--core-purple);
-        height: 3px;
-        margin: 10px auto;
-        width: 50px;
-
-        @media all and (min-width: 48em) {
-            margin: 10px 0;
         }
     }
 }
