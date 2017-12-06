@@ -9,7 +9,7 @@ const FormsSamplePage = () =>
         <Header pageTitle="Forms" withMask={false} withContentOverlap={false}>
             <p>
                 On this page you can have a look at how forms should look.<br/>
-                NOTE: there isn't mcuhmuch here yet because we haven't had many pages that contain forms.
+                NOTE: there isn't much here yet because we haven't had many pages that contain forms.
                 If you or your team have a lot of forms, maybe you could kick-start the development
                 of some forms components?
             </p>
