@@ -55,15 +55,15 @@ export default class PageHeader extends React.Component {
                     </nav>
                 </div>
                 <div className={classNames('page-header__overlay', { 'page-header__overlay--active': this.state.menuIsExpanded })} onClick={this.closeMenu}></div>
-                <a className="page-header__site-logo" href={this.props.logoUrl} title={this.props.logoTitle}>
-                    <img className="page-header__site-logo-img" src={this.props.logoImageDesktopPath} alt={this.props.logoTitle} />
-                </a>
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || "page-header-menu"} aria-pressed={this.state.menuIsExpanded}>
                         <img className="page-header__menu-button-image page-header__icon-box-icon" src="/public/icons/ico_menu.svg" alt="Vis/skjul meny" />
                         <span className="page-header__icon-box-text">Meny</span>
                     </button>
                 </div>
+                <a className="page-header__site-logo" href={this.props.logoUrl} title={this.props.logoTitle}>
+                    <img className="page-header__site-logo-img" src={this.props.logoImageDesktopPath} alt={this.props.logoTitle} />
+                </a>
                 <div className="page-header__site-tools">
                     {cartShouldBeShown ?
                         <a className="page-header__cart-button" href="#">
