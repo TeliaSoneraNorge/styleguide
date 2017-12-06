@@ -34,7 +34,7 @@
             &::-webkit-scrollbar {
                 display: block;
                 width: 20px;
-                background-color: var(--grey);
+                background-color: var(--light-grey);
             }
 
             &::-webkit-scrollbar-thumb {
@@ -53,5 +53,22 @@
 
     &--bg-white {
         background-color: var(--white);
+
+        .related-articles__list {
+            @media all and (min-width: em(768)) {
+                &::-webkit-scrollbar-track {
+                    background-color: var(--white);
+                }
+
+                &::-webkit-scrollbar {
+                    background-color: var(--white);
+                }
+
+                &::-webkit-scrollbar-thumb {
+                    border-bottom: 2px solid var(--white);
+                    border-top: 2px solid var(--white);
+                }
+            }
+        }
     }
 }
