@@ -67,3 +67,24 @@
 .full-width-table td[align='right'] {
     text-align: right;
 }
+
+.accordion__panel {
+    .full-width-table {
+
+        &:before, &:after {
+            left: -16px;
+            right: -16px;
+        }
+        &__header, thead {
+            &:before{
+                left: -16px;
+                right: -16px;
+            }
+        }
+        &__row, tr {
+            margin: 0 -16px;
+            /* add back negative margin value */
+            padding: 0 16px;
+        }
+    }
+}

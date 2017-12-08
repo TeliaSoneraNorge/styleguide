@@ -4,7 +4,7 @@ import React from 'react';
  * Status: *finished*.
  *
  * An Accordion consists of a header and a panel. The header contains a button which
- * toggles the associated panel's visibility.
+ * toggles the associated panel's visibility when <a href="#AccordionList">AccordionList</a> is used.
  *
  * The header is a `h3` tag due to the assumption that in most scenarios there will be
  * a `h1` on the page already, and the Accordion is likely to be a sub-section containing
@@ -24,24 +24,23 @@ class Accordion extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            isContentExpanded: this.props.isExpanded
-        };
+        this.accordionHeaderClicked = this.accordionHeaderClicked.bind(this);
 
-        this.toggleIsContentExpanded = this.toggleIsContentExpanded.bind(this);
     }
-    toggleIsContentExpanded() {
-        this.setState({ isContentExpanded: !this.state.isContentExpanded });
+    accordionHeaderClicked(){
+        this.props.toggleIsExpanded();
+        this.accordion.scrollIntoView({behavior: 'smooth'});
     }
     render() {
         return (
-            <section className={`accordion${this.state.isContentExpanded ? ' accordion--open' : ''}`}>
+            <section className={`accordion${this.props.isExpanded ? ' accordion--open' : ''}`}
+                     ref={(accordion) => { this.accordion = accordion; }}>
                 <h3 className="accordion__header heading heading--level-3">
                     <button
                         className="accordion__header-button"
-                        aria-expanded={this.state.isContentExpanded}
+                        aria-expanded={this.props.isExpanded}
                         aria-controls={this.props.id}
-                        onClick={this.toggleIsContentExpanded}>
+                        onClick={this.accordionHeaderClicked}>
                         {this.props.title}
                     </button>
                 </h3>

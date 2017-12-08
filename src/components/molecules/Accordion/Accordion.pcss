@@ -50,9 +50,16 @@
     }
 
     &__panel {
-        display: none;
-        padding: 0 1rem 2rem;
-    }
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 1rem;
+        transition: height 0.5s ease-in-out,
+                    opacity 0.5s ease-in-out,
+                    padding 0.5s ease-in-out,
+                    visibility 0.5s ease-in-out;
+        visibility: hidden;
+     }
 
     &--open {
         .accordion__header-button {
@@ -60,11 +67,15 @@
 
             &:focus,
             &:active {
-                background-image: url(/public/icons/ico_minus_white.svg);
+                background-color: var(--white);
+                color: var(--core-purple);
             }
         }
         .accordion__panel {
-            display: block;
+            height: auto;
+            padding: 0 1rem 2rem;
+            opacity: 1;
+            visibility: visible;
         }
     }
 }

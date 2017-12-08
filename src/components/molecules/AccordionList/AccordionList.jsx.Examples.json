@@ -1,0 +1,20 @@
+[
+    {
+        "name": "List of accordions",
+        "props": {
+            "accordionItems": [
+                {
+                    "id": "example-1",
+                    "title": "A closed accordion heading",
+                    "children": "This is the body of the accordion"
+                },
+                {
+                    "id": "example-2",
+                    "title": "An open accordion heading",
+                    "children": "This is the body of the accordion"
+                }
+            ],
+            "isExpandedAccordionIndex": 1
+        }
+    }
+]

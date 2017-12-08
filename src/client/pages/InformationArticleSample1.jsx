@@ -1,7 +1,25 @@
 import React from 'react';
 
-import Accordion from '../../components/molecules/Accordion/Accordion';
+import AccordionList from '../../components/molecules/AccordionList/AccordionList';
 import Header from '../../components/molecules/Header/Header';
+
+const accordionListProps = [
+    {
+        "accordionItems": [
+            {
+                "id": "example-1",
+                "title": "A closed accordion heading",
+                "children": "This is the body of the accordion"
+            },
+            {
+                "id": "example-2",
+                "title": "An open accordion heading",
+                "children": "This is the body of the accordion"
+            }
+        ],
+        "isExpandedAccordionIndex": 1
+    }
+];
 
 const InformationArticleSample1 = ({ colors }) =>
     <div>
@@ -45,18 +63,8 @@ const InformationArticleSample1 = ({ colors }) =>
                 </div>
             </div>
             <div className="container container--small">
-                <Accordion
-                    id="1"
-                    title="A closed accordion heading"
-                    isExpanded={false}>
-                    <p>This is the body of the accordion.</p>
-                </Accordion>
-                <Accordion
-                    id="2"
-                    title="An open accordion heading"
-                    isExpanded={true}>
-                    <p>This is the body of the accordion.</p>
-                </Accordion>
+                {accordionListProps.map((props, i) =>
+                    <AccordionList key={i} {...props} />)}
             </div>
         </div>
     </div>;
