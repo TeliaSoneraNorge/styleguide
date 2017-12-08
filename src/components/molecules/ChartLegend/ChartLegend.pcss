@@ -1,0 +1,72 @@
+.chart-legend {
+  text-align: center;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  line-height: initial;
+
+    &__container {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: space-around;
+    }
+
+    &__title {
+        margin-top: 0.5rem;
+        margin-bottom: 0;
+    }
+
+    &__number {
+        font-family: 'pebble';
+        font-weight: 600;
+        font-size: 1.5rem;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__number--sub {
+        font-size: 1rem;
+        padding: 0;
+        margin: 0;
+        color: #878787;
+    }
+
+    &--right-border {
+        border-width: 0.1rem;
+        border-right-style: solid;
+        border-color: #d4d4d4;
+    }
+
+    &--left-border {
+        border-width: 0.1rem;
+        border-left-style: solid;
+        border-color: #d4d4d4;
+    }
+
+    &__line {
+        stroke-width: 15%;
+        stroke-linecap: round;
+
+        &--red {
+            stroke: var(--venetian-red);
+        }
+
+        &--orange {
+            stroke: var(--orange);
+        }
+
+        &--green {
+            stroke: var(--emerald);
+        }
+
+        &--disabled {
+            opacity: 0;
+            stroke: var(--emerald);
+        }
+
+        &--purple {
+            stroke:var(--core-purple);
+        }
+    }
+}

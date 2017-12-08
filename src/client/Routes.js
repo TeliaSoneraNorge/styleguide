@@ -23,6 +23,7 @@ import BlogSamplePage1 from './pages/BlogSamplePage1';
 import BlogSamplePage2 from './pages/BlogSamplePage2';
 import ParallaxPage from './pages/ParallaxPage';
 import FormsSamplePage from './pages/FormsSamplePage';
+import UsagePage from './pages/UsagePage';
 
 const Routes = (props) =>
     <div>
@@ -57,6 +58,7 @@ const Routes = (props) =>
         <Route exact path="/blog-2" component={BlogSamplePage2} />
         <Route exact path="/parallax-page" component={ParallaxPage} />
         <Route exact path="/forms" component={FormsSamplePage} />
+        <Route exact path="/usage" component={UsagePage} />
 
         <div className="container container--medium container--extra-margin-bottom">
             <ContentRatingWrapper />

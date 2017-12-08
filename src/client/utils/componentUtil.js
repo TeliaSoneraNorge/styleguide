@@ -6,6 +6,11 @@ export function extractComponentNameFromPath(path) {
     return componentFileName.split('.')[0];
 }
 
+export function extractComponentNameFromFolder(path) {
+    const pathParts = path.split('/');
+    return pathParts[pathParts.length - 2];
+}
+
 export function groupComponentMetadataByType(componentMetadata) {
     const groupedMetadata = {
         atoms: {},
@@ -14,6 +19,13 @@ export function groupComponentMetadataByType(componentMetadata) {
     };
 
     _.forEach(componentMetadata, (metadata, path) => {
+        const componentName = extractComponentNameFromPath(path);
+        const folderName = extractComponentNameFromFolder(path);
+
+        if (componentName !== folderName) {
+            return;
+        }
+
         if (_.includes(path, 'atoms')) {
             groupedMetadata.atoms[path] = metadata;
         } else if (_.includes(path, 'molecules')) {

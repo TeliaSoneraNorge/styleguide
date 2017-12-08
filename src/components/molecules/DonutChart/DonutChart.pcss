@@ -1,3 +1,52 @@
+@keyframes reduceStrokeToCurrentValue {
+      0% {
+        stroke-dashoffset: 0;
+      }
+      100% {
+      }
+}
+
+@keyframes repositionCaps {
+      0% {
+        transform: rotate(6.28rad)
+      }
+      100% {
+      }
+}
+
+@keyframes repositionSegment {
+      0% {
+        transform: rotate(0)
+      }
+      100% {
+      }
+}
+
+@keyframes fadeIn {
+      0% {
+        opacity: 0;
+        stroke-dashoffset: 0;
+      }
+      99.999999% {
+        stroke-dashoffset: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+
+@keyframes capsfadeIn {
+      0% {
+        opacity: 0;
+      }
+      99.999999% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+}
+
 .donut-chart {
     position: relative;
 
@@ -12,17 +61,14 @@
 
     &__arc {
         fill: none;
-
-        stroke-width: 6%;
-        stroke-linecap: round;
+        stroke-linecap: butt;
         stroke-dasharray: 5.652;
 
         stroke: var(--emerald);
 
-        transition:
-            opacity .5s linear 0s,
-            stroke .5s cubic-bezier(0.075, 0.820, 0.070, 0.825) .5s,
-            stroke-dashoffset .5s cubic-bezier(0.075, 0.820, 0.070, 0.825) .5s;
+        animation:
+            fadeIn .5s linear,
+            reduceStrokeToCurrentValue .6s cubic-bezier(0.23, 1, 0.32, 1) .5s;
 
         &--red {
             stroke: var(--venetian-red);
@@ -39,9 +85,60 @@
         &--disabled {
             opacity: 0;
             stroke: var(--emerald);
+        }
 
-            transition:
-                stroke-dashoffset .0s linear .0s;
+        &--purple {
+            stroke:var(--core-purple);
+        }
+    }
+
+    &__segment {
+        animation:
+            repositionSegment .6s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    &__cap {
+
+        animation:
+            capsfadeIn .5s linear,
+            repositionCaps .6s cubic-bezier(0.23, 1, 0.32, 1) .5s;
+
+        &--red {
+            fill: var(--venetian-red);
+        }
+
+        &--orange {
+            fill: var(--orange);
+        }
+
+        &--green {
+            fill: var(--emerald);
+        }
+
+        &--purple {
+            fill:var(--core-purple);
+        }
+    }
+
+    &__end-cap {
+
+        animation:
+            capsfadeIn .5s linear;
+
+        &--red {
+            fill: var(--venetian-red);
+        }
+
+        &--orange {
+            fill: var(--orange);
+        }
+
+        &--green {
+            fill: var(--emerald);
+        }
+
+        &--purple {
+            fill:var(--core-purple);
         }
     }
 
@@ -98,10 +195,11 @@
     }
 
     &__value-caption {
+        font-family: 'pebble';
+        font-weight: 600;
         text-align: center;
         font-size: 1.5rem;
         line-height: 1.4rem;
-        font-weight: 300;
 
         padding: 0;
         margin: 0;
