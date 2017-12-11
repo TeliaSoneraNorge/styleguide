@@ -46,8 +46,7 @@ body {
     }
 
     &--extra-padding-top {
-
-        @media all and (min-width: 28.125em){
+        @media all and (min-width: 43em){
             padding-top: 2.5rem;
         }
     }
@@ -58,5 +57,11 @@ body {
 
     &--white-bg {
         background-color: var(--white);
+    }
+
+    &--overlapping-full-width-image {
+        @media all and (min-width: 43em){
+            width: 80%;
+        }
     }
 }

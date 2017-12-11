@@ -18,7 +18,7 @@ const InformationArticleSample1 = ({ colors }) =>
         <div className="full-width-image full-width-image--with-mask full-width-image--with-content-overlap">
             <img className="full-width-image__image" src="https://placekitten.com/1600/600" />
         </div>
-        <div className="container container--medium container--no-padding container--white-bg container--extra-padding-top">
+        <div className="container container--medium container--no-padding container--white-bg container--extra-padding-top container--overlapping-full-width-image">
             <div className="container container--small">
                 <p>
                     Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
