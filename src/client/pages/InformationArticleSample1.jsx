@@ -1,6 +1,25 @@
 import React from 'react';
 
+import AccordionList from '../../components/molecules/AccordionList/AccordionList';
 import Header from '../../components/molecules/Header/Header';
+
+const accordionListProps = [
+    {
+        "accordionItems": [
+            {
+                "id": "example-1",
+                "title": "A closed accordion heading",
+                "children": "This is the body of the accordion"
+            },
+            {
+                "id": "example-2",
+                "title": "An open accordion heading",
+                "children": "This is the body of the accordion"
+            }
+        ],
+        "isExpandedAccordionIndex": 1
+    }
+];
 
 const InformationArticleSample1 = ({ colors }) =>
     <div>
@@ -44,26 +63,8 @@ const InformationArticleSample1 = ({ colors }) =>
                 </div>
             </div>
             <div className="container container--small">
-                <section className="accordion accordion--open">
-                    <h3 className="accordion__header heading heading--level-3">
-                        <button className="accordion__header-button" aria-expanded="true" aria-controls="accordion-multiple-example-1">
-                            An open accordion heading
-                        </button>
-                    </h3>
-                    <div className="accordion__panel" id="accordion-multiple-example-1">
-                        This is the body of the accordion.
-                    </div>
-                </section>
-                <section className="accordion">
-                    <h3 className="accordion__header heading heading--level-3">
-                        <button className="accordion__header-button" aria-expanded="false" aria-controls="accordion-multiple-example-2">
-                            Another closed accordion heading
-                        </button>
-                    </h3>
-                    <div className="accordion__panel" id="accordion-multiple-example-2">
-                        This is the body of the accordion.
-                    </div>
-                </section>
+                {accordionListProps.map((props, i) =>
+                    <AccordionList key={i} {...props} />)}
             </div>
         </div>
     </div>;

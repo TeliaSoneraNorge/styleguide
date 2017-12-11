@@ -1,6 +1,25 @@
 import React from 'react';
 
+import AccordionList from '../../components/molecules/AccordionList/AccordionList';
 import Header from '../../components/molecules/Header/Header';
+
+const accordionListProps = [
+    {
+        "accordionItems": [
+            {
+                "id": "example-1",
+                "title": "A closed accordion heading",
+                "children": "This is the body of the accordion"
+            },
+            {
+                "id": "example-2",
+                "title": "An open accordion heading",
+                "children": <table className='full-width-table'> <thead className='full-width-table__header'> <tr className='full-width-table__row'> <th className='full-width-table__cell'>Column 1</th> <th className='full-width-table__cell'>Column 2</th> <th className='full-width-table__cell'>Column 3</th> </tr> </thead> <tbody className='full-width-table__body'> <tr className='full-width-table__row'> <td className='full-width-table__cell'>Nulla quis lorem ut libero malesuada feugiat</td> <td className='full-width-table__cell'>Lorem</td> <td className='full-width-table__cell'>Ipsum</td> </tr> <tr className='full-width-table__row'> <td className='full-width-table__cell'>Lorem ipsum dolor sit amet</td> <td className='full-width-table__cell'>Consectetur</td> <td className='full-width-table__cell'>Elit</td> </tr> <tr className='full-width-table__row'> <td className='full-width-table__cell'>Donec rutrum congue leo</td> <td className='full-width-table__cell'>Eget</td> <td className='full-width-table__cell'>Malesuada</td> </tr> </tbody> </table>
+            }
+        ],
+        "isExpandedAccordionIndex": 1
+    }
+];
 
 const InformationArticleSample2 = () =>
     <div>
@@ -62,26 +81,8 @@ const InformationArticleSample2 = () =>
                     <a className="list__link" href="#">Third link in list</a>
                 </li>
             </ul>
-            <section className="accordion">
-                <h3 className="accordion__header heading heading--level-3">
-                    <button className="accordion__header-button" aria-expanded="true" aria-controls="accordion-multiple-example-1">
-                        A closed accordion heading
-                    </button>
-                </h3>
-                <div className="accordion__panel" id="accordion-multiple-example-1">
-                    This is the body of the accordion.
-                </div>
-            </section>
-            <section className="accordion">
-                <h3 className="accordion__header heading heading--level-3">
-                    <button className="accordion__header-button" aria-expanded="false" aria-controls="accordion-multiple-example-2">
-                        Another closed accordion heading
-                    </button>
-                </h3>
-                <div className="accordion__panel" id="accordion-multiple-example-2">
-                    This is the body of the accordion.
-                </div>
-            </section>
+            {accordionListProps.map((props, i) =>
+                <AccordionList key={i} {...props} />)}
             <h3 className="heading heading--level-3">Heading</h3>
             <p>
                 Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
