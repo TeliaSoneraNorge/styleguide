@@ -3,6 +3,7 @@ import React from 'react';
 
 /**
  * Status: *in progress*.
+ * Waiting for final design to be implemented
  */
 const CheckBoxWithLabel = ({ label, checked }) =>
     <label className="check-box-with-label">
