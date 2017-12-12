@@ -1,0 +1,24 @@
+[
+    {
+        "name": "Default",
+        "props": {
+            "children": "<span>Label</span>"
+        }
+    },
+    {
+        "name": "Label with input element",
+        "props": {
+            "isTextBox": true,
+            "formTypeClassName": "textbox",
+            "children": "<span>Label</span>"
+        }
+    },
+    {
+        "name": "Label with check box",
+        "props": {
+            "isTextBox": false,
+            "formTypeClassName": "checkbox",
+            "children": "<span>Label</span>"
+        }
+    }
+]
