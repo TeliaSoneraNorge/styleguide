@@ -4,22 +4,31 @@
     position: relative;
     z-index: -1;
 
-    @media all and (min-width: 28.125em) {
+    @media all and (min-width: 48em) {
         margin: 0 0 1rem 0;
     }
 
-
     &__image {
         display: block;
+        min-height: 150px;
+        object-fit: cover;
         width: 100%;
+
+        @media all and (min-width: 28.125em) {
+            min-height: 300px;
+        }
+
+        @media all and (min-width: 62em) {
+            height: 440px;
+        }
     }
 
-    @media all and (min-width: 28.125em) {
+    @media all and (min-width: 43em) {
         &--with-mask {
             &:after {
                 background: transparent url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
-                background-size: 100%;
-                bottom: -1px;
+                background-size: 101%;
+                bottom: -2px;
                 content: "";
                 display: block;
                 height: 100%;
@@ -30,7 +39,7 @@
         }
 
         &--with-content-overlap {
-            margin-bottom: -18%;
+            margin-bottom: -12%;
         }
     }
 
