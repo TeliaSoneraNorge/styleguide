@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Type Text",
+        "props": {
+            "id": "textbox-example-1",
+            "type": "text",
+            "placeholder": "Write here.."
+        }
+    }
+]
