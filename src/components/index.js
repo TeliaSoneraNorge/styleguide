@@ -20,6 +20,7 @@ import ToggleButton from './atoms/ToggleButton/ToggleButton';
 // Molecules
 import AccordionList from './molecules/AccordionList/AccordionList';
 import Alert from './molecules/Alert/Alert';
+import CheckBoxWithLabel from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
 import DonutChart from './molecules/DonutChart/DonutChart';
 import FocusBox from './molecules/FocusBox/FocusBox';
 import FocusSpinner from './molecules/FocusSpinner/FocusSpinner';
@@ -54,6 +55,7 @@ export default {
     // Molecules
     'src/components/molecules/AccordionList/AccordionList.jsx': AccordionList,
     'src/components/molecules/Alert/Alert.jsx': Alert,
+    'src/components/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx': CheckBoxWithLabel,
     'src/components/molecules/DonutChart/DonutChart.jsx': DonutChart,
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
     'src/components/molecules/FocusSpinner/FocusSpinner.jsx': FocusSpinner,

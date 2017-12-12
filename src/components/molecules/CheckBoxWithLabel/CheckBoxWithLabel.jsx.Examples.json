@@ -1,0 +1,16 @@
+[
+    {
+        "name": "Unchecked",
+        "props": {
+            "label": "I am checked",
+            "checked": false
+        }
+    },
+    {
+        "name": "Checked",
+        "props": {
+            "label": "I am not checked",
+            "checked": true
+        }
+    }
+]
