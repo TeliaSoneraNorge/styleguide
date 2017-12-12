@@ -7,11 +7,7 @@ const getCapPosition = (radius, percent, strokeWidthInPercents) => ({
     y2: 0
 });
 
-const ChartSegmentSeparator = ({
-    percent,
-    strokeWidthInPercents,
-    radius
-}) => (
+const ChartSegmentSeparator = ({ percent, strokeWidthInPercents, radius }) => (
     <line
         className={`donut-chart__cap`}
         style={{
@@ -19,8 +15,7 @@ const ChartSegmentSeparator = ({
         }}
         {...getCapPosition(radius, percent, strokeWidthInPercents)}
         strokeWidth="0.02"
-        stroke="#fff"
-    />
+        stroke="#fff" />
 );
 
 export default ChartSegmentSeparator;

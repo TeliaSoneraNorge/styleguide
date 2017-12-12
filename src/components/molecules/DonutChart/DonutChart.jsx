@@ -43,8 +43,7 @@ const DonutChart = ({
                 className="donut-chart__background"
                 cx="0"
                 cy="0"
-                r={radius}
-            />
+                r={radius} />
             {!loading && alignSegments(segments).map((segment, index) =>
                 <ChartSegment
                     key={index}
@@ -55,8 +54,7 @@ const DonutChart = ({
                     startCap={index === 0}
                     endCap={index === segments.length - 1}
                     showSegmentSeparators={showSegmentSeparators}
-                    showLineCaps={showLineCaps}
-                />
+                    showLineCaps={showLineCaps} />
             )}
         </svg>
         <div className={classNames('donut-chart__hole', { 'donut-chart__hole--hidden-top': !loading })}>

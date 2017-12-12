@@ -23,29 +23,24 @@ const ChartSegment = ({
 }) => (
     <g
         className="donut-chart__segment"
-        style={{ transform: `rotate(${getBaseRotation(startCap, showLineCaps, radius)}rad)` }}
-    >
+        style={{ transform: `rotate(${getBaseRotation(startCap, showLineCaps, radius)}rad)` }}>
         {showLineCaps && startCap && <ChartSegmentStartCap
             color={color}
             percent={percent}
-            strokeWidthInPercents={strokeWidthInPercents}
-        />}
+            strokeWidthInPercents={strokeWidthInPercents} />}
         {showLineCaps && endCap && <ChartSegmentEndCap
             strokeWidthInPercents={strokeWidthInPercents}
-            color={color}
-        />}
+            color={color} />}
         <ChartSegmentArc
             index={index}
             color={color}
             percent={percent}
             radius={radius}
-            strokeWidthInPercents={strokeWidthInPercents}
-        />
+            strokeWidthInPercents={strokeWidthInPercents} />
         {!startCap && showSegmentSeparators && <ChartSegmentSeparator
             percent={percent}
             radius={radius}
-            strokeWidthInPercents={strokeWidthInPercents}
-        />}
+            strokeWidthInPercents={strokeWidthInPercents} />}
     </g>
 );
 

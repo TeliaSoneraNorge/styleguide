@@ -3,7 +3,6 @@ import Header from '../../components/molecules/Header/Header';
 import DonutChart from '../../components/molecules/DonutChart/DonutChart';
 import ChartLegend from '../../components/molecules/ChartLegend/ChartLegend';
 
-
 const Prism = window.Prism; // A global, added with a <script> tag in the HTML template
 
 export default class UsagePage extends React.Component {
@@ -17,7 +16,6 @@ export default class UsagePage extends React.Component {
 
         this.refreshData = this.refreshData.bind(this);
     }
-
     getRandomData() {
         const maxData = 60;
         const maxExtra = 20;
@@ -59,7 +57,6 @@ export default class UsagePage extends React.Component {
             ]
         };
     }
-
     refreshData() {
         this.setState({ isLoading: true, data: {} });
 
@@ -70,11 +67,9 @@ export default class UsagePage extends React.Component {
             });
         }, 1500);
     }
-
     componentDidMount() {
         this.refreshData();
     }
-
     render() {
         return (
             <div className={this.state.variant}>
@@ -85,8 +80,7 @@ export default class UsagePage extends React.Component {
                 </Header>
                 <div
                     className="container container--small container--extra-padding-top container--extra-margin-bottom"
-                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
-                >
+                    style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
                     <button
                         onClick={this.refreshData}
                         className="button"
@@ -97,35 +91,26 @@ export default class UsagePage extends React.Component {
                     <DonutChart
                         loading={this.state.isLoading}
                         segments={this.state.data.segments}
-                        value={this.state.data.value}
-                    />
+                        value={this.state.data.value} />
 
-                    <ChartLegend
-                        series={this.state.data.series}
-                    />
+                    <ChartLegend series={this.state.data.series} />
+
+                    <DonutChart
+                        loading={this.state.isLoading}
+                        segments={this.state.data.segments}
+                        value={this.state.data.value}
+                        showLineCaps />
+
+                    <ChartLegend series={this.state.data.series} />
 
                     <DonutChart
                         loading={this.state.isLoading}
                         segments={this.state.data.segments}
                         value={this.state.data.value}
                         showLineCaps
-                    />
+                        showSegmentSeparators />
 
-                    <ChartLegend
-                        series={this.state.data.series}
-                    />
-
-                    <DonutChart
-                        loading={this.state.isLoading}
-                        segments={this.state.data.segments}
-                        value={this.state.data.value}
-                        showLineCaps
-                        showSegmentSeparators
-                    />
-
-                    <ChartLegend
-                        series={this.state.data.series}
-                    />
+                    <ChartLegend series={this.state.data.series} />
                 </div>
             </div>
         );

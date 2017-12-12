@@ -1,10 +1,6 @@
 import React from 'react';
 
-const ChartSegmentStartCap = ({
-    percent,
-    strokeWidthInPercents,
-    color
-}) => (
+const ChartSegmentStartCap = ({ percent, strokeWidthInPercents, color }) => (
     <circle
         style={{
             transform: `rotate(${Math.PI * 2 * percent - strokeWidthInPercents}rad)`
@@ -13,8 +9,7 @@ const ChartSegmentStartCap = ({
         stroke={0}
         cx={1 - strokeWidthInPercents * 1.7}
         cy="0"
-        r={strokeWidthInPercents}
-    />
+        r={strokeWidthInPercents} />
 );
 
 export default ChartSegmentStartCap;

@@ -9,9 +9,7 @@ const getLegendClassName = (series, index) =>
             'chart-legend--left-border': index === series.length - 1 && series.length > 1
         });
 
-const ChartLegend = ({
-    series
-}) => (
+const ChartLegend = ({ series }) => (
     <div className="chart-legend__container">
         {series.map((serie, i) =>
             <div
@@ -27,8 +25,7 @@ const ChartLegend = ({
                         y2="0"
                         className={classNames(
                             'chart-legend__line',
-                            `chart-legend__line--${serie.color}`)}
-                    />
+                            `chart-legend__line--${serie.color}`)} />
                 </svg>
 
                 <h4 className="chart-legend__title">{serie.title}</h4>
