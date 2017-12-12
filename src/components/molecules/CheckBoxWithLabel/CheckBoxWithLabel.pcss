@@ -1,0 +1,64 @@
+.check-box-with-label {
+    user-select: none;
+    cursor: pointer;
+
+    & .check-box-with-label__input{
+        position: absolute;
+        opacity: 0;
+    }
+
+
+    & .check-box-with-label__input:checked + .check-box-with-label__background-frame .check-box-with-label__svg .check-box-with-label__foreground-frame {
+        stroke-dashoffset: 0;
+    }
+
+    &:hover > span:first-of-type .check-box-with-label__svg .check-box-with-label__check-mark {
+        stroke-dashoffset: 0;
+    }
+
+    /* Still frame */
+    & > span:first-of-type {
+        position: relative;
+        top: 2px;
+        float: left;
+        margin-right: 8px;
+        width: 20px;
+        height: 20px;
+        border: 2px solid #808281;
+        border-radius: 3px;
+    }
+
+    & > span:first-of-type .check-box-with-label__svg {
+        position: absolute;
+        top: -2px;
+        left: -2px;
+    }
+
+    /* Animated frame */
+    & > span:first-of-type .check-box-with-label__svg .check-box-with-label__check-mark {
+        fill: none;
+        stroke: #8d16d0;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 71px;
+        stroke-dashoffset: 71px;
+        transition: all .3s ease;
+    }
+
+    /* Check mark */
+    & > span:first-of-type .check-box-with-label__svg .check-box-with-label__foreground-frame {
+        fill: none;
+        stroke: #8d16d0;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 18px;
+        stroke-dashoffset: 18px;
+        transition: all .3s ease;
+    }
+
+    & > .check-box-with-label__label {
+        pointer-events: none;
+    }
+}
