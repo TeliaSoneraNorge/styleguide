@@ -1,0 +1,15 @@
+[
+    {
+        "name": "",
+        "props": {
+            "options": [
+                "This is option 1",
+                "This is option 2",
+                "This is option 3",
+                "This is option 4",
+                "This is option 5"
+            ],
+            "selectedOption": "This is option 2"
+        }
+    }
+]
