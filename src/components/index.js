@@ -8,6 +8,7 @@ const componentMetadata = getReactComponentsMetadata();
 import Box from './atoms/Box/Box';
 import Button from './atoms/Button/Button';
 import Heading from './atoms/Heading/Heading';
+import Label from './atoms/Label/Label';
 import Link from './atoms/Link/Link';
 import ParallaxBlock from './atoms/ParallaxBlock/ParallaxBlock';
 import ParallaxBlockSpacer from './atoms/ParallaxBlockSpacer/ParallaxBlockSpacer';
@@ -40,6 +41,7 @@ export default {
     'src/components/atoms/Box/Box.jsx': Box,
     'src/components/atoms/Button/Button.jsx': Button,
     'src/components/atoms/Heading/Heading.jsx': Heading,
+    'src/components/atoms/Label/Label.jsx': Label,
     'src/components/atoms/Link/Link.jsx': Link,
     'src/components/atoms/ParallaxBlock/ParallaxBlock.jsx': ParallaxBlock,
     'src/components/atoms/ParallaxBlockSpacer/ParallaxBlockSpacer.jsx': ParallaxBlockSpacer,
