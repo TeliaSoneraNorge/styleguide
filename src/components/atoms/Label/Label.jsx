@@ -1,14 +1,14 @@
 import React from 'react';
 
-function classNames(isTextBox, formTypeClassName) {
+function classNames(additionalClassName, mode) {
     const classNames = ['label'];
 
-    if (isTextBox) {
-        classNames.push('label--text-box')
+    if (additionalClassName) {
+        classNames.push('check-box-with-label');
     }
-
-    if (formTypeClassName) {
-        classNames.push(formTypeClassName);
+    
+    if (mode) {
+        classNames.push(`label--${mode}`);
     }
 
     return classNames.join(' ');
@@ -30,7 +30,7 @@ export default class Label extends React.Component {
     }
     render() {
         return (
-            <label className={classNames(this.props.isTextBox, this.props.formTypeClassName)}>
+            <label className={classNames(this.props.className, this.props.mode)}>
                 {this.props.children}
             </label>
         );

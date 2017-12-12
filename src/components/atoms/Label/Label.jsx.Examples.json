@@ -6,19 +6,17 @@
         }
     },
     {
-        "name": "Label with input element",
+        "name": "Label - text on top",
         "props": {
-            "isTextBox": true,
-            "formTypeClassName": "textbox",
-            "children": "<span>Label</span>"
+            "children": "<span>Label</span>",
+            "mode": "text-on-top"
         }
     },
     {
-        "name": "Label with check box",
+        "name": "Label - text to right",
         "props": {
-            "isTextBox": false,
-            "formTypeClassName": "checkbox",
-            "children": "<span>Label</span>"
+            "children": "<span>Label</span>",
+            "mode": "text-to-right"
         }
     }
 ]

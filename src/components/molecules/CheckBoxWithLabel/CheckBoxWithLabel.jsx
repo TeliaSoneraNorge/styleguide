@@ -1,12 +1,15 @@
 import _ from 'lodash';
 import React from 'react';
 
+import Label from '../../atoms/Label/Label';
+
 /**
  * Status: *in progress*.
- * Waiting for final design to be implemented
+ * 
+ * Waiting on the Photoshop files to get the exact checkmark SVG.
  */
 const CheckBoxWithLabel = ({ label, checked }) =>
-    <label className="check-box-with-label">
+    <Label className="check-box-with-label" mode="text-to-right">
         <input className="check-box-with-label__input" type="checkbox" defaultChecked={checked} />
         <span className="check-box-with-label__background-frame">
             <svg className="check-box-with-label__svg" width="20px" height="20px" viewBox="0 0 20 20">
@@ -14,7 +17,7 @@ const CheckBoxWithLabel = ({ label, checked }) =>
                 <polyline className="check-box-with-label__foreground-frame" points="4 11 8 15 16 6"></polyline>
             </svg>
         </span>
-        <span className="check-box-with-label__label">{label}</span>
-    </label>;
+        <span className="check-box-with-label__label-text">{label}</span>
+    </Label>;
 
 export default CheckBoxWithLabel;
