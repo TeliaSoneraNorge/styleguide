@@ -3,13 +3,51 @@
         "name": "Default",
         "props": {
             "value": "21,6GB",
-            "percent": 0.78
+            "segments": [
+                { "color": "purple", "percent": 0.3 },
+                { "color": "orange", "percent": 0.4 },
+                { "color": "green", "percent": 0.1 }
+            ]
+        }
+    },
+    {
+        "name": "With line caps",
+        "props": {
+            "showLineCaps": true,
+            "value": "21,6GB",
+            "segments": [
+                { "color": "purple", "percent": 0.3 },
+                { "color": "orange", "percent": 0.4 },
+                { "color": "green", "percent": 0.1 }
+            ]
+        }
+    },
+    {
+        "name": "With line caps and segment separators",
+        "props": {
+            "showLineCaps": true,
+            "showSegmentSeparators": true,
+            "value": "21,6GB",
+            "segments": [
+                { "color": "purple", "percent": 0.3 },
+                { "color": "orange", "percent": 0.4 },
+                { "color": "green", "percent": 0.1 }
+            ]
+        }
+    },
+    {
+        "name": "With no segments",
+        "props": {
+            "showLineCaps": true,
+            "showSegmentSeparators": true,
+            "value": "21,6GB"
         }
     },
     {
         "name": "Loading",
         "props": {
-            "loading": true
+            "loading": true,
+            "segments": []
         }
     }
 ]

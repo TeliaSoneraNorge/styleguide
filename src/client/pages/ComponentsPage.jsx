@@ -58,6 +58,7 @@ const ComponentsPage = (props) => {
                     <li><a className="link" href="/blog-2">Blog page 2</a></li>
                     <li><a className="link" href="/parallax-page">Parallax page</a></li>
                     <li><a className="link" href="/forms">Forms</a></li>
+                    <li><a className="link" href="/usage">Usage page</a></li>
                 </ul>
             </div>
         </div>

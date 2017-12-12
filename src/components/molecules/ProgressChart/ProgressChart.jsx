@@ -4,7 +4,11 @@ import PropTypes from 'prop-types';
 
 import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
 import Spinner from '../../atoms/Spinner/Spinner';
-import { getThresholdFromValue } from '../DonutChart/DonutChart';
+
+const getThresholdFromValue = (thresholds, value) =>
+    thresholds
+        .sort((a, b) => b.to - a.to)
+        .reduce((prev, curr) => curr.to >= value ? curr : prev, null);
 
 /**
  * Status: *in progress*.

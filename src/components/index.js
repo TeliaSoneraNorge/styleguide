@@ -31,6 +31,7 @@ import PersonBox from './molecules/PersonBox/PersonBox';
 import ProductPromoBox from './molecules/ProductPromoBox/ProductPromoBox';
 import ProgressChart from './molecules/ProgressChart/ProgressChart';
 import Subscription from './molecules/Subscription/Subscription';
+import ChartLegend from './molecules/ChartLegend/ChartLegend';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
@@ -64,6 +65,7 @@ export default {
     'src/components/molecules/ProductPromoBox/ProductPromoBox.jsx' : ProductPromoBox,
     'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
     'src/components/molecules/Subscription/Subscription.jsx': Subscription,
+    'src/components/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,

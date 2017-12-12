@@ -1,39 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
-
 import Spinner from '../../atoms/Spinner/Spinner';
+import ChartSegment from './ChartSegment';
 
 const radius = 0.9;
-const circumference = 2 * Math.PI * radius;
+const minimumPercentageValueToBeDisplayed = 0.01;
 
-export const getThresholdFromValue = (thresholds, value) =>
-    thresholds
-        .sort((a, b) => b.to - a.to)
-        .reduce((prev, curr) => curr.to >= value ? curr : prev, null);
+const constrainMinimumValue = (value, minimum) =>
+    value < minimum ? minimum : value;
 
-const getDashOffsetFromPercentage = (percentage) =>
-    circumference * (1 - percentage);
+const aggregatePreviousPercentages = (segments, index) =>
+    segments.slice(0, index + 1).reduce((prev, curr) => prev +
+        constrainMinimumValue(curr.percent, minimumPercentageValueToBeDisplayed), 0);
 
-const getDashOffsetIfLoading = (loading, percentage) =>
-    loading
-        ? 0
-        : getDashOffsetFromPercentage(percentage);
+const alignSegments = (segments) =>
+    segments
+        .map((segment, index) => ({
+            percent: aggregatePreviousPercentages(segments, index),
+            color: segment.color
+        }))
+        .sort((seg1, seg2) => seg2.percent - seg1.percent);
 
-/**
- * Status: *in progress*.
- *
- * Future work: Finetune the default thresholds.
- *
- */
 const DonutChart = ({
     loading,
     size,
     loadingCaption,
-    percent,
     value,
     valueCaption,
-    thresholds
+    upperCaption,
+    segments,
+    showSegmentSeparators,
+    showLineCaps
 }) => (
     <div className="donut-chart" style={{ width: size, height: size }}>
         <svg
@@ -45,24 +43,26 @@ const DonutChart = ({
                 className="donut-chart__background"
                 cx="0"
                 cy="0"
-                r={radius}
-            />
-            {!!percent && <circle
-                className={classNames(
-                    'donut-chart__arc',
-                    `donut-chart__arc--${getThresholdFromValue(thresholds, percent).type}`,
-                    { 'donut-chart__arc--disabled': loading })}
-                cx="0"
-                cy="0"
-                r={radius}
-                strokeDashoffset={getDashOffsetIfLoading(loading, percent)}
-            />}
+                r={radius} />
+            {!loading && alignSegments(segments).map((segment, index) =>
+                <ChartSegment
+                    key={index}
+                    index={index}
+                    color={segment.color}
+                    percent={segment.percent}
+                    radius={radius}
+                    startCap={index === 0}
+                    endCap={index === segments.length - 1}
+                    showSegmentSeparators={showSegmentSeparators}
+                    showLineCaps={showLineCaps} />
+            )}
         </svg>
         <div className={classNames('donut-chart__hole', { 'donut-chart__hole--hidden-top': !loading })}>
             <Spinner className="donut-chart__spinner" />
             <p className="donut-chart__loading-caption">{loadingCaption}</p>
         </div>
         <div className={classNames('donut-chart__hole', { 'donut-chart__hole--hidden-bottom': loading })}>
+            <p className="donut-chart__value-caption">{upperCaption}</p>
             <p className="donut-chart__value">{value}</p>
             <p className="donut-chart__value-caption">{valueCaption}</p>
         </div>
@@ -74,19 +74,22 @@ DonutChart.propTypes = {
     size: PropTypes.number,
     loadingCaption: PropTypes.string,
     value: PropTypes.string,
-    percent: (props, propName) => {
-        if (props[propName] === undefined || props[propName] === null) {
-            return null;
-        }
+    segments: PropTypes.arrayOf(PropTypes.shape({
+        percent: (props, propName) => {
+            if (props[propName] === undefined || props[propName] === null) {
+                return null;
+            }
 
-        if (typeof props[propName] !== 'number') {
-            return new Error(`${propName} has to be a number`);
-        }
+            if (typeof props[propName] !== 'number') {
+                return new Error(`${propName} has to be a number`);
+            }
 
-        if (props[propName] < 0 || props[propName] > 1) {
-            return new Error(`${propName} has to be within interval 0..1`);
-        }
-    },
+            if (props[propName] < 0 || props[propName] > 1) {
+                return new Error(`${propName} has to be within interval 0..1`);
+            }
+        },
+        color: PropTypes.string.isRequired
+    })),
     valueCaption: PropTypes.string,
     thresholds: PropTypes.arrayOf(PropTypes.shape({
         to: PropTypes.number.isRequired,
@@ -98,11 +101,7 @@ DonutChart.defaultProps = {
     size: 266,
     loadingCaption: "Henter data...",
     valueCaption: "gjenstår",
-    thresholds: [
-        { to: 0.2, type: 'red' },
-        { to: 0.6, type: 'orange' },
-        { to: 1, type: 'green' }
-    ]
+    segments: []
 };
 
 export default DonutChart;
