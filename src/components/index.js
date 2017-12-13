@@ -40,6 +40,7 @@ import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
 import ContentRating from './organisms/ContentRating/ContentRating';
+import Form from './organisms/Form/Form';
 
 export default {
     // Atoms
@@ -77,5 +78,6 @@ export default {
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
-    'src/components/organisms/ContentRating/ContentRating.jsx' : ContentRating
+    'src/components/organisms/ContentRating/ContentRating.jsx' : ContentRating,
+    'src/components/organisms/Form/Form.jsx' : Form
 };

@@ -3,6 +3,9 @@ import React from 'react';
 import Button from '../../components/atoms/Button/Button';
 import Heading from '../../components/atoms/Heading/Heading';
 import Header from '../../components/molecules/Header/Header';
+import TextBoxWithLabel from "../../components/molecules/TextBoxWithLabel/TextBoxWithLabel";
+import Form from "../../components/organisms/Form/Form";
+import CheckBoxWithLabel from "../../components/molecules/CheckBoxWithLabel/CheckBoxWithLabel";
 
 const FormsSamplePage = () =>
     <div>
@@ -51,6 +54,102 @@ const FormsSamplePage = () =>
             <Button text="Bar" size="small" />
             <Button text="Baz" size="small" />
             <Button text="Cancel" kind="cancel" />
+        </div>
+
+        <div className="container container--medium">
+            <h3 className="heading heading--level-3">Example login form with GET</h3>
+            <br/>
+            <Form action="/get.html" method="GET">
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Password" type="password" placeholder="password" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Button text="Login" type="submit" value="Submit" />
+                </Form.FormRow>
+            </Form>
+        </div>
+
+        <div className="container container--medium">
+            <h3 className="heading heading--level-3">Example login form with js</h3>
+            <br/>
+            <Form onSubmit={
+                function (e) {
+                    e.preventDefault();
+                    console.log('submit');
+                }
+            }>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Password" type="password" placeholder="password" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Button text="Login" type="submit" value="Submit" />
+                </Form.FormRow>
+            </Form>
+        </div>
+
+        <div className="container container--medium">
+            <h3 className="heading heading--level-3">Example multi column form</h3>
+            <br/>
+            <Form>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Name" type="text" placeholder="name" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn size="half">
+                        <TextBoxWithLabel label="D.O.B" type="text" placeholder="01/01/2018" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn size="half">
+                        <TextBoxWithLabel label="Telephone" type="text" placeholder="telephone" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Email" type="text" placeholder="email" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Address" type="text" placeholder="address" />
+                    </Form.FormColumn>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="Entrance" type="text" placeholder="entrance" />
+                        <TextBoxWithLabel label="Apt.No." type="text" placeholder="apt. no" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn size="half">
+                        <TextBoxWithLabel label="Post Code" type="text" placeholder="Post Code" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <CheckBoxWithLabel label="I have a C/O" checked="false" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <TextBoxWithLabel label="C/O Address" type="text" placeholder="c/o address" />
+                    </Form.FormColumn>
+                </Form.FormRow>
+            </Form>
         </div>
 
     </div>;
