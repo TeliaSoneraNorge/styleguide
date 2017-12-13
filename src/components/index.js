@@ -33,6 +33,7 @@ import ProductPromoBox from './molecules/ProductPromoBox/ProductPromoBox';
 import ProgressChart from './molecules/ProgressChart/ProgressChart';
 import Subscription from './molecules/Subscription/Subscription';
 import ChartLegend from './molecules/ChartLegend/ChartLegend';
+import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
@@ -68,6 +69,7 @@ export default {
     'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
     'src/components/molecules/Subscription/Subscription.jsx': Subscription,
     'src/components/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
+    'src/components/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,

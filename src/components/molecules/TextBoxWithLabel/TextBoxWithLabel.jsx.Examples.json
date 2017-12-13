@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Type Text",
+        "props": {
+            "label": "Label for textbox",
+            "type": "text",
+            "placeholder": "Write here.."
+        }
+    }
+]

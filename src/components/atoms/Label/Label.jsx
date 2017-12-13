@@ -4,9 +4,9 @@ function classNames(additionalClassName, mode) {
     const classNames = ['label'];
 
     if (additionalClassName) {
-        classNames.push('check-box-with-label');
+        classNames.push(additionalClassName);
     }
-    
+
     if (mode) {
         classNames.push(`label--${mode}`);
     }
@@ -18,7 +18,7 @@ function classNames(additionalClassName, mode) {
  * Status: *in progress*.
  *
  * Labels used with TextBox should appear on top of input element and be in grey color.
- * 
+ *
  * Labels used with CheckBox, RadioButton and DropDownList (if labelled at all) should appear
  * to the right of the input element and be in black color.
  *
