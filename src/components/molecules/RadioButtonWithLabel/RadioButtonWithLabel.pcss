@@ -27,18 +27,14 @@
     }
 
     & .radio-button-with-label__check-mark {
-        fill: none;
-        stroke: #8d16d0;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 21px;
-        stroke-dashoffset: 21px;
-        transition: stroke-dashoffset .3s ease;
+        fill: #8d16d0;
+        opacity: 0;
+        stroke: none;
+        transition: opacity .3s ease;
     }
 
     & .radio-button-with-label__input:checked + .radio-button-with-label__svg-container .radio-button-with-label__check-mark {
-        stroke-dashoffset: 0px;
+        opacity: 1;
     }
 
     & > .radio-button-with-label__label-text {

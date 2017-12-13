@@ -7,58 +7,42 @@
         opacity: 0;
     }
 
-
-    & .check-box-with-label__input:checked + .check-box-with-label__background-frame .check-box-with-label__svg .check-box-with-label__foreground-frame {
-        stroke-dashoffset: 0;
-    }
-
-    &:hover > span:first-of-type .check-box-with-label__svg .check-box-with-label__check-mark {
-        stroke-dashoffset: 0;
-    }
-
-    /* Still frame */
-    & > span:first-of-type {
+    /* SVG container */
+    & .check-box-with-label__svg-container {
+        vertical-align: middle;
+        margin-right: .3rem;
         position: relative;
-        top: 2px;
-        float: left;
-        margin-right: 8px;
-        width: 20px;
-        height: 20px;
-        border: 2px solid #808281;
-        border-radius: 3px;
+        top: 4px;
     }
 
-    & > span:first-of-type .check-box-with-label__svg {
-        position: absolute;
-        top: -2px;
-        left: -2px;
+    /* SVG parts */
+    & .check-box-with-label__frame {
+        fill: none;
+        stroke: #808281;
+        stroke-width: 2px;
+        transition: stroke .3s ease;
+    }
+    &:hover .check-box-with-label__frame {
+        stroke: #8d16d0;
     }
 
-    /* Animated frame */
-    & > span:first-of-type .check-box-with-label__svg .check-box-with-label__check-mark {
+    & .check-box-with-label__check-mark {
         fill: none;
         stroke: #8d16d0;
         stroke-width: 2;
         stroke-linecap: round;
         stroke-linejoin: round;
-        stroke-dasharray: 71px;
-        stroke-dashoffset: 71px;
-        transition: all .3s ease;
+        stroke-dasharray: 21px;
+        stroke-dashoffset: 21px;
+        transition: stroke-dashoffset .3s ease;
     }
 
-    /* Check mark */
-    & > span:first-of-type .check-box-with-label__svg .check-box-with-label__foreground-frame {
-        fill: none;
-        stroke: #8d16d0;
-        stroke-width: 2;
-        stroke-linecap: round;
-        stroke-linejoin: round;
-        stroke-dasharray: 18px;
-        stroke-dashoffset: 18px;
-        transition: all .3s ease;
+    & .check-box-with-label__input:checked + .check-box-with-label__svg-container .check-box-with-label__check-mark {
+        stroke-dashoffset: 0px;
     }
 
     & > .check-box-with-label__label-text {
         pointer-events: none;
+        vertical-align: middle;
     }
 }

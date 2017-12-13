@@ -13,8 +13,8 @@ const RadioButtonWithLabel = ({ label, checked, name }) =>
         <input className="radio-button-with-label__input" type="radio" name={name} defaultChecked={checked} />
         <span className="radio-button-with-label__svg-container">
             <svg className="radio-button-with-label__svg" width="20px" height="20px" viewBox="0 0 20 20">
-                <path className="radio-button-with-label__frame" d="M16,19H4c-1.7,0-3-1.4-3-3V4c0-1.7,1.3-3,3-3h12c1.6,0,3,1.3,3,3v12C19,17.6,17.6,19,16,19z"/>
-                <path className="radio-button-with-label__check-mark" d="M5,7.7c1.5,2.4,3.1,4.8,4.6,7.3c2.1-3.3,4.3-6.7,6.4-10"/>
+                <circle className="radio-button-with-label__frame" cx="10" cy="10" r="9"/>
+                <circle className="radio-button-with-label__check-mark" cx="10" cy="10" r="5"/>
             </svg>
         </span>
         <span className="radio-button-with-label__label-text">{label}</span>
