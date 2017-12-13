@@ -1,0 +1,48 @@
+.radio-button-with-label {
+    user-select: none;
+    cursor: pointer;
+
+    & .radio-button-with-label__input {
+        position: absolute;
+        opacity: 0;
+    }
+
+    /* SVG container */
+    & .radio-button-with-label__svg-container {
+        vertical-align: middle;
+        margin-right: .3rem;
+        position: relative;
+        top: 4px;
+    }
+
+    /* SVG parts */
+    & .radio-button-with-label__frame {
+        fill: none;
+        stroke: #808281;
+        stroke-width: 2px;
+        transition: stroke .3s ease;
+    }
+    &:hover .radio-button-with-label__frame {
+        stroke: #8d16d0;
+    }
+
+    & .radio-button-with-label__check-mark {
+        fill: none;
+        stroke: #8d16d0;
+        stroke-width: 2;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-dasharray: 21px;
+        stroke-dashoffset: 21px;
+        transition: stroke-dashoffset .3s ease;
+    }
+
+    & .radio-button-with-label__input:checked + .radio-button-with-label__svg-container .radio-button-with-label__check-mark {
+        stroke-dashoffset: 0px;
+    }
+
+    & > .radio-button-with-label__label-text {
+        pointer-events: none;
+        vertical-align: middle;
+    }
+}
