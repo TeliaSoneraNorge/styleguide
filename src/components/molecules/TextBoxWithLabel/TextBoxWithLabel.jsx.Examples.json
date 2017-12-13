@@ -2,7 +2,7 @@
     {
         "name": "Type Text",
         "props": {
-            "id": "textbox-example-1",
+            "label": "Label for textbox",
             "type": "text",
             "placeholder": "Write here.."
         }
