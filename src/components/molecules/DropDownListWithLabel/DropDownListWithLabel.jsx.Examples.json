@@ -1,6 +1,6 @@
 [
     {
-        "name": "",
+        "name": "Large - Without label",
         "props": {
             "options": [
                 "This is option 1",
@@ -9,7 +9,23 @@
                 "This is option 4",
                 "This is option 5"
             ],
-            "selectedOption": "This is option 2"
+            "selectedOption": "This is option 2",
+            "size": "large"
+        }
+    },
+    {
+        "name": "Small - With label",
+        "props": {
+            "options": [
+                "1.",
+                "2.",
+                "3.",
+                "4.",
+                "5."
+            ],
+            "selectedOption": "2.",
+            "label": "option",
+            "size": "small"
         }
     }
 ]
