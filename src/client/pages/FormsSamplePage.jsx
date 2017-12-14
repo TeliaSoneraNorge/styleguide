@@ -6,6 +6,7 @@ import Header from '../../components/molecules/Header/Header';
 import TextBoxWithLabel from "../../components/molecules/TextBoxWithLabel/TextBoxWithLabel";
 import Form from "../../components/organisms/Form/Form";
 import CheckBoxWithLabel from "../../components/molecules/CheckBoxWithLabel/CheckBoxWithLabel";
+import DropDownListWithLabel from "../../components/molecules/DropDownListWithLabel/DropDownListWithLabel";
 
 const FormsSamplePage = () =>
     <div>
@@ -19,41 +20,41 @@ const FormsSamplePage = () =>
         </Header>
 
         <div className="container container--medium">
-            <Heading text="Normal button" level={3} />
+            <Heading text="Normal button" level={3}/>
             <p className="paragraph">
                 If you are not sure what button to use, use this one. It is the standard button we recommend
                 to use most places.
             </p>
-            <Button text="Foo Bar" />
+            <Button text="Foo Bar"/>
         </div>
 
         <div className="container container--medium">
-            <Heading text="Primary button" level={3} />
+            <Heading text="Primary button" level={3}/>
             <p className="paragraph">
                 This should be used ideally no more than <em>once per page</em>. It would usually be the main
                 action, such as "Kjøp" or "Bestill".
             </p>
-            <Button text="Bestill" kind="primary" />
+            <Button text="Bestill" kind="primary"/>
         </div>
 
         <div className="container container--medium">
-            <Heading text="Regular button + cancel button" level={3} />
+            <Heading text="Regular button + cancel button" level={3}/>
             <p className="paragraph">
                 You may sometimes want a cancel button next to the main button.
             </p>
-            <Button text="Foobar" />
-            <Button text="Cancel" kind="cancel" />
+            <Button text="Foobar"/>
+            <Button text="Cancel" kind="cancel"/>
         </div>
 
         <div className="container container--medium">
-            <Heading text="Multiple (small) buttons" level={3} />
+            <Heading text="Multiple (small) buttons" level={3}/>
             <p className="paragraph">
                 Here are multiple small buttons laid out next to each other, with a cancel.
             </p>
-            <Button text="Foo" size="small" />
-            <Button text="Bar" size="small" />
-            <Button text="Baz" size="small" />
-            <Button text="Cancel" kind="cancel" />
+            <Button text="Foo" size="small"/>
+            <Button text="Bar" size="small"/>
+            <Button text="Baz" size="small"/>
+            <Button text="Cancel" kind="cancel"/>
         </div>
 
         <div className="container container--medium">
@@ -62,16 +63,16 @@ const FormsSamplePage = () =>
             <Form action="/get.html" method="GET">
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number" />
+                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Password" type="password" placeholder="password" />
+                        <TextBoxWithLabel label="Password" type="password" placeholder="password"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
-                    <Button text="Login" type="submit" value="Submit" />
+                    <Button text="Login" type="submit" value="Submit"/>
                 </Form.FormRow>
             </Form>
         </div>
@@ -87,16 +88,16 @@ const FormsSamplePage = () =>
             }>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number" />
+                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Password" type="password" placeholder="password" />
+                        <TextBoxWithLabel label="Password" type="password" placeholder="password"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
-                    <Button text="Login" type="submit" value="Submit" />
+                    <Button text="Login" type="submit" value="Submit"/>
                 </Form.FormRow>
             </Form>
         </div>
@@ -107,46 +108,56 @@ const FormsSamplePage = () =>
             <Form>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Name" type="text" placeholder="name" />
+                        <TextBoxWithLabel label="Name" type="text" placeholder="name"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn size="half">
-                        <TextBoxWithLabel label="D.O.B" type="text" placeholder="01/01/2018" />
+                        <TextBoxWithLabel label="D.O.B" type="text" placeholder="01/01/2018"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn size="half">
-                        <TextBoxWithLabel label="Telephone" type="text" placeholder="telephone" />
+                        <TextBoxWithLabel label="Telephone" type="text" placeholder="telephone"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Email" type="text" placeholder="email" />
+                        <TextBoxWithLabel label="Email" type="text" placeholder="email"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Address" type="text" placeholder="address" />
+                        <TextBoxWithLabel label="Address" type="text" placeholder="address"/>
                     </Form.FormColumn>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Entrance" type="text" placeholder="entrance" />
-                        <TextBoxWithLabel label="Apt.No." type="text" placeholder="apt. no" />
+                        <TextBoxWithLabel label="Entrance" type="text" placeholder="entrance"/>
+                        <TextBoxWithLabel label="Apt.No." type="text" placeholder="apt. no"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn size="half">
-                        <TextBoxWithLabel label="Post Code" type="text" placeholder="Post Code" />
+                        <TextBoxWithLabel label="Post Code" type="text" placeholder="Post Code"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <CheckBoxWithLabel label="I have a C/O" checked="false" />
+                        <CheckBoxWithLabel label="I have a C/O" checked="false"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="C/O Address" type="text" placeholder="c/o address" />
+                        <TextBoxWithLabel label="C/O Address" type="text" placeholder="c/o address"/>
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <DropDownListWithLabel label="Dropdown Label" options={['1','2']} selectedOption={'1'} />
+                    </Form.FormColumn>
+                </Form.FormRow>
+                <Form.FormRow>
+                    <Form.FormColumn>
+                        <DropDownListWithLabel options={['1','2']} selectedOption={'1'} />
                     </Form.FormColumn>
                 </Form.FormRow>
             </Form>

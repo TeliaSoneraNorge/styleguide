@@ -2,11 +2,11 @@ import React from 'react';
 
 import Label from '../../atoms/Label/Label';
 
-function classNames(size) {
+function classNames(label) {
     const classNames = ['dropdown-list-with-label__select'];
 
-    if (size) {
-        classNames.push(`dropdown-list-with-label__select--${size}`);
+    if (label) {
+        classNames.push(`dropdown-list-with-label__select--half`);
     }
 
     return classNames.join(' ');
@@ -25,8 +25,8 @@ export default class DropDownListWithLabel extends React.Component {
     render() {
         return (
             <Label className="dropdown-list-with-label" mode="text-to-right">
-                <select className={classNames(this.props.size)}
-                        defaultValue={this.props.selectedOption} onChange={this.props.changeSelectedOption}>
+                <select className={classNames(this.props.label)}
+                    defaultValue={this.props.selectedOption} onChange={this.props.changeSelectedOption}>
                     {this.props.options.map((option) =>
                         <option className="dropdown-list-with-label__option" key={option}>
                             {option}
