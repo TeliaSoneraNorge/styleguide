@@ -1,0 +1,41 @@
+.dropdown-list-with-label {
+
+    &__select {
+        background: transparent url('/public/icons/ico_dropArrow.svg') no-repeat right 15px center;
+        background-size: 15px 15px;
+        border: 1px solid var(--grey);
+        border-radius: 0;
+        font-size: 1rem;
+        margin: 0;
+        min-width: 10px;
+        padding: 10px 15px;
+        -webkit-appearance: none;
+
+
+        &:focus,
+        &:active {
+            background-color: var(--white);
+            background-image: url('/public/icons/ico_dropArrow_purple.svg');
+            border-color: var(--core-purple);
+            color: var(--core-purple);
+            outline: none;
+        }
+
+        &--small {
+            width: 100px;
+        }
+
+        &--large {
+            width: 290px;
+        }
+    }
+
+    &__option {
+        color: var(--black);
+        padding: 0;
+    }
+
+    &__label-text {
+        margin-left: 10px;
+    }
+}
