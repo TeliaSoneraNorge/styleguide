@@ -2,9 +2,10 @@ import React from 'react';
 
 /**
  *
- * Form is created by nesting form\_\_row and form\_\_column to create the structure
+ * The layout of a form is created by nesting form\_\_row and form\_\_column.
+ * Inside each column you add the components you need for creating your own form.
  *
- * Form examples <a href="/forms">here</a>.
+ * More form examples <a href="/forms">here</a>.
  */
 class Form extends React.Component {
     constructor(props) {
