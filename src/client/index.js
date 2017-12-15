@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
 
 import 'picturefill';
+import objectFitImages from 'object-fit-images';
 import App from './App';
 import rootReducer from './reducers';
 
@@ -31,3 +32,6 @@ if (module.hot) {
 
     module.hot.accept('./App', () => render(App));
 }
+
+// Method for object-fit polyfill
+objectFitImages();

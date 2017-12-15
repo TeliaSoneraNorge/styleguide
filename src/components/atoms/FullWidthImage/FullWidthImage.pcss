@@ -12,6 +12,8 @@
         display: block;
         min-height: 150px;
         object-fit: cover;
+        object-position: top;
+        font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
         width: 100%;
 
         @media all and (min-width: 28.125em) {
@@ -40,6 +42,12 @@
 
         &--with-content-overlap {
             margin-bottom: -12%;
+        }
+    }
+
+    @media all and (min-width: 78.125em) {
+        &--with-content-overlap {
+            margin-bottom: -9.375rem;
         }
     }
 
