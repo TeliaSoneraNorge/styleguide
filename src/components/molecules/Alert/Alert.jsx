@@ -16,7 +16,7 @@ const Alert = ({kind = "positive", headingText, bodyHtml, links = []}) =>
     <div className={classNames(kind)}>
         <div className="alert__content">
             <img className="alert__icon" src="/public/icons/ico_info.svg" role="presentation" alt=""/>
-            <div className="alert__text__container">
+            <div className="alert__text-container">
                 <Heading level={2} text={headingText}/>
                 <div dangerouslySetInnerHTML={{__html: bodyHtml}} />
                 {links.length > 0 ?
