@@ -1,9 +1,8 @@
 .header {
     background: var(--light-grey);
-    padding: rem(20);
-    text-align: center;
+    padding: rem(30) rem(20) rem(40);
 
-    @media all and (min-width: em(360)) {
+    @media all and (min-width: em(450)) {
         padding: rem(40);
     }
 
@@ -12,21 +11,25 @@
 
         &--with-mask {
             padding-bottom: rem(200);
-            background: var(--light-grey) url('/public/icons/full-screen-image-mask.svg') no-repeat bottom left;
-            background-size: 100%;
+            background: var(--light-grey) url('/public/icons/full-screen-image-mask.svg') no-repeat bottom -2px left;
+            background-size: 101%;
         }
 
         &--with-content-overlap {
-            margin-bottom: rem(-260);
-            padding-bottom: rem(300);
+            margin-bottom: rem(-160);
+            padding-bottom: rem(205);
         }
+    }
+
+    &__container {
+        text-align: center;
     }
 
     &__icon {
         margin-bottom: rem(10);
         width: rem(40);
 
-        @media all and (min-width: em(360)) {
+        @media all and (min-width: em(450)) {
             margin-bottom: rem(15);
             width: rem(50);
         }
@@ -46,7 +49,7 @@
         margin-bottom: rem(10);
         text-transform: uppercase;
 
-        @media all and (min-width: em(360)) {
+        @media all and (min-width: em(450)) {
             font-size: rem(18);
         }
 
@@ -61,7 +64,7 @@
         margin: 0 auto;
         max-width: var(--width-medium);
 
-        @media all and (min-width: em(360)) {
+        @media all and (min-width: em(450)) {
             font-size: rem(22);
             line-height: rem(28);
         }
