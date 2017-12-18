@@ -4,7 +4,6 @@ import classNames from 'classnames';
 import Spinner from '../../atoms/Spinner/Spinner';
 import ChartSegment from './ChartSegment';
 
-const radius = 0.9;
 const minimumPercentageValueToBeDisplayed = 0.01;
 
 const constrainMinimumValue = (value, minimum) =>
@@ -31,7 +30,9 @@ const DonutChart = ({
     upperCaption,
     segments,
     showSegmentSeparators,
-    showLineCaps
+    showLineCaps,
+    radius,
+    strokeWidthInPercents
 }) => (
     <div className="donut-chart" style={{ width: size, height: size }}>
         <svg
@@ -43,6 +44,7 @@ const DonutChart = ({
                 className="donut-chart__background"
                 cx="0"
                 cy="0"
+                strokeWidth={`${strokeWidthInPercents * 100}%`}
                 r={radius} />
             {!loading && alignSegments(segments).map((segment, index) =>
                 <ChartSegment
@@ -53,6 +55,7 @@ const DonutChart = ({
                     radius={radius}
                     startCap={index === 0}
                     endCap={index === segments.length - 1}
+                    strokeWidthInPercents={strokeWidthInPercents + (index * 2 / 10000)}
                     showSegmentSeparators={showSegmentSeparators}
                     showLineCaps={showLineCaps} />
             )}
@@ -99,6 +102,8 @@ DonutChart.propTypes = {
 
 DonutChart.defaultProps = {
     size: 266,
+    radius : 0.9,
+    strokeWidthInPercents : 0.06,
     loadingCaption: "Henter data...",
     valueCaption: "gjenstår",
     segments: []

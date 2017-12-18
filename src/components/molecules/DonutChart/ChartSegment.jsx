@@ -4,11 +4,9 @@ import ChartSegmentEndCap from './ChartSegmentEndCap';
 import ChartSegmentArc from './ChartSegmentArc';
 import ChartSegmentSeparator from './ChartSegmentSeparator';
 
-const strokeWidthInPercents = 0.06;
-
-const getBaseRotation = (showLineCaps, radius) =>
+const getBaseRotation = (showLineCaps, strokeWidthInPercents, radius) =>
     showLineCaps
-        ? strokeWidthInPercents * radius
+        ? strokeWidthInPercents
         : 0;
 
 const ChartSegment = ({
@@ -19,24 +17,29 @@ const ChartSegment = ({
     startCap,
     endCap,
     showSegmentSeparators,
-    showLineCaps
+    showLineCaps,
+    strokeWidthInPercents
 }) => (
     <g
         className="donut-chart__segment"
-        style={{ transform: `rotate(${getBaseRotation(startCap, showLineCaps, radius)}rad)` }}>
+        style={{ transform: `rotate(${getBaseRotation(showLineCaps, strokeWidthInPercents, radius)}rad)` }}>
         {showLineCaps && startCap && <ChartSegmentStartCap
             color={color}
             percent={percent}
+            radius={radius}
             strokeWidthInPercents={strokeWidthInPercents} />}
         {showLineCaps && endCap && <ChartSegmentEndCap
             strokeWidthInPercents={strokeWidthInPercents}
+            radius={radius}
             color={color} />}
         <ChartSegmentArc
             index={index}
             color={color}
             percent={percent}
             radius={radius}
-            strokeWidthInPercents={strokeWidthInPercents} />
+            strokeWidthInPercents={strokeWidthInPercents}
+            capsOnChart={showLineCaps}
+            capOnSegment={startCap} />
         {!startCap && showSegmentSeparators && <ChartSegmentSeparator
             percent={percent}
             radius={radius}
