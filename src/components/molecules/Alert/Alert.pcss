@@ -2,27 +2,35 @@
     border-left: none;
     border-right: none;
     margin-bottom: 1rem;
-    padding: 1rem;
+    padding: 1rem 1rem 1rem 1rem;
 
     @media screen and (min-width: 60em) {
         border: 2px solid var(--dark-green);
-        border-radius: 5px;
         display: flex;
         margin: 1rem auto;
-        width: var(--width-small);
+        width: 100%;
+    }
+
+    &__text__container{
+        float: right;
     }
 
     &__icon {
-        height: 2rem;
-        width: 2rem;
+        float: left;
+        margin-right: 1rem;
+        margin-top: 1rem;
+        height: 1rem;
+        width: 1rem;
 
         @media screen and (min-width: 60em) {
-            height: 4rem;
-            width: 4rem;
+            height: 2.5rem;
+            width: 2.5rem;
         }
     }
 
     &__content {
+        margin-left: auto;
+        margin-right: auto;
         @media screen and (min-width: 60em) {
             display: inline-block;
             padding-left: 1rem;
