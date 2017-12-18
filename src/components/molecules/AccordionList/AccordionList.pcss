@@ -6,16 +6,28 @@
     margin: 0 auto;
     max-width: var(--width-medium);
 
+    &:first-of-type {
+        margin-top: 3.125rem;
+
+        @media all and (min-width: 28.125em) {
+            margin-top: 3.75rem;
+        }
+    }
+
     &:last-of-type {
-        margin-bottom: var(--margin-bottom);
+        margin-bottom: 3.125rem;
         border-bottom: var(--accordion-border);
 
         .accordion__header-button {
+        }
 
+        @media all and (min-width: 28.125em) {
+            margin-bottom: 3.75rem;
         }
     }
 
     &__header {
+        margin-top: 0;
     }
 
     &__header-button {
@@ -73,7 +85,7 @@
         }
         .accordion__panel {
             height: auto;
-            padding: 0 1rem 2rem;
+            padding: 0 1rem 3.75rem;
             opacity: 1;
             visibility: visible;
         }
