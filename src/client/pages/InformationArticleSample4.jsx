@@ -58,7 +58,7 @@ const InformationArticleSample4 = () =>
                 </tbody>
             </table>
 
-            <h3>Heading</h3>
+            <h3 className="heading heading--level-3">Heading</h3>
             <p>
                 Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget

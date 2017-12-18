@@ -19,5 +19,12 @@
             "text": "Third level heading",
             "level": 3
         }
+    },
+    {
+        "name": "h4. Heading level 4",
+        "props": {
+            "text": "Fourth level heading",
+            "level": 4
+        }
     }
 ]

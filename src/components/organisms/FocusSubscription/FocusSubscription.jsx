@@ -45,7 +45,7 @@ export default class FocusSubscription extends React.Component {
 
                         <div className="focus-subscription__main-content">
                             <div className="focus-subscription__owner-content">
-                                <Heading level={2} text="Kari Nordmann" />
+                                <Heading level={2} text="Kari Nordmann" className="focus-subscription__owner-name"/>
                                 <div className="focus-subscription__owner-info-line">
                                     <label className="focus-subscription__owner-info-label">Telefonnummer:</label>
                                     <span className="focus-subscription__owner-info-value">9876 5432</span>
@@ -80,9 +80,9 @@ export default class FocusSubscription extends React.Component {
                             </button>
                         </h3>
                         <div className="accordion__panel" id="focus-subscription-accordion">
-                            <h3 className="heading heading--level-3">Skanning, texting og MMS</h3>
+                            <h4 className="heading heading--level-4">Skanning, texting og MMS</h4>
                             <p>Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right?</p>
-                            <h3 className="heading heading--level-3">Utland</h3>
+                            <h4 className="heading heading--level-4">Utland</h4>
                             <p>We have so many things that we have to do better... and certainly ipsum is one of them. Despite the constant negative ipsum covfefe. Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
                         </div>
                     </section>

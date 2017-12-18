@@ -95,8 +95,10 @@ const BlogSamplePage = () =>
         </section>
         <section className="related-articles">
             <div className="container container--large container--no-padding container--extra-margin-bottom">
-                <h2 className="heading heading--level-2 related-articles__heading">Related articles</h2>
-                <hr className="related-articles__line"/>
+                <a class="related-articles__link heading-link" href="#">
+                    <h2 class="related-articles__heading heading-link--focus-area heading heading--level-2">Related articles</h2>
+                    <hr class="horizontal-rule horizontal-rule--short horizontal-rule--left" />
+                </a>
                 <ul className="related-articles__list">
                     <li className="related-articles__list-item">
                         <a className="related-article" href="#">
