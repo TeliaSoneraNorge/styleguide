@@ -90,7 +90,7 @@ const BlogSamplePage = () =>
 
             <section className="fact-box">
                 <img className="fact-box__icon" src="/public/icons/ico_info.svg"/>
-                <h3 className="heading heading--level-3">Fact about Lorem Ipsum:</h3>
+                <h3 className="fact-box__heading heading heading--level-3">Fact about Lorem Ipsum:</h3>
                 <hr className="fact-box__line"/>
                 <div className="fact-box__text">
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.</p>
