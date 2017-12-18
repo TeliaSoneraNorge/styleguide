@@ -1,5 +1,6 @@
 .full-width-table {
     border-collapse: collapse;
+    margin-bottom: 40px;
     position: relative;
     width: 100%;
 
@@ -13,9 +14,8 @@
     }
 
     &__header, thead {
-        line-height: 50px;
-        font-weight: 600;
-
+        font-size: 12px;
+        font-weight: 600; /*TODO: Make sure that this is font-weight medium when we get a medium font*/
         /*Border on top of table*/
         &:before{
             content: "";
@@ -23,6 +23,13 @@
             left: -9999px;
             right: -9999px;
             border-bottom: 1px solid var(--grey);
+        }
+
+        &__cell, th {
+            &:first-child {
+                font-size: 12px;
+                font-weight: 600; /*TODO: Make sure that this is font-weight medium when we get a medium font*/
+            }
         }
     }
 
@@ -42,12 +49,15 @@
 
     &__cell, th, td {
         display: inline;
+        font-weight: 600; /*TODO: Make sure that this is font-weight medium when we get a medium font*/
         flex: 0 1 auto;
         padding: 0.5rem 0;
         text-align: right;
         width: 100%;
 
         &:first-child {
+            font-size: 14px;
+            font-weight: 400;
             text-align: left;
         }
     }
