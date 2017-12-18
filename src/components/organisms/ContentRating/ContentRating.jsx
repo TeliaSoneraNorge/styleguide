@@ -25,9 +25,10 @@ export default class ContentFeedback extends React.Component {
                 {this.props.feedbackState === 'negative-feedback' ?
                     <div>
                         <h3 className="heading heading--level-3 content-rating__heading">Å, nei!</h3>
-                        <textarea ref={(textArea) => { this.textAreaRef = textArea; }}
-                                  className="text-area text-area--margin-bottom"
-                                  placeholder="Hjelp oss, er du grei - hva kunne vi gjort bedre?"></textarea>
+                        <textarea
+                            ref={(textArea) => { this.textAreaRef = textArea; }}
+                            className="text-area text-area--margin-bottom"
+                            placeholder="Hjelp oss, er du grei - hva kunne vi gjort bedre?" />
                         <button className="button" onClick={() => this.props.negativeFeedbackSubmitText(this.textAreaRef.value)}>Send</button>
                     </div> : null
                 }

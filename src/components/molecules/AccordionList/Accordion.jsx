@@ -13,8 +13,9 @@ class Accordion extends React.Component {
     }
     render() {
         return (
-            <section className={`accordion${this.props.isExpanded ? ' accordion--open' : ''}`}
-                     ref={(accordion) => { this.accordion = accordion; }}>
+            <section
+                className={`accordion${this.props.isExpanded ? ' accordion--open' : ''}`}
+                ref={(accordion) => { this.accordion = accordion; }}>
                 <h3 className="accordion__header heading heading--level-3">
                     <button
                         className="accordion__header-button"
