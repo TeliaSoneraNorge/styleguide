@@ -20,7 +20,7 @@ const DownloadPage = ({ colors }) =>
     <div>
         <Header pageTitle="Download Styleguide" />
 
-        <Alert kind="negative" headingText="WAIT! Read this first :-)" bodyHtml={warningMessageHtml} />
+        <Alert kind="negative" bodyHtml={warningMessageHtml} />
 
         <div className="container container--small container--extra-margin-bottom">
             <p>To use the Telia Styleguide in your project, follow these steps:</p>

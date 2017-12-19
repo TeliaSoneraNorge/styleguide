@@ -3,32 +3,28 @@
         "name": "Positive",
         "props": {
             "kind": "positive",
-            "headingText": "This is a positive alert",
-            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+            "bodyHtml": "<p>This is a positive alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
         }
     },
     {
         "name": "Negative",
         "props": {
             "kind": "negative",
-            "headingText": "This is a negative alert",
-            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+            "bodyHtml": "<p>This is a negative alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
         }
     },
     {
         "name": "Warning",
         "props": {
             "kind": "warning",
-            "headingText": "This is a warning alert",
-            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+            "bodyHtml": "<p>This is a warning alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
         }
     },
     {
         "name": "With Links",
         "props": {
             "kind": "positive",
-            "headingText": "This is an important alert",
-            "bodyHtml": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
+            "bodyHtml": "<p>With Links. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>",
             "links": [
                 { "text": "This link might be of interest", "url": "#" },
                 { "text": "And this one too", "url": "#" }
