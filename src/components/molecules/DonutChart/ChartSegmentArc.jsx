@@ -6,7 +6,7 @@ const getCircumference = (radius) => 2 * Math.PI * radius;
 const getDashOffsetFromPercentage = (percentage, radius, strokeWidthInPercents, capsOnChart, capOnSegment) =>
     getCircumference(radius) * (1 - percentage)
         + (capsOnChart ? strokeWidthInPercents * radius : 0)
-        + (capsOnChart && capOnSegment ? strokeWidthInPercents * radius : 0)
+        + (capsOnChart && capOnSegment ? strokeWidthInPercents * radius : 0);
 
 const ChartSegmentArc = ({
     color,

@@ -111,6 +111,14 @@ export default class UsagePage extends React.Component {
                         showSegmentSeparators />
 
                     <ChartLegend series={this.state.data.series} />
+
+                    <DonutChart
+                        loading={this.state.isLoading}
+                        segments={this.state.data.segments}
+                        value={this.state.data.value}
+                        showSegmentSeparators />
+
+                    <ChartLegend series={this.state.data.series} />
                 </div>
             </div>
         );

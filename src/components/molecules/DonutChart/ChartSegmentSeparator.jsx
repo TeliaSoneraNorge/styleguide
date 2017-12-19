@@ -7,11 +7,15 @@ const getSeparatorPosition = (radius, percent, strokeWidthInPercents) => ({
     y2: 0
 });
 
-const ChartSegmentSeparator = ({ percent, strokeWidthInPercents, radius }) => (
+const getRotation = (capsOnChart, percent, strokeWidthInPercents) =>
+    Math.PI * 2 * percent
+        - (capsOnChart ? strokeWidthInPercents : 0);
+
+const ChartSegmentSeparator = ({ capsOnChart, percent, strokeWidthInPercents, radius }) => (
     <line
         className={`donut-chart__cap`}
         style={{
-            transform: `rotate(${Math.PI * 2 * percent - strokeWidthInPercents}rad)`
+            transform: `rotate(${getRotation(capsOnChart, percent, strokeWidthInPercents)}rad)`
         }}
         {...getSeparatorPosition(radius, percent, strokeWidthInPercents)}
         strokeWidth="0.02"

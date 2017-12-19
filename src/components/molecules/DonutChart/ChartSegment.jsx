@@ -43,6 +43,7 @@ const ChartSegment = ({
         {!startCap && showSegmentSeparators && <ChartSegmentSeparator
             percent={percent}
             radius={radius}
+            capsOnChart={showLineCaps}
             strokeWidthInPercents={strokeWidthInPercents} />}
     </g>
 );
