@@ -17,7 +17,8 @@
         background: none;
         border: none;
         display: inline-block;
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
         text-decoration: none;
 
         &:hover {
@@ -27,17 +28,23 @@
     &__icon-box-icon {
         display: block;
         height: var(--icon-size-small);
-        margin: 0 auto 0.25rem auto;
+        margin: 0.2rem;
         width: var(--icon-size-small);
 
         @media screen and (min-width: 42em) {
             height: var(--icon-size-large);
+            margin: 0 auto 0.5rem auto;
             width: var(--icon-size-large);
         }
     }
     &__icon-box-text {
+        display: none;
         color: var(--black);
         text-transform: uppercase;
+
+        @media screen and (min-width: 42em) {
+            display: block;
+        }
     }
     &__site-logo {
         order: 2;
@@ -107,18 +114,14 @@
     &__log-in-button {
         border-bottom: 1px solid var(--core-purple);
         color: var(--black);
-        font-size: 0.8125rem;
+        font-size: 0.75rem;
+        letter-spacing: 1px;
         margin-left: 1rem;
-        padding-bottom: 0.25rem;
         text-decoration: none;
         text-transform: uppercase;
 
         &:hover {
-            border-bottom-width: 2px;
-        }
-
-        @media screen and (min-width: 42em) {
-            font-size: 1rem;
+            color: var(--core-purple);
         }
     }
     &__my-account-button {
