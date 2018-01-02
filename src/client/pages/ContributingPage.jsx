@@ -47,7 +47,7 @@ const ContributingPage = ({ colors }) =>
                 Also, don't reformat lots of code at the same time as a feature commit.
             </p>
         </div>
-        <div className="container container--small container--extra-margin-bottom">
+        <div className="container container--small">
             <Heading level={2} text="Feature branches & Pull Requests" />
             <p>
                 All changes must be done in feature branches with this naming convention:
@@ -60,6 +60,16 @@ const ContributingPage = ({ colors }) =>
             <p>
                 Once the feature is complete, create a Pull Request on GitHub and post a link to it on the #styleguide Slack channel.
             </p>
+        </div>
+        <div className="container container--small container--extra-margin-bottom">
+            <Heading level={2} text="Before submitting a PR" />
+            <ul>
+                <li>Code is formatted cleanly, consistently, and passes ESLint rules.</li>
+                <li>CSS follows BEM pattern.</li>
+                <li>UI is responsive across all relevent screen sizes.</li>
+                <li>Relevant examples are shown in the styleguide.</li>
+                <li>Component has useful documentation.</li>
+            </ul> 
         </div>
     </div>;
 
