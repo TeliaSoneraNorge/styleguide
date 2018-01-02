@@ -10,7 +10,6 @@
     background-size: 2000px;
     margin: 0 auto var(--margin-bottom);
     max-width: var(--width-medium);
-    padding: 0.5rem 0;
 
     &--expanded-width {
         margin: 0 -7.63rem var(--margin-bottom);
@@ -25,7 +24,10 @@
     }
 
     &__content-inner {
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        padding: 0 20px;
+
+        @media screen and (min-width: 28.125em) {
+            padding: 2rem 20px 2rem;
+        }
     }
 }

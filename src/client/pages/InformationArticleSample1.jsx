@@ -53,7 +53,7 @@ const InformationArticleSample1 = ({ colors }) =>
             </div>
             <div className="focus-box">
                 <div className="focus-box__content-outer">
-                    <div className="container container--small container--no-margin">
+                    <div className="container container--small container--no-margin focus-box__content-inner">
                         <p>
                             Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
                             nec, egestas non nisi.
