@@ -3,17 +3,20 @@ import React from 'react';
 
 import Heading from '../../atoms/Heading/Heading';
 
-function classNames(kind) {
+function classNames(kind, size) {
     const classNames = ['alert'];
     classNames.push(`alert--${kind}`);
+    if (size === 'large') {
+        classNames.push(`alert--large`);
+    }
     return classNames.join(' ');
 }
 
 /**
  * Status: *finished*.
  */
-const Alert = ({ kind = "positive", bodyHtml, links = [] }) =>
-    <div className={classNames(kind)}>
+const Alert = ({ kind = "positive", size, bodyHtml, links = [] }) =>
+    <div className={classNames(kind, size)}>
         <div className="alert__content">
             <div className="alert__icon-container">
                 <img className="alert__icon" src="/public/icons/ico_info.svg" role="presentation" alt=""/>
