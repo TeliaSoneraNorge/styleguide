@@ -4,7 +4,7 @@ function classNames(level, className) {
     const classNames = ['heading'];
     classNames.push(`heading--level-${level}`);
 
-    if(className){
+    if (className){
         classNames.push(className);
     }
 
