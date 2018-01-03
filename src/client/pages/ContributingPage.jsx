@@ -66,10 +66,12 @@ const ContributingPage = ({ colors }) =>
             <ul>
                 <li>Code is formatted cleanly, consistently, and passes ESLint rules.</li>
                 <li>CSS follows BEM pattern.</li>
-                <li>UI is responsive across all relevent screen sizes.</li>
+                <li>UI is responsive across all relevant screen sizes.</li>
+                <li>Cross-browser compatibility: UI looks and behave equally in latest versions of Chrome, Safari, IE, Edge and Firefox.</li>
+                <li>Component is accessible.</li>
                 <li>Relevant examples are shown in the styleguide.</li>
                 <li>Component has useful documentation.</li>
-            </ul> 
+            </ul>
         </div>
     </div>;
 
