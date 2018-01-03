@@ -1,5 +1,6 @@
 .alert {
     border: 2px solid var(--dark-green);
+    margin-bottom: 1rem;
     padding: 1rem 1rem 0 1rem;
     border-left: none;
     border-right: none;
@@ -7,7 +8,7 @@
     @media screen and (min-width: 60em) {
         border: 2px solid;
         display: flex;
-        margin: 0 auto;
+        margin: 0 auto 1rem auto;
         max-width: var(--width-small);
     }
 
@@ -41,6 +42,7 @@
     }
 
     &--large {
+        margin-bottom: 0;
         @media screen and (min-width: 60em) {
             width: 100%;
             max-width: 100%;
