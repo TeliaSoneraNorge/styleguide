@@ -1,8 +1,14 @@
 .full-width-table {
     border-collapse: collapse;
     margin-bottom: 40px;
+    margin-top: 10px;
     position: relative;
     width: 100%;
+
+    caption { /*In some CMS when adding a table, it's possible to set a Heading for a table which is output as a html caption element*/
+        margin-bottom: 10px;
+        text-align: left;
+    }
 
     /*Border on top and on bottom of table body*/
     &:before, &:after {

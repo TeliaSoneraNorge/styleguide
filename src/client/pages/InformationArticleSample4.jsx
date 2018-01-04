@@ -1,6 +1,25 @@
 import React from 'react';
 
 import Header from '../../components/molecules/Header/Header';
+import AccordionList from '../../components/molecules/AccordionList/AccordionList';
+
+const accordionListProps = [
+    {
+        "accordionItems": [
+            {
+                "id": "example-1",
+                "title": "A closed accordion heading",
+                "children": "This is the body of the accordion"
+            },
+            {
+                "id": "example-2",
+                "title": "An open accordion heading",
+                "children": "This is the body of the accordion"
+            }
+        ],
+        "isExpandedAccordionIndex": 1
+    }
+];
 
 const InformationArticleSample4 = () =>
     <div className="page-pebbles">
@@ -11,8 +30,19 @@ const InformationArticleSample4 = () =>
             </p>
         </Header>
         <div className="container container--small container--no-padding-top container--extra-margin-bottom">
-
+            <h2 className="heading heading--level-2">Heading 2</h2>
+            <p>
+                Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
+                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget
+                felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at
+                tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+            </p>
+            {accordionListProps.map((props, i) =>
+                <AccordionList key={i} {...props} />)}
             <table className="full-width-table">
+                <caption>
+                    <h3 className="heading heading--level-3">Table Heading</h3>
+                </caption>
                 <thead className="full-width-table__header">
                     <tr className="full-width-table__row">
                         <th className="full-width-table__cell">Column 1</th>
@@ -41,31 +71,8 @@ const InformationArticleSample4 = () =>
                         <td className="full-width-table__cell">Lorem</td>
                         <td className="full-width-table__cell">Ipsum</td>
                     </tr>
-                    <tr className="full-width-table__row">
-                        <td className="full-width-table__cell">
-                            <a href="" className="link">Lorem ipsum dolor sit amet</a>
-                        </td>
-                        <td className="full-width-table__cell">Consectetur</td>
-                        <td className="full-width-table__cell">Elit</td>
-                    </tr>
-                    <tr className="full-width-table__row">
-                        <td className="full-width-table__cell">
-                            <a href="" className="link">Donec rutrum congue leo</a>
-                        </td>
-                        <td className="full-width-table__cell">Eget</td>
-                        <td className="full-width-table__cell">Malesuada</td>
-                    </tr>
                 </tbody>
             </table>
-
-            <h3 className="heading heading--level-3">Heading</h3>
-            <p>
-                Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
-                Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget
-                felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at
-                tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
-            </p>
-
         </div>
     </div>;
 
