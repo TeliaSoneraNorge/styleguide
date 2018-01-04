@@ -1,6 +1,40 @@
 import React from 'react';
 
 import Header from '../../components/molecules/Header/Header';
+import RelatedArticles from '../../components/molecules/RelatedArticles/RelatedArticles';
+
+const RelatedArticlesProps = [
+    {
+        "heading": "Related articles",
+        "headingLink": "#",
+        "relatedArticles": [
+            {
+                "link": "#",
+                "imageSrc": "/public/website-images/boy-ipad.jpg",
+                "heading": "This is the article's heading",
+                "tags": ["Related", "Article", "Tag"]
+            },
+            {
+                "link": "#",
+                "imageSrc": "/public/website-images/woman-mobile.jpg",
+                "heading": "This is the article's heading",
+                "tags": ["Related", "Article", "Tag"]
+            },
+            {
+                "link": "#",
+                "imageSrc": "/public/website-images/kids-ipad.jpg",
+                "heading": "This is the article's heading",
+                "tags": ["Related", "Article", "Tag"]
+            },
+            {
+                "link": "#",
+                "imageSrc": "/public/website-images/woman-holding-ipad.jpg",
+                "heading": "This is the article's heading",
+                "tags": ["Related", "Article", "Tag"]
+            }
+        ]
+    }
+];
 
 const BlogSamplePage = () =>
     <div>
@@ -102,75 +136,9 @@ const BlogSamplePage = () =>
                     <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
                 </div>
             </section>
-
         </section>
-        <section className="related-articles">
-            <div className="container container--large container--no-padding container--extra-margin-bottom">
-                <a class="related-articles__link heading-link" href="#">
-                    <h2 class="related-articles__heading heading-link--focus-area heading heading--level-2">Related articles</h2>
-                    <hr class="horizontal-rule horizontal-rule--short horizontal-rule--left" />
-                </a>
-                <ul className="related-articles__list">
-                    <li className="related-articles__list-item">
-                        <a className="related-article" href="#">
-                            <img className="related-article__image" src="/public/website-images/boy-ipad.jpg"></img>
-                            <div className="related-article__text">
-                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
-                                    heading</h3>
-                                <div className="tags tags--dark-grey">
-                                    <span className="tags__tag">Related</span>
-                                    <span className="tags__tag">Article</span>
-                                    <span className="tags__tag">Tag</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li className="related-articles__list-item">
-                        <a className="related-article" href="#">
-                            <img className="related-article__image" src="/public/website-images/woman-mobile.jpg"></img>
-                            <div className="related-article__text">
-                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
-                                    heading</h3>
-                                <div className="tags tags--dark-grey">
-                                    <span className="tags__tag">Related</span>
-                                    <span className="tags__tag">Article</span>
-                                    <span className="tags__tag">Tag</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li className="related-articles__list-item">
-                        <a className="related-article" href="#">
-                            <img className="related-article__image" src="/public/website-images/kids-ipad.jpg"></img>
-                            <div className="related-article__text">
-                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
-                                    heading</h3>
-                                <div className="tags tags--dark-grey">
-                                    <span className="tags__tag">Related</span>
-                                    <span className="tags__tag">Article</span>
-                                    <span className="tags__tag">Tag</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                    <li className="related-articles__list-item">
-                        <a className="related-article" href="#">
-                            <img className="related-article__image" src="/public/website-images/woman-holding-ipad.jpg">
-                            </img>
-                            <div className="related-article__text">
-                                <h3 className="heading heading--level-3 related-article__heading">This is the article's
-                                    heading</h3>
-                                <div className="tags tags--dark-grey">
-                                    <span className="tags__tag">Related</span>
-                                    <span className="tags__tag">Article</span>
-                                    <span className="tags__tag">Tag</span>
-                                </div>
-                            </div>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </section>
+        {RelatedArticlesProps.map((props, i) =>
+            <RelatedArticles key={i} {...props} />)}
     </div>;
 
 export default BlogSamplePage;
