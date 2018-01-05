@@ -19,6 +19,48 @@
     .horizontal-rule--left {
         text-align: left;
     }
+
+    .hero--with-pebbles {
+        &:before {
+            background-size: 27vw, 16vw, 25vw;
+            background-position: -13% 50%, 105% 60%, 101% 50%;
+        }
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 28.125em) {
+    .hero--with-pebbles {
+        &:before {
+            background-size: 32vw, 20vw, 30vw;
+            background-position: -10% 70%, 107% 67%, 103% 67%;
+        }
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 38em) {
+    .hero--with-pebbles {
+        &:before {
+            background-size: 36vw, 21vw, 33vw;
+            background-position: -6% 80%, 108% 67%, 96% 90%;
+        }
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 48em) {
+    .hero--with-pebbles {
+        &:before {
+            background-position: -13% 53%, 0% 0%, 90% 75%;
+            background-size: 34vw, 0, 30vw;
+        }
+    }
+}
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 64em) {
+    .hero--with-pebbles {
+        &:before {
+            background-position: -8% 60%, 0% 0%, 100% 75%;
+        }
+    }
 }
 
 /* Microsoft Edge Browser 12+ (All) - @supports method */
