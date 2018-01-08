@@ -33,6 +33,7 @@ import PersonBox from './molecules/PersonBox/PersonBox';
 import ProductPromoBox from './molecules/ProductPromoBox/ProductPromoBox';
 import ProgressChart from './molecules/ProgressChart/ProgressChart';
 import RadioButtonWithLabel from './molecules/RadioButtonWithLabel/RadioButtonWithLabel';
+import RelatedArticles from './molecules/RelatedArticles/RelatedArticles';
 import Subscription from './molecules/Subscription/Subscription';
 import ChartLegend from './molecules/ChartLegend/ChartLegend';
 import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
@@ -72,6 +73,7 @@ export default {
     'src/components/molecules/ProductPromoBox/ProductPromoBox.jsx' : ProductPromoBox,
     'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
     'src/components/molecules/RadioButtonWithLabel/RadioButtonWithLabel.jsx': RadioButtonWithLabel,
+    'src/components/molecules/RelatedArticles/RelatedArticles.jsx': RelatedArticles,
     'src/components/molecules/Subscription/Subscription.jsx': Subscription,
     'src/components/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
     'src/components/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
