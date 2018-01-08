@@ -27,7 +27,8 @@ class RelatedArticles extends React.Component {
                         <h2 className="related-articles__heading heading-link--focus-area heading heading--level-2">{this.props.heading}</h2>
                         <hr className="horizontal-rule horizontal-rule--short horizontal-rule--left" />
                     </a>
-                    <ul className={`related-articles__list${this.state.isShowingAllArticles ? ' related-articles__list--expanded' : ''}`}>
+                    <ul className={`related-articles__list${this.state.isShowingAllArticles ? ' related-articles__list--expanded' : ''}`}
+                        id={this.props.id}>
                         {this.props.relatedArticles.map((relatedArticle, i) =>
                             <li className="related-articles__list-item" key={i}>
                                 <a className="related-article" href={relatedArticle.link}>
@@ -45,6 +46,8 @@ class RelatedArticles extends React.Component {
                         )}
                     </ul>
                     <button className={`related-articles__show-more-articles${this.state.isShowingAllArticles ? ' related-articles__show-more-articles--expanded' : ''}`}
+                        aria-expanded={this.state.isShowingAllArticles}
+                        aria-controls={this.props.id}
                         onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? "Show less" : "Show more"}
                     </button>
                 </div>
