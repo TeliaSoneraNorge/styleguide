@@ -3,11 +3,11 @@
         "name": "Product promo box",
         "props": {
             "id": "box-1",
-            "productName": "Sony Xperia XZ Premium",
+            "productName": "Sony Xperia XZ1",
             "imagePath": "http://via.placeholder.com/140x280",
-            "description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.",
-            "monthlyPrice": "329",
-            "totalPrice": "7896",
+            "description": "Forhåndssalg på Sony Xperia XZ1!",
+            "price": "329",
+            "priceSmallprint": "per md. med Svitsj",
             "buttonText": "Les mer"
         }
     },
@@ -15,11 +15,11 @@
         "name": "Product promo box - with campaign",
         "props": {
             "id": "box-2",
-            "productName": "Sony Xperia XZ Premium",
+            "productName": "Sony Xperia XZ1",
             "imagePath": "http://via.placeholder.com/140x280",
-            "description": "Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.",
-            "monthlyPrice": "329",
-            "totalPrice": "7896",
+            "description": "Forhåndssalg på Sony Xperia XZ1!",
+            "price": "329",
+            "priceSmallprint": "per md. 7891,- totalt",
             "buttonText": "Les mer",
             "isShowingFeature": true
         }

@@ -11,33 +11,36 @@ function classNames(isShowingFeature) {
 }
 
 /**
- * Status: *in progress*.
+ * Status: *finished*.
  *
  * A ProductPromoBox component use the default <a href="/components/atoms#Box">Box</a> component.
  * The content within this box presents a product with a name, image, price and short description.
+ *
+ * We recommend a short description and minimal 'smallprint' text below the price.
+ *
+ * If multiple of these promo boxes will be used on a page, a regular button can be used
+ * instead of the primary button.
  */
-const ProductPromoBox = ({ id, productName, productColor, imagePath, description, monthlyPrice, totalPrice, buttonText, isShowingFeature }) => {
-    const imageAltText = `${productName}`;
-    return (
-        <Box id={id} color="grey" canExpand={false} isShowingFeature={isShowingFeature}>
-            <section className={classNames(isShowingFeature)}>
-                <div className="product-promo-box__image-section">
-                    <img className="product-promo-box__image" src={imagePath} alt={imageAltText}/>
+const ProductPromoBox = ({ id, productName, productColor, imagePath, description, price, priceSmallprint, buttonText, isShowingFeature }) =>
+    <Box id={id} className={classNames(isShowingFeature)} color="grey" canExpand={false} isShowingFeature={isShowingFeature}>
+        <div className="product-promo-box__image-container">
+            <img className="product-promo-box__image" src={imagePath} alt={productName}/>
+        </div>
+        <div className="product-promo-box__content-container">
+            <div className="product-promo-box__content">
+                <h2 className="heading heading--level-2 product-promo-box__product-name">{productName}</h2>
+                <div className="product-promo-box__description">{description}</div>
+            </div>
+            <div className="product-promo-box__price-and-action">
+                <div className="product-promo-box__price-info">
+                    <span className="product-promo-box__price">{price},-</span>
+                    <span className="product-promo-box__price-smallprint">{priceSmallprint}</span>
                 </div>
-                <div className="product-promo-box__content-section">
-                    <h2 className="heading heading--level-2 product-promo-box__product-name">{productName}</h2>
-                    <div className="product-promo-box__description">{description}</div>
-                </div>
-                <div className="product-promo-box__price-section">
-                    <div className="product-promo-box__monthly-price">
-                        <span className="product-promo-box__monthly-price-number">{monthlyPrice}</span>/mnd
-                    </div>
-                    <div className="product-promo-box__total-price">{totalPrice},- totalt</div>
+                <div className="product-promo-box__button-container">
                     <button className="button button--primary">{buttonText}</button>
                 </div>
-            </section>
-        </Box>
-    );
-};
+            </div>
+        </div>
+    </Box>;
 
 export default ProductPromoBox;

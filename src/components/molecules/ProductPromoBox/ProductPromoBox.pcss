@@ -1,131 +1,92 @@
 .product-promo-box {
-    /*
     display: flex;
-    flex-flow: row wrap;
-    padding: 10px;
-    text-align: center;
+    max-width: var(--width-small);
+    padding: 1rem;
 
-    @media all and (min-width: 37em) {
-        display: block;
-        padding: var(--padding);
-        text-align: left;
-    }
-    */
-
-    &__image-section {
-        border: 1px red solid;
-        float: left;
-        width: 33.3333px;
+    @media all and (min-width: 30em) {
+        padding: 2rem;
     }
 
-    &__content-section {
-        border: 1px red solid;
-        width: 66.6667%;
-    }
+    /* Content: heading & description */
+    &__image-container {
+        margin-right: 1.5rem;
+        width: 35%;
 
-    &__price-section {
-        border: 1px red solid;
-        width: 66.6667%;
+        @media all and (min-width: 30em) {
+            margin-right: 3rem;
+            width: 25%;
+        }
     }
-
     &__image {
         width: 100%;
-        /*
-        height: 100%;
-        margin: 0 auto 1rem;
-        max-height: 16rem;
-        max-width: 100%;
-        width: 20%;
-
-        @media all and (min-width: 37em) {
-            clear: left;
-            float: left;
-            height: auto;
-            margin: 0;
-            width: auto;
-        }
-        */
     }
 
+    /* Content: heading & description */
+    &__content-container {
+        align-items: flex-start;
+        display: flex;
+        flex-flow: row wrap;
+        width: 65%;
+
+        @media all and (min-width: 30em) {
+            width: 75%;
+        }
+    }
     &__product-name {
-        flex: 0 1 100%;
-        margin: 0 auto 1.5rem;
-        order: -1;
-
-        @media all and (min-width: 37em) {
-            height: 100%;
-            margin: 0 0 10px;
-            overflow: auto;
-            padding: 1rem 1.5rem 0 1.5rem;
-        }
+        margin-top: 0;
+        width: 100%;
     }
-
-    /*
-    &__text {
-        flex: 0 1 100%;
-        margin: 0 auto;
-        padding: 0.5rem 0;
-
-        @media all and (min-width: 37em) {
-            margin: 0;
-            min-height: 203px;
-            overflow: auto;
-            padding: 0 0 0.5rem 1.5rem;
-        }
-    }
-    */
-
     &__description {
-        display: none;
         margin-bottom: 1.5rem;
+        width: 100%;
+    }
 
-        @media all and (min-width: 37em) {
-            display: block;
+    /* Price, Price-label & Action Button */
+    &__price-and-action {
+        align-self: flex-end;
+        border-top: 2px solid var(--grey);
+        padding-top: 1rem;
+        width: 100%;
+    }
+    &__price-info {
+        @media all and (min-width: 36em) {
+            float: left;
+            width: 50%;
         }
     }
-
-    &__monthly-price {
-    }
-
-    &__monthly-price-number {
+    &__price {
+        display: block;
         font-family: 'pebble';
         font-size: 2rem;
         line-height: 1;
     }
-
-    &__total-price {
+    &__price-smallprint {
+        display: block;
         font-size: 0.9rem;
-        margin-bottom: 1rem;
+    }
+    &__button-container {
+        padding-top: 1rem;
+
+        @media all and (min-width: 36em) {
+            float: right;
+            padding-top: 0.5rem;
+            text-align: right;
+            width: 50%;
+        }
     }
 
+    /* Feature-circle / "speech bubble" */
     &--is-showing-feature {
-        width: 50%;
+        .product-promo-box__content-container {
+            margin-top: 80px;
 
-        @media all and (min-width: 37em) {
-            width: 80%;
-        }
-
-        /*
-        .product-promo-box__image {
-            width: 45%;
-
-            @media all and (min-width: 37em) {
-                height: auto;
-                width: auto;
+            @media all and (min-width: 36em) {
+                margin-top: 0;
             }
         }
-        */
-
-        .product-promo-box__description {
-            display: block;
-            position: absolute;
-            right: 5%;
-            top: 40%;
-            width: 45%;
-
-            @media all and (min-width: 37em) {
-                position: static;
-                width: 100%;
+        .product-promo-box__content {
+            @media all and (min-width: 36em) {
+                padding-right: 120px;
             }
         }
     }
