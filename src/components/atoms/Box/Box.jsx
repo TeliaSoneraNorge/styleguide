@@ -1,7 +1,10 @@
 import React from 'react';
 
-function classNames(color, size, canExpand, isExpanded) {
+function classNames(className, color, size, canExpand, isExpanded) {
     const classNames = ['box'];
+    if (className) {
+        classNames.push(className);
+    }
     if (color) {
         classNames.push(`box--${color}`);
     }
@@ -56,7 +59,7 @@ export default class Box extends React.Component {
         return (
             <article
                 id={this.props.id}
-                className={classNames(this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)}
+                className={classNames(this.props.className, this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)}
                 onClick={this.boxContainerClick}
                 onKeyUp={this.boxContainerClick}
                 aria-expanded={this.props.canExpand ? this.state.isExpanded : null}
