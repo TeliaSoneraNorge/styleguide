@@ -28,12 +28,11 @@
     &--with-pebbles {
         &:before {
             background-image:
-                url('/public/pebbles/pebble-14.svg'),
-                url('/public/pebbles/pebble-17.svg'),
-                url('/public/pebbles/pebble-16.svg');
+                url('/public/pebbles/hero-pebble-05.svg'),
+                url('/public/pebbles/hero-pebble-26.svg');
             background-repeat: no-repeat;
-            background-position: -8% 50%, 102% 60%, 98% 50%;
-            background-size: 22vw, 13vw, 20vw;
+            background-position: -30% 65%, 102% 90%;
+            background-size: 40vw, 22vw;
             content: '';
             display: block;
             height: 100%;
@@ -42,31 +41,82 @@
             width: 100%;
 
             @media all and (min-width: 28.125em) {
-                background-position: -1% 70%, 102% 67%, 95% 67%;
+                background-position: -30% 70%, 102% 95%;
             }
 
             @media all and (min-width: 38em) {
-                background-position: 5% 80%, 103% 70%, 89% 90%;
+                background-position: -20% 70%, 102% 95%;
+                background-size: 34vw, 20vw;
             }
 
             @media all and (min-width: 48em) {
-                background-position: 2% 54%, 0% 0%, 90% 75%;
-                background-size: 15vw, 0, 13vw;
+                background-position: -15% 55%, 101% 92%;
+                background-size: 30vw, 17vw;
             }
 
             @media all and (min-width: 64em) {
-                background-position: 5% 60%, 0% 0%, 90% 75%;
+                background-position: -15% 55%, 101% 92%;
             }
 
             @media all and (min-width: 90em) {
-                background-size: 216px, 0, 187px;
+                background-size: 25vw, 15vw;
+                background-position: -4% 60%, 101% 92%;
             }
+
+            @media all and (min-width: 112em) {
+                background-size: 21vw, 13vw;
+                background-position: -5% 60%, 101% 92%;
+            }
+        }
+
+        &-variant-1:before {
+            background-image:
+                url('/public/pebbles/hero-pebbles-01.svg'),
+                url('/public/pebbles/hero-pebbles-46.svg');
+        }
+
+        &-variant-2:before {
+            background-image:
+                url('/public/pebbles/hero-pebbles-22.svg'),
+                url('/public/pebbles/hero-pebbles-54.svg');
+        }
+
+        &-variant-3:before {
+            background-image:
+                url('/public/pebbles/hero-pebbles-06.svg'),
+                url('/public/pebbles/hero-pebbles-47.svg');
+        }
+
+        &-variant-4:before {
+            background-image:
+                url('/public/pebbles/hero-pebbles-12.svg'),
+                url('/public/pebbles/hero-pebbles-14.svg');
+        }
+
+        &-black-friday:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-black-friday-2.svg'),
+                url('/public/pebbles/hero-pebble-black-friday-6.svg');
+        }
+
+        &-easter:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-easter-2.svg'),
+                url('/public/pebbles/hero-pebble-easter-4.svg');
         }
     }
 
     &--with-pebbles-only-on-mobile {
         &:before {
             @media all and (min-width: 48em) {
+                background: none;
+            }
+        }
+    }
+
+    &--with-pebbles-only-on-desktop {
+        &:before {
+            @media all and (max-width: 48em) {
                 background: none;
             }
         }
@@ -84,6 +134,16 @@
         object-fit: cover;
         object-position: center;
         width: 100%;
+
+        &--align-top {
+            font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
+            object-position: top;
+        }
+
+        &--align-bottom {
+            font-family: 'object-fit: cover; object-position: bottom;'; /*object-fit-images polyfill*/
+            object-position: bottom;
+        }
     }
 
     &__image-color-field {
