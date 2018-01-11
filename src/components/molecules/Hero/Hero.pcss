@@ -2,11 +2,11 @@
     color: var(--black);
     display: block;
     position: relative;
-    text-decoration: none;
     text-align: center;
+    text-decoration: none;
 
     .horizontal-rule {
-        margin: 0 auto;
+        margin: 0.5rem auto 0;
     }
 
     &:active,
@@ -21,30 +21,170 @@
         text-align: left;
 
         .horizontal-rule {
-            margin: 0;
+            margin: 0.5rem 0 0;
         }
     }
 
+    &--with-pebbles {
+        &:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-05.svg'),
+                url('/public/pebbles/hero-pebble-26.svg');
+            background-repeat: no-repeat;
+            background-position: -30% 65%, 104% 90%;
+            background-size: 40vw, 22vw;
+            content: '';
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+
+            @media all and (min-width: 28.125em) {
+                background-position: -30% 70%, 104% 90%;
+            }
+
+            @media all and (min-width: 38em) {
+                background-position: -20% 70%, 104% 95%;
+                background-size: 34vw, 20vw;
+            }
+
+            @media all and (min-width: 48em) {
+                background-position: -18% 45%, 104% 92%;
+                background-size: 30vw, 17vw;
+            }
+
+            @media all and (min-width: 64em) {
+                background-position: -12% 45%, 104% 92%;
+                background-size: 28vw, 17vw;
+            }
+
+            @media all and (min-width: 90em) {
+                background-position: -10% 55%, 104% 92%;
+                background-size: 25vw, 15vw;
+            }
+
+            @media all and (min-width: 112em) {
+                background-size: 20vw, 13vw;
+            }
+        }
+
+        &-variant-1:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-46.svg'),
+                url('/public/pebbles/hero-pebble-01.svg');
+        }
+
+        &-variant-2:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-54.svg'),
+                url('/public/pebbles/hero-pebble-22.svg');
+        }
+
+        &-variant-3:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-47.svg'),
+                url('/public/pebbles/hero-pebble-06.svg');
+        }
+
+        &-variant-4:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-14.svg'),
+                url('/public/pebbles/hero-pebble-12.svg');
+        }
+
+        &-black-friday:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-black-friday-2.svg'),
+                url('/public/pebbles/hero-pebble-black-friday-6.svg');
+        }
+
+        &-easter:before {
+            background-image:
+                url('/public/pebbles/hero-pebble-easter-2.svg'),
+                url('/public/pebbles/hero-pebble-easter-4.svg');
+        }
+    }
+
+    &--with-pebbles-only-on-mobile {
+        &:before {
+            @media all and (min-width: 48em) {
+                background: none;
+            }
+        }
+    }
+
+    &--with-pebbles-only-on-desktop {
+        &:before {
+            @media all and (max-width: 48em) {
+                background: none;
+            }
+        }
+    }
+
+    &__figure {
+        margin: 0;
+    }
+
     &__image {
+        display: block;
+        font-family: 'object-fit: cover; object-position: center;'; /*object-fit-images polyfill*/
+        max-height: 620px;
+        min-height: 200px;
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+
+        &--align-top {
+            font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
+            object-position: top;
+        }
+
+        &--align-bottom {
+            font-family: 'object-fit: cover; object-position: bottom;'; /*object-fit-images polyfill*/
+            object-position: bottom;
+        }
+    }
+
+    &__image-color-field {
+        display: block;
+        min-height: 145px;
+
+        @media all and (min-width: 48em) {
+            display: none;
+        }
     }
 
     &__box {
         background-color: var(--white);
-        bottom: 8%;
-        height: 150px;
+        bottom: 5%;
+        height: auto;
+        max-height: 193px;
         left: 0;
         margin: 0 auto;
         max-width: 320px;
-        padding: 20px 10px 30px;
+        padding: 20px;
         position: absolute;
         right: 0;
-        width: 100%;
+        width: 90%;
+
+        @media all and (min-width: 28.125em) {
+            width: 100%;
+        }
 
         @media all and (min-width: 48em) {
-            bottom: 15%;
-            height: 280px;
-            left: 15%;
+            bottom: 10%;
+            left: 8%;
             margin: 0;
+        }
+
+        @media all and (min-width: 64em) {
+            bottom: 15%;
+            left: 15%;
+        }
+
+        @media all and (min-width: 90em) {
+            max-height: 500px;
             max-width: 490px;
             padding: 30px;
         }
@@ -58,7 +198,7 @@
         margin: 0 0 15px;
         text-transform: uppercase;
 
-        @media all and (min-width: 48em) {
+        @media all and (min-width: 90em) {
             font-size: 45px;
             line-height: 45px;
         }
@@ -66,9 +206,8 @@
 
     &__subheading {
         display: inline-block;
-        line-height: 40px;
 
-        @media all and (min-width: 48em) {
+        @media all and (min-width: 90em) {
             font-size: 18px;
         }
     }
