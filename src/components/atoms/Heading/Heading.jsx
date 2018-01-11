@@ -12,12 +12,10 @@ function classNames(level, className) {
 }
 
 /**
- * Status: *in progress*.
- *
- * Work remaining: a designer should take a look at these heading levels and adjust fonts, sizes & colors.
+ * Status: *finished*.
  *
  * The Heading component should be used for page titles, sub-titles, etc.
- * Currently, only h1, h2 and h3 headings have been defined.
+ * Currently, only h1, h2, h3 and h4 headings have been defined.
  */
 const Heading = ({ level, text, className }) => {
     const TagName = `h${level}`;
