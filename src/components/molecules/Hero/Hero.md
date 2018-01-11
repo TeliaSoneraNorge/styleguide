@@ -1,8 +1,4 @@
-Status: *in progress*.
-
-TODO:
-- add images that goes well with top- and bottom alignment.
-- new pebble svg's that is rotated.
+Status: *finished*.
 
 The heading in the white box should span a maximum of three lines
 and the sentence below should span a maximum of two lines.
