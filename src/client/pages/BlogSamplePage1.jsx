@@ -70,7 +70,7 @@ const BlogSamplePage = () =>
         </section>
         <section className="container container--small container--extra-margin-bottom">
 
-            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
+            <p className="paragraph">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
                 <blockquote className="quote quote--inline-right">
                     <p className="quote__text">
@@ -82,12 +82,12 @@ const BlogSamplePage = () =>
                 elementum sed sit amet dui.
             </p>
 
-            <p>Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
+            <p className="paragraph">Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
                 a. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in
                 faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
                 ullamcorper sit amet ligula.</p>
 
-            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
+            <p className="paragraph">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
                 tincidunt. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
@@ -96,11 +96,11 @@ const BlogSamplePage = () =>
                 <figcaption className="caption">Woman looking at tablet</figcaption>
             </figure>
 
-            <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
+            <p className="paragraph">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
                 eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur
                 arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
 
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
+            <p className="paragraph">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
                 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus.
                 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
 
@@ -109,7 +109,7 @@ const BlogSamplePage = () =>
                 <figcaption className="caption">Woman looking at mobile</figcaption>
             </figure>
 
-            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+            <p className="paragraph">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
                 neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Curabitur
                 aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
                 posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
@@ -127,13 +127,13 @@ const BlogSamplePage = () =>
                 <h3 className="fact-box__heading heading heading--level-3">Fact about Lorem Ipsum:</h3>
                 <hr className="fact-box__line"/>
                 <div className="fact-box__text">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.</p>
+                    <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.</p>
 
-                    <p>Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
+                    <p className="paragraph">Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
-                    <p>Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.</p>
+                    <p className="paragraph">Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.</p>
 
-                    <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
+                    <p className="paragraph">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
                 </div>
             </section>
         </section>

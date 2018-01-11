@@ -39,7 +39,7 @@ const InformationArticleSample1 = ({ colors }) =>
         </div>
         <div className="container container--medium container--no-padding container--white-bg container--extra-padding-top container--overlapping-full-width-image">
             <div className="container container--small">
-                <p>
+                <p className="paragraph">
                     Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
                     nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat,
                     accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet
@@ -54,7 +54,7 @@ const InformationArticleSample1 = ({ colors }) =>
             <div className="focus-box">
                 <div className="focus-box__content-outer">
                     <div className="container container--small container--no-margin focus-box__content-inner">
-                        <p>
+                        <p className="paragraph">
                             Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
                             nec, egestas non nisi.
                         </p>

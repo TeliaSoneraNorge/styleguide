@@ -15,7 +15,7 @@ const InformationArticleSample3 = () =>
         </div>
         <div className="container container--medium container--no-padding container--extra-margin-bottom container--white-bg container--extra-padding-top container--overlapping-full-width-image">
             <div className="container container--small">
-                <p>
+                <p className="paragraph">
                     Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Sed porttitor lectus nibh.
                 </p>
             </div>

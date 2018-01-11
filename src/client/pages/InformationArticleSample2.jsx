@@ -62,11 +62,11 @@ const InformationArticleSample2 = () =>
             </li>
         </ul>
         <div className="container container--small container--extra-margin-bottom">
-            <p>
+            <p className="paragraph">
                 Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum
                 id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
             </p>
-            <p>
+            <p className="paragraph">
                 Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus.
                 Donec sollicitudin molestie malesuada.
             </p>
@@ -84,7 +84,7 @@ const InformationArticleSample2 = () =>
             {accordionListProps.map((props, i) =>
                 <AccordionList key={i} {...props} />)}
             <h3 className="heading heading--level-3">Heading</h3>
-            <p>
+            <p className="paragraph">
                 Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget
                 felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at

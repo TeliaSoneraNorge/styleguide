@@ -22,12 +22,14 @@ const DownloadPage = ({ colors }) =>
 
         <div className="container container--small container--extra-margin-bottom">
             <Alert kind="negative" bodyHtml={warningMessageHtml} />
-            <p>To use the Telia Styleguide in your project, follow these steps:</p>
-            <p>1) Download the styleguide assets and include them in your project.</p>
-            <p>2) Link to the downloaded CSS file in your HTML:</p>
+            <p className="paragraph">To use the Telia Styleguide in your project, follow these steps:</p>
+            <ol>
+                <li>Download the styleguide assets and include them in your project.</li>
+                <li>Link to the downloaded CSS file in your HTML:</li>
+            </ol>
             <CodeSnippet code={codeSnippets.stylesheetHtmlTag} language="markup" />
-            <p><strong>Do not link directly to anything on the styleguide website!</strong></p>
-            <p><a className="button" href="/download-zip" target="_blank">Download</a></p>
+            <p className="paragraph"><strong>Do not link directly to anything on the styleguide website!</strong></p>
+            <a className="button button--margin-top" href="/download-zip" target="_blank">Download</a>
         </div>
     </div>;
 

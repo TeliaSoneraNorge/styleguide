@@ -66,12 +66,12 @@ const BlogSamplePage = () =>
         </section>
         <section className="container container--small container--extra-margin-bottom">
 
-            <p>Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
+            <p className="paragraph">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula
                 elementum sed sit amet dui.</p>
 
-            <p>Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
+            <p className="paragraph">Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
                 a. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in
                 faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
                 ullamcorper sit amet ligula.</p>
@@ -87,11 +87,11 @@ const BlogSamplePage = () =>
                 <div className="caption">Videotext here</div>
             </div>
 
-            <p>Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
+            <p className="paragraph">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
                 tincidunt. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
-            <p>Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
+            <p className="paragraph">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
                 eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur
                 arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
 
@@ -100,16 +100,16 @@ const BlogSamplePage = () =>
                 productName="Sony Xperia XZ Premium"
                 imagePath="http://via.placeholder.com/140x280"
                 description="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem."
-                monthlyPrice="329"
-                totalPrice="7896"
+                price="329"
+                priceSmallprint="per md. med Svitsj"
                 buttonText="Les mer">
             </ProductPromoBox>
 
-            <p>Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
+            <p className="paragraph">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
                 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus.
                 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
 
-            <p>Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+            <p className="paragraph">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
                 neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Curabitur
                 aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
                 posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
@@ -120,8 +120,8 @@ const BlogSamplePage = () =>
                 productName="Sony Xperia XZ Premium"
                 imagePath="http://via.placeholder.com/140x280"
                 description="Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus."
-                monthlyPrice="329"
-                totalPrice="7896"
+                price="329"
+                priceSmallprint="per md. 7891,- totalt"
                 buttonText="Les mer"
                 isShowingFeature={true}>
             </ProductPromoBox>

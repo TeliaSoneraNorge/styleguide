@@ -16,7 +16,7 @@ const ContributingPage = ({ colors }) =>
         </Header>
         <div className="container container--small">
             <Heading level={2} text="The repository" />
-            <p>
+            <p className="paragraph">
                 The repository can be found on TeliaSoneraNorge's GitHub
                 account: <a className="link" href="https://github.com/TeliaSoneraNorge/styleguide">TeliaSoneraNorge/styleguide</a>.
                 Ask someone in #styleguide if you need access.
@@ -24,7 +24,7 @@ const ContributingPage = ({ colors }) =>
         </div>
         <div className="container container--small">
             <Heading level={2} text="Writing CSS" />
-            <p>
+            <p className="paragraph">
                 Use <b>BEM</b> (Block, Element, Modifier) for writing &amp; organising CSS.
                 BEM helps keep our CSS logical and predictable. The naming convention follows this pattern:
             </p>
@@ -37,11 +37,11 @@ const ContributingPage = ({ colors }) =>
                 </li>
                 <li><code className="language-css">.block--modifier</code> represents a different state or version of <code className="language-css">.block</code>.</li>
             </ul>
-            <p>For more information on BEM, <a className="link" href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article</a>.</p>
+            <p className="paragraph">For more information on BEM, <a className="link" href="http://csswizardry.com/2013/01/mindbemding-getting-your-head-round-bem-syntax/">please see this article</a>.</p>
         </div>
         <div className="container container--small">
             <Heading level={2} text="Code style" />
-            <p>
+            <p className="paragraph">
                 Be <strong>consistent</strong>. Copy the code style, formatting, etc. that all other files use.
                 If we want to change a rule in the code styling, we should do so globally in a single commit.
                 Also, don't reformat lots of code at the same time as a feature commit.
@@ -49,7 +49,7 @@ const ContributingPage = ({ colors }) =>
         </div>
         <div className="container container--small">
             <Heading level={2} text="Feature branches & Pull Requests" />
-            <p>
+            <p className="paragraph">
                 All changes must be done in feature branches with this naming convention:
             </p>
             <ul>
@@ -57,7 +57,7 @@ const ContributingPage = ({ colors }) =>
                 <li><code>bugfix/some-bugfix-name</code></li>
                 <li><code>refactor/some-refactoring-name</code></li>
             </ul>
-            <p>
+            <p className="paragraph">
                 Once the feature is complete, create a Pull Request on GitHub and post a link to it on the #styleguide Slack channel.
             </p>
         </div>

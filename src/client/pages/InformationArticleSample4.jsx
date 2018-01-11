@@ -31,7 +31,7 @@ const InformationArticleSample4 = () =>
         </Header>
         <div className="container container--small container--no-padding-top container--extra-margin-bottom">
             <h2 className="heading heading--level-2">Heading 2</h2>
-            <p>
+            <p className="paragraph">
                 Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget
                 felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at
