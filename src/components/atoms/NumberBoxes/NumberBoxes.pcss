@@ -2,7 +2,6 @@
     background-color: var(--grey);
     cursor: all-scroll;
     display: flex;
-    flex-wrap: nowrap;
     list-style: none;
     margin: 4px 0;
     overflow: hidden;
@@ -10,32 +9,19 @@
     padding: 0;
     text-align: center;
 
+    flex-flow: row wrap;
+    justify-content: center;
+    position: relative;
+
     &::-webkit-scrollbar {
         display: none;
-    }
-
-    @media all and (min-width: em(768)) {
-        &::-webkit-scrollbar-track {
-            background-color: var(--light-grey);
-        }
-
-        &::-webkit-scrollbar {
-            display: block;
-            width: 20px;
-            background-color: var(--grey);
-        }
-
-        &::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-            background-color: var(--dark-grey);
-            border-bottom: 2px solid var(--light-grey);
-            border-top: 2px solid var(--light-grey);
-        }
     }
 }
 
 .number-box {
     background-color: var(--grey);
+    border-top: 4px solid var(--white);
+    border-right: 4px solid var(--white);
     border-left: 4px solid var(--white);
     flex: 0 0 180px;
     padding: 1.5rem 1rem;
@@ -43,15 +29,19 @@
     @media all and (min-width: em(768)) {
         flex: 0 0 250px;
         padding: 2rem 1rem;
+        flex-basis: 50%;
+
+        &:nth-child(n+3) {
+            flex-basis: 33%;
+        }
     }
 
-    &:first-child {
-        margin-left: auto;
-    }
+    @media only screen and (min-width: 321px) and (max-width: 768px) {
+        flex-basis: 50%;
 
-    &:last-child {
-        border-right: 4px solid var(--white);
-        margin-right: auto;
+        &:nth-child(n+3) {
+           flex-basis: 33%;
+        }
     }
 
     &__title {
@@ -59,6 +49,14 @@
         font-size: 0.75rem;
         font-weight: 600;
         text-transform: uppercase;
+
+        @media only screen and (min-width: 480px) and (max-width: 768px) {
+          font-size: 1rem;
+        }
+
+        @media only screen and (max-width:479px) {
+            font-size: 0.5rem;
+        }
     }
 
     &__number {
@@ -70,6 +68,14 @@
         @media all and (min-width: em(768)) {
             font-size: 3.75rem;
             line-height: 3.75rem;
+        }
+
+        @media only screen and (min-width: 480px) and (max-width: 768px) {
+            font-size: 2.75rem;
+        }
+
+        @media only screen and (max-width:479px) {
+            font-size: 1.5rem;
         }
     }
 
@@ -84,10 +90,26 @@
             font-size: 1.875rem;
             line-height: 1.875rem;
         }
+
+        @media only screen and (min-width: 480px) and (max-width: 768px) {
+            font-size: 1.5rem;
+        }
+
+        @media only screen and (max-width:479px) {
+            font-size: 1rem;
+        }
     }
 
     &__text {
         display: block;
         font-size: 0.75rem;
+
+        @media only screen and (min-width: 480px) and (max-width: 768px) {
+          font-size: 1rem;
+        }
+
+        @media only screen and (max-width:479px) {
+            font-size: 0.5rem;
+        }
     }
 }
