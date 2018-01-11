@@ -1,6 +1,6 @@
 Status: *finished*.
 
-The heading in the white box should span a maximum of three lines
+The heading in the white box should span a maximum of two lines
 and the sentence below should span a maximum of two lines.
 
 In smaller browser widths there is a coloured field below the image and beneath the white box
