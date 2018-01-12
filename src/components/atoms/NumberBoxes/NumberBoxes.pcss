@@ -1,58 +1,19 @@
 .number-boxes {
-    background-color: var(--grey);
-    cursor: all-scroll;
+    border-top: 4px solid var(--white);
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     list-style: none;
-    margin: 4px 0;
-    overflow: hidden;
-    overflow-x: auto;
+    margin: 0 0 4px 0;
     padding: 0;
     text-align: center;
-
-    &::-webkit-scrollbar {
-        display: none;
-    }
-
-    @media all and (min-width: em(768)) {
-        &::-webkit-scrollbar-track {
-            background-color: var(--light-grey);
-        }
-
-        &::-webkit-scrollbar {
-            display: block;
-            width: 20px;
-            background-color: var(--grey);
-        }
-
-        &::-webkit-scrollbar-thumb {
-            border-radius: 5px;
-            background-color: var(--dark-grey);
-            border-bottom: 2px solid var(--light-grey);
-            border-top: 2px solid var(--light-grey);
-        }
-    }
 }
 
 .number-box {
     background-color: var(--grey);
-    border-left: 4px solid var(--white);
-    flex: 0 0 180px;
+    border-right: 4px solid var(--white);
+    border-bottom: 4px solid var(--white);
+    flex-grow: 1;
     padding: 1.5rem 1rem;
-
-    @media all and (min-width: em(768)) {
-        flex: 0 0 250px;
-        padding: 2rem 1rem;
-    }
-
-    &:first-child {
-        margin-left: auto;
-    }
-
-    &:last-child {
-        border-right: 4px solid var(--white);
-        margin-right: auto;
-    }
 
     &__title {
         display: block;
