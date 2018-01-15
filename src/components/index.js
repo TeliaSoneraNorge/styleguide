@@ -37,6 +37,7 @@ import RelatedArticles from './molecules/RelatedArticles/RelatedArticles';
 import Subscription from './molecules/Subscription/Subscription';
 import ChartLegend from './molecules/ChartLegend/ChartLegend';
 import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
+import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
@@ -77,6 +78,7 @@ export default {
     'src/components/molecules/Subscription/Subscription.jsx': Subscription,
     'src/components/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
     'src/components/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
+    'src/components/molecules/DataBoostChart/DataBoostChart.jsx': DataBoostChart,
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
