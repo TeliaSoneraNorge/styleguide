@@ -2,6 +2,7 @@ import React from 'react';
 import Header from '../../components/molecules/Header/Header';
 import DonutChart from '../../components/molecules/DonutChart/DonutChart';
 import ChartLegend from '../../components/molecules/ChartLegend/ChartLegend';
+import DataBoostChart from '../../components/molecules/DataBoostChart/DataBoostChart';
 
 const Prism = window.Prism; // A global, added with a <script> tag in the HTML template
 
@@ -11,6 +12,7 @@ export default class UsagePage extends React.Component {
 
         this.state = {
             isLoading: true,
+            showRemainingTime: false,
             data: {}
         };
 
@@ -69,6 +71,13 @@ export default class UsagePage extends React.Component {
     }
     componentDidMount() {
         this.refreshData();
+
+        this.dataBoostAlternatingTextInteval = setInterval(() => {
+            this.setState({ showRemainingTime: !this.state.showRemainingTime });
+        }, 1500);
+    }
+    componentWillUnmount() {
+        clearInterval(this.dataBoostAlternatingTextInteval);
     }
     render() {
         return (
@@ -119,6 +128,11 @@ export default class UsagePage extends React.Component {
                         showSegmentSeparators />
 
                     <ChartLegend series={this.state.data.series} />
+
+                    <DataBoostChart
+                        loading={this.state.isLoading}
+                        lowerCaption={this.state.showRemainingTime ? '15:00' : 'Fri bruk'}
+                    />
                 </div>
             </div>
         );
