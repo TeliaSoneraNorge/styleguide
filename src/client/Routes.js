@@ -38,8 +38,7 @@ const Routes = (props) =>
                 { text: "Contributing", url: "/contributing" },
                 { text: "Download", url: "/download" }
             ]}
-            isLoggedIn={true}
-            loggedInUserName={"Code Monkey"}/>
+            isLoggedIn={true} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/layout" component={LayoutPage} />

@@ -25,6 +25,7 @@ import DropDownListWithLabel from './molecules/DropDownListWithLabel/DropDownLis
 import DonutChart from './molecules/DonutChart/DonutChart';
 import FocusBox from './molecules/FocusBox/FocusBox';
 import FocusSpinner from './molecules/FocusSpinner/FocusSpinner';
+import PageMenu from './molecules/PageMenu/PageMenu';
 import Header from './molecules/Header/Header';
 import ParallaxBlockTextBox from './molecules/ParallaxBlockTextBox/ParallaxBlockTextBox';
 import PageFooter from './molecules/PageFooter/PageFooter';
@@ -66,6 +67,7 @@ export default {
     'src/components/molecules/DonutChart/DonutChart.jsx': DonutChart,
     'src/components/molecules/FocusBox/FocusBox.jsx': FocusBox,
     'src/components/molecules/FocusSpinner/FocusSpinner.jsx': FocusSpinner,
+    'src/components/molecules/PageMenu/PageMenu.jsx': PageMenu,
     'src/components/molecules/Header/Header.jsx': Header,
     'src/components/molecules/PageFooter/PageFooter.jsx': PageFooter,
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,

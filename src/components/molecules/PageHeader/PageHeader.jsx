@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import PageMenu from '../PageMenu/PageMenu';
 
 /**
  * Status: *in progress*.
@@ -30,34 +31,22 @@ export default class PageHeader extends React.Component {
     }
     render() {
         const cartShouldBeShown = (this.props.cartItemCount > 0);
+        const menuIcon = this.props.isLoggedIn
+            ? '/public/icons/ico_menu_logged_in.svg'
+            : '/public/icons/ico_menu.svg';
+
         return (
-            <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown, 'page-header--menu-expanded': this.state.menuIsExpanded })}>
-                <div className="page-header__menu" id={this.props.menuId || "page-header-menu"}>
-                    <div className="page-header__close-menu">
-                        <button className="page-header__close-menu-button page-header__icon-box" onClick={this.closeMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || "page-header-menu"} aria-pressed={!this.state.menuIsExpanded}>
-                            <img className="page-header__icon-box-icon" src="/public/icons/ico_delete.svg" alt="Vis/skjul meny" />
-                            <span className="page-header__icon-box-text">Lukk</span>
-                        </button>
-                    </div>
-                    <form className="page-header__search" role="search">
-                        <input className="page-header__search-input" type="search" placeholder="Spøk, neida... søk" />
-                    </form>
-                    <nav className="page-header__menu-nav">
-                        <ul className="page-header__menu-item-list">
-                            {_.map(this.props.menuLinks, (menuLink, i) =>
-                                <li key={i} className="page-header__menu-item">
-                                    <a className="page-header__menu-item-link" href={menuLink.url}>
-                                        {menuLink.text}
-                                    </a>
-                                </li>
-                            )}
-                        </ul>
-                    </nav>
-                </div>
-                <div className={classNames('page-header__overlay', { 'page-header__overlay--active': this.state.menuIsExpanded })} onClick={this.closeMenu}></div>
+            <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown })}>
+                <PageMenu
+                    links={this.props.menuLinks}
+                    menuId={this.props.menuId}
+                    isExpanded={this.state.menuIsExpanded}
+                    onClose={this.closeMenu}
+                    fixedPosition
+                />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || "page-header-menu"} aria-pressed={this.state.menuIsExpanded}>
-                        <img className="page-header__menu-button-image page-header__icon-box-icon" src="/public/icons/ico_menu.svg" alt="Vis/skjul meny" />
+                        <img className="page-header__menu-button-image page-header__icon-box-icon" src={menuIcon} alt="Vis/skjul meny" />
                         <span className="page-header__icon-box-text">Meny</span>
                     </button>
                 </div>
@@ -70,12 +59,8 @@ export default class PageHeader extends React.Component {
                             <img className="page-header__cart-button-image" src="/public/icons/ico_buy.svg" alt="Handlekurv" />
                             <span className="page-header__cart-item-count">{this.props.cartItemCount}</span>
                         </a> : null}
-                    {this.props.isLoggedIn ?
-                        <a className="page-header__my-account-button page-header__icon-box" href="#">
-                            <img className="page-header__cart-button-image page-header__icon-box-icon" src="/public/icons/ico_enduser.svg" alt="Gå til min profil" />
-                            <span className="page-header__user-name page-header__icon-box-text">Hei, {this.props.loggedInUserName}</span>
-                        </a> :
-                        <a className="page-header__log-in-button" href="#">
+                    {!this.props.isLoggedIn &&
+                        <a className="page-header__log-in-button page-header__log-in-button--icon-for-mobile" href="#">
                             Logg inn
                         </a>}
                 </div>
