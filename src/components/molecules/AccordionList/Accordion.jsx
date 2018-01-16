@@ -5,11 +5,20 @@ class Accordion extends React.Component {
         super(props);
 
         this.accordionHeaderClicked = this.accordionHeaderClicked.bind(this);
+        this.onTransitionend = this.onTransitionend.bind(this);
 
     }
     accordionHeaderClicked(){
         this.props.toggleIsExpanded();
-        this.accordion.scrollIntoView({behavior: 'smooth'});
+    }
+    onTransitionend() {
+        if (this.accordion.classList.contains('accordion--open')) {
+            window.scroll({
+                top: this.accordion.offsetTop + this.accordion.offsetParent.offsetTop,
+                left: 0,
+                behavior: 'smooth'
+            });
+        }
     }
     render() {
         return (
@@ -25,7 +34,7 @@ class Accordion extends React.Component {
                         {this.props.title}
                     </button>
                 </h3>
-                <div className="accordion__panel rich-text-area" id={this.props.id}>
+                <div className="accordion__panel rich-text-area" id={this.props.id} onTransitionEnd={this.onTransitionend}>
                     {this.props.children}
                 </div>
             </section>
