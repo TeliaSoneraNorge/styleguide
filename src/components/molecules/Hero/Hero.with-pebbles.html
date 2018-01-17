@@ -1,8 +1,9 @@
 <a class="hero hero--with-pebbles hero--with-pebbles-variant-1 heading-link" href="#">
-    <figure class="hero__figure">
-        <img class="hero__image hero__image--align-top" src="/public/website-images/hero.jpg" alt="Woman holding iPad" />
-        <div class="hero__image-color-field" style="background-color: #04263F"></div>
-    </figure>
+    <picture class="hero__picture">
+        <source media="(max-width: 47.99em)" srcset="/public/website-images/hero.jpg">
+        <source media="(min-width: 48em)" srcset="/public/website-images/hero.jpg">
+        <img class="hero__image hero__image--align-top" src="/public/website-images/hero.jpg" alt="Woman taking photo with her mobile phone by a lake">
+    </picture>
     <div class="hero__box heading-link--focus-area">
         <h2 class="hero__heading">Hero with pebbles on mobile &amp; desktop</h2>
         <div class="hero__subheading">And this hero image is top aligned
