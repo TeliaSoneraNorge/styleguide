@@ -5,26 +5,15 @@ class Accordion extends React.Component {
         super(props);
 
         this.accordionHeaderClicked = this.accordionHeaderClicked.bind(this);
-        this.onTransitionend = this.onTransitionend.bind(this);
-
     }
     accordionHeaderClicked(){
         this.props.toggleIsExpanded();
-    }
-    onTransitionend() {
-        if (this.accordion.classList.contains('accordion--open')) {
-            window.scroll({
-                top: this.accordion.offsetTop + this.accordion.offsetParent.offsetTop,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }
     }
     render() {
         return (
             <section
                 className={`accordion${this.props.isExpanded ? ' accordion--open' : ''}`}
-                ref={(accordion) => { this.accordion = accordion; }}>
+                ref={this.props.accordionRef}>
                 <h3 className="accordion__header heading heading--level-3">
                     <button
                         className="accordion__header-button"
@@ -34,7 +23,7 @@ class Accordion extends React.Component {
                         {this.props.title}
                     </button>
                 </h3>
-                <div className="accordion__panel rich-text-area" id={this.props.id} onTransitionEnd={this.onTransitionend}>
+                <div className="accordion__panel rich-text-area" id={this.props.id}>
                     {this.props.children}
                 </div>
             </section>

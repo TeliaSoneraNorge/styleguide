@@ -29,20 +29,50 @@ class AccordionList extends React.Component {
         this.state = {
             isExpandedAccordionIndex: this.props.isExpandedAccordionIndex
         };
+
+        this.accordions = {};
+
         this.toggleIsExpanded = this.toggleIsExpanded.bind(this);
+        this.setAccordionRef = this.setAccordionRef.bind(this);
+        this.scrollToActiveAccordion = this.scrollToActiveAccordion.bind(this);
+
     }
     toggleIsExpanded(newIndex) {
+
         if (newIndex === this.state.isExpandedAccordionIndex) {
             this.setState({ isExpandedAccordionIndex: -1 });
         } else {
-            this.setState({ isExpandedAccordionIndex: newIndex });
+            this.scrollToActiveAccordion(this.state.isExpandedAccordionIndex, newIndex);
+            this.setState({isExpandedAccordionIndex: newIndex});
         }
+    }
+    scrollToActiveAccordion(previousExpandedAccordionIndex, currentExpandedAccordionIndex) {
+        setImmediate(() =>
+        {
+            let openAccordionButtonHeight = 0;
+            /*When an accordion further up on the page is already open, we subtract its button height
+             so that the page scrolls to the top of the current open accordion*/
+            if (previousExpandedAccordionIndex !== -1 &&
+                previousExpandedAccordionIndex < currentExpandedAccordionIndex) {
+                openAccordionButtonHeight = this.accordions[currentExpandedAccordionIndex].firstChild.offsetHeight;
+            }
+
+            window.scroll({
+                top: this.accordions[currentExpandedAccordionIndex].offsetTop + this.accordions[currentExpandedAccordionIndex].offsetParent.offsetTop - openAccordionButtonHeight,
+                left: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+    setAccordionRef(accordionItem, i) {
+        this.accordions[i] = accordionItem;
     }
     render() {
         return (
             <div className="accordion-list">
                 {this.props.accordionItems.map((accordionItem, i) =>
                     <Accordion
+                        accordionRef={(element) => {this.setAccordionRef(element, i)}}
                         key={i}
                         {...accordionItem}
                         isExpanded={i === this.state.isExpandedAccordionIndex}
