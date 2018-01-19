@@ -116,42 +116,38 @@
 
     &--with-pebbles-only-on-desktop {
         &:before {
-            @media all and (max-width: 48em) {
+            @media all and (max-width: 47.99em) {
                 background: none;
             }
         }
     }
 
-    &__figure {
+    &__picture {
         margin: 0;
     }
 
     &__image {
         display: block;
-        font-family: 'object-fit: cover; object-position: center;'; /*object-fit-images polyfill*/
-        max-height: 620px;
-        min-height: 200px;
+        min-height: 345px;
         object-fit: cover;
         object-position: center;
+        font-family: 'object-fit: cover; object-position: center;'; /*object-fit-images polyfill*/
         width: 100%;
 
-        &--align-top {
-            font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
-            object-position: top;
-        }
-
-        &--align-bottom {
-            font-family: 'object-fit: cover; object-position: bottom;'; /*object-fit-images polyfill*/
-            object-position: bottom;
-        }
-    }
-
-    &__image-color-field {
-        display: block;
-        min-height: 145px;
-
         @media all and (min-width: 48em) {
-            display: none;
+            max-height: 620px;
+            object-fit: cover;
+            object-position: center;
+
+            &--align-top {
+                font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
+                object-position: top;
+            }
+
+            &--align-bottom {
+                font-family: 'object-fit: cover; object-position: bottom;'; /*object-fit-images polyfill*/
+                object-position: bottom;
+            }
         }
     }
 

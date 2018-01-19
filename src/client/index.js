@@ -3,9 +3,13 @@ import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
+import { getIEVersion } from './browserHelpers';
 
-import 'picturefill';
+if(getIEVersion()){
+    require('picturefill');
+}
 import objectFitImages from 'object-fit-images';
+
 import App from './App';
 import rootReducer from './reducers';
 
