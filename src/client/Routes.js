@@ -31,6 +31,7 @@ const Routes = (props) =>
             logoUrl="/"
             logoTitle="Telia logo"
             logoImageDesktopPath="/public/images/logo/logo.svg"
+            logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
             menuLinks={[
                 { text: "Home", url: "/" },
                 { text: "Layout", url: "/layout" },
@@ -38,8 +39,7 @@ const Routes = (props) =>
                 { text: "Contributing", url: "/contributing" },
                 { text: "Download", url: "/download" }
             ]}
-            isLoggedIn={true}
-            loggedInUserName={"Code Monkey"}/>
+            isLoggedIn={true} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/layout" component={LayoutPage} />

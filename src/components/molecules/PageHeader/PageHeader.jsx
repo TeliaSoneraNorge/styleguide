@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import PageMenu from '../PageMenu/PageMenu';
 
 /**
  * Status: *in progress*.
@@ -30,53 +31,42 @@ export default class PageHeader extends React.Component {
     }
     render() {
         const cartShouldBeShown = (this.props.cartItemCount > 0);
+        const menuIconClass = this.props.isLoggedIn
+            ? 'page-header__menu-button-image page-header__menu-button-image--logged-in'
+            : 'page-header__menu-button-image';
+
         return (
-            <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown, 'page-header--menu-expanded': this.state.menuIsExpanded })}>
-                <div className="page-header__menu" id={this.props.menuId || "page-header-menu"}>
-                    <div className="page-header__close-menu">
-                        <button className="page-header__close-menu-button page-header__icon-box" onClick={this.closeMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || "page-header-menu"} aria-pressed={!this.state.menuIsExpanded}>
-                            <img className="page-header__icon-box-icon" src="/public/icons/ico_delete.svg" alt="Vis/skjul meny" />
-                            <span className="page-header__icon-box-text">Lukk</span>
-                        </button>
-                    </div>
-                    <form className="page-header__search" role="search">
-                        <input className="page-header__search-input" type="search" placeholder="Spøk, neida... søk" />
-                    </form>
-                    <nav className="page-header__menu-nav">
-                        <ul className="page-header__menu-item-list">
-                            {_.map(this.props.menuLinks, (menuLink, i) =>
-                                <li key={i} className="page-header__menu-item">
-                                    <a className="page-header__menu-item-link" href={menuLink.url}>
-                                        {menuLink.text}
-                                    </a>
-                                </li>
-                            )}
-                        </ul>
-                    </nav>
-                </div>
-                <div className={classNames('page-header__overlay', { 'page-header__overlay--active': this.state.menuIsExpanded })} onClick={this.closeMenu}></div>
+            <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown })}>
+                <PageMenu
+                    links={this.props.menuLinks}
+                    menuId={this.props.menuId}
+                    isExpanded={this.state.menuIsExpanded}
+                    onClose={this.closeMenu}
+                    fixedPosition
+                />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || "page-header-menu"} aria-pressed={this.state.menuIsExpanded}>
-                        <img className="page-header__menu-button-image page-header__icon-box-icon" src="/public/icons/ico_menu.svg" alt="Vis/skjul meny" />
+                        <i className={`${menuIconClass} page-header__icon-box-icon`} />
                         <span className="page-header__icon-box-text">Meny</span>
                     </button>
                 </div>
                 <a className="page-header__site-logo" href={this.props.logoUrl} title={this.props.logoTitle}>
                     <img className="page-header__site-logo-img" src={this.props.logoImageDesktopPath} alt={this.props.logoTitle} />
+                    <img className="page-header__site-logo-img page-header__site-logo-img--inverted" src={this.props.logoImageDesktopPathInverted} alt={this.props.logoTitle} />
                 </a>
                 <div className="page-header__site-tools">
                     {cartShouldBeShown ?
                         <a className="page-header__cart-button" href="#">
-                            <img className="page-header__cart-button-image" src="/public/icons/ico_buy.svg" alt="Handlekurv" />
+                            <i className="page-header__cart-button-image" />
                             <span className="page-header__cart-item-count">{this.props.cartItemCount}</span>
                         </a> : null}
-                    {this.props.isLoggedIn ?
-                        <a className="page-header__my-account-button page-header__icon-box" href="#">
-                            <img className="page-header__cart-button-image page-header__icon-box-icon" src="/public/icons/ico_enduser.svg" alt="Gå til min profil" />
-                            <span className="page-header__user-name page-header__icon-box-text">Hei, {this.props.loggedInUserName}</span>
-                        </a> :
+                    {!this.props.isLoggedIn &&
                         <a className="page-header__log-in-button" href="#">
-                            Logg inn
+                            <span className="page-header__log-in-button-text">Logg inn</span>
+                        </a>}
+                    {!this.props.isLoggedIn &&
+                        <a className="page-header__mobile-log-in-button" href="#">
+                            <i className="page-header__mobile-log-in-button-icon"/>
                         </a>}
                 </div>
             </header>
