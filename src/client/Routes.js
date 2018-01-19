@@ -31,6 +31,7 @@ const Routes = (props) =>
             logoUrl="/"
             logoTitle="Telia logo"
             logoImageDesktopPath="/public/images/logo/logo.svg"
+            logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
             menuLinks={[
                 { text: "Home", url: "/" },
                 { text: "Layout", url: "/layout" },

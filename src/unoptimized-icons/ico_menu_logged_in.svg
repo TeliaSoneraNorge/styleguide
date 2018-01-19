@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="31px" height="26px" viewBox="0 0 31 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="93px" height="26px" viewBox="0 0 93 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
     <title>icon/menuLoggedIn</title>
     <desc>Created with Sketch.</desc>
@@ -13,6 +13,28 @@
             </mask>
             <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
             <g id="Colour/Black" mask="url(#mask-2)" fill="#000000" fill-rule="evenodd">
+                <rect id="Rectangle-91-Copy-50" x="0" y="0.166666667" width="45" height="45"></rect>
+            </g>
+        </g>
+    </g>
+    <g id="icons-symboler-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-24.000000, -101.000000)">
+        <g id="icon/menuLoggedIn" transform="translate(45.000000, 90.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use fill="#fff" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <g id="Colour/Black" mask="url(#mask-2)" fill="#fff" fill-rule="evenodd">
+                <rect id="Rectangle-91-Copy-50" x="0" y="0.166666667" width="45" height="45"></rect>
+            </g>
+        </g>
+    </g>
+    <g id="icons-symboler-purple" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(7.000000, -101.000000)">
+        <g id="icon/menuLoggedIn" transform="translate(45.000000, 90.000000)">
+            <mask id="mask-2" fill="white">
+                <use xlink:href="#path-1"></use>
+            </mask>
+            <use fill="#990AE3" fill-rule="evenodd" xlink:href="#path-1"></use>
+            <g id="Colour/Black" mask="url(#mask-2)" fill="#990AE3" fill-rule="evenodd">
                 <rect id="Rectangle-91-Copy-50" x="0" y="0.166666667" width="45" height="45"></rect>
             </g>
         </g>

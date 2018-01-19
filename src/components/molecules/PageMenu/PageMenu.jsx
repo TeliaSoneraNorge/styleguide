@@ -1,5 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
+import _ from 'lodash';
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
@@ -30,7 +31,9 @@ const PageMenu = ({
                     items={links.filter(link => !link.forLoggedInUsers)} />
 
                 {showLogoutButton &&
-                <a className="page-menu__log-out-button page-header__log-in-button">Logg ut</a>}
+                <a className="page-menu__log-out-button page-header__log-in-button" href="#">
+                    <span className="page-header__log-in-button-text">Logg ut</span>
+                </a>}
             </nav>
         </div>
         {fixedPosition && <MenuOverlay onClick={onClose} active={isExpanded} />}
