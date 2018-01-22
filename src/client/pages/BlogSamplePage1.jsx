@@ -55,17 +55,19 @@ const BlogSamplePage = () =>
         </Header>
         <section className="article-meta-data">
             <div
-                className="article-meta-data__wrapper container container--large container--no-padding container--no-margin">
+                className="article-meta-data__wrapper container container--large container--no-margin">
                 <span className="article-meta-data__date-author">
-                    <span className="article-meta-data__date">15.june 2017</span>
-                    <span className="article-meta-data__author">by: FirstName LastName</span>
+                    <span className="article-meta-data__date">Published: 15.june 2017</span>
+                    <span className="article-meta-data__author">by FirstName LastName</span>
                 </span>
                 <div className="tags">
                     <span className="tags__tag">Technology</span>&nbsp;
                     <span className="tags__tag">Music</span>&nbsp;
                     <span className="tags__tag">Streaming</span>
                 </div>
-                <img className="article-meta-data__share" src="/public/icons/ico_share.svg"/>
+                <div class="article-meta-data__share">
+                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg"/>
+                </div>
             </div>
         </section>
         <section className="container container--small container--extra-margin-bottom">

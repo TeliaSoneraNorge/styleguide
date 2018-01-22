@@ -5,18 +5,20 @@
     &__wrapper {
         display: flex;
         flex-flow: row wrap;
-        justify-content: space-between;
-        padding: 0.5rem 1rem;
+        padding-bottom: 0.5rem;
+        padding-top: 0.5rem;
         position: relative;
+
+        @media all and (min-width: 80.25em){
+            padding: 0.5rem 0;
+        }
     }
 
     &__date-author {
         color: var(--dark-grey);
-        flex: 0 1 90%;
+        flex: 0 1 100%;
         font-size: 0.875rem;
-        order: 0;
         padding-bottom: 0.3rem;
-        padding-right: 2rem;
     }
 
     &__date {
@@ -28,30 +30,33 @@
 
     .tags {
         flex: 0 1 90%;
-        order: 2;
     }
 
     &__share {
         display: none;
+        flex: 0 1 10%;
+    }
+
+    &__share-icon {
         height: 1.2rem;
-        position: absolute;
-        right: 1rem;
-        top: 0.5rem;
         width: 1.2rem;
     }
 
-    @media all and (min-width: 609px){
+    @media all and (min-width: 47.99em){
         &__date-author {
-            flex: 0 1 auto;
+            flex: 0 1 33.33%;
             padding-bottom: 0;
-        }
-
-        .tags {
-            flex: 0 1 50%;
             padding-right: 2rem;
         }
 
+        .tags {
+            flex: 0 1 33.33%;
+            text-align: center;
+        }
+
         &__share {
+            flex: 0 1 33.33%;
+            text-align: right;
         }
     }
 }
