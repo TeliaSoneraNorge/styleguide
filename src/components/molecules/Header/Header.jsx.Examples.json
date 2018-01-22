@@ -9,6 +9,16 @@
         }
     },
     {
+        "name": "Header - hide icon on desktop",
+        "props": {
+            "iconUrl": "/public/icons/ico_favourites.svg",
+            "hideIconOnDesktop": true,
+            "runningTitle": "Running Title",
+            "pageTitle": "Page Title",
+            "children": "Preamble; an introductory and expressionary statement in a document that explains the document's purpose and underlying philosophy"
+        }
+    },
+    {
         "name": "Header with mask",
         "props": {
             "iconUrl": "/public/icons/ico_favourites.svg",
