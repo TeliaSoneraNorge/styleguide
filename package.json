@@ -71,6 +71,7 @@
     "postcss-functions": "3.0.0",
     "postcss-loader": "2.0.6",
     "postcss-nested": "2.1.2",
+    "postcss-url": "^7.3.0",
     "pretty": "2.0.0",
     "prop-types": "15.6.0",
     "proxy-middleware": "0.15.0",
