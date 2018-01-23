@@ -1,3 +1,20 @@
+const fs = require('fs');
+const crypto = require('crypto');
+
+const calculateHash = (path) => {
+    const filePath = __dirname + path;
+
+    if (fs.existsSync(filePath)) {
+        const hash = crypto.createHash('sha1');
+        const fileContent = fs.readFileSync(filePath);
+        hash.update(fileContent);
+
+        return hash.digest('hex');
+    }
+
+    return '';
+};
+
 module.exports = {
     plugins: {
         'postcss-easy-import': {
@@ -13,6 +30,10 @@ module.exports = {
         },
         'postcss-nested': {},
         'postcss-custom-properties': {},
-        'postcss-calc': {}
+        'postcss-calc': {},
+        'postcss-url': {
+            filter: '**',
+            url: (asset) => `${asset.url}?${calculateHash(asset.url)}`
+        }
     }
 };
