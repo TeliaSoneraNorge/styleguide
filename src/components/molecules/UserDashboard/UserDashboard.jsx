@@ -10,13 +10,17 @@ import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
  * and "Min side".
  *
  **/
-const UserDashboard  = ({name, dataAmountLeft, dataAmountLeftText, totalDataAmount, totalDataAmountText, refillInDays, invoiceLink, unreadInvoiceCount, minsideLink}) =>
+const UserDashboard  = ({name, usageLink, dataAmountLeft, dataAmountLeftText, totalDataAmount, totalDataAmountText, refillInDays, invoiceLink, unreadInvoiceCount, minsideLink}) =>
     <section className="user-dashboard container container--large container--no-padding container--no-margin">
         <div className="user-dashboard__container">
-            <h2 className="user-dashboard__name heading heading--level-2">{name}</h2>
-            <span className="user-dashboard__data-amount-left">{dataAmountLeftText} </span>
-            <span className="user-dashboard__data-amount-info">igjen av {totalDataAmountText}. Påfylles om {refillInDays} dager</span>
-            <ProgressBar value={dataAmountLeft} min={0} max={totalDataAmount}/>
+            <h2 className="user-dashboard__name heading heading--level-2">
+                <a className="user-dashboard__name-link link" href={minsideLink}>{name}</a>
+            </h2>
+            <a className="user-dashboard__data-usage-link link" href={usageLink}>
+                <span className="user-dashboard__data-amount-left">{dataAmountLeftText} </span>
+                <span className="user-dashboard__data-amount-info">igjen av {totalDataAmountText}. Påfylles om {refillInDays} dager</span>
+                <ProgressBar value={dataAmountLeft} min={0} max={totalDataAmount}/>
+            </a>
         </div>
         <ul className="user-dashboard__links list list--links">
             <li className="user-dashboard__link list__item">

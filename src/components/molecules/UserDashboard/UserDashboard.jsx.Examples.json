@@ -3,6 +3,7 @@
         "name": "User Dashboard",
         "props": {
             "name": "Bernard Roger Hall-Falconer",
+            "usageLink": "#",
             "dataAmountLeft": 7,
             "dataAmountLeftText": "7 GB",
             "totalDataAmount": 10,
