@@ -10,7 +10,7 @@
             "totalDataAmountText": "10 GB",
             "refillInDays": "5",
             "invoiceLink": "#",
-            "unreadInvoiceCount": "1",
+            "unpaidOverdueInvoices": "1",
             "minsideLink": "#"
         }
     }
