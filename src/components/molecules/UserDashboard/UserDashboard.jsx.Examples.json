@@ -1,6 +1,6 @@
 [
     {
-        "name": "User Dashboard",
+        "name": "User Dashboard - Data usage",
         "props": {
             "name": "Bernard Roger Hall-Falconer",
             "usageLink": "#",
@@ -9,8 +9,35 @@
             "totalDataAmount": 10,
             "totalDataAmountText": "10 GB",
             "refillInDays": "5",
+            "usageInfoText": " igjen av 10 GB. Påfylles om 5 dager",
             "invoiceLink": "#",
             "unpaidOverdueInvoices": "1",
+            "minsideLink": "#"
+        }
+    },
+    {
+        "name": "User Dashboard - Data Boost",
+        "props": {
+            "name": "Bernard Roger Hall-Falconer",
+            "usageLink": "#",
+            "isDataBoost": true,
+            "dataAmountLeftText": "02:58:32",
+            "totalDataAmountText": "UNLIMITED",
+            "usageInfoText": " igjen av Data Boost",
+            "invoiceLink": "#",
+            "unpaidOverdueInvoices": "1",
+            "minsideLink": "#"
+        }
+    },
+    {
+        "name": "User Dashboard - Prepaid - No data included",
+        "props": {
+            "name": "Bernard Roger Hall-Falconer",
+            "usageLink": "#",
+            "isPrepaid": true,
+            "dataAmountLeftText": "143 kr",
+            "usageInfoText": " igjen på kontantkort",
+            "invoiceLink": "#",
             "minsideLink": "#"
         }
     }

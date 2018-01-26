@@ -5,6 +5,30 @@
         margin-bottom: 3rem;
     }
 
+    &--no-progress-bar {
+        .user-dashboard__container {
+            flex: 0 1 auto;
+        }
+
+        .user-dashboard__data-usage-link {
+            display: inline-block;
+            padding: 0;
+        }
+
+        .user-dashboard__data-amount-left {
+            border-bottom: 1px solid var(--core-purple);
+            display: table;
+
+            @media all and (min-width: 48em) {
+                display: inline-block;
+            }
+        }
+
+        .user-dashboard__links {
+            padding: 0 1.25rem;
+        }
+    }
+
     &__container {
         padding: 0 1.25rem;
 
