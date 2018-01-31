@@ -6,8 +6,8 @@ import Heading from '../../atoms/Heading/Heading';
 /**
  * Status: *finished*.
  */
-const Header = ({ videoSrc, iconUrl, runningTitle, pageTitle, withMask, withContentOverlap, children }) =>
-    <header className={classNames('header', { 'header--with-mask': withMask, 'header--with-content-overlap': withContentOverlap })}>
+const Header = ({ videoSrc, iconUrl, hideIconOnDesktop, runningTitle, pageTitle, withMask, withContentOverlap, children }) =>
+    <header className={classNames('header', { 'header--hide-icon-on-desktop': hideIconOnDesktop, 'header--with-mask': withMask, 'header--with-content-overlap': withContentOverlap })}>
         {videoSrc ?
             <div className="video container container--large container--no-padding container--no-margin">
                 <div className="video__iframe-wrapper">

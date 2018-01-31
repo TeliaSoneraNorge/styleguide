@@ -13,6 +13,12 @@
     @media all and (min-width: em(768)) {
         padding: rem(50) rem(80) rem(40);
 
+        &--hide-icon-on-desktop {
+            .header__icon {
+                display: none;
+            }
+        }
+
         &--with-mask {
             padding-bottom: rem(200);
             background: var(--light-grey) url('/public/icons/full-screen-image-mask.svg') no-repeat bottom -2px left;
