@@ -30,18 +30,20 @@
             right: -9999px;
             border-bottom: 1px solid var(--grey);
         }
-
-        &__cell, th {
-            &:first-child {
-                font-family: 'Helvetica Neue Medium';
-                font-size: 12px;
-            }
-        }
     }
 
     &__body, tbody {
         .full-width-table__row:nth-child(odd), tr:nth-child(odd) {
                 background-color: var(--white);
+        }
+
+        .full-width-table__cell, td {
+            font-family: 'Helvetica Neue Medium';
+
+            &:first-child {
+                font-family: inherit;
+                font-size: 14px;
+            }
         }
     }
 
@@ -54,7 +56,7 @@
     }
 
     &__cell, th, td {
-        font-family: 'Helvetica Neue Medium';
+
         display: inline;
         flex: 0 1 auto;
         padding: 0.5rem 0;
@@ -62,8 +64,6 @@
         width: 100%;
 
         &:first-child {
-            font-size: 14px;
-            font-weight: 400;
             text-align: left;
         }
     }
