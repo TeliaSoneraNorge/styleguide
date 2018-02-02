@@ -72,7 +72,7 @@ class AccordionList extends React.Component {
             <div className="accordion-list">
                 {this.props.accordionItems.map((accordionItem, i) =>
                     <Accordion
-                        accordionRef={(element) => {this.setAccordionRef(element, i)}}
+                        accordionRef={(element) => {this.setAccordionRef(element, i);}}
                         key={i}
                         {...accordionItem}
                         isExpanded={i === this.state.isExpandedAccordionIndex}

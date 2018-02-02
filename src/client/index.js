@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
 import { getIEVersion } from './browserHelpers';
 
-if(getIEVersion()){
+if (getIEVersion()){
     require('picturefill');
 }
 import objectFitImages from 'object-fit-images';

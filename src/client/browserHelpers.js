@@ -22,4 +22,4 @@ export const getIEVersion = () => {
 
     // other browser
     return false;
-}
+};
