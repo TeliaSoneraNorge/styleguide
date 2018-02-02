@@ -40,6 +40,7 @@ import ChartLegend from './molecules/ChartLegend/ChartLegend';
 import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
 import UserDashboard from './molecules/UserDashboard/UserDashboard';
 import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
+import BelowTheLineOffer from './molecules/BelowTheLineOffer/BelowTheLineOffer';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
@@ -83,6 +84,7 @@ export default {
     'src/components/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
     'src/components/molecules/UserDashboard/UserDashboard.jsx': UserDashboard,
     'src/components/molecules/DataBoostChart/DataBoostChart.jsx': DataBoostChart,
+    'src/components/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx': BelowTheLineOffer,
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,

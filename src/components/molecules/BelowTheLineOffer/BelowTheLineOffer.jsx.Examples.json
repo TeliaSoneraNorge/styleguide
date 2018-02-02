@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Info Banner with header",
+        "props": {
+            "headerText": "Nytt år,\n ny telefonn?",
+            "text": "Sjekk ut tilbudene i vår nettbutik!",
+            "buttonText": "Til nettbutiken",
+            "url": "/"
+        }
+    },
+    {
+        "name": "Info Banner without header",
+        "props": {
+            "text": "Er tiden inne for ny telefon? Sjekk ut tilbudene i vår nettbutikk!",
+            "buttonText": "VIS MEG",
+            "url": "/"
+        }
+    }
+]
