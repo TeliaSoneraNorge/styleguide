@@ -18,30 +18,50 @@
                 background-color: var(--pink);
                 border-color: var(--pink);
                 color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--pink);
+                }
             }
 
             &.box--light-orange {
                 background-color: var(--light-orange);
                 border-color: var(--light-orange);
                 color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--light-orange);
+                }
             }
 
             &.box--green {
                 background-color: var(--green);
                 border-color: var(--green);
                 color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--green);
+                }
             }
 
             &.box--teal {
                 background-color: var(--teal);
                 border-color: var(--teal);
                 color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--teal);
+                }
             }
 
             &.box--blue {
                 background-color: var(--blue);
                 border-color: var(--blue);
                 color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--blue);
+                }
             }
         }
 
@@ -51,6 +71,11 @@
             border-color: var(--core-purple);
             color: var(--white);
             outline: none;
+
+            .box__speech-bubble {
+                border-color: var(--core-purple);
+                color: var(--black);
+            }
         }
     }
 
@@ -141,14 +166,21 @@
         background-color: var(--white);
         border-radius: 50%;
         font-style: italic;
-        height: 125px;
-        margin: -2rem auto 2rem;
-        padding: 1rem;
-        width: 125px;
+        height: 115px;
+        margin: 0 auto;
+        padding: 1.25rem 0.5rem;
+        text-align: center;
+        width: 115px;
+
+        &--empty {
+            visibility: hidden;
+        }
+    }
+
+    > .box__speech-bubble {
         position: absolute;
         right: 5%;
-        top: 0;
-        text-align: center;
+        top: -1.2rem;
     }
 
     /* Close button */

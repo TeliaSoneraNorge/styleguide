@@ -20,7 +20,8 @@
             "dataAmount": 1,
             "dataUnit": "GB",
             "price": 249,
-            "color": "pink"
+            "color": "pink",
+            "size": "small"
         }
     },
     {
@@ -32,7 +33,8 @@
             "dataAmount": 200,
             "dataUnit": "MB",
             "price": 99,
-            "color": "light-orange"
+            "color": "light-orange",
+            "size": "small"
         }
     },
     {
@@ -45,6 +47,7 @@
             "dataUnit": "GB",
             "price": 699,
             "color": "blue",
+            "size": "medium",
             "isShowingFeatures": true,
             "highlightedFeature": {
                 "icon": "/public/icons/ico_music.svg",
@@ -62,6 +65,7 @@
             "dataUnit": "GB",
             "price": 699,
             "color": "blue",
+            "size": "medium",
             "isShowingFeatures": true,
             "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
             "highlightedFeature": {
@@ -80,6 +84,7 @@
             "dataUnit": "GB",
             "price": 399,
             "color": "green",
+            "size": "medium",
             "isExpanded": true,
             "highlightedFeature": {
                 "icon": "/public/icons/ico_music.svg",
@@ -98,7 +103,9 @@
             "dataUnit": "GB",
             "price": 399,
             "color": "green",
+            "size": "medium",
             "isExpanded": true,
+            "isShowingFeatures": true,
             "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
             "highlightedFeature": {
                 "icon": "/public/icons/ico_music.svg",
