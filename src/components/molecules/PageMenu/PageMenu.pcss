@@ -1,9 +1,7 @@
-
 :root {
     --menu-icon-size-small: 16px;
     --menu-icon-size-large: 22px;
 }
-
 
 .page-menu {
     background-color: var(--white);
@@ -113,17 +111,22 @@
     }
 
     &__item {
+        border-bottom: 1px solid var(--light-grey);
         margin: 0;
         padding: 0;
 
+        &-text {
+            padding-left: 2rem;
+        }
 
         &-icon {
             width: var(--menu-icon-size-large);
             height: var(--menu-icon-size-large);
 
             display: inline-block;
-            margin-top: 0.2rem;
+            margin-top: 2px;
             margin-left: auto;
+            position: absolute;
 
             background-repeat: no-repeat;
             background-image: url(/public/icons/ico_linkarrow.svg);
@@ -136,20 +139,13 @@
             list-style: none;
         }
 
-        &:first-child {
-            .page-menu__item-link {
-                padding-top: 2.5625rem;
-            }
-        }
-
         &-link {
             color: var(--black);
             display: flex;
-            padding: 1.0625rem 2rem 0.875rem 1.875rem;
+            font-size: 1.2em;
+            padding: 1.0625rem 2rem 1.0625rem 1.875rem;
             text-decoration: none;
             transition: 0.3s;
-
-            font-size: 1.2em;
 
             &:hover {
                 color: var(--core-purple);
@@ -185,21 +181,11 @@
         }
 
         &--logged-in {
-            border-bottom: 1px dashed var(--grey);
+            border-bottom: 1px solid var(--grey);
             background: var(--light-grey);
 
             &:last-child {
                 border-bottom: 1px solid var(--dark-grey);
-
-                .page-menu__item-link {
-                    padding-bottom: 1.6875rem;
-                }
-            }
-
-            &:only-child {
-                .page-menu__item-link {
-                    padding-top: 1.6875rem;
-                }
             }
         }
     }
@@ -217,7 +203,6 @@
     &__search-button {
         float: right;
     }
-
 
     &__overlay {
         background-color: rgba(0, 0, 0, 0.9);
