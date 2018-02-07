@@ -31,9 +31,13 @@ const PageMenu = ({
                     items={links.filter(link => !link.forLoggedInUsers)} />
 
                 {showLogoutButton &&
-                <a className="page-menu__log-out-button page-header__log-in-button" href="#">
-                    <span className="page-header__log-in-button-text">Logg ut</span>
-                </a>}
+                    <ul className="page-menu__item-list">
+                        <li className="page-menu__item">
+                            <div className="page-menu__item-link">
+                                <a className="page-menu__log-out-button link" href="#">Logg ut</a>
+                            </div>
+                        </li>
+                    </ul>}
             </nav>
         </div>
         {fixedPosition && <MenuOverlay onClick={onClose} active={isExpanded} />}
