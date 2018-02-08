@@ -1,3 +1,7 @@
+:root {
+    --close-icon-size-small: 16px;
+}
+
 .box {
     background-color: var(--white);
     cursor: default;
@@ -9,12 +13,69 @@
         cursor: pointer;
         display: inline-block;
 
+        &:hover {
+            &.box--pink {
+                background-color: var(--pink);
+                border-color: var(--pink);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--pink);
+                }
+            }
+
+            &.box--light-orange {
+                background-color: var(--light-orange);
+                border-color: var(--light-orange);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--light-orange);
+                }
+            }
+
+            &.box--green {
+                background-color: var(--green);
+                border-color: var(--green);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--green);
+                }
+            }
+
+            &.box--teal {
+                background-color: var(--teal);
+                border-color: var(--teal);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--teal);
+                }
+            }
+
+            &.box--blue {
+                background-color: var(--blue);
+                border-color: var(--blue);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--blue);
+                }
+            }
+        }
+
         &:focus,
         &:active {
             background-color: var(--core-purple);
             border-color: var(--core-purple);
             color: var(--white);
             outline: none;
+
+            .box__speech-bubble {
+                border-color: var(--core-purple);
+                color: var(--black);
+            }
         }
     }
 
@@ -59,11 +120,6 @@
         .box__speech-bubble {
             border: 3px dotted var(--pink);
         }
-
-        &:hover {
-            background-color: var(--pink);
-            border-color: var(--pink);
-        }
     }
 
     &--light-orange {
@@ -71,11 +127,6 @@
 
         .box__speech-bubble {
             border: 3px dotted var(--light-orange);
-        }
-
-        &:hover {
-            background-color: var(--light-orange);
-            border-color: var(--light-orange);
         }
     }
 
@@ -85,11 +136,6 @@
         .box__speech-bubble {
             border: 3px dotted var(--green);
         }
-
-        &:hover {
-            background-color: var(--green);
-            border-color: var(--green);
-        }
     }
 
     &--teal {
@@ -98,11 +144,6 @@
         .box__speech-bubble {
             border: 3px dotted var(--teal);
         }
-
-        &:hover {
-            background-color: var(--teal);
-            border-color: var(--teal);
-        }
     }
 
     &--blue {
@@ -110,11 +151,6 @@
 
         .box__speech-bubble {
             border: 3px dotted var(--blue);
-        }
-
-        &:hover {
-            background-color: var(--blue);
-            border-color: var(--blue);
         }
     }
 
@@ -130,29 +166,76 @@
         background-color: var(--white);
         border-radius: 50%;
         font-style: italic;
-        height: 125px;
-        margin: -2rem auto 2rem;
-        padding: 1rem;
-        width: 125px;
+        height: 115px;
+        margin: 0 auto;
+        padding: 1.25rem 0.5rem;
+        text-align: center;
+        width: 115px;
+
+        &--empty {
+            visibility: hidden;
+        }
+    }
+
+    > .box__speech-bubble {
         position: absolute;
         right: 5%;
-        top: 0;
-        text-align: center;
+        top: -1.2rem;
     }
 
     /* Close button */
     &__close-expanded-info {
-        background: transparent url('/public/icons/ico_delete.svg') no-repeat right 15px center;
-        background-size: 25px 25px;
+        background-color: transparent;
         border: none;
+        cursor: pointer;
         display: none;
         padding: .5rem;
+        position: absolute;
+        right: 0;
         text-align: left;
+        top: 0;
         width: 100px;
+
+        &:hover {
+            color: var(--core-purple);
+
+            > .box__close-icon {
+                background-position: calc(-var(--menu-icon-size-small) * 2) 0px;
+            }
+        }
+
+        &:focus,
+        &:active {
+            background-color: var(--core-purple);
+            border-color: var(--core-purple);
+            color: var(--white);
+            outline: none;
+
+            > .box__close-icon {
+                background-position: -var(--menu-icon-size-small) 0px;
+            }
+        }
 
         @media all and (min-width: 21em) {
             padding: 1rem;
         }
+    }
+
+    &__close-text {
+        display: none;
+
+        @media all and (min-width: 28.75em) {
+            display: inline;
+        }
+    }
+
+    &__close-icon {
+        background: url('/public/icons/ico_delete.svg') no-repeat;
+        background-size: calc(var(--close-icon-size-small) * 3) var(--close-icon-size-small);
+        display: inline-block;
+        float: right;
+        height: var(--close-icon-size-small);
+        width: var(--close-icon-size-small);
     }
 
     &--is-expanded {
@@ -161,35 +244,41 @@
         padding: 2%;
         width: 100%;
 
-        @media all and (min-width: 24.9375rem) {
+        @media all and (min-width: 25.3125rem) {
             &.box--small {
-                padding: 3.5rem;
+                padding: 2rem;
             }
 
             &.box--medium {
-                padding: 3.5rem;
+                padding: 2rem;
             }
         }
 
         &:hover {
             background-color: var(--white);
+            &.box--pink {
+                background-color: var(--white);
+            }
+
+            &.box--light-orange {
+                background-color: var(--white);
+            }
+
+            &.box--green {
+                background-color: var(--white);
+            }
+
+            &.box--teal {
+                background-color: var(--white);
+            }
+
+            &.box--blue {
+                background-color: var(--white);
+            }
         }
 
         .box__close-expanded-info {
-            cursor: pointer;
             display: block;
-            position: absolute;
-            right: 0;
-            top: 0;
-
-            &:focus,
-            &:active {
-                background-color: var(--core-purple);
-                background-image: url('/public/icons/ico_delete_white.svg');
-                border-color: var(--core-purple);
-                color: var(--white);
-                outline: none;
-            }
         }
 
         &:focus,

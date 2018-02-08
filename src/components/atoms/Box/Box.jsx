@@ -64,11 +64,13 @@ export default class Box extends React.Component {
                 onKeyUp={this.boxContainerClick}
                 aria-expanded={this.props.canExpand ? this.state.isExpanded : null}
                 tabIndex={this.props.canExpand && !this.state.isExpanded ? "0" : null}>
-                {this.props.isShowingFeature ?
-                    <div className="box__speech-bubble">Some speech bubble text!</div> : null}
+                {this.props.speechBubbleText ?
+                    <div className="box__speech-bubble">{this.props.speechBubbleText}</div>
+                    : <div className="box__speech-bubble box__speech-bubble--empty"></div>}
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
-                        LUKK
+                        <span className="box__close-text">LUKK</span>
+                        <i className="box__close-icon"></i>
                     </button> : null}
                 {this.props.children}
             </article>

@@ -12,6 +12,7 @@ const underFemtenSubscriptionProps = [
         "dataUnit": "MB",
         "price": 99,
         "color": "blue",
+        "size": "small",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     },
     {
@@ -21,6 +22,7 @@ const underFemtenSubscriptionProps = [
         "dataUnit": "GB",
         "price": 169,
         "color": "green",
+        "size": "small",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     }
 ];
@@ -33,6 +35,7 @@ const underTjueAatteSubscriptionProps = [
         "dataUnit": "GB",
         "price": 249,
         "color": "pink",
+        "size": "small",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     },
     {
@@ -42,6 +45,7 @@ const underTjueAatteSubscriptionProps = [
         "dataUnit": "GB",
         "price": 299,
         "color": "teal",
+        "size": "small",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat."
     }
 ];
@@ -54,6 +58,7 @@ const forAlleSubscriptionProps = [
         "dataUnit": "GB",
         "price": 699,
         "color": "blue",
+        "size": "medium",
         "isShowingFeatures": true,
         "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
@@ -69,6 +74,7 @@ const forAlleSubscriptionProps = [
         "dataUnit": "GB",
         "price": 449,
         "color": "teal",
+        "size": "medium",
         "isShowingFeatures": true,
         "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
@@ -84,6 +90,7 @@ const forAlleSubscriptionProps = [
         "dataUnit": "GB",
         "price": 399,
         "color": "green",
+        "size": "medium",
         "isShowingFeatures": true,
         "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
         "specialMessageText": "Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.",
@@ -98,7 +105,8 @@ const forAlleSubscriptionProps = [
         "dataAmount": 3,
         "dataUnit": "GB",
         "price": 299,
-        "color": "light-orange"
+        "color": "light-orange",
+        "size": "small"
     },
     {
         "name": "SMART Mini",
@@ -106,7 +114,8 @@ const forAlleSubscriptionProps = [
         "dataAmount": 1,
         "dataUnit": "GB",
         "price": 249,
-        "color": "pink"
+        "color": "pink",
+        "size": "small"
     }
 ];
 
@@ -118,6 +127,7 @@ const kontantkortSubscriptionProps = [
         "dataUnit": "MB",
         "price": 99,
         "color": "pink",
+        "size": "small",
         "isExpanded": true,
         "highlightedFeature": {
             "icon": "/public/icons/ico_info.svg",
@@ -175,7 +185,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={1}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="subscription-wrapper container container--medium container--extra-margin-bottom">
+                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
                             {underFemtenSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -183,7 +193,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={2}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="subscription-wrapper container container--medium container--extra-margin-bottom">
+                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
                             {underTjueAatteSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -191,7 +201,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={3}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="subscription-wrapper container container--medium container--extra-margin-bottom">
+                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
                             {forAlleSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -199,7 +209,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={4}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="subscription-wrapper container container--medium container--extra-margin-bottom">
+                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
                             {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>

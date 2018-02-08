@@ -21,8 +21,8 @@ function classNames(isShowingFeature) {
  * If multiple of these promo boxes will be used on a page, a regular button can be used
  * instead of the primary button.
  */
-const ProductPromoBox = ({ id, productName, productColor, imagePath, description, price, priceSmallprint1, priceSmallprint2, buttonText, isShowingFeature }) =>
-    <Box id={id} className={classNames(isShowingFeature)} color="grey" canExpand={false} isShowingFeature={isShowingFeature}>
+const ProductPromoBox = ({ id, productName, productColor, imagePath, description, price, priceSmallprint1, priceSmallprint2, buttonText, isShowingFeatures, speechBubbleText }) =>
+    <Box id={id} className={classNames(isShowingFeatures)} color="grey" canExpand={false} isShowingFeatures={isShowingFeatures} speechBubbleText={speechBubbleText}>
         <div className="product-promo-box__image-container">
             <img className="product-promo-box__image" src={imagePath} alt={productName}/>
         </div>

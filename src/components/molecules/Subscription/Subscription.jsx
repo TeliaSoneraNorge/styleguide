@@ -1,15 +1,11 @@
 import React from 'react';
 
-function classNames(color, isShowingFeatures, isExpanded, isStandalone) {
+import Box from '../../atoms/Box/Box';
+
+function classNames(isShowingFeatures, isStandalone) {
     const classNames = ['subscription'];
-    if (color) {
-        classNames.push(`subscription--${color}`);
-    }
     if (isShowingFeatures) {
         classNames.push('subscription--is-showing-features');
-    }
-    if (isExpanded) {
-        classNames.push('subscription--is-expanded');
     }
     if (isStandalone) {
         classNames.push('subscription--is-standalone');
@@ -23,31 +19,10 @@ function classNames(color, isShowingFeatures, isExpanded, isStandalone) {
 export default class Subscription extends React.Component {
     constructor(props) {
         super(props);
-
-        this.state = {
-            isExpanded: this.props.isExpanded ? this.props.isExpanded : false
-        };
-
-        this.subscriptionContainerClick = this.subscriptionContainerClick.bind(this);
-        this.closeSubscriptionClick = this.closeSubscriptionClick.bind(this);
-    }
-    subscriptionContainerClick() {
-        if (!this.state.isExpanded && !this.props.isStandalone) {
-            this.setState({ isExpanded: true });
-        }
-    }
-    closeSubscriptionClick(e) {
-        e.stopPropagation();
-        this.setState({ isExpanded: false });
     }
     render() {
         return (
-            <article className={classNames(this.props.color, this.props.isShowingFeatures, this.state.isExpanded, this.props.isStandalone)} onClick={this.subscriptionContainerClick} aria-expanded={this.state.isExpanded} id={this.props.id}>
-                {this.state.isExpanded ?
-                    <button className="subscription__close-expanded-info" onClick={this.closeSubscriptionClick} aria-controls={this.props.id}>
-                        <span className="subscription__close-text">LUKK</span>
-                        <img className="subscription__close-image" src="/public/icons/ico_delete.svg" role="presentation" alt="Lukk ekspandert innhold" />
-                    </button> : null}
+            <Box className={classNames(this.props.isShowingFeatures, this.props.isStandalone)} color={this.props.color} size={this.props.size} id={this.props.id} canExpand={!this.props.isStandalone} isExpanded={this.props.isExpanded}>
                 <section className="subscription__teaser">
                     <div className="subscription__teaser-content">
                         <h1 className="subscription__name">{this.props.name}</h1>
@@ -61,11 +36,11 @@ export default class Subscription extends React.Component {
                         <div><a href="#" className="link" target="_self">Se alle priser</a></div>
                     </div>
                 </section>
-                {(this.state.isExpanded || this.props.isShowingFeatures) ?
+                {(this.props.isExpanded || this.props.isShowingFeatures) ?
                     <section className="subscription__features">
-                        {this.props.speechBubbleText
-                            ? <div className="subscription__speech-bubble">{this.props.speechBubbleText}</div>
-                            : <div className="subscription__speech-bubble subscription__speech-bubble--empty"></div>}
+                        {this.props.speechBubbleText ?
+                            <div className="box__speech-bubble">{this.props.speechBubbleText}</div>
+                            : <div className="box__speech-bubble box__speech-bubble--empty"></div>}
                         {this.props.highlightedFeature ?
                             <div className="subscription__highlighted-feature">
                                 <img className="subscription__highlighted-feature-icon" src={this.props.highlightedFeature.icon} role="presentation" alt="" />
@@ -74,7 +49,7 @@ export default class Subscription extends React.Component {
                         {this.props.specialMessageText ? <strong className="special-message">{this.props.specialMessageText}</strong> : null}
                         <button className="button button--primary button--small">Gå videre</button>
                     </section> : null}
-                {this.state.isExpanded ?
+                {this.props.isExpanded ?
                     <section className="subscription__expanded-info">
                         <h2 className="heading heading--level-2">Om abonnement</h2>
                         <h3 className="heading heading--level-3">Skanning, texting og MMS</h3>
@@ -89,7 +64,7 @@ export default class Subscription extends React.Component {
                             </li>
                         </ul>
                     </section> : null}
-            </article>
+            </Box>
         );
     }
 }
