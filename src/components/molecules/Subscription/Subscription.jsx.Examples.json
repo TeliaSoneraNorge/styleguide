@@ -86,6 +86,7 @@
             "color": "green",
             "size": "medium",
             "isExpanded": true,
+            "isShowingFeatures": true,
             "highlightedFeature": {
                 "icon": "/public/icons/ico_music.svg",
                 "name": "Music Freedom"
