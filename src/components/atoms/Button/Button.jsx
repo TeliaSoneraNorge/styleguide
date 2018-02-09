@@ -1,7 +1,10 @@
 import React from 'react';
 
-function classNames(kind, size) {
+function classNames(className, kind, size) {
     const classNames = ['button'];
+    if (className) {
+        classNames.push(className);
+    }
     if (kind) {
         classNames.push(`button--${kind}`);
     }
@@ -14,7 +17,7 @@ function classNames(kind, size) {
 /**
  * Status: *finished*.
  */
-const Button = ({ text, kind, size, onClick }) =>
-    <button className={classNames(kind, size)} onClick={onClick}>{text}</button>;
+const Button = ({ text, kind, size, onClick, className }) =>
+    <button className={classNames(className, kind, size)} onClick={onClick}>{text}</button>;
 
 export default Button;

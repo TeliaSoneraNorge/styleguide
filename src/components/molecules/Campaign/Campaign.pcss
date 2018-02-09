@@ -1,0 +1,60 @@
+:root {
+    --campaign-padding: 1.5rem;
+}
+
+.campaign {
+    max-width: var(--width-small);
+    position: relative;
+    overflow: hidden;
+
+    &__picture {
+    }
+    
+    &__image {
+        display: block;
+        position: absolute;
+        object-fit: cover;
+        object-position: center;
+        font-family: 'object-fit: cover; object-position: center;'; /*object-fit-images polyfill*/        
+        z-index: -1;
+
+        height: 100%;
+        width: 100%;
+    }
+
+    &__content-wrapper {
+        margin: 300px 5% 50px;
+        width: 90%;
+    
+        @media all and (min-width: 30em) {
+            margin: 2rem;
+            width: 60%;
+        }
+    }
+    
+    &__content {
+        margin-bottom: var(--campaign-padding);
+        padding: var(--campaign-padding);
+    }
+
+    &__heading {
+        font-size: 2.5rem;
+    }
+
+    &__button {
+        margin-left: var(--campaign-padding);
+    }
+
+    &--white-text {
+        .campaign__content {
+            color: white;
+        }
+    }
+
+    &--white-content-box {
+        .campaign__content {
+            background-color: #fff;
+            opacity: 0.9;
+        }
+    }
+}
