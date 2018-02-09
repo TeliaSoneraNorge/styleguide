@@ -1,0 +1,37 @@
+[
+    {
+        "name": "Default",
+        "props": {
+            "headingText": "Music Freedom",
+            "ingressHtml": "Music Freedom is a <strong>really cool</strong> product. Buy it!",
+            "buttonText": "Kjøp nå",
+            "desktopBackgroundImage": "https://placekitten.com/g/632/400",
+            "mobileBackgroundImage": "https://placekitten.com/g/400/800",
+            "backgroundImageAltText": "Cat staring at the camera looking cute"
+        }
+    },
+    {
+        "name": "With white body text",
+        "props": {
+            "headingText": "Music Freedom",
+            "ingressHtml": "Music Freedom is a <strong>really cool</strong> product. Buy it!",
+            "buttonText": "Kjøp nå",
+            "desktopBackgroundImage": "https://placekitten.com/g/632/400",
+            "mobileBackgroundImage": "https://placekitten.com/g/400/800",
+            "isUsingWhiteText": true,
+            "backgroundImageAltText": "Cat staring at the camera looking cute"
+        }
+    },
+    {
+        "name": "With white content box",
+        "props": {
+            "headingText": "Music Freedom",
+            "ingressHtml": "Music Freedom is a <strong>really cool</strong> product. Buy it!",
+            "buttonText": "Kjøp nå",
+            "desktopBackgroundImage": "https://placekitten.com/g/632/400",
+            "mobileBackgroundImage": "https://placekitten.com/g/400/800",
+            "isUsingWhiteContentBox": true,
+            "backgroundImageAltText": "Cat staring at the camera looking cute"
+        }
+    }
+]

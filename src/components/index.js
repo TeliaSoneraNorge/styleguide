@@ -20,6 +20,7 @@ import ToggleButton from './atoms/ToggleButton/ToggleButton';
 // Molecules
 import AccordionList from './molecules/AccordionList/AccordionList';
 import Alert from './molecules/Alert/Alert';
+import Campaign from './molecules/Campaign/Campaign';
 import CheckBoxWithLabel from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
 import DropDownListWithLabel from './molecules/DropDownListWithLabel/DropDownListWithLabel';
 import DonutChart from './molecules/DonutChart/DonutChart';
@@ -64,6 +65,7 @@ export default {
     // Molecules
     'src/components/molecules/AccordionList/AccordionList.jsx': AccordionList,
     'src/components/molecules/Alert/Alert.jsx': Alert,
+    'src/components/molecules/Campaign/Campaign.jsx': Campaign,
     'src/components/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx': CheckBoxWithLabel,
     'src/components/molecules/DropDownListWithLabel/DropDownListWithLabel.jsx': DropDownListWithLabel,
     'src/components/molecules/DonutChart/DonutChart.jsx': DonutChart,
