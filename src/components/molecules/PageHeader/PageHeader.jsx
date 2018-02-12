@@ -62,11 +62,8 @@ export default class PageHeader extends React.Component {
                         </a> : null}
                     {!this.props.isLoggedIn &&
                         <a className="page-header__log-in-button" href="#">
+                            <i className="page-header__log-in-button-icon"/>
                             <span className="page-header__log-in-button-text">Logg inn</span>
-                        </a>}
-                    {!this.props.isLoggedIn &&
-                        <a className="page-header__mobile-log-in-button" href="#">
-                            <i className="page-header__mobile-log-in-button-icon"/>
                         </a>}
                 </div>
             </header>

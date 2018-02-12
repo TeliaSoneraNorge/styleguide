@@ -46,7 +46,7 @@
     }
     &__site-logo {
         flex: 0 0 120px;
-        padding: 1em;
+        padding: 1.2rem;
         order: 2;
         display: inline-block;
 
@@ -212,8 +212,10 @@
     }
     &__log-in-button {
         display: flex;
-        flex-direction: row;
         align-items: center;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
 
         color: var(--black);
         font-size: 0.75rem;
@@ -224,36 +226,10 @@
         height: 100%;
 
         &-text {
-            display: block;
-            border-bottom: 1px solid var(--core-purple);
-        }
-
-        &:hover {
-            color: var(--core-purple);
-        }
-
-        &:focus {
-            outline: none;
-            background: var(--core-purple);
-            color: var(--white);
-
-            > .page-header__log-in-button-text {
-                border-bottom: 1px solid var(--white);
-            }
-        }
-
-        @media screen and (max-width: 42em) {
             display: none;
+            flex: 0 1 68%;
+            margin-top: 0.2rem;
         }
-    }
-
-    &__mobile-log-in-button {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-
-        padding: 1rem 1rem;
-        height: 100%;
 
         &-icon {
             display: block;
@@ -274,7 +250,11 @@
         }
 
         &:hover {
-            > .page-header__mobile-log-in-button-icon {
+            > .page-header__log-in-button-text {
+                color: var(--core-purple);
+            }
+
+            > .page-header__log-in-button-icon {
                 background-position: calc(-var(--icon-size-small) * 2) 0px;
 
                 @media screen and (min-width: 42em) {
@@ -287,7 +267,11 @@
             outline: none;
             background: var(--core-purple);
 
-            > .page-header__mobile-log-in-button-icon {
+            > .page-header__log-in-button-text {
+                color: var(--white);
+            }
+
+            > .page-header__log-in-button-icon {
                 background-position: -var(--icon-size-small) 0px;
 
                 @media screen and (min-width: 42em) {
@@ -297,7 +281,9 @@
         }
 
         @media screen and (min-width: 42em) {
-            display: none;
+            > .page-header__log-in-button-text {
+                display: block;
+            }
         }
     }
     &__my-account-button {
