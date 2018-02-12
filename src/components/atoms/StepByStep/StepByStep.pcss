@@ -40,6 +40,19 @@
         &--no-border {
             border: none;
         }
+
+        &--highlighted {
+            background-color: var(--core-purple);
+
+            > .step-by-step__number,
+            > .step-by-step__text {
+                color: var(--white);
+            }
+        }
+
+        &--with-pointer {
+            cursor: pointer;
+        }
     }
 
     &__icon {
