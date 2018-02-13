@@ -41,6 +41,22 @@
             border: none;
         }
 
+        &--interactive {
+            outline: none;
+        }
+
+        &--interactive:not(&--highlighted) {
+            cursor: pointer;
+
+             &:focus {
+                border: 2px solid var(--core-purple);
+
+                > .step-by-step__number {
+                    line-height:  4.375rem;
+                }
+            }
+        }
+
         &--highlighted {
             background-color: var(--core-purple);
 
@@ -48,10 +64,6 @@
             > .step-by-step__text {
                 color: var(--white);
             }
-        }
-
-        &--with-pointer {
-            cursor: pointer;
         }
     }
 
@@ -71,6 +83,7 @@
         color: var(--core-purple);
         font-family: 'pebble';
         font-size: 3rem;
+        line-height:  4.5rem;
         height: 75px;
         padding: 15px;
         width: 75px;
