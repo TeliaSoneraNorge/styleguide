@@ -3,14 +3,14 @@ import React from 'react';
 
 import Label from '../../atoms/Label/Label';
 
-/**
- * Status: *in progress*.
- *
- * Waiting on the Photoshop files to get the exact checkmark SVG.
- */
-const RadioButtonWithLabel = ({ label, checked, name }) =>
+const RadioButtonWithLabel = ({ label, checked, name, value }) =>
     <Label className="radio-button-with-label" mode="text-to-right">
-        <input className="radio-button-with-label__input" type="radio" name={name} defaultChecked={checked} />
+        <input
+            className="radio-button-with-label__input"
+            type="radio"
+            name={name}
+            defaultChecked={checked}
+            value={value} />
         <span className="radio-button-with-label__svg-container">
             <svg className="radio-button-with-label__svg" width="20px" height="20px" viewBox="0 0 20 20">
                 <circle className="radio-button-with-label__frame" cx="10" cy="10" r="9"/>

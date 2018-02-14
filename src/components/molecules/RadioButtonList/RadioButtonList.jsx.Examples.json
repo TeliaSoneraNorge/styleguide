@@ -1,0 +1,38 @@
+[
+    {
+        "name": "Horizontal",
+        "props": {
+            "type": "horizontal",
+            "selectedIndex": 0,
+            "name": "radiobutton-test",
+            "list" : [
+                {
+                    "label": "I am checked",
+                    "value": "0"
+                },
+                {
+                    "label": "I am not checked",
+                    "value": "1"
+                }
+            ]
+        }
+    },
+    {
+        "name": "Vertical",
+        "props": {
+            "type": "vertical",
+            "selectedIndex": 0,
+            "name": "radiobutton-test-2",
+            "list" : [
+                {
+                    "label": "I am checked",
+                    "value": "0"
+                },
+                {
+                    "label": "I am not checked",
+                    "value": "1"
+                }
+            ]
+        }
+    }
+]
