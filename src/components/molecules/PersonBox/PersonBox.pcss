@@ -63,6 +63,15 @@
     }
 }
 
+.box--expandable:focus,
+.box--expandable:active {
+    .person-box {
+        .person-box__title {
+            color: var(--white);
+        }
+    }
+}
+
 .box--expandable:hover {
     .person-box {
         .person-box__title {
@@ -79,17 +88,19 @@
     }
 }
 
-.box--expandable:focus,
-.box--expandable:active {
+.box--is-expanded:focus,
+.box--is-expanded:active {
     .person-box {
         .person-box__title {
-            color: var(--white);
+            color: var(--dark-grey);
         }
     }
 }
 
 .box--is-expanded {
     .person-box {
+        width: 100%;
+
         @media all and (min-width: 39.8125em) {
             display: flex;
             flex-flow: row wrap;
