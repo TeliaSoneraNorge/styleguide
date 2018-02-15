@@ -1,0 +1,13 @@
+.radio-button-list {
+   display: flex;
+   flex-direction: column;
+   align-items: left;
+
+    &--horizontal {
+        flex-direction: row;
+
+        > *:not(:last-child) {
+            margin-right: 1rem;
+        }
+   }
+}
