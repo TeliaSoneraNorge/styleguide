@@ -31,4 +31,49 @@
     &__text {
         margin-bottom: 1rem;
     }
+
+    &--two-columns {
+        display: flex;
+        flex-direction: column;
+
+        @media all and (min-width: 43em) {
+            flex-direction: row;
+        }
+    }
+
+    &--borderless {
+        border: none;
+    }
+
+    &__left {
+        width: 100%;
+        order: 1;
+
+        @media all and (min-width: 43em) {
+            width: 66%;
+            flex-direction: row;
+            order: 0;
+        }
+    }
+
+    &__right {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 2rem;
+        order: 0;
+
+        @media all and (min-width: 43em) {
+            width: 33%;
+            flex-direction: row;
+            order: 1;
+        }
+    }
+
+     &__image {
+        display: block;
+        margin: 0 auto;
+
+        max-height: 10em;
+        max-width: 100%;
+    }
 }

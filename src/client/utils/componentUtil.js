@@ -56,6 +56,7 @@ export function isFullWidthComponent(componentName) {
         'PageFooter',
         'RelatedArticles',
         'UserDashboard',
+        'FactBox',
 
         // Organisms
         'FocusSubscription'
