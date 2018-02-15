@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import classnames from 'classnames';
 
@@ -10,7 +9,7 @@ const getClassName = (type) =>
 /**
  * Status: *in progress*.
  *
- * Waiting on the Photoshop files to get the exact checkmark SVG.
+ * Missing styles for focusing
  */
 const RadioButtonList = ({ list, selectedIndex, name, type }) =>
     <div className={getClassName(type)}>
