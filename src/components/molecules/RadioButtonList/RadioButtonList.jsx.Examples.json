@@ -31,6 +31,10 @@
                 {
                     "label": "I am not checked",
                     "value": "1"
+                },
+                {
+                    "label": "I have a very very very long content that can wrap on mobile devices and should be right aligned",
+                    "value": "2"
                 }
             ]
         }
