@@ -1,0 +1,19 @@
+[
+    {
+        "name": "Modal Dialog Content - Info",
+        "props": {
+            "heading": "Info dialog",
+            "description": "This dialog can be associated with actions where it's necessary to give the user more information.",
+            "buttonText1": "Ok"
+        }
+    },
+    {
+        "name": "Modal Dialog Content - Confirm",
+        "props": {
+            "heading": "Confirm dialog",
+            "description": "This dialog can be associated with actions where it's necessary to give the user more information.",
+            "buttonText1": "Confirm",
+            "buttonText2": "Cancel"
+        }
+    }
+]

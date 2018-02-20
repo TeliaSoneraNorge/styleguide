@@ -1,0 +1,41 @@
+.modal-dialog {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.6);
+
+    &--active {
+        width: 100%;
+    }
+
+    &__heading {
+        font-family: 'Pebble';
+        color: var(--core-purple);
+        text-transform: uppercase;
+        font-size: rem(25);
+        letter-spacing: rem(0.3);
+        line-height: rem(24);
+        margin: 0;
+
+        @media all and (min-width: em(480)) {
+            font-size: rem(30);
+            line-height: rem(27);
+        }
+    }
+
+    &__content {
+        background-color: var(--white);
+        border: 1px solid var(--light-grey);
+        margin: 15% auto;
+        padding: 30px;
+        width: 90%;
+
+        @media all and (min-width: em(480)) {
+            padding: 60px;
+        }
+    }
+}
