@@ -13,8 +13,24 @@
         }
     },
     {
-        "name": "With label",
+        "name": "With label on the top",
         "props": {
+            "labelMode": "text-on-top",
+            "options": [
+                "1.",
+                "2.",
+                "3.",
+                "4.",
+                "5."
+            ],
+            "selectedOption": "2.",
+            "label": "Label"
+        }
+    },
+    {
+        "name": "With label to the right",
+        "props": {
+            "labelMode": "text-to-right",
             "options": [
                 "1.",
                 "2.",

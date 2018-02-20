@@ -24,7 +24,8 @@ export default class DropDownListWithLabel extends React.Component {
     }
     render() {
         return (
-            <Label className="dropdown-list-with-label" mode="text-to-right">
+            <Label className="dropdown-list-with-label" mode={this.props.labelMode || 'text-on-top'}>
+                { this.props.label ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null }
                 <select className={classNames(this.props.label)}
                     defaultValue={this.props.selectedOption} onChange={this.props.changeSelectedOption}>
                     {this.props.options.map((option) =>
@@ -32,7 +33,6 @@ export default class DropDownListWithLabel extends React.Component {
                             {option}
                         </option>)}
                 </select>
-                { this.props.label ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null }
             </Label>
         );
     }
