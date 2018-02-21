@@ -17,14 +17,12 @@
         "props": {
             "labelMode": "text-on-top",
             "options": [
-                "1.",
-                "2.",
-                "3.",
-                "4.",
-                "5."
+                "Apple iPhone 6 128 GB",
+                "Apple iPhone 7 128 GB",
+                "Samsung Galaxy S8"
             ],
-            "selectedOption": "2.",
-            "label": "Label"
+            "selectedOption": "Apple iPhone 7 128 GB",
+            "label": "Select your mobile phone"
         }
     },
     {

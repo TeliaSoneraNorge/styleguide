@@ -2,10 +2,10 @@ import React from 'react';
 
 import Label from '../../atoms/Label/Label';
 
-function classNames(label) {
+function classNames(labelMode) {
     const classNames = ['dropdown-list-with-label__select'];
 
-    if (label) {
+    if (labelMode === 'text-to-right') {
         classNames.push(`dropdown-list-with-label__select--half`);
     }
 
@@ -15,7 +15,7 @@ function classNames(label) {
 /**
  * Status: *in progress*.
  *
- * TODO: label accessibility. It's recommended to use aria-label on form elements when a label is not visible on the screen.
+ * TODO: Label accessibility. It's recommended to use aria-label on form elements when a label is not visible on the screen.
  *
  **/
 export default class DropDownListWithLabel extends React.Component {
@@ -25,8 +25,8 @@ export default class DropDownListWithLabel extends React.Component {
     render() {
         return (
             <Label className="dropdown-list-with-label" mode={this.props.labelMode || 'text-on-top'}>
-                { this.props.label ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null }
-                <select className={classNames(this.props.label)}
+                {this.props.label ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null}
+                <select className={classNames(this.props.labelMode)}
                     defaultValue={this.props.selectedOption} onChange={this.props.changeSelectedOption}>
                     {this.props.options.map((option) =>
                         <option className="dropdown-list-with-label__option" key={option}>
