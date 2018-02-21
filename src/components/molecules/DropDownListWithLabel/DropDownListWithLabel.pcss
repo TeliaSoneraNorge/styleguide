@@ -1,17 +1,17 @@
 .dropdown-list-with-label {
+    display: flex;
 
     &__select {
-        background: transparent url('/public/icons/ico_dropArrow.svg') no-repeat right 15px center;
+        background: transparent url('/public/icons/ico_dropArrow.svg') no-repeat right 10px center;
         background-size: 15px 15px;
         border: 1px solid var(--grey);
         border-radius: 0;
         font-size: 1rem;
         margin: 0;
         min-width: 10px;
-        padding: 10px 15px;
+        padding: 10px 30px 10px 15px;
         -webkit-appearance: none;
         width: 100%;
-
 
         &:focus,
         &:active {
@@ -32,7 +32,29 @@
         padding: 0;
     }
 
-    &__label-text {
-        margin-left: 10px;
+    &.label--text-to-right {
+        align-items: center;
+
+        .dropdown-list-with-label__label-text {
+            order: 2;
+            margin-left: 10px;
+        }
+
+        .dropdown-list-with-label__select {
+            order: 1;
+        }
+    }
+
+    &.label--text-on-top {
+        flex-direction: column;
+        align-items: left;
+
+        .dropdown-list-with-label__label-text {
+            order: 1;
+        }
+
+        .dropdown-list-with-label__select {
+            order: 2;
+        }
     }
 }

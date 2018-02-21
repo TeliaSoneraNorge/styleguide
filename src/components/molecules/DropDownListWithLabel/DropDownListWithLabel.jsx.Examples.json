@@ -13,8 +13,22 @@
         }
     },
     {
-        "name": "With label",
+        "name": "With label on the top",
         "props": {
+            "labelMode": "text-on-top",
+            "options": [
+                "Apple iPhone 6 128 GB",
+                "Apple iPhone 7 128 GB",
+                "Samsung Galaxy S8"
+            ],
+            "selectedOption": "Apple iPhone 7 128 GB",
+            "label": "Select your mobile phone"
+        }
+    },
+    {
+        "name": "With label to the right",
+        "props": {
+            "labelMode": "text-to-right",
             "options": [
                 "1.",
                 "2.",
