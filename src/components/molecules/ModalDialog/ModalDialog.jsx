@@ -3,29 +3,20 @@ import React from 'react';
 /**
  * Status: *in progress*.
  *
- * Look at this sample page to see the Modal in action.
+ * Look at the <a href='/modal-dialog'>Modal Dialog sample page</a> to see this component in action.
  *
  * TODO:
- *
- * make sample page
- *
- * accessibitlity/tabbing
- *
- * Cross-browser
- *
- * litt runde kanter og skygge på content-boksen
- *
- * &lt;div role="dialog"&gt; can be changed to &lt;dialog&gt; when this element is more widely supported
+ ** &lt;div role="dialog"&gt; can be changed to &lt;dialog&gt; when this element is more widely supported
  */
 
-const ModalDialog = ({ heading, description, buttonText1, buttonText2 }) => (
-    <div class="modal-dialog__content container container--small" role="dialog" aria-labelledby="dialog1Title" aria-describedby="dialog1Desc">
-        <h2 id="dialog1Title" class="modal-dialog__heading">{heading}</h2>
-        <section id="dialog1Desc">
-            <p>{description}</p>
+const ModalDialog = ({ headingId, heading, descriptionId, children, onClickButton1, buttonText1, onClickButton2, buttonText2 }) => (
+    <div className="modal-dialog__content container container--small" role="dialog" aria-labelledby={headingId} aria-describedby={descriptionId}>
+        <h2 id={headingId} className="modal-dialog__heading">{heading}</h2>
+        <section id={descriptionId}>
+            {children}
         </section>
-        {buttonText1 && <button class="button button--margin-top">{buttonText1}</button>}
-        {buttonText2 && <button class="button button--cancel button--margin-top">{buttonText2}</button>}
+        {buttonText1 && <button className="button button--margin-top" onClick={onClickButton1}>{buttonText1}</button>}
+        {buttonText2 && <button className="button button--cancel button--margin-top" onClick={onClickButton2}>{buttonText2}</button>}
     </div>
 );
 

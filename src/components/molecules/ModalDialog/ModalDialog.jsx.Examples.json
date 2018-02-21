@@ -2,16 +2,20 @@
     {
         "name": "Modal Dialog Content - Info",
         "props": {
+            "headingId": "infoDialogHeading",
             "heading": "Info dialog",
-            "description": "This dialog can be associated with actions where it's necessary to give the user more information.",
+            "descriptionId": "infoDialogDescription",
+            "children": "<p>This dialog can be associated with actions where it's necessary to give the user more information.</p>",
             "buttonText1": "Ok"
         }
     },
     {
         "name": "Modal Dialog Content - Confirm",
         "props": {
+            "headingId": "confirmDialogHeading",
             "heading": "Confirm dialog",
-            "description": "This dialog can be associated with actions where it's necessary to give the user more information.",
+            "descriptionId": "confirmDialogDescription",
+            "children": "<p>This dialog can be associated with actions where it's necessary to get the user to confirm what's about to happen.</p>",
             "buttonText1": "Confirm",
             "buttonText2": "Cancel"
         }

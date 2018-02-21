@@ -59,6 +59,7 @@ const ComponentsPage = (props) => {
                     <li><a className="link" href="/parallax-page">Parallax page</a></li>
                     <li><a className="link" href="/forms">Forms</a></li>
                     <li><a className="link" href="/usage">Usage page</a></li>
+                    <li><a className="link" href="/modal-dialog">Modal Dialog</a></li>
                 </ul>
             </div>
         </div>
