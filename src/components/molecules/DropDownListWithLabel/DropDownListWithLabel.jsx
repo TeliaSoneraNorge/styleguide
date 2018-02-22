@@ -16,7 +16,6 @@ function classNames(labelMode) {
  * Status: *in progress*.
  *
  * TODO: Label accessibility. It's recommended to use aria-label on form elements when a label is not visible on the screen.
- *
  **/
 export default class DropDownListWithLabel extends React.Component {
     constructor(props){
