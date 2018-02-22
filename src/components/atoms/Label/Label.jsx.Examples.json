@@ -2,21 +2,14 @@
     {
         "name": "Default",
         "props": {
-            "children": "<span>Label</span>"
+            "text": "This is a label"
         }
     },
     {
-        "name": "Label - text on top",
+        "name": "Label - gray text",
         "props": {
-            "children": "<span>Label</span>",
-            "mode": "text-on-top"
-        }
-    },
-    {
-        "name": "Label - text to right",
-        "props": {
-            "children": "<span>Label</span>",
-            "mode": "text-to-right"
+            "text": "This is a gray-text label",
+            "isUsingGrayText": true
         }
     }
 ]

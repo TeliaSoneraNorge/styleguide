@@ -4,7 +4,7 @@
      "props": {
          "action": "POST",
          "children": [
-             "<div class=\"form__row\"><div class=\"form__column \"><label class=\"label textbox-with-label label--text-on-top\"><span class=\"textbox-with-label__label-text\">Phone Number</span><input type=\"text\" class=\"textbox-with-label__input\" placeholder=\"number\"></label></div></div><div class=\"form__row\"><div class=\"form__column \"><label class=\"label textbox-with-label label--text-on-top\"><span class=\"textbox-with-label__label-text\">Password</span><input type=\"password\" class=\"textbox-with-label__input\" placeholder=\"password\"></label></div></div><div class=\"form__row\"><button class=\"button\">Login</button>"
+             "<div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Phone Number</span><input type=\"text\" class=\"textbox-with-label__input\" placeholder=\"number\"></label></div></div><div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Password</span><input type=\"password\" class=\"textbox-with-label__input\" placeholder=\"password\"></label></div></div><div class=\"form__row\"><button class=\"button\">Login</button>"
          ]
      }
     }

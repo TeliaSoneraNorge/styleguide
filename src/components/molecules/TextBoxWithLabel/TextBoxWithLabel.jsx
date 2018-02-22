@@ -9,9 +9,9 @@ import Label from '../../atoms/Label/Label';
  * the user to give correct input.
  *
 **/
-const TextBoxWithLabel = ({ label, type, placeholder}) =>
-    <Label className="textbox-with-label" mode="text-on-top">
-        <span className="textbox-with-label__label-text">{label}</span>
+const TextBoxWithLabel = ({ labelText, type, placeholder}) =>
+    <Label className="textbox-with-label" isUsingGrayText={true}>
+        <span className="textbox-with-label__label-text">{labelText}</span>
         <input className="textbox-with-label__input" type={type} placeholder={placeholder} />
     </Label>;
 

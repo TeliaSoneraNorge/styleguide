@@ -1,10 +1,12 @@
 .dropdown-list-with-label {
+    align-items: left;
     display: flex;
+    flex-direction: column;
 
     &__select {
         background: transparent url('/public/icons/ico_dropArrow.svg') no-repeat right 10px center;
         background-size: 15px 15px;
-        border: 1px solid var(--grey);
+        border: 1px solid var(--dark-grey-2);
         border-radius: 0;
         font-size: 1rem;
         margin: 0;
@@ -32,8 +34,9 @@
         padding: 0;
     }
 
-    &.label--text-to-right {
+    &--text-to-right {
         align-items: center;
+        flex-direction: row;
 
         .dropdown-list-with-label__label-text {
             order: 2;
@@ -42,19 +45,6 @@
 
         .dropdown-list-with-label__select {
             order: 1;
-        }
-    }
-
-    &.label--text-on-top {
-        flex-direction: column;
-        align-items: left;
-
-        .dropdown-list-with-label__label-text {
-            order: 1;
-        }
-
-        .dropdown-list-with-label__select {
-            order: 2;
         }
     }
 }
