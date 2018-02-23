@@ -24,6 +24,7 @@ import BlogSamplePage2 from './pages/BlogSamplePage2';
 import ParallaxPage from './pages/ParallaxPage';
 import FormsSamplePage from './pages/FormsSamplePage';
 import UsagePage from './pages/UsagePage';
+import ModalDialogSamplePage from './pages/ModalDialogSamplePage';
 
 const Routes = (props) =>
     <div>
@@ -59,6 +60,7 @@ const Routes = (props) =>
         <Route exact path="/parallax-page" component={ParallaxPage} />
         <Route exact path="/forms" component={FormsSamplePage} />
         <Route exact path="/usage" component={UsagePage} />
+        <Route exact path="/modal-dialog" component={ModalDialogSamplePage} />
 
         <div className="container container--medium container--extra-margin-bottom">
             <ContentRatingWrapper />
