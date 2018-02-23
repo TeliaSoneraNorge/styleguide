@@ -36,9 +36,8 @@ export default class ModalDialogSamplePage extends React.Component {
                     <button className="button button-default button--margin-top" onClick={this.toggleInfoModalDialog}>Info modal dialog</button>
                     <ModalDialogOverlay active={this.state.infoDialogActive}>
                         <ModalDialog
-                            headingId="infoDialogHeading"
+                            name="info-dialog"
                             heading="Info dialog"
-                            descriptionId="infoDialogDescription"
                             onClickButton1={this.toggleInfoModalDialog}
                             buttonText1="Ok">
                             <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
@@ -48,9 +47,8 @@ export default class ModalDialogSamplePage extends React.Component {
                     <button className="button button-default button--margin-top" onClick={this.toggleConfirmModalDialog}>Confirm modal dialog</button>
                     <ModalDialogOverlay active={this.state.confirmDialogActive}>
                         <ModalDialog
-                            headingId="confirmDialogHeading"
+                            name="confirm-dialog"
                             heading="Confirm dialog"
-                            descriptionId="confirmDialogDescription"
                             onClickButton1={this.toggleConfirmModalDialog}
                             buttonText1="Confirm"
                             onClickButton2={this.toggleConfirmModalDialog}
