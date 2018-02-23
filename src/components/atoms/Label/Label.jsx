@@ -1,28 +1,23 @@
 import React from 'react';
 
-function classNames(additionalClassName, mode) {
+function classNames(additionalClassName, isUsingGrayText) {
     const classNames = ['label'];
 
     if (additionalClassName) {
         classNames.push(additionalClassName);
     }
 
-    if (mode) {
-        classNames.push(`label--${mode}`);
+    if (isUsingGrayText) {
+        classNames.push(`label--gray-text`);
     }
 
     return classNames.join(' ');
 }
 
 /**
- * Status: *in progress*.
+ * Status: *finished*.
  *
- * Labels used with TextBox should appear on top of input element and be in grey color.
- *
- * Labels used with CheckBox, RadioButton and DropDownList (if labelled at all) should appear
- * to the right of the input element and be in black color.
- *
- * TODO: Add correct examples with new CheckBox and TextBox components.
+ * Standard color is black. Labels used with TextBox and DropDownList should appear on top of input element and be in grey color.
  */
 export default class Label extends React.Component {
     constructor(props) {
@@ -30,8 +25,8 @@ export default class Label extends React.Component {
     }
     render() {
         return (
-            <label className={classNames(this.props.className, this.props.mode)}>
-                {this.props.children}
+            <label className={classNames(this.props.className, this.props.isUsingGrayText)}>
+                {this.props.text || this.props.children}
             </label>
         );
     }

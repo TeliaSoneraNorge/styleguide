@@ -63,12 +63,12 @@ const FormsSamplePage = () =>
             <Form action="/get.html" method="GET">
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number"/>
+                        <TextBoxWithLabel labelText="Phone Number" type="text" placeholder="number"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Password" type="password" placeholder="password"/>
+                        <TextBoxWithLabel labelText="Password" type="password" placeholder="password"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
@@ -88,12 +88,12 @@ const FormsSamplePage = () =>
             }>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Phone Number" type="text" placeholder="number"/>
+                        <TextBoxWithLabel labelText="Phone Number" type="text" placeholder="number"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Password" type="password" placeholder="password"/>
+                        <TextBoxWithLabel labelText="Password" type="password" placeholder="password"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
@@ -108,36 +108,36 @@ const FormsSamplePage = () =>
             <Form>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Name" type="text" placeholder="name"/>
+                        <TextBoxWithLabel labelText="Name" type="text" placeholder="name"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn size="half">
-                        <TextBoxWithLabel label="D.O.B" type="text" placeholder="01/01/2018"/>
+                        <TextBoxWithLabel labelText="D.O.B" type="text" placeholder="01/01/2018"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn size="half">
-                        <TextBoxWithLabel label="Telephone" type="text" placeholder="telephone"/>
+                        <TextBoxWithLabel labelText="Telephone" type="text" placeholder="telephone"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Email" type="text" placeholder="email"/>
+                        <TextBoxWithLabel labelText="Email" type="text" placeholder="email"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Address" type="text" placeholder="address"/>
+                        <TextBoxWithLabel labelText="Address" type="text" placeholder="address"/>
                     </Form.FormColumn>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="Entrance" type="text" placeholder="entrance"/>
-                        <TextBoxWithLabel label="Apt.No." type="text" placeholder="apt. no"/>
+                        <TextBoxWithLabel labelText="Entrance" type="text" placeholder="entrance"/>
+                        <TextBoxWithLabel labelText="Apt.No." type="text" placeholder="apt. no"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn size="half">
-                        <TextBoxWithLabel label="Post Code" type="text" placeholder="Post Code"/>
+                        <TextBoxWithLabel labelText="Post Code" type="text" placeholder="Post Code"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
@@ -147,7 +147,7 @@ const FormsSamplePage = () =>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <TextBoxWithLabel label="C/O Address" type="text" placeholder="c/o address"/>
+                        <TextBoxWithLabel labelText="C/O Address" type="text" placeholder="c/o address"/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>

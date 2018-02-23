@@ -3,7 +3,7 @@ import React from 'react';
 import Label from '../../atoms/Label/Label';
 
 const RadioButtonWithLabel = ({ label, checked, name, value }) =>
-    <Label className="radio-button-with-label" mode="text-to-right">
+    <Label className="radio-button-with-label">
         <input
             className="radio-button-with-label__input"
             type="radio"

@@ -13,9 +13,8 @@
         }
     },
     {
-        "name": "With label on the top",
+        "name": "Default - Gray label text on the top",
         "props": {
-            "labelMode": "text-on-top",
             "options": [
                 "Apple iPhone 6 128 GB",
                 "Apple iPhone 7 128 GB",
