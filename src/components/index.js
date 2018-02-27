@@ -43,6 +43,7 @@ import UserDashboard from './molecules/UserDashboard/UserDashboard';
 import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
 import BelowTheLineOffer from './molecules/BelowTheLineOffer/BelowTheLineOffer';
 import ModalDialog from './molecules/ModalDialog/ModalDialog';
+import PopUpLine from './molecules/PopUpLine/PopUpLine';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
@@ -89,6 +90,7 @@ export default {
     'src/components/molecules/DataBoostChart/DataBoostChart.jsx': DataBoostChart,
     'src/components/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx': BelowTheLineOffer,
     'src/components/molecules/ModalDialog/ModalDialog.jsx': ModalDialog,
+    'src/components/molecules/PopUpLine/PopUpLine.jsx': PopUpLine,
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,

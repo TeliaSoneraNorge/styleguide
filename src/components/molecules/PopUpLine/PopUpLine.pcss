@@ -1,0 +1,22 @@
+.pop-up-line {
+    background-color: var(--grey);
+
+    &__container {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: left;
+    }
+
+    &__description {
+        margin-right: 2.5rem;
+        align-self: center;
+    }
+
+    &__buttons {
+        margin-top: 1rem;
+
+        @media all and (min-width: 448px){
+            margin-top: 0;
+        }
+    }
+}

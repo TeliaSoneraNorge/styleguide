@@ -41,14 +41,15 @@ export function groupComponentMetadataByType(componentMetadata) {
 export function isFullWidthComponent(componentName) {
     const fullWidthComponents = [
         // Atoms
-        'NumberBoxes',
         'FullWidthImage',
+        'NumberBoxes',
         'PagePebbles',
 
         // Molecules
         'Alert',
         'ArticleMetaData',
         'BoxGrid',
+        'FactBox',
         'FunkyTabs',
         'Header',
         'Hero',
@@ -56,7 +57,7 @@ export function isFullWidthComponent(componentName) {
         'PageFooter',
         'RelatedArticles',
         'UserDashboard',
-        'FactBox',
+        'PopUpLine',
 
         // Organisms
         'FocusSubscription'
