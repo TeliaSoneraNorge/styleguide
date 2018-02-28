@@ -15,6 +15,12 @@
 - Add a `YourComponent.pcss` file for your PostCSS
 - Once you have a first draft, run `npm run dev` (you may need to stop/start that process if it was already running, or run `npm run gen` to refresh the meta-info)
 
+## Serving the styleguide locally
+
+- Install http-server globally with npm (https://www.npmjs.com/package/http-server)
+- Go to you local styleguide folder in your terminal and type "http-server ./ --cors"
+- Include stylesheet in you project `<link rel="stylesheet" href="http://local-styleguide:8080/css/bundle.components.css">`
+
 # Deploy
 - npm run deploy:prod
 ## Heroku
