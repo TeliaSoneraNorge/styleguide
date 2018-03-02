@@ -4,6 +4,9 @@
     list-style: none;
     margin: 0 0 2rem;
     padding: 0;
+    @media screen and (max-width: 30em) {
+       margin-left: -1.5rem;
+    }
 
     &:after {
         border-bottom: 1px solid var(--grey);
@@ -11,54 +14,95 @@
         display: block;
         margin: 0 10px;
         width: 55px;
+        @media screen and (max-width: 30em) {
+            border-bottom: none;
+        }
     }
 
-    &__step {
+    &__step-wrapper {
         display: flex;
         flex: 1 1 100%;
         flex-wrap: wrap;
-
         &:last-of-type {
             .step-by-step__text {
                 min-height: 75px;
             }
         }
     }
-
     &__circle {
         background-color: var(--light-grey);
         border-radius: 50%;
         border: 1px solid var(--grey);
-        display: inline-block;
-        height: 75px;
-        position: relative;
-        text-align: center;
-        vertical-align: top;
-        width: 75px;
-        z-index: 1; /*To make the circle lay on top of the vertical border */
-
+        @media screen and (max-width: 30em) {
+            transform: scaleX(0.75) scaleY(0.75);
+        }
         &--no-border {
             border: none;
         }
+    }
+    &__pebbles {
+        svg {
+            z-index: 2;
+            flex: 1 auto;
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            @media screen and (max-width: 30em) {
+                transform: scaleX(-0.75) scaleY(0.75);
+            }
+            path {
+                fill: var(--light-grey);
+                stroke: var(--grey);
+            }
+        }
+        & > * {
+            z-index: 3;
+        }
+    }
+    &__step {
+        display: flex;
+        flex-direction: column;
+        height: 75px;
+        width: 75px;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        z-index: 1; /*To make the circle lay on top of the vertical border */
 
         &--interactive {
             outline: none;
+            text-decoration: none;
         }
 
         &--interactive:not(&--highlighted) {
             cursor: pointer;
 
-             &:focus {
+            &[class*=step-by-step__circle]:focus {
                 border: 2px solid var(--core-purple);
-
-                > .step-by-step__number {
-                    line-height:  4.375rem;
+            }
+            &[class*=step-by-step__pebbles]:focus {
+                path {
+                    stroke: var(--core-purple);
                 }
+            }
+
+            &:focus > .step-by-step__number {
+                line-height: 4.375rem;
             }
         }
 
         &--highlighted {
-            background-color: var(--core-purple);
+            &[class*=step-by-step__circle] {
+                background-color: var(--core-purple);
+            }
+            &[class*=step-by-step__pebbles] {
+                path {
+                    stroke: var(--core-purple);
+                    fill: var(--core-purple);
+                }
+            }
 
             > .step-by-step__number,
             > .step-by-step__text {
@@ -83,10 +127,9 @@
         color: var(--core-purple);
         font-family: 'pebble';
         font-size: 3rem;
-        line-height:  4.5rem;
-        height: 75px;
-        padding: 15px;
-        width: 75px;
+        @media screen and (max-width: 30em) {
+            font-size: 2rem;
+        }
     }
 
     &__text {
@@ -96,6 +139,9 @@
         margin-left: -37px;
         min-height: 115px;
         padding: 0 0 40px 45px;
+        @media screen and (max-width: 30em) {
+            border-left: none;
+        }
     }
 
     &__heading {
