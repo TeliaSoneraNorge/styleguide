@@ -34,3 +34,12 @@
 
 - [Telia Company full guidelines](http://brandhub.teliacompany.com/)
 - [Telia Company styleguide](http://digitalstyle.teliacompany.com/)
+
+# Versioning
+
+For changes in version you need to notify in #styleguide Slack Channel and update versioning file
+
+## Versioning file
+
+- "VERSIONS.md"
+- Update this file when the Tyleguide version changes
