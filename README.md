@@ -34,3 +34,7 @@
 
 - [Telia Company full guidelines](http://brandhub.teliacompany.com/)
 - [Telia Company styleguide](http://digitalstyle.teliacompany.com/)
+
+# Versioning
+
+Notify all "breaking changes" or major changes in the #styleguide Slack Channel and update VERSIONS.md.
