@@ -13,6 +13,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 # Versions
 
+## 1.1.2 [new component]
+- Atom: TelephoneNumberLink
+
 ## 1.1.1 [new component]
 - Atom: ShadowBox
 
