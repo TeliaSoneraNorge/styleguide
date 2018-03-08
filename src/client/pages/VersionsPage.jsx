@@ -12,11 +12,6 @@ const VersionsPage = ({ versionsHtml }) =>
         </Header>
 
         <div className="container container--small container--extra-margin-bottom">
-            <p className="paragraph">To use the Telia Styleguide in your project, follow these steps:</p>
-            <ol>
-                <li>Download the styleguide assets and include them in your project.</li>
-                <li>Link to the downloaded CSS file in your HTML:</li>
-            </ol>
             <div dangerouslySetInnerHTML={{ __html: versionsHtml }}></div>
         </div>
     </div>;
