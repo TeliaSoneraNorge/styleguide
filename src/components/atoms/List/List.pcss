@@ -1,3 +1,8 @@
+:root {
+    --link-icon-size-large: 1.875em;
+    --bubble-margin: 0.3em;
+}
+
 .list {
     list-style: none;
     margin-bottom: 1.5rem;
@@ -48,6 +53,69 @@
         }
         .list__item {
             background-image: url('/public/icons/ico_linkarrow_black.svg');
+        }
+    }
+
+    &--icon-text-links {
+        .list__item {
+            background: none;
+            margin-bottom: 1.5rem;
+            padding: 0;
+        }
+
+        &:hover {
+            color: var(--core-purple);
+        }
+
+        .list__link {
+            display: inline-block;
+            padding: 1px;
+
+            &:active,
+            &:focus {
+                background-image: none;
+                outline: none;
+
+                .list__link-bubble {
+                    background-color: var(--white);
+                }
+
+                .list__link-icon {
+                    background-position: calc(-var(--link-icon-size-large) * 2) 0px;
+                }
+            }
+
+            &-icon {
+                display: inline-block;
+                height: var(--link-icon-size-large);
+                width: var(--link-icon-size-large);
+
+                position: relative;
+                top: calc(var(--link-icon-size-large) / 2);
+                left: calc(var(--link-icon-size-large) / 2);
+
+                background-repeat: no-repeat;
+                background-position: -var(--link-icon-size-large) 0px;
+                background-size: calc(var(--link-icon-size-large) * 3) var(--link-icon-size-large);
+            }
+
+            &-bubble {
+                background-color: var(--core-purple);
+                border-radius: 100%;
+                display: inline-flex;
+                height: calc(var(--link-icon-size-large) * 2);
+                width: calc(var(--link-icon-size-large) * 2);
+                margin: var(--bubble-margin) 0 var(--bubble-margin) var(--bubble-margin);
+            }
+
+            &-text {
+                display: inline-block;
+                vertical-align: top;
+                line-height: 1;
+                color: inherit;
+                border-bottom: 1px solid var(--core-purple);
+                margin: calc(var(--link-icon-size-large) + var(--bubble-margin) - 1rem / 2) 1rem 0 1rem;
+            }
         }
     }
 }
