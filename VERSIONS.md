@@ -13,6 +13,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 # Versions
 
+## 1.1.1 [new component]
+- Atom: ShadowBox
+
 ## 1.1.0 [breaking changes]
 
 - Molecule - StepByStep - New Pebble type and separated Circle type. Steps can now change between types with just a class change.
