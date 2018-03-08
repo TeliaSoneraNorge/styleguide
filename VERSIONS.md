@@ -13,6 +13,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 # Versions
 
+## 1.1.4 [new component]
+- Molecule: TextAreaWithLabel
+
 ## 1.1.3 [new variant of component]
 - Atom: List--icon-text-links
 

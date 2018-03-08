@@ -17,7 +17,7 @@ function classNames(additionalClassName, isUsingGrayText) {
 /**
  * Status: *finished*.
  *
- * Standard color is black. Labels used with TextBox and DropDownList should appear on top of input element and be in grey color.
+ * Standard color is black. Labels used with TextBoxWithLabel, TextAreaWithLabel and DropDownListWithLabel should appear on top of input element and be in grey color.
  */
 export default class Label extends React.Component {
     constructor(props) {

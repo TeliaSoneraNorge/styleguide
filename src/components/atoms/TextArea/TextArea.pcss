@@ -7,6 +7,10 @@
     resize: none;
     width: 100%;
 
+    ::placeholder {
+        color: var(--dark-grey);
+    }
+
     &:hover,
     &:focus,
     &:active {
@@ -16,5 +20,10 @@
 
     &--margin-bottom {
         margin-bottom: 1rem;
+    }
+
+    &--white {
+        background-color: var(--white);
+        border: 1px solid var(--dark-grey-2);
     }
 }
