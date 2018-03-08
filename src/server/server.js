@@ -7,6 +7,7 @@ import colors from './colors.json';
 import { getConfig } from './config';
 import { postMessageToSlack } from './slack';
 import bodyParser from 'body-parser';
+import marked from 'marked';
 
 const app = express();
 const config = getConfig();
@@ -61,7 +62,8 @@ app.post('/api/feedback', jsonParser, (req, res) => {
 app.get('/*', (req, res) => {
     const initialState = {
         colors,
-        variablesCss: fs.readFileSync('src/components/variables.pcss', 'utf8')
+        variablesCss: fs.readFileSync('src/components/variables.pcss', 'utf8'),
+        versionsHtml: marked(fs.readFileSync('VERSIONS.md', 'utf8'))
     };
     res.render('index', {
         initialState: JSON.stringify(initialState),

@@ -11,6 +11,7 @@ import ComponentsPage from './pages/ComponentsPage';
 import ComponentsByTypePage from './pages/ComponentsByTypePage';
 import ContributingPage from './pages/ContributingPage';
 import DownloadPage from './pages/DownloadPage';
+import VersionsPage from './pages/VersionsPage';
 
 import InformationArticleSample1 from './pages/InformationArticleSample1';
 import InformationArticleSample2 from './pages/InformationArticleSample2';
@@ -38,7 +39,8 @@ const Routes = (props) =>
                 { text: "Layout", url: "/layout" },
                 { text: "Components", url: "/components" },
                 { text: "Contributing", url: "/contributing" },
-                { text: "Download", url: "/download" }
+                { text: "Download", url: "/download" },
+                { text: "Versions", url: "/versions" }
             ]}
             isLoggedIn={true} />
 
@@ -48,6 +50,8 @@ const Routes = (props) =>
         <Route exact path="/components/:componentType" component={ComponentsByTypePage} />
         <Route exact path="/contributing" component={ContributingPage} />
         <Route exact path="/download" component={DownloadPage} />
+        <Route exact path="/versions" component={VersionsPage} />
+
         <Route exact path="/information-article-1" component={InformationArticleSample1} />
         <Route exact path="/information-article-2" component={InformationArticleSample2} />
         <Route exact path="/information-article-3" component={InformationArticleSample3} />
