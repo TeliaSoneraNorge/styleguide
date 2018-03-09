@@ -1,0 +1,9 @@
+[
+    {
+        "name": "TextArea with label",
+        "props": {
+            "labelText": "Label for text area",
+            "placeholder": "Placeholder text here..."
+        }
+    }
+]

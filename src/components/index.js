@@ -38,6 +38,7 @@ import RadioButtonList from './molecules/RadioButtonList/RadioButtonList';
 import RelatedArticles from './molecules/RelatedArticles/RelatedArticles';
 import Subscription from './molecules/Subscription/Subscription';
 import ChartLegend from './molecules/ChartLegend/ChartLegend';
+import TextAreaWithLabel from './molecules/TextAreaWithLabel/TextAreaWithLabel';
 import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
 import UserDashboard from './molecules/UserDashboard/UserDashboard';
 import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
@@ -85,6 +86,7 @@ export default {
     'src/components/molecules/RelatedArticles/RelatedArticles.jsx': RelatedArticles,
     'src/components/molecules/Subscription/Subscription.jsx': Subscription,
     'src/components/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
+    'src/components/molecules/TextAreaWithLabel/TextAreaWithLabel.jsx': TextAreaWithLabel,
     'src/components/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
     'src/components/molecules/UserDashboard/UserDashboard.jsx': UserDashboard,
     'src/components/molecules/DataBoostChart/DataBoostChart.jsx': DataBoostChart,
