@@ -6,6 +6,7 @@
     padding: 1rem;
     resize: none;
     width: 100%;
+    vertical-align: top;
 
     ::placeholder {
         color: var(--dark-grey);
@@ -14,7 +15,7 @@
     &:hover,
     &:focus,
     &:active {
-        border: 1px solid var(--core-purple);
+        border-color: var(--core-purple);
         outline: none;
     }
 
@@ -24,6 +25,13 @@
 
     &--white {
         background-color: var(--white);
-        border: 1px solid var(--dark-grey-2);
+        border-color: var(--dark-grey-2);
+    }
+
+    &--with-error,
+    &--with-error:hover,
+    &--with-error:focus,
+    &--with-error:active {
+        border-color: var(--dark-red);
     }
 }

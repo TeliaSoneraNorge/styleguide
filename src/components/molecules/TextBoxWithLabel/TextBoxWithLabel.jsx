@@ -1,5 +1,5 @@
 import React from 'react';
-
+import classnames from 'classnames';
 import Label from '../../atoms/Label/Label';
 
 /**
@@ -9,10 +9,11 @@ import Label from '../../atoms/Label/Label';
  * the user to give correct input.
  *
 **/
-const TextBoxWithLabel = ({ labelText, type, placeholder}) =>
-    <Label className="textbox-with-label" isUsingGrayText={true}>
+const TextBoxWithLabel = ({ labelText, type, placeholder, errorMessage}) =>
+    <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>
         <span className="textbox-with-label__label-text">{labelText}</span>
         <input className="textbox-with-label__input" type={type} placeholder={placeholder} />
+        {errorMessage && <span className="input-error">{errorMessage}</span>}
     </Label>;
 
 export default TextBoxWithLabel;
