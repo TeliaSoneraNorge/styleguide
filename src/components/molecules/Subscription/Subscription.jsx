@@ -47,7 +47,7 @@ export default class Subscription extends React.Component {
                                 <span className="subscription__highlighted-feature-text">{this.props.highlightedFeature.name}</span>
                             </div> : null}
                         {this.props.specialMessageText ? <strong className="special-message">{this.props.specialMessageText}</strong> : null}
-                        <button className="button button--primary button--small">Gå videre</button>
+                        <button className="button button--primary">Gå videre</button>
                     </section> : null}
                 {this.props.isExpanded ?
                     <section className="subscription__expanded-info">
