@@ -12,7 +12,8 @@
             "usageInfoText": " igjen av 10 GB. Påfylles om 5 dager",
             "invoiceLink": "#",
             "unpaidOverdueInvoices": "1",
-            "minsideLink": "#"
+            "minsideLink": "#",
+            "buyMoreDataLink": "#"
         }
     },
     {
