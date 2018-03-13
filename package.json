@@ -17,6 +17,7 @@
     "deploy:prod": "git push heroku master && babel-node deploy-slack.js",
     "dev": "npm run clean && npm run gen && run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
     "dev:fast": "run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
+    "export": "node scripts/export.js",
     "generate-html-doc": "babel-node ./scripts/generate-html-component-metadata.js",
     "generate-react-doc": "react-docgen ./src/components -e index.js -o component-metadata--react.json --pretty",
     "generate-react-example-props-doc": "babel-node ./scripts/generate-react-component-example-props.js",
