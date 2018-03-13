@@ -3,7 +3,13 @@
     cursor: pointer;
 
     display: flex;
-    align-items: baseline;
+    flex-direction: row;
+    align-items: start;
+
+    & .radio-button-with-label__input:focus ~ * {
+        background: var(--core-purple);
+        color: var(--white);
+    }
 
     & .radio-button-with-label__input {
         position: absolute;
@@ -13,9 +19,12 @@
     /* SVG container */
     & .radio-button-with-label__svg-container {
         vertical-align: middle;
-        margin-right: .3rem;
-        position: relative;
-        top: 4px;
+        padding-right: .3rem;
+        padding-top: 2px;
+        height: 1.5em;
+
+        display: block;
+        box-sizing: border-box;
     }
 
     /* SVG parts */
@@ -28,6 +37,12 @@
     &:hover .radio-button-with-label__frame {
         stroke: #8d16d0;
     }
+    & .radio-button-with-label__input:focus ~ * .radio-button-with-label__frame {
+        stroke: var(--white);
+    }
+    &:focus .radio-button-with-label__frame {
+        stroke: var(--white);
+    }
 
     & .radio-button-with-label__check-mark {
         fill: #8d16d0;
@@ -39,9 +54,14 @@
     & .radio-button-with-label__input:checked + .radio-button-with-label__svg-container .radio-button-with-label__check-mark {
         opacity: 1;
     }
+    & .radio-button-with-label__input:checked:focus ~ * .radio-button-with-label__check-mark {
+        fill: var(--white);
+    }
 
     & > .radio-button-with-label__label-text {
         pointer-events: none;
-        vertical-align: middle;
+        display: block;
+        line-height: 1.5em;
+        box-sizing: border-box;
     }
 }
