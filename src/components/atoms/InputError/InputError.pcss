@@ -1,0 +1,30 @@
+.input-error {
+    background: var(--dark-red);
+    color: var(--white);
+    display: inline-block;
+
+    position: relative;
+    top: -1px;
+
+    padding-top: 0.688em;
+    padding-left: 0.875em;
+    padding-bottom: 0.750em;
+    padding-right: 1.125em;
+
+    &:after {
+        position: absolute;
+        bottom: 100%;
+        left: 21px;
+        height: 0;
+        width: 0;
+        margin-left: -7px;
+
+        border: solid transparent;
+        border-color: rgba(0, 0, 0, 0);
+        border-bottom-color: var(--dark-red);
+        border-width: 7px;
+
+        content: " ";
+        pointer-events: none;
+    }
+}

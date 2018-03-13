@@ -5,5 +5,13 @@
             "labelText": "Label for text area",
             "placeholder": "Placeholder text here..."
         }
+    },
+    {
+        "name": "TextArea with label with error",
+        "props": {
+            "labelText": "Label for text area",
+            "placeholder": "Placeholder text here...",
+            "error": "Unexpected error occured"
+        }
     }
 ]
