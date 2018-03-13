@@ -68,5 +68,26 @@
             "canExpand": true,
             "isExpanded": true
         }
+    },
+    {
+        "name": "Purple Collapsed",
+        "props": {
+            "id": "box-8",
+            "color": "purple",
+            "size": "medium",
+            "children": "Example 8 - Purple Collapsed Box",
+            "canExpand": true
+        }
+    },
+    {
+        "name": "Purple Expanded",
+        "props": {
+            "id": "box-9",
+            "color": "purple",
+            "size": "medium",
+            "children": "Example 8 - Purple Expanded Box",
+            "canExpand": true,
+            "isExpanded": true
+        }
     }
 ]

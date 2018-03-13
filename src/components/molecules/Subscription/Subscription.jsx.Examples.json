@@ -38,24 +38,6 @@
         }
     },
     {
-        "name": "Subscription - Showing features, no speech bubble",
-        "containerCssClass": "subscription-wrapper",
-        "props": {
-            "name": "SMART Total",
-            "id": "smartTotal",
-            "dataAmount": 40,
-            "dataUnit": "GB",
-            "price": 699,
-            "color": "purple",
-            "size": "medium",
-            "isShowingFeatures": true,
-            "highlightedFeature": {
-                "icon": "/public/icons/ico_music.svg",
-                "name": "Music Freedom"
-            }
-        }
-    },
-    {
         "name": "Subscription - Showing features & speech bubble",
         "containerCssClass": "subscription-wrapper",
         "props": {
@@ -108,6 +90,43 @@
             "isExpanded": true,
             "isShowingFeatures": true,
             "speechBubbleText": "Kampanje 60 GB per md. i 2 md.",
+            "highlightedFeature": {
+                "icon": "/public/icons/ico_music.svg",
+                "name": "Music Freedom"
+            },
+            "specialMessageText": "Listen to as music as you want without using your data quota!"
+        }
+    },
+    {
+        "name": "Subscription - B2B - collapsed",
+        "containerCssClass": "subscription-wrapper",
+        "props": {
+            "name": "SMART Bedrift",
+            "id": "smart-bedrift-collapsed",
+            "dataAmount": 40,
+            "dataUnit": "GB",
+            "price": 699,
+            "color": "purple",
+            "size": "small",
+            "highlightedFeature": {
+                "icon": "/public/icons/ico_music.svg",
+                "name": "Music Freedom"
+            }
+        }
+    },
+    {
+        "name": "Subscription - B2B - expanded",
+        "containerCssClass": "subscription-wrapper",
+        "props": {
+            "name": "SMART Bedrift",
+            "id": "smart-bedrift-expanded",
+            "dataAmount": 40,
+            "dataUnit": "GB",
+            "price": 699,
+            "color": "purple",
+            "size": "small",
+            "isExpanded": true,
+            "isShowingFeatures": true,
             "highlightedFeature": {
                 "icon": "/public/icons/ico_music.svg",
                 "name": "Music Freedom"
