@@ -21,8 +21,14 @@
 - Go to you local styleguide folder in your terminal and type "http-server ./ --cors"
 - Include stylesheet in you project `<link rel="stylesheet" href="http://local-styleguide:8080/css/bundle.components.css">`
 
+## Exporting to another project
+
+- If the server isn't already run it then `npm run build` to generate the styleguide.
+- `npm run export -- PATH` where `PATH` is the path to your project.
+
 # Deploy
 - npm run deploy:prod
+
 ## Heroku
 
 - Install the heroku CLI. See the [Heroku Website](https://devcenter.heroku.com/articles/heroku-cli#download-and-install) for details
