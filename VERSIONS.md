@@ -11,7 +11,9 @@ This file should contain all changes in the Styleguide.
 
 For Major and Minor changes in version you must notify everyone in the #styleguide Slack Channel.
 
-# Versions
+# Version History
+
+Only noteworthy versions shown (minor changes are omitted).
 
 ## 1.1.8 [new variant of component]
 - Atom/Molecule: Subscription purple
