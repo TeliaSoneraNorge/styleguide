@@ -33,5 +33,37 @@
             "text": "Cancel button",
             "kind": "cancel"
         }
+    },
+    {
+        "name": "Default - processing",
+        "props": {
+            "processingText": "working",
+            "isProcessing": true
+        }
+    },
+    {
+        "name": "Primary - processing",
+        "props": {
+            "processingText": "working",
+            "isProcessing": true,
+            "kind": "primary"
+        }
+    },
+    {
+        "name": "Cancel - processing",
+        "props": {
+            "processingText": "Cancelling",
+            "isProcessing": true,
+            "kind": "cancel"
+        }
+    },
+    {
+        "name": "Primary (small) - processing",
+        "props": {
+            "processingText": "working",
+            "isProcessing": true,
+            "kind": "primary",
+            "size": "small"
+        }
     }
 ]

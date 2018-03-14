@@ -1,23 +1,23 @@
 import React from 'react';
-
-function classNames(className, kind, size) {
-    const classNames = ['button'];
-    if (className) {
-        classNames.push(className);
-    }
-    if (kind) {
-        classNames.push(`button--${kind}`);
-    }
-    if (size) {
-        classNames.push(`button--${size}`);
-    }
-    return classNames.join(' ');
-}
+import classnames from 'classnames';
 
 /**
  * Status: *finished*.
  */
-const Button = ({ text, kind, size, onClick, className }) =>
-    <button className={classNames(className, kind, size)} onClick={onClick}>{text}</button>;
+const Button = ({ text, kind, size, onClick, className, processingText, isProcessing }) =>
+    <button className={classnames('button', {
+        [className]: className,
+        [`button--${kind}`]: kind,
+        [`button--${size}`]: size,
+        'button--processing': isProcessing
+    })} onClick={onClick} disabled={isProcessing}>
+        {!isProcessing && text}
+        {isProcessing && <span className="button__processing">
+            {processingText}
+            <span className="button__processing-dot">.</span>
+            <span className="button__processing-dot">.</span>
+            <span className="button__processing-dot">.</span>
+        </span>}
+    </button>;
 
 export default Button;

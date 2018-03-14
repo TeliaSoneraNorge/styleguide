@@ -1,5 +1,17 @@
 @import "../../colors.pcss";
 
+@keyframes processing-animation {
+    0% {
+      opacity: .2;
+    }
+    20% {
+      opacity: 1;
+    }
+    100% {
+      opacity: .2;
+    }
+}
+
 .button {
     background-color: var(--white);
     border: 1px solid var(--core-purple);
@@ -24,10 +36,16 @@
     &:hover,
     &:focus,
     &:active {
-        background-color: var(--core-purple);
-        color: var(--white);
         outline: none;
     }
+
+    &:not(&--processing):hover,
+    &:not(&--processing):focus,
+    &:not(&--processing):active {
+        background-color: var(--core-purple);
+        color: var(--white);
+    }
+
 
     &--small {
         padding: 0.6rem 1.3rem;
@@ -50,11 +68,41 @@
         padding: 0.25rem 0.1rem;
         text-transform: none;
 
-        &:hover, &:active {
+        &:not(.button--processing):hover,
+        &:not(.button--processing):active {
             background-color: var(--core-purple);
             border-bottom: 1px solid var(--core-purple);
             border-radius: 1px;
             color: var(--white);
+        }
+    }
+
+    &__processing {
+        display: none;
+
+        &-dot {
+            animation: processing-animation 1s infinite;
+            animation-fill-mode: both;
+
+            &:nth-child(2) {
+                animation-delay: .2s;
+            }
+
+            &:nth-child(3) {
+                animation-delay: .4s;
+            }
+        }
+    }
+
+    &--processing {
+        cursor: default;
+
+        > .button__processing {
+            display: inline;
+        }
+
+        > .button__text {
+            display: none;
         }
     }
 
