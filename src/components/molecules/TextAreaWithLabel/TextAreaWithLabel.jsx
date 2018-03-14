@@ -5,12 +5,13 @@ import Label from '../../atoms/Label/Label';
 /**
  * Status: *finished*.
  **/
-const TextAreaWithLabel = ({ labelText, placeholder, error }) =>
+const TextAreaWithLabel = ({ labelText, placeholder, error, disabled }) =>
     <Label className="text-area-with-label" isUsingGrayText={true}>
         <span className="text-area-with-label__label-text">{labelText}</span>
         <textarea
             className={classnames('text-area', 'text-area--white', { 'text-area--with-error': error })}
-            placeholder={placeholder} />
+            placeholder={placeholder}
+            disabled={disabled}/>
         {error && <span className="input-error">{error}</span>}
     </Label>;
 

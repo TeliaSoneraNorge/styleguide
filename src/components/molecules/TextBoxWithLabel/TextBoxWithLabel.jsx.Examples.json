@@ -15,5 +15,14 @@
             "placeholder": "Write here..",
             "errorMessage": "Oops! this happened"
         }
+    },
+    {
+        "name": "Disabled",
+        "props": {
+            "labelText": "Label for textbox",
+            "type": "text",
+            "placeholder": "Write here..",
+            "disabled": true
+        }
     }
 ]
