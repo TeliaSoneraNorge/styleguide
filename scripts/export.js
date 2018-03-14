@@ -19,17 +19,10 @@ try {
     fs.mkdirSync(dest);
 }
 
-// Create a directory for the CSS and copy it into place
-const css = path.join(dest, 'css');
-try {
-    fs.accessSync(css);
-} catch(err) {
-    fs.mkdirSync(css);
-}
-
+// Copy the CSS into place
 let componentsCss = fs.readFileSync(path.join(src, 'css', 'bundle.components.css'), 'utf8');
 componentsCss = componentsCss.replace(/\/public\//g, '');
-fs.writeFileSync(path.join(dest, 'css', 'telia-styleguide.css'), componentsCss);
+fs.writeFileSync(path.join(dest, 'telia-styleguide.css'), componentsCss);
 
 function copyDeep(src, dest) {
     console.log("Copying", src, dest)
