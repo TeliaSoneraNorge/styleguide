@@ -7,51 +7,30 @@ import React from 'react';
  *
  * More form examples on the <a href="/forms">forms sample page</a>.
  */
-class Form extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const Form = ({ action, method, onSubmit, children }) =>
+    <form className="form" action={action} method={method} onSubmit={onSubmit}>
+        <fieldset className="form__fieldset">
+            {children}
+        </fieldset>
+    </form>;
 
-    render() {
-        return (
-            <form className="form" action={this.props.action} method={this.props.method} onSubmit={this.props.onSubmit}>
-                <fieldset className="form__fieldset">
-                    {this.props.children}
-                </fieldset>
-            </form>
-        );
-    }
-}
+const FormRow = ({ children }) =>
+    <div className="form__row">
+        {children}
+    </div>;
 
-class FormRow extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+const FormColumn = ({ size, children }) =>
+    <div className={`form__column ${size ? 'form__column--' + size : ''}`}>
+        {children}
+    </div>;
 
-    render() {
-        return (
-            <div className="form__row">
-                {this.props.children}
-            </div>
-        );
-    }
-}
-
-class FormColumn extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-
-    render() {
-        return (
-            <div className={`form__column ${this.props.size ? 'form__column--' + this.props.size : ''}`}>
-                {this.props.children}
-            </div>
-        );
-    }
-}
+const FormSuccessMessage = ({ children }) =>
+    <div className="form__success">
+        {children}
+    </div>;
 
 Form.FormRow = FormRow;
 Form.FormColumn = FormColumn;
+Form.FormSuccessMessage = FormSuccessMessage;
 
 export default Form;
