@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.1.12 [extended components]
+- Molecule: TextArea, TextAreaWithLabel and TextBoxWithLabel - Added disable state
+
 ## 1.1.11 [extended component]
 - Organism: Form - Added fieldset as an element to form
 

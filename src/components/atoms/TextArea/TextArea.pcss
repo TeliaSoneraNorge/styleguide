@@ -19,6 +19,14 @@
         outline: none;
     }
 
+    &:disabled,
+    &:disabled:hover,
+    &:disabled:focus,
+    &:disabled:active {
+        border: 1px solid var(--light-grey);
+        color: var(--dark-grey);
+    }
+
     &--margin-bottom {
         margin-bottom: 1rem;
     }
@@ -26,6 +34,14 @@
     &--white {
         background-color: var(--white);
         border-color: var(--dark-grey-2);
+
+        &:disabled,
+        &:disabled:hover,
+        &:disabled:focus,
+        &:disabled:active {
+            border: 1px solid var(--dark-grey);
+            color: var(--dark-grey);
+        }
     }
 
     &--with-error,
