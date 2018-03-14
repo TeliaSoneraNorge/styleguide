@@ -1,25 +1,29 @@
 .form {
+    &__fieldset {
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
 
-}
+    &__row {
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-.form__row {
-    display: flex;
-    flex-wrap: wrap;
-}
+    &__column {
+        margin-bottom: 1.5rem;
+        display: flex;
+        max-width: 290px;
+        width: 100%;
+    }
 
-.form__column {
-    margin-bottom: 1.5rem;
-    display: flex;
-    max-width: 290px;
-    width: 100%;
-}
+    &__column > * {
+        width: 100%;
+        margin-right: 1rem;
+    }
 
-.form__column > * {
-    width: 100%;
-    margin-right: 1rem;
-}
-
-.form__column--half > * {
-    width: 50%;
-    margin-right: 1rem;
+    &__column--half > * {
+        width: 50%;
+        margin-right: 1rem;
+    }
 }

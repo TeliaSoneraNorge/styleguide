@@ -2,7 +2,7 @@ import React from 'react';
 
 /**
  *
- * The layout of a form is created by nesting `form__row` and `form__column`. 
+ * The layout of a form is created by nesting `form__row` and `form__column`.
  * Inside each column you add the components you need for creating your own form.
  *
  * More form examples on the <a href="/forms">forms sample page</a>.
@@ -15,7 +15,9 @@ class Form extends React.Component {
     render() {
         return (
             <form className="form" action={this.props.action} method={this.props.method} onSubmit={this.props.onSubmit}>
-                {this.props.children}
+                <fieldset className="form__fieldset">
+                    {this.props.children}
+                </fieldset>
             </form>
         );
     }
