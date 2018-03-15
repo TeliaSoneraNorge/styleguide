@@ -1,11 +1,20 @@
 [
     {
-     "name": "Simple Login Form",
-     "props": {
-         "action": "POST",
-         "children": [
-             "<div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Phone Number</span><input type=\"text\" class=\"textbox-with-label__input\" placeholder=\"number\"></label></div></div><div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Password</span><input type=\"password\" class=\"textbox-with-label__input\" placeholder=\"password\"></label></div></div><div class=\"form__row\"><button class=\"button\">Login</button>"
-         ]
-     }
+        "name": "Simple Login Form",
+        "props": {
+            "action": "POST",
+            "children": [
+                "<div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Phone Number</span><input type=\"text\" class=\"textbox-with-label__input\" placeholder=\"number\"></label></div></div><div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Password</span><input type=\"password\" class=\"textbox-with-label__input\" placeholder=\"password\"></label></div></div><div class=\"form__row\"><button class=\"button\">Login</button></div>"
+            ]
+        }
+    },
+    {
+        "name": "Simple Login Form - With success message",
+        "props": {
+            "action": "POST",
+            "children": [
+                "<div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Phone Number</span><input type=\"text\" class=\"textbox-with-label__input\" placeholder=\"number\"></label></div></div><div class=\"form__row\"><div class=\"form__column \"><label class=\"label label--gray-text textbox-with-label\"><span class=\"textbox-with-label__label-text\">Password</span><input type=\"password\" class=\"textbox-with-label__input\" placeholder=\"password\"></label></div></div><div class=\"form__row\"><button class=\"button\">Login</button></div><div class=\"form__success\">All done!</div>"
+            ]
+        }
     }
 ]
