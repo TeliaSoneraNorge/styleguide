@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.2.0 [changed component]
+- Molecule: FactBox - removed horizontal line and borders
+
 ## 1.1.13 [extended component]
 - Atom: Button - Added processing state
 
