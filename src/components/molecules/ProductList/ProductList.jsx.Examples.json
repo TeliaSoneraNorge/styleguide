@@ -1,0 +1,27 @@
+[
+    {
+        "name": "Default",
+        "props": {
+            "items": [
+                {
+                    "icon": "ico_databoost_purple",
+                    "title": "1 TIME FOR 399,-",
+                    "description": "31 dager"
+                },
+                {
+                    "icon": "ico_subscription_purple",
+                    "title": "6GB FOR 399,-"
+                },
+                {
+                    "icon": "ico_money_purple",
+                    "title": "6GB FOR 399,-",
+                    "description": "31 dager"
+                },
+                {
+                    "icon": "ico_subscription_purple",
+                    "title": "KRONEPÅFYLL 50,-"
+                }
+            ]
+        }
+    }
+]

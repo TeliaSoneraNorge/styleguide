@@ -45,6 +45,7 @@ import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
 import BelowTheLineOffer from './molecules/BelowTheLineOffer/BelowTheLineOffer';
 import ModalDialog from './molecules/ModalDialog/ModalDialog';
 import PopUpLine from './molecules/PopUpLine/PopUpLine';
+import ProductList from './molecules/ProductList/ProductList';
 
 // Organisms
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
@@ -80,7 +81,7 @@ export default {
     'src/components/molecules/PageHeader/PageHeader.jsx': PageHeader,
     'src/components/molecules/ParallaxBlockTextBox/ParallaxBlockTextBox.jsx': ParallaxBlockTextBox,
     'src/components/molecules/PersonBox/PersonBox.jsx': PersonBox,
-    'src/components/molecules/ProductPromoBox/ProductPromoBox.jsx' : ProductPromoBox,
+    'src/components/molecules/ProductPromoBox/ProductPromoBox.jsx': ProductPromoBox,
     'src/components/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
     'src/components/molecules/RadioButtonList/RadioButtonList.jsx': RadioButtonList,
     'src/components/molecules/RelatedArticles/RelatedArticles.jsx': RelatedArticles,
@@ -93,9 +94,10 @@ export default {
     'src/components/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx': BelowTheLineOffer,
     'src/components/molecules/ModalDialog/ModalDialog.jsx': ModalDialog,
     'src/components/molecules/PopUpLine/PopUpLine.jsx': PopUpLine,
+    'src/components/molecules/ProductList/ProductList.jsx': ProductList,
 
     // Organisms
     'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
-    'src/components/organisms/ContentRating/ContentRating.jsx' : ContentRating,
-    'src/components/organisms/Form/Form.jsx' : Form
+    'src/components/organisms/ContentRating/ContentRating.jsx': ContentRating,
+    'src/components/organisms/Form/Form.jsx': Form
 };
