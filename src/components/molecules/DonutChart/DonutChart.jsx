@@ -32,7 +32,8 @@ const DonutChart = ({
     showSegmentSeparators,
     showLineCaps,
     radius,
-    strokeWidthInPercents
+    strokeWidthInPercents,
+    totalFormatted
 }) => (
     <div className="donut-chart" style={{ width: size, height: size }}>
         <svg
@@ -68,6 +69,7 @@ const DonutChart = ({
             <p className="donut-chart__value-caption">{upperCaption}</p>
             <p className="donut-chart__value">{value}</p>
             <p className="donut-chart__value-caption">{valueCaption}</p>
+            <p className="donut-chart__value-caption">{totalFormatted}</p>
         </div>
     </div>
 );
@@ -94,6 +96,7 @@ DonutChart.propTypes = {
         color: PropTypes.string.isRequired
     })),
     valueCaption: PropTypes.string,
+    upperCaption: PropTypes.string,
     thresholds: PropTypes.arrayOf(PropTypes.shape({
         to: PropTypes.number.isRequired,
         type: PropTypes.string.isRequired
@@ -105,7 +108,8 @@ DonutChart.defaultProps = {
     radius : 0.9,
     strokeWidthInPercents : 0.06,
     loadingCaption: "Henter data...",
-    valueCaption: "gjenstår",
+    valueCaption: "igjen av totalt",
+    upperCaption: "Datamengde",
     segments: []
 };
 

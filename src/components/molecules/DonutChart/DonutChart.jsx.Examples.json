@@ -3,6 +3,7 @@
         "name": "Default",
         "props": {
             "value": "21,6GB",
+            "totalFormatted": "25GB",
             "segments": [
                 { "color": "purple", "percent": 0.3 },
                 { "color": "orange", "percent": 0.4 },
@@ -15,6 +16,7 @@
         "props": {
             "showLineCaps": true,
             "value": "21,6GB",
+            "totalFormatted": "25GB",
             "segments": [
                 { "color": "purple", "percent": 0.3 },
                 { "color": "orange", "percent": 0.4 },
@@ -28,6 +30,7 @@
             "showLineCaps": true,
             "showSegmentSeparators": true,
             "value": "21,6GB",
+            "totalFormatted": "25GB",
             "segments": [
                 { "color": "purple", "percent": 0.3 },
                 { "color": "orange", "percent": 0.4 },
@@ -40,7 +43,8 @@
         "props": {
             "showLineCaps": true,
             "showSegmentSeparators": true,
-            "value": "21,6GB"
+            "value": "21,6GB",
+            "totalFormatted": "25GB"
         }
     },
     {
