@@ -1,0 +1,38 @@
+.product-list {
+    padding: 1.25rem 2.5rem 1.25rem 1.75rem;
+    background: url("/public/icons/ico_linkarrow_purple.svg") right 1.75rem
+        center / 0.9rem 0.9rem no-repeat transparent;
+    border: 2px solid #d9d9d9;
+    cursor: pointer;
+    min-height: 5.75rem;
+    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    @media all and (max-width: 30em) {
+        padding: 1rem 1.75rem 1rem 1.25rem;
+        background-position: right 1rem center;
+        min-height: 5rem;
+    }
+}
+
+.product-list__icon {
+    flex-grow: 0;
+    height: 1.5rem;
+    margin-right: 1.5rem;
+}
+
+.product-list__content {
+    flex-grow: 1;
+}
+
+.product-list__heading {
+    font-family: "pebble";
+    font-size: 1.5rem;
+    line-height: 1;
+    @media all and (max-width: 30em) {
+        font-size: 1.2rem;
+    }
+}
+
+.product-list__description {
+}
