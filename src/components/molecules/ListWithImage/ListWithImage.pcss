@@ -75,6 +75,12 @@
     }
 
     &--hide-image-for-mobile {
+        margin-bottom: 0;
+
+        @media all and (min-width: em(640)) {
+            margin-bottom: 40px;
+        }
+
         .list-with-image__image {
             display: none;
 
