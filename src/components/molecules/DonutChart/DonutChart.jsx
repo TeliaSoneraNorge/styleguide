@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import Spinner from '../../atoms/Spinner/Spinner';
+import ChartWrapper from './ChartWrapper';
 import ChartSegment from './ChartSegment';
 
 const minimumPercentageValueToBeDisplayed = 0.01;
@@ -33,9 +34,10 @@ const DonutChart = ({
     showLineCaps,
     radius,
     strokeWidthInPercents,
-    totalFormatted
+    totalFormatted,
+    link
 }) => (
-    <div className="donut-chart" style={{ width: size, height: size }}>
+    <ChartWrapper className="donut-chart" size={size} link={link}>
         <svg
             className="donut-chart__slice"
             viewBox="-1 -1 2 2"
@@ -71,7 +73,7 @@ const DonutChart = ({
             <p className="donut-chart__value-caption">{valueCaption}</p>
             <p className="donut-chart__value-caption">{totalFormatted}</p>
         </div>
-    </div>
+    </ChartWrapper>
 );
 
 DonutChart.propTypes = {
