@@ -9,6 +9,31 @@
     margin-top: 0.5rem;
     padding-left: 0;
 
+    &--wrap {
+        display: flex;
+        flex-flow: column wrap;
+
+        > .list__item {
+            flex: 1;
+
+            @media all and (min-width: 37.500em) {
+                flex:  33.333333%;
+            }
+        }
+
+        &-by-three {
+            @media all and (min-width: 37.500em) {
+                max-height: 6em;
+            }
+        }
+
+        &-by-four {
+            @media all and (min-width: 37.500em) {
+                max-height: 8em;
+            }
+        }
+    }
+
     &__item, li {
         background: transparent url('/public/icons/ico_check.svg') no-repeat left 0.5rem;
         background-size: 0.875rem 0.875rem;
