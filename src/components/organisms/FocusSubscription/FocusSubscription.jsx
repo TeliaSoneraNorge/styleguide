@@ -44,17 +44,14 @@ export default class FocusSubscription extends React.Component {
                             isStandalone={true} />
 
                         <div className="focus-subscription__main-content">
-                            <div className="focus-subscription__owner-content">
-                                <Heading level={2} text="Kari Nordmann" className="focus-subscription__owner-name"/>
-                                <div className="focus-subscription__owner-info-line">
-                                    <label className="focus-subscription__owner-info-label">Telefonnummer:</label>
-                                    <span className="focus-subscription__owner-info-value">9876 5432</span>
-                                </div>
-                                <div className="focus-subscription__owner-info-line">
-                                    <label className="focus-subscription__owner-info-label">Avtaletid:</label>
-                                    <span className="focus-subscription__owner-info-value">01.01.2017 - 01.01.2018</span>
-                                </div>
-                            </div>
+                            <Heading level={2} text="Kari Nordmann" />
+                            <dl className="description-list">
+                                <dt className="description-list__term">Telefonnummer:</dt>
+                                <dd className="description-list__details">9876 5432</dd>
+
+                                <dt className="description-list__term">Avtaletid:</dt>
+                                <dd className="description-list__details">01.01.2017 - 01.01.2018</dd>
+                            </dl>
 
                             <ul className="list list--links">
                                 <li className="list__item">
