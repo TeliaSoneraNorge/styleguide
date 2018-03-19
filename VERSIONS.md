@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.3.3 [new component]
+- Molecule: RecommendedProducts
+
 ## 1.3.2 [new component]
 - Molecule: ProductList
 

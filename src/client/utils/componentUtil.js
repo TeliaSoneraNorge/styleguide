@@ -55,6 +55,7 @@ export function isFullWidthComponent(componentName) {
         'Hero',
         'PageHeader',
         'PageFooter',
+        'RecommendedProducts',
         'RelatedArticles',
         'UserDashboard',
         'PopUpLine',
