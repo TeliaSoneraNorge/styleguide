@@ -9,5 +9,11 @@
         "props": {
             "loading": true
         }
+    },
+    {
+        "name": "As a link",
+        "props": {
+            "link": "#link"
+        }
     }
 ]

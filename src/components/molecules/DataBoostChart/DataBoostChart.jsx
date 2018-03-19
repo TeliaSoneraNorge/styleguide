@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
+import ChartWrapper from '../DonutChart/ChartWrapper';
 import Spinner from '../../atoms/Spinner/Spinner';
 
 const DataBoostChart = ({
@@ -9,8 +10,9 @@ const DataBoostChart = ({
     loadingCaption,
     upperCaption,
     lowerCaption,
+    link
 }) => (
-    <div className="data-boost-chart" style={{ width: size, height: size }}>
+    <ChartWrapper className="data-boost-chart" size={size} link={link}>
         <div
             className="data-boost-chart__slice"
             viewBox="-1 -1 2 2"
@@ -24,7 +26,7 @@ const DataBoostChart = ({
             <p className="data-boost-chart__upper-caption">{upperCaption}</p>
             <p className="data-boost-chart__lower-caption">{lowerCaption}</p>
         </div>
-    </div>
+    </ChartWrapper>
 );
 
 DataBoostChart.defaultProps = {

@@ -49,6 +49,8 @@
 
 .donut-chart {
     position: relative;
+    display: block;
+    color: var(--black);
 
     &__spinner {
         margin: 0 auto;
@@ -206,5 +208,27 @@
 
         padding: 0.2em 0 0 0;
         margin: 0;
+    }
+
+    &:focus {
+        background: var(--core-purple);
+        color: var(--white);
+
+        outline: none;
+
+        .donut-chart {
+            &__cap,
+            &__end-cap {
+                fill: var(--white);
+            }
+
+            &__arc {
+                stroke: var(--white);
+            }
+
+            &__background {
+                stroke: none;
+            }
+        }
     }
 }
