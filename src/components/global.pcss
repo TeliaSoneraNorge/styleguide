@@ -24,7 +24,6 @@ body {
     unicode-range: U+000-5FF;
 }
 
-
 .container {
     color: var(--black);
     letter-spacing: 0;
@@ -53,7 +52,9 @@ body {
     }
 
     &--extra-padding-top {
-        @media all and (min-width: 43em){
+        padding-top: 1rem;
+
+        @media all and (min-width: 43em) {
             padding-top: 2.5rem;
         }
     }
@@ -67,7 +68,7 @@ body {
     }
 
     &--overlapping-full-width-image {
-        @media all and (min-width: 43em){
+        @media all and (min-width: 43em) {
             width: 80%;
         }
     }
