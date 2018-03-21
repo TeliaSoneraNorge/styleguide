@@ -24,5 +24,15 @@
             "placeholder": "Write here..",
             "disabled": true
         }
+    },
+    {
+        "name": "With loader",
+        "props": {
+            "labelText": "Label for textbox",
+            "type": "text",
+            "placeholder": "Write here..",
+            "loader": true,
+            "loading": true
+        }
     }
 ]
