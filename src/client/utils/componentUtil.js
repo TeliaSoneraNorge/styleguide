@@ -55,13 +55,14 @@ export function isFullWidthComponent(componentName) {
         'Hero',
         'PageHeader',
         'PageFooter',
+        'PopUpLine',
         'RecommendedProducts',
         'RelatedArticles',
         'UserDashboard',
-        'PopUpLine',
 
         // Organisms
-        'FocusSubscription'
+        'FocusSubscription',
+        'ThemeBoxes'
     ];
     return _.includes(fullWidthComponents, componentName);
 }
