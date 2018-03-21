@@ -1,3 +1,8 @@
+@keyframes textbox-with-label__loader-background-animation {
+    0% { left: -100%; }
+    100% { left: 200%; }
+}
+
 .textbox-with-label {
     ::placeholder {
         color: var(--dark-grey);
@@ -29,6 +34,38 @@
     &--with-error {
         .textbox-with-label__input {
             border-color: var(--dark-red);
+        }
+    }
+    &__loader{
+        opacity: 0;
+        transition: opacity 300ms linear;
+        display: block;
+        overflow: hidden;
+        height: 2px;
+        position: relative;
+        bottom: -2px;
+        width: 100%;
+        &-background{
+            position: absolute;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            width: 100%;
+
+            animation-name: textbox-with-label__loader-background-animation;
+            animation-duration: 2000ms;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(155,0,155,1) 50%, rgba(255,255,255,0) 100%); /* FF3.6-15 */
+            background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(155,0,155,1) 50%,rgba(255,255,255,0) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%,rgba(155,0,155,1) 50%,rgba(255,255,255,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 */
+        }
+    }
+    &--with-loader--loading{
+        .textbox-with-label__loader{
+            opacity: 1;
         }
     }
 }
