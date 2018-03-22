@@ -1,0 +1,98 @@
+[
+    {
+        "name": "ThemeBoxes - two closed boxes",
+        "props": {
+            "themeBoxes": [
+                {
+                    "id": "themebox-1",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox"
+                },
+                {
+                    "id": "themebox-2",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Heading"
+                }
+            ]
+        }
+    },
+    {
+        "name": "ThemeBoxes - three closed boxes",
+        "props": {
+            "themeBoxes": [
+                {
+                    "id": "themebox-1",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                },
+                {
+                    "id": "themebox-2",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                },
+                {
+                    "id": "themebox-3",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                }
+            ]
+        }
+    },
+    {
+        "name": "ThemeBoxes - middle box open",
+        "props": {
+            "themeBoxes": [
+                {
+                    "id": "themebox-1",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                },
+                {
+                    "id": "themebox-2",
+                    "isExpanded": true,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading",
+                    "children": "<p class=\"paragraph paragraph--preamble\" style=\"text-align: center; margin-bottom: 3.5rem;\">This is an example of what content you can have inside a ThemeBox. You can use text as we did here, but you can use other components from the styleguide as well.</p><h3 class=\"heading heading--level-3\">First level three heading</h3><p class=\"paragraph\">Donec rutrum congue leo eget malesuada.</p>&nbsp;<h3 class=\"heading heading--level-3\">Second heading</h3><p class=\"paragraph\">Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh.</p>&nbsp;<h3 class=\"heading heading--level-3\">Third heading</h3><p class=\"paragraph\">Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh.</p>"
+                },
+                {
+                    "id": "themebox-3",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                }
+            ]
+        }
+    },
+    {
+        "name": "ThemeBoxes - last box open",
+        "props": {
+            "themeBoxes": [
+                {
+                    "id": "themebox-1",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                },
+                {
+                    "id": "themebox-2",
+                    "isExpanded": false,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading"
+                },
+                {
+                    "id": "themebox-3",
+                    "isExpanded": true,
+                    "iconPath": "/public/icons/ico_heart_sprite.svg",
+                    "heading": "Themebox heading",
+                    "children": "<p class=\"paragraph paragraph--preamble\" style=\"text-align: center; margin-bottom: 3.5rem;\">This is an example of what content you can have inside a ThemeBox. You can use text as we did here, but you can use other components from the styleguide as well.</p><h3 class=\"heading heading--level-3\">First level three heading</h3><p class=\"paragraph\">Donec rutrum congue leo eget malesuada.</p>&nbsp;<h3 class=\"heading heading--level-3\">Second heading</h3><p class=\"paragraph\">Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh.</p>&nbsp;<h3 class=\"heading heading--level-3\">Third heading</h3><p class=\"paragraph\">Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh.</p>"
+                }
+            ]
+        }
+    }
+]

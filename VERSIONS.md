@@ -15,8 +15,11 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
-## 1.3.4 [extended component]
+## 1.3.5 [extended component]
 - Molecule: TextBoxWithLabel - new version with loader
+
+## 1.3.4 [new component]
+- Organism: ThemeBoxes
 
 ## 1.3.3 [new component]
 - Molecule: RecommendedProducts

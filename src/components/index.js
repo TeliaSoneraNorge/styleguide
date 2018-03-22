@@ -49,9 +49,10 @@ import PopUpLine from './molecules/PopUpLine/PopUpLine';
 import ProductList from './molecules/ProductList/ProductList';
 
 // Organisms
-import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
 import ContentRating from './organisms/ContentRating/ContentRating';
+import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
 import Form from './organisms/Form/Form';
+import ThemeBoxes from './organisms/ThemeBoxes/ThemeBoxes';
 
 export default {
     // Atoms
@@ -99,7 +100,8 @@ export default {
     'src/components/molecules/ProductList/ProductList.jsx': ProductList,
 
     // Organisms
-    'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
     'src/components/organisms/ContentRating/ContentRating.jsx': ContentRating,
-    'src/components/organisms/Form/Form.jsx': Form
+    'src/components/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
+    'src/components/organisms/Form/Form.jsx': Form,
+    'src/components/organisms/ThemeBoxes/ThemeBoxes.jsx': ThemeBoxes
 };
