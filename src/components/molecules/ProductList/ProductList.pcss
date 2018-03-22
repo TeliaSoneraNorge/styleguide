@@ -5,8 +5,6 @@
         margin-bottom: 0.75rem;
         padding: 1.25rem 2.5rem 1.25rem 1.75rem;
         
-        background: url("/public/icons/ico_linkarrow_purple.svg") right 1.75rem
-            center / 0.9rem 0.9rem no-repeat transparent;
         border: 2px solid #d9d9d9;
         
         cursor: pointer;
@@ -16,15 +14,26 @@
         flex-wrap: nowrap;
         align-items: center;
         
+        text-decoration: none;
+        
+        &:focus {
+            border-color: var(--core-purple);
+            outline: none;
+        }
+         
         &:hover {
-            border-color: #990ae3;
+            border-color: var(--core-purple);
+        }
+        
+        &--link {
+            background: url("/public/icons/ico_linkarrow_purple.svg") right 1.75rem center / 0.9rem 0.9rem no-repeat transparent;
         }
 
         @media all and (max-width: 30em) {
             background-position: right 1rem center;
             min-height: 5rem;
             padding: 1rem 1.75rem 1rem 1.25rem;
-        } 
+        }
     }
 
     &__item-icon {
