@@ -9,7 +9,9 @@
                 "This is option 4",
                 "This is option 5"
             ],
-            "selectedOption": "This is option 2"
+            "selectedOption": "This is option 2",
+            "label": "Select your option",
+            "visibleLabel": false
         }
     },
     {
@@ -21,7 +23,8 @@
                 "Samsung Galaxy S8"
             ],
             "selectedOption": "Apple iPhone 7 128 GB",
-            "label": "Select your mobile phone"
+            "label": "Select your mobile phone",
+            "visibleLabel": true
         }
     },
     {
@@ -36,7 +39,8 @@
                 "5."
             ],
             "selectedOption": "2.",
-            "label": "option"
+            "label": "option",
+            "visibleLabel": true
         }
     }
 ]
