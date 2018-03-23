@@ -23,9 +23,8 @@ function dropDownClassNames(labelMode) {
 }
 
 /**
- * Status: *in progress*.
+ * Status: *finished*.
  *
- * TODO: Label accessibility. It's recommended to use aria-label on form elements when a label is not visible on the screen.
  **/
 export default class DropDownListWithLabel extends React.Component {
     constructor(props) {
@@ -36,11 +35,12 @@ export default class DropDownListWithLabel extends React.Component {
 
         return (
             <Label className={labelClassNames(this.props.labelMode)} isUsingGrayText={isUsingGrayText}>
-                {this.props.label ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null}
+                {this.props.visibleLabel ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null}
                 <select
                     className={dropDownClassNames(this.props.labelMode)}
                     defaultValue={this.props.selectedOption}
-                    onChange={this.props.changeSelectedOption}>
+                    onChange={this.props.changeSelectedOption}
+                    aria-label={this.props.visibleLabel ? null : this.props.label}>
                     {this.props.options.map((option) =>
                         <option className="dropdown-list-with-label__option" key={option}>
                             {option}
