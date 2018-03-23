@@ -6,11 +6,6 @@
     flex-direction: row;
     align-items: start;
 
-    & .radio-button-with-label__input:focus ~ * {
-        background: var(--core-purple);
-        color: var(--white);
-    }
-
     & .radio-button-with-label__input {
         position: absolute;
         opacity: 0;
@@ -30,22 +25,21 @@
     /* SVG parts */
     & .radio-button-with-label__frame {
         fill: none;
-        stroke: #808281;
+        stroke: var(--dark-grey-2);
         stroke-width: 2px;
         transition: stroke .3s ease;
     }
     &:hover .radio-button-with-label__frame {
-        stroke: #8d16d0;
+        stroke: var(--core-purple);
     }
-    & .radio-button-with-label__input:focus ~ * .radio-button-with-label__frame {
-        stroke: var(--white);
-    }
-    &:focus .radio-button-with-label__frame {
-        stroke: var(--white);
+    & .radio-button-with-label__input:focus + .radio-button-with-label__svg-container {
+        & .radio-button-with-label__frame {
+            stroke: var(--core-purple);
+        }
     }
 
     & .radio-button-with-label__check-mark {
-        fill: #8d16d0;
+        fill: var(--core-purple);
         opacity: 0;
         stroke: none;
         transition: opacity .3s ease;
@@ -53,9 +47,6 @@
 
     & .radio-button-with-label__input:checked + .radio-button-with-label__svg-container .radio-button-with-label__check-mark {
         opacity: 1;
-    }
-    & .radio-button-with-label__input:checked:focus ~ * .radio-button-with-label__check-mark {
-        fill: var(--white);
     }
 
     & > .radio-button-with-label__label-text {

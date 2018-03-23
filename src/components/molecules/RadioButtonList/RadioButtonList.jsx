@@ -7,9 +7,8 @@ const getClassName = (type) =>
     classnames('radio-button-list', { 'radio-button-list--horizontal' : type === 'horizontal' });
 
 /**
- * Status: *in progress*.
+ * Status: *finished*.
  *
- * Missing styles for focusing
  */
 const RadioButtonList = ({ list, selectedIndex, name, type }) =>
     <div className={getClassName(type)}>
