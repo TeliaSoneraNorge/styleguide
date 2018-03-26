@@ -15,4 +15,33 @@
         background-color: var(--core-purple);
         outline: none;
     }
+    
+    &--with-icon {
+        border-bottom: none;
+        background-size: 0.875rem 0.875rem;
+        background-repeat: no-repeat;
+
+        &:hover, &:active {
+            border-bottom: none;
+        }
+    }
+
+    &--forward-icon {
+        background-image: url('/public/icons/ico_linkarrow_purple.svg');
+    }
+
+    &--icon-after {
+        padding-right: 1.25rem;
+        background-position: right center;
+    }
+
+    &--back-icon {
+        background-image: url('/public/icons/ico_backarrow_purple.svg');
+    }
+
+    &--icon-before {
+        padding-left: 1.25rem;
+        background-position: left center;
+    }
+
 }
