@@ -28,7 +28,7 @@
             }
 
             .theme-box__icon {
-                background-position: -var(--menu-icon-size) 0;
+                svg path { fill: #ffffff; }
             }
         }
 
@@ -47,9 +47,8 @@
         }
 
         &__icon {
-            background-repeat: no-repeat;
-            background-size: calc(var(--menu-icon-size) * 3) var(--menu-icon-size);
-            background-position: calc(-var(--menu-icon-size) * 2) 0;
+            svg path { fill: var(--core-purple); }
+
             height: var(--menu-icon-size);
             width: var(--menu-icon-size);
 
@@ -136,7 +135,7 @@
                     background-color: inherit;
 
                     .theme-box__icon {
-                        background-position: calc(-var(--menu-icon-size) * 2) 0;
+                        svg path { fill: var(--core-purple); }
                     }
 
                     * {

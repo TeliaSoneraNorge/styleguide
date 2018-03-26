@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ThemeBox = ({ isExpanded, onOpen, id, iconPath, heading, children, onClose }) =>
+const ThemeBox = ({ isExpanded, onOpen, id, iconSvg, heading, children, onClose }) =>
     <div className={`theme-box${isExpanded ? ' theme-box--open' : ''} heading-link`}
         role="button"
         onClick={onOpen}
@@ -12,7 +12,9 @@ const ThemeBox = ({ isExpanded, onOpen, id, iconPath, heading, children, onClose
                 <span className="theme-box__close-text">LUKK</span>
                 <i className="theme-box__close-icon" />
             </button>
-            <i className="theme-box__icon" style={{ backgroundImage: `url(${iconPath})` }} />
+            
+            <div className="theme-box__icon" dangerouslySetInnerHTML={{ __html: iconSvg }}></div>
+            
             <h2 className="theme-box__heading heading heading--level-2 heading--pebble">
                 {heading}
                 <hr className="horizontal-rule horizontal-rule--short" />
