@@ -3,6 +3,23 @@
         "name": "Link",
         "props": {
             "text": "Standard text link",
+            "className": "link",
+            "href": "#"
+        }
+    },
+    {
+        "name": "Link with icon after",
+        "props": {
+            "text": "Link with icon",
+            "className": "link link--with-icon link--forward-icon link--icon-after",
+            "href": "#"
+        }
+    },
+    {
+        "name": "Link with icon before",        
+        "props": {
+            "text": "Link with icon",
+            "className": "link link--with-icon link--back-icon link--icon-before",
             "href": "#"
         }
     }
