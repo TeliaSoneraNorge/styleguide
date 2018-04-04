@@ -47,13 +47,20 @@
         }
 
         &__icon {
-            svg path { fill: var(--core-purple); }
+            display: block;
+            margin: 0 0 1.5rem;
 
             height: var(--menu-icon-size);
             width: var(--menu-icon-size);
 
-            display: block;
-            margin: 0 0 1rem;
+            svg {
+                height: var(--menu-icon-size);
+                width: var(--menu-icon-size);
+
+                path {
+                    fill: var(--core-purple);
+                }
+            }
         }
 
         &__heading {
