@@ -5,5 +5,12 @@
             "text": "Standard text link",
             "href": "#"
         }
+    },{
+        "name": "Link - Backlink",
+        "props": {
+            "text": "Link back to previous step",
+            "href": "#",
+            "type": "backlink"
+        }
     }
 ]
