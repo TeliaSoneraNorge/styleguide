@@ -15,4 +15,21 @@
         background-color: var(--core-purple);
         outline: none;
     }
+    
+    &--backlink {
+        background: url('/public/icons/ico_backarrow_black.svg') no-repeat left 0.4rem;
+        padding: 0.25rem 0.25rem 0.25rem 1.25rem;
+        background-size: 0.875rem 0.875rem;
+        border-bottom: none;
+        
+        &:hover, &:active {
+            border-bottom: none;
+        }
+        
+        &:focus {
+            background: url('/public/icons/ico_backarrow_white.svg') var(--core-purple) no-repeat left 0.4rem;
+            background-size: 0.875rem 0.875rem;
+        }
+        
+    }
 }
