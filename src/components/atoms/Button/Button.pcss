@@ -39,9 +39,9 @@
         outline: none;
     }
 
-    &:not(&--processing):hover,
-    &:not(&--processing):focus,
-    &:not(&--processing):active {
+    &:not(&--processing):not(&--disabled):hover,
+    &:not(&--processing):not(&--disabled):focus,
+    &:not(&--processing):not(&--disabled):active {
         background-color: var(--core-purple);
         color: var(--white);
     }
@@ -55,6 +55,11 @@
         background-color: var(--dark-green);
         border: none;
         color: var(--black);
+    }
+
+    &--disabled {
+        border-color: var(--dark-grey-2);
+        color: var(--dark-grey-2);
     }
 
     &--cancel {

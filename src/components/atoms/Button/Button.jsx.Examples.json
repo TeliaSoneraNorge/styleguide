@@ -65,5 +65,20 @@
             "kind": "primary",
             "size": "small"
         }
+    },
+    {
+        "name": "Disabled",
+        "props": {
+            "text": "Disabled button",
+            "isDisabled": true
+        }
+    },
+    {
+        "name": "Disabled (small)",
+        "props": {
+            "text": "Disabled button",
+            "isDisabled": true,
+            "size": "small"
+        }
     }
 ]
