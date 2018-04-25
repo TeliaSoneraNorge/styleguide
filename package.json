@@ -13,7 +13,7 @@
     "clean": "npm run rimraf --  public/*/bundle.* dist && mkdirp dist -p",
     "css:components:watch": "nodemon --ext css --watch src/components --exec \"npm run build-css:components\"",
     "css:custom:watch": "nodemon --ext css --watch src/client/css --exec \"npm run build-css:custom\"",
-    "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc && npm run svgo",
+    "gen": "npm run generate-html-doc && npm run generate-react-doc && npm run generate-react-example-props-doc && npm run svgo && npm run svg-join",
     "deploy:prod": "git push heroku master && babel-node deploy-slack.js",
     "dev": "npm run clean && npm run gen && run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
     "dev:fast": "run-p start-dev-server start-server css:components:watch css:custom:watch html:components:watch",
@@ -25,6 +25,7 @@
     "html:components:watch": "nodemon --ext html --watch src/components --exec \"npm run generate-html-doc\"",
     "start": "node dist/server/server.js",
     "svgo": "svgo -f ./src/unoptimized-icons -o ./public/icons --config=./svgo.config.yml --multipass",
+    "svg-join": "svg-join -s \"public/icons/*.svg\" -o ./public/css/symbols -n allicons",
     "start-server": "babel-node src/server/server.js",
     "start-dev-server": "webpack-dev-server --port 8090 --config webpack-dev.config.js",
     "test": "mocha --opts test/mocha.opts --compilers js:babel-core/register test",
@@ -72,6 +73,7 @@
     "postcss-functions": "3.0.0",
     "postcss-loader": "2.0.6",
     "postcss-nested": "2.1.2",
+    "postcss-svg": "^2.4.0",
     "postcss-url": "^7.3.0",
     "pretty": "2.0.0",
     "prop-types": "15.6.0",
@@ -86,6 +88,7 @@
     "redux": "3.7.2",
     "rimraf": "^2.6.2",
     "svgo": "0.7.2",
+    "svg-join": "1.1.1",
     "webpack": "3.6.0",
     "whatwg-fetch": "2.0.3"
   }

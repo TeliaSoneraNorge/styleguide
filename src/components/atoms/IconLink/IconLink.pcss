@@ -1,57 +1,23 @@
 .icon-link {
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25px 25px;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
     display: inline-block;
-    height: 25px;
     margin-right: 0.5rem;
-    padding: 15px;
-    width: 25px;
-
+    
+    &:hover {
+        fill: var(--core-purple);
+    }
+    
     &:active,
     &:focus {
         background-color: var(--core-purple);
-
+        fill: var(--white);
         outline: none;
     }
-
-    &--download {
-        background-image: url('/public/icons/ico_download.svg');
-
-        &:hover {
-            background-image: url('/public/icons/ico_download_purple.svg');
-        }
-
-        &:active,
-        &:focus {
-            background-image: url('/public/icons/ico_download_white.svg');
-        }
-    }
-
-    &--linkedIn {
-        background-image: url('/public/icons/linkedin_icon.svg');
-
-        &:hover {
-            background-image: url('/public/icons/linkedin_icon_purple.svg');
-        }
-
-        &:active,
-        &:focus {
-            background-image: url('/public/icons/linkedin_icon_white.svg');
-        }
-    }
-
-    &--twitter {
-        background-image: url('/public/icons/twitter_icon.svg');
-
-        &:hover {
-            background-image: url('/public/icons/twitter_icon_purple.svg');
-        }
-
-        &:active,
-        &:focus {
-            background-image: url('/public/icons/twitter_icon_white.svg');
-        }
+    
+    .icon {
+        width: 26px;
+        height: 26px;
     }
 }
