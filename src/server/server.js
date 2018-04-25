@@ -1,6 +1,8 @@
 import Archiver from 'archiver';
 import express from 'express';
 import fs from 'fs';
+import path from 'path';
+
 import proxy from 'proxy-middleware';
 
 import colors from './colors.json';
@@ -14,11 +16,11 @@ const config = getConfig();
 const jsonParser = bodyParser.json();
 
 // Configure view engine
-app.set('views', './src/server/views');
+app.set('views', path.resolve(__dirname, './views'));
 app.set('view engine', 'ejs');
 
 // Configure the '/public' folder
-app.use('/public', express.static('./public'));
+app.use('/public', express.static('./dist/public'));
 if (config.environment === 'development') {
     app.use('/public', proxy('http://localhost:8090/public')); // for webpack-dev-server
 }
@@ -30,15 +32,15 @@ app.get('/download-zip', (req, res) => {
     const zip = Archiver('zip');
     zip.pipe(res);
 
-    let componentsCss = fs.readFileSync('public/css/bundle.components.css', 'utf8');
+    let componentsCss = fs.readFileSync('./dist/public/css/bundle.components.css', 'utf8');
     componentsCss = componentsCss.replace(/\/public\//g, '');
 
     zip.append('Follow the instuctions on the Telia Styleguide for usage.', { name: 'README.txt' })
         .append(componentsCss, { name: 'telia-styleguide.css' })
-        .directory('public/fonts/', 'fonts')
-        .directory('public/icons/', 'icons')
-        .directory('public/images/', 'images')
-        .directory('public/pebbles/', 'pebbles')
+        .directory('./dist/public/fonts/', 'fonts')
+        .directory('./dist/public/icons/', 'icons')
+        .directory('./dist/public/images/', 'images')
+        .directory('./dist/public/pebbles/', 'pebbles')
         .finalize();
 });
 
@@ -59,11 +61,12 @@ app.post('/api/feedback', jsonParser, (req, res) => {
 });
 
 // Send all requests to the same index.ejs view where the React app will start on the client
+
 app.get('/*', (req, res) => {
     const initialState = {
         colors,
-        variablesCss: fs.readFileSync('src/components/variables.pcss', 'utf8'),
-        versionsHtml: marked(fs.readFileSync('VERSIONS.md', 'utf8'))
+        variablesCss: fs.readFileSync('./component-lib/src/variables.pcss', 'utf8'),
+        versionsHtml: marked(fs.readFileSync('./VERSIONS.md', 'utf8'))
     };
     res.render('index', {
         initialState: JSON.stringify(initialState),

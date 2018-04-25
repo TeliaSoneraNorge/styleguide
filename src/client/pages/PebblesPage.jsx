@@ -1,10 +1,10 @@
 import React from 'react';
-import Header from '../../components/molecules/Header/Header';
+import { Header } from '../../../component-lib/src/index';
 
 const Prism = window.Prism; // A global, added with a <script> tag in the HTML template
 
 export const PebbleVariant = ({
-    VARIANT_0: { value: 'page-pebbles', description: 'Page Pebble'},
+    VARIANT_0: { value: 'page-pebbles', description: 'Page Pebble' },
     VARIANT_1: { value: 'page-pebbles page-pebbles--variant-1', description: 'Variant 1' },
     VARIANT_2: { value: 'page-pebbles page-pebbles--variant-2', description: 'Variant 2' },
     VARIANT_3: { value: 'page-pebbles page-pebbles--variant-3', description: 'Variant 3' },

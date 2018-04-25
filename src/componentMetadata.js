@@ -1,8 +1,8 @@
 import _ from 'lodash';
 
-import componentMetadataHtmlRaw from '../component-metadata--html.json';
-import componentMetadataReactRaw from '../component-metadata--react.json';
-import componentExamplesMetadataReactRaw from '../component-metadata--react-examples.json';
+import componentMetadataHtmlRaw from './component-metadata--html.json';
+import componentMetadataReactRaw from './component-metadata--react.json';
+import componentExamplesMetadataReactRaw from './component-metadata--react-examples.json';
 
 function fix(metadata) {
     const fixedMetadata = {};

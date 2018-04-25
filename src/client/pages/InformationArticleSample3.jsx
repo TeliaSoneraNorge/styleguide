@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../../components/molecules/Header/Header';
+import { Header } from '../../../component-lib/src/index';
 
 const InformationArticleSample3 = () =>
     <div>

@@ -1,4 +1,0 @@
---require test/common
---recursive
---full-trace
---compilers js:babel-core/register

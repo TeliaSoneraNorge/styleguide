@@ -1,5 +1,5 @@
 import React from 'react';
-import ContentRating from '../../components/organisms/ContentRating/ContentRating';
+import { ContentRating } from '../../../component-lib/src/index';
 
 function postFeedbackToSlack(feedbackState, feedbackText = ''){
     fetch(`${window.location.origin}/api/feedback`, {

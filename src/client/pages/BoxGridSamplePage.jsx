@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from '../../components/molecules/Header/Header';
-import PersonBox from '../../components/molecules/PersonBox/PersonBox';
+import { Header, PersonBox } from '../../../component-lib/src/index';
 
 const personBoxesProps = [
     {

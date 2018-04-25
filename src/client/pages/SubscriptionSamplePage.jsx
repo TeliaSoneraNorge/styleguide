@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Subscription from '../../components/molecules/Subscription/Subscription';
+import { Subscription } from '../../../component-lib/src/index';
 import FunkyTab from '../components/FunkyTab';
 import FunkyPanel from '../components/FunkyPanel';
 

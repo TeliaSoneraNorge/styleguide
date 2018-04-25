@@ -1,9 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Heading from '../../components/atoms/Heading/Heading';
-import Header from '../../components/molecules/Header/Header';
-import FocusBox from '../../components/molecules/FocusBox/FocusBox';
+import { Heading, Header, FocusBox } from '../../../component-lib/src/index';
 
 const containerStyles = {
     backgroundColor: "#990AE3",

@@ -1,0 +1,68 @@
+{
+  "name": "@telia/styleguide",
+  "version": "1.5.2",
+  "private": false,
+  "description": "",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "scripts": {
+    "build:library": "run-p build:library:css build:library:js svgo",
+    "build:library:css": "postcss src/index.pcss -o dist/index.css --config ./postcss.config.js",
+    "build:library:js": "rollup --environment NODE_ENV:production -c rollup.build.js",
+    "build:library:watch": "run-p build:library:css:watch build:library:js:watch svgo",
+    "build:library:css:watch": "postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
+    "build:library:js:watch": "rollup --environment NODE_ENV:development -c rollup.build.js -w",
+    "lint": "eslint --ext .jsx,.js /",
+    "prepublishOnly": "npm run build:library",
+    "publish:local-test": "npm run build:library && npm pack",
+    "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass"
+  },
+  "author": "Telia Norge",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-core": "6.26.0",
+    "babel-loader": "7.1.2",
+    "babel-plugin-external-helpers": "6.22.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "6.24.1",
+    "babel-preset-stage-0": "6.24.1",
+    "babel-preset-stage-1": "6.24.1",
+    "babel-preset-stage-2": "6.24.1",
+    "eslint": "4.8.0",
+    "eslint-plugin-react": "7.4.0",
+    "npm-run-all": "4.1.1",
+    "postcss": "6.0.22",
+    "postcss-calc": "6.0.0",
+    "postcss-cli": "4.1.1",
+    "postcss-custom-properties": "6.1.0",
+    "postcss-easy-import": "3.0.0",
+    "postcss-functions": "3.0.0",
+    "postcss-loader": "2.0.6",
+    "postcss-nested": "^2.1.2",
+    "postcss-replace": "^1.0.3",
+    "postcss-url": "^7.3.0",
+    "rollup": "^0.58.2",
+    "rollup-copy-plugin": "0.0.1",
+    "rollup-plugin-babel": "^3.0.3",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-resolve": "^3.3.0",
+    "rollup-plugin-replace": "^2.0.0",
+    "rollup-plugin-uglify": "^3.0.0",
+    "svgo": "0.7.2"
+  },
+  "dependencies": {
+    "classnames": "2.2.5",
+    "lodash": "4.17.4"
+  },
+  "peerDependencies": {
+    "prop-types": "15.x",
+    "react": "16.x",
+    "react-dom": "16.x"
+  },
+  "files": [
+    "/es",
+    "/assets"
+  ]
+}

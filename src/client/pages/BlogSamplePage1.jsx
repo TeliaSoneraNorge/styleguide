@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from '../../components/molecules/Header/Header';
-import RelatedArticles from '../../components/molecules/RelatedArticles/RelatedArticles';
+import { Header, RelatedArticles } from '../../../component-lib/src/index';
 
 const RelatedArticlesProps = [
     {

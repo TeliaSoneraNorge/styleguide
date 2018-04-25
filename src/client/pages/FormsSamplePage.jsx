@@ -1,12 +1,14 @@
 import React from 'react';
 
-import Button from '../../components/atoms/Button/Button';
-import Heading from '../../components/atoms/Heading/Heading';
-import Header from '../../components/molecules/Header/Header';
-import TextBoxWithLabel from "../../components/molecules/TextBoxWithLabel/TextBoxWithLabel";
-import Form from "../../components/organisms/Form/Form";
-import CheckBoxWithLabel from "../../components/molecules/CheckBoxWithLabel/CheckBoxWithLabel";
-import DropDownListWithLabel from "../../components/molecules/DropDownListWithLabel/DropDownListWithLabel";
+import {
+    Button,
+    Heading,
+    Header,
+    TextBoxWithLabel,
+    Form,
+    CheckBoxWithLabel,
+    DropDownListWithLabel
+} from '../../../component-lib/src/index';
 
 const FormsSamplePage = () =>
     <div>
@@ -152,12 +154,12 @@ const FormsSamplePage = () =>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <DropDownListWithLabel label="Dropdown Label" options={['1','2']} selectedOption={'1'} />
+                        <DropDownListWithLabel label="Dropdown Label" options={['1', '2']} selectedOption={'1'}/>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <DropDownListWithLabel options={['1','2']} selectedOption={'1'} />
+                        <DropDownListWithLabel options={['1', '2']} selectedOption={'1'}/>
                     </Form.FormColumn>
                 </Form.FormRow>
             </Form>

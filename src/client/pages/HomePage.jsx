@@ -2,8 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Color from '../components/Color';
-import Heading from '../../components/atoms/Heading/Heading';
-import Header from '../../components/molecules/Header/Header';
+import { Heading, Header } from '../../../component-lib/src/index';
 
 const HomePage = ({ colors }) =>
     <div>
@@ -13,11 +12,10 @@ const HomePage = ({ colors }) =>
             pageTitle="Telia Norge Styleguide"
             withMask={true}>
             <p>
-                This is a not-yet-ready-for-production, work-in-progress, pre-alpha version of the new Styleguide. You can look, but don't touch (yet).
+                This styleguide offers color schemes, components (both plain HTML and React) and CSS to be used in Telia Norway's digital channels.
             </p>
             <p>
-                When we roll this out to production, you will be the first to know. Until then, take a look around, and if you have any questions or
-                suggestions we are available on the #styleguide channel on Slack. Peace.
+                Talk with us in the #styleguide Slack channel and let us know if and how you intend to use the styleguide. Enjoy :)
             </p>
         </Header>
 

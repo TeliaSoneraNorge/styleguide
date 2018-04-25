@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 
 import CodeSnippet from './CodeSnippet';
-import Heading from '../../components/atoms/Heading/Heading';
+import { Heading } from '../../../component-lib/src/index';
 
 import { extractComponentNameFromPath, isFullWidthComponent } from '../utils/componentUtil';
 

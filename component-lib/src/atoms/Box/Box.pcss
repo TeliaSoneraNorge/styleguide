@@ -1,0 +1,365 @@
+:root {
+    --close-icon-size-small: 16px;
+}
+
+.box {
+    background-color: var(--white);
+    cursor: default;
+    margin: 0 0 1rem 0;
+    position: relative;
+    width: 100%;
+
+    &--expandable {
+        cursor: pointer;
+        display: inline-block;
+
+        &:hover {
+            &.box--purple {
+                background-color: var(--core-purple);
+                border-color: var(--core-purple);
+                color: white;
+
+                .box__speech-bubble {
+                    border-color: var(--core-purple);
+                }
+            }
+
+            &.box--pink {
+                background-color: var(--pink);
+                border-color: var(--pink);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--pink);
+                }
+            }
+
+            &.box--light-orange {
+                background-color: var(--light-orange);
+                border-color: var(--light-orange);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--light-orange);
+                }
+            }
+
+            &.box--green {
+                background-color: var(--green);
+                border-color: var(--green);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--green);
+                }
+            }
+
+            &.box--teal {
+                background-color: var(--teal);
+                border-color: var(--teal);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--teal);
+                }
+            }
+
+            &.box--blue {
+                background-color: var(--blue);
+                border-color: var(--blue);
+                color: inherit;
+
+                .box__speech-bubble {
+                    border-color: var(--blue);
+                }
+            }
+        }
+
+        &:focus,
+        &:active {
+            background-color: var(--core-purple);
+            border-color: var(--core-purple);
+            color: var(--white);
+            outline: none;
+
+            .box__speech-bubble {
+                border-color: var(--core-purple);
+                color: var(--black);
+            }
+        }
+    }
+
+    &--small {
+        max-width: 11.563rem;
+        width: 44%;
+    }
+
+    &--medium {
+        max-width: 24.625rem;
+        width: 94%;
+    }
+
+    @media all and (min-width: 25.3125em) {
+        &--small {
+            min-width: 10.938rem;
+        }
+
+        &--medium {
+            min-width: 23.375rem;
+        }
+    }
+
+    @media all and (min-width: 39.8125em) {
+        min-width: 10.938rem;
+        width: inherit;
+
+        &--small {
+            width: 44%;
+        }
+
+        &--medium {
+            width: 94%;
+        }
+    }
+
+    &--purple {
+        border: 3px solid var(--core-purple);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--core-purple);
+        }
+    }
+
+    &--pink {
+        border: 3px solid var(--pink);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--pink);
+        }
+    }
+
+    &--light-orange {
+        border: 3px solid var(--light-orange);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--light-orange);
+        }
+    }
+
+    &--green {
+        border: 3px solid var(--green);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--green);
+        }
+    }
+
+    &--teal {
+        border: 3px solid var(--teal);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--teal);
+        }
+    }
+
+    &--blue {
+        border: 3px solid var(--blue);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--blue);
+        }
+    }
+
+    &--grey {
+        border: 3px solid var(--grey);
+
+        .box__speech-bubble {
+            border: 3px dotted var(--grey);
+        }
+    }
+
+    &__speech-bubble {
+        background-color: var(--white);
+        border-radius: 50%;
+        font-style: italic;
+        height: 115px;
+        margin: 0 auto;
+        padding: 1.25rem 0.5rem;
+        text-align: center;
+        width: 115px;
+
+        &--empty {
+            display: none;
+        }
+    }
+
+    > .box__speech-bubble {
+        position: absolute;
+        right: 5%;
+        top: -1.2rem;
+    }
+
+    /* Close button */
+    &__close-expanded-info {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        display: none;
+        padding: .5rem;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        top: 0;
+        width: auto;
+
+        &:hover {
+            color: var(--core-purple);
+
+            > .box__close-icon {
+                background-position: calc(-var(--menu-icon-size-small) * 2) 0px;
+            }
+        }
+
+        &:focus,
+        &:active {
+            background-color: var(--core-purple);
+            border-color: var(--core-purple);
+            color: var(--white);
+            outline: none;
+
+            > .box__close-icon {
+                background-position: -var(--menu-icon-size-small) 0px;
+            }
+        }
+
+        @media all and (min-width: 21em) {
+            padding: 1rem;
+        }
+    }
+
+    &__close-text {
+        display: none;
+        line-height: 20px;
+        margin-right: 1rem;
+
+        @media all and (min-width: 28.75em) {
+            display: inline;
+        }
+    }
+
+    &__close-icon {
+        background: url('{{assetPath}}/icons/ico_delete.svg') no-repeat;
+        background-size: calc(var(--close-icon-size-small) * 3) var(--close-icon-size-small);
+        display: inline-block;
+        float: right;
+        height: var(--close-icon-size-small);
+        width: var(--close-icon-size-small);
+    }
+
+    &--is-expanded {
+        cursor: default;
+        max-width: inherit;
+        padding: 2%;
+        width: 100%;
+
+        @media all and (min-width: 25.3125rem) {
+            &.box--small {
+                padding: 2rem;
+            }
+
+            &.box--medium {
+                padding: 2rem;
+            }
+        }
+
+        &:hover {
+            background-color: var(--white);
+
+            &.box--purple {
+                background-color: var(--white);
+            }
+
+            &.box--purple {
+                color: inherit;
+            }
+
+            &.box--pink {
+                background-color: var(--white);
+            }
+
+            &.box--light-orange {
+                background-color: var(--white);
+            }
+
+            &.box--green {
+                background-color: var(--white);
+            }
+
+            &.box--teal {
+                background-color: var(--white);
+            }
+
+            &.box--blue {
+                background-color: var(--white);
+            }
+        }
+
+        &:focus,
+        &:active {
+            background-color: var(--white);
+            color: inherit;
+
+            &.box--purple {
+                border: 3px solid var(--core-purple);
+
+                .box__speech-bubble {
+                    border-color: var(--core-purple);
+                }
+            }
+
+            &.box--pink {
+                border: 3px solid var(--pink);
+
+                .box__speech-bubble {
+                    border-color: var(--pink);
+                }
+            }
+
+            &.box--light-orange {
+                border: 3px solid var(--light-orange);
+
+                .box__speech-bubble {
+                    border-color: var(--light-orange);
+                }
+            }
+
+            &.box--green {
+                border: 3px solid var(--green);
+
+                .box__speech-bubble {
+                    border-color: var(--green);
+                }
+            }
+
+            &.box--teal {
+                border: 3px solid var(--teal);
+
+                .box__speech-bubble {
+                    border-color: var(--teal);
+                }
+            }
+
+            &.box--blue {
+                border: 3px solid var(--blue);
+
+                .box__speech-bubble {
+                    border-color: var(--blue);
+                }
+            }
+        }
+
+        .box__close-expanded-info {
+            display: block;
+        }
+    }
+}

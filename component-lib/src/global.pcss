@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+    color: var(--black);
+}
+body {
+    font-family: 'Neue Helvetica W01', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+*, :after, :before {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: 'pebble';
+    src: url('{{assetPath}}/fonts/Pebble_W_Rg.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Helvetica Neue Medium';
+    src: url('{{assetPath}}/fonts/07173950-fa69-4b65-9c71-0cf2ec00b51d.woff') format('woff');
+    unicode-range: U+000-5FF;
+}
+
+.container {
+    color: var(--black);
+    letter-spacing: 0;
+    margin: 0 auto 1rem;
+    padding: var(--padding);
+    text-align: left;
+
+    &--small {
+        max-width: var(--width-small);
+    }
+    &--medium {
+        max-width: var(--width-medium);
+    }
+    &--large {
+        max-width: var(--width-large);
+    }
+
+    &--no-margin {
+        margin: 0 auto;
+    }
+    &--no-padding {
+        padding: 0;
+    }
+    &--no-padding-top {
+        padding-top: 0;
+    }
+
+    &--extra-padding-top {
+        padding-top: 1rem;
+
+        @media all and (min-width: 43em) {
+            padding-top: 2.5rem;
+        }
+    }
+
+    &--extra-margin-bottom {
+        margin-bottom: 5rem;
+    }
+
+    &--white-bg {
+        background-color: var(--white);
+    }
+
+    &--overlapping-full-width-image {
+        @media all and (min-width: 43em) {
+            width: 80%;
+        }
+    }
+}

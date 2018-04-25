@@ -31,7 +31,7 @@ render(App);
 
 // Hot Module Replacement API
 if (module.hot) {
-    require('../components/index.pcss');
+    require('../../component-lib/src/index.pcss');
     require('./css/index.pcss');
 
     module.hot.accept('./App', () => render(App));

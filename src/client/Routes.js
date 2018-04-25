@@ -2,8 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import ContentRatingWrapper from './components/ContentRatingWrapper';
-import PageHeader from '../components/molecules/PageHeader/PageHeader';
-import PageFooter from '../components/molecules/PageFooter/PageFooter';
+import { PageFooter, PageHeader } from '../../component-lib/src/index';
 
 import HomePage from './pages/HomePage';
 import LayoutPage from './pages/LayoutPage';
@@ -22,7 +21,6 @@ import PebblesPage from "./pages/PebblesPage";
 import BoxGridSamplePage from './pages/BoxGridSamplePage';
 import BlogSamplePage1 from './pages/BlogSamplePage1';
 import BlogSamplePage2 from './pages/BlogSamplePage2';
-import ParallaxPage from './pages/ParallaxPage';
 import FormsSamplePage from './pages/FormsSamplePage';
 import UsagePage from './pages/UsagePage';
 import ModalDialogSamplePage from './pages/ModalDialogSamplePage';
@@ -61,7 +59,6 @@ const Routes = (props) =>
         <Route exact path="/box-grid" component={BoxGridSamplePage} />
         <Route exact path="/blog-1" component={BlogSamplePage1} />
         <Route exact path="/blog-2" component={BlogSamplePage2} />
-        <Route exact path="/parallax-page" component={ParallaxPage} />
         <Route exact path="/forms" component={FormsSamplePage} />
         <Route exact path="/usage" component={UsagePage} />
         <Route exact path="/modal-dialog" component={ModalDialogSamplePage} />

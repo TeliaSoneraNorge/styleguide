@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from '../../components/molecules/Header/Header';
+import { Header } from '../../../component-lib/src/index';
 
 import HtmlComponent from '../components/HtmlComponent';
 import ReactComponent from '../components/ReactComponent';
@@ -56,7 +56,6 @@ const ComponentsPage = (props) => {
                     <li><a className="link" href="/box-grid">Box Grid page</a></li>
                     <li><a className="link" href="/blog-1">Blog page 1</a></li>
                     <li><a className="link" href="/blog-2">Blog page 2</a></li>
-                    <li><a className="link" href="/parallax-page">Parallax page</a></li>
                     <li><a className="link" href="/forms">Forms</a></li>
                     <li><a className="link" href="/usage">Usage page</a></li>
                     <li><a className="link" href="/modal-dialog">Modal Dialog</a></li>

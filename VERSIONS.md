@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.5.1 [component library]
+- Component library small fixes
+
+## 1.5.0 [component library]
+- Initial support for a component library (!)
+
 ## 1.4.0 [changed component]
 - Organism: ThemeBoxes - removed/added css class
 
@@ -23,7 +29,7 @@ Only noteworthy versions shown (minor changes are omitted).
 
 ## 1.3.5 [changed component + smallfixes]
 - Molecule: ProductList
-- Others: disabled button, radio focus styling, other minor changes.
+- Others: disabled button, radio focus styling, other minor changes
 
 ## 1.3.4 [new component]
 - Organism: ThemeBoxes

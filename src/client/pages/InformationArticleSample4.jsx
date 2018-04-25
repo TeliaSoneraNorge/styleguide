@@ -1,7 +1,6 @@
 import React from 'react';
 
-import Header from '../../components/molecules/Header/Header';
-import AccordionList from '../../components/molecules/AccordionList/AccordionList';
+import { AccordionList, Header } from '../../../component-lib/src/index';
 
 const accordionListProps = [
     {

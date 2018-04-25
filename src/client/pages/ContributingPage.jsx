@@ -1,8 +1,7 @@
 import React from 'react';
 
 import CodeSnippet from '../components/CodeSnippet';
-import Heading from '../../components/atoms/Heading/Heading';
-import Header from '../../components/molecules/Header/Header';
+import { Heading, Header } from '../../../component-lib/src/index';
 
 const codeSnippets = {
     bem: ".block {}\n.block__element {}\n.block__element--modifier {}"

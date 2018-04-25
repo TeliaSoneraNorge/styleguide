@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import Header from '../../components/molecules/Header/Header';
+import { Header } from '../../../component-lib/src/index';
 
 import HtmlComponent from '../components/HtmlComponent';
 import ReactComponent from '../components/ReactComponent';
@@ -11,7 +11,7 @@ import { groupComponentMetadataByType } from '../utils/componentUtil';
 
 const componentMetadata = getMergedMetadata();
 
-const ComponentsPage = (props) => {
+const ComponentsByTypePage = (props) => {
     const componentType = props.match.params.componentType;
     const groupedComponentMetadata = groupComponentMetadataByType(componentMetadata);
     const relevantComponentMetadata = groupedComponentMetadata[componentType];
@@ -36,4 +36,4 @@ const ComponentsPage = (props) => {
     );
 };
 
-export default ComponentsPage;
+export default ComponentsByTypePage;

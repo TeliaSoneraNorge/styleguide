@@ -1,0 +1,211 @@
+.hero {
+    color: var(--black);
+    display: block;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+
+    .horizontal-rule {
+        margin: 0.5rem auto 0;
+    }
+
+    &:active,
+    &:focus {
+
+        .horizontal-rule {
+            border-color: var(--white);
+        }
+    }
+
+    @media all and (min-width: 48em) {
+        text-align: left;
+
+        .horizontal-rule {
+            margin: 0.5rem 0 0;
+        }
+    }
+
+    &--with-pebbles {
+        &:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-05.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-26.svg');
+            background-repeat: no-repeat;
+            background-position: -30% 65%, 104% 90%;
+            background-size: 40vw, 22vw;
+            content: '';
+            display: block;
+            height: 100%;
+            overflow: hidden;
+            position: absolute;
+            width: 100%;
+
+            @media all and (min-width: 28.125em) {
+                background-position: -30% 70%, 104% 90%;
+            }
+
+            @media all and (min-width: 38em) {
+                background-position: -20% 70%, 104% 95%;
+                background-size: 34vw, 20vw;
+            }
+
+            @media all and (min-width: 48em) {
+                background-position: -18% 45%, 104% 92%;
+                background-size: 30vw, 17vw;
+            }
+
+            @media all and (min-width: 64em) {
+                background-position: -12% 45%, 104% 92%;
+                background-size: 28vw, 17vw;
+            }
+
+            @media all and (min-width: 90em) {
+                background-position: -10% 55%, 104% 92%;
+                background-size: 25vw, 15vw;
+            }
+
+            @media all and (min-width: 112em) {
+                background-size: 20vw, 13vw;
+            }
+        }
+
+        &-variant-1:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-46.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-01.svg');
+        }
+
+        &-variant-2:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-54.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-22.svg');
+        }
+
+        &-variant-3:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-47.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-06.svg');
+        }
+
+        &-variant-4:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-14.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-12.svg');
+        }
+
+        &-black-friday:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-black-friday-2.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-black-friday-6.svg');
+        }
+
+        &-easter:before {
+            background-image:
+                url('{{assetPath}}/pebbles/hero-pebble-easter-2.svg'),
+                url('{{assetPath}}/pebbles/hero-pebble-easter-4.svg');
+        }
+    }
+
+    &--with-pebbles-only-on-mobile {
+        &:before {
+            @media all and (min-width: 48em) {
+                background: none;
+            }
+        }
+    }
+
+    &--with-pebbles-only-on-desktop {
+        &:before {
+            @media all and (max-width: 47.99em) {
+                background: none;
+            }
+        }
+    }
+
+    &__picture {
+        margin: 0;
+    }
+
+    &__image {
+        display: block;
+        min-height: 345px;
+        object-fit: cover;
+        object-position: center;
+        font-family: 'object-fit: cover; object-position: center;'; /*object-fit-images polyfill*/
+        width: 100%;
+
+        @media all and (min-width: 48em) {
+            max-height: 620px;
+            object-fit: cover;
+            object-position: center;
+
+            &--align-top {
+                font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
+                object-position: top;
+            }
+
+            &--align-bottom {
+                font-family: 'object-fit: cover; object-position: bottom;'; /*object-fit-images polyfill*/
+                object-position: bottom;
+            }
+        }
+    }
+
+    &__box {
+        background-color: var(--white);
+        bottom: 5%;
+        height: auto;
+        max-height: 193px;
+        left: 0;
+        margin: 0 auto;
+        max-width: 320px;
+        padding: 20px;
+        position: absolute;
+        right: 0;
+        width: 90%;
+
+        @media all and (min-width: 28.125em) {
+            width: 100%;
+        }
+
+        @media all and (min-width: 48em) {
+            bottom: 10%;
+            left: 8%;
+            margin: 0;
+        }
+
+        @media all and (min-width: 64em) {
+            bottom: 15%;
+            left: 15%;
+        }
+
+        @media all and (min-width: 90em) {
+            max-height: 500px;
+            max-width: 490px;
+            padding: 30px;
+        }
+    }
+
+    &__heading {
+        color: var(--core-purple);
+        font-family: Pebble;
+        font-size: 25px;
+        line-height: 27px;
+        margin: 0 0 15px;
+        text-transform: uppercase;
+        font-weight: normal;
+
+        @media all and (min-width: 90em) {
+            font-size: 45px;
+            line-height: 45px;
+        }
+    }
+
+    &__subheading {
+        display: inline-block;
+
+        @media all and (min-width: 90em) {
+            font-size: 18px;
+        }
+    }
+}

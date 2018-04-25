@@ -2,7 +2,7 @@ import React from 'react';
 import Tabs from 'react-simpletabs';
 
 import CodeSnippet from './CodeSnippet';
-import Heading from '../../components/atoms/Heading/Heading';
+import { Heading } from '../../../component-lib/src/index';
 import * as colorUtil from '../utils/colorUtil';
 
 const codeSnippets = {

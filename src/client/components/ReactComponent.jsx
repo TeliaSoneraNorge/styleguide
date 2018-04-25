@@ -4,9 +4,9 @@ import pretty from 'pretty';
 import React from 'react';
 import ReactDOMServer from 'react-dom/server';
 
-import * as ReactComponents from '../../components/index';
 import CodeSnippet from './CodeSnippet';
-import Heading from '../../components/atoms/Heading/Heading';
+import { Heading } from '../../../component-lib/src/index';
+import * as ReactComponents from '../../../component-lib/src/index';
 
 import { extractComponentNameFromPath, isFullWidthComponent } from '../utils/componentUtil';
 
@@ -25,12 +25,20 @@ const ReactComponent = ({ path, metadata }) => {
     const ComponentToRender = ReactComponents.default[path] || NoComponentFound;
     const examples = metadata.examples || [];
     const componentName = extractComponentNameFromPath(path);
+    let markdownHtml;
+    try { // Do not fail in case of missing documentation
+        markdownHtml = marked(metadata.description);
+    } catch (e) {
+        markdownHtml = metadata.description;
+        console.warn(metadata.description);
+        console.warn(e);
+    }
 
     return (
         <div id={componentName} className="sg-component">
             <div className="container container--medium container--no-margin">
-                <Heading level={2} text={componentName} />
-                <div dangerouslySetInnerHTML={{ __html: marked(metadata.description) }}></div>
+
+                <div dangerouslySetInnerHTML={{ __html: markdownHtml }}></div>
             </div>
 
             {_.isEmpty(examples) ? <p>No examples</p> : null}

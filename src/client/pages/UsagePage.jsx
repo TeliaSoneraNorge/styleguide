@@ -1,8 +1,5 @@
 import React from 'react';
-import Header from '../../components/molecules/Header/Header';
-import DonutChart from '../../components/molecules/DonutChart/DonutChart';
-import ChartLegend from '../../components/molecules/ChartLegend/ChartLegend';
-import DataBoostChart from '../../components/molecules/DataBoostChart/DataBoostChart';
+import { Header, DonutChart, ChartLegend, DataBoostChart } from '../../../component-lib/src/index';
 
 const Prism = window.Prism; // A global, added with a <script> tag in the HTML template
 
