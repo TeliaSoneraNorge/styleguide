@@ -26,6 +26,13 @@
 - If the server isn't already run it then `npm run build` to generate the styleguide.
 - `npm run export -- PATH` where `PATH` is the path to your project.
 
+## Exporting react components
+- `npm run build:library`
+
+## Using react components
+- In your project import styles `import 'telia-styleguide/es/index.css'`
+- Then import components `import { Button } 'telia-styleguide/es/index'`
+
 # Deploy
 - npm run deploy:prod
 

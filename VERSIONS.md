@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.5.0 [component library]
+- Initial support for a component library (!)
+
 ## 1.4.0 [changed component]
 - Organism: ThemeBoxes - removed/added css class
 

@@ -41,17 +41,17 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                test: /\.pcss$/,
+                test: /\.(pcss|css)$/,
                 use: [
-                    { loader: 'style-loader' },
-                    { loader: 'css-loader', options: { importLoaders: 1 } },
-                    { loader: 'postcss-loader' }
+                    {loader: 'style-loader'},
+                    {loader: 'css-loader', options: {importLoaders: 1}},
+                    {loader: 'postcss-loader'}
                 ],
                 exclude: /node_modules/
             },
             {
-                test: /\.(jpe?g|png|ttf|eot|svg)(\?[a-z0-9=&.]+)?$/,
-                use: 'base64-inline-loader?name=[name].[ext]'
+                exclude: [/\.(js|jsx|mjs|pcss|css)$/, /\.html$/, /\.json$/],
+                loader: require.resolve('file-loader'),
             }
         ]
     },

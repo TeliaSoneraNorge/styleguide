@@ -66,7 +66,7 @@
     }
 
     &__show-more-articles {
-        background: transparent url('/public/icons/ico_add_purple.svg') no-repeat 0.1rem 0.3rem;
+        background: transparent url('{{assetPath}}/icons/ico_add_purple.svg') no-repeat 0.1rem 0.3rem;
         background-size: 0.875rem 0.875rem;
         border: 0;
         cursor: pointer;
@@ -79,17 +79,17 @@
         }
 
         &:focus, &:active {
-            background: var(--core-purple) url('/public/icons/ico_add_white.svg') no-repeat 0.1rem 0.3rem;
+            background: var(--core-purple) url('{{assetPath}}/icons/ico_add_white.svg') no-repeat 0.1rem 0.3rem;
             background-size: 0.875rem 0.875rem;
             color: var(--white);
             outline: none;
         }
 
         &--expanded {
-            background-image: url('/public/icons/ico_minus_purple.svg');
+            background-image: url('{{assetPath}}/icons/ico_minus_purple.svg');
 
             &:focus, &:active {
-                background-image: url('/public/icons/ico_minus_white.svg');
+                background-image: url('{{assetPath}}/icons/ico_minus_white.svg');
             }
         }
 

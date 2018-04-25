@@ -13,6 +13,7 @@ import objectFitImages from 'object-fit-images';
 import App from './App';
 import rootReducer from './reducers';
 
+
 const initialState = window.__INITIAL_STATE__;
 const store = createStore(rootReducer, initialState);
 
@@ -31,7 +32,7 @@ render(App);
 
 // Hot Module Replacement API
 if (module.hot) {
-    require('../components/index.pcss');
+    require('../../es/index.css');
     require('./css/index.pcss');
 
     module.hot.accept('./App', () => render(App));

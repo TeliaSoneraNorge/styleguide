@@ -19,6 +19,27 @@ module.exports = {
                     'babel-loader'
                 ],
                 exclude: /node_modules/
+            },
+            {
+                test: /\.css$/,
+                use: [
+                    {
+                        loader: 'style-loader',
+                        options: {
+                            hmr: false,
+                        },
+                    },
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            minimize: true,
+                        }
+                    }
+                ]
+            },
+            {
+                exclude: [/\.(js|jsx|mjs|pcss|css)$/, /\.html$/, /\.json$/],
+                loader: require.resolve('file-loader'),
             }
         ],
     },

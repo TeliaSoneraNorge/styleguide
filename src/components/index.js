@@ -1,8 +1,6 @@
-import { getReactComponentsMetadata } from '../componentMetadata';
-
-const componentMetadata = getReactComponentsMetadata();
-
 // TODO: loop over 'doc' and auto-generate the code below
+// using getReactComponentsMetadata
+
 
 // Atoms
 import Box from './atoms/Box/Box';
@@ -54,6 +52,56 @@ import ContentRating from './organisms/ContentRating/ContentRating';
 import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
 import Form from './organisms/Form/Form';
 import ThemeBoxes from './organisms/ThemeBoxes/ThemeBoxes';
+
+export {
+    // Atoms
+    Box,
+    Button,
+    Heading,
+    Label,
+    Link,
+    ParallaxBlock,
+    ParallaxBlockSpacer,
+    ParallaxContainer,
+    ProgressBar,
+    Spinner,
+    ToggleButton,
+    // Molecules
+    AccordionList,
+    Alert,
+    Campaign,
+    CheckBoxWithLabel,
+    DropDownListWithLabel,
+    DonutChart,
+    FocusBox,
+    FocusSpinner,
+    PageMenu,
+    Header,
+    ParallaxBlockTextBox,
+    PageFooter,
+    PageHeader,
+    PersonBox,
+    ProductPromoBox,
+    ProgressChart,
+    RadioButtonList,
+    RecommendedProducts,
+    RelatedArticles,
+    Subscription,
+    ChartLegend,
+    TextAreaWithLabel,
+    TextBoxWithLabel,
+    UserDashboard,
+    DataBoostChart,
+    BelowTheLineOffer,
+    ModalDialog,
+    PopUpLine,
+    ProductList,
+    // Organisms
+    ContentRating,
+    FocusSubscription,
+    Form,
+    ThemeBoxes
+};
 
 export default {
     // Atoms

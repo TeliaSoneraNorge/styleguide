@@ -12,16 +12,17 @@
         }
     },
     "rules": {
-        "semi": "warn",
-        "indent": ["warn", 4],
-        "no-multiple-empty-lines": "warn",
-        "react/react-in-jsx-scope": "warn",
-        "func-call-spacing": "warn",
         "arrow-spacing": "warn",
-        "no-mixed-spaces-and-tabs": "warn",
-        "eqeqeq": "warn",
         "camelcase": "warn",
-        "keyword-spacing": "warn"
+        "eqeqeq": "warn",
+        "func-call-spacing": "warn",
+        "indent": ["warn", 4],
+        "keyword-spacing": "warn",
+        "no-mixed-spaces-and-tabs": "warn",
+        "no-multiple-empty-lines": "warn",
+        "object-curly-spacing": "always",
+        "react/react-in-jsx-scope": "warn",
+        "semi": "error"
     },
     "plugins": [
         "react"

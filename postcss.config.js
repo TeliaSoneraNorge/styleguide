@@ -1,8 +1,9 @@
 const fs = require('fs');
 const crypto = require('crypto');
+const path = require('path');
 
-const calculateHash = (path) => {
-    const filePath = __dirname + path;
+const calculateHash = (url) => {
+    const filePath = path.resolve(__dirname, './es', url);
 
     if (fs.existsSync(filePath)) {
         const hash = crypto.createHash('sha1');
@@ -31,6 +32,11 @@ module.exports = {
         'postcss-nested': {},
         'postcss-custom-properties': {},
         'postcss-calc': {},
+        'postcss-replace': {
+            data: {
+                assetPath: '../public'
+            }
+        },
         'postcss-url': {
             filter: '**',
             url: (asset) => `${asset.url}?${calculateHash(asset.url)}`

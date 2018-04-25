@@ -32,7 +32,7 @@
 
     &__header-button {
         background-color: var(--white);
-        background-image: url(/public/icons/ico_add_purple.svg);
+        background-image: url({{assetPath}}/icons/ico_add_purple.svg);
         background-position: right 1rem center;
         background-repeat: no-repeat;
         background-size: 15px 15px;
@@ -56,7 +56,7 @@
         &:focus,
         &:active {
             background-color: var(--core-purple);
-            background-image: url(/public/icons/ico_add_white.svg);
+            background-image: url({{assetPath}}/icons/ico_add_white.svg);
             color: var(--white);
             outline: none;
         }
@@ -76,7 +76,7 @@
 
     &--open {
         .accordion__header-button {
-            background-image: url('/public/icons/ico_minus_purple.svg');
+            background-image: url('{{assetPath}}/icons/ico_minus_purple.svg');
 
             &:focus,
             &:active {

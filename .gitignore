@@ -8,3 +8,6 @@ component-metadata--html.json
 component-metadata--react.json
 component-metadata--react-examples.json
 public/icons
+build/
+
+es/
