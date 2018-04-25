@@ -1,6 +1,6 @@
 .parallax-block {
     display: block;
-    
+
     &__background {
         display: block;
         width:100%;
@@ -51,7 +51,7 @@
         }
 
     }
-    
+
     &__mute-button {
         position: fixed;
         z-index: 2;
@@ -63,13 +63,13 @@
         background-repeat: no-repeat;
         background-size: 26px;
         background-position: 10px;
-        background-image: url('/public/icons/silent_icon.svg');
+        /*background-image: url('{{assetPath}}/icons/silent_icon.svg');  //TODO: Missing icon */
         padding-left: 50px;
         line-height: 50px;
-        
+
         &--unmuted {
-            background-image: url('/public/icons/volume_icon.svg')
+            /* background-image: url('{{assetPath}}/icons/volume_icon.svg'); //TODO: Missing icon */
         }
-        
+
     }
 }

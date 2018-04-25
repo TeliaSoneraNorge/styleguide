@@ -30,8 +30,8 @@ app.get('/download-zip', (req, res) => {
     const zip = Archiver('zip');
     zip.pipe(res);
 
-    let componentsCss = fs.readFileSync('public/css/bundle.components.css', 'utf8');
-    componentsCss = componentsCss.replace(/\/public\//g, '');
+    let componentsCss = fs.readFileSync('es/index.css', 'utf8');
+    componentsCss = componentsCss.replace(/\.\.\/public\//g, '');
 
     zip.append('Follow the instuctions on the Telia Styleguide for usage.', { name: 'README.txt' })
         .append(componentsCss, { name: 'telia-styleguide.css' })
