@@ -1,0 +1,72 @@
+.tooltip {
+
+    &__button-container {
+        display: block;
+    }
+
+    &__button {
+        background-color: var(--core-purple);
+        border: 1px solid var(--core-purple);
+        border-radius: 1rem;
+        color: var(--white);
+        cursor: pointer;
+
+        font-size: 1rem;
+        line-height: 1.3;
+        text-align: center;
+
+        padding: 0 8px;
+        margin-bottom: 0.5rem;
+        margin-left: 0.5rem;
+
+        display: inline-block;
+        position: relative;
+
+        &:after {
+            border: solid transparent;
+            border-bottom-color: var(--core-purple);
+            border-width: 7px;
+
+            display: none;
+            position: absolute;
+            top: 75%;
+            left: 15%;
+            content: " ";
+            height: 0;
+            width: 0;
+
+            pointer-events: none;
+        }
+
+        &:hover,
+        &:active,
+        &:focus {
+            background-color: var(--white);
+            color: var(--core-purple);
+            outline: none;
+            font-weight: bold;
+        }
+    }
+
+    &__box {
+        background: var(--core-purple);
+        color: var(--white);
+        cursor: default;
+
+        padding-top: 0.688em;
+        padding-left: 0.875em;
+        padding-bottom: 0.750em;
+        padding-right: 1.125em;
+
+        display: none;
+    }
+
+    &--show {
+        .tooltip__button:after {
+            display: block;
+        }
+        .tooltip__box {
+            display: inline-block;
+        }
+    }
+}
