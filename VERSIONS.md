@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.3.8 [new component]
+- Molecule: Tooltip
+
 ## 1.3.5 [changed component + smallfixes]
 - Molecule: ProductList
 - Others: disabled button, radio focus styling, other minor changes.

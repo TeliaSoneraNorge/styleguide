@@ -41,6 +41,7 @@ import Subscription from './molecules/Subscription/Subscription';
 import ChartLegend from './molecules/ChartLegend/ChartLegend';
 import TextAreaWithLabel from './molecules/TextAreaWithLabel/TextAreaWithLabel';
 import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
+import Tooltip from './molecules/Tooltip/Tooltip';
 import UserDashboard from './molecules/UserDashboard/UserDashboard';
 import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
 import BelowTheLineOffer from './molecules/BelowTheLineOffer/BelowTheLineOffer';
@@ -92,6 +93,7 @@ export default {
     'src/components/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
     'src/components/molecules/TextAreaWithLabel/TextAreaWithLabel.jsx': TextAreaWithLabel,
     'src/components/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
+    'src/components/molecules/Tooltip/Tooltip.jsx': Tooltip,
     'src/components/molecules/UserDashboard/UserDashboard.jsx': UserDashboard,
     'src/components/molecules/DataBoostChart/DataBoostChart.jsx': DataBoostChart,
     'src/components/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx': BelowTheLineOffer,
