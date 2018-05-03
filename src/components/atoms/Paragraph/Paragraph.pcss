@@ -6,7 +6,18 @@
     margin-top: 0;
 
     &--preamble {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
+        line-height: 1.625rem;
+
+        @media all and (min-width: em(450)) {
+            font-size: 1.375rem;
+            line-height: 1.75rem;
+        }
+
+        @media all and (min-width: em(768)) {
+            font-size: 1.5rem;
+            line-height: 1.875rem;
+        }
     }
 
     &--small-text {
