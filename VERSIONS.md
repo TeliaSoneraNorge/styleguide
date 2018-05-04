@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.4.0 [changed component]
+- Organism: ThemeBoxes - removed/added css class
+
 ## 1.3.8 [new component]
 - Molecule: Tooltip
 
