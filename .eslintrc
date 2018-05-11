@@ -17,10 +17,10 @@
         "eqeqeq": "warn",
         "func-call-spacing": "warn",
         "indent": ["warn", 4],
-        "keyword-spacing": "warn",
+        "keyword-spacing": ["error", { "after": true, "before": true }],
         "no-mixed-spaces-and-tabs": "warn",
         "no-multiple-empty-lines": "warn",
-        "object-curly-spacing": "warn",
+        "object-curly-spacing": ["error", "always"],
         "react/react-in-jsx-scope": "warn",
         "semi": "error"
     },

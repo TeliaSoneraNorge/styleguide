@@ -38,17 +38,15 @@ class AccordionList extends React.Component {
 
     }
     toggleIsExpanded(newIndex) {
-
         if (newIndex === this.state.isExpandedAccordionIndex) {
             this.setState({ isExpandedAccordionIndex: -1 });
         } else {
             this.scrollToActiveAccordion(this.state.isExpandedAccordionIndex, newIndex);
-            this.setState({isExpandedAccordionIndex: newIndex});
+            this.setState({ isExpandedAccordionIndex: newIndex });
         }
     }
     scrollToActiveAccordion(previousExpandedAccordionIndex, currentExpandedAccordionIndex) {
-        setImmediate(() =>
-        {
+        setImmediate(() => {
             let openAccordionButtonHeight = 0;
             /*When an accordion further up on the page is already open, we subtract its button height
              so that the page scrolls to the top of the current open accordion*/

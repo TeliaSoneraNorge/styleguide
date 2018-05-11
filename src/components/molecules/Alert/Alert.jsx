@@ -22,7 +22,7 @@ const Alert = ({ kind = "positive", size, bodyHtml, links = [] }) =>
                 <img className="alert__icon" src="/public/icons/ico_info.svg" role="presentation" alt=""/>
             </div>
             <div className="alert__text-container">
-                <div dangerouslySetInnerHTML={{__html: bodyHtml}} />
+                <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
                 {links.length > 0 ?
                     <ul className="list list--links list--black">
                         {_.map(links, (link, i) =>

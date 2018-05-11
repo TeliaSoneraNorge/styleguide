@@ -6,7 +6,7 @@ import React from 'react';
  * TODO:
  ** Add a dynamic example to the ModalDialogSamplePage; show information pop-up line after confirmed is clicked in a confirm modal dialog.
 */
-const PopUpLine = ({description, isConfirmationLine, confirmButtonText, cancelButtonText}) => (
+const PopUpLine = ({ description, isConfirmationLine, confirmButtonText, cancelButtonText }) => (
     <div className="pop-up-line">
         <div className="pop-up-line__container container container--small">
             <div className="pop-up-line__description">{description}</div>

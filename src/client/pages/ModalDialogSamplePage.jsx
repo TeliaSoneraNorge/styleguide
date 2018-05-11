@@ -31,7 +31,7 @@ export default class ModalDialogSamplePage extends React.Component {
                     withContentOverlap={false}>
                     <p>See how a modal dialog works by clicking the button below!</p>
                 </Header>
-                <section className="container container--small" style={{textAlign: 'center'}}>
+                <section className="container container--small" style={{ textAlign: 'center' }}>
 
                     <button className="button button-default button--margin-top" onClick={this.toggleInfoModalDialog}>Info modal dialog</button>
                     <ModalDialogOverlay active={this.state.infoDialogActive}>

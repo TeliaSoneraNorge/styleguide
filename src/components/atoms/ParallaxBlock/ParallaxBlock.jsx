@@ -26,7 +26,6 @@ function background(backgroundFile, backgroundType) {
  * Example page [is here](/parallax-page)
  *
  */
-
 const ParallaxBlock = ({ index, backgroundFile, backgroundType, children }) =>
     <div className="parallax-block">
         <div className={classNames(index, backgroundType)} dangerouslySetInnerHTML={{ __html: background(backgroundFile, backgroundType) }}>
@@ -34,7 +33,7 @@ const ParallaxBlock = ({ index, backgroundFile, backgroundType, children }) =>
         </div>
         {children}
         {(backgroundType === 'video')
-            ? <a dangerouslySetInnerHTML={{ __html: '<div onclick=\"toggleSound(this)\" class=\"parallax-block__mute-button parallax-block__mute-button--unmuted parallax-block__background--hidden\">Skru på lyd'}}></a>
+            ? <a dangerouslySetInnerHTML={{ __html: '<div onclick=\"toggleSound(this)\" class=\"parallax-block__mute-button parallax-block__mute-button--unmuted parallax-block__background--hidden\">Skru på lyd' }}></a>
             : null
         }
     </div>;
