@@ -1,8 +1,9 @@
 {
-  "name": "telia-styleguide",
-  "version": "1.5.0",
+  "name": "@telia/styleguide",
+  "version": "1.5.1",
+  "private": false,
   "description": "",
-  "main": "dist/index.js",
+  "main": "es/index.js",
   "module": "es/index.js",
   "scripts": {
     "build:library": "run-p build:library:css build:library:js",
@@ -30,6 +31,7 @@
     "generate-react-example-props-doc": "babel-node ./scripts/generate-react-component-example-props.js",
     "heroku-postbuild": "npm run build",
     "html:components:watch": "nodemon --ext html --watch src/components --exec \"npm run generate-html-doc\"",
+    "prepublishOnly": "npm run svgo && npm run build:library",
     "start": "node dist/server/server.js",
     "svgo": "svgo -f ./src/unoptimized-icons -o ./public/icons --config=./svgo.config.yml --multipass",
     "start-server": "babel-node src/server/server.js",
@@ -118,5 +120,9 @@
     "prop-types": "15.6.0",
     "react": "16.3.2",
     "react-dom": "16.3.2"
-  }
+  },
+  "files": [
+    "/es",
+    "/public"
+  ]
 }

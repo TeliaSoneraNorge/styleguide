@@ -6,7 +6,7 @@ import ReactDOMServer from 'react-dom/server';
 
 import * as ReactComponents from '../../components/index';
 import CodeSnippet from './CodeSnippet';
-import { Heading } from '../../../es/index';
+import { Heading } from '../../components/atoms/Heading/Heading';
 
 import { extractComponentNameFromPath, isFullWidthComponent } from '../utils/componentUtil';
 
