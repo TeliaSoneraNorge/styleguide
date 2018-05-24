@@ -16,7 +16,7 @@ const warningMessageHtml =
         Drop us a line over at #styleguide and let us know what you're upto. Thanks!
     </p>`;
 
-const DownloadPage = ({ colors }) =>
+const DownloadPage = () =>
     <div>
         <Header pageTitle="Download Styleguide" />
 

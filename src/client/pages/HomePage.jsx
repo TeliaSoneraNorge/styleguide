@@ -1,10 +1,12 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import Color from '../components/Color';
 import { Heading, Header } from '../../../component-lib/src/index';
+import { getStaticData } from '../utils/staticDataUtil';
 
-const HomePage = ({ colors }) =>
+const colors = getStaticData('colors');
+
+const HomePage = () =>
     <div>
         <Header
             iconUrl="/public/ico_code-2.svg"
@@ -53,8 +55,4 @@ const HomePage = ({ colors }) =>
         </div>
     </div>;
 
-const mapStateToProps = (state) => ({
-    colors: state.colors
-});
-
-export default connect(mapStateToProps)(HomePage);
+export default HomePage;

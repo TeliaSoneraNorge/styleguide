@@ -1,7 +1,7 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import { Heading, Header, FocusBox } from '../../../component-lib/src/index';
+import { getStaticData } from '../utils/staticDataUtil';
 
 const containerStyles = {
     backgroundColor: "#990AE3",
@@ -9,7 +9,10 @@ const containerStyles = {
     paddingTop: "1rem"
 };
 
-const LayoutPage = ({ colors, variablesCss }) =>
+const colors = getStaticData('colors');
+const variablesCss = getStaticData('variablesCss');
+
+const LayoutPage = () =>
     <div>
         <Header iconUrl="/public/ico_code-2.svg" pageTitle="Page Layout & Grid">
             <p className="paragraph">
@@ -64,9 +67,4 @@ const LayoutPage = ({ colors, variablesCss }) =>
         </div>
     </div>;
 
-const mapStateToProps = (state) => ({
-    colors: state.colors,
-    variablesCss: state.variablesCss
-});
-
-export default connect(mapStateToProps)(LayoutPage);
+export default LayoutPage;

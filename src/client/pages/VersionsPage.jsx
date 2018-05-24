@@ -1,9 +1,11 @@
 import React from 'react';
-import { connect } from 'react-redux';
 
 import { Header } from '../../../component-lib/src/index';
+import { getStaticData } from '../utils/staticDataUtil';
 
-const VersionsPage = ({ versionsHtml }) =>
+const versionsHtml = getStaticData('versionsHtml');
+
+const VersionsPage = () =>
     <div>
         <Header iconUrl="/public/ico_code-2.svg" pageTitle="Versions">
             <p className="paragraph">
@@ -16,8 +18,4 @@ const VersionsPage = ({ versionsHtml }) =>
         </div>
     </div>;
 
-const mapStateToProps = (state) => ({
-    versionsHtml: state.versionsHtml
-});
-
-export default connect(mapStateToProps)(VersionsPage);
+export default VersionsPage;

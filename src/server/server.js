@@ -62,13 +62,13 @@ app.post('/api/feedback', jsonParser, (req, res) => {
 // Send all requests to the same index.ejs view where the React app will start on the client
 
 app.get('/*', (req, res) => {
-    const initialState = {
+    const staticData = {
         colors,
         variablesCss: fs.readFileSync('./component-lib/src/variables.pcss', 'utf8'),
         versionsHtml: marked(fs.readFileSync('./VERSIONS.md', 'utf8'))
     };
     res.render('index', {
-        initialState: JSON.stringify(initialState),
+        staticData: JSON.stringify(staticData),
         environment: config.environment
     });
 });

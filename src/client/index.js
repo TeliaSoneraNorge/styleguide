@@ -1,28 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
-import { Provider } from 'react-redux';
-import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
-import { getIEVersion } from './browserHelpers';
-
-if (getIEVersion()){
-    require('picturefill');
-}
 import objectFitImages from 'object-fit-images';
+import { AppContainer } from 'react-hot-loader'; // The wrapper component for HMR
 
 import App from './App';
-import rootReducer from './reducers';
+import { getIEVersion } from './browserHelpers';
 
-const initialState = window.__INITIAL_STATE__;
-const store = createStore(rootReducer, initialState);
+if (getIEVersion()) {
+    require('picturefill');
+}
 
 const render = (Component) => {
     ReactDOM.render(
-        <Provider store={store}>
-            <AppContainer>
-                <Component />
-            </AppContainer>
-        </Provider>,
+        <AppContainer>
+            <Component />
+        </AppContainer>,
         document.getElementById('root')
     );
 };
