@@ -39,7 +39,6 @@ app.get('/download-zip', (req, res) => {
         .append(componentsCss, { name: 'telia-styleguide.css' })
         .directory('./dist/public/fonts/', 'fonts')
         .directory('./dist/public/icons/', 'icons')
-        .directory('./dist/public/images/', 'images')
         .directory('./dist/public/pebbles/', 'pebbles')
         .finalize();
 });
