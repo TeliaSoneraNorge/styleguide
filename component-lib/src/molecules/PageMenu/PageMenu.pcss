@@ -112,6 +112,7 @@
         border-bottom: 1px solid var(--light-grey);
         margin: 0;
         padding: 0;
+        position: relative;
 
         &-text {
             padding-left: 2rem;
@@ -122,9 +123,13 @@
             height: var(--menu-icon-size-large);
 
             display: inline-block;
+            
             margin-top: 2px;
             margin-left: auto;
+            
             position: absolute;
+            left: 1.875rem;
+            top: auto;
 
             background-repeat: no-repeat;
             background-image: url({{assetPath}}/icons/ico_linkarrow.svg);
