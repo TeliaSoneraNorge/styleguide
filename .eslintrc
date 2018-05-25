@@ -1,4 +1,5 @@
 {
+    "parser": "babel-eslint",
     "env": {
         "node": true,
         "es6": true,
@@ -9,7 +10,8 @@
         "sourceType": "module",
         "ecmaFeatures": {
             "jsx": true
-        }
+        },
+        "codeFrame": false
     },
     "rules": {
         "arrow-spacing": "warn",
@@ -20,9 +22,9 @@
         "keyword-spacing": ["error", { "after": true, "before": true }],
         "no-mixed-spaces-and-tabs": "warn",
         "no-multiple-empty-lines": "warn",
-        "object-curly-spacing": ["error", "always"],
+        "object-curly-spacing": ["warn", "always"],
         "react/react-in-jsx-scope": "warn",
-        "semi": "error"
+        "semi": "warn"
     },
     "plugins": [
         "react"

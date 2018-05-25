@@ -35,7 +35,12 @@ module.exports = {
     module: {
         rules: [
             {
+                exclude: /\.(js|jsx|mjs|pcss|css|html|json)$/,
+                use: 'raw-loader'
+            },
+            {
                 test: /\.(jsx|js)?$/,
+                enforce: 'pre',
                 use: [
                     'eslint-loader'
                 ],

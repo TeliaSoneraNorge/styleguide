@@ -19,8 +19,10 @@ to achieve a common look & feel, and therefore user experience.
 
 - Add a folder called `YourComponentName` in `component-lib/src/atoms|molecules|organisms`
 - Inside the new folder, add a `YourComponentName.jsx` React component file
+- Add PropTypes to your component with documentation (you can look at Button component for inspiration)
 - Expose your React component in `component-lib/src/index.js` (NOTE: in two places)
 - Add a `YourComponent.pcss` file for your PostCSS
+- Add examples of usage of your component to `src/client/examples/atoms|molecules|organisms` (again you can look at Button examples)
 
 ## Serving the styleguide locally for consumption from another local web app
 
