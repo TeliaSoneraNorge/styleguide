@@ -45,6 +45,8 @@ export { default as ContentRating } from './organisms/ContentRating/ContentRatin
 export { default as FocusSubscription } from './organisms/FocusSubscription/FocusSubscription';
 export { default as Form } from './organisms/Form/Form';
 export { default as ThemeBoxes } from './organisms/ThemeBoxes/ThemeBoxes';
+export { default as ThemeBoxesWithImage } from './organisms/ThemeBoxesWithImage/ThemeBoxesWithImage';
+export { default as ThemeBoxWithImage } from './organisms/ThemeBoxesWithImage/ThemeBoxWithImage';
 
 export default [
     // Atoms
@@ -93,4 +95,6 @@ export default [
     'src/organisms/FocusSubscription/FocusSubscription.jsx',
     'src/organisms/Form/Form.jsx',
     'src/organisms/ThemeBoxes/ThemeBoxes.jsx',
+    'src/organisms/ThemeBoxesWithImage/ThemeBoxesWithImage.jsx',
+    'src/organisms/ThemeBoxWithImage/ThemeBoxWithImage.jsx'
 ];
