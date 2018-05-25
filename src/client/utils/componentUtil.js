@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import * as reactDocs from 'react-docgen';
+import { html } from 'js-beautify';
 
 import ReactComponents from '../../../component-lib/src/index';
 
@@ -108,3 +109,21 @@ export function isFullWidthComponent(componentName) {
     ];
     return _.includes(fullWidthComponents, componentName);
 }
+
+export function beautifyHtml(staticMarkup) {
+    // add new lines between almost all adjacent elements
+    // moves inline elements to their own line
+    const preFormattedHtml = staticMarkup.replace(/><(?!\/i|\/label|\/span|option)/g, '>\n<');
+
+    /* eslint-disable camelcase */
+    const beautifiedHtml = html(preFormattedHtml, {
+        indent_size: 2,
+        indent_char: ' ',
+        wrap_attributes: 'auto',
+        wrap_attributes_indent_size: 2,
+        end_with_newline: false,
+    });
+    /* eslint-enable camelcase */
+    return beautifiedHtml;
+}
+

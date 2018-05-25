@@ -3,7 +3,9 @@ import { renderToStaticMarkup } from 'react-dom/server';
 import * as Babel from 'babel-standalone';
 import _ from 'lodash';
 
+
 import Editor from "./Editor";
+import { beautifyHtml } from '../utils/componentUtil';
 
 const babelConfig = {
     presets: ["es2015", "react", "stage-2"],
@@ -38,7 +40,7 @@ class ComponentExample extends Component {
             this.setState({
                 sourceCode,
                 exampleElement,
-                staticMarkup: renderToStaticMarkup(exampleElement),
+                staticMarkup: beautifyHtml(renderToStaticMarkup(exampleElement)),
                 exampleName
             });
         }
@@ -135,11 +137,12 @@ class ComponentExample extends Component {
             this.setState({
                 sourceCode,
                 exampleElement,
-                staticMarkup: renderToStaticMarkup(exampleElement),
+                staticMarkup: beautifyHtml(renderToStaticMarkup(exampleElement)),
                 error: null // remove last error
             });
         }
     };
+
 
     render() {
         const { exampleElement, sourceCode, staticMarkup, error, showJSX, showHTML, exampleName } = this.state;
