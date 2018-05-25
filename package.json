@@ -75,6 +75,7 @@
     "ejs": "2.5.7",
     "express": "4.16.1",
     "file-loader": "1.1.5",
+    "js-beautify": "^1.7.5",
     "lodash": "4.17.4",
     "marked": "0.3.9",
     "mkdirp": "0.5.1",

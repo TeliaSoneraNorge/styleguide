@@ -3,6 +3,7 @@ import _ from 'lodash';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import Editor from './Editor';
+import { beautifyHtml } from '../utils/componentUtil';
 
 class HtmlOnlyExample extends Component {
     state = {
