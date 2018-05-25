@@ -10,6 +10,7 @@ import ComponentsPage from './pages/ComponentsPage';
 import ComponentsByTypePage from './pages/ComponentsByTypePage';
 import ContributingPage from './pages/ContributingPage';
 import DownloadPage from './pages/DownloadPage';
+import ImageAssetsPage from './pages/ImageAssetsPage';
 import VersionsPage from './pages/VersionsPage';
 
 import InformationArticleSample1 from './pages/InformationArticleSample1';
@@ -36,6 +37,7 @@ const Routes = (props) =>
                 { text: "Home", url: "/" },
                 { text: "Layout", url: "/layout" },
                 { text: "Components", url: "/components" },
+                { text: "Image Assets", url: "/image-assets" },
                 { text: "Contributing", url: "/contributing" },
                 { text: "Download", url: "/download" },
                 { text: "Versions", url: "/versions" }
@@ -46,6 +48,7 @@ const Routes = (props) =>
         <Route exact path="/layout" component={LayoutPage} />
         <Route exact path="/components" component={ComponentsPage} />
         <Route exact path="/components/:componentType" component={ComponentsByTypePage} />
+        <Route exact path="/image-assets" component={ImageAssetsPage} />
         <Route exact path="/contributing" component={ContributingPage} />
         <Route exact path="/download" component={DownloadPage} />
         <Route exact path="/versions" component={VersionsPage} />

@@ -65,7 +65,9 @@ app.get('/*', (req, res) => {
     const staticData = {
         colors,
         variablesCss: fs.readFileSync('./component-lib/src/variables.pcss', 'utf8'),
-        versionsHtml: marked(fs.readFileSync('./VERSIONS.md', 'utf8'))
+        versionsHtml: marked(fs.readFileSync('./VERSIONS.md', 'utf8')),
+        icons: fs.readdirSync('./component-lib/assets/icons'),
+        pebbles: fs.readdirSync('./component-lib/assets/pebbles'),
     };
     res.render('index', {
         staticData: JSON.stringify(staticData),
