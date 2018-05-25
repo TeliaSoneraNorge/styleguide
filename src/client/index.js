@@ -23,7 +23,8 @@ render(App);
 
 // Hot Module Replacement API
 if (module.hot) {
-    require('../../component-lib/src/index.pcss');
+    require('../../dist/public/css/bundle.components.css');
+    // require('../../component-lib/src/index.pcss');
     require('./css/index.pcss');
 
     module.hot.accept('./App', () => render(App));
