@@ -14,6 +14,10 @@ module.exports = {
     module: {
         rules: [
             {
+                exclude: /\.(js|jsx|mjs|pcss|css|html|json)$/,
+                use: 'raw-loader'
+            },
+            {
                 test: /\.(js|jsx)$/,
                 use: [
                     'babel-loader'
