@@ -15,7 +15,8 @@
     "lint": "eslint --ext .jsx,.js /",
     "prepublishOnly": "npm run build:library",
     "publish:local-test": "npm run build:library && npm pack",
-    "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass"
+    "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
+    "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass"
   },
   "author": "Telia Norge",
   "license": "ISC",

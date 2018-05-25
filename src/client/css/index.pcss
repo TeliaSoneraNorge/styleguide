@@ -67,6 +67,40 @@ body {
     text-align: center;
 }
 
+.sg-image-assets {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__asset {
+        border-bottom: solid 1px #ccc;
+        display: flex;
+        flex-basis: 100%;
+        flex-wrap: wrap;
+        margin-bottom: 1rem;
+        padding-bottom: 1rem;
+        text-align: center;
+
+        @media all and (min-width: 500px) {
+            flex-basis: 50%;
+        }
+        @media all and (min-width: 700px) {
+            flex-basis: 25%;
+        }
+    }
+    &__image {
+        margin: 0 auto;
+        max-height: 64px;
+        max-width: 64px;
+    }
+    &__text {
+        align-self: flex-end;
+        flex-basis: 100%;
+        font-size: 12px;
+        padding: 0.5rem 0;
+        overflow: hidden;
+    }
+}
+
 /* Tabs come from react-simpletabs */
 .tabs {
     .tabs-navigation {
