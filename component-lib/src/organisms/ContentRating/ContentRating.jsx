@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ContentFeedback extends React.Component {
+export default class ContentRating extends React.Component {
     render() {
         return (
             <section className="container container--small content-rating">
