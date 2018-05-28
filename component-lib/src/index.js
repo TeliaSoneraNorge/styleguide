@@ -1,146 +1,96 @@
-// TODO: loop over 'doc' and auto-generate the code below
-// using getReactComponentsMetadata
-
 // Atoms
-import Box from './atoms/Box/Box';
-import Button from './atoms/Button/Button';
-import Heading from './atoms/Heading/Heading';
-import Label from './atoms/Label/Label';
-import Link from './atoms/Link/Link';
-import ProgressBar from './atoms/ProgressBar/ProgressBar';
-import Spinner from './atoms/Spinner/Spinner';
-import ToggleButton from './atoms/ToggleButton/ToggleButton';
+export { default as Box } from './atoms/Box/Box';
+export { default as Button } from './atoms/Button/Button';
+export { default as Heading } from './atoms/Heading/Heading';
+export { default as Label } from './atoms/Label/Label';
+export { default as Link } from './atoms/Link/Link';
+export { default as ProgressBar } from './atoms/ProgressBar/ProgressBar';
+export { default as Spinner } from './atoms/Spinner/Spinner';
+export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 
 // Molecules
-import AccordionList from './molecules/AccordionList/AccordionList';
-import Alert from './molecules/Alert/Alert';
-import Campaign from './molecules/Campaign/Campaign';
-import CheckBoxWithLabel from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
-import DropDownListWithLabel from './molecules/DropDownListWithLabel/DropDownListWithLabel';
-import DonutChart from './molecules/DonutChart/DonutChart';
-import FocusBox from './molecules/FocusBox/FocusBox';
-import FocusSpinner from './molecules/FocusSpinner/FocusSpinner';
-import PageMenu from './molecules/PageMenu/PageMenu';
-import Header from './molecules/Header/Header';
-import ModalDialog from './molecules/ModalDialog/ModalDialog';
-import ModalDialogOverlay from './molecules/ModalDialog/ModalDialogOverlay';
-import PageFooter from './molecules/PageFooter/PageFooter';
-import PageHeader from './molecules/PageHeader/PageHeader';
-import PersonBox from './molecules/PersonBox/PersonBox';
-import ProductPromoBox from './molecules/ProductPromoBox/ProductPromoBox';
-import ProgressChart from './molecules/ProgressChart/ProgressChart';
-import RadioButtonList from './molecules/RadioButtonList/RadioButtonList';
-import RecommendedProducts from './molecules/RecommendedProducts/RecommendedProducts';
-import RelatedArticles from './molecules/RelatedArticles/RelatedArticles';
-import Subscription from './molecules/Subscription/Subscription';
-import ChartLegend from './molecules/ChartLegend/ChartLegend';
-import TextAreaWithLabel from './molecules/TextAreaWithLabel/TextAreaWithLabel';
-import TextBoxWithLabel from './molecules/TextBoxWithLabel/TextBoxWithLabel';
-import Tooltip from './molecules/Tooltip/Tooltip';
-import UserDashboard from './molecules/UserDashboard/UserDashboard';
-import DataBoostChart from './molecules/DataBoostChart/DataBoostChart';
-import BelowTheLineOffer from './molecules/BelowTheLineOffer/BelowTheLineOffer';
-import PopUpLine from './molecules/PopUpLine/PopUpLine';
-import ProductList from './molecules/ProductList/ProductList';
+export { default as AccordionList } from './molecules/AccordionList/AccordionList';
+export { default as Alert } from './molecules/Alert/Alert';
+export { default as Campaign } from './molecules/Campaign/Campaign';
+export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
+export { default as DropDownListWithLabel } from './molecules/DropDownListWithLabel/DropDownListWithLabel';
+export { default as DonutChart } from './molecules/DonutChart/DonutChart';
+export { default as FocusBox } from './molecules/FocusBox/FocusBox';
+export { default as FocusSpinner } from './molecules/FocusSpinner/FocusSpinner';
+export { default as PageMenu } from './molecules/PageMenu/PageMenu';
+export { default as Header } from './molecules/Header/Header';
+export { default as ModalDialog } from './molecules/ModalDialog/ModalDialog';
+export { default as ModalDialogOverlay } from './molecules/ModalDialog/ModalDialogOverlay';
+export { default as PageFooter } from './molecules/PageFooter/PageFooter';
+export { default as PageHeader } from './molecules/PageHeader/PageHeader';
+export { default as PersonBox } from './molecules/PersonBox/PersonBox';
+export { default as ProductPromoBox } from './molecules/ProductPromoBox/ProductPromoBox';
+export { default as ProgressChart } from './molecules/ProgressChart/ProgressChart';
+export { default as RadioButtonList } from './molecules/RadioButtonList/RadioButtonList';
+export { default as RecommendedProducts } from './molecules/RecommendedProducts/RecommendedProducts';
+export { default as RelatedArticles } from './molecules/RelatedArticles/RelatedArticles';
+export { default as Subscription } from './molecules/Subscription/Subscription';
+export { default as ChartLegend } from './molecules/ChartLegend/ChartLegend';
+export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel/TextAreaWithLabel';
+export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel/TextBoxWithLabel';
+export { default as Tooltip } from './molecules/Tooltip/Tooltip';
+export { default as UserDashboard } from './molecules/UserDashboard/UserDashboard';
+export { default as DataBoostChart } from './molecules/DataBoostChart/DataBoostChart';
+export { default as BelowTheLineOffer } from './molecules/BelowTheLineOffer/BelowTheLineOffer';
+export { default as PopUpLine } from './molecules/PopUpLine/PopUpLine';
+export { default as ProductList } from './molecules/ProductList/ProductList';
 
 // Organisms
-import ContentRating from './organisms/ContentRating/ContentRating';
-import FocusSubscription from './organisms/FocusSubscription/FocusSubscription';
-import Form from './organisms/Form/Form';
-import ThemeBoxes from './organisms/ThemeBoxes/ThemeBoxes';
+export { default as ContentRating } from './organisms/ContentRating/ContentRating';
+export { default as FocusSubscription } from './organisms/FocusSubscription/FocusSubscription';
+export { default as Form } from './organisms/Form/Form';
+export { default as ThemeBoxes } from './organisms/ThemeBoxes/ThemeBoxes';
 
-export {
+export default [
     // Atoms
-    Box,
-    Button,
-    Heading,
-    Label,
-    Link,
-    ProgressBar,
-    Spinner,
-    ToggleButton,
-    // Molecules
-    AccordionList,
-    Alert,
-    Campaign,
-    CheckBoxWithLabel,
-    DropDownListWithLabel,
-    DonutChart,
-    FocusBox,
-    FocusSpinner,
-    PageMenu,
-    Header,
-    ModalDialog,
-    ModalDialogOverlay,
-    PageFooter,
-    PageHeader,
-    PersonBox,
-    ProductPromoBox,
-    ProgressChart,
-    RadioButtonList,
-    RecommendedProducts,
-    RelatedArticles,
-    Subscription,
-    ChartLegend,
-    TextAreaWithLabel,
-    TextBoxWithLabel,
-    UserDashboard,
-    DataBoostChart,
-    BelowTheLineOffer,
-    PopUpLine,
-    ProductList,
-    // Organisms
-    ContentRating,
-    FocusSubscription,
-    Form,
-    ThemeBoxes
-};
-
-export default {
-    // Atoms
-    'src/atoms/Box/Box.jsx': Box,
-    'src/atoms/Button/Button.jsx': Button,
-    'src/atoms/Heading/Heading.jsx': Heading,
-    'src/atoms/Label/Label.jsx': Label,
-    'src/atoms/Link/Link.jsx': Link,
-    'src/atoms/ProgressBar/ProgressBar.jsx': ProgressBar,
-    'src/atoms/Spinner/Spinner.jsx': Spinner,
-    'src/atoms/ToggleButton/ToggleButton.jsx': ToggleButton,
+    'src/atoms/Box/Box.jsx',
+    'src/atoms/Button/Button.jsx',
+    'src/atoms/Heading/Heading.jsx',
+    'src/atoms/Label/Label.jsx',
+    'src/atoms/Link/Link.jsx',
+    'src/atoms/ProgressBar/ProgressBar.jsx',
+    'src/atoms/Spinner/Spinner.jsx',
+    'src/atoms/ToggleButton/ToggleButton.jsx',
 
     // Molecules
-    'src/molecules/AccordionList/AccordionList.jsx': AccordionList,
-    'src/molecules/Alert/Alert.jsx': Alert,
-    'src/molecules/Campaign/Campaign.jsx': Campaign,
-    'src/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx': CheckBoxWithLabel,
-    'src/molecules/DropDownListWithLabel/DropDownListWithLabel.jsx': DropDownListWithLabel,
-    'src/molecules/DonutChart/DonutChart.jsx': DonutChart,
-    'src/molecules/FocusBox/FocusBox.jsx': FocusBox,
-    'src/molecules/FocusSpinner/FocusSpinner.jsx': FocusSpinner,
-    'src/molecules/PageMenu/PageMenu.jsx': PageMenu,
-    'src/molecules/Header/Header.jsx': Header,
-    'src/molecules/PageFooter/PageFooter.jsx': PageFooter,
-    'src/molecules/PageHeader/PageHeader.jsx': PageHeader,
-    'src/molecules/PersonBox/PersonBox.jsx': PersonBox,
-    'src/molecules/ProductPromoBox/ProductPromoBox.jsx': ProductPromoBox,
-    'src/molecules/ProgressChart/ProgressChart.jsx': ProgressChart,
-    'src/molecules/RadioButtonList/RadioButtonList.jsx': RadioButtonList,
-    'src/molecules/RecommendedProducts/RecommendedProducts.jsx': RecommendedProducts,
-    'src/molecules/RelatedArticles/RelatedArticles.jsx': RelatedArticles,
-    'src/molecules/Subscription/Subscription.jsx': Subscription,
-    'src/molecules/ChartLegend/ChartLegend.jsx': ChartLegend,
-    'src/molecules/TextAreaWithLabel/TextAreaWithLabel.jsx': TextAreaWithLabel,
-    'src/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx': TextBoxWithLabel,
-    'src/molecules/Tooltip/Tooltip.jsx': Tooltip,
-    'src/molecules/UserDashboard/UserDashboard.jsx': UserDashboard,
-    'src/molecules/DataBoostChart/DataBoostChart.jsx': DataBoostChart,
-    'src/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx': BelowTheLineOffer,
-    'src/molecules/ModalDialog/ModalDialog.jsx': ModalDialog,
-    'src/molecules/PopUpLine/PopUpLine.jsx': PopUpLine,
-    'src/molecules/ProductList/ProductList.jsx': ProductList,
+    'src/molecules/AccordionList/AccordionList.jsx',
+    'src/molecules/Alert/Alert.jsx',
+    'src/molecules/Campaign/Campaign.jsx',
+    'src/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx',
+    'src/molecules/DropDownListWithLabel/DropDownListWithLabel.jsx',
+    'src/molecules/DonutChart/DonutChart.jsx',
+    'src/molecules/FocusBox/FocusBox.jsx',
+    'src/molecules/FocusSpinner/FocusSpinner.jsx',
+    'src/molecules/PageMenu/PageMenu.jsx',
+    'src/molecules/Header/Header.jsx',
+    'src/molecules/PageFooter/PageFooter.jsx',
+    'src/molecules/PageHeader/PageHeader.jsx',
+    'src/molecules/PersonBox/PersonBox.jsx',
+    'src/molecules/ProductPromoBox/ProductPromoBox.jsx',
+    'src/molecules/ProgressChart/ProgressChart.jsx',
+    'src/molecules/RadioButtonList/RadioButtonList.jsx',
+    'src/molecules/RecommendedProducts/RecommendedProducts.jsx',
+    'src/molecules/RelatedArticles/RelatedArticles.jsx',
+    'src/molecules/Subscription/Subscription.jsx',
+    'src/molecules/ChartLegend/ChartLegend.jsx',
+    'src/molecules/TextAreaWithLabel/TextAreaWithLabel.jsx',
+    'src/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx',
+    'src/molecules/Tooltip/Tooltip.jsx',
+    'src/molecules/UserDashboard/UserDashboard.jsx',
+    'src/molecules/DataBoostChart/DataBoostChart.jsx',
+    'src/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx',
+    'src/molecules/ModalDialog/ModalDialog.jsx',
+    'src/molecules/PopUpLine/PopUpLine.jsx',
+    'src/molecules/ProductList/ProductList.jsx',
 
     // Organisms
-    'src/organisms/ContentRating/ContentRating.jsx': ContentRating,
-    'src/organisms/FocusSubscription/FocusSubscription.jsx': FocusSubscription,
-    'src/organisms/Form/Form.jsx': Form,
-    'src/organisms/ThemeBoxes/ThemeBoxes.jsx': ThemeBoxes
-};
+    'src/organisms/ContentRating/ContentRating.jsx',
+    'src/organisms/FocusSubscription/FocusSubscription.jsx',
+    'src/organisms/Form/Form.jsx',
+    'src/organisms/ThemeBoxes/ThemeBoxes.jsx',
+];

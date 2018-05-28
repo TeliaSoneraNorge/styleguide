@@ -13,7 +13,7 @@ const components = (() => {
     const atomsPaths = require.context(`!!raw-loader!../../../component-lib/src/atoms`, true, /(.*\.(jsx|js|html|pcss)$)/).keys().map((path) => /^(.\/)?(\S*)/.exec(path)[2]); // remove ./ from relative path
     const moleculesPaths = require.context(`!!raw-loader!../../../component-lib/src/molecules`, true, /(.*\.(jsx|js|html|pcss)$)/).keys().map((path) => /^(.\/)?(\S*)/.exec(path)[2]); // remove ./ from relative path
     const organismsPaths = require.context(`!!raw-loader!../../../component-lib/src/organisms`, true, /(.*\.(jsx|js|html|pcss)$)/).keys().map((path) => /^(.\/)?(\S*)/.exec(path)[2]); // remove ./ from relative path
-    const exportedComponents = _.keys(ReactComponents);
+    const exportedComponents = ReactComponents;
     // Load all the markdown documentation
     const mdDocsPaths = require.context(`!!raw-loader!../../../component-lib/src`, true, /(.*\.(md$))/)
         .keys()
