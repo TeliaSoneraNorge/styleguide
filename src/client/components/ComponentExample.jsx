@@ -85,9 +85,10 @@ class ComponentExample extends Component {
         const defaultExport = _.get(/export\s+default\s+(?:class|function)?(?:\s+)?(\w+)/.exec(sourceCode), '[1]');
         // consider everything after the imports to be the body
         // remove `export` statements except `export default class|function`
-        const body = _.get(/import[\s\S]*from.*([\s\S]*)/.exec(sourceCode), '[1]', '')
+
+        const body = sourceCode.replace(/import(?:["'\s]*([\w*{}\n\r\t, ]+)from\s*)?["'\s].*([@\w/_-]+)["'\s].*/g, '')
             .replace(/export\s+default\s+(?!class|function)\w+([\s\n]+)?/, '')  // remove `export default Foo` statements
-            .replace(/export\s+default\s+/, ''); // remove `export default ...`
+            .replace(/export\s+default\s+/, ''); // remove `export default ...
         const IIFE = `(function() {\n${imports}${body}return ${defaultExport}\n}())`;
 
         try {
