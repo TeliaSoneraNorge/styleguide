@@ -5,27 +5,31 @@ import classnames from 'classnames';
 /**
  * Status: *finished*.
  */
-const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled }) =>
+const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type='button' }) =>
     <button className={classnames('button', {
         [className]: className,
         [`button--${kind}`]: kind,
         [`button--${size}`]: size,
         'button--processing': isProcessing,
         'button--disabled': isDisabled
-    })} onClick={onClick} disabled={isProcessing || isDisabled}>
+    })} onClick={onClick} disabled={isProcessing || isDisabled}
+    type={type}>
         {!isProcessing && text}
-        {isProcessing && <span className="button__processing">
-            {processingText}
-            <span className="button__processing-dot">.</span>
-            <span className="button__processing-dot">.</span>
-            <span className="button__processing-dot">.</span>
-        </span>}
+        {isProcessing && (
+            <span className="button__processing">
+                {processingText}
+                <span className="button__processing-dot">.</span>
+                <span className="button__processing-dot">.</span>
+                <span className="button__processing-dot">.</span>
+            </span>
+        )}
     </button>;
 
 
 Button.propTypes = {
     /** A button can have a text. */
     text: PropTypes.string,
+    type: PropTypes.oneOf(['button', 'reset', 'submit']),
     /** A button can have different appearances e.g. 'primary', 'cancel'. */
     kind: PropTypes.oneOf(['primary', 'cancel']),
     /** A button can have different sizes e.g. 'small'. */
