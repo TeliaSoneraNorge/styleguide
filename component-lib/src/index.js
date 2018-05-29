@@ -39,6 +39,7 @@ export { default as DataBoostChart } from './molecules/DataBoostChart/DataBoostC
 export { default as BelowTheLineOffer } from './molecules/BelowTheLineOffer/BelowTheLineOffer';
 export { default as PopUpLine } from './molecules/PopUpLine/PopUpLine';
 export { default as ProductList } from './molecules/ProductList/ProductList';
+export { default as References } from './molecules/References/References';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating/ContentRating';
@@ -87,6 +88,7 @@ export default [
     'src/molecules/ModalDialog/ModalDialog.jsx',
     'src/molecules/PopUpLine/PopUpLine.jsx',
     'src/molecules/ProductList/ProductList.jsx',
+    'src/molecules/References/References.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',
