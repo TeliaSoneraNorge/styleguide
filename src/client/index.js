@@ -10,12 +10,14 @@ if (getIEVersion()) {
     require('picturefill');
 }
 
+const mountElement = document.getElementById('root');
+
 const render = (Component) => {
     ReactDOM.render(
         <AppContainer>
             <Component />
         </AppContainer>,
-        document.getElementById('root')
+        mountElement
     );
 };
 
@@ -28,6 +30,7 @@ if (module.hot) {
     require('./css/index.pcss');
 
     module.hot.accept('./App', () => {
+        ReactDOM.unmountComponentAtNode(mountElement);
         const NextApp = require('./App').default;
         render(NextApp);
     });
