@@ -27,7 +27,10 @@ if (module.hot) {
     // require('../../component-lib/src/index.pcss');
     require('./css/index.pcss');
 
-    module.hot.accept('./App', () => render(App));
+    module.hot.accept('./App', () => {
+        const NextApp = require('./App').default;
+        render(NextApp);
+    });
 }
 
 // Method for object-fit polyfill
