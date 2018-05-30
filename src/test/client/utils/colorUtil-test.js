@@ -3,13 +3,13 @@ import * as colorUtil from '../../../client/utils/colorUtil';
 describe('colorUtil', () => {
 
     const colors = {
-        "Black": { "hex": "#000000", "textColor": "#FFFFFF" },
-        "White": { "hex": "#FFFFFF", "textColor": "#000000" },
-        "Light Grey": { "hex": "#F2F2F2", "textColor": "#000000" },
+        'Black': { 'hex': '#000000', 'textColor': '#FFFFFF' },
+        'White': { 'hex': '#FFFFFF', 'textColor': '#000000' },
+        'Light Grey': { 'hex': '#F2F2F2', 'textColor': '#000000' },
 
-        "Core Purple": { "hex": "#990AE3", "textColor": "#FFFFFF" },
-        "Dark Core Purple": { "hex": "#9B009B", "textColor": "#FFFFFF" },
-        "Light Core Purple": { "hex": "#CC00FF", "textColor": "#000000" }
+        'Core Purple': { 'hex': '#990AE3', 'textColor': '#FFFFFF' },
+        'Dark Core Purple': { 'hex': '#9B009B', 'textColor': '#FFFFFF' },
+        'Light Core Purple': { 'hex': '#CC00FF', 'textColor': '#000000' }
     };
 
     describe('fromColorsToCssVariables', () => {
