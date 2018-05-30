@@ -1,10 +1,8 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import createHistory from 'history/createBrowserHistory';
 
 import Routes from './Routes';
-
-const history = createHistory();
+import { history } from './utils/historyUtil';
 
 const App = (props) =>
     <Router history={history}>

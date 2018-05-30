@@ -10,12 +10,14 @@ if (getIEVersion()) {
     require('picturefill');
 }
 
+const mountElement = document.getElementById('root');
+
 const render = (Component) => {
     ReactDOM.render(
         <AppContainer>
             <Component />
         </AppContainer>,
-        document.getElementById('root')
+        mountElement
     );
 };
 
@@ -27,7 +29,11 @@ if (module.hot) {
     // require('../../component-lib/src/index.pcss');
     require('./css/index.pcss');
 
-    module.hot.accept('./App', () => render(App));
+    module.hot.accept('./App', () => {
+        ReactDOM.unmountComponentAtNode(mountElement);
+        const NextApp = require('./App').default;
+        render(NextApp);
+    });
 }
 
 // Method for object-fit polyfill
