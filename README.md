@@ -1,6 +1,6 @@
 # Telia Styleguide
 
-This is a living stykleguide, showing the Atomic Design components which should be used in Telia Norway's web applications
+This is a living styleguide, showing the Atomic Design components which should be used in Telia Norway's web applications
 to achieve a common look & feel, and therefore user experience.
 
 - The styleguide can be [found on the web](http://telia-styleguide.herokuapp.com).
