@@ -1,8 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import Button from '../../atoms/Button/Button';
 import Heading from '../../atoms/Heading/Heading';
+import { deprecated } from '../../utils/propTypesUtil';
 
 /**
  * Status: *almost finished*.
@@ -22,7 +24,8 @@ const Campaign = ({
     mobileBackgroundImage,
     backgroundImageAltText = "",
     isUsingWhiteText = false,
-    isUsingWhiteContentBox = false
+    isUsingWhiteContentBox = false,
+    children
 }) =>
     <div className={classNames("campaign", { 'campaign--white-text': isUsingWhiteText, 'campaign--white-content-box': isUsingWhiteContentBox })}>
         <picture className="campaign__picture">
@@ -33,10 +36,17 @@ const Campaign = ({
         <div className="campaign__content-wrapper">
             <div className="campaign__content">
                 <Heading className="campaign__heading" level={1} text={headingText} />
-                <div dangerouslySetInnerHTML={{ __html: ingressHtml }}></div>
+                {children
+                    ? children
+                    : <div dangerouslySetInnerHTML={{ __html: ingressHtml }}/>
+                }
             </div>
             <Button className="campaign__button" text={buttonText} />
         </div>
     </div>;
+
+Campaign.propTypes = {
+    ingressHtml: deprecated(PropTypes.string, 'Use "children" instead.')
+};
 
 export default Campaign;
