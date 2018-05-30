@@ -7,16 +7,15 @@ const menuLinks = [
 
 const LoggedInNoItems = () => (
     <PageHeader
-        menuId='page-header-menu--example-3'
-        logoUrl='#'
-        logoTitle='Telia logo'
-        logoImageDesktopPath='/public/images/logo/logo.svg'
-        logoImageDesktopPathInverted='/public/images/logo/logo-inverted.svg'
+        menuId="page-header-menu--example-3"
+        logoUrl="#"
+        logoTitle="Telia logo"
+        logoImageDesktopPath="/public/images/logo/logo.svg"
+        logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
         cartItemCount={0}
         menuLinks={menuLinks}
-        loggedInUserName='Maria'
-        isLoggedIn
-    />
+        loggedInUserName="Maria"
+        isLoggedIn />
 );
 
 export default LoggedInNoItems;

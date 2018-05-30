@@ -9,11 +9,10 @@ const list = [
 
 const VerticalRadioButtonList = () => (
     <RadioButtonList
-        type='vertical'
+        type="vertical"
         selectedIndex={0}
-        name='radiobutton-test-2'
-        list={list}
-    />
+        name="radiobutton-test-2"
+        list={list} />
 );
 
 export default VerticalRadioButtonList;

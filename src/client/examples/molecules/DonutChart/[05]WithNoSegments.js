@@ -3,11 +3,10 @@ import { DonutChart } from '@telia/styleguide';
 
 const WithNoSegments = () => (
     <DonutChart
-        value='21,6GB'
-        totalFormatted='25GB'
+        value="21,6GB"
+        totalFormatted="25GB"
         showLineCaps
-        showSegmentSeparators
-    />
+        showSegmentSeparators />
 );
 
 export default WithNoSegments;

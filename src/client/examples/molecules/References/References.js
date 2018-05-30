@@ -13,8 +13,7 @@ const ReferencesExample = () => (
             { alt: 'placeholder', image: 'http://via.placeholder.com/160x100' },
             { alt: 'placeholder', image: 'http://via.placeholder.com/160x100' },
             { alt: 'placeholder', image: 'http://via.placeholder.com/160x100' },
-        ]}
-    />
+        ]} />
 );
 
 export default ReferencesExample;

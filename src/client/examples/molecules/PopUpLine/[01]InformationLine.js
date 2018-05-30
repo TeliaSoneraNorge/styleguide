@@ -3,8 +3,7 @@ import { PopUpLine } from '@telia/styleguide';
 
 const InformationLine = () => (
     <PopUpLine
-        description='Endringene ble lagret!'
-    />
+        description="Endringene ble lagret!" />
 );
 
 export default InformationLine;

@@ -8,20 +8,17 @@ const SeveralThemeBoxesWithImage = () => (
             id="themebox-1"
             isExpanded={false}
             imageSrc="/public/website-images/themeBoxWithImage.jpg"
-            heading="Closed themebox with image"
-        />
+            heading="Closed themebox with image" />
         <ThemeBoxWithImage
             id="themebox-2"
             isExpanded={false}
             imageSrc="/public/website-images/themeBoxWithImage.jpg"
-            heading="Closed themebox with image"
-        />
+            heading="Closed themebox with image" />
         <ThemeBoxWithImage
             id="themebox-3"
             isExpanded={true}
             imageSrc="/public/website-images/themeBoxWithImage.jpg"
-            heading="Open themebox with image"
-        >
+            heading="Open themebox with image">
             <p className="theme-box__preamble paragraph">
                 This is an example of what content you can have inside a ThemeBox. You can use text as we did here, but you can use other components from the styleguide as well.
             </p>

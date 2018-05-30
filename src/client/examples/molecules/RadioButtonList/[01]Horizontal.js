@@ -8,11 +8,10 @@ const list = [
 
 const HorizontalRadioButtonList = () => (
     <RadioButtonList
-        type='horizontal'
+        type="horizontal"
         selectedIndex={0}
-        name='radiobutton-test'
-        list={list}
-    />
+        name="radiobutton-test"
+        list={list} />
 );
 
 export default HorizontalRadioButtonList;

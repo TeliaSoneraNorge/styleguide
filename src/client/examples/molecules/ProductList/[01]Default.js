@@ -26,8 +26,7 @@ const items = [
 
 const DefaultProductList = () => (
     <ProductList
-        items={items}
-    />
+        items={items} />
 );
 
 export default DefaultProductList;

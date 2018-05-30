@@ -24,13 +24,12 @@ const products = [
 
 const DefaultRecommendedProducts = () => (
     <RecommendedProducts
-        mainHeading='Recommended products'
+        mainHeading="Recommended products"
         products={products}
-        image='/public/pebbles/pebble-0.svg'
-        heading='See something you like?'
-        text='We have a lot more electric products that you might find interesting.'
-        buttonText='More products'
-    />
+        image="/public/pebbles/pebble-0.svg"
+        heading="See something you like?"
+        text="We have a lot more electric products that you might find interesting."
+        buttonText="More products" />
 );
 
 export default DefaultRecommendedProducts;
