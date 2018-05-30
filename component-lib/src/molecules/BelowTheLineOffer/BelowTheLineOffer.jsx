@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import Button from '../../atoms/Button/Button';
 
 /**
@@ -42,5 +43,22 @@ class BelowTheLineOffer extends React.Component {
         );
     }
 }
+
+BelowTheLineOffer.propTypes = {
+    /** Url to be used when user clicks on the button */
+    url: PropTypes.string,
+    /** Function to be called when user clicks on the button. Works only if url is not specified. */
+    onClick: PropTypes.func,
+    /** Function to be called when user closes the offer.*/
+    onClose: PropTypes.func,
+    /** Main text to display. */
+    text: PropTypes.string,
+    /** Text to display in the button. */
+    buttonText: PropTypes.string,
+    /** Text to display in header part. */
+    headerText: PropTypes.string,
+    /** Additional classes. */
+    className: PropTypes.string,
+};
 
 export default BelowTheLineOffer;

@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
-
-import Heading from '../../atoms/Heading/Heading';
+import PropTypes from 'prop-types';
+import { deprecated } from '../../utils/propTypesUtil';
 
 function classNames(kind, size) {
     const classNames = ['alert'];
@@ -15,14 +15,17 @@ function classNames(kind, size) {
 /**
  * Status: *finished*.
  */
-const Alert = ({ kind = "positive", size, bodyHtml, links = [] }) =>
+const Alert = ({ kind = "positive", size, bodyHtml, links = [], children }) =>
     <div className={classNames(kind, size)} role="alert">
         <div className="alert__content">
             <div className="alert__icon-container">
                 <img className="alert__icon" src="/public/icons/ico_info.svg" role="presentation" alt=""/>
             </div>
             <div className="alert__text-container">
-                <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+                {children
+                    ? children
+                    : <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+                }
                 {links.length > 0 ?
                     <ul className="list list--links list--black">
                         {_.map(links, (link, i) =>
@@ -35,5 +38,17 @@ const Alert = ({ kind = "positive", size, bodyHtml, links = [] }) =>
         </div>
 
     </div>;
+
+Alert.propTypes = {
+    bodyHtml: deprecated(PropTypes.string, 'Use "children" instead.'),
+    kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning']),
+    size: PropTypes.oneOf(['large']),
+    links: PropTypes.arrayOf(
+        PropTypes.shape({
+            text: PropTypes.string,
+            url: PropTypes.string
+        })
+    ),
+};
 
 export default Alert;

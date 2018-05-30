@@ -93,6 +93,7 @@
     "react-router-dom": "4.2.2",
     "react-simpletabs": "0.7.0",
     "rimraf": "^2.6.2",
+    "warning": "^4.0.0",
     "whatwg-fetch": "2.0.3"
   },
   "engines": {
