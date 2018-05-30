@@ -9,13 +9,12 @@ const segments = [
 
 const AsALink = () => (
     <DonutChart
-        value='21,6GB'
-        totalFormatted='25GB'
+        value="21,6GB"
+        totalFormatted="25GB"
         segments={segments}
-        link='#'
+        link="#"
         showLineCaps
-        showSegmentSeparators
-    />
+        showSegmentSeparators />
 );
 
 export default AsALink;

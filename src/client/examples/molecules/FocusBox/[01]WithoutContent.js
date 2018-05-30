@@ -2,7 +2,7 @@ import React from 'react';
 import { FocusBox } from '@telia/styleguide';
 
 const WithoutContent = () => (
-    <FocusBox/>
+    <FocusBox />
 );
 
 export default WithoutContent;

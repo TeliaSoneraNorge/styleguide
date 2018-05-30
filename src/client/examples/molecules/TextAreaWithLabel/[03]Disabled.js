@@ -3,10 +3,9 @@ import { TextAreaWithLabel } from '@telia/styleguide';
 
 const DisabledTextArea = () => (
     <TextAreaWithLabel
-        labelText='Label for text area'
-        placeholder='Placeholder text here...'
-        disabled
-    />
+        labelText="Label for text area"
+        placeholder="Placeholder text here..."
+        disabled />
 );
 
 export default DisabledTextArea;

@@ -3,14 +3,13 @@ import { Subscription } from '@telia/styleguide';
 
 const StandaloneSubscription = () => (
     <Subscription
-        name='SMART Foobar'
-        id='smartFoobar'
+        name="SMART Foobar"
+        id="smartFoobar"
         dataAmount={1}
-        dataUnit='GB'
+        dataUnit="GB"
         price={249}
-        color='green'
-        isStandalone
-    />
+        color="green"
+        isStandalone />
 );
 
 export default StandaloneSubscription;

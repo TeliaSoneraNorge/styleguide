@@ -7,20 +7,19 @@ const feature = {
 };
 
 const B2BExpanded = () => (
-    <div className='subscription-wrapper'>
+    <div className="subscription-wrapper">
         <Subscription
-            name='SMART Bedrift'
-            id='smart-bedrift-expanded'
+            name="SMART Bedrift"
+            id="smart-bedrift-expanded"
             dataAmount={40}
-            dataUnit='GB'
+            dataUnit="GB"
             price={699}
-            color='purple'
-            size='small'
+            color="purple"
+            size="small"
             highlightedFeature={feature}
-            specialMessageText='Listen to as music as you want without using your data quota!'
+            specialMessageText="Listen to as music as you want without using your data quota!"
             isExpanded
-            isShowingFeatures
-        />
+            isShowingFeatures />
     </div>
 );
 

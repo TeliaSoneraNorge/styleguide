@@ -9,10 +9,9 @@ const segments = [
 
 const DefaultDonutChart = () => (
     <DonutChart
-        value='21,6GB'
-        totalFormatted='25GB'
-        segments={segments}
-    />
+        value="21,6GB"
+        totalFormatted="25GB"
+        segments={segments} />
 );
 
 export default DefaultDonutChart;

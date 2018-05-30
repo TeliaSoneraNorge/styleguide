@@ -7,7 +7,7 @@ const links = [
 ];
 
 const WithLinks = () => (
-    <Alert kind='positive' links={links}>
+    <Alert kind="positive" links={links}>
         <p>With links. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
             incididunt ut labore et dolore magna aliqua.</p>
     </Alert>

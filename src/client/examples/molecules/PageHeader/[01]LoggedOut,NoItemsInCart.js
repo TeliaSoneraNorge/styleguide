@@ -7,14 +7,13 @@ const menuLinks = [
 
 const LoggedOutNoItems = () => (
     <PageHeader
-        menuId='page-header-menu--example-1'
-        logoUrl='#'
-        logoTitle='Telia logo'
-        logoImageDesktopPath='/public/images/logo/logo.svg'
-        logoImageDesktopPathInverted='/public/images/logo/logo-inverted.svg'
+        menuId="page-header-menu--example-1"
+        logoUrl="#"
+        logoTitle="Telia logo"
+        logoImageDesktopPath="/public/images/logo/logo.svg"
+        logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
         cartItemCount={0}
-        menuLinks={menuLinks}
-    />
+        menuLinks={menuLinks} />
 );
 
 export default LoggedOutNoItems;

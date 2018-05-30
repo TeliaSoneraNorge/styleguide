@@ -30,12 +30,11 @@ const articles = [
 
 const DefaultRelatedArticles = () => (
     <RelatedArticles
-        heading='Related articles'
-        headingLink='#'
-        id='related-articles'
+        heading="Related articles"
+        headingLink="#"
+        id="related-articles"
         relatedArticles={articles}
-        isExpandedAccordionIndex={1}
-    />
+        isExpandedAccordionIndex={1} />
 );
 
 export default DefaultRelatedArticles;

@@ -13,10 +13,9 @@ const RightDropDownListWithLabel = () => (
     <DropDownListWithLabel
         options={options}
         selectedOption={options[1]}
-        label='option'
-        labelMode='text-to-right'
-        visibleLabel
-    />
+        label="option"
+        labelMode="text-to-right"
+        visibleLabel />
 );
 
 export default RightDropDownListWithLabel;

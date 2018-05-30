@@ -18,6 +18,8 @@
     "deploy:prod": "git push heroku master && babel-node deploy-slack.js",
     "dev": "run-s clean copy-assets && run-p start-dev-server start-server css:components:watch css:custom:watch",
     "heroku-postbuild": "npm run build",
+    "lint": "eslint ./src/client/examples",
+    "lint:fix": "eslint --fix ./src/client/examples",
     "start": "node dist/server/server.js",
     "start-server": "babel-node ./src/server/server.js",
     "start-dev-server": "webpack-dev-server --port 8090 --config ./src/webpack-dev.config.js",

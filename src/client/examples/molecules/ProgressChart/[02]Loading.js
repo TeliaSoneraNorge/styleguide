@@ -3,8 +3,7 @@ import { ProgressChart } from '@telia/styleguide';
 
 const LoadingProgressChart = () => (
     <ProgressChart
-        loading
-    />
+        loading />
 );
 
 export default LoadingProgressChart;

@@ -9,11 +9,10 @@ const segments = [
 
 const WithLineCaps = () => (
     <DonutChart
-        value='21,6GB'
-        totalFormatted='25GB'
+        value="21,6GB"
+        totalFormatted="25GB"
         segments={segments}
-        showLineCaps
-    />
+        showLineCaps />
 );
 
 export default WithLineCaps;

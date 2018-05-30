@@ -12,8 +12,7 @@ const specialLink = { text: 'Personvern og Cookies', url: '#' };
 const DefaultPageFooter = () => (
     <PageFooter
         links={links}
-        specialLink={specialLink}
-    />
+        specialLink={specialLink} />
 );
 
 export default DefaultPageFooter;
