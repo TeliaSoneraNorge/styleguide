@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 
-console.log("*****", path.resolve(__dirname, 'public/js'));
+console.log('*****', path.resolve(__dirname, 'public/js'));
 
 module.exports = {
     context: path.resolve(__dirname, 'client'),

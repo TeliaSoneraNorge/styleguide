@@ -18,7 +18,7 @@ import InformationArticleSample2 from './pages/InformationArticleSample2';
 import InformationArticleSample3 from './pages/InformationArticleSample3';
 import InformationArticleSample4 from './pages/InformationArticleSample4';
 import SubscriptionSamplePage from './pages/SubscriptionSamplePage';
-import PebblesPage from "./pages/PebblesPage";
+import PebblesPage from './pages/PebblesPage';
 import BoxGridSamplePage from './pages/BoxGridSamplePage';
 import BlogSamplePage1 from './pages/BlogSamplePage1';
 import BlogSamplePage2 from './pages/BlogSamplePage2';
@@ -34,13 +34,13 @@ const Routes = (props) =>
             logoImageDesktopPath="/public/images/logo/logo.svg"
             logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
             menuLinks={[
-                { text: "Home", url: "/" },
-                { text: "Layout", url: "/layout" },
-                { text: "Components", url: "/components" },
-                { text: "Image Assets", url: "/image-assets" },
-                { text: "Contributing", url: "/contributing" },
-                { text: "Download", url: "/download" },
-                { text: "Versions", url: "/versions" }
+                { text: 'Home', url: '/' },
+                { text: 'Layout', url: '/layout' },
+                { text: 'Components', url: '/components' },
+                { text: 'Image Assets', url: '/image-assets' },
+                { text: 'Contributing', url: '/contributing' },
+                { text: 'Download', url: '/download' },
+                { text: 'Versions', url: '/versions' }
             ]}
             isLoggedIn={true} />
 
@@ -72,12 +72,12 @@ const Routes = (props) =>
 
         <PageFooter
             links={[
-                { text: "Om Telia", url: "#" },
-                { text: "Telia butikker", url: "#" },
-                { text: "Presse", url: "#" },
-                { text: "Jobb i Telia", url: "#" }
+                { text: 'Om Telia', url: '#' },
+                { text: 'Telia butikker', url: '#' },
+                { text: 'Presse', url: '#' },
+                { text: 'Jobb i Telia', url: '#' }
             ]}
-            specialLink={{ text: "Personvern og Cookies", url: "#" }} />
+            specialLink={{ text: 'Personvern og Cookies', url: '#' }} />
     </div>;
 
 export default Routes;
