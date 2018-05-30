@@ -1,9 +1,9 @@
 import React from 'react';
-import { ThemeBoxesWithImage } from '@telia/styleguide';
+import { ThemeBoxes } from '@telia/styleguide';
 import { ThemeBoxWithImage } from '@telia/styleguide';
 
 const SeveralThemeBoxesWithImage = () => (
-    <ThemeBoxesWithImage>
+    <ThemeBoxes>
         <ThemeBoxWithImage
             id="themebox-1"
             isExpanded={false}
@@ -32,7 +32,7 @@ const SeveralThemeBoxesWithImage = () => (
             <h3 className="heading heading--level-3">Third heading</h3>
             <p className="paragraph">Proin eget tortor risus. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh.</p>
         </ThemeBoxWithImage>
-    </ThemeBoxesWithImage>
+    </ThemeBoxes>
 );
 
 export default SeveralThemeBoxesWithImage;

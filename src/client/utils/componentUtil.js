@@ -70,8 +70,8 @@ const components = (() => {
             return {
                 ...it,
                 docs: docs,
-                reactExamples: allReactExamplesPaths.filter(path => path.startsWith(`${it.type}/${it.folder}`) && path.endsWith('.js')),
-                htmlExamples: allHtmlExamplesPaths.filter(path => path.startsWith(`${it.type}/${it.folder}`) && path.endsWith('.html')),
+                reactExamples: allReactExamplesPaths.filter(path => path.startsWith(`${it.type}/${it.folder}/`) && path.endsWith('.js')),
+                htmlExamples: allHtmlExamplesPaths.filter(path => path.startsWith(`${it.type}/${it.folder}/`) && path.endsWith('.html')),
             };
         });
     return components;
