@@ -4,7 +4,6 @@ import classNames from 'classnames';
 
 import Button from '../../atoms/Button/Button';
 import Heading from '../../atoms/Heading/Heading';
-import { deprecated } from '../../utils/propTypesUtil';
 
 /**
  * Status: *almost finished*.
@@ -46,7 +45,6 @@ const Campaign = ({
     </div>;
 
 Campaign.propTypes = {
-    ingressHtml: deprecated(PropTypes.string, 'Use "children" instead.')
 };
 
 export default Campaign;
