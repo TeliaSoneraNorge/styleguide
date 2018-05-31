@@ -1,7 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-import { deprecated } from '../../utils/propTypesUtil';
 
 function classNames(kind, size) {
     const classNames = ['alert'];
@@ -40,7 +39,6 @@ const Alert = ({ kind = "positive", size, bodyHtml, links = [], children }) =>
     </div>;
 
 Alert.propTypes = {
-    bodyHtml: deprecated(PropTypes.string, 'Use "children" instead.'),
     kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning']),
     size: PropTypes.oneOf(['large']),
     links: PropTypes.arrayOf(
