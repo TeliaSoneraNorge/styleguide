@@ -14,8 +14,8 @@ const FunkyPanel = (props) => {
     const isSelected = (props.selectedTabIndex === props.tabPanelIndex);
     return (
         <div className={getPanelClassNames(isSelected)}
-            id={"tab-panel-" + props.tabPanelIndex}
-            aria-labelledby={"tab-" + props.tabPanelIndex}>
+            id={'tab-panel-' + props.tabPanelIndex}
+            aria-labelledby={'tab-' + props.tabPanelIndex}>
             {props.children}
         </div>
     );

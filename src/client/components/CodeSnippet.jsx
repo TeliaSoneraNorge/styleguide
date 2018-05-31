@@ -22,7 +22,7 @@ export default class CodeSnippet extends React.Component {
         if (this.props.disableToggle) {
             return (
                 <div className="sg-code-snippet">
-                    <Editor mode={this.props.language} value={this.props.code} readOnly/>
+                    <Editor mode={this.props.language} value={this.props.code} readOnly />
                 </div>
             );
         }
@@ -30,9 +30,9 @@ export default class CodeSnippet extends React.Component {
         return (
             <div className="sg-code-snippet">
                 <a href="#" className="link"
-                    onClick={this.toggleHtmlClick}>{this.state.isOpen ? "Hide HTML" : "Show HTML"}</a>
+                    onClick={this.toggleHtmlClick}>{this.state.isOpen ? 'Hide HTML' : 'Show HTML'}</a>
                 {this.state.isOpen && (
-                    <Editor mode={this.props.language} value={this.props.code} readOnly/>
+                    <Editor mode={this.props.language} value={this.props.code} readOnly />
                 )}
             </div>
         );

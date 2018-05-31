@@ -3,14 +3,14 @@ import { ContentRating } from '../../../component-lib/src/index';
 
 function postFeedbackToSlack(feedbackState, feedbackText = ''){
     fetch(`${window.location.origin}/api/feedback`, {
-        method: "POST",
+        method: 'POST',
         body: JSON.stringify({
             feedbackType: feedbackState,
             url: window.location.href,
             feedbackText: feedbackText
         }),
         headers: {
-            "Content-Type": "application/json"
+            'Content-Type': 'application/json'
         }
     });
 }
@@ -51,8 +51,7 @@ export default class ContentRatingWrapper extends React.Component {
                 feedbackState={this.state.feedbackState}
                 positiveFeedbackClick={this.positiveFeedbackClick}
                 negativeFeedbackClick={this.negativeFeedbackClick}
-                negativeFeedbackSubmitText={this.negativeFeedbackSubmitText}
-            />
+                negativeFeedbackSubmitText={this.negativeFeedbackSubmitText} />
         );
     }
 }

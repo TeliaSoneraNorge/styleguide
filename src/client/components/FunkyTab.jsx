@@ -14,7 +14,7 @@ const FunkyTab = (props) => {
     const isSelected = (props.selectedTabIndex === props.tabIndex);
     return (
         <li className={getTabClassNames(isSelected)}
-            id={"tab-" + props.tabIndex}
+            id={'tab-' + props.tabIndex}
             onClick={props.onClick}>
             <a className="funky-tabs__link" href="#">
                 <img className="funky-tabs__tab-image" src={props.tabIconPath} />

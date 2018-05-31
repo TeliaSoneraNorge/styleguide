@@ -19,10 +19,10 @@ class ComponentDocs extends Component {
             <table className="full-width-table">
                 <thead className="full-width-table__header">
                     <tr className="full-width-table__row">
-                        <th className="full-width-table__cell" align='left' style={{ minWidth: '13%' }}>Name</th>
-                        <th className="full-width-table__cell" align='left' style={{ minWidth: '13%' }}>Default</th>
-                        <th className="full-width-table__cell" align='left' style={{ minWidth: '20%' }}>Type</th>
-                        <th className="full-width-table__cell" align='left' style={{ }}>Description</th>
+                        <th className="full-width-table__cell" align="left" style={{ minWidth: '13%' }}>Name</th>
+                        <th className="full-width-table__cell" align="left" style={{ minWidth: '13%' }}>Default</th>
+                        <th className="full-width-table__cell" align="left" style={{ minWidth: '20%' }}>Type</th>
+                        <th className="full-width-table__cell" align="left" style={{ }}>Description</th>
                     </tr>
                 </thead>
                 <tbody className="full-width-table__body">
@@ -47,10 +47,10 @@ class ComponentDocs extends Component {
         };
         return (
             <tr className="full-width-table__row" key={name}>
-                <td className="full-width-table__cell" align='left' style={{ minWidth: '12%' }}>{name}</td>
-                <td className="full-width-table__cell" align='left' style={{ minWidth: '12%' }}>{defaultValue}</td>
-                <td className="full-width-table__cell" align='left' style={{ minWidth: '20%' }}>{type}</td>
-                <td className="full-width-table__cell" align='left' style={{ }}>{prop.description}</td>
+                <td className="full-width-table__cell" align="left" style={{ minWidth: '12%' }}>{name}</td>
+                <td className="full-width-table__cell" align="left" style={{ minWidth: '12%' }}>{defaultValue}</td>
+                <td className="full-width-table__cell" align="left" style={{ minWidth: '20%' }}>{type}</td>
+                <td className="full-width-table__cell" align="left" style={{ }}>{prop.description}</td>
             </tr>
         );
     };
@@ -73,15 +73,15 @@ class ComponentDocs extends Component {
 
         const propsDocs = !htmlOnly && this.getPropsDocs(docs);
         return (
-            <div className='sg-component' {...rest}>
-                <div className='container container--medium container--no-margin'>
-                    <Heading level={2} text={_.startCase(name)}/>
+            <div className="sg-component" {...rest}>
+                <div className="container container--medium container--no-margin">
+                    <Heading level={2} text={_.startCase(name)} />
                     {htmlOnly && (
                         <div>No React component available yet.</div>
                     )}
-                    <div dangerouslySetInnerHTML={{ __html: marked(docs.description) }}/>
+                    <div dangerouslySetInnerHTML={{ __html: marked(docs.description) }} />
                     {propsDocs && (
-                        <a href='#' className='link'
+                        <a href="#" className="link"
                             onClick={this.toggleProps}>{showProps ? 'Hide Props' : 'Show Props'}</a>
                     )}
                     {showProps && (
@@ -92,10 +92,10 @@ class ComponentDocs extends Component {
                     )}
                 </div>
                 {reactExamples.map(examplePath => (
-                    <ComponentExample examplePath={examplePath} key={examplePath}/>
+                    <ComponentExample examplePath={examplePath} key={examplePath} />
                 ))}
                 {htmlExamples.map(examplePath => (
-                    <HtmlOnlyExample examplePath={examplePath} key={examplePath}/>
+                    <HtmlOnlyExample examplePath={examplePath} key={examplePath} />
                 ))}
             </div>
         );

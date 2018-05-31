@@ -30,7 +30,7 @@ class Editor extends Component {
                     width: '100%'
                 }}
                 mode={this.props.mode}
-                theme='clouds'
+                theme="clouds"
                 name={this.getId()}
                 onChange={this.props.onChange}
                 fontSize={14}
@@ -50,8 +50,7 @@ class Editor extends Component {
                     enableSnippets: true,
                     animatedScroll: true,
                     useWorker: false
-                }}
-            />
+                }} />
         );
     }
 }

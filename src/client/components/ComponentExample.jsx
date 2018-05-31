@@ -4,27 +4,30 @@ import * as Babel from 'babel-standalone';
 import _ from 'lodash';
 
 
-import Editor from "./Editor";
-import { beautifyHtml } from '../utils/componentUtil';
+import Editor from './Editor';
+import { beautifyHtml, isFullWidthComponent } from '../utils/componentUtil';
 
 const babelConfig = {
-    presets: ["es2015", "react", "stage-2"],
+    presets: ['es2015', 'react', 'stage-2'],
 };
 
 class ComponentExample extends Component {
     state = {
         exampleName: null,
+        componentName: null,
         sourceCode: null,
         staticMarkup: null,
         exampleElement: null,
         error: null,
         showJSX: false,
-        showHTML: false
+        showHTML: false,
     };
 
     componentWillMount() {
+        const pathGroups = /\/([^/]*)\/([^/]*)\..*$/.exec(this.props.examplePath);
+        const componentName = pathGroups[1];
         const exampleName = _.startCase(
-            /\/([^/]*)\..*$/.exec(this.props.examplePath)[1]
+            pathGroups[2]
                 .replace(/[-\.]/g, ' ')
                 .replace(/\(/g, ' (')
                 .replace(/^\[.*]/g, ''));
@@ -34,14 +37,16 @@ class ComponentExample extends Component {
             this.setState({
                 sourceCode,
                 error,
-                exampleName
+                exampleName,
+                componentName
             });
         } else {
             this.setState({
                 sourceCode,
                 exampleElement,
                 staticMarkup: beautifyHtml(renderToStaticMarkup(exampleElement)),
-                exampleName
+                exampleName,
+                componentName
             });
         }
     }
@@ -94,7 +99,7 @@ class ComponentExample extends Component {
         try {
             const { code } = Babel.transform(IIFE, babelConfig);
             const Example = eval(code); // eslint-disable-line no-eval
-            const exampleElement = _.isFunction(Example) ? <Example/> : Example;
+            const exampleElement = _.isFunction(Example) ? <Example /> : Example;
 
             if (!isValidElement(exampleElement)) {
                 return {
@@ -146,28 +151,42 @@ class ComponentExample extends Component {
 
 
     render() {
-        const { exampleElement, sourceCode, staticMarkup, error, showJSX, showHTML, exampleName } = this.state;
-        return (
-            <div className='container container--medium container--no-margin'>
-                <h3 className='heading heading--level-3'>{exampleName}</h3>
-                {exampleElement}
+        const { exampleElement, sourceCode, staticMarkup, error, showJSX, showHTML, exampleName, componentName } = this.state;
+        const codeSnippets = (
+            <div className="container container--medium container--no-margin">
                 <div>
-                    <a href='#' className='link' onClick={this.toggleJSX}>{showJSX ? 'Hide JSX' : 'Show JSX'}</a>
+                    <a href="#" className="link" onClick={this.toggleJSX}>{showJSX ? 'Hide JSX' : 'Show JSX'}</a>
                 </div>
                 {showJSX && (
-                    <Editor value={sourceCode} onChange={this.onJsxCodeChange} mode='jsx'/>
+                    <Editor value={sourceCode} onChange={this.onJsxCodeChange} mode="jsx" />
                 )}
                 {error && (
                     <pre>{error}</pre>
                 )}
                 <div>
-                    <a href='#' className='link'
-                        onClick={this.toggleHTML}>{showHTML ? 'Hide HTML' : 'Show HTML'}</a>
+                    <a href="#" className="link" onClick={this.toggleHTML}>{showHTML ? 'Hide HTML' : 'Show HTML'}</a>
                 </div>
                 {showHTML && (
-                    <Editor value={staticMarkup} readOnly={true} mode='html'/>
+                    <Editor value={staticMarkup} readOnly={true} mode="html" />
                 )}
             </div>
+        );
+        return (
+            isFullWidthComponent(componentName)
+                ? <div>
+                    <div className="container container--medium container--no-margin">
+                        <h3 className="heading heading--level-3">{exampleName}</h3>
+                    </div>
+                    <div className="sg-margin-top">
+                        {exampleElement}
+                    </div>
+                    {codeSnippets}
+                </div>
+                : <div className="container container--medium container--no-margin">
+                    <h3 className="heading heading--level-3">{exampleName}</h3>
+                    {exampleElement}
+                    {codeSnippets}
+                </div>
         );
     }
 }

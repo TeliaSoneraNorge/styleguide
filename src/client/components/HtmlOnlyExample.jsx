@@ -3,22 +3,26 @@ import _ from 'lodash';
 import { renderToStaticMarkup } from 'react-dom/server';
 
 import Editor from './Editor';
-import { beautifyHtml } from '../utils/componentUtil';
+import { isFullWidthComponent } from '../utils/componentUtil';
 
 class HtmlOnlyExample extends Component {
     state = {
         staticMarkup: null,
         showHTML: false,
-        exampleName: null
+        exampleName: null,
+        componentName: null,
     };
 
     componentWillMount() {
         const { examplePath } = this.props;
-        const exampleName = _.startCase(/\/([^/]*)\..*$/.exec(examplePath)[1].replace(/[-\.]/g, ' ').replace(/\(/g, ' ('));
+        const pathGroups = /\/([^/]*)\/([^/]*)\..*$/.exec(examplePath);
+        const exampleName = _.startCase(pathGroups[2].replace(/[-\.]/g, ' ').replace(/\(/g, ' ('));
+        const componentName = pathGroups[1];
         const staticMarkup = this.getOriginalStaticMarkup();
         this.setState({
             staticMarkup,
-            exampleName
+            exampleName,
+            componentName,
         });
     }
 
@@ -35,18 +39,32 @@ class HtmlOnlyExample extends Component {
     };
 
     render() {
-        const { staticMarkup, showHTML, exampleName } = this.state;
+        const { staticMarkup, showHTML, exampleName, componentName } = this.state;
         return (
-            <div className='container container--medium container--no-margin'>
-                <h3 className='heading heading--level-3'>{exampleName}</h3>
-                <div dangerouslySetInnerHTML={{ __html: staticMarkup }}/>
-                <div>
-                    <a href='#' className='link' onClick={this.toggleHTML}>{showHTML ? 'Hide HTML' : 'Show HTML'}</a>
+            isFullWidthComponent(componentName)
+                ? <div>
+                    <div className="container container--medium container--no-margin">
+                        <h3 className="heading heading--level-3">{exampleName}</h3>
+                    </div>
+                    <div dangerouslySetInnerHTML={{ __html: staticMarkup }} />
+                    {showHTML && (
+                        <div className="container container--medium container--no-margin">
+                            <Editor value={staticMarkup} readOnly={true} mode="html" />
+                        </div>
+                    )}
                 </div>
-                {showHTML && (
-                    <Editor value={staticMarkup} readOnly={true} mode='html'/>
-                )}
-            </div>
+                : <div className="container container--medium container--no-margin">
+                    <h3 className="heading heading--level-3">{exampleName}</h3>
+                    <div dangerouslySetInnerHTML={{ __html: staticMarkup }} />
+                    <div>
+                        <a href="#" className="link" onClick={this.toggleHTML}>
+                            {showHTML ? 'Hide HTML' : 'Show HTML'}
+                        </a>
+                    </div>
+                    {showHTML && (
+                        <Editor value={staticMarkup} readOnly={true} mode="html" />
+                    )}
+                </div>
         );
     }
 }
