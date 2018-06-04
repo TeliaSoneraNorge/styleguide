@@ -1,6 +1,7 @@
 // Atoms
 export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
+export { default as Caption } from './atoms/Caption/Caption';
 export { default as Heading } from './atoms/Heading/Heading';
 export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
@@ -56,6 +57,7 @@ export default [
     // Atoms
     'src/atoms/Box/Box.jsx',
     'src/atoms/Button/Button.jsx',
+    'src/atoms/Caption/Caption.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/Label/Label.jsx',
     'src/atoms/Link/Link.jsx',
