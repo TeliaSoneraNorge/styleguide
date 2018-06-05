@@ -7,19 +7,17 @@ const feature = {
 };
 
 const ShowingFeaturesAndSpeechBubble = () => (
-    <div className="subscription-wrapper">
-        <Subscription
-            name="SMART Total"
-            id="smartTotal2"
-            dataAmount={40}
-            dataUnit="GB"
-            price={699}
-            color="blue"
-            size="medium"
-            speechBubbleText="Kampanje 60 GB per md. i 2 md."
-            highlightedFeature={feature}
-            isShowingFeatures />
-    </div>
+    <Subscription
+        name="SMART Total"
+        id="smartTotal2"
+        dataAmount={40}
+        dataUnit="GB"
+        price={699}
+        color="blue"
+        size="medium"
+        speechBubbleText="Kampanje 60 GB per md. i 2 md."
+        highlightedFeature={feature}
+        isShowingFeatures />
 );
 
 export default ShowingFeaturesAndSpeechBubble;

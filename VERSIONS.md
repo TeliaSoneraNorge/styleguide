@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.6.0 [changed component]
+- Molecule: Subscription
+
 ## 1.5.4 [new component]
 - Organism: ThemeBoxesWithImage
 

@@ -7,17 +7,15 @@ const feature = {
 };
 
 const B2BCollapsed = () => (
-    <div className="subscription-wrapper">
-        <Subscription
-            name="SMART Bedrift"
-            id="smart-bedrift-collapsed"
-            dataAmount={40}
-            dataUnit="GB"
-            price={699}
-            color="purple"
-            size="small"
-            highlightedFeature={feature} />
-    </div>
+    <Subscription
+        name="SMART Bedrift"
+        id="smart-bedrift-collapsed"
+        dataAmount={40}
+        dataUnit="GB"
+        price={699}
+        color="purple"
+        size="small"
+        highlightedFeature={feature} />
 );
 
 export default B2BCollapsed;

@@ -185,7 +185,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={1}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
+                        <section className="box-grid container container--medium container--no-padding">
                             {underFemtenSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -193,7 +193,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={2}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
+                        <section className="box-grid container container--medium container--no-padding">
                             {underTjueAatteSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -201,7 +201,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={3}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
+                        <section className="box-grid container container--medium container--no-padding">
                             {forAlleSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
@@ -209,7 +209,7 @@ export default class SubscriptionSamplePage extends React.Component {
                     <FunkyPanel
                         tabPanelIndex={4}
                         selectedTabIndex={this.state.selectedTabIndex}>
-                        <section className="box-grid subscription-wrapper container container--medium container--no-padding">
+                        <section className="box-grid container container--medium container--no-padding">
                             {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
