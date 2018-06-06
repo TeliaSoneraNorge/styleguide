@@ -33,8 +33,7 @@ const ChartSegmentArc = ({
                 capsOnChart,
                 capOnSegment),
             strokeWidth: `${strokeWidthInPercents * 100}%`
-        }}
-    />
+        }} />
 );
 
 export default ChartSegmentArc;

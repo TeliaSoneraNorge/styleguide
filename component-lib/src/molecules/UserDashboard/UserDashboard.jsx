@@ -14,7 +14,7 @@ import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
 const UserDashboard  = (
     { minsideLink, name, usageLink, dataAmountLeftText, usageInfoText, isPrepaid, isDataBoost,
         dataAmountLeft, totalDataAmount, invoiceLink, unpaidOverdueInvoices, buyMoreDataLink }) =>
-    <section className={classNames("user-dashboard", { "user-dashboard--no-progress-bar" : isPrepaid || isDataBoost }, "container container--large container--no-padding container--no-margin")}>
+    <section className={classNames('user-dashboard', { 'user-dashboard--no-progress-bar' : isPrepaid || isDataBoost }, 'container container--large container--no-padding container--no-margin')}>
         <div className="user-dashboard__container">
             <h2 className="user-dashboard__name heading heading--level-2">
                 <a className="user-dashboard__name-link link" href={minsideLink}>{name}</a>
@@ -23,7 +23,7 @@ const UserDashboard  = (
                 <span className="user-dashboard__data-amount-left">{dataAmountLeftText} </span>
                 <span className="user-dashboard__data-amount-info">{usageInfoText}</span>
                 {!isPrepaid && !isDataBoost &&
-                <ProgressBar value={dataAmountLeft} min={0} max={totalDataAmount}/>}
+                <ProgressBar value={dataAmountLeft} min={0} max={totalDataAmount} />}
             </a>
         </div>
         <ul className="user-dashboard__links list list--links">

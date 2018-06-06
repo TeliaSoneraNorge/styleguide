@@ -79,8 +79,8 @@ ProgressChart.propTypes = {
 };
 
 ProgressChart.defaultProps = {
-    loadingCaption: "Henter data...",
-    valueCaption: "gjenstår",
+    loadingCaption: 'Henter data...',
+    valueCaption: 'gjenstår',
     thresholds: [
         { to: 0.2, type: 'red' },
         { to: 0.6, type: 'orange' },

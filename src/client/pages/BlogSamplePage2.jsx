@@ -4,32 +4,32 @@ import { Header, ProductPromoBox, RelatedArticles } from '../../../component-lib
 
 const RelatedArticlesProps = [
     {
-        "heading": "Related articles",
-        "headingLink": "#",
-        "relatedArticles": [
+        'heading': 'Related articles',
+        'headingLink': '#',
+        'relatedArticles': [
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/boy-ipad.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/boy-ipad.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             },
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/woman-mobile.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/woman-mobile.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             },
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/kids-ipad.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/kids-ipad.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             },
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/woman-holding-ipad.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/woman-holding-ipad.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             }
         ]
     }
@@ -60,7 +60,7 @@ const BlogSamplePage = () =>
                     <span className="tags__tag">Streaming</span>
                 </div>
                 <div class="article-meta-data__share">
-                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg"/>
+                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
                 </div>
             </div>
         </section>

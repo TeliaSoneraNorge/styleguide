@@ -4,7 +4,7 @@ import CodeSnippet from '../components/CodeSnippet';
 import { Heading, Header } from '../../../component-lib/src/index';
 
 const codeSnippets = {
-    bem: ".block {}\n.block__element {}\n.block__element--modifier {}"
+    bem: '.block {}\n.block__element {}\n.block__element--modifier {}'
 };
 
 const ContributingPage = ({ colors }) =>

@@ -30,28 +30,28 @@ export default class UsagePage extends React.Component {
         return {
             value: `${totalRemaining.toFixed(1)} GB`,
             segments: [
-                { "color": "purple", "percent": rollover / total },
-                { "color": "orange", "percent": data / total },
-                { "color": "green", "percent": extra / total }
+                { 'color': 'purple', 'percent': rollover / total },
+                { 'color': 'orange', 'percent': data / total },
+                { 'color': 'green', 'percent': extra / total }
             ],
             series: [
                 {
-                    "title": "Rollover",
-                    "color": "purple",
-                    "value": `${rollover.toFixed(1)} GB`,
-                    "total": `${maxRollover.toFixed(1)} GB`
+                    'title': 'Rollover',
+                    'color': 'purple',
+                    'value': `${rollover.toFixed(1)} GB`,
+                    'total': `${maxRollover.toFixed(1)} GB`
                 },
                 {
-                    "title": "Inkludert data",
-                    "color": "orange",
-                    "value": `${data.toFixed(1)} GB`,
-                    "total": `${maxData.toFixed(1)} GB`
+                    'title': 'Inkludert data',
+                    'color': 'orange',
+                    'value': `${data.toFixed(1)} GB`,
+                    'total': `${maxData.toFixed(1)} GB`
                 },
                 {
-                    "title": "Extra datapack",
-                    "color": "green",
-                    "value": `${extra.toFixed(1)} GB`,
-                    "total": `${maxExtra.toFixed(1)} GB`
+                    'title': 'Extra datapack',
+                    'color': 'green',
+                    'value': `${extra.toFixed(1)} GB`,
+                    'total': `${maxExtra.toFixed(1)} GB`
                 }
             ]
         };
@@ -128,8 +128,7 @@ export default class UsagePage extends React.Component {
 
                     <DataBoostChart
                         loading={this.state.isLoading}
-                        lowerCaption={this.state.showRemainingTime ? '15:00' : 'Fri bruk'}
-                    />
+                        lowerCaption={this.state.showRemainingTime ? '15:00' : 'Fri bruk'} />
                 </div>
             </div>
         );

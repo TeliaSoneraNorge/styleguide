@@ -109,9 +109,9 @@ DonutChart.defaultProps = {
     size: 266,
     radius : 0.9,
     strokeWidthInPercents : 0.06,
-    loadingCaption: "Henter data...",
-    valueCaption: "igjen av totalt",
-    upperCaption: "Datamengde",
+    loadingCaption: 'Henter data...',
+    valueCaption: 'igjen av totalt',
+    upperCaption: 'Datamengde',
     segments: []
 };
 

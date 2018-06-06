@@ -5,7 +5,7 @@ import Button from '../../atoms/Button/Button';
 
 const RecommendedProducts = ({ mainHeading, products, image, heading, text, buttonText }) =>
     <div className="recommended-products">
-        <Heading level="2" text={mainHeading} className="recommended-products__heading"/>
+        <Heading level="2" text={mainHeading} className="recommended-products__heading" />
         <div className="recommended-products__products">
             {products.map((product, i) =>
                 <div key={i} className="recommended-products__item-container">

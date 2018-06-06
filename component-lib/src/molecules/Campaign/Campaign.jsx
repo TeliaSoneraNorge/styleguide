@@ -21,12 +21,12 @@ const Campaign = ({
     buttonText,
     desktopBackgroundImage,
     mobileBackgroundImage,
-    backgroundImageAltText = "",
+    backgroundImageAltText = '',
     isUsingWhiteText = false,
     isUsingWhiteContentBox = false,
     children
 }) =>
-    <div className={classNames("campaign", { 'campaign--white-text': isUsingWhiteText, 'campaign--white-content-box': isUsingWhiteContentBox })}>
+    <div className={classNames('campaign', { 'campaign--white-text': isUsingWhiteText, 'campaign--white-content-box': isUsingWhiteContentBox })}>
         <picture className="campaign__picture">
             <source media="(max-width: 29.99em)" srcSet={mobileBackgroundImage} />
             <source media="(min-width: 30em)" srcSet={desktopBackgroundImage} />
@@ -37,7 +37,7 @@ const Campaign = ({
                 <Heading className="campaign__heading" level={1} text={headingText} />
                 {children
                     ? children
-                    : <div dangerouslySetInnerHTML={{ __html: ingressHtml }}/>
+                    : <div dangerouslySetInnerHTML={{ __html: ingressHtml }} />
                 }
             </div>
             <Button className="campaign__button" text={buttonText} />

@@ -17,8 +17,8 @@ export default class ContentRating extends React.Component {
                     <div>
                         <h3 className="heading heading--level-3 content-rating__heading">Var denne siden nyttig?</h3>
 
-                        <img className="content-rating__icon" src="/public/icons/ico_heart.svg"/>
-                        <p className="content-rating__text">Så bra!<br/>Takk for din tilbakemelding.</p>
+                        <img className="content-rating__icon" src="/public/icons/ico_heart.svg" />
+                        <p className="content-rating__text">Så bra!<br />Takk for din tilbakemelding.</p>
                     </div> : null
                 }
 

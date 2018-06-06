@@ -45,7 +45,7 @@ export default class Box extends React.Component {
     boxContainerClick(e) {
         if (!this.props.canExpand) return;
 
-        if (e.type === "click" || (e.type === "keyup" && (e.which === 13 || e.which === 32))) {
+        if (e.type === 'click' || (e.type === 'keyup' && (e.which === 13 || e.which === 32))) {
             if (!this.state.isExpanded) {
                 this.setState({ isExpanded: true });
             }
@@ -63,7 +63,7 @@ export default class Box extends React.Component {
                 onClick={this.boxContainerClick}
                 onKeyUp={this.boxContainerClick}
                 aria-expanded={this.props.canExpand ? this.state.isExpanded : null}
-                tabIndex={this.props.canExpand && !this.state.isExpanded ? "0" : null}>
+                tabIndex={this.props.canExpand && !this.state.isExpanded ? '0' : null}>
                 {this.props.speechBubbleText ?
                     <div className="box__speech-bubble">{this.props.speechBubbleText}</div>
                     : <div className="box__speech-bubble box__speech-bubble--empty"></div>}
