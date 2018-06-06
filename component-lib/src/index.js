@@ -15,6 +15,7 @@ export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
 export { default as Alert } from './molecules/Alert/Alert';
+export { default as ArticleMetaData } from './molecules/ArticleMetaData/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign/Campaign';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
 export { default as DropDownListWithLabel } from './molecules/DropDownListWithLabel/DropDownListWithLabel';
@@ -74,6 +75,7 @@ export default [
     // Molecules
     'src/molecules/AccordionList/AccordionList.jsx',
     'src/molecules/Alert/Alert.jsx',
+    'src/molecules/ArticleMetaData/ArticleMetaData.jsx',
     'src/molecules/Campaign/Campaign.jsx',
     'src/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx',
     'src/molecules/DropDownListWithLabel/DropDownListWithLabel.jsx',
