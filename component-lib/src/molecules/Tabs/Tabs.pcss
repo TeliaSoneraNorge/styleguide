@@ -1,0 +1,95 @@
+.tabs {
+    &__list {
+        position: relative;
+        display: flex;
+        padding: 0;
+        margin: 0;
+        margin-bottom: 1.875em;
+
+        list-style: none;
+
+        &-item {
+            flex: 1;
+            padding-bottom: 0.3125em;
+
+            text-align: center;
+            font-family: 'Helvetica Neue Medium';
+
+            /*
+                Generates offset and width depending on how many tabs are present and which one
+                is selected
+
+                The outer loop is iterating all possible tab counts while the inner loop
+                is terating through all possible selected tabs
+
+                Based on what is the total count of tabs and which tab is selected
+                the width and left position is calculated.
+
+                The maximum possible tab count is defined by the upper limit of the outer loop
+             */
+            @for $i from 1 to 10 {
+                @for $y from 0 to $i {
+                    &:nth-child($y)&--selected ~ &:nth-child($i) ~ .tabs__underline {
+                        left: calc(100% / $(i) * $(y) - 100% / $(i) + 0.781em);
+                        width: calc(100% / $(i) - 1.563em);
+                    }
+                }
+
+                /* The last selected item is not covered in the loop above so we cover it here */
+                &:nth-child($i)&--selected&:nth-child($i) ~ .tabs__underline {
+                    left: calc(100% - 100% / $(i) + 0.781em);
+                    width: calc(100% / $(i) - 1.563em);
+                }
+            }
+        }
+    }
+
+    &__content {
+        display: none;
+
+        &--selected {
+            display: block;
+        }
+    }
+
+    &__underline {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+
+        height: .15em;
+        width: 100%;
+        margin: 0;
+        background: var(--core-purple);
+        border: none;
+        transition: .3s ease-in-out;
+
+        &:after {
+            top: 100%;
+            left: 50%;
+            border: solid transparent;
+            content: " ";
+            height: 0;
+            width: 0;
+            position: absolute;
+            pointer-events: none;
+            border-top-color: var(--core-purple);
+            border-width: 0.281em;
+            margin-left: -0.281em;
+        }
+    }
+
+    &__link {
+        border: none;
+        cursor: pointer;
+
+        margin: 0 0.781em;
+        padding: 0 0.5em;
+        background: none;
+        font-size: 1em;
+    }
+
+    &__link, &__link:hover, &__link:focus {
+        border: none;
+    }
+}

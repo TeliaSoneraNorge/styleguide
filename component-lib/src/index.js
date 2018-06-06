@@ -40,6 +40,8 @@ export { default as BelowTheLineOffer } from './molecules/BelowTheLineOffer/Belo
 export { default as PopUpLine } from './molecules/PopUpLine/PopUpLine';
 export { default as ProductList } from './molecules/ProductList/ProductList';
 export { default as References } from './molecules/References/References';
+export { default as TabElement } from './molecules/Tabs/TabElement';
+export { default as Tabs } from './molecules/Tabs/Tabs';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating/ContentRating';
@@ -92,6 +94,7 @@ export default [
     'src/molecules/PopUpLine/PopUpLine.jsx',
     'src/molecules/ProductList/ProductList.jsx',
     'src/molecules/References/References.jsx',
+    'src/molecules/Tabs/Tabs.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',
