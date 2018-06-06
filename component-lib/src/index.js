@@ -11,6 +11,7 @@ export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
 export { default as ProgressBar } from './atoms/ProgressBar/ProgressBar';
 export { default as Spinner } from './atoms/Spinner/Spinner';
+export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 
 // Molecules
@@ -72,6 +73,7 @@ export default [
     'src/atoms/Link/Link.jsx',
     'src/atoms/ProgressBar/ProgressBar.jsx',
     'src/atoms/Spinner/Spinner.jsx',
+    'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
 
     // Molecules
