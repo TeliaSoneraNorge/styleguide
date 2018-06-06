@@ -95,6 +95,7 @@ export function isFullWidthComponent(componentName) {
         'FactBox',
         'FunkyTabs',
         'Header',
+        'HeaderWithImage',
         'Hero',
         'PageHeader',
         'PageFooter',

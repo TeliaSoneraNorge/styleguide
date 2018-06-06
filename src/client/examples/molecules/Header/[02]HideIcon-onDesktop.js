@@ -8,7 +8,7 @@ const HideIconOnDestop = () => (
         pageTitle="Page Title"
         hideIconOnDesktop>
         Preamble; an introductory and expressionary statement in a document that explains the document's purpose and
-        underlying philosoph
+        underlying philosophy.
     </Header>
 );
 
