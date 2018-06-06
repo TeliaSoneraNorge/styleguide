@@ -8,7 +8,7 @@ const WithMask = () => (
         pageTitle="Page Title"
         withMask>
         Preamble; an introductory and <a className="link">expressionary</a> statement in a document that explains the document's purpose and
-        underlying philosoph
+        underlying philosophy.
     </Header>
 );
 

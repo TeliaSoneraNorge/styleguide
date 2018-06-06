@@ -26,6 +26,7 @@ export { default as FocusBox } from './molecules/FocusBox/FocusBox';
 export { default as FocusSpinner } from './molecules/FocusSpinner/FocusSpinner';
 export { default as PageMenu } from './molecules/PageMenu/PageMenu';
 export { default as Header } from './molecules/Header/Header';
+export { default as HeaderWithImage } from './molecules/HeaderWithImage/HeaderWithImage';
 export { default as ModalDialog } from './molecules/ModalDialog/ModalDialog';
 export { default as ModalDialogOverlay } from './molecules/ModalDialog/ModalDialogOverlay';
 export { default as PageFooter } from './molecules/PageFooter/PageFooter';
@@ -88,6 +89,7 @@ export default [
     'src/molecules/FocusSpinner/FocusSpinner.jsx',
     'src/molecules/PageMenu/PageMenu.jsx',
     'src/molecules/Header/Header.jsx',
+    'src/molecules/HeaderWithImage/HeaderWithImage.jsx',
     'src/molecules/PageFooter/PageFooter.jsx',
     'src/molecules/PageHeader/PageHeader.jsx',
     'src/molecules/PersonBox/PersonBox.jsx',
