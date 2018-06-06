@@ -1,4 +1,5 @@
 // Atoms
+export { default as AlertText } from './atoms/AlertText/AlertText';
 export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
 export { default as Heading } from './atoms/Heading/Heading';
@@ -54,6 +55,7 @@ export { default as ThemeBoxWithImage } from './organisms/ThemeBoxesWithImage/Th
 // This array contains react components to be used in the examples page
 export default [
     // Atoms
+    'src/atoms/AlertText/AlertText.jsx',
     'src/atoms/Box/Box.jsx',
     'src/atoms/Button/Button.jsx',
     'src/atoms/Heading/Heading.jsx',
