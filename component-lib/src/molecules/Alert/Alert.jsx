@@ -14,11 +14,11 @@ function classNames(kind, size) {
 /**
  * Status: *finished*.
  */
-const Alert = ({ kind = "positive", size, bodyHtml, links = [], children }) =>
+const Alert = ({ kind = 'positive', size, bodyHtml, links = [], children }) =>
     <div className={classNames(kind, size)} role="alert">
         <div className="alert__content">
             <div className="alert__icon-container">
-                <img className="alert__icon" src="/public/icons/ico_info.svg" role="presentation" alt=""/>
+                <img className="alert__icon" src="/public/icons/ico_info.svg" role="presentation" alt="" />
             </div>
             <div className="alert__text-container">
                 {children

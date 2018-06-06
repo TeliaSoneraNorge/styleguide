@@ -32,7 +32,7 @@ class RelatedArticles extends React.Component {
                         {this.props.relatedArticles.map((relatedArticle, i) =>
                             <li className="related-articles__list-item" key={i}>
                                 <a className="related-article" href={relatedArticle.link}>
-                                    <img className="related-article__image" src={relatedArticle.imageSrc}/>
+                                    <img className="related-article__image" src={relatedArticle.imageSrc} />
                                     <div className="related-article__text">
                                         <h3 className="heading heading--level-3 related-article__heading">{relatedArticle.heading}</h3>
                                         <div className="tags tags--dark-grey">
@@ -48,7 +48,7 @@ class RelatedArticles extends React.Component {
                     <button className={`related-articles__show-more-articles${this.state.isShowingAllArticles ? ' related-articles__show-more-articles--expanded' : ''}`}
                         aria-expanded={this.state.isShowingAllArticles}
                         aria-controls={this.props.id}
-                        onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? "Show less" : "Show more"}
+                        onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? 'Show less' : 'Show more'}
                     </button>
                 </div>
             </section>

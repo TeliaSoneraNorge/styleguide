@@ -29,8 +29,7 @@ const ProgressBar = ({
             aria-valuenow={clamp(min, max, value)}
             aria-valuemin={min}
             aria-valuemax={max}
-            style={{ width: `${(clamp(min, max, value) - min) / (max - min) * 100}%` }}
-        />
+            style={{ width: `${(clamp(min, max, value) - min) / (max - min) * 100}%` }} />
     </div>
 );
 

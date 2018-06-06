@@ -11,7 +11,7 @@ const TextAreaWithLabel = ({ labelText, placeholder, error, disabled }) =>
         <textarea
             className={classnames('text-area', 'text-area--white', { 'text-area--with-error': error })}
             placeholder={placeholder}
-            disabled={disabled}/>
+            disabled={disabled} />
         {error && <span className="input-error">{error}</span>}
     </Label>;
 

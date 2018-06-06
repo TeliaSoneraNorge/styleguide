@@ -4,9 +4,9 @@ import { Heading, Header, FocusBox } from '../../../component-lib/src/index';
 import { getStaticData } from '../utils/staticDataUtil';
 
 const containerStyles = {
-    backgroundColor: "#990AE3",
-    color: "#FFFFFF",
-    paddingTop: "1rem"
+    backgroundColor: '#990AE3',
+    color: '#FFFFFF',
+    paddingTop: '1rem'
 };
 
 const colors = getStaticData('colors');

@@ -18,8 +18,7 @@ const RadioButtonList = ({ list, selectedIndex, name, type }) =>
                 key={index}
                 label={radio.label}
                 name={name}
-                value={radio.value}
-            />)}
+                value={radio.value} />)}
     </div>;
 
 export default RadioButtonList;

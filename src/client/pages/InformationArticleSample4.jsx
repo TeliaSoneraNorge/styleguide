@@ -4,19 +4,19 @@ import { AccordionList, Header } from '../../../component-lib/src/index';
 
 const accordionListProps = [
     {
-        "accordionItems": [
+        'accordionItems': [
             {
-                "id": "example-1",
-                "title": "A closed accordion heading",
-                "children": "This is the body of the accordion"
+                'id': 'example-1',
+                'title': 'A closed accordion heading',
+                'children': 'This is the body of the accordion'
             },
             {
-                "id": "example-2",
-                "title": "An open accordion heading",
-                "children": "This is the body of the accordion"
+                'id': 'example-2',
+                'title': 'An open accordion heading',
+                'children': 'This is the body of the accordion'
             }
         ],
-        "isExpandedAccordionIndex": 1
+        'isExpandedAccordionIndex': 1
     }
 ];
 

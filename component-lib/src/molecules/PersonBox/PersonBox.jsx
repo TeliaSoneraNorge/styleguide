@@ -19,7 +19,7 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
         <Box color={color} id={id} canExpand={true} isExpanded={isExpanded}>
             <div className="person-box">
                 <div className="person-box__image-label">
-                    <img className="person-box__image" src={imagePath} alt={imageAltText}/>
+                    <img className="person-box__image" src={imagePath} alt={imageAltText} />
                     <div className="person-box__label">
                         <span className="person-box__name">{name}</span>
                         <span className="person-box__title">{title}</span>

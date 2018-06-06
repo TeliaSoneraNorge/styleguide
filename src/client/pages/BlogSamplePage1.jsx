@@ -4,32 +4,32 @@ import { Header, RelatedArticles } from '../../../component-lib/src/index';
 
 const RelatedArticlesProps = [
     {
-        "heading": "Related articles",
-        "headingLink": "#",
-        "relatedArticles": [
+        'heading': 'Related articles',
+        'headingLink': '#',
+        'relatedArticles': [
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/boy-ipad.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/boy-ipad.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             },
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/woman-mobile.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/woman-mobile.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             },
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/kids-ipad.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/kids-ipad.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             },
             {
-                "link": "#",
-                "imageSrc": "/public/website-images/woman-holding-ipad.jpg",
-                "heading": "This is the article's heading",
-                "tags": ["Related", "Article", "Tag"]
+                'link': '#',
+                'imageSrc': '/public/website-images/woman-holding-ipad.jpg',
+                'heading': 'This is the article\'s heading',
+                'tags': ['Related', 'Article', 'Tag']
             }
         ]
     }
@@ -65,7 +65,7 @@ const BlogSamplePage = () =>
                     <span className="tags__tag">Streaming</span>
                 </div>
                 <div class="article-meta-data__share">
-                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg"/>
+                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
                 </div>
             </div>
         </section>
@@ -73,12 +73,12 @@ const BlogSamplePage = () =>
 
             <p className="paragraph">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
-                <blockquote className="quote quote--inline-right">
-                    <p className="quote__text">
+            <blockquote className="quote quote--inline-right">
+                <p className="quote__text">
                         Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
-                    </p>
-                    <span className="quote__source">Lorem Ipsum</span>
-                </blockquote>
+                </p>
+                <span className="quote__source">Lorem Ipsum</span>
+            </blockquote>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula
                 elementum sed sit amet dui.
             </p>
@@ -93,7 +93,7 @@ const BlogSamplePage = () =>
                 Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
 
             <figure className="image image--inline-left">
-                <img className="image__img" src="/public/website-images/woman-holding-ipad.jpg" alt="Woman looking at tablet"/>
+                <img className="image__img" src="/public/website-images/woman-holding-ipad.jpg" alt="Woman looking at tablet" />
                 <figcaption className="caption">Woman looking at tablet</figcaption>
             </figure>
 
@@ -106,7 +106,7 @@ const BlogSamplePage = () =>
                 Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
 
             <figure className="image image--inline-right">
-                <img className="image__img" src="/public/website-images/woman-mobile.jpg" alt="Woman looking at mobile"/>
+                <img className="image__img" src="/public/website-images/woman-mobile.jpg" alt="Woman looking at mobile" />
                 <figcaption className="caption">Woman looking at mobile</figcaption>
             </figure>
 
@@ -117,14 +117,14 @@ const BlogSamplePage = () =>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 
             <figure className="image">
-                <img className="image__img" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet"/>
+                <img className="image__img" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet" />
                 <figcaption className="caption">
                     Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
                 </figcaption>
             </figure>
 
             <section className="fact-box">
-                <img className="fact-box__icon" src="/public/icons/ico_info.svg"/>
+                <img className="fact-box__icon" src="/public/icons/ico_info.svg" />
                 <h3 className="fact-box__heading heading heading--level-3">Fact about Lorem Ipsum:</h3>
                 <div className="fact-box__text">
                     <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.</p>

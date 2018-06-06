@@ -19,10 +19,10 @@ class ComponentsByTypePage extends Component {
                     iconUrl="/public/ico_code.svg"
                     pageTitle={`Components: ${componentType}`}
                     withMask={false}
-                    withContentOverlap={false}/>
+                    withContentOverlap={false} />
                 <div className="container container--no-padding container--extra-margin-bottom">
                     {components.map(it => (
-                        <ComponentDocs id={it.name} component={it} key={it.name}/>
+                        <ComponentDocs id={it.name} component={it} key={it.name} />
                     ))}
                 </div>
             </div>

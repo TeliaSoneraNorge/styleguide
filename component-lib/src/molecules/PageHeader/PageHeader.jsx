@@ -42,10 +42,9 @@ export default class PageHeader extends React.Component {
                     menuId={this.props.menuId}
                     isExpanded={this.state.menuIsExpanded}
                     onClose={this.closeMenu}
-                    fixedPosition
-                />
+                    fixedPosition />
                 <div className="page-header__site-nav">
-                    <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || "page-header-menu"} aria-pressed={this.state.menuIsExpanded}>
+                    <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
                         <i className={`${menuIconClass} page-header__icon-box-icon`} />
                         <span className="page-header__icon-box-text">Meny</span>
                     </button>
@@ -62,7 +61,7 @@ export default class PageHeader extends React.Component {
                         </a> : null}
                     {!this.props.isLoggedIn &&
                         <a className="page-header__log-in-button" href="#">
-                            <i className="page-header__log-in-button-icon page-header__icon-box-icon"/>
+                            <i className="page-header__log-in-button-icon page-header__icon-box-icon" />
                             <span className="page-header__log-in-button-text">Logg inn</span>
                         </a>}
                 </div>

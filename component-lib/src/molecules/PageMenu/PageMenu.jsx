@@ -19,7 +19,7 @@ const PageMenu = ({
                 'page-menu',
                 { 'page-menu--fixed': fixedPosition },
                 { 'page-menu--expanded': isExpanded })}
-            id={menuId || "page-header-menu"}>
+            id={menuId || 'page-header-menu'}>
             <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClose={onClose} />
             <nav aria-label="Main menu">
                 <MenuBar

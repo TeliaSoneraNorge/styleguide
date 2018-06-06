@@ -4,19 +4,19 @@ import { AccordionList, Header } from '../../../component-lib/src/index';
 
 const accordionListProps = [
     {
-        "accordionItems": [
+        'accordionItems': [
             {
-                "id": "example-1",
-                "title": "A closed accordion heading",
-                "children": "This is the body of the accordion"
+                'id': 'example-1',
+                'title': 'A closed accordion heading',
+                'children': 'This is the body of the accordion'
             },
             {
-                "id": "example-2",
-                "title": "An open accordion heading",
-                "children": <table className='full-width-table'> <thead className='full-width-table__header'> <tr className='full-width-table__row'> <th className='full-width-table__cell'>Column 1</th> <th className='full-width-table__cell'>Column 2</th> <th className='full-width-table__cell'>Column 3</th> </tr> </thead> <tbody className='full-width-table__body'> <tr className='full-width-table__row'> <td className='full-width-table__cell'>Nulla quis lorem ut libero malesuada feugiat</td> <td className='full-width-table__cell'>Lorem</td> <td className='full-width-table__cell'>Ipsum</td> </tr> <tr className='full-width-table__row'> <td className='full-width-table__cell'>Lorem ipsum dolor sit amet</td> <td className='full-width-table__cell'>Consectetur</td> <td className='full-width-table__cell'>Elit</td> </tr> <tr className='full-width-table__row'> <td className='full-width-table__cell'>Donec rutrum congue leo</td> <td className='full-width-table__cell'>Eget</td> <td className='full-width-table__cell'>Malesuada</td> </tr> </tbody> </table>
+                'id': 'example-2',
+                'title': 'An open accordion heading',
+                'children': <table className="full-width-table"> <thead className="full-width-table__header"> <tr className="full-width-table__row"> <th className="full-width-table__cell">Column 1</th> <th className="full-width-table__cell">Column 2</th> <th className="full-width-table__cell">Column 3</th> </tr> </thead> <tbody className="full-width-table__body"> <tr className="full-width-table__row"> <td className="full-width-table__cell">Nulla quis lorem ut libero malesuada feugiat</td> <td className="full-width-table__cell">Lorem</td> <td className="full-width-table__cell">Ipsum</td> </tr> <tr className="full-width-table__row"> <td className="full-width-table__cell">Lorem ipsum dolor sit amet</td> <td className="full-width-table__cell">Consectetur</td> <td className="full-width-table__cell">Elit</td> </tr> <tr className="full-width-table__row"> <td className="full-width-table__cell">Donec rutrum congue leo</td> <td className="full-width-table__cell">Eget</td> <td className="full-width-table__cell">Malesuada</td> </tr> </tbody> </table>
             }
         ],
-        "isExpandedAccordionIndex": 1
+        'isExpandedAccordionIndex': 1
     }
 ];
 

@@ -5,7 +5,7 @@ import { getComponents } from '../utils/componentUtil';
 
 
 const ComponentList = ({ type, components }) => {
-    const typeComponents = components.filter(it => it.type === type)
+    const typeComponents = components.filter(it => it.type === type);
     return (
         <ul>
             {
@@ -35,15 +35,15 @@ const ComponentsPage = (props) => {
             </Header>
             <div className="container container--small container--extra-margin-bottom">
                 <h2 className="heading heading--level-2"><a className="link" href="/components/atoms">Atoms</a></h2>
-                <ComponentList type="atoms" components={components}/>
+                <ComponentList type="atoms" components={components} />
 
                 <h2 className="heading heading--level-2"><a className="link" href="/components/molecules">Molecules</a>
                 </h2>
-                <ComponentList type="molecules" components={components}/>
+                <ComponentList type="molecules" components={components} />
 
                 <h2 className="heading heading--level-2"><a className="link" href="/components/organisms">Organisms</a>
                 </h2>
-                <ComponentList type="organisms" components={components}/>
+                <ComponentList type="organisms" components={components} />
 
                 <h2 className="heading heading--level-2">Pages</h2>
                 <ul>

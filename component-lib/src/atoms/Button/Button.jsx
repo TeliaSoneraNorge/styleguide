@@ -5,15 +5,18 @@ import classnames from 'classnames';
 /**
  * Status: *finished*.
  */
-const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type='button' }) =>
-    <button className={classnames('button', {
-        [className]: className,
-        [`button--${kind}`]: kind,
-        [`button--${size}`]: size,
-        'button--processing': isProcessing,
-        'button--disabled': isDisabled
-    })} onClick={onClick} disabled={isProcessing || isDisabled}
-    type={type}>
+const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type = 'button' }) =>
+    <button
+        className={classnames('button', {
+            [className]: className,
+            [`button--${kind}`]: kind,
+            [`button--${size}`]: size,
+            'button--processing': isProcessing,
+            'button--disabled': isDisabled
+        })}
+        onClick={onClick}
+        disabled={isProcessing || isDisabled}
+        type={type}>
         {!isProcessing && text}
         {isProcessing && (
             <span className="button__processing">
