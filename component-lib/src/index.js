@@ -20,6 +20,7 @@ export { default as Spinner } from './atoms/Spinner/Spinner';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
 export { default as TextArea } from './atoms/TextArea/TextArea';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
+export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/UniqueSellingPoints';
 
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
@@ -90,6 +91,7 @@ export default [
     'src/atoms/TextArea/TextArea.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
+    'src/atoms/UniqueSellingPoints/UniqueSellingPoints.jsx',
 
     // Molecules
     'src/molecules/AccordionList/AccordionList.jsx',
