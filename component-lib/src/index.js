@@ -1,6 +1,7 @@
 // Atoms
 export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
+export { default as Caption } from './atoms/Caption/Caption';
 export { default as Heading } from './atoms/Heading/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule/HorizontalRule';
 export { default as IconLink } from './atoms/IconLink/IconLink';
@@ -59,6 +60,7 @@ export default [
     // Atoms
     'src/atoms/Box/Box.jsx',
     'src/atoms/Button/Button.jsx',
+    'src/atoms/Caption/Caption.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
     'src/atoms/IconLink/IconLink.jsx',
