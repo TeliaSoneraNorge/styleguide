@@ -1,7 +1,7 @@
 import React from 'react';
 import { HeaderWithImage } from '@telia/styleguide';
 
-const Default = () => (
+const BlackGradient = () => (
     <HeaderWithImage
         imgSrcMobile="/public/website-images/hero.jpg"
         imgSrcDesktop="/public/website-images/hero.jpg"
@@ -13,4 +13,4 @@ const Default = () => (
     </HeaderWithImage>
 );
 
-export default Default;
+export default BlackGradient;
