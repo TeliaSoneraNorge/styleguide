@@ -9,6 +9,7 @@ export { default as IconLink } from './atoms/IconLink/IconLink';
 export { default as InputError } from './atoms/InputError/InputError';
 export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
+export { default as NumberBoxes } from './atoms/NumberBoxes/NumberBoxes';
 export { default as ProgressBar } from './atoms/ProgressBar/ProgressBar';
 export { default as Spinner } from './atoms/Spinner/Spinner';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
@@ -72,6 +73,7 @@ export default [
     'src/atoms/InputError/InputError.jsx',
     'src/atoms/Label/Label.jsx',
     'src/atoms/Link/Link.jsx',
+    'src/atoms/NumberBoxes/NumberBoxes.jsx',
     'src/atoms/ProgressBar/ProgressBar.jsx',
     'src/atoms/Spinner/Spinner.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
