@@ -9,8 +9,13 @@ export { default as IconLink } from './atoms/IconLink/IconLink';
 export { default as InputError } from './atoms/InputError/InputError';
 export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
+export { default as NumberBoxes } from './atoms/NumberBoxes/NumberBoxes';
+export { default as PagePebbles } from './atoms/PagePebbles/PagePebbles';
+export { default as Paragraph } from './atoms/Paragraph/Paragraph';
 export { default as ProgressBar } from './atoms/ProgressBar/ProgressBar';
 export { default as Quote } from './atoms/Quote/Quote';
+export { default as ShadowBox } from './atoms/ShadowBox/ShadowBox';
+export { default as SpecialMessage } from './atoms/SpecialMessage/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner/Spinner';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
@@ -73,8 +78,13 @@ export default [
     'src/atoms/InputError/InputError.jsx',
     'src/atoms/Label/Label.jsx',
     'src/atoms/Link/Link.jsx',
+    'src/atoms/NumberBoxes/NumberBoxes.jsx',
+    'src/atoms/PagePebbles/PagePebbles.jsx',
+    'src/atoms/Paragraph/Paragraph.jsx',
     'src/atoms/ProgressBar/ProgressBar.jsx',
     'src/atoms/Quote/Quote.jsx',
+    'src/atoms/ShadowBox/ShadowBox.jsx',
+    'src/atoms/SpecialMessage/SpecialMessage.jsx',
     'src/atoms/Spinner/Spinner.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
