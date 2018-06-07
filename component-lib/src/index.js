@@ -8,6 +8,7 @@ export { default as Heading } from './atoms/Heading/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule/HorizontalRule';
 export { default as IconLink } from './atoms/IconLink/IconLink';
 export { default as InputError } from './atoms/InputError/InputError';
+export { default as FullWidthTable } from './atoms/FullWidthTable/FullWidthTable';
 export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
 export { default as List } from './atoms/List/List';
@@ -91,6 +92,7 @@ export default [
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
     'src/atoms/IconLink/IconLink.jsx',
     'src/atoms/InputError/InputError.jsx',
+    'src/atoms/FullWidthTable/FullWidthTable.jsx',
     'src/atoms/Label/Label.jsx',
     'src/atoms/Link/Link.jsx',
     'src/atoms/List/List.jsx',
