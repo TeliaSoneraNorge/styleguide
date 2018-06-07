@@ -3,6 +3,7 @@ export { default as AlertText } from './atoms/AlertText/AlertText';
 export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
 export { default as Caption } from './atoms/Caption/Caption';
+export { default as DescriptionList } from './atoms/DescriptionList/DescriptionList';
 export { default as Heading } from './atoms/Heading/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule/HorizontalRule';
 export { default as IconLink } from './atoms/IconLink/IconLink';
@@ -75,6 +76,7 @@ export default [
     'src/atoms/AlertText/AlertText.jsx',
     'src/atoms/Box/Box.jsx',
     'src/atoms/Button/Button.jsx',
+    'src/atoms/DescriptionList/DescriptionList.jsx',
     'src/atoms/Caption/Caption.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
