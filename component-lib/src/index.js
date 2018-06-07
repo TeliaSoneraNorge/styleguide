@@ -3,6 +3,8 @@ export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
 export { default as Heading } from './atoms/Heading/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule/HorizontalRule';
+export { default as IconLink } from './atoms/IconLink/IconLink';
+export { default as InputError } from './atoms/InputError/InputError';
 export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
 export { default as ProgressBar } from './atoms/ProgressBar/ProgressBar';
@@ -59,6 +61,8 @@ export default [
     'src/atoms/Button/Button.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
+    'src/atoms/IconLink/IconLink.jsx',
+    'src/atoms/InputError/InputError.jsx',
     'src/atoms/Label/Label.jsx',
     'src/atoms/Link/Link.jsx',
     'src/atoms/ProgressBar/ProgressBar.jsx',
