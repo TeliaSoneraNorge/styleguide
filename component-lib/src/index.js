@@ -18,6 +18,7 @@ export { default as ShadowBox } from './atoms/ShadowBox/ShadowBox';
 export { default as SpecialMessage } from './atoms/SpecialMessage/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner/Spinner';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
+export { default as TextArea } from './atoms/TextArea/TextArea';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 
 // Molecules
@@ -86,6 +87,7 @@ export default [
     'src/atoms/ShadowBox/ShadowBox.jsx',
     'src/atoms/SpecialMessage/SpecialMessage.jsx',
     'src/atoms/Spinner/Spinner.jsx',
+    'src/atoms/TextArea/TextArea.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
 
