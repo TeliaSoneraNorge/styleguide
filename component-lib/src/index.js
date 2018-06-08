@@ -30,6 +30,7 @@ export { default as Alert } from './molecules/Alert/Alert';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign/Campaign';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
+export { default as DownloadButtons } from './molecules/DownloadButtons/DownloadButtons';
 export { default as DropDownListWithLabel } from './molecules/DropDownListWithLabel/DropDownListWithLabel';
 export { default as DonutChart } from './molecules/DonutChart/DonutChart';
 export { default as FocusBox } from './molecules/FocusBox/FocusBox';
@@ -104,6 +105,7 @@ export default [
     'src/molecules/ArticleMetaData/ArticleMetaData.jsx',
     'src/molecules/Campaign/Campaign.jsx',
     'src/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx',
+    'src/molecules/DownloadButtons/DownloadButtons.jsx',
     'src/molecules/DropDownListWithLabel/DropDownListWithLabel.jsx',
     'src/molecules/DonutChart/DonutChart.jsx',
     'src/molecules/FocusBox/FocusBox.jsx',
