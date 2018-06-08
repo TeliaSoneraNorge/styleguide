@@ -5,14 +5,15 @@ import classnames from 'classnames';
 /**
  * Status: *finished*.
  */
-const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type = 'button' }) =>
+const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type = 'button', margin }) =>
     <button
         className={classnames('button', {
             [className]: className,
             [`button--${kind}`]: kind,
             [`button--${size}`]: size,
+            [`button--margin-${margin}`]: margin,
             'button--processing': isProcessing,
-            'button--disabled': isDisabled
+            'button--disabled': isDisabled,
         })}
         onClick={onClick}
         disabled={isProcessing || isDisabled}
@@ -35,6 +36,8 @@ Button.propTypes = {
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
     /** A button can have different appearances e.g. 'primary', 'cancel'. */
     kind: PropTypes.oneOf(['primary', 'cancel']),
+    /** One of ['top', 'bottom'] */
+    margin: PropTypes.oneOf(['top', 'bottom']),
     /** A button can have different sizes e.g. 'small'. */
     size: PropTypes.oneOf(['small']),
     onClick: PropTypes.func,
