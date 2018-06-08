@@ -33,6 +33,7 @@ export { default as DropDownListWithLabel } from './molecules/DropDownListWithLa
 export { default as DonutChart } from './molecules/DonutChart/DonutChart';
 export { default as FocusBox } from './molecules/FocusBox/FocusBox';
 export { default as FocusSpinner } from './molecules/FocusSpinner/FocusSpinner';
+export { default as Hero } from './molecules/Hero/Hero';
 export { default as PageMenu } from './molecules/PageMenu/PageMenu';
 export { default as Header } from './molecules/Header/Header';
 export { default as HeaderWithImage } from './molecules/HeaderWithImage/HeaderWithImage';
@@ -105,6 +106,7 @@ export default [
     'src/molecules/DonutChart/DonutChart.jsx',
     'src/molecules/FocusBox/FocusBox.jsx',
     'src/molecules/FocusSpinner/FocusSpinner.jsx',
+    'src/molecules/Hero/Hero.jsx',
     'src/molecules/PageMenu/PageMenu.jsx',
     'src/molecules/Header/Header.jsx',
     'src/molecules/HeaderWithImage/HeaderWithImage.jsx',
