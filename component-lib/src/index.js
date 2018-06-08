@@ -26,6 +26,7 @@ export { default as TextArea } from './atoms/TextArea/TextArea';
 export { default as Tags } from './atoms/Tags/Tags';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/UniqueSellingPoints';
+export { default as StepIndicator } from './atoms/StepIndicator/StepIndicator';
 
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
@@ -115,6 +116,7 @@ export default [
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
     'src/atoms/UniqueSellingPoints/UniqueSellingPoints.jsx',
+    'src/atoms/StepIndicator/StepIndicator.jsx',
 
     // Molecules
     'src/molecules/AccordionList/AccordionList.jsx',
