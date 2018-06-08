@@ -10,7 +10,8 @@ export default class TabsSamplePage extends React.Component {
         this.state = {
             funkyTabSelectedIndex: 2,
             otherTabSelectedIndex: 1,
-            pricesTabSelectedIndex: 1
+            pricesTabSelectedIndex: 1,
+            separatedTabSelectedIndex: 0
         };
     }
     onFunkyTabSelect(e, index) {
@@ -130,7 +131,32 @@ export default class TabsSamplePage extends React.Component {
                     </Tabs>
                 </section>
 
-                
+                <section className="container container--small">
+                    <Tabs
+                        uniqueId="separated-tabs"
+                        onSelect={(index) => this.setState({ separatedTabSelectedIndex: index })}
+                        selectedIndex={this.state.separatedTabSelectedIndex}
+                        skipPanelRendering={true}>
+                        <Tabs.Tab heading="Foo" />
+                        <Tabs.Tab heading="Bar" />
+                    </Tabs>
+
+                    <p>Some other stuff here</p>
+
+
+                    <Tabs.TabPanel index={0} heading="Foo" uniqueId="separated-tabs" isSelected={this.state.separatedTabSelectedIndex === 0}>
+                        <Heading level={3} text="Foo" />
+                        <p className="paragraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </Tabs.TabPanel>
+                    <Tabs.TabPanel  index={1} heading="Bar" uniqueId="separated-tabs" isSelected={this.state.separatedTabSelectedIndex === 1}>
+                        <Heading level={3} text="Bar" />
+                        <p className="paragraph">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        </p>
+                    </Tabs.TabPanel>
+                </section>
             </div>
         );
     }

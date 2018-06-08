@@ -1,18 +1,24 @@
 import React from 'react';
 import classNames from 'classnames';
-import _ from 'lodash';
+
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
+import Button from '../../atoms/Button/Button';
+import Heading from '../../atoms/Heading/Heading';
+import Tabs from '../../molecules/Tabs/Tabs';
 
 const PageMenu = ({
-    links,
+    menuLinks,
     menuId,
     isExpanded,
     onClose,
     fixedPosition,
-    showLogoutButton
-}) => (
+    textAboveLoginButton,
+    isLoggedIn,
+    menuSelectedTabIndex,
+    onTabSelect
+ }) => (
     <div>
         <div
             className={classNames(
@@ -22,15 +28,34 @@ const PageMenu = ({
             id={menuId || 'page-header-menu'}>
             <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClose={onClose} />
             <nav aria-label="Main menu">
-                <MenuBar
-                    ariaLabel="innlogget brukermeny"
-                    items={links.filter(link => link.forLoggedInUsers)} loggedIn />
+                <div className="page-menu__top-panel page-menu__top-panel--with-padding page-menu__top-panel--centered-content">
+                    <Tabs
+                        uniqueId="menu-tabs"
+                        onSelect={onTabSelect}
+                        selectedIndex={menuSelectedTabIndex}
+                        skipPanelRendering={true}
+                        noMargin={true}
+                        compact={true}>
+                        {_.map(menuLinks, (menuLink, i) =>
+                            <Tabs.Tab key={i} heading={menuLink.heading} />
+                        )}
+                    </Tabs>
+                    
+                    {!isLoggedIn &&
+                        <div className="page-menu__top-panel-content">
+                            <p className="paragraph">{textAboveLoginButton}</p>
+                            <Button text="Logg inn" kind="primary" />
+                        </div>}
+                </div>
 
-                <MenuBar
-                    ariaLabel="brukermeny"
-                    items={links.filter(link => !link.forLoggedInUsers)} />
+                {_.map(menuLinks, (menuLink, i) =>
+                    <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
+                        <MenuBar ariaLabel="innlogget brukermeny" items={menuLink.loggedInLinks} isEmphasised />
+                        <MenuBar items={menuLink.loggedOutLinks} />
+                    </Tabs.TabPanel>
+                )}
 
-                {showLogoutButton &&
+                {isLoggedIn &&
                     <ul className="page-menu__item-list">
                         <li className="page-menu__item">
                             <div className="page-menu__item-link">

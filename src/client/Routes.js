@@ -43,7 +43,8 @@ const Routes = (props) =>
                 { text: 'Download', url: '/download' },
                 { text: 'Versions', url: '/versions' }
             ]}
-            isLoggedIn={true} />
+            isLoggedIn={true}
+            showButtons={false}/>
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/layout" component={LayoutPage} />
