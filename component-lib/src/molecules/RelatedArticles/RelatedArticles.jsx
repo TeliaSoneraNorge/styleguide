@@ -1,4 +1,5 @@
 import React from 'react';
+import RelatedArticle from '../RelatedArticle/RelatedArticle';
 
 /**
  * Status: *finished*.
@@ -14,12 +15,15 @@ class RelatedArticles extends React.Component {
 
         this.toggleShowMoreArticles = this.toggleShowMoreArticles.bind(this);
     }
+
     toggleShowMoreArticles(e) {
         e.preventDefault();
 
         this.setState({ isShowingAllArticles: !this.state.isShowingAllArticles });
     }
+
     render() {
+        // TODO: Replace `<a className="related-articles__link heading-link"` with HeadingLink after it's merged to master
         return (
             <section className="related-articles">
                 <div className="container container--large container--no-padding">
@@ -31,21 +35,16 @@ class RelatedArticles extends React.Component {
                         id={this.props.id}>
                         {this.props.relatedArticles.map((relatedArticle, i) =>
                             <li className="related-articles__list-item" key={i}>
-                                <a className="related-article" href={relatedArticle.link}>
-                                    <img className="related-article__image" src={relatedArticle.imageSrc} />
-                                    <div className="related-article__text">
-                                        <h3 className="heading heading--level-3 related-article__heading">{relatedArticle.heading}</h3>
-                                        <div className="tags tags--dark-grey">
-                                            {relatedArticle.tags.map((tag, i) =>
-                                                <span className="tags__tag" key={i}> {tag}</span>
-                                            )}
-                                        </div>
-                                    </div>
-                                </a>
+                                <RelatedArticle
+                                    href={relatedArticle.link}
+                                    imgSrc={relatedArticle.imageSrc}
+                                    heading={relatedArticle.heading}
+                                    tags={relatedArticle.tags} />
                             </li>
                         )}
                     </ul>
-                    <button className={`related-articles__show-more-articles${this.state.isShowingAllArticles ? ' related-articles__show-more-articles--expanded' : ''}`}
+                    <button
+                        className={`related-articles__show-more-articles${this.state.isShowingAllArticles ? ' related-articles__show-more-articles--expanded' : ''}`}
                         aria-expanded={this.state.isShowingAllArticles}
                         aria-controls={this.props.id}
                         onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? 'Show less' : 'Show more'}

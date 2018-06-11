@@ -5,10 +5,13 @@ import classnames from 'classnames';
 /**
  * Status: *finished*
  */
-const Tags = ({ children, className }) => (
-    <div className={classnames('tags', {
-        [className]: className
-    })}>
+const Tags = ({ children, className, color, ...rest }) => (
+    <div
+        className={classnames('tags', {
+            [className]: className,
+            [`tags--${color}`]: color,
+        })}
+        {...rest}>
         {children}
     </div>
 );
@@ -17,7 +20,7 @@ Tags.Tag = ({ children, className }) => (
     <span className={classnames('tags__tag', {
         [className]: className
     })}>
-        {children}
+        &nbsp;{children}
     </span>
 );
 
@@ -28,7 +31,9 @@ Tags.propTypes = {
     children: PropTypes.oneOfType([
         Tags.Tag,
         PropTypes.arrayOf(Tags.Tag)
-    ])
+    ]),
+    /** One of ['dark-grey'] */
+    color: PropTypes.oneOf(['dark-grey'])
 };
 
 export default Tags;
