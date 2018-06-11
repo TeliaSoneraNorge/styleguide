@@ -21,12 +21,14 @@ export { default as Quote } from './atoms/Quote/Quote';
 export { default as ShadowBox } from './atoms/ShadowBox/ShadowBox';
 export { default as SpecialMessage } from './atoms/SpecialMessage/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner/Spinner';
+export { default as StepIndicator } from './atoms/StepIndicator/StepIndicator';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
 export { default as TextArea } from './atoms/TextArea/TextArea';
 export { default as Tags } from './atoms/Tags/Tags';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
+export { default as ToggleSwitch } from './atoms/ToggleSwitch/ToggleSwitch';
 export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/UniqueSellingPoints';
-export { default as StepIndicator } from './atoms/StepIndicator/StepIndicator';
+
 
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
@@ -111,12 +113,13 @@ export default [
     'src/atoms/ShadowBox/ShadowBox.jsx',
     'src/atoms/SpecialMessage/SpecialMessage.jsx',
     'src/atoms/Spinner/Spinner.jsx',
+    'src/atoms/StepIndicator/StepIndicator.jsx',
     'src/atoms/Tags/Tags.jsx',
     'src/atoms/TextArea/TextArea.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
+    'src/atoms/ToggleSwitch/ToggleSwitch.jsx',
     'src/atoms/UniqueSellingPoints/UniqueSellingPoints.jsx',
-    'src/atoms/StepIndicator/StepIndicator.jsx',
 
     // Molecules
     'src/molecules/AccordionList/AccordionList.jsx',

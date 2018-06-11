@@ -1,0 +1,28 @@
+.toggle-switch {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 2.5rem;
+    border-radius: 1.25rem;
+    width: 20rem;
+    background-color: var(--white);
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &__button {
+        border: 0;
+        border-radius: 1.25rem;
+        background: inherit;
+        padding: 0.8rem 1rem;
+        font-family: 'Helvetica Neue', Helvetica, Arial, "Lucinda Grande", sans-serif;
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    [aria-pressed="true"] {
+        background-color: var(--black);
+        color: var(--white);
+    }
+}
