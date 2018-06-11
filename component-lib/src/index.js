@@ -42,6 +42,7 @@ export { default as Hero } from './molecules/Hero/Hero';
 export { default as PageMenu } from './molecules/PageMenu/PageMenu';
 export { default as Header } from './molecules/Header/Header';
 export { default as HeaderWithImage } from './molecules/HeaderWithImage/HeaderWithImage';
+export { default as ImageHeadingLink } from './molecules/ImageHeadingLink/ImageHeadingLink';
 export { default as HeadingLink } from './molecules/HeadingLink/HeadingLink';
 export { default as Image } from './molecules/Image/Image';
 export { default as ListWithImage } from './molecules/ListWithImage/ListWithImage';
@@ -125,6 +126,7 @@ export default [
     'src/molecules/PageMenu/PageMenu.jsx',
     'src/molecules/Header/Header.jsx',
     'src/molecules/HeaderWithImage/HeaderWithImage.jsx',
+    'src/molecules/ImageHeadingLink/ImageHeadingLink.jsx',
     'src/molecules/HeadingLink/HeadingLink.jsx',
     'src/molecules/Image/Image.jsx',
     'src/molecules/ListWithImage/ListWithImage.jsx',
