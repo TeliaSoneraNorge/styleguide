@@ -93,7 +93,7 @@
         @media screen and (max-width: 30em) {
             margin-left: -1.5rem;
         }
-        
+
         &--interactive {
             outline: none;
             text-decoration: none;
@@ -133,6 +133,24 @@
                 color: var(--white);
             }
         }
+
+        &--touched > .step-by-step__content {
+            animation: step-by-step__height-close 500ms forwards;
+        }
+
+        &--opened > .step-by-step__content {
+            visibility: visible;
+            max-height: none;
+            animation: step-by-step__height-open 500ms forwards;
+        }
+
+        &--closed > .step-by-step__content {
+            overflow: hidden;
+            max-height: 0;
+            visibility: collapse;
+            transition: visibility 500ms;
+            animation-fill-mode: forwards;
+        }
     }
 
     &__icon {
@@ -163,7 +181,7 @@
         padding: 0 0 4rem .7rem;
     }
 
-    &__content{
+    &__content {
         width: 100%;
         margin: -2rem 0 4rem 5.3rem;
         @media screen and (max-width: 30em) {
@@ -176,5 +194,32 @@
     }
 
     &__description {
+    }
+}
+
+@keyframes step-by-step__height-open {
+    0%, 1% {
+        max-height: 0
+    }
+    99% {
+        max-height: 1000px
+    }
+    to {
+        max-height: none
+    }
+}
+@keyframes step-by-step__height-close {
+    0% {
+        max-height: none
+    }
+    1% {
+        max-height: 1000px
+    }
+    99% {
+        max-height: 0
+    }
+    to {
+        max-height: 0;
+        padding: 0
     }
 }
