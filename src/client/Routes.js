@@ -25,6 +25,7 @@ import BlogSamplePage2 from './pages/BlogSamplePage2';
 import FormsSamplePage from './pages/FormsSamplePage';
 import UsagePage from './pages/UsagePage';
 import ModalDialogSamplePage from './pages/ModalDialogSamplePage';
+import TabsSamplePage from './pages/TabsSamplePage';
 
 const Routes = (props) =>
     <div>
@@ -58,13 +59,14 @@ const Routes = (props) =>
         <Route exact path="/information-article-3" component={InformationArticleSample3} />
         <Route exact path="/information-article-4" component={InformationArticleSample4} />
         <Route exact path="/pebbles-page" component={PebblesPage} />
-        <Route exact path="/subscription" component={SubscriptionSamplePage} />
+        <Route exact path="/subscriptions" component={SubscriptionSamplePage} />
         <Route exact path="/box-grid" component={BoxGridSamplePage} />
         <Route exact path="/blog-1" component={BlogSamplePage1} />
         <Route exact path="/blog-2" component={BlogSamplePage2} />
         <Route exact path="/forms" component={FormsSamplePage} />
         <Route exact path="/usage" component={UsagePage} />
         <Route exact path="/modal-dialog" component={ModalDialogSamplePage} />
+        <Route exact path="/tabs" component={TabsSamplePage} />
 
         <div className="container container--medium container--extra-margin-bottom">
             <ContentRatingWrapper />

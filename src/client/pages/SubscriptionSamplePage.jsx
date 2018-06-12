@@ -1,8 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 
-import { Subscription } from '../../../component-lib/src/index';
-import FunkyTab from '../components/FunkyTab';
-import FunkyPanel from '../components/FunkyPanel';
+import { FunkyTabs, Subscription } from '../../../component-lib/src/index';
 
 const underFemtenSubscriptionProps = [
     {
@@ -143,11 +142,10 @@ export default class SubscriptionSamplePage extends React.Component {
         this.state = {
             selectedTabIndex: 1
         };
-
-        this.handleClick = this.handleClick.bind(this);
     }
-    handleClick(tabIndex) {
-        this.setState({ selectedTabIndex: tabIndex });
+    onFunkyTabSelect(e, index) {
+        e.preventDefault();
+        this.setState({ selectedTabIndex: index });
     }
     render() {
         return (
@@ -155,66 +153,36 @@ export default class SubscriptionSamplePage extends React.Component {
                 <div className="center-align">
                     <h1 className="heading heading--level-1">Subscription</h1>
                 </div>
-                <div className="funky-tabs">
-                    <ul className="funky-tabs__tabs">
-                        <FunkyTab
-                            tabIndex={1}
-                            selectedTabIndex={this.state.selectedTabIndex}
-                            tabText="Under 15 år"
-                            tabIconPath="/public/images/under15.png"
-                            onClick={this.handleClick.bind(this, 1)} />
-                        <FunkyTab
-                            tabIndex={2}
-                            selectedTabIndex={this.state.selectedTabIndex}
-                            tabText="Under 28 år"
-                            tabIconPath="/public/images/under28.png"
-                            onClick={this.handleClick.bind(this, 2)} />
-                        <FunkyTab
-                            tabIndex={3}
-                            selectedTabIndex={this.state.selectedTabIndex}
-                            tabText="For alle"
-                            tabIconPath="/public/images/for-alle.png"
-                            onClick={this.handleClick.bind(this, 3)} />
-                        <FunkyTab
-                            tabIndex={4}
-                            selectedTabIndex={this.state.selectedTabIndex}
-                            tabText="Kontantkort"
-                            tabIconPath="/public/images/kontantkort.png"
-                            onClick={this.handleClick.bind(this, 4)} />
-                    </ul>
-                    <FunkyPanel
-                        tabPanelIndex={1}
-                        selectedTabIndex={this.state.selectedTabIndex}>
+                
+                <FunkyTabs
+                    uniqueId="subscription-tabs"
+                    onSelect={(e, index) => this.onFunkyTabSelect(e, index)}
+                    selectedIndex={this.state.selectedTabIndex}>
+                    <FunkyTabs.TabPanel heading="Under 15 år" imagePath="/public/images/under15.png" url="/tabs/under-15">
                         <section className="box-grid container container--medium container--no-padding">
                             {underFemtenSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
-                    </FunkyPanel>
-                    <FunkyPanel
-                        tabPanelIndex={2}
-                        selectedTabIndex={this.state.selectedTabIndex}>
+                    </FunkyTabs.TabPanel>
+                    <FunkyTabs.TabPanel heading="Under 28 år" imagePath="/public/images/under28.png" url="/tabs/under-28">
                         <section className="box-grid container container--medium container--no-padding">
                             {underTjueAatteSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
-                    </FunkyPanel>
-                    <FunkyPanel
-                        tabPanelIndex={3}
-                        selectedTabIndex={this.state.selectedTabIndex}>
+                    </FunkyTabs.TabPanel>
+                    <FunkyTabs.TabPanel heading="For alle" imagePath="/public/images/for-alle.png" url="/tabs/for-alle">
                         <section className="box-grid container container--medium container--no-padding">
                             {forAlleSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
-                    </FunkyPanel>
-                    <FunkyPanel
-                        tabPanelIndex={4}
-                        selectedTabIndex={this.state.selectedTabIndex}>
+                    </FunkyTabs.TabPanel>
+                     <FunkyTabs.TabPanel heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
                         <section className="box-grid container container--medium container--no-padding">
                             {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
-                    </FunkyPanel>
-                </div>
+                    </FunkyTabs.TabPanel>
+                </FunkyTabs>
             </div>
         );
     }
