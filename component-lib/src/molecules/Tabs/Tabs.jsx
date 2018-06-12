@@ -17,7 +17,6 @@ const Tabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
                     aria-selected={selectedIndex === index}>
                     <button
                         onClick={() => onSelect(index)}
-                        tabIndex="0"
                         className="link tabs__button">
                         {element.props.heading}
                     </button>
