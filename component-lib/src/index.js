@@ -55,6 +55,7 @@ export { default as ProgressChart } from './molecules/ProgressChart/ProgressChar
 export { default as RadioButtonList } from './molecules/RadioButtonList/RadioButtonList';
 export { default as RecommendedProducts } from './molecules/RecommendedProducts/RecommendedProducts';
 export { default as RelatedArticles } from './molecules/RelatedArticles/RelatedArticles';
+export { default as StepByStep } from './molecules/StepByStep/StepByStep';
 export { default as Subscription } from './molecules/Subscription/Subscription';
 export { default as ChartLegend } from './molecules/ChartLegend/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel/TextAreaWithLabel';
@@ -134,6 +135,7 @@ export default [
     'src/molecules/RadioButtonList/RadioButtonList.jsx',
     'src/molecules/RecommendedProducts/RecommendedProducts.jsx',
     'src/molecules/RelatedArticles/RelatedArticles.jsx',
+    'src/molecules/StepByStep/StepByStep.jsx',
     'src/molecules/Subscription/Subscription.jsx',
     'src/molecules/ChartLegend/ChartLegend.jsx',
     'src/molecules/TextAreaWithLabel/TextAreaWithLabel.jsx',
