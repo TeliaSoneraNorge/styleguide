@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 
 const Tabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
     <div className="tabs">
-        <ul className="tabs__list">
+        <ul className="tabs__list" role="tablist">
             {children.map((element, index) =>
                 <li
                     key={index}
-                    id={`${uniqueId}-tab-${index}`}
                     className={classnames(
                         'tabs__list-item',
-                        { 'tabs__list-item--selected': (selectedIndex === index) })}>
+                        { 'tabs__list-item--selected': (selectedIndex === index) })}
+                    id={`${uniqueId}-tab-${index}`}
+                    role="tab"
+                    aria-controls={`${uniqueId}-panel-${index}`}
+                    aria-selected={selectedIndex === index}>
                     <button
                         onClick={() => onSelect(index)}
                         tabIndex="0"
@@ -35,7 +38,9 @@ Tabs.TabElement = ({ index, uniqueId, isSelected, children }) =>
         className={classnames(
             'tabs__content',
             { 'tabs__content--selected': isSelected })}
-        aria-labelledby={`${uniqueId}-tab-${index}`}>
+        id={`${uniqueId}-panel-${index}`}
+        aria-labelledby={`${uniqueId}-tab-${index}`}
+        role="tabpanel">
         {children}
     </div>;
 

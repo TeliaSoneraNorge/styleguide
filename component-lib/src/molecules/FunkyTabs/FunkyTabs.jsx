@@ -4,14 +4,17 @@ import PropTypes from 'prop-types';
 
 const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
     <div className="funky-tabs">
-        <ul className="funky-tabs__tabs">
+        <ul className="funky-tabs__tabs" role="tablist">
             {children.map((element, index) =>
                 <li
                     key={index}
                     className={classNames('funky-tabs__tab', {
                         'funky-tabs__tab--selected': (selectedIndex === index)
                     })}
-                    id={`${uniqueId}-tab-${index}`}>
+                    id={`${uniqueId}-tab-${index}`}
+                    role="tab"
+                    aria-controls={`${uniqueId}-panel-${index}`}
+                    aria-selected={selectedIndex === index}>
                     <a
                         className="funky-tabs__link"
                         href={element.props.url}
@@ -38,7 +41,9 @@ FunkyTabs.TabElement = ({ index, uniqueId, isSelected, children }) =>
         className={classNames(
             'funky-tabs__panel',
             { 'funky-tabs__panel--selected': isSelected })}
-        aria-labelledby={`${uniqueId}-tab-${index}`}>
+        id={`${uniqueId}-panel-${index}`}
+        aria-labelledby={`${uniqueId}-tab-${index}`}
+        role="tabpanel">
         {children}
     </div>;
 
