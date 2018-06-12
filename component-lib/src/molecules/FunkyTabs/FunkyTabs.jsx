@@ -36,7 +36,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
             }))}
     </div>;
 
-FunkyTabs.TabElement = ({ index, uniqueId, isSelected, children }) =>
+FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
     <div
         className={classNames(
             'funky-tabs__panel',

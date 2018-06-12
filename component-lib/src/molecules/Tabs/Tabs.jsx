@@ -33,7 +33,7 @@ const Tabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
             }))}
     </div>;
 
-Tabs.TabElement = ({ index, uniqueId, isSelected, children }) =>
+Tabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
     <div
         className={classnames(
             'tabs__content',

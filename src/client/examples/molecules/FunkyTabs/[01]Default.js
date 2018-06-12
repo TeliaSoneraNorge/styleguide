@@ -19,7 +19,7 @@ export default class DefaultFunkyTabs extends React.Component {
                 uniqueId="default-funky-tabs"
                 onSelect={(e, index) => this.onFunkyTabSelect(e, index)}
                 selectedIndex={this.state.funkyTabSelectedIndex}>
-                <FunkyTabs.TabElement heading="Under 15 år" imagePath="/public/images/under15.png" url="/tabs/under-15">
+                <FunkyTabs.TabPanel heading="Under 15 år" imagePath="/public/images/under15.png" url="/tabs/under-15">
                     <section className="container container--small">
                         <Heading level={2} text="Funky tab 1" />
                         <p className="paragraph">
@@ -29,8 +29,8 @@ export default class DefaultFunkyTabs extends React.Component {
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </section>
-                </FunkyTabs.TabElement>
-                <FunkyTabs.TabElement heading="Under 28 år" imagePath="/public/images/under28.png" url="/tabs/under-28">
+                </FunkyTabs.TabPanel>
+                <FunkyTabs.TabPanel heading="Under 28 år" imagePath="/public/images/under28.png" url="/tabs/under-28">
                     <section className="container container--small">
                         <Heading level={2} text="Funky tab 2" />
                         <p className="paragraph">
@@ -39,8 +39,8 @@ export default class DefaultFunkyTabs extends React.Component {
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </section>
-                </FunkyTabs.TabElement>
-                <FunkyTabs.TabElement heading="For alle" imagePath="/public/images/for-alle.png" url="/tabs/for-alle">
+                </FunkyTabs.TabPanel>
+                <FunkyTabs.TabPanel heading="For alle" imagePath="/public/images/for-alle.png" url="/tabs/for-alle">
                     <section className="container container--small">
                         <Heading level={2} text="Funky tab 3" />
                         <p className="paragraph">
@@ -50,8 +50,8 @@ export default class DefaultFunkyTabs extends React.Component {
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </section>
-                </FunkyTabs.TabElement>
-                <FunkyTabs.TabElement heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
+                </FunkyTabs.TabPanel>
+                <FunkyTabs.TabPanel heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
                     <section className="container container--small">
                         <Heading level={2} text="Funky tab 4" />
                         <p className="paragraph">
@@ -60,7 +60,7 @@ export default class DefaultFunkyTabs extends React.Component {
                             proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                         </p>
                     </section>
-                </FunkyTabs.TabElement>
+                </FunkyTabs.TabPanel>
             </FunkyTabs>
         );
     }
