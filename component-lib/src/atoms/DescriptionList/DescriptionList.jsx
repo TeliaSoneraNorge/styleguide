@@ -27,7 +27,7 @@ DescriptionList.propTypes = {
 
 DescriptionList.Dd = ({ children, className, ...rest }) => (
     <dd
-        className={classname('description-list__details', {
+        className={classnames('description-list__details', {
             [className]: className
         })}
         {...rest}>
@@ -36,7 +36,7 @@ DescriptionList.Dd = ({ children, className, ...rest }) => (
 );
 DescriptionList.Dt = ({ children, className, ...rest }) => (
     <dt
-        className={classname('description-list__term', {
+        className={classnames('description-list__term', {
             [className]: className
         })}
         {...rest}>
