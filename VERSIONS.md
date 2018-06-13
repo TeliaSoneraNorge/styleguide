@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.7.0 [changed component]
+- Tabs & FunkyTabs changes
+
 ## 1.6.0 [changed component]
 - Molecule: Subscription
 

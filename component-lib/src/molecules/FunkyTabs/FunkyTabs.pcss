@@ -22,48 +22,11 @@
             display: inline-block;
             position: relative;
         }
-
-        &--selected {
-            .funky-tabs__tab-image {
-                z-index: 1;
-
-                @media all and (max-width: 49.749em) {
-                    display: block;
-                    left: 0;
-                    margin: 0 auto 1rem;
-                    position: absolute;
-                    right: 0;
-                    top: -1.25rem;
-                }
-            }
-            .funky-tabs__tab-text {
-                @media all and (min-width: 49.750em) {
-                    position: static;
-                }
-
-                .link {
-                    border-bottom: 1px solid var(--core-purple);
-                    color: var(--core-purple);
-                }
-            }
-        }
     }
 
     &__link {
-        &:hover .link,
-        &:active .link {
-            color: var(--core-purple);
-            border-bottom: 1px solid var(--core-purple);
-        }
-
-        &:focus {
-            outline: none;
-
-            .funky-tabs__tab-text,
-            .link {
-                color: var(--white);
-                background-color: var(--core-purple);
-            }
+        .link {
+            border-bottom: 2px solid transparent;
         }
     }
 
@@ -102,8 +65,45 @@
             padding-top: 10rem;
         }
 
-        &--open {
+        &--selected {
             display: block;
+        }
+    }
+
+    &__tab--selected {
+        .funky-tabs__tab-image {
+            z-index: 1;
+
+            @media all and (max-width: 49.749em) {
+                display: block;
+                left: 0;
+                margin: 0 auto 1rem;
+                position: absolute;
+                right: 0;
+                top: -1.25rem;
+            }
+        }
+        .funky-tabs__tab-text {
+            @media all and (min-width: 49.750em) {
+                position: static;
+            }
+        }
+    }
+
+    &__link:hover,
+    &__tab--selected {
+        .link {
+            border-bottom: 2px solid var(--core-purple);
+            color: var(--core-purple);
+            padding: 0 0 0.125rem 0;
+        }
+    }
+    &__link:focus {
+        outline: none;
+
+        .link {
+            color: var(--white);
+            background-color: var(--core-purple);
         }
     }
 }

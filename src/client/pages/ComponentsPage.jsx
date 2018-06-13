@@ -41,7 +41,8 @@ const ComponentsPage = (props) => {
 
                 <h2 className="heading heading--level-2">Pages</h2>
                 <ul className="list list--links">
-                    <li className="list__item"><a className="list__link" href="/subscription">Subscription list page</a></li>
+                    <li className="list__item"><a className="list__link" href="/subscriptions">Subscription list page</a></li>
+                    <li className="list__item"><a className="list__link" href="/tabs">Tabs</a></li>
                     <li className="list__item"><a className="list__link" href="/information-article-1">Information article 1</a> - basic components</li>
                     <li className="list__item"><a className="list__link" href="/information-article-2">Information article 2</a> - with NumberBoxes</li>
                     <li className="list__item"><a className="list__link" href="/information-article-3">Information article 3</a> - with StepByStep</li>

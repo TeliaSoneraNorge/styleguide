@@ -3,6 +3,7 @@ export { default as AlertText } from './atoms/AlertText/AlertText';
 export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
 export { default as Caption } from './atoms/Caption/Caption';
+export { default as DescriptionList } from './atoms/DescriptionList/DescriptionList';
 export { default as Heading } from './atoms/Heading/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule/HorizontalRule';
 export { default as IconLink } from './atoms/IconLink/IconLink';
@@ -20,6 +21,7 @@ export { default as SpecialMessage } from './atoms/SpecialMessage/SpecialMessage
 export { default as Spinner } from './atoms/Spinner/Spinner';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
 export { default as TextArea } from './atoms/TextArea/TextArea';
+export { default as Tags } from './atoms/Tags/Tags';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/UniqueSellingPoints';
 
@@ -29,13 +31,18 @@ export { default as Alert } from './molecules/Alert/Alert';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign/Campaign';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
+export { default as DownloadButtons } from './molecules/DownloadButtons/DownloadButtons';
 export { default as DropDownListWithLabel } from './molecules/DropDownListWithLabel/DropDownListWithLabel';
 export { default as DonutChart } from './molecules/DonutChart/DonutChart';
+export { default as FactBox } from './molecules/FactBox/FactBox';
 export { default as FocusBox } from './molecules/FocusBox/FocusBox';
+export { default as FocusHeader } from './molecules/FocusHeader/FocusHeader';
 export { default as FocusSpinner } from './molecules/FocusSpinner/FocusSpinner';
+export { default as Hero } from './molecules/Hero/Hero';
 export { default as PageMenu } from './molecules/PageMenu/PageMenu';
 export { default as Header } from './molecules/Header/Header';
 export { default as HeaderWithImage } from './molecules/HeaderWithImage/HeaderWithImage';
+export { default as HeadingLink } from './molecules/HeadingLink/HeadingLink';
 export { default as Image } from './molecules/Image/Image';
 export { default as ModalDialog } from './molecules/ModalDialog/ModalDialog';
 export { default as ModalDialogOverlay } from './molecules/ModalDialog/ModalDialogOverlay';
@@ -58,8 +65,8 @@ export { default as BelowTheLineOffer } from './molecules/BelowTheLineOffer/Belo
 export { default as PopUpLine } from './molecules/PopUpLine/PopUpLine';
 export { default as ProductList } from './molecules/ProductList/ProductList';
 export { default as References } from './molecules/References/References';
-export { default as TabElement } from './molecules/Tabs/TabElement';
 export { default as Tabs } from './molecules/Tabs/Tabs';
+export { default as FunkyTabs } from './molecules/FunkyTabs/FunkyTabs';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating/ContentRating';
@@ -75,6 +82,7 @@ export default [
     'src/atoms/AlertText/AlertText.jsx',
     'src/atoms/Box/Box.jsx',
     'src/atoms/Button/Button.jsx',
+    'src/atoms/DescriptionList/DescriptionList.jsx',
     'src/atoms/Caption/Caption.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
@@ -91,6 +99,7 @@ export default [
     'src/atoms/ShadowBox/ShadowBox.jsx',
     'src/atoms/SpecialMessage/SpecialMessage.jsx',
     'src/atoms/Spinner/Spinner.jsx',
+    'src/atoms/Tags/Tags.jsx',
     'src/atoms/TextArea/TextArea.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',
     'src/atoms/ToggleButton/ToggleButton.jsx',
@@ -102,13 +111,18 @@ export default [
     'src/molecules/ArticleMetaData/ArticleMetaData.jsx',
     'src/molecules/Campaign/Campaign.jsx',
     'src/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx',
+    'src/molecules/DownloadButtons/DownloadButtons.jsx',
     'src/molecules/DropDownListWithLabel/DropDownListWithLabel.jsx',
     'src/molecules/DonutChart/DonutChart.jsx',
+    'src/molecules/FactBox/FactBox.jsx',
     'src/molecules/FocusBox/FocusBox.jsx',
+    'src/molecules/FocusHeader/FocusHeader.jsx',
     'src/molecules/FocusSpinner/FocusSpinner.jsx',
+    'src/molecules/Hero/Hero.jsx',
     'src/molecules/PageMenu/PageMenu.jsx',
     'src/molecules/Header/Header.jsx',
     'src/molecules/HeaderWithImage/HeaderWithImage.jsx',
+    'src/molecules/HeadingLink/HeadingLink.jsx',
     'src/molecules/Image/Image.jsx',
     'src/molecules/PageFooter/PageFooter.jsx',
     'src/molecules/PageHeader/PageHeader.jsx',
@@ -131,6 +145,7 @@ export default [
     'src/molecules/ProductList/ProductList.jsx',
     'src/molecules/References/References.jsx',
     'src/molecules/Tabs/Tabs.jsx',
+    'src/molecules/FunkyTabs/FunkyTabs.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',
