@@ -84,6 +84,7 @@ export function getComponents() {
 export function isFullWidthComponent(componentName) {
     const fullWidthComponents = [
         // Atoms
+        'Container',
         'FullWidthImage',
         'NumberBoxes',
         'PagePebbles',
