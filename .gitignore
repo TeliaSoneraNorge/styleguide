@@ -4,7 +4,6 @@ node_modules
 dist
 bundle.*
 npm-debug.log
-component-metadata--html.json
 component-metadata--react.json
 component-metadata--react-examples.json
 public/icons
