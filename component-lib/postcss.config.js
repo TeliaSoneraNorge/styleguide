@@ -29,7 +29,6 @@ module.exports = {
                 em: (px, base = 16) => `${px / base}em`
             }
         },
-        'postcss-for': {},
         'postcss-nested': {},
         'postcss-custom-properties': {},
         'postcss-calc': {},
