@@ -7,12 +7,12 @@ import Heading from '../../atoms/Heading/Heading';
 
 /**
  * Status: *almost finished*.
- * 
+ *
  * This component is going to be used for campaigns, such as Music Freedom.
- * 
+ *
  * Text can be altered from black to white, and the content can be placed inside a white box.
  * These options will depend on the background image.
- * 
+ *
  * We are awaiting info from the UX people regarding the recommended image sizes.
  */
 const Campaign = ({
@@ -37,7 +37,7 @@ const Campaign = ({
                 <Heading className="campaign__heading" level={1} text={headingText} />
                 {children
                     ? children
-                    : <div dangerouslySetInnerHTML={{ __html: ingressHtml }} />
+                    : ingressHtml
                 }
             </div>
             <Button className="campaign__button" text={buttonText} />

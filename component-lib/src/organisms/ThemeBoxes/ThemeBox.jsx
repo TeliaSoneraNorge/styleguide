@@ -12,15 +12,16 @@ const ThemeBox = ({ isExpanded, onOpen, id, iconSvg, heading, children, onClose 
                 <span className="theme-box__close-text">LUKK</span>
                 <i className="theme-box__close-icon" />
             </button>
-            
-            <div className="theme-box__icon" dangerouslySetInnerHTML={{ __html: iconSvg }}></div>
-            
+
+            <div className="theme-box__icon">{iconSvg}</div>
+
             <h2 className="theme-box__heading heading heading--level-2 heading--pebble">
                 {heading}
                 <hr className="horizontal-rule horizontal-rule--short" />
             </h2>
         </div>
-        <section className="theme-box__content" id={id} dangerouslySetInnerHTML={{ __html: children }}>
+        <section className="theme-box__content" id={id}>
+            {children}
         </section>
     </div>;
 
