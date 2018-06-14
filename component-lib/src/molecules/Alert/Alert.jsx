@@ -23,7 +23,7 @@ const Alert = ({ kind = 'positive', size, bodyHtml, links = [], children }) =>
             <div className="alert__text-container">
                 {children
                     ? children
-                    : <div dangerouslySetInnerHTML={{ __html: bodyHtml }} />
+                    : bodyHtml
                 }
                 {links.length > 0 ?
                     <ul className="list list--links list--black">
