@@ -3,7 +3,6 @@ import marked from 'marked';
 import _ from 'lodash';
 import { Heading } from '../../../component-lib/src/index';
 import ComponentExample from './ComponentExample';
-import HtmlOnlyExample from './HtmlOnlyExample';
 
 class ComponentDocs extends Component {
     state = {
@@ -69,16 +68,13 @@ class ComponentDocs extends Component {
             console.error(component);
         }
 
-        const { reactExamples, htmlExamples, name, docs, htmlOnly } = component;
+        const { reactExamples, name, docs } = component;
 
-        const propsDocs = !htmlOnly && this.getPropsDocs(docs);
+        const propsDocs = this.getPropsDocs(docs);
         return (
             <div className="sg-component" {...rest}>
                 <div className="container container--medium container--no-margin">
                     <Heading level={2} text={_.startCase(name)} />
-                    {htmlOnly && (
-                        <div>No React component available yet.</div>
-                    )}
                     <div dangerouslySetInnerHTML={{ __html: marked(docs.description) }} />
                     {propsDocs && (
                         <a href="#" className="link"
@@ -87,15 +83,12 @@ class ComponentDocs extends Component {
                     {showProps && (
                         propsDocs
                     )}
-                    {!htmlOnly && reactExamples.length === 0 && (
+                    {reactExamples.length === 0 && (
                         <div>No React examples available yet.</div>
                     )}
                 </div>
                 {reactExamples.map(examplePath => (
                     <ComponentExample examplePath={examplePath} key={examplePath} />
-                ))}
-                {htmlExamples.map(examplePath => (
-                    <HtmlOnlyExample examplePath={examplePath} key={examplePath} />
                 ))}
             </div>
         );
