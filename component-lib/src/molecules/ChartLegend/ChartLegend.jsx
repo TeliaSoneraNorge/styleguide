@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 const getLegendClassName = (series, index) =>
@@ -35,6 +36,17 @@ const ChartLegend = ({ series }) => (
         )}
     </div>
 );
+
+ChartLegend.propTypes = {
+    series: PropTypes.arrayOf(
+        PropTypes.shape({
+            title: PropTypes.string.isRequired,
+            color: PropTypes.string.isRequired,
+            value: PropTypes.number.isRequired,
+            total: PropTypes.number.isRequired,
+        })
+    )
+};
 
 ChartLegend.defaultProps = {
     series: []

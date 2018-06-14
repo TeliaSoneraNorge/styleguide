@@ -29,6 +29,15 @@ const DataBoostChart = ({
     </ChartWrapper>
 );
 
+DataBoostChart.propTypes = {
+    loading: PropTypes.bool,
+    size: PropTypes.number,
+    loadingCaption: PropTypes.string,
+    upperCaption: PropTypes.string,
+    lowerCaption: PropTypes.string,
+    link: PropTypes.string,
+};
+
 DataBoostChart.defaultProps = {
     size: 266,
     loadingCaption: 'Henter data...',
