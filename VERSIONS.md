@@ -15,6 +15,45 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.7.1 [new components]
+
+### Atoms:
+- Caption
+- DescriptionList
+- FullWidthTable
+- HorizontalRule
+- IconLink
+- InputError
+- List
+- NumberBoxes
+- PagePebbles
+- Paragraph
+- Quote
+- ShadowBox
+- SpecialMessage
+- StepIndicator
+- Tags
+- TelephoneNumberLink
+- TextArea
+- UniqueSellingPoints
+
+### Molecules: 
+- ArticleMetaData
+- BoxGrid
+- DownloadButtons
+- FactBox
+- FocusHeader
+- FullWidthImage
+- Header
+- HeadingLink
+- Hero
+- Image
+- ImageHeadingLink
+- ListWithImage
+- RelatedArticle
+- StepByStep
+- Video
+
 ## 1.7.0 [changed component]
 - Tabs & FunkyTabs changes
 
