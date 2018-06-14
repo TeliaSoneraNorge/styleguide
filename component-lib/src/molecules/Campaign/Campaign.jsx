@@ -45,6 +45,15 @@ const Campaign = ({
     </div>;
 
 Campaign.propTypes = {
+    headingText: PropTypes.node.isRequired,
+    ingressHtml: PropTypes.node,
+    buttonText: PropTypes.node.isRequired,
+    desktopBackgroundImage: PropTypes.string.isRequired,
+    mobileBackgroundImage: PropTypes.string.isRequired,
+    backgroundImageAltText: PropTypes.string,
+    isUsingWhiteText: PropTypes.bool,
+    isUsingWhiteContentBox: PropTypes.bool,
+    children: PropTypes.node,
 };
 
 export default Campaign;

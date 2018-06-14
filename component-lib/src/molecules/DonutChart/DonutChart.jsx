@@ -102,7 +102,9 @@ DonutChart.propTypes = {
     thresholds: PropTypes.arrayOf(PropTypes.shape({
         to: PropTypes.number.isRequired,
         type: PropTypes.string.isRequired
-    }))
+    })),
+    radius: PropTypes.number,
+    strokeWidthInPercents: PropTypes.number,
 };
 
 DonutChart.defaultProps = {
