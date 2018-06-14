@@ -3,6 +3,7 @@ export { default as AlertText } from './atoms/AlertText/AlertText';
 export { default as Box } from './atoms/Box/Box';
 export { default as Button } from './atoms/Button/Button';
 export { default as Caption } from './atoms/Caption/Caption';
+export { default as Container } from './atoms/Container/Container';
 export { default as DescriptionList } from './atoms/DescriptionList/DescriptionList';
 export { default as Heading } from './atoms/Heading/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule/HorizontalRule';
@@ -29,6 +30,7 @@ export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/Uniq
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
 export { default as Alert } from './molecules/Alert/Alert';
+export { default as BoxGrid } from './molecules/BoxGrid/BoxGrid';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign/Campaign';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel/CheckBoxWithLabel';
@@ -91,6 +93,7 @@ export default [
     'src/atoms/Button/Button.jsx',
     'src/atoms/DescriptionList/DescriptionList.jsx',
     'src/atoms/Caption/Caption.jsx',
+    'src/atoms/Container/Container.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
     'src/atoms/IconLink/IconLink.jsx',
@@ -116,6 +119,7 @@ export default [
     // Molecules
     'src/molecules/AccordionList/AccordionList.jsx',
     'src/molecules/Alert/Alert.jsx',
+    'src/molecules/BoxGrid/BoxGrid.jsx',
     'src/molecules/ArticleMetaData/ArticleMetaData.jsx',
     'src/molecules/Campaign/Campaign.jsx',
     'src/molecules/CheckBoxWithLabel/CheckBoxWithLabel.jsx',
