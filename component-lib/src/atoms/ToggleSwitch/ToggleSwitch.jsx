@@ -7,7 +7,7 @@ const PANEL = {
 };
 
 /**
- * Status: *finished*.
+ * Status: *In progress*.
  */
 const ToggleSwitch = ({ leftLabel, rightLabel, leftOnClickHandler, rightOnClickHandler, active }) => (
     <div className="toggle-switch" role="group">

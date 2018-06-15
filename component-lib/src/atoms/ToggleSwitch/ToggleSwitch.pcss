@@ -7,18 +7,25 @@
     width: 20rem;
     background-color: var(--white);
 
-    &:hover {
-        cursor: pointer;
-    }
 
     &__button {
         border: 0;
         border-radius: 1.25rem;
+        height: 100%;
         background: inherit;
-        padding: 0.8rem 1rem;
+        padding: 0 1rem;
         font-family: 'Helvetica Neue', Helvetica, Arial, "Lucinda Grande", sans-serif;
         font-size: 1rem;
         font-weight: normal;
+
+    }
+    &__button:focus {
+        outline: 0;
+        text-decoration: underline;
+    }
+    &__button:hover {
+        cursor: pointer;
+        text-decoration: underline;
     }
 
     [aria-pressed="true"] {
