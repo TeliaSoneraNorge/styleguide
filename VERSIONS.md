@@ -15,6 +15,11 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.7.2 [new + changed components]
+- PageMenu
+- PageHeading
+. ToggleSwitch
+
 ## 1.7.1 [new components]
 
 ### Atoms:
