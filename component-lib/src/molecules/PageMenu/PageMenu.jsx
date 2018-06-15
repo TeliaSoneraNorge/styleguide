@@ -17,7 +17,8 @@ const PageMenu = ({
     textAboveLoginButton,
     isLoggedIn,
     menuSelectedTabIndex,
-    onTabSelect
+    onTabSelect,
+    showButtons
  }) => (
     <div>
         <div
@@ -40,8 +41,8 @@ const PageMenu = ({
                             <Tabs.Tab key={i} heading={menuLink.heading} />
                         )}
                     </Tabs>
-                    
-                    {!isLoggedIn &&
+
+                    {showButtons && !isLoggedIn &&
                         <div className="page-menu__top-panel-content">
                             <p className="paragraph">{textAboveLoginButton}</p>
                             <Button text="Logg inn" kind="primary" />

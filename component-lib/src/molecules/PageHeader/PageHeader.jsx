@@ -17,11 +17,16 @@ export default class PageHeader extends React.Component {
         super(props);
 
         this.state = {
-            menuIsExpanded: false
+            menuIsExpanded: false,
+            menuSelectedTabIndex: 0
         };
 
         this.openMenu = this.openMenu.bind(this);
         this.closeMenu = this.closeMenu.bind(this);
+        this.onTabSelect = this.onTabSelect.bind(this);
+    }
+    onTabSelect(menuSelectedTabIndex) {
+        this.setState({ menuSelectedTabIndex });
     }
     openMenu() {
         this.setState({ menuIsExpanded: true });
@@ -38,12 +43,15 @@ export default class PageHeader extends React.Component {
         return (
             <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown })}>
                 <PageMenu
-                    links={this.props.menuLinks}
+                    menuLinks={this.props.menuLinks}
                     menuId={this.props.menuId}
                     isExpanded={this.state.menuIsExpanded}
                     onClose={this.closeMenu}
                     fixedPosition
-                    isLoggedIn={this.props.isLoggedIn} />
+                    isLoggedIn={this.props.isLoggedIn}
+                    menuSelectedTabIndex={this.state.menuSelectedTabIndex}
+                    onTabSelect={this.onTabSelect}
+                    showButtons={this.props.showButtons} />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
                         <i className={`${menuIconClass} page-header__icon-box-icon`} />

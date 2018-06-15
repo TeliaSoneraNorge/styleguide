@@ -10,18 +10,17 @@ const codeSnippets = {
     componentLibraryUseButton: `<Button text="Click me" />`,
 };
 
-const warningMessageHtml =
-    `<p>
-        The styleguide is now <strong>production-ready</strong>, but we still want to know who is using it.
-        Drop us a line over at #styleguide and let us know what you're upto. Thanks!
-    </p>`;
-
 const DownloadPage = () =>
     <div>
         <Header pageTitle="Download Styleguide" />
 
         <div className="container container--small">
-            <Alert kind="info" bodyHtml={warningMessageHtml} />
+            <Alert kind="info">
+                <p>
+                    The styleguide is now <strong>production-ready</strong>, but we still want to know who is using it.
+                    Drop us a line over at #styleguide and let us know what you're upto. Thanks!
+                </p>
+            </Alert>
             <h2 className="heading heading--level-2">Download the CSS & assets</h2>
             <p className="paragraph">To use the Telia Styleguide in your project, follow these steps:</p>
             <ol>

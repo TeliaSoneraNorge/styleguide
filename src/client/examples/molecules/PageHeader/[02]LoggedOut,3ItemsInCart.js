@@ -2,8 +2,15 @@ import React from 'react';
 import { PageHeader } from '@telia/styleguide';
 
 const menuLinks = [
-    { text: 'A fake menu item', url: '#' }
+    {
+        heading: 'Fake',
+        loggedInLinks: [
+            { text: 'A fake menu item', url: '#' }
+        ],
+        loggedOutLinks: []
+    }
 ];
+
 
 const LoggedOut3Items = () => (
     <PageHeader

@@ -27,6 +27,44 @@ import UsagePage from './pages/UsagePage';
 import ModalDialogSamplePage from './pages/ModalDialogSamplePage';
 import TabsSamplePage from './pages/TabsSamplePage';
 
+const links = [
+    { text: 'Home', url: '/' },
+    { text: 'Layout', url: '/layout' },
+    { text: 'Components', url: '/components' },
+    { text: 'Image Assets', url: '/image-assets' },
+    { text: 'Contributing', url: '/contributing' },
+    { text: 'Download', url: '/download' },
+    { text: 'Versions', url: '/versions' }
+];
+
+const menuLinks = [
+    {
+        heading: 'Styleguide',
+        loggedInLinks: [
+            { text: 'Home', url: '/', icon: '/public/icons/ico_home.svg' }
+        ],
+        loggedOutLinks: [
+            { text: 'Layout', url: '/layout' },
+            { text: 'Image Assets', url: '/image-assets' },
+            { text: 'Contributing', url: '/contributing' },
+            { text: 'Download', url: '/download' },
+            { text: 'Versions', url: '/versions' }
+        ],
+    },
+    {
+        heading: 'Component Library',
+        loggedInLinks: [
+            { text: 'Home', url: '/', icon: '/public/icons/ico_home.svg' }
+        ],
+        loggedOutLinks: [
+            { text: 'All Components', url: '/components' },
+            { text: 'Atoms', url: '/components/atoms' },
+            { text: 'Molecules', url: '/components/molecules' },
+            { text: 'Organisms', url: '/components/organisms' },
+        ]
+    }
+];
+
 const Routes = (props) =>
     <div>
         <PageHeader
@@ -34,17 +72,9 @@ const Routes = (props) =>
             logoTitle="Telia logo"
             logoImageDesktopPath="/public/images/logo/logo.svg"
             logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
-            menuLinks={[
-                { text: 'Home', url: '/' },
-                { text: 'Layout', url: '/layout' },
-                { text: 'Components', url: '/components' },
-                { text: 'Image Assets', url: '/image-assets' },
-                { text: 'Contributing', url: '/contributing' },
-                { text: 'Download', url: '/download' },
-                { text: 'Versions', url: '/versions' }
-            ]}
-            isLoggedIn={true}
-            showButtons={false}/>
+            menuLinks={menuLinks}
+            isLoggedIn={false}
+            showButtons={false} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/layout" component={LayoutPage} />

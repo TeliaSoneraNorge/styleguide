@@ -43,6 +43,7 @@ export default class DefaultPageMenu extends React.Component {
                 isExpanded
                 textAboveLoginButton="Sjekk forbruket og abonnementet ditt, fakturaer og innstillinger."
                 isLoggedIn={false}
+                showButtons={true}
                 onTabSelect={(index) => this.selectMenuTabIndex(index)}
                 menuSelectedTabIndex={this.state.menuTabIndex} />
         );
