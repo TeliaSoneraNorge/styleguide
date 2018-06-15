@@ -4,7 +4,12 @@ import { PageMenu } from '@telia/styleguide';
 const menuLinks = [
     {
         heading: 'Privat',
-        loggedInLinks: [],
+        loggedInLinks: [
+            { text: 'Forsiden', url: '/', icon: '/public/icons/ico_home.svg' },
+            { text: 'Dataforbruk', url: '/', icon: '/public/icons/ico_statistics.svg' },
+            { text: 'Faktura', url: '/', 'notification': 1, icon: '/public/icons/ico_default_doc.svg' },
+            { text: 'Mer fra min side', url: '/', icon: '/public/icons/ico_contacts.svg' }
+        ],
         loggedOutLinks: [
             { text: 'Mobilabonnement og priser', url: '/' },
             { text: 'Mobiltelefoner og tilbehor', url: '/' },
@@ -16,7 +21,12 @@ const menuLinks = [
     },
     {
         heading: 'Bedrift',
-        loggedInLinks: [],
+        loggedInLinks: [
+            { text: 'Bedrift Forsiden', url: '/', icon: '/public/icons/ico_home.svg' },
+            { text: 'Dataforbruk', url: '/', icon: '/public/icons/ico_statistics.svg' },
+            { text: 'Faktura', url: '/', 'notification': 1, icon: '/public/icons/ico_default_doc.svg' },
+            { text: 'Mer fra min side', url: '/', icon: '/public/icons/ico_contacts.svg' }
+        ],
         loggedOutLinks: [
             { text: 'Bedrift 1', url: '/' },
             { text: 'Bedrift 2', url: '/' },
@@ -26,7 +36,7 @@ const menuLinks = [
     }
 ];
 
-export default class DefaultPageMenu extends React.Component {
+export default class LoggedInPageMenu extends React.Component {
     constructor(props) {
         super(props);
 
@@ -38,11 +48,10 @@ export default class DefaultPageMenu extends React.Component {
     render() {
         return (
             <PageMenu
-                menuId="page-menu--example-1"
+                menuId="page-menu--example-2"
                 menuLinks={menuLinks}
                 isExpanded
-                textAboveLoginButton="Sjekk forbruket og abonnementet ditt, fakturaer og innstillinger."
-                isLoggedIn={false}
+                isLoggedIn={true}
                 onTabSelect={(index) => this.selectMenuTabIndex(index)}
                 menuSelectedTabIndex={this.state.menuTabIndex} />
         );

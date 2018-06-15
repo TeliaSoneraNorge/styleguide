@@ -42,7 +42,8 @@ export default class PageHeader extends React.Component {
                     menuId={this.props.menuId}
                     isExpanded={this.state.menuIsExpanded}
                     onClose={this.closeMenu}
-                    fixedPosition />
+                    fixedPosition
+                    isLoggedIn={this.props.isLoggedIn} />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
                         <i className={`${menuIconClass} page-header__icon-box-icon`} />
