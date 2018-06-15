@@ -63,7 +63,7 @@
     "react-dom": "16.x"
   },
   "files": [
-    "/es",
+    "/dist",
     "/assets"
   ]
 }
