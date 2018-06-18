@@ -12,7 +12,8 @@ export default [{
     input: 'src/index.js',
     external: ['react', 'react-dom', 'prop-types'],
     output: [
-        { file: pkg.module, format: 'es', sourcemap: 'inline' }
+        { file: pkg.main, format: 'cjs', sourcemap: 'inline' },
+        { file: pkg.module, format: 'es', sourcemap: 'inline' },
     ],
     plugins: [
         eslint(),
