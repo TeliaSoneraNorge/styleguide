@@ -13,4 +13,4 @@ function postDeployMessageToSlack(slackChannel, options = {}) {
         });
 }
 
-postDeployMessageToSlack('#albatross-dev', { environment: 'prod' });
+postDeployMessageToSlack('#web-team-dev', { environment: 'prod' });

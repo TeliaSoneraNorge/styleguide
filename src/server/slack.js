@@ -3,7 +3,7 @@ import { path } from 'path';
 
 export function postMessageToSlack(channel, message) {
     const slackChannelLookup = {
-        '#albatross-dev': 'T03PATMPV/B75FPT806/CfO1QpLDhLXup5JG0t2LcSc4',
+        '#web-team-dev': 'T03PATMPV/B75FPT806/CfO1QpLDhLXup5JG0t2LcSc4',
         '#styleguide': 'T03PATMPV/B85RMMS58/2mSdleivsadp0WRlQiSn64Xf'
     };
     return new Promise((resolve, reject) => {
