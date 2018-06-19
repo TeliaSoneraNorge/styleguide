@@ -4,6 +4,7 @@
     border-right: none;
     margin-bottom: 1rem;
     padding: 0rem 1rem 0 1rem;
+    position: relative;
 
     @media screen and (min-width: 60em) {
         border: 2px solid;
@@ -51,23 +52,138 @@
         border-right: none;
     }
 
+    &--minimizable {
+        padding-right: 3.125rem;
+
+        @media all and (min-width: 28.75em) {
+            padding-right: 6.25rem;
+        }
+    }
+
+    &__close {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        padding: .5rem;
+        position: absolute;
+        right: 0;
+        text-align: left;
+        top: 0;
+        width: auto;
+
+        &:hover {
+            color: var(--core-purple);
+
+            > .box__close-icon {
+                background-position: calc(-var(--menu-icon-size-small) * 2) 0px;
+            }
+        }
+
+        &:focus,
+        &:active {
+            background-color: var(--core-purple);
+            border-color: var(--core-purple);
+            color: var(--white);
+            outline: none;
+
+            > .box__close-icon {
+                background-position: -var(--menu-icon-size-small) 0px;
+            }
+        }
+
+        @media all and (min-width: 21em) {
+            padding: 1rem;
+        }
+    }
+
+    &__close-text {
+        display: none;
+        line-height: 20px;
+        margin-right: 1rem;
+
+        @media all and (min-width: 28.75em) {
+            display: inline;
+        }
+    }
+
     &--positive {
         background-color: var(--alert-green);
         border-color: var(--dark-green);
+
+        .alert__expand {
+            background-color: var(--alert-green);
+            border-color: var(--dark-green);
+        }
     }
 
     &--negative {
         background-color: var(--alert-red);
         border-color: var(--alert-dark-red);
+
+        .alert__expand {
+            background-color: var(--alert-red);
+            border-color: var(--alert-dark-red);
+        }
     }
 
     &--warning {
         background-color: var(--alert-yellow);
         border-color: var(--alert-dark-yellow);
+
+        .alert__expand {
+            background-color: var(--alert-yellow);
+            border-color: var(--alert-dark-yellow);
+        }
     }
 
     &--info {
         background-color: var(--alert-blue);
         border-color: var(--alert-dark-blue);
+
+        .alert__expand {
+            background-color: var(--alert-blue);
+            border-color: var(--alert-dark-blue);
+        }
+    }
+
+    &--minimized {
+        right: 8px;
+        width: 70px;
+        height: 32px;
+        z-index: 2;
+        padding: 0;
+        margin-top: 8px;
+        border: 0;
+        background: transparent;
+
+        position: absolute;
+
+        .alert__content,
+        .alert__close {
+            display: none;
+        }
+
+        .alert__expand {
+            display: block;
+        }
+    }
+
+    &__expand {
+        border: 3px solid;
+        font-family: pebble;
+        font-size: 18px;
+        cursor: pointer;
+        z-index: 100;
+        height: 100%;
+        width: 100%;
+        border-radius: 3px;
+        display: none;
+
+        &:hover,
+        &:focus {
+            background: var(--core-purple);
+            border-color: var(--core-purple);
+            color: var(--white)
+        }
     }
 }

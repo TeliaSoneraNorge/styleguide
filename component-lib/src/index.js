@@ -33,6 +33,7 @@ export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/Uniq
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
 export { default as Alert } from './molecules/Alert/Alert';
+export { default as StatefulAlert } from './molecules/Alert/StatefulAlert';
 export { default as BoxGrid } from './molecules/BoxGrid/BoxGrid';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign/Campaign';
