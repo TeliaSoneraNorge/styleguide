@@ -2,7 +2,7 @@ import React from 'react';
 
 import MenuItem from './MenuItem';
 
-const MenuBar = ({ items, ariaLabel, isEmphasised }) => (
+const MenuBar = ({ items = [], ariaLabel, isEmphasised }) => (
     <ul
         role="menubar"
         aria-label={ariaLabel}

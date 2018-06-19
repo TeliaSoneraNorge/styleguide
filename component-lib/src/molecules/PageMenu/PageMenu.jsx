@@ -9,7 +9,7 @@ import Heading from '../../atoms/Heading/Heading';
 import Tabs from '../../molecules/Tabs/Tabs';
 
 const PageMenu = ({
-    menuLinks,
+    menuLinks = [],
     menuId,
     isExpanded,
     onClose,
@@ -37,7 +37,7 @@ const PageMenu = ({
                         skipPanelRendering={true}
                         noMargin={true}
                         compact={true}>
-                        {_.map(menuLinks, (menuLink, i) =>
+                        {menuLinks.map((menuLink, i) =>
                             <Tabs.Tab key={i} heading={menuLink.heading} />
                         )}
                     </Tabs>
@@ -49,7 +49,7 @@ const PageMenu = ({
                         </div>}
                 </div>
 
-                {_.map(menuLinks, (menuLink, i) =>
+                {menuLinks.map((menuLink, i) =>
                     <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
                         <MenuBar ariaLabel="innlogget brukermeny" items={menuLink.loggedInLinks} isEmphasised />
                         <MenuBar items={menuLink.loggedOutLinks} />
