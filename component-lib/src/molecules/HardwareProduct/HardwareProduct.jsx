@@ -1,9 +1,9 @@
 import React from 'react';
-
+import classNames from 'classnames';
 import Heading from '../../atoms/Heading/Heading';
 
-const HardwareProduct = ( { campaign, url, image, name, priceDescription, price, priceDisclaimerLine1, priceDisclaimerLine2 } ) =>
-    <a className="hardware-product" href={url}>
+const HardwareProduct = ({ className, campaign, url, image, name, priceDescription, price, priceDisclaimerLine1, priceDisclaimerLine2 }) =>
+    <a className={classNames('hardware-product', className)} href={url}>
         <div className="hardware-product__upper-container">
             {image ? <div className="hardware-product__product-image-container">
                 <img className="hardware-product__product-image" src={image} />

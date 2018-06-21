@@ -86,6 +86,7 @@ export { default as Video } from './molecules/Video/Video';
 export { default as ContentRating } from './organisms/ContentRating/ContentRating';
 export { default as FocusSubscription } from './organisms/FocusSubscription/FocusSubscription';
 export { default as Form } from './organisms/Form/Form';
+export { default as HardwareProductList } from './organisms/HardwareProductList/HardwareProductList';
 export { default as ThemeBoxes } from './organisms/ThemeBoxes/ThemeBoxes';
 export { default as ThemeBox } from './organisms/ThemeBoxes/ThemeBox';
 export { default as ThemeBoxWithImage } from './organisms/ThemeBoxesWithImage/ThemeBoxWithImage';
@@ -177,6 +178,7 @@ export default [
     'src/organisms/ContentRating/ContentRating.jsx',
     'src/organisms/FocusSubscription/FocusSubscription.jsx',
     'src/organisms/Form/Form.jsx',
+    'src/organisms/HardwareProductList/HardwareProductList.jsx',
     'src/organisms/ThemeBoxes/ThemeBoxes.jsx',
     'src/organisms/ThemeBoxWithImage/ThemeBoxWithImage.jsx'
 ];
