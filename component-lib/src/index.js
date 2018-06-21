@@ -46,6 +46,7 @@ export { default as FocusBox } from './molecules/FocusBox/FocusBox';
 export { default as FocusHeader } from './molecules/FocusHeader/FocusHeader';
 export { default as FocusSpinner } from './molecules/FocusSpinner/FocusSpinner';
 export { default as FullWidthImage } from './molecules/FullWidthImage/FullWidthImage';
+export { default as HardwareProduct } from './molecules/HardwareProduct/HardwareProduct';
 export { default as Hero } from './molecules/Hero/Hero';
 export { default as PageMenu } from './molecules/PageMenu/PageMenu';
 export { default as Header } from './molecules/Header/Header';
@@ -139,6 +140,7 @@ export default [
     'src/molecules/FullWidthImage/FullWidthImage.jsx',
     'src/molecules/Hero/Hero.jsx',
     'src/molecules/PageMenu/PageMenu.jsx',
+    'src/molecules/HardwareProduct/HardwareProduct.jsx',
     'src/molecules/Header/Header.jsx',
     'src/molecules/HeaderWithImage/HeaderWithImage.jsx',
     'src/molecules/ImageHeadingLink/ImageHeadingLink.jsx',

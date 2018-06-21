@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.7.7 [new component]
+- Molecule: HardwareProduct
+
 ## 1.7.6
 - Add new icons
 
