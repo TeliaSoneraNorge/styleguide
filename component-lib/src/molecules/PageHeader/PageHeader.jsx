@@ -1,5 +1,7 @@
 import classNames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import PageMenu from '../PageMenu/PageMenu';
 
 /**
@@ -13,6 +15,17 @@ import PageMenu from '../PageMenu/PageMenu';
  *
  */
 export default class PageHeader extends React.Component {
+    static propTypes = {
+        menuLinks: PropTypes.array.isRequired,
+        menuId: PropTypes.string.isRequired,
+        isLoggedIn: PropTypes.bool,
+        showButtons: PropTypes.bool,
+        cartItemCount: PropTypes.number.isRequired,
+        logoUrl: PropTypes.string.isRequired,
+        logoTitle: PropTypes.string.isRequired,
+        logoImageDesktopPath: PropTypes.string.isRequired,
+        logoImageDesktopPathInverted: PropTypes.string.isRequired,
+    };
     constructor(props) {
         super(props);
 
