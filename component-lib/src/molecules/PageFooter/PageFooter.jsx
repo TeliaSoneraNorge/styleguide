@@ -1,5 +1,6 @@
 import _ from 'lodash';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * Status: *finished*.
@@ -22,5 +23,18 @@ const PageFooter = ({ links, specialLink }) =>
             </div>
         </div>
     </footer>;
+
+PageFooter.propTypes = {
+    links: PropTypes.arrayOf(
+        PropTypes.shape({
+            text: PropTypes.string.isRequired,
+            url: PropTypes.string.isRequired,
+        }),
+    ),
+    specialLink: PropTypes.shape({
+        text: PropTypes.string.isRequired,
+        url: PropTypes.string.isRequired,
+    }),
+};
 
 export default PageFooter;
