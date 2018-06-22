@@ -63,6 +63,7 @@ export { default as PersonBox } from './molecules/PersonBox/PersonBox';
 export { default as ProductPromoBox } from './molecules/ProductPromoBox/ProductPromoBox';
 export { default as ProgressChart } from './molecules/ProgressChart/ProgressChart';
 export { default as RadioButtonList } from './molecules/RadioButtonList/RadioButtonList';
+export { default as RadioButtonWithLabel } from './molecules/RadioButtonList/RadioButtonWithLabel';
 export { default as RecommendedProducts } from './molecules/RecommendedProducts/RecommendedProducts';
 export { default as RelatedArticle } from './molecules/RelatedArticle/RelatedArticle';
 export { default as RelatedArticles } from './molecules/RelatedArticles/RelatedArticles';

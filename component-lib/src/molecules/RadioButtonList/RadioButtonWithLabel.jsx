@@ -2,7 +2,7 @@ import React from 'react';
 
 import Label from '../../atoms/Label/Label';
 
-const RadioButtonWithLabel = ({ label, checked, name, value }) =>
+const RadioButtonWithLabel = ({ label, checked, name, value, hasRichContent, children }) =>
     <Label className="radio-button-with-label">
         <input
             className="radio-button-with-label__input"
@@ -16,7 +16,9 @@ const RadioButtonWithLabel = ({ label, checked, name, value }) =>
                 <circle className="radio-button-with-label__check-mark" cx="10" cy="10" r="5" />
             </svg>
         </span>
-        <span className="radio-button-with-label__label-text">{label}</span>
+        <span className="radio-button-with-label__label-text">
+            {hasRichContent ? children : label}
+        </span>
     </Label>;
 
 export default RadioButtonWithLabel;
