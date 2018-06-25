@@ -60,6 +60,7 @@ export { default as ModalDialogOverlay } from './molecules/ModalDialog/ModalDial
 export { default as PageFooter } from './molecules/PageFooter/PageFooter';
 export { default as PageHeader } from './molecules/PageHeader/PageHeader';
 export { default as PersonBox } from './molecules/PersonBox/PersonBox';
+export { default as PriceCalculation } from './molecules/PriceCalculation/PriceCalculation';
 export { default as ProductPromoBox } from './molecules/ProductPromoBox/ProductPromoBox';
 export { default as ProgressChart } from './molecules/ProgressChart/ProgressChart';
 export { default as RadioButtonList } from './molecules/RadioButtonList/RadioButtonList';
@@ -153,6 +154,7 @@ export default [
     'src/molecules/PageHeader/PageHeader.jsx',
     'src/molecules/PersonBox/PersonBox.jsx',
     'src/molecules/ProductPromoBox/ProductPromoBox.jsx',
+    'src/molecules/PriceCalculation/PriceCalculation.jsx',
     'src/molecules/ProgressChart/ProgressChart.jsx',
     'src/molecules/RadioButtonList/RadioButtonList.jsx',
     'src/molecules/RecommendedProducts/RecommendedProducts.jsx',
