@@ -1,10 +1,12 @@
 import React from 'react';
 
 import Box from '../../atoms/Box/Box';
-import RadioButtonList from '../RadioButtonList/RadioButtonList';
-import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
 import Heading from '../../atoms/Heading/Heading';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
+import PriceCalculation from '../PriceCalculation/PriceCalculation';
+import RadioButtonList from '../RadioButtonList/RadioButtonList';
+import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
+
 
 function classNames(isShowingFeatures, isStandalone, isBroadband) {
     const classNames = ['subscription'];
@@ -66,9 +68,8 @@ export default class Subscription extends React.Component {
                             </div> : null}
                         {this.props.specialMessageText ? <strong className="special-message">{this.props.specialMessageText}</strong> : null}
                         {this.props.isBroadband &&
-                            <div className="">
-                                price table here
-                            </div>
+                            <PriceCalculation productListWithPrice={this.props.productList} totalTextWithPrice={this.props.totalCalculation} />
+
                         }
                         <button className="button button--primary">Gå videre</button>
                     </section> : null}
@@ -82,7 +83,7 @@ export default class Subscription extends React.Component {
                                     <div style={{display: 'inline-block', width: '80%'}}>
                                         <Heading level="3" text="Batteridrevet 4G-ruter"/>
                                         <Paragraph>A longer description text here. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</Paragraph>
-                                        <Heading level="2" text="499,-" className="heading--pebble"/>
+                                        <Heading level="2" text="499,-" className="heading--pebble subscription__price"/>
                                         <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
                                     </div>
                                     <img style={{display: 'inline-block', float: 'right', width: '20%'}} src="/public/website-images/router1.jpg"/>
@@ -91,7 +92,7 @@ export default class Subscription extends React.Component {
                                     <div style={{display: 'inline-block', width: '80%'}}>
                                         <Heading level="3" text="Markedets kraftigste 4G-ruter"/>
                                         <Paragraph>Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</Paragraph>
-                                        <Heading level="2" text="499,-" className="heading--pebble"/>
+                                        <Heading level="2" text="499,-" className="heading--pebble subscription__price"/>
                                         <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
                                     </div>
                                     <img style={{display: 'inline-block', float: 'right', width: '20%'}} src="/public/website-images/router2.png"/>

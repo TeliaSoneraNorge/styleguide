@@ -1,6 +1,13 @@
 import React from 'react';
 import { Subscription } from '@telia/styleguide';
 
+const productList = [
+    { title: 'Abonnement', price: '449,-', subtitle: 'Per mnd' },
+    { title: 'Ruter', price: '499,-' },
+];
+
+const totalCalculation = { title: 'Minste totalpris', price: '5887,-', subtitle: 'med 12 mnd avtale' };
+
 const BroadbandExpanded = () => (
     <Subscription
         id="broadband-subscription-expanded"
@@ -10,7 +17,10 @@ const BroadbandExpanded = () => (
         color="blue"
         size="small"
         isExpanded
-        isBroadband />
+        speechBubbleText="Some campaign text"
+        isBroadband
+        productList={productList}
+        totalCalculation={totalCalculation}/>
 );
 
 export default BroadbandExpanded;
