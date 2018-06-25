@@ -1,0 +1,36 @@
+.price-calculation {
+    width: 100%;
+    max-width: var(--width-small);
+    margin: 0 auto;
+    text-align: left;
+
+    &__item {
+        margin-bottom: 0.5rem;
+
+        &-title {
+        }
+
+        &-price {
+            float: right;
+        }
+
+        &-subtitle {
+            font-style: italic;
+            color: var(--dark-grey-2);
+        }
+    }
+
+    &__total {
+        .price-calculation__item-title {
+            font-family: "Helvetica Neue Medium";
+        }
+
+        .price-calculation__item-price {
+            font-family: "Helvetica Neue Medium";
+        }
+    }
+
+    .horizontal-rule {
+        margin-bottom: 0.5rem;
+    }
+}
