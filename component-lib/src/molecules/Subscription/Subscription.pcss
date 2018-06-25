@@ -130,6 +130,28 @@
             padding: 0.5rem;
         }
     }
+
+    &--is-broadband {
+        &.box--is-expanded {
+            @media all and (max-width: 37.5em) {
+                .subscription__teaser {
+                    width: 100%;
+                    margin: 0 auto;
+                }
+
+                .subscription__features {
+                    width: 100%;
+                    margin-top: 2rem;
+                }
+            }
+
+            @media all and (min-width: 37.5em) {
+                .price-calculation {
+                    width: 80%;
+                }
+            }
+        }
+    }
 }
 
 .box--purple {
