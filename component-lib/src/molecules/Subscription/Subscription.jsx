@@ -3,7 +3,7 @@ import React from 'react';
 import Box from '../../atoms/Box/Box';
 import Heading from '../../atoms/Heading/Heading';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
-import PriceCalculation from '../PriceCalculation/PriceCalculation';
+import PriceTable from '../PriceTable/PriceTable';
 import RadioButtonList from '../RadioButtonList/RadioButtonList';
 import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
 
@@ -65,8 +65,7 @@ export default class Subscription extends React.Component {
                             </div> : null}
                         {this.props.specialMessageText ? <strong className="special-message">{this.props.specialMessageText}</strong> : null}
                         {this.props.isBroadband &&
-                            <PriceCalculation productListWithPrice={this.props.productList} totalTextWithPrice={this.props.totalCalculation} />
-
+                            <PriceTable productListWithPrice={this.props.productList} totalTextWithPrice={this.props.totalCalculation} />
                         }
                         <button className="button button--primary">Gå videre</button>
                     </section> : null}
