@@ -1,19 +1,46 @@
 import React from 'react';
 import classnames from 'classnames';
+import PropTypes from 'prop-types';
+
 import Label from '../../atoms/Label/Label';
+import LabelWithIcon from '../../molecules/LabelWithIcon/LabelWithIcon';
 
 /**
- * Status: *in progress*.
+ * Status: *in progress*
  *
  * Be sure to set the correct type when using this component as it helps
  * the user to give correct input.
  *
-**/
-const TextBoxWithLabel = ({ labelText, type, placeholder, errorMessage, disabled }) =>
-    <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>
-        <span className="textbox-with-label__label-text">{labelText}</span>
-        <input className="textbox-with-label__input" type={type} placeholder={placeholder} disabled={disabled} />
-        {errorMessage && <span className="input-error">{errorMessage}</span>}
-    </Label>;
+ **/
+const TextBoxWithLabel = ({ errorMessage, labelText, iconSrc, tooltipText, ...rest }) => {
+    const LabelComponent = iconSrc ? LabelWithIcon : Label;
+    return (
+        <div className={classnames('textbox-with-label', {
+            'textbox-with-label--with-error': errorMessage
+        })}>
+            <LabelComponent
+                iconSrc={iconSrc}
+                tooltipText={tooltipText}
+                isUsingGrayText>
+                <span className="textbox-with-label__label-text">{labelText}</span>
+            </LabelComponent>
+            <input className="textbox-with-label__input" {...rest} />
+            {errorMessage && <span className="input-error">{errorMessage}</span>}
+        </div>
+    );
+};
+
+TextBoxWithLabel.propTypes = {
+    type: PropTypes.string,
+    placeholder: PropTypes.string,
+    disabled: PropTypes.bool,
+    onChange: PropTypes.func,
+    name: PropTypes.string,
+    value: PropTypes.any,
+    errorMessage: PropTypes.string,
+    labelText: PropTypes.string,
+    iconSrc: PropTypes.string,
+    tooltipText: PropTypes.string,
+};
 
 export default TextBoxWithLabel;
