@@ -4,14 +4,25 @@
     margin: 0 auto;
     text-align: left;
 
+    &__items {
+        border-bottom: 1px solid var(--grey);
+        display: block;
+        margin-bottom: 0.2rem;
+    }
+
     &__item {
-        margin-bottom: 0.5rem;
+        display: block;
+        margin-bottom: 0.2rem;
+
+        &-cell {
+            width: 100%;
+        }
 
         &-title {
         }
 
         &-price {
-            float: right;
+            vertical-align: top;
         }
 
         &-subtitle {
@@ -28,9 +39,5 @@
         .price-calculation__item-price {
             font-family: "Helvetica Neue Medium";
         }
-    }
-
-    .horizontal-rule {
-        margin-bottom: 0.5rem;
     }
 }
