@@ -40,14 +40,11 @@ export default class Subscription extends React.Component {
                         <span className="subscription__price">{this.props.price},-</span>
                         <span className="subscription__price-info">per mnd.</span>
                         <span className="subscription__price-info">Ingen bindingstid.</span>
-                        {this.props.isBroadband && !this.props.isExpanded &&
+                        {this.props.isBroadband &&
                             <div className="subscription__additional-info">
                                 <div className="subscription__additional-info--bold">Ruter fra 499,-</div>
                                 <div>ved 12 mnd binding</div>
                             </div>
-                        }
-                        {this.props.isBroadband && this.props.isExpanded &&
-                            <div className="subscription__additional-info">Begrensninger i EU, EØS og Sveits</div>
                         }
                     </div>
                     {!this.props.isBroadband &&
