@@ -1,0 +1,27 @@
+.label-with-icon {
+  display: flex;
+  align-items: center;
+}
+
+.label__icon {
+  width: 1.2rem;
+  height: 1.2rem;
+  margin-left: 0.5rem;
+}
+
+.label__tooltip-text {
+    visibility: hidden;
+    max-width: 240px;
+    background-color: #ffffff;
+    color: #000000;
+    text-align: center;
+    padding: 5px 5px;
+    border: 1px solid #990AE3;
+
+    position: absolute;
+    z-index: 1;
+}
+
+.label__tooltip:hover .label__tooltip-text {
+  visibility: visible;
+}

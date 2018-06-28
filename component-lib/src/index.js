@@ -54,6 +54,7 @@ export { default as HeaderWithImage } from './molecules/HeaderWithImage/HeaderWi
 export { default as ImageHeadingLink } from './molecules/ImageHeadingLink/ImageHeadingLink';
 export { default as HeadingLink } from './molecules/HeadingLink/HeadingLink';
 export { default as Image } from './molecules/Image/Image';
+export { default as LabelWithIcon } from './molecules/LabelWithIcon/LabelWithIcon';
 export { default as ListWithImage } from './molecules/ListWithImage/ListWithImage';
 export { default as ModalDialog } from './molecules/ModalDialog/ModalDialog';
 export { default as ModalDialogOverlay } from './molecules/ModalDialog/ModalDialogOverlay';
@@ -149,6 +150,7 @@ export default [
     'src/molecules/ImageHeadingLink/ImageHeadingLink.jsx',
     'src/molecules/HeadingLink/HeadingLink.jsx',
     'src/molecules/Image/Image.jsx',
+    'src/molecules/LabelWithIcon/LabelWithIcon.jsx',
     'src/molecules/ListWithImage/ListWithImage.jsx',
     'src/molecules/PageFooter/PageFooter.jsx',
     'src/molecules/PageHeader/PageHeader.jsx',
