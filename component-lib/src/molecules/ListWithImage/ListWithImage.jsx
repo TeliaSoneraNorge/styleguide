@@ -5,7 +5,7 @@ import classnames from 'classnames';
 /**
  * Status: *finished*
  */
-const ListWithImage = ({ children, className, src, alt, imagePosition = 'bottom', listPosition = 'left', hideImageForMobile, ...rest }) => (
+const ListWithImage = ({ children, className, heading, src, alt, imagePosition = 'bottom', listPosition = 'left', hideImageForMobile, ...rest }) => (
     <div
         className={classnames('list-with-image', {
             [className]: className,
@@ -14,6 +14,7 @@ const ListWithImage = ({ children, className, src, alt, imagePosition = 'bottom'
             'list-with-image--hide-image-for-mobile': hideImageForMobile,
         })}
         {...rest}>
+        <h3 className="heading heading--level-3 heading--pebble list-with-image__heading">{heading}</h3>
         <ul className="list-with-image__list list">
             {children}
         </ul>
@@ -36,6 +37,7 @@ ListWithImage.Item.propTypes = {};
 ListWithImage.propTypes = {
     /** ListWithImage.Item */
     children: PropTypes.node,
+    heading: PropTypes.string,
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
     /** Position of the image on smaller devices. */
