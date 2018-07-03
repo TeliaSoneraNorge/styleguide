@@ -8,7 +8,7 @@ import PropTypes from 'prop-types';
  * The PageFooter is the main footer on the page, and should be included only once.
  * It contains a small number of important, side-wide links.
  */
-const PageFooter = ({ links, specialLink }) =>
+const PageFooter = ({ links, chatLinkText, chatLink, chatImgSrc }) =>
     <footer className="page-footer">
         <div className="page-footer__content">
             <div className="page-footer__content-wrapper">
@@ -17,9 +17,12 @@ const PageFooter = ({ links, specialLink }) =>
                         <a key={i} className="page-footer__link" href={link.url}>{link.text}</a>
                     )}
                 </nav>
-                <nav className="page-footer__special-nav">
-                    <a className="page-footer__special-link page-footer__link" href={specialLink.url}>{specialLink.text}</a>
-                </nav>
+                {chatLink && chatImgSrc && chatLinkText &&
+                <a className="page-footer__chat" href={chatLink}>
+                    <img className="page-footer__chat-icon" src={chatImgSrc} alt={chatLinkText}/>
+                    <div className="page-footer__chat-link-text">{chatLinkText}</div>
+                </a>
+                }
             </div>
         </div>
     </footer>;
@@ -31,10 +34,9 @@ PageFooter.propTypes = {
             url: PropTypes.string.isRequired,
         }),
     ),
-    specialLink: PropTypes.shape({
-        text: PropTypes.string.isRequired,
-        url: PropTypes.string.isRequired,
-    }),
+    chatLink: PropTypes.string,
+    chatImgSrc: PropTypes.string,
+    chatLinkText: PropTypes.string
 };
 
 export default PageFooter;

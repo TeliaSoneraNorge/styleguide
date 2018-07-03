@@ -108,9 +108,9 @@ const Routes = (props) =>
                 { text: 'Om Telia', url: '#' },
                 { text: 'Telia butikker', url: '#' },
                 { text: 'Presse', url: '#' },
-                { text: 'Jobb i Telia', url: '#' }
-            ]}
-            specialLink={{ text: 'Personvern og Cookies', url: '#' }} />
+                { text: 'Jobb i Telia', url: '#' },
+                { text: 'Personvern hos Telia', url: '#'}
+            ]} />
     </div>;
 
 export default Routes;
