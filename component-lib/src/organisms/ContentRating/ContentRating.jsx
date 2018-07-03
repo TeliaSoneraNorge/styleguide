@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-export default class ContentRating extends React.Component {
+export default class ContentRating extends Component {
+    static propTypes = {
+        feedbackState: PropTypes.oneOf(['initial', 'receipt-positive', 'negative-feedback', 'receipt-negative']),
+        positiveFeedbackClick: PropTypes.func,
+        negativeFeedbackClick: PropTypes.func,
+        negativeFeedbackSubmitTex: PropTypes.func,
+    };
+
     render() {
         return (
             <section className="container container--small content-rating">

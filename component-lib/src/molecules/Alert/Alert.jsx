@@ -1,24 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
-
-function classNames(kind, size, minimizable, isOpen) {
-    const classNames = ['alert'];
-    classNames.push(`alert--${kind}`);
-    if (size === 'large') {
-        classNames.push(`alert--large`);
-    }
-
-    if (minimizable) {
-        classNames.push(`alert--minimizable`);
-    }
-
-    if (minimizable && !isOpen) {
-        classNames.push(`alert--minimized`);
-    }
-
-    return classNames.join(' ');
-}
+import classnames from 'classnames';
 
 /**
  * Status: *finished*.
@@ -33,8 +16,19 @@ const Alert = ({
     onOpen,
     onClose,
     isOpen,
-    minimizedText }) =>
-    <div className={classNames(kind, size, minimizable, isOpen)} role="alert">
+    minimizedText,
+    className,
+    ...rest }) =>
+    <div
+        className={classnames('alert', {
+            [className]: className,
+            [`alert--${kind}`]: kind,
+            [`alert--${size}`]: size,
+            [`alert--minimizable`]: minimizable,
+            [`alert--minimized`]: minimizable && !isOpen,
+        })}
+        role="alert"
+        {...rest}>
         <div className="alert__content">
             <div className="alert__icon-container">
                 <img

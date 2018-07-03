@@ -1,11 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
 import Button from '../../atoms/Button/Button';
-import Heading from '../../atoms/Heading/Heading';
 import Tabs from '../../molecules/Tabs/Tabs';
 
 const PageMenu = ({
@@ -69,5 +69,29 @@ const PageMenu = ({
         {fixedPosition && <MenuOverlay onClick={onClose} active={isExpanded} />}
     </div>
 );
+PageMenu.propTypes = {
+    menuLinks: PropTypes.arrayOf(PropTypes.shape({
+        heading: PropTypes.string,
+        loggedInLinks: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string,
+            url: PropTypes.string,
+            icon: PropTypes.string,
+        })),
+        loggedOutLinks: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string,
+            url: PropTypes.string,
+            icon: PropTypes.string,
+        })),
+    })),
+    menuId: PropTypes.string,
+    isExpanded: PropTypes.bool,
+    onClose: PropTypes.func,
+    fixedPosition: PropTypes.bool,
+    textAboveLoginButton: PropTypes.string,
+    isLoggedIn: PropTypes.bool,
+    menuSelectedTabIndex: PropTypes.number,
+    onTabSelect: PropTypes.func,
+    showButtons: PropTypes.bool,
+};
 
 export default PageMenu;

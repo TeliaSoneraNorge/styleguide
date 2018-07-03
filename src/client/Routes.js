@@ -68,6 +68,8 @@ const menuLinks = [
 const Routes = (props) =>
     <div>
         <PageHeader
+            menuId="main-menu"
+            cartItemCount={0}
             logoUrl="/"
             logoTitle="Telia logo"
             logoImageDesktopPath="/public/images/logo/logo.svg"

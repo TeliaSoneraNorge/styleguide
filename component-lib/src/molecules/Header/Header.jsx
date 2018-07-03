@@ -1,5 +1,6 @@
 import classNames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Heading from '../../atoms/Heading/Heading';
 
@@ -30,5 +31,15 @@ const Header = ({ videoSrc, iconUrl, hideIconOnDesktop, runningTitle, pageTitle,
             <section className="header__preamble">{children}</section>
         </div>
     </header>;
+Header.propTypes = {
+    videoSrc: PropTypes.string,
+    iconUrl: PropTypes.string,
+    hideIconOnDesktop: PropTypes.bool,
+    runningTitle: PropTypes.string,
+    pageTitle: PropTypes.string.isRequired,
+    withMask: PropTypes.bool,
+    withContentOverlap: PropTypes.bool,
+    children: PropTypes.node,
+};
 
 export default Header;

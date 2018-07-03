@@ -1,5 +1,5 @@
-import classNames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
 
@@ -27,6 +27,16 @@ const MiniDashboard = ({ headingText, children, links }) =>
             )}
         </ul>
     </section>;
+
+MiniDashboard.propTypes = {
+    headingText: PropTypes.string,
+    children: PropTypes.node,
+    links: PropTypes.arrayOf(PropTypes.shape({
+        text: PropTypes.string,
+        href: PropTypes.string,
+        notifications: PropTypes.number
+    }))
+};
 
 MiniDashboard.StatWithLabelWidget = ({ statisticText, statisticLabel, statisticHref, progressBarRemaining, progressBarTotal }) =>
     <div>

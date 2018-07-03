@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import Caption from '../../atoms/Caption/Caption';
 
 /**
@@ -28,6 +29,11 @@ const FullWidthImage = ({ children, className, withMask, withContentOverlap, src
     </div>
 );
 
-FullWidthImage.propTypes = {};
+FullWidthImage.propTypes = {
+    withMask: PropTypes.bool,
+    withContentOverlap: PropTypes.bool,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+};
 
 export default FullWidthImage;

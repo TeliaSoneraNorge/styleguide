@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Accordion from './Accordion';
 
@@ -24,28 +25,27 @@ import Accordion from './Accordion';
  */
 
 class AccordionList extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            isExpandedAccordionIndex: this.props.isExpandedAccordionIndex
-        };
-
-        this.accordions = {};
-
-        this.toggleIsExpanded = this.toggleIsExpanded.bind(this);
-        this.setAccordionRef = this.setAccordionRef.bind(this);
-        this.scrollToActiveAccordion = this.scrollToActiveAccordion.bind(this);
-
-    }
-    toggleIsExpanded(newIndex) {
+    static propTypes = {
+        accordionItems: PropTypes.arrayOf(PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            title: PropTypes.string.isRequired,
+            children: PropTypes.string.isRequired
+        })).isRequired,
+        isExpandedAccordionIndex: PropTypes.number.isRequired,
+    };
+    state = {
+        isExpandedAccordionIndex: this.props.isExpandedAccordionIndex
+    };
+    accordions = {};
+    toggleIsExpanded = (newIndex) => {
         if (newIndex === this.state.isExpandedAccordionIndex) {
             this.setState({ isExpandedAccordionIndex: -1 });
         } else {
             this.scrollToActiveAccordion(this.state.isExpandedAccordionIndex, newIndex);
             this.setState({ isExpandedAccordionIndex: newIndex });
         }
-    }
-    scrollToActiveAccordion(previousExpandedAccordionIndex, currentExpandedAccordionIndex) {
+    };
+    scrollToActiveAccordion = (previousExpandedAccordionIndex, currentExpandedAccordionIndex) => {
         setImmediate(() => {
             let openAccordionButtonHeight = 0;
             /*When an accordion further up on the page is already open, we subtract its button height
@@ -61,10 +61,10 @@ class AccordionList extends React.Component {
                 behavior: 'smooth'
             });
         });
-    }
-    setAccordionRef(accordionItem, i) {
+    };
+    setAccordionRef = (accordionItem, i) => {
         this.accordions[i] = accordionItem;
-    }
+    };
     render() {
         return (
             <div className="accordion-list">

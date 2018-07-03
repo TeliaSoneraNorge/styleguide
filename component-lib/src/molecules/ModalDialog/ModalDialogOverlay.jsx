@@ -1,8 +1,8 @@
 import React from 'react';
 import classNames from 'classnames';
 
-const ModalDialogOverlay = ({ onClick, active, children }) => (
-    <div className={ classNames('modal-dialog', { 'modal-dialog--active': active })}>
+const ModalDialogOverlay = ({ active, children, ...rest }) => (
+    <div className={classNames('modal-dialog', { 'modal-dialog--active': active })} {...rest}>
         {children}
     </div>
 );

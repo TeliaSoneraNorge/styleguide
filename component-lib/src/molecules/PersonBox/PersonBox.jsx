@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Box from '../../atoms/Box/Box';
 
@@ -34,6 +35,19 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
                 </div>
             </div>
         </Box>);
+};
+PersonBox.propTypes = {
+    id: PropTypes.string,
+    color: PropTypes.oneOf(['purple', 'pink', 'light-orange', 'green', 'blue', 'teal', 'grey']),
+    isExpanded: PropTypes.bool,
+    imagePath: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    /** Url */
+    linkedInProfile: PropTypes.string,
+    /** Url */
+    twitterProfile: PropTypes.string,
 };
 
 export default PersonBox;

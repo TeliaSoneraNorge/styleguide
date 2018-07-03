@@ -1,10 +1,6 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
-
-const classNames = (additionalClassName, type) =>
-    ['spinner', `spinner--${type}`, additionalClassName]
-        .filter(cls => !!cls)
-        .join(' ');
 
 /**
  * Status: *in progress*.
@@ -12,8 +8,11 @@ const classNames = (additionalClassName, type) =>
  * Future work: Replace it with gif
  *
  */
-const Spinner = ({ className, type }) => (
-    <div className={classNames(className, type)}>
+const Spinner = ({ className, type = 'lg' }) => (
+    <div className={classnames('spinner', {
+        [className]: className,
+        [`spinner--${type}`]: type,
+    })}>
         <div className="spinner__blade spinner__blade--0" />
         <div className="spinner__blade spinner__blade--1" />
         <div className="spinner__blade spinner__blade--2" />
@@ -33,11 +32,7 @@ const Spinner = ({ className, type }) => (
 
 Spinner.propTypes = {
     className: PropTypes.string,
-    type: PropTypes.string
-};
-
-Spinner.defaultProps = {
-    type: 'lg'
+    type: PropTypes.oneOf(['sm', 'md', 'lg'])
 };
 
 export default Spinner;
