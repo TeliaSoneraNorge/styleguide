@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Label from '../../atoms/Label/Label';
 
@@ -20,5 +21,14 @@ const RadioButtonWithLabel = ({ label, checked, name, value, hasRichContent, chi
             {hasRichContent ? children : label}
         </span>
     </Label>;
+RadioButtonWithLabel.propTypes = {
+    label: PropTypes.string,
+    checked: PropTypes.bool,
+    name: PropTypes.string,
+    value: PropTypes.any,
+    /** Decides whenever should render label or children. */
+    hasRichContent: PropTypes.bool,
+    children: PropTypes.node,
+};
 
 export default RadioButtonWithLabel;

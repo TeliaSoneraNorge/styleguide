@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ThemeBox = ({ isExpanded, onOpen, id, iconSvg, heading, children, onClose }) =>
     <div className={`theme-box${isExpanded ? ' theme-box--open' : ''} heading-link`}
@@ -24,5 +25,14 @@ const ThemeBox = ({ isExpanded, onOpen, id, iconSvg, heading, children, onClose 
             {children}
         </section>
     </div>;
+ThemeBox.propTypes = {
+    isExpanded: PropTypes.bool,
+    onOpen: PropTypes.func,
+    id: PropTypes.string,
+    iconSvg: PropTypes.node,
+    heading: PropTypes.string,
+    children: PropTypes.node,
+    onClose: PropTypes.func,
+};
 
 export default ThemeBox;

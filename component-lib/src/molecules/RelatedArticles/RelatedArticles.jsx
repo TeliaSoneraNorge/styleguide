@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import RelatedArticle from '../RelatedArticle/RelatedArticle';
 
 /**
@@ -6,21 +8,28 @@ import RelatedArticle from '../RelatedArticle/RelatedArticle';
  **/
 
 class RelatedArticles extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {
-            isShowingAllArticles: false
-        };
-
-        this.toggleShowMoreArticles = this.toggleShowMoreArticles.bind(this);
-    }
-
-    toggleShowMoreArticles(e) {
+    static propTypes = {
+        headingLink: PropTypes.string.isRequired,
+        heading: PropTypes.string.isRequired,
+        id: PropTypes.string.isRequired,
+        relatedArticles: PropTypes.arrayOf(PropTypes.shape({
+            link: PropTypes.string.isRequired,
+            imageSrc: PropTypes.string.isRequired,
+            heading: PropTypes.string.isRequired,
+            tags: PropTypes.arrayOf(PropTypes.string).isRequired,
+        })),
+    };
+    static defaultProps = {
+        relatedArticles: [],
+    };
+    state = {
+        isShowingAllArticles: false
+    };
+    toggleShowMoreArticles = (e) => {
         e.preventDefault();
 
         this.setState({ isShowingAllArticles: !this.state.isShowingAllArticles });
-    }
+    };
 
     render() {
         // TODO: Replace `<a className="related-articles__link heading-link"` with HeadingLink after it's merged to master

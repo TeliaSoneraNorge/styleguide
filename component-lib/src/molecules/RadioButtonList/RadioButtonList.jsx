@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import RadioButtonWithLabel from './RadioButtonWithLabel';
@@ -10,7 +11,7 @@ const getClassName = (type, hasRichContent) =>
  * Status: *finished*.
  *
  */
-const RadioButtonList = ({ list, selectedIndex, name, type, hasRichContent, children }) =>
+const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent, children }) =>
     <div className={getClassName(type, hasRichContent)}>
         {hasRichContent ?
             children
@@ -20,8 +21,19 @@ const RadioButtonList = ({ list, selectedIndex, name, type, hasRichContent, chil
                     key={index}
                     label={radio.label}
                     name={name}
-                    value={radio.value}/>)
+                    value={radio.value} />)
         }
     </div>;
+RadioButtonList.propTypes = {
+    list: PropTypes.arrayOf(PropTypes.shape({
+        label: PropTypes.string.isRequired,
+        value: PropTypes.any
+    })),
+    selectedIndex: PropTypes.number,
+    name: PropTypes.string,
+    type: PropTypes.oneOf(['horizontal', 'vertical']),
+    hasRichContent: PropTypes.bool,
+    children: PropTypes.node,
+};
 
 export default RadioButtonList;

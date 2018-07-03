@@ -1,5 +1,7 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
+
 import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
 
 /**
@@ -29,5 +31,13 @@ ImageHeadingLink.Small = ({ children, className, ...rest }) => (
         {children}
     </span>
 );
+
+ImageHeadingLink.propTypes = {
+    children: PropTypes.node,
+    src: PropTypes.string.isRequired,
+    alt: PropTypes.string,
+    href: PropTypes.string,
+    onClick: PropTypes.func,
+};
 
 export default ImageHeadingLink;

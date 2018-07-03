@@ -1,21 +1,20 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import FocusBox from '../FocusBox/FocusBox';
 import Spinner from '../../atoms/Spinner/Spinner';
-
-const classNames = (additionalClassName, type) =>
-    [ 'spinner', `spinner--${type}`, additionalClassName ]
-        .filter(cls => !!cls)
-        .join(' ');
 
 /**
  * Status: *finished*.
  *
  * Like a FocusBox, but shown before the content is loaded.
  */
-const FocusSpinner = ({ className }) =>
+const FocusSpinner = ({ type }) =>
     <FocusBox className="focus-spinner">
-        <Spinner className="focus-spinner__spinner" />
+        <Spinner className="focus-spinner__spinner" type={type} />
     </FocusBox>;
+FocusSpinner.propTypes = {
+    type: PropTypes.oneOf(['sm', 'md', 'lg']),
+};
 
 export default FocusSpinner;

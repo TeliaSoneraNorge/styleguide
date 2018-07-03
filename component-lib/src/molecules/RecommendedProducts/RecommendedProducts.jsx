@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Heading from '../../atoms/Heading/Heading';
 import Button from '../../atoms/Button/Button';
 
-const RecommendedProducts = ({ mainHeading, products, image, heading, text, buttonText }) =>
+const RecommendedProducts = ({ mainHeading, products = [], image, heading, text, buttonText }) =>
     <div className="recommended-products">
         <Heading level="2" text={mainHeading} className="recommended-products__heading" />
         <div className="recommended-products__products">
@@ -30,5 +31,18 @@ const RecommendedProducts = ({ mainHeading, products, image, heading, text, butt
             </div>
         </div>
     </div>;
+RecommendedProducts.propTypes = {
+    mainHeading: PropTypes.string.isRequired,
+    products: PropTypes.arrayOf(PropTypes.shape({
+        url: PropTypes.string.isRequired,
+        image: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+    })),
+    image: PropTypes.string.isRequired,
+    heading: PropTypes.string.isRequired,
+    text: PropTypes.string.isRequired,
+    buttonText: PropTypes.string.isRequired,
+};
 
 export default RecommendedProducts;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
  * This tooltip is implemented with the purpose of having to open/close it by clicking or using keyboard,
@@ -18,5 +19,10 @@ const Tooltip = ({ label, text, isExpanded }) =>
             {text}
         </div>
     </div>;
+Tooltip.propTypes = {
+    label: PropTypes.string,
+    text: PropTypes.string,
+    isExpanded: PropTypes.bool,
+};
 
 export default Tooltip;

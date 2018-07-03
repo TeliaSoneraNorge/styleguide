@@ -1,52 +1,45 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import Label from '../../atoms/Label/Label';
-
-function labelClassNames(labelMode) {
-    const classNames = ['dropdown-list-with-label'];
-
-    if (labelMode === 'text-to-right') {
-        classNames.push(`dropdown-list-with-label--text-to-right`);
-    }
-
-    return classNames.join(' ');
-}
-
-function dropDownClassNames(labelMode) {
-    const classNames = ['dropdown-list-with-label__select'];
-
-    if (labelMode === 'text-to-right') {
-        classNames.push(`dropdown-list-with-label__select--half`);
-    }
-
-    return classNames.join(' ');
-}
 
 /**
  * Status: *finished*.
  *
  **/
-export default class DropDownListWithLabel extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        const isUsingGrayText = (this.props.labelMode !== 'text-to-right');
+const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, selectedOption, changeSelectedOption, options = [], ...rest }) => (
+    <Label
+        className={classnames('dropdown-list-with-label', {
+            [className]: className,
+            [`dropdown-list-with-label--${labelMode}`]: labelMode
+        })}
+        isUsingGrayText={labelMode !== 'text-to-right'}>
+        {visibleLabel ?
+            <span className="dropdown-list-with-label__label-text">{label}</span> : null}
+        <select
+            className={classnames('dropdown-list-with-label__select', {
+                'dropdown-list-with-label__select--half': labelMode === 'text-to-right'
+            })}
+            defaultValue={selectedOption}
+            onChange={changeSelectedOption}
+            aria-label={visibleLabel ? null : label}
+            {...rest}>
+            {options.map((option) =>
+                <option className="dropdown-list-with-label__option" key={option}>
+                    {option}
+                </option>)}
+        </select>
+    </Label>
+);
+DropDownListWithLabel.propTypes = {
+    labelMode: PropTypes.oneOf(['text-to-right']),
+    visibleLabel: PropTypes.bool,
+    selectedOption: PropTypes.string,
+    label: PropTypes.node,
+    /** Called on select value change. */
+    changeSelectedOption: PropTypes.func,
+    options: PropTypes.arrayOf(PropTypes.string),
+};
 
-        return (
-            <Label className={labelClassNames(this.props.labelMode)} isUsingGrayText={isUsingGrayText}>
-                {this.props.visibleLabel ? <span className="dropdown-list-with-label__label-text">{this.props.label}</span> : null}
-                <select
-                    className={dropDownClassNames(this.props.labelMode)}
-                    defaultValue={this.props.selectedOption}
-                    onChange={this.props.changeSelectedOption}
-                    aria-label={this.props.visibleLabel ? null : this.props.label}>
-                    {this.props.options.map((option) =>
-                        <option className="dropdown-list-with-label__option" key={option}>
-                            {option}
-                        </option>)}
-                </select>
-            </Label>
-        );
-    }
-}
+export default DropDownListWithLabel;

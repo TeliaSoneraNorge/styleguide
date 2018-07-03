@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 /**
 * Status: *in progress*.
@@ -19,5 +20,11 @@ const PopUpLine = ({ description, isConfirmationLine, confirmButtonText, cancelB
         </div>
     </div>
 );
+PopUpLine.propTypes = {
+    description: PropTypes.string.isRequired,
+    isConfirmationLine: PropTypes.bool,
+    confirmButtonText: PropTypes.string,
+    cancelButtonText: PropTypes.string,
+};
 
 export default PopUpLine;

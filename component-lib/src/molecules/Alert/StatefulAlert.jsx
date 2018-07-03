@@ -1,30 +1,39 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Alert from './Alert';
 
 export default class StatefulAlert extends React.Component {
-    constructor() {
-        super();
+    static propTypes = {
+        kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning']),
+        size: PropTypes.oneOf(['large']),
+        onOpen: PropTypes.func,
+        onClose: PropTypes.func,
+        minimizedText: PropTypes.string,
+        links: PropTypes.arrayOf(
+            PropTypes.shape({
+                text: PropTypes.string,
+                url: PropTypes.string
+            })
+        ),
+    };
+    state = { isOpen: true };
 
-        this.state = { isOpen: true };
-        this.onOpen = this.onOpen.bind(this);
-        this.onClose = this.onClose.bind(this);
-    }
-
-    onClose() {
+    onClose = () => {
         this.setState({ isOpen: false });
 
         if (this.props.onOpen) {
             this.props.onOpen();
         }
-    }
+    };
 
-    onOpen() {
+    onOpen = () => {
         this.setState({ isOpen: true });
 
         if (this.props.onOpen) {
             this.props.onOpen();
         }
-    }
+    };
 
     render() {
         return (

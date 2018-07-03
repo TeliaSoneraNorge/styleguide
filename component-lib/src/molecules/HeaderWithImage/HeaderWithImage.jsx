@@ -1,12 +1,13 @@
 import classNames from 'classnames';
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import Heading from '../../atoms/Heading/Heading';
 
 /**
  * Status: *finished*.
  */
-const HeaderWithImage = ({imgSrcMobile, imgSrcDesktop, blackText, whiteText, withGradient, pageTitle, children }) =>
+const HeaderWithImage = ({ imgSrcMobile, imgSrcDesktop, blackText, whiteText, withGradient, pageTitle, children }) =>
     <header className={classNames('header header--plain header-with-image', { 'header--black-text': blackText, 'header--white-text': whiteText, 'header-with-image--with-gradient': withGradient })}>
         <picture className="hero__picture">
             <source media="(max-width: 47.99em)" srcSet={imgSrcMobile}/>
@@ -18,5 +19,14 @@ const HeaderWithImage = ({imgSrcMobile, imgSrcDesktop, blackText, whiteText, wit
             <section className="header__preamble">{children}</section>
         </div>
     </header>;
+HeaderWithImage.propTypes = {
+    imgSrcMobile: PropTypes.string,
+    imgSrcDesktop: PropTypes.string,
+    blackText: PropTypes.bool,
+    whiteText: PropTypes.bool,
+    withGradient: PropTypes.bool,
+    pageTitle: PropTypes.string.isRequired,
+    children: PropTypes.node,
+};
 
 export default HeaderWithImage;

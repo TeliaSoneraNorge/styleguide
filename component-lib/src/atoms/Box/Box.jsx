@@ -1,24 +1,6 @@
 import React from 'react';
-
-function classNames(className, color, size, canExpand, isExpanded) {
-    const classNames = ['box'];
-    if (className) {
-        classNames.push(className);
-    }
-    if (color) {
-        classNames.push(`box--${color}`);
-    }
-    if (size) {
-        classNames.push(`box--${size}`);
-    }
-    if (canExpand) {
-        classNames.push(`box--expandable`);
-    }
-    if (isExpanded) {
-        classNames.push('box--is-expanded');
-    }
-    return classNames.join(' ');
-}
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 /**
  * Status: *finished*.
@@ -30,6 +12,16 @@ function classNames(className, color, size, canExpand, isExpanded) {
  * One or more Boxes can be used inside a <a href="/components/molecules#BoxGrid">BoxGrid</a> component.
  */
 export default class Box extends React.Component {
+    static propTypes = {
+        isExpanded: PropTypes.bool,
+        canExpand: PropTypes.bool,
+        color: PropTypes.oneOf(['purple', 'pink', 'light-orange', 'green', 'blue', 'teal', 'grey']),
+        size: PropTypes.oneOf(['small', 'medium']),
+        speechBubbleText: PropTypes.string,
+        /** close button aria-controls */
+        id: PropTypes.string,
+    };
+
     constructor(props) {
         super(props);
 
@@ -56,10 +48,19 @@ export default class Box extends React.Component {
         this.setState({ isExpanded: false });
     }
     render() {
+        const { className, color, size, canExpand } = this.props;
+        const { isExpanded } = this.state;
+
         return (
             <article
                 id={this.props.id}
-                className={classNames(this.props.className, this.props.color, this.props.size, this.props.canExpand, this.state.isExpanded)}
+                className={classnames('box', {
+                    [className]: className,
+                    [`box--${color}`]: color,
+                    [`box--${size}`]: size,
+                    'box--expandable': canExpand,
+                    'box--is-expanded': isExpanded,
+                })}
                 onClick={this.boxContainerClick}
                 onKeyUp={this.boxContainerClick}
                 aria-expanded={this.props.canExpand ? this.state.isExpanded : null}
