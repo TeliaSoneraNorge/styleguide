@@ -14,7 +14,7 @@ module.exports = {
     module: {
         rules: [
             {
-                exclude: /\.(js|jsx|mjs|pcss|css|html|json)$/,
+                exclude: /\.(js|jsx|mjs|pcss|css|html|json|svg)$/,
                 use: 'raw-loader'
             },
             {

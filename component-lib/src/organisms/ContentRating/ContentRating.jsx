@@ -1,6 +1,6 @@
 import React from 'react';
 
-const hearthIcon = require('../assets/icons/ico_heart.svg');
+import { heart } from '../../icons';
 
 export default class ContentRating extends React.Component {
     render() {
@@ -19,7 +19,7 @@ export default class ContentRating extends React.Component {
                     <div>
                         <h3 className="heading heading--level-3 content-rating__heading">Var denne siden nyttig?</h3>
 
-                        <img className="content-rating__icon" src={hearthIcon} />
+                        <img className="content-rating__icon" src={heart} />
                         <p className="content-rating__text">Så bra!<br />Takk for din tilbakemelding.</p>
                     </div> : null
                 }

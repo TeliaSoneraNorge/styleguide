@@ -1,8 +1,9 @@
 import React from 'react';
 import classNames from 'classnames';
+import { linkArrow } from '../../icons';
 
 const getIconUrl = item =>
-    item.icon || require('../assets/icons/ico_linkarrow.svg');
+    item.icon || linkArrow;
 
 const MenuItem = ({ item, isEmphasised }) => (
     <li role="none" className={classNames('page-menu__item', { 'page-menu__item--logged-in': isEmphasised })}>
