@@ -3,6 +3,8 @@
     margin: 0 auto var(--margin-bottom);
     padding: 1rem;
 
+    position: relative;
+
     @media all and (min-width: 30em) {
         padding: 1.5rem 2.3125rem 1.5rem 2.3125rem;
     }
@@ -17,6 +19,10 @@
         margin: 0;
     }
 
+    &__line {
+        margin: 1em 0;
+    }
+
     &__text {
         margin-bottom: 1rem;
     }
@@ -27,6 +33,10 @@
 
         @media all and (min-width: 43em) {
             flex-direction: row;
+        }
+
+        .fact-box__text {
+            margin-top: 1.5rem;
         }
     }
 
@@ -60,5 +70,23 @@
 
         max-height: 10em;
         max-width: 100%;
+    }
+
+    &--centered-icon {
+        padding-top: 4rem;
+        margin-top: 2.34375rem;
+
+        .fact-box__icon {
+            width: 4.6875rem;
+            height: 4.6875rem;
+
+            position: absolute;
+            left: calc(50% - 2.34375rem);
+            top: -2.34375rem;
+        }
+
+        .fact-box__text {
+            margin-top: 1.5rem;
+        }
     }
 }
