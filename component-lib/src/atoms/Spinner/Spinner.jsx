@@ -22,11 +22,11 @@ class Spinner extends Component {
     };
 
     componentWillUnmount() {
-        this.props.spinnerWillHide();
+        this.props.spinnerWillHide && this.props.spinnerWillHide();
     }
 
     componentWillMount() {
-        this.props.spinnerWillShow();
+        this.props.spinnerWillShow && this.props.spinnerWillShow();
     }
 
     render() {
