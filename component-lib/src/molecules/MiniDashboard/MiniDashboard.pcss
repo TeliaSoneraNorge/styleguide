@@ -1,28 +1,7 @@
-.user-dashboard {
-
+.mini-dashboard {
     @media all and (min-width: 48em) {
         display: flex;
         margin-bottom: 3rem;
-    }
-
-    &--no-progress-bar {
-        .user-dashboard__container {
-            flex: 0 1 auto;
-        }
-
-        .user-dashboard__data-usage-link {
-            display: inline-block;
-            padding: 0;
-        }
-
-        .user-dashboard__data-amount-left {
-            border-bottom: 1px solid var(--core-purple);
-            display: table;
-
-            @media all and (min-width: 48em) {
-                display: inline-block;
-            }
-        }
     }
 
     &__container {
@@ -34,7 +13,7 @@
         }
     }
 
-    &__name {
+    &__heading {
         margin: 1rem 0;
 
         @media all and (min-width: 48em) {
@@ -42,28 +21,11 @@
         }
     }
 
-    &__links {
-        align-self: flex-end;
-        margin: 1rem 0 1rem 1.25rem;
-
-        @media all and (min-width: 48em) {
-            margin: 0 0 0 3rem;
-        }
+    &__statistic-widget {
+        display: inline-block;
+        margin-bottom: 1rem;
     }
-
-    .link {
-        border: none;
-    }
-
-    &__name-link {
-    }
-
-    &__data-usage-link {
-        display: block;
-        padding: 0 1px 0.5rem 0;
-    }
-
-    &__data-amount-left {
+    &__statistic-text {
         display: block;
         font-family: Pebble;
         font-size: 37px;
@@ -74,14 +36,21 @@
             margin-right: 0.5rem;
         }
     }
-
-    &__data-amount-info {
+    &__statistic-label {
         font-size: 0.875rem;
         font-family: 'Helvetica Neue Medium';
         line-height: 2;
     }
 
-    &__unpaid-invoices {
+    &__links {
+        align-self: flex-end;
+        margin: 1rem 0 1rem 1.25rem;
+
+        @media all and (min-width: 48em) {
+            margin: 0 0 0 3rem;
+        }
+    }
+    &__link-notifications {
         background-color: #D0021B;
         border-radius: 1rem;
         color: white;
