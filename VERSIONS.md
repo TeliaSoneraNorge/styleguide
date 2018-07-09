@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.8.0 [new component]
+- Molecule: MiniDashboard (previously UserDashboard)
+- Molecule: UserDashboard - removed
+
 ## 1.7.10 [new component]
 - Molecule: Subscription (broadband variant)
 - Molecule: PriceTable
