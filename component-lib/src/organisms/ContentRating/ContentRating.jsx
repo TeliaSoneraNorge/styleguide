@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { heart } from '../../icons';
+
 export default class ContentRating extends React.Component {
     render() {
         return (
@@ -17,7 +19,7 @@ export default class ContentRating extends React.Component {
                     <div>
                         <h3 className="heading heading--level-3 content-rating__heading">Var denne siden nyttig?</h3>
 
-                        <img className="content-rating__icon" src="/public/icons/ico_heart.svg" />
+                        <img className="content-rating__icon" src={heart} />
                         <p className="content-rating__text">Så bra!<br />Takk for din tilbakemelding.</p>
                     </div> : null
                 }

@@ -16,7 +16,9 @@ export default [{
         { file: pkg.module, format: 'es', sourcemap: 'inline' },
     ],
     plugins: [
-        eslint(),
+        eslint({
+            exclude: ['node_modules/**', /\.svg$/]
+        }),
         nodeResolve({
             jsnext: true,
             main: true,
