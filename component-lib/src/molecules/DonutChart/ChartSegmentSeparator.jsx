@@ -12,14 +12,19 @@ const getRotation = (capsOnChart, percent, strokeWidthInPercents) =>
         - (capsOnChart ? strokeWidthInPercents : 0);
 
 const ChartSegmentSeparator = ({ capsOnChart, percent, strokeWidthInPercents, radius }) => (
-    <line
+    <g
         className={`donut-chart__cap`}
         style={{
             transform: `rotate(${getRotation(capsOnChart, percent, strokeWidthInPercents)}rad)`
-        }}
-        {...getSeparatorPosition(radius, percent, strokeWidthInPercents)}
-        strokeWidth="0.02"
-        stroke="#fff" />
+        }}>
+        <line
+            {...getSeparatorPosition(
+                radius,
+                percent,
+                strokeWidthInPercents)}
+            strokeWidth="0.02"
+            stroke="#fff" />
+    </g>
 );
 
 export default ChartSegmentSeparator;
