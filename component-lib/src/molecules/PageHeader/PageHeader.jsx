@@ -19,7 +19,6 @@ export default class PageHeader extends React.Component {
         menuLinks: PropTypes.array.isRequired,
         menuId: PropTypes.string.isRequired,
         isLoggedIn: PropTypes.bool,
-        showButtons: PropTypes.bool,
         cartItemCount: PropTypes.number.isRequired,
         logoUrl: PropTypes.string.isRequired,
         logoTitle: PropTypes.string.isRequired,
@@ -63,8 +62,7 @@ export default class PageHeader extends React.Component {
                     fixedPosition
                     isLoggedIn={this.props.isLoggedIn}
                     menuSelectedTabIndex={this.state.menuSelectedTabIndex}
-                    onTabSelect={this.onTabSelect}
-                    showButtons={this.props.showButtons} />
+                    onTabSelect={this.onTabSelect} />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
                         <i className={`${menuIconClass} page-header__icon-box-icon`} />

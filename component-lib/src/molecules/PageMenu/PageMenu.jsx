@@ -14,11 +14,9 @@ const PageMenu = ({
     isExpanded,
     onClose,
     fixedPosition,
-    textAboveLoginButton,
     isLoggedIn,
     menuSelectedTabIndex,
-    onTabSelect,
-    showButtons
+    onTabSelect
  }) => (
     <div>
         <div
@@ -29,7 +27,7 @@ const PageMenu = ({
             id={menuId || 'page-header-menu'}>
             <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClose={onClose} />
             <nav aria-label="Main menu">
-                <div className="page-menu__top-panel page-menu__top-panel--with-padding page-menu__top-panel--centered-content">
+                <div className="page-menu__selection">
                     <Tabs
                         uniqueId="menu-tabs"
                         onSelect={onTabSelect}
@@ -41,16 +39,15 @@ const PageMenu = ({
                             <Tabs.Tab key={i} heading={menuLink.heading} />
                         )}
                     </Tabs>
-
-                    {showButtons && !isLoggedIn &&
-                        <div className="page-menu__top-panel-content">
-                            <p className="paragraph">{textAboveLoginButton}</p>
-                            <Button text="Logg inn" kind="primary" />
-                        </div>}
                 </div>
 
                 {menuLinks.map((menuLink, i) =>
                     <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
+                        <div className={classNames(
+                            'page-menu__content',
+                            { 'page-menu__content--empty': !menuLink.contentAboveItems })}>
+                            {menuLink.contentAboveItems}
+                        </div>
                         <MenuBar ariaLabel="innlogget brukermeny" items={menuLink.loggedInLinks} isEmphasised />
                         <MenuBar items={menuLink.loggedOutLinks} />
                     </Tabs.TabPanel>
@@ -87,11 +84,9 @@ PageMenu.propTypes = {
     isExpanded: PropTypes.bool,
     onClose: PropTypes.func,
     fixedPosition: PropTypes.bool,
-    textAboveLoginButton: PropTypes.string,
     isLoggedIn: PropTypes.bool,
     menuSelectedTabIndex: PropTypes.number,
-    onTabSelect: PropTypes.func,
-    showButtons: PropTypes.bool,
+    onTabSelect: PropTypes.func
 };
 
 export default PageMenu;

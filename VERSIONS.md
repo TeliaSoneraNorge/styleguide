@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.9.0 [changed component]
+- Molecule: PageMenu (removed showButtons prop)
+- Molecule: PageHeading - (removed textAboveLoginButton and showButtons prop in favour of templating; CSS change)
+
 ## 1.8.0 [new component]
 - Molecule: MiniDashboard (previously UserDashboard)
 - Molecule: UserDashboard - removed
@@ -67,7 +71,7 @@ Only noteworthy versions shown (minor changes are omitted).
 - TextArea
 - UniqueSellingPoints
 
-### Molecules: 
+### Molecules:
 - ArticleMetaData
 - BoxGrid
 - DownloadButtons

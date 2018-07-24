@@ -75,8 +75,7 @@ const Routes = (props) =>
             logoImageDesktopPath="/public/images/logo/logo.svg"
             logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
             menuLinks={menuLinks}
-            isLoggedIn={false}
-            showButtons={false} />
+            isLoggedIn={false} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/layout" component={LayoutPage} />
