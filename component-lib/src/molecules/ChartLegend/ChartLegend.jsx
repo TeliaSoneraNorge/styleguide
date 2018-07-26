@@ -42,8 +42,8 @@ ChartLegend.propTypes = {
         PropTypes.shape({
             title: PropTypes.string.isRequired,
             color: PropTypes.string.isRequired,
-            value: PropTypes.number.isRequired,
-            total: PropTypes.number.isRequired,
+            value: PropTypes.any.isRequired,
+            total: PropTypes.any.isRequired,
         })
     )
 };
