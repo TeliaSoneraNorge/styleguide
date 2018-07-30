@@ -22,7 +22,7 @@ const FactTwoColumnContent = ({ iconSrc, title, centerIcon, imgSrc, imgAlt, chil
 const FactContent = ({ children, iconSrc, title, underline }) => (
     <React.Fragment>
         {iconSrc && (
-            <img className="fact-box__icon" src="/public/icons/ico_info.svg" />
+            <img className="fact-box__icon" src={iconSrc} alt={title} />
         )}
         <h3 className="fact-box__heading heading heading--level-3">{title}</h3>
         {underline &&
@@ -43,7 +43,7 @@ const FactContent = ({ children, iconSrc, title, underline }) => (
 const FactBox = ({ children, title, imgAlt, imgSrc, iconSrc, className, centerIcon, ...rest }) => (
     <div
         className={classnames('container container--small', {
-            [className]: className,
+            [className]: className
         })}
         {...rest}>
 
