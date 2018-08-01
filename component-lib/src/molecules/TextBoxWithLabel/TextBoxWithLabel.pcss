@@ -31,4 +31,46 @@
             border-color: var(--dark-red);
         }
     }
+
+    &--with-icon {
+        .textbox-with-label__input {
+            display: inline-block;
+        }
+
+        .textbox-with-label__button {
+            background-color: transparent;
+            border: none;
+            display: inline-block;
+            height: 46px;
+            margin-left: -46px;
+            padding: 5px;
+            vertical-align: bottom;
+            width: 46px;
+
+            &:hover {
+                .textbox-with-label__icon {
+                    background-position: right;
+                }
+            }
+
+            &:active,
+            &:focus {
+                background-color: var(--core-purple);
+                outline: none;
+
+                .textbox-with-label__icon {
+                    background-position: center;
+                }
+            }
+        }
+
+        .textbox-with-label__icon {
+            background-position: left;
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: block;
+            height: 100%;
+            width: 100%;
+        }
+    }
 }
