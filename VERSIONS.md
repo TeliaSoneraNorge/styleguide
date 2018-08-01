@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.9.5 [changed component]
+- Molecule: TextBoxWithLabel - added a modifier to have the possibility to add an icon in the input field
+
 ## 1.9.0 [changed component]
 - Molecule: PageMenu (removed showButtons prop)
 - Molecule: PageHeading - (removed textAboveLoginButton and showButtons prop in favour of templating; CSS change)
