@@ -6,7 +6,7 @@ const TypeSearch = () => (
         labelText="Label for search box"
         type="search"
         withIcon={true}
-        icon="/public/icons/ico_search.svg" />
+        icon="/public/icons/ico_search.svg"/>
 );
 
 export default TypeSearch;
