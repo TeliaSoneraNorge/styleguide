@@ -76,8 +76,11 @@ export default class PageHeader extends React.Component {
                 <div className="page-header__site-tools">
                     {cartShouldBeShown ?
                         <a className="page-header__cart-button" href="#">
-                            <i className="page-header__cart-button-image" />
-                            <span className="page-header__cart-item-count">{this.props.cartItemCount}</span>
+                            <i className="page-header__cart-button-image page-header__icon-box-icon" />
+                            <span className="page-header__cart-button-text">Handlekurv</span>
+                            <span className="page-header__cart-item-count">
+                                <span className="page-header__cart-item-count-text">{this.props.cartItemCount}</span>
+                            </span>
                         </a> : null}
                     {!this.props.isLoggedIn &&
                         <a className="page-header__log-in-button" href="#">
