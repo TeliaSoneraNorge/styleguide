@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.9.7 [changed component]
+- Molecule: PageHeader - added "Handlekurv" text to cart button and made styling-changes to the cart counter
+
 ## 1.9.6 [changed component]
 - Molecule: TextBoxWithLabel - changed positioning of icon in input field
 
