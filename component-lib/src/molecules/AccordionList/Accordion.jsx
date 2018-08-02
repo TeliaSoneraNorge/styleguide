@@ -8,6 +8,8 @@ class Accordion extends Component {
         title: PropTypes.node,
         accordionRef: PropTypes.any,
         children: PropTypes.node,
+        imageUrl: PropTypes.string,
+        imageAlt: PropTypes.string
     };
 
     accordionHeaderClicked = () => {
@@ -25,6 +27,10 @@ class Accordion extends Component {
                         aria-expanded={this.props.isExpanded}
                         aria-controls={this.props.id}
                         onClick={this.accordionHeaderClicked}>
+                        {
+                            this.props.imageUrl &&
+                            <img className="accordion__image" src={this.props.imageUrl} alt={this.props.imageAlt} />
+                        }
                         {this.props.title}
                     </button>
                 </h3>
