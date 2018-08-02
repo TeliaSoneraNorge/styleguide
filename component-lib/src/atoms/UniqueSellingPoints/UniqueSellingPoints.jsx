@@ -15,13 +15,13 @@ const UniqueSellingPoints = ({ children, className, ...rest }) => (
     </ul>
 );
 
-UniqueSellingPoints.Item = ({ children, imgSrc, className, ...rest }) => (
+UniqueSellingPoints.Item = ({ children, iconSvg, className, ...rest }) => (
     <li
         className={classnames('unique-selling-points__block', {
             [className]: className
         })}
         {...rest}>
-        <img className="unique-selling-points__icon" src={imgSrc} role="presentation" />
+        <div className="unique-selling-points__icon">{iconSvg}</div>
         <div>{children}</div>
     </li>
 );
@@ -33,7 +33,7 @@ UniqueSellingPoints.propTypes = {
 
 UniqueSellingPoints.Item.propTypes = {
     /** Src of an icon to display. */
-    imgSrc: PropTypes.string,
+    iconSvg: PropTypes.node,
 };
 
 export default UniqueSellingPoints;

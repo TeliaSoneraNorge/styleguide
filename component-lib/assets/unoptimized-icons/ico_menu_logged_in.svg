@@ -1,42 +1,71 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg width="93px" height="26px" viewBox="0 0 93 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
-    <title>icon/menuLoggedIn</title>
-    <desc>Created with Sketch.</desc>
-    <defs>
-        <path d="M12.8326335,28.5555413 L17.331874,28.5555413 C18.4953408,28.5555413 19.4341779,29.4886187 19.4341779,30.6520855 C19.4341779,31.8155523 18.4895811,32.7543894 17.331874,32.7543894 L12.8326335,32.7543894 C11.6691667,32.7543894 10.7303296,31.8097926 10.7303296,30.6520855 C10.7303296,29.4943784 11.6691667,28.5555413 12.8326335,28.5555413 Z M12.8326335,20.1520855 L22.1833445,20.1520855 C23.3468113,20.1520855 24.2856484,21.0909226 24.2856484,22.2543894 C24.2856484,23.4178562 23.3410516,24.3566933 22.1833445,24.3566933 L12.8326335,24.3566933 C11.6691667,24.3566933 10.7303296,23.4120965 10.7303296,22.2543894 C10.7303296,21.0966823 11.6691667,20.1520855 12.8326335,20.1520855 Z M31.8862856,15.9532374 L12.8326335,15.9532374 C11.6691667,15.9532374 10.7303296,15.0201601 10.7303296,13.8566933 C10.7303296,12.6932265 11.6691667,11.7543894 12.8326335,11.7543894 L31.8862856,11.7543894 C33.0497524,11.7543894 33.9885895,12.6874667 33.9885895,13.8509335 C33.9885895,15.0144004 33.0439926,15.9532374 31.8862856,15.9532374 Z M36.564431,25.2901714 C36.564431,26.8839214 35.7587238,28.2852502 34.5311803,29.1302305 C39.918029,30.2973073 40.2301878,33.2505553 40.3103367,35.0116281 C40.3272101,35.3881045 40.0487982,35.8356931 39.6818007,35.9319037 C38.753761,36.1745218 36.8850265,36.5091675 31.8483019,36.5091675 C26.8115774,36.5091675 24.9428429,36.1703388 24.0148032,35.9319037 C23.6478057,35.8356931 23.3693937,35.3881045 23.3862672,35.0116281 C23.4621977,33.2505553 23.7785749,30.2973073 29.1612052,29.1302305 C27.9336617,28.2852502 27.1321729,26.8797384 27.1321729,25.2901714 C27.1321729,22.7050336 29.2455724,20.6134982 31.8483019,20.6134982 C34.4510315,20.6134982 36.564431,22.7050336 36.564431,25.2901714 Z" id="path-1"></path>
-    </defs>
-    <g id="icons-symboler" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-55.000000, -101.000000)">
-        <g id="icon/menuLoggedIn" transform="translate(45.000000, 90.000000)">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use fill="#000000" fill-rule="evenodd" xlink:href="#path-1"></use>
-            <g id="Colour/Black" mask="url(#mask-2)" fill="#000000" fill-rule="evenodd">
-                <rect id="Rectangle-91-Copy-50" x="0" y="0.166666667" width="45" height="45"></rect>
-            </g>
-        </g>
-    </g>
-    <g id="icons-symboler-white" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-24.000000, -101.000000)">
-        <g id="icon/menuLoggedIn" transform="translate(45.000000, 90.000000)">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use fill="#fff" fill-rule="evenodd" xlink:href="#path-1"></use>
-            <g id="Colour/Black" mask="url(#mask-2)" fill="#fff" fill-rule="evenodd">
-                <rect id="Rectangle-91-Copy-50" x="0" y="0.166666667" width="45" height="45"></rect>
-            </g>
-        </g>
-    </g>
-    <g id="icons-symboler-purple" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(7.000000, -101.000000)">
-        <g id="icon/menuLoggedIn" transform="translate(45.000000, 90.000000)">
-            <mask id="mask-2" fill="white">
-                <use xlink:href="#path-1"></use>
-            </mask>
-            <use fill="#990AE3" fill-rule="evenodd" xlink:href="#path-1"></use>
-            <g id="Colour/Black" mask="url(#mask-2)" fill="#990AE3" fill-rule="evenodd">
-                <rect id="Rectangle-91-Copy-50" x="0" y="0.166666667" width="45" height="45"></rect>
-            </g>
-        </g>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   id="svg4765"
+   viewBox="0 0 17 16">
+  <g
+     id="g4767"
+     fill-rule="evenodd"
+     fill="none">
+    <path
+       style="fill:#000000"
+       id="path4769"
+       d="M 3.8495827,9.326 1.167,9.326 c -1.55399933,0 -1.55399933,2.331 0,2.331 l 2.6825827,0 c 1.60019,0.04688 1.60019,-2.3778772 0,-2.331 z M 6.8400551,4.662 1.167,4.662 c -1.55599929,0 -1.55599929,2.334 0,2.334 l 5.6730551,0 c 1.555999,0 1.555999,-2.334 0,-2.334 z M 1.167,2.33 l 10.932162,0 c 1.619039,0.067097 1.619039,-2.39709694 0,-2.33 L 1.167,0 c -1.55333266,0 -1.55333266,2.33 0,2.33 z" />
+  </g>
+  <g
+     transform="translate(-1074.5724,-147.56616)"
+     id="g5346">
+    <path
+       d="M 440.67,157.71"
+       id="path5334" />
+    <path
+       style="fill:#ffffff"
+       d="M 1035.49,157.71"
+       id="path5336" />
+    <path
+       style="fill:#990ae3"
+       d="M 1630.31,157.71"
+       id="path5338" />
+  </g>
+  <g
+     transform="translate(-1059.4067,-160.51208)"
+     id="g5365">
+    <path
+       d="M 440.67,157.71"
+       id="path5353" />
+    <path
+       style="fill:#ffffff"
+       d="M 1035.49,157.71"
+       id="path5355" />
+    <path
+       style="fill:#990ae3"
+       d="M 1630.31,157.71"
+       id="path5357" />
+  </g>
+  <g
+     transform="translate(-512.12833,-143.66833)"
+     style="fill:#000000"
+     id="g5949">
+    <path
+       d="M 507.75,250.64"
+       transform="translate(-67.08,-92.93)"
+       id="path5951" />
+  </g>
+  <g
+     transform="translate(-503.81583,-152.2725)"
+     style="fill:#000000"
+     id="g5964">
+    <path
+       d="M 507.75,250.64"
+       transform="translate(-67.08,-92.93)"
+       id="path5966" />
+  </g>
+  <g transform="translate(7 5) scale(0.017)" fill="#000">
+        <path d="M507.75,250.64a157.46,157.46,0,0,1-67.95,129.56c180,39.29,190.52,138.93,193.09,198.23.54,12.67-8.79,27.8-21,31-31,8.13-93.57,19.5-261.83,19.5s-230.8-11.36-261.85-19.5c-12.28-3.22-21.6-18.34-21.06-31,2.56-59.3,13.12-158.94,193.1-198.23A157.69,157.69,0,1,1,507.75,250.64Z" transform="translate(-67.08 -92.93)" />
     </g>
 </svg>
