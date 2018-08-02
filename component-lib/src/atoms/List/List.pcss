@@ -101,6 +101,14 @@
             display: inline-block;
             padding: 1px;
 
+            .list__link-icon {
+                svg{
+                    path {
+                        fill: var(--white);
+                    }
+                }
+            }
+
             &:active,
             &:focus {
                 background-image: none;
@@ -112,6 +120,10 @@
 
                 .list__link-icon {
                     background-position: calc(-var(--link-icon-size-large) * 2) 0px;
+         
+                    path {
+                        fill: var(--core-purple);
+                    }
                 }
             }
 
