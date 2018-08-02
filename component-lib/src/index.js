@@ -83,6 +83,7 @@ export { default as References } from './molecules/References/References';
 export { default as Tabs } from './molecules/Tabs/Tabs';
 export { default as FunkyTabs } from './molecules/FunkyTabs/FunkyTabs';
 export { default as Video } from './molecules/Video/Video';
+export { default as ArticleList } from './molecules/ArticleList/ArticleList';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating/ContentRating';
@@ -176,6 +177,7 @@ export default [
     'src/molecules/Tabs/Tabs.jsx',
     'src/molecules/FunkyTabs/FunkyTabs.jsx',
     'src/molecules/Video/Video.jsx',
+    'src/molecules/ArticleList/ArticleList.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',
