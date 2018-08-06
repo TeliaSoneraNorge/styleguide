@@ -53,7 +53,7 @@ List.Link = ({ children, className, ...rest }) => (
 List.BubbleLink = ({ children, iconSvg, ...rest }) => (
     <List.Link {...rest}>
         <span className="list__link-bubble">
-                <i  className="list__link-icon">{iconSvg}</i>
+            <i className="list__link-icon">{iconSvg}</i>
         </span>
         <span className="list__link-text">{children}</span>
     </List.Link>

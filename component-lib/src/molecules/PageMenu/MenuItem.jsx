@@ -15,7 +15,7 @@ const MenuItem = ({ item, isEmphasised }) => (
             {item.notification &&
                 <span className="page-menu__item-notification">{item.notification}</span>}
                 <i className={classNames('page-menu__item-icon', { 'page-menu__item-icon--small' : !isEmphasised })}> 
-                {getIconSvg(item)}
+                    {getIconSvg(item)}
                 </i>
         </a>
     </li>
