@@ -16,7 +16,6 @@ const TextBoxWithLabel = ({ labelText, type, placeholder, errorMessage, disabled
             ? <div className="textbox-with-label__input-icon-wrapper">
                 <input className="textbox-with-label__input" type={type} placeholder={placeholder} disabled={disabled} />
                 <button className="textbox-with-label__button">
-                    {/* <i className="textbox-with-label__icon" aria-label={labelText} style={{ backgroundImage: `url(${icon})` }}/> */}
                     <i className="textbox-with-label__icon" aria-label={labelText} >{iconSvg}</i>
                 </button>
             </div>
