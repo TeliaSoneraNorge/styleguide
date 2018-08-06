@@ -119,8 +119,6 @@
             display: inline-block;
             float: right;
 
-            background: url('{{assetPath}}/icons/ico_delete.svg') no-repeat;
-            background-size: calc(var(--close-icon-size-small) * 3) var(--close-icon-size-small);
             height: var(--close-icon-size-small);
             width: var(--close-icon-size-small);
         }
@@ -149,7 +147,9 @@
                     background-color: inherit;
 
                     .theme-box__icon {
-                        svg * { fill: var(--core-purple); }
+                        svg * {
+                            fill: var(--core-purple);
+                        }
                     }
 
                     * {
@@ -176,7 +176,11 @@
                     }
 
                     > .theme-box__close-icon {
-                        background-position: calc(-var(--menu-icon-size-small) * 2) 0px;
+                        svg {
+                            path {
+                                fill: var(--core-purple);
+                            }
+                        }
                     }
                 }
 
@@ -191,7 +195,11 @@
                     }
 
                     > .theme-box__close-icon {
-                        background-position: -var(--menu-icon-size-small) 0px;
+                        svg {
+                            path {
+                                fill: var(--white);
+                            }
+                        }
                     }
                 }
             }

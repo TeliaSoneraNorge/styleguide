@@ -23,7 +23,7 @@ const InformationArticleSample3 = () =>
                 <ul className="step-by-step">
                     <li className="step-by-step__step-wrapper">
                         <div className="step-by-step__step step-by-step__circle">
-                            <img className="step-by-step__icon" src="/public/icons/ico_buy_purple.svg" alt="" />
+                            <img className="step-by-step__icon" src="/public/icons/ico_buy.svg" alt="" />
                         </div>
                         <div className="step-by-step__text">
                             <h2 className="step-by-step__heading heading heading--level-2">Lorem</h2>

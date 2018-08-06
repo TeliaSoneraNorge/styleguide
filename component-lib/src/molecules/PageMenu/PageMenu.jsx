@@ -5,7 +5,6 @@ import classNames from 'classnames';
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
-import Button from '../../atoms/Button/Button';
 import Tabs from '../../molecules/Tabs/Tabs';
 
 const PageMenu = ({

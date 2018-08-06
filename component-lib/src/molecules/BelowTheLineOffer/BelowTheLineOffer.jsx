@@ -26,7 +26,11 @@ class BelowTheLineOffer extends React.Component {
         return (
             <div className={`info-banner__container ${className}`}>
                 <div className="info-banner__top-row">
-                    <i onClick={onClose} className="info-banner__icon-close"></i>
+                    <i onClick={onClose} className="info-banner__icon-close">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 21 21">
+                            <path fill-rule="evenodd" d="M13.773 10.502l6.546 6.546c.907.907.912 2.366.005 3.273a2.318 2.318 0 0 1-3.278 0L10.5 13.775l-6.546 6.546a2.318 2.318 0 0 1-3.278 0 2.313 2.313 0 0 1 .005-3.273l6.546-6.546L.68 3.956A2.309 2.309 0 0 1 .676.682a2.314 2.314 0 0 1 3.278 0L10.5 7.23 17.046.682A2.309 2.309 0 0 1 20.32.678a2.318 2.318 0 0 1 0 3.278l-6.546 6.546z"/>
+                        </svg>
+                    </i>
                 </div>
                 {headerText &&
                     <div className="info-banner__header">

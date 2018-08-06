@@ -75,7 +75,11 @@
             color: var(--core-purple);
 
             > .box__close-icon {
-                background-position: calc(-var(--menu-icon-size-small) * 2) 0px;
+               svg {
+                   path {
+                       fill: var(--core-purple);
+                   }
+               }
             }
         }
 
@@ -87,7 +91,11 @@
             outline: none;
 
             > .box__close-icon {
-                background-position: -var(--menu-icon-size-small) 0px;
+                svg{
+                   path{
+                       fill: var(--white);
+                   }
+               }
             }
         }
 

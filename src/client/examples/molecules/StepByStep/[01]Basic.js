@@ -7,7 +7,7 @@ const DefaultStepByStep = () => (
     <StepByStep>
         <Step>
             <Description
-                iconSrc="/public/icons/ico_buy_purple.svg"
+                iconSrc="/public/icons/ico_buy.svg"
                 heading="Lorem">
                 Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta. Proin
                 eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in
@@ -33,7 +33,7 @@ const DefaultStepByStep = () => (
         </Step>
         <Step>
             <Description
-                iconSrc="/public/icons/ico_buy_purple.svg"
+                iconSrc="/public/icons/ico_buy.svg"
                 heading="Sit dolor">
                 Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta.
             </Description>

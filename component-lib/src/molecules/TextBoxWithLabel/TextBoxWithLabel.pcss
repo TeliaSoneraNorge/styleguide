@@ -53,10 +53,13 @@
             right: 0;
             bottom: 0;
 
-
             &:hover {
                 .textbox-with-label__icon {
-                    background-position: calc(-var(--icon-size) * 2) 0px;
+                    svg {
+                        path {
+                            fill: var(--core-purple);
+                        }
+                    }
                 }
             }
 
@@ -66,7 +69,11 @@
                 outline: none;
 
                 .textbox-with-label__icon {
-                    background-position: -var(--icon-size) 0px;
+                     svg {
+                        path {
+                            fill: var(--white);
+                        }
+                    }
                 }
             }
         }
