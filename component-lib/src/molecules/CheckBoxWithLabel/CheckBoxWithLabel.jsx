@@ -9,7 +9,7 @@ import StatefulTooltip from '../Tooltip/StatefulTooltip';
  * Waiting on the Photoshop files to get the exact checkmark SVG.
  */
 const CheckBoxWithLabel = ({ label, checked, tooltipText, ...rest }) => (
-            <Label className="check-box-with-label" tooltipText={tooltipText}>
+            <Label className="check-box-with-label">
                 <input className="check-box-with-label__input" type="checkbox" defaultChecked={checked} {...rest} />
                 <span className="check-box-with-label__svg-container">
                     <svg className="check-box-with-label__svg" width="20px" height="20px" viewBox="0 0 20 20">

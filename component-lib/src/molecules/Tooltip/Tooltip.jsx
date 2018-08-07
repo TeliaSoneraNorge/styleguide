@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
 /**
@@ -6,6 +7,11 @@ import classnames from 'classnames';
  * but the behavior is not implemented as a part of the styleguide.
  **/
 export default class Tooltip extends Component {
+    static propTypes = {
+        label: PropTypes.node,
+        text: PropTypes.string,
+        isExpanded: PropTypes.bool,
+    };
     buttonId = _.uniqueId('tooltip-button-');
     tooltipBoxId = _.uniqueId('tooltip-box-');
     render() {
