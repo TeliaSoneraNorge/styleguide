@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export default class ContentRating extends Component {
     static propTypes = {
@@ -25,7 +26,7 @@ export default class ContentRating extends Component {
                     <div>
                         <h3 className="heading heading--level-3 content-rating__heading">Var denne siden nyttig?</h3>
 
-                        <img className="content-rating__icon" src="/public/icons/ico_heart.svg" />
+                        <SvgIcon className="content-rating__icon" iconName="ico_heart" color="black" />
                         <p className="content-rating__text">Så bra!<br />Takk for din tilbakemelding.</p>
                     </div> : null
                 }

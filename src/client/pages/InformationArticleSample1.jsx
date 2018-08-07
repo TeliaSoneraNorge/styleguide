@@ -23,7 +23,7 @@ const accordionListProps = [
 const InformationArticleSample1 = ({ colors }) =>
     <div>
         <Header
-            iconUrl="./public/icons/ico_info.svg"
+            iconName="ico_info"
             runningTitle="Sample page"
             pageTitle="Information Article"
             withMask={false}

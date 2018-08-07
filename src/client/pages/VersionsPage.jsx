@@ -7,7 +7,7 @@ const versionsHtml = getStaticData('versionsHtml');
 
 const VersionsPage = () =>
     <div>
-        <Header iconUrl="/public/ico_code-2.svg" pageTitle="Versions">
+        <Header iconName="ico_code-2" pageTitle="Versions">
             <p className="paragraph">
                 This content was read from VERSIONS.md in the repository.
             </p>

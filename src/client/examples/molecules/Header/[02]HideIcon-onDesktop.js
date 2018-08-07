@@ -3,7 +3,7 @@ import { Header } from '@telia/styleguide';
 
 const HideIconOnDestop = () => (
     <Header
-        iconUrl="/public/icons/ico_favourites.svg"
+        iconName="ico_favourites"
         runningTitle="Running Title"
         pageTitle="Page Title"
         hideIconOnDesktop>

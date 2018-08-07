@@ -4,7 +4,7 @@ import { Header } from '@telia/styleguide';
 const WithContentOverlap = () => (
     <div>
         <Header
-            iconUrl="/public/icons/ico_favourites.svg"
+            iconName="ico_favourites"
             pageTitle="Page Title"
             withContentOverlap={true}>
             Preamble; an introductory and <a className="link">expressionary</a> statement in a document that explains the document's purpose and

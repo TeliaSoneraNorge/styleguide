@@ -28,7 +28,7 @@ export default class PebblesPage extends React.Component {
         return (
             <div className={this.state.variant}>
                 <Header
-                    iconUrl="./public/icons/ico_info.svg"
+                    iconName="ico_info"
                     pageTitle="Pebble Page"
                     withMask={false}
                     withContentOverlap={false}>

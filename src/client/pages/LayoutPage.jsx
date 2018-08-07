@@ -14,7 +14,7 @@ const variablesCss = getStaticData('variablesCss');
 
 const LayoutPage = () =>
     <div>
-        <Header iconUrl="/public/ico_code-2.svg" pageTitle="Page Layout & Grid">
+        <Header iconName="ico_code-2" pageTitle="Page Layout & Grid">
             <p className="paragraph">
                 You will notice that this is at the top of the page and is full-width.
             </p>

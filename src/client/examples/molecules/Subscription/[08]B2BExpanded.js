@@ -2,7 +2,7 @@ import React from 'react';
 import { Subscription } from '@telia/styleguide';
 
 const feature = {
-    icon: '/public/icons/ico_music.svg',
+    iconName: 'ico_music',
     name: 'Music Freedom',
 };
 

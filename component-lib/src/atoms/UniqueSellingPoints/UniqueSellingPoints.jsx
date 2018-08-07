@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+
 
 /**
  * Status: *finished*
  */
-const UniqueSellingPoints = ({ children, className, ...rest }) => (
+const UniqueSellingPoints = ({ children, iconName, iconColor, className, ...rest }) => (
     <ul
         className={classnames('unique-selling-points', {
             [className]: className
@@ -15,13 +17,13 @@ const UniqueSellingPoints = ({ children, className, ...rest }) => (
     </ul>
 );
 
-UniqueSellingPoints.Item = ({ children, iconSvg, className, ...rest }) => (
+UniqueSellingPoints.Item = ({ children, iconName, iconColor, className, ...rest }) => (
     <li
         className={classnames('unique-selling-points__block', {
             [className]: className
         })}
         {...rest}>
-        <div className="unique-selling-points__icon">{iconSvg}</div>
+        <SvgIcon iconName={iconName} color={iconColor} className="unique-selling-points__icon"/>
         <div>{children}</div>
     </li>
 );
@@ -32,8 +34,10 @@ UniqueSellingPoints.propTypes = {
 };
 
 UniqueSellingPoints.Item.propTypes = {
-    /** Src of an icon to display. */
-    iconSvg: PropTypes.node,
+    /** Name of icon to be displayed. */
+    iconSvg: PropTypes.string,
+    /** Color of icon to be displayed. */
+    iconColor: PropTypes.string,
 };
 
 export default UniqueSellingPoints;

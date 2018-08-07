@@ -3,9 +3,9 @@ import { IconLink } from '@telia/styleguide';
 
 const AllIconLinks = () => (
     <div>
-        <IconLink kind="download" href="#" />
-        <IconLink kind="linkedIn" href="#" />
-        <IconLink kind="twitter" href="#" />
+        <IconLink iconName="ico_download" href="#" />
+        <IconLink iconName="linkedin_icon" href="#" />
+        <IconLink iconName="twitter_icon" href="#" />
     </div>
 );
 

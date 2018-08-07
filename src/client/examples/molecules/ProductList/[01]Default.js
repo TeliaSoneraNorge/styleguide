@@ -3,23 +3,27 @@ import { ProductList } from '@telia/styleguide';
 
 const items = [
     {
-        icon: 'ico_databoost_purple',
+        iconName: 'ico_databoost_purple',
+        iconColor: "purple",
         title: '1 TIME FOR 399,-',
         description: '31 dager',
         href: '#',
     },
     {
-        icon: 'ico_subscription_purple',
+        iconName: 'ico_subscription_purple',
+        iconColor: "purple",
         title: '6GB FOR 399,-',
         href: 'https://telia.no',
     },
     {
-        icon: 'ico_money_purple',
+        iconName: 'ico_money_purple',
+        iconColor: "purple",
         title: '6GB FOR 399,-',
         description: '31 dager',
     },
     {
-        icon: 'ico_subscription_purple',
+        iconName: 'ico_subscription_purple',
+        iconColor: "purple",
         title: 'KRONEPÅFYLL 50,-',
     }
 ];

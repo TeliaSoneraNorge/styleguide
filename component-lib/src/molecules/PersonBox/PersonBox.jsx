@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Box from '../../atoms/Box/Box';
+import IconLink from '../../atoms/IconLink/IconLink';
 
 /**
  * Status: *finished*.
@@ -29,8 +30,8 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
                 <div className="person-box__text-links">
                     <div className="person-box__description">{description}</div>
                     <div className="person-box__social-links">
-                        <a className="icon-link icon-link--linkedIn" href={linkedInProfile} target="_self" title={titleLinkedInProfile} aria-label={titleLinkedInProfile}></a>
-                        <a className="icon-link icon-link--twitter" href={twitterProfile} target="_self" title={titleTwitterProfile} aria-label={titleTwitterProfile}></a>
+                        <IconLink iconName="linkedin_icon" className="icon-link icon-link--linkedIn" href={linkedInProfile} target="_self" title={titleLinkedInProfile} aria-label={titleLinkedInProfile} />
+                        <IconLink iconName="twitter_icon" className="icon-link icon-link--twitter" href={twitterProfile} target="_self" title={titleTwitterProfile} aria-label={titleTwitterProfile} />
                     </div>
                 </div>
             </div>

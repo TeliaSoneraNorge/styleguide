@@ -16,13 +16,15 @@
     "prepublishOnly": "npm run build:library",
     "publish:local-test": "npm run build:library && npm pack",
     "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
-    "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass"
+    "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
+    "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/icons/symbols -n allicons  --mono"
   },
   "author": "Telia Norge",
   "license": "ISC",
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
+    "babel-eslint": "^8.2.3",
     "babel-loader": "7.1.2",
     "babel-plugin-external-helpers": "6.22.0",
     "babel-preset-env": "^1.7.0",
@@ -42,6 +44,7 @@
     "postcss-loader": "2.0.6",
     "postcss-nested": "^2.1.2",
     "postcss-replace": "^1.0.3",
+    "postcss-svg": "^2.4.0",
     "postcss-url": "^7.3.0",
     "rollup": "^0.58.2",
     "rollup-copy-plugin": "0.0.1",
@@ -51,8 +54,9 @@
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-uglify": "^3.0.0",
-    "babel-eslint": "^8.2.3",
-    "svgo": "0.7.2"
+    "svg-join": "^1.1.1",
+    "svg4everybody": "^2.1.9",
+    "svgo": "^0.7.2"
   },
   "dependencies": {
     "classnames": "2.2.5",

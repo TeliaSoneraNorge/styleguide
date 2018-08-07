@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import { Link } from '../../index';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
@@ -50,10 +51,10 @@ List.Link = ({ children, className, ...rest }) => (
         text={children} />
 );
 
-List.BubbleLink = ({ children, iconSvg, ...rest }) => (
+List.BubbleLink = ({ children, iconName, ...rest }) => (
     <List.Link {...rest}>
         <span className="list__link-bubble">
-            <i className="list__link-icon">{iconSvg}</i>
+            <SvgIcon iconName={iconName} color="white" className="list__link-icon"/>
         </span>
         <span className="list__link-text">{children}</span>
     </List.Link>

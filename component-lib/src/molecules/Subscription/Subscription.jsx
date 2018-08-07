@@ -8,6 +8,7 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 import PriceTable from '../PriceTable/PriceTable';
 import RadioButtonList from '../RadioButtonList/RadioButtonList';
 import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
@@ -54,7 +55,7 @@ const Subscription = ({ isShowingFeatures, isStandalone, isBroadband, color, siz
                     : <div className="box__speech-bubble box__speech-bubble--empty"></div>}
                 {highlightedFeature ?
                     <div className="subscription__highlighted-feature">
-                        <img className="subscription__highlighted-feature-icon" src={highlightedFeature.icon} role="presentation" alt="" />
+                    <SvgIcon className="subscription__highlighted-feature-icon" iconName={highlightedFeature.iconName} role="presentation" alt=""/>
                         <span className="subscription__highlighted-feature-text">{highlightedFeature.name}</span>
                     </div> : null}
                 {specialMessageText ?
@@ -135,7 +136,7 @@ Subscription.propTypes = {
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     speechBubbleText: PropTypes.string,
     highlightedFeature: PropTypes.shape({
-        icon: PropTypes.string.isRequired,
+        iconName: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
     }),
     specialMessageText: PropTypes.string,

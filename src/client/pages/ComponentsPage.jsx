@@ -21,7 +21,7 @@ const ComponentsPage = (props) => {
     return (
         <div>
             <Header
-                iconUrl="/public/ico_code-2.svg"
+                iconName="ico_code-2"
                 pageTitle="Components"
                 withMask={false}
                 withContentOverlap={false}>
