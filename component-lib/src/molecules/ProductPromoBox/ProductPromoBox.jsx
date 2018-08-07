@@ -1,4 +1,6 @@
 import React from 'react';
+import classnames from 'classnames';
+import PropTypes from 'prop-types';
 
 import Box from '../../atoms/Box/Box';
 
@@ -21,8 +23,16 @@ function classNames(isShowingFeature) {
  * If multiple of these promo boxes will be used on a page, a regular button can be used
  * instead of the primary button.
  */
-const ProductPromoBox = ({ id, productName, productColor, imagePath, description, price, priceSmallprint1, priceSmallprint2, buttonText, isShowingFeatures, speechBubbleText }) =>
-    <Box id={id} className={classNames(isShowingFeatures)} color="grey" canExpand={false} isShowingFeatures={isShowingFeatures} speechBubbleText={speechBubbleText}>
+const ProductPromoBox = ({ id, productName, productColor, imagePath, description, price, priceSmallprint1, priceSmallprint2, buttonText, isShowingFeatures, speechBubbleText, onClick }) =>
+    <Box
+        id={id}
+        className={classnames('product-promo-box', {
+            'product-promo-box--is-showing-feature': isShowingFeatures,
+        })}
+        color="grey"
+        canExpand={false}
+        isShowingFeatures={isShowingFeatures}
+        speechBubbleText={speechBubbleText}>
         <div className="product-promo-box__image-container">
             <img className="product-promo-box__image" src={imagePath} alt={productName} />
         </div>
@@ -38,10 +48,24 @@ const ProductPromoBox = ({ id, productName, productColor, imagePath, description
                     <div className="product-promo-box__price-smallprint">{priceSmallprint2}</div>
                 </div>
                 <div className="product-promo-box__button-container">
-                    <button className="button button--primary">{buttonText}</button>
+                    <button className="button button--primary" onClick={onClick}>{buttonText}</button>
                 </div>
             </div>
         </div>
     </Box>;
+ProductPromoBox.propTypes = {
+    id: PropTypes.string,
+    productName: PropTypes.string,
+    productColor: PropTypes.string,
+    imagePath: PropTypes.string,
+    description: PropTypes.string,
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    priceSmallprint1: PropTypes.string,
+    priceSmallprint2: PropTypes.string,
+    buttonText: PropTypes.string,
+    isShowingFeatures: PropTypes.bool,
+    speechBubbleText: PropTypes.string,
+    onClick: PropTypes.func
+};
 
 export default ProductPromoBox;

@@ -1,11 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
-import Button from '../../atoms/Button/Button';
-import Heading from '../../atoms/Heading/Heading';
 import Tabs from '../../molecules/Tabs/Tabs';
 
 const PageMenu = ({
@@ -14,11 +13,9 @@ const PageMenu = ({
     isExpanded,
     onClose,
     fixedPosition,
-    textAboveLoginButton,
     isLoggedIn,
     menuSelectedTabIndex,
-    onTabSelect,
-    showButtons
+    onTabSelect
  }) => (
     <div>
         <div
@@ -29,7 +26,7 @@ const PageMenu = ({
             id={menuId || 'page-header-menu'}>
             <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClose={onClose} />
             <nav aria-label="Main menu">
-                <div className="page-menu__top-panel page-menu__top-panel--with-padding page-menu__top-panel--centered-content">
+                <div className="page-menu__selection">
                     <Tabs
                         uniqueId="menu-tabs"
                         onSelect={onTabSelect}
@@ -41,16 +38,15 @@ const PageMenu = ({
                             <Tabs.Tab key={i} heading={menuLink.heading} />
                         )}
                     </Tabs>
-
-                    {showButtons && !isLoggedIn &&
-                        <div className="page-menu__top-panel-content">
-                            <p className="paragraph">{textAboveLoginButton}</p>
-                            <Button text="Logg inn" kind="primary" />
-                        </div>}
                 </div>
 
                 {menuLinks.map((menuLink, i) =>
                     <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
+                        <div className={classNames(
+                            'page-menu__content',
+                            { 'page-menu__content--empty': !menuLink.contentAboveItems })}>
+                            {menuLink.contentAboveItems}
+                        </div>
                         <MenuBar ariaLabel="innlogget brukermeny" items={menuLink.loggedInLinks} isEmphasised />
                         <MenuBar items={menuLink.loggedOutLinks} />
                     </Tabs.TabPanel>
@@ -69,5 +65,27 @@ const PageMenu = ({
         {fixedPosition && <MenuOverlay onClick={onClose} active={isExpanded} />}
     </div>
 );
+PageMenu.propTypes = {
+    menuLinks: PropTypes.arrayOf(PropTypes.shape({
+        heading: PropTypes.string,
+        loggedInLinks: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string,
+            url: PropTypes.string,
+            icon: PropTypes.string,
+        })),
+        loggedOutLinks: PropTypes.arrayOf(PropTypes.shape({
+            text: PropTypes.string,
+            url: PropTypes.string,
+            icon: PropTypes.string,
+        })),
+    })),
+    menuId: PropTypes.string,
+    isExpanded: PropTypes.bool,
+    onClose: PropTypes.func,
+    fixedPosition: PropTypes.bool,
+    isLoggedIn: PropTypes.bool,
+    menuSelectedTabIndex: PropTypes.number,
+    onTabSelect: PropTypes.func
+};
 
 export default PageMenu;

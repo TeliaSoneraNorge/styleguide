@@ -15,6 +15,23 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.9.7 [changed component]
+- Molecule: PageHeader - added "Handlekurv" text to cart button and made styling-changes to the cart counter
+
+## 1.9.6 [changed component]
+- Molecule: TextBoxWithLabel - changed positioning of icon in input field
+
+## 1.9.5 [changed component]
+- Molecule: TextBoxWithLabel - added a modifier to have the possibility to add an icon in the input field
+
+## 1.9.0 [changed component]
+- Molecule: PageMenu (removed showButtons prop)
+- Molecule: PageHeading - (removed textAboveLoginButton and showButtons prop in favour of templating; CSS change)
+
+## 1.8.0 [new component]
+- Molecule: MiniDashboard (previously UserDashboard)
+- Molecule: UserDashboard - removed
+
 ## 1.7.10 [new component]
 - Molecule: Subscription (broadband variant)
 - Molecule: PriceTable
@@ -63,7 +80,7 @@ Only noteworthy versions shown (minor changes are omitted).
 - TextArea
 - UniqueSellingPoints
 
-### Molecules: 
+### Molecules:
 - ArticleMetaData
 - BoxGrid
 - DownloadButtons

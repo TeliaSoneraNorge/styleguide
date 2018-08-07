@@ -216,7 +216,11 @@
             color: var(--core-purple);
 
             > .box__close-icon {
-                background-position: calc(-var(--menu-icon-size-small) * 2) 0px;
+                svg {
+                    path {
+                        fill: var(--core-purple);
+                    }
+                }
             }
         }
 
@@ -228,7 +232,11 @@
             outline: none;
 
             > .box__close-icon {
-                background-position: -var(--menu-icon-size-small) 0px;
+                svg {
+                    path {
+                        fill: var(--white);
+                    }
+                }
             }
         }
 
@@ -248,8 +256,6 @@
     }
 
     &__close-icon {
-        background: url('{{assetPath}}/icons/ico_delete.svg') no-repeat;
-        background-size: calc(var(--close-icon-size-small) * 3) var(--close-icon-size-small);
         display: inline-block;
         float: right;
         height: var(--close-icon-size-small);

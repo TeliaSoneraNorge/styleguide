@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const ThemeBoxWithImage = ({ isExpanded, onOpen, id, imageSrc, heading, onClose, children }) =>
     <div className={`theme-box theme-box-with-image${isExpanded ? ' theme-box--open' : ''}`}
@@ -23,5 +24,14 @@ const ThemeBoxWithImage = ({ isExpanded, onOpen, id, imageSrc, heading, onClose,
             </div>
         </div>
     </div>;
+ThemeBoxWithImage.propTypes = {
+    isExpanded: PropTypes.bool,
+    onOpen: PropTypes.func,
+    id: PropTypes.string,
+    imageSrc: PropTypes.string,
+    heading: PropTypes.string,
+    onClose: PropTypes.func,
+    children: PropTypes.node,
+};
 
 export default ThemeBoxWithImage;

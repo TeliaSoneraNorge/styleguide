@@ -2,6 +2,7 @@ import _ from 'lodash';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import classnames from 'classnames';
+
 /**
  * This tooltip is implemented with the purpose of having to open/close it by clicking or using keyboard,
  * but the behavior is not implemented as a part of the styleguide.

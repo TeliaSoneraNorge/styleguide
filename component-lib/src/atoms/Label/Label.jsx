@@ -1,33 +1,28 @@
 import React from 'react';
-
-function classNames(additionalClassName, isUsingGrayText) {
-    const classNames = ['label'];
-
-    if (additionalClassName) {
-        classNames.push(additionalClassName);
-    }
-
-    if (isUsingGrayText) {
-        classNames.push(`label--gray-text`);
-    }
-
-    return classNames.join(' ');
-}
+import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 /**
- * Status: *finished*.
+ * Status: *finished*
  *
  * Standard color is black. Labels used with TextBoxWithLabel, TextAreaWithLabel and DropDownListWithLabel should appear on top of input element and be in grey color.
  */
-export default class Label extends React.Component {
-    constructor(props) {
-        super(props);
-    }
-    render() {
-        return (
-            <label className={classNames(this.props.className, this.props.isUsingGrayText)}>
-                {this.props.text || this.props.children}
-            </label>
-        );
-    }
-}
+const Label = ({ text, children, isUsingGrayText, className, ...rest }) => (
+    <label
+        className={classnames('label', {
+            [className]: className,
+            'label--gray-text': isUsingGrayText
+        })}
+        {...rest}>
+        {text || children}
+    </label>
+);
+Label.propTypes = {
+    /** Content of this label. */
+    text: PropTypes.node,
+    /** Content of this label. */
+    children: PropTypes.node,
+    isUsingGrayText: PropTypes.bool,
+};
+
+export default Label;

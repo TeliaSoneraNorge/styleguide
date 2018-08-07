@@ -74,7 +74,7 @@ export { default as ChartLegend } from './molecules/ChartLegend/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel/TextAreaWithLabel';
 export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel/TextBoxWithLabel';
 export { default as Tooltip } from './molecules/Tooltip/Tooltip';
-export { default as UserDashboard } from './molecules/UserDashboard/UserDashboard';
+export { default as MiniDashboard } from './molecules/MiniDashboard/MiniDashboard';
 export { default as DataBoostChart } from './molecules/DataBoostChart/DataBoostChart';
 export { default as BelowTheLineOffer } from './molecules/BelowTheLineOffer/BelowTheLineOffer';
 export { default as PopUpLine } from './molecules/PopUpLine/PopUpLine';
@@ -83,6 +83,7 @@ export { default as References } from './molecules/References/References';
 export { default as Tabs } from './molecules/Tabs/Tabs';
 export { default as FunkyTabs } from './molecules/FunkyTabs/FunkyTabs';
 export { default as Video } from './molecules/Video/Video';
+export { default as ArticleList } from './molecules/ArticleList/ArticleList';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating/ContentRating';
@@ -166,7 +167,7 @@ export default [
     'src/molecules/TextAreaWithLabel/TextAreaWithLabel.jsx',
     'src/molecules/TextBoxWithLabel/TextBoxWithLabel.jsx',
     'src/molecules/Tooltip/Tooltip.jsx',
-    'src/molecules/UserDashboard/UserDashboard.jsx',
+    'src/molecules/MiniDashboard/MiniDashboard.jsx',
     'src/molecules/DataBoostChart/DataBoostChart.jsx',
     'src/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx',
     'src/molecules/ModalDialog/ModalDialog.jsx',
@@ -176,6 +177,7 @@ export default [
     'src/molecules/Tabs/Tabs.jsx',
     'src/molecules/FunkyTabs/FunkyTabs.jsx',
     'src/molecules/Video/Video.jsx',
+    'src/molecules/ArticleList/ArticleList.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',

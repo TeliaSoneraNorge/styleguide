@@ -50,12 +50,10 @@ List.Link = ({ children, className, ...rest }) => (
         text={children} />
 );
 
-List.BubbleLink = ({ children, iconSrc, ...rest }) => (
+List.BubbleLink = ({ children, iconSvg, ...rest }) => (
     <List.Link {...rest}>
         <span className="list__link-bubble">
-            <i
-                className="list__link-icon"
-                style={{ backgroundImage: `url('${iconSrc}')` }} />
+            <i className="list__link-icon">{iconSvg}</i>
         </span>
         <span className="list__link-text">{children}</span>
     </List.Link>
@@ -63,7 +61,7 @@ List.BubbleLink = ({ children, iconSrc, ...rest }) => (
 
 List.BubbleLink.propTypes = {
     /** Url of an icon to use. */
-    iconSrc: PropTypes.string,
+    iconSvg: PropTypes.node,
 };
 
 export default List;

@@ -65,5 +65,3 @@ export default class DefaultFunkyTabs extends React.Component {
         );
     }
 }
-
-export default DefaultFunkyTabs;

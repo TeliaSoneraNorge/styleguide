@@ -1,6 +1,8 @@
 @import "../../colors.pcss";
 
 :root {
+    --cart-count-size: 1.5rem;
+    --cart-count-size-small: 1rem;
     --logo-size-small-screens: 80px;
     --logo-size-large-screens: 120px;
     --icon-size-small: 24px;
@@ -95,10 +97,11 @@
         &:hover {
             > .page-header__menu-button-image {
                 outline: none;
-                background-position: calc(-var(--icon-size-small) * 2) 0px;
 
-                @media screen and (min-width: 42em) {
-                    background-position: calc(-var(--icon-size-large) * 2) 0px;
+                svg {
+                    path {
+                        fill: var(--core-purple);
+                    }
                 }
             }
 
@@ -113,10 +116,11 @@
 
             > .page-header__menu-button-image {
                 outline: none;
-                background-position: calc(-var(--icon-size-small)) 0px;
 
-                @media screen and (min-width: 42em) {
-                    background-position: calc(-var(--icon-size-large)) 0px;
+                svg {
+                    path {
+                        fill: var(--white);
+                    }
                 }
             }
 
@@ -126,16 +130,10 @@
         }
     }
     &__menu-button-image {
-        background-repeat: no-repeat;
-        background-size: calc(var(--icon-size-small) * 3) var(--icon-size-small);
-        background-image: url({{assetPath}}/icons/ico_menu.svg);
-
-        @media screen and (min-width: 42em) {
-            background-size: calc(var(--icon-size-large) * 3) var(--icon-size-large);
-        }
-
-        &--logged-in {
-            background-image: url({{assetPath}}/icons/ico_menu_logged_in.svg);
+        svg {
+            path {
+                fill: var(--black);
+            }
         }
     }
 
@@ -149,20 +147,30 @@
     }
     &__cart-button {
         display: flex;
-        flex: 0;
-        height: 100%;
-        padding: 1em 1em;
         align-items: center;
-        background: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        color: var(--black);
+        font-size: 0.75rem;
+        letter-spacing: 1px;
+        padding: 1rem 1rem;
         position: relative;
+        text-decoration: none;
+        text-transform: uppercase;
+        height: 100%;
 
         &:hover {
-            > .page-header__cart-button-image {
-                outline: none;
-                background-position: calc(-var(--icon-size-small) * 2) 0px;
+            > .page-header__cart-button-text {
+                color: var(--core-purple);
+            }
 
-                @media screen and (min-width: 42em) {
-                    background-position: calc(-var(--icon-size-large) * 2) 0px;
+            > .page-header__cart-button-image {
+                svg {
+                    path {
+                        fill: var(--core-purple);
+                    }
                 }
             }
         }
@@ -171,19 +179,36 @@
             outline: none;
             background: var(--core-purple);
 
-            > .page-header__cart-button-image {
-                background-position: -var(--icon-size-small) 0px;
+            > .page-header__cart-button-text {
+                color: var(--white);
+            }
 
-                @media screen and (min-width: 42em) {
-                    background-position: -var(--icon-size-large) 0px;
+            > .page-header__cart-button-image {
+                svg {
+                    path {
+                        fill: var(--white);
+                    }
                 }
+            }
+
+            > .page-header__cart-item-count {
+                background-color: white;
+                color: var(--core-purple);
+            }
+        }
+
+        &-text {
+            display: none;
+            flex: 0 0 100%;
+            text-align: center;
+
+            @media screen and (min-width: 42em) {
+                display: block;
             }
         }
     }
     &__cart-button-image {
-        background-repeat: no-repeat;
-        background-size: calc(var(--icon-size-small) * 3) var(--icon-size-small);
-        background-image: url({{assetPath}}/icons/ico_buy.svg);
+        display: block;
 
         height: var(--icon-size-small);
         width: var(--icon-size-small);
@@ -191,24 +216,41 @@
         @media screen and (min-width: 42em) {
             height: var(--icon-size-large);
             width: var(--icon-size-large);
-
-            background-size: calc(var(--icon-size-large) * 3) var(--icon-size-large);
         }
     }
     &__cart-item-count {
-        background-color: red;
-        border: 1px solid white;
-        border-radius: 0.5rem;
+        background-color: var(--core-purple);
+        border-radius: calc(var(--cart-count-size-small) / 2);
         color: white;
         display: inline-block;
-        font-size: 0.75rem;
-        height: 1rem;
-        line-height: 1rem;
+        font-size: calc(var(--cart-count-size-small) / 2);
+        font-weight: bold;
+        height: var(--cart-count-size-small);
+        line-height: var(--cart-count-size-small);
         text-align: center;
         position: absolute;
-        right: 6px;
-        top: 10px;
-        width: 1rem;
+        top: 35%;
+        right: 15%;
+        width: var(--cart-count-size-small);
+
+        &-text {
+            display: none;
+        }
+
+        @media screen and (min-width: 42em) {
+            border-radius: calc(var(--cart-count-size) / 2);
+            font-size: calc(var(--cart-count-size) / 2);
+            height: var(--cart-count-size);
+            line-height: var(--cart-count-size);
+            width: var(--cart-count-size);
+
+            right: 30%;
+            top: 10%;
+
+            &-text {
+                display: inline;
+            }
+        }
     }
     &__log-in-button {
         display: flex;
@@ -234,9 +276,11 @@
         &-icon {
             display: block;
 
-            background-repeat: no-repeat;
-            background-size: calc(var(--icon-size-small) * 3) var(--icon-size-small);
-            background-image: url({{assetPath}}/icons/ico_enduser.svg);
+            svg {
+                path {
+                    fill: var(--black);
+                }
+            }
 
             height: var(--icon-size-small);
             width: var(--icon-size-small);
@@ -244,8 +288,6 @@
             @media screen and (min-width: 42em) {
                 height: var(--icon-size-large);
                 width: var(--icon-size-large);
-
-                background-size: calc(var(--icon-size-large) * 3) var(--icon-size-large);
             }
         }
 
@@ -255,10 +297,10 @@
             }
 
             > .page-header__log-in-button-icon {
-                background-position: calc(-var(--icon-size-small) * 2) 0px;
-
-                @media screen and (min-width: 42em) {
-                    background-position: -calc(-var(--icon-size-large) * 2) 0px;
+                svg {
+                    path {
+                        fill: var(--core-purple);
+                    }
                 }
             }
         }
@@ -272,10 +314,10 @@
             }
 
             > .page-header__log-in-button-icon {
-                background-position: -var(--icon-size-small) 0px;
-
-                @media screen and (min-width: 42em) {
-                    background-position: -var(--icon-size-large) 0px;
+                svg {
+                    path {
+                        fill: var(--white);
+                    }
                 }
             }
         }

@@ -3,6 +3,7 @@
     <head>
         <title>Telia Styleguide</title>
 
+        <link rel="icon" href="/public/favicon.ico" type="image/x-icon">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
 
         <% if (environment !== 'development') { %>
@@ -15,6 +16,18 @@
     <body>
         <div id="root"></div>
 
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
+        <script>
+            (function(n, d) {
+                var userAgent = n.userAgent.toLowerCase();
+                if (userAgent.indexOf('edge') != -1 || userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+                    var head = d.getElementsByTagName('head')[0];
+                    var babelPolyfill = d.createElement('script');
+                    babelPolyfill.src = 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js';
+                    head.appendChild(babelPolyfill);
+                }
+            })(navigator, document);
+        </script>
         <script>
             window.__STATIC_DATA__ = <%- staticData %>;
         </script>

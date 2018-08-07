@@ -20,7 +20,7 @@ Tags.Tag = ({ children, className }) => (
     <span className={classnames('tags__tag', {
         [className]: className
     })}>
-        &nbsp;{children}
+        {children}
     </span>
 );
 

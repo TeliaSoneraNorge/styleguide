@@ -68,13 +68,14 @@ const menuLinks = [
 const Routes = (props) =>
     <div>
         <PageHeader
+            menuId="main-menu"
+            cartItemCount={0}
             logoUrl="/"
             logoTitle="Telia logo"
             logoImageDesktopPath="/public/images/logo/logo.svg"
             logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
             menuLinks={menuLinks}
-            isLoggedIn={false}
-            showButtons={false} />
+            isLoggedIn={false} />
 
         <Route exact path="/" component={HomePage} />
         <Route exact path="/layout" component={LayoutPage} />

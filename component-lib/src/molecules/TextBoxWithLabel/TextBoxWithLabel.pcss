@@ -1,3 +1,7 @@
+:root {
+    --icon-size: 26px;
+}
+
 .textbox-with-label {
     ::placeholder {
         color: var(--dark-grey);
@@ -29,6 +33,57 @@
     &--with-error {
         .textbox-with-label__input {
             border-color: var(--dark-red);
+        }
+    }
+
+    &--with-icon {
+        .textbox-with-label__input-icon-wrapper {
+            display: block;
+            position: relative;
+        }
+
+        .textbox-with-label__input {
+        }
+
+        .textbox-with-label__button {
+            background-color: transparent;
+            border: none;
+            padding: 10px 20px;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+
+            &:hover {
+                .textbox-with-label__icon {
+                    svg {
+                        path {
+                            fill: var(--core-purple);
+                        }
+                    }
+                }
+            }
+
+            &:active,
+            &:focus {
+                background-color: var(--core-purple);
+                outline: none;
+
+                .textbox-with-label__icon {
+                     svg {
+                        path {
+                            fill: var(--white);
+                        }
+                    }
+                }
+            }
+        }
+
+        .textbox-with-label__icon {
+            background-repeat: no-repeat;
+            background-size: calc(var(--icon-size) * 3) var(--icon-size);
+            display: block;
+            height: var(--icon-size);
+            width: var(--icon-size);
         }
     }
 }

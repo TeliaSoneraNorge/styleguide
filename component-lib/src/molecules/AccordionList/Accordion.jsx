@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
-class Accordion extends React.Component {
-    constructor(props) {
-        super(props);
+class Accordion extends Component {
+    static propTypes = {
+        isExpanded: PropTypes.bool,
+        id: PropTypes.string,
+        title: PropTypes.node,
+        accordionRef: PropTypes.any,
+        children: PropTypes.node,
+    };
 
-        this.accordionHeaderClicked = this.accordionHeaderClicked.bind(this);
-    }
-    accordionHeaderClicked(){
+    accordionHeaderClicked = () => {
         this.props.toggleIsExpanded();
-    }
+    };
+
     render() {
         return (
             <section
