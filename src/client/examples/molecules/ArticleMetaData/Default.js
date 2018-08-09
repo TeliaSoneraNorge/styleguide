@@ -11,7 +11,7 @@ const DefaultArticleMetaData = () => (
     <ArticleMetaData
         author="Master Yoda"
         date="6 June 2018"
-        iconSrc="/public/icons/ico_share.svg"
+        iconName="ico_share"
         tags={tags} />
 );
 

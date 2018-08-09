@@ -17,7 +17,7 @@
     "publish:local-test": "npm run build:library && npm pack",
     "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
-    "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/icons/symbols -n allicons  --mono"
+    "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono"
   },
   "author": "Telia Norge",
   "license": "ISC",

@@ -2,11 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import _ from 'lodash';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
  */
-const ArticleMetaData = ({ iconSrc, tags = [], date, author, className, ...rest }) => (
+const ArticleMetaData = ({ iconName, tags = [], date, author, className, ...rest }) => (
     <section
         className={classnames('article-meta-data', {
             [className]: className
@@ -22,9 +23,9 @@ const ArticleMetaData = ({ iconSrc, tags = [], date, author, className, ...rest 
                     <span className="tags__tag" key={_.uniqueId('tag-')}> {tag}</span>
                 ))}
             </div>
-            {iconSrc && (
+            {iconName && (
                 <div className="article-meta-data__share">
-                    <img className="article-meta-data__share-icon" src={iconSrc} />
+                    <SvgIcon className="article-meta-data__share-icon" iconName={iconName} />
                 </div>
             )}
         </div>
@@ -33,7 +34,7 @@ const ArticleMetaData = ({ iconSrc, tags = [], date, author, className, ...rest 
 
 ArticleMetaData.propTypes = {
     /** Source of icon to use. */
-    iconSrc: PropTypes.string,
+    iconName: PropTypes.string,
     /** Array of tags to display. */
     tags: PropTypes.arrayOf(PropTypes.string),
     /** Formatted date of publishing. */

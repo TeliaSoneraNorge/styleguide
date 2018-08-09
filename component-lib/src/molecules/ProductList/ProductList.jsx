@@ -22,6 +22,7 @@ const ProductList = ({ items = [] }) =>
                     <a href={item.href} key={index} className="product-list__item product-list__item--link">
                         {icon}
                         {content}
+                        <SvgIcon className="product-list__item--link-icon" iconName="ico_linkarrow" color="purple" />
                     </a>
                 );
             }

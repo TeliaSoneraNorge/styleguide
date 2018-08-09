@@ -23,13 +23,16 @@ const Link = ({ className, text, children, href, icon, iconPosition, target = '_
         {text}
         {children}
     </a>;
+    
 Link.propTypes = {
     /** Content of this link. */
     text: PropTypes.node,
     /** Content of this link. */
     children: PropTypes.node,
     target: PropTypes.string,
+    /** Choose between forward arrow (forward-icon) and backward arrow (back-icon) icon */
     icon: PropTypes.oneOf(['forward-icon', 'back-icon']),
+    /** Set position of icon (before or after) */
     iconPosition: PropTypes.oneOf(['before', 'after']),
 };
 export default Link;
