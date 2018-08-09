@@ -15,6 +15,35 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.10.0 [new + changed components]
+
+### Atoms:
+- Box
+- IconLink
+- List with BubbleLinks
+- SvgIcon
+- UniqueSellingPoints
+
+### Molecules:
+- AccordionList
+- Alert
+- ArticleMetaData
+- BelowTheLineOffer
+- BoxGrid
+- FactBox0
+- Header
+- PageHeader
+- PageMenu
+- PersonBox
+- ProductList
+- StepByStep
+- Subscription
+- TypeSearch
+
+### Organisms:
+- ContentRating
+- Theme Boxes
+
 ## 1.9.7 [changed component]
 - Molecule: PageHeader - added "Handlekurv" text to cart button and made styling-changes to the cart counter
 
