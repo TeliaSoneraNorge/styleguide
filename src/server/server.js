@@ -38,6 +38,7 @@ app.get('/download-zip', (req, res) => {
     zip.append('Follow the instuctions on the Telia Styleguide for usage.', { name: 'README.txt' })
         .append(componentsCss, { name: 'telia-styleguide.css' })
         .directory('./dist/public/fonts/', 'fonts')
+        .directory('./dist/public/allicons/', 'allicons')
         .directory('./dist/public/icons/', 'icons')
         .directory('./dist/public/pebbles/', 'pebbles')
         .finalize();
