@@ -32,7 +32,7 @@ const Alert = ({
         {...rest}>
         <div className="alert__content">
             <div className="alert__icon-container">
-                <SvgIcon iconName="ico_info" color="black" className="alert__icon" role="presentation" alt=""/>
+                <SvgIcon iconName="ico_info" color="black" className="alert__icon" role="presentation" alt="" />
             </div>
             <div className="alert__text-container">
                 {children
@@ -52,7 +52,7 @@ const Alert = ({
         {minimizable &&
             <button onClick={onClose} className="alert__close">
                 <span className="alert__close-text">LUKK</span>
-                <SvgIcon iconName="ico_delete" color="black" className="box__close-icon"/>
+                <SvgIcon iconName="ico_delete" color="black" className="box__close-icon" />
             </button>
         }
         <button onClick={onOpen} className="alert__expand">{minimizedText}</button>

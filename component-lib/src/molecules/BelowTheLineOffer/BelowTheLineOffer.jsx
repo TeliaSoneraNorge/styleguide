@@ -27,7 +27,7 @@ class BelowTheLineOffer extends React.Component {
         return (
             <div className={`info-banner__container ${className}`}>
                 <div className="info-banner__top-row">
-                <SvgIcon iconName="ico_delete" color="black" onClick={onClose} className="info-banner__icon-close"/>
+                    <SvgIcon iconName="ico_delete" color="black" onClick={onClose} className="info-banner__icon-close" />
                 </div>
                 {headerText &&
                     <div className="info-banner__header">

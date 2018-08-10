@@ -77,13 +77,12 @@ StepByStep.Step = ({ children, className, index, opened, onSelect, interactive, 
 StepByStep.Description = ({ children, className, heading, iconName, imageSrc, number, pebbles, onSelect, index, interactive, opened, ...rest }) => (
     <React.Fragment>
         <Icon pebbles={pebbles} onSelect={onSelect} index={index} interactive={interactive} opened={opened}>
-            {pebbles && (
-                <SvgIcon iconName="step-by-step-pebble" color="grey"/>
-            )}
+            {pebbles &&
+                <SvgIcon iconName="step-by-step-pebble" color="grey" />}
             {imageSrc && 
                 <img className="step-by-step__icon" src={imageSrc} />}
             {iconName && 
-                <SvgIcon className="step-by-step__icon" iconName={iconName} color="purple"/>}
+                <SvgIcon className="step-by-step__icon" iconName={iconName} color="purple" />}
             {number !== null && <span className="step-by-step__number">{number}</span>}
         </Icon>
         <div

@@ -16,7 +16,8 @@ const MenuItem = ({ item, isEmphasised }) => (
                 <span className="page-menu__item-notification">{item.notification}</span>}
                 <SvgIcon 
                     className={classNames('page-menu__item-icon', { 'page-menu__item-icon--small' : !isEmphasised })} 
-                    iconName={getIconName(item)} color="black" />
+                    iconName={getIconName(item)}
+                    color="black" />
         </a>
     </li>
 );

@@ -58,7 +58,10 @@ class RelatedArticles extends React.Component {
                         aria-expanded={this.state.isShowingAllArticles}
                         aria-controls={this.props.id}
                         onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? 'Show less' : 'Show more'}
-                         <SvgIcon className="related-articles__show-more-articles-icon" iconName={this.state.isShowingAllArticles ? "ico_minus" : "ico_add"} color="purple" />
+                         <SvgIcon
+                            className="related-articles__show-more-articles-icon"
+                            iconName={this.state.isShowingAllArticles ? 'ico_minus' : 'ico_add'}
+                            color="purple" />
                     </button>
                 </div>
             </section>

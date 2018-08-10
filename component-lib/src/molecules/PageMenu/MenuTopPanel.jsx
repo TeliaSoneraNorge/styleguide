@@ -9,18 +9,14 @@ const MenuTopPanel = ({ isExpanded, onClose, menuId }) => (
             onClick={onClose}
             aria-expanded={isExpanded}
             aria-controls={menuId || 'page-header-menu'}>
-            <SvgIcon 
-                className="page-menu__icon-box-icon page-menu__icon-delete" 
-                iconName="ico_delete" color="black" />
+            <SvgIcon className="page-menu__icon-box-icon page-menu__icon-delete" iconName="ico_delete" color="black" />
             <span className="page-menu__icon-box-text">Lukk</span>
         </button>
         <button
             aria-label="Søk"
             className="page-menu__search-button page-menu__icon-box"
             onClick={onClose}>
-            <SvgIcon 
-                className="page-menu__icon-box-icon page-menu__icon-search" 
-                iconName="ico_search" color="black" />
+            <SvgIcon className="page-menu__icon-box-icon page-menu__icon-search" iconName="ico_search" color="black" />
             <span className="page-menu__icon-box-text">Søk</span>
         </button>
     </div>

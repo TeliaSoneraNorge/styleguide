@@ -25,7 +25,6 @@ export default class ContentRating extends Component {
                 {this.props.feedbackState === 'receipt-positive' ?
                     <div>
                         <h3 className="heading heading--level-3 content-rating__heading">Var denne siden nyttig?</h3>
-
                         <SvgIcon className="content-rating__icon" iconName="ico_heart" color="black" />
                         <p className="content-rating__text">Så bra!<br />Takk for din tilbakemelding.</p>
                     </div> : null

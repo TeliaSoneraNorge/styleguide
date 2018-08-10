@@ -54,7 +54,7 @@ List.Link = ({ children, className, ...rest }) => (
 List.BubbleLink = ({ children, iconName, ...rest }) => (
     <List.Link {...rest}>
         <span className="list__link-bubble">
-            <SvgIcon iconName={iconName} color="white" className="list__link-icon"/>
+            <SvgIcon iconName={iconName} color="white" className="list__link-icon" />
         </span>
         <span className="list__link-text">{children}</span>
     </List.Link>

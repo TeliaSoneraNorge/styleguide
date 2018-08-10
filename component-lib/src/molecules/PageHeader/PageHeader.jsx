@@ -63,9 +63,7 @@ export default class PageHeader extends React.Component {
                     onTabSelect={this.onTabSelect} />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
-                        <SvgIcon 
-                            className="page-header__menu-button-image page-header__icon-box-icon" 
-                            iconName={menuIconName} color="black" />
+                        <SvgIcon className="page-header__menu-button-image page-header__icon-box-icon" iconName={menuIconName} color="black" />
                         <span className="page-header__icon-box-text">Meny</span>
                     </button>
                 </div>
@@ -76,9 +74,7 @@ export default class PageHeader extends React.Component {
                 <div className="page-header__site-tools">
                     {cartShouldBeShown ?
                         <a className="page-header__cart-button" href="#">
-                            <SvgIcon 
-                                className="page-header__cart-button-image page-header__icon-box-icon" 
-                                iconName="ico_buy" color="black" />
+                            <SvgIcon className="page-header__cart-button-image page-header__icon-box-icon" iconName="ico_buy" color="black" />
                             <span className="page-header__cart-button-text">Handlekurv</span>
                             <span className="page-header__cart-item-count">
                                 <span className="page-header__cart-item-count-text">{this.props.cartItemCount}</span>
@@ -86,9 +82,7 @@ export default class PageHeader extends React.Component {
                         </a> : null}
                     {!this.props.isLoggedIn &&
                         <a className="page-header__log-in-button" href="#">
-                            <SvgIcon 
-                                className="page-header__log-in-button-icon page-header__icon-box-icon" 
-                                iconName="ico_end_user" color="black" />
+                            <SvgIcon className="page-header__log-in-button-icon page-header__icon-box-icon" iconName="ico_end_user" color="black" />
                             <span className="page-header__log-in-button-text">Logg inn</span>
                         </a>}
                 </div>

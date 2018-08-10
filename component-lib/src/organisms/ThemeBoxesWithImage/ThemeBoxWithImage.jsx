@@ -19,7 +19,7 @@ const ThemeBoxWithImage = ({ isExpanded, onOpen, id, imageSrc, heading, onClose,
                 {children}
             </section>
             <div className="theme-box-with-image__icon" role="button" tabIndex={isExpanded ? 0 : -1} aria-controls={id}>
-                <SvgIcon className="theme-box-with-image__icon-box" iconName="ico_dropArrow" color="purple"/>
+                <SvgIcon className="theme-box-with-image__icon-box" iconName="ico_dropArrow" color="purple" />
             </div>
         </div>
     </div>;

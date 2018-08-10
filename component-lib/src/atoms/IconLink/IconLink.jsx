@@ -15,7 +15,7 @@ const IconLink = ({ className, iconName, ...rest }) => (
         })}
         aria-label={_.upperFirst(iconName)}
         {...rest}>
-        <SvgIcon iconName={iconName} color="black" className="icon-link__icon"/>
+        <SvgIcon iconName={iconName} color="black" className="icon-link__icon" />
     </a>
 );
 

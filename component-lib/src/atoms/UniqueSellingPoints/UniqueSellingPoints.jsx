@@ -23,7 +23,7 @@ UniqueSellingPoints.Item = ({ children, iconName, iconColor, className, ...rest 
             [className]: className
         })}
         {...rest}>
-        <SvgIcon iconName={iconName} color={iconColor} className="unique-selling-points__icon"/>
+        <SvgIcon iconName={iconName} color={iconColor} className="unique-selling-points__icon" />
         <div>{children}</div>
     </li>
 );

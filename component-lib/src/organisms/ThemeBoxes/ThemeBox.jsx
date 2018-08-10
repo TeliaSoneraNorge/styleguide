@@ -12,7 +12,7 @@ const ThemeBox = ({ isExpanded, onOpen, id, iconSvg, heading, children, onClose 
         <div className="theme-box__header heading-link--focus-area">
             <button className="theme-box__close-expanded-info" onClick={onClose} aria-controls={id}>
                 <span className="theme-box__close-text">LUKK</span>
-                <SvgIcon className="theme-box__close-icon" iconName="ico_delete"/>
+                <SvgIcon className="theme-box__close-icon" iconName="ico_delete" />
             </button>
 
             <div className="theme-box__icon">{iconSvg}</div>

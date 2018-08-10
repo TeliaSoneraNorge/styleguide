@@ -6,12 +6,12 @@ const TwoClosedBoxes = () => (
         <ThemeBox
             id="themebox-1"
             isExpanded={false}
-            iconSvg={<SvgIcon iconName="ico_heart" color="purple"/> }
+            iconSvg={<SvgIcon iconName="ico_heart" color="purple" />}
             heading="Themebox" />
         <ThemeBox
             id="themebox-2"
             isExpanded={false}
-            iconSvg={<SvgIcon iconName="ico_heart" color="purple"/> }            
+            iconSvg={<SvgIcon iconName="ico_heart" color="purple" />}            
             heading="Heading" />
     </ThemeBoxes>
 );

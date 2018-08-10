@@ -22,12 +22,10 @@ const Header = ({ videoSrc, iconName, hideIconOnDesktop, runningTitle, pageTitle
             </div> : null
         }
         <div className="header__container container container--medium container--no-padding container--no-margin">
-            {iconName ?
-                <SvgIcon className="header__icon" iconName={iconName} role="presentation" /> : null
-            }
-            {runningTitle ?
-                <span className="header__subtitle ">{runningTitle}</span> : null
-            }
+            {iconName &&
+                <SvgIcon className="header__icon" iconName={iconName} role="presentation" />}
+            {runningTitle &&
+                <span className="header__subtitle ">{runningTitle}</span>}
             <Heading level={1} text={pageTitle} />
             <section className="header__preamble">{children}</section>
         </div>

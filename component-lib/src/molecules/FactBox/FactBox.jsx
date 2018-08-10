@@ -14,21 +14,19 @@ const FactTwoColumnContent = ({ iconName, title, centerIcon, imgSrc, imgAlt, chi
             </FactContent>
         </div>
         {imgSrc &&
-        <div className="fact-box__right">
-            <img className="fact-box__image" alt={imgAlt} src={imgSrc} />
-        </div>}
+            <div className="fact-box__right">
+                <img className="fact-box__image" alt={imgAlt} src={imgSrc} />
+            </div>}
     </React.Fragment>
 )
 
 const FactContent = ({ children, iconName, title, underline }) => (
     <React.Fragment>
-        {iconName && (
-            <SvgIcon className="fact-box__icon" iconName={iconName} color="black" />
-        )}
+        {iconName &&
+            <SvgIcon className="fact-box__icon" iconName={iconName} color="black" />}
         <h3 className="fact-box__heading heading heading--level-3">{title}</h3>
         {underline &&
-            <hr className="fact-box__line" />
-        }
+            <hr className="fact-box__line" />}
         <div className="fact-box__text">
             {children}
         </div>

@@ -17,12 +17,13 @@ const TextBoxWithLabel = ({ labelText, type, placeholder, errorMessage, disabled
             ? <div className="textbox-with-label__input-icon-wrapper">
                 <input className="textbox-with-label__input" type={type} placeholder={placeholder} disabled={disabled} />
                 <button className="textbox-with-label__button">
-                    <SvgIcon className="textbox-with-label__icon" iconName={iconName} color="black" aria-label={labelText}/>
+                    <SvgIcon className="textbox-with-label__icon" iconName={iconName} color="black" aria-label={labelText} />
                 </button>
             </div>
             : <input className="textbox-with-label__input" type={type} placeholder={placeholder} disabled={disabled} />
         }
-        {errorMessage && <span className="input-error">{errorMessage}</span>}
+        {errorMessage &&
+            <span className="input-error">{errorMessage}</span>}
     </Label>;
 
 export default TextBoxWithLabel;
