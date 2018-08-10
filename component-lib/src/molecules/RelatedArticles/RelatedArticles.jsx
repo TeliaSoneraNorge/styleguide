@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import RelatedArticle from '../RelatedArticle/RelatedArticle';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon'
 
 /**
  * Status: *finished*.
@@ -57,6 +58,10 @@ class RelatedArticles extends React.Component {
                         aria-expanded={this.state.isShowingAllArticles}
                         aria-controls={this.props.id}
                         onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? 'Show less' : 'Show more'}
+                         <SvgIcon
+                            className="related-articles__show-more-articles-icon"
+                            iconName={this.state.isShowingAllArticles ? 'ico_minus' : 'ico_add'}
+                            color="purple" />
                     </button>
                 </div>
             </section>

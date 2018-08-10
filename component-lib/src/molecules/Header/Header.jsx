@@ -3,11 +3,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Heading from '../../atoms/Heading/Heading';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
  */
-const Header = ({ videoSrc, iconUrl, hideIconOnDesktop, runningTitle, pageTitle, withMask, withContentOverlap, children }) =>
+const Header = ({ videoSrc, iconName, hideIconOnDesktop, runningTitle, pageTitle, withMask, withContentOverlap, children }) =>
     <header className={classNames('header', { 'header--hide-icon-on-desktop': hideIconOnDesktop, 'header--with-mask': withMask, 'header--with-content-overlap': withContentOverlap })}>
         {videoSrc ?
             <div className="video container container--large container--no-padding container--no-margin">
@@ -21,19 +22,17 @@ const Header = ({ videoSrc, iconUrl, hideIconOnDesktop, runningTitle, pageTitle,
             </div> : null
         }
         <div className="header__container container container--medium container--no-padding container--no-margin">
-            {iconUrl ?
-                <img className="header__icon" src={iconUrl} role="presentation" /> : null
-            }
-            {runningTitle ?
-                <span className="header__subtitle ">{runningTitle}</span> : null
-            }
+            {iconName &&
+                <SvgIcon className="header__icon" iconName={iconName} role="presentation" />}
+            {runningTitle &&
+                <span className="header__subtitle ">{runningTitle}</span>}
             <Heading level={1} text={pageTitle} />
             <section className="header__preamble">{children}</section>
         </div>
     </header>;
 Header.propTypes = {
     videoSrc: PropTypes.string,
-    iconUrl: PropTypes.string,
+    iconName: PropTypes.string,
     hideIconOnDesktop: PropTypes.bool,
     runningTitle: PropTypes.string,
     pageTitle: PropTypes.string.isRequired,

@@ -9,7 +9,7 @@ const colors = getStaticData('colors');
 const HomePage = () =>
     <div>
         <Header
-            iconUrl="/public/ico_code-2.svg"
+            iconName="ico_code-2"
             runningTitle="Greetings, Earthlings!"
             pageTitle="Telia Norge Styleguide"
             withMask={true}>

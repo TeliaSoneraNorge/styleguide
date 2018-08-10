@@ -71,7 +71,7 @@
                 transform: scaleX(-0.75) scaleY(0.75);
             }
 
-            path {
+            * {
                 fill: var(--light-grey);
                 stroke: var(--grey);
             }
@@ -121,11 +121,9 @@
             &[class*=step-by-step__circle] {
                 background-color: var(--core-purple);
             }
-            &[class*=step-by-step__pebbles] {
-                path {
-                    stroke: var(--core-purple);
-                    fill: var(--core-purple);
-                }
+            &.step-by-step__pebbles svg * {
+                stroke: var(--core-purple);
+                fill: var(--core-purple);
             }
 
             > .step-by-step__number,

@@ -52,12 +52,8 @@
                 color: var(--core-purple);
             }
 
-            > .page-menu__icon-box-icon {
-                svg {
-                    path {
-                        fill: var(--core-purple);
-                    }
-                }
+            > .page-menu__icon-box-icon * {
+                fill:var(--core-purple);
             }
         }
 
@@ -69,12 +65,8 @@
                 color: var(--white);
             }
 
-            > .page-menu__icon-box-icon {
-                svg {
-                    path {
-                        fill: var(--white);
-                    }
-                }
+            > .page-menu__icon-box-icon * {
+                fill:var(--white);
             }
         }
     }
@@ -82,21 +74,12 @@
     &__icon-box-icon {
         display: block;
         margin: 0 auto 0.5rem auto;
-
-        svg {
-            width: var(--menu-icon-size-small);
-            height: var(--menu-icon-size-small);
-
-            path {
-                fill: var(--black);
-            }
-        }
+        width: var(--menu-icon-size-small);
+        height: var(--menu-icon-size-small);
        
         @media screen and (min-width: 42em) {
-            svg {
-                width: var(--menu-icon-size-large);
-                height: var(--menu-icon-size-large);
-            }
+            width: var(--menu-icon-size-large);
+            height: var(--menu-icon-size-large);
         }
     }
 
@@ -128,11 +111,13 @@
             left: 1.875rem;
             top: auto;
 
+        
             &--small {
                 width: var(--menu-icon-size-small);
                 height: var(--menu-icon-size-small);
                     
                 left: 2.2rem;
+                margin-top: 5px;
             }
         }
 
@@ -154,10 +139,8 @@
                 color: var(--core-purple);
 
                 .page-menu__item-icon, .page-menu__item-icon--small {
-                    svg {
-                        path {
-                            fill: var(--core-purple);
-                        }
+                    * {
+                        fill: var(--core-purple);
                     }
                 }
             }
@@ -168,10 +151,8 @@
                 color: var(--white);
 
                 .page-menu__item-icon, .page-menu__item-icon--small {
-                    svg {
-                        path {
-                            fill: var(--white);
-                        }
+                    * {
+                        fill: var(--white);
                     }
                 }
             }

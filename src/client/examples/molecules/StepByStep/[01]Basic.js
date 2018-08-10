@@ -7,7 +7,7 @@ const DefaultStepByStep = () => (
     <StepByStep>
         <Step>
             <Description
-                iconSrc="/public/icons/ico_buy.svg"
+                iconName="ico_buy"
                 heading="Lorem">
                 Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta. Proin
                 eget tortor risus. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Pellentesque in
@@ -16,7 +16,7 @@ const DefaultStepByStep = () => (
         </Step>
         <Step>
             <Description
-                iconSrc="/public/website-images/boy-ipad.jpg"
+                imageSrc="/public/website-images/boy-ipad.jpg"
                 heading="Ipsum">
                 Nulla quis lorem ut libero malesuada feugiat.
             </Description>
@@ -33,7 +33,7 @@ const DefaultStepByStep = () => (
         </Step>
         <Step>
             <Description
-                iconSrc="/public/icons/ico_buy.svg"
+                iconName="ico_buy"
                 heading="Sit dolor">
                 Pellentesque in ipsum id orci porta dapibus. Cras ultricies ligula sed magna dictum porta.
             </Description>

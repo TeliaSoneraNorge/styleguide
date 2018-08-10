@@ -1,6 +1,7 @@
 import React from 'react';
 
-import { Header } from '../../../component-lib/src/index';
+import { Header, SvgIcon, StepByStep } from '../../../component-lib/src/index';
+const { Step, Description, Content } = StepByStep;
 
 const InformationArticleSample3 = () =>
     <div>
@@ -23,7 +24,7 @@ const InformationArticleSample3 = () =>
                 <ul className="step-by-step">
                     <li className="step-by-step__step-wrapper">
                         <div className="step-by-step__step step-by-step__circle">
-                            <img className="step-by-step__icon" src="/public/icons/ico_buy.svg" alt="" />
+                            <SvgIcon className="step-by-step__icon" iconName="ico_buy" alt="" />
                         </div>
                         <div className="step-by-step__text">
                             <h2 className="step-by-step__heading heading heading--level-2">Lorem</h2>
@@ -58,7 +59,7 @@ const InformationArticleSample3 = () =>
                         </div>
                     </li>
                 </ul>
-
+                
                 <ul className="step-by-step">
                     <li className="step-by-step__step-wrapper">
                         <a className="step-by-step__step step-by-step__pebbles step-by-step__step--interactive">

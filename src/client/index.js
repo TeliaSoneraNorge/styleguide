@@ -5,6 +5,7 @@ import { AppContainer } from 'react-hot-loader'; // The wrapper component for HM
 
 import App from './App';
 import { getIEVersion } from './browserHelpers';
+import svg4everybody from 'svg4everybody';
 
 if (getIEVersion()) {
     require('picturefill');
@@ -36,5 +37,8 @@ if (module.hot) {
     });
 }
 
+// Method for displaying svg sprites in IE10-11 
+svg4everybody();
 // Method for object-fit polyfill
 objectFitImages();
+

@@ -1,57 +1,30 @@
 .icon-link {
-    background-color: transparent;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 25px 25px;
+        
     display: inline-block;
-    height: 25px;
+    height: 35px;
+    width: 35px;
     margin-right: 0.5rem;
-    padding: 15px;
-    width: 25px;
+    padding: 5px;
+   
+
+    &__icon {
+        height: 25px;
+        width: 25px;
+    }
+
+    &:hover {
+        > .icon-link__icon * {
+            fill:var(--core-purple);
+        }
+    }
 
     &:active,
     &:focus {
         background-color: var(--core-purple);
-
         outline: none;
-    }
 
-    &--download {
-        background-image: url('{{assetPath}}/icons/ico_download.svg');
-
-        &:hover {
-            background-image: url('{{assetPath}}/icons/ico_download_purple.svg');
-        }
-
-        &:active,
-        &:focus {
-            background-image: url('{{assetPath}}/icons/ico_download_white.svg');
-        }
-    }
-
-    &--linkedIn {
-        background-image: url('{{assetPath}}/icons/linkedin_icon.svg');
-
-        &:hover {
-            background-image: url('{{assetPath}}/icons/linkedin_icon_purple.svg');
-        }
-
-        &:active,
-        &:focus {
-            background-image: url('{{assetPath}}/icons/linkedin_icon_white.svg');
-        }
-    }
-
-    &--twitter {
-        background-image: url('{{assetPath}}/icons/twitter_icon.svg');
-
-        &:hover {
-            background-image: url('{{assetPath}}/icons/twitter_icon_purple.svg');
-        }
-
-        &:active,
-        &:focus {
-            background-image: url('{{assetPath}}/icons/twitter_icon_white.svg');
+        > .icon-link__icon * {
+            fill:var(--white);
         }
     }
 }

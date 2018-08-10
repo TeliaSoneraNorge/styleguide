@@ -16,7 +16,7 @@ class ComponentsByTypePage extends Component {
         return (
             <div>
                 <Header
-                    iconUrl="/public/ico_code.svg"
+                    iconName="ico_code"
                     pageTitle={`Components: ${componentType}`}
                     withMask={false}
                     withContentOverlap={false} />

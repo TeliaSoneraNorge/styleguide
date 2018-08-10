@@ -97,11 +97,8 @@
         &:hover {
             > .page-header__menu-button-image {
                 outline: none;
-
-                svg {
-                    path {
-                        fill: var(--core-purple);
-                    }
+                * {
+                    fill: var(--core-purple);
                 }
             }
 
@@ -116,23 +113,13 @@
 
             > .page-header__menu-button-image {
                 outline: none;
-
-                svg {
-                    path {
-                        fill: var(--white);
-                    }
+                * {
+                    fill: var(--white); 
                 }
             }
 
             > .page-header__icon-box-text {
                 color: var(--white);
-            }
-        }
-    }
-    &__menu-button-image {
-        svg {
-            path {
-                fill: var(--black);
             }
         }
     }
@@ -166,12 +153,8 @@
                 color: var(--core-purple);
             }
 
-            > .page-header__cart-button-image {
-                svg {
-                    path {
-                        fill: var(--core-purple);
-                    }
-                }
+            > .page-header__cart-button-image * {
+                fill: var(--core-purple);
             }
         }
 
@@ -183,12 +166,8 @@
                 color: var(--white);
             }
 
-            > .page-header__cart-button-image {
-                svg {
-                    path {
-                        fill: var(--white);
-                    }
-                }
+            > .page-header__cart-button-image * {
+                fill: var(--white);
             }
 
             > .page-header__cart-item-count {
@@ -276,12 +255,6 @@
         &-icon {
             display: block;
 
-            svg {
-                path {
-                    fill: var(--black);
-                }
-            }
-
             height: var(--icon-size-small);
             width: var(--icon-size-small);
 
@@ -296,12 +269,8 @@
                 color: var(--core-purple);
             }
 
-            > .page-header__log-in-button-icon {
-                svg {
-                    path {
-                        fill: var(--core-purple);
-                    }
-                }
+            > .page-header__log-in-button-icon * {
+                fill: var(--core-purple);
             }
         }
 
@@ -313,12 +282,8 @@
                 color: var(--white);
             }
 
-            > .page-header__log-in-button-icon {
-                svg {
-                    path {
-                        fill: var(--white);
-                    }
-                }
+            > .page-header__log-in-button-icon * {
+                fill: var(--white);
             }
         }
 

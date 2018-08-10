@@ -8,6 +8,7 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 import PriceTable from '../PriceTable/PriceTable';
 import RadioButtonList from '../RadioButtonList/RadioButtonList';
 import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
@@ -54,14 +55,13 @@ const Subscription = ({ isShowingFeatures, isStandalone, isBroadband, color, siz
                     : <div className="box__speech-bubble box__speech-bubble--empty"></div>}
                 {highlightedFeature ?
                     <div className="subscription__highlighted-feature">
-                        <img className="subscription__highlighted-feature-icon" src={highlightedFeature.icon} role="presentation" alt="" />
+                        <SvgIcon className="subscription__highlighted-feature-icon" iconName={highlightedFeature.iconName} role="presentation" alt="" />
                         <span className="subscription__highlighted-feature-text">{highlightedFeature.name}</span>
                     </div> : null}
                 {specialMessageText ?
                     <strong className="special-message">{specialMessageText}</strong> : null}
                 {isBroadband &&
-                <PriceTable productListWithPrice={productList} totalTextWithPrice={totalCalculation} />
-                }
+                    <PriceTable productListWithPrice={productList} totalTextWithPrice={totalCalculation} />}
                 <button className="button button--primary">Gå videre</button>
             </section> : null}
         {isExpanded ?
@@ -99,20 +99,25 @@ const Subscription = ({ isShowingFeatures, isStandalone, isBroadband, color, siz
                 }
                 <h2 className="heading heading--level-2">Om abonnement</h2>
                 <h3 className="heading heading--level-3">Skanning, texting og MMS</h3>
-                <p>Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like
-                    the world has never seen. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig,
-                    right?</p>
+                <p>
+                    Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like
+                    the world has never seen. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right?
+                </p>
                 <h3 className="heading heading--level-3">Data</h3>
-                <p>I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, "I
+                <p>
+                    I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, "I
                     can't do it. I just can't do it. It's inappropriate. It's not nice." When other websites give you
                     text, they’re not sending the best. They’re not sending you, they’re sending words that have lots of
                     problems and they’re bringing those problems with us. They’re bringing mistakes. They’re bringing
                     misspellings. They’re typists… And some, I assume, are good words. I think the only card she has is
-                    the Lorem card.</p>
+                    the Lorem card.
+                </p>
                 <h3 className="heading heading--level-3">Utland</h3>
-                <p>We have so many things that we have to do better... and certainly ipsum is one of them. Despite the
+                <p>
+                    We have so many things that we have to do better... and certainly ipsum is one of them. Despite the
                     constant negative ipsum covfefe. Lorem Ipsum is the single greatest threat. We are not - we are not
-                    keeping up with other websites.</p>
+                    keeping up with other websites.
+                </p>
                 <ul className="list list--links">
                     <li className="list__item">
                         <a className="list__link" href="#" target="_self">Last ned abonnementsvilkår</a>
@@ -135,7 +140,7 @@ Subscription.propTypes = {
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     speechBubbleText: PropTypes.string,
     highlightedFeature: PropTypes.shape({
-        icon: PropTypes.string.isRequired,
+        iconName: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
     }),
     specialMessageText: PropTypes.string,

@@ -82,7 +82,7 @@
             }
         }
         .list__item {
-            background-image: url('{{assetPath}}/icons/ico_linkarrow_black.svg');
+            background-image: url('{{assetPath}}/icons/ico_linkarrow.svg');
         }
     }
 
@@ -102,10 +102,8 @@
             padding: 1px;
 
             .list__link-icon {
-                svg {
-                    path {
-                        fill: var(--white);
-                    }
+                svg path {
+                    fill: var(--white);
                 }
             }
 
@@ -118,12 +116,8 @@
                     background-color: var(--white);
                 }
 
-                .list__link-icon {
-                    background-position: calc(-var(--link-icon-size-large) * 2) 0px;
-         
-                    path {
+                .list__link-icon * {
                         fill: var(--core-purple);
-                    }
                 }
             }
 

@@ -23,7 +23,7 @@ export default class ModalDialogSamplePage extends React.Component {
         return (
             <article>
                 <Header
-                    iconUrl="./public/icons/ico_info.svg"
+                    iconName="ico_info"
                     pageTitle="Modal Dialog Sample"
                     withMask={false}
                     withContentOverlap={false}>

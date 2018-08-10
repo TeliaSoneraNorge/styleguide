@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="4px" viewBox="0 0 16 4" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 44.1 (41455) - http://www.bohemiancoding.com/sketch -->
+    <title>Minus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="TS-ATOMS" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="MEDIA-ICONS-Copy" transform="translate(-512.000000, -245.000000)" fill="#000000">
+            <path d="M514.264639,245 C513.258389,245 512.442764,245.815625 512.442764,246.825 C512.442764,247.83125 513.258389,248.646875 514.264639,248.646875 L525.614639,248.646875 C526.620889,248.646875 527.436514,247.83125 527.436514,246.825 C527.439639,245.815625 526.624014,245 525.617764,245 L514.264639,245 Z" id="Minus"></path>
+        </g>
+    </g>
+</svg>

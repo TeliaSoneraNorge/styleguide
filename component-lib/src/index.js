@@ -22,6 +22,7 @@ export { default as ShadowBox } from './atoms/ShadowBox/ShadowBox';
 export { default as SpecialMessage } from './atoms/SpecialMessage/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner/Spinner';
 export { default as StepIndicator } from './atoms/StepIndicator/StepIndicator';
+export { default as SvgIcon } from './atoms/SvgIcon/SvgIcon';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink/TelephoneNumberLink';
 export { default as TextArea } from './atoms/TextArea/TextArea';
 export { default as Tags } from './atoms/Tags/Tags';
@@ -120,6 +121,7 @@ export default [
     'src/atoms/SpecialMessage/SpecialMessage.jsx',
     'src/atoms/Spinner/Spinner.jsx',
     'src/atoms/StepIndicator/StepIndicator.jsx',
+    'src/atoms/SvgIcon/SvgIcon.jsx',
     'src/atoms/Tags/Tags.jsx',
     'src/atoms/TextArea/TextArea.jsx',
     'src/atoms/TelephoneNumberLink/TelephoneNumberLink.jsx',

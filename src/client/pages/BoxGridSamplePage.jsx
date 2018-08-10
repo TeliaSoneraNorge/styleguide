@@ -11,8 +11,8 @@ const personBoxesProps = [
         'name': 'Person Name',
         'title': 'Official job title',
         'description': 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.',
-        'linkedInProfile': 'www.linkedin.com',
-        'twitterProfile': 'www.twitter.com'
+        'linkedInProfile': 'http://linkedin.com',
+        'twitterProfile': 'http://twitter.com'
     },
     {
         'id': 'person-2',
@@ -31,8 +31,8 @@ const personBoxesProps = [
         'name': 'Person Name',
         'title': 'Official job title',
         'description': 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.',
-        'linkedInProfile': 'www.linkedin.com',
-        'twitterProfile': 'www.twitter.com'
+        'linkedInProfile': 'http://linkedin.com',
+        'twitterProfile': 'http://twitter.com'
     },
     {
         'id': 'person-4',
@@ -41,8 +41,8 @@ const personBoxesProps = [
         'name': 'Person Name',
         'title': 'Official job title',
         'description': 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.',
-        'linkedInProfile': 'www.linkedin.com',
-        'twitterProfile': 'www.twitter.com'
+        'linkedInProfile': 'http://linkedin.com',
+        'twitterProfile': 'http://twitter.com'
     },
     {
         'id': 'person-5',
@@ -51,8 +51,8 @@ const personBoxesProps = [
         'name': 'Person Name',
         'title': 'Official job title',
         'description': 'Quisque velit nisi, pretium ut lacinia in, elementum id enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Sed porttitor lectus nibh. Pellentesque in ipsum id orci porta dapibus. Donec rutrum congue leo eget malesuada. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.',
-        'linkedInProfile': 'www.linkedin.com',
-        'twitterProfile': 'www.twitter.com'
+        'linkedInProfile': 'http://linkedin.com',
+        'twitterProfile': 'http://twitter.com'
     }
 ];
 

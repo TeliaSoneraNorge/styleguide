@@ -53,13 +53,10 @@
             right: 0;
             bottom: 0;
 
+
             &:hover {
-                .textbox-with-label__icon {
-                    svg {
-                        path {
-                            fill: var(--core-purple);
-                        }
-                    }
+                .textbox-with-label__icon * {
+                    fill: var(--core-purple);
                 }
             }
 
@@ -68,12 +65,8 @@
                 background-color: var(--core-purple);
                 outline: none;
 
-                .textbox-with-label__icon {
-                     svg {
-                        path {
-                            fill: var(--white);
-                        }
-                    }
+                .textbox-with-label__icon * {
+                    fill: var(--white);
                 }
             }
         }

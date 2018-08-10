@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide-web",
-  "version": "1.9.7",
+  "version": "1.10.0",
   "private": false,
   "description": "",
   "main": "server/server.js",
@@ -32,8 +32,8 @@
   "devDependencies": {
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
-    "babel-loader": "7.1.4",
     "babel-eslint": "7.2.3",
+    "babel-loader": "7.1.4",
     "babel-plugin-external-helpers": "6.22.0",
     "babel-plugin-transform-react-jsx": "6.24.1",
     "babel-preset-env": "^1.7.0",
@@ -63,6 +63,7 @@
     "postcss-replace": "^1.0.3",
     "postcss-url": "^7.3.0",
     "style-loader": "0.19.0",
+    "svg4everybody": "^2.1.9",
     "webpack": "3.12.0",
     "webpack-dev-server": "2.11.1"
   },
