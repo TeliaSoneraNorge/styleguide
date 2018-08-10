@@ -138,7 +138,7 @@
             max-height: 620px;
             object-fit: cover;
             object-position: center;
-
+            
             &--align-top {
                 font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
                 object-position: top;
@@ -148,6 +148,10 @@
                 font-family: 'object-fit: cover; object-position: bottom;'; /*object-fit-images polyfill*/
                 object-position: bottom;
             }
+        }
+
+        @media all and (min-width: 110em) {
+            max-height: 720px;
         }
     }
 
