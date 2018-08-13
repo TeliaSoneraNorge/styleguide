@@ -46,24 +46,20 @@
 
     &__header-button {
         background-color: var(--white);
+        background-image: url({{assetPath}}/icons/ico_add_purple.svg);
+        background-position: right 1rem center;
+        background-repeat: no-repeat;
+        background-size: 15px 15px;
         border: none;
         cursor: pointer;
         display: block;
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
-        padding: 1rem 1rem 1rem 1rem;
+        padding: 1rem 2.8rem 1rem 1rem;
         position: relative;
         text-align: left;
         width: 100%;
-
-        &-icon {
-            height: 1rem;
-            width: 1rem;
-            float: right;
-            vertical-align:middle;
-            margin-right: 1rem;
-        }
 
         &:hover {
             color: var(--core-purple);
@@ -72,13 +68,9 @@
         &:focus,
         &:active {
             background-color: var(--core-purple);
+            background-image: url({{assetPath}}/icons/ico_add_white.svg);
             color: var(--white);
             outline: none;
-
-            > .accordion__header-button-icon * {
-                fill: var(--white);
-            }
-
         }
     }
 
@@ -96,15 +88,12 @@
 
     &--open {
         .accordion__header-button {
+            background-image: url('{{assetPath}}/icons/ico_minus_purple.svg');
 
             &:focus,
             &:active {
                 background-color: var(--white);
                 color: var(--core-purple);
-            }
-
-            > .accordion__header-button-icon * {
-                fill: var(--core-purple);
             }
         }
         .accordion__panel {
