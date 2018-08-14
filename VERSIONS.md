@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.11.0 [changed component]
+- Molecule: AccordionList - icons now done with CSS again
+
 ## 1.10.0 [new + changed components]
 
 ### Atoms:
