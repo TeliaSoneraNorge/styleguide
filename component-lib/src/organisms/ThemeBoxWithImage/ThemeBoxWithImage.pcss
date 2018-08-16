@@ -20,7 +20,7 @@
             .theme-box-with-image__icon-box {
                 border-color: var(--white);
 
-                svg *{
+                * {
                     fill: var(--white);
                 }
             }
@@ -92,7 +92,7 @@
             .theme-box-with-image__icon-box {
                 border-color: var(--core-purple);
 
-                svg *{
+                * {
                     fill: var(--core-purple);
                 }
             }
@@ -112,7 +112,7 @@
 
         .theme-box-with-image__icon {
             padding: 2.5rem;
-
+        
             &:hover,
             &:active,
             &:focus {
@@ -122,20 +122,15 @@
                 .theme-box-with-image__icon-box {
                     border-color: var(--white);
 
-                    svg * {
+                    * {
                         fill: var(--white);
                     }
                 }
-
             }
         }
-
+        
         .theme-box-with-image__icon-box {
-            svg {
-                height: 17px;
-                width: 15px;
-                transform: rotate(180deg);
-            }
+            transform: rotate(180deg);
         }
     }
 }

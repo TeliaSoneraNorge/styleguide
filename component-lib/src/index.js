@@ -93,7 +93,7 @@ export { default as Form } from './organisms/Form/Form';
 export { default as HardwareProductList } from './organisms/HardwareProductList/HardwareProductList';
 export { default as ThemeBoxes } from './organisms/ThemeBoxes/ThemeBoxes';
 export { default as ThemeBox } from './organisms/ThemeBoxes/ThemeBox';
-export { default as ThemeBoxWithImage } from './organisms/ThemeBoxesWithImage/ThemeBoxWithImage';
+export { default as ThemeBoxWithImage } from './organisms/ThemeBoxWithImage/ThemeBoxWithImage';
 
 // This array contains react components to be used in the examples page
 export default [
