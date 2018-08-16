@@ -33,7 +33,20 @@ import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
  * There is also one for black friday <code>.hero--with-pebbles-black-friday</code> and
  * one for easter <code>.hero--with-pebbles-easter</code>.
  */
-const Hero = ({ className, heading, subheading, src, alt, sources = [], pebbles, mode, align, ...rest }) => (
+const Hero = ({
+    className,
+    heading,
+    subheading,
+    src,
+    alt,
+    sources = [],
+    logoSources = [],
+    pebbles,
+    mode,
+    align,
+    logoAlign,
+    ...rest
+}) => (
     <a
         className={classnames('hero heading-link', {
             [className]: className,
@@ -54,6 +67,20 @@ const Hero = ({ className, heading, subheading, src, alt, sources = [], pebbles,
                     })}
                     alt={alt} />
             </picture>
+            {logoSources && !!logoSources.length &&
+                <picture className="hero__logo">
+                    {logoSources.map(it => <source
+                        key={_.uniqueId('source-')}
+                        srcSet={it.srcSet}
+                        media={it.type==='mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'} />
+                    )}
+                    <img
+                        className={classnames('hero__logo-image', {
+                            [`hero__logo-image--align-${logoAlign || 'top-right'}`]: logoAlign,
+                        })}
+                        alt={alt} />
+                </picture>
+            }
             <div className="hero__box heading-link--focus-area">
                 <h2 className="hero__heading">{heading}</h2>
                 <div className="hero__subheading">{subheading}
