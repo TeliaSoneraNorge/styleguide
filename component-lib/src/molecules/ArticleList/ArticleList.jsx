@@ -15,7 +15,7 @@ const ArticleListItem = ({ article }) => (
 
 const ArticleList = ({ articles }) => (
     <ul className="article-list">
-        {articles.map(article => <ArticleListItem article={article} />)}
+        {articles.map((article, index) => <ArticleListItem key={index} article={article} />)}
     </ul>
 );
 
