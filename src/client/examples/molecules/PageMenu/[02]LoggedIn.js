@@ -53,7 +53,8 @@ export default class LoggedInPageMenu extends React.Component {
                 isExpanded
                 isLoggedIn={true}
                 onTabSelect={(index) => this.selectMenuTabIndex(index)}
-                menuSelectedTabIndex={this.state.menuTabIndex} />
+                menuSelectedTabIndex={this.state.menuTabIndex}
+                searchUrl="#PageMenu" />
         );
     }
 }

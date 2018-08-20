@@ -1,7 +1,7 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-const MenuTopPanel = ({ isExpanded, onClose, menuId }) => (
+const MenuTopPanel = ({ isExpanded, onClose, menuId, searchUrl }) => (
     <div className="page-menu__top-panel">
         <button
             aria-label="Lukk"
@@ -12,13 +12,14 @@ const MenuTopPanel = ({ isExpanded, onClose, menuId }) => (
             <SvgIcon className="page-menu__icon-box-icon page-menu__icon-delete" iconName="ico_delete" color="black" />
             <span className="page-menu__icon-box-text">Lukk</span>
         </button>
-        <button
+        {searchUrl ? <a
             aria-label="Søk"
             className="page-menu__search-button page-menu__icon-box"
-            onClick={onClose}>
+            onClick={onClose}
+            href={searchUrl}>
             <SvgIcon className="page-menu__icon-box-icon page-menu__icon-search" iconName="ico_search" color="black" />
             <span className="page-menu__icon-box-text">Søk</span>
-        </button>
+        </a> : null}
     </div>
 );
 

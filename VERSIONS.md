@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.11.4 [changed component]
+- Molecule: PageMenu - modified to use searchUrl for link to search page or remove button if not defined
+
 ## 1.11.0 [changed component]
 - Molecule: AccordionList - icons now done with CSS again
 
@@ -46,6 +49,8 @@ Only noteworthy versions shown (minor changes are omitted).
 ### Organisms:
 - ContentRating
 - Theme Boxes
+
+
 
 ## 1.9.7 [changed component]
 - Molecule: PageHeader - added "Handlekurv" text to cart button and made styling-changes to the cart counter
