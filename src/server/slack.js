@@ -1,5 +1,4 @@
 import https from 'https';
-import { path } from 'path';
 
 export function postMessageToSlack(channel, message) {
     const slackChannelLookup = {
