@@ -19,6 +19,7 @@ export default class PageHeader extends React.Component {
     static propTypes = {
         menuLinks: PropTypes.array.isRequired,
         menuId: PropTypes.string.isRequired,
+        menuSelectedTabIndex: PropTypes.number,
         isLoggedIn: PropTypes.bool,
         cartItemCount: PropTypes.number.isRequired,
         logoUrl: PropTypes.string.isRequired,
@@ -26,12 +27,18 @@ export default class PageHeader extends React.Component {
         logoImageDesktopPath: PropTypes.string.isRequired,
         logoImageDesktopPathInverted: PropTypes.string.isRequired,
     };
+
+    static defaultProps = {
+        menuSelectedTabIndex: 0,
+        isLoggedIn: false
+    };
+
     constructor(props) {
         super(props);
 
         this.state = {
             menuIsExpanded: false,
-            menuSelectedTabIndex: 0
+            menuSelectedTabIndex: this.props.menuSelectedTabIndex
         };
 
         this.openMenu = this.openMenu.bind(this);
