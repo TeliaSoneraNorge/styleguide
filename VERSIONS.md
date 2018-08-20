@@ -50,8 +50,6 @@ Only noteworthy versions shown (minor changes are omitted).
 - ContentRating
 - Theme Boxes
 
-
-
 ## 1.9.7 [changed component]
 - Molecule: PageHeader - added "Handlekurv" text to cart button and made styling-changes to the cart counter
 
