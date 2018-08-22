@@ -11,7 +11,7 @@ const PageMenu = ({
     menuLinks = [],
     menuId,
     isExpanded,
-    onClose,
+    onClickClose,
     onClickSearch,
     searchUrl,
     fixedPosition,
@@ -26,7 +26,7 @@ const PageMenu = ({
                 { 'page-menu--fixed': fixedPosition },
                 { 'page-menu--expanded': isExpanded })}
             id={menuId || 'page-header-menu'}>
-            <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClickSearch={onClickSearch} searchUrl={searchUrl} />
+            <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClickClose={onClickClose} onClickSearch={onClickSearch} searchUrl={searchUrl} />
             <nav aria-label="Main menu">
                 <div className="page-menu__selection">
                     <Tabs
@@ -64,7 +64,7 @@ const PageMenu = ({
                     </ul>}
             </nav>
         </div>
-        {fixedPosition && <MenuOverlay onClick={onClose} active={isExpanded} />}
+        {fixedPosition && <MenuOverlay onClick={onClickClose} active={isExpanded} />}
     </div>
 );
 PageMenu.propTypes = {
@@ -83,7 +83,7 @@ PageMenu.propTypes = {
     })),
     menuId: PropTypes.string,
     isExpanded: PropTypes.bool,
-    onClose: PropTypes.func,
+    onClickClose: PropTypes.func,
     onClickSearch: PropTypes.func,
     searchUrl: PropTypes.string,
     fixedPosition: PropTypes.bool,

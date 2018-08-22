@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.11.4",
+  "version": "1.11.5",
   "private": false,
   "description": "",
   "main": "dist/index.cjs.js",
@@ -12,6 +12,7 @@
     "build:library:watch": "run-p build:library:css:watch build:library:js:watch svgo",
     "build:library:css:watch": "postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
     "build:library:js:watch": "rollup --environment NODE_ENV:development -c rollup.build.js -w",
+    "deploy:prod": "npm publish --access=public && babel-node ../deploy-slack.js component-lib",
     "lint": "eslint --ext .jsx,.js /",
     "prepublishOnly": "npm run build:library",
     "publish:local-test": "npm run build:library && npm pack",

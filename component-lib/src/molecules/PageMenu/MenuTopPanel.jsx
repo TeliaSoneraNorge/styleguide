@@ -1,12 +1,12 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-const MenuTopPanel = ({ isExpanded, onClickSearch, menuId, searchUrl }) => (
+const MenuTopPanel = ({ isExpanded, onClickClose, onClickSearch, menuId, searchUrl }) => (
     <div className="page-menu__top-panel">
         <button
             aria-label="Lukk"
             className="page-menu__close-button page-menu__icon-box"
-            onClick={onClickSearch}
+            onClick={onClickClose}
             aria-expanded={isExpanded}
             aria-controls={menuId || 'page-header-menu'}>
             <SvgIcon className="page-menu__icon-box-icon page-menu__icon-delete" iconName="ico_delete" color="black" />
