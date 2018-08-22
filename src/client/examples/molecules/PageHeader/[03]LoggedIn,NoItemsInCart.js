@@ -22,7 +22,8 @@ const LoggedInNoItems = () => (
         cartItemCount={0}
         menuLinks={menuLinks}
         loggedInUserName="Maria"
-        isLoggedIn />
+        isLoggedIn
+        searchUrl="#PageHeader" />
 );
 
 export default LoggedInNoItems;
