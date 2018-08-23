@@ -11,6 +11,10 @@ const menuLinks = [
     }
 ];
 
+function toggleCart() {
+    alert('You need to add the cart yourself for now');
+}
+
 
 const LoggedIn1Item = () => (
     <PageHeader
@@ -22,7 +26,8 @@ const LoggedIn1Item = () => (
         cartItemCount={1}
         menuLinks={menuLinks}
         loggedInUserName="Maria"
-        isLoggedIn />
+        isLoggedIn
+        toggleCart={toggleCart} />
 );
 
 export default LoggedIn1Item;

@@ -11,6 +11,10 @@ const menuLinks = [
     }
 ];
 
+function toggleCart() {
+    alert('You need to add the cart yourself for now');
+}
+
 
 const LoggedOut3Items = () => (
     <PageHeader
@@ -20,7 +24,8 @@ const LoggedOut3Items = () => (
         logoImageDesktopPath="/public/images/logo/logo.svg"
         logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
         cartItemCount={3}
-        menuLinks={menuLinks} />
+        menuLinks={menuLinks}
+        toggleCart={toggleCart} />
 );
 
 export default LoggedOut3Items;

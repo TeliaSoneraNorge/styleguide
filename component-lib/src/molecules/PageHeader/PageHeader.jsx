@@ -26,6 +26,7 @@ export default class PageHeader extends React.Component {
         logoTitle: PropTypes.string.isRequired,
         logoImageDesktopPath: PropTypes.string.isRequired,
         logoImageDesktopPathInverted: PropTypes.string.isRequired,
+        toggleCart: PropTypes.func,
     };
 
     static defaultProps = {
@@ -56,7 +57,7 @@ export default class PageHeader extends React.Component {
     }
     render() {
         const cartShouldBeShown = (this.props.cartItemCount > 0);
-        const menuIconName = this.props.isLoggedIn ? "ico_menu_logged_in" : "ico_menu";
+        const menuIconName = this.props.isLoggedIn ? 'ico_menu_logged_in' : 'ico_menu';
         return (
             <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown })}>
                 <PageMenu
@@ -81,13 +82,13 @@ export default class PageHeader extends React.Component {
                 </a>
                 <div className="page-header__site-tools">
                     {cartShouldBeShown ?
-                        <a className="page-header__cart-button" href="#">
+                        <button className="page-header__cart-button" onClick={this.props.toggleCart}>
                             <SvgIcon className="page-header__cart-button-image page-header__icon-box-icon" iconName="ico_buy" color="black" />
                             <span className="page-header__cart-button-text">Handlekurv</span>
                             <span className="page-header__cart-item-count">
                                 <span className="page-header__cart-item-count-text">{this.props.cartItemCount}</span>
                             </span>
-                        </a> : null}
+                        </button> : null}
                     {!this.props.isLoggedIn &&
                         <a className="page-header__log-in-button" href="#">
                             <SvgIcon className="page-header__log-in-button-icon page-header__icon-box-icon" iconName="ico_end_user" color="black" />
