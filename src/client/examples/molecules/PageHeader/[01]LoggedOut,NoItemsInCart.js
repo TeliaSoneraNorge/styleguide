@@ -19,7 +19,8 @@ const LoggedOutNoItems = () => (
         logoImageDesktopPath="/public/images/logo/logo.svg"
         logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
         cartItemCount={0}
-        menuLinks={menuLinks} />
+        menuLinks={menuLinks}
+        searchUrl="#PageHeader"/>
 );
 
 export default LoggedOutNoItems;

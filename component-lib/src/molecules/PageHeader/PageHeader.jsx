@@ -27,6 +27,7 @@ export default class PageHeader extends React.Component {
         logoImageDesktopPath: PropTypes.string.isRequired,
         logoImageDesktopPathInverted: PropTypes.string.isRequired,
         toggleCart: PropTypes.func,
+        searchUrl: PropTypes.string,
     };
 
     static defaultProps = {
@@ -69,7 +70,7 @@ export default class PageHeader extends React.Component {
                     isLoggedIn={this.props.isLoggedIn}
                     menuSelectedTabIndex={this.state.menuSelectedTabIndex}
                     onTabSelect={this.onTabSelect}
-                    searchUrl="#PageHeader" />
+                    searchUrl={this.props.searchUrl} />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
                         <SvgIcon className="page-header__menu-button-image page-header__icon-box-icon" iconName={menuIconName} color="black" />
