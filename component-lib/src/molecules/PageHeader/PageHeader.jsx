@@ -2,6 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import { preventDefault } from '../../utils';
 import PageMenu from '../PageMenu/PageMenu';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
@@ -28,11 +29,17 @@ export default class PageHeader extends React.Component {
         logoImageDesktopPathInverted: PropTypes.string.isRequired,
         toggleCart: PropTypes.func,
         searchUrl: PropTypes.string,
+        loginLink: PropTypes.string,
+        onLoginClick: PropTypes.func,
+        logoutLink: PropTypes.string,
+        onLogoutClick: PropTypes.func,
     };
 
     static defaultProps = {
         menuSelectedTabIndex: 0,
-        isLoggedIn: false
+        isLoggedIn: false,
+        loginLink: '#',
+        logoutLink: '#',
     };
 
     constructor(props) {
@@ -70,7 +77,9 @@ export default class PageHeader extends React.Component {
                     isLoggedIn={this.props.isLoggedIn}
                     menuSelectedTabIndex={this.state.menuSelectedTabIndex}
                     onTabSelect={this.onTabSelect}
-                    searchUrl={this.props.searchUrl} />
+                    searchUrl={this.props.searchUrl}
+                    logoutLink={this.props.logoutLink}
+                    onLogoutClick={this.props.onLogoutClick} />
                 <div className="page-header__site-nav">
                     <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
                         <SvgIcon className="page-header__menu-button-image page-header__icon-box-icon" iconName={menuIconName} color="black" />
@@ -91,7 +100,7 @@ export default class PageHeader extends React.Component {
                             </span>
                         </button> : null}
                     {!this.props.isLoggedIn &&
-                        <a className="page-header__log-in-button" href="#">
+                        <a className="page-header__log-in-button" href={this.props.loginLink} onClick={preventDefault(this.props.onLoginClick)}>
                             <SvgIcon className="page-header__log-in-button-icon page-header__icon-box-icon" iconName="ico_end_user" color="black" />
                             <span className="page-header__log-in-button-text">Logg inn</span>
                         </a>}

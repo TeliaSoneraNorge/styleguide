@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 
+import { preventDefault } from '../../utils';
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
@@ -17,8 +18,10 @@ const PageMenu = ({
     fixedPosition,
     isLoggedIn,
     menuSelectedTabIndex,
-    onTabSelect
- }) => (
+    onTabSelect,
+    logoutLink = '#',
+    onLogoutClick
+}) => (
     <div>
         <div
             className={classNames(
@@ -42,6 +45,7 @@ const PageMenu = ({
                     </Tabs>
                 </div>
 
+
                 {menuLinks.map((menuLink, i) =>
                     <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
                         <div className={classNames(
@@ -58,7 +62,7 @@ const PageMenu = ({
                     <ul className="page-menu__item-list">
                         <li className="page-menu__item">
                             <div className="page-menu__item-link">
-                                <a className="page-menu__log-out-button link" href="#">Logg ut</a>
+                                <a className="page-menu__log-out-button link" href={logoutLink} onClick={preventDefault(onLogoutClick)}>Logg ut</a>
                             </div>
                         </li>
                     </ul>}
