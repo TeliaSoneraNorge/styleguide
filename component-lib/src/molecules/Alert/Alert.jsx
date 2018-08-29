@@ -60,7 +60,7 @@ const Alert = ({
 
 Alert.propTypes = {
     kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning']),
-    size: PropTypes.oneOf(['large']),
+    size: PropTypes.oneOf(['large', 'large-with-borders']),
     onOpen: PropTypes.func,
     onClose: PropTypes.func,
     isOpen: PropTypes.bool,

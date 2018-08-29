@@ -42,7 +42,7 @@
         }
     }
 
-    &--large {
+    &--large, &--large-with-borders {
         margin-bottom: 0;
         @media screen and (min-width: 60em) {
             width: 100%;
@@ -50,6 +50,10 @@
         }
         border-left: none;
         border-right: none;
+    }
+
+    &--large-with-borders {
+         border: 2px solid;
     }
 
     &--minimizable {
