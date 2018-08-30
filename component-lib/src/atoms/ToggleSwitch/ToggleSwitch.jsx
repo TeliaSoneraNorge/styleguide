@@ -34,7 +34,7 @@ ToggleSwitch.defaultProps = {
 };
 
 ToggleSwitch.propTypes = {
-    active: PropTypes.oneOf(Object.values(PANEL)),
+    active: PropTypes.oneOf(Object.keys(PANEL).map(k => PANEL[k])),
     leftLabel: PropTypes.string,
     rightLabel: PropTypes.string,
     leftOnClickHandler: PropTypes.func,
