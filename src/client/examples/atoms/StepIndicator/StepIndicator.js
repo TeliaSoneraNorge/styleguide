@@ -2,7 +2,9 @@ import React from 'react';
 import { StepIndicator } from '@telia/styleguide';
 
 const wrapperStyle = {
-    width: '300px'
+    width: '700px',
+    display: 'flex',
+    justifyContent: 'flexStart'
 };
 
 const StepIndicators = () => (
