@@ -1,31 +1,37 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const PriceTable = ({ productListWithPrice, totalTextWithPrice }) =>
+const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }) =>
     <table className="price-table">
         <tbody className="price-table__items">
-        {productListWithPrice.map((product, index) =>
-            <tr className="price-table__item" key={index}>
-                <td className="price-table__item-cell">
-                    <div className="price-table__item-title">{product.title}</div>
-                    {product.subtitle &&
-                    <div className="price-table__item-subtitle">{product.subtitle}</div>
-                    }
-                </td>
-                <td className="price-table__item-cell price-table__item-price">{product.price}</td>
-            </tr>
-        )}
+            {productListWithPrice.map((product, index) =>
+                <tr className="price-table__item" key={index}>
+                    <td className="price-table__item-cell">
+                        <div className="price-table__item-title">{product.title}</div>
+                        {product.subtitle &&
+                        <div className="price-table__item-subtitle">{product.subtitle}</div>
+                        }
+                    </td>
+                    <td className="price-table__item-cell price-table__item-price">{product.price}</td>
+                </tr>
+            )}
         </tbody>
         <tfoot>
-        <tr className="price-table__item price-table__total">
-            <td className="price-table__item-cell">
-                <div className="price-table__item-title">{totalTextWithPrice.title}</div>
-                {totalTextWithPrice.subtitle &&
-                <div className="price-table__item-subtitle">{totalTextWithPrice.subtitle}</div>
-                }
-            </td>
-            <td className="price-table__item-cell price-table__item-price">{totalTextWithPrice.price}</td>
-        </tr>
+            <tr className="price-table__item price-table__total">
+                <td className="price-table__item-cell">
+                    <div className="price-table__item-title">{totalTextWithPrice.title}</div>
+                    {totalTextWithPrice.subtitle &&
+                    <div className="price-table__item-subtitle">{totalTextWithPrice.subtitle}</div>
+                    }
+                </td>
+                <td className="price-table__item-cell price-table__item-price">{totalTextWithPrice.price}</td>
+            </tr>
+            { additionalLine &&
+            <tr className="price-table__item price-table__additional">
+                <td className="price-table__item-cell">
+                    <div className="price-table__item-title">{additionalLine}</div>
+                </td>
+            </tr> }
         </tfoot>
     </table>;
 PriceTable.propTypes = {
@@ -39,6 +45,7 @@ PriceTable.propTypes = {
         subtitle: PropTypes.string,
         price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     }),
+    additionalLine: PropTypes.string,
 };
 
 export default PriceTable;
