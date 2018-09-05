@@ -1,35 +1,66 @@
+.product-promo-box-grid {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+
+    @media all and (min-width: 48em) {
+        justify-content: space-between;
+
+        .product-promo-box {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        .product-promo-box:not(:only-child):first-child {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
 .product-promo-box {
     display: flex;
-    max-width: var(--width-small);
-    padding: 1rem;
+    flex-flow: column;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 100%;
+    width: 370px;
+    padding: 1.5rem;
 
-    @media all and (min-width: 30em) {
-        padding: 2rem;
+    @media all and (min-width: 48em) {
+        flex-flow: row;
+        width: var(--width-medium);
+        padding: 4rem;
     }
 
     /* Content: heading & description */
     &__image-container {
-        margin-right: 1.5rem;
-        width: 35%;
+        display: block;
+        margin: 1rem 1rem 2rem;
 
-        @media all and (min-width: 30em) {
-            margin-right: 3rem;
-            width: 25%;
+        @media all and (min-width: 48em) {
+            margin: 0 3rem 0 0;
+            width: 35%;
         }
     }
     &__image {
+        display: block;
+        margin: 0 auto;
+        max-width: 200px;
         width: 100%;
+
+        @media all and (min-width: 48em) {
+            max-width: 100%;
+        }
     }
 
     /* Content: heading & description */
     &__content-container {
-        align-items: flex-start;
-        display: flex;
-        flex-flow: row wrap;
-        width: 65%;
+        margin-bottom: 2rem;
+        width: 100%;
 
-        @media all and (min-width: 30em) {
-            width: 75%;
+        @media all and (min-width: 48em) {
+            margin-bottom: 0;
+            width: 57%;
         }
     }
     &__product-name {
@@ -43,16 +74,10 @@
 
     /* Price, Price-label & Action Button */
     &__price-and-action {
-        align-self: flex-end;
         border-top: 2px solid var(--grey);
         padding-top: 1rem;
-        width: 100%;
     }
     &__price-info {
-        @media all and (min-width: 36em) {
-            float: left;
-            width: 50%;
-        }
     }
     &__price {
         font-family: 'pebble';
@@ -62,29 +87,43 @@
     &__price-smallprint {
         font-size: 0.9rem;
     }
-    &__button-container {
-        padding-top: 1rem;
-
-        @media all and (min-width: 36em) {
-            float: right;
-            padding-top: 0.5rem;
-            text-align: right;
-            width: 50%;
-        }
+    &__text-instead-of-button {
+        margin: 1rem 0 0;
     }
 
     /* Feature-circle / "speech bubble" */
     &--is-showing-feature {
-        .product-promo-box__content-container {
-            margin-top: 80px;
-
-            @media all and (min-width: 36em) {
-                margin-top: 0;
+        .product-promo-box__product-name {
+            @media all and (min-width: 34.375em) {
+                padding-right: 90px;
             }
         }
-        .product-promo-box__content {
-            @media all and (min-width: 36em) {
-                padding-right: 120px;
+    }
+
+    &--small {
+        width: 370px;
+
+        @media all and (min-width: 48em) {
+            flex-flow: column;
+            padding: 1.5rem;
+            width: 48%;
+        }
+
+        .product-promo-box__image-container {
+            @media all and (min-width: 48em) {
+                margin: 1rem 1rem 2rem;
+                width: auto;
+            }
+        }
+        .product-promo-box__image {
+            @media all and (min-width: 48em) {
+                max-width: 200px;
+            }
+        }
+        .product-promo-box__content-container {
+            @media all and (min-width: 48em) {
+                margin-bottom: 2rem;
+                width: 100%;
             }
         }
     }
