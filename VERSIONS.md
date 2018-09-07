@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.11.9
+- Organism: FocusBoxWithLabels
+- PageHeader fixes
+- StepIndicator fixes
+- Hamburger menu animation
+- PriceTable adjustments
+
 ## 1.11.4 [changed component]
 - Molecule: PageMenu - modified to use searchUrl for link to search page or remove button if not defined
 
