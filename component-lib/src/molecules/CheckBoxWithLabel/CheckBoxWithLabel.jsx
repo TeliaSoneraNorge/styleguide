@@ -1,4 +1,5 @@
 import _ from 'lodash';
+import PropTypes from 'prop-types';
 import React from 'react';
 
 import Label from '../../atoms/Label/Label';
@@ -8,9 +9,9 @@ import Label from '../../atoms/Label/Label';
  *
  * Waiting on the Photoshop files to get the exact checkmark SVG.
  */
-const CheckBoxWithLabel = ({ label, checked }) =>
+const CheckBoxWithLabel = ({ label, defaultChecked, onChange, checked }) => (
     <Label className="check-box-with-label">
-        <input className="check-box-with-label__input" type="checkbox" defaultChecked={checked} />
+        <input onChange={onChange} checked={checked} className="check-box-with-label__input" type="checkbox" defaultChecked={defaultChecked} />
         <span className="check-box-with-label__svg-container">
             <svg className="check-box-with-label__svg" width="20px" height="20px" viewBox="0 0 20 20">
                 <path className="check-box-with-label__frame" d="M16,19H4c-1.7,0-3-1.4-3-3V4c0-1.7,1.3-3,3-3h12c1.6,0,3,1.3,3,3v12C19,17.6,17.6,19,16,19z" />
@@ -18,6 +19,14 @@ const CheckBoxWithLabel = ({ label, checked }) =>
             </svg>
         </span>
         <span className="check-box-with-label__label-text">{label}</span>
-    </Label>;
+    </Label>
+);
+
+CheckBoxWithLabel.propTypes = {
+    label: PropTypes.string.isRequired,
+    defaultChecked: PropTypes.bool,
+    checked: PropTypes.bool,
+    onChange: PropTypes.func
+};
 
 export default CheckBoxWithLabel;

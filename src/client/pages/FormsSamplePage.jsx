@@ -144,7 +144,7 @@ const FormsSamplePage = () =>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <CheckBoxWithLabel label="I have a C/O" checked="false" />
+                        <CheckBoxWithLabel label="I have a C/O" defaultChecked="false" />
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
