@@ -3,10 +3,11 @@ import { TextBoxWithLabel } from '@telia/styleguide';
 
 const TypeSearch = () => (
     <TextBoxWithLabel
-        labelText="Label for search box"
-        type="search"
+        labelText="Label for text box"
+        type="text"
         withIcon={true}
-        iconName="ico_search" />
+        iconName="ico_check"
+        iconColor="purple" />
 );
 
 export default TypeSearch;
