@@ -34,15 +34,21 @@
                 margin: 0 0 20px 0;
             }
         }
-    }
 
+        &-content {
+            display: inline-block;
+            width: calc(100% - 10px - var(--icon-size-small));
+            margin-left:10px;
+        }
+
+    }
     &__icon {
         height: var(--icon-size-small);
         margin-bottom: 0;
         width: var(--icon-size-small);
 
-        @media all and (min-width: em(450)) {
-            margin-bottom: 5px;
-        }
+        display: inline-block;
+        float:left;
+
     }
 }
