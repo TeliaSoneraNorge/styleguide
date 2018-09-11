@@ -14,13 +14,15 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy versions shown (minor changes are omitted).
+
+## 1.12.0 [changed component]
+- ProductPromoBox changes
+
 ## 1.11.10
-- Atoms: UniqueSellingPoints
-
-## 1.11.10 [new component]
 - AnimatedProgressBar
+- UniqueSellingPoints
 
-## 1.11.9
+## 1.11.9 [various]
 - Organism: FocusBoxWithLabels
 - PageHeader fixes
 - StepIndicator fixes
