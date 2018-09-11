@@ -29,6 +29,7 @@ export { default as Tags } from './atoms/Tags/Tags';
 export { default as ToggleButton } from './atoms/ToggleButton/ToggleButton';
 export { default as ToggleSwitch } from './atoms/ToggleSwitch/ToggleSwitch';
 export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints/UniqueSellingPoints';
+export { default as AnimatedProgressBar } from './atoms/AnimatedProgressBar/AnimatedProgressBar';
 
 
 // Molecules
@@ -129,6 +130,7 @@ export default [
     'src/atoms/ToggleButton/ToggleButton.jsx',
     'src/atoms/ToggleSwitch/ToggleSwitch.jsx',
     'src/atoms/UniqueSellingPoints/UniqueSellingPoints.jsx',
+    'src/atoms/AnimatedProgressBar/AnimatedProgressBar.jsx',
 
     // Molecules
     'src/molecules/AccordionList/AccordionList.jsx',
