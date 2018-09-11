@@ -5,7 +5,8 @@ const TypeSearch = () => (
     <TextBoxWithLabel
         labelText="Label for search box"
         type="search"
-        withIcon={true}
+        withIcon
+        withIconButton
         iconName="ico_search" />
 );
 
