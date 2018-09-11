@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 const PANEL = {
     LEFT: 'left',
@@ -9,8 +10,13 @@ const PANEL = {
 /**
  * Status: *In progress*.
  */
-const ToggleSwitch = ({ leftLabel, rightLabel, leftOnClickHandler, rightOnClickHandler, active }) => (
-    <div className="toggle-switch" role="group">
+const ToggleSwitch = ({ leftLabel, rightLabel, leftOnClickHandler, rightOnClickHandler, active, backgroundColor, className }) => (
+    <div
+        className={classnames('toggle-switch', {
+            [`toggle-switch__${backgroundColor}`]: true,
+            [className]: className
+        })}
+        role="group">
         <button
             type="button"
             aria-pressed={active === PANEL.LEFT}
@@ -30,11 +36,14 @@ const ToggleSwitch = ({ leftLabel, rightLabel, leftOnClickHandler, rightOnClickH
 
 ToggleSwitch.defaultProps = {
     leftOnClickHandler: () => {},
-    rightOnClickHandler: () => {}
+    rightOnClickHandler: () => {},
+    backgroundColor: 'white'
 };
 
 ToggleSwitch.propTypes = {
     active: PropTypes.oneOf(Object.keys(PANEL).map(k => PANEL[k])),
+    backgroundColor: PropTypes.oneOf(['white', 'grey']),
+    className: PropTypes.string,
     leftLabel: PropTypes.string,
     rightLabel: PropTypes.string,
     leftOnClickHandler: PropTypes.func,
