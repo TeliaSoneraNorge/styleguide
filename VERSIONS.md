@@ -17,6 +17,9 @@ Only noteworthy versions shown (minor changes are omitted).
 ## 1.11.10
 - Atoms: UniqueSellingPoints
 
+## 1.11.10 [new component]
+- AnimatedProgressBar
+
 ## 1.11.9
 - Organism: FocusBoxWithLabels
 - PageHeader fixes
