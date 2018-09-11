@@ -5,8 +5,13 @@
     height: 2.5rem;
     border-radius: 1.25rem;
     width: 20rem;
-    background-color: var(--white);
 
+    &__white {
+        background-color: var(--white);
+    }
+    &__grey {
+        background-color: var(--grey);
+    }
 
     &__button {
         border: 0;
@@ -31,5 +36,6 @@
     [aria-pressed="true"] {
         background-color: var(--black);
         color: var(--white);
+        transition: background-color 300ms linear;
     }
 }
