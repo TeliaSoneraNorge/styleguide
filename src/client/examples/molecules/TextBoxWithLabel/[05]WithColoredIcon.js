@@ -1,13 +1,13 @@
 import React from 'react';
 import { TextBoxWithLabel } from '@telia/styleguide';
 
-const TypeSearch = () => (
+const TypeColoredIcon = () => (
     <TextBoxWithLabel
         labelText="Label for text box"
         type="text"
-        withIcon={true}
+        withIcon
         iconName="ico_check"
         iconColor="purple" />
 );
 
-export default TypeSearch;
+export default TypeColoredIcon;

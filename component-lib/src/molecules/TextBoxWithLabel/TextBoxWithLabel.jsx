@@ -11,18 +11,25 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * the user to give correct input.
  *
 **/
-const TextBoxWithLabel = ({ labelText, type, placeholder, errorMessage, disabled, withIcon, iconName, iconColor, ...rest }) =>
+const TextBoxWithLabel = ({ className, labelText, type, placeholder, errorMessage, disabled, withIcon, withIconButton, iconName, iconColor, ...rest }) =>
     <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage, 'textbox-with-label--with-icon': withIcon })} isUsingGrayText={true}>
         <span className="textbox-with-label__label-text">{labelText}</span>
-        {withIcon
-            ? <div className="textbox-with-label__input-icon-wrapper">
-                <input className="textbox-with-label__input" type={type} placeholder={placeholder} disabled={disabled} {...rest} />
-                <button className="textbox-with-label__button">
-                    <SvgIcon className="textbox-with-label__icon" iconName={iconName} color={iconColor} aria-label={labelText} />
-                </button>
-            </div>
-            : <input className="textbox-with-label__input" type={type} placeholder={placeholder} disabled={disabled} {...rest} />
-        }
+        <div className="textbox-with-label__input-icon-wrapper">
+            <input className={classnames('textbox-with-label__input', {
+                [className]: className
+            })} type={type} placeholder={placeholder} disabled={disabled} {...rest} />
+            { withIcon && (
+                withIconButton ?
+                    <button className="textbox-with-label__icon-wrapper textbox-with-label__button">
+                        <SvgIcon className="textbox-with-label__icon" iconName={iconName} color={iconColor} aria-label={labelText} />
+                    </button>
+                    :
+                    <span className="textbox-with-label__icon-wrapper">
+                        <SvgIcon className="textbox-with-label__icon" iconName={iconName} color={iconColor} aria-label={labelText} />
+                    </span>
+            )}
+
+        </div>
         {errorMessage &&
             <span className="input-error">{errorMessage}</span>}
     </Label>;
@@ -40,8 +47,10 @@ TextBoxWithLabel.propTypes = {
     errorMessage: PropTypes.string,
     disabled: PropTypes.bool,
     withIcon: PropTypes.bool,
+    withIconButton: PropTypes.bool,
     iconName: PropTypes.string,
-    iconColor: PropTypes.string
+    iconColor: PropTypes.string,
+    className: PropTypes.string,
 };
 
 export default TextBoxWithLabel;
