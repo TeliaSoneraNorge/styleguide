@@ -11,10 +11,6 @@
     width: 100%;
     padding: 0;
 
-    @media all and (min-width: em(768)) {
-        justify-content: center;
-    }
-
     &__block {
         flex-basis: 100%;
         flex-grow: 0;
@@ -23,13 +19,11 @@
         margin-bottom: 20px;
 
         @media all and (min-width: em(450)) {
-            flex-basis: 47%;
+            flex-basis: auto;
+            margin: 0 20px 20px 0;
         }
 
         @media all and (min-width: em(768)) {
-            flex-basis: 22%;
-            margin: 0 20px 20px 0;
-
             &:last-child {
                 margin: 0 0 20px 0;
             }

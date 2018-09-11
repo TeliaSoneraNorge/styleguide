@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.12.1 [changed component]
+- UniqueSellingPoints: adjusted width on items
+
 ## 1.12.0 [changed component]
 - ProductPromoBox changes
 
