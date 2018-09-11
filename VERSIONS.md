@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.11.10 [new component]
+- AnimatedProgressBar
+
 ## 1.11.9
 - Organism: FocusBoxWithLabels
 - PageHeader fixes
