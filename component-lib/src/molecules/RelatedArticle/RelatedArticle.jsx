@@ -12,7 +12,9 @@ const RelatedArticle = ({ children, className, imgSrc, imgAlt, heading, tags = [
             [className]: className,
         })}
         {...rest}>
-        <img className="related-article__image" src={imgSrc} alt={imgAlt} />
+        <div className="related-article__image-placeholder" >
+            <img className="related-article__image" src={imgSrc} alt={imgAlt} />
+        </div>
         <div className="related-article__text">
             <h3 className="heading heading--level-3 related-article__heading">{heading}</h3>
             {tags.length && (
