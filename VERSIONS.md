@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.13.0 [changed component]
+- TextBoxWithLabel: Refactoring of component, adding props className and withIconButton. Old withIcon prop has now a different usecase, new name is withIconButton.
+- AnimatedProgressBar: Bugfix in prop-types
+- PageHeader: Always white BG
+- PageMenu: Faster hamburger meny animation
+
 ## 1.12.1 [changed component]
 - UniqueSellingPoints: adjusted width on items
 
