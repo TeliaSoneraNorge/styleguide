@@ -48,7 +48,7 @@ module.exports = {
         ],
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.svg']
     },
     plugins: [
         // No plugins needed. Running `webpack -p` minifies and optimizes for us automatically.

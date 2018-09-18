@@ -4,8 +4,9 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import eslint from 'rollup-plugin-eslint';
-
+import image from 'rollup-plugin-image';
 import pkg from './package.json';
+import url from "rollup-plugin-url"
 
 export default [{
     // perf: true, // Outputs performance information
@@ -16,12 +17,16 @@ export default [{
         { file: pkg.module, format: 'es', sourcemap: 'inline' },
     ],
     plugins: [
-        eslint(),
+        url({
+            limit: 10 * 1024,
+          }),
+       /*  eslint(), */
         nodeResolve({
             jsnext: true,
             main: true,
             browser: true
         }),
+        image(),
         babel({
             babelrc: false,
             exclude: 'node_modules/**',
@@ -34,7 +39,7 @@ export default [{
             plugins: ['external-helpers']
         }),
         cjs({
-            extensions: ['.js', '.jsx']
+            extensions: ['.js', '.jsx', '.svg']
         }),
         replace({
             ENV: JSON.stringify(process.env.NODE_ENV || 'development')

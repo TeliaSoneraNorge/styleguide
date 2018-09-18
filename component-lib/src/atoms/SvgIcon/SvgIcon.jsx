@@ -9,15 +9,19 @@ import classnames from 'classnames';
  * To show an icon, give the name of the icon (without file ending) and the desired color (defaults to black). 
  */
 
-const SvgIcon = ({ iconName, color, className, ...rest }) =>
-    <svg 
+const SvgIcon = ({ iconName, color, className, ...rest }) => {
+    const p = '../../../assets/allicons/' + iconName + '.svg';
+    console.log(p)
+    return(
+    <div 
         className={classnames('svg-icon', {
             [className]: className,
             [`svg-icon--${color || 'black'}`]: color,
         })}
         {...rest}>
-        <use xlinkHref={'/public/allicons/allicons.svg#' + iconName}></use>
-    </svg>;
+        {iconName ? <img src={require(p)} /> : null}
+    </div>
+)};
 
 SvgIcon.propTypes = {
     /** The name of the icon*/

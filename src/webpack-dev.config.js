@@ -9,7 +9,7 @@ module.exports = {
         'react-hot-loader/patch',
         // activate HMR for React
 
-        'webpack-dev-server/client?http://localhost:8090',
+        'webpack-dev-server/client?http://localhost:3000',
         // bundle the client for webpack-dev-server and connect to the provided endpoint
 
         'webpack/hot/only-dev-server',
@@ -65,11 +65,15 @@ module.exports = {
             {
                 exclude: [/\.(js|jsx|mjs|pcss|css)$/, /\.html$/, /\.json$/],
                 loader: require.resolve('file-loader'),
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader'
             }
         ]
     },
     resolve: {
-        extensions: ['.js', '.jsx']
+        extensions: ['.js', '.jsx', '.svg']
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),
