@@ -65,6 +65,7 @@ export { default as PersonBox } from './molecules/PersonBox/PersonBox';
 export { default as PriceTable } from './molecules/PriceTable/PriceTable';
 export { default as ProductPromoBox } from './molecules/ProductPromoBox/ProductPromoBox';
 export { default as ProgressChart } from './molecules/ProgressChart/ProgressChart';
+export { default as PromoBox } from './molecules/PromoBox/PromoBox';
 export { default as RadioButtonList } from './molecules/RadioButtonList/RadioButtonList';
 export { default as RadioButtonWithLabel } from './molecules/RadioButtonList/RadioButtonWithLabel';
 export { default as RecommendedProducts } from './molecules/RecommendedProducts/RecommendedProducts';
@@ -179,6 +180,7 @@ export default [
     'src/molecules/ModalDialog/ModalDialog.jsx',
     'src/molecules/PopUpLine/PopUpLine.jsx',
     'src/molecules/ProductList/ProductList.jsx',
+    'src/molecules/PromoBox/PromoBox.jsx',
     'src/molecules/References/References.jsx',
     'src/molecules/Tabs/Tabs.jsx',
     'src/molecules/FunkyTabs/FunkyTabs.jsx',
