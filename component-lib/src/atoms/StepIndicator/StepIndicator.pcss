@@ -1,6 +1,7 @@
 :root {
     --step-indicator-height: 1.5rem;
     --step-indicator-border: 2px;
+    --step-indicator-icon-size: 0.8rem;
 }
 
 .step-indicator {
@@ -8,17 +9,20 @@
     justify-content: center;
 
     &__list {
+        display: flex;
         list-style: none;
         margin: 0 0 var(--margin-bottom);
         padding: 0;
     }
 
     &__step {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: white;
         border: var(--step-indicator-border) solid var(--grey-darker);
         border-radius: 50%;
         color: var(--grey-darker);
-        display: inline-block;
         font: 900 0.75rem Avenir;
         height: var(--step-indicator-height);
         line-height: calc(var(--step-indicator-height) - 4px);
@@ -45,7 +49,7 @@
         }
 
         &:after {
-            width: var(--step-indicator-height);
+            width: calc(var(--step-indicator-border) + var(--step-indicator-height));
             height: 3px;
             content: '';
             position: absolute;
@@ -56,7 +60,7 @@
 
             @media all and (min-width: 37.5em) {
                 height: 6px;
-                width: calc(2 * var(--step-indicator-height));
+                width: calc(3px + 2 * var(--step-indicator-height));
                 top: calc(50% - 3px);
                 left: calc(0px - 2 * var(--step-indicator-height) - 3px);
             }
@@ -66,9 +70,34 @@
             content: none;
         }
 
-        &--active {
+        &--active,
+        &--passed {
             border: 2px solid var(--core-purple);
             color: var(--core-purple);
+        }
+
+        &--passed:after {
+            background-color: var(--core-purple);
+        }
+
+        .icon-wrapper {
+            background-color: transparent;
+            border: none;
+        }
+
+        .icon {
+            display: block;
+            height: var(--step-indicator-icon-size);
+            width: var(--step-indicator-icon-size);
+
+            @media all and (min-width: 37.5em) {
+                height: calc(2 * var(--step-indicator-icon-size));
+                width: calc(2 * var(--step-indicator-icon-size));
+            }
+
+            * {
+                fill: var(--core-purple);
+            }
         }
     }
 }

@@ -2,9 +2,10 @@ import _ from 'lodash';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
+import SvgIcon from '../SvgIcon/SvgIcon';
 
 /**
- * Status: *finished*.
+ * Status: *In progress*.
  */
 const StepIndicator = ({ index, numberOfSteps }) =>
     <div className="step-indicator">
@@ -13,8 +14,17 @@ const StepIndicator = ({ index, numberOfSteps }) =>
                 <li key={`step-indicator-step-${number}`}
                     className={classnames(
                         'step-indicator__step',
-                        { 'step-indicator__step--active': index === number })}>
-                    {number + 1}
+                        {
+                            'step-indicator__step--active': index === number,
+                            'step-indicator__step--passed': index >= number
+                        }
+                    )}>
+                    {index > number ?
+                        <span className="icon-wrapper">
+                            <SvgIcon className="icon" iconName="ico_check" />
+                        </span>
+                        : number + 1
+                    }
                 </li>
             )}
         </ul>
