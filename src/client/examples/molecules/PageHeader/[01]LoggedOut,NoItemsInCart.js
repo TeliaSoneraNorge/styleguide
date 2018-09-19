@@ -20,7 +20,7 @@ const LoggedOutNoItems = () => (
         logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
         cartItemCount={0}
         menuLinks={menuLinks}
-        searchUrl="#PageHeader"/>
+        searchUrl="#PageHeader" />
 );
 
 export default LoggedOutNoItems;

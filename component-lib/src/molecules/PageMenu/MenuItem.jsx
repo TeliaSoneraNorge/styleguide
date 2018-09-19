@@ -2,8 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-const getIconName = item =>
-    item.iconName || "ico_linkarrow" 
+const getIconName = item => (item.iconName || 'ico_linkarrow');
 
 const MenuItem = ({ item, isEmphasised }) => (
     <li role="none" className={classNames('page-menu__item', { 'page-menu__item--logged-in': isEmphasised })}>
@@ -14,10 +13,10 @@ const MenuItem = ({ item, isEmphasised }) => (
             </span>
             {item.notification &&
                 <span className="page-menu__item-notification">{item.notification}</span>}
-                <SvgIcon 
-                    className={classNames('page-menu__item-icon', { 'page-menu__item-icon--small' : !isEmphasised })} 
-                    iconName={getIconName(item)}
-                    color="black" />
+            <SvgIcon 
+                className={classNames('page-menu__item-icon', { 'page-menu__item-icon--small' : !isEmphasised })}
+                iconName={getIconName(item)}
+                color="black" />
         </a>
     </li>
 );

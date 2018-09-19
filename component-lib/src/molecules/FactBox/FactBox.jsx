@@ -18,7 +18,7 @@ const FactTwoColumnContent = ({ iconName, title, centerIcon, imgSrc, imgAlt, chi
                 <img className="fact-box__image" alt={imgAlt} src={imgSrc} />
             </div>}
     </React.Fragment>
-)
+);
 
 const FactContent = ({ children, iconName, title, underline }) => (
     <React.Fragment>

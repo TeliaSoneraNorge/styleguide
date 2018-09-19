@@ -20,7 +20,7 @@ const BroadbandExpanded = () => (
         speechBubbleText="Some campaign text"
         isBroadband
         productList={productList}
-        totalCalculation={totalCalculation}/>
+        totalCalculation={totalCalculation} />
 );
 
 export default BroadbandExpanded;

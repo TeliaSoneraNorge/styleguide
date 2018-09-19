@@ -5,10 +5,10 @@ const menuLinks = [
     {
         heading: 'Privat',
         loggedInLinks: [
-            { text: 'Forsiden', url: '/', iconName: "ico_home"},
-            { text: 'Dataforbruk', url: '/', iconName: "ico_statistics"},
-            { text: 'Faktura', url: '/', 'notification': 1, iconName: "ico_default_doc"},
-            { text: 'Mer fra min side', url: '/', iconName: "ico_contacts"}
+            { text: 'Forsiden', url: '/', iconName: 'ico_home' },
+            { text: 'Dataforbruk', url: '/', iconName: 'ico_statistics' },
+            { text: 'Faktura', url: '/', 'notification': 1, iconName: 'ico_default_doc' },
+            { text: 'Mer fra min side', url: '/', iconName: 'ico_contacts' }
         ],
         loggedOutLinks: [
             { text: 'Mobilabonnement og priser', url: '/' },
@@ -22,10 +22,10 @@ const menuLinks = [
     {
         heading: 'Bedrift',
         loggedInLinks: [
-            { text: 'Bedrift Forsiden', url: '/', iconName: "ico_home"},
-            { text: 'Dataforbruk', url: '/', iconName: "ico_statistics"},
-            { text: 'Faktura', url: '/', 'notification': 1, iconName: "ico_default_doc"},
-            { text: 'Mer fra min side', url: '/', iconName: "ico_contacts"}
+            { text: 'Bedrift Forsiden', url: '/', iconName: 'ico_home' },
+            { text: 'Dataforbruk', url: '/', iconName: 'ico_statistics' },
+            { text: 'Faktura', url: '/', 'notification': 1, iconName: 'ico_default_doc' },
+            { text: 'Mer fra min side', url: '/', iconName: 'ico_contacts' }
         ],
         loggedOutLinks: [
             { text: 'Bedrift 1', url: '/' },

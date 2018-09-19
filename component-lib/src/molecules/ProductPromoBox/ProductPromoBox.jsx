@@ -5,14 +5,6 @@ import PropTypes from 'prop-types';
 import Box from '../../atoms/Box/Box';
 import Heading from '../../atoms/Heading/Heading';
 
-function classNames(isShowingFeature) {
-    const classNames = ['product-promo-box'];
-    if (isShowingFeature) {
-        classNames.push('product-promo-box--is-showing-feature');
-    }
-    return classNames.join(' ');
-}
-
 /**
  * Status: *finished*.
  *
@@ -27,7 +19,6 @@ function classNames(isShowingFeature) {
 const ProductPromoBox = ({
     id,
     productName,
-    productColor,
     isSmallBox,
     imagePath,
     description,
@@ -66,13 +57,14 @@ const ProductPromoBox = ({
                         <div className="product-promo-box__price-smallprint">{priceSmallprint2}</div>
                     </div>
                 }
-                {!hideButton ?
-                    <button className="button button--primary button--margin-top" onClick={onClick}>{buttonText}</button>
-                    : <Heading level={3} text={"Coming soon"} className="product-promo-box__text-instead-of-button" />
+                {!hideButton
+                    ? <button className="button button--primary button--margin-top" onClick={onClick}>{buttonText}</button>
+                    : <Heading level={3} text="Coming soon" className="product-promo-box__text-instead-of-button" />
                 }
             </div>
         </div>
     </Box>;
+
 ProductPromoBox.propTypes = {
     id: PropTypes.string,
     productName: PropTypes.string,

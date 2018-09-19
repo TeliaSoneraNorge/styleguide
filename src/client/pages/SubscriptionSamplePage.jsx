@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import { FunkyTabs, Subscription } from '../../../component-lib/src/index';
 
@@ -176,7 +175,7 @@ export default class SubscriptionSamplePage extends React.Component {
                                 <Subscription key={i} {...subscriptionProps} />)}
                         </section>
                     </FunkyTabs.TabPanel>
-                     <FunkyTabs.TabPanel heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
+                    <FunkyTabs.TabPanel heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
                         <section className="box-grid container container--medium container--no-padding">
                             {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
                                 <Subscription key={i} {...subscriptionProps} />)}

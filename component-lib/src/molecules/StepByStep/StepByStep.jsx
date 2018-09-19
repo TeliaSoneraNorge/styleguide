@@ -125,8 +125,6 @@ StepByStep.Content = ({ children, className, opened, interactive, ...rest }) => 
     </div>
 );
 
-
-
 const Icon = ({ children, className, onSelect, index, interactive, opened, pebbles, ...rest }) => {
     const elementType = interactive ? 'a' : 'div';
     return React.createElement(elementType, {

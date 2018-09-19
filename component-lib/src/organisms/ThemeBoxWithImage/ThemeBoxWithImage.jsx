@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon'
+
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *in progress*
