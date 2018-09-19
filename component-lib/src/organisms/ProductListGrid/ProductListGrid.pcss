@@ -1,0 +1,18 @@
+.product-list-grid {
+    @media screen and (min-width: 50em) {
+        display: flex;
+    }
+
+    &__section {
+        @media screen and (min-width: 50em) {
+            flex-basis: 50%;
+
+            &:nth-child(odd) {
+                padding-right: 1rem;
+            }
+            &:nth-child(even) {
+                padding-left: 1rem;
+            }
+        }
+    }
+}
