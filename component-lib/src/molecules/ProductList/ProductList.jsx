@@ -1,6 +1,8 @@
+import classnames from 'classnames';
 import React from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+
 /**
  * Status: *finished*.
  *
@@ -9,6 +11,10 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 const ProductList = ({ items = [] }) =>
     <div className="product-list">
         {items.map((item, index) => {
+            const productItemClassNames = classnames('product-list__item', {
+                'product-list__item--promo': item.style === 'promo'
+            });
+
             const icon = <SvgIcon className="product-list__item-icon" iconName={item.iconName} color={item.iconColor} />;
             const content = (
                 <div className="product-list__item-content">
@@ -19,7 +25,7 @@ const ProductList = ({ items = [] }) =>
 
             if (item.href) {
                 return (
-                    <a href={item.href} key={index} className="product-list__item product-list__item--link">
+                    <a href={item.href} key={index} className={`${productItemClassNames} product-list__item--link`}>
                         {icon}
                         {content}
                         <SvgIcon className="product-list__item--link-icon" iconName="ico_linkarrow" color="purple" />
@@ -28,7 +34,7 @@ const ProductList = ({ items = [] }) =>
             }
 
             return (
-                <article key={index} className="product-list__item">
+                <article key={index} className={productItemClassNames}>
                     {icon}
                     {content}
                 </article>
@@ -48,7 +54,9 @@ ProductList.propTypes = {
         /** Description of product */
         description: PropTypes.string,
         /** A link to the product */
-        href: PropTypes.string
+        href: PropTypes.string,
+        /** Decide the style of the box */
+        style: PropTypes.oneOf(['promo']),
     }))
 };
 
