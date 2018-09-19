@@ -4,33 +4,32 @@ import { ProductList } from '@telia/styleguide';
 const items = [
     {
         iconName: 'ico_databoost',
-        iconColor: "purple",
+        iconColor: 'purple',
         title: '1 TIME FOR 399,-',
         description: '31 dager',
-        href: '#',
+        href: '#'
     },
     {
         iconName: 'ico_subscription',
-        iconColor: "purple",
+        iconColor: 'purple',
         title: '6GB FOR 399,-',
-        href: 'https://telia.no',
+        href: 'https://telia.no'
     },
     {
         iconName: 'ico_money',
-        iconColor: "purple",
+        iconColor: 'purple',
         title: '6GB FOR 399,-',
-        description: '31 dager',
+        description: '31 dager'
     },
     {
         iconName: 'ico_subscription',
-        iconColor: "purple",
-        title: 'KRONEPÅFYLL 50,-',
+        iconColor: 'purple',
+        title: 'KRONEPÅFYLL 50,-'
     }
 ];
 
 const DefaultProductList = () => (
-    <ProductList
-        items={items} />
+    <ProductList items={items} />
 );
 
 export default DefaultProductList;

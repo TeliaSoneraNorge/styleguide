@@ -86,7 +86,8 @@ export function isFullWidthComponent(componentName) {
         // Organisms
         'FocusSubscription',
         'ThemeBoxes',
-        'ThemeBoxesWithImage'
+        'ThemeBoxesWithImage',
+        'ProductListGrid'
     ];
     return _.includes(fullWidthComponents, componentName);
 }

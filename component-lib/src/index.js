@@ -96,6 +96,7 @@ export { default as ThemeBoxes } from './organisms/ThemeBoxes/ThemeBoxes';
 export { default as ThemeBox } from './organisms/ThemeBoxes/ThemeBox';
 export { default as ThemeBoxWithImage } from './organisms/ThemeBoxWithImage/ThemeBoxWithImage';
 export { default as FocusBoxWithLabels } from './organisms/FocusBoxWithLabels/FocusBoxWithLabels';
+export { default as ProductListGrid } from './organisms/ProductListGrid/ProductListGrid';
 
 // This array contains react components to be used in the examples page
 export default [
@@ -191,5 +192,6 @@ export default [
     'src/organisms/HardwareProductList/HardwareProductList.jsx',
     'src/organisms/ThemeBoxes/ThemeBoxes.jsx',
     'src/organisms/ThemeBoxWithImage/ThemeBoxWithImage.jsx',
-    'src/organisms/FocusBoxWithLabels/FocusBoxWithLabels.jsx'
+    'src/organisms/FocusBoxWithLabels/FocusBoxWithLabels.jsx',
+    'src/organisms/ProductListGrid/ProductListGrid.jsx'
 ];
