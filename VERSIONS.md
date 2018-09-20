@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.13.2
+- StepIndicator [changed]
+- PromoBox [new]
+
 ## 1.13.1
 - ProductList: new promo variant [changed]
 - RelatedArticle: placeholder image [changed]
