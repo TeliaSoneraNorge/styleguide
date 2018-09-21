@@ -63,7 +63,7 @@ module.exports = {
                 exclude: /node_modules/
             },
             {
-                exclude: [/\.(js|jsx|mjs|pcss|css)$/, /\.html$/, /\.json$/],
+                exclude: [/\.(js|jsx|mjs|pcss|css|svg)$/, /\.html$/, /\.json$/],
                 loader: require.resolve('file-loader'),
             }
         ]

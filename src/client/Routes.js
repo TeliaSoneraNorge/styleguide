@@ -1,5 +1,8 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import SVGInline from 'react-svg-inline';
+
+import allIcons from '../../dist/public/allicons/allicons.svg';
 
 import ContentRatingWrapper from './components/ContentRatingWrapper';
 import { PageFooter, PageHeader } from '../../component-lib/src/index';
@@ -67,6 +70,8 @@ const menuLinks = [
 
 const Routes = (props) =>
     <div>
+        <SVGInline svg={allIcons} />
+
         <PageHeader
             menuId="main-menu"
             cartItemCount={0}
