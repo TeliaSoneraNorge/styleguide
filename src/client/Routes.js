@@ -1,5 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
+import SVGInline from 'react-svg-inline';
 
 import ContentRatingWrapper from './components/ContentRatingWrapper';
 import { PageFooter, PageHeader } from '../../component-lib/src/index';
@@ -67,6 +68,10 @@ const menuLinks = [
 
 const Routes = (props) =>
     <div>
+        <SVGInline svg={module.hot
+            ? require('../../dist/public/allicons/allicons.svg')
+            : require('../../component-lib/assets/allicons/allicons.svg')} />
+
         <PageHeader
             menuId="main-menu"
             cartItemCount={0}

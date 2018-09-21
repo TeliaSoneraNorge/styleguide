@@ -39,6 +39,6 @@ if (module.hot) {
 
 // Method for displaying svg sprites in IE10-11 
 svg4everybody();
+
 // Method for object-fit polyfill
 objectFitImages();
-
