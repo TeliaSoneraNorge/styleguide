@@ -16,7 +16,7 @@ const SvgIcon = ({ iconName, color, className, ...rest }) =>
             [`svg-icon--${color || 'black'}`]: color,
         })}
         {...rest}>
-        <use xlinkHref={'/public/allicons/allicons.svg#' + iconName}></use>
+        <use xlinkHref={`#${iconName}`}></use>
     </svg>;
 
 SvgIcon.propTypes = {
