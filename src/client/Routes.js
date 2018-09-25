@@ -37,7 +37,7 @@ const menuLinks = [
             { text: 'Layout', url: '/layout' },
             { text: 'Image Assets', url: '/image-assets' },
             { text: 'Contributing', url: '/contributing' },
-            { text: 'Download', url: '/download' },
+            { text: 'Download/Install', url: '/download' },
             { text: 'Versions', url: '/versions' }
         ],
     },

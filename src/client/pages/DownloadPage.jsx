@@ -1,18 +1,21 @@
 import React from 'react';
 
 import CodeSnippet from '../components/CodeSnippet';
-import { Heading, Header, Alert } from '../../../component-lib/src/index';
+import { Header, Alert } from '../../../component-lib/src/index';
 
 const codeSnippets = {
     stylesheetHtmlTag: '<link href="/path/to/your/styleguide/telia-styleguide.css" rel="stylesheet" type="text/css" />',
     componentLibraryInstall: `npm install @telia/styleguide --save`,
     componentLibraryImportButton: `import { Button } from '@telia/styleguide';`,
     componentLibraryUseButton: `<Button text="Click me" />`,
+    componentLibraryIconsImport: `import AllIcons from '@telia/styleguide/assets/allicons/AllIcons';`,
+    componentLibraryIconsInsert: `<AllIcons />`,
+    componentLibraryIconsExample: `<SvgIcon iconName="ico_heart" color="purple" />`
 };
 
 const DownloadPage = () =>
     <div>
-        <Header pageTitle="Download Styleguide" />
+        <Header pageTitle="Download/Install Styleguide" />
 
         <div className="container container--small">
             <Alert kind="info">
@@ -33,7 +36,7 @@ const DownloadPage = () =>
             <a className="button button--margin-top" href="/download-zip" target="_blank">Download</a>
         </div>
 
-        <div className="container container--small container--extra-margin-bottom">
+        <div className="container container--small">
             <h2 className="heading heading--level-2">React Component Library</h2>
             <p className="paragraph">To use the React component library in your project, install it as a dependency:</p>
             <CodeSnippet code={codeSnippets.componentLibraryInstall} language="javascript" disableToggle={true} />
@@ -44,6 +47,19 @@ const DownloadPage = () =>
             <p className="paragraph">Use the component:</p>
             <CodeSnippet code={codeSnippets.componentLibraryUseButton} language="markup" disableToggle={true} />
         </div>
+
+        <div className="container container--small container--extra-margin-bottom">
+            <h2 className="heading heading--level-2">Icons</h2>
+            <p className="paragraph">If you are using the React component library, import the icons:</p>
+            <CodeSnippet code={codeSnippets.componentLibraryIconsImport} language="javascript" disableToggle={true} />
+            <p className="paragraph">Then insert them into the DOM at the top of your app:</p>
+            <CodeSnippet code={codeSnippets.componentLibraryIconsInsert} language="javascript" disableToggle={true} />
+            <p className="paragraph">At this point, just render icons like this:</p>
+            <CodeSnippet code={codeSnippets.componentLibraryIconsExample} language="javascript" disableToggle={true} />
+
+            <p className="paragraph">If you are not using the React component library, you need to insert the icoons into the DOM some other way - manually, or by loading the file from disk on the server side and printing its contents into your HTML.</p>
+        </div>
+
     </div>;
 
 export default DownloadPage;
