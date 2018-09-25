@@ -4,7 +4,7 @@ import { Router } from 'react-router-dom';
 import Routes from './Routes';
 import { history } from './utils/historyUtil';
 
-const App = (props) =>
+const App = () =>
     <Router history={history}>
         <Routes />
     </Router>;

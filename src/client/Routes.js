@@ -28,16 +28,6 @@ import UsagePage from './pages/UsagePage';
 import ModalDialogSamplePage from './pages/ModalDialogSamplePage';
 import TabsSamplePage from './pages/TabsSamplePage';
 
-const links = [
-    { text: 'Home', url: '/' },
-    { text: 'Layout', url: '/layout' },
-    { text: 'Components', url: '/components' },
-    { text: 'Image Assets', url: '/image-assets' },
-    { text: 'Contributing', url: '/contributing' },
-    { text: 'Download', url: '/download' },
-    { text: 'Versions', url: '/versions' }
-];
-
 const menuLinks = [
     {
         heading: 'Styleguide',
@@ -66,7 +56,7 @@ const menuLinks = [
     }
 ];
 
-const Routes = (props) =>
+const Routes = () =>
     <div>
         <SVGInline svg={module.hot
             ? require('../../dist/public/allicons/allicons.svg')
