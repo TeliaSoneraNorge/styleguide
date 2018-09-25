@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
-import SVGInline from 'react-svg-inline';
 
 import ContentRatingWrapper from './components/ContentRatingWrapper';
 import { PageFooter, PageHeader } from '../../component-lib/src/index';
@@ -56,11 +55,13 @@ const menuLinks = [
     }
 ];
 
+const AllIcons = module.hot
+    ? require('../../dist/public/allicons/AllIcons.jsx').default
+    : require('../../component-lib/assets/allicons/AllIcons.jsx').default;
+
 const Routes = () =>
     <div>
-        <SVGInline svg={module.hot
-            ? require('../../dist/public/allicons/allicons.svg')
-            : require('../../component-lib/assets/allicons/allicons.svg')} />
+        <AllIcons />
 
         <PageHeader
             menuId="main-menu"

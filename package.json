@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide-web",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "private": false,
   "description": "",
   "main": "server/server.js",
@@ -63,7 +63,6 @@
     "postcss-nested": "^2.1.2",
     "postcss-replace": "^1.0.3",
     "postcss-url": "^7.3.0",
-    "react-svg-inline": "^2.1.1",
     "style-loader": "0.19.0",
     "svg4everybody": "^2.1.9",
     "webpack": "3.12.0",

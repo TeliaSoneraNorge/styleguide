@@ -1,12 +1,12 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.14.0",
+  "version": "1.14.1",
   "private": false,
   "description": "",
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "build:library": "run-p build:library:css build:library:js svgo",
+    "build:library": "run-p build:library:css build:library:js svgo svg-join allicons:react",
     "build:library:css": "postcss src/index.pcss -o dist/index.css --config ./postcss.config.js",
     "build:library:js": "rollup --environment NODE_ENV:production -c rollup.build.js",
     "build:library:watch": "run-p build:library:css:watch build:library:js:watch svgo",
@@ -18,7 +18,8 @@
     "publish:local-test": "npm run build:library && npm pack",
     "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
-    "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono"
+    "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono",
+    "allicons:react": "node generate-AllIcons-component.js"
   },
   "author": "Telia Norge",
   "license": "ISC",
