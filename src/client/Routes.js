@@ -56,8 +56,8 @@ const menuLinks = [
 ];
 
 const AllIcons = module.hot
-    ? require('../../dist/public/allicons/AllIcons.jsx').default
-    : require('../../component-lib/assets/allicons/AllIcons.jsx').default;
+    ? require('../../dist/public/allicons/AllIcons.js').default
+    : require('../../component-lib/assets/allicons/AllIcons.js').default;
 
 const Routes = () =>
     <div>
