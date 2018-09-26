@@ -36,8 +36,8 @@
 .svg_ico_buy,
 .svg_ico_content,
 .svg_ico_delete,
-.svg_ico_dropArrow_purple,
 .svg_ico_download,
+.svg_ico_dropArrow_purple,
 .svg_ico_dropArrow,
 .svg_ico_edit,
 .svg_ico_favourites,
@@ -50,8 +50,8 @@
 .svg_ico_minus_purple,
 .svg_ico_minus,
 .svg_ico_mobile,
-.svg_ico_premisesdatacenter,
 .svg_ico_music,
+.svg_ico_premisesdatacenter,
 .svg_ico_quote,
 .svg_ico_router_refill,
 .svg_ico_search,
@@ -76,14 +76,14 @@
   width: 14px;
   height: 11px;
 }
-.svg_ico_code-2 {
-  width: 512px;
-  height: 512px;
-}
 .svg_ico_checkmark_green {
   width: 21px;
   height: 16px;
   fill: #0C6;
+}
+.svg_ico_code-2 {
+  width: 512px;
+  height: 512px;
 }
 .svg_ico_code {
   width: 543.232px;
@@ -99,14 +99,14 @@
   width: 17px;
   height: 17px;
 }
+.svg_ico_databoost {
+  width: 459.8px;
+  height: 463.27px;
+}
 .svg_ico_default_doc,
 .svg_ico_statistics {
   width: 670.83px;
   height: 670.83px;
-}
-.svg_ico_databoost {
-  width: 459.8px;
-  height: 463.27px;
 }
 .svg_ico_delete {
   width: 21px;
@@ -178,13 +178,13 @@
   width: 555.73px;
   height: 635.32px;
 }
-.svg_ico_premisesdatacenter {
-  width: 18px;
-  height: 15px;
-}
 .svg_ico_music {
   width: 16px;
   height: 17px;
+}
+.svg_ico_premisesdatacenter {
+  width: 18px;
+  height: 15px;
 }
 .svg_ico_quote {
   width: 16px;

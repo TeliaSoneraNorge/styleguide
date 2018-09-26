@@ -15,7 +15,7 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
-## 1.14.3
+## 1.14.3/1.14.4
 - Added two svg icons
 
 ## 1.14.1/1.14.2
