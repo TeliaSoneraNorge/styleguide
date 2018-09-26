@@ -15,11 +15,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.14.3
+- Added two svg icons
+
 ## 1.14.1/1.14.2
 - Auto-generate the AllIcons.jsx component - no dependencies - and make it a part of the library.
 
 ## 1.14.0
-- No static path for icons. Relies on an embedded SVG being present in the DOM. 
+- No static path for icons. Relies on an embedded SVG being present in the DOM.
 
 ## 1.13.2
 - StepIndicator [changed]
