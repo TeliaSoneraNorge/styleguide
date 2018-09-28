@@ -38,30 +38,6 @@ const ProductListGridExample = () => (
                     </List.Item>
                 </List>
             </ProductListGrid.Section>
-            <ProductListGrid.Section>
-                <Heading level={2} text="Ekstra data" />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <ProductList items={[
-                    {
-                        iconName: 'ico_subscription',
-                        iconColor: 'purple',
-                        title: '1GB FOR 99,-',
-                        href: 'https://telia.no'
-                    },
-                    {
-                        iconName: 'ico_subscription',
-                        iconColor: 'purple',
-                        title: '5GB FOR 199,-',
-                        href: 'https://telia.no'
-                    },
-                    {
-                        iconName: 'ico_subscription',
-                        iconColor: 'purple',
-                        title: '10GB FOR 299,-',
-                        href: 'https://telia.no'
-                    }
-                ]} />
-            </ProductListGrid.Section>
         </ProductListGrid>
     </Container>
 );

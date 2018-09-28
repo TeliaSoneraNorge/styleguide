@@ -6,7 +6,7 @@
   "main": "dist/index.cjs.js",
   "module": "dist/index.es.js",
   "scripts": {
-    "build:library": "run-p build:library:css build:library:js svgo svg-join allicons:react",
+    "build:library": "run-p build:library:css build:library:js && npm run svgo && npm run svg-join && npm run allicons:react",
     "build:library:css": "postcss src/index.pcss -o dist/index.css --config ./postcss.config.js",
     "build:library:js": "rollup --environment NODE_ENV:production -c rollup.build.js",
     "build:library:watch": "run-p build:library:css:watch build:library:js:watch svgo",
