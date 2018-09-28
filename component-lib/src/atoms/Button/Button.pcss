@@ -82,6 +82,23 @@
         }
     }
 
+    &--link {
+        text-decoration: underline;
+        background-color: transparent;
+        border: none;
+        color: var(--black);
+        font-family: 'Helvetica Neue';
+        text-transform: none;
+        padding: 0;
+
+        &:not(&--processing):not(&--disabled):hover,
+        &:not(&--processing):not(&--disabled):focus,
+        &:not(&--processing):not(&--disabled):active {
+            background-color: transparent;
+            color: var(--core-purple);
+        }
+    }
+
     &__processing {
         display: none;
 
