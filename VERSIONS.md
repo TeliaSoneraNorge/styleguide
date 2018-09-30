@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.15.0
+- Icon fixes
+- ProductListGrid multi-column layout
+
 ## 1.14.3/1.14.4/1.14.5
 - Added two svg icons
 
