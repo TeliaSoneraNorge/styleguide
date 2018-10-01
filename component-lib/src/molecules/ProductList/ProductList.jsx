@@ -25,7 +25,7 @@ const ProductList = ({ items = [] }) =>
 
             if (item.href) {
                 return (
-                    <a href={item.href} key={index} className={`${productItemClassNames} product-list__item--link`}>
+                    <a href={item.href} key={index} className={`${productItemClassNames} product-list__item--link`} onClick={item.onClick}>
                         {icon}
                         {content}
                         <SvgIcon className="product-list__item--link-icon" iconName="ico_linkarrow" color="purple" />
@@ -34,7 +34,7 @@ const ProductList = ({ items = [] }) =>
             }
 
             return (
-                <article key={index} className={productItemClassNames}>
+                <article key={index} className={productItemClassNames} onClick={item.onClick}>
                     {icon}
                     {content}
                 </article>
@@ -55,6 +55,8 @@ ProductList.propTypes = {
         description: PropTypes.string,
         /** A link to the product */
         href: PropTypes.string,
+        /** A click-handler for the product */
+        onClick: PropTypes.func,
         /** Decide the style of the box */
         style: PropTypes.oneOf(['promo']),
     }))

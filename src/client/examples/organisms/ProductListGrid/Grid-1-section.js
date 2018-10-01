@@ -14,7 +14,8 @@ const ProductListGridExample = () => (
                         title: '1 TIME FOR 19,-',
                         description: 'Lorem ipsum dolor sit amet',
                         href: '#',
-                        style: 'promo'
+                        style: 'promo',
+                        onClick: (e) => console.log('onClick a link')
                     },
                     {
                         iconName: 'ico_databoost',
@@ -26,7 +27,8 @@ const ProductListGridExample = () => (
                         iconName: 'ico_databoost',
                         iconColor: 'purple',
                         title: '12 TIME FOR 99,-',
-                        description: 'Lorem ipsum dolor sit amet'
+                        description: 'Lorem ipsum dolor sit amet',
+                        onClick: (e) => console.log('onClick a non-link')
                     }
                 ]} />
                 <List>
