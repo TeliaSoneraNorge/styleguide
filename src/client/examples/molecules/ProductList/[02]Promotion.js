@@ -4,7 +4,7 @@ import { ProductList } from '@telia/styleguide';
 const items = [{
     iconName: 'ico_subscription',
     iconColor: 'purple',
-    title: 'KRONEPÅFYLL 50,-',
+    title: 'Kronepåfyll 50,-',
     style: 'promo'
 }];
 

@@ -11,7 +11,7 @@ const ProductListGridExample = () => (
                     {
                         iconName: 'ico_databoost',
                         iconColor: 'purple',
-                        title: '1 TIME FOR 19,-',
+                        title: '1 time for 19,-',
                         description: 'Lorem ipsum dolor sit amet',
                         href: '#',
                         style: 'promo'
@@ -19,13 +19,13 @@ const ProductListGridExample = () => (
                     {
                         iconName: 'ico_databoost',
                         iconColor: 'purple',
-                        title: '3 TIME FOR 39,-',
+                        title: '3 time for 39,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_databoost',
                         iconColor: 'purple',
-                        title: '12 TIME FOR 99,-',
+                        title: '12 time for 99,-',
                         description: 'Lorem ipsum dolor sit amet'
                     }
                 ]} />
@@ -45,19 +45,19 @@ const ProductListGridExample = () => (
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '1GB FOR 99,-',
+                        title: '1GB for 99,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '5GB FOR 199,-',
+                        title: '5GB for 199,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '10GB FOR 299,-',
+                        title: '10GB for 299,-',
                         href: 'https://telia.no'
                     }
                 ]} />
@@ -69,19 +69,19 @@ const ProductListGridExample = () => (
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '1GB FOR 99,-',
+                        title: '1GB for 99,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '5GB FOR 199,-',
+                        title: '5GB for 199,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '10GB FOR 299,-',
+                        title: '10GB for 299,-',
                         href: 'https://telia.no'
                     }
                 ]} />
@@ -93,19 +93,19 @@ const ProductListGridExample = () => (
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '1GB FOR 99,-',
+                        title: '1GB for 99,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '5GB FOR 199,-',
+                        title: '5GB for 199,-',
                         href: 'https://telia.no'
                     },
                     {
                         iconName: 'ico_subscription',
                         iconColor: 'purple',
-                        title: '10GB FOR 299,-',
+                        title: '10GB for 299,-',
                         href: 'https://telia.no'
                     }
                 ]} />

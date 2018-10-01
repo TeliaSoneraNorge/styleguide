@@ -5,26 +5,26 @@ const items = [
     {
         iconName: 'ico_databoost',
         iconColor: 'purple',
-        title: '1 TIME FOR 399,-',
+        title: '1 time for 399,-',
         description: '31 dager',
         href: '#'
     },
     {
         iconName: 'ico_subscription',
         iconColor: 'purple',
-        title: '6GB FOR 399,-',
+        title: '6GB for 399,-',
         href: 'https://telia.no'
     },
     {
         iconName: 'ico_money',
         iconColor: 'purple',
-        title: '6GB FOR 399,-',
+        title: '6GB for 399,-',
         description: '31 dager'
     },
     {
         iconName: 'ico_subscription',
         iconColor: 'purple',
-        title: 'KRONEPÅFYLL 50,-'
+        title: 'Kronepåfyll 50,-'
     }
 ];
 
