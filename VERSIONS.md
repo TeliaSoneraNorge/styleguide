@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.15.2
+- Added klikk-og-hent & map icons
+- ProductList items onClick
+
 ## 1.15.0
 - Icon fixes
 - ProductListGrid multi-column layout

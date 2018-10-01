@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.15.0",
+  "version": "1.15.2",
   "private": false,
   "description": "",
   "main": "dist/index.cjs.js",
@@ -14,7 +14,7 @@
     "build:library:js:watch": "rollup --environment NODE_ENV:development -c rollup.build.js -w",
     "deploy:prod": "npm publish --access=public && babel-node ../deploy-slack.js component-lib",
     "lint": "eslint --ext .jsx,.js /",
-    "prepublishOnly": "npm run build:library",
+    "prepublishOnly": "",
     "publish:local-test": "npm run build:library && npm pack",
     "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
