@@ -9,7 +9,7 @@ const Button = ({ text, kind, size, onClick, className, processingText, isProces
     <button
         className={classnames('button', {
             [className]: className,
-            [`button--${kind}`]: kind,
+            [`button--${kind}`]: !isDisabled && kind,
             [`button--${size}`]: size,
             [`button--margin-${margin}`]: margin,
             'button--processing': isProcessing,
