@@ -11,11 +11,11 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * the user to give correct input.
  *
 **/
-const TextBoxWithLabel = ({ className, labelText, type, placeholder, errorMessage, disabled, withIcon, withIconButton, iconName, iconColor, ...rest }) =>
+const TextBoxWithLabel = React.forwardRef(({ className, labelText, type, placeholder, errorMessage, disabled, withIcon, withIconButton, iconName, iconColor, ...rest }, ref) => (
     <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage, 'textbox-with-label--with-icon': withIcon })} isUsingGrayText={true}>
         <span className="textbox-with-label__label-text">{labelText}</span>
         <div className="textbox-with-label__input-icon-wrapper">
-            <input className={classnames('textbox-with-label__input', {
+            <input ref={ref} className={classnames('textbox-with-label__input', {
                 [className]: className
             })} type={type} placeholder={placeholder} disabled={disabled} {...rest} />
             { withIcon && (
@@ -32,7 +32,8 @@ const TextBoxWithLabel = ({ className, labelText, type, placeholder, errorMessag
         </div>
         {errorMessage &&
             <span className="input-error">{errorMessage}</span>}
-    </Label>;
+    </Label>
+));
 
 TextBoxWithLabel.defaultProps = {
     iconColor: 'black',

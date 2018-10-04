@@ -1,30 +1,33 @@
 import React from 'react';
 import { TextBoxWithLabel } from '@telia/styleguide';
 
-export default class TypeDynamicallyTogglingIcon extends React.Component {
+export default class TypeWithRef extends React.Component {
     state = {
-        showIcon: false,
         value: ''
+    }
+    constructor(props) {
+        super(props);
+
+        this.inputRef = React.createRef();
     }
     onChange = (event) => {
         this.setState({
-            showIcon: event.target.value === '42',
             value: event.target.value
         });
     }
     render() {
-        const { showIcon, value } = this.state;
+        const { value } = this.state;
+        const ref = this.inputRef.current;
 
         return (
             <React.Fragment>
-                <p>Type 42 in input field.</p>
+                <p>Value from ref: {ref && ref.value}</p>
                 <TextBoxWithLabel
                     labelText="Label for text box"
                     type="text"
                     value={value}
-                    onChange={this.onChange}
-                    withIcon={showIcon}
-                    iconName="ico_check" />
+                    ref={this.inputRef}
+                    onChange={this.onChange} />
             </React.Fragment>
         );
     }
