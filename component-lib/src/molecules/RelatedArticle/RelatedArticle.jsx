@@ -7,13 +7,10 @@ import Tags from '../../atoms/Tags/Tags';
  * Status: *finished*
  */
 const RelatedArticle = ({ children, className, imgSrc, imgAlt, heading, tags = [], ...rest }) => (
-    <a
-        className={classnames('related-article', {
-            [className]: className,
-        })}
+    <a className={classnames('related-article', { [className]: className })}
         {...rest}>
         <div className="related-article__image-placeholder" >
-            <img className="related-article__image" src={imgSrc} alt={imgAlt} />
+            {imgSrc && <img className="related-article__image" src={imgSrc} alt={imgAlt} />}
         </div>
         <div className="related-article__text">
             <h3 className="heading heading--level-3 related-article__heading">{heading}</h3>
@@ -29,7 +26,7 @@ const RelatedArticle = ({ children, className, imgSrc, imgAlt, heading, tags = [
 
 RelatedArticle.propTypes = {
     /** Source of the image. */
-    imgSrc: PropTypes.string.isRequired,
+    imgSrc: PropTypes.string,
     imgAlt: PropTypes.string,
     /** The heading text. */
     heading: PropTypes.string.isRequired,

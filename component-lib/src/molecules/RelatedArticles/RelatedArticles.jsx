@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import RelatedArticle from '../RelatedArticle/RelatedArticle';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
@@ -32,7 +33,7 @@ class RelatedArticles extends React.Component {
     };
 
     render() {
-        // TODO: Replace `<a className="related-articles__link heading-link"` with HeadingLink after it's merged to master
+        // TODO: Replace `<a className="related-articles__link heading-link"` with HeadingLink?
         return (
             <section className="related-articles">
                 <div className="container container--large container--no-padding">
@@ -40,8 +41,7 @@ class RelatedArticles extends React.Component {
                         <h2 className="related-articles__heading heading-link--focus-area heading heading--level-2">{this.props.heading}</h2>
                         <hr className="horizontal-rule horizontal-rule--short horizontal-rule--left" />
                     </a>
-                    <ul className={`related-articles__list${this.state.isShowingAllArticles ? ' related-articles__list--expanded' : ''}`}
-                        id={this.props.id}>
+                    <ul id={this.props.id} className={classnames('related-articles__list', { 'related-articles__list--expanded': this.state.isShowingAllArticles })}>
                         {this.props.relatedArticles.map((relatedArticle, i) =>
                             <li className="related-articles__list-item" key={i}>
                                 <RelatedArticle
@@ -53,10 +53,11 @@ class RelatedArticles extends React.Component {
                         )}
                     </ul>
                     <button
-                        className={`related-articles__show-more-articles${this.state.isShowingAllArticles ? ' related-articles__show-more-articles--expanded' : ''}`}
+                        className={classnames('related-articles__show-more-articles', { 'related-articles__show-more-articles--expanded': this.state.isShowingAllArticles })}
                         aria-expanded={this.state.isShowingAllArticles}
                         aria-controls={this.props.id}
-                        onClick={this.toggleShowMoreArticles}>{this.state.isShowingAllArticles ? 'Show less' : 'Show more'}
+                        onClick={this.toggleShowMoreArticles}>
+                        {this.state.isShowingAllArticles ? 'Show less' : 'Show more'}
                         <SvgIcon
                             className="related-articles__show-more-articles-icon"
                             iconName={this.state.isShowingAllArticles ? 'ico_minus' : 'ico_add'}
