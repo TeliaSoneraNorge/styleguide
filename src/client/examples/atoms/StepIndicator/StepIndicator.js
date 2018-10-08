@@ -10,10 +10,10 @@ const wrapperStyle = {
 const StepIndicators = () => (
     <div>
         <div style={wrapperStyle}>
-            <StepIndicator index={0} numberOfSteps={3} />
+            <StepIndicator index={0} numberOfSteps={3} labels={['Nummer', 'Se over', 'Ferdig']} />
         </div>
         <div style={wrapperStyle}>
-            <StepIndicator index={2} numberOfSteps={6} />
+            <StepIndicator index={2} numberOfSteps={5} labels={['One', 'Two', 'Three', 'Four', 'Five']} />
         </div>
     </div>
 );
