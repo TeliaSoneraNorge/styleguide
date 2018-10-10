@@ -48,4 +48,9 @@ MiniDashboard.StatWithLabelWidget = ({ statisticText, statisticLabel, statisticH
             <ProgressBar value={progressBarRemaining} min={0} max={progressBarTotal} />}
     </div>;
 
+MiniDashboard.ExtraPromoLine = ({ children }) =>
+    <div className="mini-dashboard__extra-promo-line">
+        {children}
+    </div>;
+
 export default MiniDashboard;
