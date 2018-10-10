@@ -40,7 +40,7 @@ const renderStep = (index, number, numberOfSteps, label) => {
             )}>
                 {index > number ?
                     <span className="icon-wrapper">
-                        <SvgIcon className="icon" iconName="ico_check" />
+                        <SvgIcon className="icon" iconName="ico_check" role="presentation" title={number + 1} />
                     </span>
                     : number + 1
                 }
@@ -49,6 +49,7 @@ const renderStep = (index, number, numberOfSteps, label) => {
                 classnames('step-indicator__label', {
                     'step-indicator__label--active': isActive })}>
                 { label }
+                {index > number && <span className="sr-only">- fullført</span>}
             </span>
             { renderLine(number, numberOfSteps, index) }
         </li>
