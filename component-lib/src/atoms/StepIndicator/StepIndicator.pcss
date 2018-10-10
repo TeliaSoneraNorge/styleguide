@@ -10,15 +10,11 @@
 
     &__label {
         font-size: 0.75rem;
-        color: var(--dark-grey);
+        color: var(--dark-grey-2);
 
         @media all and (min-width: 37.5em) {
             margin-top: 0.5rem;
             font-size: 1rem;
-        }
-
-        &--active {
-            color: var(--dark-grey-2);
         }
     }
 
@@ -70,10 +66,10 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--dark-grey);
-        border: var(--step-indicator-border) solid var(--dark-grey);
+        background-color: var(--dark-grey-2);
+        border: var(--step-indicator-border) solid var(--dark-grey-2);
         border-radius: 50%;
-        color: var(--dark-grey-2);
+        color: var(--white);
         font: 900 0.75rem Avenir;
         height: var(--step-indicator-height);
         line-height: calc(var(--step-indicator-height) - 4px);
@@ -84,7 +80,7 @@
 
         @media all and (min-width: 37.5em) {
             font: 900 1.5rem Avenir;
-            border: 3px solid var(--dark-grey);
+            border-width: 3px;
             height: calc(2 * var(--step-indicator-height));
             width: calc(2 * var(--step-indicator-height));
             margin: 0 var(--step-indicator-height);
