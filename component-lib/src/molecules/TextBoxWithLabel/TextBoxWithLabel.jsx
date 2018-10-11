@@ -18,7 +18,7 @@ const TextBoxWithLabel = React.forwardRef(({ className, labelText, type, placeho
             <input ref={ref} className={classnames('textbox-with-label__input', {
                 [className]: className
             })} type={type} placeholder={placeholder} disabled={disabled} {...rest} />
-            { withIcon && (
+            {withIcon && (
                 withIconButton ?
                     <button className="textbox-with-label__icon-wrapper textbox-with-label__button">
                         <SvgIcon className="textbox-with-label__icon" iconName={iconName} color={iconColor} aria-label={labelText} />
@@ -52,6 +52,7 @@ TextBoxWithLabel.propTypes = {
     iconName: PropTypes.string,
     iconColor: PropTypes.string,
     className: PropTypes.string,
+    onChange: PropTypes.func
 };
 
 export default TextBoxWithLabel;

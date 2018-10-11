@@ -64,8 +64,8 @@ const BlogSamplePage = () =>
                     <span className="tags__tag">Music</span>&nbsp;
                     <span className="tags__tag">Streaming</span>
                 </div>
-                <div class="article-meta-data__share">
-                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
+                <div className="article-meta-data__share">
+                    <img className="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
                 </div>
             </div>
         </section>
@@ -73,15 +73,15 @@ const BlogSamplePage = () =>
 
             <p className="paragraph">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula
+                elementum sed sit amet dui.
+            </p>
             <blockquote className="quote quote--inline-right">
                 <p className="quote__text">
                         Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
                 </p>
                 <span className="quote__source">Lorem Ipsum</span>
             </blockquote>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula
-                elementum sed sit amet dui.
-            </p>
 
             <p className="paragraph">Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
                 a. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in
@@ -138,7 +138,7 @@ const BlogSamplePage = () =>
             </section>
         </section>
         {RelatedArticlesProps.map((props, i) =>
-            <RelatedArticles key={i} {...props} />)}
+            <RelatedArticles id="blog1" key={i} {...props} />)}
     </div>;
 
 export default BlogSamplePage;

@@ -29,7 +29,7 @@ class AccordionList extends React.Component {
         accordionItems: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
-            children: PropTypes.string.isRequired
+            children: PropTypes.node.isRequired
         })).isRequired,
         isExpandedAccordionIndex: PropTypes.number.isRequired,
     };

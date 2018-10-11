@@ -95,6 +95,7 @@ Hero.propTypes = {
     heading: PropTypes.string.isRequired,
     subheading: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,
+    logoSources: PropTypes.array,
     /** Set of sources. */
     sources: PropTypes.arrayOf(PropTypes.shape({
         type: PropTypes.oneOf(['mobile', 'desktop']),
@@ -105,7 +106,7 @@ Hero.propTypes = {
     /** One of ['mobile', 'desktop'] */
     mode: PropTypes.oneOf(['mobile', 'desktop']),
     /** One of ['top', 'bottom'] */
-    align: PropTypes.oneOf(['top', 'bottom']),
+    align: PropTypes.oneOf(['top', 'bottom'])
 };
 
 export default Hero;

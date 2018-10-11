@@ -26,8 +26,8 @@ const ImageAssetsPage = () =>
                         {_.map(icons, (iconName) =>
                             <tr key={iconName}>
                                 <td>{iconName}</td>
-                                {_.map(['black', 'purple', 'grey', 'light-grey'], (color) =>
-                                    <td>
+                                {_.map(['black', 'purple', 'grey', 'light-grey'], (color, i) =>
+                                    <td key={i}>
                                         <SvgIcon style={{ width: '50px', height: '50px' }} key={`${iconName}_${color}`} iconName={iconName.replace('.svg', '')} color={color} />
                                     </td>
                                 )}

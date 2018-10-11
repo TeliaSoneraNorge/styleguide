@@ -90,6 +90,7 @@ PageMenu.propTypes = {
     onClickClose: PropTypes.func,
     onClickSearch: PropTypes.func,
     searchUrl: PropTypes.string,
+    logoutLink: PropTypes.string,
     fixedPosition: PropTypes.bool,
     isLoggedIn: PropTypes.bool,
     menuSelectedTabIndex: PropTypes.number,

@@ -6,14 +6,12 @@ const InlineRightQuote = () => (
         <p>
             Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
             Curabitur aliquet quam id dui posuere blandit.
-            
-            <Quote source="Darth Vader" inline>
-                I find your lack of faith disturbing.
-            </Quote>
-            
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula elementum
             sed sit amet dui.
         </p>
+        <Quote source="Darth Vader" inline>
+            I find your lack of faith disturbing.
+        </Quote>
         <p>
             Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a.
             Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in faucibus

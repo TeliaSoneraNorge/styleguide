@@ -40,7 +40,7 @@ const renderStep = (index, number, numberOfSteps, label) => {
             )}>
                 {index > number ?
                     <span className="icon-wrapper">
-                        <SvgIcon className="icon" iconName="ico_check" role="presentation" title={number + 1} />
+                        <SvgIcon className="icon" iconName="ico_check" role="presentation" title={`${number + 1}`} />
                     </span>
                     : number + 1
                 }
