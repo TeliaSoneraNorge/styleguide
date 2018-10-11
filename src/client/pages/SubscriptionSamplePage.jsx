@@ -61,7 +61,7 @@ const forAlleSubscriptionProps = [
         'speechBubbleText': 'Kampanje 60 GB per md. i 2 md.',
         'specialMessageText': 'Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.',
         'highlightedFeature': {
-            'icon': 'ico_music',
+            'iconName': 'ico_music',
             'name': 'Music Freedom'
         }
     },
@@ -77,7 +77,7 @@ const forAlleSubscriptionProps = [
         'speechBubbleText': 'Kampanje 60 GB per md. i 2 md.',
         'specialMessageText': 'Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.',
         'highlightedFeature': {
-            'icon': 'ico_music',
+            'iconName': 'ico_music',
             'name': 'Music Freedom'
         }
     },
@@ -93,7 +93,7 @@ const forAlleSubscriptionProps = [
         'speechBubbleText': 'Kampanje 60 GB per md. i 2 md.',
         'specialMessageText': 'Hør så mye musikk du vil... uten å bruke av dataen din. Gjelder Spotify, Tidal og Beat.',
         'highlightedFeature': {
-            'icon': 'ico_music',
+            'iconName': 'ico_music',
             'name': 'Music Freedom'
         }
     },
@@ -128,7 +128,7 @@ const kontantkortSubscriptionProps = [
         'size': 'small',
         'isExpanded': true,
         'highlightedFeature': {
-            'icon': 'ico_music',
+            'iconName': 'ico_music',
             'name': 'For deg som liker å betale på forhånd'
         }
     }

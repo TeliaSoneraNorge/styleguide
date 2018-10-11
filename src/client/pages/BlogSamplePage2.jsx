@@ -59,8 +59,8 @@ const BlogSamplePage = () =>
                     <span className="tags__tag">Music</span>&nbsp;
                     <span className="tags__tag">Streaming</span>
                 </div>
-                <div class="article-meta-data__share">
-                    <img class="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
+                <div className="article-meta-data__share">
+                    <img className="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
                 </div>
             </div>
         </section>
@@ -128,7 +128,7 @@ const BlogSamplePage = () =>
 
         </section>
         {RelatedArticlesProps.map((props, i) =>
-            <RelatedArticles key={i} {...props} />)}
+            <RelatedArticles id="blog2" key={i} {...props} />)}
     </div>;
 
 export default BlogSamplePage;
