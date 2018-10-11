@@ -79,7 +79,6 @@ export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel/TextBo
 export { default as Tooltip } from './molecules/Tooltip/Tooltip';
 export { default as MiniDashboard } from './molecules/MiniDashboard/MiniDashboard';
 export { default as DataBoostChart } from './molecules/DataBoostChart/DataBoostChart';
-export { default as BelowTheLineOffer } from './molecules/BelowTheLineOffer/BelowTheLineOffer';
 export { default as PopUpLine } from './molecules/PopUpLine/PopUpLine';
 export { default as ProductList } from './molecules/ProductList/ProductList';
 export { default as References } from './molecules/References/References';
@@ -176,7 +175,6 @@ export default [
     'src/molecules/Tooltip/Tooltip.jsx',
     'src/molecules/MiniDashboard/MiniDashboard.jsx',
     'src/molecules/DataBoostChart/DataBoostChart.jsx',
-    'src/molecules/BelowTheLineOffer/BelowTheLineOffer.jsx',
     'src/molecules/ModalDialog/ModalDialog.jsx',
     'src/molecules/PopUpLine/PopUpLine.jsx',
     'src/molecules/ProductList/ProductList.jsx',
