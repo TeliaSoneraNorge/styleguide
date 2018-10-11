@@ -17,6 +17,12 @@ Only noteworthy versions shown (minor changes are omitted).
 
 ## 1.15.4
 - Removed BelowTheLineOffer
+- TextBoxWithLabel ref forwarding
+- Button disabled prop fix
+- Font name fix
+- ProductList smallfixes
+- Removed `heading--pebble` class
+- + others
 
 ## 1.15.3
 - Added trash icons & source icon cleanups
