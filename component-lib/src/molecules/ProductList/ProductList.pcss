@@ -28,6 +28,8 @@
         &--link-icon {
             height: 0.875rem;
             width: 0.875rem;
+            flex-grow: 0;
+            flex-shrink: 0;
         }
 
         @media all and (max-width: 30em) {
@@ -74,13 +76,16 @@
 
     &__item-icon {
         flex-grow: 0;
-        height: 1.75rem;
-        width: 1.75rem;
+        flex-shrink: 0;
+        width: 35px;
+        height: 35px;
         margin-right: 1.5rem;
     }
 
     &__item-content {
         flex-grow: 1;
+        flex-shrink: 1;
+        margin-right: .5rem;
     }
 
     &__item-heading {
@@ -99,6 +104,12 @@
     &__item-description {
         color: black;
         text-decoration: none;
+        line-height: inherit;
+        
+        @media all and (max-width: 30em) {
+            line-height: 1rem;
+            font-size: .85em;
+        }
     }
 
 }
