@@ -14,7 +14,7 @@ const ListWithImage = ({ children, className, heading, src, alt, imagePosition =
             'list-with-image--hide-image-for-mobile': hideImageForMobile,
         })}
         {...rest}>
-        <h3 className="heading heading--level-3 heading--pebble list-with-image__heading">{heading}</h3>
+        <h3 className="heading heading--level-3 list-with-image__heading">{heading}</h3>
         <ul className="list-with-image__list list">
             {children}
         </ul>
