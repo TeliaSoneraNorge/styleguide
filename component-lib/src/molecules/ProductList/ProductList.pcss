@@ -47,14 +47,16 @@
                 content: ' ';
                 display: block;
                 position: absolute;
+                left: -100px;
+                
                 width: 200%;
                 height: 900%;
-                top: -450%;
-                left: -50%;
-                z-index: -2;
-                animation: promo-animation linear 4s infinite;
-                background-position: center;
-                background: linear-gradient(to right, #009999 0%,#009797 2%,#009797 2%,#009b9b 7.2%,#00d1cc 11.5%,#10c6d0 11.6%,#8d71f5 11.9%,#03cecb 11.5%,#a561fb 12%,#b555ff 12%,#af5afe 12%,#b707dc 17%,#b707dc 21%,#b707dc 21%,#940ae4 23%,#8720e0 33%,#3887d4 34%,#3887d4 34%,#3887d4 39%,#3887d4 39%,#13c0cd 43%,#13c0cd 46%,#d0ee39 50%,#d0ee39 61%,#d0ee39 61%,#ff00ce 66%,#e002d4 71%,#e002d4 71%,#b05efe 74%,#b05efe 82%,#b05efe 82%,#3887d4 88%,#3887d4 88%,#00c3c2 96%,#00c3c2 100%,#00c3c2 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+               
+                z-index: 0;
+                animation: promo-animation linear 6s infinite;
+                background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-6.svg') no-repeat -300px -300px;
+                background-size: 1600px;
+                
             }
             &:after {
                 content: ' ';
@@ -65,11 +67,15 @@
                 top: 2px;
                 bottom: 2px;
                 right: 2px;
-                z-index: -1;
+                z-index: 1;
             }
 
             .product-list__item-heading {
                 color: var(--core-purple);
+            }
+
+            * {
+                z-index: 3;
             }
         }
     }
@@ -111,10 +117,11 @@
             font-size: .85em;
         }
     }
-
 }
+
 @keyframes promo-animation {
-  0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
+    0%   { background-position: -600px -600px; }
+    33%  { background-position: -200px -600px; }
+    66%  { background-position: -200px -900px; }
+    100% { background-position: -600px -600px; }
 }
