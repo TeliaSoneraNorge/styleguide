@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.15.5
+- ProductList data boost Safari fix
+
 ## 1.15.4
 - Removed BelowTheLineOffer
 - TextBoxWithLabel ref forwarding
