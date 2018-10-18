@@ -10,10 +10,39 @@
             flex-basis: 50%;
 
             &:nth-child(odd) {
-                padding-right: 2.5rem;
+                padding-right: 1.5rem;
             }
             &:nth-child(even) {
-                padding-left: 2.5rem;
+                padding-left: 1.5rem;
+            }
+        }
+    }
+
+    &--horizontal {
+        display: block;
+
+        @media screen and (min-width: 50em) {
+            .product-list {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+
+                &__item {
+                    flex-basis: 48%;
+
+                    &:nth-child(odd) {
+                        margin-right: 1%;
+                    }
+                    &:nth-child(even) {
+                        margin-left: 1%;
+                    }
+                }
+            }
+        }
+
+        .product-list-grid__section {
+            @media screen and (min-width: 50em) {
+                padding: 0;
             }
         }
     }

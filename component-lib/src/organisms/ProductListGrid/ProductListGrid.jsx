@@ -1,7 +1,8 @@
 import React from 'react';
+import classnames from 'classnames';
 
-const ProductListGrid = ({ children }) =>
-    <div className="product-list-grid">
+const ProductListGrid = ({ children, layout }) =>
+    <div className={classnames('product-list-grid', { 'product-list-grid--horizontal': (layout === 'horizontal') })}>
         {children}
     </div>;
 
