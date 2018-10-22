@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.15.8
+- Added LightAlert molecule
+
 ## 1.15.7
 - ProductListGrid has a horizontal layout option
 
