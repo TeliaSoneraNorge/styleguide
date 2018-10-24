@@ -55,7 +55,7 @@
 
     /* Content: heading & description */
     &__content-container {
-        margin-bottom: 2rem;
+        margin-bottom: 1rem;
         width: 100%;
 
         @media all and (min-width: 48em) {
@@ -76,6 +76,18 @@
     &__price-and-action {
         border-top: 2px solid var(--grey);
         padding-top: 1rem;
+
+        @media all and (min-width: 48em) {
+            display: flex;
+            width: 100%;
+            justify-content: space-between;
+
+            .button{
+                flex: 0 0 37%;
+                align-self: flex-end;
+                margin-left: 1rem;
+            }
+        }
     }
     &__price-info {
     }
@@ -86,6 +98,7 @@
     }
     &__price-smallprint {
         font-size: 0.9rem;
+        padding-top: 1rem;
     }
     &__text-instead-of-button {
         margin: 1rem 0 0;
@@ -125,6 +138,9 @@
                 margin-bottom: 2rem;
                 width: 100%;
             }
+        }
+        .product-promo-box__price-and-action {
+            display: block;
         }
     }
 }
