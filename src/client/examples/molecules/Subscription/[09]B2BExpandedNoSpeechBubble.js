@@ -6,7 +6,7 @@ const feature = {
     name: 'Music Freedom',
 };
 
-const B2BExpanded = () => (
+const B2BExpandedNoSpeechBubble = () => (
     <Subscription
         name="SMART Bedrift"
         id="smart-bedrift-expanded"
@@ -14,11 +14,11 @@ const B2BExpanded = () => (
         dataUnit="GB"
         price={699}
         color="purple"
-        size="small"
+        size="medium"
         highlightedFeature={feature}
         specialMessageText="Listen to as music as you want without using your data quota!"
         isExpanded
         isShowingFeatures />
 );
 
-export default B2BExpanded;
+export default B2BExpandedNoSpeechBubble;
