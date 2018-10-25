@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.15.14
+- B2B subscription box: Bugfix: text in bubble disappeared on hover
+
 ## 1.15.12
 - FullWidthTable: Table rows are contained within container
 
