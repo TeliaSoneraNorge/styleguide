@@ -37,7 +37,7 @@ const InformationArticleSample1 = ({ colors }) =>
             <img className="full-width-image__image" src="https://placekitten.com/1600/600" />
         </div>
         <div className="container container--medium container--no-padding container--white-bg container--extra-padding-top container--overlapping-full-width-image">
-            <div className="container container--small">
+            <div className="rich-text container container--small">
                 <p className="paragraph">
                     Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
                     nec, egestas non nisi. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Curabitur arcu erat,
@@ -50,18 +50,20 @@ const InformationArticleSample1 = ({ colors }) =>
                     <li className="list__item">Third link in list</li>
                 </ul>
             </div>
-            <div className="focus-box">
-                <div className="focus-box__content-outer">
-                    <div className="container container--small container--no-margin focus-box__content-inner">
-                        <p className="paragraph">
-                            Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
-                            nec, egestas non nisi.
-                        </p>
-                        <button className="button">Click me</button>
+            <div className="rich-text container container--medium">
+                <div className="focus-box">
+                    <div className="focus-box__content-outer">
+                        <div className="container container--small container--no-margin focus-box__content-inner">
+                            <p className="paragraph">
+                                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
+                                nec, egestas non nisi.
+                            </p>
+                            <button className="button">Click me</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div className="container container--small">
+            <div className="rich-text container container--small">
                 {accordionListProps.map((props, i) =>
                     <AccordionList key={i} {...props} />)}
             </div>

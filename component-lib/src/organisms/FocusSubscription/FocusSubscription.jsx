@@ -44,7 +44,7 @@ export default class FocusSubscription extends React.Component {
                             isStandalone={true} />
 
                         <div className="focus-subscription__main-content">
-                            <Heading level={2} text="Kari Nordmann" />
+                            <Heading level={2} text="Kari Nordmann" className="focus-subscription__heading" />
                             <dl className="description-list">
                                 <dt className="description-list__term">Telefonnummer:</dt>
                                 <dd className="description-list__details">9876 5432</dd>

@@ -47,6 +47,7 @@ const ComponentsPage = (props) => {
                     <li className="list__item"><a className="list__link" href="/information-article-2">Information article 2</a></li>
                     <li className="list__item"><a className="list__link" href="/information-article-3">Information article 3</a> - with StepByStep</li>
                     <li className="list__item"><a className="list__link" href="/information-article-4">Information article 4</a> - with table</li>
+                    <li className="list__item"><a className="list__link" href="/information-article-5">Information article 5</a></li>
                     <li className="list__item"><a className="list__link" href="/pebbles-page">Pebble page</a></li>
                     <li className="list__item"><a className="list__link" href="/box-grid">Box Grid page</a></li>
                     <li className="list__item"><a className="list__link" href="/blog-1">Blog page 1</a></li>

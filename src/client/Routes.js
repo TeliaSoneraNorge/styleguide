@@ -17,6 +17,7 @@ import InformationArticleSample1 from './pages/InformationArticleSample1';
 import InformationArticleSample2 from './pages/InformationArticleSample2';
 import InformationArticleSample3 from './pages/InformationArticleSample3';
 import InformationArticleSample4 from './pages/InformationArticleSample4';
+import InformationArticleSample5 from './pages/InformationArticleSample5';
 import SubscriptionSamplePage from './pages/SubscriptionSamplePage';
 import PebblesPage from './pages/PebblesPage';
 import BoxGridSamplePage from './pages/BoxGridSamplePage';
@@ -86,6 +87,7 @@ const Routes = () =>
         <Route exact path="/information-article-2" component={InformationArticleSample2} />
         <Route exact path="/information-article-3" component={InformationArticleSample3} />
         <Route exact path="/information-article-4" component={InformationArticleSample4} />
+        <Route exact path="/information-article-5" component={InformationArticleSample5} />
         <Route exact path="/pebbles-page" component={PebblesPage} />
         <Route exact path="/subscriptions" component={SubscriptionSamplePage} />
         <Route exact path="/box-grid" component={BoxGridSamplePage} />

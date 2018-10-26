@@ -13,7 +13,7 @@ class Accordion extends Component {
     accordionHeaderClicked = () => {
         this.props.toggleIsExpanded();
     };
-    
+
     render() {
         return (
             <section
@@ -28,7 +28,7 @@ class Accordion extends Component {
                         {this.props.title}
                     </button>
                 </h3>
-                <div className="accordion__panel" id={this.props.id}>
+                <div className="accordion__panel rich-text" id={this.props.id}>
                     {this.props.children}
                 </div>
             </section>

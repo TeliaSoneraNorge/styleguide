@@ -1,9 +1,13 @@
 .paragraph {
     font-size: 1rem;
     letter-spacing: .01875rem;
-    margin-bottom: 0.625rem;
     line-height: 1.5rem;
+    margin-bottom: 0.5rem;
     margin-top: 0;
+
+    @media all and (min-width: em(450)) {
+        margin-bottom: var(--margin-bottom);
+    }
 
     &--preamble {
         font-size: 1.25rem;

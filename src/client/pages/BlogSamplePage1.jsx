@@ -69,7 +69,7 @@ const BlogSamplePage = () =>
                 </div>
             </div>
         </section>
-        <section className="container container--small container--extra-margin-bottom">
+        <section className="rich-text container container--small container--extra-margin-bottom">
 
             <p className="paragraph">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
