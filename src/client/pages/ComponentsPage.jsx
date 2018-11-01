@@ -44,7 +44,7 @@ const ComponentsPage = (props) => {
                     <li className="list__item"><a className="list__link" href="/subscriptions">Subscription list page</a></li>
                     <li className="list__item"><a className="list__link" href="/tabs">Tabs</a></li>
                     <li className="list__item"><a className="list__link" href="/information-article-1">Information article 1</a> - basic components</li>
-                    <li className="list__item"><a className="list__link" href="/information-article-2">Information article 2</a> - with NumberBoxes</li>
+                    <li className="list__item"><a className="list__link" href="/information-article-2">Information article 2</a></li>
                     <li className="list__item"><a className="list__link" href="/information-article-3">Information article 3</a> - with StepByStep</li>
                     <li className="list__item"><a className="list__link" href="/information-article-4">Information article 4</a> - with table</li>
                     <li className="list__item"><a className="list__link" href="/pebbles-page">Pebble page</a></li>
