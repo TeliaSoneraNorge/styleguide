@@ -64,7 +64,6 @@ export function isFullWidthComponent(componentName) {
         // Atoms
         'Container',
         'FullWidthImage',
-        'NumberBoxes',
         'PagePebbles',
 
         // Molecules

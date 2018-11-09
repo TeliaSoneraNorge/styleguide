@@ -9,11 +9,12 @@ import classnames from 'classnames';
  * the element, or it can be used on the <code>&lt;hr/&gt;</code> tag as a standalone component.
  * The style should be used to define a thematic break.
  */
-const HorizontalRule = ({ className, short, ...rest }) => (
+const HorizontalRule = ({ className, short, left, ...rest }) => (
     <hr
         className={classnames('horizontal-rule', {
             [className]: className,
-            'horizontal-rule--short horizontal-rule--left': short
+            'horizontal-rule--short': short,
+            'horizontal-rule--left': left
         })}
         {...rest} />
 );
@@ -21,6 +22,8 @@ const HorizontalRule = ({ className, short, ...rest }) => (
 HorizontalRule.propTypes = {
     /** Whenever this should be short or not. */
     short: PropType.bool,
+    /** Whenever this should be left aligned. */
+    left: PropType.bool
 };
 
 export default HorizontalRule;

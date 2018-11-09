@@ -84,7 +84,7 @@ const Hero = ({
             <div className="hero__box heading-link--focus-area">
                 <h2 className="hero__heading">{heading}</h2>
                 <div className="hero__subheading">{subheading}
-                    <HorizontalRule short />
+                    <HorizontalRule short left/>
                 </div>
             </div>
         </React.Fragment>

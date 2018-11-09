@@ -28,7 +28,7 @@ const InformationArticleSample4 = () =>
                 and some of the components in the styleguide combined with each other.
             </p>
         </Header>
-        <div className="container container--small container--no-padding-top container--extra-margin-bottom">
+        <div className="container container--small container--no-padding-top container--extra-margin-bottom container--extra-padding-top">
             <h2 className="heading heading--level-2">Heading 2</h2>
             <p className="paragraph">
                 Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit.

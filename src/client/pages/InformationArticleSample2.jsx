@@ -28,39 +28,7 @@ const InformationArticleSample2 = () =>
                 and some of the components in the styleguide combined with each other.
             </p>
         </Header>
-        <ul className="number-boxes">
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
-            </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
-            </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
-            </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
-            </li>
-            <li className="number-box">
-                <span className="number-box__title">A small title</span>
-                <span className="number-box__number">45 609</span>
-                <span className="number-box__unit">Unit</span>
-                <span className="number-box__text">a short descriptive text</span>
-            </li>
-        </ul>
-        <div className="container container--small container--extra-margin-bottom">
+        <div className="container container--small container--extra-margin-bottom container--extra-padding-top">
             <p className="paragraph">
                 Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in, elementum
                 id enim. Quisque velit nisi, pretium ut lacinia in, elementum id enim.

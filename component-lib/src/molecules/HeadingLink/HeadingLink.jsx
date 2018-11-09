@@ -13,7 +13,7 @@ const HeadingLink = ({ children, className, ...rest }) => (
         })}
         {...rest}>
         <Heading className="heading-link--focus-area" level={2} text={children} />
-        <HorizontalRule short />
+        <HorizontalRule short left/>
     </a>
 );
 

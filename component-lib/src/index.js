@@ -13,7 +13,6 @@ export { default as FullWidthTable } from './atoms/FullWidthTable/FullWidthTable
 export { default as Label } from './atoms/Label/Label';
 export { default as Link } from './atoms/Link/Link';
 export { default as List } from './atoms/List/List';
-export { default as NumberBoxes } from './atoms/NumberBoxes/NumberBoxes';
 export { default as PagePebbles } from './atoms/PagePebbles/PagePebbles';
 export { default as Paragraph } from './atoms/Paragraph/Paragraph';
 export { default as ProgressBar } from './atoms/ProgressBar/ProgressBar';
@@ -116,7 +115,6 @@ export default [
     'src/atoms/Label/Label.jsx',
     'src/atoms/Link/Link.jsx',
     'src/atoms/List/List.jsx',
-    'src/atoms/NumberBoxes/NumberBoxes.jsx',
     'src/atoms/PagePebbles/PagePebbles.jsx',
     'src/atoms/Paragraph/Paragraph.jsx',
     'src/atoms/ProgressBar/ProgressBar.jsx',

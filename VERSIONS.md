@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.16.1
+- HorizontalRule: Added prop to fix example that was wrong, and updated related components.
+
+## 1.16.0
+- NumberBoxes component removed
+
 ## 1.15.14
 - B2B subscription box: Bugfix: text in bubble disappeared on hover
 
