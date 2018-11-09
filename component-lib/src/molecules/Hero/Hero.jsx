@@ -16,7 +16,7 @@ import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
  * - Avoid using images that contains a lot of white color as this will blend in with the content and the user might not differ the picture from the rounded mask or the overlapping content.
  * - Images of nature and people are easier to match with this component than portrait images.
  *
- * The Hero image has a max-height of 620px, and when the width of the browser is bigger than 1440px
+ * The Hero image has a max-height of 600px, and when the width of the browser is bigger than 1400px
  * the image is center aligned and gets cropped from both the top and bottom by default. If you want
  * the image to be top aligned use the css modifier class
  * <code>.hero&#95;&#95;image--top-aligned</code> on the image-element instead. If you want it to be bottom-aligned
