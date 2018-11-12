@@ -19,7 +19,7 @@ const LightAlert = ({
         role="alert">
         <div className="light-alert__content">
             <div className="light-alert__header-container">
-                <Heading level="2" text={title} />
+                <Heading level="2" text={title} className="light-alert__heading" />
                 <SvgIcon iconName="ico_info" color="black" className="light-alert__icon" role="presentation" alt="" />
             </div>
             <div className="light-alert__text-container">

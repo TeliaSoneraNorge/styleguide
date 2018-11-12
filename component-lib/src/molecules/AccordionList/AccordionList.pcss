@@ -6,38 +6,29 @@
     border-top: var(--accordion-border);
 }
 
+p + .accordion,
+p + .accordion-list {
+    margin-top: 2rem;
+}
+
 .accordion {
     margin: 0 auto;
     max-width: var(--width-medium);
 
-    margin-top: 3.125rem;
-    margin-bottom: 3.125rem;
+    margin-bottom: 2rem;
     border-bottom: var(--accordion-border);
-
-    @media all and (min-width: 28.125em) {
-        margin-top: 3.75rem;
-        margin-bottom: 3.75rem;
-    }
 
     &:first-of-type {
         border-top: var(--accordion-border);
     }
 
     &:last-of-type {
-        margin-bottom: 3.125rem;
-
-        @media all and (min-width: 28.125em) {
-            margin-bottom: 3.75rem;
-        }
+        margin-bottom: 2rem;
     }
 
     & + .accordion {
-        margin-top: -3.125rem;
+        margin-top: -2rem;
         border-top: none;
-
-        @media all and (min-width: 28.125em) {
-            margin-top: -3.75rem;
-        }
     }
 
     &__header {
@@ -98,7 +89,7 @@
         }
         .accordion__panel {
             height: auto;
-            padding: 0 1rem 3.75rem;
+            padding: 0 1rem 1rem;
             opacity: 1;
             visibility: visible;
         }

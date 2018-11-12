@@ -15,12 +15,12 @@ const InformationArticleSample3 = () =>
             <img className="full-width-image__image" src="https://placekitten.com/1440/440" />
         </div>
         <div className="container container--medium container--no-padding container--extra-margin-bottom container--white-bg container--extra-padding-top container--overlapping-full-width-image">
-            <div className="container container--small">
+            <div className="rich-text container container--small">
                 <p className="paragraph">
                     Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Proin eget tortor risus. Cras ultricies ligula sed magna dictum porta. Sed porttitor lectus nibh. Sed porttitor lectus nibh.
                 </p>
             </div>
-            <div className="container container--small">
+            <div className="rich-text container container--small">
                 <ul className="step-by-step">
                     <li className="step-by-step__step-wrapper">
                         <div className="step-by-step__step step-by-step__circle">
@@ -59,7 +59,7 @@ const InformationArticleSample3 = () =>
                         </div>
                     </li>
                 </ul>
-                
+
                 <ul className="step-by-step">
                     <li className="step-by-step__step-wrapper">
                         <a className="step-by-step__step step-by-step__pebbles step-by-step__step--interactive">

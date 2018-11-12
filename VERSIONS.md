@@ -15,6 +15,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.17.0
+- Added RichText molecule
+- Adjusted margins on several components
+- Removed margin-bottom on `heading--level-2`
++ (and therefore) added new `light-alert__heading` css class for LightAlert molecule
++ (and) new `focus-subscription__heading` css class for FocusSubscription organism
+- Updated some examples and sample pages with new classes and content
+
 ## 1.16.1
 - HorizontalRule: Added prop to fix example that was wrong, and updated related components.
 

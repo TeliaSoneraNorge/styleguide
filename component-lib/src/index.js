@@ -70,6 +70,7 @@ export { default as RadioButtonWithLabel } from './molecules/RadioButtonList/Rad
 export { default as RecommendedProducts } from './molecules/RecommendedProducts/RecommendedProducts';
 export { default as RelatedArticle } from './molecules/RelatedArticle/RelatedArticle';
 export { default as RelatedArticles } from './molecules/RelatedArticles/RelatedArticles';
+export { default as RichText } from './molecules/RichText/RichText';
 export { default as StepByStep } from './molecules/StepByStep/StepByStep';
 export { default as Subscription } from './molecules/Subscription/Subscription';
 export { default as ChartLegend } from './molecules/ChartLegend/ChartLegend';
@@ -166,6 +167,7 @@ export default [
     'src/molecules/RecommendedProducts/RecommendedProducts.jsx',
     'src/molecules/RelatedArticle/RelatedArticle.jsx',
     'src/molecules/RelatedArticles/RelatedArticles.jsx',
+    'src/molecules/RichText/RichText.jsx',
     'src/molecules/StepByStep/StepByStep.jsx',
     'src/molecules/Subscription/Subscription.jsx',
     'src/molecules/ChartLegend/ChartLegend.jsx',

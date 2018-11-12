@@ -29,7 +29,7 @@ export default class TabsSamplePage extends React.Component {
                     onSelect={(e, index) => this.onFunkyTabSelect(e, index)}
                     selectedIndex={this.state.funkyTabSelectedIndex}>
                     <FunkyTabs.TabPanel heading="Under 15 år" imagePath="/public/images/under15.png" url="/tabs/under-15">
-                        <section className="container container--small">
+                        <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 1" />
                             <p className="paragraph">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -40,7 +40,7 @@ export default class TabsSamplePage extends React.Component {
                         </section>
                     </FunkyTabs.TabPanel>
                     <FunkyTabs.TabPanel heading="Under 28 år" imagePath="/public/images/under28.png" url="/tabs/under-28">
-                        <section className="container container--small">
+                        <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 2" />
                             <p className="paragraph">
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -50,7 +50,7 @@ export default class TabsSamplePage extends React.Component {
                         </section>
                     </FunkyTabs.TabPanel>
                     <FunkyTabs.TabPanel heading="For alle" imagePath="/public/images/for-alle.png" url="/tabs/for-alle">
-                        <section className="container container--small">
+                        <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 3" />
                             <p className="paragraph">
                                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -61,7 +61,7 @@ export default class TabsSamplePage extends React.Component {
                         </section>
                     </FunkyTabs.TabPanel>
                     <FunkyTabs.TabPanel heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
-                        <section className="container container--small">
+                        <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 4" />
                             <p className="paragraph">
                                 Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
@@ -72,7 +72,7 @@ export default class TabsSamplePage extends React.Component {
                     </FunkyTabs.TabPanel>
                 </FunkyTabs>
 
-                <section className="container container--small">
+                <section className="container container--small rich-text">
                     <Heading level={2} text="Other types of tabs" />
                     <p className="paragraph">
                         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
