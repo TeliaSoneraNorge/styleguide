@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.18.0
+- Changed handling of menuLinks prop in PageMenu to expect a string of html in contentAboveItems instead of a React component
+
 ## 1.17.0
 - Added RichText molecule
 - Adjusted margins on several components

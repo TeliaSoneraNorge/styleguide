@@ -1,24 +1,10 @@
 import React from 'react';
-import { PageMenu,  Button } from '@telia/styleguide';
-
-const ContentAboveItemsPrivat = () => (
-    <div>
-        <p className="paragraph">Sjekk forbruket og abonnementet ditt, fakturaer og innstillinger.</p>
-        <Button text="Logg inn" kind="primary" />
-    </div>
-);
-
-const ContentAboveItemsBedrift = () => (
-    <div>
-        <p className="paragraph">Administrer dine abonnement og tjenester og få oversikt over fakturaer og rapporter.</p>
-        <Button text="Logg inn" kind="primary" />
-    </div>
-);
+import { PageMenu } from '@telia/styleguide';
 
 const menuLinks = [
     {
         heading: 'Privat',
-        contentAboveItems: <ContentAboveItemsPrivat />,
+        contentAboveItems: '<div><p class="paragraph">Sjekk forbruket og abonnementet ditt, fakturaer og innstillinger.</p><button class="button button--primary">Logg inn</button></div>',
         loggedInLinks: [],
         loggedOutLinks: [
             { text: 'Mobilabonnement og priser', url: '/' },
@@ -31,7 +17,7 @@ const menuLinks = [
     },
     {
         heading: 'Bedrift',
-        contentAboveItems: <ContentAboveItemsBedrift />,
+        contentAboveItems: '<div><p class="paragraph">Administrer dine abonnement og tjenester og få oversikt over fakturaer og rapporter.</p><button class="button button--primary">Logg inn</button></div>',
         loggedInLinks: [],
         loggedOutLinks: [
             { text: 'Bedrift 1', url: '/' },
