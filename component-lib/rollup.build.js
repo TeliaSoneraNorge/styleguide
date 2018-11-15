@@ -3,7 +3,7 @@ import commonjs from 'rollup-plugin-commonjs';
 import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
 import nodeGlobals from 'rollup-plugin-node-globals';
-import uglify from 'rollup-plugin-uglify';
+import { uglify } from 'rollup-plugin-uglify';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 const input = './src/index.js';
@@ -20,16 +20,24 @@ const babelOptions = {
 };
 const commonjsOptions = {
     ignoreGlobal: true,
-    include: /node_modules/,
+    include: 'node_modules/**',
 };
 
 export default [
     {
         input,
-        output: { file: `dist/umd/${name}.development.js`, format: 'umd', name, globals },
+        output: {
+            file: `dist/umd/${name}.development.js`, format: 'umd',
+            sourceMap: 'inline',
+            name, globals,
+        },
         external: Object.keys(globals),
         plugins: [
-            nodeResolve({ extensions: ['.jsx', '.js'] }),
+            nodeResolve({
+                extensions: ['.jsx', '.js'],
+                main: true,
+                browser: true,
+            }),
             babel(babelOptions),
             commonjs(commonjsOptions),
             nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
@@ -41,7 +49,10 @@ export default [
         output: { file: `dist/umd/${name}.production.min.js`, format: 'umd', name, globals },
         external: Object.keys(globals),
         plugins: [
-            nodeResolve({ extensions: ['.jsx', '.js'] }),
+            nodeResolve({
+                extensions: ['.jsx', '.js'], main: true,
+                browser: true,
+            }),
             babel(babelOptions),
             commonjs(commonjsOptions),
             nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
