@@ -4,7 +4,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import eslint from 'rollup-plugin-eslint';
-import { sizeSnapshot} from 'rollup-plugin-size-snapshot';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 import nodeGlobals from 'rollup-plugin-node-globals';
 
 import pkg from './package.json';
@@ -13,6 +13,7 @@ const globals = {
     react: 'React',
     'react-dom': 'ReactDOM',
     'prop-types': 'propTypes',
+    'lodash-es': 'lodash-es',
 };
 export default [{
     //perf: true, // Outputs performance information
@@ -30,6 +31,7 @@ export default [{
             browser: true
         }),
         babel({
+            runtimeHelpers: true,
             babelrc: false,
             exclude: 'node_modules/**',
             presets: ['@babel/preset-react', ['@babel/preset-env', {
@@ -39,6 +41,7 @@ export default [{
                 }
             }]],
             plugins: [
+                'lodash',
                 '@babel/plugin-proposal-class-properties',
                 ['@babel/plugin-proposal-decorators', { 'legacy': true }],
                 '@babel/plugin-proposal-do-expressions',
@@ -54,10 +57,11 @@ export default [{
                 ['@babel/plugin-proposal-pipeline-operator', { 'proposal': 'minimal' }],
                 '@babel/plugin-proposal-throw-expressions',
                 '@babel/plugin-syntax-dynamic-import',
-                '@babel/plugin-syntax-import-meta',
-                'lodash']
+                '@babel/plugin-syntax-import-meta']
         }),
         cjs({
+            ignoreGlobal: true,
+            include: 'node_modules/**',
             extensions: ['.js', '.jsx']
         }),
         replace({

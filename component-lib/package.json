@@ -68,6 +68,7 @@
     "rollup-plugin-babel": "^4.0.1",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-eslint": "^4.0.0",
+    "rollup-plugin-node-globals": "^1.4.0",
     "rollup-plugin-node-resolve": "^3.3.0",
     "rollup-plugin-replace": "^2.0.0",
     "rollup-plugin-size-snapshot": "^0.7.0",
@@ -75,17 +76,17 @@
     "svg-join": "^1.1.1",
     "svg4everybody": "^2.1.9",
     "svgo": "^0.7.2",
-    "rollup-plugin-node-globals": "^1.4.0"
+    "lodash-es": "^4.17.11"
   },
   "dependencies": {
-    "classnames": "2.2.5",
-    "lodash-es": "^4.17.11"
+    "classnames": "2.2.5"
   },
   "sideEffects": false,
   "peerDependencies": {
     "prop-types": "15.x",
     "react": "16.x",
-    "react-dom": "16.x"
+    "react-dom": "16.x",
+    "lodash-es": "^4.17.11"
   },
   "files": [
     "/dist",
