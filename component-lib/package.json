@@ -19,7 +19,7 @@
         "lint": "eslint --ext .jsx,.js /",
         "deploy:prod": "npm publish dist && babel-node ../deploy-slack.js component-lib",
         "prepublishOnly": "",
-        "publish:local-test": "npm run build:library && npm pack",
+        "publish:local-test": "npm run build:library && cd dist && npm pack",
         "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
         "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
         "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono",
@@ -111,9 +111,6 @@
         "react": "16.x",
         "react-dom": "16.x"
     },
-    "files": [
-        "dist"
-    ],
     "workspaces": [
         "src/*"
     ],
