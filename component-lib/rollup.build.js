@@ -7,7 +7,7 @@ import uglify from 'rollup-plugin-uglify';
 import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 const input = './src/index.js';
-const name = 'style-guide';
+const name = 'index';
 const globals = {
     react: 'React',
     'react-dom': 'ReactDOM',
@@ -29,7 +29,7 @@ export default [
         output: { file: `dist/umd/${name}.development.js`, format: 'umd', name, globals },
         external: Object.keys(globals),
         plugins: [
-            nodeResolve(),
+            nodeResolve({ extensions: ['.jsx', '.js'] }),
             babel(babelOptions),
             commonjs(commonjsOptions),
             nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
@@ -41,7 +41,7 @@ export default [
         output: { file: `dist/umd/${name}.production.min.js`, format: 'umd', name, globals },
         external: Object.keys(globals),
         plugins: [
-            nodeResolve(),
+            nodeResolve({ extensions: ['.jsx', '.js'] }),
             babel(babelOptions),
             commonjs(commonjsOptions),
             nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893

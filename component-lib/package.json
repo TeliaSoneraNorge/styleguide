@@ -16,7 +16,7 @@
         "build:es": "cross-env NODE_ENV=production BABEL_ENV=es babel --config-file ./babel.config.js ./src --out-dir ./dist/es --ignore *.test.js",
         "build:umd": "cross-env BABEL_ENV=production-umd rollup -c ./rollup.build.js",
         "build:copy-files": "babel-node --config-file ./babel.config.js ./scripts/copy-files.js",
-        "build:js": "npm run build:es2015 && npm run build:es2015modules && npm run build:es && npm run build:copy-files",
+        "build:js": "npm run build:es2015 && npm run build:es2015modules && npm run build:es && npm run build:umd && npm run build:copy-files",
         "lint": "eslint --ext .jsx,.js /",
         "prepublishOnly": "",
         "publish:local-test": "npm run build:library && npm pack",

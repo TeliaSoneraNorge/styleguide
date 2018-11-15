@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Accordion from './Accordion';
+import Accordion from '../Accordion';
 
 /**
  * Status: *finished*.

@@ -1,13 +1,4 @@
-This;
-array;
-contains;
-react;
-components;
-to;
-be;
-used in the;
-examples;
-page;
+// This array contains react components to be used in the examples page
 const componentsForExamplePage = [
     // Atoms
     'src/atoms/AlertText/AlertText.jsx',

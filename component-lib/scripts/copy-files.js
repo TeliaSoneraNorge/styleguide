@@ -51,8 +51,8 @@ async function addLicense(packageData) {
         [
             '../dist/index.js',
             '../dist/index.es.js',
-            //'../dist/umd/style-guide.development.js',
-            //'../dist/umd/style-guide.production.min.js',
+            '../dist/umd/index.development.js',
+            '../dist/umd/index.production.min.js',
         ].map(file => prepend(path.resolve(__dirname, file), license)),
     );
 }

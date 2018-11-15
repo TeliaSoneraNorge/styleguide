@@ -1,6 +1,6 @@
 let defaultPresets;
 
-// We release a ES version of styleguide.
+// We release a ES version of style guide.
 // It's something that matches the latest official supported features of JavaScript.
 // Nothing more (stage-1, etc), nothing less (require, etc).
 
@@ -34,7 +34,15 @@ module.exports = {
             },
         ],
         '@babel/plugin-transform-object-assign',
-        '@babel/plugin-transform-runtime',
+        [
+            '@babel/plugin-transform-runtime',
+            {
+                'corejs': false,
+                'helpers': true,
+                'regenerator': true,
+                'useESModules': false
+            }
+        ]
     ],
     env: {
         test: {
