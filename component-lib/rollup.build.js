@@ -4,6 +4,7 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import eslint from 'rollup-plugin-eslint';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 import pkg from './package.json';
 
@@ -12,8 +13,8 @@ export default [{
     input: 'src/index.js',
     external: ['react', 'react-dom', 'prop-types'],
     output: [
-        { file: pkg.main, format: 'cjs', sourcemap: 'inline' },
-        { file: pkg.module, format: 'es', sourcemap: 'inline' },
+        { file: pkg.main, format: 'cjs', sourcemap: process.env.NODE_ENV !== 'production' && 'inline' },
+        { file: pkg.module, format: 'es', sourcemap: process.env.NODE_ENV !== 'production' && 'inline' },
     ],
     plugins: [
         eslint(),
@@ -25,13 +26,30 @@ export default [{
         babel({
             babelrc: false,
             exclude: 'node_modules/**',
-            presets: ['react', ['env', {
+            presets: ['@babel/preset-react', ['@babel/preset-env', {
                 modules: false,
                 targets: {
                     browsers :['last 2 versions'],
                 }
-            }], 'stage-0', 'stage-1', 'stage-2'],
-            plugins: ['external-helpers']
+            }]],
+            plugins: [
+                '@babel/plugin-proposal-class-properties',
+                ['@babel/plugin-proposal-decorators', { 'legacy': true }],
+                '@babel/plugin-proposal-do-expressions',
+                '@babel/plugin-proposal-export-default-from',
+                '@babel/plugin-proposal-export-namespace-from',
+                '@babel/plugin-proposal-function-bind',
+                '@babel/plugin-proposal-function-sent',
+                '@babel/plugin-proposal-json-strings',
+                '@babel/plugin-proposal-logical-assignment-operators',
+                '@babel/plugin-proposal-nullish-coalescing-operator',
+                '@babel/plugin-proposal-numeric-separator',
+                '@babel/plugin-proposal-optional-chaining',
+                ['@babel/plugin-proposal-pipeline-operator', { 'proposal': 'minimal' }],
+                '@babel/plugin-proposal-throw-expressions',
+                '@babel/plugin-syntax-dynamic-import',
+                '@babel/plugin-syntax-import-meta',
+                'lodash']
         }),
         cjs({
             extensions: ['.js', '.jsx']
@@ -40,6 +58,7 @@ export default [{
             ENV: JSON.stringify(process.env.NODE_ENV || 'development')
         }),
         (process.env.NODE_ENV === 'production' && uglify()),
+        sizeSnapshot(),
     ],
     watch: {
         chokidar: true,

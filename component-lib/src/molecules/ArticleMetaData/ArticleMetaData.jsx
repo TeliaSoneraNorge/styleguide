@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import _ from 'lodash';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import { uniqueId } from 'lodash-es';
 
 /**
  * Status: *finished*
@@ -20,7 +20,7 @@ const ArticleMetaData = ({ iconName, tags = [], date, author, className, ...rest
             </span>
             <div className="tags">
                 {tags.map(tag => (
-                    <span className="tags__tag" key={_.uniqueId('tag-')}> {tag}</span>
+                    <span className="tags__tag" key={uniqueId('tag-')}> {tag}</span>
                 ))}
             </div>
             {iconName && (

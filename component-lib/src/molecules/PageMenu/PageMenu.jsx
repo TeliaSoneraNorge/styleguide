@@ -50,8 +50,7 @@ const PageMenu = ({
                     <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
                         <div className={classNames(
                             'page-menu__content',
-                            { 'page-menu__content--empty': !menuLink.contentAboveItems })}
-                             dangerouslySetInnerHTML={{ __html: menuLink.contentAboveItems }} />
+                            { 'page-menu__content--empty': !menuLink.contentAboveItems })} dangerouslySetInnerHTML={{ __html: menuLink.contentAboveItems }} />
                         <MenuBar ariaLabel="innlogget brukermeny" items={menuLink.loggedInLinks} isEmphasised />
                         <MenuBar items={menuLink.loggedOutLinks} />
                     </Tabs.TabPanel>
