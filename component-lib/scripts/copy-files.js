@@ -43,7 +43,7 @@ async function prepend(file, string) {
 async function addLicense(packageData) {
     const license = `/** @license Telia Style Guide v${packageData.version}
  *
- * This source code is licensed under the MIT license found in the
+ * This source code is licensed under the ISC license found in the
  * LICENSE file in the root directory of this source tree.
  */
 `;
