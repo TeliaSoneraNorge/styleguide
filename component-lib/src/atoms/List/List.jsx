@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import { Link } from '../../index';
+import { default as Link } from '../../atoms/Link';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**

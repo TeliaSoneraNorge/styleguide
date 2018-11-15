@@ -1,8 +1,8 @@
-import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import map from 'lodash/map';
 
 /**
  * Status: *finished*.
@@ -41,7 +41,7 @@ const Alert = ({
                 }
                 {links.length > 0 ?
                     <ul className="list list--links list--black">
-                        {_.map(links, (link, i) =>
+                        {map(links, (link, i) =>
                             <li key={i} className="list__item">
                                 <a className="list__link" href={link.url} target="_self">{link.text}</a>
                             </li>

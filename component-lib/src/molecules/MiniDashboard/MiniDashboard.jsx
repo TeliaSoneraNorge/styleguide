@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
+import map  from 'lodash/map';
 
 /**
  * Status: *in progress*.
@@ -18,7 +19,7 @@ const MiniDashboard = ({ headingText, children, links }) =>
             {children}
         </div>
         <ul className="mini-dashboard__links list list--links">
-            {_.map(links, ({ text, href, notifications }, i) =>
+            {map(links, ({ text, href, notifications }, i) =>
                 <li key={i} className="mini-dashboard__link list__item">
                     <a className="list__link" href={href} target="_self">{text}</a>
                     {notifications &&

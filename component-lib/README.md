@@ -5,6 +5,13 @@ This is a React component library of the Atomic Design components found in the T
 - The styleguide can be [found on the web](http://telia-styleguide.herokuapp.com).
 - The React component library can be [found on NPM as a JavaScript module](https://www.npmjs.com/package/@telia/styleguide).
 
+# Development
+
+## Getting started
+
+- Install dependencies: `npm install`
+- Build the library: `npm run build:library`
+
 ## Exporting/Publishing
 
 - MAKE SURE YOU ARE IN THE `component-lib` FOLDER AND NOT IN THE WEBSITE ROOT!

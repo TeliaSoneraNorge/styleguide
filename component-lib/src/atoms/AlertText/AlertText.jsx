@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-import Heading from '../Heading/Heading';
+import Heading from '../Heading';
 
 /**
  * Status: *finished*.

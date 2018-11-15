@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import _ from 'lodash';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
-
+import upperFirst from 'lodash/upperFirst';
 
 /**
  * Status: *finished*.
@@ -13,7 +12,7 @@ const IconLink = ({ className, iconName, ...rest }) => (
         className={classnames('icon-link', {
             [className]: className,
         })}
-        aria-label={_.upperFirst(iconName)}
+        aria-label={upperFirst(iconName)}
         {...rest}>
         <SvgIcon iconName={iconName} color="black" className="icon-link__icon" />
     </a>

@@ -1,6 +1,6 @@
-import _ from 'lodash';
 import React from 'react';
 import PropTypes from 'prop-types';
+import map  from 'lodash/map';
 
 /**
  * Status: *finished*.
@@ -13,7 +13,7 @@ const PageFooter = ({ links, specialLink }) =>
         <div className="page-footer__content">
             <div className="page-footer__content-wrapper">
                 <nav className="page-footer__main-nav">
-                    {_.map(links, (link, i) =>
+                    {map(links, (link, i) =>
                         <a key={i} className="page-footer__link" href={link.url}>{link.text}</a>
                     )}
                 </nav>

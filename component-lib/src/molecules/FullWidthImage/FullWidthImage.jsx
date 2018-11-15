@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Caption from '../../atoms/Caption/Caption';
+import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*
@@ -33,7 +34,7 @@ const FullWidthImage = ({
         {logoSources && !!logoSources.length &&
             <picture className="full-width-image__logo">
                 {logoSources.map(it => <source
-                    key={_.uniqueId('source-')}
+                    key={uniqueId('source-')}
                     srcSet={it.srcSet}
                     media={it.type==='mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'} />
                 )}

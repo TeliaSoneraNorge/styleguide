@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Alert from './Alert';
+import Alert from '../Alert/Alert';
 
 export default class StatefulAlert extends React.Component {
     static propTypes = {
