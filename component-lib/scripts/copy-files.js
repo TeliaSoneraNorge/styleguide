@@ -4,6 +4,13 @@ import path from 'path';
 import fse from 'fs-extra';
 import glob from 'glob';
 
+async function copyFolder(folder) {
+    const buildPath = path.resolve(__dirname, '../dist/', path.basename(folder));
+    await fse.copy(folder, buildPath);
+    console.log(`Copied ${folder} to ${buildPath}`);
+}
+
+
 async function copyFile(file) {
     const buildPath = path.resolve(__dirname, '../dist/', path.basename(file));
     await fse.copy(file, buildPath);
@@ -25,6 +32,7 @@ async function createPackageFile() {
         ...packageDataOther,
         main: './index.js',
         module: './index.es.js',
+        es: './es/index.js',
         private: false,
     };
     const buildPath = path.resolve(__dirname, '../dist/package.json');
@@ -60,6 +68,7 @@ async function addLicense(packageData) {
 async function run() {
     await Promise.all(
         ['../README.md', '../VERSIONS.md', '../LICENSE'].map(file => copyFile(file)),
+        ['./assets'].map(folder => copyFolder(folder))
     );
     const packageData = await createPackageFile();
     await addLicense(packageData);
