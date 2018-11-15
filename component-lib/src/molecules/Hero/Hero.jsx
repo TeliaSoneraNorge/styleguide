@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import _ from 'lodash';
 import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
+import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*
@@ -57,7 +57,7 @@ const Hero = ({
         <React.Fragment>
             <picture className="hero__picture">
                 {sources.map(it => <source
-                    key={_.uniqueId('source-')}
+                    key={uniqueId('source-')}
                     srcSet={it.srcSet}
                     media={it.type==='mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'} />
                 )}
@@ -70,7 +70,7 @@ const Hero = ({
             {logoSources && !!logoSources.length &&
                 <picture className="hero__logo">
                     {logoSources.map(it => <source
-                        key={_.uniqueId('source-')}
+                        key={uniqueId('source-')}
                         srcSet={it.srcSet}
                         media={it.type==='mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'} />
                     )}

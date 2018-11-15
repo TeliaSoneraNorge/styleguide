@@ -2,7 +2,7 @@ import _ from 'lodash';
 import * as reactDocs from 'react-docgen';
 import { html } from 'js-beautify';
 
-import ReactComponents from '../../../component-lib/src/index';
+import ReactComponents from '../../../component-lib/src/examples-page';
 
 const components = (() => {
     // First load paths of all React and Html examples.

@@ -1,48 +1,81 @@
-import babel from 'rollup-plugin-babel';
-import cjs from 'rollup-plugin-commonjs';
 import nodeResolve from 'rollup-plugin-node-resolve';
+import commonjs from 'rollup-plugin-commonjs';
+import babel from 'rollup-plugin-babel';
 import replace from 'rollup-plugin-replace';
-import uglify from 'rollup-plugin-uglify';
-import eslint from 'rollup-plugin-eslint';
+import nodeGlobals from 'rollup-plugin-node-globals';
+import { uglify } from 'rollup-plugin-uglify';
+import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import filesize from 'rollup-plugin-filesize';
+import { eslint } from 'rollup-plugin-eslint';
 
-import pkg from './package.json';
+const isProdBuild = 'production' === process.env.NODE_ENV;
+const input = './src/index.js';
+const name = 'index';
+const globals = {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'lodash': 'lodash',
+    'classNames': 'classNames',
+};
+const babelOptions = {
+    exclude: /node_modules/,
+    // We are using @babel/plugin-transform-runtime
+    runtimeHelpers: true,
+    configFile: './babel.config.js',
+};
+const commonjsOptions = {
+    ignoreGlobal: true,
+    include: /node_modules/,
+};
+
+const commonPlugins = [
+    eslint(),
+    nodeResolve({
+        extensions: ['.jsx', '.js'], main: true,
+        jsnext: true,
+        browser: true,
+    }),
+    babel(babelOptions),
+    commonjs(commonjsOptions),
+    nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
+    replace({ 'process.env.NODE_ENV': JSON.stringify('production') }),
+    filesize({
+        showGzippedSize: false,
+    }),
+    replace({
+        ENV: JSON.stringify(process.env.NODE_ENV || 'development'),
+    }),
+];
+
+const prodPlugins = [
+    uglify(),
+    sizeSnapshot(),
+];
+
+const sourcemap = isProdBuild ? false : 'inline';
 
 export default [{
-    // perf: true, // Outputs performance information
-    input: 'src/index.js',
-    external: ['react', 'react-dom', 'prop-types'],
+    input,
+    external: Object.keys(globals),
+    plugins: commonPlugins.concat(isProdBuild ? prodPlugins : []),
     output: [
-        { file: pkg.main, format: 'cjs', sourcemap: 'inline' },
-        { file: pkg.module, format: 'es', sourcemap: 'inline' },
-    ],
-    plugins: [
-        eslint(),
-        nodeResolve({
-            jsnext: true,
-            main: true,
-            browser: true
-        }),
-        babel({
-            babelrc: false,
-            exclude: 'node_modules/**',
-            presets: ['react', ['env', {
-                modules: false,
-                targets: {
-                    browsers :['last 2 versions'],
-                }
-            }], 'stage-0', 'stage-1', 'stage-2'],
-            plugins: ['external-helpers']
-        }),
-        cjs({
-            extensions: ['.js', '.jsx']
-        }),
-        replace({
-            ENV: JSON.stringify(process.env.NODE_ENV || 'development')
-        }),
-        (process.env.NODE_ENV === 'production' && uglify()),
+        {
+            file: `dist/${name}.cjs.js`, format: 'cjs',
+            sourcemap,
+            name, globals,
+        },
+        {
+            file: `dist/umd/${name}.development.js`, format: 'umd',
+            sourcemap,
+            name, globals,
+        },
+        {
+            file: `dist/umd/${name}.production.min.js`,
+            format: 'umd', name, globals,
+        },
     ],
     watch: {
         chokidar: true,
-        include: ['./**']
-    }
+        include: ['./**'],
+    },
 }];

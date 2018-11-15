@@ -2,8 +2,8 @@ import React from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 
-import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
-import Spinner from '../../atoms/Spinner/Spinner';
+import ProgressBar from '../../atoms/ProgressBar';
+import Spinner from '../../atoms/Spinner';
 
 const getThresholdFromValue = (thresholds, value) =>
     thresholds

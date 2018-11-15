@@ -1,8 +1,8 @@
-import _ from 'lodash';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import SvgIcon from '../SvgIcon/SvgIcon';
+import range from 'lodash/range';
 
 /**
  * Status: *In progress*.
@@ -59,7 +59,7 @@ const renderStep = (index, number, numberOfSteps, label) => {
 const StepIndicator = ({ index, numberOfSteps, labels }) =>
     <div className="step-indicator">
         <ul className="step-indicator__list">
-            {_.range(numberOfSteps).map(number => renderStep(index, number, numberOfSteps, labels[number]) )}
+            {range(numberOfSteps).map(number => renderStep(index, number, numberOfSteps, labels[number]) )}
         </ul>
     </div>;
 
