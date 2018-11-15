@@ -4,7 +4,8 @@ import nodeResolve from 'rollup-plugin-node-resolve';
 import replace from 'rollup-plugin-replace';
 import uglify from 'rollup-plugin-uglify';
 import eslint from 'rollup-plugin-eslint';
-import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
+import { sizeSnapshot} from 'rollup-plugin-size-snapshot';
+import nodeGlobals from 'rollup-plugin-node-globals';
 
 import pkg from './package.json';
 
@@ -59,10 +60,11 @@ export default [{
         cjs({
             extensions: ['.js', '.jsx']
         }),
-        //replace({
-        //    ENV: JSON.stringify(process.env.NODE_ENV || 'development')
-        //}),
+        replace({
+            ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+        }),
         //(process.env.NODE_ENV === 'production' && uglify()),
+        nodeGlobals(), // Wait for https://github.com/cssinjs/jss/pull/893
         sizeSnapshot(),
     ],
     watch: {

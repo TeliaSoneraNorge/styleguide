@@ -74,14 +74,15 @@
     "rollup-plugin-uglify": "^3.0.0",
     "svg-join": "^1.1.1",
     "svg4everybody": "^2.1.9",
-    "svgo": "^0.7.2"
+    "svgo": "^0.7.2",
+    "rollup-plugin-node-globals": "^1.4.0"
   },
   "dependencies": {
     "classnames": "2.2.5",
     "lodash-es": "^4.17.11"
   },
-    "sideEffects": false,
-    "peerDependencies": {
+  "sideEffects": false,
+  "peerDependencies": {
     "prop-types": "15.x",
     "react": "16.x",
     "react-dom": "16.x"
