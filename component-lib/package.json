@@ -80,7 +80,8 @@
     "classnames": "2.2.5",
     "lodash-es": "^4.17.11"
   },
-  "peerDependencies": {
+    "sideEffects": false,
+    "peerDependencies": {
     "prop-types": "15.x",
     "react": "16.x",
     "react-dom": "16.x"
