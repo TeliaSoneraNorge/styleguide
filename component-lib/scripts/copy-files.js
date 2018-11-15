@@ -31,8 +31,8 @@ async function createPackageFile() {
     const newPackageData = {
         ...packageDataOther,
         main: './index.js',
-        module: './index.es.js',
-        es: './es/index.js',
+        module: './es/index.js',
+        cjs: './index.cjs.js',
         private: false,
     };
     const buildPath = path.resolve(__dirname, '../dist/package.json');
@@ -59,6 +59,8 @@ async function addLicense(packageData) {
         [
             '../dist/index.js',
             '../dist/index.es.js',
+            '../dist/index.cjs.js',
+            '../dist/es/index.js',
             '../dist/umd/index.development.js',
             '../dist/umd/index.production.min.js',
         ].map(file => prepend(path.resolve(__dirname, file), license)),

@@ -8,19 +8,21 @@
   fill: #FFF;
   fill-rule: evenodd;
 }
-.svg_ico_add_purple,
 .svg_ico_add_white,
+.svg_ico_add_purple,
 .svg_ico_add {
   width: 15px;
   height: 15px;
 }
-.svg_ico_add_purple {
-  fill: #990AE3;
+.svg_ico_add_white {
+  fill: #FFF;
   fill-rule: evenodd;
 }
-.svg_ico_add_white,
-.svg_ico_linkarrow_white {
-  fill: #FFF;
+.svg_ico_add_purple,
+.svg_ico_dropArrow_purple,
+.svg_ico_linkarrow_purple,
+.svg_ico_minus_purple {
+  fill: #990AE3;
   fill-rule: evenodd;
 }
 .svg_ico_add,
@@ -28,17 +30,15 @@
 .svg_ico_content,
 .svg_ico_delete,
 .svg_ico_download,
-.svg_ico_dropArrow_purple,
 .svg_ico_dropArrow,
 .svg_ico_edit_document,
 .svg_ico_favourites,
 .svg_ico_heart,
 .svg_ico_info,
-.svg_ico_linkarrow_purple,
+.svg_ico_linkarrow_white,
 .svg_ico_linkarrow,
 .svg_ico_menu_logged_in,
 .svg_ico_menu,
-.svg_ico_minus_purple,
 .svg_ico_minus,
 .svg_ico_mobile,
 .svg_ico_music,
@@ -51,20 +51,15 @@
   fill-rule: evenodd;
 }
 .svg_ico_backarrow_purple,
-.svg_ico_backarrow_white,
 .svg_ico_backarrow,
+.svg_ico_backarrow_white,
 .svg_ico_linkarrow_purple,
 .svg_ico_linkarrow_white {
   width: 9px;
   height: 13px;
 }
-.svg_ico_backarrow_purple,
-.svg_ico_linkarrow_purple {
+.svg_ico_backarrow_purple {
   fill: #990AE3;
-}
-.svg_ico_backarrow_white,
-.svg_ico_image_placeholder_white {
-  fill: #fff;
 }
 .svg_ico_buy,
 .svg_ico_download {
@@ -74,6 +69,10 @@
 .svg_ico_check {
   width: 14px;
   height: 11px;
+}
+.svg_ico_backarrow_white,
+.svg_ico_image_placeholder_white {
+  fill: #fff;
 }
 .svg_ico_checkmark_green {
   width: 21px;
@@ -116,9 +115,6 @@
   width: 15px;
   height: 10px;
 }
-.svg_ico_dropArrow_purple {
-  fill: #990AE3;
-}
 .svg_ico_edit_document {
   width: 16px;
   height: 18px;
@@ -153,13 +149,12 @@
   width: 64px;
   height: 64px;
 }
+.svg_ico_linkarrow_white {
+  fill: #FFF;
+}
 .svg_ico_linkarrow {
   width: 13px;
   height: 13px;
-}
-.svg_ico_map {
-  width: 32px;
-  height: 32px;
 }
 .svg_ico_menu_logged_in {
   width: 17px;
@@ -169,13 +164,14 @@
   width: 14px;
   height: 12px;
 }
+.svg_ico_map {
+  width: 32px;
+  height: 32px;
+}
 .svg_ico_minus_purple,
 .svg_ico_minus {
   width: 16px;
   height: 4px;
-}
-.svg_ico_minus_purple {
-  fill: #990AE3;
 }
 .svg_ico_mobile {
   width: 13px;
