@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
-import { map } from 'lodash-es';
+import map from 'lodash/map';
 
 /**
  * Status: *finished*.

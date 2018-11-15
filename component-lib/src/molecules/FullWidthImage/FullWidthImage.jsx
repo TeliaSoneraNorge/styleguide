@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 import Caption from '../../atoms/Caption/Caption';
-import { uniqueId } from 'lodash-es';
+import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*

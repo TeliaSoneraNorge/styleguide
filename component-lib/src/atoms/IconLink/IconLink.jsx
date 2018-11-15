@@ -2,8 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
-import { upperFirst } from 'lodash-es';
-
+import upperFirst from 'lodash/upperFirst';
 
 /**
  * Status: *finished*.

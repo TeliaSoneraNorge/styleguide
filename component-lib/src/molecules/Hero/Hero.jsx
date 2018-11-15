@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
-import { uniqueId } from 'lodash-es';
+import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*

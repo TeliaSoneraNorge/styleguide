@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import ProgressBar from '../../atoms/ProgressBar/ProgressBar';
-import { map } from 'lodash-es';
+import map  from 'lodash/map';
 
 /**
  * Status: *in progress*.

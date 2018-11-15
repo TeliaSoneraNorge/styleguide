@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import SvgIcon from '../SvgIcon/SvgIcon';
-import { range } from 'lodash-es';
+import range from 'lodash/range';
 
 /**
  * Status: *In progress*.
