@@ -34,15 +34,8 @@ module.exports = {
             },
         ],
         '@babel/plugin-transform-object-assign',
-        [
-            '@babel/plugin-transform-runtime',
-            {
-                'corejs': false,
-                'helpers': true,
-                'regenerator': true,
-                'useESModules': false
-            }
-        ]
+        '@babel/plugin-transform-runtime',
+        'lodash',
     ],
     env: {
         test: {
@@ -57,10 +50,17 @@ module.exports = {
                 ],
             ],
         },
-        development: { },
+        development: {},
         es: {
             plugins: [
                 'transform-react-constant-elements',
+                'transform-dev-warning',
+                [
+                    'transform-react-remove-prop-types',
+                    {
+                        mode: 'wrap',
+                    },
+                ],
             ],
             // It's most likely a babel bug.
             // We are using this ignore option in the CLI command but that has no effect.
@@ -69,6 +69,13 @@ module.exports = {
         production: {
             plugins: [
                 'transform-react-constant-elements',
+                'transform-dev-warning',
+                [
+                    'transform-react-remove-prop-types',
+                    {
+                        mode: 'wrap',
+                    },
+                ],
             ],
             // It's most likely a babel bug.
             // We are using this ignore option in the CLI command but that has no effect.
