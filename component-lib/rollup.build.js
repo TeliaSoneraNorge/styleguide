@@ -8,13 +8,18 @@ import { sizeSnapshot } from 'rollup-plugin-size-snapshot';
 
 import pkg from './package.json';
 
+const globals = {
+    react: 'React',
+    'react-dom': 'ReactDOM',
+    'prop-types': 'propTypes',
+};
 export default [{
     //perf: true, // Outputs performance information
     input: 'src/index.js',
-    external: ['react', 'react-dom', 'prop-types'],
+    external: Object.keys(globals),
     output: [
-        { file: pkg.main, format: 'cjs', sourcemap: 'inline' },
-        { file: pkg.module, format: 'es', sourcemap: 'inline' },
+        { file: pkg.main, format: 'cjs', sourcemap: 'inline', globals },
+        { file: pkg.module, format: 'es', sourcemap: 'inline', globals },
     ],
     plugins: [
         eslint(),
@@ -54,10 +59,10 @@ export default [{
         cjs({
             extensions: ['.js', '.jsx']
         }),
-        replace({
-            ENV: JSON.stringify(process.env.NODE_ENV || 'development')
-        }),
-        (process.env.NODE_ENV === 'production' && uglify()),
+        //replace({
+        //    ENV: JSON.stringify(process.env.NODE_ENV || 'development')
+        //}),
+        //(process.env.NODE_ENV === 'production' && uglify()),
         sizeSnapshot(),
     ],
     watch: {
