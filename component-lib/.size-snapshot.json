@@ -1,0 +1,7 @@
+{
+  "dist/umd/index.production.min.js": {
+    "bundled": 304022,
+    "minified": 119100,
+    "gzipped": 29247
+  }
+}
