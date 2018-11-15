@@ -75,8 +75,7 @@
     "rollup-plugin-uglify": "^3.0.0",
     "svg-join": "^1.1.1",
     "svg4everybody": "^2.1.9",
-    "svgo": "^0.7.2",
-    "lodash-es": "^4.17.11"
+    "svgo": "^0.7.2"
   },
   "dependencies": {
     "classnames": "2.2.5"
