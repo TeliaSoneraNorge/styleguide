@@ -25,7 +25,7 @@ const noop = () => {};
  * [MDN: ARIA / button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role)
  *
  */
-const AccordionList = ({ accordionItems, setItemRef,isExpandedAccordionIndex, toggleIsExpanded }) => (
+const AccordionList = ({ accordionItems, setItemRef, isExpandedAccordionIndex, toggleIsExpanded }) => (
     <div className="accordion-list">
         {accordionItems.map((accordionItem, i) =>
             <Accordion
@@ -45,6 +45,7 @@ AccordionList.propTypes = {
         children: PropTypes.node.isRequired
     })).isRequired,
     setItemRef: PropTypes.func,
+    toggleIsExpanded: PropTypes.func,
     isExpandedAccordionIndex: PropTypes.number.isRequired,
 };
 
