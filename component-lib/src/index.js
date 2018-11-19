@@ -33,6 +33,7 @@ export { default as AnimatedProgressBar } from './atoms/AnimatedProgressBar/Anim
 
 // Molecules
 export { default as AccordionList } from './molecules/AccordionList/AccordionList';
+export { default as StatefulAccordionList } from './molecules/AccordionList/StatefulAccordionList';
 export { default as Alert } from './molecules/Alert/Alert';
 export { default as StatefulAlert } from './molecules/Alert/StatefulAlert';
 export { default as BoxGrid } from './molecules/BoxGrid/BoxGrid';

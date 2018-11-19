@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import Accordion from './Accordion';
 
+const noop = () => {};
+
 /**
  * Status: *finished*.
  *
@@ -23,62 +25,27 @@ import Accordion from './Accordion';
  * [MDN: ARIA / button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role)
  *
  */
+const AccordionList = ({ accordionItems, setItemRef,isExpandedAccordionIndex, toggleIsExpanded }) => (
+    <div className="accordion-list">
+        {accordionItems.map((accordionItem, i) =>
+            <Accordion
+                accordionRef={(element) => {(setItemRef || noop)(element, i);}}
+                key={i}
+                {...accordionItem}
+                isExpanded={i === isExpandedAccordionIndex}
+                toggleIsExpanded={() => (toggleIsExpanded || noop)(i)} />
+        )}
+    </div>
+);
 
-class AccordionList extends React.Component {
-    static propTypes = {
-        accordionItems: PropTypes.arrayOf(PropTypes.shape({
-            id: PropTypes.string.isRequired,
-            title: PropTypes.string.isRequired,
-            children: PropTypes.node.isRequired
-        })).isRequired,
-        isExpandedAccordionIndex: PropTypes.number.isRequired,
-    };
-    state = {
-        isExpandedAccordionIndex: this.props.isExpandedAccordionIndex
-    };
-    accordions = {};
-    toggleIsExpanded = (newIndex) => {
-        if (newIndex === this.state.isExpandedAccordionIndex) {
-            this.setState({ isExpandedAccordionIndex: -1 });
-        } else {
-            this.scrollToActiveAccordion(this.state.isExpandedAccordionIndex, newIndex);
-            this.setState({ isExpandedAccordionIndex: newIndex });
-        }
-    };
-    scrollToActiveAccordion = (previousExpandedAccordionIndex, currentExpandedAccordionIndex) => {
-        setImmediate(() => {
-            let openAccordionButtonHeight = 0;
-            /*When an accordion further up on the page is already open, we subtract its button height
-             so that the page scrolls to the top of the current open accordion*/
-            if (previousExpandedAccordionIndex !== -1 &&
-                previousExpandedAccordionIndex < currentExpandedAccordionIndex) {
-                openAccordionButtonHeight = this.accordions[currentExpandedAccordionIndex].firstChild.offsetHeight;
-            }
-
-            window.scroll({
-                top: this.accordions[currentExpandedAccordionIndex].offsetTop + this.accordions[currentExpandedAccordionIndex].offsetParent.offsetTop - openAccordionButtonHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
-        });
-    };
-    setAccordionRef = (accordionItem, i) => {
-        this.accordions[i] = accordionItem;
-    };
-    render() {
-        return (
-            <div className="accordion-list">
-                {this.props.accordionItems.map((accordionItem, i) =>
-                    <Accordion
-                        accordionRef={(element) => {this.setAccordionRef(element, i);}}
-                        key={i}
-                        {...accordionItem}
-                        isExpanded={i === this.state.isExpandedAccordionIndex}
-                        toggleIsExpanded={() => this.toggleIsExpanded(i)} />
-                )}
-            </div>
-        );
-    }
-}
+AccordionList.propTypes = {
+    accordionItems: PropTypes.arrayOf(PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        title: PropTypes.string.isRequired,
+        children: PropTypes.node.isRequired
+    })).isRequired,
+    setItemRef: PropTypes.func,
+    isExpandedAccordionIndex: PropTypes.number.isRequired,
+};
 
 export default AccordionList;
