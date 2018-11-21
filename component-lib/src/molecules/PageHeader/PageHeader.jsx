@@ -1,5 +1,5 @@
 import classNames from 'classnames';
-import React from 'react';
+import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 
 import { preventDefault } from '../../utils';
@@ -18,7 +18,12 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  */
 export default class PageHeader extends React.Component {
     static propTypes = {
-        menuLinks: PropTypes.array.isRequired,
+        hideMenu: PropTypes.bool,
+        menuLinks: (props, propName) => {
+            if (!props.hideMenu && (props[propName] === undefined || !Array.isArray(props[propName]))) {
+                return new Error('PageHeader requires menuLinks to be set unless the \'hideMenu\' prop equals \'true\'.');
+            }
+        },
         menuId: PropTypes.string.isRequired,
         menuSelectedTabIndex: PropTypes.number,
         isLoggedIn: PropTypes.bool,
@@ -36,6 +41,7 @@ export default class PageHeader extends React.Component {
     };
 
     static defaultProps = {
+        hideMenu: false,
         menuSelectedTabIndex: 0,
         isLoggedIn: false,
         loginLink: '#',
@@ -68,23 +74,33 @@ export default class PageHeader extends React.Component {
         const menuIconName = this.props.isLoggedIn ? 'ico_menu_logged_in' : 'ico_menu';
         return (
             <header className={classNames('page-header', { 'page-header--with-cart': cartShouldBeShown })}>
-                <PageMenu
-                    menuLinks={this.props.menuLinks}
-                    menuId={this.props.menuId}
-                    isExpanded={this.state.menuIsExpanded}
-                    onClickClose={this.closeMenu}
-                    fixedPosition
-                    isLoggedIn={this.props.isLoggedIn}
-                    menuSelectedTabIndex={this.state.menuSelectedTabIndex}
-                    onTabSelect={this.onTabSelect}
-                    searchUrl={this.props.searchUrl}
-                    logoutLink={this.props.logoutLink}
-                    onLogoutClick={this.props.onLogoutClick} />
+                {!this.props.hideMenu &&
+                    <PageMenu
+                        menuLinks={this.props.menuLinks}
+                        menuId={this.props.menuId}
+                        isExpanded={this.state.menuIsExpanded}
+                        onClickClose={this.closeMenu}
+                        fixedPosition
+                        isLoggedIn={this.props.isLoggedIn}
+                        menuSelectedTabIndex={this.state.menuSelectedTabIndex}
+                        onTabSelect={this.onTabSelect}
+                        searchUrl={this.props.searchUrl}
+                        logoutLink={this.props.logoutLink}
+                        onLogoutClick={this.props.onLogoutClick} />
+                }
                 <div className="page-header__site-nav">
-                    <button className="page-header__menu-button page-header__icon-box" onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded} aria-controls={this.props.menuId || 'page-header-menu'} aria-pressed={this.state.menuIsExpanded}>
-                        <SvgIcon className="page-header__menu-button-image page-header__icon-box-icon" iconName={menuIconName} color="black" />
-                        <span className="page-header__icon-box-text">Meny</span>
-                    </button>
+                    {!this.props.hideMenu &&
+                        <button
+                            className="page-header__menu-button page-header__icon-box"
+                            onClick={this.openMenu} aria-expanded={this.state.menuIsExpanded}
+                            aria-controls={this.props.menuId || 'page-header-menu'}
+                            aria-pressed={this.state.menuIsExpanded}>
+                            <SvgIcon
+                                className="page-header__menu-button-image page-header__icon-box-icon"
+                                iconName={menuIconName} color="black" />
+                            <span className="page-header__icon-box-text">Meny</span>
+                        </button>
+                    }
                 </div>
                 <a className="page-header__site-logo" href={this.props.logoUrl} title={this.props.logoTitle}>
                     <img className="page-header__site-logo-img" src={this.props.logoImageDesktopPath} alt={this.props.logoTitle} />
