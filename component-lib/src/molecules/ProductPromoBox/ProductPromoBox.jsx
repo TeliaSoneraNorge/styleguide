@@ -29,6 +29,7 @@ const ProductPromoBox = ({
     buttonText,
     isShowingFeatures,
     speechBubbleText,
+    showActionOnNewLine,
     onClick
 }) =>
     <Box
@@ -49,7 +50,10 @@ const ProductPromoBox = ({
                 <h2 className="heading heading--level-2 product-promo-box__product-name">{productName}</h2>
                 <div className="product-promo-box__description">{description}</div>
             </div>
-            <div className="product-promo-box__price-and-action">
+            <div
+                className={classnames('product-promo-box__price-and-action', {
+                    'product-promo-box__price-and-action-inline': !showActionOnNewLine
+                })}>
                 {price &&
                     <div className="product-promo-box__price-info">
                         <span className="product-promo-box__price">{price},-</span>
