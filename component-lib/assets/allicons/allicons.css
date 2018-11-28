@@ -18,10 +18,6 @@
   fill: #FFF;
   fill-rule: evenodd;
 }
-.svg_full-screen-image-mask {
-  width: 1417px;
-  height: 152px;
-}
 .svg_ico_add,
 .svg_ico_buy,
 .svg_ico_content,
@@ -30,18 +26,18 @@
 .svg_ico_dropArrow_purple,
 .svg_ico_dropArrow,
 .svg_ico_edit_document,
-.svg_ico_heart,
 .svg_ico_favourites,
+.svg_ico_heart,
 .svg_ico_info,
 .svg_ico_linkarrow_purple,
 .svg_ico_linkarrow,
-.svg_ico_menu,
 .svg_ico_menu_logged_in,
+.svg_ico_menu,
 .svg_ico_minus_purple,
 .svg_ico_minus,
 .svg_ico_mobile,
-.svg_ico_premisesdatacenter,
 .svg_ico_music,
+.svg_ico_premisesdatacenter,
 .svg_ico_quote,
 .svg_ico_router_refill,
 .svg_ico_search,
@@ -65,14 +61,23 @@
 .svg_ico_image_placeholder_white {
   fill: #fff;
 }
-.svg_ico_check {
-  width: 14px;
-  height: 11px;
+.svg_full-screen-image-mask {
+  width: 1417px;
+  height: 152px;
 }
 .svg_ico_buy,
 .svg_ico_download {
   width: 17px;
   height: 18px;
+}
+.svg_ico_check {
+  width: 14px;
+  height: 11px;
+}
+.svg_ico_checkmark_green {
+  width: 21px;
+  height: 16px;
+  fill: #0C6;
 }
 .svg_ico_code-2 {
   width: 512px;
@@ -82,10 +87,9 @@
   width: 543.232px;
   height: 543.232px;
 }
-.svg_ico_checkmark_green {
-  width: 21px;
-  height: 16px;
-  fill: #0C6;
+.svg_ico_contacts {
+  width: 567.01px;
+  height: 536.01px;
 }
 .svg_ico_content,
 .svg_ico_info,
@@ -93,22 +97,18 @@
   width: 17px;
   height: 17px;
 }
-.svg_ico_contacts {
-  width: 567.01px;
-  height: 536.01px;
-}
 .svg_ico_default_doc,
 .svg_ico_statistics {
   width: 670.83px;
   height: 670.83px;
 }
-.svg_ico_databoost {
-  width: 459.8px;
-  height: 463.27px;
-}
 .svg_ico_delete {
   width: 21px;
   height: 21px;
+}
+.svg_ico_databoost {
+  width: 459.8px;
+  height: 463.27px;
 }
 .svg_ico_dropArrow_purple,
 .svg_ico_dropArrow {
@@ -126,6 +126,10 @@
   width: 17px;
   height: 35px;
 }
+.svg_ico_favourites {
+  width: 14px;
+  height: 14px;
+}
 .svg_ico_end_user {
   width: 616px;
   height: 557.15px;
@@ -134,10 +138,6 @@
   width: 51px;
   height: 45px;
   fill: #231F20;
-}
-.svg_ico_favourites {
-  width: 14px;
-  height: 14px;
 }
 .svg_ico_home {
   width: 591.91px;
@@ -160,13 +160,13 @@
   width: 32px;
   height: 32px;
 }
-.svg_ico_menu {
-  width: 14px;
-  height: 12px;
-}
 .svg_ico_menu_logged_in {
   width: 17px;
   height: 16px;
+}
+.svg_ico_menu {
+  width: 14px;
+  height: 12px;
 }
 .svg_ico_minus_purple,
 .svg_ico_minus {
@@ -180,6 +180,10 @@
   width: 13px;
   height: 18px;
 }
+.svg_ico_music {
+  width: 16px;
+  height: 17px;
+}
 .svg_ico_money {
   width: 555.73px;
   height: 635.32px;
@@ -188,18 +192,14 @@
   width: 18px;
   height: 15px;
 }
-.svg_ico_music {
-  width: 16px;
-  height: 17px;
-}
-.svg_ico_refill {
-  width: 21px;
-  height: 30px;
-}
 .svg_ico_quote {
   width: 16px;
   height: 14px;
   fill: #726E6E;
+}
+.svg_ico_refill {
+  width: 21px;
+  height: 30px;
 }
 .svg_ico_router_refill {
   width: 28px;
