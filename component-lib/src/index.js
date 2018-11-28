@@ -31,7 +31,7 @@ export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints';
 export { default as AnimatedProgressBar } from './atoms/AnimatedProgressBar';
 
 // Molecules
-export { default as AccordionList } from './molecules/AccordionList';
+export { AccordionList, StatefulAccordionList } from './molecules/AccordionList';
 export { default as Alert } from './molecules/Alert';
 export { default as StatefulAlert } from './molecules/AlertStateful';
 export { default as BoxGrid } from './molecules/BoxGrid';

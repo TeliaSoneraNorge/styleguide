@@ -15,6 +15,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.19.2
+- Added hideMenu prop to PageHeader
+- Minor style change for StepIndicator
+- Added sr-only class global in component lib (screereader-only)
+
+## 1.19.0
+- Split AccordionList component into AccordionList and StatefulAccordionList where all the scrolling and toggling is inside the StatefulAccordionList and AccordionList is a pure component.
+
 ## 1.18.0
 - Changed handling of menuLinks prop in PageMenu to expect a string of html in contentAboveItems instead of a React component
 
