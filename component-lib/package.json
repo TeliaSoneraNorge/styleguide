@@ -1,6 +1,6 @@
 {
     "name": "@telia/styleguide",
-    "version": "1.20.1",
+    "version": "1.20.1-beta.0",
     "private": false,
     "description": "",
     "scripts": {
@@ -24,9 +24,9 @@
         "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
         "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono",
         "allicons:react": "node generate-AllIcons-component.js && babel ./assets/allicons/AllIcons.jsx.generated --out-file ./assets/allicons/AllIcons.js"
-    },,
+    },
     "publishConfig": {
-      "access": "public"
+        "access": "public"
     },
     "author": "Telia Norge",
     "license": "ISC",
