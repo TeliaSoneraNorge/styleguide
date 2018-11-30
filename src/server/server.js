@@ -57,7 +57,7 @@ app.post('/api/feedback', jsonParser, (req, res) => {
         message = `:speech_balloon: "${req.body.feedbackText}"\n${req.body.url}`;
     }
 
-    postMessageToSlack('#styleguide', message).then(() => res.send());
+    postMessageToSlack(message).then(() => res.send());
 });
 
 // Send all requests to the same index.ejs view where the React app will start on the client

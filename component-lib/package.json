@@ -12,7 +12,7 @@
     "build:library:watch": "run-p build:library:css:watch build:library:js:watch svgo",
     "build:library:css:watch": "postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
     "build:library:js:watch": "rollup --environment NODE_ENV:development -c rollup.build.js -w",
-    "deploy:prod": "npm publish --access=public && babel-node ../deploy-slack.js component-lib",
+    "deploy:prod": "npm publish --access=public",
     "lint": "eslint --ext .jsx,.js /",
     "prepublishOnly": "",
     "publish:local-test": "npm run build:library && npm pack",
