@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.19.4
+- Minor stuff
+
 ## 1.19.2
 - Added hideMenu prop to PageHeader
 - Minor style change for StepIndicator
