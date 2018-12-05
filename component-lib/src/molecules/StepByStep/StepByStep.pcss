@@ -37,12 +37,6 @@
                 border-left: none;
             }
         }
-
-        &:last-of-type {
-            .step-by-step__text {
-                min-height: 75px;
-            }
-        }
     }
     &__circle {
         background-color: var(--light-grey);
@@ -177,6 +171,10 @@
         flex: 6 0 0;
         min-height: 115px;
         padding: 0 0 4rem .7rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
     }
 
     &__content {
