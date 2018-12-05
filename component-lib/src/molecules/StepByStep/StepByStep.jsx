@@ -79,9 +79,9 @@ StepByStep.Description = ({ children, className, heading, iconName, imageSrc, nu
         <Icon pebbles={pebbles} onSelect={onSelect} index={index} interactive={interactive} opened={opened}>
             {pebbles &&
                 <SvgIcon iconName="step-by-step-pebble" color="grey" />}
-            {imageSrc && 
+            {imageSrc &&
                 <img className="step-by-step__icon" src={imageSrc} />}
-            {iconName && 
+            {iconName &&
                 <SvgIcon className="step-by-step__icon" iconName={iconName} color="purple" />}
             {number !== null && <span className="step-by-step__number">{number}</span>}
         </Icon>
@@ -91,7 +91,7 @@ StepByStep.Description = ({ children, className, heading, iconName, imageSrc, nu
             })}
             {...rest}>
             <h2 className="step-by-step__heading heading heading--level-2">{heading}</h2>
-            <div className="step-by-step__description">{children}</div>
+            {children && <div className="step-by-step__description">{children}</div>}
         </div>
     </React.Fragment>
 );
