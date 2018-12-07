@@ -69,7 +69,7 @@
         "webpack-dev-server": "2.11.1"
     },
     "dependencies": {
-        "@telia/styleguide": "file:component-lib",
+        "@telia/styleguide": "file:component-lib/dist",
         "archiver": "2.0.3",
         "babel-standalone": "^6.26.0",
         "body-parser": "1.18.2",
