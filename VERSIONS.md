@@ -18,6 +18,9 @@ Only noteworthy versions shown (minor changes are omitted).
 - tree shakable components (this version has backward-compatibility, however,
 since there is not /dist folder anymore in the library, you should import index.css from styleguide root directory if you have this file in your codebase)
 
+## 1.19.4
+- Minor stuff
+
 ## 1.19.2
 - Added hideMenu prop to PageHeader
 - Minor style change for StepIndicator

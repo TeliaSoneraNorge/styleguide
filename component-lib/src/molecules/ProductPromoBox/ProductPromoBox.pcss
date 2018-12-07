@@ -77,19 +77,22 @@
         border-top: 2px solid var(--grey);
         padding-top: 1rem;
 
-        @media all and (min-width: 48em) {
-            display: flex;
-            width: 100%;
-            justify-content: space-between;
+        &-inline {
+            @media all and (min-width: 48em) {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
 
-            .button{
-                flex: 0 0 37%;
-                align-self: flex-end;
-                margin-left: 1rem;
-                text-align: center;
+                .button {
+                    flex: 0 0 37%;
+                    align-self: flex-end;
+                    margin-left: 1rem;
+                    text-align: center;
+                }
             }
         }
     }
+
     &__price-info {
     }
     &__price {
