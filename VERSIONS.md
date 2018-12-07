@@ -14,6 +14,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy versions shown (minor changes are omitted).
+## 1.20.1
+- tree shakable components (this version has backward-compatibility, however,
+since there is not /dist folder anymore in the library, you should import index.css from styleguide root directory if you have this file in your codebase)
 
 ## 1.19.2
 - Added hideMenu prop to PageHeader
