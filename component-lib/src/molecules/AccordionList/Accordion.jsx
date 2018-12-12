@@ -28,9 +28,7 @@ class Accordion extends Component {
                         {this.props.title}
                     </button>
                 </h3>
-                <div className="accordion__panel rich-text" id={this.props.id}>
-                    {this.props.children}
-                </div>
+                <div className="accordion__panel rich-text" id={this.props.id} dangerouslySetInnerHTML={{ __html: this.props.children }} />
             </section>
         );
     }
