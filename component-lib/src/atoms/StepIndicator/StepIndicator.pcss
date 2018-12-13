@@ -8,9 +8,27 @@
     display: flex;
     justify-content: center;
 
+    &__clickable {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        cursor: pointer;
+        border-style: none;
+        background-color: inherit;
+    }
+    &__clickable:focus,
+    &__clickable:hover,
+    &__clickable:active {
+        outline: 2px solid var(--core-purple);
+        background: var(--white);
+        z-index: 1;
+    }
+
     &__label {
         font-size: 0.75rem;
         color: var(--dark-grey-2);
+        text-align: center;
 
         @media all and (min-width: 37.5em) {
             margin-top: 0.5rem;
@@ -69,7 +87,7 @@
         border: var(--step-indicator-border) solid var(--dark-grey-2);
         border-radius: 50%;
         color: var(--white);
-        font: 900 0.75rem Avenir;
+        font-size: 0.75rem;
         height: var(--step-indicator-height);
         line-height: calc(var(--step-indicator-height) - 4px);
         margin: 0 calc(var(--step-indicator-height) / 2);
@@ -78,7 +96,7 @@
         width: var(--step-indicator-height);
 
         @media all and (min-width: 37.5em) {
-            font: 900 1.5rem Avenir;
+            font-size: 1.5rem;
             border-width: 3px;
             height: calc(2 * var(--step-indicator-height));
             width: calc(2 * var(--step-indicator-height));
