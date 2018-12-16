@@ -64,15 +64,6 @@ export default [{
             sourcemap,
             name, globals,
         },
-        {
-            file: `dist/umd/${name}.development.js`, format: 'umd',
-            sourcemap,
-            name, globals,
-        },
-        {
-            file: `dist/umd/${name}.production.min.js`,
-            format: 'umd', name, globals,
-        },
     ],
     watch: {
         chokidar: true,
