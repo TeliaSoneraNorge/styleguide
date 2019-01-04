@@ -2,7 +2,7 @@ import React from 'react';
 import { PriceTable } from '@telia/styleguide';
 
 const productList = [
-    { title: 'Abonnement', price: '449,-', subtitle: 'Per mnd' },
+    { title: 'Abonnement', price: '449,-', subtitles: ['Per mnd'] },
     { title: 'Ruter', price: '499,-' },
 ];
 
