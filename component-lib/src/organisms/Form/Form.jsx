@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 
 /**
  *
@@ -7,8 +8,14 @@ import React from 'react';
  *
  * More form examples on the <a href="/forms">forms sample page</a>.
  */
-const Form = ({ action, method, onSubmit, children }) =>
-    <form className="form" action={action} method={method} onSubmit={onSubmit}>
+const Form = ({ action, method, onSubmit, children, className }) =>
+    <form
+        className={classnames('form', {
+            [className]: className
+        })}
+        action={action}
+        method={method}
+        onSubmit={onSubmit}>
         <fieldset className="form__fieldset">
             {children}
         </fieldset>
