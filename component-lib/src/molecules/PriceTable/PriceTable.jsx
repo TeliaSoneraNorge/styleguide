@@ -8,8 +8,10 @@ const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }
                 <tr className="price-table__item" key={index}>
                     <td className="price-table__item-cell">
                         <div className="price-table__item-title">{product.title}</div>
-                        {product.subtitle &&
-                        <div className="price-table__item-subtitle">{product.subtitle}</div>
+                        {
+                            product.subtitles && product.subtitles.map((subtitle) => (
+                                <div className="price-table__item-subtitle">{subtitle}</div>
+                            ))
                         }
                     </td>
                     <td className="price-table__item-cell price-table__item-price">{product.price}</td>
@@ -20,8 +22,10 @@ const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }
             <tr className="price-table__item price-table__total">
                 <td className="price-table__item-cell">
                     <div className="price-table__item-title">{totalTextWithPrice.title}</div>
-                    {totalTextWithPrice.subtitle &&
-                    <div className="price-table__item-subtitle">{totalTextWithPrice.subtitle}</div>
+                    {
+                        totalTextWithPrice.subtitles && totalTextWithPrice.subtitles.map((subtitle) => (
+                            <div className="price-table__item-subtitle">{subtitle}</div>
+                        ))
                     }
                 </td>
                 <td className="price-table__item-cell price-table__item-price">{totalTextWithPrice.price}</td>
@@ -34,15 +38,16 @@ const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }
             </tr> }
         </tfoot>
     </table>;
+
 PriceTable.propTypes = {
     productListWithPrice: PropTypes.arrayOf(PropTypes.shape({
         title: PropTypes.string.isRequired,
-        subtitle: PropTypes.string,
+        subtitles: PropTypes.arrayOf(PropTypes.string),
         price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     })),
     totalTextWithPrice: PropTypes.shape({
         title: PropTypes.string.isRequired,
-        subtitle: PropTypes.string,
+        subtitles: PropTypes.arrayOf(PropTypes.string),
         price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     }),
     additionalLine: PropTypes.string,
