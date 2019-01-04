@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.21.0
+- Made custom classes appear last for Button component
+- Form component can now take classNames
+- PriceTable can now have array of subtitles per product. This is a major change to the proptypes of PriceTable
+- StepIndicator changes
+- Safari Fix for Speechbuble in Subscription component
+
 ## 1.20.0
 - tree shakable components (this version has backward-compatibility, however,
 since there is not /dist folder anymore in the library, you should import index.css from styleguide root directory if you have this file in your codebase)
