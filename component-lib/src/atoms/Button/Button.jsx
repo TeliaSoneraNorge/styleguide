@@ -8,12 +8,12 @@ import classnames from 'classnames';
 const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type = 'button', margin, ...rest }) =>
     <button
         className={classnames('button', {
-            [className]: className,
             [`button--${kind}`]: !isDisabled && kind,
             [`button--${size}`]: size,
             [`button--margin-${margin}`]: margin,
             'button--processing': isProcessing,
             'button--disabled': isDisabled,
+            [className]: className,
         })}
         onClick={onClick}
         disabled={isProcessing || isDisabled}
