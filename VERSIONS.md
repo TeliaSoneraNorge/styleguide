@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.21.1
+- Updated README in component-lib folder
+- Updated heroku build scripts
+
 ## 1.21.0
 - Made custom classes appear last for Button component
 - Form component can now take classNames
