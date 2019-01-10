@@ -1,9 +1,16 @@
 .header {
-    background: var(--light-grey);
     padding: rem(30) rem(20) rem(40);
 
-    &--white-bg {
+    &--grey {
+        background: var(--light-grey);
+    }
+
+    &--white {
         background-color: var(--white);
+    }
+
+    &--with-border-bottom {
+        border-bottom: 3px solid var(--core-purple)
     }
 
     @media all and (min-width: em(450)) {

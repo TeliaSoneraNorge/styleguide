@@ -8,8 +8,26 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 /**
  * Status: *finished*.
  */
-const Header = ({ videoSrc, iconName, hideIconOnDesktop, runningTitle, pageTitle, withMask, withContentOverlap, children }) =>
-    <header className={classNames('header', { 'header--hide-icon-on-desktop': hideIconOnDesktop, 'header--with-mask': withMask, 'header--with-content-overlap': withContentOverlap })}>
+const Header = ({
+    videoSrc,
+    iconName,
+    hideIconOnDesktop,
+    runningTitle,
+    pageTitle,
+    withMask,
+    withContentOverlap,
+    withBorderBottom,
+    backgroundColor,
+    children
+}) =>
+    <header className={
+        classNames('header', {
+            'header--hide-icon-on-desktop': hideIconOnDesktop,
+            'header--with-mask': withMask,
+            'header--with-content-overlap': withContentOverlap,
+            'header--with-border-bottom': withBorderBottom,
+            [`header--${backgroundColor}`]: true
+        })}>
         {videoSrc ?
             <div className="video container container--large container--no-padding container--no-margin">
                 <div className="video__iframe-wrapper">
@@ -30,6 +48,11 @@ const Header = ({ videoSrc, iconName, hideIconOnDesktop, runningTitle, pageTitle
             <section className="header__preamble">{children}</section>
         </div>
     </header>;
+
+Header.defaultProps = {
+    backgroundColor: 'grey'
+};
+
 Header.propTypes = {
     videoSrc: PropTypes.string,
     iconName: PropTypes.string,
@@ -38,6 +61,8 @@ Header.propTypes = {
     pageTitle: PropTypes.string.isRequired,
     withMask: PropTypes.bool,
     withContentOverlap: PropTypes.bool,
+    withBorderBottom: PropTypes.bool,
+    backgroundColor: PropTypes.oneOf(['grey', 'white']),
     children: PropTypes.node,
 };
 
