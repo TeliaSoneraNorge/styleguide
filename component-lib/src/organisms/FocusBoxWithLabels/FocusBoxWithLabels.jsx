@@ -5,8 +5,8 @@ import FocusBox from '../../molecules/FocusBox/FocusBox';
 
 const FocusBoxWithLabels = ({ padding, content: { upperLeft, upperRight, bottomLeft, bottomRight } }) => {
     return (
-        <FocusBox>
-            <div className="focus-box-with-labels">
+        <FocusBox className="focus-box-with-labels">
+            <div className="focus-box-with-labels__inner">
                 <div className={
                     classnames('focus-box-with-labels__upper-left', 'focus-box-with-labels__item', {
                         'focus-box-with-labels__upper-left--padding': padding ,
