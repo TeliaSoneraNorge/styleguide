@@ -8,8 +8,9 @@ import classnames from 'classnames';
  *
  * More form examples on the <a href="/forms">forms sample page</a>.
  */
-const Form = ({ action, method, onSubmit, children, className }) =>
+const Form = ({ id, action, method, onSubmit, children, className }) =>
     <form
+        id={id}
         className={classnames('form', {
             [className]: className
         })}

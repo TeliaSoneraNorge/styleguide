@@ -24,8 +24,8 @@ AnimatedProgressBar.defaultProps = {
 };
 
 AnimatedProgressBar.propTypes = {
-    backgroundColor: PropTypes.oneOf(['grey', 'white', 'black', 'purple']),
-    color: PropTypes.oneOf(['white', 'purple', 'grey', 'black'])
+    backgroundColor: PropTypes.oneOf(['light-grey', 'grey', 'white', 'black', 'purple']),
+    color: PropTypes.oneOf(['light-grey', 'white', 'purple', 'grey', 'black'])
 };
 
 export default AnimatedProgressBar;
