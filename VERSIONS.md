@@ -15,6 +15,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.21.2
+- Changes to style of StepIndicator
+- Added withBorderBottom and backgroundColor props to Header
+- Changes to style for FocusBoxWithLabels
+- Added id prop to Form
+- Fixed such that FocusBox shows border on mobile as well
+- Added light-grey color to AnimatedProgressBar
+
 ## 1.21.1
 - Updated README in component-lib folder
 - Updated heroku build scripts
