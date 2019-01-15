@@ -30,7 +30,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
                     <a
                         className="funky-tabs__link"
                         href={element.props.url}
-                        onClick={(e) => onSelect(e, index)}>
+                        onClick={(e) => onSelect(e, index, element.props.url, element.props.heading)}>
                         <img className="funky-tabs__tab-image" src={element.props.imagePath} />
                         <div className="funky-tabs__tab-text">
                             <span className="link">{element.props.heading}</span>
@@ -58,6 +58,15 @@ FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
         role="tabpanel">
         {children}
     </div>;
+
+FunkyTabs.TabPanel.propTypes = {
+    index: PropTypes.number,
+    uniqueId: PropTypes.string,
+    isSelected: PropTypes.bool,
+    heading: PropTypes.string,
+    url: PropTypes.string,
+    children: PropTypes.node
+};
 
 FunkyTabs.propTypes = {
     selectedIndex: PropTypes.number,
