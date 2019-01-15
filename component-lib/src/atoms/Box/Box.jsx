@@ -16,7 +16,7 @@ export default class Box extends React.Component {
     static propTypes = {
         isExpanded: PropTypes.bool,
         canExpand: PropTypes.bool,
-        color: PropTypes.oneOf(['purple', 'pink', 'light-orange', 'green', 'blue', 'teal', 'grey']),
+        color: PropTypes.oneOf(['purple', 'pink', 'light-orange', 'green', 'blue', 'teal', 'grey', 'black']),
         size: PropTypes.oneOf(['small', 'medium']),
         speechBubbleText: PropTypes.string,
         /** close button aria-controls */
