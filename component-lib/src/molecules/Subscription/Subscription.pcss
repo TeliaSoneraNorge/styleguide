@@ -237,6 +237,20 @@
             background-color: var(--grey);
         }
     }
+
+}
+
+.box--black {
+    &.box--is-expanded,
+    &.subscription--is-standalone {
+        .subscription__teaser {
+            border: 3px solid var(--black);
+        }
+        .subscription__teaser-content {
+            background-color: var(--black);
+            color: var(--white);
+        }
+    }
 }
 
 .box--is-expanded {
