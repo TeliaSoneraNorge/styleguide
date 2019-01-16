@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.21.3
+- Added black color option to Box/Subscription component
+- Small change to FunkyTabs onSelect method
+
 ## 1.21.2
 - Changes to style of StepIndicator
 - Added withBorderBottom and backgroundColor props to Header
