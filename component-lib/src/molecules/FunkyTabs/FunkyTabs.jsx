@@ -14,39 +14,47 @@ import PropTypes from 'prop-types';
  * changes to indicate to the user that he/she are looking at some new content.
  * </p>
  */
-const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) =>
-    <div className="funky-tabs">
-        <ul className="funky-tabs__tabs" role="tablist">
-            {children.map((element, index) =>
-                <li
-                    key={index}
-                    className={classNames('funky-tabs__tab', {
-                        'funky-tabs__tab--selected': (selectedIndex === index)
-                    })}
-                    id={`${uniqueId}-tab-${index}`}
-                    role="tab"
-                    aria-controls={`${uniqueId}-panel-${index}`}
-                    aria-selected={selectedIndex === index}>
-                    <a
-                        className="funky-tabs__link"
-                        href={element.props.url}
-                        onClick={(e) => onSelect(e, index, element.props.url, element.props.heading)}>
-                        <img className="funky-tabs__tab-image" src={element.props.imagePath} />
-                        <div className="funky-tabs__tab-text">
-                            <span className="link">{element.props.heading}</span>
-                        </div>
-                    </a>
-                </li>
-            )}
-        </ul>
-        {children.map((element, index) =>
-            React.cloneElement(element, {
-                key: index,
-                index,
-                uniqueId,
-                isSelected: (index === selectedIndex)
-            }))}
-    </div>;
+const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
+
+    const selectedChild = children.find((_, index) => index === selectedIndex);
+
+    return (
+        <div className="funky-tabs">
+            <ul className="funky-tabs__tabs" role="tablist">
+                {children.map((element, index) =>
+                    <li
+                        key={index}
+                        className={classNames('funky-tabs__tab', {
+                            'funky-tabs__tab--selected': (selectedIndex === index)
+                        })}
+                        id={`${uniqueId}-tab-${index}`}
+                        role="tab"
+                        aria-controls={`${uniqueId}-panel-${index}`}
+                        aria-selected={selectedIndex === index}>
+                        <a
+                            className="funky-tabs__link"
+                            href={element.props.url}
+                            onClick={(e) => onSelect(e, index, element.props.url, element.props.heading)}>
+                            <img className="funky-tabs__tab-image" src={element.props.imagePath} />
+                            <div className="funky-tabs__tab-text">
+                                <span className="link">{element.props.heading}</span>
+                            </div>
+                        </a>
+                    </li>
+                )}
+            </ul>
+            {
+                selectedChild && React.cloneElement(selectedChild, {
+                    key: selectedIndex,
+                    index: selectedIndex,
+                    uniqueId,
+                    isSelected: true
+                })
+            }
+        </div>
+    )
+}
+;
 
 FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
     <div
