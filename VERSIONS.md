@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.21.4
+- Added three new icons: ico_gift, ico_kr and ico_interest_free_down_payment. Also changed the ico_klikk-og-hent.
+
 ## 1.21.3
 - Added black color option to Box/Subscription component
 - Small change to FunkyTabs onSelect method
