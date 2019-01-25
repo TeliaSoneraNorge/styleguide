@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.21.6
+- Added new Data Freedom icon
+- Updated black variant of Subscription Box
+
 ## 1.21.5
 - Added new Music Freedom icon
 
