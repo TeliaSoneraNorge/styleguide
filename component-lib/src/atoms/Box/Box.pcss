@@ -76,9 +76,9 @@
             }
 
             &.box--black {
-                background-color: var(--black);
+                background-color: var(--white);
                 border-color: var(--black);
-                color: var(--white);
+                color: var(--black);
 
                 .box__speech-bubble {
                     border-color: var(--black);
@@ -191,9 +191,12 @@
 
     &--black {
         border: 3px solid var(--black);
+        background-color: var(--black);
+        color: var(--white);
 
         .box__speech-bubble {
             border: 3px dashed var(--black);
+            color: var(--black);
         }
     }
 
@@ -298,6 +301,11 @@
             &.box--medium {
                 padding: 2rem;
             }
+        }
+
+        &.box--black {
+            background-color: var(--white);
+            color: var(--black);
         }
 
         &:hover {
