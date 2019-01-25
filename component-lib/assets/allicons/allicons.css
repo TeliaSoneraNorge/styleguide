@@ -30,8 +30,8 @@
 .svg_ico_download,
 .svg_ico_dropArrow_purple,
 .svg_ico_dropArrow,
-.svg_ico_favourites,
 .svg_ico_edit_document,
+.svg_ico_favourites,
 .svg_ico_heart,
 .svg_ico_info,
 .svg_ico_linkarrow_purple,
@@ -81,8 +81,8 @@
   fill: #0C6;
 }
 .svg_ico_code-2,
-.svg_ico_klikk-og-hent,
-.svg_ico_kr {
+.svg_ico_kr,
+.svg_ico_klikk-og-hent {
   width: 512px;
   height: 512px;
 }
@@ -125,6 +125,10 @@
 .svg_ico_dropArrow_purple {
   fill: #990AE3;
 }
+.svg_ico_edit_document {
+  width: 16px;
+  height: 18px;
+}
 .svg_ico_edit {
   width: 17px;
   height: 35px;
@@ -133,17 +137,13 @@
   width: 616px;
   height: 557.15px;
 }
-.svg_ico_favourites {
-  width: 14px;
-  height: 14px;
-}
-.svg_ico_edit_document {
-  width: 16px;
-  height: 18px;
-}
 .svg_ico_gift {
   width: 534px;
   height: 623.76px;
+}
+.svg_ico_favourites {
+  width: 14px;
+  height: 14px;
 }
 .svg_ico_heart {
   width: 51px;
@@ -194,6 +194,10 @@
 .svg_ico_money {
   width: 555.73px;
   height: 635.32px;
+}
+.svg_ico_music_freedom {
+  width: 57.09px;
+  height: 41.76px;
 }
 .svg_ico_music {
   width: 16px;
