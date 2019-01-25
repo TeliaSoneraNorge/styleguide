@@ -75,14 +75,9 @@
   width: 14px;
   height: 11px;
 }
-.svg_ico_checkmark_green {
-  width: 21px;
-  height: 16px;
-  fill: #0C6;
-}
 .svg_ico_code-2,
-.svg_ico_kr,
-.svg_ico_klikk-og-hent {
+.svg_ico_klikk-og-hent,
+.svg_ico_kr {
   width: 512px;
   height: 512px;
 }
@@ -94,6 +89,11 @@
   width: 567.01px;
   height: 536.01px;
 }
+.svg_ico_checkmark_green {
+  width: 21px;
+  height: 16px;
+  fill: #0C6;
+}
 .svg_ico_content,
 .svg_ico_info,
 .svg_ico_search {
@@ -103,6 +103,10 @@
 .svg_ico_customer_service {
   width: 303.25px;
   height: 332.98px;
+}
+.svg_ico_data_freedom {
+  width: 313.77px;
+  height: 217.3px;
 }
 .svg_ico_databoost {
   width: 459.8px;
@@ -137,13 +141,13 @@
   width: 616px;
   height: 557.15px;
 }
-.svg_ico_gift {
-  width: 534px;
-  height: 623.76px;
-}
 .svg_ico_favourites {
   width: 14px;
   height: 14px;
+}
+.svg_ico_gift {
+  width: 534px;
+  height: 623.76px;
 }
 .svg_ico_heart {
   width: 51px;
