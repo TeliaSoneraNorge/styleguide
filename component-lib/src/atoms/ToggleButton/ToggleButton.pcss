@@ -7,11 +7,9 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
     &__checkbox {
         margin: 7px 0 0 0;
         position: absolute;
-        right: 5px;
 
         &:checked + .toggle-button__label:after {
             background: var(--core-purple);
-            right: 0px;
         }
         &:checked + .toggle-button__label:before {
             background: #d7acff; /* Um, this is not on the color chart... */
@@ -20,7 +18,6 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
     &__label {
         cursor: pointer;
         display: block;
-        padding: 4px 48px 4px 0;
 
         &:before {
             background: #c6c5c5;
@@ -29,7 +26,6 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
             display: block;
             height: 16px;
             position: absolute;
-            right: 0px;
             top: 4px;
             transition: all 0.3s;
             width: 40px;
@@ -42,7 +38,6 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
             display: block;
             height: 24px;
             position: absolute;
-            right: 16px;
             top: 0px;
             transition: all 0.3s;
             width: 24px;
@@ -57,5 +52,50 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
     &__description {
         color: var(--dark-grey-2);
         font-style: italic;
+    }
+}
+
+.toggle-button.right-side {
+    .toggle-button__checkbox {
+        right: 5px;
+
+        &:checked + .toggle-button__label:after {
+            right: 0px;
+        }
+    }
+
+    .toggle-button__label {
+        padding: 4px 48px 4px 0;
+
+        &:before {
+            right: 0px;
+        }
+        &:after {
+            right: 16px;
+        }
+    }
+}
+
+.toggle-button.left-side {
+    .toggle-button__checkbox {
+        left: 5px;
+        top: 4px;
+
+        &:checked + .toggle-button__label:after {
+            left: 16px;
+        }
+    }
+
+    .toggle-button__label {
+        padding: 4px 0 4px 48px;
+
+        &:before {
+            left: 0;
+            top: 8px;
+        }
+        &:after {
+            left: 0;
+            top: 4px;
+        }
     }
 }
