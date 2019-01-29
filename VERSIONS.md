@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.22.0
+- FunkyTabs now only renders selected content (previously all other content was in DOM with display:none)
+- Added and changed use of props for ToggleButton
+
 ## 1.21.7
 - Small color change to icon for black version of Subscription Box
 
