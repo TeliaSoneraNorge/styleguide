@@ -22,6 +22,7 @@ const ToggleButton = ({ id, labelText, descriptionText, defaultChecked = false, 
 );
 
 ToggleButton.propTypes = {
+    defaultChecked: PropTypes.bool,
     id: PropTypes.string.isRequired,
     labelText: PropTypes.string.isRequired,
     onChange: PropTypes.func,
