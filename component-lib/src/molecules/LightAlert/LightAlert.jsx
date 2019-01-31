@@ -11,9 +11,11 @@ const LightAlert = ({
     title,
     children,
     className,
+    noMargin,
 }) => (
     <div
         className={classnames('light-alert', {
+            'light-alert--no-margin': noMargin,
             [className]: className,
         })}
         role="alert">
@@ -32,6 +34,7 @@ const LightAlert = ({
 LightAlert.propTypes = {
     title: PropTypes.string,
     className: PropTypes.string,
+    noMargin: PropTypes.bool,
     children: PropTypes.node
 };
 
