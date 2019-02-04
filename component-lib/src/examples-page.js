@@ -94,5 +94,6 @@ export default [
     'src/organisms/ThemeBoxes/ThemeBoxes.jsx',
     'src/organisms/ThemeBoxWithImage/ThemeBoxWithImage.jsx',
     'src/organisms/FocusBoxWithLabels/FocusBoxWithLabels.jsx',
-    'src/organisms/ProductListGrid/ProductListGrid.jsx'
+    'src/organisms/ProductListGrid/ProductListGrid.jsx',
+    'src/organisms/FeatureBoxes/FeatureBoxes.jsx'
 ];
