@@ -95,3 +95,4 @@ export { ThemeBox, ThemeBoxes } from './organisms/ThemeBoxes';
 export { default as ThemeBoxWithImage } from './organisms/ThemeBoxWithImage';
 export { default as FocusBoxWithLabels } from './organisms/FocusBoxWithLabels';
 export { default as ProductListGrid } from './organisms/ProductListGrid';
+export { FeatureBox, FeatureBoxes } from './organisms/FeatureBoxes';
