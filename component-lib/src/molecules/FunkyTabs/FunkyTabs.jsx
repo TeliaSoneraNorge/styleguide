@@ -15,9 +15,7 @@ import PropTypes from 'prop-types';
  * </p>
  */
 const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
-
     const selectedChild = children.find((_, index) => index === selectedIndex);
-
     return (
         <div className="funky-tabs">
             <ul className="funky-tabs__tabs" role="tablist">
@@ -52,9 +50,8 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
                 })
             }
         </div>
-    )
-}
-;
+    );
+};
 
 FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
     <div

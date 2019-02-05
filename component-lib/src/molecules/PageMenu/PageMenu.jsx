@@ -45,7 +45,6 @@ const PageMenu = ({
                     </Tabs>
                 </div>
 
-
                 {menuLinks.map((menuLink, i) =>
                     <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
                         <div className={classNames(
