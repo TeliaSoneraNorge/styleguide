@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.22.4
+- FeatureBoxes component
+
 ## 1.22.3
 - Forgot to update AllIcons files
 
