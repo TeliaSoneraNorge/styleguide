@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.22.3
+- Forgot to update AllIcons files
+
 ## 1.22.2
 - Added two new icons ico_five and ico_six
 
