@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+
 class Accordion extends Component {
     static propTypes = {
         isExpanded: PropTypes.bool,
@@ -27,6 +29,7 @@ class Accordion extends Component {
                         onClick={this.accordionHeaderClicked}>
                         {this.props.title}
                     </button>
+                    <SvgIcon className="accordion__header-icon" iconName="ico_dropArrow" color="purple" />
                 </h3>
                 <div className="accordion__panel rich-text" id={this.props.id}>
                     {this.props.children}

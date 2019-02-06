@@ -33,14 +33,11 @@ p + .accordion-list {
 
     &__header {
         margin-top: 0;
+        position: relative;
     }
 
     &__header-button {
         background-color: var(--white);
-        background-image: url({{assetPath}}/icons/ico_add_purple.svg);
-        background-position: right 1rem center;
-        background-repeat: no-repeat;
-        background-size: 15px 15px;
         border: none;
         cursor: pointer;
         display: block;
@@ -59,10 +56,24 @@ p + .accordion-list {
         &:focus,
         &:active {
             background-color: var(--core-purple);
-            background-image: url({{assetPath}}/icons/ico_add_white.svg);
             color: var(--white);
             outline: none;
         }
+        &:focus + .accordion__header-icon *,
+        &:active + .accordion__header-icon * {
+            fill: var(--white);
+        }
+    }
+
+    &__header-icon {
+        fill: var(--core-purple);
+
+        height: 15px;
+        width: 15px;
+
+        position: absolute;
+        right: 1rem;
+        top: 1.25rem;
     }
 
     &__panel {
@@ -79,13 +90,18 @@ p + .accordion-list {
 
     &--open {
         .accordion__header-button {
-            background-image: url('{{assetPath}}/icons/ico_minus_purple.svg');
-
             &:focus,
             &:active {
                 background-color: var(--white);
                 color: var(--core-purple);
             }
+            &:focus + .accordion__header-icon *,
+            &:active + .accordion__header-icon * {
+                fill: var(--core-purple);
+            }
+        }
+        .accordion__header-icon {
+            transform: rotate(180deg);
         }
         .accordion__panel {
             height: auto;
