@@ -33,11 +33,6 @@ to achieve a common look & feel, and therefore user experience.
 - Go to you local styleguide folder in your terminal and type `http-server ./ --cors`
 - Include stylesheet in your project `<link rel="stylesheet" href="http://local-styleguide:8080/css/bundle.components.css">`
 
-## Exporting to another project
-
-- Make sure the server is running, then run `npm run build` to generate the styleguide
-- `npm run export -- PATH` where `PATH` is the path to your project
-
 # Deployment
 
 ## Website
