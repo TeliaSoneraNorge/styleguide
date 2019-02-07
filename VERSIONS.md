@@ -15,6 +15,11 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.23.2
+- InfoBox component
+- Heading's can be centered
+- Label styling adjustments
+
 ## 1.23.0
 - Accordion: Plus/minus icons replaced with up/down arrows. No breaking changes to
   React component, but HTML structure changes, so non-React apps need to adjust their HTML.
