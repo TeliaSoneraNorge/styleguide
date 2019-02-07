@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Paragraph from '../../atoms/Paragraph/Paragraph';
 
 export default class FeatureBox extends React.Component {
     static propTypes = {
@@ -16,20 +17,15 @@ export default class FeatureBox extends React.Component {
 
     render() {
         return (
-            <div className="feature-box"
-                aria-controls={this.props.id}>
-                <div className="feature-box__header">
-                    <div className="feature-box__icon">{this.props.iconSvg}</div>
-                    <h2 className="feature-box__heading heading heading--level-2 heading--pebble">
-                        {this.props.heading}
-                    </h2>
-                </div>
-                <section className="feature-box__content" id={this.props.id}>
+            <div className="feature-box">
+                <div className="feature-box__icon">{this.props.iconSvg}</div>
+                <h2 className="feature-box__heading heading heading--level-2">
+                    {this.props.heading}
+                </h2>
+                <Paragraph>
                     {this.props.text}
-                </section>
-                <div className="feature-box__button">
-                    <a className="button button button--small" href={this.props.url}>Les mer</a>
-                </div>
+                </Paragraph>
+                <a className="button button--small" href={this.props.url}>Les mer</a>
             </div>
         );
     }

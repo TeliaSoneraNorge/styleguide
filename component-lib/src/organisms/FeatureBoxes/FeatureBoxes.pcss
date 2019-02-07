@@ -6,56 +6,28 @@
     }
 
     .feature-box {
-        padding:2rem;
+        padding: 2rem;
+        text-align: center;
 
         @media (min-width: 39.5em) {
             flex-basis: 50%;
         }
+
         @media (min-width: 52.25em) {
             flex-basis: 33.3333333%;
         }
-        @media (min-width: 77.75em) {
+
+        @media (min-width:77.75em) {
             flex-basis: 25%;
         }
 
         &__icon {
-            text-align: center;
-            margin-bottom: 1.1875rem;
+            margin-bottom: var(--margin-bottom);
 
             svg {
                 width: 3rem;
                 height: 3rem;
             }
-        }
-
-        &__heading {
-            text-align: center;
-            margin-bottom: 1.0625rem;
-            font-family: 'pebble', sans-serif;
-            line-height: 1.375rem;
-            font-size: 1.125rem;
-            letter-spacing: -0.0041rem;
-            text-transform: uppercase;
-            color: #1F1F1F;
-        }
-
-        &__content {
-            margin:0 auto;
-            margin-bottom: 0.9375rem;
-            text-align: center;
-            max-width: 14.5625rem;
-
-            font-family: 'Helvetica Neue', Helvetica, Arial;
-            line-height: 1.625rem;
-            font-size: 1rem;
-            text-align: center;
-            letter-spacing: -0.0036rem;
-
-            color: #1A1A1A;
-        }
-
-        &__button {
-            text-align: center;
         }
     }
 }
