@@ -8,3 +8,4 @@ component-metadata--react.json
 component-metadata--react-examples.json
 public/icons
 *.tgz
+.vs/
