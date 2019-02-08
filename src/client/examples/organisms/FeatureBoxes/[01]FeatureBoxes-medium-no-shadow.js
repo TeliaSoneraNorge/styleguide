@@ -2,7 +2,7 @@ import React from 'react';
 import { FeatureBoxes, FeatureBox, SvgIcon, Container } from '@telia/styleguide';
 
 const FeatureBoxesDemo = () => (
-    <Container size="large">
+    <Container size="medium">
         <FeatureBoxes>
             <FeatureBox
                 iconSvg={<SvgIcon iconName="ico_desktop" color="purple" />}

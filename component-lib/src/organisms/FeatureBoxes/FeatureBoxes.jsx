@@ -5,9 +5,9 @@ import React from 'react';
  *
  * There should be a minimum of three- and a maximum of eight boxes when using this component.
  **/
-const FeatureBoxes = ({ children }) =>
+const FeatureBoxes = ({ children, hasShadow }) =>
     <div className="feature-boxes">
-        {children}
+        {React.Children.map(children, child => React.cloneElement(child, { hasShadow }))}
     </div>;
 
 export default FeatureBoxes;

@@ -4,11 +4,11 @@ import Paragraph from '../../atoms/Paragraph/Paragraph';
 
 export default class FeatureBox extends React.Component {
     static propTypes = {
-        id: PropTypes.string,
         iconSvg: PropTypes.node,
         heading: PropTypes.string,
         text: PropTypes.string,
-        url: PropTypes.string
+        url: PropTypes.string,
+        hasShadow: PropTypes.bool
     };
 
     constructor(props) {
@@ -17,7 +17,7 @@ export default class FeatureBox extends React.Component {
 
     render() {
         return (
-            <div className="feature-box">
+            <div className={`feature-box${this.props.hasShadow ? ' shadow-box' : ''}`}>
                 <div className="feature-box__icon">{this.props.iconSvg}</div>
                 <h2 className="feature-box__heading heading heading--level-2">
                     {this.props.heading}
