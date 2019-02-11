@@ -8,7 +8,7 @@ const UniqueSellingPointsVerticalListing = () => (
         <Item
             iconName="ico_check_sharp"
             iconColor="purple">
-            You can use this funtionality
+            You can use this functionality
         </Item>
         <Item
             iconName="facebook_icon"
