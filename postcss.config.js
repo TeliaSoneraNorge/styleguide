@@ -30,7 +30,9 @@ module.exports = {
             }
         },
         'postcss-nested': {},
-        'postcss-custom-properties': {},
+        'postcss-custom-properties': {
+            preserve: false
+        },
         'postcss-calc': {},
         'postcss-replace': {
             data: {
