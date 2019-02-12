@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.24.0
+- Updated React version in the Node app
+- Updated PostCSS versions
+
 ## 1.23.2
 - InfoBox component
 - Heading's can be centered
