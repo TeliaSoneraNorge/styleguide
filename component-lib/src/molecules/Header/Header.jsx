@@ -26,7 +26,7 @@ const Header = ({
             'header--with-mask': withMask,
             'header--with-content-overlap': withContentOverlap,
             'header--with-border-bottom': withBorderBottom,
-            [`header--${backgroundColor}`]: true
+            [`header--${backgroundColor}`]: !!backgroundColor
         })}>
         {videoSrc ?
             <div className="video container container--large container--no-padding container--no-margin">
@@ -49,10 +49,6 @@ const Header = ({
         </div>
     </header>;
 
-Header.defaultProps = {
-    backgroundColor: 'grey'
-};
-
 Header.propTypes = {
     videoSrc: PropTypes.string,
     iconName: PropTypes.string,
@@ -62,7 +58,7 @@ Header.propTypes = {
     withMask: PropTypes.bool,
     withContentOverlap: PropTypes.bool,
     withBorderBottom: PropTypes.bool,
-    backgroundColor: PropTypes.oneOf(['grey', 'white']),
+    backgroundColor: PropTypes.oneOf(['white']),
     children: PropTypes.node,
 };
 
