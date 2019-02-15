@@ -1,11 +1,11 @@
 import React from 'react';
-import { TextBoxWithLabel } from '@telia/styleguide';
+import { TextBoxWithIcon } from '@telia/styleguide';
 
 const TypeSearch = () => (
-    <TextBoxWithLabel
-        labelText="Label for search box"
+    <TextBoxWithIcon
         type="search"
         iconName="ico_search"
+        iconLabel="Search"
         iconIsButton />
 );
 
