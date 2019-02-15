@@ -1,19 +1,14 @@
 import React from 'react';
 import { TextArea } from '@telia/styleguide';
 
-const DefaultTextArea = () => (
+const TextAreaExamples = () => (
     <div>
-        <TextArea
-            placeholder="This is normal textarea..."></TextArea>
+        <TextArea placeholder="This is normal textarea..." />
         <br /><br />
-        <TextArea
-            placeholder="This one is disabled..."
-            disabled></TextArea>
+        <TextArea placeholder="This one is disabled..." disabled />
         <br /><br />
-        <TextArea
-            placeholder="And this one is marked as error..."
-            error></TextArea>
+        <TextArea placeholder="And this one is marked as error..." error />
     </div>
 );
 
-export default DefaultTextArea;
+export default TextAreaExamples;
