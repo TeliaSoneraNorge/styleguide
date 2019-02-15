@@ -1,9 +1,8 @@
 import React from 'react';
-import { TextBoxWithLabel } from '@telia/styleguide';
+import { TextBoxWithIcon } from '@telia/styleguide';
 
 const TypeColoredIcon = () => (
-    <TextBoxWithLabel
-        labelText="Label for text box"
+    <TextBoxWithIcon
         type="text"
         iconName="ico_check"
         iconColor="purple" />

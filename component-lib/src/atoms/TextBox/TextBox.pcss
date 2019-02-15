@@ -1,0 +1,44 @@
+.textbox {
+    ::placeholder {
+        color: var(--dark-grey);
+    }
+
+    border-radius: 0.25em;
+    border: 1px solid var(--dark-grey-2);
+    color: var(--black);
+    display: block;
+    font: inherit;
+    padding: 10px 15px;
+    transition: all 0.3s;
+    width: 100%;
+
+    &[type="search"] {
+        -webkit-appearance: none;
+    }
+    &[type="search"]::-webkit-search-decoration,
+    &[type="search"]::-webkit-search-cancel-button,
+    &[type="search"]::-webkit-search-results-button,
+    &[type="search"]::-webkit-search-results-decoration {
+        display: none;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+        border: 1px solid var(--core-purple);
+        outline: none;
+    }
+
+    &:disabled {
+        background-color: var(--light-grey);
+        border: 1px solid var(--dark-grey);
+        color: var(--dark-grey);
+    }
+
+    &--with-error,
+    &--with-error:hover,
+    &--with-error:focus,
+    &--with-error:active {
+        border-color: var(--dark-red);
+    }
+}

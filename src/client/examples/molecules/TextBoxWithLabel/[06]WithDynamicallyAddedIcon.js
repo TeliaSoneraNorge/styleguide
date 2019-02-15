@@ -23,8 +23,7 @@ export default class TypeDynamicallyTogglingIcon extends React.Component {
                     type="text"
                     value={value}
                     onChange={this.onChange}
-                    withIcon={showIcon}
-                    iconName="ico_check" />
+                    iconName={showIcon ? 'ico_check' : null} />
             </React.Fragment>
         );
     }
