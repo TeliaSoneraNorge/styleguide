@@ -7,9 +7,9 @@ import classnames from 'classnames';
  */
 const TextArea = ({ children, className, error, ...rest }) => (
     <textarea
-        className={classnames('text-area', {
+        className={classnames('textarea', {
             [className]: className,
-            ['text-area--with-error']: error
+            ['textarea--with-error']: error
         })}
         {...rest}>
         {children}
@@ -18,7 +18,7 @@ const TextArea = ({ children, className, error, ...rest }) => (
 
 TextArea.propTypes = {
     /** Whenever should this TextArea display as error. Use when input text is not valid. */
-    error: PropTypes.bool,
+    error: PropTypes.bool
 };
 
 export default TextArea;
