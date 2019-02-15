@@ -13,7 +13,6 @@ const PageMenu = ({
     menuId,
     isExpanded,
     onClickClose,
-    onClickSearch,
     searchUrl,
     fixedPosition,
     isLoggedIn,
@@ -29,7 +28,7 @@ const PageMenu = ({
                 { 'page-menu--fixed': fixedPosition },
                 { 'page-menu--expanded': isExpanded })}
             id={menuId || 'page-header-menu'}>
-            <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClickClose={onClickClose} onClickSearch={onClickSearch} searchUrl={searchUrl} />
+            <MenuTopPanel isExpanded={isExpanded} menuId={menuId} onClickClose={onClickClose} searchUrl={searchUrl} />
             <nav aria-label="Main menu">
                 <div className="page-menu__selection">
                     <Tabs
@@ -85,7 +84,6 @@ PageMenu.propTypes = {
     menuId: PropTypes.string,
     isExpanded: PropTypes.bool,
     onClickClose: PropTypes.func,
-    onClickSearch: PropTypes.func,
     searchUrl: PropTypes.string,
     logoutLink: PropTypes.string,
     fixedPosition: PropTypes.bool,

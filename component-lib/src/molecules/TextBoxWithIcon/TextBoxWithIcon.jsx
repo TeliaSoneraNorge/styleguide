@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import SvgIcon from '../../atoms/SvgIcon';
 import TextBox from '../../atoms/TextBox';
@@ -8,7 +9,10 @@ import TextBox from '../../atoms/TextBox';
  * Status: *finished*.
 **/
 const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, iconName, iconColor, iconIsButton, iconLabel, ...rest }, ref) => (
-    <div className="textbox-with-icon">
+    <div
+        className={classnames('textbox-with-icon', {
+            [className]: className
+        })}>
         <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={error} {...rest} />
         {iconIsButton ?
             <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button">
