@@ -50,7 +50,7 @@ export { default as FocusSpinner } from './molecules/FocusSpinner';
 export { default as FullWidthImage } from './molecules/FullWidthImage';
 export { default as HardwareProduct } from './molecules/HardwareProduct';
 export { default as Hero } from './molecules/Hero';
-export { PageMenu } from './molecules/PageMenu';
+export { PageMenu, MenuTopPanel } from './molecules/PageMenu';
 export { default as Header } from './molecules/Header';
 export { default as HeaderWithImage } from './molecules/HeaderWithImage';
 export { default as ImageHeadingLink } from './molecules/ImageHeadingLink';
