@@ -8,7 +8,7 @@ import classnames from 'classnames';
  * There are three main container widths: small, medium and large. Body text, such as this one, should be in a small container to reduce line width and make reading easier.
  */
 const Container = ({ children, className, size, noMargin, noPadding, noPaddingTop, extraPaddingTop, extraMarginBottom,
-    whiteBg, overlappingFullWidthImage, ...rest }) => (
+    whiteBg, overlappingFullWidthImage, withFlex, ...rest }) => (
     <div
         className={classnames('container', {
             [className]: className,
@@ -20,6 +20,7 @@ const Container = ({ children, className, size, noMargin, noPadding, noPaddingTo
             'container--extra-margin-bottom': extraMarginBottom,
             'container--white-bg': whiteBg,
             'container--overlapping-full-width-image': overlappingFullWidthImage,
+            'container--with-flex' : withFlex,
         })}
         {...rest}>
         {children}
@@ -35,6 +36,7 @@ Container.propTypes = {
     extraMarginBottom: PropTypes.bool,
     whiteBg: PropTypes.bool,
     overlappingFullWidthImage: PropTypes.bool,
+    withFlex: PropTypes.bool,
 };
 
 export default Container;

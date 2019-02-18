@@ -41,6 +41,14 @@
         background-color: var(--white);
     }
 
+    &--with-flex {
+        display: flex; 
+
+        @media all and (max-width: 43em) {
+           display: block;
+        }
+    }
+
     &--overlapping-full-width-image {
         @media all and (min-width: 43em) {
             width: 80%;
