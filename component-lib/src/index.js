@@ -3,6 +3,7 @@ export { default as AlertText } from './atoms/AlertText';
 export { default as Box } from './atoms/Box';
 export { default as Button } from './atoms/Button';
 export { default as Caption } from './atoms/Caption';
+export { default as ColumnBox } from './atoms/ColumnBox';
 export { default as Container } from './atoms/Container';
 export { default as DescriptionList } from './atoms/DescriptionList';
 export { default as Heading } from './atoms/Heading';

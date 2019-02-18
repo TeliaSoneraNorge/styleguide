@@ -6,6 +6,7 @@ export default [
     'src/atoms/Button/Button.jsx',
     'src/atoms/DescriptionList/DescriptionList.jsx',
     'src/atoms/Caption/Caption.jsx',
+    'src/atoms/ColumnBox/ColumnBox.jsx',
     'src/atoms/Container/Container.jsx',
     'src/atoms/Heading/Heading.jsx',
     'src/atoms/HorizontalRule/HorizontalRule.jsx',
