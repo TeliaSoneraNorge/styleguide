@@ -4,6 +4,10 @@
     flex-wrap: wrap;
     justify-content: left;
 
+    &--center-content {
+        justify-content: center;
+    }
+
     .box {
         display: flex;
         flex: 0 1 auto;
@@ -19,6 +23,16 @@
 
     .box--no-flex {
         display: block;
+    }
+
+    .box--half-width {
+        flex-basis: 45%;
+    }
+
+    @media all and (max-width: 39.8125em) {
+        .box--half-width {
+            flex-basis: inherit;
+        }
     }
 
     .box--small,
