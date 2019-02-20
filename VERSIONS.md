@@ -15,6 +15,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.2
+- Add new options for BoxGrid component
+- Removed pointer-events from AccordionList icon
+- CSS tweaks to ToggleSwitch
+
+## 1.25.1
+- Expost MenuTopPanel
+
 ## 1.25.0
 - TextBox components split up
 
