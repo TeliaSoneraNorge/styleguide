@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 
-import ContentRatingWrapper from './components/ContentRatingWrapper';
 import { PageFooter, PageHeader } from '../../component-lib/src/index';
 
 import HomePage from './pages/HomePage';
@@ -97,10 +96,6 @@ const Routes = () =>
         <Route exact path="/usage" component={UsagePage} />
         <Route exact path="/modal-dialog" component={ModalDialogSamplePage} />
         <Route exact path="/tabs" component={TabsSamplePage} />
-
-        <div className="container container--medium container--extra-margin-bottom">
-            <ContentRatingWrapper />
-        </div>
 
         <PageFooter
             links={[

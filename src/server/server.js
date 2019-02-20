@@ -7,13 +7,10 @@ import proxy from 'proxy-middleware';
 
 import colors from './colors.json';
 import { getConfig } from './config';
-import { postMessageToSlack } from './slack';
-import bodyParser from 'body-parser';
 import marked from 'marked';
 
 const app = express();
 const config = getConfig();
-const jsonParser = bodyParser.json();
 
 // Configure view engine
 app.set('views', path.resolve(__dirname, './views'));
@@ -44,24 +41,7 @@ app.get('/download-zip', (req, res) => {
         .finalize();
 });
 
-app.post('/api/feedback', jsonParser, (req, res) => {
-    let message = '';
-
-    if (req.body.feedbackType === 'receipt-positive') {
-        message = `:check: ${req.body.url}`;
-    }
-    else if (req.body.feedbackType === 'negative-feedback') {
-        message = `:x: ${req.body.url}`;
-    }
-    else if (req.body.feedbackType === 'receipt-negative') {
-        message = `:speech_balloon: "${req.body.feedbackText}"\n${req.body.url}`;
-    }
-
-    postMessageToSlack(message).then(() => res.send());
-});
-
 // Send all requests to the same index.ejs view where the React app will start on the client
-
 app.get('/*', (req, res) => {
     const staticData = {
         colors,
