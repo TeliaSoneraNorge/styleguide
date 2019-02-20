@@ -5,6 +5,7 @@ const TypeColoredIcon = () => (
     <TextBoxWithLabel
         labelText="Label for text box"
         type="text"
+        withIcon
         iconName="ico_check"
         iconColor="purple" />
 );

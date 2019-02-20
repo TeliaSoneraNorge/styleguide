@@ -5,6 +5,24 @@ import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon';
 import TextBox from '../../atoms/TextBox';
 
+const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
+    if (!iconName) return null;
+
+    if (iconIsButton) {
+        return (
+            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button">
+                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
+            </button>
+        );
+    }
+
+    return (
+        <span className="textbox-with-icon__icon-wrapper">
+            <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
+        </span>
+    );
+};
+
 /**
  * Status: *finished*.
 **/
@@ -14,13 +32,7 @@ const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabl
             [className]: className
         })}>
         <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={error} {...rest} />
-        {iconIsButton ?
-            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button">
-                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
-            </button> :
-            <span className="textbox-with-icon__icon-wrapper">
-                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
-            </span>}
+        <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} />
     </div>
 ));
 
