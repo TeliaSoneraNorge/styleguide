@@ -9,7 +9,7 @@ import TextBoxWithIcon from '../TextBoxWithIcon/TextBoxWithIcon';
 /**
  * Status: *in progress*.
 **/
-const TextBoxWithLabel = React.forwardRef(({ className, labelText, type, placeholder, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, ...rest }, ref) => (
+const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, ...rest }, ref) => (
     <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>
         <span className="textbox-with-label__label-text">{labelText}</span>
         {withIcon ?
@@ -55,8 +55,7 @@ TextBoxWithLabel.propTypes = {
     iconColor: PropTypes.string,
     iconIsButton: PropTypes.bool,
     iconLabel: PropTypes.string,
-    
-    className: PropTypes.string,
+
     onChange: PropTypes.func
 };
 
