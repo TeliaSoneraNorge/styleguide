@@ -14,6 +14,7 @@
     }
 
     &__button {
+        position: relative;
         border: 0;
         border-radius: 1.25rem;
         height: 100%;
@@ -37,5 +38,19 @@
         background-color: var(--black);
         color: var(--white);
         transition: background-color 300ms linear;
+    }
+
+    [aria-pressed="true"]:before {
+        content: " ";
+        position: absolute;
+        bottom: 100%;
+        top: 2rem;
+        width: 0;
+        height: 0;
+        border-top: 0px solid transparent;
+        border-right: 13px solid var(--black);
+        border-bottom: 13px solid transparent;
+        transform: rotate(135deg);
+        left: 50%;
     }
 }
