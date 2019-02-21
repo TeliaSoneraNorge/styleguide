@@ -17,15 +17,12 @@ async function copyFile(file) {
 
 async function createPackageFile() {
     const packageData = await fse.readFile(path.resolve(__dirname, '../package.json'), 'utf8');
-    const { nyc, scripts, devDependencies, workspaces, ...packageDataOther } = JSON.parse(
-        packageData,
-    );
+    const { nyc, scripts, devDependencies, workspaces, ...packageDataOther } = JSON.parse(packageData);
     const newPackageData = {
         ...packageDataOther,
         main: './index.js',
-        module: './es/index.js',
-        cjs: './index.cjs.js',
-        private: false,
+        module: './index.js',
+        private: false
     };
     const buildPath = path.resolve(__dirname, '../dist/package.json');
 
@@ -47,16 +44,8 @@ async function addLicense(packageData) {
  * LICENSE file in the root directory of this source tree.
  */
 `;
-    await Promise.all(
-        [
-            '../dist/index.js',
-            '../dist/index.es.js',
-            '../dist/index.cjs.js',
-            '../dist/es/index.js',
-            '../dist/umd/index.development.js',
-            '../dist/umd/index.production.min.js',
-        ].map(file => prepend(path.resolve(__dirname, file), license)),
-    );
+
+    await prepend(path.resolve(__dirname, '../dist/index.js'), license);
 }
 
 async function run() {
