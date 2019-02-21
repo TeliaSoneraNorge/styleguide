@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide-web",
-  "version": "1.25.13",
+  "version": "1.26.0-beta-1",
   "private": false,
   "description": "",
   "main": "server/server.js",
@@ -12,7 +12,7 @@
     "build-css:custom": "postcss --config postcss.config.js src/client/css/index.pcss -o dist/public/css/bundle.custom.css",
     "build-server": "babel ./src/server --out-dir ./dist/server --copy-files && npm run copy-assets",
     "copy-assets": "cp-cli src/public dist/public && cp-cli component-lib/assets dist/public",
-    "clean": "npm run rimraf --  ./src/public/*/bundle.* dist && mkdirp dist -p",
+    "clean": "npm run rimraf -- ./src/public/*/bundle.* dist && mkdirp dist -p",
     "css:components:watch": "postcss --config postcss.config.js component-lib/src/index.pcss -o dist/public/css/bundle.components.css --watch",
     "css:custom:watch": "postcss --config postcss.config.js src/client/css/index.pcss -o dist/public/css/bundle.custom.css --watch",
     "cp-cli": "cp-cli",
