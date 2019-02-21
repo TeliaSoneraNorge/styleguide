@@ -1,11 +1,11 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.25.13",
+  "version": "1.26.0-beta-1",
   "private": false,
   "description": "",
   "scripts": {
-    "prebuild": "rimraf dist",
-    "remove-dist": "rimraf dist",
+    "prebuild": "npm run rimraf -- dist",
+    "remove-dist": "npm run rimraf -- dist",
     "build:library": "npm run remove-dist && run-p build:library:css build:library:js && npm run svgo && npm run svg-join && npm run allicons:react",
     "build:library:css": "postcss src/index.pcss -o dist/index.css --config ./postcss.config.js",
     "build:library:js": "npm run build:es && npm run build:copy-files",
@@ -15,13 +15,14 @@
     "build:copy-files": "babel-node --config-file ./babel.config.js ./scripts/copy-files.js",
     "lint": "eslint --ext .jsx,.js /",
     "deploy:prod": "npm run build:library && npm publish dist",
-    "deploy:beta": "npm publish dist --tag beta",
+    "deploy:beta": "npm run build:library && npm publish dist --tag beta",
     "prepublishOnly": "",
     "publish:local-test": "npm run build:library && cd dist && npm pack",
     "svgo": "svgo -f ./assets/unoptimized-icons -o ./assets/icons --config=./svgo.config.yml --multipass",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
     "svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono",
-    "allicons:react": "node generate-AllIcons-component.js && babel ./assets/allicons/AllIcons.jsx.generated --out-file ./assets/allicons/AllIcons.js"
+    "allicons:react": "node generate-AllIcons-component.js && babel ./assets/allicons/AllIcons.jsx.generated --out-file ./assets/allicons/AllIcons.js",
+    "rimraf": "rimraf"
   },
   "publishConfig": {
     "access": "public"
