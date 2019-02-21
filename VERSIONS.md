@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.4
+- Video with custom thumbnail and title
+
 ## 1.25.3
 - TextBoxWithLabel bugfix when conditionally showing icon
 
