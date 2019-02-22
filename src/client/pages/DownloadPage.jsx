@@ -33,7 +33,7 @@ const DownloadPage = () =>
             <CodeSnippet code={codeSnippets.stylesheetHtmlTag} language="markup" disableToggle={true} />
 
             <p className="paragraph"><strong>Do not link directly to anything on the styleguide website!</strong></p>
-            <a className="button button--margin-top" href="/download-zip" target="_blank">Download</a>
+            <a className="button button--margin-top" href="/TeliaStyleguide-Latest.zip" target="_blank">Download</a>
         </div>
 
         <div className="container container--small">

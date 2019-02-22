@@ -6,7 +6,7 @@
   "main": "server/server.js",
   "scripts": {
     "build:component-lib": "cd component-lib && npm install && npm run build",
-    "build": "run-s clean && webpack --config ./src/webpack-prod.config.js -p && run-s build-css build-server",
+    "build": "run-s clean && webpack --config ./src/webpack-prod.config.js -p && run-s build-css build-server generate-zip",
     "build-css": "npm run build-css:components && npm run build-css:custom",
     "build-css:components": "postcss --config postcss.config.js component-lib/src/index.pcss -o dist/public/css/bundle.components.css",
     "build-css:custom": "postcss --config postcss.config.js src/client/css/index.pcss -o dist/public/css/bundle.custom.css",
@@ -19,6 +19,7 @@
     "deploy:prod": "npm run git:checkout-master-and-pull && git push heroku master",
     "dev": "run-s clean copy-assets && run-p start-dev-server start-server css:components:watch css:custom:watch",
     "git:checkout-master-and-pull": "git checkout master && git pull --rebase",
+    "generate-zip": "node scripts/generate-zip-file.js",
     "heroku-prebuild": "cross-env NODE_ENV=production && npm run build:component-lib",
     "heroku-postbuild": "npm run build",
     "lint": "eslint ./component-lib/src ./src --ext .jsx,.js",
@@ -33,6 +34,7 @@
   "author": "Telia Norge",
   "license": "ISC",
   "devDependencies": {
+    "archiver": "3.0.0",
     "babel-cli": "6.26.0",
     "babel-core": "6.26.0",
     "babel-eslint": "7.2.3",
@@ -72,7 +74,6 @@
   },
   "dependencies": {
     "@telia/styleguide": "file:component-lib/dist",
-    "archiver": "2.0.3",
     "babel-standalone": "^6.26.0",
     "brace": "^0.11.1",
     "classnames": "2.2.5",
