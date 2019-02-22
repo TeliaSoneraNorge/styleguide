@@ -5,7 +5,7 @@
   "description": "",
   "main": "server/server.js",
   "scripts": {
-    "build:component-lib": "cd component-lib && NODE_ENV=development npm install && npm run build:library",
+    "build:component-lib": "cd component-lib && npm install && npm run build",
     "build": "run-s clean && webpack --config ./src/webpack-prod.config.js -p && run-s build-css build-server",
     "build-css": "npm run build-css:components && npm run build-css:custom",
     "build-css:components": "postcss --config postcss.config.js component-lib/src/index.pcss -o dist/public/css/bundle.components.css",
@@ -19,16 +19,16 @@
     "deploy:prod": "npm run git:checkout-master-and-pull && git push heroku master",
     "dev": "run-s clean copy-assets && run-p start-dev-server start-server css:components:watch css:custom:watch",
     "git:checkout-master-and-pull": "git checkout master && git pull --rebase",
-    "heroku-prebuild": "npm run build:component-lib",
+    "heroku-prebuild": "cross-env NODE_ENV=production && npm run build:component-lib",
     "heroku-postbuild": "npm run build",
     "lint": "eslint ./component-lib/src ./src --ext .jsx,.js",
     "lint:fix": "eslint --fix ./component-lib/src ./src --ext .jsx,.js",
+    "rimraf": "rimraf",
     "start": "node dist/server/server.js",
     "start-server": "babel-node ./src/server/server.js",
     "start-dev-server": "webpack-dev-server --port 8090 --config ./src/webpack-dev.config.js",
     "test": "mocha --opts src/test/mocha.opts --compilers js:babel-core/register src/test",
-    "test:watch": "nodemon --watch test/ --watch src/ --ext js,jsx --exec \"npm --silent run test\"",
-    "rimraf": "rimraf"
+    "test:watch": "nodemon --watch test/ --watch src/ --ext js,jsx --exec \"npm --silent run test\""
   },
   "author": "Telia Norge",
   "license": "ISC",

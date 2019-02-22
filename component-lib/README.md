@@ -10,7 +10,7 @@ This is a React component library of the Atomic Design components found in the T
 ## Getting started
 
 - Install dependencies: `npm install`
-- Build the library: `npm run build:library`
+- Build the library: `npm run build`
 
 ## Exporting/Publishing
 
