@@ -6,7 +6,6 @@ dist
 bundle.*
 npm-debug.log
 component-metadata--react.json
-component-metadata--react-examples.json
 static-data.json
 public/icons
 *.tgz
