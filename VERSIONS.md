@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.6
+- Add DisplayFunctionality molecule
+
 ## 1.25.5
 - TextBox className passed down
 - Modal scroll fix
