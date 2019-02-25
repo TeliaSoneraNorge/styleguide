@@ -88,6 +88,7 @@ export default [
     'src/molecules/ArticleList/ArticleList.jsx',
     'src/molecules/LightAlert/LightAlert.jsx',
     'src/molecules/InfoBox/InfoBox.jsx',
+    'src/molecules/DisplayFunctionality/DisplayFunctionality.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',

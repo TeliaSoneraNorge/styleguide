@@ -81,6 +81,7 @@ export function isFullWidthComponent(componentName) {
         'RecommendedProducts',
         'RelatedArticles',
         'MiniDashboard',
+        'DisplayFunctionality',
 
         // Organisms
         'FocusSubscription',
