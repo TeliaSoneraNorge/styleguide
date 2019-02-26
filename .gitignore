@@ -1,12 +1,13 @@
 .DS_Store
 .idea/
 .cache/
+.vs/
+
 node_modules
 dist
 bundle.*
 npm-debug.log
-component-metadata--react.json
+component-docs.json
 static-data.json
 public/icons
 *.tgz
-.vs/

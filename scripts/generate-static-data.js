@@ -2,7 +2,7 @@ const fs = require('fs');
 const marked = require('marked');
 
 const packageJson = require('../package.json');
-const colorsJson = require('../src/server/colors.json');
+const colorsJson = require('../src/colors.json');
 
 const staticData = {
     colors: colorsJson,
@@ -13,4 +13,4 @@ const staticData = {
     version: packageJson.version
 };
 
-fs.writeFileSync('./src/public/static-data.json', JSON.stringify(staticData, null, 2));
+fs.writeFileSync('./src/static-data.json', JSON.stringify(staticData, null, 2));

@@ -8,11 +8,9 @@ const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }
                 <tr className="price-table__item" key={index}>
                     <td className="price-table__item-cell">
                         <div className="price-table__item-title">{product.title}</div>
-                        {
-                            product.subtitles && product.subtitles.map((subtitle) => (
-                                <div className="price-table__item-subtitle">{subtitle}</div>
-                            ))
-                        }
+                        {product.subtitles && product.subtitles.map((subtitle, i) => (
+                            <div key={i} className="price-table__item-subtitle">{subtitle}</div>
+                        ))}
                     </td>
                     <td className="price-table__item-cell price-table__item-price">{product.price}</td>
                 </tr>
@@ -22,20 +20,18 @@ const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }
             <tr className="price-table__item price-table__total">
                 <td className="price-table__item-cell">
                     <div className="price-table__item-title">{totalTextWithPrice.title}</div>
-                    {
-                        totalTextWithPrice.subtitles && totalTextWithPrice.subtitles.map((subtitle) => (
-                            <div className="price-table__item-subtitle">{subtitle}</div>
-                        ))
-                    }
+                    {totalTextWithPrice.subtitles && totalTextWithPrice.subtitles.map((subtitle, i) => (
+                        <div key={i} className="price-table__item-subtitle">{subtitle}</div>
+                    ))}
                 </td>
                 <td className="price-table__item-cell price-table__item-price">{totalTextWithPrice.price}</td>
             </tr>
-            { additionalLine &&
-            <tr className="price-table__item price-table__additional">
-                <td className="price-table__item-cell">
-                    <div className="price-table__item-title">{additionalLine}</div>
-                </td>
-            </tr> }
+            {additionalLine &&
+                <tr className="price-table__item price-table__additional">
+                    <td className="price-table__item-cell">
+                        <div className="price-table__item-title">{additionalLine}</div>
+                    </td>
+                </tr>}
         </tfoot>
     </table>;
 

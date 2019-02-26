@@ -11,9 +11,7 @@ to achieve a common look & feel, and therefore user experience.
 ## Getting started
 
 - Clone the repository
-- First, you need to get the component library ready - because it is used in the Styleguide website.
-  Follow instructions in the `component-lib/README.md` file
-- Go back to the root
+- Build the component library: `npm run build:component-lib`
 - Install dependencies: `npm install`
 - Run in development mode: `npm run dev`
 - Go to this URL in your browser: `http://localhost:3000/`
@@ -26,7 +24,6 @@ to achieve a common look & feel, and therefore user experience.
 - Expose your React component in `component-lib/src/index.js`
 - Add a `YourComponent.pcss` file for your PostCSS
 - Add examples of usage of your component to `src/client/examples/atoms|molecules|organisms` (again you can look at Button examples)
-  and expose the component you are using in `examples-page.js`
 
 ## Serving the styleguide locally for consumption from another local web app
 

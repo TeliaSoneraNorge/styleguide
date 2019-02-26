@@ -1,9 +1,9 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-class Accordion extends Component {
+export default class Accordion extends React.Component {
     static propTypes = {
         isExpanded: PropTypes.bool,
         id: PropTypes.string,
@@ -38,5 +38,3 @@ class Accordion extends Component {
         );
     }
 }
-
-export default Accordion;
