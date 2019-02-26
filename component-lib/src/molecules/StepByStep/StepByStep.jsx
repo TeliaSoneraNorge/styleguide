@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -7,7 +7,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 /**
  * Status: *finished*
  */
-class StepByStep extends Component {
+class StepByStep extends React.Component {
     static propTypes = {
         /** StepByStep.Step */
         children: PropTypes.node,

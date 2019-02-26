@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import map from 'lodash/map';
+
+import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.

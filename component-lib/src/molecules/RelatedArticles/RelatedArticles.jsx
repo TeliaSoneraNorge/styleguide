@@ -8,7 +8,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 /**
  * Status: *finished*.
  */
-class RelatedArticles extends React.Component {
+export default class RelatedArticles extends React.Component {
     static propTypes = {
         headingLink: PropTypes.string.isRequired,
         heading: PropTypes.string.isRequired,
@@ -68,5 +68,3 @@ class RelatedArticles extends React.Component {
         );
     }
 }
-
-export default RelatedArticles;

@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import AccordionList from './AccordionList';
 
-class StatefulAccordionList extends React.Component {
+export default class StatefulAccordionList extends React.Component {
     static propTypes = {
         accordionItems: PropTypes.arrayOf(PropTypes.shape({
             id: PropTypes.string.isRequired,
@@ -54,5 +54,3 @@ class StatefulAccordionList extends React.Component {
         );
     }
 }
-
-export default StatefulAccordionList;

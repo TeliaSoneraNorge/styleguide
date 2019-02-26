@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-export default class ContentRating extends Component {
+export default class ContentRating extends React.Component {
     static propTypes = {
         feedbackState: PropTypes.oneOf(['initial', 'receipt-positive', 'negative-feedback', 'receipt-negative']),
         positiveFeedbackClick: PropTypes.func,
