@@ -1,33 +1,35 @@
 :root {
-    --step-indicator-height: 0.5rem;
+    --step-indicator-height: 1rem;
     --step-indicator-border: 2px;
+    --step-indicator-icon-size: 0.6rem;
 }
 
 .step-indicator {
     display: flex;
     justify-content: center;
 
-    &__clickable {
+    &__element {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
-        cursor: pointer;
         border-style: none;
-        background-color: inherit;
+        background: none;
 
-        &--future {
-            cursor: auto;
-        }
-    }
-    &__clickable:focus,
-    &__clickable:hover,
-    &__clickable:active {
-        &:not(.step-indicator__clickable--future) {
-            outline: none;
+        &__clickable {
+            background: inherit;
+            text-decoration: none;
 
-            .step-indicator__step {
-                background-color: var(--light-green);
+            &:focus,
+            &:hover,
+            &:active {
+                outline: 5px solid var(--core-purple);
+                background: var(--core-purple);
+                z-index: 1;
+
+                .step-indicator__label {
+                    color: var(--white)
+                }
             }
         }
     }
@@ -38,7 +40,7 @@
         text-align: center;
 
         @media all and (min-width: 37.5em) {
-            margin-bottom: 0.3rem;
+            margin-top: 0.5rem;
             font-size: 1rem;
         }
     }
@@ -66,7 +68,7 @@
     &__line {
         width: 3rem;
         position: absolute;
-        bottom: calc(1.5 * var(--step-indicator-height) / 2);
+        top: calc(1.5 * var(--step-indicator-height) / 2);
         height: 2px;
         right: -1.5rem;
         background-color: var(--dark-grey);
@@ -76,12 +78,12 @@
         @media all and (min-width: 37.5em) {
             height: 4px;
             width: 4rem;
-            bottom: var(--step-indicator-height);
+            top: calc(var(--step-indicator-height) - var(--step-indicator-border));
             right: -2rem;
         }
 
         &--passed {
-            background-color: var(--dark-green);
+            background-color: var(--core-purple);
         }
     }
 
@@ -90,10 +92,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        background-color: var(--dark-grey);
+        border: var(--step-indicator-border) solid var(--dark-grey-2);
         border-radius: 50%;
-        color: var(--white);
+        color: var(--dark-grey-2);
         font-size: 0.75rem;
+        font-weight: bold;
         height: calc(1.5 * var(--step-indicator-height));
         width: calc(1.5 * var(--step-indicator-height));
         line-height: calc(1.5 * var(--step-indicator-height) - 4px);
@@ -119,11 +122,31 @@
         }
 
         &--passed {
-            background-color: var(--dark-green);
+            background-color: var(--white);
+            border: 2px solid var(--core-purple);
+            color: var(--core-purple);
         }
 
         &--active {
-            background-color: var(--dark-green);
+            border: 2px solid var(--core-purple);
+            background-color: var(--core-purple);
+            color: var(--white);
+        }
+
+
+        .icon-wrapper {
+            background-color: transparent;
+            border: none;
+        }
+
+        .icon {
+            display: block;
+            height: 1rem;
+            width: 1rem;
+
+            * {
+                fill: var(--core-purple);
+            }
         }
     }
 }
