@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.7
+- Make modifications to StepIndicator
+- Add proper display for single elements in BoxGridBlocks
+
 ## 1.25.6
 - Add DisplayFunctionality molecule
 
