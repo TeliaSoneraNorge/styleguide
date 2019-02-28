@@ -1,6 +1,6 @@
 .feature-boxes {
     margin-bottom: var(--margin-bottom-large);
-    
+
     @media (min-width: 39.5em) {
         display: flex;
         flex-flow: row wrap;
@@ -8,21 +8,38 @@
     }
 
     .feature-box {
+        background-color: var(--white);
         padding: 2rem;
         text-align: center;
-        max-width: 18.3125rem;
-        min-width: 14.3125rem;
+        width: 100%;
 
         @media (min-width: 39.5em) {
-            flex-basis: 50%;
+            flex-basis: 48%;
+            max-width: 48%;
         }
 
-        @media (min-width: 52.25em) {
-            flex-basis: 33.3333333%;
+        &--medium {
+            @media (min-width: 58.75em) {
+                flex-basis: 31.3333%;
+                max-width: 31.33333%;
+            }
         }
 
-        @media (min-width:77.75em) {
-            flex-basis: 25%;
+        &--small {
+            @media (min-width: 46.875em) {
+                flex-basis: 31.3333%;
+                max-width: 31.33333%;
+            }
+
+            @media (min-width: 58.75em) {
+                flex-basis: 23%;
+                max-width: 23%;
+            }
+        }
+
+        &--border {
+            border: 1px solid var(--light-grey);
+            margin: 0.3125rem;
         }
 
         &__icon {

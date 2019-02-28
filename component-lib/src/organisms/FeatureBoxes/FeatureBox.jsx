@@ -1,4 +1,5 @@
 import React from 'react';
+import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 
@@ -8,7 +9,8 @@ export default class FeatureBox extends React.Component {
         heading: PropTypes.string,
         text: PropTypes.string,
         url: PropTypes.string,
-        hasShadow: PropTypes.bool
+        hasBorder: PropTypes.bool,
+        size: PropTypes.string
     };
 
     constructor(props) {
@@ -17,7 +19,10 @@ export default class FeatureBox extends React.Component {
 
     render() {
         return (
-            <div className={`feature-box${this.props.hasShadow ? ' shadow-box' : ''}`}>
+            <div className={classnames(`feature-box feature-box--${this.props.size ? this.props.size: 'medium'}`, {
+                [this.props.className]: this.props.className,
+                'feature-box--border': this.props.hasBorder,
+            })}>
                 <div className="feature-box__icon">{this.props.iconSvg}</div>
                 <h2 className="feature-box__heading heading heading--level-2">
                     {this.props.heading}
