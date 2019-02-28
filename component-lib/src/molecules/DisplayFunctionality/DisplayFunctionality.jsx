@@ -33,18 +33,19 @@ class DisplayFunctionality extends React.Component {
                         {this.props.children}
                     </div>
                     <div className="display-functionality__col">
-                        <img className="display-functionality__laptop" src="/public/website-images/laptop.png" />
+                        <img className="display-functionality__device" src={this.props.deviceImageUrl} />
                         {
                             this.props.imgs.map((img, i) => {
-                                return <img key={i} src={img} className={classnames('display-functionality__image', {
-                                    'display-functionality__image--hidden': this.state.index != i})} />
+                                return <img key={i} src={img} className={classnames(`display-functionality__image display-functionality__image--${this.props.device ? this.props.device : 'laptop'}`, {
+                                    'display-functionality__image--hidden': this.state.index !== i })} />;
                             })
                         }
                         <div className="display-functionality__paging">
                             {
                                 this.props.imgs.map((img, i) => {
-                                    return <span key={i} onClick={() => {this.onClick(i)}} className={classnames('display-functionality__bullet', {
-                                        'display-functionality__bullet--active': this.state.index == i,})}></span>
+                                    return <span key={i} onClick={() => { this.onClick(i); }}
+                                        className={classnames('display-functionality__bullet', {
+                                            'display-functionality__bullet--active': this.state.index === i })}></span>;
                                 })
                             }
                         </div>
@@ -57,7 +58,9 @@ class DisplayFunctionality extends React.Component {
 
 DisplayFunctionality.propTypes = {
     imgs: PropTypes.arrayOf(PropTypes.string),
-    reverse: PropTypes.bool
+    reverse: PropTypes.bool,
+    device: PropTypes.string,
+    deviceImageUrl: PropTypes.string
 };
 
 

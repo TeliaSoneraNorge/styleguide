@@ -23,7 +23,7 @@
         padding: var(--padding);
     }
 
-    &__laptop {
+    &__device {
         position: relative;
         z-index: 1;
         width: 100%;
@@ -40,8 +40,20 @@
         opacity: 1;
         transition: opacity 0.5s ease-out;
 
-        &--hidden{
+        &--hidden {
             opacity: 0;
+        }
+
+        &--tablet {
+            left: 14%;
+            width: 68%;
+            margin-top: 12.25%;
+        }
+
+        &--phone {
+            left: 20%;
+            width: 63%;
+            margin-top: 11.25%;
         }
     }
 
