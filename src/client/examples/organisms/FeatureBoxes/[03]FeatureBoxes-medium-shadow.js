@@ -3,7 +3,7 @@ import { FeatureBoxes, FeatureBox, SvgIcon, Container } from '@telia/styleguide'
 
 const FeatureBoxesDemo = () => (
     <Container size="medium">
-        <FeatureBoxes hasShadow={true}>
+        <FeatureBoxes hasBorder={true} size="large">
             <FeatureBox
                 iconSvg={<SvgIcon iconName="ico_desktop" color="purple" />}
                 heading="Selvbetjening"
