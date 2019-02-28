@@ -2,12 +2,12 @@ import React from 'react';
 import { DisplayFunctionality, Container } from '@telia/styleguide';
 
 const imgs = [
-    '/public/website-images/screenshot1.png',
-    '/public/website-images/screenshot2.png'
+    '/public/website-images/screenshot1-phone.png',
+    '/public/website-images/screenshot2-phone.png'
 ];
 
 const DefaultDisplayFunctionality = () => (
-    <DisplayFunctionality reverse={true} imgs={imgs} deviceImageUrl="/public/website-images/laptop.png">
+    <DisplayFunctionality reverse={true} imgs={imgs} device="phone" deviceImageUrl="/public/website-images/phone.png">
         <h3 className="heading heading--level-2">Bedrifter med behov for dokumentasjon</h3>
         <p className="paragraph">
             Mobilt Opptak fra Telia sørger for opptak og trygg lagring av samtaler og meldinger.

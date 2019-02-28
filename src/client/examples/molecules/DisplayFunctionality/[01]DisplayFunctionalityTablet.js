@@ -7,7 +7,7 @@ const imgs = [
 ];
 
 const DefaultDisplayFunctionality = () => (
-    <DisplayFunctionality reverse={true} imgs={imgs} deviceImageUrl="/public/website-images/laptop.png">
+    <DisplayFunctionality reverse={true} imgs={imgs} device="tablet" deviceImageUrl="/public/website-images/tablet.png">
         <h3 className="heading heading--level-2">Bedrifter med behov for dokumentasjon</h3>
         <p className="paragraph">
             Mobilt Opptak fra Telia sørger for opptak og trygg lagring av samtaler og meldinger.
