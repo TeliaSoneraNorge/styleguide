@@ -11,6 +11,8 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * should be able to control that part.
  *
  * One or more Boxes can be used inside a <a href="/components/molecules#BoxGrid">BoxGrid</a> component.
+ * 
+ * Color can be set to transparent with box--no-background
  */
 export default class Box extends React.Component {
     static propTypes = {
