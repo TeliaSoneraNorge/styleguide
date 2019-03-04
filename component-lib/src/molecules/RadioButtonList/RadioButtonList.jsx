@@ -11,7 +11,7 @@ const getClassName = (type, hasRichContent) =>
  * Status: *finished*.
  *
  */
-const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent, children }) =>
+const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent, onChange, children }) =>
     <div className={getClassName(type, hasRichContent)}>
         {hasRichContent ?
             children
@@ -21,6 +21,7 @@ const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent,
                     key={index}
                     label={radio.label}
                     name={name}
+                    onChange={onChange}
                     value={radio.value} />)
         }
     </div>;
@@ -33,6 +34,7 @@ RadioButtonList.propTypes = {
     name: PropTypes.string,
     type: PropTypes.oneOf(['horizontal', 'vertical']),
     hasRichContent: PropTypes.bool,
+    onChange: PropTypes.func,
     children: PropTypes.node,
 };
 
