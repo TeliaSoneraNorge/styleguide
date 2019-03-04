@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.9
+- Changed styling on Quote component
+
 ## 1.25.8
 - Fixed bug with ModalDialogOverlay not working on server rendered pages
 
