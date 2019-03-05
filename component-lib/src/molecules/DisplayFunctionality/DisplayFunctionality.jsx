@@ -6,23 +6,20 @@ import PropTypes from 'prop-types';
  * Status: *finished*
  */
 class DisplayFunctionality extends React.Component {
-
-    constructor(){
+    constructor() {
         super();
 
         this.state = {
             index: 0
-        }
+        };
 
         this.onClick = this.onClick.bind(this);
     }
-
-    onClick(i){
-        this.setState({index: i});
+    onClick(i) {
+        this.setState({ index: i });
     }
-
-    render(){
-        return(
+    render() {
+        return (
             <div className={classnames('display-functionality', {
                 [this.props.className]: this.props.className,
             })}>

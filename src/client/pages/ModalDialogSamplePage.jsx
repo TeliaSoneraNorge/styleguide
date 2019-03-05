@@ -62,7 +62,7 @@ export default class ModalDialogSamplePage extends React.Component {
                         magna justo, lacinia eget consectetur sed, convallis at tellus. Proin eget tortor risus.
                     </p>
                 </Header>
-                <section className="container container--small" style={{textAlign: 'center'}}>
+                <section className="container container--small" style={{ textAlign: 'center' }}>
                     <button
                         className="button button-default button--margin-top"
                         onClick={this.toggleInfoModalDialog}>

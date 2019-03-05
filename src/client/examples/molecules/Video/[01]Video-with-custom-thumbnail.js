@@ -1,22 +1,20 @@
 import React from 'react';
 import { Video } from '@telia/styleguide';
 
-class DefaultVideo extends React.Component{
-    constructor(){
+export default class DefaultVideo extends React.Component {
+    constructor() {
         super();
 
-        this.state={
+        this.state = {
             autoplay: false
-        }
+        };
 
         this.onClick = this.onClick.bind(this);
     }
-
-    onClick(){
-        this.setState({autoplay: true})
+    onClick() {
+        this.setState({ autoplay: true });
     }
-
-    render(){
+    render() {
         return (
             <Video 
                 autoplay={this.state.autoplay}
@@ -28,5 +26,3 @@ class DefaultVideo extends React.Component{
         );
     }
 }
-
-export default DefaultVideo;
