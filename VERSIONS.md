@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.10
+- RadioButtonList: onChange prop added
+- Box: Add transparent option
+- DisplayFunctionalityBlock: Added ability to choose device
+- FeatureBox: Added ability to choose size and border of
+
 ## 1.25.9
 - Changed styling on Quote component
 
