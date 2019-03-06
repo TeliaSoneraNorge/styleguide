@@ -90,6 +90,7 @@ export { default as LightAlert } from './molecules/LightAlert';
 export { default as InfoBox } from './molecules/InfoBox';
 export { default as DisplayFunctionality } from './molecules/DisplayFunctionality';
 export { default as Banner } from './molecules/Banner';
+export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
