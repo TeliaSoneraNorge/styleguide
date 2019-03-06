@@ -9,25 +9,25 @@ const RelatedArticlesProps = [
         'relatedArticles': [
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/boy-ipad.jpg',
+                'imageSrc': require('../../assets/website-images/boy-ipad.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             },
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/woman-mobile.jpg',
+                'imageSrc': require('../../assets/website-images/woman-mobile.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             },
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/kids-ipad.jpg',
+                'imageSrc': require('../../assets/website-images/kids-ipad.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             },
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/woman-holding-ipad.jpg',
+                'imageSrc': require('../../assets/website-images/woman-holding-ipad.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             }
@@ -65,80 +65,78 @@ const BlogSamplePage = () =>
                     <span className="tags__tag">Streaming</span>
                 </div>
                 <div className="article-meta-data__share">
-                    <img className="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
+                    <img className="article-meta-data__share-icon" src={require('../../assets/ico_share.svg')} />
                 </div>
             </div>
         </section>
         <section className="rich-text container container--small container--extra-margin-bottom">
-
-            <p className="paragraph">Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
+            <p className="paragraph">
+                Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
                 Curabitur aliquet quam id dui posuere blandit.
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac diam sit amet quam vehicula
                 elementum sed sit amet dui.
             </p>
             <blockquote className="quote quote--inline-right">
                 <p className="quote__text">
-                        Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
+                    Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui.
                 </p>
                 <span className="quote__source">Lorem Ipsum</span>
             </blockquote>
-
-            <p className="paragraph">Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
+            <p className="paragraph">
+                Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar
                 a. Donec sollicitudin molestie malesuada. Sed porttitor lectus nibh. Vestibulum ante ipsum primis in
                 faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel,
-                ullamcorper sit amet ligula.</p>
-
+                ullamcorper sit amet ligula.
+            </p>
             <p className="paragraph">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Nulla porttitor accumsan
                 tincidunt. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
-                Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-
+                Quisque velit nisi, pretium ut lacinia in, elementum id enim.
+            </p>
             <figure className="image image--inline-left">
-                <img className="image__img" src="/public/website-images/woman-holding-ipad.jpg" alt="Woman looking at tablet" />
+                <img className="image__img" src={require('../../assets/website-images/woman-holding-ipad.jpg')} alt="Woman looking at tablet" />
                 <figcaption className="caption">Woman looking at tablet</figcaption>
             </figure>
-
-            <p className="paragraph">Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
+            <p className="paragraph">
+                Cras ultricies ligula sed magna dictum porta. Nulla porttitor accumsan tincidunt. Vivamus suscipit tortor
                 eget felis porttitor volutpat. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Curabitur
-                arcu erat, accumsan id imperdiet et, porttitor at sem.</p>
-
-            <p className="paragraph">Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
+                arcu erat, accumsan id imperdiet et, porttitor at sem.
+            </p>
+            <p className="paragraph">
+                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Nulla quis lorem ut libero malesuada feugiat.
                 Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Proin eget tortor risus.
-                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.</p>
-
+                Praesent sapien massa, convallis a pellentesque nec, egestas non nisi.
+            </p>
             <figure className="image image--inline-right">
-                <img className="image__img" src="/public/website-images/woman-mobile.jpg" alt="Woman looking at mobile" />
+                <img className="image__img" src={require('../../assets/website-images/woman-mobile.jpg')} alt="Woman looking at mobile" />
                 <figcaption className="caption">Woman looking at mobile</figcaption>
             </figure>
-
-            <p className="paragraph">Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
+            <p className="paragraph">
+                Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit
                 neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Proin eget tortor risus. Curabitur
                 aliquet quam id dui posuere blandit. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices
                 posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            </p>
             <figure className="image">
-                <img className="image__img" src="/public/website-images/kids-ipad.jpg" alt="Kids playing with tablet" />
+                <img className="image__img" src={require('../../assets/website-images/kids-ipad.jpg')} alt="Kids playing with tablet" />
                 <figcaption className="caption">
                     Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
                 </figcaption>
             </figure>
 
             <section className="fact-box">
-                <img className="fact-box__icon" src="/public/icons/ico_info.svg" />
+                <img className="fact-box__icon" src={require('../../assets/ico_info.svg')} />
                 <h3 className="fact-box__heading heading heading--level-3">Fact about Lorem Ipsum:</h3>
                 <div className="fact-box__text">
                     <p className="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet quam id dui posuere blandit. Pellentesque in ipsum id orci porta dapibus.</p>
-
                     <p className="paragraph">Cras ultricies ligula sed magna dictum porta. Donec sollicitudin molestie malesuada. Quisque velit nisi, pretium ut lacinia in, elementum id enim.</p>
-
                     <p className="paragraph">Donec sollicitudin molestie malesuada. Donec sollicitudin molestie malesuada. Donec rutrum congue leo eget malesuada.</p>
-
                     <p className="paragraph">Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Vivamus suscipit tortor eget felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
                 </div>
             </section>
         </section>
         {RelatedArticlesProps.map((props, i) =>
-            <RelatedArticles id="blog1" key={i} {...props} />)}
+            <RelatedArticles id={i} key={i} {...props} />)}
     </div>;
 
 export default BlogSamplePage;

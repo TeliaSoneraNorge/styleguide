@@ -64,36 +64,38 @@ const Subscription = ({ isShowingFeatures, isStandalone, isBroadband, color, siz
                     <PriceTable productListWithPrice={productList} totalTextWithPrice={totalCalculation} />}
                 <button className="button button--primary">Gå videre</button>
             </section> : null}
-        {isExpanded ?
+        {isExpanded &&
             <section className="subscription__expanded-info">
                 {isBroadband &&
-                <RadioButtonList
-                    type="vertical"
-                    hasRichContent>
-                    <RadioButtonWithLabel checked hasRichContent value="0" name="radiobutton-broadband">
-                        <div style={{ display: 'inline-block', width: '80%' }}>
-                            <Heading level="3" text="Batteridrevet 4G-ruter" />
-                            <Paragraph>A longer description text here. Nulla quis lorem ut libero malesuada feugiat.
-                                Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</Paragraph>
-                            <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
-                            <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
-                        </div>
-                        <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src="/public/website-images/router1.jpg" />
-                    </RadioButtonWithLabel>
-                    <RadioButtonWithLabel hasRichContent value="1" name="radiobutton-broadband">
-                        <div style={{ display: 'inline-block', width: '80%' }}>
-                            <Heading level="3" text="Markedets kraftigste 4G-ruter" />
-                            <Paragraph>Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id
-                                imperdiet et, porttitor at sem.</Paragraph>
-                            <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
-                            <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
-                        </div>
-                        <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src="/public/website-images/router2.png" />
-                    </RadioButtonWithLabel>
-                    <RadioButtonWithLabel hasRichContent value="2" name="radiobutton-broadband">
-                        <Heading level="3" text="Jeg ønsker ikke å kjøpe ruter" />
-                    </RadioButtonWithLabel>
-                </RadioButtonList>
+                    <RadioButtonList
+                        type="vertical"
+                        hasRichContent>
+                        <RadioButtonWithLabel checked hasRichContent value="0" name="radiobutton-broadband">
+                            <div style={{ display: 'inline-block', width: '80%' }}>
+                                <Heading level="3" text="Batteridrevet 4G-ruter" />
+                                <Paragraph>A longer description text here. Nulla quis lorem ut libero malesuada feugiat.
+                                    Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</Paragraph>
+                                <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
+                                <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
+                            </div>
+                            {/* TODO: This image path shouldn't be there if this component is to be used by others */}
+                            <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src="/public/website-images/router1.jpg" />
+                        </RadioButtonWithLabel>
+                        <RadioButtonWithLabel hasRichContent value="1" name="radiobutton-broadband">
+                            <div style={{ display: 'inline-block', width: '80%' }}>
+                                <Heading level="3" text="Markedets kraftigste 4G-ruter" />
+                                <Paragraph>Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id
+                                    imperdiet et, porttitor at sem.</Paragraph>
+                                <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
+                                <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
+                            </div>
+                            {/* TODO: This image path shouldn't be there if this component is to be used by others */}
+                            <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src="/public/website-images/router2.png" />
+                        </RadioButtonWithLabel>
+                        <RadioButtonWithLabel hasRichContent value="2" name="radiobutton-broadband">
+                            <Heading level="3" text="Jeg ønsker ikke å kjøpe ruter" />
+                        </RadioButtonWithLabel>
+                    </RadioButtonList>
                 }
                 <div className="rich-text">
                     <h2 className="heading heading--level-2">Om abonnement</h2>
@@ -123,9 +125,11 @@ const Subscription = ({ isShowingFeatures, isStandalone, isBroadband, color, siz
                         </li>
                     </ul>
                 </div>
-            </section> : null}
+            </section>
+        }
     </Box>
 );
+
 Subscription.propTypes = {
     isShowingFeatures: PropTypes.bool,
     isStandalone: PropTypes.bool,

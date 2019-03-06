@@ -32,7 +32,7 @@ const menuLinks = [
     {
         heading: 'Styleguide',
         loggedInLinks: [
-            { text: 'Home', url: '/', icon: '/public/icons/ico_home.svg' }
+            { text: 'Home', url: '/', icon: require('../assets/ico_home.svg') }
         ],
         loggedOutLinks: [
             { text: 'Layout', url: '/layout' },
@@ -45,7 +45,7 @@ const menuLinks = [
     {
         heading: 'Component Library',
         loggedInLinks: [
-            { text: 'Home', url: '/', icon: '/public/icons/ico_home.svg' }
+            { text: 'Home', url: '/', icon: require('../assets/ico_home.svg') }
         ],
         loggedOutLinks: [
             { text: 'All Components', url: '/components' },
@@ -65,8 +65,8 @@ const Routes = () =>
             cartItemCount={0}
             logoUrl="/"
             logoTitle="Telia logo"
-            logoImageDesktopPath="/public/images/logo/logo.svg"
-            logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
+            logoImageDesktopPath={require('../assets/images/logo/logo.svg')}
+            logoImageDesktopPathInverted={require('../assets/images/logo/logo-inverted.svg')}
             menuLinks={menuLinks}
             isLoggedIn={false} />
 

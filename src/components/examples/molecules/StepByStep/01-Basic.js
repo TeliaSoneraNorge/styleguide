@@ -16,7 +16,7 @@ const DefaultStepByStep = () => (
         </Step>
         <Step>
             <Description
-                imageSrc="/public/website-images/boy-ipad.jpg"
+                imageSrc={require('../../../../assets/website-images/boy-ipad.jpg')}
                 heading="Ipsum">
                 Nulla quis lorem ut libero malesuada feugiat.
             </Description>

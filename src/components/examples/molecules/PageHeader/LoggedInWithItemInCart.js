@@ -21,8 +21,8 @@ const LoggedIn1Item = () => (
         menuId="page-header-menu--example-4"
         logoUrl="#"
         logoTitle="Telia logo"
-        logoImageDesktopPath="/public/images/logo/logo.svg"
-        logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
+        logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
+        logoImageDesktopPathInverted={require('../../../../assets/images/logo/logo-inverted.svg')}
         cartItemCount={1}
         menuLinks={menuLinks}
         loggedInUserName="Maria"

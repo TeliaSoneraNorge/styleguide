@@ -38,7 +38,7 @@ const InformationArticleSample3 = () =>
                     </li>
                     <li className="step-by-step__step-wrapper">
                         <div className="step-by-step__step step-by-step__circle step-by-step__step--no-border">
-                            <img className="step-by-step__image" src="/public/website-images/boy-ipad.jpg" alt="" />
+                            <img className="step-by-step__image" src={require('../../assets/website-images/boy-ipad.jpg')} alt="" />
                         </div>
                         <div className="step-by-step__text">
                             <h2 className="step-by-step__heading heading heading--level-2">Ipsum</h2>

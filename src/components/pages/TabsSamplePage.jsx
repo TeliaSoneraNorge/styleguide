@@ -1,5 +1,4 @@
 import React from 'react';
-import classNames from 'classnames';
 
 import { Heading, FunkyTabs, Tabs } from '../../../component-lib/src/index';
 
@@ -28,7 +27,7 @@ export default class TabsSamplePage extends React.Component {
                 <FunkyTabs
                     onSelect={(e, index) => this.onFunkyTabSelect(e, index)}
                     selectedIndex={this.state.funkyTabSelectedIndex}>
-                    <FunkyTabs.TabPanel heading="Under 15 år" imagePath="/public/images/under15.png" url="/tabs/under-15">
+                    <FunkyTabs.TabPanel heading="Under 15 år" imagePath={require('../../assets/images/under15.png')} url="/tabs/under-15">
                         <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 1" />
                             <p className="paragraph">
@@ -39,7 +38,7 @@ export default class TabsSamplePage extends React.Component {
                             </p>
                         </section>
                     </FunkyTabs.TabPanel>
-                    <FunkyTabs.TabPanel heading="Under 28 år" imagePath="/public/images/under28.png" url="/tabs/under-28">
+                    <FunkyTabs.TabPanel heading="Under 28 år" imagePath={require('../../assets/images/under28.png')} url="/tabs/under-28">
                         <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 2" />
                             <p className="paragraph">
@@ -49,7 +48,7 @@ export default class TabsSamplePage extends React.Component {
                             </p>
                         </section>
                     </FunkyTabs.TabPanel>
-                    <FunkyTabs.TabPanel heading="For alle" imagePath="/public/images/for-alle.png" url="/tabs/for-alle">
+                    <FunkyTabs.TabPanel heading="For alle" imagePath={require('../../assets/images/for-alle.png')} url="/tabs/for-alle">
                         <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 3" />
                             <p className="paragraph">
@@ -60,7 +59,7 @@ export default class TabsSamplePage extends React.Component {
                             </p>
                         </section>
                     </FunkyTabs.TabPanel>
-                    <FunkyTabs.TabPanel heading="Kontantkort" imagePath="/public/images/kontantkort.png" url="/tabs/kontantkort">
+                    <FunkyTabs.TabPanel heading="Kontantkort" imagePath={require('../../assets/images/kontantkort.png')} url="/tabs/kontantkort">
                         <section className="container container--small rich-text">
                             <Heading level={2} text="Funky tab 4" />
                             <p className="paragraph">

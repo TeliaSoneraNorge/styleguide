@@ -6,7 +6,7 @@ const ProductPromoBoxesInGrid = () => (
         <ProductPromoBox
             id="box-5"
             productName="iPhone 9"
-            imagePath="/public/website-images/iPhone.png"
+            imagePath={require('../../../../assets/website-images/iPhone.png')}
             speechBubbleText=""
             description="Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
             price=""
@@ -17,7 +17,7 @@ const ProductPromoBoxesInGrid = () => (
         <ProductPromoBox
             id="box-6"
             productName="iPhone 9"
-            imagePath="/public/website-images/iPhone.png"
+            imagePath={require('../../../../assets/website-images/iPhone.png')}
             speechBubbleText=""
             description="Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
             price=""
@@ -29,7 +29,7 @@ const ProductPromoBoxesInGrid = () => (
         <ProductPromoBox
             id="box-7"
             productName="iPhone 9"
-            imagePath="/public/website-images/iPhone.png"
+            imagePath={require('../../../../assets/website-images/iPhone.png')}
             speechBubbleText=""
             description="Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
             price=""

@@ -26,8 +26,8 @@ const LoggedOutNoItems = () => (
         menuId="page-header-menu--example-5"
         logoUrl="#"
         logoTitle="Telia logo"
-        logoImageDesktopPath="/public/images/logo/logo.svg"
-        logoImageDesktopPathInverted="/public/images/logo/logo-inverted.svg"
+        logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
+        logoImageDesktopPathInverted={require('../../../../assets/images/logo/logo-inverted.svg')}
         cartItemCount={0}
         menuSelectedTabIndex={1}
         menuLinks={menuLinks} />
