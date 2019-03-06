@@ -9,25 +9,25 @@ const RelatedArticlesProps = [
         'relatedArticles': [
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/boy-ipad.jpg',
+                'imageSrc': require('../../assets/website-images/boy-ipad.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             },
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/woman-mobile.jpg',
+                'imageSrc': require('../../assets/website-images/woman-mobile.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             },
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/kids-ipad.jpg',
+                'imageSrc': require('../../assets/website-images/kids-ipad.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             },
             {
                 'link': '#',
-                'imageSrc': '/public/website-images/woman-holding-ipad.jpg',
+                'imageSrc': require('../../assets/website-images/woman-holding-ipad.jpg'),
                 'heading': 'This is the article\'s heading',
                 'tags': ['Related', 'Article', 'Tag']
             }
@@ -60,7 +60,7 @@ const BlogSamplePage = () =>
                     <span className="tags__tag">Streaming</span>
                 </div>
                 <div className="article-meta-data__share">
-                    <img className="article-meta-data__share-icon" src="/public/icons/ico_share.svg" />
+                    <img className="article-meta-data__share-icon" src={require('../../assets/ico_share.svg')} />
                 </div>
             </div>
         </section>

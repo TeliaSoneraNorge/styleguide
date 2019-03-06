@@ -2,8 +2,8 @@ import React from 'react';
 import { Hero } from '@telia/styleguide';
 
 const sources = [
-    { type: 'mobile', srcSet: '/public/website-images/hero.jpg' },
-    { type: 'desktop', srcSet: '/public/website-images/hero.jpg' }
+    { type: 'mobile', srcSet: require('../../../../assets/website-images/hero.jpg') },
+    { type: 'desktop', srcSet: require('../../../../assets/website-images/hero.jpg') }
 ];
 
 const DefaultHero = () => (

@@ -3,7 +3,7 @@ import { RelatedArticle } from '@telia/styleguide';
 
 const DefaultRelatedArticle = () => (
     <RelatedArticle
-        imgSrc="/public/website-images/boy-ipad.jpg"
+        imgSrc={require('../../../../assets/website-images/boy-ipad.jpg')}
         imgAlt="Boy playing with a tablet in a bed."
         heading="This is the article's heading"
         tags={['Related', 'Article', 'Tag']} />

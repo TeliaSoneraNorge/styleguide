@@ -5,7 +5,7 @@ const ProductPromoBoxSmallBox = () => (
     <ProductPromoBox
         id="box-4"
         productName="iPhone 9"
-        imagePath="/public/website-images/iPhone.png"
+        imagePath={require('../../../../assets/website-images/iPhone.png')}
         speechBubbleText=""
         description="Nulla quis lorem ut libero malesuada feugiat. Curabitur non nulla sit amet nisl tempus convallis quis ac lectus."
         price="329"
@@ -14,7 +14,6 @@ const ProductPromoBoxSmallBox = () => (
         hideButton
         buttonText=""
         isSmallBox />
-
 );
 
 export default ProductPromoBoxSmallBox;
