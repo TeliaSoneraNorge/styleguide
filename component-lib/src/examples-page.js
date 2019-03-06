@@ -90,6 +90,7 @@ export default [
     'src/molecules/InfoBox/InfoBox.jsx',
     'src/molecules/DisplayFunctionality/DisplayFunctionality.jsx',
     'src/molecules/Banner/Banner.jsx',
+    'src/molecules/StatsDisplay/StatsDisplay.jsx',
 
     // Organisms
     'src/organisms/ContentRating/ContentRating.jsx',
