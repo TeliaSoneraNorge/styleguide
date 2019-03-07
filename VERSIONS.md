@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.25.12
+- StatsDisplay: molecule added
+
 ## 1.25.11
 - Banner: molecule added
 
