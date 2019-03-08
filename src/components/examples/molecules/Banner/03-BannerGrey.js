@@ -3,7 +3,7 @@ import { Banner, Container } from '@telia/styleguide';
 
 const DefaultBanner = () => (
     <Container size="large">
-        <Banner img="/public/website-images/screenshot1.png" grey={true}>
+        <Banner img={require('../../../../assets/website-images/screenshot1.png')} grey={true}>
             <h2 className="heading-2">– Vi står ikke bare og prater om digitalisering</h2>
             <p className="paragraph">
                 I Åseral i Vest-Agder jobber i disse dager Implenia Norge 
