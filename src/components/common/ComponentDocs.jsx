@@ -6,7 +6,7 @@ import { Heading } from '../../../component-lib/src/index';
 import ComponentExample from './ComponentExample';
 
 const ComponentDocs = ({ component }) =>
-    <div className="sg-component">
+    <div className="sg-component" id={component.name}>
         <div className="container container--medium container--no-margin">
             <Heading level={2} text={component.name} />
             <div dangerouslySetInnerHTML={{ __html: marked(component.docs) }} />
