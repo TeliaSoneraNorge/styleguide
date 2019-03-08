@@ -3,21 +3,16 @@ import { Banner, Container } from '@telia/styleguide';
 
 const DefaultBanner = () => (
     <Container size="full" className="banner--background-grey">
-        <Container size="large">
-            <Banner img={require('../../../../assets/website-images/screenshot1.png')} reverse={true}>
-                <h2 className="heading-2">– Vi står ikke bare og prater om digitalisering</h2>
-                <p className="paragraph">
-                    I Åseral i Vest-Agder jobber i disse dager Implenia Norge 
-                    med å bygge ut nesten 10 kilometer med tunneler for Agder 
-                    Energi. Fordi det er snakk om overføringstuneller for 
-                    vann i forbindelse med strømproduksjon, vil det ikke 
-                    være et sted hvor mennesker skal oppholde seg når 
-                    det er ferdig bygget. Derfor er det heller ingen 
-                    grunn til å bruke store summer på montering av 
-                    permanente basestasjoner.
-                </p>
-            </Banner>
-        </Container>
+        <Banner img={require('../../../../assets/website-images/screenshot1.png')} reverse={true}>
+            <h2 className="heading-2">– Vi står ikke bare og prater om digitalisering</h2>
+            <p className="paragraph">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+                ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
+                laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in
+                voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat
+                non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            </p>
+        </Banner>
     </Container>
 );
 
