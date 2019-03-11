@@ -13,14 +13,6 @@
         display: flex;
         flex-flow: column wrap;
 
-        > .list__item {
-            flex: 1;
-
-            @media all and (min-width: 37.500em) {
-                flex:  33.333333%;
-            }
-        }
-
         &-by-three {
             @media all and (min-width: 37.500em) {
                 max-height: 6em;
@@ -30,6 +22,18 @@
         &-by-four {
             @media all and (min-width: 37.500em) {
                 max-height: 8em;
+            }
+        }
+
+        /* This is a hack to make wrapping look nice in IE */
+        /* -ms-high-contrast is used for detection of IE10 and 11 */
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 37.500em) {
+            &-by-three {
+                height: 6em;
+            }
+
+            &-by-four {
+                height: 8em;
             }
         }
     }
