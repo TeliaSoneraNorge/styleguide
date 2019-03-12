@@ -5,9 +5,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "parcel build src/index.html",
+    "build": "run-s clean generate-static-data generate-component-docs && parcel build src/index.html && npm run generate-zip",
     "build:component-lib": "cd component-lib && npm install && npm run build",
-    "build-old": "run-s clean generate-zip",
     "clean": "npm run rimraf -- dist && mkdirp dist -p",
     "deploy:prod": "npm run git:checkout-master-and-pull && git push heroku master",
     "dev": "run-s clean generate-static-data generate-component-docs && cross-env NODE_ENV=development LOCAL_DEV=true node server.js",
