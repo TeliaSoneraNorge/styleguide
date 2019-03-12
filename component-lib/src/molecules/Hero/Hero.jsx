@@ -45,6 +45,7 @@ const Hero = ({
     mode,
     align,
     logoAlign,
+    alignBox,
     ...rest
 }) => (
     <a
@@ -81,7 +82,7 @@ const Hero = ({
                         alt={alt} />
                 </picture>
             }
-            <div className="hero__box heading-link--focus-area">
+            <div className={classnames("hero__box heading-link--focus-area", {[`hero__box--align-${alignBox || 'left'}`]: alignBox})}>
                 <h2 className="hero__heading">{heading}</h2>
                 <div className="hero__subheading">{subheading}
                     <HorizontalRule short left />
@@ -106,7 +107,9 @@ Hero.propTypes = {
     /** One of ['mobile', 'desktop'] */
     mode: PropTypes.oneOf(['mobile', 'desktop']),
     /** One of ['top', 'bottom'] */
-    align: PropTypes.oneOf(['top', 'bottom'])
+    align: PropTypes.oneOf(['top', 'bottom']),
+    /** One of ['left', 'right' or 'center'] */
+    alignBox: PropTypes.oneOf(['left', 'right', 'center'])
 };
 
 export default Hero;
