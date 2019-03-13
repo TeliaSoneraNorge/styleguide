@@ -33,15 +33,6 @@ module.exports = {
         'postcss-custom-properties': {
             preserve: false
         },
-        'postcss-calc': {},
-        'postcss-replace': {
-            data: {
-                assetPath: '/public'
-            }
-        },
-        'postcss-url': {
-            filter: '**',
-            url: (asset) => `${asset.url}?${calculateHash(asset.url)}`
-        }
+        'postcss-calc': {}
     }
 };

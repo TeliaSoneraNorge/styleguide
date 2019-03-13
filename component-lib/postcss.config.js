@@ -36,7 +36,7 @@ module.exports = {
         'postcss-calc': {},
         'postcss-replace': {
             data: {
-                assetPath: './assets'
+                assetPath: (process.env.LOCAL_DEV === 'true') ? '../assets' : './assets'
             }
         },
         'postcss-url': {
