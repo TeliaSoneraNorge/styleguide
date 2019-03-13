@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.26.1
+- FocusBox: works better on small screens
+
+## 1.26.0
+- Large rewrite to remove dependencies, and get rid of (most of) the server
+
 ## 1.25.12
 - StatsDisplay: molecule added
 

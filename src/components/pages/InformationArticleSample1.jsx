@@ -68,6 +68,26 @@ const InformationArticleSample1 = ({ colors }) =>
                     <AccordionList key={i} {...props} />)}
             </div>
         </div>
+
+        <div className="focus-box">
+            <div className="focus-box__content-outer">
+                <div className="container container--small container--no-margin focus-box__content-inner">
+                    <p className="paragraph">
+                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
+                        nec, egestas non nisi.
+                    </p>
+                    <button className="button" style={{ marginBottom: '1rem' }}>Click me</button>
+                    <p className="paragraph">
+                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
+                        nec, egestas non nisi.
+                    </p>
+                    <p className="paragraph">
+                        Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque
+                        nec, egestas non nisi.
+                    </p>
+                </div>
+            </div>
+        </div>
     </div>;
 
 export default InformationArticleSample1;
