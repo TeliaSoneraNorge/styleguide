@@ -9,7 +9,6 @@ const calculateHash = (url) => {
         const hash = crypto.createHash('sha1');
         const fileContent = fs.readFileSync(filePath);
         hash.update(fileContent);
-
         return hash.digest('hex');
     }
 
