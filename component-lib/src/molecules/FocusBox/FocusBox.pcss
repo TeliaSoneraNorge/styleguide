@@ -5,7 +5,6 @@
 }
 
 .focus-box {
-    animation: focus-box-animation 4s 1;
     background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-41.svg') no-repeat -300px -500px;
     background-size: 1000px;
     margin: 0 auto var(--margin-bottom-large);
@@ -17,6 +16,7 @@
     }
 
     @media screen and (min-width: 28.125em) {
+        animation: focus-box-animation 4s 1;
         background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-41.svg') no-repeat -600px -1000px;
         background-size: 2000px;
     }
@@ -26,10 +26,10 @@
     }
 
     &__content-inner {
-        padding: 0 20px;
+        padding: 2.5rem 20px 2rem;
 
         @media screen and (min-width: 28.125em) {
-            padding: 4rem 20px 4rem;
+            padding: 4rem 20px 3.5rem;
         }
     }
 }
