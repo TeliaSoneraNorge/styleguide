@@ -5,9 +5,9 @@
 
 node_modules
 dist
-bundle.*
 npm-debug.log
 component-docs.json
 static-data.json
 public/icons
 *.tgz
+src/css/index.css
