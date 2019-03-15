@@ -12,6 +12,8 @@ p + .accordion-list {
 }
 
 .accordion {
+    display: flex;
+    flex-wrap: wrap;
     margin: 0 auto;
     max-width: var(--width-medium);
 
@@ -34,13 +36,27 @@ p + .accordion-list {
     &__header {
         margin-top: 0;
         position: relative;
+        width: 100%;
+
+        &--with-button {
+            border-right: 1px solid #CFCFCF;
+            width: 74%;
+            
+            @media only screen and (max-width: 52.5em) {
+                width: 65%; 
+            }
+            @media only screen and (max-width: 44.5em) {
+                border-right: none;
+                width: 100%;
+            }
+        }
     }
 
     &__header-button {
         background-color: var(--white);
         border: none;
         cursor: pointer;
-        display: block;
+        display: flex;
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
@@ -48,6 +64,26 @@ p + .accordion-list {
         position: relative;
         text-align: left;
         width: 100%;
+        height: 100%;
+        padding-bottom: 0.5rem;
+        align-items: center;
+        justify-content: flex-start;
+
+        &--text-box {
+            padding-left: 1rem;   
+
+            &-no-icon {
+                padding-bottom: 0.5rem;
+            }
+            
+            &-text {
+                font-size: 16px;
+                color: #3C3C3CB3;
+                font-family: Helvetica;
+                padding-top: 0.2rem;
+                padding-bottom: 0.5rem;
+            }
+        }
 
         &:hover {
             color: var(--core-purple);
@@ -55,13 +91,31 @@ p + .accordion-list {
 
         &:focus,
         &:active {
-            background-color: var(--core-purple);
-            color: var(--white);
+            background-color: hsl(0, 0%, 97%);
             outline: none;
         }
         &:focus + .accordion__header-icon *,
         &:active + .accordion__header-icon * {
-            fill: var(--white);
+        }
+    }
+
+    &__button {
+        margin-left: 2rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        width: 20%;
+        padding: 0.5rem 1rem;
+
+        @media only screen and (max-width: 52.5em) {
+            margin-left: 3rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            min-width: 10rem;
+        }
+        @media only screen and (max-width: 44.5em) {
+            margin-top: 0rem;
+            margin-left: 1.8rem;
+            min-width: 10rem;
         }
     }
 
@@ -73,8 +127,16 @@ p + .accordion-list {
 
         position: absolute;
         right: 1rem;
-        top: 1.25rem;
+        top: 50%;
         pointer-events: none;
+        transform: translateY(-50%);
+    }
+
+
+    &__icon {
+        fill: var(--core-purple);
+        height: 3rem;
+        width: 3rem;
     }
 
     &__panel {
@@ -87,9 +149,25 @@ p + .accordion-list {
                     padding 0.5s ease-in-out,
                     visibility 0.5s ease-in-out;
         visibility: hidden;
+        width: 100%;
     }
 
     &--open {
+        .accordion__header {
+                &--with-button {
+                    border-right: none;
+                    width: 75%;
+
+                    @media only screen and (max-width: 52.5em) {
+                        width: 65%; 
+                    }
+
+                     @media only screen and (max-width: 44.5em) {
+                        width: 100%;
+                    }
+            }
+        }
+
         .accordion__header-button {
             &:focus,
             &:active {
@@ -101,10 +179,12 @@ p + .accordion-list {
                 fill: var(--core-purple);
             }
         }
+        
         .accordion__header-icon {
             transform: rotate(180deg);
         }
         .accordion__panel {
+            margin-left: 1rem;
             height: auto;
             padding: 0 1rem 1rem;
             opacity: 1;
