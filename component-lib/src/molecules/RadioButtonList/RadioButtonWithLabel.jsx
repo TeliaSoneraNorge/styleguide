@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Label from '../../atoms/Label/Label';
 
-const RadioButtonWithLabel = ({ label, checked, name, value, hasRichContent, onChange, children }) =>
+const RadioButtonWithLabel = ({ label, checked, disabled, name, value, hasRichContent, onChange, children }) =>
     <Label className="radio-button-with-label">
         <input
             className="radio-button-with-label__input"
@@ -11,6 +11,7 @@ const RadioButtonWithLabel = ({ label, checked, name, value, hasRichContent, onC
             name={name}
             defaultChecked={checked}
             onChange={onChange ? (changeEvent) => onChange(changeEvent.target.value) : null}
+            disabled={disabled}
             value={value} />
         <span className="radio-button-with-label__svg-container">
             <svg className="radio-button-with-label__svg" width="20px" height="20px" viewBox="0 0 20 20">
@@ -25,6 +26,7 @@ const RadioButtonWithLabel = ({ label, checked, name, value, hasRichContent, onC
 RadioButtonWithLabel.propTypes = {
     label: PropTypes.string,
     checked: PropTypes.bool,
+    disabled: PropTypes.bool,
     name: PropTypes.string,
     value: PropTypes.any,
     /** Decides whenever should render label or children. */
