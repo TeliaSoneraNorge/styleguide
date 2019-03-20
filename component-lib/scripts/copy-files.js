@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 
-import path from 'path';
-import fse from 'fs-extra';
+const path = require('path');
+const fse = require('fs-extra');
 
 async function copyFolder(folder) {
     const buildPath = path.resolve(__dirname, '../dist/', path.basename(folder));
