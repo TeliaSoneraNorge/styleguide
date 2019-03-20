@@ -43,7 +43,7 @@ export default class Menu extends React.Component {
                                 return (
                                     <li key={menuLink.heading+index}>
                                         <a href={`${menuLink.heading}`}   
-                                            className="menu__heading-item link">
+                                                  className="menu__heading-item link">
                                             {menuLink.heading}
                                         </a>
                                     </li>
@@ -51,10 +51,14 @@ export default class Menu extends React.Component {
                             })
                         }
                     </ul>
-                    <div className="menu__search">
+                    <div className={ classnames('menu__search',{
+                            'menu__search--focused': this.state.searchFocus,
+                        })}
+                        onClick={ () => { this.search_input.focus(); } }>
                         <input className="menu__search-input" 
                             type="text" 
                             placeholder="Søk"
+                            ref={ (search_input) => {this.search_input = search_input} }
                             onFocus={ () => {this.setState({ searchFocus: true })} }
                             onBlur={ () => {this.setState({ searchFocus: false })} } />
                         <SvgIcon className="menu__search-icon" iconName="ico_search" color="black" />
@@ -74,34 +78,41 @@ export default class Menu extends React.Component {
                         this.props.menuLinks &&
                         this.props.menuLinks.map(( menuLink, index ) => {
                             return (
-                                <section 
+                                <ul 
                                     id={`${menuLink.heading}-panel`} 
-                                    className="menu__content-panel"
-                                    hidden={ this.state.selectedIndex !== index }>
+                                    className={ classnames('menu__content-panel',{
+                                        'menu__content-panel--hidden': this.state.selectedIndex !== index,
+                                    })}>
                                     {
                                         menuLink.links.map( ( link, index ) => {
-                                            if(link.url != null) return <a key={'link'+index} className="menu__item link" href={link.url}>{link.text}</a>
-                                            else return ( 
-                                                <div className="menu__item link menu__submenu">
-                                                    <span className="" onClick={ () => { this.setState( { open : !this.state.open }) } }>{link.text}
-                                                        <SvgIcon iconName="ico_dropArrow" color="purple" 
-                                                            className={ classnames('icon-link__icon menu__submenu-icon',{
-                                                                'menu__submenu-icon--open': this.state.open
-                                                            })}/></span>
-                                                    <div className={ classnames('menu__submenu-container',{
-                                                        'menu__submenu-container--open': this.state.open
-                                                    })}>
-                                                        {
-                                                            link.subLinks.map( ( sublink, index ) => {
-                                                                return <a key={'sublink'+index} className="menu__subitem link" href={sublink.url}>{sublink.text}</a>
-                                                            })
-                                                        }
-                                                    </div>
-                                                </div> 
-                                            )
+                                            return <li>
+                                                {
+                                                    link.url &&
+                                                    <a key={'link'+index} className="menu__item link" href={link.url}>{link.text}</a>
+                                                }
+                                                {
+                                                    !link.url &&
+                                                    <div className="menu__item link menu__submenu">
+                                                        <span className="" onClick={ () => { this.setState( { open : !this.state.open }) } }>{link.text}
+                                                            <SvgIcon iconName="ico_dropArrow" color="purple" 
+                                                                className={ classnames('icon-link__icon menu__submenu-icon',{
+                                                                    'menu__submenu-icon--open': this.state.open
+                                                                })}/></span>
+                                                        <div className={ classnames('menu__submenu-container',{
+                                                            'menu__submenu-container--open': this.state.open
+                                                        })}>
+                                                            {
+                                                                link.subLinks.map( ( sublink, index ) => {
+                                                                    return <a key={'sublink'+index} className="menu__subitem link" href={sublink.url}>{sublink.text}</a>
+                                                                })
+                                                            }
+                                                        </div>
+                                                    </div> 
+                                                }
+                                            </li>
                                         })
                                     }
-                                </section>
+                                </ul>
                             )
                         })
                     }
