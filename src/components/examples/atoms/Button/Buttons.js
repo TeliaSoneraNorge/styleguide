@@ -16,6 +16,7 @@ const Buttons = () => (
         <br /><br />
         <Button text="Confirm" />
         <Button text="Cancel button" kind="cancel" />
+        <Button text="Inverted button" kind="inverted" />
         <br /><br />
         <Button text="Link button" kind="link" />
     </div>

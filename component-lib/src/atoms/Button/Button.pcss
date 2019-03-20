@@ -39,9 +39,9 @@
         outline: none;
     }
 
-    &:not(&--processing):not(&--disabled):hover,
-    &:not(&--processing):not(&--disabled):focus,
-    &:not(&--processing):not(&--disabled):active {
+    &:not(&--processing):not(&--disabled):not(&--inverted):hover,
+    &:not(&--processing):not(&--disabled):not(&--inverted):focus,
+    &:not(&--processing):not(&--disabled):not(&--inverted):active {
         background-color: var(--core-purple);
         color: var(--white);
     }
@@ -55,6 +55,18 @@
         background-color: var(--dark-green);
         border: none;
         color: var(--black);
+    }
+
+    &--inverted {
+        background-color: var(--core-purple);
+        color: var(--white);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--white);
+            color: var(--core-purple);
+        }
     }
 
     &--cancel {
