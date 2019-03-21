@@ -13,14 +13,14 @@ export default class Menu extends React.Component {
     static propTypes = {
         menuLinks: PropTypes.array,
         logoImageDesktopPath: PropTypes.string,
-        logoTitle: PropTypes.string
+        logoTitle: PropTypes.string,
+        activeIndex: PropTypes.number
     };
 
     constructor(props) {
         super(props);
 
         this.state = {
-            selectedIndex : 0,
             searchFocus: false,
             open: false,
             mobileMenuOpen: false
@@ -43,7 +43,9 @@ export default class Menu extends React.Component {
                                 return (
                                     <li key={menuLink.heading+index}>
                                         <a href={`${menuLink.heading}`}   
-                                                  className="menu__heading-item link">
+                                                className={ classnames('menu__heading-item link',{
+                                                'menu__heading-item--active': this.props.activeIndex === index,
+                                            })}>
                                             {menuLink.heading}
                                         </a>
                                     </li>
@@ -81,7 +83,7 @@ export default class Menu extends React.Component {
                                 <ul 
                                     id={`${menuLink.heading}-panel`} 
                                     className={ classnames('menu__content-panel',{
-                                        'menu__content-panel--hidden': this.state.selectedIndex !== index,
+                                        'menu__content-panel--hidden': this.props.activeIndex !== index,
                                     })}>
                                     {
                                         menuLink.links.map( ( link, index ) => {
@@ -131,7 +133,9 @@ export default class Menu extends React.Component {
                                         return (
                                             <li key={menuLink.heading+index}>
                                                 <a href={`${menuLink.heading}`}   
-                                                    className="menu__mobile-heading-item link">
+                                                    className={ classnames('menu__mobile-heading-item link',{
+                                                        'menu__mobile-heading-item--active': this.props.activeIndex === index,
+                                                    })}>
                                                     {menuLink.heading}
                                                 </a>
                                             </li>
@@ -147,7 +151,7 @@ export default class Menu extends React.Component {
                                 <section 
                                     id={`${menuLink.heading}-panel`} 
                                     className="menu__mobile-panel"
-                                    hidden={ this.state.selectedIndex !== index }>
+                                    hidden={ this.props.activeIndex !== index }>
                                     {
                                         menuLink.links.map( ( link, index ) => {
                                             if(link.url != null) return <a key={'link'+index} className="menu__mobile-item link" href={link.url}>{link.text}</a>
