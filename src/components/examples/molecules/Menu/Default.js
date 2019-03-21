@@ -7,15 +7,15 @@ const menuLinks = [
     {
         heading: 'Privat',
         links: [
-            { text: 'Mobilabonnement', url: '/' },
-            { text: 'Mobilt bredbånd', url: '/' },
-            { text: 'Kontakt', url: '/' },
             { text: 'Mobiler og tilbehør', subLinks: [
                 { text: 'Mobiltelefoner', url: '/' },
                 { text: 'Smartklokker', url: '/' },
                 { text: 'Nettbrett', url: '/' },
                 { text: 'Tilbehør', url: '/' }
-            ]}
+            ]},
+            { text: 'Mobilabonnement', url: '/' },
+            { text: 'Mobilt bredbånd', url: '/' },
+            { text: 'Kontakt', url: '/' }
         ],
     },
     {
@@ -30,9 +30,9 @@ const menuLinks = [
 ];
 
 const Default = () => (
-    <Menu 
+    <Menu
         activeIndex={0}
-        menuLinks={menuLinks} 
+        menuLinks={menuLinks}
         logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')} />
 );
 
