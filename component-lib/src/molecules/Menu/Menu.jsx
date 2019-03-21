@@ -74,19 +74,18 @@ export default class Menu extends React.Component {
                         <span className="menu__mobile-button-text"> Meny </span>
                     </button>
                 </div>
-                <div ref={ ( menu_content ) => { this.menu_content = menu_content } } className="menu__content">
                     {
                         this.props.menuLinks &&
                         this.props.menuLinks.map(( menuLink, index ) => {
                             return (
-                                <ul
+                                <div ref={ ( menu_content ) => { this.menu_content = menu_content } }
                                     id={`${menuLink.heading}-panel`}
-                                    className={ classnames('menu__content-panel',{
-                                        'menu__content-panel--hidden': this.props.activeIndex !== index,
+                                    className={ classnames('menu__content',{
+                                        'menu__content--hidden': this.props.activeIndex !== index,
                                     })}>
                                     {
                                         menuLink.links.map( ( link, index ) => {
-                                            return <li>
+                                            return <React.Fragment>
                                                 {
                                                     link.url &&
                                                     <a key={'link'+index} className="menu__item link" href={link.url}>{link.text}</a>
@@ -110,14 +109,13 @@ export default class Menu extends React.Component {
                                                         </div>
                                                     </div>
                                                 }
-                                            </li>
+                                           </React.Fragment>
                                         })
                                     }
-                                </ul>
+                                </div>
                             )
                         })
                     }
-                </div>
 
                 <div className={ classnames('menu__mobile',{
                             'menu__mobile--open' : this.state.mobileMenuOpen })}>

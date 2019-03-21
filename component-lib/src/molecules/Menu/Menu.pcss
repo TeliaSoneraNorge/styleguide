@@ -59,7 +59,7 @@
         display: none;
 
         @media all and (min-width: rem(1120)) {
-            display: block;
+            display: inline-block;
         }
 
         &:hover {
@@ -75,7 +75,7 @@
     }
 
     &__heading-item {
-        
+
         &--active {
             margin-top: -2px;
             border-bottom: 2px solid var(--core-purple);
@@ -397,23 +397,14 @@
 
         @media all and (min-width: rem(1120)) {
             display: block;
+
+            &--hidden {
+                display: none;
+            }
         }
 
         @media all and (min-width: rem(1460)) {
             padding: var(--padding) 2.8125rem var(--padding) 16rem;
-        }
-    }
-
-    &__content-panel{
-        display: flex;
-        list-style: none;
-
-        &:focus {
-            border: 1px solid red;
-        }
-
-        &--hidden {
-            display: none;
         }
     }
 
@@ -458,7 +449,7 @@
     }
 
     &__mobile-heading-item {
-        
+
         &--active {
             border-bottom: 2px solid var(--white);
         }
