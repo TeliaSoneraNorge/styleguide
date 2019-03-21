@@ -49,7 +49,7 @@
         display: none;
 
         @media all and (min-width: rem(1120)) {
-            display: inline-block;
+            display: block;
         }
 
         &:hover {
@@ -70,6 +70,7 @@
         &:hover {
             text-decoration: none;
             border: none;
+            margin-top: 0;
         }
     }
 
@@ -101,6 +102,10 @@
         display: block;
         border: none;
         margin-bottom: 1rem;
+
+        &:hover {
+            margin-top: -1px;
+        }
     }
 
     &__search {
