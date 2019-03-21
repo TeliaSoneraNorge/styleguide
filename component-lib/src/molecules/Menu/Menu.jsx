@@ -65,6 +65,13 @@ export default class Menu extends React.Component {
                             onBlur={ () => {this.setState({ searchFocus: false })} } />
                         <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
                         <span className="menu__search-label"> Søk </span>
+                        <button className={ classnames('menu__search-close',{
+                                'menu__search-close--focused': this.state.searchFocus,
+                            })}>
+                            <span className="menu__search-close-line"></span>
+                            <span className="menu__search-close-line"></span>
+                        </button>
+
                     </div>
                     <button className="menu__login-button button button--small">
                         <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" /> logg inn

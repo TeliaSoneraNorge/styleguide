@@ -145,6 +145,54 @@
                 position: relative;
             }
         }
+
+        &-close {
+            display: none;
+            position: absolute;
+            top: 50%;
+            right: 1rem;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            width: 1rem;
+            height: 1rem;
+
+            @media all and (min-width: rem(600)) {
+                height: 2rem;
+                width: 2rem;
+            }
+
+            &--focused{
+                display: block;
+            }
+
+            &:hover {
+                cursor: pointer;
+            }
+
+            &-line {
+                position: absolute;
+                display: block;
+                height: 2px;
+                width: 100%;
+                background: black;
+
+                &:first-child {
+                    transform: rotate(45deg);
+                }
+
+                &:last-child {
+                    transform: rotate(-45deg);
+                }
+            }
+
+            @media all and (min-width: rem(1120)) {
+                display: none;
+            }
+
+        }
     }
 
     &__search-icon {
@@ -235,7 +283,8 @@
             height: 100%;
             margin: 0;
             transform: none;
-            padding-left: 2.5rem;
+            padding: 0 2.5rem;
+            pointer-events: auto;
 
             & + .menu__search-icon {
                 position: absolute;
