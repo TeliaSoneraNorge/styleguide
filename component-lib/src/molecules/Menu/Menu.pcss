@@ -378,8 +378,13 @@
 
     &__content {
         padding: var(--padding) 2.8125rem;
+        display: none;
 
-        @media all and (min-width: 91.25em) {
+        @media all and (min-width: rem(1120)) {
+            display: block;
+        }
+
+        @media all and (min-width: rem(1460)) {
             padding: var(--padding) 2.8125rem var(--padding) 16rem;
         }
     }
