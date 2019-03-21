@@ -31,6 +31,7 @@ const menuLinks = [
 
 const Default = () => (
     <Menu 
+        activeIndex={0}
         menuLinks={menuLinks} 
         logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')} />
 );
