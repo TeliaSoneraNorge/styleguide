@@ -1,8 +1,12 @@
 .menu {
     width: 100%;
-    padding: 1.125rem 0;
+    padding-top: 1.125rem;
     position: relative;
     z-index: 99999;
+
+    @media all and (min-width: rem(1120)) {
+       padding: 1.125rem 0;
+    }
 
     &__top {
         display: flex;
