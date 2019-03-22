@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import MenuSearch from './MenuSearch';
 
 /**
  * Status: *In progress*.
@@ -18,9 +19,8 @@ export default class Menu extends React.Component {
         super(props);
 
         this.state = {
-            searchFocus: false,
             open: false,
-            mobileMenuOpen: false
+            mobileMenuOpen: false,
         }
     }
 
@@ -50,29 +50,7 @@ export default class Menu extends React.Component {
                             })
                         }
                     </ul>
-                    <div className={ classnames('menu__search',{
-                            'menu__search--focused': this.state.searchFocus,
-                        })}
-                        onClick={ () => { this.search_input.focus(); } }>
-                        <input className="menu__search-input"
-                            type="text"
-                            placeholder="Søk"
-                            ref={ (search_input) => {this.search_input = search_input} }
-                            onFocus={ () => {this.setState({ searchFocus: true })} }
-                            onBlur={ () => {this.setState({ searchFocus: false })} } />
-                        <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
-                        <span className="menu__search-label"> Søk </span>
-                        <button className={ classnames('menu__search-close',{
-                            'menu__search-close--focused': this.state.searchFocus,
-                        })}
-                        onClick={ () => {
-                            this.searchInput.value= "";
-                            this.setState({ searchFocus: false});
-                        }}>
-                            <span className="menu__search-close-line"></span>
-                            <span className="menu__search-close-line"></span>
-                        </button>
-                    </div>
+                    <MenuSearch />
                     <button className="menu__login-button button button--small">
                         <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" /> logg inn
                     </button>
