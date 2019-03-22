@@ -11,20 +11,38 @@ export default class MenuSearch extends React.Component {
             searchQuery: ''
         }
 
-        this.onInputFocus = this.onInputFocus.bind(this);
-        this.onInputBlur = this.onInputBlur.bind(this);
         this.onSearchQueryChange = this.onSearchQueryChange.bind(this);
         this.onSearchInputRef = this.onSearchInputRef.bind(this);
         this.onContainerClick = this.onContainerClick.bind(this);
+        this.onClickaway = this.onClickaway.bind(this);
+        this.onContainerRef = this.onContainerRef.bind(this);
+        this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
     }
 
-    onInputFocus() {
-        this.setState({ searchFocus: true });
+    isDescendant(parent, child) {
+        while (child) {
+            if (child === parent) {
+                return true;
+            }
+            child = child.parentNode;
+        }
+        return false;
     }
 
-    onInputBlur() {
-        this.setState({ searchFocus: false, searchQuery: '' });
+    componentDidMount() {
+        document.addEventListener('click', this.onClickaway);
     }
+
+    componentWillUnmount() {
+        document.removeEventListener('click', this.onClickaway);
+    }
+
+    onClickaway(event) {
+        if (this.container && !this.isDescendant(this.container, event.target)) {
+            this.setState({ searchFocus: false });
+        }
+    }
+
     onSearchQueryChange(event) {
         this.setState({ searchQuery: event.target.value });
     }
@@ -33,8 +51,21 @@ export default class MenuSearch extends React.Component {
         this.searchInput = searchInput
     }
 
-    onContainerClick() {
-        this.searchInput.focus();
+    onContainerRef(container) {
+        this.container = container
+    }
+
+    onContainerClick(e) {
+        e.stopPropagation();
+
+        this.setState({ searchFocus: true });
+        setTimeout(() => this.searchInput.focus(), 0);
+    }
+
+    onCloseButtonClick(e) {
+        e.stopPropagation();
+
+        this.setState({ searchFocus: false, searchQuery: '' });
     }
 
     render() {
@@ -42,7 +73,7 @@ export default class MenuSearch extends React.Component {
 
         return (
             <div
-                tabIndex={0}
+                ref={this.onContainerRef}
                 className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
                 onClick={this.onContainerClick}
             >
@@ -50,16 +81,14 @@ export default class MenuSearch extends React.Component {
                     type="text"
                     placeholder="Søk"
                     value={searchQuery}
-                    onFocus={this.onInputFocus}
-                    onBlur={this.onInputBlur}
                     onChange={this.onSearchQueryChange}
                     ref={this.onSearchInputRef}
                 />
                 <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
                 <span className="menu__search-label">Søk</span>
                 <button
-                    className={classnames('menu__search-close', {'menu__search-close--focused': searchFocus })}
-                    onClick={this.onInputBlur}
+                    className={classnames('menu__search-close', { 'menu__search-close--focused': searchFocus })}
+                    onClick={this.onCloseButtonClick}
                 >
                     <span className="menu__search-close-line"></span>
                     <span className="menu__search-close-line"></span>
