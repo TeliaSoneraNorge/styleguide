@@ -193,7 +193,7 @@
             font-size: 0.875rem;
         }
 
-        &:hover {
+        &:hover, &:focus {
             background-color: var(--white) !important;
             color: var(--black) !important;
         }
@@ -246,6 +246,10 @@
             .menu__mobile-button-line {
                 width: 100%;
             }
+        }
+
+        &:focus {
+            outline: none;
         }
 
         &-icon{
@@ -325,9 +329,10 @@
         background-color: transparent;
         box-shadow: none;
         margin-bottom: 4.1875rem;
+        cursor: pointer;
 
-        &:hover {
-            cursor: pointer;
+        &:focus {
+            outline:none;
         }
     }
 
