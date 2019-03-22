@@ -10,14 +10,6 @@
         cursor: pointer;
     }
 
-    &-input {
-        display: none;
-
-        @media all and (min-width: rem(1120)) {
-            display: inline-block;
-        }
-    }
-
     &-close {
         display: none;
         position: absolute;
@@ -72,8 +64,53 @@
         }
 
     }
+    &-icon {
+        height: 100%;
+        pointer-events: none;
+        height: 1rem;
+        width: 1rem;
+        margin-bottom: 0.5rem;
+
+        @media all and (min-width: rem(600)) {
+            height: 1.9rem;
+            width: 1.9rem;
+        }
+
+        @media all and (min-width: rem(1120)) {
+            position: absolute;
+            height: 2.5rem;
+            width: 2.5rem;
+            padding: 0.75rem;
+            top: 0;
+            left: 0;
+            transform: none;
+            transform: translateX(-50%);
+        }
+    }
+
+    &-label {
+        display: block;
+        font-family: 'Helvetica Neue Medium';
+        font-size: 0.675rem;
+        letter-spacing: .05rem;
+        line-height: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        margin-top: -0.1px;
+
+        @media all and (min-width: rem(600)) {
+            font-size: 0.875rem;
+            margin-top: -0.2rem;
+        }
+
+        @media all and (min-width: rem(1120)) {
+            display: none;
+        }
+    }
 
     &-input {
+        display: none;
         padding: 0.75rem;
         border: none;
         font-size: 1.125rem;
@@ -86,6 +123,7 @@
         }
 
         @media all and (min-width: rem(1120)) {
+            display: inline-block;
             width: 6rem;
             background-color: transparent;
             transition: width 250ms ease-out;
