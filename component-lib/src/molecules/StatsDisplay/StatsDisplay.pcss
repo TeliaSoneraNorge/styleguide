@@ -1,7 +1,7 @@
 .stats-display {
     display: flex;
     
-    @media (max-width: 39.8125em) {
+    @media (max-width: 41.8125em) {
         flex-wrap: wrap;
     }
 
@@ -12,15 +12,16 @@
         border-right: 1px solid #CFCFCF;
         stroke-width: 15%;
         stroke-linecap: round;
+        min-width: 6rem;
 
         &:last-child {
             border: none;
         }
 
-        @media (max-width: 39.8125em) {
+        @media (max-width: 41.8125em) {
             border: none;
 
-            &:last-child {
+            &:last-child:nth-child(odd) {
                 border: none;
                 flex-basis: 100%;
             }
@@ -37,7 +38,7 @@
             align-items: center;
             justify-content: center;
 
-            @media (max-width: 39.8125em) {
+            @media (max-width: 41.8125em) {
                 font-size: 1.5rem;
             }
 
@@ -45,7 +46,7 @@
                 width: 3rem;
                 height: 3rem;
 
-                @media (max-width: 39.8125em) {
+                @media (max-width: 41.8125em) {
                     width: 2rem;
                     height: 2rem;
                 }
@@ -61,7 +62,7 @@
     margin-top: 2rem;
     margin-bottom: 2rem;
 
-    @media (max-width: 39.8125em) {
+    @media (max-width: 41.8125em) {
         border: none;
     }
 }
