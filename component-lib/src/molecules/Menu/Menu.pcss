@@ -152,6 +152,9 @@
             top: 50%;
             right: 1rem;
             transform: translateY(-50%);
+            pointer-events: all;
+            height: 2rem;
+            width: 2rem;
             background: none;
             border: none;
             cursor: pointer;
@@ -166,6 +169,10 @@
 
             &--focused{
                 display: block;
+
+                &:focus {
+                    outline: none;
+                }
             }
 
             &:hover {

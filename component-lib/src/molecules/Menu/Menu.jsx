@@ -1,13 +1,10 @@
 import React from 'react';
 import classnames from 'classnames';
-import Tabs from '../../molecules/Tabs/Tabs';
-import Container from '../../atoms/Container/Container';
-import SVG from '../../atoms/SvgIcon/SvgIcon';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
- * Status: *finished*.
+ * Status: *In progress*.
  **/
 export default class Menu extends React.Component {
     static propTypes = {
@@ -66,12 +63,15 @@ export default class Menu extends React.Component {
                         <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
                         <span className="menu__search-label"> Søk </span>
                         <button className={ classnames('menu__search-close',{
-                                'menu__search-close--focused': this.state.searchFocus,
-                            })}>
+                            'menu__search-close--focused': this.state.searchFocus,
+                        })}
+                        onClick={ () => {
+                            this.searchInput.value= "";
+                            this.setState({ searchFocus: false});
+                        }}>
                             <span className="menu__search-close-line"></span>
                             <span className="menu__search-close-line"></span>
                         </button>
-
                     </div>
                     <button className="menu__login-button button button--small">
                         <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" /> logg inn
