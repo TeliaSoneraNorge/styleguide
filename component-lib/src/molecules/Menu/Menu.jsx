@@ -107,7 +107,7 @@ export default class Menu extends React.Component {
                 <div className={ classnames('menu__mobile',{
                     'menu__mobile--open' : this.state.mobileMenuOpen })}>
                     <div className="menu__mobile-header">
-                        <button className="menu__mobile-close-button" onClick={ () => { this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }); } }><SvgIcon iconName="ico_delete" color="white"
+                        <button className="menu__mobile-close-button" onClick={ () => { this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen }); } }><SvgIcon iconName="ico_delete" color="black"
                             className={ classnames('menu__mobile-close-button-icon',{
                             })} /></button>
                         <ul className="menu__mobile-heading-links">
