@@ -12,7 +12,7 @@ const menuLinks = [
                 { text: 'Smartklokker', url: '/' },
                 { text: 'Nettbrett', url: '/' },
                 { text: 'Tilbehør', url: '/' }
-            ]},
+            ] },
             { text: 'Mobilabonnement', url: '/' },
             { text: 'Mobilt bredbånd', url: '/' },
             { text: 'Kontakt', url: '/' }
