@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, withRouter } from 'react-router-dom';
+import { Route, withRouter, Link } from 'react-router-dom';
 
 import { PageFooter, Menu } from '../../component-lib/src/index';
 import AllIcons from '@telia/styleguide/assets/allicons/AllIcons';
@@ -49,6 +49,9 @@ const menuLinks = [
     }
 ];
 
+const routerLinkTemplate = ({ url, ...otherProps }) =>
+    <Link to={url} {...otherProps} />
+
 const Routes = () => {
     return (
         <div>
@@ -56,6 +59,7 @@ const Routes = () => {
 
             <Menu
                 logoUrl="/"
+                linkTemplate={routerLinkTemplate}
                 activeIndex={window.location.href.includes('component') ? 1 : 0}
                 menuLinks={menuLinks}
                 logoImageDesktopPath={require('../assets/images/logo/logo.svg')} />

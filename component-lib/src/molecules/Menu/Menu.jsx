@@ -3,7 +3,9 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
-import { Link } from 'react-router-dom';
+
+const defaultLinkTemplate = ({ url, ...otherProps }) =>
+    <a href={url} {...otherProps} />;
 
 /**
  * Status: *In progress*.
@@ -14,7 +16,8 @@ export default class Menu extends React.Component {
         logoImageDesktopPath: PropTypes.string,
         logoTitle: PropTypes.string,
         activeIndex: PropTypes.number,
-        onSearchSubmit: PropTypes.func
+        onSearchSubmit: PropTypes.func,
+        linkTemplate: PropTypes.func
     };
 
     constructor(props) {
@@ -33,25 +36,29 @@ export default class Menu extends React.Component {
     }
 
     render() {
+        const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
+
         return (
             <div className={ classnames('menu',{
                 [this.props.className]: this.props.className,
             })}>
                 <div className="menu__top">
-                    <Link to={this.props.logoUrl}>
+                    <LinkTemplate url={this.props.logoUrl}>
                         <img className="menu__logo"
                             src={this.props.logoImageDesktopPath}
                             alt={this.props.logoTitle} />
-                    </Link>
+                    </LinkTemplate>
                     <ul className="menu__heading">
                         {
                             this.props.menuLinks &&
                             this.props.menuLinks.map(( menuLink, index ) => {
                                 return (
                                     <li key={'dekstop-heading-link'+index}>
-                                        <Link to={`${menuLink.heading.url}`} className={ classnames('menu__heading-item link',{
+                                        <LinkTemplate
+                                            url={`${menuLink.heading.url}`}
+                                            className={ classnames('menu__heading-item link',{
                                             'menu__heading-item--active': this.props.activeIndex === index,
-                                        })}>{menuLink.heading.text}</Link>
+                                        })}>{menuLink.heading.text}</LinkTemplate>
                                     </li>
                                 );
                             })
@@ -85,7 +92,7 @@ export default class Menu extends React.Component {
                                             return <li key={'dekstop-link'+index} >
                                                 {
                                                     link.url &&
-                                                    <Link className="menu__item link" to={link.url}>{link.text}</Link>
+                                                    <LinkTemplate className="menu__item link" url={link.url}>{link.text}</LinkTemplate>
                                                 }
                                                 {
                                                     !link.url &&
@@ -100,7 +107,7 @@ export default class Menu extends React.Component {
                                                         })}>
                                                             {
                                                                 link.subLinks.map( ( sublink, index ) => {
-                                                                    return <Link key={'mobile-sublink'+index} className="menu__subitem link" to={sublink.url}>{sublink.text}</Link>;
+                                                                    return <LinkTemplate key={'mobile-sublink'+index} className="menu__subitem link" url={sublink.url}>{sublink.text}</LinkTemplate>;
                                                                 })
                                                             }
                                                         </div>
@@ -127,12 +134,12 @@ export default class Menu extends React.Component {
                                 this.props.menuLinks.map(( menuLink, index ) => {
                                     return (
                                         <li key={'mobile-heading-link'+index}>
-                                            <Link onClick={this.closeMenu} to={`${menuLink.heading.url}`}
+                                            <LinkTemplate onClick={this.closeMenu} url={`${menuLink.heading.url}`}
                                                 className={ classnames('menu__mobile-heading-item link',{
                                                     'menu__mobile-heading-item--active': this.props.activeIndex === index,
                                                 })}>
                                                 {menuLink.heading.text}
-                                            </Link>
+                                            </LinkTemplate>
                                         </li>
                                     );
                                 })
@@ -150,14 +157,14 @@ export default class Menu extends React.Component {
                                     hidden={ this.props.activeIndex !== index }>
                                     {
                                         menuLink.links.map( ( link, index ) => {
-                                            if (link.url) return <Link onClick={this.closeMenu} key={'link'+index} className="menu__mobile-item link" to={link.url}>{link.text}</Link>;
+                                            if (link.url) return <LinkTemplate onClick={this.closeMenu} key={'link'+index} className="menu__mobile-item link" url={link.url}>{link.text}</LinkTemplate>;
                                             else return (
                                                 <div className="menu__mobile-submenu">
                                                     <span className="menu__mobile-item-with-children">{link.text}</span>
                                                     <div className="menu__mobile-submenu-container">
                                                         {
                                                             link.subLinks.map( ( sublink, index ) => {
-                                                                return <Link onClick={this.closeMenu} key={'mobile-sublink'+index} className="menu__mobile-subitem link" to={sublink.url}>{sublink.text}</Link>;
+                                                                return <LinkTemplate onClick={this.closeMenu} key={'mobile-sublink'+index} className="menu__mobile-subitem link" url={sublink.url}>{sublink.text}</LinkTemplate>;
                                                             })
                                                         }
                                                     </div>
