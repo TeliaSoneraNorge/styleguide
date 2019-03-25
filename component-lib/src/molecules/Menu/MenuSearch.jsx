@@ -1,14 +1,8 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export default class MenuSearch extends React.Component {
-    static propTypes = {
-        inputName: PropTypes.string,
-        onSumbmit: PropTypes.func
-    };
-
     constructor(props) {
         super(props);
 
@@ -91,8 +85,6 @@ export default class MenuSearch extends React.Component {
                     className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
                     onClick={this.onContainerClick} >
                     <input className="menu__search-input"
-                        id={this.props.inputName}
-                        name={this.props.inputName}
                         type="text"
                         placeholder="Søk"
                         value={searchQuery}

@@ -12,7 +12,8 @@ export default class Menu extends React.Component {
         menuLinks: PropTypes.array,
         logoImageDesktopPath: PropTypes.string,
         logoTitle: PropTypes.string,
-        activeIndex: PropTypes.number
+        activeIndex: PropTypes.number,
+        onSearchSubmit: PropTypes.func
     };
 
     constructor(props) {
@@ -50,7 +51,7 @@ export default class Menu extends React.Component {
                             })
                         }
                     </ul>
-                    <MenuSearch inputName="q" onSubmit={(e, searchQuery) => {} } />
+                    <MenuSearch onSubmit={this.props.onSearchSubmit} />
                     <button className="menu__login-button button button--small">
                         <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" /> logg inn
                     </button>

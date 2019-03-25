@@ -33,7 +33,8 @@ const Default = () => (
     <Menu
         activeIndex={0}
         menuLinks={menuLinks}
-        logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')} />
+        logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
+        onSearchSubmit={(e, searchQuery) => {} } />
 );
 
 export default Default;
