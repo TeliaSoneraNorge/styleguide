@@ -10,6 +10,10 @@
         cursor: pointer;
     }
 
+    &:focus {
+        outline:none;
+    }
+
     &-close {
         display: none;
         position: absolute;
@@ -136,6 +140,10 @@
                 margin-top: 0.125rem;
                 border-bottom: 2px solid var(--core-purple);
             }
+        }
+
+        &:focus {
+            outline:none;
         }
 
         &::-webkit-input-placeholder { /* Chrome/Opera/Safari */

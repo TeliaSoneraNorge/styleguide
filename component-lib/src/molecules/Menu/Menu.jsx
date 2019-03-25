@@ -50,7 +50,7 @@ export default class Menu extends React.Component {
                             })
                         }
                     </ul>
-                    <MenuSearch />
+                    <MenuSearch inputName="q" onSubmit={(e, searchQuery) => {} } />
                     <button className="menu__login-button button button--small">
                         <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" /> logg inn
                     </button>

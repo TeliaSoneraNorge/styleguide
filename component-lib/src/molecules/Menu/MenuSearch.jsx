@@ -1,10 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export default class MenuSearch extends React.Component {
-    constructor() {
-        super();
+    static propTypes = {
+        inputName: PropTypes.string,
+        onSumbmit: PropTypes.func
+    };
+
+    constructor(props) {
+        super(props);
 
         this.state = {
             searchFocus: false,
@@ -17,6 +23,7 @@ export default class MenuSearch extends React.Component {
         this.onClickaway = this.onClickaway.bind(this);
         this.onContainerRef = this.onContainerRef.bind(this);
         this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
     }
 
     isDescendant(parent, child) {
@@ -68,29 +75,40 @@ export default class MenuSearch extends React.Component {
         this.setState({ searchFocus: false, searchQuery: '' });
     }
 
+    onSubmit(e) {
+        e.preventDefault();
+        this.props.onSubmit(e, this.state.searchQuery);
+        this.setState({ searchFocus: false, searchQuery: '' });
+    }
+
     render() {
         const { searchFocus, searchQuery } = this.state;
 
         return (
-            <div
-                ref={this.onContainerRef}
-                className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
-                onClick={this.onContainerClick} >
-                <input className="menu__search-input"
-                    type="text"
-                    placeholder="Søk"
-                    value={searchQuery}
-                    onChange={this.onSearchQueryChange}
-                    ref={this.onSearchInputRef} />
-                <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
-                <span className="menu__search-label">Søk</span>
-                <button
-                    className={classnames('menu__search-close', { 'menu__search-close--focused': searchFocus })}
-                    onClick={this.onCloseButtonClick} >
-                    <span className="menu__search-close-line"></span>
-                    <span className="menu__search-close-line"></span>
-                </button>
-            </div>
+            <form onSubmit={this.onSubmit}>
+                <div
+                    ref={this.onContainerRef}
+                    className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
+                    onClick={this.onContainerClick} >
+                    <input className="menu__search-input"
+                        id={this.props.inputName}
+                        name={this.props.inputName}
+                        type="text"
+                        placeholder="Søk"
+                        value={searchQuery}
+                        onChange={this.onSearchQueryChange}
+                        ref={this.onSearchInputRef} />
+                    <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
+                    <span className="menu__search-label">Søk</span>
+                    <button
+                        type="button"
+                        className={classnames('menu__search-close', { 'menu__search-close--focused': searchFocus })}
+                        onClick={this.onCloseButtonClick} >
+                        <span className="menu__search-close-line"></span>
+                        <span className="menu__search-close-line"></span>
+                    </button>
+                </div>
+            </form>
         );
     }
 }
