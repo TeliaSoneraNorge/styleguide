@@ -177,10 +177,20 @@
     }
 
     &--focused {
-        position: static;
+        position: absolute;
+        left: 0;
+        right: 0;
+        width: 100%;
+        top: -1.125rem;
+        bottom: 0;
 
         @media all and (min-width: rem(1120)) {
+            top: 0;
             position: relative;
+        }
+
+        .menu__search-label {
+            display: none;
         }
 
         .menu__search-input {
