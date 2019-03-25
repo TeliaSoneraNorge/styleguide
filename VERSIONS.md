@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.2
+- Small menu adjustments
+
 ## 1.27.0
 - ES6 is no longer exposed in the component-lib - it is now vanilla JS, so works on all browsers.
 
