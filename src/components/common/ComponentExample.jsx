@@ -2,12 +2,12 @@ import _ from 'lodash';
 import React from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
 
-import CodeSnippet from  './CodeSnippet'
+import CodeSnippet from  './CodeSnippet';
 import { isFullWidthComponent } from '../../utils/componentUtil';
 
 const ComponentExample = ({ example, exampleName, componentName }) => {
     const Example = _.get(example, 'default', null);
-    if (!Example) return <p>Problem with example {exampleName}</p>
+    if (!Example) return <p>Problem with example {exampleName}</p>;
     
     const html = renderToStaticMarkup(<Example />);
 

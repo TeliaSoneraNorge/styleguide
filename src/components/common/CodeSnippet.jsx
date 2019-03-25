@@ -18,7 +18,7 @@ export default class CodeSnippet extends React.Component {
         return (
             <div className="sg-code-snippet">
                 {!this.props.disableToggle &&
-                    <a href="#" className="link" onClick={(e) => this.toggleHtmlClick(e)}>{this.state.isOpen ? "Hide HTML" : "Show HTML"}</a>}
+                    <a href="#" className="link" onClick={(e) => this.toggleHtmlClick(e)}>{this.state.isOpen ? 'Hide HTML' : 'Show HTML'}</a>}
                 
                 {this.state.isOpen &&
                     <pre className={`language-${this.props.language}`}>

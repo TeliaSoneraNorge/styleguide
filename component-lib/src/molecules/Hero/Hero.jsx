@@ -82,7 +82,7 @@ const Hero = ({
                         alt={alt} />
                 </picture>
             }
-            <div className={classnames("hero__box heading-link--focus-area", {[`hero__box--align-${alignBox || 'left'}`]: alignBox})}>
+            <div className={ classnames('hero__box heading-link--focus-area', { [`hero__box--align-${alignBox || 'left'}`]: alignBox }) }>
                 <h2 className="hero__heading">{heading}</h2>
                 <div className="hero__subheading">{subheading}
                     <HorizontalRule short left />
