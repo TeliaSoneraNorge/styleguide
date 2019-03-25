@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.3
+- Export menu search component
+
 ## 1.28.2
 - Small menu adjustments
 

@@ -92,6 +92,7 @@ export { default as DisplayFunctionality } from './molecules/DisplayFunctionalit
 export { default as Banner } from './molecules/Banner';
 export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
 export { default as Menu } from './molecules/Menu';
+export { MenuSearch } from './molecules/Menu';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
