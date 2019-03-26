@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import TextBoxWithIcon from '../../molecules/TextBoxWithIcon';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export default class MenuSearch extends React.Component {
@@ -12,7 +13,6 @@ export default class MenuSearch extends React.Component {
         };
 
         this.onSearchQueryChange = this.onSearchQueryChange.bind(this);
-        this.onSearchInputRef = this.onSearchInputRef.bind(this);
         this.onContainerClick = this.onContainerClick.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
         this.onContainerRef = this.onContainerRef.bind(this);
@@ -39,6 +39,7 @@ export default class MenuSearch extends React.Component {
     }
 
     onClickaway(event) {
+
         if (this.container && !this.isDescendant(this.container, event.target)) {
             this.setState({ searchFocus: false });
         }
@@ -48,19 +49,15 @@ export default class MenuSearch extends React.Component {
         this.setState({ searchQuery: event.target.value });
     }
 
-    onSearchInputRef(searchInput) {
-        this.searchInput = searchInput;
-    }
-
     onContainerRef(container) {
         this.container = container;
     }
 
     onContainerClick(e) {
         e.stopPropagation();
-
-        this.setState({ searchFocus: true });
-        setTimeout(() => this.searchInput.focus(), 0);
+        setTimeout(() => {
+            this.setState({ searchFocus: true })
+        },1);
     }
 
     onCloseButtonClick(e) {
@@ -75,32 +72,45 @@ export default class MenuSearch extends React.Component {
         this.setState({ searchFocus: false, searchQuery: '' });
     }
 
+    renderSearchField() {
+        return (
+            <form onSubmit={this.onSubmit} className="menu__search--open-form">
+                <TextBoxWithIcon
+                    type="search"
+                    autoFocus
+                    iconName="ico_search"
+                    iconLabel="Search"
+                    iconIsButton
+                    small
+                    onChange={(e) => this.onSearchQueryChange(e)}/>
+            </form>
+        );
+    }
+
     render() {
-        const { searchFocus, searchQuery } = this.state;
+        const { searchFocus } = this.state;
 
         return (
-            <form onSubmit={this.onSubmit}>
-                <div
-                    ref={this.onContainerRef}
-                    className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
-                    onClick={this.onContainerClick} >
-                    <input className="menu__search-input"
-                        type="text"
-                        placeholder="Søk"
-                        value={searchQuery}
-                        onChange={this.onSearchQueryChange}
-                        ref={this.onSearchInputRef} />
-                    <SvgIcon className="menu__search-icon" iconName="ico_search-menu" color="black" />
-                    <span className="menu__search-label">Søk</span>
-                    <button
-                        type="button"
-                        className={classnames('menu__search-close', { 'menu__search-close--focused': searchFocus })}
-                        onClick={this.onCloseButtonClick} >
-                        <span className="menu__search-close-line"></span>
-                        <span className="menu__search-close-line"></span>
-                    </button>
-                </div>
-            </form>
+            <div
+                ref={this.onContainerRef}
+                className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
+                onClick={this.onContainerClick} >
+                {!searchFocus &&
+                    <div className="menu__search--closed">
+                        <SvgIcon className="menu__search--closed-icon" iconName="ico_search-menu" color="black" />
+                        <div className="menu__search--closed-label">Søk</div>
+                    </div>
+                }
+                {searchFocus &&
+                    <div className="menu__search--open">
+                        {this.renderSearchField()}
+                        <span className="menu__search--open-abort-button"
+                            onClick={(e) => this.onCloseButtonClick(e)}>
+                            Avbryt
+                        </span>
+                    </div>
+                }
+            </div>
         );
     }
 }
