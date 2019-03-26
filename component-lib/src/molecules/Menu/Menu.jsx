@@ -159,7 +159,7 @@ export default class Menu extends React.Component {
                                         menuLink.links.map( ( link, index ) => {
                                             if (link.url) return <LinkTemplate onClick={this.closeMenu} key={'link'+index} className="menu__mobile-item link" url={link.url}>{link.text}</LinkTemplate>;
                                             else return (
-                                                <div className="menu__mobile-submenu">
+                                                <div className="menu__mobile-submenu" key={index}>
                                                     <span className="menu__mobile-item-with-children">{link.text}</span>
                                                     <div className="menu__mobile-submenu-container">
                                                         {
