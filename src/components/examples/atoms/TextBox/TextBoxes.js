@@ -17,6 +17,11 @@ const TextBoxes = () =>
             type="text"
             placeholder="Type something here..."
             error />
+        <br /><br />
+        <TextBox
+            type="text"
+            placeholder="Type something here in the smaller textbox..."
+            small />
     </div>;
 
 export default TextBoxes;

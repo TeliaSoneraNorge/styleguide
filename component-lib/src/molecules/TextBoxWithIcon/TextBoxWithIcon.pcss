@@ -1,5 +1,6 @@
 :root {
     --textbox-icon-size: 26px;
+    --textbox-icon-size-small: 22px;
 }
 
 .textbox-with-icon {
@@ -41,5 +42,16 @@
         display: block;
         height: var(--textbox-icon-size);
         width: var(--textbox-icon-size);
+    }
+
+    &--small{
+         .textbox-with-icon__icon-wrapper {
+             padding: 7px 10px;
+         }
+
+         .textbox-with-icon__icon {
+            height: var(--textbox-icon-size-small);
+            width: var(--textbox-icon-size-small);
+         }
     }
 }

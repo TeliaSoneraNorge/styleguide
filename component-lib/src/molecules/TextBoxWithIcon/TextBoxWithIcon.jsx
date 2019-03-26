@@ -26,12 +26,13 @@ const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
 /**
  * Status: *finished*.
 **/
-const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, iconName, iconColor, iconIsButton, iconLabel, ...rest }, ref) => (
+const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, small, iconName, iconColor, iconIsButton, iconLabel, ...rest }, ref) => (
     <div
         className={classnames('textbox-with-icon', {
+            ['textbox-with-icon--small']: small,
             [className]: className
         })}>
-        <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={error} {...rest} />
+        <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={error} small={small} {...rest} />
         <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} />
     </div>
 ));
@@ -47,7 +48,8 @@ TextBoxWithIcon.propTypes = {
     placeholder: PropTypes.string,
     disabled: PropTypes.bool,
     error: PropTypes.bool,
-    
+    small: PropTypes.bool,
+
     iconName: PropTypes.string,
     iconColor: PropTypes.string,
     iconIsButton: PropTypes.bool,

@@ -1,177 +1,67 @@
 .menu__search {
     position: relative;
     text-align: center;
-    margin-right: 1.7188rem;
+    cursor: pointer;
+    width: 4rem;
 
-    @media all and (min-width: rem(1120)) {
+    @media all and (min-width: rem(600)) {
+       width: 6rem;
     }
 
-    &:hover {
-        cursor: pointer;
+    @media all and (min-width: rem(1120)) {
+        width: 4rem;
     }
 
     &:focus {
         outline:none;
     }
 
-    &-close {
-        display: none;
-        position: absolute;
-        top: 50%;
-        right: 1rem;
-        transform: translateY(-50%);
-        pointer-events: all;
-        height: 2rem;
-        width: 2rem;
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0;
-        width: 1rem;
-        height: 1rem;
+    &--closed {
 
-        @media all and (min-width: rem(600)) {
-            height: 2rem;
-            width: 2rem;
+        &-icon {
+            height: 100%;
+            pointer-events: none;
+            height: 1rem;
+            width: 1rem;
+            margin-bottom: 0.25rem;
+
+            @media all and (min-width: rem(600)) {
+                height: 1.9rem;
+                width: 1.9rem;
+                margin-bottom: 0.3rem;
+            }
+
+            @media all and (min-width: rem(1120)) {
+                position: absolute;
+                height: 1rem;
+                width: 1rem;
+                top: 0;
+                left: 0;
+                transform: none;
+                transform: translateX(-50%);
+                margin-bottom: 0;
+            }
         }
 
-        &--focused {
+        &-label {
             display: block;
+            font-family: 'Helvetica Neue Medium';
+            letter-spacing: .05rem;
+            line-height: 1;
+            text-decoration: none;
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 0.675rem;
 
-            &:focus {
-                outline: none;
+            @media all and (min-width: rem(600)) {
+                font-size: 14px;
             }
-        }
-
-        &:hover {
-            cursor: pointer;
-        }
-
-        &-line {
-            position: absolute;
-            display: block;
-            height: 2px;
-            width: 100%;
-            background: black;
-
-            &:first-child {
-                transform: rotate(45deg);
-            }
-
-            &:last-child {
-                transform: rotate(-45deg);
-            }
-        }
-
-        @media all and (min-width: rem(1120)) {
-            display: none;
-        }
-
-    }
-    &-icon {
-        height: 100%;
-        pointer-events: none;
-        height: 1rem;
-        width: 1rem;
-        margin-bottom: 0.5rem;
-
-        @media all and (min-width: rem(600)) {
-            height: 1.9rem;
-            width: 1.9rem;
-        }
-
-        @media all and (min-width: rem(1120)) {
-            position: absolute;
-            height: 2.5rem;
-            width: 2.5rem;
-            padding: 0.75rem;
-            top: 0;
-            left: 0;
-            transform: none;
-            transform: translateX(-50%);
-        }
-    }
-
-    &-label {
-        display: block;
-        font-family: 'Helvetica Neue Medium';
-        font-size: 0.675rem;
-        letter-spacing: .05rem;
-        line-height: 1;
-        text-decoration: none;
-        text-transform: uppercase;
-        text-align: center;
-        margin-top: -0.1px;
-
-        @media all and (min-width: rem(600)) {
-            font-size: 0.875rem;
-            margin-top: -0.2rem;
-        }
-
-        @media all and (min-width: rem(1120)) {
-            display: none;
-        }
-    }
-
-    &-input {
-        display: none;
-        padding: 0.75rem;
-        border: none;
-        font-size: 1.125rem;
-        width: 1rem;
-        transform: translate(25%, -25%);
-        pointer-events: none;
-
-        @media all and (min-width: rem(600)) {
-            width: 3rem;
-        }
-
-        @media all and (min-width: rem(1120)) {
-            display: inline-block;
-            width: 6rem;
-            background-color: transparent;
-            transition: width 250ms ease-out;
-            transform: none;
-        }
-
-        &:hover {
-            cursor: pointer;
-            @media all and (min-width: rem(1120)) {
-                margin-top: 0.125rem;
-                border-bottom: 2px solid var(--core-purple);
-            }
-        }
-
-        &:focus {
-            outline:none;
-        }
-
-        &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-            color: var(--white);
 
             @media all and (min-width: rem(1120)) {
-                color: var(--black);
-            }
-        }
-        &::-moz-placeholder { /* Firefox 19+ */
-            color: var(--white);
-
-            @media all and (min-width: rem(1120)) {
-                color: var(--black);
-            }
-        }
-        &:-ms-input-placeholder { /* IE 10+ */
-            color: var(--white);
-
-            @media all and (min-width: rem(1120)) {
-                color: var(--black);
-            }
-        }
-        &:-moz-placeholder { /* Firefox 18- */
-            color: var(--white);
-
-            @media all and (min-width: rem(1120)) {
-                color: var(--black);
+                font-size: 0.875rem;
+                margin-top: 0;
+                text-align: left;
+                padding-left: 1rem;
             }
         }
     }
@@ -180,57 +70,52 @@
         position: absolute;
         left: 0;
         right: 0;
-        width: 100%;
-        top: -1.125rem;
+        top: 0;
         bottom: 0;
+        width: 100%;
 
         @media all and (min-width: rem(1120)) {
             top: 0;
             position: relative;
+            width: 19.8125rem;
         }
 
-        .menu__search-label {
-            display: none;
-        }
-
-        .menu__search-input {
-            display: inline-block;
-            outline: none;
-            margin-top: 0.125rem;
-            border-bottom: 2px solid var(--core-purple);
-            cursor: text;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
+        .menu__search--open{
+            position: relative;
             height: 100%;
-            margin: 0;
-            transform: none;
-            padding: 0 2.5rem;
-            pointer-events: auto;
+            width: 100%;
+            padding-top: 0.125rem;
+            background: var(--white);
 
-            & + .menu__search-icon {
-                position: absolute;
-                left: 0;
-                top: 50%;
-                transform: translateY(-50%);
+            @media all and (min-width: rem(1120)){
+                padding-top: 1.125rem;
             }
 
-            @media all and (min-width: rem(1120)) {
-                position: static;
-                width: 19.8125rem;
+            @media all and (min-width: rem(1120)){
+                padding-top: 0;
             }
-            &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-                color: var(--black);
+
+            &-form {
+                width: 80%;
+                display: inline-block;
+
+                @media all and (min-width: rem(1120)){
+                    width: 90%;
+                }
             }
-            &::-moz-placeholder { /* Firefox 19+ */
-                color: var(--black);
-            }
-            &:-ms-input-placeholder { /* IE 10+ */
-                color: var(--black);
-            }
-            &:-moz-placeholder { /* Firefox 18- */
-                color: var(--black);
+
+            &-abort-button {
+                display: inline-block;
+                min-width: 10%;
+                padding-left: 1rem;
+
+                &:hover {
+                    color: var(--core-purple);
+                }
+
+                @media all and (min-width: rem(1120)){
+                    display: none;
+                }
             }
         }
     }
