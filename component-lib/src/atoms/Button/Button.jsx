@@ -36,7 +36,7 @@ Button.propTypes = {
     text: PropTypes.string,
     type: PropTypes.oneOf(['button', 'reset', 'submit']),
     /** A button can have different appearances e.g. 'primary', 'cancel'. */
-    kind: PropTypes.oneOf(['primary', 'cancel', 'link']),
+    kind: PropTypes.oneOf(['primary', 'cancel', 'link', 'inverted']),
     /** One of ['top', 'bottom'] */
     margin: PropTypes.oneOf(['top', 'bottom']),
     /** A button can have different sizes e.g. 'small'. */
