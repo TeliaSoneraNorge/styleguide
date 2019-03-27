@@ -5,6 +5,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 
 const MenuLogo = ({ logo: { url, image, title }, LinkTemplate }) => (
+    // TODO: Add tabbing (inverse) image
     <LinkTemplate url={url}>
         <img
             className="menu__logo"

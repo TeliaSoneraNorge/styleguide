@@ -14,6 +14,7 @@ export default class MenuSearch extends React.Component {
 
         this.onSearchQueryChange = this.onSearchQueryChange.bind(this);
         this.onContainerClick = this.onContainerClick.bind(this);
+        this.onKeyDown = this.onKeyDown.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
         this.onContainerRef = this.onContainerRef.bind(this);
         this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
@@ -60,6 +61,13 @@ export default class MenuSearch extends React.Component {
         },1);
     }
 
+    onKeyDown(e) {
+        const key = e.which || e.keyCode;
+        if (key === 13) { // enter
+            this.onContainerClick(e);
+        }
+    }
+
     onCloseButtonClick(e) {
         e.stopPropagation();
 
@@ -91,10 +99,11 @@ export default class MenuSearch extends React.Component {
         const { searchFocus } = this.state;
 
         return (
-            <div
+            <div tabIndex="0"
                 ref={this.onContainerRef}
                 className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
-                onClick={this.onContainerClick} >
+                onClick={this.onContainerClick}
+                onKeyDown={this.onKeyDown} >
                 {!searchFocus &&
                     <div className="menu__search--closed">
                         <SvgIcon className="menu__search--closed-icon" iconName="ico_search-menu" color="black" />
@@ -104,7 +113,8 @@ export default class MenuSearch extends React.Component {
                 {searchFocus &&
                     <div className="menu__search--open">
                         {this.renderSearchField()}
-                        <span className="menu__search--open-abort-button"
+                        <span tabindex="0" className="menu__search--open-abort-button"
+                            onKeyDown={(e) => this.onCloseButtonClick(e)}
                             onClick={(e) => this.onCloseButtonClick(e)}>
                             Avbryt
                         </span>

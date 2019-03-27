@@ -3,9 +3,17 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
+const onSubmenuKeyPress = (e, onToggleSubmenu) => {
+    const key = e.which || e.keyCode;
+    if (key === 13) { // 13 = enter
+        onToggleSubmenu(e);
+    }
+  };
+
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, link, LinkTemplate  }) => (
-    <div className="menu__item link menu__submenu">
-        <span className="" onClick={onToggleSubmenu}>
+    <div tabIndex="0" className="menu__item link menu__submenu"
+        onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)}>
+        <span className=""  onClick={onToggleSubmenu}>
             {link.text}
             <SvgIcon
                 iconName="ico_dropArrow"

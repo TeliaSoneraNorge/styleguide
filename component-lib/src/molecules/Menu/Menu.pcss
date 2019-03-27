@@ -169,12 +169,12 @@
         margin-right: 0;
         padding-left: 0;
         font-size: 0.675rem;
-
+        border-radius: 0;
 
         &-icon {
             * {
                 fill: none;
-                stroke: black;
+                stroke: var(--black);
                 stroke-width: 30;
             }
         }
@@ -198,14 +198,34 @@
             color: var(--black) !important;
         }
 
+        &:focus {
+            border-bottom: 2px solid var(--core-purple);
+            margin-bottom: -2px;
+        }
+
         @media all and (min-width: rem(1120)) {
             display: flex;
             border: 1px solid #990AE3;
             padding-left: 1.3rem;
-
+            border-radius: 2rem;
 
             &:hover {
                 background-color: var(--core-purple);
+            }
+
+            &:focus {
+                background-color: var(--core-purple) !important;
+                color: var(--white) !important;
+                border-bottom: 0;
+                margin-bottom: 0;
+
+                .menu__login-button-icon {
+                    * {
+                        fill: none;
+                        stroke: var(--white);
+                        stroke-width: 30;
+                    }
+                }
             }
         }
     }
@@ -257,6 +277,8 @@
 
         &:focus {
             outline: none;
+            border-bottom: 2px solid var(--core-purple);
+            margin-bottom: -2px;
         }
 
         &-icon{
