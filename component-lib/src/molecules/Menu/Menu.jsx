@@ -45,14 +45,25 @@ export default class Menu extends React.Component {
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.toggleSubmenu = this.toggleSubmenu.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
+        this.onGlobalKeyDown = this.onGlobalKeyDown.bind(this);
     }
 
     componentDidMount() {
         document.addEventListener('click', this.onClickaway);
+        document.addEventListener('keydown', this.onGlobalKeyDown);
     }
 
     componentWillUnmount() {
         document.removeEventListener('click', this.onClickaway);
+        document.removeEventListener('keydown', this.onGlobalKeyDown);
+    }
+
+    onGlobalKeyDown(e) {
+        const key = e.which || e.keyCode;
+
+        if (key === 27 && this.openedSubmenuIndex !== -1) { // escape key
+            this.toggleSubmenu(this.openedSubmenuIndex, e);
+        }
     }
 
     onClickaway(event) {
