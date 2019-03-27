@@ -22,13 +22,15 @@ const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent,
                     label={radio.label}
                     name={name}
                     onChange={onChange}
+                    disabled={radio.disabled}
                     value={radio.value} />)
         }
     </div>;
 RadioButtonList.propTypes = {
     list: PropTypes.arrayOf(PropTypes.shape({
         label: PropTypes.string.isRequired,
-        value: PropTypes.any
+        value: PropTypes.any,
+        disabled: PropTypes.bool
     })),
     selectedIndex: PropTypes.number,
     name: PropTypes.string,
