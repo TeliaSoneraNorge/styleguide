@@ -39,6 +39,7 @@ const Default = () => (
             activeIndex={0}
             menuLinks={menuLinks}
             logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
+            logoImageInverseDesktopPath={require('../../../../assets/images/logo/logo-inverted.svg')}
             onSearchSubmit={(e, searchQuery) => {} } />
     </Router>
 );

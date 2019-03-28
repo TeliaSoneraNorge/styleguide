@@ -16,6 +16,7 @@ export default class MenuSearch extends React.Component {
         this.onContainerClick = this.onContainerClick.bind(this);
         this.onKeyDown = this.onKeyDown.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
+        this.onGlobalKeyDown = this.onGlobalKeyDown.bind(this);
         this.onContainerRef = this.onContainerRef.bind(this);
         this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
@@ -33,15 +34,25 @@ export default class MenuSearch extends React.Component {
 
     componentDidMount() {
         document.addEventListener('click', this.onClickaway);
+        document.addEventListener('keydown', this.onGlobalKeyDown);
     }
 
     componentWillUnmount() {
         document.removeEventListener('click', this.onClickaway);
+        document.removeEventListener('keydown', this.onGlobalKeyDown);
     }
 
     onClickaway(event) {
 
         if (this.container && !this.isDescendant(this.container, event.target)) {
+            this.setState({ searchFocus: false });
+        }
+    }
+
+    onGlobalKeyDown(e) {
+        const key = e.which || e.keyCode;
+
+        if (key === 27 && this.searchFocus !== -1) { // escape key
             this.setState({ searchFocus: false });
         }
     }
@@ -104,16 +115,15 @@ export default class MenuSearch extends React.Component {
                 className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
                 onClick={this.onContainerClick}
                 onKeyDown={this.onKeyDown} >
-                {!searchFocus &&
-                    <div className="menu__search--closed">
-                        <SvgIcon className="menu__search--closed-icon" iconName="ico_search-menu" color="black" />
-                        <div className="menu__search--closed-label">Søk</div>
-                    </div>
-                }
+
+                <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="black" />
+                <div className="menu__search--label">Søk</div>
+
+
                 {searchFocus &&
                     <div className="menu__search--open">
                         {this.renderSearchField()}
-                        <span tabindex="0" className="menu__search--open-abort-button"
+                        <span tabIndex="0" className="menu__search--open-abort-button"
                             onKeyDown={(e) => this.onCloseButtonClick(e)}
                             onClick={(e) => this.onCloseButtonClick(e)}>
                             Avbryt

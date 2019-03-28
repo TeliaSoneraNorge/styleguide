@@ -6,7 +6,7 @@ const MobileMenuCloseButton = ({ onClick }) => (
     <button className="menu__mobile-close-button" onClick={onClick}>
         <SvgIcon
             iconName="ico_delete"
-            color="white"
+            color="black"
             className="menu__mobile-close-button-icon" />
     </button>
 )
@@ -18,7 +18,7 @@ const MobileMenuHeaderItem = ({ onItemSelected, menuLink, isActive, LinkTemplate
                 'menu__mobile-heading-item link', {
                 'menu__mobile-heading-item--active': isActive,
             })}>
-            {menuLink.heading.text}
+            <span className="link__content">{menuLink.heading.text}</span>
         </LinkTemplate>
     </li>
 )
@@ -51,8 +51,9 @@ const MobileSubmenu = ({ link, LinkTemplate, onItemSelected }) => (
                     key={index}
                     className="menu__mobile-subitem link"
                     url={sublink.url}>
-                    {sublink.text}
-                </LinkTemplate>)}
+                    <span className="link__content">{sublink.text}</span>
+                </LinkTemplate>
+                )}
         </div>
     </div>
 )
@@ -64,7 +65,7 @@ const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
                 onClick={() => onItemSelected(index, link)}
                 className="menu__mobile-item link"
                 url={link.url}>
-                {link.text}
+                <span className="link__content">{link.text}</span>
             </LinkTemplate>}
         {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
     </React.Fragment>

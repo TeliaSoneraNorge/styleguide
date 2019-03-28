@@ -26,7 +26,9 @@ export default class Menu extends React.Component {
     static propTypes = {
         menuLinks: PropTypes.array,
         logoImageDesktopPath: PropTypes.string,
+        logoImageInverseDesktopPath: PropTypes.string,
         logoTitle: PropTypes.string,
+        logoUrl: PropTypes.string,
         activeIndex: PropTypes.number,
         onSearchSubmit: PropTypes.func,
         linkTemplate: PropTypes.func
@@ -75,6 +77,7 @@ export default class Menu extends React.Component {
     }
 
     toggleMobileMenu() {
+        console.log("OPEN");
         this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
     }
 
@@ -100,7 +103,9 @@ export default class Menu extends React.Component {
         const {
             menuLinks,
             logoUrl,
+            logoInverseUrl,
             logoImageDesktopPath,
+            logoImageInverseDesktopPath,
             logoTitle,
             activeIndex,
             loginUrl,
@@ -109,27 +114,31 @@ export default class Menu extends React.Component {
 
         const logo = {
             image: logoImageDesktopPath,
+            image_inverted: logoImageInverseDesktopPath,
             title: logoTitle,
-            url: logoUrl
+            url: logoUrl,
+            url_inverse: logoInverseUrl
         };
 
         return (
             <div className={classnames('menu', { [this.props.className]: this.props.className })}>
-                <MenuTop
-                    LinkTemplate={LinkTemplate}
+                 <MenuTop
                     activeIndex={activeIndex}
-                    loginUrl={loginUrl}
-                    logo={logo}
                     menuLinks={menuLinks}
-                    onMobileMenuToggle={this.toggleMobileMenu}
-                    onSearchSubmit={onSearchSubmit}
-                />
+                    LinkTemplate={LinkTemplate} />
+
                 <MenuContent
+                    logo={logo}
                     LinkTemplate={LinkTemplate}
                     menuLink={menuLinks[activeIndex]}
                     onToggleSubmenu={this.toggleSubmenu}
                     openedSubmenuIndex={this.state.openedSubmenuIndex}
+                    LinkTemplate={LinkTemplate}
+                    loginUrl={loginUrl}
+                    onMobileMenuToggle={this.toggleMobileMenu}
+                    onSearchSubmit={onSearchSubmit}
                 />
+
                 <MobileMenu
                     isOpen={this.state.mobileMenuOpen}
                     LinkTemplate={LinkTemplate}
