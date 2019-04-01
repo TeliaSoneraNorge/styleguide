@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.9
+- New function and stle on Menu component
+
 ## 1.28.6
 - Fixed accordians to work with and without buttons
 

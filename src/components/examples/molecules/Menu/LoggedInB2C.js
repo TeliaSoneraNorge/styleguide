@@ -3,8 +3,6 @@ import Menu from '../../../../../component-lib/src/molecules/Menu/Menu';
 import { Router } from 'react-router-dom';
 import { history } from '../../../../utils/historyUtil';
 
-/*Status: In progress*/
-
 const menuLinks = [
     {
         heading: { text: 'Privat', url : '#' },
@@ -31,7 +29,7 @@ const menuLinks = [
     }
 ];
 
-const Default = () => (
+const LoggedInMenu = () => (
     <Router history={history}>
         <Menu
             loginUrl="#Menu"
@@ -41,8 +39,10 @@ const Default = () => (
             logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
             logoImageInverseDesktopPath={require('../../../../assets/images/logo/logo-inverted.svg')}
             onSearchSubmit={(e, searchQuery) => {} }
-            lockBodyOnMenuOpen/>
+            lockBodyOnMenuOpen={true}
+            isLoggedIn={true}
+            myPageUrl="#" />
     </Router>
 );
 
-export default Default;
+export default LoggedInMenu;

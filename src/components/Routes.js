@@ -62,7 +62,9 @@ const Routes = () => {
                 linkTemplate={routerLinkTemplate}
                 activeIndex={window.location.href.includes('component') ? 1 : 0}
                 menuLinks={menuLinks}
-                logoImageDesktopPath={require('../assets/images/logo/logo.svg')} />
+                logoImageDesktopPath={require('../assets/images/logo/logo.svg')}
+                logoImageInverseDesktopPath={require('../assets/images/logo/logo-inverted.svg')}
+                lockBodyOnMenuOpen />
 
             <Route exact path="/" component={HomePage} />
             <Route exact path="/layout" component={LayoutPage} />

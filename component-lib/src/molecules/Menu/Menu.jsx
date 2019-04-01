@@ -26,10 +26,17 @@ export default class Menu extends React.Component {
     static propTypes = {
         menuLinks: PropTypes.array,
         logoImageDesktopPath: PropTypes.string,
+        logoImageInverseDesktopPath: PropTypes.string,
         logoTitle: PropTypes.string,
+        logoUrl: PropTypes.string,
         activeIndex: PropTypes.number,
         onSearchSubmit: PropTypes.func,
-        linkTemplate: PropTypes.func
+        linkTemplate: PropTypes.func,
+        lockBodyOnMenuOpen: PropTypes.bool,
+        isLoggedIn: PropTypes.bool,
+        loginUrl: PropTypes.string,
+        myPageUrl: PropTypes.string,
+        cartUrl: PropTypes.string
     };
 
     constructor(props) {
@@ -37,11 +44,13 @@ export default class Menu extends React.Component {
 
         this.state = {
             open: false,
+            activeIndex: this.props.activeIndex,
             mobileMenuOpen: false,
             openedSubmenuIndex: -1
         };
 
-        this.closeMobileMenu = this.closeMobileMenu.bind(this);
+        this.closeMobileMenu = this.toggleMobileMenu.bind(this);
+        this.onMenuHeaderItemSelected = this.onMenuHeaderItemSelected.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.toggleSubmenu = this.toggleSubmenu.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
@@ -61,8 +70,8 @@ export default class Menu extends React.Component {
     onGlobalKeyDown(e) {
         const key = e.which || e.keyCode;
 
-        if (key === 27 && this.openedSubmenuIndex !== -1) { // escape key
-            this.toggleSubmenu(this.openedSubmenuIndex, e);
+        if (key === 27 && this.state.openedSubmenuIndex !== -1) { // escape key
+            this.toggleSubmenu(this.state.openedSubmenuIndex, e);
         }
     }
 
@@ -75,7 +84,17 @@ export default class Menu extends React.Component {
     }
 
     toggleMobileMenu() {
+        if (!this.state.mobileMenuOpen && this.props.lockBodyOnMenuOpen) {
+            document.body.classList.add('body--locked');
+        } else {
+            document.body.classList.remove('body--locked');
+        }
+
         this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
+    }
+
+    onMenuHeaderItemSelected(index) {
+        this.setState({ activeIndex: index });
     }
 
     toggleSubmenu(submenuIndex, event) {
@@ -90,10 +109,6 @@ export default class Menu extends React.Component {
         }
     }
 
-    closeMobileMenu() {
-        this.setState({ mobileMenuOpen: false });
-    }
-
     render() {
         const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
 
@@ -101,14 +116,18 @@ export default class Menu extends React.Component {
             menuLinks,
             logoUrl,
             logoImageDesktopPath,
+            logoImageInverseDesktopPath,
             logoTitle,
-            activeIndex,
-            loginUrl,
             onSearchSubmit,
+            isLoggedIn,
+            loginUrl,
+            myPageUrl,
+            cartUrl
         } = this.props;
 
         const logo = {
             image: logoImageDesktopPath,
+            imageInverted: logoImageInverseDesktopPath,
             title: logoTitle,
             url: logoUrl
         };
@@ -116,27 +135,33 @@ export default class Menu extends React.Component {
         return (
             <div className={classnames('menu', { [this.props.className]: this.props.className })}>
                 <MenuTop
-                    LinkTemplate={LinkTemplate}
-                    activeIndex={activeIndex}
-                    loginUrl={loginUrl}
-                    logo={logo}
+                    activeIndex={this.state.activeIndex}
                     menuLinks={menuLinks}
-                    onMobileMenuToggle={this.toggleMobileMenu}
-                    onSearchSubmit={onSearchSubmit}
-                />
-                <MenuContent
                     LinkTemplate={LinkTemplate}
-                    menuLink={menuLinks[activeIndex]}
+                    onMenuHeaderItemSelected={this.onMenuHeaderItemSelected} />
+
+                <MenuContent
+                    logo={logo}
+                    LinkTemplate={LinkTemplate}
+                    menuLink={menuLinks[this.state.activeIndex]}
                     onToggleSubmenu={this.toggleSubmenu}
                     openedSubmenuIndex={this.state.openedSubmenuIndex}
+                    LinkTemplate={LinkTemplate}
+                    loginUrl={loginUrl}
+                    onMobileMenuToggle={this.toggleMobileMenu}
+                    onSearchSubmit={onSearchSubmit}
+                    isLoggedIn={isLoggedIn}
+                    myPageUrl={myPageUrl}
                 />
+
                 <MobileMenu
                     isOpen={this.state.mobileMenuOpen}
                     LinkTemplate={LinkTemplate}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     menuLinks={menuLinks}
-                    selectedHeaderIndex={activeIndex}
-                    onMenuItemSelected={this.closeMobileMenu}
+                    selectedHeaderIndex={this.state.activeIndex}
+                    onMenuItemSelected={this.toggleMobileMenu}
+                    onMenuHeaderItemSelected={this.onMenuHeaderItemSelected}
                 />
             </div>
         );
