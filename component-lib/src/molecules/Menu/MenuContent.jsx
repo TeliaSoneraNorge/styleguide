@@ -60,6 +60,13 @@ const LoginButton = ({ loginUrl }) => (
     </a>
 );
 
+const MyPageButton = ({ myPageUrl }) => (
+    <a href={myPageUrl} className="menu__mypage-button button button--small">
+        <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
+        min side
+    </a>
+);
+
 const MobileMenuButton = ({ onMenuToggle }) => (
     <button className="menu__mobile-button" onClick={onMenuToggle}>
         <SvgIcon className="menu__mobile-button-icon" iconName="ico_menu_mobile" color="black" />
@@ -67,7 +74,7 @@ const MobileMenuButton = ({ onMenuToggle }) => (
     </button>
 )
 
-const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, LinkTemplate, loginUrl, onMobileMenuToggle, onSearchSubmit }) => (
+const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, LinkTemplate, onMobileMenuToggle, onSearchSubmit, isLoggedIn, loginUrl, myPageUrl }) => (
     <div className="menu__content">
         <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
         <ul id={`${menuLink.heading.text}-panel`} className="menu__content-panel">
@@ -81,12 +88,15 @@ const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, Link
         </ul>
         <div className="menu__content-right">
             { onSearchSubmit &&
-                    <MenuSearch onSearchSubmit={onSearchSubmit} />
+                <MenuSearch onSearchSubmit={onSearchSubmit} />
             }
-            { loginUrl &&
-                    <LoginButton loginUrl={loginUrl} />
+            { loginUrl && !isLoggedIn &&
+                <LoginButton loginUrl={loginUrl} />
             }
-                <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
+            { myPageUrl && isLoggedIn &&
+                <MyPageButton myPageUrl={myPageUrl} />
+            }
+            <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
         </div>
     </div>
 );

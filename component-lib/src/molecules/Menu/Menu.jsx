@@ -32,7 +32,11 @@ export default class Menu extends React.Component {
         activeIndex: PropTypes.number,
         onSearchSubmit: PropTypes.func,
         linkTemplate: PropTypes.func,
-        lockBodyOnMenuOpen: PropTypes.bool
+        lockBodyOnMenuOpen: PropTypes.bool,
+        isLoggedIn: PropTypes.bool,
+        loginUrl: PropTypes.string,
+        myPageUrl: PropTypes.string,
+        cartUrl: PropTypes.string
     };
 
     constructor(props) {
@@ -114,8 +118,11 @@ export default class Menu extends React.Component {
             logoImageInverseDesktopPath,
             logoTitle,
             activeIndex,
+            onSearchSubmit,
+            isLoggedIn,
             loginUrl,
-            onSearchSubmit
+            myPageUrl,
+            cartUrl
         } = this.props;
 
         const logo = {
@@ -128,7 +135,7 @@ export default class Menu extends React.Component {
 
         return (
             <div className={classnames('menu', { [this.props.className]: this.props.className })}>
-                 <MenuTop
+                <MenuTop
                     activeIndex={activeIndex}
                     menuLinks={menuLinks}
                     LinkTemplate={LinkTemplate} />
@@ -143,6 +150,8 @@ export default class Menu extends React.Component {
                     loginUrl={loginUrl}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     onSearchSubmit={onSearchSubmit}
+                    isLoggedIn={isLoggedIn}
+                    myPageUrl={myPageUrl}
                 />
 
                 <MobileMenu
