@@ -70,8 +70,8 @@ export default class Menu extends React.Component {
     onGlobalKeyDown(e) {
         const key = e.which || e.keyCode;
 
-        if (key === 27 && this.openedSubmenuIndex !== -1) { // escape key
-            this.toggleSubmenu(this.openedSubmenuIndex, e);
+        if (key === 27 && this.state.openedSubmenuIndex !== -1) { // escape key
+            this.toggleSubmenu(this.state.openedSubmenuIndex, e);
         }
     }
 
@@ -115,7 +115,6 @@ export default class Menu extends React.Component {
         const {
             menuLinks,
             logoUrl,
-            logoInverseUrl,
             logoImageDesktopPath,
             logoImageInverseDesktopPath,
             logoTitle,
@@ -128,10 +127,9 @@ export default class Menu extends React.Component {
 
         const logo = {
             image: logoImageDesktopPath,
-            image_inverted: logoImageInverseDesktopPath,
+            imageInverted: logoImageInverseDesktopPath,
             title: logoTitle,
-            url: logoUrl,
-            url_inverse: logoInverseUrl
+            url: logoUrl
         };
 
         return (
@@ -139,7 +137,8 @@ export default class Menu extends React.Component {
                 <MenuTop
                     activeIndex={this.state.activeIndex}
                     menuLinks={menuLinks}
-                    LinkTemplate={LinkTemplate} />
+                    LinkTemplate={LinkTemplate}
+                    onMenuHeaderItemSelected={this.onMenuHeaderItemSelected} />
 
                 <MenuContent
                     logo={logo}

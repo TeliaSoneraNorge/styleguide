@@ -65,7 +65,7 @@ const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
     <React.Fragment>
         {link.url &&
             <LinkTemplate
-                onClick={() => onItemSelected()}
+                onClick={onItemSelected}
                 className="menu__mobile-item link"
                 url={link.url}>
                 <span className="link__content">{link.text}</span>
@@ -78,7 +78,7 @@ const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
     <section id={`${menuLink.heading.text}-panel`} className="menu__mobile-panel">
         { menuLink.heading.url &&
             <LinkTemplate
-                onClick={() => onItemSelected()}
+                onClick={onItemSelected}
                 className="menu__mobile-item link"
                 url={menuLink.heading.url}>
                 <span className="link__content">Forside</span>
@@ -87,7 +87,7 @@ const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
 
         {menuLink.links.map((link, index) =>
             <MobileMenuItem
-                index={index + 1}
+                index={index}
                 key={index}
                 link={link}
                 onItemSelected={onItemSelected}

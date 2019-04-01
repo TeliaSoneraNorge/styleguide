@@ -52,7 +52,7 @@ export default class MenuSearch extends React.Component {
     onGlobalKeyDown(e) {
         const key = e.which || e.keyCode;
 
-        if (key === 27 && this.searchFocus !== -1) { // escape key
+        if (key === 27 && this.state.searchFocus) { // escape key
             this.setState({ searchFocus: false });
         }
     }

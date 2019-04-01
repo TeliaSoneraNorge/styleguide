@@ -101,7 +101,7 @@ const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, Link
     </div>
 );
 
-const MenuLogo = ({ logo: { url, image, image_inverted, title }, LinkTemplate }) => (
+const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) => (
     <LinkTemplate url={url} className="menu__logo-container">
         <img
             className="menu__logo"
@@ -109,7 +109,7 @@ const MenuLogo = ({ logo: { url, image, image_inverted, title }, LinkTemplate })
             alt={title} />
         <img
             className="menu__logo--inverted"
-            src={image_inverted}
+            src={imageInverted}
             alt={title} />
     </LinkTemplate>
 );
