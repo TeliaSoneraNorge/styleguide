@@ -94,6 +94,7 @@ export { default as Banner } from './molecules/Banner';
 export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
 export { default as Menu } from './molecules/Menu';
 export { MenuSearch } from './molecules/Menu';
+export { Card, Cards } from './molecules/Cards';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';

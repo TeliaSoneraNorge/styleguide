@@ -56,6 +56,7 @@ export function isFullWidthComponent(componentName) {
         'MiniDashboard',
         'Menu',
         'DisplayFunctionality',
+        'Cards',
 
         // Organisms
         'FocusSubscription',
