@@ -31,7 +31,8 @@ export default class Menu extends React.Component {
         logoUrl: PropTypes.string,
         activeIndex: PropTypes.number,
         onSearchSubmit: PropTypes.func,
-        linkTemplate: PropTypes.func
+        linkTemplate: PropTypes.func,
+        lockBodyOnMenuOpen: PropTypes.bool
     };
 
     constructor(props) {
@@ -77,7 +78,12 @@ export default class Menu extends React.Component {
     }
 
     toggleMobileMenu() {
-        console.log("OPEN");
+        if (!this.state.mobileMenuOpen && this.props.lockBodyOnMenuOpen) {
+            document.body.classList.add('body--locked');
+        } else {
+            document.body.classList.remove('body--locked');
+        }
+
         this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
     }
 
@@ -109,7 +115,7 @@ export default class Menu extends React.Component {
             logoTitle,
             activeIndex,
             loginUrl,
-            onSearchSubmit,
+            onSearchSubmit
         } = this.props;
 
         const logo = {

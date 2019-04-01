@@ -40,7 +40,8 @@ const Default = () => (
             menuLinks={menuLinks}
             logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
             logoImageInverseDesktopPath={require('../../../../assets/images/logo/logo-inverted.svg')}
-            onSearchSubmit={(e, searchQuery) => {} } />
+            onSearchSubmit={(e, searchQuery) => {} }
+            lockBodyOnMenuOpen/>
     </Router>
 );
 
