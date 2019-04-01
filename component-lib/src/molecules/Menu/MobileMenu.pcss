@@ -15,6 +15,7 @@
 
         &--open {
             display: block;
+            z-index: 100000;
         }
 
         &-header {
@@ -30,23 +31,27 @@
             }
 
             &-item {
-                border-bottom: 0;
+                cursor: pointer;
 
                 &--active {
                     border-bottom: 2px solid var(--core-purple);
                     margin-bottom: -2px;
                 }
 
-                font-size: 1.1875rem;
-
                 &:last-child {
                     margin-left: 2rem;
                 }
 
-                &:hover, &:focus, &.link:hover {
-                    background: none;
+                &:hover, &:focus {
+                    outline: none;
                     color: var(--core-purple);
                     border-bottom: 2px solid var(--core-purple);
+                    margin-bottom: -2px;
+                }
+
+                &-text {
+                    font-family: var(--font-family);
+                    font-size: 1.1875rem;
                 }
             }
         }

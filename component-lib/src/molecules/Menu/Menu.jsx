@@ -44,11 +44,13 @@ export default class Menu extends React.Component {
 
         this.state = {
             open: false,
+            activeIndex: this.props.activeIndex,
             mobileMenuOpen: false,
             openedSubmenuIndex: -1
         };
 
-        this.closeMobileMenu = this.closeMobileMenu.bind(this);
+        this.closeMobileMenu = this.toggleMobileMenu.bind(this);
+        this.onMenuHeaderItemSelected = this.onMenuHeaderItemSelected.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.toggleSubmenu = this.toggleSubmenu.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
@@ -91,6 +93,10 @@ export default class Menu extends React.Component {
         this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
     }
 
+    onMenuHeaderItemSelected(index) {
+        this.setState({ activeIndex: index });
+    }
+
     toggleSubmenu(submenuIndex, event) {
         event.stopPropagation();
 
@@ -103,10 +109,6 @@ export default class Menu extends React.Component {
         }
     }
 
-    closeMobileMenu() {
-        this.setState({ mobileMenuOpen: false });
-    }
-
     render() {
         const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
 
@@ -117,7 +119,6 @@ export default class Menu extends React.Component {
             logoImageDesktopPath,
             logoImageInverseDesktopPath,
             logoTitle,
-            activeIndex,
             onSearchSubmit,
             isLoggedIn,
             loginUrl,
@@ -136,14 +137,14 @@ export default class Menu extends React.Component {
         return (
             <div className={classnames('menu', { [this.props.className]: this.props.className })}>
                 <MenuTop
-                    activeIndex={activeIndex}
+                    activeIndex={this.state.activeIndex}
                     menuLinks={menuLinks}
                     LinkTemplate={LinkTemplate} />
 
                 <MenuContent
                     logo={logo}
                     LinkTemplate={LinkTemplate}
-                    menuLink={menuLinks[activeIndex]}
+                    menuLink={menuLinks[this.state.activeIndex]}
                     onToggleSubmenu={this.toggleSubmenu}
                     openedSubmenuIndex={this.state.openedSubmenuIndex}
                     LinkTemplate={LinkTemplate}
@@ -159,8 +160,9 @@ export default class Menu extends React.Component {
                     LinkTemplate={LinkTemplate}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     menuLinks={menuLinks}
-                    selectedHeaderIndex={activeIndex}
-                    onMenuItemSelected={this.closeMobileMenu}
+                    selectedHeaderIndex={this.state.activeIndex}
+                    onMenuItemSelected={this.toggleMobileMenu}
+                    onMenuHeaderItemSelected={this.onMenuHeaderItemSelected}
                 />
             </div>
         );
