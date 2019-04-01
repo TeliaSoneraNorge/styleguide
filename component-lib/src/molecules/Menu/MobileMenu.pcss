@@ -15,6 +15,7 @@
 
         &--open {
             display: block;
+            overflow: scroll;
             z-index: 100000;
         }
 
@@ -122,8 +123,12 @@
             border: none;
             background-color: transparent;
             box-shadow: none;
-            margin-bottom: 4.1875rem;
+            margin-bottom: 1rem;
             cursor: pointer;
+
+            @media all and (min-width: rem(360)) {
+                margin-bottom: 4.1875rem;
+            }
 
             &:focus {
                 outline:none;
@@ -168,7 +173,6 @@
         }
 
         &-submenu {
-            margin-top:1.5rem;
             text-align: right;
         }
 
