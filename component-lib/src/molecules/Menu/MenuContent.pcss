@@ -184,10 +184,13 @@
 
             > .menu__logo--inverted {
                 outline: none;
-                max-width: 7rem;
+                max-width: 5rem;
                 display: flex;
                 padding: 0 0.2rem;
 
+                @media all and (min-width: rem(600)){
+                    max-width: 7rem;
+                }
             }
         }
     }
