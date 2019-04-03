@@ -275,7 +275,6 @@
                 width: 1rem;
                 margin-right: 1rem;
                 margin-bottom: 0;
-
             }
 
             * {
@@ -285,15 +284,16 @@
             }
         }
     }
+    @media all and (min-width: rem(1120)) {
+        &__mypage-button {
+            background: var(--core-purple);
+            color: var(--white);
 
-    &__mypage-button {
-        background: var(--core-purple);
-        color: var(--white);
-
-        &-icon {
-            * {
-                stroke: var(--white);
-                stroke-width: 40;
+            &-icon {
+                * {
+                    stroke: var(--white);
+                    stroke-width: 40;
+                }
             }
         }
     }
