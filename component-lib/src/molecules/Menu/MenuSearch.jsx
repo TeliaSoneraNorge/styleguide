@@ -116,7 +116,7 @@ export default class MenuSearch extends React.Component {
                 onClick={this.onContainerClick}
                 onKeyDown={this.onKeyDown} >
 
-                <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="black" />
+                <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
                 <div className="menu__search--label">Søk</div>
 
 

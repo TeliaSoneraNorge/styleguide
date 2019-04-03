@@ -17,7 +17,8 @@ const menuLinks = [
             ] },
             { text: 'Mobilabonnement', url: '#' },
             { text: 'Mobilt bredbånd', url: '#' },
-            { text: 'Kontakt', url: '#' }
+            { text: 'Dekning', url: '#' },
+            { text: 'Hjelp', url: '#' }
         ],
     },
     {
