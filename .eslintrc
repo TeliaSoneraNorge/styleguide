@@ -31,7 +31,8 @@
         "react/jsx-equals-spacing": ["warn", "never"],
         "react/jsx-no-duplicate-props": ["warn", { "ignoreCase": true }],
         "react/jsx-tag-spacing": ["warn"],
-        "react/jsx-indent-props": ["warn", 4]
+        "react/jsx-indent-props": ["warn", 4],
+        "react/no-array-index-key": "warn" // todo: this should be an "error" really
     },
     "plugins": [
         "react"
