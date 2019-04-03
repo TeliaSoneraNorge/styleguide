@@ -35,7 +35,7 @@
                 border: none;
                 cursor: pointer;
                 font-family: var(--font-family);
-                font-size: 1em;
+                font-size: var(--font-size);
                 margin: 0;
                 padding: var(--menu-link-padding);
                 margin-right: var(--menu-link-margin-right);
@@ -110,6 +110,8 @@
                         display: block;
                         border: none;
                         margin-top: 1rem;
+                        font-family: var(--font-family);
+                        font-size: var(--font-size);
 
                         &:hover, &:focus {
                             background: none;
@@ -190,6 +192,8 @@
         }
     }
 
+
+
     &__login-button, &__mypage-button {
         display: flex;
         height: 100%;
@@ -197,7 +201,8 @@
         color: var(--black);
         border: none;
         padding: 0;
-        font-size: 0.675rem;
+        font-family: var(--font-family);
+        font-size: 0.75rem;
         border-radius: 0;
         flex-direction: column;
         justify-content: space-between;
@@ -254,7 +259,6 @@
             }
         }
 
-
         &-icon {
             height: var(--icon-size-mobile-small);
             width: var(--icon-size-mobile-small);
@@ -282,9 +286,15 @@
         }
     }
 
-    .menu__mypage-button-icon {
-        * {
-            fill: var(--black);
+    &__mypage-button {
+        background: var(--core-purple);
+        color: var(--white);
+
+        &-icon {
+            * {
+                stroke: var(--white);
+                stroke-width: 40;
+            }
         }
     }
 }
