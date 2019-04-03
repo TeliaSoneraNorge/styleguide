@@ -88,7 +88,7 @@ const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, Link
         </ul>
         <div className="menu__content-right">
             { onSearchSubmit &&
-                <MenuSearch onSearchSubmit={onSearchSubmit} />
+                <MenuSearch onSubmit={onSearchSubmit} />
             }
             { loginUrl && !isLoggedIn &&
                 <LoginButton loginUrl={loginUrl} />
