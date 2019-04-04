@@ -9,7 +9,7 @@ const RadioButtonWithLabel = ({ label, checked, disabled, name, value, hasRichCo
             className="radio-button-with-label__input"
             type="radio"
             name={name}
-            defaultChecked={checked}
+            checked={checked}
             onChange={onChange ? (changeEvent) => onChange(changeEvent.target.value) : null}
             disabled={disabled}
             value={value} />

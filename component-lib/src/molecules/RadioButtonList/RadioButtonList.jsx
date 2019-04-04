@@ -18,7 +18,7 @@ const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent,
             : list.map((radio, index) =>
                 <RadioButtonWithLabel
                     checked={index === selectedIndex}
-                    key={index}
+                    key={radio.value}
                     label={radio.label}
                     name={name}
                     onChange={onChange}
