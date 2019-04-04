@@ -14,6 +14,10 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
         &:checked + .toggle-button__label:before {
             background: #d7acff; /* Um, this is not on the color chart... */
         }
+
+        &:focus + .toggle-button__label:after {
+            box-shadow: 2px 2px 6px #666, 0 0 0 1px var(--core-purple);
+        }
     }
     &__label {
         cursor: pointer;
@@ -45,7 +49,7 @@ Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
 
         &:hover {
             &:after {
-                box-shadow: 2px 2px 6px #666;
+                box-shadow: 2px 2px 6px #666, 0 0 0 1px var(--core-purple);
             }
         }
     }
