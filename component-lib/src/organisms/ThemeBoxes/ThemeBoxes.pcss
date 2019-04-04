@@ -23,12 +23,17 @@
 
         &:focus,
         &:active {
-            .horizontal-rule {
-                border-color: var(--white);
+
+            .heading-link--focus-area{
+                background: var(--white);
+
+                *{
+                    color: var(--core-purple);
+                }
             }
 
-            .theme-box__icon {
-                svg * { fill: #ffffff; }
+            .horizontal-rule {
+                border-color: var(--core-purple);
             }
         }
 
@@ -46,13 +51,15 @@
             }
         }
 
-        &__icon {
+        &__icon, &__icon-animated {
             display: block;
             margin: 0 0 1.5rem;
 
             height: var(--menu-icon-size);
             width: var(--menu-icon-size);
+        }
 
+        &__icon {
             svg {
                 height: var(--menu-icon-size);
                 width: var(--menu-icon-size);

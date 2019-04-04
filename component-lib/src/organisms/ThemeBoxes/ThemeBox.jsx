@@ -8,6 +8,7 @@ export default class ThemeBox extends React.Component {
         canExpand: PropTypes.bool,
         id: PropTypes.string,
         iconSvg: PropTypes.node,
+        iconAnimated: PropTypes.node,
         heading: PropTypes.string,
         children: PropTypes.node,
     };
@@ -48,9 +49,14 @@ export default class ThemeBox extends React.Component {
                         <span className="theme-box__close-text">LUKK</span>
                         <SvgIcon className="theme-box__close-icon" iconName="ico_delete" />
                     </button>
-
-                    <div className="theme-box__icon">{this.props.iconSvg}</div>
-
+                    {this.props.iconSvg &&
+                        <div className="theme-box__icon">{this.props.iconSvg}</div>
+                    }
+                    {this.props.iconAnimated &&
+                        <div className="theme-box__icon-animated">
+                            {this.props.iconAnimated}
+                        </div>
+                    }
                     <h2 className="theme-box__heading heading heading--level-2 heading--pebble">
                         {this.props.heading}
                         <hr className="horizontal-rule horizontal-rule--short" />

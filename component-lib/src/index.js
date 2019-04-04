@@ -8,6 +8,7 @@ export { default as DescriptionList } from './atoms/DescriptionList';
 export { default as Heading } from './atoms/Heading';
 export { default as HorizontalRule } from './atoms/HorizontalRule';
 export { default as IconLink } from './atoms/IconLink';
+export { default as IconAnimated } from './atoms/IconAnimated';
 export { default as InputError } from './atoms/InputError';
 export { default as FullWidthTable } from './atoms/FullWidthTable';
 export { default as Label } from './atoms/Label';
