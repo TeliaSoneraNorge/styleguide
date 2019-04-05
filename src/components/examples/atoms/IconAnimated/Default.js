@@ -7,7 +7,7 @@ const IconAnimatedExample = () => (
             height: 10,
             width: 10
         }}
-        json={require('../../../../assets/animations/Music_freedom.json')}
+        json={require('../../../../assets/animations/music_freedom.json')}
     />
 );
 
