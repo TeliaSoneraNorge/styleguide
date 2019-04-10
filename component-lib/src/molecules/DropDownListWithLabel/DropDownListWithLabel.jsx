@@ -4,6 +4,10 @@ import classnames from 'classnames';
 
 import Label from '../../atoms/Label/Label';
 
+const normalizeOptions = (options) =>
+    options.map(option => option instanceof Object
+        ? option
+        : { name: option, value: option })
 /**
  * Status: *finished*.
  *
@@ -25,9 +29,9 @@ const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, sele
             onChange={changeSelectedOption}
             aria-label={visibleLabel ? null : label}
             {...rest}>
-            {options.map((option) =>
-                <option className="dropdown-list-with-label__option" key={option}>
-                    {option}
+            {normalizeOptions(options).map((option) =>
+                <option className="dropdown-list-with-label__option" key={option.value} value={option.value}>
+                    {option.name}
                 </option>)}
         </select>
     </Label>
@@ -39,7 +43,13 @@ DropDownListWithLabel.propTypes = {
     label: PropTypes.node,
     /** Called on select value change. */
     changeSelectedOption: PropTypes.func,
-    options: PropTypes.arrayOf(PropTypes.string),
+    options: PropTypes.arrayOf(PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.shape({
+            name: PropTypes.string,
+            value: PropTypes.string
+        })
+    ])),
 };
 
 export default DropDownListWithLabel;
