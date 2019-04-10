@@ -7,7 +7,7 @@ import Label from '../../atoms/Label/Label';
 const normalizeOptions = (options) =>
     options.map(option => option instanceof Object
         ? option
-        : { name: option, value: option })
+        : { name: option, value: option });
 /**
  * Status: *finished*.
  *
