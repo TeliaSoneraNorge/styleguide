@@ -1,5 +1,5 @@
 import React from 'react';
-import { FactBox } from '@telia/styleguide';
+import { FactBox } from 'component-lib';
 
 const DefaultFactBox = () => (
     <FactBox

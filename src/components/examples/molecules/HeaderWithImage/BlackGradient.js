@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderWithImage } from '@telia/styleguide';
+import { HeaderWithImage } from 'component-lib';
 
 const BlackGradient = () => (
     <HeaderWithImage

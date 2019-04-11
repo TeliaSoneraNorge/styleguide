@@ -1,5 +1,5 @@
 import React from 'react';
-import { HorizontalRule } from '@telia/styleguide';
+import { HorizontalRule } from 'component-lib';
 
 const DefaultHr = () => (
     <HorizontalRule />

@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Container } from '@telia/styleguide';
+import { Container } from 'component-lib';
 
 const exampleStyles = {
     backgroundColor: 'rgb(153, 10, 227)',

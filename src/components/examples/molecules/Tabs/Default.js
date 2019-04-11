@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Tabs } from '@telia/styleguide';
+import { Heading, Tabs } from 'component-lib';
 
 export default class TabsExample extends React.Component {
     constructor() {

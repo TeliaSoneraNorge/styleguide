@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropDownListWithLabel } from '@telia/styleguide';
+import { DropDownListWithLabel } from 'component-lib';
 
 const options = [
     '1.',

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from '@telia/styleguide';
+import { Tooltip } from 'component-lib';
 
 const DefaultTooltip = () => (
     <Tooltip

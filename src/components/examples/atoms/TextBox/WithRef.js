@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextBox } from '@telia/styleguide';
+import { TextBox } from 'component-lib';
 
 export default class TypeWithRef extends React.Component {
     state = {

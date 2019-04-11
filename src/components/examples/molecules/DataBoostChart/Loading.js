@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataBoostChart } from '@telia/styleguide';
+import { DataBoostChart } from 'component-lib';
 
 const LoadingDataBoostChart = () => (
     <DataBoostChart loading />

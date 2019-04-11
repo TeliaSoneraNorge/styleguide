@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductPromoBox } from '@telia/styleguide';
+import { ProductPromoBox } from 'component-lib';
 
 const ProductPromoBoxSmallBox = () => (
     <ProductPromoBox

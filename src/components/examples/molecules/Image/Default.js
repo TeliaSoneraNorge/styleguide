@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Caption } from '@telia/styleguide';
+import { Image, Caption } from 'component-lib';
 
 const DefaultImage = () => (
     <Image src={require('../../../../assets/website-images/kids-ipad.jpg')} alt="Kids playing with tablet">

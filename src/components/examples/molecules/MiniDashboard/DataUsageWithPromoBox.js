@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgIcon, MiniDashboard } from '@telia/styleguide';
+import { SvgIcon, MiniDashboard } from 'component-lib';
 
 const MiniDashboardDataUsageWithPromoBox = () => (
     <MiniDashboard

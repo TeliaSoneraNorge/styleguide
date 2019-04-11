@@ -1,5 +1,5 @@
 import React from 'react';
-import { PagePebbles } from '@telia/styleguide';
+import { PagePebbles } from 'component-lib';
 
 const DefaultPagePebbles = () => (
     <PagePebbles />

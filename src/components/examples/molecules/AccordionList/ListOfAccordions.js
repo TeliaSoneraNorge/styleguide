@@ -1,5 +1,5 @@
 import React from 'react';
-import { AccordionList } from '@telia/styleguide';
+import { AccordionList } from 'component-lib';
 
 /**Status: Add possibility for passing objects to the right content area */
 

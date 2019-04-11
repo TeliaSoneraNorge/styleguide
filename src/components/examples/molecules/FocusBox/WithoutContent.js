@@ -1,5 +1,5 @@
 import React from 'react';
-import { FocusBox } from '@telia/styleguide';
+import { FocusBox } from 'component-lib';
 
 const WithoutContent = () => (
     <FocusBox />

@@ -1,5 +1,5 @@
 import React from 'react';
-import { AlertText } from '@telia/styleguide';
+import { AlertText } from 'component-lib';
 
 const DefaultAlertText = () => (
     <AlertText>Chat is closed</AlertText>

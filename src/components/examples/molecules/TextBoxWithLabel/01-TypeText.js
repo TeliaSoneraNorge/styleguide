@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextBoxWithLabel } from '@telia/styleguide';
+import { TextBoxWithLabel } from 'component-lib';
 
 const TypeText = () => (
     <TextBoxWithLabel

@@ -1,5 +1,5 @@
 import React from 'react';
-import { RelatedArticles } from '@telia/styleguide';
+import { RelatedArticles } from 'component-lib';
 
 const articles = [
     {

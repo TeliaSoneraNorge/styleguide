@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeBoxes, ThemeBox, IconAnimated } from '@telia/styleguide';
+import { ThemeBoxes, ThemeBox, IconAnimated } from 'component-lib';
 
 const TwoClosedBoxes = () => (
     <ThemeBoxes>

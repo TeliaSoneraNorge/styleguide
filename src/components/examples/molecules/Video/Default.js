@@ -1,5 +1,5 @@
 import React from 'react';
-import { Video } from '@telia/styleguide';
+import { Video } from 'component-lib';
 
 const DefaultVideo = () => (
     <Video 

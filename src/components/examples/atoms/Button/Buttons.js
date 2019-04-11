@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@telia/styleguide';
+import { Button } from 'component-lib';
 
 const Buttons = () => (
     <div>

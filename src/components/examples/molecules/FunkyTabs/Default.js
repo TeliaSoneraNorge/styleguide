@@ -1,5 +1,5 @@
 import React from 'react';
-import { FunkyTabs, Heading } from '@telia/styleguide';
+import { FunkyTabs, Heading } from 'component-lib';
 
 export default class DefaultFunkyTabs extends React.Component {
     constructor(props) {

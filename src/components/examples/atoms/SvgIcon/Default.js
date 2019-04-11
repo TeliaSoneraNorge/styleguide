@@ -1,5 +1,5 @@
 import React from 'react';
-import { SvgIcon } from '@telia/styleguide';
+import { SvgIcon } from 'component-lib';
 
 const DefaultSvgIcon = () => (
     <div>

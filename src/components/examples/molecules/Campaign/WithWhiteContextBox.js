@@ -1,5 +1,5 @@
 import React from 'react';
-import { Campaign } from '@telia/styleguide';
+import { Campaign } from 'component-lib';
 
 const WithWhiteContextBox = () => (
     <Campaign

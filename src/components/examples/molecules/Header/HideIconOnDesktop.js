@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from '@telia/styleguide';
+import { Header } from 'component-lib';
 
 const HideIconOnDestop = () => (
     <Header

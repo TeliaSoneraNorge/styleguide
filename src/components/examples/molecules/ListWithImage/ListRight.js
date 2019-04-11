@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListWithImage } from '@telia/styleguide';
+import { ListWithImage } from 'component-lib';
 
 const { Item } = ListWithImage;
 

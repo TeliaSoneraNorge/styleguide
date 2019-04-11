@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProductList } from '@telia/styleguide';
+import { ProductList } from 'component-lib';
 
 const items = [
     {

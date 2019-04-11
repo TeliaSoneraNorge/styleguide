@@ -1,5 +1,5 @@
 import React from 'react';
-import { HardwareProduct } from '@telia/styleguide';
+import { HardwareProduct } from 'component-lib';
 
 const product = {
     campaign: {

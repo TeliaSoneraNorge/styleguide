@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProgressChart } from '@telia/styleguide';
+import { ProgressChart } from 'component-lib';
 
 const DefaultProgressChart = () => (
     <ProgressChart

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DonutChart } from '@telia/styleguide';
+import { DonutChart } from 'component-lib';
 
 const WithNoSegments = () => (
     <DonutChart

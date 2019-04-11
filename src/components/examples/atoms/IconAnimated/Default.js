@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconAnimated } from '@telia/styleguide';
+import { IconAnimated } from 'component-lib';
 
 const IconAnimatedExample = () => (
    <IconAnimated

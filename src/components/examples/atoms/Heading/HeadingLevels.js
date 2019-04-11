@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '@telia/styleguide';
+import { Heading } from 'component-lib';
 
 const HeadingLevels = () => (
     <div>

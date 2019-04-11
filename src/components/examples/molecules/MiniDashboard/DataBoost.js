@@ -1,5 +1,5 @@
 import React from 'react';
-import { MiniDashboard } from '@telia/styleguide';
+import { MiniDashboard } from 'component-lib';
 
 const MiniDashboardDataBoost = () => (
     <MiniDashboard

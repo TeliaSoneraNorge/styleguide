@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paragraph, InfoBox } from '@telia/styleguide';
+import { Paragraph, InfoBox } from 'component-lib';
 
 const Default = () => (
     <InfoBox title="This is a title">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tags } from '@telia/styleguide';
+import { Tags } from 'component-lib';
 
 const { Tag } = Tags;
 

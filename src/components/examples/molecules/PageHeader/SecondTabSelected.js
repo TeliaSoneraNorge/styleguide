@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageHeader } from '@telia/styleguide';
+import { PageHeader } from 'component-lib';
 
 const menuLinks = [
     {

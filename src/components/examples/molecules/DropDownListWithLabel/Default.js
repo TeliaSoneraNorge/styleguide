@@ -1,5 +1,5 @@
 import React from 'react';
-import { DropDownListWithLabel } from '@telia/styleguide';
+import { DropDownListWithLabel } from 'component-lib';
 
 const options = [
     'Apple iPhone 6 128 GB',

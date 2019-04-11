@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { ThemeBoxes } from '@telia/styleguide';
-import { ThemeBoxWithImage } from '@telia/styleguide';
+import { ThemeBoxes } from 'component-lib';
+import { ThemeBoxWithImage } from 'component-lib';
 
 const ThemeBoxesWithImage = () => (
     <ThemeBoxes>
