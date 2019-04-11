@@ -1,5 +1,5 @@
 import React from 'react';
-import { Form, Button } from '@telia/styleguide';
+import { Form, Button } from 'component-lib';
 
 export default class SimpleLogin extends React.Component {
     state = {

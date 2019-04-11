@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxGrid, Box, Container } from '@telia/styleguide';
+import { BoxGrid, Box, Container } from 'component-lib';
 
 const SmallAndMediumBoxes = () => (
     <Container size="medium" noMargin noPadding>

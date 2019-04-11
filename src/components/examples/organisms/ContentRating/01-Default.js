@@ -1,5 +1,5 @@
 import React from 'react';
-import { ContentRating } from '@telia/styleguide';
+import { ContentRating } from 'component-lib';
 
 const DefaultContentFeedback = () => (
     <ContentRating feedbackState="initial" />

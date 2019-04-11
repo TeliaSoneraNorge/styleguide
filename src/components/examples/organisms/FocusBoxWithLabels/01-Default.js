@@ -1,5 +1,5 @@
 import React from 'react';
-import { FocusBoxWithLabels } from '@telia/styleguide';
+import { FocusBoxWithLabels } from 'component-lib';
 
 const content = {
     upperLeft: {

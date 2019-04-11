@@ -1,5 +1,5 @@
 import React from 'react';
-import { DescriptionList } from '@telia/styleguide';
+import { DescriptionList } from 'component-lib';
 
 const { Dt, Dd } = DescriptionList;
 

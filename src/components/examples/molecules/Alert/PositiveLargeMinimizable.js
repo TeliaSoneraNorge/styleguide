@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatefulAlert } from '@telia/styleguide';
+import { StatefulAlert } from 'component-lib';
 
 const PositiveLargeMinimizable = () => (
     <StatefulAlert kind="positive" size="large" minimizedText="CLICK" minimizable>

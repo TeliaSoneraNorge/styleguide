@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from '@telia/styleguide';
+import { Alert } from 'component-lib';
 
 const Positive = () => (
     <Alert kind="positive">

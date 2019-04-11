@@ -1,5 +1,5 @@
 import React from 'react';
-import { UniqueSellingPoints } from '@telia/styleguide';
+import { UniqueSellingPoints } from 'component-lib';
 
 const { Item } = UniqueSellingPoints;
 

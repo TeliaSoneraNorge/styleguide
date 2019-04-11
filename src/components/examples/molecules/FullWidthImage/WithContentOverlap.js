@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullWidthImage } from '@telia/styleguide';
+import { FullWidthImage } from 'component-lib';
 
 const DefaultFullWidthImage = () => (
     <div>

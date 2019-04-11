@@ -1,5 +1,5 @@
 import React from 'react';
-import { PopUpLine } from '@telia/styleguide';
+import { PopUpLine } from 'component-lib';
 
 const InformationLine = () => (
     <PopUpLine

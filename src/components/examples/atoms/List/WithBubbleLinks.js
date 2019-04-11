@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from '@telia/styleguide';
+import { List } from 'component-lib';
 
 const { Item, BubbleLink } = List;
 

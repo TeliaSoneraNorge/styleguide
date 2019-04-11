@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeadingLink } from '@telia/styleguide';
+import { HeadingLink } from 'component-lib';
 
 const DefaultHeadingLink = () => (
     <HeadingLink href="#">Heading for link</HeadingLink>

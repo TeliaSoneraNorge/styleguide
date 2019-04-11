@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullWidthTable } from '@telia/styleguide';
+import { FullWidthTable } from 'component-lib';
 
 const { THead, TBody, Th, Tr, Td } = FullWidthTable;
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Banner, Container } from '@telia/styleguide';
+import { Banner, Container } from 'component-lib';
 
 const DefaultBanner = () => (
     <Container size="large">

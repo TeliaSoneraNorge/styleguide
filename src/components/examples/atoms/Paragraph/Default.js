@@ -1,5 +1,5 @@
 import React from 'react';
-import { Paragraph } from '@telia/styleguide';
+import { Paragraph } from 'component-lib';
 
 const DefaultParagraph = () => (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PersonBox } from '@telia/styleguide';
+import { PersonBox } from 'component-lib';
 
 const CollapsedPersonBox = () => (
     <PersonBox

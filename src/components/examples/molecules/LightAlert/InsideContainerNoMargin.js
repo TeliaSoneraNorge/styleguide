@@ -1,5 +1,5 @@
 import React from 'react';
-import { LightAlert, Container } from '@telia/styleguide';
+import { LightAlert, Container } from 'component-lib';
 
 const wrapperStyles = {
     backgroundColor: '#990AE3'

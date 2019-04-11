@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleList } from '@telia/styleguide';
+import { ArticleList } from 'component-lib';
 
 const articles = [
     { title: 'HBO Nordic', link: '#', tags: ['Artikkel'], description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit velit, egestas eget suscipit a, porta sed orci. Cras ac convallis nisl. In fringilla aliquam magna nec iaculis. Donec non dolor ipsum. Praesent auctor leo ex.' },

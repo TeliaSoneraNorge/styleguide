@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconLink } from '@telia/styleguide';
+import { IconLink } from 'component-lib';
 
 const AllIconLinks = () => (
     <div>

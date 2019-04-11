@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '@telia/styleguide';
+import { Image } from 'component-lib';
 
 const SmallImageInline = () => (
     <div>

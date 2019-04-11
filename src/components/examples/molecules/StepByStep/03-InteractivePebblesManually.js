@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepByStep, Button } from '@telia/styleguide';
+import { StepByStep, Button } from 'component-lib';
 
 const { Step, Description, Content } = StepByStep;
 

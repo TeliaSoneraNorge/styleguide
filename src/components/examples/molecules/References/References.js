@@ -1,5 +1,5 @@
 import React from 'react';
-import { References } from '@telia/styleguide';
+import { References } from 'component-lib';
 
 const ReferencesExample = () => (
     <References

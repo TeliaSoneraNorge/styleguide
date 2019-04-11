@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeBoxes, ThemeBox, SvgIcon } from '@telia/styleguide';
+import { ThemeBoxes, ThemeBox, SvgIcon } from 'component-lib';
 
 const TwoClosedBoxes = () => (
     <ThemeBoxes>
@@ -11,7 +11,7 @@ const TwoClosedBoxes = () => (
         <ThemeBox
             id="themebox-2"
             isExpanded={false}
-            iconSvg={<SvgIcon iconName="ico_heart" color="purple" />}            
+            iconSvg={<SvgIcon iconName="ico_heart" color="purple" />}
             heading="Heading" />
     </ThemeBoxes>
 );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { SpecialMessage } from '@telia/styleguide';
+import { SpecialMessage } from 'component-lib';
 
 const DefaultSpecialMessage = () => (
     <SpecialMessage>

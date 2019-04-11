@@ -1,5 +1,5 @@
 import React from 'react';
-import { TelephoneNumberLink } from '@telia/styleguide';
+import { TelephoneNumberLink } from 'component-lib';
 
 const DefaultTelephoneNumberLink = () => (
     <TelephoneNumberLink>+47 924 05 050</TelephoneNumberLink>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputError } from '@telia/styleguide';
+import { InputError } from 'component-lib';
 
 const DefaultInputError = () => (
     <InputError>Some error message</InputError>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { DownloadButtons } from '@telia/styleguide';
+import { DownloadButtons } from 'component-lib';
 
 const { Button } = DownloadButtons;
 

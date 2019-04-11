@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckBoxWithLabel } from '@telia/styleguide';
+import { CheckBoxWithLabel } from 'component-lib';
 
 const Unchecked = () => (
     <CheckBoxWithLabel label="I am not checked" />
