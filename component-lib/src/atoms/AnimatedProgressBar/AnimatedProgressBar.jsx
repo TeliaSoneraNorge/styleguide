@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*.
+ * Category: Loader
  *
  * An animated progress bar with changeable bar and background color.
  * Basically copied from https://codepen.io/holdencreative/pen/vEVbwv with some modifications

@@ -5,7 +5,12 @@ import Button from '../../atoms/Button/Button';
 
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-/**Status: Add possibility for passing objects to the right content area */
+/**
+ * Status: *Finished*
+ * Category: Accordion
+ *
+ * Add possibility for passing objects to the right content area
+*/
 
 export default class Accordion extends React.Component {
     static propTypes = {

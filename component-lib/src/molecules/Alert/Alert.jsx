@@ -7,6 +7,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
+ * Category: Notifications
  */
 const Alert = ({
     kind = 'positive',

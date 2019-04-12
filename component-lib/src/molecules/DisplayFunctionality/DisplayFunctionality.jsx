@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Status: *finished*
+ * Category: Misc
  */
 class DisplayFunctionality extends React.Component {
     constructor() {

@@ -6,6 +6,7 @@ import Label from '../../atoms/Label/Label';
 
 /**
  * Status: *finished*.
+ * Category: FormElements
  **/
 const TextAreaWithLabel = ({ labelText, placeholder, error, disabled, ...rest }) =>
     <Label className="textarea-with-label" isUsingGrayText={true}>

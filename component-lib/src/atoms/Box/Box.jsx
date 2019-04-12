@@ -5,13 +5,14 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
+ * Category: Boxes
  *
  * A Box component has a default size, but can be made into a small or a medium box.
  * It serves as a container with a colored border, and do not have any padding since the content
  * should be able to control that part.
  *
  * One or more Boxes can be used inside a <a href="/components/molecules#BoxGrid">BoxGrid</a> component.
- * 
+ *
  * Color can be set to transparent with box--no-background
  */
 export default class Box extends React.Component {

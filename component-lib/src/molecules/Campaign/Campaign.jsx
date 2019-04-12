@@ -7,6 +7,7 @@ import Heading from '../../atoms/Heading/Heading';
 
 /**
  * Status: *almost finished*.
+ * Category: Hero
  *
  * This component is going to be used for campaigns, such as Music Freedom.
  *

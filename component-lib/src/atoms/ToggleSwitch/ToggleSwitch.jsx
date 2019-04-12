@@ -9,6 +9,7 @@ const PANEL = {
 
 /**
  * Status: *In progress*.
+ * Category: FormElements
  */
 const ToggleSwitch = ({ leftLabel, rightLabel, leftOnClickHandler, rightOnClickHandler, active, backgroundColor, className }) => (
     <div

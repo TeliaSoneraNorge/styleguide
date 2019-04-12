@@ -8,6 +8,13 @@ import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
 import Tabs from '../../molecules/Tabs/Tabs';
 
+
+/**
+ * Status: *Deprecated*
+ * Category: PageElements
+ *
+ * This component will be replaces with the Menu-component
+ */
 const PageMenu = ({
     menuLinks = [],
     menuId,

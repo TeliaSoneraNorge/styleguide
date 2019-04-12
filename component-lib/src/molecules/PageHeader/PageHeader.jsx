@@ -8,6 +8,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *in progress*.
+ * Category: PageElements
  *
  * Work remaining: menu, toolbar, responsiveness.
  *

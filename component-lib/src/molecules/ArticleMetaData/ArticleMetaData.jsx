@@ -6,6 +6,7 @@ import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*
+ * Category: PageHeaders
  */
 const ArticleMetaData = ({ iconName, tags = [], date, author, className, ...rest }) => (
     <section

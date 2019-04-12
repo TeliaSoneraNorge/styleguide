@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Status: *delete from styleguide*.
+ * Category: Lists
+ */
 const References = ({ items = [], heading }) => (
     <section className="references container container--no-margin container--no-padding">
         <h2 className="heading heading--level-2 heading--pebble references__heading">{heading}</h2>

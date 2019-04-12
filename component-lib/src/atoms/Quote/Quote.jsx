@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Style
  */
 const Quote = ({ children, className, inline = false, source, ...rest }) => (
     <blockquote

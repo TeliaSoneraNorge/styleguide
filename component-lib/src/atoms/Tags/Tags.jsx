@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Links
  */
 const Tags = ({ children, className, color, ...rest }) => (
     <div

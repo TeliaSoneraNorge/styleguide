@@ -3,6 +3,12 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import FocusBox from '../../molecules/FocusBox/FocusBox';
 
+/**
+ * Status: *should be deleted*.
+ * Category: FocusBox
+ *
+ * TODO: better documentation.
+ */
 const FocusBoxWithLabels = ({ padding, content: { upperLeft, upperRight, bottomLeft, bottomRight } }) => {
     return (
         <FocusBox className="focus-box-with-labels">

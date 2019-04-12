@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Style
  */
 const SpecialMessage = ({ children, className, ...rest }) => (
     <strong

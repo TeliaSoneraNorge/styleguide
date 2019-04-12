@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Lists
  */
 const ListWithImage = ({ children, className, heading, src, alt, imagePosition = 'bottom', listPosition = 'left', hideImageForMobile, ...rest }) => (
     <div

@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *in progress*.
+ * Category: Boxes
  *
  * The PromoBox is created to display a promoted feature.
  * It can be animated by adding class name promo-box__animated

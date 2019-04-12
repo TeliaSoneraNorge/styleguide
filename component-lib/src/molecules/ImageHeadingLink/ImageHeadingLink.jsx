@@ -6,6 +6,7 @@ import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
 
 /**
  * Status: *in progress*
+ * Category: ImageAndVideo
  */
 const ImageHeadingLink = ({ children, className, src, alt, ...rest }) => (
     <a

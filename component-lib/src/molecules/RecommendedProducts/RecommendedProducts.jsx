@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 import Heading from '../../atoms/Heading/Heading';
 import Button from '../../atoms/Button/Button';
 
+/**
+ * Status: *Finished*.
+ * Category: Hardware
+ */
 const RecommendedProducts = ({ mainHeading, products = [], image, heading, text, buttonText }) =>
     <div className="recommended-products">
         <Heading level="2" text={mainHeading} className="recommended-products__heading" />

@@ -5,6 +5,7 @@ import Tags from '../../atoms/Tags/Tags';
 
 /**
  * Status: *finished*
+ * Category: Misc
  */
 const RelatedArticle = ({ children, className, imgSrc, imgAlt, heading, tags = [], ...rest }) => (
     <a className={classnames('related-article', { [className]: className })}

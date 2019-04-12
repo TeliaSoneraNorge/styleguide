@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Boxes
  */
 const ShadowBox = ({ children, className, ...rest }) => (
     <div

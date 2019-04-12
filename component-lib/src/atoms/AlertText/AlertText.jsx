@@ -5,6 +5,7 @@ import Heading from '../Heading';
 
 /**
  * Status: *finished*.
+ * Category: Notifications
  *
  * Use this component when you want to make the user aware of something, for instance:
  * - the chat to customer service is closed

@@ -4,6 +4,7 @@ import cn from 'classnames';
 
 /**
  * Status: *in progress*.
+ * Category: FormElements
  *
  * Work remaining: test in more browsers; use rem instead of px in the CSS.
  *

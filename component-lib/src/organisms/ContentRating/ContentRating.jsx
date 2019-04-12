@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
+/**
+ * Status: *delete from styleguide*
+ * Category: FormElements
+ */
 export default class ContentRating extends React.Component {
     static propTypes = {
         feedbackState: PropTypes.oneOf(['initial', 'receipt-positive', 'negative-feedback', 'receipt-negative']),

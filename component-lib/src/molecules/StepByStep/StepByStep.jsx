@@ -6,6 +6,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
+ * Category: Wizard
  */
 class StepByStep extends React.Component {
     static propTypes = {

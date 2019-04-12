@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *in progress*.
+ * Category: Style
  *
  * This is a component that is meant to be used as a container for text (headings, paragraphs etc.)
  * to give the text a certain layout with spacing between elements.

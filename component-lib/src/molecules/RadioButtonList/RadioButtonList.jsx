@@ -9,7 +9,7 @@ const getClassName = (type, hasRichContent) =>
 
 /**
  * Status: *finished*.
- *
+ * Category: FormElements
  */
 const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent, onChange, children }) =>
     <div className={getClassName(type, hasRichContent)}>

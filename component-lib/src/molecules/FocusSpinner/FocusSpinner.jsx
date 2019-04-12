@@ -6,6 +6,7 @@ import Spinner from '../../atoms/Spinner/Spinner';
 
 /**
  * Status: *finished*.
+ * Category: FocusBox
  *
  * Like a FocusBox, but shown before the content is loaded.
  */

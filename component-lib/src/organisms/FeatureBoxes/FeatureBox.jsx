@@ -3,6 +3,10 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 
+/**
+ * Status: *finished*.
+ * Category: Boxes
+**/
 export default class FeatureBox extends React.Component {
     static propTypes = {
         iconSvg: PropTypes.node,

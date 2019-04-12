@@ -5,6 +5,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
+ * Category: Lists
  *
  * Used for showing lists of products like subscriptions and services, in a less "in your face" manner than the Subscription component.
  */

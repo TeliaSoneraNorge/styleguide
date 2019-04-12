@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 /**
+ * Category: FormElements
  *
  * The layout of a form is created by nesting `form__row` and `form__column`.
  * Inside each column you add the components you need for creating your own form.

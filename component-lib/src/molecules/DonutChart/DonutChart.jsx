@@ -21,7 +21,10 @@ const alignSegments = (segments) =>
             color: segment.color
         }))
         .sort((seg1, seg2) => seg2.percent - seg1.percent);
-
+/**
+ * Status: *finished*.
+ * Category: Graphs
+ */
 const DonutChart = ({
     loading,
     size,

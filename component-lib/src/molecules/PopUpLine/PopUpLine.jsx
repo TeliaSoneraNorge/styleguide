@@ -2,7 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
-* Status: *in progress*.
+ * Status: *in progress*.
+ * Category: Notifications
  *
  * TODO:
  ** Add a dynamic example to the ModalDialogSamplePage; show information pop-up line after confirmed is clicked in a confirm modal dialog.

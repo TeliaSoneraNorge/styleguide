@@ -5,6 +5,7 @@ import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
 
 /**
  * Status: *in progress*
+ * Category: Links
  */
 const HeadingLink = ({ children, className, ...rest }) => (
     <a

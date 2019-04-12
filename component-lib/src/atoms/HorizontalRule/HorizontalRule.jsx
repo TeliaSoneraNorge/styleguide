@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Misc
  *
  * The css-class <code>.horizontal-rule</code> can be used on any element to give it a grey border in bottom of
  * the element, or it can be used on the <code>&lt;hr/&gt;</code> tag as a standalone component.

@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: FormElements
  */
 const TextArea = ({ children, className, error, ...rest }) => (
     <textarea

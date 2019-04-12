@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *in progress*.
+ * Category: Style
  *
  * Work remaining:
  *

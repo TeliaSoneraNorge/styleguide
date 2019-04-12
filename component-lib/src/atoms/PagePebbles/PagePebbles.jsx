@@ -2,6 +2,8 @@ import React from 'react';
 
 /**
  * Status: *finished*.
+ * Category: PageElements
+ *
  * <p>
  *   Use the CSS class <code>.page-pebbles</code> if you want pebbles as decoration on your page.
  *   This applies to devices wider than or equal to 900px.

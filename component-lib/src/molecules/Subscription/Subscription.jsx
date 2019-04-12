@@ -12,6 +12,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
+ * Category: Subscription
  *
  */
 const Subscription = ({ isShowingFeatures, isStandalone, isBroadband, color, size, id, isExpanded, name, dataAmount, dataUnit, price, speechBubbleText,

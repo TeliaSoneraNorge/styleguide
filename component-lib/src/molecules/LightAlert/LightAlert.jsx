@@ -6,6 +6,7 @@ import Heading from '../../atoms/Heading/Heading';
 
 /**
  * Status: *in progress*.
+ * Category: Notifications
  */
 const LightAlert = ({
     title,

@@ -9,7 +9,10 @@ const getLegendClassName = (series, index) =>
             'chart-legend--right-border': index === 0 && series.length > 2,
             'chart-legend--left-border': index === series.length - 1 && series.length > 1
         });
-
+/**
+ * Status: *finished*.
+ * Category: Graphs
+ */
 const ChartLegend = ({ series }) => (
     <div className="chart-legend__container">
         {series.map((serie, i) =>

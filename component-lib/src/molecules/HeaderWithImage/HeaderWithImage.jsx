@@ -6,6 +6,7 @@ import Heading from '../../atoms/Heading/Heading';
 
 /**
  * Status: *finished*.
+ * Category: PageHeaders
  */
 const HeaderWithImage = ({ imgSrcMobile, imgSrcDesktop, blackText, whiteText, withGradient, pageTitle, children }) =>
     <header className={classNames('header header--plain header-with-image', { 'header--black-text': blackText, 'header--white-text': whiteText, 'header-with-image--with-gradient': withGradient })}>

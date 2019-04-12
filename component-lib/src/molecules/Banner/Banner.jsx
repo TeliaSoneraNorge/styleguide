@@ -4,9 +4,10 @@ import PropTypes from 'prop-types';
 
 /**
  * Status: *finished*.
+ * Category: Misc
  *
  * Should be placed in a medium or large container. Never small.
- * Should always use white banner on grey background and grey banner on white background. 
+ * Should always use white banner on grey background and grey banner on white background.
  **/
 export default class Banner extends React.Component {
     static propTypes = {
