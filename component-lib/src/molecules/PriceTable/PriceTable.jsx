@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+/**
+ * Status: *finished*.
+ * Category: Tables
+ */
 const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }) =>
     <table className="price-table">
         <tbody className="price-table__items">

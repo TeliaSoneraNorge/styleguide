@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*.
+ * Category: ImageAndVideo
  */
 const Caption = ({ className, children, ...rest }) => (
     <div

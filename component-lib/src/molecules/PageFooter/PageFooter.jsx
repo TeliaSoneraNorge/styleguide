@@ -4,6 +4,7 @@ import map  from 'lodash/map';
 
 /**
  * Status: *finished*.
+ * Category: PageElements
  *
  * The PageFooter is the main footer on the page, and should be included only once.
  * It contains a small number of important, side-wide links.

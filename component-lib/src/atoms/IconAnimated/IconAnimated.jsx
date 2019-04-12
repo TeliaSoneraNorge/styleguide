@@ -4,6 +4,7 @@ import lottie from 'lottie-web';
 
 /**
  * Status: *finished*.
+ * Category: Style
  */
 
 export default class IconAnimated extends React.Component {

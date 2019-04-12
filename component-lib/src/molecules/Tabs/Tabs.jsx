@@ -2,6 +2,10 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
+/**
+ * Status: *finished*
+ * Category: Tabs
+ */
 const Tabs = ({ uniqueId, children, selectedIndex, onSelect, skipPanelRendering, noMargin, compact }) =>
     <div className={classnames(
         'tabs',

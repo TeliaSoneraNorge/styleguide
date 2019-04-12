@@ -6,6 +6,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
+ * Category: Lists
  */
 const UniqueSellingPoints = ({ children, iconName, iconColor, className, ...rest }) => (
     <ul

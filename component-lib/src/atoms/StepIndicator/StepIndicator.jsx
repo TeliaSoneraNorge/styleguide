@@ -6,6 +6,7 @@ import SvgIcon from '../SvgIcon/SvgIcon';
 
 /**
  * Status: *In progress*.
+ * Category: Wizard
  */
 const renderLine = (number, numberOfSteps, index) => {
     if (number >= numberOfSteps - 1) {

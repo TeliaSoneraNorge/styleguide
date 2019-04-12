@@ -6,6 +6,7 @@ import IconLink from '../../atoms/IconLink/IconLink';
 
 /**
  * Status: *finished*.
+ * Category: Boxes
  *
  * A PersonBox component use the default <a href="/components/atoms#Box">Box</a> component.
  * The content within this Box presents a person with an image, name, job title, description and

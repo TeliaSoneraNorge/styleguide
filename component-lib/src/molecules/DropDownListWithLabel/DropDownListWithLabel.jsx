@@ -9,8 +9,10 @@ const normalizeOptions = (options) =>
         ? option
         : { name: option, value: option });
 /**
- * Status: *finished*.
+ * Status: *In progress*.
+ * Category: FormElements
  *
+ * Improvements: Move to a generic dropdown component
  **/
 const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, selectedOption, changeSelectedOption, options = [], ...rest }) => (
     <Label

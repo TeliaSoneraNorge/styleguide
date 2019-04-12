@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Links
  */
 const TelephoneNumberLink = ({ children, className, ...rest }) => (
     <a

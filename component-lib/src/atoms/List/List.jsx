@@ -7,6 +7,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
+ * Category: Lists
  */
 const List = ({ children, className, wrapByThree, wrapByFour, black, ...rest }) => {
     // Determine css classes to use based on the children.

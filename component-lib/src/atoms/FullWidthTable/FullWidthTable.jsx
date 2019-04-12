@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Tables
  *
  * This table component use negative margins to achieve full width rows in the table,
  * and padding to add back the negative margin value. To avoid horizontal scrolling

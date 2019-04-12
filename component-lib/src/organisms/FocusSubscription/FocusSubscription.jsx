@@ -5,7 +5,8 @@ import FocusBox from '../../molecules/FocusBox/FocusBox';
 import Subscription from '../../molecules/Subscription/Subscription';
 
 /**
- * Status: *finished*.
+ * Status: *should be deleted*.
+ * Category: FocusBox
  *
  */
 export default class FocusSubscription extends React.Component {

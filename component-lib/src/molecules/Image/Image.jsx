@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: ImageAndVideo
  */
 const Image = ({ children, className, src, alt, inline, ...rest }) => (
     <figure

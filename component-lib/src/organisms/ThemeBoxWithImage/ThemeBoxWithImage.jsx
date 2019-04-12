@@ -5,8 +5,9 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *in progress*
+ * Category: Accordion
  *
- * Box to display a theme with a header image. 
+ * Box to display a theme with a header image.
  **/
 export default class ThemeBoxWithImage extends React.Component{
     static propTypes = {

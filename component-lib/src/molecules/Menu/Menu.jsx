@@ -21,6 +21,7 @@ const isDescendant = (parent, child) => {
 
 /**
  * Status: *In progress*.
+ * Category: PageElements
  **/
 export default class Menu extends React.Component {
     static propTypes = {

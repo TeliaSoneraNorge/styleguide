@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*.
+ * Category: FormElements
  *
  * Be sure to set the correct type when using this component as it helps the user to give correct input.
 **/

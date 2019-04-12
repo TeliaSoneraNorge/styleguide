@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Status: *in progress*.
+ * Category: Notifications
  *
  * Look at the <a href='/modal-dialog'>Modal Dialog sample page</a> to see this component in action.
  *

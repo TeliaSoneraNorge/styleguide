@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Status: *in progress*.
+ * Category: Loader
  *
  * Future work: Replace it with gif
  *

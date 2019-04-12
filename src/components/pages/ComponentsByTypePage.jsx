@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import { Header } from '../../../component-lib/src/index';
+import { Header } from 'component-lib';
 import ComponentDocs from '../common/ComponentDocs';
 import { getComponents } from '../../utils/componentUtil';
 
@@ -13,7 +13,7 @@ export default class ComponentsByTypePage extends React.Component {
         const allComponents = getComponents();
         const { componentType } = this.props.match.params;
         const componentsOfType = allComponents[componentType];
-        
+
         return (
             <div>
                 <Header

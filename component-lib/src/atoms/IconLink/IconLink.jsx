@@ -6,6 +6,7 @@ import upperFirst from 'lodash/upperFirst';
 
 /**
  * Status: *finished*.
+ * Category: Links
  */
 const IconLink = ({ className, iconName, ...rest }) => (
     <a

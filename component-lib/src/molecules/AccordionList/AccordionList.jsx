@@ -7,6 +7,7 @@ const noop = () => {};
 
 /**
  * Status: *finished*.
+ * Category: Accordion
  *
  * An AccordionList is a list of Accordions. An Accordion consists of a header and a panel.
  * The header contains a button which toggles the associated panel's visibility.

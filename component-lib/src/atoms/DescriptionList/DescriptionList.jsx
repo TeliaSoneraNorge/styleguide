@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Style
  */
 const DescriptionList = ({ children, wrapByTwo, className, ...rest }) => {
     return (

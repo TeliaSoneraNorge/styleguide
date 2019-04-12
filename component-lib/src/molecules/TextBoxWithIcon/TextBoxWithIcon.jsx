@@ -25,6 +25,7 @@ const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
 
 /**
  * Status: *finished*.
+ * Category: FormElements
 **/
 const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, small, iconName, iconColor, iconIsButton, iconLabel, ...rest }, ref) => (
     <div

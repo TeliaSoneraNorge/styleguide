@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *in progress*
+ * Category: Misc
  *
  * There are three main container widths: small, medium and large. Body text, such as this one, should be in a small container to reduce line width and make reading easier.
  */

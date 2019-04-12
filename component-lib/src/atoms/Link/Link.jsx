@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*.
+ * Category: Links
  *
  * The target attribute is set to '_self' which is the default value if the attribute is not specified.
  * If you rather prefer to open the linked document in a new browser window or tab, you can set the target to '_blank' instead.
@@ -23,7 +24,7 @@ const Link = ({ className, text, children, href, icon, iconPosition, target = '_
         {text}
         {children}
     </a>;
-    
+
 Link.propTypes = {
     /** Content of this link. */
     text: PropTypes.node,

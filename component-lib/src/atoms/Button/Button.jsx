@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*.
+ * Category: Buttons
  */
 const Button = ({ text, kind, size, onClick, className, processingText, isProcessing, isDisabled, type = 'button', margin, ...rest }) =>
     <button

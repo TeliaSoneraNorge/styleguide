@@ -7,6 +7,7 @@ import Heading from '../../atoms/Heading/Heading';
 
 /**
  * Status: *finished*.
+ * Category: Hardware
  *
  * A ProductPromoBox component use the default <a href="/components/atoms#Box">Box</a> component.
  * The content within this box presents a product with a name, image, price and short description.

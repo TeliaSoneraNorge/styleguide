@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Status: *finished*
+ * Category: Tabs
  *
  * <p>
  * The FunkyTabs component are implemented as a list, where each tab is a list element with a link inside.

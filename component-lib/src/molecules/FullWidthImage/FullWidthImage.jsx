@@ -7,6 +7,7 @@ import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*
+ * Category: ImageAndVideo
  *
  * Recommendations from designers:
  * - Images in the size of 1440x440px or the same width/height format seems to be a good size to use in this component.

@@ -4,6 +4,10 @@ import classNames from 'classnames';
 import ChartWrapper from '../DonutChart/ChartWrapper';
 import Spinner from '../../atoms/Spinner/Spinner';
 
+/**
+ * Status: *finished*.
+ * Category: Graphs
+ */
 const DataBoostChart = ({
     loading,
     size,

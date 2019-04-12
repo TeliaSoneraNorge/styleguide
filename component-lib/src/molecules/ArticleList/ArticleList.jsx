@@ -1,6 +1,12 @@
 import React from 'react';
 import Tags from '../../atoms/Tags/Tags';
 
+/**
+ * Status: *in progress*.
+ * Category: Lists
+ *
+ * TODO: Rename to search result
+ */
 const ArticleListItem = ({ article }) => (
     <li className="article-list__item">
         <a className="link article-list__title" href={article.link}>{article.title}</a>

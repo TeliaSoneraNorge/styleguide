@@ -7,6 +7,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*.
+ * Category: Misc
  */
 export default class RelatedArticles extends React.Component {
     static propTypes = {

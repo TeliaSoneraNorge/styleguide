@@ -2,6 +2,7 @@ import React from 'react';
 
 /**
  * Status: *finished*.
+ * Category: Boxes
  *
  * There should be a minimum of three- and a maximum of eight boxes when using this component.
  **/

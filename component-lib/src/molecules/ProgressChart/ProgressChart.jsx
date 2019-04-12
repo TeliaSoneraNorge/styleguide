@@ -12,6 +12,7 @@ const getThresholdFromValue = (thresholds, value) =>
 
 /**
  * Status: *in progress*.
+ * Category: Graphs
  *
  * Future work: Finetune the default thresholds.
  *

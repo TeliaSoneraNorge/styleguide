@@ -6,6 +6,7 @@ import map  from 'lodash/map';
 
 /**
  * Status: *in progress*.
+ * Category: Graphs
  *
  * A small dashboard to be placed on top of a page for the logged in user to view a snapshot
  * of Min Side info, and to be able to navigate quickly to the full Min Side page.

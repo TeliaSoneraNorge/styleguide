@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: FormElements
  */
 const InputError = ({ className, children, ...rest }) => (
     <span

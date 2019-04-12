@@ -5,6 +5,7 @@ import Label from '../../atoms/Label/Label';
 
 /**
  * Status: *in progress*.
+ * Category: FormElements
  *
  * Waiting on the Photoshop files to get the exact checkmark SVG.
  */

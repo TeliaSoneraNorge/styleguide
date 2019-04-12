@@ -6,6 +6,7 @@ import uniqueId from 'lodash/uniqueId';
 
 /**
  * Status: *finished*
+ * Category: Hero
  *
  * The hero component requires two images, one for desktop and one for mobile view.
  * With using the <code>&lt;picture&gt;</code> element this component itself decides when to load and render

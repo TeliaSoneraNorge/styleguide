@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *In progress*.
+ * Category: Style
  *
  * A component that is used to create external reference to svg icons from the icon assets.
  * To show an icon, give the name of the icon (without file ending) and the desired color (defaults to black).

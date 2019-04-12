@@ -3,6 +3,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *in progress*.
+ * Category: FocusBox
  *
  * Future work: change the pebble-type in the border, and animate it.
  *

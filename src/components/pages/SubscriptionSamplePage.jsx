@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FunkyTabs, Subscription } from '../../../component-lib/src/index';
+import { FunkyTabs, Subscription } from 'component-lib';
 
 const underFemtenSubscriptionProps = [
     {

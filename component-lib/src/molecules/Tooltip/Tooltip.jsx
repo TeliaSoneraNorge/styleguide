@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 /**
+ * Status: *finished*
+ * Category: FormElements
+ *
  * This tooltip is implemented with the purpose of having to open/close it by clicking or using keyboard,
  * but the behavior is not implemented as a part of the styleguide.
  **/

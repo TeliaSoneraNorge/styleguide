@@ -4,6 +4,10 @@ import classNames from 'classnames';
 
 import Heading from '../../atoms/Heading/Heading';
 
+/**
+ * Status: *Finished*.
+ * Category: Hardware
+ */
 const HardwareProduct = ({ className, campaign, url, onClick, image, name, priceDescription, price, priceDisclaimerLine1, priceDisclaimerLine2, ...rest }) =>
     <a className={classNames('hardware-product', className)} href={url} onClick={onClick} {...rest}>
         <div className="hardware-product__upper-container">

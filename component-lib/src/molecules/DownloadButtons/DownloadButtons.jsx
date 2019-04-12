@@ -4,6 +4,7 @@ import classnames from 'classnames';
 
 /**
  * Status: *finished*
+ * Category: Buttons
  */
 const DownloadButtons = ({ children, className, ...rest }) => (
     <div

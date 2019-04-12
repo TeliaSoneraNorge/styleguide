@@ -11,6 +11,7 @@ const clamp = (min, max, value) => {
 
 /**
  * Status: *in progress*.
+ * Category: Graphs
  */
 const ProgressBar = ({
     value,

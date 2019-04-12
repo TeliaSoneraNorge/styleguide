@@ -8,6 +8,7 @@ import TextBoxWithIcon from '../TextBoxWithIcon/TextBoxWithIcon';
 
 /**
  * Status: *in progress*.
+ * Category: FormElements
 **/
 const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, ...rest }, ref) => (
     <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>

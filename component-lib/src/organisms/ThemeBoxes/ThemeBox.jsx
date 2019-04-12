@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
+/**
+ * Status: *Finished*
+ * Category: Accordion
+*/
 export default class ThemeBox extends React.Component {
     static propTypes = {
         isExpanded: PropTypes.bool,
