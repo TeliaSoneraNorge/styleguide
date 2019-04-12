@@ -25,7 +25,7 @@ const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, sele
             className={classnames('dropdown-list-with-label__select', {
                 'dropdown-list-with-label__select--half': labelMode === 'text-to-right'
             })}
-            defaultValue={selectedOption}
+            value={selectedOption}
             onChange={changeSelectedOption}
             aria-label={visibleLabel ? null : label}
             {...rest}>
@@ -36,6 +36,7 @@ const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, sele
         </select>
     </Label>
 );
+
 DropDownListWithLabel.propTypes = {
     labelMode: PropTypes.oneOf(['text-to-right']),
     visibleLabel: PropTypes.bool,
