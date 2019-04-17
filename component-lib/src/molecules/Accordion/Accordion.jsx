@@ -34,12 +34,12 @@ export default class Accordion extends React.Component {
                         aria-expanded={this.props.isExpanded}
                         aria-controls={this.props.id}
                         onClick={this.accordionHeaderClicked}>
-                        {this.props.icon !== null &&
+                        {this.props.icon &&
                             <SvgIcon className="accordion__icon" iconName={this.props.icon} />
                         }
-                        <div className={classnames('accordion__header-button--text-box', { 'accordion__header-button--text-box-no-icon': this.props.icon === null })}>
+                        <div className={classnames('accordion__header-button--text-box', { 'accordion__header-button--text-box-no-icon': !this.props.icon })}>
                             {this.props.title}
-                            {this.props.text !== null &&
+                            {this.props.text &&
                                 <div className="accordion__header-button--text-box-text">{this.props.text}</div>
                             }
                         </div>
