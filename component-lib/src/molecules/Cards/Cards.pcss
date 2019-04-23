@@ -9,26 +9,22 @@
     }
 }
 
-.card__wrapper {
+.card {
+    display: block;
+    background-color: var(--white);
+    text-decoration: none;
     width: 100%;
-    padding: 0.5rem 0;
+    margin: 0.5rem 0;
 
     @media (min-width: rem(750)) {
         flex: 0 0 47%;
-        padding: 0.5rem;
+        margin: 0.5rem;
     }
 
     @media (min-width: rem(1196)) {
         flex-basis: 0;
         flex-grow: 1;
     }
-}
-
-.card {
-    display: block;
-    background-color: #FFFFFF;
-    text-decoration: none;
-    height: 100%;
 
     &:hover {
         .card__horizontal-line {
