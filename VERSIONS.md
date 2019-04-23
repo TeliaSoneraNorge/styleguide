@@ -14,7 +14,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy versions shown (minor changes are omitted).
-## 1.28.15
+## 1.28.19 [new component]
+- Molecules: Card
+
+## 1.28.18
 - Molecules: StatefulAccordionList: Removed scroll to active accordion
 
 ## 1.28.15 [new component]
