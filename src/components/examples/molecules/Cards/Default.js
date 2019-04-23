@@ -1,6 +1,5 @@
 import React from 'react';
-import Card from '../../../../../component-lib/src/molecules/Cards/Card';
-import Cards from '../../../../../component-lib/src/molecules/Cards/Cards';
+import { Card, Cards } from 'component-lib';
 
 const img = require('../../../../assets/website-images/screenshot1.png');
 
