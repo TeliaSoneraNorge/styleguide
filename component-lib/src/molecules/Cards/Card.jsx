@@ -23,7 +23,10 @@ const Card = ({ children, isGrey, img, alt, title, link }) => (
 Card.propTypes = {
     title: PropTypes.string,
     isGrey: PropTypes.bool,
-    img: PropTypes.string
+    img: PropTypes.string,
+    alt: PropTypes.string,
+    title: PropTypes.string,
+    link: PropTypes.string
 };
 
 export default Card;
