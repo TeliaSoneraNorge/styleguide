@@ -3,7 +3,7 @@
     margin: 0 auto;
     display: block;
     flex-wrap: wrap;
-    
+
     @media (min-width: rem(750)) {
         display: flex;
     }
@@ -32,6 +32,21 @@
 
     &:hover {
         .card__horizontal-line {
+            width: 100%;
+        }
+    }
+
+    &:focus, &:active {
+        background: var(--core-purple);
+
+        .card__content {
+            .heading {
+                color: var(--white);
+            }
+        }
+
+        .card__horizontal-line {
+            background: var(--white);
             width: 100%;
         }
     }
