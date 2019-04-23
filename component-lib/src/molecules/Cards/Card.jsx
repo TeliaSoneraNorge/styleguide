@@ -5,8 +5,8 @@ import classnames from 'classnames';
 /**
  * Status: *finished*.
  */
-const Card = ({ children, className, isGrey, img, alt, title, link, ...rest }) => (
-    <div className="card__wrapper" {...rest}>
+const Card = ({ children, isGrey, img, alt, title, link }) => (
+    <div className="card__wrapper">
         <a className={ classnames('card link', {
             'card--background-grey' : isGrey
         })} href={link}>
