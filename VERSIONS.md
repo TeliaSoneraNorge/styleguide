@@ -14,6 +14,8 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy versions shown (minor changes are omitted).
+## 1.28.15
+- Molecules: StatefulAccordionList: Removed scroll to active accordion
 
 ## 1.28.15 [new component]
 - Atom: IconAnimated - has a dependency to the library [`lottie-web`](https://www.npmjs.com/package/lottie-web)

@@ -21,27 +21,8 @@ export default class StatefulAccordionList extends React.Component {
         if (newIndex === this.state.isExpandedAccordionIndex) {
             this.setState({ isExpandedAccordionIndex: -1 });
         } else {
-            this.scrollToActiveAccordion(this.state.isExpandedAccordionIndex, newIndex);
             this.setState({ isExpandedAccordionIndex: newIndex });
         }
-    };
-
-    scrollToActiveAccordion = (previousExpandedAccordionIndex, currentExpandedAccordionIndex) => {
-        setTimeout(() => {
-            let openAccordionButtonHeight = 0;
-            /*When an accordion further up on the page is already open, we subtract its button height
-             so that the page scrolls to the top of the current open accordion*/
-            if (previousExpandedAccordionIndex !== -1 &&
-                previousExpandedAccordionIndex < currentExpandedAccordionIndex) {
-                openAccordionButtonHeight = this.accordions[currentExpandedAccordionIndex].firstChild.offsetHeight;
-            }
-
-            window.scroll({
-                top: this.accordions[currentExpandedAccordionIndex].offsetTop + this.accordions[currentExpandedAccordionIndex].offsetParent.offsetTop - openAccordionButtonHeight,
-                left: 0,
-                behavior: 'smooth'
-            });
-        }, 1);
     };
 
     setAccordionRef = (accordionItem, i) => {
