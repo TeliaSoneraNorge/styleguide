@@ -4,6 +4,7 @@ import { AccordionList, Header } from '../../../component-lib/src/index';
 
 const accordionListProps = [
     {
+        'key': 'accordion-list-1',
         'accordionItems': [
             {
                 'id': 'example-1',
@@ -64,8 +65,8 @@ const InformationArticleSample1 = ({ colors }) =>
                 </div>
             </div>
             <div className="rich-text container container--small">
-                {accordionListProps.map((props, i) =>
-                    <AccordionList key={i} {...props} />)}
+                {accordionListProps.map((props) =>
+                    <AccordionList key={props.key} {...props} />)}
             </div>
         </div>
 

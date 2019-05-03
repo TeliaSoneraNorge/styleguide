@@ -42,8 +42,8 @@ export default class RelatedArticles extends React.Component {
                         <hr className="horizontal-rule horizontal-rule--short horizontal-rule--left" />
                     </a>
                     <ul id={this.props.id} className={classnames('related-articles__list', { 'related-articles__list--expanded': this.state.isShowingAllArticles })}>
-                        {this.props.relatedArticles.map((relatedArticle, i) =>
-                            <li className="related-articles__list-item" key={i}>
+                        {this.props.relatedArticles.map((relatedArticle) =>
+                            <li className="related-articles__list-item" key={relatedArticle.heading}>
                                 <RelatedArticle
                                     href={relatedArticle.link}
                                     imgSrc={relatedArticle.imageSrc}

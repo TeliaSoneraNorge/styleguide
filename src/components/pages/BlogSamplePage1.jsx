@@ -136,7 +136,7 @@ const BlogSamplePage = () =>
             </section>
         </section>
         {RelatedArticlesProps.map((props, i) =>
-            <RelatedArticles id={i} key={i} {...props} />)}
+            <RelatedArticles id={`article-${i}`} key={props.heading} {...props} />)}
     </div>;
 
 export default BlogSamplePage;

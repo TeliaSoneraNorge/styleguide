@@ -5,21 +5,19 @@ import PropTypes from 'prop-types';
 const MenuHeading = ({ menuLinks, activeIndex, LinkTemplate, onItemSelected }) => (
     <ul className="menu__top--heading">
         {menuLinks.map((menuLink, index) => (
-            <li key={index}>
+            <li key={menuLink.heading.text}>
                 <LinkTemplate
                     onClick={() => onItemSelected(index)}
                     url={menuLink.heading.url}
                     className={classnames(
                         'menu__top--heading-item link',
-                        { 'menu__top--heading-item--active': activeIndex === index })}
-                >
-                 <span className="link__content">{menuLink.heading.text}</span>
+                        { 'menu__top--heading-item--active': activeIndex === index })}>
+                    <span className="link__content">{menuLink.heading.text}</span>
                 </LinkTemplate>
             </li>
         ))}
     </ul>
 );
-
 
 
 const MenuTop = ({ LinkTemplate, activeIndex, menuLinks, onMenuHeaderItemSelected }) => (
@@ -42,6 +40,6 @@ MenuTop.propTypes = {
 MenuTop.defaultProps = {
     menuLinks: [],
     activeIndex: 0
-}
+};
 
 export default MenuTop;

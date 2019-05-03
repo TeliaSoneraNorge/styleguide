@@ -19,7 +19,7 @@ export default class IconAnimated extends React.Component {
     componentDidMount() {
         lottie.loadAnimation({
             container: this.container.current,
-            renderer: "svg",
+            renderer: 'svg',
             loop: true,
             autoplay: true,
             animationData: this.props.json

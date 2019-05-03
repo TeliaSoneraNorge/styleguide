@@ -6,7 +6,7 @@ const ArticleListItem = ({ article }) => (
         <a className="link article-list__title" href={article.link}>{article.title}</a>
         {article.tags.length && (
             <Tags color="dark-grey">
-                {article.tags.map((it, i) => (<Tags.Tag key={i}>{it}</Tags.Tag>))}
+                {article.tags.map((it, i) => (<Tags.Tag key={it}>{it}</Tags.Tag>))}
             </Tags>
         )}
         <p className="paragraph">{article.description}</p>
@@ -15,7 +15,7 @@ const ArticleListItem = ({ article }) => (
 
 const ArticleList = ({ articles }) => (
     <ul className="article-list">
-        {articles.map((article, index) => <ArticleListItem key={index} article={article} />)}
+        {articles.map((article) => <ArticleListItem key={article.title} article={article} />)}
     </ul>
 );
 

@@ -16,7 +16,7 @@ const RelatedArticle = ({ children, className, imgSrc, imgAlt, heading, tags = [
             <h3 className="heading heading--level-3 related-article__heading">{heading}</h3>
             {tags.length && (
                 <Tags color="dark-grey">
-                    {tags.map((it, i) => (<Tags.Tag key={i}>{it}</Tags.Tag>))}
+                    {tags.map((it) => (<Tags.Tag key={it}>{it}</Tags.Tag>))}
                 </Tags>
             )}
             {children}

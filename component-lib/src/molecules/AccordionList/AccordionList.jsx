@@ -30,7 +30,7 @@ const AccordionList = ({ accordionItems, setItemRef, isExpandedAccordionIndex, t
         {accordionItems.map((accordionItem, i) =>
             <Accordion
                 accordionRef={(element) => {(setItemRef || noop)(element, i);}}
-                key={i}
+                key={accordionItem.id}
                 {...accordionItem}
                 isExpanded={i === isExpandedAccordionIndex}
                 toggleIsExpanded={() => (toggleIsExpanded || noop)(i)} />

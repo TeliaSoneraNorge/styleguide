@@ -51,7 +51,7 @@ const DonutChart = ({
                 r={radius} />
             {!loading && alignSegments(segments).map((segment, index) =>
                 <ChartSegment
-                    key={index}
+                    key={segment.percent}
                     index={index}
                     color={segment.color}
                     percent={segment.percent}

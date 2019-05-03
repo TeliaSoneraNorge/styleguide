@@ -11,7 +11,8 @@ const HorizontalRadioButtonList = () => (
         type="horizontal"
         selectedIndex={0}
         name="radiobutton-test"
-        list={list} />
+        list={list}
+        onChange={() => {}} />
 );
 
 export default HorizontalRadioButtonList;

@@ -9,7 +9,7 @@ const onSubmenuKeyPress = (e, onToggleSubmenu) => {
     if (key === 13) { // 13 = enter
         onToggleSubmenu(e);
     }
-  };
+};
 
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, link, LinkTemplate  }) => (
     <div tabIndex="0" className="menu__item link menu__submenu"
@@ -26,7 +26,7 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, link, LinkTemplate  }) => (
         <div className={classnames('menu__submenu-container', { 'menu__submenu-container--open': isOpen })}>
             {link.subLinks.map((sublink, index) =>
                 <LinkTemplate
-                    key={index}
+                    key={sublink.tex}
                     className="menu__subitem link"
                     url={sublink.url}>
                     <span className="link__content">{sublink.text}</span>
@@ -34,7 +34,7 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, link, LinkTemplate  }) => (
             )}
         </div>
     </div>
-)
+);
 
 const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen }) => (
     <li>
@@ -72,7 +72,7 @@ const MobileMenuButton = ({ onMenuToggle }) => (
         <SvgIcon className="menu__mobile-button-icon" iconName="ico_menu_mobile" color="black" />
         <span className="menu__mobile-button-text">Meny</span>
     </button>
-)
+);
 
 const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, LinkTemplate, onMobileMenuToggle, onSearchSubmit, isLoggedIn, loginUrl, myPageUrl }) => (
     <div className="menu__content">
@@ -83,7 +83,7 @@ const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, Link
                     LinkTemplate={LinkTemplate}
                     isSubmenuOpen={openedSubmenuIndex === index}
                     onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
-                    key={index}
+                    key={link.text}
                     link={link} />))}
         </ul>
         <div className="menu__content-right">
@@ -128,6 +128,6 @@ MenuContent.propTypes = {
     }),
     openedSubmenuIndex: PropTypes.number,
     onToggleSubmenu: PropTypes.func
-}
+};
 
 export default MenuContent;

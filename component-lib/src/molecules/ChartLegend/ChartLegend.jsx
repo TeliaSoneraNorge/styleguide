@@ -14,7 +14,7 @@ const ChartLegend = ({ series }) => (
     <div className="chart-legend__container">
         {series.map((serie, i) =>
             <div
-                key={i}
+                key={serie.title}
                 className={getLegendClassName(series, i)}
                 style={{ width: `${100 / series.length}%` }}>
 

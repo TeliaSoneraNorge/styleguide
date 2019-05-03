@@ -11,6 +11,7 @@ const DefaultDropDownListWithLabel = () => (
     <DropDownListWithLabel
         options={options}
         selectedOption="B"
+        changeSelectedOption={() => {}}
         label="Select your mobile phone"
         visibleLabel />
 );

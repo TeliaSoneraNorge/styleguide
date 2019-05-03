@@ -8,8 +8,8 @@ const RecommendedProducts = ({ mainHeading, products = [], image, heading, text,
     <div className="recommended-products">
         <Heading level="2" text={mainHeading} className="recommended-products__heading" />
         <div className="recommended-products__products">
-            {products.map((product, i) =>
-                <div key={i} className="recommended-products__item-container">
+            {products.map((product) =>
+                <div key={product.name} className="recommended-products__item-container">
                     <a className="recommended-products__item recommended-products__product" href={product.url}>
                         <div className="recommended-products__product-image-container">
                             <img className="recommended-products__product-image" src={product.image} />

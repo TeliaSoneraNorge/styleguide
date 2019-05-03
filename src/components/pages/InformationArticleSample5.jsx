@@ -4,6 +4,7 @@ import { AccordionList, Header, UniqueSellingPoints } from '../../../component-l
 
 const accordionListProps = [
     {
+        'key': 'accordion-list-1',
         'accordionItems': [
             {
                 'id': 'example-1',
@@ -107,8 +108,8 @@ const InformationArticleSample5 = () =>
                     <li className="list__item">Second link in list</li>
                     <li className="list__item">Third link in list</li>
                 </ul>
-                {accordionListProps.map((props, i) =>
-                    <AccordionList key={i} {...props} />)}
+                {accordionListProps.map((props) =>
+                    <AccordionList key={props.key} {...props} />)}
                 <table className="full-width-table">
                     <caption>
                         <h3 className="heading heading--level-3">Table Heading</h3>
@@ -155,8 +156,8 @@ const InformationArticleSample5 = () =>
                     felis porttitor volutpat.
                 </p>
                 <h2 className="heading heading--level-2">Heading 2 for accordions</h2>
-                {accordionListProps.map((props, i) =>
-                    <AccordionList key={i} {...props} />)}
+                {accordionListProps.map((props) =>
+                    <AccordionList key={props.key} {...props} />)}
                 <h3 className="heading heading--level-3">Heading 3</h3>
                 <UniqueSellingPoints>
                     <UniqueSellingPoints.Item
