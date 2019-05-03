@@ -23,7 +23,7 @@ Tabs.TabList = ({ children, selectedIndex, uniqueId, onSelect }) =>
     <ul className="tabs__list" role="tablist">
         {children.map((element, index) =>
             <Tabs.Tab
-                key={index}
+                key={element.props.heading}
                 index={index}
                 selectedIndex={selectedIndex}
                 uniqueId={uniqueId}
@@ -51,7 +51,7 @@ Tabs.Tab = ({ index, uniqueId, selectedIndex, heading, onSelect }) =>
 Tabs.TabPanels = ({ children, uniqueId, selectedIndex }) =>
     children.map((element, index) =>
         React.cloneElement(element, {
-            key: index,
+            key: element.props.heading,
             index,
             uniqueId,
             isSelected: (index === selectedIndex)

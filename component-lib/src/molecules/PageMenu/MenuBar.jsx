@@ -7,7 +7,7 @@ const MenuBar = ({ items = [], ariaLabel, isEmphasised }) => (
         role="menubar"
         aria-label={ariaLabel}
         className="page-menu__item-list">
-        {items.map((link, i) => <MenuItem item={link} key={i} isEmphasised={isEmphasised} />)}
+        {items.map((link) => <MenuItem item={link} key={link.text} isEmphasised={isEmphasised} />)}
     </ul>
 );
 

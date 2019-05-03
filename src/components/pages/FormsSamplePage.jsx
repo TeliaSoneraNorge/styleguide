@@ -74,7 +74,7 @@ const FormsSamplePage = () =>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
-                    <Button text="Login" type="submit" value="Submit" />
+                    <Button text="Login" type="submit" />
                 </Form.FormRow>
             </Form>
         </div>
@@ -99,7 +99,7 @@ const FormsSamplePage = () =>
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
-                    <Button text="Login" type="submit" value="Submit" />
+                    <Button text="Login" type="submit" />
                 </Form.FormRow>
             </Form>
         </div>
@@ -154,12 +154,12 @@ const FormsSamplePage = () =>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <DropDownListWithLabel label="Dropdown Label" options={['1', '2']} selectedOption={'1'} />
+                        <DropDownListWithLabel label="Dropdown Label" options={['1', '2']} selectedOption={'1'} changeSelectedOption={() => {}} />
                     </Form.FormColumn>
                 </Form.FormRow>
                 <Form.FormRow>
                     <Form.FormColumn>
-                        <DropDownListWithLabel options={['1', '2']} selectedOption={'1'} />
+                        <DropDownListWithLabel options={['1', '2']} selectedOption={'1'} changeSelectedOption={() => {}} />
                     </Form.FormColumn>
                 </Form.FormRow>
             </Form>

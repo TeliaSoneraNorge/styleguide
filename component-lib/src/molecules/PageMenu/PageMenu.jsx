@@ -38,14 +38,14 @@ const PageMenu = ({
                         skipPanelRendering={true}
                         noMargin={true}
                         compact={true}>
-                        {menuLinks.map((menuLink, i) =>
-                            <Tabs.Tab key={i} heading={menuLink.heading} />
+                        {menuLinks.map((menuLink) =>
+                            <Tabs.Tab key={menuLink.heading} heading={menuLink.heading} />
                         )}
                     </Tabs>
                 </div>
 
                 {menuLinks.map((menuLink, i) =>
-                    <Tabs.TabPanel key={i} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
+                    <Tabs.TabPanel key={menuLink.title} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
                         <div className={classNames(
                             'page-menu__content',
                             { 'page-menu__content--empty': !menuLink.contentAboveItems })} dangerouslySetInnerHTML={{ __html: menuLink.contentAboveItems }} />

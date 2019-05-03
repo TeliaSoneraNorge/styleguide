@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { Header } from '../../../component-lib/src/index';
 
 export const PebbleVariant = ({
@@ -38,7 +39,7 @@ export default class PebblesPage extends React.Component {
                     <label>Select your variant: </label>
                     <select className="dropdown-list" onChange={this.dropdownChange}>
                         {_.map(PebbleVariant, (variant,i) =>
-                            <option key={i} className="dropdown-list__option" value={variant.value}>{variant.description}</option>
+                            <option key={variant.description} className="dropdown-list__option" value={variant.value}>{variant.description}</option>
                         )}
                     </select>
                 </div>

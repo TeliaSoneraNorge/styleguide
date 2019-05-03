@@ -152,33 +152,33 @@ export default class SubscriptionSamplePage extends React.Component {
                 <div className="center-align">
                     <h1 className="heading heading--level-1">Subscription</h1>
                 </div>
-                
+
                 <FunkyTabs
                     uniqueId="subscription-tabs"
                     onSelect={(e, index) => this.onFunkyTabSelect(e, index)}
                     selectedIndex={this.state.selectedTabIndex}>
                     <FunkyTabs.TabPanel heading="Under 15 år" imagePath={require('../../assets/images/under15.png')} url="/tabs/under-15">
                         <section className="box-grid container container--medium container--no-padding">
-                            {underFemtenSubscriptionProps.map((subscriptionProps, i) =>
-                                <Subscription key={i} {...subscriptionProps} />)}
+                            {underFemtenSubscriptionProps.map((subscriptionProps) =>
+                                <Subscription key={subscriptionProps.id} {...subscriptionProps} />)}
                         </section>
                     </FunkyTabs.TabPanel>
                     <FunkyTabs.TabPanel heading="Under 28 år" imagePath={require('../../assets/images/under28.png')} url="/tabs/under-28">
                         <section className="box-grid container container--medium container--no-padding">
-                            {underTjueAatteSubscriptionProps.map((subscriptionProps, i) =>
-                                <Subscription key={i} {...subscriptionProps} />)}
+                            {underTjueAatteSubscriptionProps.map((subscriptionProps) =>
+                                <Subscription key={subscriptionProps.id} {...subscriptionProps} />)}
                         </section>
                     </FunkyTabs.TabPanel>
                     <FunkyTabs.TabPanel heading="For alle" imagePath={require('../../assets/images/for-alle.png')} url="/tabs/for-alle">
                         <section className="box-grid container container--medium container--no-padding">
-                            {forAlleSubscriptionProps.map((subscriptionProps, i) =>
-                                <Subscription key={i} {...subscriptionProps} />)}
+                            {forAlleSubscriptionProps.map((subscriptionProps) =>
+                                <Subscription key={subscriptionProps.id} {...subscriptionProps} />)}
                         </section>
                     </FunkyTabs.TabPanel>
                     <FunkyTabs.TabPanel heading="Kontantkort" imagePath={require('../../assets/images/kontantkort.png')} url="/tabs/kontantkort">
                         <section className="box-grid container container--medium container--no-padding">
-                            {kontantkortSubscriptionProps.map((subscriptionProps, i) =>
-                                <Subscription key={i} {...subscriptionProps} />)}
+                            {kontantkortSubscriptionProps.map((subscriptionProps) =>
+                                <Subscription key={subscriptionProps.id} {...subscriptionProps} />)}
                         </section>
                     </FunkyTabs.TabPanel>
                 </FunkyTabs>

@@ -68,7 +68,7 @@ export default class MenuSearch extends React.Component {
     onContainerClick(e) {
         e.stopPropagation();
         setTimeout(() => {
-            this.setState({ searchFocus: true })
+            this.setState({ searchFocus: true });
         },1);
     }
 
@@ -101,7 +101,7 @@ export default class MenuSearch extends React.Component {
                     iconLabel="Search"
                     iconIsButton
                     small
-                    onChange={(e) => this.onSearchQueryChange(e)}/>
+                    onChange={(e) => this.onSearchQueryChange(e)} />
             </form>
         );
     }

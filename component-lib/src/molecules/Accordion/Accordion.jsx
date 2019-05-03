@@ -45,10 +45,10 @@ export default class Accordion extends React.Component {
                         </div>
                     </button>
                     <SvgIcon className="accordion__header-icon" iconName="ico_dropArrow" color="purple" />
-                    </h3>
-                    {this.props.button &&
+                </h3>
+                {this.props.button &&
                         <Button type="button" className="accordion__button" text={this.props.button}></Button>
-                    }
+                }
                 <div className="accordion__panel rich-text" id={this.props.id}>
                     {this.props.children}
                 </div>

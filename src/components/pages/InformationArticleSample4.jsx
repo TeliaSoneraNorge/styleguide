@@ -4,6 +4,7 @@ import { AccordionList, Header } from '../../../component-lib/src/index';
 
 const accordionListProps = [
     {
+        'key': 'accordion-list-1',
         'accordionItems': [
             {
                 'id': 'example-1',
@@ -37,8 +38,8 @@ const InformationArticleSample4 = () =>
                     felis porttitor volutpat. Vivamus magna justo, lacinia eget consectetur sed, convallis at
                     tellus. Quisque velit nisi, pretium ut lacinia in, elementum id enim.
                 </p>
-                {accordionListProps.map((props, i) =>
-                    <AccordionList key={i} {...props} />)}
+                {accordionListProps.map((props) =>
+                    <AccordionList key={props.key} {...props} />)}
                 <table className="full-width-table">
                     <caption>
                         <h3 className="heading heading--level-3">Table Heading</h3>

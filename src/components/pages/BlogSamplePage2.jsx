@@ -127,8 +127,8 @@ const BlogSamplePage = () =>
             </ProductPromoBox>
 
         </section>
-        {RelatedArticlesProps.map((props, i) =>
-            <RelatedArticles id="blog2" key={i} {...props} />)}
+        {RelatedArticlesProps.map((props) =>
+            <RelatedArticles id="blog2" key={props.heading} {...props} />)}
     </div>;
 
 export default BlogSamplePage;

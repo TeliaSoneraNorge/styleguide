@@ -17,7 +17,7 @@ const isDescendant = (parent, child) => {
         child = child.parentNode;
     }
     return false;
-}
+};
 
 /**
  * Status: *In progress*.
@@ -146,13 +146,11 @@ export default class Menu extends React.Component {
                     menuLink={menuLinks[this.state.activeIndex]}
                     onToggleSubmenu={this.toggleSubmenu}
                     openedSubmenuIndex={this.state.openedSubmenuIndex}
-                    LinkTemplate={LinkTemplate}
                     loginUrl={loginUrl}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     onSearchSubmit={onSearchSubmit}
                     isLoggedIn={isLoggedIn}
-                    myPageUrl={myPageUrl}
-                />
+                    myPageUrl={myPageUrl} />
 
                 <MobileMenu
                     isOpen={this.state.mobileMenuOpen}
@@ -161,8 +159,7 @@ export default class Menu extends React.Component {
                     menuLinks={menuLinks}
                     selectedHeaderIndex={this.state.activeIndex}
                     onMenuItemSelected={this.toggleMobileMenu}
-                    onMenuHeaderItemSelected={this.onMenuHeaderItemSelected}
-                />
+                    onMenuHeaderItemSelected={this.onMenuHeaderItemSelected} />
             </div>
         );
     }

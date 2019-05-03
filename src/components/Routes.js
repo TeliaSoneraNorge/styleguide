@@ -50,7 +50,7 @@ const menuLinks = [
 ];
 
 const routerLinkTemplate = ({ url, ...otherProps }) =>
-    <Link to={url} {...otherProps} />
+    <Link to={url} {...otherProps} />;
 
 const Routes = () => {
     return (

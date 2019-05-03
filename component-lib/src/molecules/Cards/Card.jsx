@@ -16,7 +16,7 @@ const Card = ({ title, link, isGrey, img, children }) => (
             {children}
         </div>
     </a>
-    );
+);
 
 Card.propTypes = {
     title: PropTypes.string.isRequired,

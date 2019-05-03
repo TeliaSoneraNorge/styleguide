@@ -13,6 +13,7 @@ const RightDropDownListWithLabel = () => (
     <DropDownListWithLabel
         options={options}
         selectedOption={options[1]}
+        changeSelectedOption={() => {}}
         label="option"
         labelMode="text-to-right"
         visibleLabel />

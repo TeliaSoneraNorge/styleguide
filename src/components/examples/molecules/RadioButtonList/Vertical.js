@@ -11,6 +11,7 @@ const VerticalRadioButtonList = () => (
     <RadioButtonList
         type="vertical"
         selectedIndex={0}
+        onChange={() => {}}
         name="radiobutton-test-2"
         list={list} />
 );

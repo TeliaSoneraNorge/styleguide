@@ -18,7 +18,7 @@ const items = [
     {
         iconName: 'ico_money',
         iconColor: 'purple',
-        title: '6GB for 399,-',
+        title: '5GB for 299,-',
         description: '31 dager'
     },
     {

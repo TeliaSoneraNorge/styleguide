@@ -3,7 +3,7 @@ import { RadioButtonList, RadioButtonWithLabel, Heading, Paragraph } from 'compo
 
 const RichContentRadioButtonList = () => (
     <RadioButtonList type="vertical" hasRichContent>
-        <RadioButtonWithLabel checked hasRichContent value="0" name="radiobutton-test-3">
+        <RadioButtonWithLabel checked hasRichContent value="0" name="radiobutton-test-3" onChange={() => {}}>
             <div style={{ display: 'inline-block', width: '80%' }}>
                 <Heading level="3" text="Option 1" />
                 <Paragraph>A longer description text here. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.</Paragraph>

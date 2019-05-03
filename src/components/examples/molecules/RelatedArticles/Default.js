@@ -11,19 +11,19 @@ const articles = [
     {
         link: '#',
         imageSrc: require('../../../../assets/website-images/woman-mobile.jpg'),
-        heading: 'This is the article\'s heading',
+        heading: 'This is the article\'s heading again',
         tags: ['Related', 'Article', 'Tag'],
     },
     {
         link: '#',
         imageSrc: require('../../../../assets/website-images/kids-ipad.jpg'),
-        heading: 'This is the article\'s heading',
+        heading: 'This is the article\'s heading once more',
         tags: ['Related', 'Article', 'Tag'],
     },
     {
         link: '#',
         imageSrc: require('../../../../assets/website-images/woman-holding-ipad.jpg'),
-        heading: 'This is the article\'s heading',
+        heading: 'This is the final article\'s heading',
         tags: ['Related', 'Article', 'Tag'],
     },
 ];

@@ -37,7 +37,7 @@ class StepByStep extends React.Component {
                     interactive
                         ? React.Children.map(children, (step, i) => (
                             React.cloneElement(step, {
-                                key: i,
+                                key: step.index,
                                 index: i,
                                 opened: selectedIndex ? selectedIndex === i : this.state.selectedIndex === i,
                                 onSelect: onSelect || this.onSelect,
@@ -63,7 +63,7 @@ StepByStep.Step = ({ children, className, index, opened, onSelect, interactive, 
         {
             React.Children.map(children, (it, i) =>
                 React.cloneElement(it, {
-                    key: i,
+                    key: index,
                     index,
                     opened,
                     onSelect,

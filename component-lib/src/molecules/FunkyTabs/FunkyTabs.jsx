@@ -21,7 +21,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
             <ul className="funky-tabs__tabs" role="tablist">
                 {children.map((element, index) =>
                     <li
-                        key={index}
+                        key={element.props.heading}
                         className={classNames('funky-tabs__tab', {
                             'funky-tabs__tab--selected': (selectedIndex === index)
                         })}

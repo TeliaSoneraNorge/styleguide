@@ -33,14 +33,14 @@ class DisplayFunctionality extends React.Component {
                         <img className="display-functionality__device" src={this.props.deviceImageUrl} />
                         {
                             this.props.imgs.map((img, i) => {
-                                return <img key={i} src={img} className={classnames(`display-functionality__image display-functionality__image--${this.props.device ? this.props.device : 'laptop'}`, {
+                                return <img key={img} src={img} className={classnames(`display-functionality__image display-functionality__image--${this.props.device ? this.props.device : 'laptop'}`, {
                                     'display-functionality__image--hidden': this.state.index !== i })} />;
                             })
                         }
                         <div className="display-functionality__paging">
                             {
                                 this.props.imgs.map((img, i) => {
-                                    return <span key={i} onClick={() => { this.onClick(i); }}
+                                    return <span key={img} onClick={() => { this.onClick(i); }}
                                         className={classnames('display-functionality__bullet', {
                                             'display-functionality__bullet--active': this.state.index === i })}></span>;
                                 })
