@@ -8,6 +8,7 @@ const ThreeDigitsMBSubscription = () => (
         dataAmount={200}
         dataUnit="MB"
         price={99}
+        priceInfo={['pr. md', 'Ingen bindingstid.']}
         color="light-orange"
         size="small" />
 );
