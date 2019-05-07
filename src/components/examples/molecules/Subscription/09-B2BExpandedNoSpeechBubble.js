@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subscription } from 'component-lib';
+import { Button, Subscription } from 'component-lib';
 
 const features = {
     specialMessageText: 'Listen to as music as you want without using your data quota!',
@@ -7,9 +7,8 @@ const features = {
         iconName: 'ico_music',
         name: 'Music Freedom',
     },
-    buttonText: 'Gå videre'
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />
 };
-
 
 const B2BExpandedNoSpeechBubble = () => (
     <Subscription

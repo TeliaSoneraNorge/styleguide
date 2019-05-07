@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subscription } from 'component-lib';
+import { Button, Subscription } from 'component-lib';
 
 const features = {
     highlightedFeature: {
@@ -7,7 +7,7 @@ const features = {
         name: 'Music Freedom'
     },
     speechBubbleText: 'Kampanje 60 GB per md. i 2 md.',
-    buttonText: 'Gå videre'
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />
 };
 
 const ShowingFeaturesAndSpeechBubble = () => (

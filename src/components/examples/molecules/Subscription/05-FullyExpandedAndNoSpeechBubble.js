@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subscription } from 'component-lib';
+import { Button, Subscription } from 'component-lib';
 
 const features = {
     specialMessageText: 'Listen to as music as you want without using your data quota!',
@@ -7,7 +7,7 @@ const features = {
         iconName: 'ico_music',
         name: 'Music Freedom',
     },
-    buttonText: 'Gå videre'
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />
 };
 
 const FullyExpandedAndNoSpeechBubble = () => (
@@ -23,9 +23,9 @@ const FullyExpandedAndNoSpeechBubble = () => (
             text: 'Se alle priser'
         }}
         color="green"
-        size="medium"
+        size="small"
         features={features}
-        isExpanded >
+        isExpanded>
         <div className="rich-text">
             <h2 className="heading heading--level-2">Om abonnement</h2>
             <h3 className="heading heading--level-3">Skanning, texting og MMS</h3>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subscription } from 'component-lib';
+import { Button, Subscription } from 'component-lib';
 
 const features = {
     speechBubbleText: 'Kampanje 60 GB per md. i 2 md.',
@@ -8,7 +8,7 @@ const features = {
         iconName: 'ico_music',
         name: 'Music Freedom',
     },
-    buttonText: 'Gå videre'
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />
 };
 
 const FullyExpandedAndSpeechBubble = () => (
@@ -26,6 +26,7 @@ const FullyExpandedAndSpeechBubble = () => (
         color="green"
         size="medium"
         features={features}
+        buttonText="Gå videre"
         isShowingFeatures
         isExpanded >
         <div className="rich-text">

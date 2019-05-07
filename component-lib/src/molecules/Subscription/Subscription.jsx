@@ -27,10 +27,11 @@ const Subscription = ({
     isStandalone,
     isBroadband,
     isExpanded,
+    isShowingFeatures,
     children }) => (
     <Box
         className={classnames('subscription', {
-            'subscription--is-showing-features': features,
+            'subscription--is-showing-features': isShowingFeatures,
             'subscription--is-standalone': isStandalone,
             'subscription--is-broadband': isBroadband,
         })}
@@ -63,34 +64,31 @@ const Subscription = ({
                     </div>
             }
         </section>
-        {(features) ?
-            <Subscription.Features
-                features={features} isBroadband={isBroadband} />
-            : null}
-        {isExpanded &&
+        {features &&
+                <Subscription.Features
+                    features={features} isBroadband={isBroadband} />}
+        {children &&
                 <section className="subscription__expanded-info">
                     {children}
-                </section>
-        }
+                </section>}
     </Box>
 );
 
 Subscription.Features = ({ features, isBroadband }) =>
     <section className="subscription__features">
-        {features.speechBubbleText ?
+        {(features.speechBubbleText ?
             <div className="box__speech-bubble">{features.speechBubbleText}</div>
-            : <div className="box__speech-bubble box__speech-bubble--empty"></div>}
-        {features.highlightedFeature ?
+            : <div className="box__speech-bubble box__speech-bubble--empty"></div>)}
+        {features.highlightedFeature &&
             <div className="subscription__highlighted-feature">
                 <SvgIcon className="subscription__highlighted-feature-icon" iconName={features.highlightedFeature.iconName} role="presentation" alt="" />
                 <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
-            </div> : null}
-        {features.specialMessageText  ?
-            <strong className="special-message">{features.specialMessageText}</strong> : null}
+            </div>}
+        {features.specialMessageText &&
+            <strong className="special-message">{features.specialMessageText}</strong>}
         {isBroadband &&
-            <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
-        }
-        <button className="button button--primary">{features.buttonText}</button>
+            <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />}
+        {features.button}
     </section>;
 
 
@@ -127,7 +125,7 @@ Subscription.propTypes = {
             subtitle: PropTypes.string,
             price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
         })),
-        featureButtonText: PropTypes.string,
+        button: PropTypes.Button
     }),
     totalCalculation: PropTypes.shape({
         title: PropTypes.string.isRequired,

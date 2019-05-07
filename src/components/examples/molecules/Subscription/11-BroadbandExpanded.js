@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading, Paragraph, RadioButtonList, RadioButtonWithLabel, Subscription } from 'component-lib';
+import { Button, Heading, Paragraph, RadioButtonList, RadioButtonWithLabel, Subscription } from 'component-lib';
 
 const features = {
     totalCalculation: { title: 'Minste totalpris', price: '8887,-', subtitles: ['med 12 mnd avtale'] },
@@ -7,8 +7,7 @@ const features = {
         { title: 'Abonnement', price: '699,-', subtitles: ['Per mnd'] },
         { title: 'Ruter', price: '499,-' },
     ],
-    buttonText: 'Gå videre'
-
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />
 };
 
 const BroadbandExpanded = () => (
@@ -24,7 +23,6 @@ const BroadbandExpanded = () => (
         }}
         color="blue"
         size="small"
-        isExpanded
         speechBubbleText="Some campaign text"
         featureButtonText="Gå videre"
         isBroadband
