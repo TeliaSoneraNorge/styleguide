@@ -33,11 +33,10 @@ export default class Box extends React.Component {
             isExpanded: this.props.isExpanded ? this.props.isExpanded : false
         };
 
-        if (this.props.canExpand) {
-            this.boxContainerClick = this.boxContainerClick.bind(this);
-            this.closeBoxClick = this.closeBoxClick.bind(this);
-        }
+        this.boxContainerClick = this.boxContainerClick.bind(this);
+        this.closeBoxClick = this.closeBoxClick.bind(this);
     }
+
     boxContainerClick(e) {
         if (!this.props.canExpand) return;
 

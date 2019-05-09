@@ -1,5 +1,9 @@
 import React from 'react';
-import { Subscription } from 'component-lib';
+import { Button, Subscription } from 'component-lib';
+
+const features = {
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />
+};
 
 const ThreeDigitsMBSubscription = () => (
     <Subscription
@@ -8,8 +12,10 @@ const ThreeDigitsMBSubscription = () => (
         dataAmount={200}
         dataUnit="MB"
         price={99}
+        priceInfo={['pr. md', 'Ingen bindingstid.']}
         color="light-orange"
-        size="small" />
+        size="small"
+        features={features} />
 );
 
 export default ThreeDigitsMBSubscription;

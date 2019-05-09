@@ -15,7 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
-## 1.28.20 [new component]
+## 1.28.21
+- Subscription: The subscription box is now more flexible with no hardcoded text
+
+## 1.28.20
 - Menu `z-index` fix
 
 ## 1.28.19 [new component]

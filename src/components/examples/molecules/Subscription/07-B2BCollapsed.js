@@ -13,6 +13,7 @@ const B2BCollapsed = () => (
         dataAmount={40}
         dataUnit="GB"
         price={699}
+        priceInfo={['pr. md', 'Ingen bindingstid.']}
         color="purple"
         size="small"
         highlightedFeature={feature} />

@@ -8,6 +8,7 @@ const SmallSubscription = () => (
         dataAmount={1}
         dataUnit="GB"
         price={249}
+        priceInfo={['pr. md', 'Ingen bindingstid.']}
         color="pink"
         size="small" />
 );
