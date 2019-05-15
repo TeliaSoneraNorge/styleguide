@@ -12,10 +12,11 @@ import classnames from 'classnames';
  * It's also recommended to use this component within an element with a styling that centers-, and
  * sets the content to a max-width.
  */
-const FullWidthTable = ({ children, className, ...rest }) => (
+const FullWidthTable = ({ children, clickable, className, ...rest }) => (
     <table
         className={classnames('full-width-table', {
-            [className]: className
+            [className]: className,
+            [`full-width-table--clickable`]: clickable
         })}
         {...rest}>{children}</table>
 );
@@ -41,19 +42,20 @@ FullWidthTable.TFoot = ({ children, white, className, ...rest }) => (
         })}
         {...rest}>{children}</tfoot>
 );
-FullWidthTable.Tr = ({ children, className, ...rest }) => (
+FullWidthTable.Tr = ({ children, onClick, className, ...rest }) => (
     <tr
         className={classnames('full-width-table__row', {
             [className]: className
         })}
+        onClick={onClick ? onClick : null}
         {...rest}>{children}</tr>
 );
 FullWidthTable.Td = ({ children, className, ...rest }) => (
-    <th
+    <td
         className={classnames('full-width-table__cell', {
             [className]: className
         })}
-        {...rest}>{children}</th>
+        {...rest}>{children}</td>
 );
 FullWidthTable.Th = ({ children, className, ...rest }) => (
     <th
