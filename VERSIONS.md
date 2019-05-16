@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.22
+- FullWidthTable: Hover functionality with onClick event on rows
+
 ## 1.28.21
 - Subscription: The subscription box is now more flexible with no hardcoded text
 
