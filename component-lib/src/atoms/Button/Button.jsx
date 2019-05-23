@@ -31,15 +31,33 @@ const Button = ({ text, kind, size, onClick, className, processingText, isProces
         )}
     </button>;
 
+Button.types = {
+  button: 'button',
+  reset: 'reset',
+  submit: 'submit',
+};
+
+Button.kinds = {
+  primary: 'primary',
+  cancel: 'cancel',
+  link: 'link',
+  inverted: 'inverted',
+  negative: 'negative',
+};
+
+Button.margins = {
+  top: 'top',
+  bottom: 'bottom',
+};
 
 Button.propTypes = {
     /** A button can have a text. */
     text: PropTypes.string,
-    type: PropTypes.oneOf(['button', 'reset', 'submit']),
+    type: PropTypes.oneOf(Object.values(Button.types)),
     /** A button can have different appearances e.g. 'primary', 'cancel'. */
-    kind: PropTypes.oneOf(['primary', 'cancel', 'link', 'inverted']),
+    kind: PropTypes.oneOf(Object.values(Button.kinds)),
     /** One of ['top', 'bottom'] */
-    margin: PropTypes.oneOf(['top', 'bottom']),
+    margin: PropTypes.oneOf(Object.values(Button.margins)),
     /** A button can have different sizes e.g. 'small'. */
     size: PropTypes.oneOf(['small']),
     onClick: PropTypes.func,

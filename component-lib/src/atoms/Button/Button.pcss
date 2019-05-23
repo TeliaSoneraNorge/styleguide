@@ -39,9 +39,9 @@
         outline: none;
     }
 
-    &:not(&--processing):not(&--disabled):not(&--inverted):hover,
-    &:not(&--processing):not(&--disabled):not(&--inverted):focus,
-    &:not(&--processing):not(&--disabled):not(&--inverted):active {
+    &:not(&--processing):not(&--disabled):not(&--inverted):not(&--negative):hover,
+    &:not(&--processing):not(&--disabled):not(&--inverted):not(&--negative):focus,
+    &:not(&--processing):not(&--disabled):not(&--inverted):not(&--negative):active {
         background-color: var(--core-purple);
         color: var(--white);
     }
@@ -66,6 +66,18 @@
         &:active {
             background-color: var(--white);
             color: var(--core-purple);
+        }
+    }
+
+    &--negative {
+        color: var(--dark-red);
+        border-color: var(--dark-red);
+
+        &:hover,
+        &:focus,
+        &:active {
+            background-color: var(--dark-red);
+            color: var(--white);
         }
     }
 

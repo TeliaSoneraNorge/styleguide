@@ -17,6 +17,7 @@ const Buttons = () => (
         <Button text="Confirm" />
         <Button text="Cancel button" kind="cancel" />
         <Button text="Inverted button" kind="inverted" />
+        <Button text="Negative button" kind={Button.kinds.negative} />
         <br /><br />
         <Button text="Link button" kind="link" />
     </div>
