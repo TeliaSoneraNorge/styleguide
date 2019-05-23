@@ -62,6 +62,7 @@
     "object-fit-images": "3.2.4",
     "parcel-bundler": "1.12.3",
     "picturefill": "3.0.3",
+    "postcss-url": "^8.0.0",
     "pretty": "2.0.0",
     "prop-types": "15.7.2",
     "react": "16.8.3",
