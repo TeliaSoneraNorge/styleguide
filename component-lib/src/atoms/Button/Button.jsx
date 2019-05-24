@@ -32,22 +32,22 @@ const Button = ({ text, kind, size, onClick, className, processingText, isProces
     </button>;
 
 Button.types = {
-  button: 'button',
-  reset: 'reset',
-  submit: 'submit',
+    button: 'button',
+    reset: 'reset',
+    submit: 'submit',
 };
 
 Button.kinds = {
-  primary: 'primary',
-  cancel: 'cancel',
-  link: 'link',
-  inverted: 'inverted',
-  negative: 'negative',
+    primary: 'primary',
+    cancel: 'cancel',
+    link: 'link',
+    inverted: 'inverted',
+    negative: 'negative',
 };
 
 Button.margins = {
-  top: 'top',
-  bottom: 'bottom',
+    top: 'top',
+    bottom: 'bottom',
 };
 
 Button.propTypes = {
