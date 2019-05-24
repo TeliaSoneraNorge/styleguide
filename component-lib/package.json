@@ -12,7 +12,7 @@
     "css:watch": "cross-env LOCAL_DEV=true postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
     "deploy:prod": "npm run build && npm publish dist",
     "deploy:beta": "npm run build && npm publish dist --tag beta",
-    "lint": "eslint --ext .jsx,.js /",
+    "lint": "eslint --ext .jsx,.js ./src",
     "prebuild": "npm run remove-dist",
     "publish:local-test": "npm run build && cd dist && npm pack",
     "remove-dist": "npm run rimraf -- dist",

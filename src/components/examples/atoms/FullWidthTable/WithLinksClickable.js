@@ -14,21 +14,21 @@ const FullWidthTableWithLink = () => {
                 </Tr>
             </THead>
             <TBody>
-                <Tr onClick={() => { window.location.href = "#" }}>
+                <Tr onClick={() => { window.location.href = '#'; }}>
                     <Td>Nulla quis lorem ut libero malesuada feugiat</Td>
                     <Td>Lorem</Td>
                     <Td>
                         <a href="#" className="link" target="_self">Lorem ipsum dolor sit amet</a>
                     </Td>
                 </Tr>
-                <Tr onClick={() => { window.location.href = "https://telia.no" }} >
+                <Tr onClick={() => { window.location.href = 'https://telia.no'; }} >
                     <Td>Lorem ipsum dolor sit amet</Td>
                     <Td>Consectetur</Td>
                     <Td>
                         <a href="https://telia.no" className="link" target="_self">Lorem ipsum dolor sit amet</a>
                     </Td>
                 </Tr>
-                <Tr onClick={() => { window.location.href = "https://telia.no" }}>
+                <Tr onClick={() => { window.location.href = 'https://telia.no'; }}>
                     <Td>Donec ruTrum congue leo</Td>
                     <Td>Eget</Td>
                     <Td>
@@ -38,6 +38,6 @@ const FullWidthTableWithLink = () => {
             </TBody>
         </FullWidthTable>
     );
-}
+};
 
 export default FullWidthTableWithLink;
