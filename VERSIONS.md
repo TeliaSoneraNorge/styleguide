@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.23
+- Button: new 'negative' kind
+
 ## 1.28.22
 - FullWidthTable: Hover functionality with onClick event on rows
 
