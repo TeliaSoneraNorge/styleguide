@@ -26,8 +26,9 @@ const HomePage = () =>
             <Heading level={2} text="Color Palette" />
             <p className="paragraph">The color palette below was taken from the Telia Company design document (TODO: source) and shows the recommended font color to give the correct contrast.</p>
         </div>
-        <div className="sg-colors-wrapper container container--medium">
-            {_.map(colors, (color, name) => <Color key={name} name={name} {...color} />)}
+        <div className="container container--medium">
+            <div className="sg-colors-wrapper"> {_.map(_.filter(colors,{priority:"1"}), (color, name) => <Color key={name} name={name} {...color} />)}</div>
+            <div className="sg-colors-wrapper"> {_.map(_.filter(colors,{priority:"2"}), (color, name) => <Color key={name} name={name} {...color} />)}</div>
         </div>
 
         <div className="container container--small">
