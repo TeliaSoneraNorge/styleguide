@@ -18,7 +18,7 @@ const MobileMenuHeaderItem = ({ index, onHeaderItemSelected, menuLink, isActive 
                 'menu__mobile-heading-item', {
                     'menu__mobile-heading-item--active': isActive,
                 })}>
-            <span className="menu__mobile-heading-item-text">{menuLink.heading.text}</span>
+            <span className="menu__mobile-heading-item-text">{menuLink.heading && menuLink.heading.text}</span>
         </div>
     </li>
 );
@@ -31,15 +31,17 @@ const MobileMenuHeader = ({
     onHeaderItemSelected }) => (
     <div className="menu__mobile-header">
         <MobileMenuCloseButton onClick={onMobileMenuToggle} />
+        {menuLinks &&
         <ul className="menu__mobile-heading-links">
             {menuLinks.map((menuLink, index) => <MobileMenuHeaderItem
-                key={menuLink.heading.text}
+                key={menuLink.heading ? menuLink.heading.text : index}
                 index={index}
                 LinkTemplate={LinkTemplate}
                 menuLink={menuLink}
                 isActive={selectedIndex === index}
                 onHeaderItemSelected={onHeaderItemSelected} />)}
         </ul>
+        }
     </div>
 );
 
@@ -74,8 +76,8 @@ const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
 );
 
 const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
-    <section id={`${menuLink.heading.text}-panel`} className="menu__mobile-panel">
-        { menuLink.heading.url &&
+    <section id={`${menuLink.heading && menuLink.heading.text}-panel`} className="menu__mobile-panel">
+        { menuLink.heading && menuLink.heading.url &&
             <LinkTemplate
                 onClick={onItemSelected}
                 className="menu__mobile-item link"
@@ -111,10 +113,12 @@ const MobileMenu = ({
             LinkTemplate={LinkTemplate}
             selectedIndex={selectedHeaderIndex}
             onHeaderItemSelected={onMenuHeaderItemSelected} />
+        {menuLinks &&
         <MobileMenuItemSection
             menuLink={menuLinks[selectedHeaderIndex]}
             onItemSelected={onMenuItemSelected}
             LinkTemplate={LinkTemplate} />
+        }
     </div>
 );
 

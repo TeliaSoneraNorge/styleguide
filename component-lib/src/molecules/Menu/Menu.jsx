@@ -112,10 +112,11 @@ export default class Menu extends React.Component {
 
     render() {
         const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
+        const { activeIndex = 0, openedSubmenuIndex, mobileMenuOpen } = this.state;
 
         const {
             menuLinks,
-            logoUrl,
+            logoUrl = '/',
             logoImageDesktopPath,
             logoImageInverseDesktopPath,
             logoTitle,
@@ -135,18 +136,20 @@ export default class Menu extends React.Component {
 
         return (
             <div className={classnames('menu', { [this.props.className]: this.props.className })}>
+                {menuLinks && menuLinks.length > 1 &&
                 <MenuTop
-                    activeIndex={this.state.activeIndex}
+                    activeIndex={activeIndex}
                     menuLinks={menuLinks}
                     LinkTemplate={LinkTemplate}
                     onMenuHeaderItemSelected={this.onMenuHeaderItemSelected} />
+                }
 
                 <MenuContent
                     logo={logo}
                     LinkTemplate={LinkTemplate}
-                    menuLink={menuLinks[this.state.activeIndex]}
+                    menuLink={menuLinks && menuLinks[activeIndex]}
                     onToggleSubmenu={this.toggleSubmenu}
-                    openedSubmenuIndex={this.state.openedSubmenuIndex}
+                    openedSubmenuIndex={openedSubmenuIndex}
                     loginUrl={loginUrl}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     onSearchSubmit={onSearchSubmit}
@@ -154,11 +157,11 @@ export default class Menu extends React.Component {
                     myPageUrl={myPageUrl} />
 
                 <MobileMenu
-                    isOpen={this.state.mobileMenuOpen}
+                    isOpen={mobileMenuOpen}
                     LinkTemplate={LinkTemplate}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     menuLinks={menuLinks}
-                    selectedHeaderIndex={this.state.activeIndex}
+                    selectedHeaderIndex={activeIndex}
                     onMenuItemSelected={this.toggleMobileMenu}
                     onMenuHeaderItemSelected={this.onMenuHeaderItemSelected} />
             </div>
