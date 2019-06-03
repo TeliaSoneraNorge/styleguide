@@ -9,7 +9,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * Status: *Finished*
  * Category: Accordion
  *
- * Add possibility for passing objects to the right content area
+ * TODO: Add possibility for passing objects to the right content area
 */
 
 export default class Accordion extends React.Component {
