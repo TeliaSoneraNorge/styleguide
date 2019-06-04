@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 const MenuHeading = ({ menuLinks, activeIndex, LinkTemplate, onItemSelected }) => (
     <ul className="menu__top--heading">
         {menuLinks.map((menuLink, index) => (
-            <li key={menuLink.heading.text}>
+            <li key={menuLink.heading && menuLink.heading.text}>
                 <LinkTemplate
                     onClick={() => onItemSelected(index)}
                     url={menuLink.heading.url}
