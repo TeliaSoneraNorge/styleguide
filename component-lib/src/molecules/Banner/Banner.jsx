@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 /**
  * Status: *finished*.
- * Category: Misc
+ * Category: Boxes
  *
  * Should be placed in a medium or large container. Never small.
  * Should always use white banner on grey background and grey banner on white background.
