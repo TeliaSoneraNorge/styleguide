@@ -4,10 +4,6 @@ import React from 'react';
 import range from 'lodash/range';
 import SvgIcon from '../SvgIcon/SvgIcon';
 
-/**
- * Status: *In progress*.
- * Category: Wizard
- */
 const renderLine = (number, numberOfSteps, index) => {
     if (number >= numberOfSteps - 1) {
         return null;
@@ -68,6 +64,10 @@ const renderStep = (index, number, numberOfSteps, label, link) => {
     );
 };
 
+/**
+ * Status: *In progress*.
+ * Category: Wizard
+ */
 const StepIndicator = ({ index, numberOfSteps, labels, links }) =>
     <div className="step-indicator">
         <ol className="step-indicator__list">
