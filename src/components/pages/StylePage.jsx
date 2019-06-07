@@ -33,8 +33,10 @@ const StylePage = () =>
                     </a>
                     and shows the recommended font color to give the correct contrast.
                 </p>
-                <div className="sg-colors-wrapper">
-                    {_.map(colors, (color, name) => <Color key={name} name={name} {...color} />)}
+                <div>
+                    <div className="sg-colors-wrapper"> {_.map(colors[0], (color, name) => <Color key={name} name={name} {...color} />)}</div>
+                    <div className="sg-colors-wrapper"> {_.map(colors[1], (color, name) => <Color key={name} name={name} {...color} />)}</div>
+                    <div className="sg-colors-wrapper"> {_.map(colors[2], (color, name) => <Color key={name} name={name} {...color} />)}</div>
                 </div>
             </div>
         </div>
