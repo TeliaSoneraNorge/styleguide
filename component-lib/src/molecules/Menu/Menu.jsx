@@ -31,6 +31,7 @@ export default class Menu extends React.Component {
         logoTitle: PropTypes.string,
         logoUrl: PropTypes.string,
         activeIndex: PropTypes.number,
+        activeLinkIndex: PropTypes.number,
         onSearchSubmit: PropTypes.func,
         linkTemplate: PropTypes.func,
         lockBodyOnMenuOpen: PropTypes.bool,
@@ -46,12 +47,15 @@ export default class Menu extends React.Component {
         this.state = {
             open: false,
             activeIndex: this.props.activeIndex,
+            activeLinkIndex: this.props.activeLinkIndex,
             mobileMenuOpen: false,
             openedSubmenuIndex: -1
         };
 
         this.closeMobileMenu = this.toggleMobileMenu.bind(this);
         this.onMenuHeaderItemSelected = this.onMenuHeaderItemSelected.bind(this);
+        this.onMenuContentItemSelected = this.onMenuContentItemSelected.bind(this);
+        this.setDefaultActiveLinkIndex = this.setDefaultActiveLinkIndex.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.toggleSubmenu = this.toggleSubmenu.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
@@ -95,7 +99,16 @@ export default class Menu extends React.Component {
     }
 
     onMenuHeaderItemSelected(index) {
-        this.setState({ activeIndex: index });
+        this.setState({ activeIndex: index});
+        this.setDefaultActiveLinkIndex();
+    }
+
+    onMenuContentItemSelected(index) {
+        this.setState({ activeLinkIndex: index });
+    }
+
+    setDefaultActiveLinkIndex(){
+        this.setState({activeLinkIndex: this.props.defaultActiveLinkIndex });
     }
 
     toggleSubmenu(submenuIndex, event) {
@@ -112,7 +125,12 @@ export default class Menu extends React.Component {
 
     render() {
         const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
-        const { activeIndex = 0, openedSubmenuIndex, mobileMenuOpen } = this.state;
+        const {
+            activeIndex = 0,
+            activeLinkIndex = this.props.defaultActiveLinkIndex,
+            openedSubmenuIndex,
+            mobileMenuOpen
+        } = this.state;
 
         const {
             menuLinks,
@@ -150,11 +168,14 @@ export default class Menu extends React.Component {
                     menuLink={menuLinks && menuLinks[activeIndex]}
                     onToggleSubmenu={this.toggleSubmenu}
                     openedSubmenuIndex={openedSubmenuIndex}
+                    activeIndex={activeLinkIndex}
                     loginUrl={loginUrl}
                     onMobileMenuToggle={this.toggleMobileMenu}
                     onSearchSubmit={onSearchSubmit}
                     isLoggedIn={isLoggedIn}
-                    myPageUrl={myPageUrl} />
+                    myPageUrl={myPageUrl}
+                    onMenuContentItemSelected={this.onMenuContentItemSelected}
+                    setDefaultActiveLinkIndex={this.setDefaultActiveLinkIndex} />
 
                 <MobileMenu
                     isOpen={mobileMenuOpen}
