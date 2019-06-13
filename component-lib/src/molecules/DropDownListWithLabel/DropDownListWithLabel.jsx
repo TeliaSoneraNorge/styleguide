@@ -14,7 +14,7 @@ const normalizeOptions = (options) =>
  *
  * Improvements: Move to a generic dropdown component
  **/
-const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, selectedOption, changeSelectedOption, options = [], ...rest }) => (
+const DropDownListWithLabel = ({ className, labelMode, disabled, visibleLabel, label, selectedOption, changeSelectedOption, options = [], ...rest }) => (
     <Label
         className={classnames('dropdown-list-with-label', {
             [className]: className,
@@ -26,7 +26,8 @@ const DropDownListWithLabel = ({ className, labelMode, visibleLabel, label, sele
         <select
             className={classnames('dropdown-list-with-label__select', {
                 'dropdown-list-with-label__select--half': labelMode === 'text-to-right'
-            })}
+            }, {'dropdown-list-with-label__select--disabled': disabled})} 
+            disabled={disabled}
             value={selectedOption}
             onChange={changeSelectedOption}
             aria-label={visibleLabel ? null : label}
