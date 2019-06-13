@@ -14,6 +14,8 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy versions shown (minor changes are omitted).
+## 1.28.32
+- DropDownListWithLabel: new Disabled option
 
 ## 1.28.23
 - Button: new 'negative' kind
