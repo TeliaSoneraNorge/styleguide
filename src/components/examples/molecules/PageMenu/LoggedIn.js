@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageMenu } from 'component-lib';
+import { PageMenu } from '@telia/styleguide';
 
 const menuLinks = [
     {

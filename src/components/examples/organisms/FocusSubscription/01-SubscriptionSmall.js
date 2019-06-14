@@ -1,5 +1,5 @@
 import React from 'react';
-import { FocusSubscription } from 'component-lib';
+import { FocusSubscription } from '@telia/styleguide';
 
 const SubscriptionSmall = () => (
     <FocusSubscription id="smartMini"

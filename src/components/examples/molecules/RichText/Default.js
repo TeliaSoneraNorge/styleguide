@@ -1,5 +1,5 @@
 import React from 'react';
-import { RichText } from 'component-lib';
+import { RichText } from '@telia/styleguide';
 
 const DefaultRichText = () => (
     <RichText>

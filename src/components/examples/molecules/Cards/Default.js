@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Cards } from 'component-lib';
+import { Card, Cards } from '@telia/styleguide';
 
 const imgSrc = require('../../../../assets/website-images/screenshot1.png');
 

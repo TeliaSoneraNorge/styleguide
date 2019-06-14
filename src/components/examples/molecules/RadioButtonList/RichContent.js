@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioButtonList, RadioButtonWithLabel, Heading, Paragraph } from 'component-lib';
+import { RadioButtonList, RadioButtonWithLabel, Heading, Paragraph } from '@telia/styleguide';
 
 const RichContentRadioButtonList = () => (
     <RadioButtonList type="vertical" hasRichContent>

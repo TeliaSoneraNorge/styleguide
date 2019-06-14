@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Heading, Paragraph, RadioButtonList, RadioButtonWithLabel, Subscription } from 'component-lib';
+import { Button, Heading, Paragraph, RadioButtonList, RadioButtonWithLabel, Subscription } from '@telia/styleguide';
 
 const features = {
     totalCalculation: { title: 'Minste totalpris', price: '8887,-', subtitles: ['med 12 mnd avtale'] },

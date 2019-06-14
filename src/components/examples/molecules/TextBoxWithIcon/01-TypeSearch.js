@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextBoxWithIcon } from 'component-lib';
+import { TextBoxWithIcon } from '@telia/styleguide';
 
 const TypeSearch = () => (
     <TextBoxWithIcon

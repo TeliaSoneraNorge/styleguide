@@ -1,5 +1,5 @@
 import React from 'react';
-import { ShadowBox } from 'component-lib';
+import { ShadowBox } from '@telia/styleguide';
 
 const DefaultShadowBox = () => (
     <ShadowBox>This is a box with some content inside</ShadowBox>

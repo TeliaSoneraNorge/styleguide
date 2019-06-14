@@ -1,5 +1,5 @@
 import React from 'react';
-import { FullWidthImage } from 'component-lib';
+import { FullWidthImage } from '@telia/styleguide';
 
 const logoSources = [
     { type: 'mobile', srcSet: require('../../../../assets/website-images/BusinessDevelopment_Pebble.png') },

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PromoBox } from 'component-lib';
+import { PromoBox } from '@telia/styleguide';
 
 const AnimatedPromoBox = () => (
     <PromoBox

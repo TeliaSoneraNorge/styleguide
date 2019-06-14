@@ -1,5 +1,5 @@
 import React from 'react';
-import { DisplayFunctionality } from 'component-lib';
+import { DisplayFunctionality } from '@telia/styleguide';
 
 const imgs = [
     require('../../../../assets/website-images/screenshot1.png'),

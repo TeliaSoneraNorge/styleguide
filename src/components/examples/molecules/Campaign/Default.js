@@ -1,5 +1,5 @@
 import React from 'react';
-import { Campaign } from 'component-lib';
+import { Campaign } from '@telia/styleguide';
 
 const DefaultCampaign = () => (
     <Campaign

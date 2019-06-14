@@ -1,5 +1,5 @@
 import React from 'react';
-import { FeatureBoxes, FeatureBox, SvgIcon, Container } from 'component-lib';
+import { FeatureBoxes, FeatureBox, SvgIcon, Container } from '@telia/styleguide';
 
 const FeatureBoxesDemo = () => (
     <Container size="large">

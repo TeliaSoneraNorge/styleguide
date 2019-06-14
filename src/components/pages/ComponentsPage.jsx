@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import { Header, ProductList } from 'component-lib';
+import { Header, ProductList } from '@telia/styleguide';
 import { getComponentsByCategory } from '../../utils/componentUtil';
 
 const CategoryList = ({ categories }) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'component-lib';
+import { Alert } from '@telia/styleguide';
 
 const Warning = () => (
     <Alert kind="warning">

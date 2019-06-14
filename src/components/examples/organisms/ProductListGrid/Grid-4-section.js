@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Heading, List, ProductList, ProductListGrid } from 'component-lib';
+import { Container, Heading, List, ProductList, ProductListGrid } from '@telia/styleguide';
 
 const ProductListGridExample = () => (
     <Container size="large">

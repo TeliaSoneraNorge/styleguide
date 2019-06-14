@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from 'component-lib';
+import { Accordion } from '@telia/styleguide';
 
 const ExpandedAccordion = () => (
     <Accordion title="Lorem ipsum" isExpanded={true}>

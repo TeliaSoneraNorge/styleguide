@@ -74,6 +74,7 @@
     "rimraf": "2.6.3"
   },
   "alias": {
+    "@telia/styleguide": "./component-lib/src",
     "component-lib": "./component-lib/src",
     "component-lib-root": "./component-lib"
   },

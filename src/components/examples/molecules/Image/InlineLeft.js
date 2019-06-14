@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image, Caption } from 'component-lib';
+import { Image, Caption } from '@telia/styleguide';
 
 const InlineLeft = () => (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToggleButton } from 'component-lib';
+import { ToggleButton } from '@telia/styleguide';
 
 const BasicToggleButton = () => (
     <ToggleButton id="example-1" labelText="Example with short label text" defaultChecked />

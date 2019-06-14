@@ -1,5 +1,5 @@
 import React from 'react';
-import { ChartLegend } from 'component-lib';
+import { ChartLegend } from '@telia/styleguide';
 
 const series = [
     { title: 'Rollover', color: 'purple', value: 20, total: 100 },

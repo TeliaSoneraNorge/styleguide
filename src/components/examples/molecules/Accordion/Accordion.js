@@ -1,5 +1,5 @@
 import React from 'react';
-import { Accordion } from 'component-lib';
+import { Accordion } from '@telia/styleguide';
 
 const ExampleAccordion = () => (
     <Accordion title="Lorem ipsum">

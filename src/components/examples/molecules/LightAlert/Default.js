@@ -1,5 +1,5 @@
 import React from 'react';
-import { LightAlert } from 'component-lib';
+import { LightAlert } from '@telia/styleguide';
 
 const Default = () => (
     <LightAlert title="This is a title">

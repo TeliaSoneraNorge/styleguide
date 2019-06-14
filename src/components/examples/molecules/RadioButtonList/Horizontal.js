@@ -1,5 +1,5 @@
 import React from 'react';
-import { RadioButtonList } from 'component-lib';
+import { RadioButtonList } from '@telia/styleguide';
 
 const list = [
     { label: 'I am checked', value: '0' },

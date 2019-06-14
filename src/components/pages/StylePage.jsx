@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { Header, Heading, RichText } from 'component-lib';
+import { Header, Heading, RichText } from '@telia/styleguide';
 
 import Color from '../common/Color';
 import ComponentDocs from '../common/ComponentDocs';

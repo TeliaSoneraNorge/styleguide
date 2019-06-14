@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToggleSwitch } from 'component-lib';
+import { ToggleSwitch } from '@telia/styleguide';
 
 const exampleContainerStyle = {
     backgroundColor: 'white',

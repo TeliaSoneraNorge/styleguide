@@ -1,5 +1,5 @@
 import React from 'react';
-import { ModalDialog } from 'component-lib';
+import { ModalDialog } from '@telia/styleguide';
 
 const ConfirmModalDialog = () => (
     <ModalDialog

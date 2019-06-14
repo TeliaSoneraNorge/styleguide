@@ -1,5 +1,5 @@
 import React from 'react';
-import { RelatedArticle } from 'component-lib';
+import { RelatedArticle } from '@telia/styleguide';
 
 const DefaultRelatedArticle = () => (
     <RelatedArticle

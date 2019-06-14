@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepIndicator } from 'component-lib';
+import { StepIndicator } from '@telia/styleguide';
 
 const wrapperStyle = {
     width: '700px',

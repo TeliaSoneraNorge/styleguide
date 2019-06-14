@@ -1,6 +1,6 @@
 import React from 'react';
 import { Router } from 'react-router-dom';
-import { Menu } from 'component-lib';
+import { Menu } from '@telia/styleguide';
 import { history } from '../../../../utils/historyUtil';
 
 const menuLinks = [

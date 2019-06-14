@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatsDisplay, StatsDisplayItem, SvgIcon, Container } from 'component-lib';
+import { StatsDisplay, StatsDisplayItem, SvgIcon, Container } from '@telia/styleguide';
 
 const StatsDisplayDemo = () => (
     <Container size="large">
