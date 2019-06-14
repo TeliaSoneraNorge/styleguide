@@ -7,12 +7,6 @@ import { Heading, Header, SvgIcon } from '../../../component-lib/src/index';
 const icons = getStaticData('icons');
 const pebbles = getStaticData('pebbles');
 
-const ImageAsset = ({ imagePath, imageName }) =>
-    <div className="sg-image-assets__asset">
-        <img className="sg-image-assets__image" src={`${imagePath}/${imageName}`} />
-        <div className="sg-image-assets__text">{imageName}</div>
-    </div>;
-
 const ImageAssetsPage = () =>
     <div>
         <Header pageTitle="Image Assets" />
@@ -43,7 +37,11 @@ const ImageAssetsPage = () =>
             <Heading level="2" text="Pebbles" />
             <div className="sg-image-assets">
                 {_.map(pebbles, (pebble) =>
-                    <ImageAsset key={pebble} imagePath="/public/pebbles" imageName={pebble} />
+                    <div key={pebble} className="sg-image-assets__asset">
+                        {/* This is broken because dynamic importing of assets does not work in Parcel: require(`${variable}.svg`) */}
+                        <img className="sg-image-assets__image" src={require(`component-lib-root/assets/pebbles/pebble-7.svg`)} />
+                        <div className="sg-image-assets__text">{pebble}</div>
+                    </div>
                 )}
             </div>
         </div>
