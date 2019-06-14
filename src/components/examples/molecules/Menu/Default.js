@@ -1,9 +1,7 @@
 import React from 'react';
-import Menu from '../../../../../component-lib/src/molecules/Menu/Menu';
 import { Router } from 'react-router-dom';
+import { Menu } from 'component-lib';
 import { history } from '../../../../utils/historyUtil';
-
-/*Status: In progress*/
 
 const menuLinks = [
     {
@@ -19,7 +17,7 @@ const menuLinks = [
             { text: 'Mobilt bredbånd', url: '#' },
             { text: 'Dekning', url: '#' },
             { text: 'Hjelp', url: '#' }
-        ],
+        ]
     },
     {
         heading: { text: 'Bedrift', url : '#' },
