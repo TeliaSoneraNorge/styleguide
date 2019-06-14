@@ -3,8 +3,8 @@ import { HeaderWithImage } from '@telia/styleguide';
 
 const WhiteGradient = () => (
     <HeaderWithImage
-        imgSrcMobile={require('../../../../assets/website-images/light-image.jpg')}
-        imgSrcDesktop={require('../../../../assets/website-images/light-image.jpg')}
+        imgSrcMobile={require('assets/website-images/light-image.jpg')}
+        imgSrcDesktop={require('assets/website-images/light-image.jpg')}
         blackText
         withGradient
         pageTitle="Page Title">

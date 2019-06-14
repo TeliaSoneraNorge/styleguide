@@ -8,14 +8,14 @@ const products = [{
         color: '#ffffff'
     },
     url: '#',
-    image: require('../../../../assets/website-images/iphone-x-silver-front.png'),
+    image: require('assets/website-images/iphone-x-silver-front.png'),
     name: 'Apple iPhone X',
     priceDescription: 'Månedspris fra',
     price: 489,
     priceDisclaimerLine1: 'm/SVITSJ i 24 md. 11736,-'
 }, {
     url: '#',
-    image: require('../../../../assets/website-images/iphone-x-silver-front.png'),
+    image: require('assets/website-images/iphone-x-silver-front.png'),
     name: 'Apple iPhone X',
     priceDescription: 'Månedspris fra',
     price: 489,
@@ -23,7 +23,7 @@ const products = [{
     priceDisclaimerLine2: 'Abo u/binding kommer i tillegg'
 }, {
     url: '#',
-    image: require('../../../../assets/website-images/iphone-x-silver-front.png'),
+    image: require('assets/website-images/iphone-x-silver-front.png'),
     name: 'Apple iPhone X',
     priceDescription: 'Månedspris fra',
     price: 489,
@@ -35,7 +35,7 @@ const products = [{
         color: '#ffffff'
     },
     url: '#',
-    image: require('../../../../assets/website-images/iphone-x-silver-front.png'),
+    image: require('assets/website-images/iphone-x-silver-front.png'),
     name: 'Apple iPhone X',
     priceDescription: 'Månedspris fra',
     price: 489,

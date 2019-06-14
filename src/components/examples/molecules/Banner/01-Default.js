@@ -3,7 +3,7 @@ import { Banner, Container } from '@telia/styleguide';
 
 const DefaultBanner = () => (
     <Container size="large" className="banner--background-grey">
-        <Banner img={require('../../../../assets/website-images/screenshot1.png')}>
+        <Banner img={require('assets/website-images/screenshot1.png')}>
             <h2 className="heading-2">– Vi står ikke bare og prater om digitalisering</h2>
             <p className="paragraph">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt

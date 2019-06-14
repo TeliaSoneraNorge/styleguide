@@ -6,12 +6,12 @@ const TwoClosedBoxes = () => (
         <ThemeBox
             id="themebox-1"
             isExpanded={false}
-            iconAnimated={<IconAnimated json={require('../../../../assets/animations/music_freedom.json')} />}
+            iconAnimated={<IconAnimated json={require('assets/animations/music_freedom.json')} />}
             heading="Themebox" />
         <ThemeBox
             id="themebox-2"
             isExpanded={false}
-            iconAnimated={<IconAnimated json={require('../../../../assets/animations/music_freedom.json')} />}
+            iconAnimated={<IconAnimated json={require('assets/animations/music_freedom.json')} />}
             heading="Heading" >
             <p className="theme-box__preamble paragraph">Du betaler ingenting i dag, men får en fast månedspris over 24 måneder.</p>
             <p>Prisen inkluderer skjermforsikring og mulighet til å bytte til ny mobil etter 12 måneder. I tillegg kommer månedsprisen på et valgfritt Telia-abonnement uten binding.</p>

@@ -8,7 +8,7 @@ const product = {
         color: '#ffffff'
     },
     url: '#',
-    image: require('../../../../assets/website-images/iphone-x-silver-front.png'),
+    image: require('assets/website-images/iphone-x-silver-front.png'),
     name: 'Apple iPhone X',
     priceDescription: 'Månedspris fra',
     price: 489,

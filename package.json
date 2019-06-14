@@ -54,6 +54,7 @@
     "svg4everybody": "2.1.9"
   },
   "dependencies": {
+    "assets": "^3.0.1",
     "classnames": "2.2.6",
     "cp-cli": "2.0.0",
     "express": "4.16.4",
@@ -76,7 +77,8 @@
   "alias": {
     "@telia/styleguide": "./component-lib/src",
     "component-lib": "./component-lib/src",
-    "component-lib-root": "./component-lib"
+    "component-lib-root": "./component-lib",
+    "assets": "./src/assets"
   },
   "engines": {
     "node": "10.1.0",

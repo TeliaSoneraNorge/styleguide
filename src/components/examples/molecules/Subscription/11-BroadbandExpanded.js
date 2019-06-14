@@ -38,7 +38,7 @@ const BroadbandExpanded = () => (
                     <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
                     <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
                 </div>
-                <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src={require('../../../../assets/website-images/router1.jpg')} />
+                <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src={require('assets/website-images/router1.jpg')} />
             </RadioButtonWithLabel>
             <RadioButtonWithLabel hasRichContent value="1" name="radiobutton-broadband">
                 <div style={{ display: 'inline-block', width: '80%' }}>
@@ -48,7 +48,7 @@ const BroadbandExpanded = () => (
                     <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
                     <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
                 </div>
-                <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src={require('../../../../assets/website-images/router2.png')} />
+                <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src={require('assets/website-images/router2.png')} />
             </RadioButtonWithLabel>
             <RadioButtonWithLabel hasRichContent value="2" name="radiobutton-broadband">
                 <Heading level="3" text="Jeg ønsker ikke å kjøpe ruter" />

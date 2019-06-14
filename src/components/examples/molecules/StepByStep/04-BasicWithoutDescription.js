@@ -9,7 +9,7 @@ const DefaultStepByStep = () => (
             <Description iconName="ico_buy" heading="Lorem" />
         </Step>
         <Step>
-            <Description imageSrc={require('../../../../assets/website-images/boy-ipad.jpg')} heading="Ipsum" />
+            <Description imageSrc={require('assets/website-images/boy-ipad.jpg')} heading="Ipsum" />
             <Content>
                 Ullamcorper massa in dictum consectetur. Sed eu luctus velit. Pellentesque aliquam, lectus eu aliquet
                 suscipit, diam sem vulputate ex, posuere cursus mi arcu ac nunc. Vestibulum dictum metus nisi, non
