@@ -111,6 +111,7 @@ export function isFullWidthComponent(componentName) {
         'Menu',
         'DisplayFunctionality',
         'Cards',
+        'Gallery',
 
         // Organisms
         'FocusSubscription',
