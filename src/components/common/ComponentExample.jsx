@@ -20,7 +20,7 @@ const ComponentExample = ({ example, exampleName, componentName }) => {
                 <Example />
             </div>
             <div className="container container--medium container--no-margin">
-                <CodeSnippet language="html" code={html} />
+                <CodeSnippet language="html" code={html} toggle={true} />
             </div>
         </div>
     );
