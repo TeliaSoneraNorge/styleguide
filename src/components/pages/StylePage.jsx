@@ -1,14 +1,12 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 
-import { Header, Heading, RichText } from '@telia/styleguide';
+import { Header, Heading } from '@telia/styleguide';
 
 import Color from '../common/Color';
 import ComponentDocs from '../common/ComponentDocs';
-
 import { getStaticData } from '../../utils/staticDataUtil';
 import { getComponentsByCategory } from '../../utils/componentUtil';
-
 
 const colors = getStaticData('colors');
 
@@ -34,9 +32,15 @@ const StylePage = () =>
                     and shows the recommended font color to give the correct contrast.
                 </p>
                 <div>
-                    <div className="sg-colors-wrapper"> {_.map(colors[0], (color, name) => <Color key={name} name={name} {...color} />)}</div>
-                    <div className="sg-colors-wrapper"> {_.map(colors[1], (color, name) => <Color key={name} name={name} {...color} />)}</div>
-                    <div className="sg-colors-wrapper"> {_.map(colors[2], (color, name) => <Color key={name} name={name} {...color} />)}</div>
+                    <div className="sg-colors-wrapper">
+                        {_.map(colors[0], (color, name) => <Color key={name} name={name} {...color} />)}
+                    </div>
+                    <div className="sg-colors-wrapper">
+                        {_.map(colors[1], (color, name) => <Color key={name} name={name} {...color} />)}
+                    </div>
+                    <div className="sg-colors-wrapper">
+                        {_.map(colors[2], (color, name) => <Color key={name} name={name} {...color} />)}
+                    </div>
                 </div>
             </div>
         </div>
