@@ -14,6 +14,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy versions shown (minor changes are omitted).
+
+## 1.28.35
+- Molecules: Gallery
+- package "marked" updated
+- CheckboxWithLabel has a disabled state
+- Different layout for colors on the website
+- Other minor tweaks
+
 ## 1.28.32
 - DropDownListWithLabel: new Disabled option
 
