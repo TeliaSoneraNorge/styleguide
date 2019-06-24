@@ -10,7 +10,7 @@ const RadioButtonWithLabel = ({ label, checked, disabled, name, value, hasRichCo
             type="radio"
             name={name}
             checked={checked}
-            onChange={onChange ? (changeEvent) => onChange(changeEvent.target.value) : null}
+            onChange={onChange ? onChange : null}
             disabled={disabled}
             value={value} />
         <span className="radio-button-with-label__svg-container">
