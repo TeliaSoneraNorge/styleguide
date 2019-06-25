@@ -31,7 +31,8 @@ CheckBoxWithLabel.propTypes = {
     defaultChecked: PropTypes.bool,
     checked: PropTypes.bool,
     onChange: PropTypes.func,
-    disabled: PropTypes.bool
+    disabled: PropTypes.bool,
+    name: PropTypes.string,
 };
 
 export default CheckBoxWithLabel;
