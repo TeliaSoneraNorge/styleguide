@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.36
+- onChange prop fixed in RadioButtonList
+
 ## 1.28.35
 - Molecules: Gallery
 - package "marked" updated
