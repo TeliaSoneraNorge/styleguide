@@ -42,10 +42,10 @@ class TextBoxWithCharCount extends React.Component {
         return (
             <React.Fragment>
                 <div
-                className={classnames('textbox-with-char-count', {
-                    [className]: className,
-                    'textbox-with-char-count--with-error': this.props.errorMessage
-                })}>
+                    className={classnames('textbox-with-char-count', {
+                        [this.props.className]: this.props.className,
+                        ['textbox-with-char-count--with-error']: this.props.errorMessage
+                    })}>
                     <TextBox
                         ref={this.props.innerRef}
                         type={this.props.type}
