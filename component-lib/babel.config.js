@@ -16,11 +16,26 @@ module.exports = {
     ],
     env: {
         development: {},
-        production: {
+        // jest doesn't take account of BABEL_ENV, you need to set NODE_ENV - https://facebook.github.io/jest/docs/getting-started.html#using-babel
+        commonjs: {
+            presets: [
+                ['@babel/preset-env', {
+                    useBuiltIns: false,
+                    modules: 'commonjs'
+                }]
+            ],
             plugins: [
                 'transform-react-constant-elements',
                 'transform-dev-warning',
                 ['transform-react-remove-prop-types', { mode: 'wrap' }]
+            ]
+        },
+        es: {
+            presets: [
+                ['@babel/preset-env', {
+                    useBuiltIns: false,
+                    modules: false
+                }]
             ]
         }
     }
