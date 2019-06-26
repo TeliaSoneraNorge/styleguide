@@ -78,6 +78,7 @@ export { default as ChartLegend } from './molecules/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel';
 export { default as TextBoxWithIcon } from './molecules/TextBoxWithIcon';
 export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel';
+export { default as TextBoxWithCharCount } from './molecules/TextBoxWithCharCount';
 export { default as Tooltip } from './molecules/Tooltip';
 export { default as MiniDashboard } from './molecules/MiniDashboard';
 export { default as DataBoostChart } from './molecules/DataBoostChart';
