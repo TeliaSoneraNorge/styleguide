@@ -1,5 +1,5 @@
 import React from 'react';
-import { ThemeBoxes, ThemeBox, SvgIcon } from 'component-lib';
+import { ThemeBoxes, ThemeBox, SvgIcon } from '@telia/styleguide';
 
 const TwoClosedBoxes = () => (
     <ThemeBoxes>

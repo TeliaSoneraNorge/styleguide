@@ -1,0 +1,23 @@
+.gallery {
+    line-height: 2;
+    column-count: 1;
+    column-gap: 10px;
+
+    @media all and (min-width: em(300)) {
+        column-count: 2;
+    }
+    @media all and (min-width: em(800)) {
+        column-count: 3;
+    }
+    @media all and (min-width: em(1000)) {
+        column-count: 4;
+    }
+    @media all and (min-width: em(1200)) {
+        column-count: 5;
+    }
+
+    &--image {
+        width: 100%;
+        height: auto;
+    }
+}

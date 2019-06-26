@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { TextBox } from 'component-lib';
+import { TextBox } from '@telia/styleguide';
 
 const TextBoxes = () =>
     <div>

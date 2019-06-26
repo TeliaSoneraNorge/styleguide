@@ -195,8 +195,6 @@
         }
     }
 
-
-
     &__login-button, &__mypage-button {
         display: flex;
         height: 100%;
@@ -212,9 +210,9 @@
         letter-spacing: 0;
         box-sizing: content-box;
 
-        &:not(.button--processing):not(.button--disabled):not(.button--inverted):focus,
-        &:not(.button--processing):not(.button--disabled):not(.button--inverted):active,
-        &:not(.button--processing):not(.button--disabled):not(.button--inverted):hover {
+        &:not(.button--processing):not(.button--disabled):not(.button--inverted):not(.button--negative):focus,
+        &:not(.button--processing):not(.button--disabled):not(.button--inverted):not(.button--negative):active,
+        &:not(.button--processing):not(.button--disabled):not(.button--inverted):not(.button--negative):hover {
             background-color: var(--white);
             color: var(--black);
             border-bottom: 2px solid var(--core-purple);
@@ -237,9 +235,9 @@
             padding: 0.6rem 1.3rem;
             height: inherit;
 
-            &:not(.button--processing):not(.button--disabled):not(.button--inverted):focus,
-            &:not(.button--processing):not(.button--disabled):not(.button--inverted):active,
-            &:not(.button--processing):not(.button--disabled):not(.button--inverted):hover {
+            &:not(.button--processing):not(.button--disabled):not(.button--inverted):not(.button--negative):focus,
+            &:not(.button--processing):not(.button--disabled):not(.button--inverted):not(.button--negative):active,
+            &:not(.button--processing):not(.button--disabled):not(.button--inverted):not(.button--negative):hover {
                 background-color: var(--core-purple);
                 color: var(--white);
                 border-bottom: 1px solid var(--core-purple);

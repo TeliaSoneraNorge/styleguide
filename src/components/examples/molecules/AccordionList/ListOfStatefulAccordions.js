@@ -1,5 +1,5 @@
 import React from 'react';
-import { StatefulAccordionList } from 'component-lib';
+import { StatefulAccordionList } from '@telia/styleguide';
 
 /**Status: Add possibility for passing objects to the right content area */
 

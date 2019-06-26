@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Subscription } from 'component-lib';
+import { Button, Subscription } from '@telia/styleguide';
 
 const features = {
     button: <Button text="Gå videre" kind="primary" onClick={() => {}} />

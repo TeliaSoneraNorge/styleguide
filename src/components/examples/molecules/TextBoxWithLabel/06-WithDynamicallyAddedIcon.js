@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextBoxWithLabel } from 'component-lib';
+import { TextBoxWithLabel } from '@telia/styleguide';
 
 export default class TypeDynamicallyTogglingIcon extends React.Component {
     state = {

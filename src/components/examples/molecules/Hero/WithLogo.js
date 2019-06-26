@@ -1,14 +1,14 @@
 import React from 'react';
-import { Hero } from 'component-lib';
+import { Hero } from '@telia/styleguide';
 
 const sources = [
-    { type: 'mobile', srcSet: require('../../../../assets/website-images/hero1_mobil.jpg') },
-    { type: 'desktop', srcSet: require('../../../../assets/website-images/hero1.jpg') }
+    { type: 'mobile', srcSet: require('assets/website-images/hero1_mobil.jpg') },
+    { type: 'desktop', srcSet: require('assets/website-images/hero1.jpg') }
 ];
 
 const logoSources = [
-    { type: 'mobile', srcSet: require('../../../../assets/website-images/BusinessDevelopment_Pebble.png') },
-    { type: 'desktop', srcSet: require('../../../../assets/website-images/BusinessDevelopment_Pebble.png') }
+    { type: 'mobile', srcSet: require('assets/website-images/BusinessDevelopment_Pebble.png') },
+    { type: 'desktop', srcSet: require('assets/website-images/BusinessDevelopment_Pebble.png') }
 ];
 
 const WithLogo = () => (

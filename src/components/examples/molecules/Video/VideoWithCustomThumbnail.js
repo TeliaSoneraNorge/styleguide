@@ -1,5 +1,5 @@
 import React from 'react';
-import { Video } from 'component-lib';
+import { Video } from '@telia/styleguide';
 
 export default class DefaultVideo extends React.Component  {
     constructor() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Spinner } from 'component-lib';
+import { Spinner } from '@telia/styleguide';
 
 const DefaultSpinner = () => (
     <Spinner />

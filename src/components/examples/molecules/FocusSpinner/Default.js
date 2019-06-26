@@ -1,5 +1,5 @@
 import React from 'react';
-import { FocusSpinner } from 'component-lib';
+import { FocusSpinner } from '@telia/styleguide';
 
 const DefaultFocusSpinner = () => (
     <FocusSpinner />

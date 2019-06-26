@@ -1,5 +1,5 @@
 import React from 'react';
-import { ArticleMetaData } from 'component-lib';
+import { ArticleMetaData } from '@telia/styleguide';
 
 const tags = [
     'Technology',

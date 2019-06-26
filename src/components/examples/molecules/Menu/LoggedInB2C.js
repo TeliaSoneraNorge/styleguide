@@ -1,6 +1,6 @@
 import React from 'react';
-import Menu from '../../../../../component-lib/src/molecules/Menu/Menu';
 import { Router } from 'react-router-dom';
+import { Menu } from '@telia/styleguide';
 import { history } from '../../../../utils/historyUtil';
 
 const menuLinks = [
@@ -17,7 +17,7 @@ const menuLinks = [
             { text: 'Mobilt bredbånd', url: '#' },
             { text: 'Dekning', url: '#' },
             { text: 'Hjelp', url: '#' }
-        ],
+        ]
     },
     {
         heading: { text: 'Bedrift', url : '#' },
@@ -37,8 +37,8 @@ const LoggedInMenu = () => (
             logoUrl="#"
             activeIndex={0}
             menuLinks={menuLinks}
-            logoImageDesktopPath={require('../../../../assets/images/logo/logo.svg')}
-            logoImageInverseDesktopPath={require('../../../../assets/images/logo/logo-inverted.svg')}
+            logoImageDesktopPath={require('assets/images/logo/logo.svg')}
+            logoImageInverseDesktopPath={require('assets/images/logo/logo-inverted.svg')}
             onSearchSubmit={(e, searchQuery) => {} }
             lockBodyOnMenuOpen={true}
             isLoggedIn={true}

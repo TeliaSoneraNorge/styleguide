@@ -1,5 +1,5 @@
 import React from 'react';
-import { FocusHeader, Button } from 'component-lib';
+import { FocusHeader, Button } from '@telia/styleguide';
 
 const DefaultFocusHeader = () => (
     <FocusHeader title="Mistet telefonen?">

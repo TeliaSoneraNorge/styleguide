@@ -1,5 +1,5 @@
 import React from 'react';
-import { Header } from 'component-lib';
+import { Header } from '@telia/styleguide';
 
 const WithMask = () => (
     <Header

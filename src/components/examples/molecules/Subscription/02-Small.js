@@ -1,5 +1,5 @@
 import React from 'react';
-import { Subscription } from 'component-lib';
+import { Subscription } from '@telia/styleguide';
 
 const SmallSubscription = () => (
     <Subscription

@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, withRouter, Link } from 'react-router-dom';
 
-import { PageFooter, Menu } from 'component-lib';
+import { PageFooter, Menu } from '@telia/styleguide';
 import AllIcons from 'component-lib-root/assets/allicons/AllIcons.js';
 
 import HomePage from './pages/HomePage';

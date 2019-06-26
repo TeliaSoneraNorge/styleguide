@@ -1,5 +1,5 @@
 import React from 'react';
-import { Label } from 'component-lib';
+import { Label } from '@telia/styleguide';
 
 const DefaultLabel = () => (
     <Label text="This is a label" />

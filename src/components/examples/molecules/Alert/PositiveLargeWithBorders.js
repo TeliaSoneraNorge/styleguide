@@ -1,5 +1,5 @@
 import React from 'react';
-import { Alert } from 'component-lib';
+import { Alert } from '@telia/styleguide';
 
 const PositiveLargeWithBorders = () => (
     <Alert kind="positive" size="large-with-borders">
