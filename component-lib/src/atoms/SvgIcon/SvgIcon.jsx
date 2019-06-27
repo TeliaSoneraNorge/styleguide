@@ -25,7 +25,7 @@ SvgIcon.propTypes = {
     /** The name of the icon*/
     iconName: PropTypes.string,
     /** The color of the icon (white, black, purple, grey or none)*/
-    color: PropTypes.oneOf(['white', 'black', 'purple', 'grey', 'light-grey', 'none']),
+    color: PropTypes.oneOf(['white', 'black', 'purple', 'grey', 'light-grey', 'green', 'dark-grey', 'none']),
     /** Other class names*/
     className: PropTypes.string,
     title: PropTypes.string,
