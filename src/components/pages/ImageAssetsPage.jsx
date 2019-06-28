@@ -38,8 +38,7 @@ const ImageAssetsPage = () =>
             <div className="sg-image-assets">
                 {_.map(pebbles, (pebble) =>
                     <div key={pebble} className="sg-image-assets__asset">
-                        {/* This is broken because dynamic importing of assets does not work in Parcel: require(`${variable}.svg`) */}
-                        <img className="sg-image-assets__image" src={require(`component-lib-root/assets/pebbles/pebble-7.svg`)} />
+                        <img className="sg-image-assets__image" src={pebble} alt={pebble}/>
                         <div className="sg-image-assets__text">{pebble}</div>
                     </div>
                 )}
