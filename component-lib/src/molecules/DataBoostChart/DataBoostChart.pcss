@@ -1,7 +1,13 @@
 @keyframes data-boost-chart-animation {
-  0%   { transform: rotate(0deg); }
-  50%  { transform: rotate(180deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .data-boost-chart {
@@ -10,78 +16,142 @@
   color: var(--black);
 
   &__slice {
+    position: absolute;
+
+    &:before {
+      border-radius: 50%;
+
+      animation: data-boost-chart-animation 20s linear infinite;
+      background-image: linear-gradient(
+        314.2634263100117deg,
+        #099,
+        #009797 7.2%,
+        #009b9b 7.2%,
+        #00c3c2 7.5%,
+        #00cece 8.1%,
+        #00d1cc 11.5%,
+        #03cecb 11.5%,
+        #10c6d0 11.6%,
+        #8d71f5 11.9%,
+        #a561fb 12%,
+        #b555ff,
+        #af5afe 12.4%,
+        #b15cff 15%,
+        #b05efe,
+        #b05cfe,
+        #af55fd,
+        #af55fd 15.4%,
+        #aa48f9 15.4%,
+        #9a0be3 16.6%,
+        #930ae3 20.2%,
+        #9a09e2 20.2%,
+        #b707dc 20.3%,
+        #e002d4 20.5%,
+        #fe00cd 20.8%,
+        #fe00cd 24.6%,
+        #f701cf 24.6%,
+        #d504d4 24.8%,
+        #ad08e0 24.9%,
+        #940ae4 25.1%,
+        #9a0be3 25.7%,
+        #9908e5 33.9%,
+        #9501ec,
+        #9804e8 34.3%,
+        #9c1ad9 34.3%,
+        #c2c557 34.7%,
+        #cffe2a 35%,
+        #cbfe2b 40.3%,
+        #d0ee39 40.3%,
+        #f240a9 40.7%,
+        #ff00d6 41%,
+        #ff00ce 41.5%,
+        #fe00cd 63.3%,
+        #fa04cc 63.3%,
+        #9952ce 63.6%,
+        #667bce 63.7%,
+        #37a2ce 63.7%,
+        #13c0cd,
+        #05d0cd 63.9%,
+        #02dacd 64.1%,
+        #0cc 64.4%,
+        #01cecc 69.3%,
+        #00d6ca 69.5%,
+        #00d1cb,
+        #00d1cb 69.7%,
+        #0bc1cf 69.7%,
+        #1ea8d1 69.8%,
+        #3887d4 69.8%,
+        #713ddd 70%,
+        #8720e0 70.1%,
+        #980be4 70.1%,
+        #9f04e3 70.2%,
+        #9a0be3 71%
+      );
+
+      width: 100%;
+      height: 100%;
+
+      content: ' ';
+      display: block;
       position: absolute;
 
-      &:before {
-          border-radius: 50%;
+      left: 0;
+      top: 0;
+    }
 
-          animation: data-boost-chart-animation 20s linear infinite;
-          background-image: linear-gradient(314.2634263100117deg, #099, #009797 7.2%, #009b9b 7.2%, #00c3c2 7.5%, #00cece 8.1%, #00d1cc 11.5%, #03cecb 11.5%, #10c6d0 11.6%, #8d71f5 11.9%, #a561fb 12%, #b555ff, #af5afe 12.4%, #b15cff 15%, #b05efe, #b05cfe, #af55fd, #af55fd 15.4%, #aa48f9 15.4%, #9a0be3 16.6%, #930ae3 20.2%, #9a09e2 20.2%, #b707dc 20.3%, #e002d4 20.5%, #fe00cd 20.8%, #fe00cd 24.6%, #f701cf 24.6%, #d504d4 24.8%, #ad08e0 24.9%, #940ae4 25.1%, #9a0be3 25.7%, #9908e5 33.9%, #9501ec, #9804e8 34.3%, #9c1ad9 34.3%, #c2c557 34.7%, #cffe2a 35%, #cbfe2b 40.3%, #d0ee39 40.3%, #f240a9 40.7%, #ff00d6 41%, #ff00ce 41.5%, #fe00cd 63.3%, #fa04cc 63.3%, #9952ce 63.6%, #667bce 63.7%, #37a2ce 63.7%, #13c0cd, #05d0cd 63.9%, #02dacd 64.1%, #0cc 64.4%, #01cecc 69.3%, #00d6ca 69.5%, #00d1cb, #00d1cb 69.7%, #0bc1cf 69.7%, #1ea8d1 69.8%, #3887d4 69.8%, #713ddd 70%, #8720e0 70.1%, #980be4 70.1%, #9f04e3 70.2%, #9a0be3 71%);
+    &:after {
+      border-radius: 50%;
 
-          width: 100%;
-          height: 100%;
+      width: 88%;
+      height: 88%;
+      margin: 6%;
 
-          content: ' ';
-          display: block;
-          position: absolute;
+      background: #fff;
 
-          left: 0;
-          top: 0;
-      }
+      content: ' ';
+      display: block;
+      position: absolute;
 
-      &:after {
-          border-radius: 50%;
-
-          width: 88%;
-          height: 88%;
-          margin: 6%;
-
-          background: #fff;
-
-          content: ' ';
-          display: block;
-          position: absolute;
-
-          left: 0;
-          top: 0;
-      }
+      left: 0;
+      top: 0;
+    }
   }
 
   &__upper-caption {
-      font-family: 'pebble';
-      text-align: center;
-      font-size: 1.5rem;
-      line-height: 1.4rem;
+    font-family: 'pebble';
+    text-align: center;
+    font-size: 1.5rem;
+    line-height: 1.4rem;
 
-      padding: 0;
-      margin: 0;
-      width: 80%;
+    padding: 0;
+    margin: 0;
+    width: 80%;
   }
 
   &__lower-caption {
-      text-align: center;
-      font-size: 1rem;
+    text-align: center;
+    font-size: 1rem;
 
-      padding: 0.4em 0 0 0;
-      margin: 0;
+    padding: 0.4em 0 0 0;
+    margin: 0;
   }
 
   &:focus {
-        background: var(--core-purple);
-        color: var(--white);
+    background: var(--core-purple);
+    color: var(--white);
 
-        outline: none;
+    outline: none;
 
-        .data-boost-chart {
-            &__slice {
-                &:before {
-                    background: var(--white);
-                }
-
-                &:after {
-                    background: var(--core-purple);
-                }
-            }
+    .data-boost-chart {
+      &__slice {
+        &:before {
+          background: var(--white);
         }
+
+        &:after {
+          background: var(--core-purple);
+        }
+      }
     }
+  }
 }

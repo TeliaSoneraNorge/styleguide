@@ -1,161 +1,165 @@
 :root {
-    --link-icon-size-large: 1.875em;
-    --bubble-margin: 0.3em;
+  --link-icon-size-large: 1.875em;
+  --bubble-margin: 0.3em;
 }
 
 .list {
-    list-style: none;
-    margin-bottom: var(--margin-bottom);
-    margin-top: 0;
-    padding-left: 0;
+  list-style: none;
+  margin-bottom: var(--margin-bottom);
+  margin-top: 0;
+  padding-left: 0;
 
-    &--wrap {
-        display: flex;
-        flex-flow: column wrap;
+  &--wrap {
+    display: flex;
+    flex-flow: column wrap;
 
-        &-by-three {
-            @media all and (min-width: 37.500em) {
-                max-height: 6em;
-            }
-        }
-
-        &-by-four {
-            @media all and (min-width: 37.500em) {
-                max-height: 8em;
-            }
-        }
-
-        /* This is a hack to make wrapping look nice in IE */
-        /* -ms-high-contrast is used for detection of IE10 and 11 */
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 37.500em) {
-            &-by-three {
-                height: 6em;
-            }
-
-            &-by-four {
-                height: 8em;
-            }
-        }
+    &-by-three {
+      @media all and (min-width: 37.5em) {
+        max-height: 6em;
+      }
     }
 
-    &__item, li {
-        background: transparent url('{{assetPath}}/icons/ico_check.svg') no-repeat left 0.5rem;
-        background-size: 0.875rem 0.875rem;
-        padding: 0.25rem 0 0.25rem 1.25rem;
+    &-by-four {
+      @media all and (min-width: 37.5em) {
+        max-height: 8em;
+      }
     }
 
-    &__link {
-        border-bottom: none;
-        color: var(--black);
-        padding: 0.325rem 0.25rem 0.325rem 1.25rem;
-        text-decoration: none;
-        font-family: 'Helvetica Neue Medium';
+    /* This is a hack to make wrapping look nice in IE */
+    /* -ms-high-contrast is used for detection of IE10 and 11 */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) and (min-width: 37.5em) {
+      &-by-three {
+        height: 6em;
+      }
 
-        &:hover {
-            border-bottom: none;
-            color: var(--core-purple);
-        }
+      &-by-four {
+        height: 8em;
+      }
+    }
+  }
 
-        &:focus, &:active {
-            background: var(--core-purple) url('{{assetPath}}/icons/ico_linkarrow_white.svg') no-repeat left 0.5rem;
-            background-size: 0.875rem 0.875rem;
-            color: var(--white);
-            outline: none;
-        }
+  &__item,
+  li {
+    background: transparent url('{{assetPath}}/icons/ico_check.svg') no-repeat left 0.5rem;
+    background-size: 0.875rem 0.875rem;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+  }
+
+  &__link {
+    border-bottom: none;
+    color: var(--black);
+    padding: 0.325rem 0.25rem 0.325rem 1.25rem;
+    text-decoration: none;
+    font-family: 'Helvetica Neue Medium';
+
+    &:hover {
+      border-bottom: none;
+      color: var(--core-purple);
     }
 
-    &--links {
-        .list__item, li {
-            font-family: 'Helvetica Neue Medium';
+    &:focus,
+    &:active {
+      background: var(--core-purple) url('{{assetPath}}/icons/ico_linkarrow_white.svg') no-repeat left 0.5rem;
+      background-size: 0.875rem 0.875rem;
+      color: var(--white);
+      outline: none;
+    }
+  }
 
-            background-image: url('{{assetPath}}/icons/ico_linkarrow_purple.svg');
-            padding: 0.25rem 0 0.25rem 0;
-        }
+  &--links {
+    .list__item,
+    li {
+      font-family: 'Helvetica Neue Medium';
+
+      background-image: url('{{assetPath}}/icons/ico_linkarrow_purple.svg');
+      padding: 0.25rem 0 0.25rem 0;
+    }
+  }
+
+  &--black {
+    .list__link {
+      color: var(--black);
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus,
+      &:active {
+        color: var(--white);
+      }
+    }
+    .list__item {
+      background-image: url('{{assetPath}}/icons/ico_linkarrow.svg');
+    }
+  }
+
+  &--icon-text-links {
+    .list__item {
+      background: none;
+      margin-bottom: 1.5rem;
+      padding: 0;
     }
 
-    &--black {
-        .list__link {
-            color: var(--black);
-
-            &:hover {
-                text-decoration: underline;
-            }
-
-            &:focus, &:active {
-                color: var(--white);
-            }
-        }
-        .list__item {
-            background-image: url('{{assetPath}}/icons/ico_linkarrow.svg');
-        }
+    &:hover {
+      color: var(--core-purple);
     }
 
-    &--icon-text-links {
-        .list__item {
-            background: none;
-            margin-bottom: 1.5rem;
-            padding: 0;
+    .list__link {
+      display: inline-block;
+      padding: 1px;
+
+      .list__link-icon {
+        svg path {
+          fill: var(--white);
+        }
+      }
+
+      &:active,
+      &:focus {
+        background-image: none;
+        outline: none;
+
+        .list__link-bubble {
+          background-color: var(--white);
         }
 
-        &:hover {
-            color: var(--core-purple);
+        .list__link-icon * {
+          fill: var(--core-purple);
         }
+      }
 
-        .list__link {
-            display: inline-block;
-            padding: 1px;
+      &-icon {
+        display: inline-block;
+        height: var(--link-icon-size-large);
+        width: var(--link-icon-size-large);
 
-            .list__link-icon {
-                svg path {
-                    fill: var(--white);
-                }
-            }
+        position: relative;
+        top: calc(var(--link-icon-size-large) / 2);
+        left: calc(var(--link-icon-size-large) / 2);
 
-            &:active,
-            &:focus {
-                background-image: none;
-                outline: none;
+        background-repeat: no-repeat;
+        background-position: calc(var(--link-icon-size-large) * -1) 0px;
+        background-size: calc(var(--link-icon-size-large) * 3) var(--link-icon-size-large);
+      }
 
-                .list__link-bubble {
-                    background-color: var(--white);
-                }
+      &-bubble {
+        background-color: var(--core-purple);
+        border-radius: 100%;
+        display: inline-flex;
+        height: calc(var(--link-icon-size-large) * 2);
+        width: calc(var(--link-icon-size-large) * 2);
+        margin: var(--bubble-margin) 0 var(--bubble-margin) var(--bubble-margin);
+      }
 
-                .list__link-icon * {
-                    fill: var(--core-purple);
-                }
-            }
-
-            &-icon {
-                display: inline-block;
-                height: var(--link-icon-size-large);
-                width: var(--link-icon-size-large);
-
-                position: relative;
-                top: calc(var(--link-icon-size-large) / 2);
-                left: calc(var(--link-icon-size-large) / 2);
-
-                background-repeat: no-repeat;
-                background-position: calc(var(--link-icon-size-large) * -1) 0px;
-                background-size: calc(var(--link-icon-size-large) * 3) var(--link-icon-size-large);
-            }
-
-            &-bubble {
-                background-color: var(--core-purple);
-                border-radius: 100%;
-                display: inline-flex;
-                height: calc(var(--link-icon-size-large) * 2);
-                width: calc(var(--link-icon-size-large) * 2);
-                margin: var(--bubble-margin) 0 var(--bubble-margin) var(--bubble-margin);
-            }
-
-            &-text {
-                display: inline-block;
-                vertical-align: top;
-                line-height: 1;
-                color: inherit;
-                border-bottom: 1px solid var(--core-purple);
-                margin: calc(var(--link-icon-size-large) + var(--bubble-margin) - 1rem / 2) 1rem 0 1rem;
-            }
-        }
+      &-text {
+        display: inline-block;
+        vertical-align: top;
+        line-height: 1;
+        color: inherit;
+        border-bottom: 1px solid var(--core-purple);
+        margin: calc(var(--link-icon-size-large) + var(--bubble-margin) - 1rem / 2) 1rem 0 1rem;
+      }
     }
+  }
 }

@@ -1,114 +1,114 @@
 .header {
-    background: var(--light-grey);
-    padding: rem(30) rem(20) rem(40);
+  background: var(--light-grey);
+  padding: rem(30) rem(20) rem(40);
 
-    &--white {
-        background-color: var(--white);
+  &--white {
+    background-color: var(--white);
+  }
+
+  &--with-border-bottom {
+    border-bottom: 3px solid var(--core-purple);
+  }
+
+  @media all and (min-width: em(450)) {
+    padding: rem(40);
+  }
+
+  @media all and (min-width: em(768)) {
+    padding: rem(50) rem(80) rem(40);
+
+    &--hide-icon-on-desktop {
+      .header__icon {
+        display: none;
+      }
     }
 
-    &--with-border-bottom {
-        border-bottom: 3px solid var(--core-purple)
+    &--with-mask {
+      padding-bottom: rem(200);
+      background: var(--light-grey) url('{{assetPath}}/icons/full-screen-image-mask.svg') no-repeat bottom -2px left;
+      background-size: 101%;
     }
+
+    &--with-content-overlap {
+      margin-bottom: rem(-160);
+      padding-bottom: rem(205);
+    }
+  }
+
+  &__container {
+    text-align: center;
+  }
+
+  &__icon {
+    margin-bottom: rem(10);
+    width: rem(40);
+    height: rem(40);
 
     @media all and (min-width: em(450)) {
-        padding: rem(40);
+      margin-bottom: rem(15);
+      width: rem(50);
+      height: rem(50);
     }
 
     @media all and (min-width: em(768)) {
-        padding: rem(50) rem(80) rem(40);
+      margin-bottom: rem(20);
+      width: rem(60);
+      height: rem(60);
+    }
+  }
 
-        &--hide-icon-on-desktop {
-            .header__icon {
-                display: none;
-            }
-        }
+  &__subtitle {
+    color: var(--dark-grey-2);
+    display: block;
+    font-size: rem(14);
+    letter-spacing: em(0.8);
+    line-height: 1.2;
+    margin-bottom: rem(10);
+    text-transform: uppercase;
 
-        &--with-mask {
-            padding-bottom: rem(200);
-            background: var(--light-grey) url('{{assetPath}}/icons/full-screen-image-mask.svg') no-repeat bottom -2px left;
-            background-size: 101%;
-        }
-
-        &--with-content-overlap {
-            margin-bottom: rem(-160);
-            padding-bottom: rem(205);
-        }
+    @media all and (min-width: em(450)) {
+      font-size: rem(18);
     }
 
-    &__container {
-        text-align: center;
+    @media all and (min-width: em(768)) {
+      font-size: rem(20);
+    }
+  }
+
+  &__preamble {
+    font-size: rem(20);
+    line-height: rem(26);
+    margin: 0 auto;
+    max-width: var(--width-medium);
+
+    @media all and (min-width: em(450)) {
+      font-size: rem(22);
+      line-height: rem(28);
     }
 
-    &__icon {
-        margin-bottom: rem(10);
-        width: rem(40);
-        height: rem(40);
-
-        @media all and (min-width: em(450)) {
-            margin-bottom: rem(15);
-            width: rem(50);
-            height: rem(50);
-        }
-
-        @media all and (min-width: em(768)) {
-            margin-bottom: rem(20);
-            width: rem(60);
-            height: rem(60);
-        }
+    @media all and (min-width: em(768)) {
+      font-size: rem(24);
+      line-height: rem(30);
     }
+  }
 
-    &__subtitle {
-        color: var(--dark-grey-2);
-        display: block;
-        font-size: rem(14);
-        letter-spacing: em(0.8);
-        line-height: 1.2;
-        margin-bottom: rem(10);
-        text-transform: uppercase;
+  &.header--plain {
+    background: none;
+  }
 
-        @media all and (min-width: em(450)) {
-            font-size: rem(18);
-        }
-
-        @media all and (min-width: em(768)) {
-            font-size: rem(20);
-        }
+  &.header--black-text {
+    .header__subtitle,
+    .heading--level-1,
+    .header__preamble {
+      color: #000000;
     }
+  }
 
-    &__preamble {
-        font-size: rem(20);
-        line-height: rem(26);
-        margin: 0 auto;
-        max-width: var(--width-medium);
-
-        @media all and (min-width: em(450)) {
-            font-size: rem(22);
-            line-height: rem(28);
-        }
-
-        @media all and (min-width: em(768)) {
-            font-size: rem(24);
-            line-height: rem(30);
-        }
+  &.header--white-text {
+    .header__subtitle,
+    .heading--level-1,
+    .header__preamble {
+      color: #ffffff;
     }
-
-    &.header--plain {
-        background: none;
-    }
-
-    &.header--black-text {
-        .header__subtitle,
-        .heading--level-1,
-        .header__preamble {
-            color: #000000;
-        }
-    }
-
-    &.header--white-text {
-        .header__subtitle,
-        .heading--level-1,
-        .header__preamble {
-            color: #FFFFFF;
-        }
-    }
+  }
 }

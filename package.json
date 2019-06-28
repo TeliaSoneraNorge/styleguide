@@ -88,6 +88,8 @@
     "npm": "5.6.x"
   },
   "staticFiles": {
-    "staticPath": ["component-lib/assets/pebbles"]
+    "staticPath": [
+      "component-lib/assets/pebbles"
+    ]
   }
 }

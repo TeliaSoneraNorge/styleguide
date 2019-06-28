@@ -1,221 +1,222 @@
 .step-by-step {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+
+  &:after {
+    border-bottom: 1px solid var(--grey);
+    content: '';
+    display: block;
+    margin: 0 10px;
+    width: 55px;
+
+    @media screen and (max-width: 30em) {
+      border-bottom: none;
+    }
+  }
+
+  &__step-wrapper {
+    position: relative;
     display: flex;
+    flex: 1 1 100%;
     flex-wrap: wrap;
-    list-style: none;
-    margin: 0 0 2rem;
-    padding: 0;
 
     &:after {
-        border-bottom: 1px solid var(--grey);
-        content: '';
-        display: block;
-        margin: 0 10px;
-        width: 55px;
+      content: '';
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 2.3rem;
+      height: 100%;
+      width: 1px;
+      border-left: 1px solid var(--grey);
 
-        @media screen and (max-width: 30em) {
-            border-bottom: none;
-        }
+      @media screen and (max-width: 30em) {
+        border-left: none;
+      }
+    }
+  }
+  &__circle {
+    background-color: var(--light-grey);
+    border-radius: 50%;
+    border: 1px solid var(--grey);
+
+    @media screen and (max-width: 30em) {
+      transform: scaleX(0.75) scaleY(0.75);
     }
 
-    &__step-wrapper {
-        position: relative;
-        display: flex;
-        flex: 1 1 100%;
-        flex-wrap: wrap;
-
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 2.3rem;
-            height: 100%;
-            width: 1px;
-            border-left: 1px solid var(--grey);
-
-            @media screen and (max-width: 30em) {
-                border-left: none;
-            }
-        }
+    &--no-border {
+      border: none;
     }
-    &__circle {
-        background-color: var(--light-grey);
-        border-radius: 50%;
-        border: 1px solid var(--grey);
+  }
+  &__pebbles {
+    svg {
+      z-index: 2;
+      flex: 1 auto;
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
 
-        @media screen and (max-width: 30em) {
-            transform: scaleX(0.75) scaleY(0.75);
-        }
+      @media screen and (max-width: 30em) {
+        transform: scaleX(-0.75) scaleY(0.75);
+      }
 
-        &--no-border {
-            border: none;
-        }
+      * {
+        fill: var(--light-grey);
+        stroke: var(--grey);
+      }
     }
-    &__pebbles {
-        svg {
-            z-index: 2;
-            flex: 1 auto;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-
-            @media screen and (max-width: 30em) {
-                transform: scaleX(-0.75) scaleY(0.75);
-            }
-
-            * {
-                fill: var(--light-grey);
-                stroke: var(--grey);
-            }
-        }
-        & > * {
-            z-index: 3;
-        }
+    & > * {
+      z-index: 3;
     }
-    &__step {
-        display: flex;
-        flex-direction: column;
-        height: 75px;
-        width: 75px;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        z-index: 1; /*To make the circle lay on top of the vertical border */
+  }
+  &__step {
+    display: flex;
+    flex-direction: column;
+    height: 75px;
+    width: 75px;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 1; /*To make the circle lay on top of the vertical border */
 
-        @media screen and (max-width: 30em) {
-            margin-left: -1.5rem;
-        }
-
-        &--interactive {
-            outline: none;
-            text-decoration: none;
-        }
-
-        &--interactive:not(&--highlighted) {
-            cursor: pointer;
-
-            &[class*=step-by-step__circle]:focus {
-                border: 2px solid var(--core-purple);
-            }
-
-            &[class*=step-by-step__pebbles]:focus {
-                path {
-                    stroke: var(--core-purple);
-                }
-            }
-
-            &:focus > .step-by-step__number {
-                line-height: 4.375rem;
-            }
-        }
-
-        &--highlighted {
-            &[class*=step-by-step__circle] {
-                background-color: var(--core-purple);
-            }
-            &.step-by-step__pebbles svg * {
-                stroke: var(--core-purple);
-                fill: var(--core-purple);
-            }
-
-            > .step-by-step__number,
-            > .step-by-step__text {
-                color: var(--white);
-            }
-        }
-
-        &--touched > .step-by-step__content {
-            animation: step-by-step__height-close 500ms forwards;
-        }
-
-        &--opened > .step-by-step__content {
-            visibility: visible;
-            max-height: none;
-            animation: step-by-step__height-open 500ms forwards;
-        }
-
-        &--closed > .step-by-step__content {
-            overflow: hidden;
-            max-height: 0;
-            visibility: collapse;
-            transition: visibility 500ms;
-            animation-fill-mode: forwards;
-        }
+    @media screen and (max-width: 30em) {
+      margin-left: -1.5rem;
     }
 
-    &__icon {
-        height: 75px;
-        padding: 15px;
-        width: 75px;
+    &--interactive {
+      outline: none;
+      text-decoration: none;
     }
 
-    &__image {
-        border-radius: 50%;
-        height: 75px;
-        width: 75px;
-    }
+    &--interactive:not(&--highlighted) {
+      cursor: pointer;
 
-    &__number {
-        color: var(--core-purple);
-        font-family: 'pebble';
-        font-size: 3rem;
+      &[class*='step-by-step__circle']:focus {
+        border: 2px solid var(--core-purple);
+      }
 
-        @media screen and (max-width: 30em) {
-            font-size: 2rem;
+      &[class*='step-by-step__pebbles']:focus {
+        path {
+          stroke: var(--core-purple);
         }
+      }
+
+      &:focus > .step-by-step__number {
+        line-height: 4.375rem;
+      }
     }
 
-    &__text {
-        flex: 6 0 0;
-        min-height: 115px;
-        padding: 0 0 4rem .7rem;
+    &--highlighted {
+      &[class*='step-by-step__circle'] {
+        background-color: var(--core-purple);
+      }
+      &.step-by-step__pebbles svg * {
+        stroke: var(--core-purple);
+        fill: var(--core-purple);
+      }
 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+      > .step-by-step__number,
+      > .step-by-step__text {
+        color: var(--white);
+      }
     }
 
-    &__content {
-        width: 100%;
-        margin: -2rem 0 4rem 5.3rem;
-        @media screen and (max-width: 30em) {
-            margin-left: 0;
-        }
+    &--touched > .step-by-step__content {
+      animation: step-by-step__height-close 500ms forwards;
     }
 
-    &__heading {
-        margin: 0 0 0.3125rem;
+    &--opened > .step-by-step__content {
+      visibility: visible;
+      max-height: none;
+      animation: step-by-step__height-open 500ms forwards;
     }
 
-    &__description {
+    &--closed > .step-by-step__content {
+      overflow: hidden;
+      max-height: 0;
+      visibility: collapse;
+      transition: visibility 500ms;
+      animation-fill-mode: forwards;
     }
+  }
+
+  &__icon {
+    height: 75px;
+    padding: 15px;
+    width: 75px;
+  }
+
+  &__image {
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+  }
+
+  &__number {
+    color: var(--core-purple);
+    font-family: 'pebble';
+    font-size: 3rem;
+
+    @media screen and (max-width: 30em) {
+      font-size: 2rem;
+    }
+  }
+
+  &__text {
+    flex: 6 0 0;
+    min-height: 115px;
+    padding: 0 0 4rem 0.7rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &__content {
+    width: 100%;
+    margin: -2rem 0 4rem 5.3rem;
+    @media screen and (max-width: 30em) {
+      margin-left: 0;
+    }
+  }
+
+  &__heading {
+    margin: 0 0 0.3125rem;
+  }
+
+  &__description {
+  }
 }
 
 @keyframes step-by-step__height-open {
-    0%, 1% {
-        max-height: 0
-    }
-    99% {
-        max-height: 1000px
-    }
-    to {
-        max-height: none
-    }
+  0%,
+  1% {
+    max-height: 0;
+  }
+  99% {
+    max-height: 1000px;
+  }
+  to {
+    max-height: none;
+  }
 }
 @keyframes step-by-step__height-close {
-    0% {
-        max-height: none
-    }
-    1% {
-        max-height: 1000px
-    }
-    99% {
-        max-height: 0
-    }
-    to {
-        max-height: 0;
-        padding: 0
-    }
+  0% {
+    max-height: none;
+  }
+  1% {
+    max-height: 1000px;
+  }
+  99% {
+    max-height: 0;
+  }
+  to {
+    max-height: 0;
+    padding: 0;
+  }
 }

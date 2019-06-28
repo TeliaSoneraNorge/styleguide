@@ -1,62 +1,62 @@
 .tabs {
-    &__list {
-        @media all and (min-width: 49.750em) {
-            display: flex;
-        }
-
-        list-style: none;
-        margin: 0;
-        margin-bottom: 1.875em;
-        padding: 0;
-        position: relative; 
+  &__list {
+    @media all and (min-width: 49.75em) {
+      display: flex;
     }
 
-    &__list-item {
-        display: block;
-        flex: 1;
-        font-family: 'Helvetica Neue Medium';
-        padding-bottom: 0.3125em;
-        text-align: center;
-    }
+    list-style: none;
+    margin: 0;
+    margin-bottom: 1.875em;
+    padding: 0;
+    position: relative;
+  }
 
-    &__button {
-        background: none;
-        border: none;
-        border-bottom: solid 1px transparent;
-        cursor: pointer;
-        font-family: 'Helvetica Neue Medium';
-        font-size: 1em;
-        margin: 0;
-        padding: 0 0 0.125rem 0;
-        transition: all .1s ease-in;
-    }
+  &__list-item {
+    display: block;
+    flex: 1;
+    font-family: 'Helvetica Neue Medium';
+    padding-bottom: 0.3125em;
+    text-align: center;
+  }
 
-    &__list-item--selected .tabs__button,
-    .tabs__button:hover {
-        border-bottom: solid 2px var(--core-purple);
-    }
+  &__button {
+    background: none;
+    border: none;
+    border-bottom: solid 1px transparent;
+    cursor: pointer;
+    font-family: 'Helvetica Neue Medium';
+    font-size: 1em;
+    margin: 0;
+    padding: 0 0 0.125rem 0;
+    transition: all 0.1s ease-in;
+  }
 
-    &__content {
-        display: none;
+  &__list-item--selected .tabs__button,
+  .tabs__button:hover {
+    border-bottom: solid 2px var(--core-purple);
+  }
 
-        &--selected {
-            display: block;
-        }
-    }
+  &__content {
+    display: none;
 
-    &--no-margin {
-        .tabs__list {
-            margin: 0;
-        }
+    &--selected {
+      display: block;
     }
+  }
 
-    &--compact {
-        .tabs__list {
-            display: block;
-        }
-        .tabs__list-item {
-            display: inline-block;
-            padding: 0 1.5rem;
-        }
+  &--no-margin {
+    .tabs__list {
+      margin: 0;
     }
+  }
+
+  &--compact {
+    .tabs__list {
+      display: block;
+    }
+    .tabs__list-item {
+      display: inline-block;
+      padding: 0 1.5rem;
+    }
+  }
 }

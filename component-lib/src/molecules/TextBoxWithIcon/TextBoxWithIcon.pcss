@@ -1,57 +1,57 @@
 :root {
-    --textbox-icon-size: 26px;
-    --textbox-icon-size-small: 22px;
+  --textbox-icon-size: 26px;
+  --textbox-icon-size-small: 22px;
 }
 
 .textbox-with-icon {
+  display: block;
+  position: relative;
+
+  &__button {
+    &:hover {
+      cursor: pointer;
+
+      .textbox-with-icon__icon * {
+        fill: var(--core-purple);
+      }
+    }
+
+    &:active,
+    &:focus {
+      background-color: var(--core-purple);
+      outline: none;
+
+      .textbox-with-icon__icon * {
+        fill: var(--white);
+      }
+    }
+  }
+
+  &__icon-wrapper {
+    background-color: transparent;
+    border: none;
+    padding: 10px 20px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  }
+
+  &__icon {
+    background-repeat: no-repeat;
+    background-size: calc(var(--textbox-icon-size) * 3) var(--textbox-icon-size);
     display: block;
-    position: relative;
+    height: var(--textbox-icon-size);
+    width: var(--textbox-icon-size);
+  }
 
-    &__button {
-        &:hover {
-            cursor: pointer;
-
-            .textbox-with-icon__icon * {
-                fill: var(--core-purple);
-            }
-        }
-
-        &:active,
-        &:focus {
-            background-color: var(--core-purple);
-            outline: none;
-
-            .textbox-with-icon__icon * {
-                fill: var(--white);
-            }
-        }
+  &--small {
+    .textbox-with-icon__icon-wrapper {
+      padding: 7px 10px;
     }
 
-    &__icon-wrapper {
-        background-color: transparent;
-        border: none;
-        padding: 10px 20px;
-        position: absolute;
-        right: 0;
-        bottom: 0;
+    .textbox-with-icon__icon {
+      height: var(--textbox-icon-size-small);
+      width: var(--textbox-icon-size-small);
     }
-
-    &__icon {
-        background-repeat: no-repeat;
-        background-size: calc(var(--textbox-icon-size) * 3) var(--textbox-icon-size);
-        display: block;
-        height: var(--textbox-icon-size);
-        width: var(--textbox-icon-size);
-    }
-
-    &--small{
-         .textbox-with-icon__icon-wrapper {
-             padding: 7px 10px;
-         }
-
-         .textbox-with-icon__icon {
-            height: var(--textbox-icon-size-small);
-            width: var(--textbox-icon-size-small);
-         }
-    }
+  }
 }

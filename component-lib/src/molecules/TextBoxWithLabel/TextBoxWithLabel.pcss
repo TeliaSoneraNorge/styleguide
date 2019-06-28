@@ -1,94 +1,94 @@
 :root {
-    --icon-size: 26px;
+  --icon-size: 26px;
 }
 
 .textbox-with-label {
-    ::placeholder {
-        color: var(--dark-grey);
+  ::placeholder {
+    color: var(--dark-grey);
+  }
+
+  &__input {
+    &[type='search'] {
+      -webkit-appearance: none;
+    }
+    &[type='search']::-webkit-search-decoration,
+    &[type='search']::-webkit-search-cancel-button,
+    &[type='search']::-webkit-search-results-button,
+    &[type='search']::-webkit-search-results-decoration {
+      display: none;
     }
 
-    &__input {
-        &[type="search"] {
-            -webkit-appearance: none;
-        }
-        &[type="search"]::-webkit-search-decoration,
-        &[type="search"]::-webkit-search-cancel-button,
-        &[type="search"]::-webkit-search-results-button,
-        &[type="search"]::-webkit-search-results-decoration {
-            display: none;
-        }
+    border-radius: 0.25em;
+    border: 1px solid var(--dark-grey-2);
+    color: var(--black);
+    font: inherit;
+    padding: 10px 15px;
+    display: block;
+    transition: all 0.3s;
+    width: 100%;
 
-        border-radius: 0.25em;
-        border: 1px solid var(--dark-grey-2);
-        color: var(--black);
-        font: inherit;
-        padding: 10px 15px;
-        display: block;
-        transition: all 0.3s;
-        width: 100%;
-
-        &:hover,
-        &:focus,
-        &:active {
-            border: 1px solid var(--core-purple);
-            outline: none;
-        }
-
-        &:disabled {
-            border: 1px solid var(--dark-grey);
-            color: var(--dark-grey);
-            background: var(--white);
-        }
+    &:hover,
+    &:focus,
+    &:active {
+      border: 1px solid var(--core-purple);
+      outline: none;
     }
 
-    &--with-error {
-        .textbox-with-label__input {
-            border-color: var(--dark-red);
-        }
+    &:disabled {
+      border: 1px solid var(--dark-grey);
+      color: var(--dark-grey);
+      background: var(--white);
+    }
+  }
+
+  &--with-error {
+    .textbox-with-label__input {
+      border-color: var(--dark-red);
+    }
+  }
+
+  &--with-icon {
+    .textbox-with-label__input-icon-wrapper {
+      display: block;
+      position: relative;
     }
 
-    &--with-icon {
-        .textbox-with-label__input-icon-wrapper {
-            display: block;
-            position: relative;
-        }
-
-        .textbox-with-label__input {
-        }
-
-        .textbox-with-label__button {
-            &:hover {
-                .textbox-with-label__icon * {
-                    fill: var(--core-purple);
-                }
-            }
-
-            &:active,
-            &:focus {
-                background-color: var(--core-purple);
-                outline: none;
-
-                .textbox-with-label__icon * {
-                    fill: var(--white);
-                }
-            }
-        }
-
-        .textbox-with-label__icon-wrapper {
-            background-color: transparent;
-            border: none;
-            padding: 10px 20px;
-            position: absolute;
-            right: 0;
-            bottom: 0;
-        }
-
-        .textbox-with-label__icon {
-            background-repeat: no-repeat;
-            background-size: calc(var(--icon-size) * 3) var(--icon-size);
-            display: block;
-            height: var(--icon-size);
-            width: var(--icon-size);
-        }
+    .textbox-with-label__input {
     }
+
+    .textbox-with-label__button {
+      &:hover {
+        .textbox-with-label__icon * {
+          fill: var(--core-purple);
+        }
+      }
+
+      &:active,
+      &:focus {
+        background-color: var(--core-purple);
+        outline: none;
+
+        .textbox-with-label__icon * {
+          fill: var(--white);
+        }
+      }
+    }
+
+    .textbox-with-label__icon-wrapper {
+      background-color: transparent;
+      border: none;
+      padding: 10px 20px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+
+    .textbox-with-label__icon {
+      background-repeat: no-repeat;
+      background-size: calc(var(--icon-size) * 3) var(--icon-size);
+      display: block;
+      height: var(--icon-size);
+      width: var(--icon-size);
+    }
+  }
 }

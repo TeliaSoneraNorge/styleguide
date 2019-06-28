@@ -1,128 +1,135 @@
 .product-list {
-    margin-bottom: 2rem;
+  margin-bottom: 2rem;
 
-    &__item {
-        margin-bottom: 0.75rem;
-        padding: 1.25rem 1.75rem 1.25rem 1.75rem;
+  &__item {
+    margin-bottom: 0.75rem;
+    padding: 1.25rem 1.75rem 1.25rem 1.75rem;
 
-        border: 2px solid #d9d9d9;
+    border: 2px solid #d9d9d9;
 
-        cursor: pointer;
-        min-height: 5.75rem;
+    cursor: pointer;
+    min-height: 5.75rem;
 
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
 
-        text-decoration: none;
+    text-decoration: none;
 
-        &:focus {
-            border-color: var(--core-purple);
-            outline: none;
-        }
-
-        &:hover {
-            border-color: var(--core-purple);
-        }
-
-        &--link-icon {
-            height: 0.875rem;
-            width: 0.875rem;
-            flex-grow: 0;
-            flex-shrink: 0;
-        }
-
-        @media all and (max-width: 30em) {
-            background-position: right 1rem center;
-            min-height: 5rem;
-            padding: 1rem 1.75rem 1rem 1.25rem;
-        }
-
-        &--promo {
-            position: relative;
-            overflow: hidden;
-            border: none;
-
-            &:before {
-                content: ' ';
-                display: block;
-                position: absolute;
-                left: -100px;
-
-                width: 200%;
-                height: 900%;
-
-                z-index: 0;
-                animation: promo-animation linear 6s infinite;
-                background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-6.svg') no-repeat -300px -300px;
-                background-size: 1600px;
-
-            }
-            &:after {
-                content: ' ';
-                display: block;
-                position: absolute;
-                background: var(--white);
-                left: 2px;
-                top: 2px;
-                bottom: 2px;
-                right: 2px;
-                z-index: 1;
-            }
-
-            .product-list__item-heading {
-                color: var(--core-purple);
-            }
-
-            * {
-                z-index: 3;
-            }
-        }
+    &:focus {
+      border-color: var(--core-purple);
+      outline: none;
     }
 
-    &__item-icon {
-        flex-grow: 0;
-        flex-shrink: 0;
-        width: 35px;
-        height: 35px;
-        margin-right: 1.5rem;
+    &:hover {
+      border-color: var(--core-purple);
     }
 
-    &__item-content {
-        flex-grow: 1;
-        flex-shrink: 1;
-        margin-right: .5rem;
+    &--link-icon {
+      height: 0.875rem;
+      width: 0.875rem;
+      flex-grow: 0;
+      flex-shrink: 0;
     }
 
-    &__item-heading {
-        color: black;
-        font-family: "pebble";
-        font-size: 1.5rem;
-        line-height: 1.5rem;
-        text-decoration: none;
-        text-transform: uppercase;
-
-        @media all and (max-width: 30em) {
-            font-size: 1.2rem;
-            line-height: 1.2rem;
-        }
+    @media all and (max-width: 30em) {
+      background-position: right 1rem center;
+      min-height: 5rem;
+      padding: 1rem 1.75rem 1rem 1.25rem;
     }
 
-    &__item-description {
-        color: black;
-        text-decoration: none;
-        line-height: 1.3rem;
-        margin-top: .3rem;
-        @media all and (max-width: 30em) {
-            font-size: .85em;
-            line-height: 1rem;
-        }
+    &--promo {
+      position: relative;
+      overflow: hidden;
+      border: none;
+
+      &:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: -100px;
+
+        width: 200%;
+        height: 900%;
+
+        z-index: 0;
+        animation: promo-animation linear 6s infinite;
+        background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-6.svg') no-repeat -300px -300px;
+        background-size: 1600px;
+      }
+      &:after {
+        content: ' ';
+        display: block;
+        position: absolute;
+        background: var(--white);
+        left: 2px;
+        top: 2px;
+        bottom: 2px;
+        right: 2px;
+        z-index: 1;
+      }
+
+      .product-list__item-heading {
+        color: var(--core-purple);
+      }
+
+      * {
+        z-index: 3;
+      }
     }
+  }
+
+  &__item-icon {
+    flex-grow: 0;
+    flex-shrink: 0;
+    width: 35px;
+    height: 35px;
+    margin-right: 1.5rem;
+  }
+
+  &__item-content {
+    flex-grow: 1;
+    flex-shrink: 1;
+    margin-right: 0.5rem;
+  }
+
+  &__item-heading {
+    color: black;
+    font-family: 'pebble';
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    @media all and (max-width: 30em) {
+      font-size: 1.2rem;
+      line-height: 1.2rem;
+    }
+  }
+
+  &__item-description {
+    color: black;
+    text-decoration: none;
+    line-height: 1.3rem;
+    margin-top: 0.3rem;
+    @media all and (max-width: 30em) {
+      font-size: 0.85em;
+      line-height: 1rem;
+    }
+  }
 }
 
 @keyframes promo-animation {
-    0%   { background-position: -600px -600px; }
-    33%  { background-position: -200px -600px; }
-    66%  { background-position: -200px -900px; }
-    100% { background-position: -600px -600px; }
+  0% {
+    background-position: -600px -600px;
+  }
+  33% {
+    background-position: -200px -600px;
+  }
+  66% {
+    background-position: -200px -900px;
+  }
+  100% {
+    background-position: -600px -600px;
+  }
 }

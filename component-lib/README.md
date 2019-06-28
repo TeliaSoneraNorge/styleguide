@@ -5,7 +5,7 @@ This is a React component library of the Atomic Design components found in the T
 - The styleguide can be [found on the web](http://telia-styleguide.herokuapp.com).
 - The React component library can be [found on NPM as a JavaScript module](https://www.npmjs.com/package/@telia/styleguide).
 
-# Development 
+# Development
 
 ## Getting started
 
@@ -19,6 +19,7 @@ This is a React component library of the Atomic Design components found in the T
 - NPM publish: `npm run deploy:prod` or `npm publish dist --access=public` (you need access to the Telia NPM organization, Note: since 1.20.0, we just need to publish dist folder)
 
 To test locally;
+
 - Local test: `npm run publish:local-test`
 
 ## Usage

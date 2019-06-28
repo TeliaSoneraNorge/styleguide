@@ -1,51 +1,49 @@
 :root {
-    --icon-size-small: 20px;
+  --icon-size-small: 20px;
 }
 
 .unique-selling-points {
-    background-color: white;
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-between;
-    margin: 0 auto var(--margin-bottom);
-    width: 100%;
-    padding: 0;
+  background-color: white;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0 auto var(--margin-bottom);
+  width: 100%;
+  padding: 0;
 
-    &__block {
-        flex-basis: 100%;
-        flex-grow: 0;
-        flex-shrink: 0;
-        list-style: none;
-        margin-bottom: 20px;
+  &__block {
+    flex-basis: 100%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    list-style: none;
+    margin-bottom: 20px;
 
-        @media all and (min-width: em(450)) {
-            flex-basis: auto;
-            margin: 0 20px 20px 0;
-        }
-
-        @media all and (min-width: em(768)) {
-            &:last-child {
-                margin: 0 0 20px 0;
-            }
-        }
-
-        &-content {
-            display: inline-block;
-            width: calc(100% - 10px - var(--icon-size-small));
-            margin-left:10px;
-        }
-
+    @media all and (min-width: em(450)) {
+      flex-basis: auto;
+      margin: 0 20px 20px 0;
     }
-    &__icon {
-        height: var(--icon-size-small);
-        margin-bottom: 0;
-        width: var(--icon-size-small);
 
-        display: inline-block;
-        float:left;
+    @media all and (min-width: em(768)) {
+      &:last-child {
+        margin: 0 0 20px 0;
+      }
+    }
 
+    &-content {
+      display: inline-block;
+      width: calc(100% - 10px - var(--icon-size-small));
+      margin-left: 10px;
     }
-    &__vertical-list {
-        display: block;
-    }
+  }
+  &__icon {
+    height: var(--icon-size-small);
+    margin-bottom: 0;
+    width: var(--icon-size-small);
+
+    display: inline-block;
+    float: left;
+  }
+  &__vertical-list {
+    display: block;
+  }
 }

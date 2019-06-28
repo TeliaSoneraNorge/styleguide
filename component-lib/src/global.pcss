@@ -1,40 +1,42 @@
 html {
-    box-sizing: border-box;
-    color: var(--black);
+  box-sizing: border-box;
+  color: var(--black);
 }
 body {
-    font-family: Helvetica, Roboto, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
+  font-family: Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
-*, :after, :before {
-    box-sizing: inherit;
-}
-
-@font-face {
-    font-family: 'pebble';
-    src: url('{{assetPath}}/fonts/Pebble_W_Rg.woff') format('woff');
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
 @font-face {
-    font-family: 'Helvetica Neue Medium';
-    src: url('{{assetPath}}/fonts/07173950-fa69-4b65-9c71-0cf2ec00b51d.woff') format('woff');
-    unicode-range: U+000-5FF;
+  font-family: 'pebble';
+  src: url('{{assetPath}}/fonts/Pebble_W_Rg.woff') format('woff');
 }
 
 @font-face {
-    font-family: 'Helvetica Neue';
-    src: url('{{assetPath}}/fonts/HelveticaNeue-01.ttf') format('truetype');
+  font-family: 'Helvetica Neue Medium';
+  src: url('{{assetPath}}/fonts/07173950-fa69-4b65-9c71-0cf2ec00b51d.woff') format('woff');
+  unicode-range: U+000-5FF;
+}
+
+@font-face {
+  font-family: 'Helvetica Neue';
+  src: url('{{assetPath}}/fonts/HelveticaNeue-01.ttf') format('truetype');
 }
 
 /* Accessibility */
 .sr-only {
-    position: absolute;
-    left: -10000em;
-    top: auto;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
+  position: absolute;
+  left: -10000em;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }

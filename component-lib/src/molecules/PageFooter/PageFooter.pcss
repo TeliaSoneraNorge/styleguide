@@ -1,67 +1,66 @@
 .page-footer {
+  &__content {
+    background-color: var(--core-purple);
+    position: relative;
+  }
 
-    &__content {
-        background-color: var(--core-purple);
-        position: relative;
+  &__content-wrapper {
+    margin: 0 auto;
+    max-width: var(--width-large);
+    position: relative;
+
+    @media screen and (min-width: 60em) {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+
+  &__main-nav {
+    background-color: var(--core-purple);
+    padding: 1.25rem 1rem;
+
+    @media screen and (min-width: 60em) {
+      width: 75%;
+    }
+  }
+
+  &__special-nav {
+    background-color: var(--dark-purple-2);
+    padding: 1rem;
+
+    @media screen and (min-width: 60em) {
+      background-color: var(--core-purple);
+      padding: 1.25rem 1rem;
+      text-align: right;
+      width: 25%;
+    }
+  }
+
+  &__link {
+    color: var(--white);
+    display: block;
+    padding: 0.5rem 0;
+    text-decoration: none;
+
+    @media screen and (min-width: 42em) {
+      border-right: 1px solid var(--white);
+      display: inline;
+      padding: 0 1rem;
     }
 
-    &__content-wrapper {
-        margin: 0 auto;
-        max-width: var(--width-large);
-        position: relative;
-
-        @media screen and (min-width: 60em) {
-            display: flex;
-            flex-direction: row;
-        }
+    &:hover {
+      text-decoration: underline;
     }
-
-    &__main-nav {
-        background-color: var(--core-purple);
-        padding: 1.25rem 1rem;
-
-        @media screen and (min-width: 60em) {
-            width: 75%;
-        }
+    &:first-child {
+      padding-left: 0;
     }
-
-    &__special-nav {
-        background-color: var(--dark-purple-2);
-        padding: 1rem;
-
-        @media screen and (min-width: 60em) {
-            background-color: var(--core-purple);
-            padding: 1.25rem 1rem;
-            text-align: right;
-            width: 25%;
-        }
+    &:last-child {
+      border-right: none;
     }
-
-    &__link {
-        color: var(--white);
-        display: block;
-        padding: 0.5rem 0;
-        text-decoration: none;
-
-        @media screen and (min-width: 42em) {
-            border-right: 1px solid var(--white);
-            display: inline;
-            padding: 0 1rem;
-        }
-
-        &:hover {
-            text-decoration: underline;
-        }
-        &:first-child {
-            padding-left: 0;
-        }
-        &:last-child {
-            border-right: none;
-        }
+  }
+  &__special-link {
+    @media screen and (min-width: 60em) {
+      padding: 0;
     }
-    &__special-link {
-        @media screen and (min-width: 60em) {
-            padding: 0;
-        }
-    }
+  }
 }

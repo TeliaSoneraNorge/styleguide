@@ -1,62 +1,62 @@
 .article-meta-data {
-    border-bottom: 1px solid var(--grey);
-    border-top: 1px solid var(--grey);
+  border-bottom: 1px solid var(--grey);
+  border-top: 1px solid var(--grey);
 
-    &__wrapper {
-        display: flex;
-        flex-flow: row wrap;
-        padding-bottom: 0.5rem;
-        padding-top: 0.5rem;
-        position: relative;
+  &__wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    padding-bottom: 0.5rem;
+    padding-top: 0.5rem;
+    position: relative;
 
-        @media all and (min-width: 80.25em){
-            padding: 0.5rem 0;
-        }
+    @media all and (min-width: 80.25em) {
+      padding: 0.5rem 0;
     }
+  }
 
+  &__date-author {
+    color: var(--dark-grey);
+    flex: 0 1 100%;
+    font-size: 0.875rem;
+    padding-bottom: 0.3rem;
+  }
+
+  &__date {
+    padding-right: 0.6rem;
+  }
+
+  &__author {
+  }
+
+  .tags {
+    flex: 0 1 90%;
+  }
+
+  &__share {
+    display: none;
+    flex: 0 1 10%;
+  }
+
+  &__share-icon {
+    height: 1.2rem;
+    width: 1.2rem;
+  }
+
+  @media all and (min-width: 47.99em) {
     &__date-author {
-        color: var(--dark-grey);
-        flex: 0 1 100%;
-        font-size: 0.875rem;
-        padding-bottom: 0.3rem;
-    }
-
-    &__date {
-        padding-right: 0.6rem;
-    }
-
-    &__author {
+      flex: 0 1 33.33%;
+      padding-bottom: 0;
+      padding-right: 2rem;
     }
 
     .tags {
-        flex: 0 1 90%;
+      flex: 0 1 33.33%;
+      text-align: center;
     }
 
     &__share {
-        display: none;
-        flex: 0 1 10%;
+      flex: 0 1 33.33%;
+      text-align: right;
     }
-
-    &__share-icon {
-        height: 1.2rem;
-        width: 1.2rem;
-    }
-
-    @media all and (min-width: 47.99em){
-        &__date-author {
-            flex: 0 1 33.33%;
-            padding-bottom: 0;
-            padding-right: 2rem;
-        }
-
-        .tags {
-            flex: 0 1 33.33%;
-            text-align: center;
-        }
-
-        &__share {
-            flex: 0 1 33.33%;
-            text-align: right;
-        }
-    }
+  }
 }

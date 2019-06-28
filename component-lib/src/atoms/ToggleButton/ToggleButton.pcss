@@ -2,104 +2,104 @@
 Inspired by: https://codepen.io/aorcsik/pen/OPMyQp
 */
 .toggle-button {
-    position: relative;
+  position: relative;
 
-    &__checkbox {
-        margin: 7px 0 0 0;
-        position: absolute;
+  &__checkbox {
+    margin: 7px 0 0 0;
+    position: absolute;
 
-        &:checked + .toggle-button__label:after {
-            background: var(--core-purple);
-        }
-        &:checked + .toggle-button__label:before {
-            background: #d7acff; /* Um, this is not on the color chart... */
-        }
-
-        &:focus + .toggle-button__label:after {
-            box-shadow: 2px 2px 6px #666, 0 0 0 1px var(--core-purple);
-        }
+    &:checked + .toggle-button__label:after {
+      background: var(--core-purple);
     }
-    &__label {
-        cursor: pointer;
-        display: block;
-
-        &:before {
-            background: #c6c5c5;
-            border-radius: 16px;
-            content: "";
-            display: block;
-            height: 16px;
-            position: absolute;
-            top: 4px;
-            transition: all 0.3s;
-            width: 40px;
-        }
-        &:after {
-            background: #f1f1f1;
-            border-radius: 16px;
-            box-shadow: 2px 2px 4px #999;
-            content: "";
-            display: block;
-            height: 24px;
-            position: absolute;
-            top: 0px;
-            transition: all 0.3s;
-            width: 24px;
-        }
-
-        &:hover {
-            &:after {
-                box-shadow: 2px 2px 6px #666, 0 0 0 1px var(--core-purple);
-            }
-        }
+    &:checked + .toggle-button__label:before {
+      background: #d7acff; /* Um, this is not on the color chart... */
     }
-    &__description {
-        color: var(--dark-grey-2);
-        font-style: italic;
+
+    &:focus + .toggle-button__label:after {
+      box-shadow: 2px 2px 6px #666, 0 0 0 1px var(--core-purple);
     }
+  }
+  &__label {
+    cursor: pointer;
+    display: block;
+
+    &:before {
+      background: #c6c5c5;
+      border-radius: 16px;
+      content: '';
+      display: block;
+      height: 16px;
+      position: absolute;
+      top: 4px;
+      transition: all 0.3s;
+      width: 40px;
+    }
+    &:after {
+      background: #f1f1f1;
+      border-radius: 16px;
+      box-shadow: 2px 2px 4px #999;
+      content: '';
+      display: block;
+      height: 24px;
+      position: absolute;
+      top: 0px;
+      transition: all 0.3s;
+      width: 24px;
+    }
+
+    &:hover {
+      &:after {
+        box-shadow: 2px 2px 6px #666, 0 0 0 1px var(--core-purple);
+      }
+    }
+  }
+  &__description {
+    color: var(--dark-grey-2);
+    font-style: italic;
+  }
 }
 
 .toggle-button.right-side {
-    .toggle-button__checkbox {
-        right: 5px;
+  .toggle-button__checkbox {
+    right: 5px;
 
-        &:checked + .toggle-button__label:after {
-            right: 0px;
-        }
+    &:checked + .toggle-button__label:after {
+      right: 0px;
     }
+  }
 
-    .toggle-button__label {
-        padding: 4px 48px 4px 0;
+  .toggle-button__label {
+    padding: 4px 48px 4px 0;
 
-        &:before {
-            right: 0px;
-        }
-        &:after {
-            right: 16px;
-        }
+    &:before {
+      right: 0px;
     }
+    &:after {
+      right: 16px;
+    }
+  }
 }
 
 .toggle-button.left-side {
-    .toggle-button__checkbox {
-        left: 5px;
-        top: 4px;
+  .toggle-button__checkbox {
+    left: 5px;
+    top: 4px;
 
-        &:checked + .toggle-button__label:after {
-            left: 16px;
-        }
+    &:checked + .toggle-button__label:after {
+      left: 16px;
     }
+  }
 
-    .toggle-button__label {
-        padding: 4px 0 4px 48px;
+  .toggle-button__label {
+    padding: 4px 0 4px 48px;
 
-        &:before {
-            left: 0;
-            top: 8px;
-        }
-        &:after {
-            left: 0;
-            top: 4px;
-        }
+    &:before {
+      left: 0;
+      top: 8px;
     }
+    &:after {
+      left: 0;
+      top: 4px;
+    }
+  }
 }

@@ -1,78 +1,77 @@
 .box-grid {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: left;
+
+  &--center-content {
+    justify-content: center;
+  }
+
+  .box {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: left;
+    flex: 0 1 auto;
 
-    &--center-content {
-        justify-content: center;
+    @media all and (min-width: 39.8125em) {
+      margin: 0.75rem;
     }
 
-    .box {
-        display: flex;
-        flex: 0 1 auto;
-
-        @media all and (min-width: 39.8125em) {
-            margin: 0.75rem;
-        }
-
-        &--is-expanded {
-            flex-wrap: wrap;
-        }
+    &--is-expanded {
+      flex-wrap: wrap;
     }
+  }
 
-    .box--no-margin-horizontal {
-        margin-left: 0;
-        margin-right: 0;
+  .box--no-margin-horizontal {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .box--no-margin-vertical {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .box--no-flex {
+    display: block;
+  }
+
+  .box--half-width {
+    flex-basis: 45%;
+
+    &:only-child {
+      flex-basis: 100%;
     }
+  }
 
-    .box--no-margin-vertical {
-        margin-top: 0;
-        margin-bottom: 0;
-    }
-
-    .box--no-flex {
-        display: block;
-    }
-
+  @media all and (max-width: 47.313em) {
     .box--half-width {
-        flex-basis: 45%;
-
-        &:only-child {
-            flex-basis: 100%;
-        }
+      flex-basis: inherit;
     }
+  }
 
-    @media all and (max-width: 47.313em) {
-        .box--half-width {
-            flex-basis: inherit;
-        }
-    }
+  .box--small,
+  .box--medium {
+    margin: 3%;
+  }
 
+  @media all and (min-width: 25.3125em) {
     .box--small,
     .box--medium {
-        margin: 3%;
+      margin: 0.75rem;
+    }
+  }
+
+  .box--is-expanded {
+    &.box--small,
+    &.box--medium {
+      margin: 0.75rem 0.3rem;
     }
 
     @media all and (min-width: 25.3125em) {
-        .box--small,
-        .box--medium {
-            margin: 0.75rem;
-        }
+      &.box--small,
+      &.box--medium {
+        margin: 0.75rem;
+      }
     }
-
-    .box--is-expanded {
-
-        &.box--small,
-        &.box--medium {
-            margin: 0.75rem 0.3rem;
-        }
-
-        @media all and (min-width: 25.3125em) {
-            &.box--small,
-            &.box--medium {
-                margin: 0.75rem;
-            }
-        }
-    }
+  }
 }

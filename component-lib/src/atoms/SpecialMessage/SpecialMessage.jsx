@@ -6,13 +6,14 @@ import classnames from 'classnames';
  * Category: Style
  */
 const SpecialMessage = ({ children, className, ...rest }) => (
-    <strong
-        className={classnames('special-message', {
-            [className]: className
-        })}
-        {...rest}>
-        {children}
-    </strong>
+  <strong
+    className={classnames('special-message', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </strong>
 );
 
 export default SpecialMessage;

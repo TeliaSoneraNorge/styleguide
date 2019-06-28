@@ -1,54 +1,100 @@
 @keyframes spinner-rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .spinner {
-    position: relative;
+  position: relative;
 
-    animation-name: spinner-rotate;
-    animation-duration: 700ms;
-    animation-iteration-count: infinite;
-    animation-timing-function: linear;
+  animation-name: spinner-rotate;
+  animation-duration: 700ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 
-    &__blade {
-        position: absolute;
-        display: block;
-        transform-origin: 200% 50%;
+  &__blade {
+    position: absolute;
+    display: block;
+    transform-origin: 200% 50%;
 
-        top: 48%;
-        left: 10%;
-        width: 20%;
-        height: 4%;
+    top: 48%;
+    left: 10%;
+    width: 20%;
+    height: 4%;
 
-        &--0 { transform: rotate(0deg); background: #cfcfcf; }
-        &--1 { transform: rotate(25.71deg); background: #cfcfcf; }
-        &--2 { transform: rotate(51.42deg); background: #cfcfcf; }
-        &--3 { transform: rotate(77.14deg); background: #cfcfcf; }
-        &--4 { transform: rotate(102.84deg); background: #bdbdbd; }
-        &--5 { transform: rotate(128.55deg); background: #999999; }
-        &--6 { transform: rotate(154.26deg); background: #878787; }
-        &--7 { transform: rotate(179.97deg); background: #757575; }
-        &--8 { transform: rotate(205.68deg); background: #636363; }
-        &--9 { transform: rotate(231.39deg); background: #525252; }
-        &--10 { transform: rotate(257.1deg); background: #404040; }
-        &--11 { transform: rotate(282.81deg); background: #2e2e2e; }
-        &--12 { transform: rotate(308.52deg); background: #1c1c1c; }
-        &--13 { transform: rotate(334.23deg); background: #0a0a0a; }
+    &--0 {
+      transform: rotate(0deg);
+      background: #cfcfcf;
     }
-
-    &--sm {
-        width: 30px;
-        height: 30px;
+    &--1 {
+      transform: rotate(25.71deg);
+      background: #cfcfcf;
     }
-
-    &--md {
-        width: 40px;
-        height: 40px;
+    &--2 {
+      transform: rotate(51.42deg);
+      background: #cfcfcf;
     }
-
-    &--lg {
-        width: 50px;
-        height: 50px;
+    &--3 {
+      transform: rotate(77.14deg);
+      background: #cfcfcf;
     }
+    &--4 {
+      transform: rotate(102.84deg);
+      background: #bdbdbd;
+    }
+    &--5 {
+      transform: rotate(128.55deg);
+      background: #999999;
+    }
+    &--6 {
+      transform: rotate(154.26deg);
+      background: #878787;
+    }
+    &--7 {
+      transform: rotate(179.97deg);
+      background: #757575;
+    }
+    &--8 {
+      transform: rotate(205.68deg);
+      background: #636363;
+    }
+    &--9 {
+      transform: rotate(231.39deg);
+      background: #525252;
+    }
+    &--10 {
+      transform: rotate(257.1deg);
+      background: #404040;
+    }
+    &--11 {
+      transform: rotate(282.81deg);
+      background: #2e2e2e;
+    }
+    &--12 {
+      transform: rotate(308.52deg);
+      background: #1c1c1c;
+    }
+    &--13 {
+      transform: rotate(334.23deg);
+      background: #0a0a0a;
+    }
+  }
+
+  &--sm {
+    width: 30px;
+    height: 30px;
+  }
+
+  &--md {
+    width: 40px;
+    height: 40px;
+  }
+
+  &--lg {
+    width: 50px;
+    height: 50px;
+  }
 }

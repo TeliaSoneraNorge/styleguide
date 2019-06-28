@@ -32,79 +32,80 @@ import ModalDialogSamplePage from './pages/ModalDialogSamplePage';
 import TabsSamplePage from './pages/TabsSamplePage';
 
 const menuLinks = [
-    {
-        heading: { text: 'Styleguide', url: '/' },
-        links: [
-            { text: 'Layout', url: '/layout' },
-            { text: 'Image Assets', url: '/image-assets' },
-            { text: 'Contributing', url: '/contributing' },
-            { text: 'Download/Install', url: '/download' },
-            { text: 'Versions', url: '/versions' }
-        ],
-    },
-    {
-        heading: { text: 'Component Library', url: '/components' },
-        links: [
-            { text: 'Components', url: '/components/' },
-            { text: 'Components in atomic structure', url: '/components-atomic/' },
-        ]
-    }
+  {
+    heading: { text: 'Styleguide', url: '/' },
+    links: [
+      { text: 'Layout', url: '/layout' },
+      { text: 'Image Assets', url: '/image-assets' },
+      { text: 'Contributing', url: '/contributing' },
+      { text: 'Download/Install', url: '/download' },
+      { text: 'Versions', url: '/versions' },
+    ],
+  },
+  {
+    heading: { text: 'Component Library', url: '/components' },
+    links: [
+      { text: 'Components', url: '/components/' },
+      { text: 'Components in atomic structure', url: '/components-atomic/' },
+    ],
+  },
 ];
 
-const routerLinkTemplate = ({ url, ...otherProps }) =>
-    <Link to={url} {...otherProps} />;
+const routerLinkTemplate = ({ url, ...otherProps }) => <Link to={url} {...otherProps} />;
 
 const Routes = () => {
-    return (
-        <div>
-            <AllIcons />
+  return (
+    <div>
+      <AllIcons />
 
-            <Menu
-                logoUrl="/"
-                linkTemplate={routerLinkTemplate}
-                activeIndex={window.location.href.includes('component') ? 1 : 0}
-                menuLinks={menuLinks}
-                logoImageDesktopPath={require('../assets/images/logo/logo.svg')}
-                logoImageInverseDesktopPath={require('../assets/images/logo/logo-inverted.svg')}
-                lockBodyOnMenuOpen />
+      <Menu
+        logoUrl="/"
+        linkTemplate={routerLinkTemplate}
+        activeIndex={window.location.href.includes('component') ? 1 : 0}
+        menuLinks={menuLinks}
+        logoImageDesktopPath={require('../assets/images/logo/logo.svg')}
+        logoImageInverseDesktopPath={require('../assets/images/logo/logo-inverted.svg')}
+        lockBodyOnMenuOpen
+      />
 
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/layout" component={LayoutPage} />
-            <Route exact path="/components" component={ComponentsPage} />
-            <Route exact path="/components-atomic" component={ComponentsAtomicPage} />
-            <Route exact path="/components-atomic/:componentType" component={ComponentsByTypePage} />
-            <Route exact path="/components/:componentCategory" component={ComponentsByCategoryPage} />
-            <Route exact path="/image-assets" component={ImageAssetsPage} />
-            <Route exact path="/contributing" component={ContributingPage} />
-            <Route exact path="/download" component={DownloadPage} />
-            <Route exact path="/versions" component={VersionsPage} />
+      <Route exact path="/" component={HomePage} />
+      <Route exact path="/layout" component={LayoutPage} />
+      <Route exact path="/components" component={ComponentsPage} />
+      <Route exact path="/components-atomic" component={ComponentsAtomicPage} />
+      <Route exact path="/components-atomic/:componentType" component={ComponentsByTypePage} />
+      <Route exact path="/components/:componentCategory" component={ComponentsByCategoryPage} />
+      <Route exact path="/image-assets" component={ImageAssetsPage} />
+      <Route exact path="/contributing" component={ContributingPage} />
+      <Route exact path="/download" component={DownloadPage} />
+      <Route exact path="/versions" component={VersionsPage} />
 
-            <Route exact path="/information-article-1" component={InformationArticleSample1} />
-            <Route exact path="/information-article-2" component={InformationArticleSample2} />
-            <Route exact path="/information-article-3" component={InformationArticleSample3} />
-            <Route exact path="/information-article-4" component={InformationArticleSample4} />
-            <Route exact path="/information-article-5" component={InformationArticleSample5} />
-            <Route exact path="/pebbles-page" component={PebblesPage} />
-            <Route exact path="/subscriptions" component={SubscriptionSamplePage} />
-            <Route exact path="/box-grid" component={BoxGridSamplePage} />
-            <Route exact path="/blog-1" component={BlogSamplePage1} />
-            <Route exact path="/blog-2" component={BlogSamplePage2} />
-            <Route exact path="/forms" component={FormsSamplePage} />
-            <Route exact path="/usage" component={UsagePage} />
-            <Route exact path="/modal-dialog" component={ModalDialogSamplePage} />
-            <Route exact path="/style" component={StylePage} />
-            <Route exact path="/tabs" component={TabsSamplePage} />
+      <Route exact path="/information-article-1" component={InformationArticleSample1} />
+      <Route exact path="/information-article-2" component={InformationArticleSample2} />
+      <Route exact path="/information-article-3" component={InformationArticleSample3} />
+      <Route exact path="/information-article-4" component={InformationArticleSample4} />
+      <Route exact path="/information-article-5" component={InformationArticleSample5} />
+      <Route exact path="/pebbles-page" component={PebblesPage} />
+      <Route exact path="/subscriptions" component={SubscriptionSamplePage} />
+      <Route exact path="/box-grid" component={BoxGridSamplePage} />
+      <Route exact path="/blog-1" component={BlogSamplePage1} />
+      <Route exact path="/blog-2" component={BlogSamplePage2} />
+      <Route exact path="/forms" component={FormsSamplePage} />
+      <Route exact path="/usage" component={UsagePage} />
+      <Route exact path="/modal-dialog" component={ModalDialogSamplePage} />
+      <Route exact path="/style" component={StylePage} />
+      <Route exact path="/tabs" component={TabsSamplePage} />
 
-            <PageFooter
-                links={[
-                    { text: 'Om Telia', url: '#' },
-                    { text: 'Telia butikker', url: '#' },
-                    { text: 'Presse', url: '#' },
-                    { text: 'Jobb i Telia', url: '#' }
-                ]}
-                specialLink={{ text: 'Personvern og Cookies', url: '#' }} />
-        </div>
-    );
+      <PageFooter
+        links={[
+          { text: 'Om Telia', url: '#' },
+          { text: 'Telia butikker', url: '#' },
+          { text: 'Presse', url: '#' },
+          { text: 'Jobb i Telia', url: '#' },
+        ]}
+        specialLink={{ text: 'Personvern og Cookies', url: '#' }}
+      />
+    </div>
+  );
 };
 
 export default withRouter(Routes);

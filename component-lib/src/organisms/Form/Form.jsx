@@ -9,34 +9,27 @@ import classnames from 'classnames';
  *
  * More form examples on the <a href="/forms">forms sample page</a>.
  */
-const Form = ({ id, action, method, onSubmit, children, className }) =>
-    <form
-        id={id}
-        className={classnames('form', {
-            [className]: className
-        })}
-        action={action}
-        method={method}
-        onSubmit={onSubmit}>
-        <fieldset className="form__fieldset">
-            {children}
-        </fieldset>
-    </form>;
+const Form = ({ id, action, method, onSubmit, children, className }) => (
+  <form
+    id={id}
+    className={classnames('form', {
+      [className]: className,
+    })}
+    action={action}
+    method={method}
+    onSubmit={onSubmit}
+  >
+    <fieldset className="form__fieldset">{children}</fieldset>
+  </form>
+);
 
-const FormRow = ({ children }) =>
-    <div className="form__row">
-        {children}
-    </div>;
+const FormRow = ({ children }) => <div className="form__row">{children}</div>;
 
-const FormColumn = ({ size, children }) =>
-    <div className={`form__column ${size ? 'form__column--' + size : ''}`}>
-        {children}
-    </div>;
+const FormColumn = ({ size, children }) => (
+  <div className={`form__column ${size ? 'form__column--' + size : ''}`}>{children}</div>
+);
 
-const FormSuccessMessage = ({ children }) =>
-    <div className="form__success">
-        {children}
-    </div>;
+const FormSuccessMessage = ({ children }) => <div className="form__success">{children}</div>;
 
 Form.FormRow = FormRow;
 Form.FormColumn = FormColumn;

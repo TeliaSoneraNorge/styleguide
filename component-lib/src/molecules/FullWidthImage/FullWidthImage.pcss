@@ -1,90 +1,90 @@
 .full-width-image {
-    background-color: var(--grey);
-    margin: 0;
-    position: relative;
-    z-index: -1;
+  background-color: var(--grey);
+  margin: 0;
+  position: relative;
+  z-index: -1;
 
-    &__image {
+  &__image {
+    display: block;
+    min-height: 150px;
+    object-fit: cover;
+    object-position: top;
+    font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
+    width: 100%;
+
+    @media all and (min-width: 28.125em) {
+      min-height: 300px;
+    }
+
+    @media all and (min-width: 62em) {
+      height: 440px;
+    }
+
+    @media all and (min-width: 110em) {
+      height: 620px;
+    }
+  }
+
+  &__logo {
+    position: absolute;
+
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+
+    &-image {
+      position: absolute;
+
+      &--align-top-left {
+        left: 1rem;
+        top: 1rem;
+      }
+
+      &--align-top-right {
+        top: 1rem;
+        right: 1rem;
+      }
+
+      &--align-bottom-right {
+        bottom: 1rem;
+        right: 1rem;
+      }
+
+      &--align-bottom-left {
+        bottom: 1rem;
+        left: 1rem;
+      }
+    }
+  }
+
+  @media all and (min-width: 43em) {
+    &--with-mask {
+      &:after {
+        background: transparent url('{{assetPath}}/icons/full-screen-image-mask.svg') no-repeat bottom left;
+        background-size: 101%;
+        bottom: -2px;
+        content: '';
         display: block;
-        min-height: 150px;
-        object-fit: cover;
-        object-position: top;
-        font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
-        width: 100%;
-
-        @media all and (min-width: 28.125em) {
-            min-height: 300px;
-        }
-
-        @media all and (min-width: 62em) {
-            height: 440px;
-        }
-
-         @media all and (min-width: 110em) {
-            height: 620px;
-        }
-    }
-
-    &__logo {
-        position: absolute;
-
-        top: 0;
-        right: 0;
-        width: 100%;
         height: 100%;
-
-        &-image {
-            position: absolute;
-
-            &--align-top-left {
-                left: 1rem;
-                top: 1rem;
-            }
-
-            &--align-top-right {
-                top: 1rem;
-                right: 1rem;
-            }
-
-            &--align-bottom-right {
-                bottom: 1rem;
-                right: 1rem;
-            }
-
-            &--align-bottom-left {
-                bottom: 1rem;
-                left: 1rem;
-            }
-        }
+        left: 0;
+        position: absolute;
+        width: 100%;
+      }
     }
 
-    @media all and (min-width: 43em) {
-        &--with-mask {
-            &:after {
-                background: transparent url('{{assetPath}}/icons/full-screen-image-mask.svg') no-repeat bottom left;
-                background-size: 101%;
-                bottom: -2px;
-                content: "";
-                display: block;
-                height: 100%;
-                left: 0;
-                position: absolute;
-                width: 100%;
-            }
-        }
-
-        &--with-content-overlap {
-            margin-bottom: -12%;
-        }
+    &--with-content-overlap {
+      margin-bottom: -12%;
     }
+  }
 
-    @media all and (min-width: 78.125em) {
-        &--with-content-overlap {
-            margin-bottom: -9.375rem;
-        }
+  @media all and (min-width: 78.125em) {
+    &--with-content-overlap {
+      margin-bottom: -9.375rem;
     }
+  }
 
-    &--no-margin {
-        margin-bottom: 0;
-    }
+  &--no-margin {
+    margin-bottom: 0;
+  }
 }

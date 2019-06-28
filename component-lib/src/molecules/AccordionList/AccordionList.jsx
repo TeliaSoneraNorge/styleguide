@@ -27,27 +27,32 @@ const noop = () => {};
  *
  */
 const AccordionList = ({ accordionItems, setItemRef, isExpandedAccordionIndex, toggleIsExpanded }) => (
-    <div className="accordion-list">
-        {accordionItems.map((accordionItem, i) =>
-            <Accordion
-                accordionRef={(element) => {(setItemRef || noop)(element, i);}}
-                key={accordionItem.id}
-                {...accordionItem}
-                isExpanded={i === isExpandedAccordionIndex}
-                toggleIsExpanded={() => (toggleIsExpanded || noop)(i)} />
-        )}
-    </div>
+  <div className="accordion-list">
+    {accordionItems.map((accordionItem, i) => (
+      <Accordion
+        accordionRef={element => {
+          (setItemRef || noop)(element, i);
+        }}
+        key={accordionItem.id}
+        {...accordionItem}
+        isExpanded={i === isExpandedAccordionIndex}
+        toggleIsExpanded={() => (toggleIsExpanded || noop)(i)}
+      />
+    ))}
+  </div>
 );
 
 AccordionList.propTypes = {
-    accordionItems: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        children: PropTypes.node.isRequired
-    })).isRequired,
-    setItemRef: PropTypes.func,
-    toggleIsExpanded: PropTypes.func,
-    isExpandedAccordionIndex: PropTypes.number.isRequired,
+  accordionItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      children: PropTypes.node.isRequired,
+    })
+  ).isRequired,
+  setItemRef: PropTypes.func,
+  toggleIsExpanded: PropTypes.func,
+  isExpandedAccordionIndex: PropTypes.number.isRequired,
 };
 
 export default AccordionList;

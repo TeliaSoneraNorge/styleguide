@@ -1,49 +1,53 @@
 @keyframes promotion-box-animation {
-    0%   { background-position: -600px -1737px; }
-    100% { background-position: -600px 165px; }
+  0% {
+    background-position: -600px -1737px;
+  }
+  100% {
+    background-position: -600px 165px;
+  }
 }
 
 .promo-box {
-    background: var(--core-purple) url('{{assetPath}}/pebbles/hero-pebble-54.svg') no-repeat -600px -290px;
-    background-size: 1552px;
-    margin: 0 auto var(--margin-bottom-large);
-    padding: 0.2rem;
+  background: var(--core-purple) url('{{assetPath}}/pebbles/hero-pebble-54.svg') no-repeat -600px -290px;
+  background-size: 1552px;
+  margin: 0 auto var(--margin-bottom-large);
+  padding: 0.2rem;
 
-    max-width: 370px;
-    width: 100%;
+  max-width: 370px;
+  width: 100%;
 
-    @media all and (min-width: 48em) {
-        width: 48%;
+  @media all and (min-width: 48em) {
+    width: 48%;
+  }
+
+  &__outer-wrapper {
+    background-color: white;
+    padding: 1rem;
+    overflow: hidden;
+  }
+
+  &__content {
+    color: var(--core-purple);
+
+    .heading {
+      color: var(--core-purple);
+    }
+  }
+
+  &--with-image {
+    .promo-box__content {
+      float: left;
+      width: 70%;
     }
 
-    &__outer-wrapper {
-        background-color: white;
-        padding: 1rem;
-        overflow: hidden;
+    .promo-box__image {
+      float: right;
+      width: 30%;
     }
+  }
 
-    &__content {
-        color: var(--core-purple);
-
-        .heading {
-            color: var(--core-purple);
-        }
-    }
-
-    &--with-image {
-        .promo-box__content {
-            float: left;
-            width: 70%;
-        }
-
-        .promo-box__image {
-            float: right;
-            width: 30%;
-        }
-    }
-
-    &--animated {
-        animation: promotion-box-animation linear 10s infinite;
-        background-position: -600px -1000px;
-    }
+  &--animated {
+    animation: promotion-box-animation linear 10s infinite;
+    background-position: -600px -1000px;
+  }
 }

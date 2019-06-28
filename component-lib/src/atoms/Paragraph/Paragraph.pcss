@@ -1,34 +1,34 @@
 .paragraph {
-    font-size: 1rem;
-    letter-spacing: .01875rem;
-    line-height: 1.5rem;
-    margin-bottom: 0.5rem;
-    margin-top: 0;
+  font-size: 1rem;
+  letter-spacing: 0.01875rem;
+  line-height: 1.5rem;
+  margin-bottom: 0.5rem;
+  margin-top: 0;
+
+  @media all and (min-width: em(450)) {
+    margin-bottom: var(--margin-bottom);
+  }
+
+  &--preamble {
+    font-size: 1.25rem;
+    line-height: 1.625rem;
 
     @media all and (min-width: em(450)) {
-        margin-bottom: var(--margin-bottom);
+      font-size: 1.375rem;
+      line-height: 1.75rem;
     }
 
-    &--preamble {
-        font-size: 1.25rem;
-        line-height: 1.625rem;
-
-        @media all and (min-width: em(450)) {
-            font-size: 1.375rem;
-            line-height: 1.75rem;
-        }
-
-        @media all and (min-width: em(768)) {
-            font-size: 1.5rem;
-            line-height: 1.875rem;
-        }
+    @media all and (min-width: em(768)) {
+      font-size: 1.5rem;
+      line-height: 1.875rem;
     }
+  }
 
-    &--small-text {
-        font-size: 0.875rem;
-    }
+  &--small-text {
+    font-size: 0.875rem;
+  }
 
-    &--fineprint {
-        font-size: .9rem;
-    }
+  &--fineprint {
+    font-size: 0.9rem;
+  }
 }

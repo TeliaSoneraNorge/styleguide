@@ -1,59 +1,59 @@
 .dropdown-list-with-label {
-    align-items: left;
-    display: flex;
-    flex-direction: column;
+  align-items: left;
+  display: flex;
+  flex-direction: column;
 
-    &__select {
-        border-radius: 0.25em;
-        background: transparent url('{{assetPath}}/icons/ico_dropArrow.svg') no-repeat right 10px center;
-        background-size: 15px 15px;
-        border: 1px solid var(--dark-grey-2);
-        font-size: 1rem;
-        margin: 0;
-        min-width: 10px;
-        padding: 10px 30px 10px 15px;
-        -webkit-appearance: none;
-        -moz-appearance: none;
-        width: 100%;
+  &__select {
+    border-radius: 0.25em;
+    background: transparent url('{{assetPath}}/icons/ico_dropArrow.svg') no-repeat right 10px center;
+    background-size: 15px 15px;
+    border: 1px solid var(--dark-grey-2);
+    font-size: 1rem;
+    margin: 0;
+    min-width: 10px;
+    padding: 10px 30px 10px 15px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
 
-        &:focus,
-        &:active {
-            background-color: var(--white);
-            background-image: url('{{assetPath}}/icons/ico_dropArrow_purple.svg');
-            border-color: var(--core-purple);
-            color: var(--core-purple);
-            outline: none;
-        }
-
-        &--half {
-            width: 50%;
-        }
-
-        &--disabled {
-            background-image: url('{{assetPath}}/icons/ico_dropArrow_grey.svg');
-        }
-
-        &::-ms-expand {
-            display: none;
-        }
+    &:focus,
+    &:active {
+      background-color: var(--white);
+      background-image: url('{{assetPath}}/icons/ico_dropArrow_purple.svg');
+      border-color: var(--core-purple);
+      color: var(--core-purple);
+      outline: none;
     }
 
-    &__option {
-        color: var(--black);
-        padding: 0;
+    &--half {
+      width: 50%;
     }
 
-    &--text-to-right {
-        align-items: center;
-        flex-direction: row;
-
-        .dropdown-list-with-label__label-text {
-            order: 2;
-            margin-left: 10px;
-        }
-
-        .dropdown-list-with-label__select {
-            order: 1;
-        }
+    &--disabled {
+      background-image: url('{{assetPath}}/icons/ico_dropArrow_grey.svg');
     }
+
+    &::-ms-expand {
+      display: none;
+    }
+  }
+
+  &__option {
+    color: var(--black);
+    padding: 0;
+  }
+
+  &--text-to-right {
+    align-items: center;
+    flex-direction: row;
+
+    .dropdown-list-with-label__label-text {
+      order: 2;
+      margin-left: 10px;
+    }
+
+    .dropdown-list-with-label__select {
+      order: 1;
+    }
+  }
 }

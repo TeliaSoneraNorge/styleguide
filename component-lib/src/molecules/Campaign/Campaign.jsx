@@ -17,44 +17,47 @@ import Heading from '../../atoms/Heading/Heading';
  * We are awaiting info from the UX people regarding the recommended image sizes.
  */
 const Campaign = ({
-    headingText,
-    ingressHtml,
-    buttonText,
-    desktopBackgroundImage,
-    mobileBackgroundImage,
-    backgroundImageAltText = '',
-    isUsingWhiteText = false,
-    isUsingWhiteContentBox = false,
-    children
-}) =>
-    <div className={classNames('campaign', { 'campaign--white-text': isUsingWhiteText, 'campaign--white-content-box': isUsingWhiteContentBox })}>
-        <picture className="campaign__picture">
-            <source media="(max-width: 29.99em)" srcSet={mobileBackgroundImage} />
-            <source media="(min-width: 30em)" srcSet={desktopBackgroundImage} />
-            <img className="campaign__image" src={desktopBackgroundImage} alt={backgroundImageAltText} />
-        </picture>
-        <div className="campaign__content-wrapper">
-            <div className="campaign__content">
-                <Heading className="campaign__heading" level={1} text={headingText} />
-                {children
-                    ? children
-                    : ingressHtml
-                }
-            </div>
-            <Button className="campaign__button" text={buttonText} />
-        </div>
-    </div>;
+  headingText,
+  ingressHtml,
+  buttonText,
+  desktopBackgroundImage,
+  mobileBackgroundImage,
+  backgroundImageAltText = '',
+  isUsingWhiteText = false,
+  isUsingWhiteContentBox = false,
+  children,
+}) => (
+  <div
+    className={classNames('campaign', {
+      'campaign--white-text': isUsingWhiteText,
+      'campaign--white-content-box': isUsingWhiteContentBox,
+    })}
+  >
+    <picture className="campaign__picture">
+      <source media="(max-width: 29.99em)" srcSet={mobileBackgroundImage} />
+      <source media="(min-width: 30em)" srcSet={desktopBackgroundImage} />
+      <img className="campaign__image" src={desktopBackgroundImage} alt={backgroundImageAltText} />
+    </picture>
+    <div className="campaign__content-wrapper">
+      <div className="campaign__content">
+        <Heading className="campaign__heading" level={1} text={headingText} />
+        {children ? children : ingressHtml}
+      </div>
+      <Button className="campaign__button" text={buttonText} />
+    </div>
+  </div>
+);
 
 Campaign.propTypes = {
-    headingText: PropTypes.node.isRequired,
-    ingressHtml: PropTypes.node,
-    buttonText: PropTypes.node.isRequired,
-    desktopBackgroundImage: PropTypes.string.isRequired,
-    mobileBackgroundImage: PropTypes.string.isRequired,
-    backgroundImageAltText: PropTypes.string,
-    isUsingWhiteText: PropTypes.bool,
-    isUsingWhiteContentBox: PropTypes.bool,
-    children: PropTypes.node,
+  headingText: PropTypes.node.isRequired,
+  ingressHtml: PropTypes.node,
+  buttonText: PropTypes.node.isRequired,
+  desktopBackgroundImage: PropTypes.string.isRequired,
+  mobileBackgroundImage: PropTypes.string.isRequired,
+  backgroundImageAltText: PropTypes.string,
+  isUsingWhiteText: PropTypes.bool,
+  isUsingWhiteContentBox: PropTypes.bool,
+  children: PropTypes.node,
 };
 
 export default Campaign;

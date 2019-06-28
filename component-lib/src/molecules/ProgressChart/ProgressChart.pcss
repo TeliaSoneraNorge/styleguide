@@ -1,59 +1,59 @@
 .progress-chart {
-    overflow: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+
+  align-items: center;
+  padding: 0.4em 0;
+
+  &__side {
+    max-height: 20px;
+
+    &-inner {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+
+      transition: top 0.2s linear 0.1s;
+
+      &--hidden-top {
+        top: -2em;
+      }
+
+      &--hidden-bottom {
+        top: 0em;
+      }
+    }
+  }
+
+  &__caption {
     display: flex;
-    flex-direction: row;
+    position: relative;
+    opacity: 1;
 
-    align-items: center;
-    padding: .4em 0;
+    width: 100%;
+    height: 100%;
+    height: 2em;
+    top: 0;
+    padding: 0 1em;
 
-    &__side {
-        max-height: 20px;
+    text-align: center;
+    line-height: 1.3rem;
+    white-space: nowrap;
 
-        &-inner {
-            display: flex;
-            flex-direction: column;
-            position: relative;
+    transition: opacity 0.2s linear 0s;
 
-            transition: top .2s linear .1s;
-
-            &--hidden-top {
-                top: -2em;
-            }
-
-            &--hidden-bottom {
-                top: 0em;
-            }
-        }
+    &-value {
+      font-family: 'Helvetica Neue Medium';
     }
 
-    &__caption {
-        display: flex;
-        position: relative;
-        opacity: 1;
-
-        width: 100%;
-        height: 100%;
-        height: 2em;
-        top: 0;
-        padding: 0 1em;
-
-        text-align: center;
-        line-height: 1.3rem;
-        white-space: nowrap;
-
-        transition: opacity .2s linear .0s;
-
-        &-value {
-            font-family: 'Helvetica Neue Medium';
-        }
-
-        &--hidden {
-            transition: opacity .2s linear .0s;
-            opacity: 0;
-        }
+    &--hidden {
+      transition: opacity 0.2s linear 0s;
+      opacity: 0;
     }
+  }
 
-    &__spinner {
-        margin: -5px 5px;
-    }
+  &__spinner {
+    margin: -5px 5px;
+  }
 }

@@ -1,146 +1,174 @@
 .full-width-table {
-    border-collapse: collapse;
-    margin-bottom: var(--margin-bottom-large);
-    margin-top: 10px;
-    position: relative;
+  border-collapse: collapse;
+  margin-bottom: var(--margin-bottom-large);
+  margin-top: 10px;
+  position: relative;
+  width: 100%;
+
+  &--clickable {
+    .full-width-table__header,
+    thead {
+      .full-width-table__row,
+      tr {
+        background-color: var(--white);
+      }
+    }
+
+    .full-width-table__body,
+    tbody {
+      .full-width-table__row,
+      tr {
+        background-color: var(--white);
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--light-grey);
+
+          .full-width-table__row:nth-child(odd),
+          tr:nth-child(odd) {
+            background-color: var(--light-grey);
+          }
+        }
+
+        &:before,
+        &:after,
+        &__header:before,
+        thead:before,
+        &__footer:after,
+        tfoot:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          border-top: 1px solid var(--grey);
+        }
+      }
+    }
+  }
+
+  caption {
+    /*In some CMS when adding a table, it's possible to set a Heading for a table which is output as a html caption element*/
+    margin-bottom: 10px;
+    text-align: left;
+  }
+
+  /*Border on top and on bottom of table body and table*/
+  &:before,
+  &:after,
+  &__header:before,
+  thead:before,
+  &__footer:after,
+  tfoot:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    border-top: 1px solid var(--grey);
+  }
+
+  &__header,
+  thead {
+    font-family: 'Helvetica Neue Medium';
+  }
+
+  &__footer,
+  tfoot {
+    font-family: 'Helvetica Neue Medium';
+
+    .full-width-table__cell,
+    td {
+      font-family: 'Helvetica Neue Medium';
+
+      &:not(:last-child) {
+        font-family: inherit;
+        font-size: 14px;
+        text-transform: uppercase;
+      }
+    }
+
+    &--alt {
+      .full-width-table__row,
+      tr {
+        background-color: var(--white);
+      }
+    }
+  }
+
+  &__body,
+  tbody {
+    .full-width-table__row:nth-child(odd),
+    tr:nth-child(odd) {
+      background-color: var(--white);
+    }
+
+    .full-width-table__cell,
+    td {
+      font-family: 'Helvetica Neue Medium';
+
+      &:first-child {
+        font-family: inherit;
+      }
+    }
+  }
+
+  &__row,
+  tr {
+    background-color: var(--light-grey);
+    display: flex;
+    margin: 0;
+    padding: 0 0.5rem;
+  }
+
+  &__cell,
+  th,
+  td {
+    display: inline;
+    flex: 0 1 auto;
+    font-weight: 400;
+    padding: 0.5rem 0;
+    text-align: right;
     width: 100%;
 
-    &--clickable {
-        .full-width-table__header, thead {
-            .full-width-table__row, tr {
-                background-color: var(--white);
-            }
-        }
-
-        .full-width-table__body, tbody {
-            .full-width-table__row, tr {
-                background-color: var(--white);
-                cursor: pointer;
-
-                &:hover {
-                    background-color: var(--light-grey);
-
-                    .full-width-table__row:nth-child(odd), tr:nth-child(odd) {
-                        background-color: var(--light-grey);
-                    }
-                }
-
-                &:before, &:after, &__header:before, thead:before, &__footer:after, tfoot:after {
-                    content: "";
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    border-top: 1px solid var(--grey);
-                }
-            }
-        }
+    &:first-child {
+      text-align: left;
     }
-
-    caption { /*In some CMS when adding a table, it's possible to set a Heading for a table which is output as a html caption element*/
-        margin-bottom: 10px;
-        text-align: left;
-    }
-
-    /*Border on top and on bottom of table body and table*/
-    &:before, &:after, &__header:before, thead:before, &__footer:after, tfoot:after {
-        content: "";
-        position: absolute;
-        left: 0;
-        right: 0;
-        border-top: 1px solid var(--grey);
-    }
-
-    &__header, thead {
-        font-family: 'Helvetica Neue Medium';
-    }
-
-    &__footer, tfoot {
-        font-family: 'Helvetica Neue Medium';
-
-        .full-width-table__cell, td {
-            font-family: 'Helvetica Neue Medium';
-
-            &:not(:last-child) {
-                font-family: inherit;
-                font-size: 14px;
-                text-transform: uppercase;
-            }
-        }
-
-        &--alt {
-            .full-width-table__row, tr {
-                background-color: var(--white);
-            }
-        }
-    }
-
-    &__body, tbody {
-        .full-width-table__row:nth-child(odd), tr:nth-child(odd) {
-            background-color: var(--white);
-        }
-
-        .full-width-table__cell, td {
-            font-family: 'Helvetica Neue Medium';
-
-            &:first-child {
-                font-family: inherit;
-            }
-        }
-    }
-
-    &__row, tr {
-        background-color: var(--light-grey);
-        display: flex;
-        margin: 0;
-        padding: 0 0.5rem;
-    }
-
-    &__cell, th, td {
-        display: inline;
-        flex: 0 1 auto;
-        font-weight: 400;
-        padding: 0.5rem 0;
-        text-align: right;
-        width: 100%;
-
-        &:first-child {
-            text-align: left;
-        }
-    }
+  }
 }
 
 .full-width-table th[align='left'],
 .full-width-table td[align='left'] {
-    text-align: left;
+  text-align: left;
 }
 
 .full-width-table th[align='center'],
 .full-width-table td[align='center'] {
-    text-align: center;
+  text-align: center;
 }
 
 .full-width-table th[align='right'],
 .full-width-table td[align='right'] {
-    text-align: right;
+  text-align: right;
 }
 
 .accordion__panel {
-    .full-width-table {
-
-        &:before, &:after {
-            left: -16px;
-            right: -16px;
-        }
-        &__header, thead {
-            &:before {
-                left: -16px;
-                right: -16px;
-            }
-        }
-        &__row, tr {
-            margin: 0 -16px;
-            /* add back negative margin value */
-            padding: 0 16px;
-        }
+  .full-width-table {
+    &:before,
+    &:after {
+      left: -16px;
+      right: -16px;
     }
+    &__header,
+    thead {
+      &:before {
+        left: -16px;
+        right: -16px;
+      }
+    }
+    &__row,
+    tr {
+      margin: 0 -16px;
+      /* add back negative margin value */
+      padding: 0 16px;
+    }
+  }
 }

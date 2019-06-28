@@ -1,41 +1,41 @@
 .textbox-with-char-count {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    border-radius: 0.25em;
-    border: 1px solid var(--dark-grey-2);
-    color: var(--black);
-    font: inherit;
-    transition: all 0.3s;
-    width: 100%;
+  border-radius: 0.25em;
+  border: 1px solid var(--dark-grey-2);
+  color: var(--black);
+  font: inherit;
+  transition: all 0.3s;
+  width: 100%;
 
-    &:hover,
-    &:focus,
-    &:active {
-        border: 1px solid var(--core-purple);
-        outline: none;
-    }
+  &:hover,
+  &:focus,
+  &:active {
+    border: 1px solid var(--core-purple);
+    outline: none;
+  }
 
-    &--with-error,
-    &--with-error:hover,
-    &--with-error:focus,
-    &--with-error:active {
-        border-color: var(--dark-red);
-    }
+  &--with-error,
+  &--with-error:hover,
+  &--with-error:focus,
+  &--with-error:active {
+    border-color: var(--dark-red);
+  }
 
-    .textbox {
-        border: none;
-        flex: 2.5;
-    }
+  .textbox {
+    border: none;
+    flex: 2.5;
+  }
 
-    &__char-count {
-        margin: 0;
-        color: var(--dark-grey-2);
-        padding: 0;
-        border-left: 1px solid var(--dark-grey-2);
-        background: light-grey;
-        flex: 1;
-        max-width: 5rem;
-        text-align: center;
-    }
+  &__char-count {
+    margin: 0;
+    color: var(--dark-grey-2);
+    padding: 0;
+    border-left: 1px solid var(--dark-grey-2);
+    background: light-grey;
+    flex: 1;
+    max-width: 5rem;
+    text-align: center;
+  }
 }

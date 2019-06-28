@@ -1,59 +1,59 @@
 .price-table {
-    width: 100%;
-    max-width: var(--width-small);
-    margin: 0 auto;
-    text-align: left;
+  width: 100%;
+  max-width: var(--width-small);
+  margin: 0 auto;
+  text-align: left;
 
-    &__items {
-        border-bottom: 1px solid var(--grey);
-        display: block;
-        margin-bottom: 0.2rem;
+  &__items {
+    border-bottom: 1px solid var(--grey);
+    display: block;
+    margin-bottom: 0.2rem;
+  }
+
+  &__item {
+    display: block;
+    margin-bottom: 0.2rem;
+
+    &-cell {
+      width: 100%;
     }
 
-    &__item {
-        display: block;
-        margin-bottom: 0.2rem;
-
-        &-cell {
-            width: 100%;
-        }
-
-        &-title {
-        }
-
-        &-price {
-            vertical-align: top;
-        }
-
-        &-subtitle {
-            font-style: italic;
-            color: var(--dark-grey-2);
-        }
+    &-title {
     }
 
-    &__total {
-        .price-table__item-title {
-            font-family: "Helvetica Neue Medium";
-        }
-
-        .price-table__item-price {
-            font-family: "Helvetica Neue Medium";
-        }
+    &-price {
+      vertical-align: top;
     }
 
-    &__additional {
-        padding: 1rem 0;
-        border-bottom: 1px solid var(--grey);
-        border-top: 1px solid var(--grey);
-
-        .price-table__item-cell {
-            display: flex;
-            justify-content: center;
-        }
-
-        .price-table__item-title {
-            font-style: italic;
-            font-family: "Helvetica Neue Medium";
-        }
+    &-subtitle {
+      font-style: italic;
+      color: var(--dark-grey-2);
     }
+  }
+
+  &__total {
+    .price-table__item-title {
+      font-family: 'Helvetica Neue Medium';
+    }
+
+    .price-table__item-price {
+      font-family: 'Helvetica Neue Medium';
+    }
+  }
+
+  &__additional {
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--grey);
+    border-top: 1px solid var(--grey);
+
+    .price-table__item-cell {
+      display: flex;
+      justify-content: center;
+    }
+
+    .price-table__item-title {
+      font-style: italic;
+      font-family: 'Helvetica Neue Medium';
+    }
+  }
 }

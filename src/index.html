@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Telia Styleguide</title>
-        <meta charset="utf-8">
-        <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+  <head>
+    <title>Telia Styleguide</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="./assets/favicon.ico" type="image/x-icon" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"
+    />
 
-        <script type="text/javascript" src="https://fast.fonts.net/jsapi/9ac28642-e1dc-4931-bc6a-0b65f47c0f5d.js"></script>
+    <script type="text/javascript" src="https://fast.fonts.net/jsapi/9ac28642-e1dc-4931-bc6a-0b65f47c0f5d.js"></script>
 
-        <link rel="stylesheet" type="text/css" href="./css/index.css">
-        <link rel="stylesheet" type="text/css" href="../component-lib/dist/index.css">
-    </head>
-    <body>
-        <div id="root"></div>
+    <link rel="stylesheet" type="text/css" href="./css/index.css" />
+    <link rel="stylesheet" type="text/css" href="../component-lib/dist/index.css" />
+  </head>
+  <body>
+    <div id="root"></div>
 
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"></script>
-        <script>
-            (function(n, d) {
-                var userAgent = n.userAgent.toLowerCase();
-                if (userAgent.indexOf('edge') != -1 || userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
-                    var head = d.getElementsByTagName('head')[0];
-                    var babelPolyfill = d.createElement('script');
-                    babelPolyfill.src = 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js';
-                    head.appendChild(babelPolyfill);
-                }
-            })(navigator, document);
-        </script>
-        <script src="./index.js" type="text/javascript"></script>
-    </body>
+    <script
+      type="text/javascript"
+      src="https://cdnjs.cloudflare.com/ajax/libs/es6-shim/0.35.0/es6-shim.min.js"
+    ></script>
+    <script>
+      (function(n, d) {
+        var userAgent = n.userAgent.toLowerCase();
+        if (userAgent.indexOf('edge') != -1 || userAgent.indexOf('msie') != -1 || userAgent.indexOf('trident') != -1) {
+          var head = d.getElementsByTagName('head')[0];
+          var babelPolyfill = d.createElement('script');
+          babelPolyfill.src = 'https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js';
+          head.appendChild(babelPolyfill);
+        }
+      })(navigator, document);
+    </script>
+    <script src="./index.js" type="text/javascript"></script>
+  </body>
 </html>

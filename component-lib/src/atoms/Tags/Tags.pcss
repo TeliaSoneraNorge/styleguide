@@ -1,23 +1,23 @@
 .tags {
-    color: var(--black);
-    display: inline-block;
-    font-size: 0.875rem;
+  color: var(--black);
+  display: inline-block;
+  font-size: 0.875rem;
 
-    &--dark-grey {
-        color: var(--dark-grey);
+  &--dark-grey {
+    color: var(--dark-grey);
+  }
+
+  &__tag {
+    border-right: 1px solid;
+    padding-left: 0.4rem;
+    padding-right: 0.4rem;
+
+    &:last-of-type {
+      border: none;
     }
 
-    &__tag {
-        border-right: 1px solid;
-        padding-left: 0.4rem;
-        padding-right: 0.4rem;
-
-        &:last-of-type {
-            border: none;
-        }
-
-        &:first-of-type {
-            padding-left: 0.1rem;
-        }
+    &:first-of-type {
+      padding-left: 0.1rem;
     }
+  }
 }

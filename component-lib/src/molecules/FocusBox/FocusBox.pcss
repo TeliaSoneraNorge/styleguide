@@ -1,35 +1,41 @@
 @keyframes focus-box-animation {
-    0%   { background-position: -1000px -1000px; }
-    25%  { background-position: -1000px -1000px; }
-    100% { background-position: -600px  -1000px; }
+  0% {
+    background-position: -1000px -1000px;
+  }
+  25% {
+    background-position: -1000px -1000px;
+  }
+  100% {
+    background-position: -600px -1000px;
+  }
 }
 
 .focus-box {
-    background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-41.svg') no-repeat -300px -500px;
-    background-size: 1000px;
-    margin: 0 auto var(--margin-bottom-large);
-    max-width: var(--width-medium);
-    padding: 0.5rem;
+  background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-41.svg') no-repeat -300px -500px;
+  background-size: 1000px;
+  margin: 0 auto var(--margin-bottom-large);
+  max-width: var(--width-medium);
+  padding: 0.5rem;
 
-    &--expanded-width {
-        margin: 0 -7.63rem var(--margin-bottom-large);
-    }
+  &--expanded-width {
+    margin: 0 -7.63rem var(--margin-bottom-large);
+  }
+
+  @media screen and (min-width: 28.125em) {
+    animation: focus-box-animation 4s 1;
+    background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-41.svg') no-repeat -600px -1000px;
+    background-size: 2000px;
+  }
+
+  &__content-outer {
+    background-color: white;
+  }
+
+  &__content-inner {
+    padding: 2.5rem 20px 2rem;
 
     @media screen and (min-width: 28.125em) {
-        animation: focus-box-animation 4s 1;
-        background: var(--core-purple) url('{{assetPath}}/pebbles/pebble-41.svg') no-repeat -600px -1000px;
-        background-size: 2000px;
+      padding: 4rem 20px 3.5rem;
     }
-
-    &__content-outer {
-        background-color: white;
-    }
-
-    &__content-inner {
-        padding: 2.5rem 20px 2rem;
-
-        @media screen and (min-width: 28.125em) {
-            padding: 4rem 20px 3.5rem;
-        }
-    }
+  }
 }

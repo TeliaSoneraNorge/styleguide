@@ -8,14 +8,15 @@ import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
  * Category: Links
  */
 const HeadingLink = ({ children, className, ...rest }) => (
-    <a
-        className={classnames('heading-link', {
-            [className]: className,
-        })}
-        {...rest}>
-        <Heading className="heading-link--focus-area" level={2} text={children} />
-        <HorizontalRule short left />
-    </a>
+  <a
+    className={classnames('heading-link', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    <Heading className="heading-link--focus-area" level={2} text={children} />
+    <HorizontalRule short left />
+  </a>
 );
 
 export default HeadingLink;

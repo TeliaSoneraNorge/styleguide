@@ -1,15 +1,16 @@
 .telephone-number-link {
-    color: var(--core-purple);
+  color: var(--core-purple);
+  text-decoration: none;
+  border-bottom: 1px solid var(--core-purple);
+
+  &:hover {
+  }
+
+  &:active,
+  &:focus {
+    background-color: var(--core-purple);
+    color: var(--white);
+    outline: none;
     text-decoration: none;
-    border-bottom: 1px solid var(--core-purple);
-
-    &:hover {
-    }
-
-    &:active, &:focus {
-        background-color: var(--core-purple);
-        color: var(--white);
-        outline: none;
-        text-decoration: none;
-    }
+  }
 }

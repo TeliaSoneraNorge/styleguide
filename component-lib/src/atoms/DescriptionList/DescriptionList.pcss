@@ -1,42 +1,42 @@
 .description-list {
-    list-style: none;
-    margin-bottom: 1.5rem;
-    margin-top: 0.5rem;
-    padding-left: 0;
+  list-style: none;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  padding-left: 0;
 
-    &__term {
-        font-size: 0.875rem;
-        color: var(--dark-grey-2);
-        padding: 0.25rem 0 0 0;
+  &__term {
+    font-size: 0.875rem;
+    color: var(--dark-grey-2);
+    padding: 0.25rem 0 0 0;
+  }
+
+  &__details {
+    margin: 0;
+    padding: 0 0 0.32rem 0;
+  }
+
+  &--wrap {
+    display: flex;
+    flex-flow: column wrap;
+
+    > .description-list__term {
+      flex: 1;
+
+      @media all and (min-width: 37.5em) {
+        flex: 33.333333%;
+      }
     }
 
-    &__details {
-        margin: 0;
-        padding: 0 0 0.32rem 0;
+    &-by-two {
+      @media all and (min-width: 37.5em) {
+        max-height: 8em;
+      }
     }
+  }
 
-    &--wrap {
-        display: flex;
-        flex-flow: column wrap;
-
-        > .description-list__term {
-            flex: 1;
-
-            @media all and (min-width: 37.500em) {
-                flex:  33.333333%;
-            }
-        }
-
-        &-by-two {
-            @media all and (min-width: 37.500em) {
-                max-height: 8em;
-            }
-        }
-    }
-
-    &__item {
-        background: transparent url('{{assetPath}}/icons/ico_check.svg') no-repeat left 0.5rem;
-        background-size: 0.875rem 0.875rem;
-        padding: 0.25rem 0 0.25rem 1.25rem;
-    }
+  &__item {
+    background: transparent url('{{assetPath}}/icons/ico_check.svg') no-repeat left 0.5rem;
+    background-size: 0.875rem 0.875rem;
+    padding: 0.25rem 0 0.25rem 1.25rem;
+  }
 }

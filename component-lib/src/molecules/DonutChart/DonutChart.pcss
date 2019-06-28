@@ -1,234 +1,223 @@
 @keyframes reduceStrokeToCurrentValue {
-      0% {
-        stroke-dashoffset: 0;
-      }
-      100% {
-      }
+  0% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+  }
 }
 
 @keyframes repositionCaps {
-      0% {
-        transform: rotate(6.28rad)
-      }
-      100% {
-      }
+  0% {
+    transform: rotate(6.28rad);
+  }
+  100% {
+  }
 }
 
 @keyframes repositionSegment {
-      0% {
-        transform: rotate(0)
-      }
-      100% {
-      }
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+  }
 }
 
 @keyframes fadeIn {
-      0% {
-        opacity: 0;
-        stroke-dashoffset: 0;
-      }
-      99.999999% {
-        stroke-dashoffset: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+  0% {
+    opacity: 0;
+    stroke-dashoffset: 0;
+  }
+  99.999999% {
+    stroke-dashoffset: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes capsfadeIn {
-      0% {
-        opacity: 0;
-      }
-      99.999999% {
-        opacity: 0;
-      }
-      100% {
-        opacity: 1;
-      }
+  0% {
+    opacity: 0;
+  }
+  99.999999% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .donut-chart {
-    position: relative;
-    display: block;
-    color: var(--black);
+  position: relative;
+  display: block;
+  color: var(--black);
 
-    &__spinner {
-        margin: 0 auto;
+  &__spinner {
+    margin: 0 auto;
+  }
+
+  &__slice {
+    position: absolute;
+    transform: rotate(-90deg);
+  }
+
+  &__arc {
+    fill: none;
+    stroke-linecap: butt;
+
+    stroke: var(--emerald);
+
+    animation: fadeIn 0.5s linear, reduceStrokeToCurrentValue 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
+
+    &--red {
+      stroke: var(--venetian-red);
     }
 
-    &__slice {
-        position: absolute;
-        transform: rotate(-90deg);
+    &--orange {
+      stroke: var(--orange);
     }
 
-    &__arc {
-        fill: none;
-        stroke-linecap: butt;
-
-        stroke: var(--emerald);
-
-        animation:
-            fadeIn .5s linear,
-            reduceStrokeToCurrentValue .6s cubic-bezier(0.23, 1, 0.32, 1) .5s;
-
-        &--red {
-            stroke: var(--venetian-red);
-        }
-
-        &--orange {
-            stroke: var(--orange);
-        }
-
-        &--green {
-            stroke: var(--emerald);
-        }
-
-        &--disabled {
-            opacity: 0;
-            stroke: var(--emerald);
-        }
-
-        &--purple {
-            stroke:var(--core-purple);
-        }
+    &--green {
+      stroke: var(--emerald);
     }
 
-    &__segment {
-        animation:
-            repositionSegment .6s cubic-bezier(0.23, 1, 0.32, 1);
+    &--disabled {
+      opacity: 0;
+      stroke: var(--emerald);
     }
 
-    &__cap {
+    &--purple {
+      stroke: var(--core-purple);
+    }
+  }
 
-        animation:
-            capsfadeIn .5s linear,
-            repositionCaps .6s cubic-bezier(0.23, 1, 0.32, 1) .5s;
+  &__segment {
+    animation: repositionSegment 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
 
-        &--red {
-            fill: var(--venetian-red);
-        }
+  &__cap {
+    animation: capsfadeIn 0.5s linear, repositionCaps 0.6s cubic-bezier(0.23, 1, 0.32, 1) 0.5s;
 
-        &--orange {
-            fill: var(--orange);
-        }
-
-        &--green {
-            fill: var(--emerald);
-        }
-
-        &--purple {
-            fill:var(--core-purple);
-        }
+    &--red {
+      fill: var(--venetian-red);
     }
 
-    &__end-cap {
-
-        animation:
-            capsfadeIn .5s linear;
-
-        &--red {
-            fill: var(--venetian-red);
-        }
-
-        &--orange {
-            fill: var(--orange);
-        }
-
-        &--green {
-            fill: var(--emerald);
-        }
-
-        &--purple {
-            fill:var(--core-purple);
-        }
+    &--orange {
+      fill: var(--orange);
     }
 
-    &__background {
-        fill: none;
-        stroke: var(--light-grey);
+    &--green {
+      fill: var(--emerald);
     }
 
-    &__hole {
-        width: 100%;
-        height: 100%;
-        top: 0;
+    &--purple {
+      fill: var(--core-purple);
+    }
+  }
 
-        position: absolute;
-        display: flex;
+  &__end-cap {
+    animation: capsfadeIn 0.5s linear;
 
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        opacity: 1;
-
-        pointer-events: none;
-
-        transition:
-            top .2s linear .2s,
-            opacity .2s linear .2s;
-
-        &--hidden-top, &--hidden-bottom {
-            transition:
-                top .2s linear .0s,
-                opacity .2s linear .0s;
-        }
-
-        &--hidden-top {
-            top: -30%;
-            opacity: 0;
-        }
-
-        &--hidden-bottom {
-            top: 30%;
-            opacity: 0;
-        }
+    &--red {
+      fill: var(--venetian-red);
     }
 
-    &__value {
-        font-family: 'pebble';
-        font-size: 2.583rem;
-
-        padding: 0;
-        margin: 0;
+    &--orange {
+      fill: var(--orange);
     }
 
-    &__value-caption {
-        text-align: center;
-        font-size: 1rem;
-        line-height: 1.4rem;
-        padding: 0;
-        margin: 0;
-        width: 80%;
+    &--green {
+      fill: var(--emerald);
     }
 
-    &__loading-caption {
-        text-align: center;
-        font-size: 0.9rem;
+    &--purple {
+      fill: var(--core-purple);
+    }
+  }
 
-        padding: 0.2em 0 0 0;
-        margin: 0;
+  &__background {
+    fill: none;
+    stroke: var(--light-grey);
+  }
+
+  &__hole {
+    width: 100%;
+    height: 100%;
+    top: 0;
+
+    position: absolute;
+    display: flex;
+
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    opacity: 1;
+
+    pointer-events: none;
+
+    transition: top 0.2s linear 0.2s, opacity 0.2s linear 0.2s;
+
+    &--hidden-top,
+    &--hidden-bottom {
+      transition: top 0.2s linear 0s, opacity 0.2s linear 0s;
     }
 
-    &:focus {
-        background: var(--core-purple);
-        color: var(--white);
-
-        outline: none;
-
-        .donut-chart {
-            &__cap,
-            &__end-cap {
-                fill: var(--white);
-            }
-
-            &__arc {
-                stroke: var(--white);
-            }
-
-            &__background {
-                stroke: none;
-            }
-        }
+    &--hidden-top {
+      top: -30%;
+      opacity: 0;
     }
+
+    &--hidden-bottom {
+      top: 30%;
+      opacity: 0;
+    }
+  }
+
+  &__value {
+    font-family: 'pebble';
+    font-size: 2.583rem;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  &__value-caption {
+    text-align: center;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    padding: 0;
+    margin: 0;
+    width: 80%;
+  }
+
+  &__loading-caption {
+    text-align: center;
+    font-size: 0.9rem;
+
+    padding: 0.2em 0 0 0;
+    margin: 0;
+  }
+
+  &:focus {
+    background: var(--core-purple);
+    color: var(--white);
+
+    outline: none;
+
+    .donut-chart {
+      &__cap,
+      &__end-cap {
+        fill: var(--white);
+      }
+
+      &__arc {
+        stroke: var(--white);
+      }
+
+      &__background {
+        stroke: none;
+      }
+    }
+  }
 }
