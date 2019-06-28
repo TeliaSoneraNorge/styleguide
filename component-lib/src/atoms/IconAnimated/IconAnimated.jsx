@@ -8,27 +8,26 @@ import lottie from 'lottie-web';
  */
 
 export default class IconAnimated extends React.Component {
-    static propTypes = {
-        json: PropTypes.object,
-    };
+  static propTypes = {
+    json: PropTypes.object,
+  };
 
-    constructor(props) {
-        super(props);
-        this.container = React.createRef();
-    }
+  constructor(props) {
+    super(props);
+    this.container = React.createRef();
+  }
 
-    componentDidMount() {
-        lottie.loadAnimation({
-            container: this.container.current,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            animationData: this.props.json
-        });
-    }
+  componentDidMount() {
+    lottie.loadAnimation({
+      container: this.container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: this.props.json,
+    });
+  }
 
-    render() {
-        return (<div className="icon-animated-container" ref={this.container}></div>);
-    }
-};
-
+  render() {
+    return <div className="icon-animated-container" ref={this.container}></div>;
+  }
+}

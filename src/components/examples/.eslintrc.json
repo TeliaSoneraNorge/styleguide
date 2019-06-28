@@ -1,0 +1,6 @@
+{
+    "rules": {
+        "no-console": "off", // Console statements are OK for use in examples, to substitute onClick functions
+        "react/no-unescaped-entities": "off" // In these examples, we have a lot of inline text, which might use apostrophe, which violates this rule
+    }
+}

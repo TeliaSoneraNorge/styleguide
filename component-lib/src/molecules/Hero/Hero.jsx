@@ -35,82 +35,95 @@ import uniqueId from 'lodash/uniqueId';
  * one for easter <code>.hero--with-pebbles-easter</code>.
  */
 const Hero = ({
-    className,
-    heading,
-    subheading,
-    src,
-    alt,
-    sources = [],
-    logoSources = [],
-    pebbles,
-    mode,
-    align,
-    logoAlign,
-    alignBox,
-    ...rest
+  className,
+  heading,
+  subheading,
+  alt,
+  sources = [],
+  logoSources = [],
+  pebbles,
+  mode,
+  align,
+  logoAlign,
+  alignBox,
+  ...rest
 }) => (
-    <a
-        className={classnames('hero heading-link', {
-            [className]: className,
-            [`hero--with-pebbles hero--with-pebbles-${pebbles}`]: pebbles,
-            [`hero--with-pebbles-only-on-${mode}`]: mode,
+  <a
+    className={classnames('hero heading-link', {
+      [className]: className,
+      [`hero--with-pebbles hero--with-pebbles-${pebbles}`]: pebbles,
+      [`hero--with-pebbles-only-on-${mode}`]: mode,
+    })}
+    {...rest}
+  >
+    <React.Fragment>
+      <picture className="hero__picture">
+        {sources.map(it => (
+          <source
+            key={uniqueId('source-')}
+            srcSet={it.srcSet}
+            media={it.type === 'mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'}
+          />
+        ))}
+        <img
+          className={classnames('hero__image', {
+            [`hero__image--align-${align}`]: align,
+          })}
+          alt={alt}
+        />
+      </picture>
+      {logoSources && !!logoSources.length && (
+        <picture className="hero__logo">
+          {logoSources.map(it => (
+            <source
+              key={uniqueId('source-')}
+              srcSet={it.srcSet}
+              media={it.type === 'mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'}
+            />
+          ))}
+          <img
+            className={classnames('hero__logo-image', {
+              [`hero__logo-image--align-${logoAlign || 'top-right'}`]: logoAlign,
+            })}
+            alt={alt}
+          />
+        </picture>
+      )}
+      <div
+        className={classnames('hero__box heading-link--focus-area', {
+          [`hero__box--align-${alignBox || 'left'}`]: alignBox,
         })}
-        {...rest}>
-        <React.Fragment>
-            <picture className="hero__picture">
-                {sources.map(it => <source
-                    key={uniqueId('source-')}
-                    srcSet={it.srcSet}
-                    media={it.type==='mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'} />
-                )}
-                <img
-                    className={classnames('hero__image', {
-                        [`hero__image--align-${align}`]: align,
-                    })}
-                    alt={alt} />
-            </picture>
-            {logoSources && !!logoSources.length &&
-                <picture className="hero__logo">
-                    {logoSources.map(it => <source
-                        key={uniqueId('source-')}
-                        srcSet={it.srcSet}
-                        media={it.type==='mobile' ? '(max-width: 47.99em)' : '(min-width: 48em)'} />
-                    )}
-                    <img
-                        className={classnames('hero__logo-image', {
-                            [`hero__logo-image--align-${logoAlign || 'top-right'}`]: logoAlign,
-                        })}
-                        alt={alt} />
-                </picture>
-            }
-            <div className={ classnames('hero__box heading-link--focus-area', { [`hero__box--align-${alignBox || 'left'}`]: alignBox }) }>
-                <h2 className="hero__heading">{heading}</h2>
-                <div className="hero__subheading">{subheading}
-                    <HorizontalRule short left />
-                </div>
-            </div>
-        </React.Fragment>
-    </a>
+      >
+        <h2 className="hero__heading">{heading}</h2>
+        <div className="hero__subheading">
+          {subheading}
+          <HorizontalRule short left />
+        </div>
+      </div>
+    </React.Fragment>
+  </a>
 );
 
 Hero.propTypes = {
-    heading: PropTypes.string.isRequired,
-    subheading: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-    logoSources: PropTypes.array,
-    /** Set of sources. */
-    sources: PropTypes.arrayOf(PropTypes.shape({
-        type: PropTypes.oneOf(['mobile', 'desktop']),
-        srcSet: PropTypes.string,
-    })),
-    /** One of ['easter', 'black-friday', 'variant-1', 'variant-2', 'variant-3', 'variant-4'] */
-    pebbles: PropTypes.oneOf(['easter', 'black-friday', 'variant-1', 'variant-2', 'variant-3', 'variant-4']),
-    /** One of ['mobile', 'desktop'] */
-    mode: PropTypes.oneOf(['mobile', 'desktop']),
-    /** One of ['top', 'bottom'] */
-    align: PropTypes.oneOf(['top', 'bottom']),
-    /** One of ['left', 'right' or 'center'] */
-    alignBox: PropTypes.oneOf(['left', 'right', 'center'])
+  heading: PropTypes.string.isRequired,
+  subheading: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
+  logoSources: PropTypes.array,
+  /** Set of sources. */
+  sources: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.oneOf(['mobile', 'desktop']),
+      srcSet: PropTypes.string,
+    })
+  ),
+  /** One of ['easter', 'black-friday', 'variant-1', 'variant-2', 'variant-3', 'variant-4'] */
+  pebbles: PropTypes.oneOf(['easter', 'black-friday', 'variant-1', 'variant-2', 'variant-3', 'variant-4']),
+  /** One of ['mobile', 'desktop'] */
+  mode: PropTypes.oneOf(['mobile', 'desktop']),
+  /** One of ['top', 'bottom'] */
+  align: PropTypes.oneOf(['top', 'bottom']),
+  /** One of ['left', 'right' or 'center'] */
+  alignBox: PropTypes.oneOf(['left', 'right', 'center']),
 };
 
 export default Hero;

@@ -1,0 +1,5 @@
+{
+    "rules": {
+        "react/no-unescaped-entities": "off" // In these examples, we have a lot of inline text, which might use apostrophe, which violates this rule
+    }
+}

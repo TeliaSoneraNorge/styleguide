@@ -3,42 +3,44 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-
 /**
  * Status: *finished*
  * Category: Lists
  */
+// eslint-disable-next-line no-unused-vars
 const UniqueSellingPoints = ({ children, iconName, iconColor, className, ...rest }) => (
-    <ul
-        className={classnames('unique-selling-points', {
-            [className]: className
-        })}
-        {...rest}>
-        {children}
-    </ul>
+  <ul
+    className={classnames('unique-selling-points', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </ul>
 );
 
-UniqueSellingPoints.Item = ({ children, iconName, iconColor, className, ...rest }) => (
-    <li
-        className={classnames('unique-selling-points__block', {
-            [className]: className
-        })}
-        {...rest}>
-        <SvgIcon iconName={iconName} color={iconColor} className="unique-selling-points__icon" />
-        <div className="unique-selling-points__block-content">{children}</div>
-    </li>
+export const Item = ({ children, iconName, iconColor, className, ...rest }) => (
+  <li
+    className={classnames('unique-selling-points__block', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    <SvgIcon iconName={iconName} color={iconColor} className="unique-selling-points__icon" />
+    <div className="unique-selling-points__block-content">{children}</div>
+  </li>
 );
 
 UniqueSellingPoints.propTypes = {
-    /** Zero or more of UniqueSellingPoints.Item elements. */
-    children: PropTypes.node,
+  /** Zero or more of UniqueSellingPoints.Item elements. */
+  children: PropTypes.node,
 };
 
-UniqueSellingPoints.Item.propTypes = {
-    /** Name of icon to be displayed. */
-    iconSvg: PropTypes.string,
-    /** Color of icon to be displayed. */
-    iconColor: PropTypes.string,
+Item.propTypes = {
+  /** Name of icon to be displayed. */
+  iconSvg: PropTypes.string,
+  /** Color of icon to be displayed. */
+  iconColor: PropTypes.string,
 };
 
 export default UniqueSellingPoints;

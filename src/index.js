@@ -1,4 +1,3 @@
-import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import objectFitImages from 'object-fit-images';
@@ -8,10 +7,10 @@ import App from './components/App';
 import { getIEVersion } from './utils/browserUtil';
 
 if (getIEVersion()) {
-    require('picturefill');
+  require('picturefill');
 }
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
-svg4everybody(); // SVG sprites in IE10-11 
+svg4everybody(); // SVG sprites in IE10-11
 objectFitImages();
