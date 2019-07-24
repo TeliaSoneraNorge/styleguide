@@ -1,20 +1,9 @@
 .textbox-with-char-count {
-    display: flex;
-    align-items: center;
-
+    position: relative;
     border-radius: 0.25em;
-    border: 1px solid var(--dark-grey-2);
     color: var(--black);
     font: inherit;
-    transition: all 0.3s;
     width: 100%;
-
-    &:hover,
-    &:focus,
-    &:active {
-        border: 1px solid var(--core-purple);
-        outline: none;
-    }
 
     &--with-error,
     &--with-error:hover,
@@ -23,19 +12,21 @@
         border-color: var(--dark-red);
     }
 
-    .textbox {
-        border: none;
-        flex: 2.5;
-    }
-
     &__char-count {
-        margin: 0;
-        color: var(--dark-grey-2);
-        padding: 0;
-        border-left: 1px solid var(--dark-grey-2);
+        position: absolute;
         background: light-grey;
-        flex: 1;
-        max-width: 5rem;
-        text-align: center;
+        color: var(--dark-grey-2);
+
+        margin: 0;
+        border-left: 1px solid var(--dark-grey-2);
+
+        right: 0;
+        top: 0;
+        bottom: 0;
+        min-width: 5rem;
+
+        display: flex;
+        align-items: center;
+        justify-content:center;
     }
 }

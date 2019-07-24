@@ -4,17 +4,12 @@ import classnames from 'classnames';
 
 import TextBox from '../../atoms/TextBox';
 
-/**
- * Status: *finished*.
- * Category: FormElements
-**/
 class TextBoxWithCharCount extends React.Component {
     static propTypes = {
         innerRef: PropTypes.string,
         type: PropTypes.string,
         placeholder: PropTypes.string,
         disabled: PropTypes.bool,
-        errorMessage: PropTypes.string,
         small: PropTypes.bool,
         className: PropTypes.string,
         onChange: PropTypes.func,
@@ -40,14 +35,12 @@ class TextBoxWithCharCount extends React.Component {
 
     render() {
         return (
-            <React.Fragment>
-                <div
-                    className={classnames('textbox-with-char-count', {
-                        [this.props.className]: this.props.className,
-                        ['textbox-with-char-count--with-error']: this.props.errorMessage
-                    })}>
+                <div className='textbox-with-char-count'>
                     <TextBox
                         ref={this.props.innerRef}
+                        className={classnames('textbox-with-char-count__textbox', {
+                            [this.props.className]: this.props.className
+                        })}
                         type={this.props.type}
                         placeholder={this.props.placeholder}
                         disabled={this.props.disabled}
@@ -55,15 +48,20 @@ class TextBoxWithCharCount extends React.Component {
                         onChange={this.onChange}
                         value={this.state.inputValue}
                         {...this.props.rest} />
-                    <p className='textbox-with-char-count__char-count'>
+                    <span className='textbox-with-char-count__char-count'>
                         {this.state.inputValue.length}/{this.state.maxCharCount}
-                    </p>
+                    </span>
                 </div>
-                { this.props.errorMessage &&
-                    <span className='input-error'>{ this.props.errorMessage }</span> }
-            </React.Fragment>
         );
     }
 };
 
+/**
+ * Status: *in progress*.
+ * Category: FormElements
+ *
+ * The input field has a dynamically updated char count with maximum length.
+ * TODO: It should be possible to add error messages.
+ * Maybe we do not really need this component at all.
+**/
 export default React.forwardRef((props, ref) => <TextBoxWithCharCount innerRef={ref} {...props} />);
