@@ -10,7 +10,7 @@ const CategoryList = ({ categories }) => {
         return {
             iconName: '',
             title: category.heading,
-            href: categoryName === 'style' ? '/style' : `/components/${categoryName}`,
+            href: categoryName === 'style' ? '/style' : `/#/components/${categoryName}`,
         };
     });
 
