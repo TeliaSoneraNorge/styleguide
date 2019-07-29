@@ -1,0 +1,148 @@
+config:
+  webhook: &webhook-config
+    check_every: 24h
+    webhook_token: KC8SFDCTLu
+#   slack: &slack-config
+#     username: 'concourse'
+#     channel: '#web-team-deploy'
+#     icon_url: 'http://cl.ly/image/3e1h0H3H2s0P/concourse-logo.png'
+#   failure: &slack-failure
+#     put: slack-alert
+#     params:
+#       <<: *slack-config
+#       text: |
+#         Stylguide build failed:
+#         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+resource_types:
+  - name: slack-notification
+    type: docker-image
+    source:
+      repository: cfcommunity/slack-notification-resource
+      tag: latest
+
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: teliaoss/github-pr-resource
+      tag: latest
+
+  - name: node_modules-cache-resource-type
+    type: docker-image
+    source:
+      repository: ymedlop/npm-cache-resource
+      tag: "10"
+
+resources:
+  - name: styleguide-pr
+    type: pull-request
+    check_every: 24h
+    webhook_token: MQxZf6F6Tz
+    source: &styleguide-pr-source
+      repository: TeliaSoneraNorge/styleguide
+      ignore_paths: [ ci ]
+      access_token: ((teliasoneranorge-access-token))
+
+#   - name: styleguide
+#     type: git
+#     source: &styleguide-pr-source
+#       uri: git@github.com:TeliaSoneraNorge/styleguide.git
+#       branch: master
+#       private_key: ((channel-api-functions-deploy-key))
+
+  - name: node-tasks
+    type: git
+    source:
+        uri: git@github.com:mhd999/go-tasks.git
+        branch: master
+        private_key: ((channel-api-functions-deploy-key))
+
+        #todo: how to select files here
+#   - name: executable
+#     type: s3
+#     source:
+#       bucket: telia-no-styleguide
+#       access_key_id: ((telia-no-channelapi-stage-access-key))
+#       secret_access_key: ((telia-no-channelapi-stage-secret-key))
+#       session_token: ((telia-no-channelapi-stage-session-token))
+#       private: true
+#       region_name: "eu-west-1"
+
+#   - name: slack-alert
+#     type: slack-notification
+#     source:
+#       url: https://hooks.slack.com/services/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
+
+  - name: node_modules
+    type: node_modules-cache-resource-type
+    source:
+      <<: *styleguide-pr-source
+      paths:
+        - package.json
+
+groups:
+  - name: PR
+    jobs:
+    - test-pr
+    - build-executable
+
+jobs:
+  - name: test-pr
+    serial: true
+    public: true
+    plan:
+    - aggregate:
+      - get: node_modules
+        passed:
+      - get: styleguide-pr
+        trigger: true
+        version: every
+        passed:
+
+    - task: run-lint
+      file: styleguide/ci/tasks/lint.yml
+     # on_failure: *slack-failure
+
+  - name: build-executable
+    serial: true
+    plan:
+    - aggregate:
+      - get: styleguide-pr
+        passed:
+      - get: node_modules
+        passed:
+      - get: node-tasks
+        params:
+          submodules:
+          - node
+    - task: build-component-lib
+      file: node-tasks/node/8.10.0.yml
+      input_mapping:
+        dependencies: node_modules
+      params:
+        entrypoint: handler
+        command: build
+        directory: component-lib
+    #   on_failure:
+    #     put: slack-alert
+    #     params:
+    #         <<: *slack-config
+    #         text: 'Styleguide build failed (component-lib):
+    #         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+    #         '
+    - task: build-website
+      file: node-tasks/node/8.10.0.yml
+      input_mapping:
+        dependencies: node_modules
+      params:
+        entrypoint: handler
+        command: build
+        directory: /
+    #   on_failure:
+    #     put: slack-alert
+    #     params:
+    #         <<: *slack-config
+    #         text: 'Styleguide build failed:
+
+    #         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+    #         '

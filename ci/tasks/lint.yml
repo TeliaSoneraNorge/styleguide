@@ -1,0 +1,19 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: node, tag: "8-alpine" }
+
+inputs:
+  - name: styleguide-pr
+  - name: node_modules
+    path: /cache
+
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    mv cache/node_modules styleguide-pr
+    cd styleguide-pr && npm run lint
