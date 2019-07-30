@@ -1,0 +1,12 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: node, tag: "8-alpine" }
+
+inputs:
+  - name: styleguide
+
+run:
+  path: ./styleguide/ci/tasks/aws-s3-upload/task.sh

@@ -62,16 +62,16 @@ resources:
         branch: master
         private_key: ((channel-api-functions-deploy-key))
 
-  - name: website
-    type: s3-resource
-    source:
-      bucket: styleguide.channelapi-at.telia.no
-      access_key_id: ((telia-no-channelapi-stage-access-key))
-      secret_access_key: ((telia-no-channelapi-stage-secret-key))
-      region: "eu-west-1"
-      options:
-      - "--exclude '*'"
-      - "--include 'styleguide/dist/*'"
+#   - name: website
+#     type: s3-resource
+#     source:
+#       bucket: styleguide.channelapi-at.telia.no
+#       access_key_id: ((telia-no-channelapi-stage-access-key))
+#       secret_access_key: ((telia-no-channelapi-stage-secret-key))
+#       region: "eu-west-1"
+#       options:
+#       - "--exclude '*'"
+#       - "--include 'styleguide/dist/*'"
 
 #   - name: website
 #     type: s3
@@ -181,10 +181,11 @@ jobs:
     - aggregate:
       - get: styleguide
         passed: [ lint, build-and-upload ]
-      - get: node_modules
-        passed: [ lint, build-and-upload ]
-    - put: website
 
+    - task: release-to-s3
+      file: styleguide/ci/tasks/aws-s3-upload/tasks.yml
+      input_mapping:
+        source: styleguide
 
 
     #   on_failure:
