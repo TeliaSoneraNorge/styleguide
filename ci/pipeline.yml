@@ -81,17 +81,17 @@ resources:
         - package.json
 
 groups:
+  - name: Master
+    jobs:
+    - lint
+    - build-executable
+
   - name: PR
     jobs:
     - test-pr
 
-  - name: Master
-    jobs:
-    - test
-    - build-executable
-
 jobs:
-  - name: test
+  - name: lint
     serial: true
     public: true
     plan:
@@ -102,9 +102,19 @@ jobs:
         trigger: true
         version: every
         passed:
+      - get: node-tasks
+        params:
+          submodules:
+          - node
 
     - task: run-lint
-      file: styleguide/ci/tasks/lint.yml
+      file: node-tasks/node/8.10.0.yml
+      input_mapping:
+        source: styleguide
+        dependencies: node_modules
+      params:
+        command: lint
+        directory: /
      # on_failure: *slack-failure
 
   - name: test-pr
@@ -129,7 +139,7 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        passed:
+        trigger: true
       - get: node_modules
         passed:
       - get: node-tasks
@@ -139,9 +149,9 @@ jobs:
     - task: build-component-lib
       file: node-tasks/node/8.10.0.yml
       input_mapping:
+        source: styleguide
         dependencies: node_modules
       params:
-        entrypoint: handler
         command: build
         directory: component-lib
     #   on_failure:
@@ -151,15 +161,15 @@ jobs:
     #         text: 'Styleguide build failed (component-lib):
     #         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
     #         '
-    - task: build-website
-      file: node-tasks/node/8.10.0.yml
-      input_mapping:
-        dependencies: node_modules
-      params:
-        entrypoint: handler
-        command: build
-        directory: /
-    #   on_failure:
+    # - task: build-website
+    #   file: node-tasks/node/8.10.0.yml
+    #   input_mapping:
+    #     dependencies: node_modules
+    #   params:
+    #     entrypoint:
+    #     command: build
+    #     directory: /
+    # #   on_failure:
     #     put: slack-alert
     #     params:
     #         <<: *slack-config
