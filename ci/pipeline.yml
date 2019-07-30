@@ -100,7 +100,6 @@ groups:
     jobs:
     - lint
     - build-and-upload
-    - upload
 
   - name: PR
     jobs:
@@ -167,25 +166,40 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
+        trigger: true
         passed: [ lint ]
       - get: node_modules
         passed: [ lint ]
 
-    - task: build-and-upload-styleguide
+    - task: build
       file: styleguide/ci/tasks/build.yml
-
-  - name: upload
-    serial: true
-    serial_groups: [lint-job, build-and-upload-job, upload-job]
-    plan:
-    - aggregate:
-      - get: styleguide
-        passed: [ lint, build-and-upload ]
-
     - task: release-to-s3
-      file: styleguide/ci/tasks/aws-s3-upload/tasks.yml
+      file: styleguide/ci/tasks/aws-s3-upload/task.yml
       input_mapping:
-        source: styleguide
+        styleguide: styleguide
+      params:
+        BUCKET_NAME: styleguide.channelapi-at.telia.no
+        AWS_DEFAULT_REGION: eu-west-1
+        AWS_ACCESS_KEY_ID: ((telia-no-channelapi-stage-access-key))
+        AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-stage-secret-key))
+        AWS_SESSION_TOKEN: ((telia-no-channelapi-stage-session-token))
+
+
+
+#   - name: upload
+#     serial: true
+#     serial_groups: [lint-job, build-and-upload-job, upload-job]
+#     plan:
+#     - aggregate:
+#       - get: styleguide
+#         passed: [ lint, build-and-upload ]
+#       - get: styleguide-build
+#         passed:
+
+#     - task: release-to-s3
+#       file: styleguide/ci/tasks/aws-s3-upload/tasks.yml
+#       input_mapping:
+#         source: styleguide-build
 
 
     #   on_failure:

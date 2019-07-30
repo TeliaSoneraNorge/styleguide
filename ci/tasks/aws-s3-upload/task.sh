@@ -11,6 +11,7 @@ export NC='\033[0m'
 export CHECK="√"
 
 cd styleguide
+ls
 PACKAGE_VERSION=$(cat package.json \
 | grep version \
 | head -1 \
@@ -19,5 +20,6 @@ PACKAGE_VERSION=$(cat package.json \
 | tr -d '[[:space:]]')
 echo -e "Version detected:${PACKAGE_VERSION}"
 
+aws s3 rm s3://${BUCKET_NAME} --recursive
 aws s3 sync dist/ s3://${BUCKET_NAME}
 echo -e "${GREEN}${CHECK} Packages deployed to s3://${BUCKET_NAME} ${NC}"
