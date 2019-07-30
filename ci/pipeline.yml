@@ -88,7 +88,7 @@ groups:
 
   - name: PR
     jobs:
-    - test-pr
+    - lint-pr
 
 jobs:
   - name: lint
@@ -117,7 +117,7 @@ jobs:
         directory: /
      # on_failure: *slack-failure
 
-  - name: test-pr
+  - name: lint-pr
     serial: true
     public: true
     plan:
@@ -128,9 +128,19 @@ jobs:
         trigger: true
         version: every
         passed:
+      - get: node-tasks
+        params:
+          submodules:
+          - node
 
     - task: run-lint
-      file: styleguide-pr/ci/tasks/lint.yml
+      file: node-tasks/node/8.10.0.yml
+      input_mapping:
+        source: styleguide-pr
+        dependencies: node_modules
+      params:
+        command: lint
+        directory: /
      # on_failure: *slack-failure
 
 
@@ -142,18 +152,9 @@ jobs:
         trigger: true
       - get: node_modules
         passed:
-      - get: node-tasks
-        params:
-          submodules:
-          - node
-    - task: build-component-lib
-      file: node-tasks/node/8.10.0.yml
-      input_mapping:
-        source: styleguide
-        dependencies: node_modules
-      params:
-        command: build
-        directory: component-lib
+
+    - task: run-build
+      file: styleguide/ci/tasks/build.yml
     #   on_failure:
     #     put: slack-alert
     #     params:

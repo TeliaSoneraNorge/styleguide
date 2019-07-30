@@ -10,10 +10,13 @@ inputs:
   - name: node_modules
     path: /cache
 
+outputs:
+  - name: styleguide
+
 run:
   path: sh
   args:
   - -exc
   - |
     mv cache/node_modules styleguide
-    cd styleguide && npm run lint
+    cd styleguide && npm run build
