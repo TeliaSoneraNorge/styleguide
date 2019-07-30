@@ -34,14 +34,14 @@ resource_types:
       tag: "8"
 
 resources:
-#   - name: styleguide-pr
-#     type: pull-request
-#     check_every: 24h
-#     webhook_token: MQxZf6F6Tz
-#     source: &styleguide-pr-source
-#       repository: TeliaSoneraNorge/styleguide
-#       ignore_paths: [ ci ]
-#       access_token: ((teliasoneranorge-access-token))
+  - name: styleguide-pr
+    type: pull-request
+    check_every: 24h
+    webhook_token: MQxZf6F6Tz
+    source: &styleguide-pr-source
+      repository: TeliaSoneraNorge/styleguide
+      ignore_paths: [ ci ]
+      access_token: ((teliasoneranorge-access-token))
 
   - name: styleguide
     type: git
@@ -81,10 +81,10 @@ resources:
         - package.json
 
 groups:
-#   - name: PR
-#     jobs:
-#     - test-pr
-#     - build-executable
+  - name: PR
+    jobs:
+    - test-pr
+
   - name: Master
     jobs:
     - test
@@ -106,6 +106,23 @@ jobs:
     - task: run-lint
       file: styleguide/ci/tasks/lint.yml
      # on_failure: *slack-failure
+
+  - name: test-pr
+    serial: true
+    public: true
+    plan:
+    - aggregate:
+      - get: node_modules
+        passed:
+      - get: styleguide-pr
+        trigger: true
+        version: every
+        passed:
+
+    - task: run-lint
+      file: styleguide-pr/ci/tasks/lint.yml
+     # on_failure: *slack-failure
+
 
   - name: build-executable
     serial: true
