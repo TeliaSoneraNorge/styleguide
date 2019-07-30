@@ -6,7 +6,7 @@ image_resource:
   source: {repository: node, tag: "8-alpine" }
 
 inputs:
-  - name: styleguide-pr
+  - name: styleguide
   - name: node_modules
     path: /cache
 
@@ -15,5 +15,5 @@ run:
   args:
   - -exc
   - |
-    mv cache/node_modules styleguide-pr
-    cd styleguide-pr && npm run lint
+    mv cache/node_modules styleguide
+    cd styleguide && npm run lint

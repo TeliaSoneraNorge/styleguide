@@ -31,24 +31,24 @@ resource_types:
     type: docker-image
     source:
       repository: ymedlop/npm-cache-resource
-      tag: "10"
+      tag: "8"
 
 resources:
-  - name: styleguide-pr
-    type: pull-request
-    check_every: 24h
-    webhook_token: MQxZf6F6Tz
-    source: &styleguide-pr-source
-      repository: TeliaSoneraNorge/styleguide
-      ignore_paths: [ ci ]
-      access_token: ((teliasoneranorge-access-token))
-
-#   - name: styleguide
-#     type: git
+#   - name: styleguide-pr
+#     type: pull-request
+#     check_every: 24h
+#     webhook_token: MQxZf6F6Tz
 #     source: &styleguide-pr-source
-#       uri: git@github.com:TeliaSoneraNorge/styleguide.git
-#       branch: master
-#       private_key: ((channel-api-functions-deploy-key))
+#       repository: TeliaSoneraNorge/styleguide
+#       ignore_paths: [ ci ]
+#       access_token: ((teliasoneranorge-access-token))
+
+  - name: styleguide
+    type: git
+    source: &styleguide-source
+      uri: git@github.com:TeliaSoneraNorge/styleguide.git
+      branch: feature/concourse-pipeline
+      private_key: ((channel-api-functions-deploy-key))
 
   - name: node-tasks
     type: git
@@ -76,38 +76,42 @@ resources:
   - name: node_modules
     type: node_modules-cache-resource-type
     source:
-      <<: *styleguide-pr-source
+      <<: *styleguide-source
       paths:
         - package.json
 
 groups:
-  - name: PR
+#   - name: PR
+#     jobs:
+#     - test-pr
+#     - build-executable
+  - name: Master
     jobs:
-    - test-pr
+    - test
     - build-executable
 
 jobs:
-  - name: test-pr
+  - name: test
     serial: true
     public: true
     plan:
     - aggregate:
       - get: node_modules
         passed:
-      - get: styleguide-pr
+      - get: styleguide
         trigger: true
         version: every
         passed:
 
     - task: run-lint
-      file: styleguide-pr/ci/tasks/lint.yml
+      file: styleguide/ci/tasks/lint.yml
      # on_failure: *slack-failure
 
   - name: build-executable
     serial: true
     plan:
     - aggregate:
-      - get: styleguide-pr
+      - get: styleguide
         passed:
       - get: node_modules
         passed:
