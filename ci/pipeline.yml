@@ -33,6 +33,11 @@ resource_types:
       repository: ymedlop/npm-cache-resource
       tag: "8"
 
+  - name: s3-resource
+    type: docker-image
+    source:
+      repository: 18fgsa/s3-resource-simple
+
 resources:
   - name: styleguide-pr
     type: pull-request
@@ -57,11 +62,21 @@ resources:
         branch: master
         private_key: ((channel-api-functions-deploy-key))
 
-        #todo: how to select files here
-#   - name: executable
+  - name: website
+    type: s3-resource
+    source:
+      bucket: styleguide.channelapi-at.telia.no
+      access_key_id: ((telia-no-channelapi-stage-access-key))
+      secret_access_key: ((telia-no-channelapi-stage-secret-key))
+      region: "eu-west-1"
+      options:
+      - "--exclude '*'"
+      - "--include 'styleguide/dist/*'"
+
+#   - name: website
 #     type: s3
 #     source:
-#       bucket: telia-no-styleguide
+#       bucket: styleguide.channelapi-at.telia.no
 #       access_key_id: ((telia-no-channelapi-stage-access-key))
 #       secret_access_key: ((telia-no-channelapi-stage-secret-key))
 #       session_token: ((telia-no-channelapi-stage-session-token))
@@ -84,7 +99,8 @@ groups:
   - name: Master
     jobs:
     - lint
-    - build-executable
+    - build-and-upload
+    - upload
 
   - name: PR
     jobs:
@@ -93,6 +109,7 @@ groups:
 jobs:
   - name: lint
     serial: true
+    serial_groups: [lint-job]
     public: true
     plan:
     - aggregate:
@@ -144,17 +161,32 @@ jobs:
      # on_failure: *slack-failure
 
 
-  - name: build-executable
+  - name: build-and-upload
     serial: true
+    serial_groups: [lint-job, build-and-upload-job]
     plan:
     - aggregate:
       - get: styleguide
-        trigger: true
+        passed: [ lint ]
       - get: node_modules
-        passed:
+        passed: [ lint ]
 
-    - task: run-build
+    - task: build-and-upload-styleguide
       file: styleguide/ci/tasks/build.yml
+
+  - name: upload
+    serial: true
+    serial_groups: [lint-job, build-and-upload-job, upload-job]
+    plan:
+    - aggregate:
+      - get: styleguide
+        passed: [ lint, build-and-upload ]
+      - get: node_modules
+        passed: [ lint, build-and-upload ]
+    - put: website
+
+
+
     #   on_failure:
     #     put: slack-alert
     #     params:
