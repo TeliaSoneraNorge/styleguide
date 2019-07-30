@@ -100,7 +100,7 @@ jobs:
         passed:
 
     - task: run-lint
-      file: styleguide/ci/tasks/lint.yml
+      file: styleguide-pr/ci/tasks/lint.yml
      # on_failure: *slack-failure
 
   - name: build-executable
