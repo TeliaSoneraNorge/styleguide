@@ -26,7 +26,7 @@ const ProductList = ({ items = [] }) =>
 
             if (item.href) {
                 return (
-                    <a href={item.href} key={i} className={`${productItemClassNames} product-list__item--link`} onClick={item.onClick}>
+                    <a href={item.href} key={item.href} className={`${productItemClassNames} product-list__item--link`} onClick={item.onClick}>
                         {icon}
                         {content}
                         <SvgIcon className="product-list__item--link-icon" iconName="ico_linkarrow" color="purple" />
@@ -35,7 +35,7 @@ const ProductList = ({ items = [] }) =>
             }
 
             return (
-                <article key={i} className={productItemClassNames} onClick={item.onClick}>
+                <article key={item.title} className={productItemClassNames} onClick={item.onClick}>
                     {icon}
                     {content}
                 </article>
