@@ -47,7 +47,7 @@ resources:
   - name: styleguide-pr
     type: pull-request
     check_every: 24h
-    webhook_token: MQxZf6F6Tz
+    webhook_token: KC8SFDCTLu
     source: &styleguide-pr-source
       repository: TeliaSoneraNorge/styleguide
       ignore_paths: [ ci ]
@@ -58,7 +58,8 @@ resources:
     source: &styleguide-source
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: feature/concourse-pipeline
-      private_key: ((channel-api-functions-deploy-key))
+      private_key: ((styleguide-deploy-key))
+    #   ignore_paths: [ package.json, component-lib/package.json ]
 
   - name: node-tasks
     type: git
@@ -84,6 +85,7 @@ groups:
     jobs:
     - lint
     - build-and-upload
+    - update-version-patch
 
   - name: PR
     jobs:
@@ -172,3 +174,20 @@ jobs:
       on_failure: *slack-failure
       on_success: *slack-success
 
+  - name: update-version-patch
+    serial: true
+    plan:
+    - aggregate:
+      - get: styleguide
+        passed: [lint]
+
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: patch
+    - put: styleguide
+      params:
+        repository: styleguide
+        rebase: true
