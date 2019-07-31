@@ -2,17 +2,22 @@ config:
   webhook: &webhook-config
     check_every: 24h
     webhook_token: KC8SFDCTLu
-#   slack: &slack-config
-#     username: 'concourse'
-#     channel: '#web-team-deploy'
-#     icon_url: 'http://cl.ly/image/3e1h0H3H2s0P/concourse-logo.png'
-#   failure: &slack-failure
-#     put: slack-alert
-#     params:
-#       <<: *slack-config
-#       text: |
-#         Stylguide build failed:
-#         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+  failure: &slack-failure
+    put: slack-alert
+    params:
+      channel: '#styleguide-deploy'
+      icon_emoji: ':x:'
+      text: |
+        ' *Styleguide*: Build failed:
+        https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+        '
+  success: &slack-success
+    put: slack-alert
+    params:
+      channel: '#styleguide-deploy'
+      icon_emoji: ':heavy_check_mark:'
+      text: |
+        *Styleguide*: Latest version is live at https://styleguide.channelapi-at.telia.no/#/
 
 resource_types:
   - name: slack-notification
@@ -52,7 +57,7 @@ resources:
     type: git
     source: &styleguide-source
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
-      branch: feature/concourse-pipeline
+      branch: master
       private_key: ((channel-api-functions-deploy-key))
 
   - name: node-tasks
@@ -62,31 +67,10 @@ resources:
         branch: master
         private_key: ((channel-api-functions-deploy-key))
 
-#   - name: website
-#     type: s3-resource
-#     source:
-#       bucket: styleguide.channelapi-at.telia.no
-#       access_key_id: ((telia-no-channelapi-stage-access-key))
-#       secret_access_key: ((telia-no-channelapi-stage-secret-key))
-#       region: "eu-west-1"
-#       options:
-#       - "--exclude '*'"
-#       - "--include 'styleguide/dist/*'"
-
-#   - name: website
-#     type: s3
-#     source:
-#       bucket: styleguide.channelapi-at.telia.no
-#       access_key_id: ((telia-no-channelapi-stage-access-key))
-#       secret_access_key: ((telia-no-channelapi-stage-secret-key))
-#       session_token: ((telia-no-channelapi-stage-session-token))
-#       private: true
-#       region_name: "eu-west-1"
-
-#   - name: slack-alert
-#     type: slack-notification
-#     source:
-#       url: https://hooks.slack.com/services/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
+  - name: slack-alert
+    type: slack-notification
+    source:
+      url: https://hooks.slack.com/services/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
 
   - name: node_modules
     type: node_modules-cache-resource-type
@@ -131,7 +115,7 @@ jobs:
       params:
         command: lint
         directory: /
-     # on_failure: *slack-failure
+      on_failure: *slack-failure
 
   - name: lint-pr
     serial: true
@@ -157,7 +141,7 @@ jobs:
       params:
         command: lint
         directory: /
-     # on_failure: *slack-failure
+      on_failure: *slack-failure
 
 
   - name: build-and-upload
@@ -173,6 +157,8 @@ jobs:
 
     - task: build
       file: styleguide/ci/tasks/build.yml
+      on_failure: *slack-failure
+
     - task: release-to-s3
       file: styleguide/ci/tasks/aws-s3-upload/task.yml
       input_mapping:
@@ -183,45 +169,6 @@ jobs:
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-stage-access-key))
         AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-stage-secret-key))
         AWS_SESSION_TOKEN: ((telia-no-channelapi-stage-session-token))
+      on_failure: *slack-failure
+      on_success: *slack-success
 
-
-
-#   - name: upload
-#     serial: true
-#     serial_groups: [lint-job, build-and-upload-job, upload-job]
-#     plan:
-#     - aggregate:
-#       - get: styleguide
-#         passed: [ lint, build-and-upload ]
-#       - get: styleguide-build
-#         passed:
-
-#     - task: release-to-s3
-#       file: styleguide/ci/tasks/aws-s3-upload/tasks.yml
-#       input_mapping:
-#         source: styleguide-build
-
-
-    #   on_failure:
-    #     put: slack-alert
-    #     params:
-    #         <<: *slack-config
-    #         text: 'Styleguide build failed (component-lib):
-    #         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
-    #         '
-    # - task: build-website
-    #   file: node-tasks/node/8.10.0.yml
-    #   input_mapping:
-    #     dependencies: node_modules
-    #   params:
-    #     entrypoint:
-    #     command: build
-    #     directory: /
-    # #   on_failure:
-    #     put: slack-alert
-    #     params:
-    #         <<: *slack-config
-    #         text: 'Styleguide build failed:
-
-    #         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
-    #         '
