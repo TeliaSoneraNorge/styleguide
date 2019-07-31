@@ -1,0 +1,20 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: node, tag: "8-alpine" }
+
+inputs:
+  - name: styleguide
+
+params:
+  update_type:
+
+outputs:
+  - name: styleguide
+
+run:
+  path: sh
+  args:
+  - styleguide/ci/tasks/update-version/task.sh

@@ -59,6 +59,7 @@ resources:
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: feature/concourse-pipeline
       private_key: ((channel-api-functions-deploy-key))
+    #   ignore_paths: [ package.json, component-lib/package.json ]
 
   - name: node-tasks
     type: git
@@ -84,6 +85,7 @@ groups:
     jobs:
     - lint
     - build-and-upload
+    - update-version-patch
 
   - name: PR
     jobs:
@@ -172,3 +174,19 @@ jobs:
       on_failure: *slack-failure
       on_success: *slack-success
 
+  - name: update-version-patch
+    serial: true
+    plan:
+    - aggregate:
+      - get: styleguide
+        passed: [lint]
+
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: patch
+    - put: styleguide
+      params:
+        rebase: true
