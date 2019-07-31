@@ -8,16 +8,16 @@ config:
       channel: '#styleguide-deploy'
       icon_emoji: ':x:'
       text: |
-        ' *Styleguide*: Build failed:
+        *Styleguide*: Build failed
         https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
-        '
+
   success: &slack-success
     put: slack-alert
     params:
       channel: '#styleguide-deploy'
       icon_emoji: ':heavy_check_mark:'
       text: |
-        *Styleguide*: Latest version is live at https://styleguide.channelapi-at.telia.no/#/
+        *Styleguide*: Latest version is live at https://styleguide.channelapi.telia.no/#/
 
 resource_types:
   - name: slack-notification
@@ -57,7 +57,7 @@ resources:
     type: git
     source: &styleguide-source
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
-      branch: master
+      branch: feature/concourse-pipeline
       private_key: ((channel-api-functions-deploy-key))
 
   - name: node-tasks
@@ -164,11 +164,11 @@ jobs:
       input_mapping:
         styleguide: styleguide
       params:
-        BUCKET_NAME: styleguide.channelapi-at.telia.no
+        BUCKET_NAME: styleguide.channelapi.telia.no
         AWS_DEFAULT_REGION: eu-west-1
-        AWS_ACCESS_KEY_ID: ((telia-no-channelapi-stage-access-key))
-        AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-stage-secret-key))
-        AWS_SESSION_TOKEN: ((telia-no-channelapi-stage-session-token))
+        AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
+        AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
+        AWS_SESSION_TOKEN: ((telia-no-channelapi-prod-session-token))
       on_failure: *slack-failure
       on_success: *slack-success
 

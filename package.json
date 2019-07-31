@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide-web",
-  "version": "1.28.43",
+  "version": "1.28.42",
   "private": false,
   "description": "",
   "main": "server.js",
@@ -86,8 +86,6 @@
     "npm": "5.6.x"
   },
   "staticFiles": {
-    "staticPath": [
-      "component-lib/assets/pebbles"
-    ]
+    "staticPath": ["component-lib/assets/pebbles"]
   }
 }
