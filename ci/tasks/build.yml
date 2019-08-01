@@ -19,5 +19,5 @@ run:
   - -exc
   - |
     mv cache/node_modules styleguide
-    cd styleguide/component-lib && npm i && npm run build
-    cd .. && npm i && npm run build
+    cd styleguide/component-lib && npm run build
+    cd .. && npm run build

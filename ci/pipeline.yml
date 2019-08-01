@@ -169,7 +169,7 @@ jobs:
       on_failure: *slack-failure
 
     - task: release-to-s3
-      file: styleguide/ci/tasks/aws-s3-upload/task.yml
+      file: styleguide/ci/tasks/aws-s3-sync/task.yml
       input_mapping:
         styleguide: styleguide
       params:

@@ -14,4 +14,4 @@ echo "BUCKET: ${destination}"
 
 aws s3 rm ${destination} --recursive
 aws s3 sync ${source} ${destination}
-echo -e "${GREEN}${CHECK} Packages deployed from ${soruce} to ${destination} ${NC}"
+echo -e "${GREEN}${CHECK} Packages deployed from ${source} to ${destination} ${NC}"
