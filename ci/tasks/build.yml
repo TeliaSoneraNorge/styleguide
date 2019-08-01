@@ -9,6 +9,8 @@ inputs:
   - name: styleguide
   - name: node_modules
     path: /cache
+  - name: node_modules-component-lib
+    path: /cache-component-lib
 
 outputs:
   - name: styleguide
@@ -18,6 +20,13 @@ run:
   args:
   - -exc
   - |
+    ls cache/
+    ls cache-component-lib/
     mv cache/node_modules styleguide
+    mv cache-component-lib/node_modules styleguide/component-lib
     cd styleguide/component-lib && npm run build
+    ls dist/
     cd .. && npm run build
+    ls component-lib/dist/
+    cd component-lib && npm run build
+    ls dist/

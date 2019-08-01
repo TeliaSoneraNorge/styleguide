@@ -10,7 +10,6 @@ export NC='\033[0m'
 export CHECK="√"
 
 cd styleguide
-echo "BUCKET: ${destination}"
 
 aws s3 rm ${destination} --recursive
 aws s3 sync ${source} ${destination}

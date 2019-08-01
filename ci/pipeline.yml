@@ -61,7 +61,7 @@ resources:
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: feature/concourse-pipeline
       private_key: ((styleguide-deploy-key))
-    #   ignore_paths: [ package.json, component-lib/package.json ]
+      ignore_paths: [ package.json, component-lib/package.json ]
 
   - name: node-tasks
     type: git
@@ -77,17 +77,23 @@ resources:
 
   - name: node_modules
     type: node_modules-cache-resource-type
-    source:
+    source: &source-config
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: feature/concourse-pipeline
       private_key: ((channel-api-functions-deploy-key))
       paths:
         - package.json
 
+  - name: node_modules-component-lib
+    type: node_modules-cache-resource-type
+    source:
+      project-path: component-lib
+      <<: *source-config
+
 groups:
   - name: Master
     jobs:
-    - lint
+    - cache
     - build-and-upload
     - update-version-patch
     - update-version-minor
@@ -99,43 +105,52 @@ groups:
     - lint-pr
 
 jobs:
-  - name: lint
+  - name: cache
     serial: true
-    serial_groups: [lint-job]
-    public: true
     plan:
     - aggregate:
-      - get: node_modules
-        passed:
       - get: styleguide
         trigger: true
-        version: every
         passed:
-      - get: node-tasks
-        params:
-          submodules:
-          - node
+      - get: node_modules
+        passed:
+      - get: node_modules-component-lib
+        passed:
 
-    - task: run-lint
-      file: node-tasks/node/8.10.0.yml
-      input_mapping:
-        source: styleguide
-        dependencies: node_modules
-      params:
-        command: lint
-        directory: /
-      on_failure: *slack-failure
+#   - name: lint
+#     serial: true
+#     serial_groups: [lint-job]
+#     public: true
+#     plan:
+#     - aggregate:
+#       - get: styleguide
+#         trigger: true
+#         version: every
+#         passed:
+#       - get: node-tasks
+#         params:
+#           submodules:
+#           - node
+    # - task: run-lint
+    #   file: node-tasks/node/8.10.0.yml
+    #   input_mapping:
+    #     source: styleguide
+    #     dependencies: node_modules
+    #   params:
+    #     command: lint
+    #     directory: /
+    #   on_failure: *slack-failure
 
   - name: lint-pr
     serial: true
     public: true
     plan:
     - aggregate:
-      - get: node_modules
-        passed:
       - get: styleguide-pr
         trigger: true
         version: every
+        passed:
+      - get: node_modules
         passed:
       - get: node-tasks
         params:
@@ -152,7 +167,6 @@ jobs:
         directory: /
       on_failure: *slack-failure
 
-
   - name: build-and-upload
     serial: true
     serial_groups: [lint-job, build-and-upload-job]
@@ -160,12 +174,18 @@ jobs:
     - aggregate:
       - get: styleguide
         trigger: true
-        passed: [ lint ]
+        passed: [ cache ]
       - get: node_modules
-        passed: [ lint ]
+        passed: [ cache ]
+      - get: node_modules-component-lib
+        passed: [ cache ]
 
     - task: build
       file: styleguide/ci/tasks/build.yml
+      input_mapping:
+        styleguide: styleguide
+        node_modules: node_modules
+        node_modules-component-lib: node_modules-component-lib
       on_failure: *slack-failure
 
     - task: release-to-s3
@@ -186,7 +206,7 @@ jobs:
       input_mapping:
         styleguide: styleguide
       params:
-        source: component-lib/dist
+        source: component-lib/dist/
         destination: s3://styleguide.channelapi.telia.no/component-lib
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
@@ -260,17 +280,22 @@ jobs:
       - get: styleguide
         trigger: true
         passed: [ update-version-patch ]
-    - task: publish-package
-      file: styleguide/ci/tasks/publish-npm-package/task.yml
+    - task: get-component-lib-dist
+      file: styleguide/ci/tasks/aws-s3-sync/task.yml
       input_mapping:
         styleguide: styleguide
       params:
-        directory: dist/
-        BUCKET_NAME: styleguide.channelapi.telia.no
+        destination: component-lib/dist/
+        source: s3://styleguide.channelapi.telia.no/component-lib
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
         AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
-        AWS_SESSION_TOKEN: ((telia-no-channelapi-prod-session-token))
+        AWS_SESSION_TOKEN: ((telia-no-channelapi-prod-session-token))¨
+    - task: publish-component-lib
+      file: styleguide/ci/tasks/publish-npm-package/task.yml
+      input_mapping:
+        styleguide: styleguide
+
 
 
 
