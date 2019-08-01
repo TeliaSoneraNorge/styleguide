@@ -19,6 +19,8 @@ config:
       text: |
         *Styleguide*: Latest version is live at https://styleguide.channelapi.telia.no/#/
 
+# TODO Add aws bucket config here
+
 resource_types:
   - name: slack-notification
     type: docker-image
@@ -90,6 +92,7 @@ groups:
     - update-version-patch
     - update-version-minor
     - update-version-major
+    - publish-npm-patch
 
   - name: PR
     jobs:
@@ -170,8 +173,8 @@ jobs:
       input_mapping:
         styleguide: styleguide
       params:
-        directory: dist/
-        BUCKET_NAME: styleguide.channelapi.telia.no
+        source: dist/
+        destination: s3://styleguide.channelapi.telia.no
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
         AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
@@ -179,12 +182,12 @@ jobs:
       on_failure: *slack-failure
 
     - task: release-component-lib-to-s3
-      file: styleguide/ci/tasks/aws-s3-upload/task.yml
+      file: styleguide/ci/tasks/aws-s3-sync/task.yml
       input_mapping:
         styleguide: styleguide
       params:
-        directory: component-lib/dist
-        BUCKET_NAME: styleguide.channelapi.telia.no/component-lib
+        source: component-lib/dist
+        destination: s3://styleguide.channelapi.telia.no/component-lib
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
         AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
@@ -198,7 +201,8 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        passed: [lint]
+        trigger: false
+        passed: [ build-and-upload ]
     - task: update-version
       file: styleguide/ci/tasks/update-version/task.yml
       input_mapping:
@@ -216,7 +220,8 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        passed: [lint]
+        trigger: false
+        passed: [ build-and-upload ]
     - task: update-version
       file: styleguide/ci/tasks/update-version/task.yml
       input_mapping:
@@ -234,7 +239,8 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        passed: [lint]
+        trigger: false
+        passed: [ build-and-upload ]
     - task: update-version
       file: styleguide/ci/tasks/update-version/task.yml
       input_mapping:
@@ -245,3 +251,27 @@ jobs:
       params:
         repository: styleguide
         rebase: true
+
+  - name: publish-npm-patch
+    serial: true
+    serial_groups: [update-version, publish-npm]
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: true
+        passed: [ update-version-patch ]
+    - task: publish-package
+      file: styleguide/ci/tasks/publish-npm-package/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        directory: dist/
+        BUCKET_NAME: styleguide.channelapi.telia.no
+        AWS_DEFAULT_REGION: eu-west-1
+        AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
+        AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
+        AWS_SESSION_TOKEN: ((telia-no-channelapi-prod-session-token))
+
+
+
+
