@@ -170,7 +170,22 @@ jobs:
       input_mapping:
         styleguide: styleguide
       params:
+        directory: dist/
         BUCKET_NAME: styleguide.channelapi.telia.no
+        AWS_DEFAULT_REGION: eu-west-1
+        AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
+        AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
+        AWS_SESSION_TOKEN: ((telia-no-channelapi-prod-session-token))
+      on_failure: *slack-failure
+      on_success: *slack-success
+
+    - task: release-component-lib-to-s3
+      file: styleguide/ci/tasks/aws-s3-upload/task.yml
+      input_mapping:
+        styleguide: styleguide/component-lib/dist
+      params:
+        directory: component-lib/dist
+        BUCKET_NAME: styleguide.channelapi.telia.no/component-lib
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
         AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))

@@ -21,5 +21,5 @@ PACKAGE_VERSION=$(cat package.json \
 echo -e "Version detected:${PACKAGE_VERSION}"
 
 aws s3 rm s3://${BUCKET_NAME} --recursive
-aws s3 sync dist/ s3://${BUCKET_NAME}
+aws s3 sync ${directory} s3://${BUCKET_NAME}
 echo -e "${GREEN}${CHECK} Packages deployed to s3://${BUCKET_NAME} ${NC}"
