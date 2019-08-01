@@ -1,7 +1,7 @@
 config:
   webhook: &webhook-config
     check_every: 24h
-    webhook_token: KC8SFDCTLu
+    webhook_token: KC8SFDCTLb
   failure: &slack-failure
     put: slack-alert
     params:
@@ -47,15 +47,15 @@ resources:
   - name: styleguide-pr
     type: pull-request
     check_every: 24h
-    webhook_token: KC8SFDCTLu
-    source: &styleguide-pr-source
+    webhook_token: KC8SFDCTLb
+    source:
       repository: TeliaSoneraNorge/styleguide
       ignore_paths: [ ci ]
       access_token: ((teliasoneranorge-access-token))
 
   - name: styleguide
     type: git
-    source: &styleguide-source
+    source:
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: feature/concourse-pipeline
       private_key: ((styleguide-deploy-key))
@@ -76,7 +76,9 @@ resources:
   - name: node_modules
     type: node_modules-cache-resource-type
     source:
-      <<: *styleguide-source
+      uri: git@github.com:TeliaSoneraNorge/styleguide.git
+      branch: feature/concourse-pipeline
+      private_key: ((channel-api-functions-deploy-key))
       paths:
         - package.json
 
@@ -86,6 +88,8 @@ groups:
     - lint
     - build-and-upload
     - update-version-patch
+    - update-version-minor
+    - update-version-major
 
   - name: PR
     jobs:
@@ -176,17 +180,53 @@ jobs:
 
   - name: update-version-patch
     serial: true
+    serial_groups: [update-version]
     plan:
     - aggregate:
       - get: styleguide
         passed: [lint]
-
     - task: update-version
       file: styleguide/ci/tasks/update-version/task.yml
       input_mapping:
         styleguide: styleguide
       params:
         update_type: patch
+    - put: styleguide
+      params:
+        repository: styleguide
+        rebase: true
+
+  - name: update-version-minor
+    serial: true
+    serial_groups: [update-version]
+    plan:
+    - aggregate:
+      - get: styleguide
+        passed: [lint]
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: minor
+    - put: styleguide
+      params:
+        repository: styleguide
+        rebase: true
+
+  - name: update-version-major
+    serial: true
+    serial_groups: [update-version]
+    plan:
+    - aggregate:
+      - get: styleguide
+        passed: [lint]
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: major
     - put: styleguide
       params:
         repository: styleguide

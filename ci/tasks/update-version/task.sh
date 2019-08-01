@@ -12,12 +12,12 @@ git config --global user.name "concourse-ci"
 
 echo "Update styleguide version:"
 
-cd styleguide/component-lib
+cd styleguide
 npm version ${update_type}
 
 echo "Update component lib version:"
 
-cd ..
+cd component-lib
 npm version ${update_type}
 #npm publish
 
