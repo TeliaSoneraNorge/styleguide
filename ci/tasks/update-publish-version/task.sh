@@ -29,7 +29,6 @@ echo -e "${GREEN}${CHECK} Package version updated${NC}"
 
 # Authenticate npm styleguide
 export NPM_TOKEN=${npm_token}
-source ~/.profile
 echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
 
 cd component-lib && npm run build && npm publish dist

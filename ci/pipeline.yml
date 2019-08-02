@@ -219,6 +219,7 @@ jobs:
         styleguide: styleguide
       params:
         update_type: patch
+        npm_token: ((styleguide-npm-token))
     - put: styleguide
       params:
         repository: styleguide
