@@ -7,8 +7,9 @@ image_resource:
 
 inputs:
   - name: styleguide
-  - name: node_modules
-    path: /cache
+
+params:
+  update_type:
 
 outputs:
   - name: styleguide
@@ -16,7 +17,4 @@ outputs:
 run:
   path: sh
   args:
-  - -exc
-  - |
-    mv cache/node_modules styleguide
-    cd styleguide && npm run build
+  - styleguide/ci/tasks/update-publish-version/task.sh

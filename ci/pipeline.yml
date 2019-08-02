@@ -174,9 +174,8 @@ jobs:
         passed: [ cache ]
       - get: node_modules
         passed: [ cache ]
-
     - task: build
-      file: styleguide/ci/tasks/build.yml
+      file: styleguide/ci/tasks/build/build-website.yml
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules
@@ -206,9 +205,9 @@ jobs:
         trigger: false
         passed: [ build-and-upload ]
     - task: build-component-lib
-      file: styleguide/ci/tasks/build.yml
+      file: styleguide/ci/tasks/build/build-component-lib.yml
       input_mapping:
-        styleguide: styleguide/component-lib
+        styleguide: styleguide
     # - task: update-version
     #   file: styleguide/ci/tasks/update-version/task.yml
     #   input_mapping:
