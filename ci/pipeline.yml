@@ -213,8 +213,8 @@ jobs:
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules-component-lib
-    - task: update-version
-      file: styleguide/ci/tasks/update-version/task.yml
+    - task: update-and-publish-version
+      file: styleguide/ci/tasks/update-publish-version/task.yml
       input_mapping:
         styleguide: styleguide
       params:
