@@ -10,6 +10,7 @@ inputs:
 
 params:
   update_type:
+  npm_token:
 
 outputs:
   - name: styleguide
