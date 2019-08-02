@@ -9,7 +9,6 @@ inputs:
   - name: styleguide
 
 params:
-  update_type:
   npm_token:
 
 outputs:
@@ -18,4 +17,4 @@ outputs:
 run:
   path: sh
   args:
-  - styleguide/ci/tasks/update-publish-version/task.sh
+  - styleguide/ci/tasks/publish-npm/task.sh

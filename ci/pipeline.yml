@@ -213,17 +213,23 @@ jobs:
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules-component-lib
-    - task: update-and-publish-version
-      file: styleguide/ci/tasks/update-publish-version/task.yml
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
       input_mapping:
         styleguide: styleguide
       params:
         update_type: patch
-        npm_token: ((styleguide-npm-token))
     - put: styleguide
       params:
         repository: styleguide
         rebase: true
+    - task: publish-npm
+      file: styleguide/ci/tasks/publish-npm/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        npm_token: ((styleguide-npm-token))
+
 
 
 

@@ -26,16 +26,3 @@ git commit -a -m ":airplane: Updating styleguide version type: ${update_type}"
 git clone "${DIR}/styleguide" "${DIR}/updated-version"
 
 echo -e "${GREEN}${CHECK} Package version updated${NC}"
-
-# Authenticate npm styleguide
-cd component-lib
-export NPM_TOKEN=${npm_token}
-ls /root/
-touch ~/.profile
-source ~/.profile
-echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-echo -e "${GREEN}${CHECK} Registered npm token ${NC}"
-
-npm run build && npm publish dist
-
-echo -e "${GREEN}${CHECK} Latest version deployed${NC}"
