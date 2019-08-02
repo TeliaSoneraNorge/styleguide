@@ -20,18 +20,13 @@ echo "Update component lib version:"
 cd component-lib
 npm version ${update_type} --no-git-tag
 
-ls compontent-lib/dist
-cd component-lib/dist
-npm version ${update_type} --no-git-tag
-
-cd ../..
+cd ..
 git commit -a -m ":airplane: Updating styleguide version type: ${update_type}"
 
 git clone "${DIR}/styleguide" "${DIR}/updated-version"
 
 echo -e "${GREEN}${CHECK} Package version updated"
 
-cd component-lib
-npm publish dist
+cd component-lib && npm run build && npm publish dist
 
 echo -e "${GREEN}${CHECK} Latest version deployed"

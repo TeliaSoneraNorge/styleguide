@@ -11,9 +11,7 @@ export CHECK="√"
 
 cd styleguide
 
-if [[ ${destination} == *"s3://"* ]]; then
-  aws s3 rm ${destination} --recursive
-fi
+aws s3 rm ${destination} --recursive
 
 aws s3 sync ${source} ${destination}
 echo -e "${GREEN}${CHECK} Packages deployed from ${source} to ${destination} ${NC}"
