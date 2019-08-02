@@ -19,6 +19,10 @@ echo "Update component lib version:"
 
 cd component-lib
 npm version ${update_type} --no-git-tag
+
+ls compontent-lib/dist
+cd component-lib/dist
+npm version ${update_type} --no-git-tag
 #npm publish
 
 cd ..
