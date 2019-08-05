@@ -32,8 +32,8 @@ archive
     .append(packageJson.version, { name: 'version.txt' })
     .append('Follow the instuctions on the Telia Styleguide for usage.', { name: 'README.txt' })
     .append(css, { name: 'telia-styleguide.css' })
-    .directory(path.resolve(__dirname, '../component-lib/dist/assets/fonts/'), 'fonts')
-    .directory(path.resolve(__dirname, '../component-lib/dist/assets/allicons/'), 'allicons')
-    .directory(path.resolve(__dirname, '../component-lib/dist/assets/icons/'), 'icons')
-    .directory(path.resolve(__dirname, '../component-lib/dist/assets/pebbles/'), 'pebbles')
+    .directory(path.resolve(__dirname, '../component-lib/assets/fonts/'), 'fonts')
+    .directory(path.resolve(__dirname, '../component-lib/assets/allicons/'), 'allicons')
+    .directory(path.resolve(__dirname, '../component-lib/assets/icons/'), 'icons')
+    .directory(path.resolve(__dirname, '../component-lib/assets/pebbles/'), 'pebbles')
     .finalize();

@@ -1,0 +1,332 @@
+config:
+  webhook: &webhook-config
+    check_every: 24h
+    webhook_token: KC8SFDCTLb
+  failure: &slack-failure
+    put: slack-alert
+    params:
+      channel: '#styleguide-deploy'
+      icon_emoji: ':x:'
+      text: |
+        *Styleguide*: Build failed
+        https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+  success: &slack-success
+    put: slack-alert
+    params:
+      channel: '#styleguide-deploy'
+      icon_emoji: ':heavy_check_mark:'
+      text: |
+        *Styleguide*: Latest version is live at https://styleguide.channelapi.telia.no/#/
+
+  failure-component-lib: &slack-failure-component-lib
+    put: slack-alert
+    params:
+      channel: '#styleguide-deploy'
+      icon_emoji: ':no-entry:'
+      text: |
+        *NPM*: Publish failed
+        https://concourse.common-services.telia.io/teams/$BUILD_TEAM_NAME/pipelines/$BUILD_PIPELINE_NAME/jobs/$BUILD_JOB_NAME/builds/$BUILD_NAME
+
+  success-component-lib: &slack-success-component-lib
+    put: slack-alert
+    params:
+      channel: '#styleguide-deploy'
+      icon_emoji: ':heavy_check_mark:'
+      text: |
+        *NPM*: New version of package is published (https://www.npmjs.com/package/@telia/styleguide)
+
+resource_types:
+  - name: slack-notification
+    type: docker-image
+    source:
+      repository: cfcommunity/slack-notification-resource
+      tag: latest
+
+  - name: pull-request
+    type: docker-image
+    source:
+      repository: teliaoss/github-pr-resource
+      tag: latest
+
+  - name: node_modules-cache-resource-type
+    type: docker-image
+    source:
+      repository: ymedlop/npm-cache-resource
+      tag: "8"
+
+
+resources:
+  - name: styleguide-pr
+    type: pull-request
+    check_every: 24h
+    webhook_token: KC8SFDCTLb
+    source:
+      repository: TeliaSoneraNorge/styleguide
+      ignore_paths: [ ci ]
+      access_token: ((teliasoneranorge-access-token))
+
+  - name: styleguide
+    type: git
+    source:
+      uri: git@github.com:TeliaSoneraNorge/styleguide.git
+      branch: master
+      private_key: ((styleguide-deploy-key))
+      ignore_paths: [ package.json, package.lock.json, component-lib/package.json, component-lib/package.lock.json, component-lib/assets/allicons/ ]
+
+  - name: node-tasks
+    type: git
+    source:
+        uri: git@github.com:mhd999/go-tasks.git
+        branch: master
+        private_key: ((channel-api-functions-deploy-key))
+
+  - name: slack-alert
+    type: slack-notification
+    source:
+      url: https://hooks.slack.com/services/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
+
+  - name: node_modules
+    type: node_modules-cache-resource-type
+    source: &source-config
+      uri: git@github.com:TeliaSoneraNorge/styleguide.git
+      branch: master
+      private_key: ((channel-api-functions-deploy-key))
+      paths:
+        - package.json
+
+  - name: node_modules-component-lib
+    type: node_modules-cache-resource-type
+    source:
+      project-path: component-lib
+      <<: *source-config
+
+groups:
+  - name: Master
+    jobs:
+    - cache
+    - lint-test
+    - publish-website
+    - version-patch-and-publish-npm
+    - version-minor-and-publish-npm
+    - version-major-and-publish-npm
+
+  - name: PR
+    jobs:
+    - cache-pr
+    - lint-test-pr
+
+jobs:
+  - name: cache-pr
+    serial: true
+    plan:
+    - aggregate:
+      - get: styleguide-pr
+        trigger: true
+        passed:
+      - get: node_modules
+        passed:
+      - get: node_modules-component-lib
+        passed:
+
+  - name: lint-test-pr
+    serial: true
+    plan:
+    - aggregate:
+      - get: styleguide-pr
+        trigger: true
+        passed: [ cache-pr ]
+        version: every
+      - get: node_modules
+        passed: [ cache-pr ]
+      - get: node-tasks
+        params:
+          submodules:
+          - node
+    - task: run-lint
+      file: node-tasks/node/8.10.0.yml
+      input_mapping:
+        source: styleguide-pr
+        dependencies: node_modules
+      params:
+        command: lint
+        directory: /
+      on_failure: *slack-failure
+
+  - name: cache
+    serial: true
+    serial_groups: [ cache ]
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: true
+        passed:
+      - get: node_modules
+        passed:
+      - get: node_modules-component-lib
+        passed:
+
+  - name: lint-test
+    serial: true
+    serial_groups: [ cache, lint-job ]
+    public: true
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: true
+        passed: [ cache ]
+        version: every
+      - get: node_modules
+        passed: [ cache ]
+      - get: node-tasks
+        params:
+          submodules:
+          - node
+    - task: run-lint
+      file: node-tasks/node/8.10.0.yml
+      input_mapping:
+        source: styleguide
+        dependencies: node_modules
+      params:
+        command: lint
+        directory: /
+      on_failure: *slack-failure
+
+  - name: publish-website
+    serial: true
+    serial_groups: [ cache, lint-job, publish-website-job ]
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: true
+        passed: [ lint-test ]
+      - get: node_modules
+        passed: [ lint-test ]
+      - get: node_modules-component-lib
+        passed: [ cache ]
+    - task: build
+      file: styleguide/ci/tasks/build/build-website.yml
+      input_mapping:
+        styleguide: styleguide
+        node_modules: node_modules
+        node_modules-component-lib: node_modules-component-lib
+      on_failure: *slack-failure
+
+    - task: release-to-s3
+      file: styleguide/ci/tasks/aws-s3-sync/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        source: dist/
+        destination: s3://styleguide.channelapi.telia.no
+        AWS_DEFAULT_REGION: eu-west-1
+        AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
+        AWS_SECRET_ACCESS_KEY: ((telia-no-channelapi-prod-secret-key))
+        AWS_SESSION_TOKEN: ((telia-no-channelapi-prod-session-token))
+      on_failure: *slack-failure
+      on_success: *slack-success
+
+  - name: version-patch-and-publish-npm
+    serial: true
+    serial_groups: [ cache, lint-job, publish-website-job, update-version ]
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: false
+        passed: [ publish-website ]
+      - get: node_modules-component-lib
+        passed: [ publish-website ]
+    - task: build-component-lib
+      file: styleguide/ci/tasks/build/build-component-lib.yml
+      input_mapping:
+        styleguide: styleguide
+        node_modules: node_modules-component-lib
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: patch
+    - put: styleguide
+      params:
+        repository: styleguide
+        rebase: true
+    - task: publish-npm
+      file: styleguide/ci/tasks/publish-npm/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        npm_token: ((styleguide-npm-token))
+      on_failure: *slack-failure-component-lib
+      on_success: *slack-success-component-lib
+
+
+  - name: version-minor-and-publish-npm
+    serial: true
+    serial_groups: [ cache, lint-job, publish-website-job, update-version ]
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: false
+        passed: [ publish-website ]
+      - get: node_modules-component-lib
+        passed: [ publish-website ]
+    - task: build-component-lib
+      file: styleguide/ci/tasks/build/build-component-lib.yml
+      input_mapping:
+        styleguide: styleguide
+        node_modules: node_modules-component-lib
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: minor
+    - put: styleguide
+      params:
+        repository: styleguide
+        rebase: true
+    - task: publish-npm
+      file: styleguide/ci/tasks/publish-npm/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        npm_token: ((styleguide-npm-token))
+      on_failure: *slack-failure-component-lib
+      on_success: *slack-success-component-lib
+
+  - name: version-major-and-publish-npm
+    serial: true
+    serial_groups: [ cache, lint-job, publish-website-job, update-version ]
+    plan:
+    - aggregate:
+      - get: styleguide
+        trigger: false
+        passed: [ publish-website ]
+      - get: node_modules-component-lib
+        passed: [ publish-website ]
+    - task: build-component-lib
+      file: styleguide/ci/tasks/build/build-component-lib.yml
+      input_mapping:
+        styleguide: styleguide
+        node_modules: node_modules-component-lib
+    - task: update-version
+      file: styleguide/ci/tasks/update-version/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        update_type: major
+    - put: styleguide
+      params:
+        repository: styleguide
+        rebase: true
+    - task: publish-npm
+      file: styleguide/ci/tasks/publish-npm/task.yml
+      input_mapping:
+        styleguide: styleguide
+      params:
+        npm_token: ((styleguide-npm-token))
+      on_failure: *slack-failure-component-lib
+      on_success: *slack-success-component-lib
+
+
