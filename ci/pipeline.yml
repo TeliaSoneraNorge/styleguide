@@ -55,10 +55,6 @@ resource_types:
       repository: ymedlop/npm-cache-resource
       tag: "8"
 
-  - name: s3-resource
-    type: docker-image
-    source:
-      repository: 18fgsa/s3-resource-simple
 
 resources:
   - name: styleguide-pr
