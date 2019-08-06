@@ -13,6 +13,6 @@ source ~/.profile
 echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
 echo -e "${GREEN}${CHECK} Registered npm token ${NC}"
 
-npm run build && npm publish dist
+npm publish dist
 
 echo -e "${GREEN}${CHECK} Latest version deployed to npm${NC}"
