@@ -73,6 +73,11 @@
   width: 17px;
   height: 18px;
 }
+.svg_ico_check_sharp {
+  width: 60px;
+  height: 48px;
+  fill: #990AE3;
+}
 .svg_ico_check {
   width: 14px;
   height: 11px;
@@ -124,9 +129,9 @@
   width: 21px;
   height: 21px;
 }
-.svg_ico_check_sharp {
-  width: 60px;
-  height: 48px;
+.svg_ico_desktop {
+  width: 48px;
+  height: 43px;
   fill: #990AE3;
 }
 .svg_ico_dropArrow_grey,
@@ -139,7 +144,6 @@
   fill: #757575;
 }
 .svg_ico_dropArrow_purple,
-.svg_ico_desktop,
 .svg_ico_headset,
 .svg_ico_minus_purple,
 .svg_ico_quote-left,
@@ -171,6 +175,10 @@
   width: 534px;
   height: 623.76px;
 }
+.svg_ico_headset {
+  width: 43px;
+  height: 38px;
+}
 .svg_ico_heart {
   width: 51px;
   height: 45px;
@@ -180,14 +188,14 @@
   width: 591.91px;
   height: 591.7px;
 }
-.svg_ico_desktop {
-  width: 48px;
-  height: 43px;
-}
 .svg_ico_image_placeholder_white,
 .svg_ico_image_placeholder {
   width: 670.83px;
   height: 495.83px;
+}
+.svg_ico_infinity {
+  width: 88px;
+  height: 43px;
 }
 .svg_ico_interest_free_down_payment_icon {
   width: 38.04px;
@@ -210,10 +218,6 @@
   stroke-miterlimit: 10;
   stroke-width: 30;
 }
-.svg_ico_headset {
-  width: 43px;
-  height: 38px;
-}
 .svg_ico_map {
   width: 32px;
   height: 32px;
@@ -228,10 +232,6 @@
   stroke-linejoin: round;
   stroke-miterlimit: 8;
   stroke-width: 30;
-}
-.svg_ico_infinity {
-  width: 88px;
-  height: 43px;
 }
 .svg_ico_menu {
   width: 14px;
@@ -253,6 +253,10 @@
 .svg_ico_premisesdatacenter {
   width: 18px;
   height: 15px;
+}
+.svg_ico_quote-left {
+  width: 30px;
+  height: 27px;
 }
 .svg_ico_quote {
   width: 16px;
@@ -288,13 +292,18 @@
   height: 256px;
   clip-rule: evenodd;
 }
+.svg_ico_video_play {
+  width: 69px;
+  height: 69px;
+  fill: white;
+}
+.svg_ico_wifi {
+  width: 53px;
+  height: 38px;
+}
 .svg_ico_wireless {
   width: 16px;
   height: 13px;
-}
-.svg_ico_quote-left {
-  width: 30px;
-  height: 27px;
 }
 .svg_linkedin_icon {
   width: 38.08px;
@@ -318,14 +327,9 @@
   width: 652.25px;
   height: 527.37px;
 }
-.svg_ico_video_play {
-  width: 69px;
-  height: 69px;
-  fill: white;
-}
-.svg_ico_wifi {
-  width: 53px;
-  height: 38px;
+.svg_ico_money {
+  width: 555.73px;
+  height: 635.32px;
 }
 .svg_ico_mobile {
   width: 13px;
@@ -334,8 +338,4 @@
 .svg_ico_mobile_o {
   width: 27px;
   height: 43px;
-}
-.svg_ico_money {
-  width: 555.73px;
-  height: 635.32px;
 }
