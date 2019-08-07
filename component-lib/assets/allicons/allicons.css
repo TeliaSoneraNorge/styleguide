@@ -63,10 +63,6 @@
   height: 16px;
   fill: #0C6;
 }
-.svg_ico_check {
-  width: 14px;
-  height: 11px;
-}
 .svg_ico_code-2,
 .svg_ico_klikk-og-hent,
 .svg_ico_kr {
@@ -154,7 +150,6 @@
 .svg_ico_headset {
   width: 43px;
   height: 38px;
-  fill: #990AE3;
 }
 .svg_ico_heart {
   width: 51px;
@@ -178,9 +173,6 @@
 .svg_ico_interest_free_down_payment_icon {
   width: 38.04px;
   height: 35.1px;
-}
-.svg_ico_linkarrow_white {
-  fill: #FFF;
 }
 .svg_ico_linkarrow {
   width: 13px;
@@ -267,7 +259,6 @@
 .svg_ico_quote-left {
   width: 30px;
   height: 27px;
-  fill: #990AE3;
 }
 .svg_ico_quote {
   width: 16px;
@@ -311,7 +302,6 @@
 .svg_ico_wifi {
   width: 53px;
   height: 38px;
-  fill: #990AE3;
 }
 .svg_ico_wireless {
   width: 16px;
@@ -338,13 +328,4 @@
 .svg_volume_icon {
   width: 652.25px;
   height: 527.37px;
-}
-.svg_ico_mobile_o {
-  width: 27px;
-  height: 43px;
-  fill: #990AE3;
-}
-.svg_ico_mobile {
-  width: 13px;
-  height: 18px;
 }
