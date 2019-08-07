@@ -7,9 +7,12 @@ image_resource:
 
 inputs:
   - name: styleguide
+  - name: node_modules
+    path: /cache
 
 params:
   npm_token:
+  update_type:
 
 outputs:
   - name: styleguide
@@ -17,4 +20,4 @@ outputs:
 run:
   path: sh
   args:
-  - styleguide/ci/tasks/publish-npm/task.sh
+  - styleguide/ci/tasks/update-and-publish-npm/task.sh
