@@ -205,7 +205,7 @@ jobs:
       - get: node_modules-component-lib
         passed: [ cache ]
     - task: build
-      file: styleguide/ci/tasks/build/build-website.yml
+      file: styleguide/ci/tasks/build-website/task.yml
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules
@@ -232,31 +232,21 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        trigger: false
         passed: [ publish-website ]
       - get: node_modules-component-lib
         passed: [ publish-website ]
-    - task: build-component-lib
-      file: styleguide/ci/tasks/build/build-component-lib.yml
+    - task: update-and-publish
+      file: styleguide/ci/tasks/update-and-publish-npm/task.yml
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules-component-lib
-    - task: update-version
-      file: styleguide/ci/tasks/update-version/task.yml
-      input_mapping:
-        styleguide: styleguide
       params:
+        npm_token: ((styleguide-npm-token))
         update_type: patch
     - put: styleguide
       params:
         repository: styleguide
         rebase: true
-    - task: publish-npm
-      file: styleguide/ci/tasks/publish-npm/task.yml
-      input_mapping:
-        styleguide: styleguide
-      params:
-        npm_token: ((styleguide-npm-token))
       on_failure: *slack-failure-component-lib
       on_success: *slack-success-component-lib
 
@@ -267,31 +257,21 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        trigger: false
         passed: [ publish-website ]
       - get: node_modules-component-lib
         passed: [ publish-website ]
-    - task: build-component-lib
-      file: styleguide/ci/tasks/build/build-component-lib.yml
+    - task: update-and-publish
+      file: styleguide/ci/tasks/update-and-publish-npm/task.yml
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules-component-lib
-    - task: update-version
-      file: styleguide/ci/tasks/update-version/task.yml
-      input_mapping:
-        styleguide: styleguide
       params:
+        npm_token: ((styleguide-npm-token))
         update_type: minor
     - put: styleguide
       params:
         repository: styleguide
         rebase: true
-    - task: publish-npm
-      file: styleguide/ci/tasks/publish-npm/task.yml
-      input_mapping:
-        styleguide: styleguide
-      params:
-        npm_token: ((styleguide-npm-token))
       on_failure: *slack-failure-component-lib
       on_success: *slack-success-component-lib
 
@@ -301,31 +281,21 @@ jobs:
     plan:
     - aggregate:
       - get: styleguide
-        trigger: false
         passed: [ publish-website ]
       - get: node_modules-component-lib
         passed: [ publish-website ]
-    - task: build-component-lib
-      file: styleguide/ci/tasks/build/build-component-lib.yml
+    - task: update-and-publish
+      file: styleguide/ci/tasks/update-and-publish-npm/task.yml
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules-component-lib
-    - task: update-version
-      file: styleguide/ci/tasks/update-version/task.yml
-      input_mapping:
-        styleguide: styleguide
       params:
+        npm_token: ((styleguide-npm-token))
         update_type: major
     - put: styleguide
       params:
         repository: styleguide
         rebase: true
-    - task: publish-npm
-      file: styleguide/ci/tasks/publish-npm/task.yml
-      input_mapping:
-        styleguide: styleguide
-      params:
-        npm_token: ((styleguide-npm-token))
       on_failure: *slack-failure-component-lib
       on_success: *slack-success-component-lib
 
