@@ -1,7 +1,4 @@
 config:
-  webhook: &webhook-config
-    check_every: 24h
-    webhook_token: KC8SFDCTLb
   failure: &slack-failure
     put: slack-alert
     params:
@@ -60,7 +57,6 @@ resources:
   - name: styleguide-pr
     type: pull-request
     check_every: 24h
-    webhook_token: KC8SFDCTLb
     source:
       repository: TeliaSoneraNorge/styleguide
       ignore_paths: [ ci ]
@@ -84,7 +80,7 @@ resources:
   - name: slack-alert
     type: slack-notification
     source:
-      url: https://hooks.slack.com/services/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
+      url: ((styleguide-deploy-slack-webhook))
 
   - name: node_modules
     type: node_modules-cache-resource-type
