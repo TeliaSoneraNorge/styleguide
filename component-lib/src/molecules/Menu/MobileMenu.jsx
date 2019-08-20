@@ -30,7 +30,6 @@ const MobileMenuHeader = ({
     selectedIndex,
     onHeaderItemSelected }) => (
     <div className="menu__mobile-header">
-        <MobileMenuCloseButton onClick={onMobileMenuToggle} />
         {menuLinks &&
         <ul className="menu__mobile-heading-links">
             {menuLinks.map((menuLink, index) => <MobileMenuHeaderItem
@@ -42,6 +41,7 @@ const MobileMenuHeader = ({
                 onHeaderItemSelected={onHeaderItemSelected} />)}
         </ul>
         }
+        <MobileMenuCloseButton onClick={onMobileMenuToggle} />
     </div>
 );
 
