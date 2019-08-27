@@ -22,5 +22,5 @@ run:
   - |
     mv cache/node_modules styleguide
     mv cache-component-lib/node_modules styleguide/component-lib
-    cd styleguide/component-lib && npm run build:css
-    cd .. && npm run build
+    cd styleguide/component-lib && npm install && npm run build:css
+    cd .. && npm install && npm run build
