@@ -10,7 +10,7 @@
     "icons": "run-s icons:add-icons icons:svg-join icons:allicons-react",
     "icons:allicons-react": "node generate-AllIcons-component.js && babel ./assets/allicons/AllIcons.jsx.generated --out-file ./assets/allicons/AllIcons.js",
     "icons:svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono",
-    "icons:add-icons": "node ./scripts/addIcons.js",
+    "icons:add-icons": "node ./scripts/add-icons.js",
     "build": "run-p build:commonjs build:es build:css && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --out-dir dist",
     "build:copy-files": "node ./scripts/copy-files.js",
