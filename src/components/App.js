@@ -1,12 +1,11 @@
 import React from 'react';
-import { Router } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 
 import Routes from './Routes';
-import { history } from '../utils/historyUtil';
 
 const App = () =>
-    <Router history={history}>
+    <HashRouter>
         <Routes />
-    </Router>;
+    </HashRouter>;
 
 export default App;

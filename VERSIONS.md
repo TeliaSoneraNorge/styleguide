@@ -15,8 +15,21 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
-## 1.28.26
-- Menu: functionality for active link index
+## 1.28.37 [new component]
+- Molecules: TextBoxWithCharCount: input field with maximum number of characters
+
+## 1.28.36
+- onChange prop fixed in RadioButtonList
+
+## 1.28.35
+- Molecules: Gallery
+- package "marked" updated
+- CheckboxWithLabel has a disabled state
+- Different layout for colors on the website
+- Other minor tweaks
+
+## 1.28.32
+- DropDownListWithLabel: new Disabled option
 
 ## 1.28.23
 - Button: new 'negative' kind

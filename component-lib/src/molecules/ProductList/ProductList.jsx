@@ -11,7 +11,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  */
 const ProductList = ({ items = [] }) =>
     <div className="product-list">
-        {items.map((item) => {
+        {items.map((item, i) => {
             const productItemClassNames = classnames('product-list__item', {
                 'product-list__item--promo': item.style === 'promo'
             });
@@ -26,7 +26,7 @@ const ProductList = ({ items = [] }) =>
 
             if (item.href) {
                 return (
-                    <a href={item.href} key={item.title} className={`${productItemClassNames} product-list__item--link`} onClick={item.onClick}>
+                    <a href={item.href} key={item.href} className={`${productItemClassNames} product-list__item--link`} onClick={item.onClick}>
                         {icon}
                         {content}
                         <SvgIcon className="product-list__item--link-icon" iconName="ico_linkarrow" color="purple" />

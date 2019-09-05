@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextArea } from 'component-lib';
+import { TextArea } from '@telia/styleguide';
 
 const TextAreaExamples = () => (
     <div>

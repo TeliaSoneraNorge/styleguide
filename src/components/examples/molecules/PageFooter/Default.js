@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageFooter } from 'component-lib';
+import { PageFooter } from '@telia/styleguide';
 
 const links = [
     { text: 'Om Telia', url: '#' },

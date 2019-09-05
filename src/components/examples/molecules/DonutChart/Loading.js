@@ -1,5 +1,5 @@
 import React from 'react';
-import { DonutChart } from 'component-lib';
+import { DonutChart } from '@telia/styleguide';
 
 const Loading = () => (
     <DonutChart loading />

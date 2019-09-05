@@ -78,6 +78,7 @@ export { default as ChartLegend } from './molecules/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel';
 export { default as TextBoxWithIcon } from './molecules/TextBoxWithIcon';
 export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel';
+export { default as TextBoxWithCharCount } from './molecules/TextBoxWithCharCount';
 export { default as Tooltip } from './molecules/Tooltip';
 export { default as MiniDashboard } from './molecules/MiniDashboard';
 export { default as DataBoostChart } from './molecules/DataBoostChart';
@@ -96,6 +97,7 @@ export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
 export { default as Menu } from './molecules/Menu';
 export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
+export { default as Gallery } from './molecules/Gallery';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { StepByStep } from 'component-lib';
+import { StepByStep } from '@telia/styleguide';
 
 const { Step, Description, Content } = StepByStep;
 
@@ -16,7 +16,7 @@ const DefaultStepByStep = () => (
         </Step>
         <Step>
             <Description
-                imageSrc={require('../../../../assets/website-images/boy-ipad.jpg')}
+                imageSrc={require('assets/website-images/boy-ipad.jpg')}
                 heading="Ipsum">
                 Nulla quis lorem ut libero malesuada feugiat.
             </Description>

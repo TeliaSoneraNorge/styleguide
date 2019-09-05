@@ -1,75 +1,62 @@
+.svg_facebook_icon {
+  width: 37.84px;
+  height: 37.84px;
+}
 .svg_full-screen-image-mask {
   width: 1417px;
   height: 152px;
   fill: #FFF;
   fill-rule: evenodd;
 }
+.svg_ico_add,
 .svg_ico_add_purple,
-.svg_ico_add_white,
-.svg_ico_add {
+.svg_ico_add_white {
   width: 15px;
   height: 15px;
-}
-.svg_ico_add_purple {
-  fill: #990AE3;
   fill-rule: evenodd;
 }
+.svg_ico_add_purple,
 .svg_ico_backarrow_purple,
-.svg_ico_backarrow_white,
-.svg_ico_backarrow,
+.svg_ico_check_sharp,
+.svg_ico_desktop,
+.svg_ico_dropArrow_purple,
+.svg_ico_headset,
 .svg_ico_linkarrow_purple,
-.svg_ico_linkarrow_white {
-  width: 9px;
-  height: 13px;
-}
-.svg_ico_backarrow_purple {
+.svg_ico_minus_purple,
+.svg_ico_mobile_o,
+.svg_ico_quote-left,
+.svg_ico_wifi {
   fill: #990AE3;
 }
 .svg_ico_add_white,
 .svg_ico_linkarrow_white {
   fill: #FFF;
-  fill-rule: evenodd;
+}
+.svg_ico_backarrow,
+.svg_ico_backarrow_purple,
+.svg_ico_backarrow_white,
+.svg_ico_linkarrow_purple,
+.svg_ico_linkarrow_white {
+  width: 9px;
+  height: 13px;
 }
 .svg_ico_backarrow_white,
 .svg_ico_image_placeholder_white {
   fill: #fff;
 }
-.svg_ico_check_sharp {
-  width: 60px;
-  height: 48px;
-  fill: #990AE3;
-}
-.svg_ico_add,
-.svg_ico_buy,
-.svg_ico_content,
-.svg_ico_delete,
-.svg_ico_download,
-.svg_ico_dropArrow_purple,
-.svg_ico_edit_document,
-.svg_ico_favourites,
-.svg_ico_heart,
-.svg_ico_info,
-.svg_ico_dropArrow,
-.svg_ico_linkarrow_purple,
-.svg_ico_linkarrow,
-.svg_ico_menu_logged_in,
-.svg_ico_menu,
-.svg_ico_minus_purple,
-.svg_ico_minus,
-.svg_ico_mobile,
-.svg_ico_music,
-.svg_ico_premisesdatacenter,
-.svg_ico_quote,
-.svg_ico_router_refill,
-.svg_ico_search,
-.svg_ico_wireless,
-.svg_ico_share {
-  fill-rule: evenodd;
-}
 .svg_ico_buy,
 .svg_ico_download {
   width: 17px;
   height: 18px;
+  fill-rule: evenodd;
+}
+.svg_ico_check {
+  width: 14px;
+  height: 11px;
+}
+.svg_ico_check_sharp {
+  width: 60px;
+  height: 48px;
 }
 .svg_ico_checkmark_green {
   width: 21px;
@@ -82,6 +69,10 @@
   width: 512px;
   height: 512px;
 }
+.svg_ico_code {
+  width: 543.232px;
+  height: 543.232px;
+}
 .svg_ico_contacts {
   width: 567.01px;
   height: 536.01px;
@@ -91,18 +82,16 @@
 .svg_ico_search {
   width: 17px;
   height: 17px;
+  fill-rule: evenodd;
 }
-.svg_facebook_icon {
-  width: 37.84px;
-  height: 37.84px;
+.svg_ico_customer_service {
+  width: 303.25px;
+  height: 332.98px;
 }
 .svg_ico_data_freedom {
   width: 313.77px;
   height: 217.3px;
-}
-.svg_ico_check {
-  width: 14px;
-  height: 11px;
+  clip-path: url(#a);
 }
 .svg_ico_databoost {
   width: 459.8px;
@@ -113,86 +102,98 @@
   width: 670.83px;
   height: 670.83px;
 }
-.svg_ico_desktop {
-  width: 48px;
-  height: 43px;
-  fill: #990AE3;
-}
 .svg_ico_delete {
   width: 21px;
   height: 21px;
+  fill-rule: evenodd;
 }
-.svg_ico_code {
-  width: 543.232px;
-  height: 543.232px;
+.svg_ico_desktop {
+  width: 48px;
+  height: 43px;
 }
-.svg_ico_dropArrow_purple,
-.svg_ico_dropArrow {
+.svg_ico_dropArrow,
+.svg_ico_dropArrow_grey,
+.svg_ico_dropArrow_purple {
   width: 15px;
   height: 10px;
+  fill-rule: evenodd;
 }
-.svg_ico_dropArrow_purple,
-.svg_ico_linkarrow_purple {
-  fill: #990AE3;
-}
-.svg_ico_edit_document {
-  width: 16px;
-  height: 18px;
+.svg_ico_dropArrow_grey {
+  fill: #757575;
 }
 .svg_ico_edit {
   width: 17px;
   height: 35px;
 }
-.svg_ico_customer_service {
-  width: 303.25px;
-  height: 332.98px;
+.svg_ico_edit_document {
+  width: 16px;
+  height: 18px;
+  fill-rule: evenodd;
+}
+.svg_ico_end_user {
+  width: 616px;
+  height: 557.15px;
 }
 .svg_ico_favourites {
   width: 14px;
   height: 14px;
+  fill-rule: evenodd;
 }
 .svg_ico_five {
   width: 592.48px;
   height: 592.48px;
 }
-.svg_ico_headset {
-  width: 43px;
-  height: 38px;
-  fill: #990AE3;
-}
 .svg_ico_gift {
   width: 534px;
   height: 623.76px;
 }
-.svg_ico_home {
-  width: 591.91px;
-  height: 591.7px;
+.svg_ico_headset {
+  width: 43px;
+  height: 38px;
 }
 .svg_ico_heart {
   width: 51px;
   height: 45px;
   fill: #231F20;
+  fill-rule: evenodd;
+}
+.svg_ico_home {
+  width: 591.91px;
+  height: 591.7px;
 }
 .svg_ico_image_placeholder,
 .svg_ico_image_placeholder_white {
   width: 670.83px;
   height: 495.83px;
 }
-.svg_ico_interest_free_down_payment_icon {
-  width: 38.04px;
-  height: 35.1px;
-}
 .svg_ico_infinity {
   width: 88px;
   height: 43px;
 }
-.svg_ico_end_user {
-  width: 616px;
-  height: 557.15px;
+.svg_ico_interest_free_down_payment_icon {
+  width: 38.04px;
+  height: 35.1px;
 }
 .svg_ico_linkarrow {
   width: 13px;
   height: 13px;
+  fill-rule: evenodd;
+}
+.svg_ico_linkarrow_purple,
+.svg_ico_linkarrow_white,
+.svg_ico_menu,
+.svg_ico_menu_logged_in,
+.svg_ico_minus,
+.svg_ico_minus_purple,
+.svg_ico_mobile,
+.svg_ico_music,
+.svg_ico_premisesdatacenter,
+.svg_ico_quote,
+.svg_ico_router_refill,
+.svg_ico_share,
+.svg_ico_truck,
+.svg_ico_wireless {
+  fill-rule: evenodd;
 }
 .svg_ico_login,
 .svg_ico_menu_mobile,
@@ -211,13 +212,13 @@
   width: 32px;
   height: 32px;
 }
-.svg_ico_menu_logged_in {
-  width: 17px;
-  height: 16px;
-}
 .svg_ico_menu {
   width: 14px;
   height: 12px;
+}
+.svg_ico_menu_logged_in {
+  width: 17px;
+  height: 16px;
 }
 .svg_ico_menu_mobile {
   fill: none;
@@ -226,90 +227,93 @@
   stroke-miterlimit: 8;
   stroke-width: 30;
 }
-.svg_ico_mobile_o {
-  width: 27px;
-  height: 43px;
-  fill: #990AE3;
-}
-.svg_ico_minus_purple,
-.svg_ico_minus {
+.svg_ico_minus,
+.svg_ico_minus_purple {
   width: 16px;
   height: 4px;
-}
-.svg_ico_minus_purple {
-  fill: #990AE3;
 }
 .svg_ico_mobile {
   width: 13px;
   height: 18px;
 }
-.svg_ico_music {
-  width: 16px;
-  height: 17px;
+.svg_ico_mobile_o {
+  width: 27px;
+  height: 43px;
 }
 .svg_ico_money {
   width: 555.73px;
   height: 635.32px;
 }
+.svg_ico_music {
+  width: 16px;
+  height: 17px;
+}
 .svg_ico_music_freedom {
   width: 57.09px;
   height: 41.76px;
 }
-.svg_ico_quote-left {
-  width: 30px;
-  height: 27px;
-  fill: #990AE3;
-}
 .svg_ico_premisesdatacenter {
   width: 18px;
   height: 15px;
+}
+.svg_ico_quote-left {
+  width: 30px;
+  height: 27px;
 }
 .svg_ico_quote {
   width: 16px;
   height: 14px;
   fill: #726E6E;
 }
-.svg_ico_router_refill {
-  width: 28px;
-  height: 25px;
-}
 .svg_ico_refill {
   width: 21px;
   height: 30px;
 }
+.svg_ico_router_refill {
+  width: 28px;
+  height: 25px;
+}
+.svg_ico_share {
+  width: 12px;
+  height: 15px;
+}
 .svg_ico_six {
   width: 38.27px;
   height: 38.27px;
+}
+.svg_ico_subscription {
+  width: 700px;
+  height: 700px;
+}
+.svg_ico_trash {
+  width: 10px;
+  height: 35px;
+}
+.svg_ico_truck {
+  width: 256px;
+  height: 256px;
+  clip-rule: evenodd;
 }
 .svg_ico_video_play {
   width: 69px;
   height: 69px;
   fill: white;
 }
-.svg_ico_subscription {
-  width: 700px;
-  height: 700px;
-}
 .svg_ico_wifi {
   width: 53px;
   height: 38px;
-  fill: #990AE3;
-}
-.svg_ico_truck {
-  width: 256px;
-  height: 256px;
 }
 .svg_ico_wireless {
   width: 16px;
   height: 13px;
 }
-.svg_silent_icon {
-  width: 652.25px;
-  height: 534.69px;
-}
 .svg_linkedin_icon {
   width: 38.08px;
   height: 38.08px;
+}
+.svg_silent_icon {
+  width: 652.25px;
+  height: 534.69px;
 }
 .svg_step-by-step-pebble {
   width: 66px;
@@ -324,12 +328,4 @@
 .svg_volume_icon {
   width: 652.25px;
   height: 527.37px;
-}
-.svg_ico_share {
-  width: 12px;
-  height: 15px;
-}
-.svg_ico_trash {
-  width: 10px;
-  height: 35px;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { BoxGrid, Box, Container } from 'component-lib';
+import { BoxGrid, Box, Container } from '@telia/styleguide';
 
 const DefaultBoxGrid = () => (
     <Container size="medium" noMargin>

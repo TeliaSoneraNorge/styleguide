@@ -1,5 +1,5 @@
 import React from 'react';
-import { Caption } from 'component-lib';
+import { Caption } from '@telia/styleguide';
 
 const DefaultCaption = () => (
     <Caption>

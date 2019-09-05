@@ -21,7 +21,8 @@ async function createPackageFile() {
     const newPackageData = {
         ...packageDataOther,
         main: './index.js',
-        module: './index.js',
+        [`jsnext:main`]: 'es/index.js',
+        module: 'es/index.js',
         private: false
     };
     const buildPath = path.resolve(__dirname, '../dist/package.json');

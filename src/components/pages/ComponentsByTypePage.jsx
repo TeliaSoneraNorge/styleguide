@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 
-import { Header } from 'component-lib';
+import { Header } from '@telia/styleguide';
 import ComponentDocs from '../common/ComponentDocs';
 import { getComponents } from '../../utils/componentUtil';
 

@@ -7,35 +7,29 @@ import { Heading, Header, SvgIcon } from '../../../component-lib/src/index';
 const icons = getStaticData('icons');
 const pebbles = getStaticData('pebbles');
 
-const ImageAsset = ({ imagePath, imageName }) =>
-    <div className="sg-image-assets__asset">
-        <img className="sg-image-assets__image" src={`${imagePath}/${imageName}`} />
-        <div className="sg-image-assets__text">{imageName}</div>
-    </div>;
-
 const ImageAssetsPage = () =>
     <div>
         <Header pageTitle="Image Assets" />
 
         <div className="container container--small">
             <Heading level="2" text="Icons" />
+            <Heading level="3" text="CSS icons color classes" style={ { marginBottom: '1rem' } } />
             <div className="sg-image-assets">
-            
-                <table>
-                    <tbody>
-                        {_.map(icons, (iconName) =>
-                            <tr key={iconName}>
-                                <td>{iconName}</td>
-                                {_.map(['black', 'purple', 'grey', 'light-grey'], (color, i) =>
-                                    <td key={i}>
-                                        <SvgIcon style={{ width: '50px', height: '50px' }} key={`${iconName}_${color}`} iconName={iconName.replace('.svg', '')} color={color} />
-                                    </td>
-                                )}
-                            </tr>
-                        )}
-                    </tbody>
-                </table>
-                
+                {_.map(['purple', 'black', 'dark-grey', 'grey', 'light-grey','white', 'green'], (color) =>
+                    <div key={color} className="sg-image-assets__asset">
+                        <SvgIcon className={'sg-image-assets__image'}  iconName={'step-by-step-pebble'} color={color} />
+                        <div className="sg-image-assets__text">.svg-icon--{color}</div>
+                    </div>
+                )}
+            </div>
+            <Heading level="3" text="Icon names" style={ { marginBottom: '1rem' } } />
+            <div className="sg-image-assets">
+                {_.map(icons, (iconName) =>
+                    <div key={iconName} className="sg-image-assets__asset">
+                        <SvgIcon className={'sg-image-assets__image'}  iconName={iconName.replace('.svg', '')} color={'purple'} />
+                        <div className="sg-image-assets__text">{iconName.replace('.svg', '')}</div>
+                    </div>
+                )}
             </div>
         </div>
 
@@ -43,7 +37,10 @@ const ImageAssetsPage = () =>
             <Heading level="2" text="Pebbles" />
             <div className="sg-image-assets">
                 {_.map(pebbles, (pebble) =>
-                    <ImageAsset key={pebble} imagePath="/public/pebbles" imageName={pebble} />
+                    <div key={pebble} className="sg-image-assets__asset">
+                        <img className="sg-image-assets__image" src={pebble} alt={pebble}/>
+                        <div className="sg-image-assets__text">{pebble}</div>
+                    </div>
                 )}
             </div>
         </div>

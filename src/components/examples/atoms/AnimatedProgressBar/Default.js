@@ -1,5 +1,5 @@
 import React from 'react';
-import { AnimatedProgressBar } from 'component-lib';
+import { AnimatedProgressBar } from '@telia/styleguide';
 
 const Default = () => (
     <AnimatedProgressBar />

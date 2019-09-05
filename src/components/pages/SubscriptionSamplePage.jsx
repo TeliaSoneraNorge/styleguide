@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FunkyTabs, Subscription } from 'component-lib';
+import { FunkyTabs, Subscription } from '@telia/styleguide';
 
 const underFemtenSubscriptionProps = [
     {

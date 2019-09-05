@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from 'component-lib';
+import { Tooltip } from '@telia/styleguide';
 
 const InContextOfALabel = () => (
     <Tooltip

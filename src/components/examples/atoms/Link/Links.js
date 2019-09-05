@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'component-lib';
+import { Link } from '@telia/styleguide';
 
 const Links = () => (
     <div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { List } from 'component-lib';
+import { List } from '@telia/styleguide';
 
 const { Item } = List;
 

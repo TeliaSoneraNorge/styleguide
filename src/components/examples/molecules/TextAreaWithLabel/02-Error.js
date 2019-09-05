@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextAreaWithLabel } from 'component-lib';
+import { TextAreaWithLabel } from '@telia/styleguide';
 
 const WithLabel = () => (
     <TextAreaWithLabel

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Image, Caption } from 'component-lib';
+import { Image, Caption } from '@telia/styleguide';
 
 const InlineLeft = () => (
     <div>
-        <Image src={require('../../../../assets/website-images/woman-holding-ipad.jpg')} alt="Woman looking at tablet" inline="left">
+        <Image src={require('assets/website-images/woman-holding-ipad.jpg')} alt="Woman looking at tablet" inline="left">
             <Caption>Woman looking at tablet</Caption>
         </Image>
         <p>

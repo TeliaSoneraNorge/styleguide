@@ -52,7 +52,7 @@ const PageMenu = ({
                 </div>
 
                 {menuLinks.map((menuLink, i) =>
-                    <Tabs.TabPanel key={menuLink.title} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
+                    <Tabs.TabPanel key={menuLink.heading} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
                         <div className={classNames(
                             'page-menu__content',
                             { 'page-menu__content--empty': !menuLink.contentAboveItems })} dangerouslySetInnerHTML={{ __html: menuLink.contentAboveItems }} />

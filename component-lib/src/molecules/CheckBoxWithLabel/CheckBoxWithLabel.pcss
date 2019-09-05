@@ -28,8 +28,17 @@
         stroke-width: 2px;
         transition: stroke .3s ease;
     }
+
+    & .check-box-with-label__frame--disabled {
+        fill: var(--light-grey);
+    }
+
     &:hover .check-box-with-label__frame {
         stroke: var(--core-purple);
+    }
+
+    &:hover .check-box-with-label__frame--disabled {
+        stroke: var(--dark-grey-2);
     }
 
     & .check-box-with-label__check-mark {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { PriceTable } from 'component-lib';
+import { PriceTable } from '@telia/styleguide';
 
 const productList = [
     { title: 'Abonnement', price: '449,-', subtitles: ['Per mnd'] },

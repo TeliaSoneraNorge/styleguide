@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hero } from 'component-lib';
+import { Hero } from '@telia/styleguide';
 
 const sources = [
     { type: 'mobile', srcSet: '/public/website-images/hero.jpg' },

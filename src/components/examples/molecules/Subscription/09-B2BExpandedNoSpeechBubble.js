@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Subscription } from 'component-lib';
+import { Button, Subscription } from '@telia/styleguide';
 
 const features = {
     specialMessageText: 'Listen to as music as you want without using your data quota!',

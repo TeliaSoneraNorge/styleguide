@@ -1,5 +1,5 @@
 import React from 'react';
-import { Quote } from 'component-lib';
+import { Quote } from '@telia/styleguide';
 
 const InlineRightQuote = () => (
     <section className="container container--small">
