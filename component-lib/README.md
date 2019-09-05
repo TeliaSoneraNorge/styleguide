@@ -12,6 +12,16 @@ This is a React component library of the Atomic Design components found in the T
 - Install dependencies: `npm install`
 - Build the library: `npm run build`
 
+## Add new icons
+
+- Copy the new icons into the folder `component-lib/assets/icons/dropHereNewIcons`
+- Build the library: (from component-lib) `npm run icons`
+- Note that the original icons where _optimized and moved_ from the _drop here_ folder. 
+The files which couldn't be processed successfully remain in the _drop folder_
+- Check that the new optimized version of the icons look as expected in _styleguide-web_. 
+(Go up to the main folder, `npm run build`, `npm run start` and check [http://localhost:3000/#/image-assets](http://localhost:3000/#/image-assets) )
+- Commit the changes to git
+
 ## Exporting/Publishing
 
 - MAKE SURE YOU ARE IN THE `component-lib` FOLDER AND NOT IN THE WEBSITE ROOT!
