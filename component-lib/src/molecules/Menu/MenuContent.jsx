@@ -94,12 +94,11 @@ const MenuContent = ({
     onMobileMenuToggle,
     onSearchSubmit,
     onMenuContentItemSelected,
-    setDefaultActiveLinkIndex,
     isLoggedIn,
     loginUrl,
     myPageUrl }) => (
         <div className="menu__content">
-            <MenuLogo LinkTemplate={LinkTemplate} logo={logo} setDefaultActiveLinkIndex={setDefaultActiveLinkIndex} />
+            <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
             <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
                 {menuLink && menuLink.links.map((link, index) => (
                     <MenuLinkItem
@@ -126,8 +125,8 @@ const MenuContent = ({
         </div>
     );
 
-const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate, setDefaultActiveLinkIndex }) => (
-    <LinkTemplate url={url} className="menu__logo-container" onClick={() => setDefaultActiveLinkIndex()}>
+const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) => (
+    <LinkTemplate url={url} className="menu__logo-container">
         <img
             className="menu__logo"
             src={image}

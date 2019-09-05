@@ -37,7 +37,6 @@ const Default = () => (
             logoUrl="#"
             activeIndex={0}
             activeLinkIndex={-1}
-            defaultActiveLinkIndex={-1}
             menuLinks={menuLinks}
             logoImageDesktopPath={require('assets/images/logo/logo.svg')}
             logoImageInverseDesktopPath={require('assets/images/logo/logo-inverted.svg')}

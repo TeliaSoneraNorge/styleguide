@@ -55,7 +55,6 @@ export default class Menu extends React.Component {
         this.closeMobileMenu = this.toggleMobileMenu.bind(this);
         this.onMenuHeaderItemSelected = this.onMenuHeaderItemSelected.bind(this);
         this.onMenuContentItemSelected = this.onMenuContentItemSelected.bind(this);
-        this.setDefaultActiveLinkIndex = this.setDefaultActiveLinkIndex.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.toggleSubmenu = this.toggleSubmenu.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
@@ -100,15 +99,10 @@ export default class Menu extends React.Component {
 
     onMenuHeaderItemSelected(index) {
         this.setState({ activeIndex: index});
-        this.setDefaultActiveLinkIndex();
     }
 
     onMenuContentItemSelected(index) {
         this.setState({ activeLinkIndex: index });
-    }
-
-    setDefaultActiveLinkIndex(){
-        this.setState({activeLinkIndex: this.props.defaultActiveLinkIndex });
     }
 
     toggleSubmenu(submenuIndex, event) {
@@ -127,7 +121,7 @@ export default class Menu extends React.Component {
         const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
         const {
             activeIndex = 0,
-            activeLinkIndex = this.props.defaultActiveLinkIndex,
+            activeLinkIndex = -1,
             openedSubmenuIndex,
             mobileMenuOpen
         } = this.state;
@@ -174,8 +168,7 @@ export default class Menu extends React.Component {
                     onSearchSubmit={onSearchSubmit}
                     isLoggedIn={isLoggedIn}
                     myPageUrl={myPageUrl}
-                    onMenuContentItemSelected={this.onMenuContentItemSelected}
-                    setDefaultActiveLinkIndex={this.setDefaultActiveLinkIndex} />
+                    onMenuContentItemSelected={this.onMenuContentItemSelected}/>
 
                 <MobileMenu
                     isOpen={mobileMenuOpen}
