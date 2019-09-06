@@ -2,12 +2,11 @@ import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 
-const MenuHeading = ({ menuLinks, activeIndex, LinkTemplate, onItemSelected }) => (
+const MenuHeading = ({ menuLinks, activeIndex, LinkTemplate }) => (
     <ul className="menu__top--heading">
         {menuLinks.map((menuLink, index) => (
             <li key={menuLink.heading && menuLink.heading.text}>
                 <LinkTemplate
-                    onClick={() => onItemSelected(index)}
                     url={menuLink.heading.url}
                     className={classnames(
                         'menu__top--heading-item link',
@@ -26,9 +25,9 @@ const MenuTop = ({ LinkTemplate, activeIndex, menuLinks }) => (
             LinkTemplate={LinkTemplate}
             activeIndex={activeIndex}
             menuLinks={menuLinks}
-            onItemSelected={() => {}} />
+        />
     </div>
-);//    FIXME
+);
 
 MenuTop.propTypes = {
     menuLinks: PropTypes.array,

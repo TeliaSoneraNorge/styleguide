@@ -7,17 +7,17 @@ const MobileMenuCloseButton = ({ onClick }) => (
         <SvgIcon
             iconName="ico_delete"
             color="black"
-            className="menu__mobile-close-button-icon" />
+            className="menu__mobile-close-button-icon"/>
     </button>
 );
 
 const MobileMenuHeaderItem = ({ index, onHeaderItemSelected, menuLink, isActive }) => (
     <li>
         <div onClick={() => onHeaderItemSelected(index)} tabIndex="0"
-            className={classnames(
-                'menu__mobile-heading-item', {
-                    'menu__mobile-heading-item--active': isActive,
-                })}>
+             className={classnames(
+                 'menu__mobile-heading-item', {
+                     'menu__mobile-heading-item--active': isActive,
+                 })}>
             <span className="menu__mobile-heading-item-text">{menuLink.heading && menuLink.heading.text}</span>
         </div>
     </li>
@@ -41,7 +41,7 @@ const MobileMenuHeader = ({
                 onHeaderItemSelected={onHeaderItemSelected} />)}
         </ul>
         }
-        <MobileMenuCloseButton onClick={onMobileMenuToggle} />
+        <MobileMenuCloseButton onClick={onMobileMenuToggle}/>
     </div>
 );
 
@@ -65,25 +65,25 @@ const MobileSubmenu = ({ link, LinkTemplate, onItemSelected }) => (
 const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
     <React.Fragment>
         {link.url &&
-            <LinkTemplate
-                onClick={onItemSelected}
-                className="menu__mobile-item link"
-                url={link.url}>
-                <span className="link__content">{link.text}</span>
-            </LinkTemplate>}
-        {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
+        <LinkTemplate
+            onClick={onItemSelected}
+            className="menu__mobile-item link"
+            url={link.url}>
+            <span className="link__content">{link.text}</span>
+        </LinkTemplate>}
+        {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate}/>}
     </React.Fragment>
 );
 
 const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
     <section id={`${menuLink.heading && menuLink.heading.text}-panel`} className="menu__mobile-panel">
-        { menuLink.heading && menuLink.heading.url &&
-            <LinkTemplate
-                onClick={onItemSelected}
-                className="menu__mobile-item link"
-                url={menuLink.heading.url}>
-                <span className="link__content">Forside</span>
-            </LinkTemplate>
+        {menuLink.heading && menuLink.heading.url &&
+        <LinkTemplate
+            onClick={onItemSelected}
+            className="menu__mobile-item link"
+            url={menuLink.heading.url}>
+            <span className="link__content">Forside</span>
+        </LinkTemplate>
         }
 
         {menuLink.links.map((link, index) =>
@@ -92,33 +92,51 @@ const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
                 key={link.text}
                 link={link}
                 onItemSelected={onItemSelected}
-                LinkTemplate={LinkTemplate} />)}
+                LinkTemplate={LinkTemplate}/>)}
 
     </section>
 );
 
-const MobileMenu = ({
-    isOpen,
-    LinkTemplate,
-    onMobileMenuToggle,
-    menuLinks,
-    selectedHeaderIndex,
-    onMenuItemSelected
-}) => (
-    <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
-        <MobileMenuHeader
-            onMobileMenuToggle={onMobileMenuToggle}
-            menuLinks={menuLinks}
-            LinkTemplate={LinkTemplate}
-            selectedIndex={selectedHeaderIndex}
-            onHeaderItemSelected={() => {}} />
-        {menuLinks &&
-        <MobileMenuItemSection
-            menuLink={menuLinks[selectedHeaderIndex]}
-            onItemSelected={onMenuItemSelected}
-            LinkTemplate={LinkTemplate} />
-        }
-    </div>
-);
+class MobileMenu extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedHeaderIndex: 0
+        };
+    }
+
+    // onMobileMenuToggle // TODO
+
+    render() {
+        const {
+            // isOpen,
+            selectedHeaderIndex
+        } = this.state;
+        const {
+            isOpen,
+            LinkTemplate,
+            onMobileMenuToggle,
+            menuLinks,
+            onMenuItemSelected
+        } = this.props;
+        return (
+            <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
+                <MobileMenuHeader
+                    onMobileMenuToggle={onMobileMenuToggle}
+                    menuLinks={menuLinks}
+                    LinkTemplate={LinkTemplate}
+                    selectedIndex={selectedHeaderIndex}
+                    onHeaderItemSelected={index => this.setState({selectedHeaderIndex: index})}
+                />
+                {menuLinks &&
+                <MobileMenuItemSection
+                    menuLink={menuLinks[selectedHeaderIndex]}
+                    onItemSelected={onMenuItemSelected}
+                    LinkTemplate={LinkTemplate}/>
+                }
+            </div>
+        );
+    };
+}
 
 export default MobileMenu;
