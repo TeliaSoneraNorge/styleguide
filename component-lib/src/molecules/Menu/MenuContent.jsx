@@ -11,7 +11,7 @@ const onSubmenuKeyPress = (e, onToggleSubmenu) => {
     }
 };
 
-const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive, onItemSelected }) => (
+const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
     <div tabIndex="0" className={classnames(
         "menu__item link menu__submenu",
         { 'menu__submenu--active': isActive })}
@@ -31,7 +31,7 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
                     key={sublink.text}
                     className="menu__subitem link"
                     url={sublink.url}
-                    onClick={onItemSelected}>
+                >
                     <span className="link__content">{sublink.text}</span>
                 </LinkTemplate>
             )}
@@ -39,15 +39,14 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
     </div>
 );
 
-const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isActive, onItemSelected }) => (
+const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isActive }) => (
     <li>
         {link.url &&
             <LinkTemplate
                 className={classnames(
                     'menu__item link',
                     { 'menu__item--active': isActive })}
-                url={link.url}
-                onClick={onItemSelected}>
+                url={link.url}>
                 <span className="link__content">{link.text}</span>
             </LinkTemplate>
         }
@@ -59,7 +58,7 @@ const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isAc
                 isOpen={isSubmenuOpen}
                 isActive={isActive}
                 LinkTemplate={LinkTemplate}
-                onItemSelected={onItemSelected} />}
+            />}
     </li>
 );
 
@@ -93,7 +92,6 @@ const MenuContent = ({
     LinkTemplate,
     onMobileMenuToggle,
     onSearchSubmit,
-    onMenuContentItemSelected,
     isLoggedIn,
     loginUrl,
     myPageUrl }) => (
@@ -108,7 +106,7 @@ const MenuContent = ({
                         onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
                         key={link.text}
                         link={link}
-                        onItemSelected={() => onMenuContentItemSelected(index)} />))}
+                    />))}
             </ul>
             <div className="menu__content-right">
                 {onSearchSubmit &&

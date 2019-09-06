@@ -52,7 +52,6 @@ export default class Menu extends React.Component {
         };
 
         this.closeMobileMenu = this.toggleMobileMenu.bind(this);
-        this.onMenuContentItemSelected = this.onMenuContentItemSelected.bind(this);
         this.toggleMobileMenu = this.toggleMobileMenu.bind(this);
         this.toggleSubmenu = this.toggleSubmenu.bind(this);
         this.onClickaway = this.onClickaway.bind(this);
@@ -95,10 +94,6 @@ export default class Menu extends React.Component {
         this.setState({ mobileMenuOpen: !this.state.mobileMenuOpen });
     }
 
-    onMenuContentItemSelected(index) {
-        this.setState({ activeLinkIndex: index });
-    }
-
     toggleSubmenu(submenuIndex, event) {
         event.stopPropagation();
 
@@ -114,7 +109,6 @@ export default class Menu extends React.Component {
     render() {
         const LinkTemplate = this.props.linkTemplate || defaultLinkTemplate;
         const {
-            activeLinkIndex = -1,
             openedSubmenuIndex,
             mobileMenuOpen
         } = this.state;
@@ -130,6 +124,7 @@ export default class Menu extends React.Component {
             loginUrl,
             myPageUrl,
             activeIndex = 0,
+            activeLinkIndex = -1,
             cartUrl
         } = this.props;
 
@@ -162,7 +157,7 @@ export default class Menu extends React.Component {
                     onSearchSubmit={onSearchSubmit}
                     isLoggedIn={isLoggedIn}
                     myPageUrl={myPageUrl}
-                    onMenuContentItemSelected={this.onMenuContentItemSelected}/>
+                />
 
                 <MobileMenu
                     isOpen={mobileMenuOpen}
