@@ -20,21 +20,20 @@ const MenuHeading = ({ menuLinks, activeIndex, LinkTemplate, onItemSelected }) =
 );
 
 
-const MenuTop = ({ LinkTemplate, activeIndex, menuLinks, onMenuHeaderItemSelected }) => (
+const MenuTop = ({ LinkTemplate, activeIndex, menuLinks }) => (
     <div className="menu__top">
         <MenuHeading
             LinkTemplate={LinkTemplate}
             activeIndex={activeIndex}
             menuLinks={menuLinks}
-            onItemSelected={onMenuHeaderItemSelected} />
+            onItemSelected={() => {}} />
     </div>
-);
+);//    FIXME
 
 MenuTop.propTypes = {
     menuLinks: PropTypes.array,
     activeIndex: PropTypes.number,
-    LinkTemplate: PropTypes.func,
-    onMenuHeaderItemSelected: PropTypes.func
+    LinkTemplate: PropTypes.func
 };
 
 MenuTop.defaultProps = {

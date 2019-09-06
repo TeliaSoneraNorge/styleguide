@@ -103,8 +103,7 @@ const MobileMenu = ({
     onMobileMenuToggle,
     menuLinks,
     selectedHeaderIndex,
-    onMenuItemSelected,
-    onMenuHeaderItemSelected
+    onMenuItemSelected
 }) => (
     <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
         <MobileMenuHeader
@@ -112,7 +111,7 @@ const MobileMenu = ({
             menuLinks={menuLinks}
             LinkTemplate={LinkTemplate}
             selectedIndex={selectedHeaderIndex}
-            onHeaderItemSelected={onMenuHeaderItemSelected} />
+            onHeaderItemSelected={() => {}} />
         {menuLinks &&
         <MobileMenuItemSection
             menuLink={menuLinks[selectedHeaderIndex]}
