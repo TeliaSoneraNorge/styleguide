@@ -46,7 +46,6 @@ export default class Menu extends React.Component {
 
         this.state = {
             open: false,
-            activeLinkIndex: this.props.activeLinkIndex,
             mobileMenuOpen: false,
             openedSubmenuIndex: -1
         };
