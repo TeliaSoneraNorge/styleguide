@@ -33,10 +33,10 @@ import TabsSamplePage from './pages/TabsSamplePage';
 
 const menuLinks = [
     {
-        heading: { text: 'Styleguide', url: '/' },
+        heading: { text: 'Styleguide', url: '/'},
         links: [
             { text: 'Layout', url: '/layout' },
-            { text: 'Image Assets', url: '/image-assets' },
+            { text: 'Image Assets', url: '/image-assets'},
             { text: 'Contributing', url: '/contributing' },
             { text: 'Download/Install', url: '/download' },
             { text: 'Versions', url: '/versions' }
@@ -45,16 +45,21 @@ const menuLinks = [
     {
         heading: { text: 'Component Library', url: '/components' },
         links: [
-            { text: 'Components', url: '/components/' },
-            { text: 'Components in atomic structure', url: '/components-atomic/' },
+            { text: 'Components', url: '/components' },
+            { text: 'Components in atomic structure', url: '/components-atomic' },
         ]
     }
 ];
 
+const calculateActiveIndex = pathname => pathname.includes('component') ? 1 : 0;
+const calculateActiveLinkIndex = pathname => menuLinks.reduce(
+    (result, topMenuItem, topIndex) => result !== null ? result : topMenuItem.links.reduce(
+        (res, menuItem, contentIndex) => res !== null ? res : menuItem.url === pathname ? contentIndex : null, null), null);
+
 const routerLinkTemplate = ({ url, ...otherProps }) =>
     <Link to={url} {...otherProps} />;
 
-const Routes = () => {
+const Routes = ({ history }) => {
     return (
         <div>
             <AllIcons />
@@ -62,7 +67,8 @@ const Routes = () => {
             <Menu
                 logoUrl="/"
                 linkTemplate={routerLinkTemplate}
-                activeIndex={window.location.href.includes('component') ? 1 : 0}
+                activeIndex={calculateActiveIndex(history.location.pathname)}
+                activeLinkIndex={calculateActiveLinkIndex(history.location.pathname)}
                 menuLinks={menuLinks}
                 logoImageDesktopPath={require('../assets/images/logo/logo.svg')}
                 logoImageInverseDesktopPath={require('../assets/images/logo/logo-inverted.svg')}

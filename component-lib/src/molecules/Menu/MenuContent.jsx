@@ -11,8 +11,10 @@ const onSubmenuKeyPress = (e, onToggleSubmenu) => {
     }
 };
 
-const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate }) => (
-    <div tabIndex="0" className="menu__item link menu__submenu"
+const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
+    <div tabIndex="0" className={classnames(
+        "menu__item link menu__submenu",
+        { 'menu__submenu--active': isActive })}
         onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)}>
         <span className="menu__submenu-link" onClick={onToggleSubmenu}>
             {text}
@@ -28,7 +30,8 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
                 <LinkTemplate
                     key={sublink.text}
                     className="menu__subitem link"
-                    url={sublink.url}>
+                    url={sublink.url}
+                >
                     <span className="link__content">{sublink.text}</span>
                 </LinkTemplate>
             )}
@@ -36,22 +39,26 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
     </div>
 );
 
-const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen }) => (
+const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isActive }) => (
     <li>
         {link.url &&
-        <LinkTemplate
-            className="menu__item link"
-            url={link.url}>
-            <span className="link__content">{link.text}</span>
-        </LinkTemplate>
+            <LinkTemplate
+                className={classnames(
+                    'menu__item link',
+                    { 'menu__item--active': isActive })}
+                url={link.url}>
+                <span className="link__content">{link.text}</span>
+            </LinkTemplate>
         }
         {!link.url && link.subLinks &&
-        <ItemWithSubmenu
-            text={link.text}
-            subLinks={link.subLinks}
-            onToggleSubmenu={onToggleSubmenu}
-            isOpen={isSubmenuOpen}
-            LinkTemplate={LinkTemplate} />}
+            <ItemWithSubmenu
+                text={link.text}
+                subLinks={link.subLinks}
+                onToggleSubmenu={onToggleSubmenu}
+                isOpen={isSubmenuOpen}
+                isActive={isActive}
+                LinkTemplate={LinkTemplate}
+            />}
     </li>
 );
 
@@ -76,32 +83,45 @@ const MobileMenuButton = ({ onMenuToggle }) => (
     </button>
 );
 
-const MenuContent = ({ menuLink, openedSubmenuIndex, onToggleSubmenu, logo, LinkTemplate, onMobileMenuToggle, onSearchSubmit, isLoggedIn, loginUrl, myPageUrl }) => (
-    <div className="menu__content">
-        <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
-        <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
-            {menuLink && menuLink.links.map((link, index) => (
-                <MenuLinkItem
-                    LinkTemplate={LinkTemplate}
-                    isSubmenuOpen={openedSubmenuIndex === index}
-                    onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
-                    key={link.text}
-                    link={link} />))}
-        </ul>
-        <div className="menu__content-right">
-            {onSearchSubmit &&
-            <MenuSearch onSubmit={onSearchSubmit} />
-            }
-            {loginUrl && !isLoggedIn &&
-            <LoginButton loginUrl={loginUrl} />
-            }
-            {myPageUrl && isLoggedIn &&
-            <MyPageButton myPageUrl={myPageUrl} />
-            }
-            <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
+const MenuContent = ({
+    menuLink,
+    openedSubmenuIndex,
+    activeIndex,
+    onToggleSubmenu,
+    logo,
+    LinkTemplate,
+    onMobileMenuToggle,
+    onSearchSubmit,
+    isLoggedIn,
+    loginUrl,
+    myPageUrl }) => (
+        <div className="menu__content">
+            <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
+            <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
+                {menuLink && menuLink.links.map((link, index) => (
+                    <MenuLinkItem
+                        LinkTemplate={LinkTemplate}
+                        isSubmenuOpen={openedSubmenuIndex === index}
+                        isActive={activeIndex === index}
+                        onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
+                        key={link.text}
+                        link={link}
+                    />))}
+            </ul>
+            <div className="menu__content-right">
+                {onSearchSubmit &&
+                    <MenuSearch onSubmit={onSearchSubmit} />
+                }
+                {loginUrl && !isLoggedIn &&
+                    <LoginButton loginUrl={loginUrl} />
+                }
+                {myPageUrl && isLoggedIn &&
+                    <MyPageButton myPageUrl={myPageUrl} />
+                }
+                <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
+            </div>
         </div>
-    </div>
-);
+    );
 
 const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) => (
     <LinkTemplate url={url} className="menu__logo-container">
