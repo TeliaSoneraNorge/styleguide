@@ -63,14 +63,14 @@ const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isAc
 );
 
 const LoginButton = ({ loginUrl, LinkTemplate }) => (
-    <LinkTemplate className={'menu__login-button button button--small'} url={loginUrl}>
+    <LinkTemplate className="menu__login-button button button--small" url={loginUrl}>
         <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" />
         logg inn
     </LinkTemplate>
 );
 
 const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
-    <LinkTemplate className={'menu__mypage-button button button--small'} url={myPageUrl}>
+    <LinkTemplate className="menu__mypage-button button button--small" url={myPageUrl}>
         <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
         min side
     </LinkTemplate>
