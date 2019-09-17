@@ -128,16 +128,14 @@
 
     &__image {
         display: block;
-        min-height: 300px;
+        min-height: 18.75em;
+        max-height: 25em;
         object-fit: cover;
         object-position: center;
         font-family: 'object-fit: cover; object-position: center;'; /*object-fit-images polyfill*/
         width: 100%;
 
         @media all and (min-width: 68.75em) {
-            max-height: 400px;
-            object-fit: cover;
-            object-position: center;
 
             &--align-top {
                 font-family: 'object-fit: cover; object-position: top;'; /*object-fit-images polyfill*/
@@ -151,7 +149,11 @@
         }
 
         @media all and (min-width: 87.5em) {
-            max-height: 600px;
+            max-height: 37.5em;
+        }
+
+        @media all and (min-width: 125em) {
+            max-height: 62.5em;
         }
     }
 
