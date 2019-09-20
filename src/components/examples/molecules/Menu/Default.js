@@ -35,6 +35,7 @@ const Default = () => (
         <Menu
             loginUrl="#Menu"
             logoUrl="#"
+            logoTitle="Telia logo"
             activeIndex={0}
             activeLinkIndex={-1}
             menuLinks={menuLinks}
