@@ -1,11 +1,12 @@
 import React from 'react';
 import classnames from 'classnames';
 
-const Color = ({ name, hex, textColor, priority }) =>
+const Color = ({ name, hex, textColor, priority, boxShadow }) =>
     <div className="sg-color">
         <span className={classnames("sg-color__circle", 
             priority === "1" ? "sg-color__circle-large" : null, 
-            priority === "2" ? "sg-color__circle-medium" : null)} 
+            priority === "2" ? "sg-color__circle-medium" : null,
+            boxShadow ? "sg-color__box-shadow" : null)} 
             style={{ backgroundColor: hex }}></span>
         <div align="center" className="sg-color__name">{name}</div>
         <div align="center" className="sg-color__hex">{hex}</div>

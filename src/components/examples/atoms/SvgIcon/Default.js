@@ -3,10 +3,10 @@ import { SvgIcon } from '@telia/styleguide';
 
 const DefaultSvgIcon = () => (
     <div>
-        <SvgIcon iconName="ico_heart" color="light-grey" />
-        <SvgIcon iconName="ico_heart" color="grey" />
         <SvgIcon iconName="ico_heart" color="black" />
-        <SvgIcon iconName="ico_heart" color="purple" />
+        <SvgIcon iconName="ico_heart" color="core-purple" />
+        <SvgIcon iconName="ico_heart" color="light-grey" />
+        <SvgIcon iconName="ico_heart" color="white" style={{background: '#990AE3'}} />
     </div>
 );
 
