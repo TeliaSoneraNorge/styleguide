@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import { colorNames } from '../../constants'
 
 /**
  * Status: *In progress*.
@@ -25,7 +26,7 @@ SvgIcon.propTypes = {
     /** The name of the icon*/
     iconName: PropTypes.string,
     /** The color of the icon (white, black, purple, grey or none)*/
-    color: PropTypes.oneOf(['white', 'black', 'purple', 'grey', 'light-grey', 'green', 'dark-grey', 'none']),
+    color: PropTypes.oneOf(colorNames),
     /** Other class names*/
     className: PropTypes.string,
     title: PropTypes.string,
