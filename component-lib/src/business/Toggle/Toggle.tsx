@@ -1,6 +1,5 @@
 import React, { useState, useRef } from 'react';
 import cs from 'classnames';
-// import './Toggle.scss';
 
 const colors = {
     white: '#ffffff',
@@ -57,7 +56,7 @@ const Toggle: React.FC<Props> = props => {
         <div
             className={cs(
                 {
-                    Toggle: true,
+                    'Business-Toggle': true,
                     checked: props.checked,
                     focus: focus,
                     disabled: props.disabled,
@@ -68,7 +67,7 @@ const Toggle: React.FC<Props> = props => {
             onKeyUp={handleKeyUp}
             tabIndex={props.disabled ? -1 : 0}
         >
-            <div className="Toggle-track">
+            <div className="Business-Toggle-track">
                 <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" viewBox="0 0 18 18">
                     <path
                         id="check"
@@ -89,7 +88,7 @@ const Toggle: React.FC<Props> = props => {
                     />
                 </svg>
             </div>
-            <div className="Toggle-thumb" />
+            <div className="Business-Toggle-thumb" />
 
             <input
                 {...props}
@@ -97,7 +96,7 @@ const Toggle: React.FC<Props> = props => {
                 ref={inputRef}
                 onFocus={handleFocus}
                 onBlur={handleBlur}
-                className="Toggle-screenreader-only"
+                className="Business-Toggle-screenreader-only"
                 type="checkbox"
                 tabIndex={-1}
             />
