@@ -6,6 +6,13 @@ to achieve a common look & feel, and therefore user experience.
 - The styleguide can be [found on the web](http://styleguide.channelapi.telia.no/#/).
 - The React component library can be [found on NPM as a JavaScript module](https://www.npmjs.com/package/@telia/styleguide).
 
+## Business branch
+
+This is the business branch of the styleguide. It is a long-lived branch
+used to isolate development of components currently in use by the Min Bedrift
+and Min Portal teams. For any questions regarding this, contact Håkon Antonsen or
+Nils Magnus Englund from the respective teams.
+
 # Development
 
 ## Getting started
