@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 /**
- * Status: *finished*
+ * Status: *Deprecated*: Use TextAreaWithLable to be WGAC2.0 compliant. Set 'hideLabel' to hide the lable.
  * Category: FormElements
  */
 const TextArea = ({ children, className, error, ...rest }) => (
