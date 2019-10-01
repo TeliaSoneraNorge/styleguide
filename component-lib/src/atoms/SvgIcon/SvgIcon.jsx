@@ -17,6 +17,7 @@ const SvgIcon = ({ iconName, color, className, title, ...rest }) =>
             [className]: className,
             [`svg-icon--${color || 'black'}`]: color,
         })}
+        aria-hidden={title ? undefined : true}
         {...rest}>
         {title && <title>{title}</title>}
         <use xlinkHref={`#${iconName}`}></use>
