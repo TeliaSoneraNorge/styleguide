@@ -13,6 +13,7 @@ export default class Banner extends React.Component {
     static propTypes = {
         reverse: PropTypes.bool,
         img: PropTypes.string,
+        imgAlt: PropTypes.string,
         grey: PropTypes.bool,
         reverse: PropTypes.bool
     };
@@ -33,7 +34,7 @@ export default class Banner extends React.Component {
                     {this.props.children}
                 </div>
                 <div className="banner__col">
-                    <img className="banner__image" src={this.props.img} />
+                    <img className="banner__image" src={this.props.img} alt={this.props.imgAlt} />
                 </div>
             </div>
         );

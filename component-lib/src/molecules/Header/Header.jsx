@@ -11,6 +11,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  */
 const Header = ({
     videoSrc,
+    videoTitle,
     iconName,
     hideIconOnDesktop,
     runningTitle,
@@ -36,7 +37,8 @@ const Header = ({
                         src={videoSrc}
                         className="video__iframe"
                         frameBorder="0"
-                        allowFullScreen></iframe>
+                        allowFullScreen
+                        title={videoTitle}></iframe>
                 </div>
             </div> : null
         }
@@ -52,6 +54,7 @@ const Header = ({
 
 Header.propTypes = {
     videoSrc: PropTypes.string,
+    videoTitle: PropTypes.string,
     iconName: PropTypes.string,
     hideIconOnDesktop: PropTypes.bool,
     runningTitle: PropTypes.string,
