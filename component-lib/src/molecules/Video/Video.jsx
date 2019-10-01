@@ -7,7 +7,7 @@ import SvgIcon from '../../atoms/SvgIcon';
  * Status: *finished*
  * Category: ImageAndVideo
  */
-const Video = ({ className, src, allowFullScreen, img, description, autoplay, ...rest }) => (
+const Video = ({ className, src, allowFullScreen, img, description, videoTitle, autoplay, ...rest }) => (
     <div
         className={classnames('video', {
             [className]: className,
@@ -27,7 +27,8 @@ const Video = ({ className, src, allowFullScreen, img, description, autoplay, ..
             <iframe
                 src={src + (autoplay ? '?rel=0&autoplay=1' : '')}
                 className="video__iframe"
-                allowFullScreen={allowFullScreen} />
+                allowFullScreen={allowFullScreen}
+                title={videoTitle} />
         </div>
         {!img &&
             <div className="caption">{description}</div>
@@ -40,6 +41,7 @@ Video.propTypes = {
     allowFullScreen: PropTypes.bool,
     img: PropTypes.string,
     description: PropTypes.string,
+    videoTitle: PropTypes.string,
     autoplay: PropTypes.bool
 };
 

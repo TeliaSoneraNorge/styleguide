@@ -2,8 +2,14 @@ import React from 'react';
 import { DisplayFunctionality } from '@telia/styleguide';
 
 const imgs = [
-    require('assets/website-images/screenshot1.png'),
-    require('assets/website-images/screenshot2.png')
+    {
+        img: require('assets/website-images/screenshot1.png'),
+        imgAlt: "Man and woman looking at tablet"
+    },
+    {
+        img: require('assets/website-images/screenshot2.png'),
+        imgAlt: "People talking"
+    }
 ];
 
 const DefaultDisplayFunctionality = () => (

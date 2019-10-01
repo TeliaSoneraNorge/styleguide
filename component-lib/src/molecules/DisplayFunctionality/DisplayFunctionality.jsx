@@ -33,8 +33,11 @@ class DisplayFunctionality extends React.Component {
                     <div className="display-functionality__col">
                         <img className="display-functionality__device" src={this.props.deviceImageUrl} />
                         {
-                            this.props.imgs.map((img, i) => {
-                                return <img key={img} src={img} className={classnames(`display-functionality__image display-functionality__image--${this.props.device ? this.props.device : 'laptop'}`, {
+                            this.props.imgs.map((image, i) => {
+                                return <img key={image.img}
+                                    src={image.img}
+                                    alt={image.imgAlt}
+                                    className={classnames(`display-functionality__image display-functionality__image--${this.props.device ? this.props.device : 'laptop'}`, {
                                     'display-functionality__image--hidden': this.state.index !== i })} />;
                             })
                         }
@@ -55,7 +58,10 @@ class DisplayFunctionality extends React.Component {
 }
 
 DisplayFunctionality.propTypes = {
-    imgs: PropTypes.arrayOf(PropTypes.string),
+    imgs: PropTypes.arrayOf(PropTypes.shape({
+        img: PropTypes.string,
+        imgAlt: PropTypes.string
+    })),
     reverse: PropTypes.bool,
     device: PropTypes.string,
     deviceImageUrl: PropTypes.string
