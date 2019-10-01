@@ -78,7 +78,7 @@ export default class Box extends React.Component {
                 {this.state.isExpanded ?
                     <button className="box__close-expanded-info" onClick={this.closeBoxClick} aria-controls={this.props.id}>
                         <span className="box__close-text">LUKK</span>
-                        <SvgIcon className="box__close-icon" iconName="ico_delete" color="black" />
+                        <SvgIcon aria-hidden="true" className="box__close-icon" iconName="ico_delete" color="black" />
                     </button> : null}
                 {this.props.children}
             </article>
