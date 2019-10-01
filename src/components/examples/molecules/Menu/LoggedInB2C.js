@@ -35,6 +35,7 @@ const LoggedInMenu = () => (
         <Menu
             loginUrl="#Menu"
             logoUrl="#"
+            logoTitle="Telia logo"
             activeIndex={0}
             menuLinks={menuLinks}
             logoImageDesktopPath={require('assets/images/logo/logo.svg')}

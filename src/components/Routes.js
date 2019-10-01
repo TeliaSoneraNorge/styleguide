@@ -66,6 +66,7 @@ const Routes = ({ history }) => {
 
             <Menu
                 logoUrl="/"
+                logoTitle="Telia logo"
                 linkTemplate={routerLinkTemplate}
                 activeIndex={calculateActiveIndex(history.location.pathname)}
                 activeLinkIndex={calculateActiveLinkIndex(history.location.pathname)}
