@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextBox } from '@telia/styleguide';
+import { TextBoxWithLabel } from '@telia/styleguide';
 
 export default class TypeWithRef extends React.Component {
     state = {
@@ -22,8 +22,10 @@ export default class TypeWithRef extends React.Component {
         return (
             <React.Fragment>
                 <p>Value from ref: {ref && ref.value}</p>
-                <TextBox
+                <TextBoxWithLabel
                     type="text"
+                    labelText="Sample input field"
+                    hideLabel
                     value={value}
                     ref={this.inputRef}
                     onChange={this.onChange} />

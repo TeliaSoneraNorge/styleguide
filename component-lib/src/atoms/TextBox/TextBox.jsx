@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 /**
- * Status: *finished*.
+ * Status: *Deprecated*, use TextBoxWithLabel. To hide the label, set hideLabel to hide the label.
  * Category: FormElements
  *
  * Be sure to set the correct type when using this component as it helps the user to give correct input.

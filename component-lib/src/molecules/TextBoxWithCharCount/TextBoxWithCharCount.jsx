@@ -60,7 +60,7 @@ class TextBoxWithCharCount extends React.Component {
                     </p>
                 </div>
                 { this.props.errorMessage &&
-                    <span className='input-error'>{ this.props.errorMessage }</span> }
+                    <p className='input-error'>{ this.props.errorMessage }</p> }
             </React.Fragment>
         );
     }

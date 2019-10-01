@@ -1,13 +1,17 @@
 import React from 'react';
-import { TextArea } from '@telia/styleguide';
+import { TextAreaWithLabel } from '@telia/styleguide';
 
 const TextAreaExamples = () => (
     <div>
-        <TextArea placeholder="This is normal textarea..." />
+        <TextAreaWithLabel labelText="A sample textarea" hideLabel placeholder="This is normal textarea..." />
         <br /><br />
-        <TextArea placeholder="This one is disabled..." disabled />
+        <TextAreaWithLabel labelText="A disabled textarea" hideLabel placeholder="This one is disabled..." disabled />
         <br /><br />
-        <TextArea placeholder="And this one is marked as error..." error />
+        <TextAreaWithLabel
+            labelText="A textarea with an error"
+            hideLabel
+            placeholder="And this one is marked as error..."
+            error="An unexpected error occured" />
     </div>
 );
 
