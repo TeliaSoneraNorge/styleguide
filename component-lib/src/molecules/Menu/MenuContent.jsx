@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
+import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 
@@ -94,9 +95,11 @@ const MenuContent = ({
     onSearchSubmit,
     isLoggedIn,
     loginUrl,
-    myPageUrl }) => (
+    myPageUrl,
+    isLoading}) => (
         <div className="menu__content">
             <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
+            {isLoading && <Spinner/>}
             <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
                 {menuLink && menuLink.links.map((link, index) => (
                     <MenuLinkItem
