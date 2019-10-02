@@ -22,9 +22,9 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "jsx": "react",
-    "outFile": "dist/types.d.ts"
+    "outDir": "dist/business"
   },
   "include": [
-    "src"
+    "src/business"
   ]
 }
