@@ -15,6 +15,19 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.28.52 and 1.28.53
+- Colors: Darkest grey is changed, and all use of custom dark-grey-2 is removed.
+- Svg icon files: Id is removed from all icons except pebbles. Title tag is removed.
+- SvgIcon: add aria-hidden="true" if no title is provided
+- TextBox: Should use TextBoxWithLabel and set `hideLabel` prop
+- TextArea: Should use TextAreaWithLabel and set `hideLabel` prop
+- Banner: Added image alt prop
+- DisplayFunctonality: Breaking change; pass in both image and alt text
+- Box: aria-label on close button
+- PageMenu: Deleted examples
+- Video: Added videoTitle prop
+- Header: Added videoTitle prop
+
 ## 1.28.37 [new component]
 - Molecules: TextBoxWithCharCount: input field with maximum number of characters
 
