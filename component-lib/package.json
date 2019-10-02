@@ -19,6 +19,7 @@
     "clean": "rimraf dist",
     "deploy:prod": "npm run build && npm publish dist",
     "deploy:beta": "npm run build && npm publish dist --tag beta",
+    "deploy:business": "npm run build && npm publish dist --tag business",
     "dev:es": "cross-env BABEL_ENV=es babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist/es --watch",
     "lint": "eslint --ext .jsx,.js ./src",
     "prebuild": "run-s clean",
