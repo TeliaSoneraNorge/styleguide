@@ -14,7 +14,7 @@
     "build": "run-p build:commonjs build:es build:css && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist",
     "build:copy-files": "node ./scripts/copy-files.js",
-    "build:css": "postcss src/index.pcss -o dist/index.css --config ./postcss.config.js",
+    "build:css": "postcss src/index.pcss src/business.pcss --dir dist --ext css --config ./postcss.config.js",
     "build:es": "cross-env BABEL_ENV=es babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist/es",
     "clean": "rimraf dist",
     "deploy:prod": "npm run build && npm publish dist",
