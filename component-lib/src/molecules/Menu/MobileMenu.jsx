@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 const MobileMenuCloseButton = ({ onClick }) => (
@@ -114,7 +115,8 @@ class MobileMenu extends React.Component {
             LinkTemplate,
             onMobileMenuToggle,
             menuLinks,
-            onMenuItemSelected
+            onMenuItemSelected,
+            isLoading
         } = this.props;
         return (
             <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
@@ -125,6 +127,7 @@ class MobileMenu extends React.Component {
                     selectedIndex={selectedHeaderIndex}
                     onHeaderItemSelected={index => this.setState({selectedHeaderIndex: index})}
                 />
+                {isLoading && <Spinner/>}
                 {menuLinks &&
                 <MobileMenuItemSection
                     menuLink={menuLinks[selectedHeaderIndex]}

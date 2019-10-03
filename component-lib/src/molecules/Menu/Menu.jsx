@@ -38,7 +38,8 @@ export default class Menu extends React.Component {
         isLoggedIn: PropTypes.bool,
         loginUrl: PropTypes.string,
         myPageUrl: PropTypes.string,
-        cartUrl: PropTypes.string
+        cartUrl: PropTypes.string,
+        isLoading: PropTypes.bool
     };
 
     constructor(props) {
@@ -124,7 +125,8 @@ export default class Menu extends React.Component {
             myPageUrl,
             activeIndex = 0,
             activeLinkIndex = -1,
-            cartUrl
+            cartUrl,
+            isLoading
         } = this.props;
 
         const logo = {
@@ -156,6 +158,7 @@ export default class Menu extends React.Component {
                     onSearchSubmit={onSearchSubmit}
                     isLoggedIn={isLoggedIn}
                     myPageUrl={myPageUrl}
+                    isLoading={isLoading}
                 />
 
                 <MobileMenu
@@ -165,7 +168,8 @@ export default class Menu extends React.Component {
                     menuLinks={menuLinks}
                     selectedHeaderIndex={activeIndex}
                     onMenuItemSelected={this.toggleMobileMenu}
-                 />
+                    isLoading={isLoading}
+                />
             </div>
         );
     }
