@@ -77,7 +77,7 @@ const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
 );
 
 const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
-    <section id={`${menuLink.heading && menuLink.heading.text}-panel`} className="menu__mobile-panel">
+    <section id={`${menuLink.heading && menuLink.heading.text}-mobile-panel`} className="menu__mobile-panel">
         {menuLink.heading && menuLink.heading.url &&
             <LinkTemplate
                 onClick={onItemSelected}
