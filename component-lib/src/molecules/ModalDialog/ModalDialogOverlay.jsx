@@ -17,6 +17,9 @@ class ModalDialogOverlay extends React.Component {
             this.toggleScroll(nextProps.active);
         }
     }
+    componentWillUnmount() {
+        this.toggleScroll(false);
+    }
     toggleScroll(active){
         if (active) {
             this.scrollPos = window.scrollY;
