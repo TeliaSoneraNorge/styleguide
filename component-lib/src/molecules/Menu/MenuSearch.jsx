@@ -1,6 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
-import TextBoxWithIcon from '../../molecules/TextBoxWithIcon';
+import TextBoxWithLabel from '../../molecules/TextBoxWithLabel';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export default class MenuSearch extends React.Component {
@@ -94,13 +94,15 @@ export default class MenuSearch extends React.Component {
     renderSearchField() {
         return (
             <form onSubmit={this.onSubmit} className="menu__search--open-form">
-                <TextBoxWithIcon
+                <TextBoxWithLabel
                     type="search"
                     autoFocus
+                    withIcon="true"
                     iconName="ico_search"
                     iconLabel="Search"
                     iconIsButton
                     small
+                    buttonTitle="Søk knapp"
                     onChange={(e) => this.onSearchQueryChange(e)} />
             </form>
         );

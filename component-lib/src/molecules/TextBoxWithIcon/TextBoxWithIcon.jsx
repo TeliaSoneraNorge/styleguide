@@ -5,12 +5,12 @@ import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon';
 import TextBox from '../../atoms/TextBox';
 
-const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
+const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel, buttonTitle }) => {
     if (!iconName) return null;
 
     if (iconIsButton) {
         return (
-            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button">
+            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button" title={buttonTitle}>
                 <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
             </button>
         );
@@ -27,14 +27,14 @@ const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
  * Status: *finished*.
  * Category: FormElements
 **/
-const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, small, iconName, iconColor, iconIsButton, iconLabel, ...rest }, ref) => (
+const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, small, iconName, iconColor, iconIsButton, iconLabel, buttonTitle, ...rest }, ref) => (
     <div
         className={classnames('textbox-with-icon', {
             ['textbox-with-icon--small']: small,
             [className]: className
         })}>
         <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={error} small={small} {...rest} />
-        <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} />
+        <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} buttonTitle={buttonTitle} />
     </div>
 ));
 
