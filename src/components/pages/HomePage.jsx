@@ -22,7 +22,7 @@ const HomePage = () =>
             </p>
         </Header>
 
-        <div className="container container--small container--extra-padding-top">
+        <div className="container container--small container--extra-padding-top" id='hovedinnhold'>
             <Heading level={2} text="Color Palette" />
             <p className="paragraph">The color palette below was taken from the <a href="https://brandhub.teliacompany.com/document/14#/colour-palette/our-colour-palette" target="_blank">Telia Company design document</a> and shows the recommended font color to give the correct contrast.</p>
         </div>

@@ -135,7 +135,7 @@ const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) 
         <img
             className="menu__logo--inverted"
             src={imageInverted}
-            alt={title} />
+            alt='' />
     </LinkTemplate>
 );
 
