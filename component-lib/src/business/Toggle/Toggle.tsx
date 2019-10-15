@@ -18,7 +18,7 @@ interface Props {
     id?: string;
 }
 
-const Toggle: React.FC<Props> = props => {
+export const Toggle: React.FC<Props> = props => {
     const [focus, setFocus] = useState(false);
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -103,5 +103,3 @@ const Toggle: React.FC<Props> = props => {
         </div>
     );
 };
-
-export default Toggle;
