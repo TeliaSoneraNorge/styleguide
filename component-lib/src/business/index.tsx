@@ -1,1 +1,2 @@
-export { default as Toggle } from './Toggle';
+export { Toggle } from './Toggle';
+export { Icon, IconDefinition, AllBusinessIcons } from './Icon';
