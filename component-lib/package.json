@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.28.59",
+  "version": "1.28.58-business2",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -84,6 +84,9 @@
     "postcss-replace": "1.0.5",
     "postcss-svg": "3.0.0",
     "postcss-url": "8.0.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "rimraf": "^2.6.3",
     "svg4everybody": "^2.1.9",
     "svgo": "^1.2.2",
@@ -92,10 +95,7 @@
   "dependencies": {
     "classnames": "2.2.5",
     "lodash": "^4.17.15",
-    "lottie-web": "^5.5.5",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "lottie-web": "^5.5.5"
   },
   "sideEffects": false,
   "peerDependencies": {
