@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
+
+import FunkyTab from './FunkyTab';
 
 /**
  * Status: *finished*
@@ -17,29 +19,34 @@ import PropTypes from 'prop-types';
  */
 const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
     const selectedChild = children.find((_, index) => index === selectedIndex);
+    const containerRef = useRef();
+
+    const handleKeyDown = (e) => {
+        if (e.which === 37) {
+            const previousIndex = (selectedIndex - 1 + children.length) % children.length;
+            const previousElement = children.find((_, index) => index === previousIndex);
+            onSelect(e, previousIndex, previousElement.props.url, previousElement.props.heading);
+        } else if (e.which === 39) {
+            const nextIndex = (selectedIndex + 1) % children.length;
+            const nextElement = children.find((_, index) => index === nextIndex);
+            onSelect(e, nextIndex, nextElement.props.url, nextElement.props.heading);
+        } else if (e.which === 40 && containerRef.current) {
+            containerRef.current.focus();
+        }
+    }
+
     return (
         <div className="funky-tabs">
-            <ul className="funky-tabs__tabs" role="tablist">
+            <ul className="funky-tabs__tabs" role="tablist" onKeyDown={handleKeyDown}>
                 {children.map((element, index) =>
-                    <li
-                        key={element.props.heading}
-                        className={classNames('funky-tabs__tab', {
-                            'funky-tabs__tab--selected': (selectedIndex === index)
-                        })}
-                        id={`${uniqueId}-tab-${index}`}
-                        role="tab"
-                        aria-controls={`${uniqueId}-panel-${index}`}
-                        aria-selected={selectedIndex === index}>
-                        <a
-                            className="funky-tabs__link"
-                            href={element.props.url}
-                            onClick={(e) => onSelect(e, index, element.props.url, element.props.heading)}>
-                            <img className="funky-tabs__tab-image" src={element.props.imagePath} />
-                            <div className="funky-tabs__tab-text">
-                                <span className="link">{element.props.heading}</span>
-                            </div>
-                        </a>
-                    </li>
+                    <FunkyTab
+                        element={element}
+                        isSelected={index === selectedIndex}
+                        index={index}
+                        uniqueId={uniqueId}
+                        key={index}
+                        onSelect={onSelect}
+                    />
                 )}
             </ul>
             {
@@ -47,23 +54,27 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
                     key: selectedIndex,
                     index: selectedIndex,
                     uniqueId,
-                    isSelected: true
+                    isSelected: true,
+                    containerRef
                 })
             }
         </div>
     );
 };
 
-FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
-    <div
+FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =>
+    <section
+        tabIndex="-1"
+        ref={containerRef}
         className={classNames(
             'funky-tabs__panel',
             { 'funky-tabs__panel--selected': isSelected })}
         id={`${uniqueId}-panel-${index}`}
         aria-labelledby={`${uniqueId}-tab-${index}`}
-        role="tabpanel">
+        role="tabpanel"
+        hidden={isSelected}>
         {children}
-    </div>;
+    </section>;
 
 FunkyTabs.TabPanel.propTypes = {
     index: PropTypes.number,
