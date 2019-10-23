@@ -10,8 +10,8 @@ import TextBoxWithIcon from '../TextBoxWithIcon/TextBoxWithIcon';
  * Status: *in progress*.
  * Category: FormElements
 **/
-const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideLabel, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, buttonTitle, ...rest }, ref) => {
-    return(
+const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideLabel, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, iconTitle, searchQueryValue, ...rest }, ref) => {
+    return (
         <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>
             <span className={classnames('textbox-with-label__label-text', { 'sr-only': hideLabel })}>
                 {labelText}
@@ -27,7 +27,8 @@ const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideL
                     iconColor={iconColor}
                     iconIsButton={iconIsButton}
                     iconLabel={labelText}
-                    buttonTitle={buttonTitle}
+                    iconTitle={iconTitle}
+                    searchQueryValue={searchQueryValue}
                     {...rest} /> :
                 <TextBox
                     ref={ref}
@@ -40,7 +41,7 @@ const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideL
             {errorMessage &&
                 <p className="input-error">{errorMessage}</p>}
         </Label>
-    )
+    );
 });
 
 TextBoxWithLabel.defaultProps = {
@@ -62,7 +63,7 @@ TextBoxWithLabel.propTypes = {
     iconColor: PropTypes.string,
     iconIsButton: PropTypes.bool,
     iconLabel: PropTypes.string,
-    buttonTitle: PropTypes.string,
+    iconTitle: PropTypes.string,
 
     onChange: PropTypes.func
 };

@@ -40,3 +40,34 @@ body {
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
 }
+
+.button--stripped {
+    -webkit-appearance: none;         /* button */
+    -webkit-writing-mode: inherit;    /* horizontal-tb !important */
+    text-rendering: auto;
+    color: #000000;                 /* buttontext */
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: transparent;    /* buttonface */
+    box-sizing: border-box;
+    margin: 0em;
+    font: inherit;                    /* 400 11px system-ui */
+    padding: inherit;                 /* 1px 7px 2px */
+    writing-mode: inherit;
+    border-width: inherit;            /* 1px */
+    border-style: inherit;            /* solid */
+    border-color: inherit;            /* rgb(216, 216, 216) rgb(209, 209, 209) rgb(186, 186, 186) */
+    border-image: initial;
+      
+}
+
+.button--stripped:hover, .button--stripped:focus, .button--stripped:active {
+    outline: none;
+}
