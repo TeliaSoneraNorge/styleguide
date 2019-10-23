@@ -9,14 +9,38 @@ import TextBoxWithIcon from '../TextBoxWithIcon/TextBoxWithIcon';
 /**
  * Status: *in progress*.
  * Category: FormElements
-**/
-const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideLabel, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, iconTitle, searchQueryValue, ...rest }, ref) => {
-    return (
-        <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>
-            <span className={classnames('textbox-with-label__label-text', { 'sr-only': hideLabel })}>
+ **/
+const TextBoxWithLabel = React.forwardRef(
+    (
+        {
+            labelText,
+            type,
+            placeholder,
+            hideLabel,
+            errorMessage,
+            disabled,
+            withIcon,
+            iconName,
+            iconColor,
+            iconIsButton,
+            iconTitle,
+            searchQueryValue,
+            ...rest
+        },
+        ref
+    ) => (
+        <Label
+            className={classnames('textbox-with-label', {
+                'textbox-with-label--with-error': errorMessage
+            })}
+            isUsingGrayText={true}  >
+            <span
+                className={classnames('textbox-with-label__label-text', {
+                    'sr-only': hideLabel
+                })} >
                 {labelText}
             </span>
-            {withIcon ?
+            {withIcon ? (
                 <TextBoxWithIcon
                     ref={ref}
                     type={type}
@@ -29,7 +53,8 @@ const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideL
                     iconLabel={labelText}
                     iconTitle={iconTitle}
                     searchQueryValue={searchQueryValue}
-                    {...rest} /> :
+                    {...rest} />
+            ) : (
                 <TextBox
                     ref={ref}
                     type={type}
@@ -37,12 +62,11 @@ const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideL
                     disabled={disabled}
                     error={!!errorMessage}
                     {...rest} />
-            }
-            {errorMessage &&
-                <p className="input-error">{errorMessage}</p>}
+            )}
+            {errorMessage && <p className="input-error">{errorMessage}</p>}
         </Label>
-    );
-});
+    )
+);
 
 TextBoxWithLabel.defaultProps = {
     iconColor: 'black',

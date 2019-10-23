@@ -16,7 +16,7 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
     <button className={classnames(
         'button--stripped menu__item link menu__submenu',
         { 'menu__submenu--active': isActive })}
-        onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)} 
+        onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)}
         title={submenuButtonTitle ? submenuButtonTitle : 'Trykk for å se lenker til mobiler og tilbehør'}>
         <span className="menu__submenu-link" onClick={onToggleSubmenu}>
             {text}
@@ -120,13 +120,13 @@ const MenuContent = ({
             </ul>
             <div className="menu__content-right">
                 {onSearchSubmit &&
-                        <MenuSearch onSubmit={onSearchSubmit} searchLabel={searchLabel} searchButtonTitle={searchButtonTitle} searchButtonAbort={searchButtonAbort} />
+                    <MenuSearch onSubmit={onSearchSubmit} searchLabel={searchLabel} searchButtonTitle={searchButtonTitle} searchButtonAbort={searchButtonAbort} />
                 }
                 {loginUrl && !isLoggedIn &&
-                        <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />
+                    <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />
                 }
                 {myPageUrl && isLoggedIn &&
-                        <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />
+                    <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />
                 }
                 <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
             </div>
