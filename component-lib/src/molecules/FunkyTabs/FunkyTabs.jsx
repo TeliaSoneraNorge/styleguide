@@ -33,7 +33,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
         } else if (e.which === 40 && containerRef.current) {
             containerRef.current.focus();
         }
-    }
+    };
 
     return (
         <div className="funky-tabs">
@@ -44,9 +44,8 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
                         isSelected={index === selectedIndex}
                         index={index}
                         uniqueId={uniqueId}
-                        key={index}
-                        onSelect={onSelect}
-                    />
+                        key={element.props.heading}
+                        onSelect={onSelect} />
                 )}
             </ul>
             {
