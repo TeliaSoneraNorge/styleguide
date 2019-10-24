@@ -67,9 +67,9 @@
     "picturefill": "3.0.3",
     "pretty": "2.0.0",
     "prop-types": "15.7.2",
-    "react": "16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "react-docgen": "4.0.1",
-    "react-dom": "16.6.3",
     "react-hot-loader": "3.0.0-beta.7",
     "react-router-dom": "4.3.1",
     "react-router-hash-link": "^1.2.2",
@@ -79,7 +79,8 @@
     "@telia/styleguide": "./component-lib/src",
     "component-lib": "./component-lib/src",
     "component-lib-root": "./component-lib",
-    "assets": "./src/assets"
+    "assets": "./src/assets",
+    "react": "./node_modules/react"
   },
   "engines": {
     "node": ">=10.1.0",
