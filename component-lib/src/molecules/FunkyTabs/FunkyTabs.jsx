@@ -4,6 +4,10 @@ import PropTypes from 'prop-types';
 
 import FunkyTab from './FunkyTab';
 
+const LEFT_ARROW_KEY = 37;
+const RIGHT_ARROW_KEY = 39;
+const DOWN_ARROW_KEY = 40;
+
 /**
  * Status: *finished*
  * Category: Tabs
@@ -21,18 +25,20 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
     const selectedChild = children.find((_, index) => index === selectedIndex);
     const containerRef = useRef();
 
+    const changeTabByOffset = (e, offset) => {
+        const indexToSelect = (selectedIndex + offset + children.length) % children.length;
+        const elementToSelect = children.find((_, index) => index === indexToSelect);
+
+        onSelect(e, indexToSelect, elementToSelect.props.url, elementToSelect.props.heading);
+    }
+
     const handleKeyDown = (e) => {
-        if (e.which === 37) {
-            const previousIndex = (selectedIndex - 1 + children.length) % children.length;
-            const previousElement = children.find((_, index) => index === previousIndex);
-            onSelect(e, previousIndex, previousElement.props.url, previousElement.props.heading);
-        } else if (e.which === 39) {
-            const nextIndex = (selectedIndex + 1) % children.length;
-            const nextElement = children.find((_, index) => index === nextIndex);
-            onSelect(e, nextIndex, nextElement.props.url, nextElement.props.heading);
-        } else if (e.which === 40 && containerRef.current) {
+        if (e.which === LEFT_ARROW_KEY)
+            changeTabByOffset(e, -1);
+        else if (e.which === RIGHT_ARROW_KEY)
+            changeTabByOffset(e, 1);
+        else if (e.which === DOWN_ARROW_KEY && containerRef.current)
             containerRef.current.focus();
-        }
     };
 
     return (
@@ -63,7 +69,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
 
 FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =>
     <section
-        tabIndex="-1"
+        tabIndex={-1}
         ref={containerRef}
         className={classNames(
             'funky-tabs__panel',
@@ -71,7 +77,7 @@ FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =
         id={`${uniqueId}-panel-${index}`}
         aria-labelledby={`${uniqueId}-tab-${index}`}
         role="tabpanel"
-        hidden={isSelected}>
+        hidden={!isSelected}>
         {children}
     </section>;
 

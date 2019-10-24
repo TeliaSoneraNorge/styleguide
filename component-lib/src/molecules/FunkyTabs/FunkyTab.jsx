@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 
-export default function({ element, isSelected, index, uniqueId, onSelect }) {
+export default function FunkyTab({ element, isSelected, index, uniqueId, onSelect }) {
     const linkRef = useRef();
 
     useEffect(() => {
