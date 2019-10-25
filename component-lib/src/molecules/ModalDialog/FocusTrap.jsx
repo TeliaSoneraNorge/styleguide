@@ -3,6 +3,12 @@ import React from 'react';
 const KEY_TAB = 9;
 export const focusableElementsSelector = 'a[href], area[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), button:not([disabled]), [tabindex="0"]';
 
+/**
+ * Status: *in progress*.
+ * Category: Notifications
+ *
+ * Prevens focusing outside the container with using TAB keys
+ */
 function FocusTrap({ as, children, onKeyDown, ...otherProps }, ref) {
     const Element = as;
     const handleKeyDown = (event) => {
