@@ -1,7 +1,10 @@
-import React, { useContext } from 'react';
+import React, { useContext, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { Context } from './ModalDialogProvider';
+import FocusTrap, { focusableElementsSelector } from './FocusTrap';
+
+const KEY_ESC = 27;
 
 /**
  * Status: *in progress*.
@@ -12,24 +15,58 @@ import { Context } from './ModalDialogProvider';
  * TODO:
  ** &lt;div role="dialog"&gt; can be changed to &lt;dialog&gt; when this element is more widely supported
  */
-
 export default function ModalDialog({
     name,
     heading,
     children,
-    onClickButton1,
-    buttonText1,
-    onClickButton2,
-    buttonText2,
+    onSubmit,
+    submitText,
+    onClose,
+    closeText,
     ...rest
 }) {
     const modalNode = useContext(Context);
+    const dialogRef = useRef();
+
+    const returnFocusOnDialogClose = () => {
+        const lastFocusedElement = document.activeElement;
+
+        return () => {
+            lastFocusedElement.focus();
+        }
+    }
+
+    const setFocusOnFirstFocusableElement = () => {
+        if (!dialogRef.current) return;
+
+        const focusableElements = dialogRef.current.querySelectorAll(focusableElementsSelector);
+
+        if (!focusableElements.length) return;
+
+        focusableElements[0].focus();
+    }
+
+    const closeDialog = () => {
+        if (onClose) onClose();
+        if (!onClose && onSubmit) onSubmit();
+    }
+
+    const handleKeyDown = (event) => {
+        if (event.keyCode === KEY_ESC)
+            closeDialog();
+    }
+
+    useEffect(returnFocusOnDialogClose);
+    useEffect(setFocusOnFirstFocusableElement);
 
     if (!modalNode) return null;
 
     return ReactDOM.createPortal(
         <>
-            <div
+            <FocusTrap
+                as="div"
+                onKeyDown={handleKeyDown}
+                ref={dialogRef}
                 className="modal-dialog container container--small"
                 role="dialog"
                 aria-labelledby={`${name}-heading`}
@@ -39,10 +76,10 @@ export default function ModalDialog({
                 <section id={`${name}-description`}>
                     {children}
                 </section>
-                {buttonText1 && <button className="button button--margin-top" onClick={onClickButton1}>{buttonText1}</button>}
-                {buttonText2 && <button className="button button--cancel button--margin-top" onClick={onClickButton2}>{buttonText2}</button>}
-            </div>
-            <div className="modal-dialog-overlay"/>
+                {submitText && <button className="button button--margin-top" onClick={onSubmit}>{submitText}</button>}
+                {closeText && <button className="button button--cancel button--margin-top" onClick={onClose}>{closeText}</button>}
+            </FocusTrap>
+            <div onClick={closeDialog} tabIndex="-1"className="modal-dialog-overlay"/>
         </>
     , modalNode);
 }

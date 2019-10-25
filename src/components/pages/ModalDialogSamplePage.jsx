@@ -73,8 +73,8 @@ export default class ModalDialogSamplePage extends React.Component {
                             <ModalDialog
                                 name="info-dialog"
                                 heading="Info dialog"
-                                onClickButton1={this.toggleInfoModalDialog}
-                                buttonText1="Ok">
+                                onSubmit={this.toggleInfoModalDialog}
+                                submitText="Ok">
                                 <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
                             </ModalDialog>}
                         <button
@@ -86,10 +86,10 @@ export default class ModalDialogSamplePage extends React.Component {
                             <ModalDialog
                                 name="confirm-dialog"
                                 heading="Confirm dialog"
-                                onClickButton1={this.toggleConfirmModalDialog}
-                                buttonText1="Confirm"
-                                onClickButton2={this.toggleConfirmModalDialog}
-                                buttonText2="Cancel">
+                                onSubmit={this.toggleConfirmModalDialog}
+                                submitText="Confirm"
+                                onClose={this.toggleConfirmModalDialog}
+                                closeText="Cancel">
                                 <p>
                                     This dialog can be associated with actions where it's necessary to get the user to
                                     confirm what's about to happen.
