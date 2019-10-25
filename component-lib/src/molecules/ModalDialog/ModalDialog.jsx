@@ -1,6 +1,7 @@
 import React, { useContext, useRef, useEffect } from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 import { Context } from './ModalDialogProvider';
 import FocusTrap, { focusableElementsSelector } from './FocusTrap';
 
@@ -23,12 +24,15 @@ export default function ModalDialog({
     submitText,
     onClose,
     closeText,
+    standalone,
     ...rest
 }) {
     const modalNode = useContext(Context);
     const dialogRef = useRef();
 
     const returnFocusOnDialogClose = () => {
+        if (standalone) return;
+
         const lastFocusedElement = document.activeElement;
 
         return () => {
@@ -38,7 +42,7 @@ export default function ModalDialog({
     }
 
     const setFocusOnFirstFocusableElement = () => {
-        if (!dialogRef.current) return;
+        if (!dialogRef.current || standalone) return;
 
         const focusableElements = dialogRef.current.querySelectorAll(focusableElementsSelector);
 
@@ -60,32 +64,42 @@ export default function ModalDialog({
     useEffect(returnFocusOnDialogClose);
     useEffect(setFocusOnFirstFocusableElement);
 
+    const renderDialog = (Component, additionalProps = {}) => (
+        <Component
+            onKeyDown={handleKeyDown}
+            ref={dialogRef}
+            className={classnames(
+                'modal-dialog container',
+                'container--small',
+                { 'modal-dialog--standalone': standalone })}
+            role="dialog"
+            aria-labelledby={`${name}-heading`}
+            aria-describedby={`${name}-description`}
+            {...rest}
+            {...additionalProps}>
+            <h2 id={`${name}-heading`} className="modal-dialog__heading">{heading}</h2>
+            <section id={`${name}-description`}>
+                {children}
+            </section>
+            {submitText && <button className="button button--margin-top" onClick={onSubmit}>{submitText}</button>}
+            {closeText && <button className="button button--cancel button--margin-top" onClick={onClose}>{closeText}</button>}
+        </Component>);
+
+    if (standalone) {
+        return renderDialog('div')
+    }
+
     if (!modalNode) return null;
 
     // portals need to be wrapped in a fragment because react-docgen doesn't recognize them
     // as a component ref: https://github.com/reactjs/react-docgen/issues/336
     return (<>
         {ReactDOM.createPortal(
-        <>
-            <FocusTrap
-                as="div"
-                onKeyDown={handleKeyDown}
-                ref={dialogRef}
-                className="modal-dialog container container--small"
-                role="dialog"
-                aria-labelledby={`${name}-heading`}
-                aria-describedby={`${name}-description`}
-                {...rest}>
-                <h2 id={`${name}-heading`} className="modal-dialog__heading">{heading}</h2>
-                <section id={`${name}-description`}>
-                    {children}
-                </section>
-                {submitText && <button className="button button--margin-top" onClick={onSubmit}>{submitText}</button>}
-                {closeText && <button className="button button--cancel button--margin-top" onClick={onClose}>{closeText}</button>}
-            </FocusTrap>
-            <div onClick={closeDialog} tabIndex="-1" className="modal-dialog-overlay" />
-        </>
-        , modalNode)}
+            <>
+                {renderDialog(FocusTrap, { as: 'div' })}
+                <div onClick={closeDialog} tabIndex="-1" className="modal-dialog-overlay" />
+            </>
+            , modalNode)}
     </>);
 }
 
