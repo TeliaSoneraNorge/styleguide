@@ -1,13 +1,17 @@
-import React from 'react';
-import { ModalDialog } from '@telia/styleguide';
+import React, { useState } from 'react';
+import { ModalDialog, Button } from '@telia/styleguide';
 
-const InfoModalDialog = () => (
-    <ModalDialog
-        name="info-dialog"
-        heading="Info dialog"
-        buttonText1="Ok">
-        <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
-    </ModalDialog>
-);
+export default function InfoModalDialog() {
+    const [open, setOpen] = useState(false);
 
-export default InfoModalDialog;
+    return (<>
+        <Button onClick={() => setOpen(true)} text="Open" />
+        {open && <ModalDialog
+            name="info-dialog"
+            heading="Info dialog"
+            submitText="Ok"
+            onSubmit={() => setOpen(false)}>
+            <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
+        </ModalDialog>}
+    </>)
+};

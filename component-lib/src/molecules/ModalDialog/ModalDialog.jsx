@@ -32,7 +32,8 @@ export default function ModalDialog({
         const lastFocusedElement = document.activeElement;
 
         return () => {
-            lastFocusedElement.focus();
+            if (lastFocusedElement)
+                lastFocusedElement.focus();
         }
     }
 
@@ -61,7 +62,10 @@ export default function ModalDialog({
 
     if (!modalNode) return null;
 
-    return ReactDOM.createPortal(
+    // portals need to be wrapped in a fragment because react-docgen doesn't recognize them
+    // as a component ref: https://github.com/reactjs/react-docgen/issues/336
+    return (<>
+        {ReactDOM.createPortal(
         <>
             <FocusTrap
                 as="div"
@@ -79,9 +83,10 @@ export default function ModalDialog({
                 {submitText && <button className="button button--margin-top" onClick={onSubmit}>{submitText}</button>}
                 {closeText && <button className="button button--cancel button--margin-top" onClick={onClose}>{closeText}</button>}
             </FocusTrap>
-            <div onClick={closeDialog} tabIndex="-1"className="modal-dialog-overlay"/>
+            <div onClick={closeDialog} tabIndex="-1" className="modal-dialog-overlay" />
         </>
-    , modalNode);
+        , modalNode)}
+    </>);
 }
 
 ModalDialog.propTypes = {
