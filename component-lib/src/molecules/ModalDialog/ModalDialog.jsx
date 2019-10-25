@@ -25,9 +25,10 @@ export default function ModalDialog({
     onClose,
     closeText,
     standalone,
+    renderTo,
     ...rest
 }) {
-    const modalNode = useContext(Context);
+    const modalNode = renderTo || useContext(Context);
     const dialogRef = useRef();
 
     const returnFocusOnDialogClose = () => {
@@ -107,8 +108,10 @@ ModalDialog.propTypes = {
     name: PropTypes.string.isRequired,
     heading: PropTypes.string,
     children: PropTypes.node,
-    onClickButton1: PropTypes.func,
-    buttonText1: PropTypes.string,
-    onClickButton2: PropTypes.func,
-    buttonText2: PropTypes.string,
+    onSubmit: PropTypes.func,
+    submitText: PropTypes.string,
+    onClose: PropTypes.func,
+    closeText: PropTypes.string,
+    standalone: PropTypes.bool,
+    renderTo: PropTypes.instanceOf(Element),
 };
