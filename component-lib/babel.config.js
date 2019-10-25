@@ -6,7 +6,8 @@ module.exports = {
                 ie: '11'
             }
         }],
-        ['@babel/preset-react']
+        ['@babel/preset-react'],
+        ['@babel/preset-typescript']
     ],
     plugins: [
         ['@babel/plugin-proposal-class-properties', { loose: true }],
