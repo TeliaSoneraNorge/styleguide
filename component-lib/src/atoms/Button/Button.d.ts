@@ -11,8 +11,14 @@ interface Props {
     processingText?: string;
     isProcessing?: boolean;
     isDisabled?: boolean;
+
+    /**
+     * Children is not a valid prop, and is present with type `never` to override the default React.FC definition.
+     * See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34237
+     */
+    children?: never;
 }
 
-declare function Button(props: Props): React.ReactElement | null;
+declare const Button: React.FC<Props>;
 
 export default Button;
