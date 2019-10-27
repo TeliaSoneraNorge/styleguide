@@ -1,0 +1,9 @@
+// Used when running tsc for preparing dist/. Exclude all storybook
+// files to avoid littering the dist/ output with *.stories.d.ts files
+
+{
+    "extends": "./tsconfig.json",
+    "exclude": [
+        "**/*.stories.tsx"
+    ]
+}
