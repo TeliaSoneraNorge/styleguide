@@ -34,9 +34,9 @@ export default class Menu extends React.Component {
         activeLinkIndex: PropTypes.number,
         onSearchSubmit: PropTypes.func,
         searchLabel: PropTypes.string,
-        searchButtonTitle: PropTypes.string,
-        searchButtonAbort: PropTypes.string,
-        submenuButtonTitle: PropTypes.string,
+        searchButtonLabel: PropTypes.string,
+        searchButtonAbortText: PropTypes.string,
+        mobileMenuCloseButtonLabel: PropTypes.string,
         linkTemplate: PropTypes.func,
         lockBodyOnMenuOpen: PropTypes.bool,
         isLoggedIn: PropTypes.bool,
@@ -125,9 +125,9 @@ export default class Menu extends React.Component {
             logoTitle,
             onSearchSubmit,
             searchLabel,
-            searchButtonTitle,
-            searchButtonAbort,
-            submenuButtonTitle,
+            searchButtonLabel,
+            searchButtonAbortText,
+            mobileMenuCloseButtonLabel,
             isLoggedIn,
             loginUrl,
             myPageUrl,
@@ -164,9 +164,8 @@ export default class Menu extends React.Component {
                     onMobileMenuToggle={this.toggleMobileMenu}
                     onSearchSubmit={onSearchSubmit}
                     searchLabel={searchLabel}
-                    searchButtonTitle={searchButtonTitle}
-                    searchButtonAbort={searchButtonAbort}
-                    submenuButtonTitle={submenuButtonTitle}
+                    searchButtonLabel={searchButtonLabel}
+                    searchButtonAbortText={searchButtonAbortText}
                     isLoggedIn={isLoggedIn}
                     myPageUrl={myPageUrl}
                     isLoading={isLoading} />
@@ -178,7 +177,8 @@ export default class Menu extends React.Component {
                     menuLinks={menuLinks}
                     selectedHeaderIndex={activeIndex}
                     onMenuItemSelected={this.toggleMobileMenu}
-                    isLoading={isLoading} />
+                    isLoading={isLoading}
+                    mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel} />
             </div>
         );
     }

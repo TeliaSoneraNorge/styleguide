@@ -73,7 +73,8 @@ const Routes = ({ history }) => {
                 menuLinks={menuLinks}
                 logoImageDesktopPath={require('../assets/images/logo/logo.svg')}
                 logoImageInverseDesktopPath={require('../assets/images/logo/logo-inverted.svg')}
-                lockBodyOnMenuOpen />
+                lockBodyOnMenuOpen
+                mobileMenuCloseButtonLabel="Lukk" />
 
             <Route exact path="/" component={HomePage} />
             <Route exact path="/layout" component={LayoutPage} />

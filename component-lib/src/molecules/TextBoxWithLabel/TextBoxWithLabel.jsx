@@ -23,8 +23,7 @@ const TextBoxWithLabel = React.forwardRef(
             iconName,
             iconColor,
             iconIsButton,
-            iconTitle,
-            searchQueryValue,
+            iconLabel,
             ...rest
         },
         ref
@@ -50,9 +49,7 @@ const TextBoxWithLabel = React.forwardRef(
                     iconName={iconName}
                     iconColor={iconColor}
                     iconIsButton={iconIsButton}
-                    iconLabel={labelText}
-                    iconTitle={iconTitle}
-                    searchQueryValue={searchQueryValue}
+                    iconLabel={iconLabel}
                     {...rest} />
             ) : (
                 <TextBox
@@ -87,7 +84,6 @@ TextBoxWithLabel.propTypes = {
     iconColor: PropTypes.string,
     iconIsButton: PropTypes.bool,
     iconLabel: PropTypes.string,
-    iconTitle: PropTypes.string,
 
     onChange: PropTypes.func
 };

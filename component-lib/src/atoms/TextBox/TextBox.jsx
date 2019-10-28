@@ -8,7 +8,7 @@ import classnames from 'classnames';
  *
  * Be sure to set the correct type when using this component as it helps the user to give correct input.
 **/
-const TextBox = React.forwardRef(({ className, type, placeholder, disabled, error, small, searchQueryValue, ...rest }, ref) =>
+const TextBox = React.forwardRef(({ className, type, placeholder, disabled, error, small, ...rest }, ref) =>
     <input
         ref={ref}
         className={classnames('textbox', {
@@ -18,7 +18,6 @@ const TextBox = React.forwardRef(({ className, type, placeholder, disabled, erro
         })}
         type={type}
         placeholder={placeholder}
-        value={searchQueryValue}
         disabled={disabled}
         {...rest} />
 );

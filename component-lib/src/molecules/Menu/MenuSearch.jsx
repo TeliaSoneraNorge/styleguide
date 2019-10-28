@@ -8,8 +8,8 @@ export default class MenuSearch extends React.Component {
     static propTypes = {
         onSubmit: PropTypes.func,
         searchLabel: PropTypes.string,
-        searchButtonTitle: PropTypes.string,
-        searchButtonAbort: PropTypes.string,
+        searchButtonLabel: PropTypes.string,
+        searchButtonAbortText: PropTypes.string,
     };
 
     constructor(props) {
@@ -98,13 +98,12 @@ export default class MenuSearch extends React.Component {
                     autoFocus
                     withIcon={true}
                     iconName="ico_search"
-                    iconLabel="Search"
+                    iconLabel={this.props.searchButtonLabel}
                     iconIsButton
-                    iconTitle={this.props.searchButtonTitle}
                     small
                     hideLabel={true}
                     labelText={this.props.searchLabel}
-                    searchQueryValue={this.state.searchQuery}
+                    value={this.state.searchQuery}
                     onChange={(e) => this.onSearchQueryChange(e)} />
             </form>
         );
@@ -120,10 +119,12 @@ export default class MenuSearch extends React.Component {
                     className="menu__search button--stripped"
                     onClick={this.onContainerClick}
                     onKeyDown={this.onKeyDown}
-                    title={this.props.searchButtonTitle} >
+                    aria-label={this.props.searchButtonLabel} >
 
                     <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
-                    <div className="menu__search--label">Søk</div>
+                    <div className="menu__search--label" aria-label={this.props.searchButtonLabel}>
+                        {this.props.searchButtonLabel ? this.props.searchButtonLabel : 'Søk'}
+                    </div>
                 </button>
                 {searchFocus &&
                     <div className="menu__search--open">
@@ -131,8 +132,8 @@ export default class MenuSearch extends React.Component {
                         <button className="menu__search--open-abort-button button--stripped"
                             onKeyDown={(e) => this.onCloseButtonClick(e)}
                             onClick={(e) => this.onCloseButtonClick(e)}
-                            title={this.props.searchButtonAbort ? this.props.searchButtonAbort : 'Trykk for å avbryte'} >
-                            Avbryt
+                            aria-label={this.props.searchButtonAbortText ? this.props.searchButtonAbortText : 'Avbryt'} >
+                            {this.props.searchButtonAbortText ? this.props.searchButtonAbortText : 'Avbryt'}
                         </button>
                     </div>
                 }

@@ -43,9 +43,9 @@ const Default = () => (
             logoImageInverseDesktopPath={require('assets/images/logo/logo-inverted.svg')}
             onSearchSubmit={(e, searchQuery) => {} }
             searchLabel="Fyll inn det du skal søke på"
-            searchButtonTitle="Trykk for å søke"
-            searchButtonAbort="Trykk for å avbryte"
-            submenuButtonTitle="Trykk for å se lenker til mobiler og tilbehør"
+            searchButtonLabel="Søk"
+            searchButtonAbortText="Avbryt"
+            mobileMenuCloseButtonLabel="Lukk"
             lockBodyOnMenuOpen />
     </Router>
 );
