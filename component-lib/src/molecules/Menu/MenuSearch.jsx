@@ -1,9 +1,17 @@
 import React from 'react';
 import classnames from 'classnames';
-import TextBoxWithIcon from '../../molecules/TextBoxWithIcon';
+import PropTypes from 'prop-types';
+import TextBoxWithLabel from '../../molecules/TextBoxWithLabel';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 export default class MenuSearch extends React.Component {
+    static propTypes = {
+        onSubmit: PropTypes.func,
+        searchLabel: PropTypes.string,
+        searchButtonLabel: PropTypes.string,
+        searchButtonAbortText: PropTypes.string,
+    };
+
     constructor(props) {
         super(props);
 
@@ -22,16 +30,6 @@ export default class MenuSearch extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    isDescendant(parent, child) {
-        while (child) {
-            if (child === parent) {
-                return true;
-            }
-            child = child.parentNode;
-        }
-        return false;
-    }
-
     componentDidMount() {
         document.addEventListener('click', this.onClickaway);
         document.addEventListener('keydown', this.onGlobalKeyDown);
@@ -43,8 +41,7 @@ export default class MenuSearch extends React.Component {
     }
 
     onClickaway(event) {
-
-        if (this.container && !this.isDescendant(this.container, event.target)) {
+        if (event.target.className !== 'textbox textbox--small') {
             this.setState({ searchFocus: false });
         }
     }
@@ -54,6 +51,8 @@ export default class MenuSearch extends React.Component {
 
         if (key === 27 && this.state.searchFocus) { // escape key
             this.setState({ searchFocus: false });
+
+            this.container.focus();
         }
     }
 
@@ -82,7 +81,7 @@ export default class MenuSearch extends React.Component {
     onCloseButtonClick(e) {
         e.stopPropagation();
 
-        this.setState({ searchFocus: false, searchQuery: '' });
+        this.setState({ searchFocus: false });
     }
 
     onSubmit(e) {
@@ -94,13 +93,17 @@ export default class MenuSearch extends React.Component {
     renderSearchField() {
         return (
             <form onSubmit={this.onSubmit} className="menu__search--open-form">
-                <TextBoxWithIcon
+                <TextBoxWithLabel
                     type="search"
                     autoFocus
+                    withIcon={true}
                     iconName="ico_search"
-                    iconLabel="Search"
+                    iconLabel={this.props.searchButtonLabel}
                     iconIsButton
                     small
+                    hideLabel={true}
+                    labelText={this.props.searchLabel}
+                    value={this.state.searchQuery}
                     onChange={(e) => this.onSearchQueryChange(e)} />
             </form>
         );
@@ -110,27 +113,31 @@ export default class MenuSearch extends React.Component {
         const { searchFocus } = this.state;
 
         return (
-            <div tabIndex="0"
-                ref={this.onContainerRef}
-                className={classnames('menu__search', { 'menu__search--focused': searchFocus })}
-                onClick={this.onContainerClick}
-                onKeyDown={this.onKeyDown} >
+            <div className={classnames('menu__search',{ 'menu__search--focused': searchFocus })} >
+                <button
+                    ref={this.onContainerRef}
+                    className="menu__search button--stripped"
+                    onClick={this.onContainerClick}
+                    onKeyDown={this.onKeyDown}
+                    aria-label={this.props.searchButtonLabel} >
 
-                <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
-                <div className="menu__search--label">Søk</div>
-
-
+                    <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
+                    <div className="menu__search--label" aria-label={this.props.searchButtonLabel}>
+                        {this.props.searchButtonLabel ? this.props.searchButtonLabel : 'Søk'}
+                    </div>
+                </button>
                 {searchFocus &&
                     <div className="menu__search--open">
                         {this.renderSearchField()}
-                        <span tabIndex="0" className="menu__search--open-abort-button"
+                        <button className="menu__search--open-abort-button button--stripped"
                             onKeyDown={(e) => this.onCloseButtonClick(e)}
-                            onClick={(e) => this.onCloseButtonClick(e)}>
-                            Avbryt
-                        </span>
+                            onClick={(e) => this.onCloseButtonClick(e)}
+                            aria-label={this.props.searchButtonAbortText ? this.props.searchButtonAbortText : 'Avbryt'} >
+                            {this.props.searchButtonAbortText ? this.props.searchButtonAbortText : 'Avbryt'}
+                        </button>
                     </div>
                 }
-            </div>
+            </div>          
         );
     }
 }

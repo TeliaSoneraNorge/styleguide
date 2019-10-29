@@ -9,36 +9,61 @@ import TextBoxWithIcon from '../TextBoxWithIcon/TextBoxWithIcon';
 /**
  * Status: *in progress*.
  * Category: FormElements
-**/
-const TextBoxWithLabel = React.forwardRef(({ labelText, type, placeholder, hideLabel, errorMessage, disabled, withIcon, iconName, iconColor, iconIsButton, ...rest }, ref) => (
-    <Label className={classnames('textbox-with-label', { 'textbox-with-label--with-error': errorMessage })} isUsingGrayText={true}>
-        <span className={classnames('textbox-with-label__label-text', { 'sr-only': hideLabel })}>
-            {labelText}
-        </span>
-        {withIcon ?
-            <TextBoxWithIcon
-                ref={ref}
-                type={type}
-                placeholder={placeholder}
-                disabled={disabled}
-                error={!!errorMessage}
-                iconName={iconName}
-                iconColor={iconColor}
-                iconIsButton={iconIsButton}
-                iconLabel={labelText}
-                {...rest} /> :
-            <TextBox
-                ref={ref}
-                type={type}
-                placeholder={placeholder}
-                disabled={disabled}
-                error={!!errorMessage}
-                {...rest} />
-        }
-        {errorMessage &&
-            <p className="input-error">{errorMessage}</p>}
-    </Label>
-));
+ **/
+const TextBoxWithLabel = React.forwardRef(
+    (
+        {
+            labelText,
+            type,
+            placeholder,
+            hideLabel,
+            errorMessage,
+            disabled,
+            withIcon,
+            iconName,
+            iconColor,
+            iconIsButton,
+            iconLabel,
+            ...rest
+        },
+        ref
+    ) => (
+        <Label
+            className={classnames('textbox-with-label', {
+                'textbox-with-label--with-error': errorMessage
+            })}
+            isUsingGrayText={true}  >
+            <span
+                className={classnames('textbox-with-label__label-text', {
+                    'sr-only': hideLabel
+                })} >
+                {labelText}
+            </span>
+            {withIcon ? (
+                <TextBoxWithIcon
+                    ref={ref}
+                    type={type}
+                    placeholder={placeholder}
+                    disabled={disabled}
+                    error={!!errorMessage}
+                    iconName={iconName}
+                    iconColor={iconColor}
+                    iconIsButton={iconIsButton}
+                    iconLabel={iconLabel}
+                    {...rest} />
+            ) : (
+                <TextBox
+                    ref={ref}
+                    type={type}
+                    placeholder={placeholder}
+                    disabled={disabled}
+                    error={!!errorMessage}
+                    {...rest} />
+            )}
+            {errorMessage && <p className="input-error">{errorMessage}</p>}
+        </Label>
+    )
+);
 
 TextBoxWithLabel.defaultProps = {
     iconColor: 'black',

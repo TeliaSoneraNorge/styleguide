@@ -10,15 +10,15 @@ const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
 
     if (iconIsButton) {
         return (
-            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button">
-                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
+            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button button--stripped" aria-label={iconLabel}>
+                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} />
             </button>
         );
     }
 
     return (
-        <span className="textbox-with-icon__icon-wrapper">
-            <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
+        <span className="textbox-with-icon__icon-wrapper" aria-label={iconLabel}>
+            <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} />
         </span>
     );
 };
@@ -55,6 +55,7 @@ TextBoxWithIcon.propTypes = {
     iconColor: PropTypes.string,
     iconIsButton: PropTypes.bool,
     iconLabel: PropTypes.string,
+    title: PropTypes.string,
 
     className: PropTypes.string,
     onChange: PropTypes.func
