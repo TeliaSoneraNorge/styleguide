@@ -59,7 +59,7 @@ export { default as ImageHeadingLink } from './molecules/ImageHeadingLink';
 export { default as HeadingLink } from './molecules/HeadingLink';
 export { default as Image } from './molecules/Image';
 export { default as ListWithImage } from './molecules/ListWithImage';
-export { ModalDialogOverlay, ModalDialog } from './molecules/ModalDialog';
+export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';
 export { default as PageFooter } from './molecules/PageFooter';
 export { default as PageHeader } from './molecules/PageHeader';
 export { default as PersonBox } from './molecules/PersonBox';

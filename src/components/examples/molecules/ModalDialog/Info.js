@@ -5,7 +5,8 @@ const InfoModalDialog = () => (
     <ModalDialog
         name="info-dialog"
         heading="Info dialog"
-        buttonText1="Ok">
+        submitText="Ok"
+        standalone>
         <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
     </ModalDialog>
 );
