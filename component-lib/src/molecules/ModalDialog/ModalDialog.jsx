@@ -26,6 +26,8 @@ export default function ModalDialog({
     closeText,
     standalone,
     renderTo,
+    headerElement,
+    footerElement,
     ...rest
 }) {
     const modalNode = renderTo || useContext(Context);
@@ -65,6 +67,14 @@ export default function ModalDialog({
     useEffect(returnFocusOnDialogClose);
     useEffect(setFocusOnFirstFocusableElement);
 
+    const defaultHeaderElement = <h2 id={`${name}-heading`} className="modal-dialog__heading">{heading}</h2>;
+    const defaultFooterElement = (
+        <>
+            {submitText && <button className="button button--margin-top" onClick={onSubmit}>{submitText}</button>}
+            {closeText && <button className="button button--cancel button--margin-top" onClick={onClose}>{closeText}</button>}
+        </>
+    );
+
     const renderDialog = (Component, additionalProps = {}) => (
         <Component
             onKeyDown={handleKeyDown}
@@ -78,12 +88,11 @@ export default function ModalDialog({
             aria-describedby={`${name}-description`}
             {...rest}
             {...additionalProps}>
-            <h2 id={`${name}-heading`} className="modal-dialog__heading">{heading}</h2>
+            {headerElement || defaultHeaderElement}
             <section id={`${name}-description`}>
                 {children}
             </section>
-            {submitText && <button className="button button--margin-top" onClick={onSubmit}>{submitText}</button>}
-            {closeText && <button className="button button--cancel button--margin-top" onClick={onClose}>{closeText}</button>}
+            {footerElement || defaultFooterElement}
         </Component>);
 
     if (standalone) {
@@ -114,4 +123,6 @@ ModalDialog.propTypes = {
     closeText: PropTypes.string,
     standalone: PropTypes.bool,
     renderTo: PropTypes.any,
+    headerElement: PropTypes.element,
+    footerElement: PropTypes.element,
 };
