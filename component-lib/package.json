@@ -28,7 +28,7 @@
     "publish:local-test": "npm run build && cd dist && npm pack",
     "css:watch": "cross-env LOCAL_DEV=true postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "start-storybook -s ./assets -p 6006",
     "build-storybook": "build-storybook"
   },
   "publishConfig": {
