@@ -7,7 +7,7 @@ export const focusableElementsSelector = 'a[href], area[href], input:not([disabl
  * Status: *in progress*.
  * Category: Notifications
  *
- * Prevens focusing outside the container with using TAB keys
+ * Prevents focusing outside the container with using TAB keys
  */
 function FocusTrap({ as, children, onKeyDown, ...otherProps }, ref) {
     const Element = as;
