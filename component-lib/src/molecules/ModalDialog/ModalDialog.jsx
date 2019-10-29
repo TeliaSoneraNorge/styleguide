@@ -113,5 +113,5 @@ ModalDialog.propTypes = {
     onClose: PropTypes.func,
     closeText: PropTypes.string,
     standalone: PropTypes.bool,
-    renderTo: PropTypes.instanceOf(Element),
+    renderTo: PropTypes.any,
 };
