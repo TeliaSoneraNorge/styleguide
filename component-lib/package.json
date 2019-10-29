@@ -29,7 +29,7 @@
     "css:watch": "cross-env LOCAL_DEV=true postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
     "storybook": "start-storybook -s ./assets -p 6006",
-    "build-storybook": "build-storybook -o dist-storybook"
+    "build-storybook": "cross-env STORYBOOK=true build-storybook -o dist-storybook"
   },
   "publishConfig": {
     "access": "public"
