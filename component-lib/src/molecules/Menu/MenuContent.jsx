@@ -16,8 +16,9 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
     <button className={classnames(
         'button--stripped menu__item link menu__submenu',
         { 'menu__submenu--active': isActive })}
+        onClick={onToggleSubmenu}
         onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)} >
-        <span className="menu__submenu-link" onClick={onToggleSubmenu}>
+        <span className="menu__submenu-link">
             {text}
             <SvgIcon
                 iconName="ico_dropArrow"
