@@ -5,19 +5,11 @@ import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 
-const onSubmenuKeyPress = (e, onToggleSubmenu) => {
-    const key = e.which || e.keyCode;
-    if (key === 13) { // 13 = enter
-        onToggleSubmenu(e);
-    }
-};
-
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
     <button className={classnames(
         'button--stripped menu__item link menu__submenu',
         { 'menu__submenu--active': isActive })}
-        onClick={onToggleSubmenu}
-        onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)} >
+        onClick={onToggleSubmenu}>
         <span className="menu__submenu-link">
             {text}
             <SvgIcon
