@@ -22,6 +22,9 @@ Only noteworthy versions shown (minor changes are omitted).
 ## 1.29.1
 - Fix missing Element in SSR problem for modals
 
+## 1.29.0
+- Modal dialog rewrite and accessibility improvements
+
 ## 1.28.60
 - Create cjs version of AllIcons
 
