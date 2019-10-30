@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.3
+- Menu & ModalDialog: IE compatibility fixes
+
 ## 1.29.2
 - Allow modal dialog templating
 - Menu accessibility: converted to buttons and added aria labels where needed.
