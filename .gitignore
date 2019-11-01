@@ -5,6 +5,7 @@
 
 node_modules
 dist
+dist-storybook
 npm-debug.log
 component-docs.json
 static-data.json
