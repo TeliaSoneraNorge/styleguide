@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, ModalDialogOverlay, ModalDialog } from '../../../component-lib/src/index';
+import { Header, ModalDialog, ModalDialogProvider } from '../../../component-lib/src/index';
 
 export default class ModalDialogSamplePage extends React.Component {
     constructor(props) {
@@ -68,34 +68,32 @@ export default class ModalDialogSamplePage extends React.Component {
                         onClick={this.toggleInfoModalDialog}>
                         Info modal dialog
                     </button>
-                    <ModalDialogOverlay active={this.state.infoDialogActive}>
+                    {this.state.infoDialogActive &&
                         <ModalDialog
                             name="info-dialog"
                             heading="Info dialog"
-                            onClickButton1={this.toggleInfoModalDialog}
-                            buttonText1="Ok">
+                            onSubmit={this.toggleInfoModalDialog}
+                            submitText="Ok">
                             <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
-                        </ModalDialog>
-                    </ModalDialogOverlay>
+                        </ModalDialog>}
                     <button
                         className="button button-default button--margin-top"
                         onClick={this.toggleConfirmModalDialog}>
                         Confirm modal dialog
                     </button>
-                    <ModalDialogOverlay active={this.state.confirmDialogActive}>
+                    {this.state.confirmDialogActive &&
                         <ModalDialog
                             name="confirm-dialog"
                             heading="Confirm dialog"
-                            onClickButton1={this.toggleConfirmModalDialog}
-                            buttonText1="Confirm"
-                            onClickButton2={this.toggleConfirmModalDialog}
-                            buttonText2="Cancel">
+                            onSubmit={this.toggleConfirmModalDialog}
+                            submitText="Confirm"
+                            onClose={this.toggleConfirmModalDialog}
+                            closeText="Cancel">
                             <p>
                                 This dialog can be associated with actions where it's necessary to get the user to
                                 confirm what's about to happen.
                             </p>
-                        </ModalDialog>
-                    </ModalDialogOverlay>
+                        </ModalDialog>}
                 </section>
             </article>
         );

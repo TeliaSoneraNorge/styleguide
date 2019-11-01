@@ -5,20 +5,20 @@ import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon';
 import TextBox from '../../atoms/TextBox';
 
-const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
+const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel, onClick }) => {
     if (!iconName) return null;
 
     if (iconIsButton) {
         return (
-            <button className="textbox-with-icon__icon-wrapper textbox-with-icon__button">
-                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
+            <button onClick={onClick} className="textbox-with-icon__icon-wrapper textbox-with-icon__button button--stripped" aria-label={iconLabel}>
+                <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} />
             </button>
         );
     }
 
     return (
-        <span className="textbox-with-icon__icon-wrapper">
-            <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} aria-label={iconLabel} />
+        <span className="textbox-with-icon__icon-wrapper" aria-label={iconLabel}>
+            <SvgIcon className="textbox-with-icon__icon" iconName={iconName} color={iconColor} />
         </span>
     );
 };
@@ -27,14 +27,14 @@ const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel }) => {
  * Status: *finished*.
  * Category: FormElements
 **/
-const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, small, iconName, iconColor, iconIsButton, iconLabel, ...rest }, ref) => (
+const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabled, error, small, iconName, iconColor, iconIsButton, iconLabel, onIconClick, ...rest }, ref) => (
     <div
         className={classnames('textbox-with-icon', {
             ['textbox-with-icon--small']: small,
             [className]: className
         })}>
         <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={error} small={small} {...rest} />
-        <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} />
+        <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} onClick={onIconClick} />
     </div>
 ));
 
@@ -55,6 +55,7 @@ TextBoxWithIcon.propTypes = {
     iconColor: PropTypes.string,
     iconIsButton: PropTypes.bool,
     iconLabel: PropTypes.string,
+    title: PropTypes.string,
 
     className: PropTypes.string,
     onChange: PropTypes.func

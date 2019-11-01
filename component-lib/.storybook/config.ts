@@ -1,10 +1,38 @@
-import { configure } from "@storybook/react";
+import { addParameters, configure } from "@storybook/react";
+import teliaTheme from "./teliaTheme";
 
-// automatically import all files ending in *.stories.js
-const req = require.context("../stories", true, /\.stories\.(js|ts|tsx)$/);
+addParameters({
+  options: {
+    theme: teliaTheme
+  }
+});
 
-function loadStories() {
-  req.keys().forEach(filename => req(filename));
-}
+/**
+ * Quick way to load all stories:
+ */
+// configure([
+//   require.context('../stories', true, /\.stories\.(js|ts|tsx)$/),
+//   require.context('../src', true, /\.stories\.(js|ts|tsx)$/)
+// ], module);
 
-configure(loadStories, module);
+/**
+ * For controlling import order -- to make sure stories show up in the
+ * order we want them to.
+ */
+const requireGlobalStory = require.context(
+  "../stories",
+  true,
+  /\.stories\.(js|ts|tsx)$/
+);
+const requireComponentStory = require.context(
+  "../src",
+  true,
+  /\.stories\.(js|ts|tsx)$/
+);
+
+configure(() => {
+  requireGlobalStory.keys().forEach(filename => requireGlobalStory(filename));
+  requireComponentStory
+    .keys()
+    .forEach(filename => requireComponentStory(filename));
+}, module);

@@ -40,3 +40,34 @@ body {
     clip: rect(1px, 1px, 1px, 1px);
     white-space: nowrap; /* added line */
 }
+
+/* Removes button defaults */
+.button--stripped {
+    -webkit-appearance: none;
+    -webkit-writing-mode: inherit;
+    text-rendering: auto;
+    color: #000000;
+    letter-spacing: normal;
+    word-spacing: normal;
+    text-transform: none;
+    text-indent: 0px;
+    text-shadow: none;
+    display: inline-block;
+    text-align: center;
+    align-items: flex-start;
+    cursor: default;
+    background-color: transparent;
+    box-sizing: border-box;
+    margin: 0em;
+    font: inherit;
+    padding: inherit;
+    writing-mode: inherit;
+    border-width: inherit;
+    border-style: inherit;
+    border-color: inherit;
+    border-image: initial;
+}
+
+.button--stripped:hover, .button--stripped:focus, .button--stripped:active {
+    outline: none;
+}

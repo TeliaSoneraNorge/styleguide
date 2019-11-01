@@ -3,12 +3,14 @@ import classnames from 'classnames';
 import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
-const MobileMenuCloseButton = ({ onClick }) => (
-    <button className="menu__mobile-close-button" onClick={onClick}>
+const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
+    <button className="menu__mobile-close-button" 
+        onClick={onClick} 
+        aria-label={mobileMenuCloseButtonLabel ? mobileMenuCloseButtonLabel : 'Lukk'} >
         <SvgIcon
             iconName="ico_delete"
             color="black"
-            className="menu__mobile-close-button-icon"/>
+            className="menu__mobile-close-button-icon" />
     </button>
 );
 
@@ -29,7 +31,8 @@ const MobileMenuHeader = ({
     menuLinks,
     LinkTemplate,
     selectedIndex,
-    onHeaderItemSelected }) => (
+    onHeaderItemSelected,
+    mobileMenuCloseButtonLabel }) => (
     <div className="menu__mobile-header">
         {menuLinks &&
         <ul className="menu__mobile-heading-links">
@@ -42,7 +45,7 @@ const MobileMenuHeader = ({
                 onHeaderItemSelected={onHeaderItemSelected} />)}
         </ul>
         }
-        <MobileMenuCloseButton onClick={onMobileMenuToggle}/>
+        <MobileMenuCloseButton onClick={onMobileMenuToggle} mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel} />
     </div>
 );
 
@@ -72,7 +75,7 @@ const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
                 url={link.url}>
                 <span className="link__content">{link.text}</span>
             </LinkTemplate>}
-        {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate}/>}
+        {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
     </React.Fragment>
 );
 
@@ -93,7 +96,7 @@ const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
                 key={link.text}
                 link={link}
                 onItemSelected={onItemSelected}
-                LinkTemplate={LinkTemplate}/>)}
+                LinkTemplate={LinkTemplate} />)}
 
     </section>
 );
@@ -110,14 +113,17 @@ class MobileMenu extends React.Component {
         const {
             selectedHeaderIndex
         } = this.state;
+
         const {
             isOpen,
             LinkTemplate,
             onMobileMenuToggle,
             menuLinks,
             onMenuItemSelected,
-            isLoading
+            isLoading,
+            mobileMenuCloseButtonLabel
         } = this.props;
+
         return (
             <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
                 <MobileMenuHeader
@@ -125,14 +131,14 @@ class MobileMenu extends React.Component {
                     menuLinks={menuLinks}
                     LinkTemplate={LinkTemplate}
                     selectedIndex={selectedHeaderIndex}
-                    onHeaderItemSelected={index => this.setState({selectedHeaderIndex: index})}
-                />
-                {isLoading && <Spinner/>}
+                    onHeaderItemSelected={index => this.setState({ selectedHeaderIndex: index })}
+                    mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel} />
+                {isLoading && <Spinner />}
                 {menuLinks &&
                 <MobileMenuItemSection
                     menuLink={menuLinks[selectedHeaderIndex]}
                     onItemSelected={onMenuItemSelected}
-                    LinkTemplate={LinkTemplate}/>
+                    LinkTemplate={LinkTemplate} />
                 }
             </div>
         );

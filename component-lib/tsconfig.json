@@ -22,9 +22,10 @@
     "resolveJsonModule": true,
     "isolatedModules": false,
     "jsx": "react",
-    "outDir": "dist/business"
+    "outDir": "dist",
+    "rootDir": "src"
   },
   "include": [
-    "src/business"
+    "src"
   ]
 }

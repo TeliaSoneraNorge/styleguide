@@ -35,7 +35,9 @@ module.exports = {
         'postcss-calc': {},
         'postcss-replace': {
             data: {
-                assetPath: (process.env.LOCAL_DEV === 'true') ? '../assets' : './assets'
+                // For Storybook, we serve the contents of /assets directly under /
+                // (i.e. ./assets/fonts/* is served under http://localhost:6006/fonts/*)
+                assetPath: (process.env.STORYBOOK === 'true' ? '' : (process.env.LOCAL_DEV === 'true' ? '../assets' : './assets'))
             }
         },
         'postcss-url': {

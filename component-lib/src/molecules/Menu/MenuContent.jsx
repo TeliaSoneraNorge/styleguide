@@ -5,19 +5,12 @@ import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 
-const onSubmenuKeyPress = (e, onToggleSubmenu) => {
-    const key = e.which || e.keyCode;
-    if (key === 13) { // 13 = enter
-        onToggleSubmenu(e);
-    }
-};
-
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
-    <div tabIndex="0" className={classnames(
-        "menu__item link menu__submenu",
+    <button className={classnames(
+        'button--stripped menu__item link menu__submenu',
         { 'menu__submenu--active': isActive })}
-        onKeyPress={(e) => onSubmenuKeyPress(e, onToggleSubmenu)}>
-        <span className="menu__submenu-link" onClick={onToggleSubmenu}>
+        onClick={onToggleSubmenu}>
+        <span className="menu__submenu-link">
             {text}
             <SvgIcon
                 iconName="ico_dropArrow"
@@ -31,13 +24,12 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
                 <LinkTemplate
                     key={sublink.text}
                     className="menu__subitem link"
-                    url={sublink.url}
-                >
+                    url={sublink.url} >
                     <span className="link__content">{sublink.text}</span>
                 </LinkTemplate>
             )}
         </div>
-    </div>
+    </button>
 );
 
 const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isActive }) => (
@@ -58,8 +50,7 @@ const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isAc
                 onToggleSubmenu={onToggleSubmenu}
                 isOpen={isSubmenuOpen}
                 isActive={isActive}
-                LinkTemplate={LinkTemplate}
-            />}
+                LinkTemplate={LinkTemplate} />}
     </li>
 );
 
@@ -78,7 +69,7 @@ const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
 );
 
 const MobileMenuButton = ({ onMenuToggle }) => (
-    <button className="menu__mobile-button" onClick={onMenuToggle}>
+    <button className="menu__mobile-button" onClick={onMenuToggle} aria-label="Meny">
         <SvgIcon className="menu__mobile-button-icon" iconName="ico_menu_mobile" color="black" />
         <span className="menu__mobile-button-text">Meny</span>
     </button>
@@ -93,38 +84,41 @@ const MenuContent = ({
     LinkTemplate,
     onMobileMenuToggle,
     onSearchSubmit,
+    searchLabel,
+    searchButtonLabel,
+    searchButtonAbortText,
     isLoggedIn,
     loginUrl,
     myPageUrl,
-    isLoading}) => (
-        <div className="menu__content">
-            <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
-            {isLoading && <Spinner/>}
-            <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
-                {menuLink && menuLink.links.map((link, index) => (
-                    <MenuLinkItem
-                        LinkTemplate={LinkTemplate}
-                        isSubmenuOpen={openedSubmenuIndex === index}
-                        isActive={activeIndex === index}
-                        onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
-                        key={link.text}
-                        link={link}
-                    />))}
-            </ul>
-            <div className="menu__content-right">
-                {onSearchSubmit &&
-                    <MenuSearch onSubmit={onSearchSubmit} />
-                }
-                {loginUrl && !isLoggedIn &&
-                    <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />
-                }
-                {myPageUrl && isLoggedIn &&
-                    <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />
-                }
-                <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
-            </div>
+    isLoading }) => (
+    <div className="menu__content">
+        <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
+        {isLoading && <Spinner />}
+        <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
+            {menuLink && menuLink.links.map((link, index) => (
+                <MenuLinkItem
+                    LinkTemplate={LinkTemplate}
+                    isSubmenuOpen={openedSubmenuIndex === index}
+                    isActive={activeIndex === index}
+                    onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
+                    key={link.text}
+                    link={link} />
+            ))}
+        </ul>
+        <div className="menu__content-right">
+            {onSearchSubmit &&
+                <MenuSearch onSubmit={onSearchSubmit} searchLabel={searchLabel} searchButtonLabel={searchButtonLabel} searchButtonAbortText={searchButtonAbortText} />
+            }
+            {loginUrl && !isLoggedIn &&
+                <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />
+            }
+            {myPageUrl && isLoggedIn &&
+                <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />
+            }
+            <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
         </div>
-    );
+    </div>
+);
 
 const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) => (
     <LinkTemplate url={url} className="menu__logo-container">
@@ -135,7 +129,7 @@ const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) 
         <img
             className="menu__logo--inverted"
             src={imageInverted}
-            alt={title} />
+            alt="" />
     </LinkTemplate>
 );
 
@@ -152,7 +146,9 @@ MenuContent.propTypes = {
         title: PropTypes.string
     }),
     openedSubmenuIndex: PropTypes.number,
-    onToggleSubmenu: PropTypes.func
+    onToggleSubmenu: PropTypes.func,
+    searchLabel: PropTypes.string,
+    searchButtonAbortText: PropTypes.string
 };
 
 export default MenuContent;
