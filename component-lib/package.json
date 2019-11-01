@@ -18,7 +18,7 @@
     "build:es": "cross-env BABEL_ENV=es babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist/es",
     "build:ts-types": "run-s build:ts-emit-declarations build:ts-copy-type-files",
     "build:ts-copy-type-files": "node ./scripts/copy-type-files.js",
-    "build:ts-emit-declarations": "tsc --build tsconfig.dist.json",
+    "build:ts-emit-declarations": "./node_modules/.bin/tsc --build tsconfig.dist.json",
     "clean": "rimraf dist",
     "deploy:prod": "npm run build && npm publish dist",
     "deploy:beta": "npm run build && npm publish dist --tag beta",
