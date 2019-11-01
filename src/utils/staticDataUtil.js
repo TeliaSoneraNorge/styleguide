@@ -19,7 +19,7 @@ export function getComponentCategory(type, name) {
     if (match && match.description) {
         const re = /Category:\s(?<category>\w*)/g;
         const res = re.exec(match.description);
-        if (res) {
+        if (res && res.groups) {
             return res.groups.category;
         }
     }
