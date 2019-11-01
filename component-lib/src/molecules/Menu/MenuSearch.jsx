@@ -100,6 +100,7 @@ export default class MenuSearch extends React.Component {
                     iconName="ico_search"
                     iconLabel={this.props.searchButtonLabel}
                     iconIsButton
+                    onIconClick={this.onSubmit}
                     small
                     hideLabel={true}
                     labelText={this.props.searchLabel}
@@ -119,10 +120,10 @@ export default class MenuSearch extends React.Component {
                     className="menu__search button--stripped"
                     onClick={this.onContainerClick}
                     onKeyDown={this.onKeyDown}
-                    aria-label={this.props.searchButtonLabel} >
+                    aria-label={this.props.searchButtonLabel ? this.props.searchButtonLabel : 'Søk'} >
 
                     <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
-                    <div className="menu__search--label" aria-label={this.props.searchButtonLabel}>
+                    <div className="menu__search--label" aria-label={this.props.searchButtonLabel ? this.props.searchButtonLabel : 'Søk'}>
                         {this.props.searchButtonLabel ? this.props.searchButtonLabel : 'Søk'}
                     </div>
                 </button>
