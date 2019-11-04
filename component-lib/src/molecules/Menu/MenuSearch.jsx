@@ -17,13 +17,14 @@ export default class MenuSearch extends React.Component {
 
         this.state = {
             searchFocus: false,
-            searchQuery: ''
+            searchQuery: '',
+            searchIsLoading: false
         };
 
         this.onSearchQueryChange = this.onSearchQueryChange.bind(this);
         this.onContainerClick = this.onContainerClick.bind(this);
         this.onKeyDown = this.onKeyDown.bind(this);
-        this.onClickaway = this.onClickaway.bind(this);
+        // this.onClickaway = this.onClickaway.bind(this);
         this.onGlobalKeyDown = this.onGlobalKeyDown.bind(this);
         this.onContainerRef = this.onContainerRef.bind(this);
         this.onCloseButtonClick = this.onCloseButtonClick.bind(this);
@@ -31,26 +32,26 @@ export default class MenuSearch extends React.Component {
     }
 
     componentDidMount() {
-        document.addEventListener('click', this.onClickaway);
+        // document.addEventListener('click', this.onClickaway);
         document.addEventListener('keydown', this.onGlobalKeyDown);
     }
 
     componentWillUnmount() {
-        document.removeEventListener('click', this.onClickaway);
+        // document.removeEventListener('click', this.onClickaway);
         document.removeEventListener('keydown', this.onGlobalKeyDown);
     }
 
-    onClickaway(event) {
-        if (event.target.className !== 'textbox textbox--small') {
-            this.setState({ searchFocus: false });
-        }
-    }
+    // onClickaway(event) {
+    //     if (event.target.className !== 'textbox textbox--small') {
+    //         this.setState({ searchFocus: false });
+    //     }
+    // }
 
     onGlobalKeyDown(e) {
         const key = e.which || e.keyCode;
 
         if (key === 27 && this.state.searchFocus) { // escape key
-            this.setState({ searchFocus: false });
+            this.setState({ searchFocus: false, searchIsLoading: false });
 
             this.container.focus();
         }
@@ -81,13 +82,13 @@ export default class MenuSearch extends React.Component {
     onCloseButtonClick(e) {
         e.stopPropagation();
 
-        this.setState({ searchFocus: false });
+        this.setState({ searchFocus: false, searchIsLoading: false });
     }
 
     onSubmit(e) {
         e.preventDefault();
         this.props.onSubmit(e, this.state.searchQuery);
-        this.setState({ searchFocus: false, searchQuery: '' });
+        this.setState({ searchQuery: '', searchIsLoading: true });
     }
 
     renderSearchField() {
@@ -101,6 +102,7 @@ export default class MenuSearch extends React.Component {
                     iconLabel={this.props.searchButtonLabel}
                     iconIsButton
                     onIconClick={this.onSubmit}
+                    searchIsLoading={this.state.searchIsLoading}
                     small
                     hideLabel={true}
                     labelText={this.props.searchLabel}
