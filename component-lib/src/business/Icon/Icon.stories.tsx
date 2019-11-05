@@ -53,7 +53,11 @@ stories.add("Icon", () => (
             {availableIcons.map((key: IconDefinition) => (
                 <li
                     key={key}
-                    style={{ padding: "8px", display: "inline-block" }}
+                    style={{
+                        padding: "8px",
+                        display: "inline-block",
+                        color: color("Color for all icons", "red")
+                    }}
                     title={key}
                 >
                     <Icon
