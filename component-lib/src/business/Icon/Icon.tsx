@@ -13,7 +13,11 @@ interface Props {
 export function Icon(props: Props) {
     return (
         <svg
-            className={cs('Business-Icon', props.className)}
+            className={cs(
+                'Business-Icon',
+                `Business-Icon--${props.icon}`,
+                props.className
+            )}
             aria-hidden={props.title ? undefined : true}
             style={props.style}
         >

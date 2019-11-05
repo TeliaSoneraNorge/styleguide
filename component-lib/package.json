@@ -13,7 +13,7 @@
     "icons:add-icons": "node ./scripts/add-icons.js",
     "icons:business": "run-s icons:svg-join-business icons:business-allicons-react",
     "icons:business-allicons-react": "node generate-AllBusinessIcons-component.js",
-    "icons:svg-join-business": "svg-join -s \"assets/business-icons/*.svg\" -o ./assets/business-allicons -n business-allicons -p business_icon_ --mono",
+    "icons:svg-join-business": "svg-join -s \"assets/business-icons/*.svg\" -o ./assets/business-allicons -n business-allicons -p Business-Icon-- --mono",
     "build": "run-p build:commonjs build:es build:css build:ts-types && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist",
     "build:copy-files": "node ./scripts/copy-files.js",
