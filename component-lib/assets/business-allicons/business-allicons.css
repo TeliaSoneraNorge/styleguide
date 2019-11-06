@@ -209,6 +209,7 @@
 .Business-Icon--shopping,
 .Business-Icon--shopping_2,
 .Business-Icon--shuffle,
+.Business-Icon--signal,
 .Business-Icon--sim-card,
 .Business-Icon--sms,
 .Business-Icon--star-filled,
@@ -243,12 +244,4 @@
 .Business-Icon--filter {
   fill: #220;
   fill-rule: nonzero;
-}
-.Business-Icon--signal {
-  fill: none;
-  fill-rule: evenodd;
-  stroke: #220;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 4;
 }
