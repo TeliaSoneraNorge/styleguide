@@ -32,20 +32,12 @@ export default class MenuSearch extends React.Component {
     }
 
     componentDidMount() {
-        // document.addEventListener('click', this.onClickaway);
         document.addEventListener('keydown', this.onGlobalKeyDown);
     }
 
     componentWillUnmount() {
-        // document.removeEventListener('click', this.onClickaway);
         document.removeEventListener('keydown', this.onGlobalKeyDown);
     }
-
-    // onClickaway(event) {
-    //     if (event.target.className !== 'textbox textbox--small') {
-    //         this.setState({ searchFocus: false });
-    //     }
-    // }
 
     onGlobalKeyDown(e) {
         const key = e.which || e.keyCode;
@@ -58,7 +50,7 @@ export default class MenuSearch extends React.Component {
     }
 
     onSearchQueryChange(event) {
-        this.setState({ searchQuery: event.target.value });
+        this.setState({ searchQuery: event.target.value, searchIsLoading: false });
     }
 
     onContainerRef(container) {
@@ -83,6 +75,15 @@ export default class MenuSearch extends React.Component {
         e.stopPropagation();
 
         this.setState({ searchFocus: false, searchIsLoading: false });
+    }
+
+    onCloseButtonKeyDown(e) {
+        e.stopPropagation();
+        const key = e.which || e.keyCode;
+
+        if (key === 13 && this.state.searchFocus) { // enter key
+            this.setState({ searchFocus: false, searchIsLoading: false });
+        }
     }
 
     onSubmit(e) {
@@ -133,8 +134,8 @@ export default class MenuSearch extends React.Component {
                     <div className="menu__search--open">
                         {this.renderSearchField()}
                         <button className="menu__search--open-abort-button button--stripped"
-                            onKeyDown={(e) => this.onCloseButtonClick(e)}
                             onClick={(e) => this.onCloseButtonClick(e)}
+                            onKeyDown={(e) => this.onCloseButtonKeyDown(e)}
                             aria-label={this.props.searchButtonAbortText ? this.props.searchButtonAbortText : 'Avbryt'} >
                             {this.props.searchButtonAbortText ? this.props.searchButtonAbortText : 'Avbryt'}
                         </button>
