@@ -1,0 +1,51 @@
+@import "../../colors.pcss";
+
+.quantity-picker {
+    display: flex;
+    align-items: center;
+
+    &__input {
+        display: inline-block;
+        font-size: 1rem;
+        text-align: center;
+        -moz-appearance: textfield;
+
+        &::selection {
+            background-color: var(--core-purple);
+            color: var(--white);
+        }
+
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+        }
+    }
+
+    &__label {
+        margin: 0 1rem;
+    }
+}
+
+.quantity-picker__button {
+    margin: 0 !important;
+    padding: 0 !important;
+    height: 2.5rem;
+    width: 2.5rem;
+
+    &[disabled] {
+        .svg-icon {
+            fill: var(--border-grey);
+        }
+    }
+
+    &:active, &:hover, &:focus {
+        &:not([disabled]) .svg-icon {
+            fill: var(--white);
+        }
+    }
+
+    &__icon {
+        width: 0.7rem;
+        height: 0.7rem;
+    }
+}
