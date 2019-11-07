@@ -67,8 +67,8 @@ export default function MenuSearch({
             </form>
             <button className="menu__search--open-abort-button button button--small"
                 onClick={() => closeSeachBox()}
-                aria-label={searchButtonAbortText ? searchButtonAbortText : 'Avbryt'} >
-                {searchButtonAbortText ? searchButtonAbortText : 'Avbryt'}
+                aria-label={searchButtonAbortText ? searchButtonAbortText : 'Lukk'} >
+                {searchButtonAbortText ? searchButtonAbortText : 'Lukk'}
             </button>
         </Component>
     );
