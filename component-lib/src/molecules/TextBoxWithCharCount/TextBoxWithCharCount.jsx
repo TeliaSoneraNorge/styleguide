@@ -64,6 +64,6 @@ class TextBoxWithCharCount extends React.Component {
             </React.Fragment>
         );
     }
-};
+}
 
 export default React.forwardRef((props, ref) => <TextBoxWithCharCount innerRef={ref} {...props} />);

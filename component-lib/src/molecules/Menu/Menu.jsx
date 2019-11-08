@@ -133,7 +133,6 @@ export default class Menu extends React.Component {
             myPageUrl,
             activeIndex = 0,
             activeLinkIndex = -1,
-            cartUrl,
             isLoading
         } = this.props;
 
