@@ -21,6 +21,7 @@ const TextBox = React.forwardRef(({ className, type, placeholder, disabled, erro
         disabled={disabled}
         {...rest} />
 );
+TextBox.displayName = 'TextBox'
 
 TextBox.defaultProps = {
     placeholder: '',

@@ -41,9 +41,10 @@ List.propTypes = {
     black: PropTypes.bool,
 };
 
-List.Item = ({ children, ...rest }) => (<li className="list__item" {...rest}>{children}</li>);
+const Item = ({ children, ...rest }) => (<li className="list__item" {...rest}>{children}</li>);
+List.Item = Item
 
-List.Link = ({ children, className, ...rest }) => (
+const ListLink = ({ children, className, ...rest }) => (
     <Link
         className={classnames('list__link', {
             [className]: className
@@ -51,8 +52,9 @@ List.Link = ({ children, className, ...rest }) => (
         {...rest}
         text={children} />
 );
+List.Link = ListLink
 
-List.BubbleLink = ({ children, iconName, ...rest }) => (
+const BubbleLink = ({ children, iconName, ...rest }) => (
     <List.Link {...rest}>
         <span className="list__link-bubble">
             <SvgIcon iconName={iconName} color="white" className="list__link-icon" />
@@ -60,6 +62,7 @@ List.BubbleLink = ({ children, iconName, ...rest }) => (
         <span className="list__link-text">{children}</span>
     </List.Link>
 );
+List.BubbleLink = BubbleLink
 
 List.BubbleLink.propTypes = {
     /** Url of an icon to use. */

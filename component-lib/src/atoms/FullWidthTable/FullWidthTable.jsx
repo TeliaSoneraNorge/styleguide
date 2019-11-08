@@ -20,21 +20,26 @@ const FullWidthTable = ({ children, clickable, className, ...rest }) => (
         })}
         {...rest}>{children}</table>
 );
-FullWidthTable.THead = ({ children, className, ...rest }) => (
+
+const THead = ({ children, className, ...rest }) => (
     <thead
         className={classnames('full-width-table__header', {
             [className]: className
         })}
         {...rest}>{children}</thead>
 );
-FullWidthTable.TBody = ({ children, className, ...rest }) => (
+FullWidthTable.THead = THead
+
+const TBody = ({ children, className, ...rest }) => (
     <tbody
         className={classnames('full-width-table__body', {
             [className]: className
         })}
         {...rest}>{children}</tbody>
 );
-FullWidthTable.TFoot = ({ children, white, className, ...rest }) => (
+FullWidthTable.TBody = TBody
+
+const TFoot = ({ children, white, className, ...rest }) => (
     <tfoot
         className={classnames('full-width-table__footer', {
             [className]: className,
@@ -42,7 +47,9 @@ FullWidthTable.TFoot = ({ children, white, className, ...rest }) => (
         })}
         {...rest}>{children}</tfoot>
 );
-FullWidthTable.Tr = ({ children, onClick, className, ...rest }) => (
+FullWidthTable.TFoot = TFoot
+
+const Tr = ({ children, onClick, className, ...rest }) => (
     <tr
         className={classnames('full-width-table__row', {
             [className]: className
@@ -50,19 +57,24 @@ FullWidthTable.Tr = ({ children, onClick, className, ...rest }) => (
         onClick={onClick ? onClick : null}
         {...rest}>{children}</tr>
 );
-FullWidthTable.Td = ({ children, className, ...rest }) => (
+FullWidthTable.Tr = Tr
+
+const Td = ({ children, className, ...rest }) => (
     <td
         className={classnames('full-width-table__cell', {
             [className]: className
         })}
         {...rest}>{children}</td>
 );
-FullWidthTable.Th = ({ children, className, ...rest }) => (
+FullWidthTable.Td = Td
+
+const Th = ({ children, className, ...rest }) => (
     <th
         className={classnames('full-width-table__cell', {
             [className]: className
         })}
         {...rest}>{children}</th>
 );
+FullWidthTable.Th = Th
 
 export default FullWidthTable;

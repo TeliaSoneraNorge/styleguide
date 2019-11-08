@@ -40,7 +40,7 @@ MiniDashboard.propTypes = {
     }))
 };
 
-MiniDashboard.StatWithLabelWidget = ({ statisticText, statisticLabel, statisticHref, progressBarRemaining, progressBarTotal }) =>
+const StatWithLabelWidget = ({ statisticText, statisticLabel, statisticHref, progressBarRemaining, progressBarTotal }) =>
     <div>
         <a className="mini-dashboard__statistic-widget link" href={statisticHref}>
             <span className="mini-dashboard__statistic-text">{statisticText} </span>
@@ -49,10 +49,12 @@ MiniDashboard.StatWithLabelWidget = ({ statisticText, statisticLabel, statisticH
         {(progressBarRemaining && progressBarTotal) &&
             <ProgressBar value={progressBarRemaining} min={0} max={progressBarTotal} />}
     </div>;
+MiniDashboard.StatWithLabelWidget = StatWithLabelWidget
 
-MiniDashboard.ExtraPromoLine = ({ children }) =>
+const ExtraPromoLine = ({ children }) =>
     <div className="mini-dashboard__extra-promo-line">
         {children}
     </div>;
+MiniDashboard.ExtraPromoLine = ExtraPromoLine
 
 export default MiniDashboard;

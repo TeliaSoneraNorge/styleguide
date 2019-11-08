@@ -7,7 +7,7 @@ const WithCustomFooter = () => (
         heading="Info dialog"
         footerElement={<p>This is a custom footer</p>}
         standalone>
-        <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
+        <p>This dialog can be associated with actions where it&#39;s necessary to give the user more information.</p>
     </ModalDialog>
 );
 

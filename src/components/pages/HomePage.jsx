@@ -15,7 +15,7 @@ const HomePage = () =>
             pageTitle="Telia Norge Styleguide"
             withMask={true}>
             <p>
-                This styleguide offers color schemes, components (both plain HTML and React) and CSS to be used in Telia Norway's digital channels.
+                This styleguide offers color schemes, components (both plain HTML and React) and CSS to be used in Telia Norway&#39;s digital channels.
             </p>
             <p>
                 Talk with us in the #styleguide Slack channel and let us know if and how you intend to use the styleguide. Enjoy :)
@@ -24,7 +24,7 @@ const HomePage = () =>
 
         <div className="container container--small container--extra-padding-top">
             <Heading level={2} text="Color Palette" />
-            <p className="paragraph">The color palette below was taken from the <a href="https://brandhub.teliacompany.com/document/14#/colour-palette/our-colour-palette" target="_blank">Telia Company design document</a> and shows the recommended font color to give the correct contrast.</p>
+            <p className="paragraph">The color palette below was taken from the <a href="https://brandhub.teliacompany.com/document/14#/colour-palette/our-colour-palette">Telia Company design document</a> and shows the recommended font color to give the correct contrast.</p>
         </div>
         <div className="container container--medium">
             <div className="sg-colors-wrapper">
@@ -61,11 +61,11 @@ const HomePage = () =>
             <Heading level={2} text="Sizes and units (px, em, rem)" />
             <p className="paragraph">When writing CSS, the styleguide uses these rules:</p>
             <ul>
-                <li>Sizes and spacing should be in REM's.</li>
-                <li>Media queries should be in EM's.</li>
+                <li>Sizes and spacing should be in REM&#39;s.</li>
+                <li>Media queries should be in EM&#39;s.</li>
                 <li>Pixels should be avoided, where possible.</li>
             </ul>
-            <p className="paragraph">Source: <a className="link" href="http://engageinteractive.co.uk/blog/em-vs-rem-vs-px">EM vs REM vs PX – Why you shouldn't “just use pixels”</a></p>
+            <p className="paragraph">Source: <a className="link" href="http://engageinteractive.co.uk/blog/em-vs-rem-vs-px">EM vs REM vs PX – Why you shouldn&#39;t “just use pixels”</a></p>
         </div>
     </div>;
 

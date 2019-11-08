@@ -8,7 +8,7 @@ const BlackGradient = () => (
         whiteText
         withGradient
         pageTitle="Page Title">
-        Preamble; an introductory and expressionary statement in a document that explains the document's purpose and
+        Preamble; an introductory and expressionary statement in a document that explains the document&#39;s purpose and
         underlying philosophy.
     </HeaderWithImage>
 );

@@ -4,7 +4,7 @@ import ChartSegmentEndCap from './ChartSegmentEndCap';
 import ChartSegmentArc from './ChartSegmentArc';
 import ChartSegmentSeparator from './ChartSegmentSeparator';
 
-const getBaseRotation = (showLineCaps, strokeWidthInPercents, radius) =>
+const getBaseRotation = (showLineCaps, strokeWidthInPercents) =>
     showLineCaps
         ? strokeWidthInPercents
         : 0;

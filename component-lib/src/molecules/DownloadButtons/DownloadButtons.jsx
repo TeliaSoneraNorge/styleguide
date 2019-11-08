@@ -21,7 +21,7 @@ DownloadButtons.propTypes = {
     children: PropTypes.node,
 };
 
-DownloadButtons.Button = ({ className, href, src, alt, title, ...rest }) => (
+const Button = ({ className, href, src, alt, title, ...rest }) => (
     <a
         href={href}
         className={classnames('download-buttons__button', {
@@ -36,6 +36,7 @@ DownloadButtons.Button = ({ className, href, src, alt, title, ...rest }) => (
             aria-label={rest['aria-label']} />
     </a>
 );
+DownloadButtons.Button = Button
 
 DownloadButtons.Button.propTypes = {
     /** Use if you want to redirect to a url after click. */

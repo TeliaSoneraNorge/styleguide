@@ -79,7 +79,7 @@ export default class FocusSubscription extends React.Component {
                         </h3>
                         <div className="accordion__panel" id="focus-subscription-accordion">
                             <h4 className="heading heading--level-4">Skanning, texting og MMS</h4>
-                            <p>Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? She's a disgusting pig, right?</p>
+                            <p>Lorem Ipsum best not make any more threats to your website. It will be met with fire and fury like the world has never seen. Does everybody know that pig named Lorem Ipsum? She&#39;s a disgusting pig, right?</p>
                             <h4 className="heading heading--level-4">Utland</h4>
                             <p>We have so many things that we have to do better... and certainly ipsum is one of them. Despite the constant negative ipsum covfefe. Lorem Ipsum is the single greatest threat. We are not - we are not keeping up with other websites.</p>
                         </div>

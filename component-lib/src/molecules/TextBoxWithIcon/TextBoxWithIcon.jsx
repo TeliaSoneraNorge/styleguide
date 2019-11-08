@@ -37,6 +37,7 @@ const TextBoxWithIcon = React.forwardRef(({ className, type, placeholder, disabl
         <TextBoxIcon iconName={iconName} iconIsButton={iconIsButton} iconColor={iconColor} iconLabel={iconLabel} onClick={onIconClick} />
     </div>
 ));
+TextBoxWithIcon.displayName = 'TextBoxWithIcon';
 
 TextBoxWithIcon.defaultProps = {
     iconColor: 'black',

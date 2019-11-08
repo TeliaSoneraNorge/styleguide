@@ -1,7 +1,6 @@
 import React from 'react';
 
-import { Header, SvgIcon, StepByStep } from '../../../component-lib/src/index';
-const { Step, Description, Content } = StepByStep;
+import { Header, SvgIcon } from '../../../component-lib/src/index';
 
 const InformationArticleSample3 = () =>
     <div>

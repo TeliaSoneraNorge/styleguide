@@ -21,7 +21,7 @@ const DownloadPage = () =>
             <Alert kind="info">
                 <p>
                     The styleguide is now <strong>production-ready</strong>, but we still want to know who is using it.
-                    Drop us a line over at #styleguide and let us know what you're upto. Thanks!
+                    Drop us a line over at #styleguide and let us know what you&#39;re upto. Thanks!
                 </p>
             </Alert>
             <h2 className="heading heading--level-2">Download the CSS & assets</h2>

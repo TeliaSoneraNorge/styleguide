@@ -19,6 +19,7 @@ const DescriptionList = ({ children, wrapByTwo, className, ...rest }) => {
     );
 };
 
+
 DescriptionList.propTypes = {
     /** Pairs of Dt or Dd. */
     children: PropTypes.node,
@@ -26,7 +27,7 @@ DescriptionList.propTypes = {
     wrapByTwo: PropTypes.bool,
 };
 
-DescriptionList.Dd = ({ children, className, ...rest }) => (
+const Dd = ({ children, className, ...rest }) => (
     <dd
         className={classnames('description-list__details', {
             [className]: className
@@ -35,7 +36,10 @@ DescriptionList.Dd = ({ children, className, ...rest }) => (
         {children}
     </dd>
 );
-DescriptionList.Dt = ({ children, className, ...rest }) => (
+
+DescriptionList.Dd = Dd
+
+const Dt = ({ children, className, ...rest }) => (
     <dt
         className={classnames('description-list__term', {
             [className]: className
@@ -44,5 +48,7 @@ DescriptionList.Dt = ({ children, className, ...rest }) => (
         {children}
     </dt>
 );
+
+DescriptionList.Dt = Dt
 
 export default DescriptionList;
