@@ -15,7 +15,6 @@ export default class Banner extends React.Component {
         img: PropTypes.string,
         imgAlt: PropTypes.string,
         grey: PropTypes.bool,
-        reverse: PropTypes.bool
     };
 
     constructor(props) {

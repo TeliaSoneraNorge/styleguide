@@ -42,15 +42,15 @@ const LayoutPage = () =>
             </div>
 
             <div className="container container--small" style={containerStyles}>
-                This is some content inside a className="container container--small" block.
+                This is some content inside a className=&quot;container container--small&quot; block.
             </div>
 
             <div className="container container--medium" style={containerStyles}>
-                This is some content inside a className="container container--medium" block.
+                This is some content inside a className=&apos;container container--medium&apos; block.
             </div>
 
             <div className="container container--large" style={containerStyles}>
-                This is some content inside a className="container container--large" block.
+                This is some content inside a className=&apos;container container--large&apos; block.
             </div>
 
             <FocusBox>

@@ -20,7 +20,7 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
                     { 'menu__submenu-icon--open': isOpen })} />
         </span>
         <div className={classnames('menu__submenu-container', { 'menu__submenu-container--open': isOpen })}>
-            {subLinks.map((sublink, index) =>
+            {subLinks.map((sublink) =>
                 <LinkTemplate
                     key={sublink.text}
                     className="menu__subitem link"
