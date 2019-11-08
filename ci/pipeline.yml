@@ -93,6 +93,7 @@ resources:
     type: node_modules-cache-resource-type
     source:
       <<: *source-config
+      project-path: component-lib
       paths:
         - component-lib/package.json
 
@@ -133,8 +134,6 @@ jobs:
         passed: [ cache-pr ]
         version: every
       - get: node_modules
-        passed: [ cache-pr ]
-      - get: node_modules-component-lib
         passed: [ cache-pr ]
       - get: node-tasks
         params:
