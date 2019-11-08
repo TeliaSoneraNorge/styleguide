@@ -2,8 +2,8 @@ import React from "react";
 
 interface Props {
     text?: string;
-    type?: "button" | "reset" | "submit";
     kind?: "primary" | "cancel" | "link" | "inverted" | "negative";
+    type?: "button" | "reset" | "submit";
     margin?: "top" | "bottom";
     size?: "small";
     onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
