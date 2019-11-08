@@ -10,7 +10,7 @@ const WithCustomHeader = () => (
             <p>Some subtitle</p>
         </section>}
         standalone>
-        <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
+        <p>This dialog can be associated with actions where it&#39;s necessary to give the user more information.</p>
     </ModalDialog>
 );
 

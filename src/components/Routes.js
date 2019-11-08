@@ -53,7 +53,7 @@ const menuLinks = [
 
 const calculateActiveIndex = pathname => pathname.includes('component') ? 1 : 0;
 const calculateActiveLinkIndex = pathname => menuLinks.reduce(
-    (result, topMenuItem, topIndex) => result !== null ? result : topMenuItem.links.reduce(
+    (result, topMenuItem ) => result !== null ? result : topMenuItem.links.reduce(
         (res, menuItem, contentIndex) => res !== null ? res : menuItem.url === pathname ? contentIndex : null, null), null);
 
 const routerLinkTemplate = ({ url, ...otherProps }) =>

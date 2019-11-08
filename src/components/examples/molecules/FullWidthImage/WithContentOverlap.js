@@ -11,8 +11,8 @@ const DefaultFullWidthImage = () => (
                     next piece of content will overlap the image.
                 </p>
                 <p>
-                    It's recommended to wrap the overlapping content in a <code>&lt;div class="container"&gt;</code>
-                    to make it responsive and <code>&lt;section class="container--small"&gt;</code>
+                    It&#39;s recommended to wrap the overlapping content in a <code>&lt;div class=&#34;container&#34;&gt;</code>
+                    to make it responsive and <code>&lt;section class=&#34;container--small&#34;&gt;</code>
                     to give the content a max-width to restrict the line length in the text for readability
                     (accessibility) reasons.
                 </p>
@@ -30,7 +30,7 @@ const DefaultFullWidthImage = () => (
                     Add <code>main-content--bg-color-white</code> if you want the background-color to be white.
                 </p>
                 <p>
-                    It's also recommended to keep the height of the next piece of content tall enough
+                    It&#39;s also recommended to keep the height of the next piece of content tall enough
                     to cover the mask.
                 </p>
             </div>

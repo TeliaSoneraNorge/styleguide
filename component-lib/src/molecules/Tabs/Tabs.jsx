@@ -23,7 +23,7 @@ const Tabs = ({ uniqueId, children, selectedIndex, onSelect, skipPanelRendering,
             </Tabs.TabPanels>}
     </div>;
 
-Tabs.TabList = ({ children, selectedIndex, uniqueId, onSelect }) =>
+const TabList = ({ children, selectedIndex, uniqueId, onSelect }) =>
     <ul className="tabs__list" role="tablist">
         {children.map((element, index) =>
             <Tabs.Tab
@@ -35,8 +35,9 @@ Tabs.TabList = ({ children, selectedIndex, uniqueId, onSelect }) =>
                 onSelect={onSelect} />
         )}
     </ul>;
+Tabs.TabList = TabList
 
-Tabs.Tab = ({ index, uniqueId, selectedIndex, heading, onSelect }) =>
+const Tab = ({ index, uniqueId, selectedIndex, heading, onSelect }) =>
     <li
         className={classnames(
             'tabs__list-item',
@@ -51,6 +52,7 @@ Tabs.Tab = ({ index, uniqueId, selectedIndex, heading, onSelect }) =>
             {heading}
         </button>
     </li>;
+Tabs.Tab = Tab
 
 Tabs.TabPanels = ({ children, uniqueId, selectedIndex }) =>
     children.map((element, index) =>
@@ -62,7 +64,7 @@ Tabs.TabPanels = ({ children, uniqueId, selectedIndex }) =>
         })
     );
 
-Tabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
+const TabPanel = ({ index, uniqueId, isSelected, children }) =>
     <div
         className={classnames(
             'tabs__content',
@@ -72,6 +74,7 @@ Tabs.TabPanel = ({ index, uniqueId, isSelected, children }) =>
         role="tabpanel">
         {children}
     </div>;
+Tabs.TabPanel = TabPanel
 
 Tabs.propTypes = {
     uniqueId: PropTypes.string,

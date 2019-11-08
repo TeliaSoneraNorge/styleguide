@@ -74,7 +74,7 @@ const Subscription = ({
     </Box>
 );
 
-Subscription.Features = ({ features, isBroadband }) =>
+const Features = ({ features, isBroadband }) =>
     <section className="subscription__features">
         {(features.speechBubbleText ?
             <div className="box__speech-bubble">{features.speechBubbleText}</div>
@@ -90,6 +90,7 @@ Subscription.Features = ({ features, isBroadband }) =>
             <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />}
         {features.button}
     </section>;
+Subscription.Features = Features
 
 
 Subscription.propTypes = {

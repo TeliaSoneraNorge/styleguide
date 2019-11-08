@@ -13,7 +13,6 @@ const ChartSegmentArc = ({
     percent,
     radius,
     strokeWidthInPercents,
-    index,
     capsOnChart,
     capOnSegment
 }) => (

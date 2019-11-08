@@ -67,7 +67,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
     );
 };
 
-FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =>
+const TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =>
     <section
         tabIndex={-1}
         ref={containerRef}
@@ -80,6 +80,7 @@ FunkyTabs.TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =
         hidden={!isSelected}>
         {children}
     </section>;
+FunkyTabs.TabPanel = TabPanel
 
 FunkyTabs.TabPanel.propTypes = {
     index: PropTypes.number,

@@ -1,8 +1,6 @@
 import React from 'react';
 import { Header, DonutChart, ChartLegend, DataBoostChart } from '../../../component-lib/src/index';
 
-const Prism = window.Prism; // A global, added with a <script> tag in the HTML template
-
 export default class UsagePage extends React.Component {
     constructor(props) {
         super(props);

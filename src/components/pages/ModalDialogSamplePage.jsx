@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Header, ModalDialog, ModalDialogProvider } from '../../../component-lib/src/index';
+import { Header, ModalDialog } from '../../../component-lib/src/index';
 
 export default class ModalDialogSamplePage extends React.Component {
     constructor(props) {
@@ -74,7 +74,7 @@ export default class ModalDialogSamplePage extends React.Component {
                             heading="Info dialog"
                             onSubmit={this.toggleInfoModalDialog}
                             submitText="Ok">
-                            <p>This dialog can be associated with actions where it's necessary to give the user more information.</p>
+                            <p>This dialog can be associated with actions where it&#39;s necessary to give the user more information.</p>
                         </ModalDialog>}
                     <button
                         className="button button-default button--margin-top"
@@ -90,8 +90,8 @@ export default class ModalDialogSamplePage extends React.Component {
                             onClose={this.toggleConfirmModalDialog}
                             closeText="Cancel">
                             <p>
-                                This dialog can be associated with actions where it's necessary to get the user to
-                                confirm what's about to happen.
+                                This dialog can be associated with actions where it&#39;s necessary to get the user to
+                                confirm what&#39;s about to happen.
                             </p>
                         </ModalDialog>}
                 </section>

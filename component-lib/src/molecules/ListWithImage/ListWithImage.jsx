@@ -23,7 +23,7 @@ const ListWithImage = ({ children, className, heading, src, alt, imagePosition =
     </div>
 );
 
-ListWithImage.Item = ({ children, className, ...rest }) => (
+const Item = ({ children, className, ...rest }) => (
     <li
         className={classnames('list__item', {
             [className]: className,
@@ -32,6 +32,7 @@ ListWithImage.Item = ({ children, className, ...rest }) => (
         {children}
     </li>
 );
+ListWithImage.Item = Item
 
 ListWithImage.Item.propTypes = {};
 
