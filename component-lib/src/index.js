@@ -17,6 +17,7 @@ export { default as List } from './atoms/List';
 export { default as PagePebbles } from './atoms/PagePebbles';
 export { default as Paragraph } from './atoms/Paragraph';
 export { default as ProgressBar } from './atoms/ProgressBar';
+export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
 export { default as ShadowBox } from './atoms/ShadowBox';
 export { default as SpecialMessage } from './atoms/SpecialMessage';
