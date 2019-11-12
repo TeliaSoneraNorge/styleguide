@@ -44,7 +44,7 @@ const Default = () => (
             onSearchSubmit={() => {} }
             searchLabel="Fyll inn det du skal søke på"
             searchButtonLabel="Søk"
-            searchButtonAbortText="Avbryt"
+            searchButtonAbortText="Lukk"
             mobileMenuCloseButtonLabel="Lukk"
             lockBodyOnMenuOpen />
     </Router>

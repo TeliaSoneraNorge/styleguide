@@ -78,13 +78,6 @@
         bottom: 0;
         width: 100%;
 
-        @media all and (min-width: rem(1120)) {
-            top: 0;
-            left: -1rem;
-            position: relative;
-            width: 4rem;
-        }
-
         .menu__search {
             &--icon, &--label {
                 display: none;
@@ -101,33 +94,19 @@
             background: var(--white);
 
             @media all and (min-width: rem(1120)){
-                position: absolute;
                 top: 0;
+                right: 0;
                 padding: 0;
                 height: 100%;
                 width: 20rem;
-                right: -11rem;
             }
-
-            @media all and (min-width: rem(1400)){
-                right: -1rem;
-            }
-
 
             &-form {
                 flex-grow: 1;
             }
 
             &-abort-button {
-                flex-grow: 0;
-                padding: 0 var(--padding);
-                font-family: var(--font-family);
-                font-size: var(--font-size);
-
-                &:hover, &:focus {
-                    outline: none;
-                    color: var(--core-purple);
-                }
+                margin-left: 1rem;
             }
         }
     }
