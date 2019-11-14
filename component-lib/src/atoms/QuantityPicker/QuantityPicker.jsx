@@ -25,11 +25,12 @@ const QuantityPicker = ({
     <div className="quantity-picker">
       <QuantityButton
         icon="ico_minus"
-        isDisabled={quantity <= minQuantity || quantity === ''}
+        isDisabled={quantity <= minQuantity || !quantity}
         onClick={() => onChangeQuantity(Math.max(quantity - 1, minQuantity))}
         text={reduceText}
       />
-      <div className="quantity-picker__input-container">
+
+      <span className="quantity-picker__input-container">
         <TextBoxWithLabel
           max={maxQuantity}
           min={minQuantity}
@@ -41,10 +42,11 @@ const QuantityPicker = ({
           labelText={quantityLabel}
           hideLabel
         />
-      </div>
+      </span>
+
       <QuantityButton
         icon="ico_add"
-        isDisabled={quantity >= maxQuantity || quantity === ''}
+        isDisabled={quantity >= maxQuantity || !quantity}
         onClick={() => onChangeQuantity(Math.min(quantity + 1, maxQuantity))}
         text={addText}
       />
