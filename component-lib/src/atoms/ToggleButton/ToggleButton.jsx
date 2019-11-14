@@ -15,7 +15,7 @@ const ToggleButton = ({
   id,
   labelText,
   descriptionText,
-  defaultChecked = undefined,
+  defaultChecked,
   checked,
   onChange,
   toggleOnLeftSide = false,
