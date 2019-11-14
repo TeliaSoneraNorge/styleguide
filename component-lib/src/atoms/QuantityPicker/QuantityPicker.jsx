@@ -1,13 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import QuantityButton from './QuantityButton';
+import TextBoxWithLabel from '../../molecules/TextBoxWithLabel/TextBoxWithLabel';
 
 /**
  * Status: *finished*.
  * Category: Buttons
  */
 
-const QuantityPicker = ({ onChangeQuantity, quantity, minQuantity, maxQuantity, addText, reduceText, inputName }) => {
+const QuantityPicker = ({
+  onChangeQuantity,
+  quantity,
+  minQuantity,
+  maxQuantity,
+  addText,
+  reduceText,
+  quantityLabel,
+}) => {
   if (isNaN(quantity)) {
     quantity = '';
   }
@@ -16,26 +25,26 @@ const QuantityPicker = ({ onChangeQuantity, quantity, minQuantity, maxQuantity, 
     <div className="quantity-picker">
       <QuantityButton
         icon="ico_minus"
-        isDisabled={quantity <= minQuantity}
+        isDisabled={quantity <= minQuantity || quantity === ''}
         onClick={() => onChangeQuantity(Math.max(quantity - 1, minQuantity))}
         text={reduceText}
       />
-      <label className="quantity-picker__label">
-        <input
-          className="textbox quantity-picker__input"
+      <div className="quantity-picker__input-container">
+        <TextBoxWithLabel
           max={maxQuantity}
           min={minQuantity}
           onChange={event =>
             onChangeQuantity(Math.max(Math.min(parseInt(event.target.value), maxQuantity), minQuantity))
           }
           type="number"
-          name={inputName}
           value={quantity}
+          labelText={quantityLabel}
+          hideLabel
         />
-      </label>
+      </div>
       <QuantityButton
         icon="ico_add"
-        isDisabled={quantity >= maxQuantity}
+        isDisabled={quantity >= maxQuantity || quantity === ''}
         onClick={() => onChangeQuantity(Math.min(quantity + 1, maxQuantity))}
         text={addText}
       />
@@ -50,7 +59,7 @@ QuantityPicker.propTypes = {
   maxQuantity: PropTypes.number,
   addText: PropTypes.string,
   reduceText: PropTypes.string,
-  inputName: PropTypes.string,
+  quantityLabel: PropTypes.string,
 };
 
 QuantityPicker.defaultProps = {
@@ -58,7 +67,7 @@ QuantityPicker.defaultProps = {
   maxQuantity: Number.MAX_SAFE_INTEGER,
   addText: 'Øk antall',
   reduceText: 'Reduser antall',
-  inputName: 'Tast inn antall',
+  quantityLabel: 'Tast inn antall',
 };
 
 QuantityButton.propTypes = {
