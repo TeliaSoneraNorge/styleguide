@@ -7,7 +7,7 @@ import QuantityButton from './QuantityButton';
  * Category: Buttons
  */
 
-const QuantityPicker = ({ onChangeQuantity, quantity, minQuantity, maxQuantity, addText, reduceText }) => {
+const QuantityPicker = ({ onChangeQuantity, quantity, minQuantity, maxQuantity, addText, reduceText, inputName }) => {
   if (isNaN(quantity)) {
     quantity = '';
   }
@@ -29,7 +29,7 @@ const QuantityPicker = ({ onChangeQuantity, quantity, minQuantity, maxQuantity, 
             onChangeQuantity(Math.max(Math.min(parseInt(event.target.value), maxQuantity), minQuantity))
           }
           type="number"
-          name="Tast inn antall"
+          name={inputName}
           value={quantity}
         />
       </label>
@@ -50,13 +50,15 @@ QuantityPicker.propTypes = {
   maxQuantity: PropTypes.number,
   addText: PropTypes.string,
   reduceText: PropTypes.string,
+  inputName: PropTypes.string,
 };
 
 QuantityPicker.defaultProps = {
   minQuantity: Number.MIN_SAFE_INTEGER,
   maxQuantity: Number.MAX_SAFE_INTEGER,
   addText: 'Øk antall',
-  reduceText: 'Reuser antall',
+  reduceText: 'Reduser antall',
+  inputName: 'Tast inn antall',
 };
 
 QuantityButton.propTypes = {
