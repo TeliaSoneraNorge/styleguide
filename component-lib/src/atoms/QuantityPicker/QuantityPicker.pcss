@@ -4,24 +4,25 @@
     display: flex;
     align-items: center;
 
-    &__input-container {
+    &__container {
         margin: 0 1rem;
         
-        input {
-            display: inline-block;
-            font-size: 1rem;
-            text-align: center;
-            -moz-appearance: textfield;
+    }
 
-            &::selection {
-                background-color: var(--core-purple);
-                color: var(--white);
-            }
-        
-            &::-webkit-inner-spin-button,
-            &::-webkit-outer-spin-button {
-                -webkit-appearance: none;
-            }
+    &__input {
+        display: inline-block;
+        font-size: 1rem;
+        text-align: center;
+        -moz-appearance: textfield;
+
+        &::selection {
+            background-color: var(--core-purple);
+            color: var(--white);
+        }
+    
+        &::-webkit-inner-spin-button,
+        &::-webkit-outer-spin-button {
+            -webkit-appearance: none;
         }
     }
 

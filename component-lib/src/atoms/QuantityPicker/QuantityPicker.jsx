@@ -30,8 +30,9 @@ const QuantityPicker = ({
         text={reduceText}
       />
 
-      <span className="quantity-picker__input-container">
+      <span className="quantity-picker__container">
         <TextBoxWithLabel
+          className="quantity-picker__input"
           max={maxQuantity}
           min={minQuantity}
           onChange={event =>
