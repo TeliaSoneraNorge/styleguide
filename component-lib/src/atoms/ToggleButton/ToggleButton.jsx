@@ -11,25 +11,44 @@ import cn from 'classnames';
  * This component should be used when there are things that can be toggled on and off.
  * Extra `descriptionText` can be displayed below the toggle button.
  */
-const ToggleButton = ({ id, labelText, descriptionText, defaultChecked = false, checked, onChange, toggleOnLeftSide = false }) => (
-    <div className={cn('toggle-button', {
-        'left-side': toggleOnLeftSide,
-        'right-side': !toggleOnLeftSide
-    })}>
-        <input id={id} className="toggle-button__checkbox" type="checkbox" onChange={onChange} checked={checked} defaultChecked={defaultChecked} />
-        <label htmlFor={id} className="toggle-button__label">{labelText}</label>
-        {descriptionText ? <p className="toggle-button__description">{descriptionText}</p> : null}
-    </div>
+const ToggleButton = ({
+  id,
+  labelText,
+  descriptionText,
+  defaultChecked = undefined,
+  checked,
+  onChange,
+  toggleOnLeftSide = false,
+}) => (
+  <div
+    className={cn('toggle-button', {
+      'left-side': toggleOnLeftSide,
+      'right-side': !toggleOnLeftSide,
+    })}
+  >
+    <input
+      id={id}
+      className="toggle-button__checkbox"
+      type="checkbox"
+      onChange={onChange}
+      checked={checked}
+      defaultChecked={defaultChecked}
+    />
+    <label htmlFor={id} className="toggle-button__label">
+      {labelText}
+    </label>
+    {descriptionText ? <p className="toggle-button__description">{descriptionText}</p> : null}
+  </div>
 );
 
 ToggleButton.propTypes = {
-    defaultChecked: PropTypes.bool,
-    id: PropTypes.string.isRequired,
-    labelText: PropTypes.string.isRequired,
-    onChange: PropTypes.func,
-    checked: PropTypes.bool,
-    descriptionText: PropTypes.string,
-    toggleOnLeftSide: PropTypes.bool
+  defaultChecked: PropTypes.bool,
+  id: PropTypes.string.isRequired,
+  labelText: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  checked: PropTypes.bool,
+  descriptionText: PropTypes.string,
+  toggleOnLeftSide: PropTypes.bool,
 };
 
 export default ToggleButton;
