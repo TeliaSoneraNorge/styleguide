@@ -4,6 +4,11 @@
     display: flex;
     align-items: center;
 
+    &__container {
+        margin: 0 1rem;
+        
+    }
+
     &__input {
         display: inline-block;
         font-size: 1rem;
@@ -14,16 +19,13 @@
             background-color: var(--core-purple);
             color: var(--white);
         }
-
+    
         &::-webkit-inner-spin-button,
         &::-webkit-outer-spin-button {
             -webkit-appearance: none;
         }
     }
 
-    &__label {
-        margin: 0 1rem;
-    }
 }
 
 .quantity-picker__button {
