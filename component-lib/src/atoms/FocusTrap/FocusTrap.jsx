@@ -23,9 +23,11 @@ function FocusTrap({ as, children, onKeyDown, ...otherProps }, ref) {
     const focusableElements = ref.current.querySelectorAll(focusableElementsSelector);
 
     if (event.keyCode === KEY_TAB) {
-      if (event.shiftKey && document.activeElement === focusableElements[0]) {
-        event.preventDefault();
-        focusableElements[focusableElements.length - 1].focus();
+      if (event.shiftKey) {
+        if (document.activeElement === focusableElements[0]) {
+          event.preventDefault();
+          focusableElements[focusableElements.length - 1].focus();
+        }
       } else if (document.activeElement === focusableElements[focusableElements.length - 1]) {
         event.preventDefault();
         focusableElements[0].focus();
