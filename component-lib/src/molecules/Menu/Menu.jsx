@@ -6,6 +6,10 @@ import MenuContent from './MenuContent';
 import MobileMenu from './MobileMenu';
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 
+/**
+ * Status: *In progress*.
+ * Category: PageElements
+ **/
 const Menu = ({
   menuLinks,
   className,
@@ -175,8 +179,4 @@ Menu.propTypes = {
   isLoading: PropTypes.bool,
 };
 
-/**
- * Status: *In progress*.
- * Category: PageElements
- **/
 export default Menu;
