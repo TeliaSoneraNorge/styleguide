@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import MenuTop from './MenuTop';
 import MenuContent from './MenuContent';
 import MobileMenu from './MobileMenu';
-import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
+import FocusTrap, { focusableElementsSelector } from '../../atoms/FocusTrap/FocusTrap';
 
 /**
  * Status: *In progress*.
@@ -32,6 +32,7 @@ const Menu = ({
   isLoading,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [lastActiveMenuContentElement, setLastActiveMenuContentElement] = useState(undefined);
   const [openedSubmenuIndex, setOpenedSubmenuIndex] = useState(-1);
   const mobileMenuRef = useRef();
 
@@ -76,12 +77,29 @@ const Menu = ({
   };
 
   const toggleMobileMenu = () => {
-    if (!mobileMenuOpen && lockBodyOnMenuOpen) {
-      document.body.classList.add('body--locked');
+    if (!mobileMenuOpen) {
+      setFocusOnFirstFocusableElement();
+      setLastActiveMenuContentElement(document.activeElement);
+      if (lockBodyOnMenuOpen) document.body.classList.add('body--locked');
     } else {
-      document.body.classList.remove('body--locked');
+      returnFocusOnDialogClose();
+      if (lockBodyOnMenuOpen) document.body.classList.remove('body--locked');
     }
     setMobileMenuOpen(!mobileMenuOpen);
+  };
+
+  const setFocusOnFirstFocusableElement = () => {
+    if (!mobileMenuRef.current) return;
+    const focusableElements = mobileMenuRef.current.querySelectorAll(focusableElementsSelector);
+    if (!focusableElements.length) return;
+
+    focusableElements[0].focus();
+  };
+
+  useEffect(setFocusOnFirstFocusableElement);
+
+  const returnFocusOnDialogClose = () => {
+    if (lastActiveMenuContentElement) lastActiveMenuContentElement.focus();
   };
 
   const toggleSubmenu = (submenuIndex, e) => {
