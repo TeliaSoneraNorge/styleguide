@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+
+const KEY_ESC = 27;
 
 const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
   <button
@@ -114,6 +116,15 @@ const MobileMenu = ({
   mobileMenuCloseButtonLabel,
 }) => {
   const [selectedHeaderIndex, setSelectedHeaderIndex] = useState(0);
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => document.removeEventListener('keydown', handleKeyDown);
+  });
+
+  const handleKeyDown = event => {
+    if (event.keyCode === KEY_ESC) onMobileMenuToggle();
+  };
 
   return (
     <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
