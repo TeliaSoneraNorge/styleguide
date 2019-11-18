@@ -7,16 +7,16 @@ const codeSnippets = {
     bem: '.block {}\n.block__element {}\n.block__element--modifier {}'
 };
 
-const ContributingPage = ({ colors }) =>
+const ContributingPage = ( ) =>
     <div>
         <Header pageTitle="Contributing">
             <p>We welcome all frontend developers - in collaboration with designers - to contribute to the styleguide.</p>
-            <p>Together, we can Make Telia's Frontend Great Again&trade;!</p>
+            <p>Together, we can Make Telia&#39;s Frontend Great Again&trade;!</p>
         </Header>
         <div className="container container--small">
             <Heading level={2} text="The repository" />
             <p className="paragraph">
-                The repository can be found on TeliaSoneraNorge's GitHub
+                The repository can be found on TeliaSoneraNorge&#39;s GitHub
                 account: <a className="link" href="https://github.com/TeliaSoneraNorge/styleguide">TeliaSoneraNorge/styleguide</a>.
                 Ask someone in #styleguide if you need access.
             </p>
@@ -43,7 +43,7 @@ const ContributingPage = ({ colors }) =>
             <p className="paragraph">
                 Be <strong>consistent</strong>. Copy the code style, formatting, etc. that all other files use.
                 If we want to change a rule in the code styling, we should do so globally in a single commit.
-                Also, don't reformat lots of code at the same time as a feature commit.
+                Also, don&#39;t reformat lots of code at the same time as a feature commit.
             </p>
         </div>
         <div className="container container--small">

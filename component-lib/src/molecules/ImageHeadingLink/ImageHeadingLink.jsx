@@ -23,7 +23,7 @@ const ImageHeadingLink = ({ children, className, src, alt, ...rest }) => (
         </div>
     </a>
 );
-ImageHeadingLink.Small = ({ children, className, ...rest }) => (
+const Small = ({ children, className, ...rest }) => (
     <span
         className={classnames('image-heading-link__heading--small', {
             [className]: className,
@@ -32,6 +32,7 @@ ImageHeadingLink.Small = ({ children, className, ...rest }) => (
         {children}
     </span>
 );
+ImageHeadingLink.Small = Small
 
 ImageHeadingLink.propTypes = {
     children: PropTypes.node,

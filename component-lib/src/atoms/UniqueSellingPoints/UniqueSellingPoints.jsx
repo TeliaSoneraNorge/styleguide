@@ -8,7 +8,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * Status: *finished*
  * Category: Lists
  */
-const UniqueSellingPoints = ({ children, iconName, iconColor, className, ...rest }) => (
+const UniqueSellingPoints = ({ children, className, ...rest }) => (
     <ul
         className={classnames('unique-selling-points', {
             [className]: className
@@ -18,7 +18,7 @@ const UniqueSellingPoints = ({ children, iconName, iconColor, className, ...rest
     </ul>
 );
 
-UniqueSellingPoints.Item = ({ children, iconName, iconColor, className, ...rest }) => (
+const Item = ({ children, iconName, iconColor, className, ...rest }) => (
     <li
         className={classnames('unique-selling-points__block', {
             [className]: className
@@ -28,6 +28,7 @@ UniqueSellingPoints.Item = ({ children, iconName, iconColor, className, ...rest 
         <div className="unique-selling-points__block-content">{children}</div>
     </li>
 );
+UniqueSellingPoints.Item = Item
 
 UniqueSellingPoints.propTypes = {
     /** Zero or more of UniqueSellingPoints.Item elements. */

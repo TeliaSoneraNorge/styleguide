@@ -57,8 +57,8 @@ const BroadbandExpanded = () => (
         <div className="rich-text">
             <h3 className="heading heading--level-3">Data</h3>
             <p>
-                I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, "I
-                can't do it. I just can't do it. It's inappropriate. It's not nice." When other websites give you
+                I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, &quot;I
+                can&apos;t do it. I just can&apos;t do it. It&apos;s inappropriate. It&apos;s not nice.&quot; When other websites give you
                 text, they’re not sending the best. They’re not sending you, they’re sending words that have lots of
                 problems and they’re bringing those problems with us. They’re bringing mistakes. They’re bringing
                 misspellings. They’re typists… And some, I assume, are good words. I think the only card she has is

@@ -38,7 +38,7 @@ export default class PebblesPage extends React.Component {
                 <div className="container container--small container--extra-padding-top container--extra-margin-bottom">
                     <label>Select your variant: </label>
                     <select className="dropdown-list" onChange={this.dropdownChange}>
-                        {_.map(PebbleVariant, (variant,i) =>
+                        {_.map(PebbleVariant, (variant) =>
                             <option key={variant.description} className="dropdown-list__option" value={variant.value}>{variant.description}</option>
                         )}
                     </select>

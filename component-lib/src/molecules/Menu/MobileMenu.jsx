@@ -4,8 +4,8 @@ import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
-    <button className="menu__mobile-close-button" 
-        onClick={onClick} 
+    <button className="menu__mobile-close-button"
+        onClick={onClick}
         aria-label={mobileMenuCloseButtonLabel ? mobileMenuCloseButtonLabel : 'Lukk'} >
         <SvgIcon
             iconName="ico_delete"
@@ -66,7 +66,7 @@ const MobileSubmenu = ({ link, LinkTemplate, onItemSelected }) => (
     </div>
 );
 
-const MobileMenuItem = ({ index, link, onItemSelected, LinkTemplate }) => (
+const MobileMenuItem = ({ link, onItemSelected, LinkTemplate }) => (
     <React.Fragment>
         {link.url &&
             <LinkTemplate
@@ -142,7 +142,7 @@ class MobileMenu extends React.Component {
                 }
             </div>
         );
-    };
+    }
 }
 
 export default MobileMenu;

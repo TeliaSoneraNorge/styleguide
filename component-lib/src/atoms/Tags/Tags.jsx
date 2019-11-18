@@ -17,13 +17,14 @@ const Tags = ({ children, className, color, ...rest }) => (
     </div>
 );
 
-Tags.Tag = ({ children, className }) => (
+const Tag = ({ children, className }) => (
     <span className={classnames('tags__tag', {
         [className]: className
     })}>
         {children}
     </span>
 );
+Tags.Tag = Tag
 
 Tags.propTypes = {
     /** Additional classes */

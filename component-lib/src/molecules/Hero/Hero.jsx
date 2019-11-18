@@ -38,7 +38,6 @@ const Hero = ({
     className,
     heading,
     subheading,
-    src,
     alt,
     sources = [],
     logoSources = [],

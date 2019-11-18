@@ -11,7 +11,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  */
 const ProductList = ({ items = [] }) =>
     <div className="product-list">
-        {items.map((item, i) => {
+        {items.map((item) => {
             const productItemClassNames = classnames('product-list__item', {
                 'product-list__item--promo': item.style === 'promo'
             });

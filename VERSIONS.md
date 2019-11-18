@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.7
+- Changed font-size of text in the Quote component
+
+## 1.29.6
+- Lint and Prettier fix
+- Menu search: Shows spinner when loading and input field are disabled
+
 ## 1.29.3
 - Menu & ModalDialog: IE compatibility fixes
 

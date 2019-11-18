@@ -64,6 +64,7 @@ const TextBoxWithLabel = React.forwardRef(
         </Label>
     )
 );
+TextBoxWithLabel.displayName = 'TextBoxWithLabel';
 
 TextBoxWithLabel.defaultProps = {
     iconColor: 'black',

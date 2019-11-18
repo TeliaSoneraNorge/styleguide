@@ -168,7 +168,7 @@ const InformationArticleSample5 = () =>
                     <UniqueSellingPoints.Item
                         iconName="ico_search"
                         iconColor="black">
-                        It's recommended to use between 2-3 points
+                        It&#39;s recommended to use between 2-3 points
                     </UniqueSellingPoints.Item>
                 </UniqueSellingPoints>
             </div>

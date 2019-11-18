@@ -52,7 +52,7 @@ class StepByStep extends React.Component {
     }
 }
 
-StepByStep.Step = ({ children, className, index, opened, onSelect, interactive, ...rest }) => (
+const Step = ({ children, className, index, opened, onSelect, interactive, ...rest }) => (
     <li
         className={classnames('step-by-step__step-wrapper', {
             [className]: className,
@@ -62,7 +62,7 @@ StepByStep.Step = ({ children, className, index, opened, onSelect, interactive, 
         })}
         {...rest}>
         {
-            React.Children.map(children, (it, i) =>
+            React.Children.map(children, (it) =>
                 React.cloneElement(it, {
                     key: index,
                     index,
@@ -74,8 +74,9 @@ StepByStep.Step = ({ children, className, index, opened, onSelect, interactive, 
         }
     </li>
 );
+StepByStep.Step = Step
 
-StepByStep.Description = ({ children, className, heading, iconName, imageSrc, number, pebbles, onSelect, index, interactive, opened, ...rest }) => (
+const Description = ({ children, className, heading, iconName, imageSrc, number, pebbles, onSelect, index, interactive, opened, ...rest }) => (
     <React.Fragment>
         <Icon pebbles={pebbles} onSelect={onSelect} index={index} interactive={interactive} opened={opened}>
             {pebbles &&
@@ -96,6 +97,7 @@ StepByStep.Description = ({ children, className, heading, iconName, imageSrc, nu
         </div>
     </React.Fragment>
 );
+StepByStep.Description = Description
 
 StepByStep.Description.propTypes = {
     /** Short step description. */
@@ -116,7 +118,7 @@ StepByStep.Description.propTypes = {
     opened: PropTypes.bool
 };
 
-StepByStep.Content = ({ children, className, opened, interactive, ...rest }) => (
+const Content = ({ children, className, ...rest }) => (
     <div
         className={classnames('step-by-step__content', {
             [className]: className,
@@ -125,6 +127,7 @@ StepByStep.Content = ({ children, className, opened, interactive, ...rest }) => 
         {children}
     </div>
 );
+StepByStep.Content = Content
 
 const Icon = ({ children, className, onSelect, index, interactive, opened, pebbles, ...rest }) => {
     const elementType = interactive ? 'a' : 'div';

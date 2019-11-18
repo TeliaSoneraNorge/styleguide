@@ -64,11 +64,11 @@ resources:
 
   - name: styleguide
     type: git
-    source:
+    source: &source-config
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: master
       private_key: ((styleguide-deploy-key))
-      ignore_paths: [ package.json, package.lock.json, component-lib/package.json, component-lib/package.lock.json, component-lib/assets/allicons/ ]
+      ignore_paths: [ component-lib/assets/allicons/ ]
 
   - name: node-tasks
     type: git
@@ -84,18 +84,18 @@ resources:
 
   - name: node_modules
     type: node_modules-cache-resource-type
-    source: &source-config
-      uri: git@github.com:TeliaSoneraNorge/styleguide.git
-      branch: master
-      private_key: ((channel-api-functions-deploy-key))
+    source:
+      <<: *source-config
       paths:
         - package.json
 
   - name: node_modules-component-lib
     type: node_modules-cache-resource-type
     source:
-      project-path: component-lib
       <<: *source-config
+      project-path: component-lib
+      paths:
+        - component-lib/package.json
 
 groups:
   - name: Master
@@ -116,7 +116,7 @@ jobs:
   - name: cache-pr
     serial: true
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide-pr
         trigger: true
         passed:
@@ -128,7 +128,7 @@ jobs:
   - name: lint-test-pr
     serial: true
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide-pr
         trigger: true
         passed: [ cache-pr ]
@@ -153,7 +153,7 @@ jobs:
     serial: true
     serial_groups: [ cache ]
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide
         trigger: true
         passed:
@@ -167,7 +167,7 @@ jobs:
     serial_groups: [ cache, lint-job ]
     public: true
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide
         trigger: true
         passed: [ cache ]
@@ -192,7 +192,7 @@ jobs:
     serial: true
     serial_groups: [ cache, lint-job, publish-website-job ]
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide
         trigger: true
         passed: [ lint-test ]
@@ -226,7 +226,7 @@ jobs:
     serial: true
     serial_groups: [ cache, lint-job, publish-website-job, update-version ]
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide
         passed: [ publish-website ]
       - get: node_modules-component-lib
@@ -251,7 +251,7 @@ jobs:
     serial: true
     serial_groups: [ cache, lint-job, publish-website-job, update-version ]
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide
         passed: [ publish-website ]
       - get: node_modules-component-lib
@@ -275,7 +275,7 @@ jobs:
     serial: true
     serial_groups: [ cache, lint-job, publish-website-job, update-version ]
     plan:
-    - aggregate:
+    - in_parallel:
       - get: styleguide
         passed: [ publish-website ]
       - get: node_modules-component-lib

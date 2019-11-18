@@ -8,7 +8,7 @@ const ConfirmModalDialog = () => (
         submitText="Confirm"
         closeText="Cancel"
         standalone>
-        <p>This dialog can be associated with actions where it's necessary to get the user to confirm what's about to happen.</p>
+        <p>This dialog can be associated with actions where it&#39;s necessary to get the user to confirm what&#39;s about to happen.</p>
     </ModalDialog>
 );
 

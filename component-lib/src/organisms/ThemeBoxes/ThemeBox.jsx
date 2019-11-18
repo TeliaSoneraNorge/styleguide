@@ -26,7 +26,7 @@ export default class ThemeBox extends React.Component {
 
         if (this.props.canExpand) {
             this.boxContainerClick = this.boxContainerClick.bind(this);
-            this.closeBoxClick = this.closeBoxClick.bind(thilicks);
+            this.closeBoxClick = this.closeBoxClick.bind();
         }
     }
 

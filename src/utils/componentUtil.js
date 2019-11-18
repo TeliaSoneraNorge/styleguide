@@ -8,7 +8,6 @@ function getComponentsByType(type, componentsInFolder) {
 
     return _.reduce(componentsInFolder, (result, value, componentName) => {
         if (!value[componentName]) {
-            console.log('Skipping', type, componentName);
             return result;
         }
 
@@ -25,7 +24,7 @@ function getComponentsByType(type, componentsInFolder) {
     }, {});
 }
 
-function getComponentsByPredicate(predicate, allComponents, heading = '') {
+function getComponentsByPredicate(predicate, allComponents, heading = '', category) {
     const examples = require('../components/examples/**/*.js');
 
     const componentsInCategory = _.map(allComponents, (components, type) => {

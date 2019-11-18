@@ -21,7 +21,7 @@ const accordionListProps = [
     }
 ];
 
-const InformationArticleSample1 = ({ colors }) =>
+const InformationArticleSample1 = () =>
     <div>
         <Header
             iconName="ico_info"

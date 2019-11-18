@@ -30,5 +30,5 @@ export default class IconAnimated extends React.Component {
     render() {
         return (<div className="icon-animated-container" ref={this.container}></div>);
     }
-};
+}
 

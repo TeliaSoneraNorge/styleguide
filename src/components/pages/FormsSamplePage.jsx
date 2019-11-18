@@ -15,7 +15,7 @@ const FormsSamplePage = () =>
         <Header pageTitle="Forms" withMask={false} withContentOverlap={false}>
             <p>
                 On this page you can have a look at how forms should look.<br />
-                NOTE: there isn't much here yet because we haven't had many pages that contain forms.
+                NOTE: there isn&#39;t much here yet because we haven&#39;t had many pages that contain forms.
                 If you or your team have a lot of forms, maybe you could kick-start the development
                 of some forms components?
             </p>
@@ -34,7 +34,7 @@ const FormsSamplePage = () =>
             <Heading text="Primary button" level={3} />
             <p className="paragraph">
                 This should be used ideally no more than <em>once per page</em>. It would usually be the main
-                action, such as "Kjøp" or "Bestill".
+                action, such as &#34;Kjøp&#34; or &#34;Bestill&#34;.
             </p>
             <Button text="Bestill" kind="primary" />
         </div>
@@ -85,7 +85,6 @@ const FormsSamplePage = () =>
             <Form onSubmit={
                 function (e) {
                     e.preventDefault();
-                    console.log('submit');
                 }
             }>
                 <Form.FormRow>

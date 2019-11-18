@@ -22,4 +22,4 @@ export function getIEVersion() {
 
     // other browser
     return false;
-};
+}

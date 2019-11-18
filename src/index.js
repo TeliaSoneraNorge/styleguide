@@ -1,4 +1,4 @@
-import _ from 'lodash';
+// import _ from 'lodash';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import objectFitImages from 'object-fit-images';
