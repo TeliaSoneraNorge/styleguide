@@ -75,6 +75,19 @@ const MobileMenuButton = ({ onMenuToggle }) => (
     </button>
 );
 
+const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate, onlyLogo }) => (
+    <LinkTemplate url={url} className="menu__logo-container">
+        <img
+            className={classnames("menu__logo", { "menu__logo--only": onlyLogo })}
+            src={image}
+            alt={title} />
+        <img
+            className={classnames("menu__logo--inverted", { "menu__logo--only": onlyLogo })}
+            src={imageInverted}
+            alt="" />
+    </LinkTemplate>
+);
+
 const MenuContent = ({
     menuLink,
     openedSubmenuIndex,
@@ -90,48 +103,49 @@ const MenuContent = ({
     isLoggedIn,
     loginUrl,
     myPageUrl,
-    isLoading }) => (
-    <div className="menu__content">
-        <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
-        {isLoading && <Spinner />}
-        <ul id={`${menuLink && menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
-            {menuLink && menuLink.links.map((link, index) => (
-                <MenuLinkItem
-                    LinkTemplate={LinkTemplate}
-                    isSubmenuOpen={openedSubmenuIndex === index}
-                    isActive={activeIndex === index}
-                    onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
-                    key={link.text}
-                    link={link} />
-            ))}
-        </ul>
-        <div className="menu__content-right">
-            {onSearchSubmit &&
-                <MenuSearch onSubmit={onSearchSubmit} searchLabel={searchLabel} searchButtonLabel={searchButtonLabel} searchButtonAbortText={searchButtonAbortText} />
-            }
-            {loginUrl && !isLoggedIn &&
-                <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />
-            }
-            {myPageUrl && isLoggedIn &&
-                <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />
-            }
-            <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
-        </div>
-    </div>
-);
+    isLoading,
+    onlyLogo
+}) => {
+    if (onlyLogo) {
+        return (
+            <div className="menu__content">
+                <MenuLogo LinkTemplate={LinkTemplate} logo={logo} onlyLogo={onlyLogo} />
+            </div> 
+        )
+    }
 
-const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate }) => (
-    <LinkTemplate url={url} className="menu__logo-container">
-        <img
-            className="menu__logo"
-            src={image}
-            alt={title} />
-        <img
-            className="menu__logo--inverted"
-            src={imageInverted}
-            alt="" />
-    </LinkTemplate>
-);
+    return (
+        <div className="menu__content">
+            <MenuLogo LinkTemplate={LinkTemplate} logo={logo} />
+            {isLoading && <Spinner />}
+            {menuLink && (
+                <ul id={`${menuLink.heading && menuLink.heading.text}-panel`} className="menu__content-panel">
+                    {menuLink.links.map((link, index) => (
+                        <MenuLinkItem
+                            LinkTemplate={LinkTemplate}
+                            isSubmenuOpen={openedSubmenuIndex === index}
+                            isActive={activeIndex === index}
+                            onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
+                            key={link.text}
+                            link={link} />
+                    ))}
+                </ul>
+            )}
+            <div className="menu__content-right">
+                {onSearchSubmit &&
+                    <MenuSearch onSubmit={onSearchSubmit} searchLabel={searchLabel} searchButtonLabel={searchButtonLabel} searchButtonAbortText={searchButtonAbortText} />
+                }
+                {loginUrl && !isLoggedIn &&
+                    <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />
+                }
+                {myPageUrl && isLoggedIn &&
+                    <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />
+                }
+                <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
+            </div>
+        </div>
+    );
+}
 
 MenuContent.propTypes = {
     menuLink: PropTypes.shape({
@@ -148,7 +162,8 @@ MenuContent.propTypes = {
     openedSubmenuIndex: PropTypes.number,
     onToggleSubmenu: PropTypes.func,
     searchLabel: PropTypes.string,
-    searchButtonAbortText: PropTypes.string
+    searchButtonAbortText: PropTypes.string,
+    onlyLogo: PropTypes.bool
 };
 
 export default MenuContent;
