@@ -60,7 +60,7 @@ p + .accordion-list {
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
-        padding: 1rem;
+        padding: 1rem 2.8rem 0.5rem 1rem;
         position: relative;
         text-align: left;
         width: 100%;
@@ -71,6 +71,10 @@ p + .accordion-list {
 
         &--text-box {
             padding-left: 1rem;
+
+            &-no-icon {
+                padding-bottom: 0.5rem;
+            }
 
             &-text {
                 font-size: 16px;
@@ -96,12 +100,14 @@ p + .accordion-list {
     }
 
     &__button {
-        margin-left: 2rem;
-        margin-top: 2rem;
-        margin-bottom: 2rem;
+        margin: 2rem auto;
         width: 20%;
         padding: 0.5rem 1rem;
         text-align: center;
+
+        &:last-of-type {
+            margin-right: auto;
+        }
 
         @media only screen and (max-width: 52.5em) {
             margin-left: 3rem;
@@ -136,6 +142,17 @@ p + .accordion-list {
         width: 2.5rem;
     }
 
+    &__image-container {
+        display: flex;
+        justify-content: center;
+        width: 2.5rem;
+    }
+
+    &__image {
+        height: auto;
+        max-width: 2.5rem;
+    }
+
     &__panel {
         height: 0;
         opacity: 0;
@@ -154,13 +171,13 @@ p + .accordion-list {
         .accordion__header {
                 &--with-button {
                     border-right: none;
-                    width: 75%;
+                    width: 74%;
 
                     @media only screen and (max-width: 52.5em) {
                         width: 65%;
                     }
 
-                     @media only screen and (max-width: 44.5em) {
+                    @media only screen and (max-width: 44.5em) {
                         width: 100%;
                     }
             }
@@ -186,6 +203,20 @@ p + .accordion-list {
             padding: 0 calc(1rem + 15px) 1rem 1rem;
             opacity: 1;
             visibility: visible;
+        }
+    }
+}
+
+.accordion-list {
+    &__no-border {
+        .accordion {
+            border-bottom: 0 !important;
+            &:first-of-type {
+                border-top: 0 !important;
+            }
+            & + .accordion {
+                margin-top: -1.5rem !important;
+            }
         }
     }
 }

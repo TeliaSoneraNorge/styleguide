@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 
 import Accordion from '../Accordion';
 
@@ -26,8 +27,8 @@ const noop = () => {};
  * [MDN: ARIA / button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role)
  *
  */
-const AccordionList = ({ accordionItems, setItemRef, isExpandedAccordionIndex, toggleIsExpanded }) => (
-    <div className="accordion-list">
+const AccordionList = ({ accordionItems, setItemRef, isExpandedAccordionIndex, toggleIsExpanded, noBorder, className }) => (
+    <div className={cn("accordion-list", { "accordion-list__no-border": noBorder, [className]: className })}>
         {accordionItems.map((accordionItem, i) =>
             <Accordion
                 accordionRef={(element) => {(setItemRef || noop)(element, i);}}
@@ -48,6 +49,7 @@ AccordionList.propTypes = {
     setItemRef: PropTypes.func,
     toggleIsExpanded: PropTypes.func,
     isExpandedAccordionIndex: PropTypes.number.isRequired,
+    noBorder: PropTypes.bool
 };
 
 export default AccordionList;

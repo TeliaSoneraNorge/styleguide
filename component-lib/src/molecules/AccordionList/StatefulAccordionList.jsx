@@ -11,6 +11,7 @@ export default class StatefulAccordionList extends React.Component {
             children: PropTypes.node.isRequired
         })).isRequired,
         isExpandedAccordionIndex: PropTypes.number.isRequired,
+        noBorder: PropTypes.bool
     };
     state = {
         isExpandedAccordionIndex: this.props.isExpandedAccordionIndex
@@ -32,6 +33,7 @@ export default class StatefulAccordionList extends React.Component {
     render() {
         return (
             <AccordionList
+                noBorder={this.props.noBorder}
                 accordionItems={this.props.accordionItems}
                 setItemRef={this.setAccordionRef}
                 isExpandedAccordionIndex={this.state.isExpandedAccordionIndex}
