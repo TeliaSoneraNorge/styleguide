@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.9
+- Focus trap is available for all and MobileMenu is focus trapped (accessibility improvement)
+
 ## 1.29.7
 - Changed font-size of text in the Quote component
 
