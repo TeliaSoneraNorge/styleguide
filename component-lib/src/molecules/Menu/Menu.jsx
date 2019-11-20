@@ -30,6 +30,7 @@ const Menu = ({
   loginUrl,
   myPageUrl,
   isLoading,
+  onlyLogo
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lastActiveMenuContentElement, setLastActiveMenuContentElement] = useState(undefined);
@@ -131,7 +132,7 @@ const Menu = ({
 
   return (
     <div className={classnames('menu', { [className]: className })}>
-      {menuLinks && menuLinks.length > 1 && (
+      {!onlyLogo && menuLinks && menuLinks.length > 1 && (
         <MenuTop activeIndex={activeIndex} menuLinks={menuLinks} LinkTemplate={LinkTemplate} />
       )}
 
@@ -156,8 +157,9 @@ const Menu = ({
         isLoggedIn={isLoggedIn}
         myPageUrl={myPageUrl}
         isLoading={isLoading}
+        onlyLogo={onlyLogo}
       />
-      {mobileMenuOpen && renderMobileMenu(FocusTrap, { as: 'div' })}
+      {!onlyLogo && mobileMenuOpen && renderMobileMenu(FocusTrap, { as: 'div' })}
     </div>
   );
 };
@@ -195,6 +197,7 @@ Menu.propTypes = {
   myPageUrl: PropTypes.string,
   cartUrl: PropTypes.string,
   isLoading: PropTypes.bool,
+  onlyLogo: PropTypes.bool
 };
 
 export default Menu;

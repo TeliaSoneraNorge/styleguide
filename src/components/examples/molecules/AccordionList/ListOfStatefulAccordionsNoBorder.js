@@ -3,8 +3,9 @@ import { StatefulAccordionList } from '@telia/styleguide';
 
 /**Status: Add possibility for passing objects to the right content area */
 
-const ListOfStatefulAccordions = () => (
+const ListOfStatefulAccordionsNoBorder = () => (
     <StatefulAccordionList
+        noBorder
         accordionItems={[
             {
                 id: 'example-1',
@@ -49,4 +50,4 @@ const ListOfStatefulAccordions = () => (
         isExpandedAccordionIndex={1} />
 );
 
-export default ListOfStatefulAccordions;
+export default ListOfStatefulAccordionsNoBorder;
