@@ -6,13 +6,14 @@ import classnames from 'classnames';
  * Category: ImageAndVideo
  */
 const Caption = ({ className, children, ...rest }) => (
-    <div
-        className={classnames('caption', {
-            [className]: className
-        })}
-        {...rest}>
-        {children}
-    </div>
+  <div
+    className={classnames('caption', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </div>
 );
 
 export default Caption;

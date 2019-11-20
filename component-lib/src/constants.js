@@ -28,5 +28,5 @@ export const colorNames = [
   'grey',
   'purple',
   'green',
-  'none'
-] 
+  'none',
+];

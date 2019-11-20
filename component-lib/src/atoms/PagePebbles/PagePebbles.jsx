@@ -18,8 +18,6 @@ import React from 'react';
  *   it wrapped inside <code>.body-text-container</code> or content is of similar or smaller width.
  * </p>
  */
-const PagePebbles = () => (
-    <div className="page-pebbles" />
-);
+const PagePebbles = () => <div className="page-pebbles" />;
 
 export default PagePebbles;

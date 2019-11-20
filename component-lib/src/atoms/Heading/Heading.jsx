@@ -16,26 +16,29 @@ import classnames from 'classnames';
  * Heading can be centered by applying heading--centered.
  */
 const Heading = ({ level, tagName, text, children, className, ...rest }) => {
-    const TagName = tagName ? tagName : `h${level}`;
-    return <TagName
-        className={classnames('heading', {
-            [className]: className,
-            [`heading--level-${level}`]: level,
-        })}
-        {...rest}>
-        {text}
-        {children}
-    </TagName>;
+  const TagName = tagName ? tagName : `h${level}`;
+  return (
+    <TagName
+      className={classnames('heading', {
+        [className]: className,
+        [`heading--level-${level}`]: level,
+      })}
+      {...rest}
+    >
+      {text}
+      {children}
+    </TagName>
+  );
 };
 Heading.propTypes = {
-    /** Level of this heading (1-6). */
-    level: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-    /** The tag name */
-    tagName: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong']),
-    /** Content of this heading. */
-    text: PropTypes.node,
-    /** Content of this heading. */
-    children: PropTypes.node,
+  /** Level of this heading (1-6). */
+  level: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
+  /** The tag name */
+  tagName: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong']),
+  /** Content of this heading. */
+  text: PropTypes.node,
+  /** Content of this heading. */
+  children: PropTypes.node,
 };
 
 export default Heading;

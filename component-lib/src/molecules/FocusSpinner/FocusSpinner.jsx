@@ -10,12 +10,13 @@ import Spinner from '../../atoms/Spinner/Spinner';
  *
  * Like a FocusBox, but shown before the content is loaded.
  */
-const FocusSpinner = ({ type }) =>
-    <FocusBox className="focus-spinner">
-        <Spinner className="focus-spinner__spinner" type={type} />
-    </FocusBox>;
+const FocusSpinner = ({ type }) => (
+  <FocusBox className="focus-spinner">
+    <Spinner className="focus-spinner__spinner" type={type} />
+  </FocusBox>
+);
 FocusSpinner.propTypes = {
-    type: PropTypes.oneOf(['sm', 'md', 'lg']),
+  type: PropTypes.oneOf(['sm', 'md', 'lg']),
 };
 
 export default FocusSpinner;

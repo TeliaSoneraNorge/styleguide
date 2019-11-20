@@ -27,29 +27,41 @@ const noop = () => {};
  * [MDN: ARIA / button role](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/ARIA_Techniques/Using_the_button_role)
  *
  */
-const AccordionList = ({ accordionItems, setItemRef, isExpandedAccordionIndex, toggleIsExpanded, noBorder, className }) => (
-    <div className={cn("accordion-list", { "accordion-list__no-border": noBorder, [className]: className })}>
-        {accordionItems.map((accordionItem, i) =>
-            <Accordion
-                accordionRef={(element) => {(setItemRef || noop)(element, i);}}
-                key={accordionItem.id}
-                {...accordionItem}
-                isExpanded={i === isExpandedAccordionIndex}
-                toggleIsExpanded={() => (toggleIsExpanded || noop)(i)} />
-        )}
-    </div>
+const AccordionList = ({
+  accordionItems,
+  setItemRef,
+  isExpandedAccordionIndex,
+  toggleIsExpanded,
+  noBorder,
+  className,
+}) => (
+  <div className={cn('accordion-list', { 'accordion-list__no-border': noBorder, [className]: className })}>
+    {accordionItems.map((accordionItem, i) => (
+      <Accordion
+        accordionRef={element => {
+          (setItemRef || noop)(element, i);
+        }}
+        key={accordionItem.id}
+        {...accordionItem}
+        isExpanded={i === isExpandedAccordionIndex}
+        toggleIsExpanded={() => (toggleIsExpanded || noop)(i)}
+      />
+    ))}
+  </div>
 );
 
 AccordionList.propTypes = {
-    accordionItems: PropTypes.arrayOf(PropTypes.shape({
-        id: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        children: PropTypes.node.isRequired
-    })).isRequired,
-    setItemRef: PropTypes.func,
-    toggleIsExpanded: PropTypes.func,
-    isExpandedAccordionIndex: PropTypes.number.isRequired,
-    noBorder: PropTypes.bool
+  accordionItems: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      children: PropTypes.node.isRequired,
+    })
+  ).isRequired,
+  setItemRef: PropTypes.func,
+  toggleIsExpanded: PropTypes.func,
+  isExpandedAccordionIndex: PropTypes.number.isRequired,
+  noBorder: PropTypes.bool,
 };
 
 export default AccordionList;

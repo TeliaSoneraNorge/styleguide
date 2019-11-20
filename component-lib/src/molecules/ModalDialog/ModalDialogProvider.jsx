@@ -9,17 +9,17 @@ export const Context = React.createContext();
  * Provides a container inside which all dialogs will be rendered
  */
 export default function ModalDialogProvider({ children }) {
-    const modalRef = useRef();
-    const [context, setContext] = useState();
+  const modalRef = useRef();
+  const [context, setContext] = useState();
 
-    useEffect(() => {
-        setContext(modalRef.current);
-    }, []);
+  useEffect(() => {
+    setContext(modalRef.current);
+  }, []);
 
-    return (
-        <>
-            <Context.Provider value={context}>{children}</Context.Provider>
-            <div ref={modalRef} />
-        </>
-    );
+  return (
+    <>
+      <Context.Provider value={context}>{children}</Context.Provider>
+      <div ref={modalRef} />
+    </>
+  );
 }

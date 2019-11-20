@@ -15,13 +15,14 @@ import classnames from 'classnames';
  * You can override boxes to take up 45% of total width by using box--half-width.
  */
 const BoxGrid = ({ children, className, ...rest }) => (
-    <section
-        className={classnames('box-grid', {
-            [className]: className
-        })}
-        {...rest}>
-        {children}
-    </section>
+  <section
+    className={classnames('box-grid', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </section>
 );
 
 export default BoxGrid;

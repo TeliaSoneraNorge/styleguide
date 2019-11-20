@@ -22,83 +22,80 @@ const DOWN_ARROW_KEY = 40;
  * </p>
  */
 const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
-    const selectedChild = children.find((_, index) => index === selectedIndex);
-    const containerRef = useRef();
+  const selectedChild = children.find((_, index) => index === selectedIndex);
+  const containerRef = useRef();
 
-    const changeTabByOffset = (e, offset) => {
-        const indexToSelect = (selectedIndex + offset + children.length) % children.length;
-        const elementToSelect = children.find((_, index) => index === indexToSelect);
+  const changeTabByOffset = (e, offset) => {
+    const indexToSelect = (selectedIndex + offset + children.length) % children.length;
+    const elementToSelect = children.find((_, index) => index === indexToSelect);
 
-        onSelect(e, indexToSelect, elementToSelect.props.url, elementToSelect.props.heading);
-    }
+    onSelect(e, indexToSelect, elementToSelect.props.url, elementToSelect.props.heading);
+  };
 
-    const handleKeyDown = (e) => {
-        if (e.which === LEFT_ARROW_KEY)
-            changeTabByOffset(e, -1);
-        else if (e.which === RIGHT_ARROW_KEY)
-            changeTabByOffset(e, 1);
-        else if (e.which === DOWN_ARROW_KEY && containerRef.current)
-            containerRef.current.focus();
-    };
+  const handleKeyDown = e => {
+    if (e.which === LEFT_ARROW_KEY) changeTabByOffset(e, -1);
+    else if (e.which === RIGHT_ARROW_KEY) changeTabByOffset(e, 1);
+    else if (e.which === DOWN_ARROW_KEY && containerRef.current) containerRef.current.focus();
+  };
 
-    return (
-        <div className="funky-tabs">
-            <ul className="funky-tabs__tabs" role="tablist" onKeyDown={handleKeyDown}>
-                {children.map((element, index) =>
-                    <FunkyTab
-                        element={element}
-                        isSelected={index === selectedIndex}
-                        index={index}
-                        uniqueId={uniqueId}
-                        key={element.props.heading}
-                        onSelect={onSelect} />
-                )}
-            </ul>
-            {
-                selectedChild && React.cloneElement(selectedChild, {
-                    key: selectedIndex,
-                    index: selectedIndex,
-                    uniqueId,
-                    isSelected: true,
-                    containerRef
-                })
-            }
-        </div>
-    );
+  return (
+    <div className="funky-tabs">
+      <ul className="funky-tabs__tabs" role="tablist" onKeyDown={handleKeyDown}>
+        {children.map((element, index) => (
+          <FunkyTab
+            element={element}
+            isSelected={index === selectedIndex}
+            index={index}
+            uniqueId={uniqueId}
+            key={element.props.heading}
+            onSelect={onSelect}
+          />
+        ))}
+      </ul>
+      {selectedChild &&
+        React.cloneElement(selectedChild, {
+          key: selectedIndex,
+          index: selectedIndex,
+          uniqueId,
+          isSelected: true,
+          containerRef,
+        })}
+    </div>
+  );
 };
 
-const TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) =>
-    <section
-        tabIndex={-1}
-        ref={containerRef}
-        className={classNames(
-            'funky-tabs__panel',
-            { 'funky-tabs__panel--selected': isSelected })}
-        id={`${uniqueId}-panel-${index}`}
-        aria-labelledby={`${uniqueId}-tab-${index}`}
-        role="tabpanel"
-        hidden={!isSelected}>
-        {children}
-    </section>;
-FunkyTabs.TabPanel = TabPanel
+const TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) => (
+  <section
+    tabIndex={-1}
+    ref={containerRef}
+    className={classNames('funky-tabs__panel', { 'funky-tabs__panel--selected': isSelected })}
+    id={`${uniqueId}-panel-${index}`}
+    aria-labelledby={`${uniqueId}-tab-${index}`}
+    role="tabpanel"
+    hidden={!isSelected}
+  >
+    {children}
+  </section>
+);
+FunkyTabs.TabPanel = TabPanel;
 
 FunkyTabs.TabPanel.propTypes = {
-    index: PropTypes.number,
-    uniqueId: PropTypes.string,
-    isSelected: PropTypes.bool,
-    heading: PropTypes.string,
-    url: PropTypes.string,
-    children: PropTypes.node
+  index: PropTypes.number,
+  uniqueId: PropTypes.string,
+  isSelected: PropTypes.bool,
+  heading: PropTypes.string,
+  url: PropTypes.string,
+  children: PropTypes.node,
 };
 
 FunkyTabs.propTypes = {
-    selectedIndex: PropTypes.number,
-    onSelect: PropTypes.func,
-    uniqueId: PropTypes.string,
+  selectedIndex: PropTypes.number,
+  onSelect: PropTypes.func,
+  uniqueId: PropTypes.string,
 };
 
 FunkyTabs.defaultProps = {
-    selectedIndex: 0
+  selectedIndex: 0,
 };
 
 export default FunkyTabs;
