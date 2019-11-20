@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import TextBoxWithLabel from '../../molecules/TextBoxWithLabel';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
-import FocusTrap from './FocusTrap';
+import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 
 const KEY_ESC = 27;
 

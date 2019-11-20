@@ -9,19 +9,20 @@ import upperFirst from 'lodash/upperFirst';
  * Category: Links
  */
 const IconLink = ({ className, iconName, ...rest }) => (
-    <a
-        className={classnames('icon-link', {
-            [className]: className,
-        })}
-        aria-label={upperFirst(iconName)}
-        {...rest}>
-        <SvgIcon iconName={iconName} color="black" className="icon-link__icon" />
-    </a>
+  <a
+    className={classnames('icon-link', {
+      [className]: className,
+    })}
+    aria-label={upperFirst(iconName)}
+    {...rest}
+  >
+    <SvgIcon iconName={iconName} color="black" className="icon-link__icon" />
+  </a>
 );
 
 IconLink.propTypes = {
-    /** One of 'download', 'linkedIn' or 'twitter'. */
-    iconName: PropTypes.oneOf(['ico_download', 'linkedin_icon', 'twitter_icon']),
+  /** One of 'download', 'linkedIn' or 'twitter'. */
+  iconName: PropTypes.oneOf(['ico_download', 'linkedin_icon', 'twitter_icon']),
 };
 
 export default IconLink;

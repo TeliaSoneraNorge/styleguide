@@ -7,18 +7,19 @@ import classnames from 'classnames';
  * Category: ImageAndVideo
  */
 const Image = ({ children, className, src, alt, inline, ...rest }) => (
-    <figure
-        className={classnames('image', {
-            [className]: className,
-            [`image--inline-${inline}`]: inline
-        })}>
-        <img className="image__img" src={src} alt={alt} {...rest} />
-        {children}
-    </figure>
+  <figure
+    className={classnames('image', {
+      [className]: className,
+      [`image--inline-${inline}`]: inline,
+    })}
+  >
+    <img className="image__img" src={src} alt={alt} {...rest} />
+    {children}
+  </figure>
 );
 
 Image.propTypes = {
-    inline: PropTypes.oneOf(['left', 'right'])
+  inline: PropTypes.oneOf(['left', 'right']),
 };
 
 export default Image;

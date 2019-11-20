@@ -13,19 +13,20 @@ import classnames from 'classnames';
  * - There may be a need for more variations
  */
 const Paragraph = ({ children, className, kind, ...rest }) => (
-    <p
-        className={classnames('paragraph', {
-            [className]: className,
-            [`paragraph--${kind}`]: kind,
-        })}
-        {...rest}>
-        {children}
-    </p>
+  <p
+    className={classnames('paragraph', {
+      [className]: className,
+      [`paragraph--${kind}`]: kind,
+    })}
+    {...rest}
+  >
+    {children}
+  </p>
 );
 
 Paragraph.propTypes = {
-    /** One of 'fineprint' or 'preamble'. */
-    kind: PropTypes.oneOf(['fineprint', 'preamble']),
+  /** One of 'fineprint' or 'preamble'. */
+  kind: PropTypes.oneOf(['fineprint', 'preamble']),
 };
 
 export default Paragraph;
