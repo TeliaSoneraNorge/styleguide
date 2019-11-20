@@ -6,13 +6,14 @@ import classnames from 'classnames';
  * Category: Boxes
  */
 const ShadowBox = ({ children, className, ...rest }) => (
-    <div
-        className={classnames('shadow-box', {
-            [className]: className,
-        })}
-        {...rest}>
-        {children}
-    </div>
+  <div
+    className={classnames('shadow-box', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </div>
 );
 
 export default ShadowBox;

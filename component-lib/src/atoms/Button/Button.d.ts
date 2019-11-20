@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import * as React from 'react';
 
 export interface ButtonProps {
@@ -34,6 +35,20 @@ export interface ButtonProps {
   /**
    * A button can be disabled.
    */
+=======
+import React from 'react';
+
+interface Props {
+  text?: string;
+  kind?: 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
+  type?: 'button' | 'reset' | 'submit';
+  margin?: 'top' | 'bottom';
+  size?: 'small';
+  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  className?: string;
+  processingText?: string;
+  isProcessing?: boolean;
+>>>>>>> master
   isDisabled?: boolean;
 
   /**

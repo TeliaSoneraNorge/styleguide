@@ -2,8 +2,8 @@ import React from 'react';
 import { PriceTable } from '@telia/styleguide';
 
 const productList = [
-    { title: 'Abonnement', price: '449,-', subtitles: ['Per mnd'] },
-    { title: 'Ruter', price: '499,-' },
+  { title: 'Abonnement', price: '449,-', subtitles: ['Per mnd'] },
+  { title: 'Ruter', price: '499,-' },
 ];
 
 const totalCalculation = { title: 'Minste totalpris', price: '5887,-', subtitle: 'med 12 mnd avtale' };
@@ -11,7 +11,11 @@ const totalCalculation = { title: 'Minste totalpris', price: '5887,-', subtitle:
 const additionalLine = 'Already paid upfront';
 
 const AdditionalLine = () => (
-    <PriceTable productListWithPrice={productList} totalTextWithPrice={totalCalculation} additionalLine={additionalLine} />
+  <PriceTable
+    productListWithPrice={productList}
+    totalTextWithPrice={totalCalculation}
+    additionalLine={additionalLine}
+  />
 );
 
 export default AdditionalLine;

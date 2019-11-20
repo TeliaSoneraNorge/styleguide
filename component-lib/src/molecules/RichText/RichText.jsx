@@ -14,13 +14,14 @@ import classnames from 'classnames';
  *
  */
 const RichText = ({ className, children, ...rest }) => (
-    <div
-        className={classnames('rich-text', {
-            [className]: className
-        })}
-        {...rest}>
-        {children}
-    </div>
+  <div
+    className={classnames('rich-text', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </div>
 );
 
 export default RichText;

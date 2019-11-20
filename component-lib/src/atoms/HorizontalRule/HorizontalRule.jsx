@@ -11,20 +11,21 @@ import classnames from 'classnames';
  * The style should be used to define a thematic break.
  */
 const HorizontalRule = ({ className, short, left, ...rest }) => (
-    <hr
-        className={classnames('horizontal-rule', {
-            [className]: className,
-            'horizontal-rule--short': short,
-            'horizontal-rule--left': left
-        })}
-        {...rest} />
+  <hr
+    className={classnames('horizontal-rule', {
+      [className]: className,
+      'horizontal-rule--short': short,
+      'horizontal-rule--left': left,
+    })}
+    {...rest}
+  />
 );
 
 HorizontalRule.propTypes = {
-    /** Whenever this should be short or not. */
-    short: PropType.bool,
-    /** Whenever this should be left aligned. */
-    left: PropType.bool
+  /** Whenever this should be short or not. */
+  short: PropType.bool,
+  /** Whenever this should be left aligned. */
+  left: PropType.bool,
 };
 
 export default HorizontalRule;

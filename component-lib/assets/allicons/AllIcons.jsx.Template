@@ -1,10 +1,7 @@
 import React from 'react';
 
-const allIconsHtml =
-    `[ALL_ICONS_SVG_MARKUP]`;
+const allIconsHtml = `[ALL_ICONS_SVG_MARKUP]`;
 
-const AllIcons = () => (
-    <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: allIconsHtml }} />
-);
+const AllIcons = () => <div style={{ display: 'none' }} dangerouslySetInnerHTML={{ __html: allIconsHtml }} />;
 
 export default AllIcons;

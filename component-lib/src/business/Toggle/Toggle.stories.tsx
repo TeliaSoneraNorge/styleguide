@@ -1,14 +1,9 @@
-import React, { useState } from "react";
-import { storiesOf } from "@storybook/react";
+import React, { useState } from 'react';
+import { storiesOf } from '@storybook/react';
 
-import { Toggle } from "./Toggle";
+import { Toggle } from './Toggle';
 
-storiesOf("Business|Toggle", module).add("default", () => {
-    const [checked, setChecked] = useState(false);
-    return (
-        <Toggle
-            checked={checked}
-            onChange={e => setChecked(e.target.checked)}
-        />
-    );
+storiesOf('Business|Toggle', module).add('default', () => {
+  const [checked, setChecked] = useState(false);
+  return <Toggle checked={checked} onChange={e => setChecked(e.target.checked)} />;
 });

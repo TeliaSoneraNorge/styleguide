@@ -33,6 +33,7 @@ export { default as ToggleSwitch } from './atoms/ToggleSwitch';
 export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints';
 export { default as AnimatedProgressBar } from './atoms/AnimatedProgressBar';
 
+<<<<<<< HEAD
 // Molecules
 export { default as Accordion } from './molecules/Accordion';
 export { default as AccordionList } from './molecules/AccordionList';
@@ -110,3 +111,14 @@ export { default as ThemeBoxWithImage } from './organisms/ThemeBoxWithImage';
 export { default as FocusBoxWithLabels } from './organisms/FocusBoxWithLabels';
 export { default as ProductListGrid } from './organisms/ProductListGrid';
 export { FeatureBox, FeatureBoxes } from './organisms/FeatureBoxes';
+=======
+/**
+ * Button itself is untouched, but has received additional .d.ts definition type files
+ */
+export { default as Button } from './atoms/Button';
+
+/**
+ * Container is rewritten to TypeScript -- pure TS components
+ */
+export { default as Container } from './atoms/Container';
+>>>>>>> master

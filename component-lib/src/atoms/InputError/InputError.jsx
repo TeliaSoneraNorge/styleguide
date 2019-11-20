@@ -6,13 +6,14 @@ import classnames from 'classnames';
  * Category: FormElements
  */
 const InputError = ({ className, children, ...rest }) => (
-    <span
-        className={classnames('input-error', {
-            [className]: className
-        })}
-        {...rest}>
-        {children}
-    </span>
+  <span
+    className={classnames('input-error', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </span>
 );
 
 export default InputError;

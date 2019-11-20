@@ -9,15 +9,15 @@ import Heading from '../../atoms/Heading/Heading';
  * This should be used in `small` or `medium` width containers. In a `large`, the text lines become too long to read comfortably.
  */
 const InfoBox = ({ title, children }) => (
-    <div className="info-box">
-        <Heading level="2" text={title} />
-        {children}
-    </div>
+  <div className="info-box">
+    <Heading level="2" text={title} />
+    {children}
+  </div>
 );
 
 InfoBox.propTypes = {
-    title: PropTypes.string,
-    children: PropTypes.node
+  title: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default InfoBox;
