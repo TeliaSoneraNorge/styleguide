@@ -1,2 +1,2 @@
 export { default as ModalDialog } from './ModalDialog';
-export { default as ModalDialogProvider} from './ModalDialogProvider';
+export { default as ModalDialogProvider } from './ModalDialogProvider';

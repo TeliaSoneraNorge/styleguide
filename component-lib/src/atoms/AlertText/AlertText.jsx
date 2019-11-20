@@ -14,13 +14,14 @@ import Heading from '../Heading';
  * It's recommended to use this component with any heading component and only for short texts (for instance maximum five words).
  */
 const AlertText = ({ children, className, ...rest }) => (
-    <Heading
-        className={classnames('alert-text', {
-            [className]: className
-        })}
-        level={2}
-        text={children}
-        {...rest} />
+  <Heading
+    className={classnames('alert-text', {
+      [className]: className,
+    })}
+    level={2}
+    text={children}
+    {...rest}
+  />
 );
 
 export default AlertText;

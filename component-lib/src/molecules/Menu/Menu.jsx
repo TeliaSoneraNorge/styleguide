@@ -30,7 +30,7 @@ const Menu = ({
   loginUrl,
   myPageUrl,
   isLoading,
-  onlyLogo
+  onlyLogo,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lastActiveMenuContentElement, setLastActiveMenuContentElement] = useState(undefined);
@@ -197,7 +197,7 @@ Menu.propTypes = {
   myPageUrl: PropTypes.string,
   cartUrl: PropTypes.string,
   isLoading: PropTypes.bool,
-  onlyLogo: PropTypes.bool
+  onlyLogo: PropTypes.bool,
 };
 
 export default Menu;

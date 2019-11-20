@@ -13,68 +13,89 @@ import classnames from 'classnames';
  * sets the content to a max-width.
  */
 const FullWidthTable = ({ children, clickable, className, ...rest }) => (
-    <table
-        className={classnames('full-width-table', {
-            [className]: className,
-            [`full-width-table--clickable`]: clickable
-        })}
-        {...rest}>{children}</table>
+  <table
+    className={classnames('full-width-table', {
+      [className]: className,
+      [`full-width-table--clickable`]: clickable,
+    })}
+    {...rest}
+  >
+    {children}
+  </table>
 );
 
 const THead = ({ children, className, ...rest }) => (
-    <thead
-        className={classnames('full-width-table__header', {
-            [className]: className
-        })}
-        {...rest}>{children}</thead>
+  <thead
+    className={classnames('full-width-table__header', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </thead>
 );
-FullWidthTable.THead = THead
+FullWidthTable.THead = THead;
 
 const TBody = ({ children, className, ...rest }) => (
-    <tbody
-        className={classnames('full-width-table__body', {
-            [className]: className
-        })}
-        {...rest}>{children}</tbody>
+  <tbody
+    className={classnames('full-width-table__body', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </tbody>
 );
-FullWidthTable.TBody = TBody
+FullWidthTable.TBody = TBody;
 
 const TFoot = ({ children, white, className, ...rest }) => (
-    <tfoot
-        className={classnames('full-width-table__footer', {
-            [className]: className,
-            'full-width-table__footer--alt': white
-        })}
-        {...rest}>{children}</tfoot>
+  <tfoot
+    className={classnames('full-width-table__footer', {
+      [className]: className,
+      'full-width-table__footer--alt': white,
+    })}
+    {...rest}
+  >
+    {children}
+  </tfoot>
 );
-FullWidthTable.TFoot = TFoot
+FullWidthTable.TFoot = TFoot;
 
 const Tr = ({ children, onClick, className, ...rest }) => (
-    <tr
-        className={classnames('full-width-table__row', {
-            [className]: className
-        })}
-        onClick={onClick ? onClick : null}
-        {...rest}>{children}</tr>
+  <tr
+    className={classnames('full-width-table__row', {
+      [className]: className,
+    })}
+    onClick={onClick ? onClick : null}
+    {...rest}
+  >
+    {children}
+  </tr>
 );
-FullWidthTable.Tr = Tr
+FullWidthTable.Tr = Tr;
 
 const Td = ({ children, className, ...rest }) => (
-    <td
-        className={classnames('full-width-table__cell', {
-            [className]: className
-        })}
-        {...rest}>{children}</td>
+  <td
+    className={classnames('full-width-table__cell', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </td>
 );
-FullWidthTable.Td = Td
+FullWidthTable.Td = Td;
 
 const Th = ({ children, className, ...rest }) => (
-    <th
-        className={classnames('full-width-table__cell', {
-            [className]: className
-        })}
-        {...rest}>{children}</th>
+  <th
+    className={classnames('full-width-table__cell', {
+      [className]: className,
+    })}
+    {...rest}
+  >
+    {children}
+  </th>
 );
-FullWidthTable.Th = Th
+FullWidthTable.Th = Th;
 
 export default FullWidthTable;

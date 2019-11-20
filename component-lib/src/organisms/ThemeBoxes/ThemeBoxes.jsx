@@ -6,9 +6,6 @@ import React from 'react';
  *
  * There should be a minimum of two- and a maximum of six boxes when using this component.
  **/
-const ThemeBoxes = ({ children }) =>
-    <div className="theme-boxes">
-        {children}
-    </div>;
+const ThemeBoxes = ({ children }) => <div className="theme-boxes">{children}</div>;
 
 export default ThemeBoxes;

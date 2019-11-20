@@ -11,29 +11,31 @@ import classnames from 'classnames';
  *
  * Our links have _two visual means_ of being identified: an underline and bolder font.
  */
-const Link = ({ className, text, children, href, icon, iconPosition, target = '_self', ...rest }) =>
-    <a
-        className={classnames('link', {
-            [`link--with-icon link--${icon}`]: icon,
-            [`link--icon-${iconPosition}`]: icon && iconPosition,
-            [className]: className
-        })}
-        href={href}
-        target={target}
-        {...rest}>
-        {text}
-        {children}
-    </a>;
+const Link = ({ className, text, children, href, icon, iconPosition, target = '_self', ...rest }) => (
+  <a
+    className={classnames('link', {
+      [`link--with-icon link--${icon}`]: icon,
+      [`link--icon-${iconPosition}`]: icon && iconPosition,
+      [className]: className,
+    })}
+    href={href}
+    target={target}
+    {...rest}
+  >
+    {text}
+    {children}
+  </a>
+);
 
 Link.propTypes = {
-    /** Content of this link. */
-    text: PropTypes.node,
-    /** Content of this link. */
-    children: PropTypes.node,
-    target: PropTypes.string,
-    /** Choose between forward arrow (forward-icon) and backward arrow (back-icon) icon */
-    icon: PropTypes.oneOf(['forward-icon', 'back-icon']),
-    /** Set position of icon (before or after) */
-    iconPosition: PropTypes.oneOf(['before', 'after']),
+  /** Content of this link. */
+  text: PropTypes.node,
+  /** Content of this link. */
+  children: PropTypes.node,
+  target: PropTypes.string,
+  /** Choose between forward arrow (forward-icon) and backward arrow (back-icon) icon */
+  icon: PropTypes.oneOf(['forward-icon', 'back-icon']),
+  /** Set position of icon (before or after) */
+  iconPosition: PropTypes.oneOf(['before', 'after']),
 };
 export default Link;

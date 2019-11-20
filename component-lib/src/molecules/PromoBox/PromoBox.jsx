@@ -8,19 +8,19 @@ import classnames from 'classnames';
  * The PromoBox is created to display a promoted feature.
  * It can be animated by adding class name promo-box__animated
  */
-const PromoBox = ({ className, animated, imgSrc, imgAlt, children }) =>
-    <div className={classnames('promo-box', {
-        'promo-box--animated' : animated,
-        'promo-box--with-image': (!!imgSrc),
-        [className]: className
-    })}>
-        <div className="promo-box__outer-wrapper">
-            <div className="promo-box__content">
-                {children}
-            </div>
-            {imgSrc &&
-                <img className="promo-box__image" alt={imgAlt} src={imgSrc} />}
-        </div>
-    </div>;
+const PromoBox = ({ className, animated, imgSrc, imgAlt, children }) => (
+  <div
+    className={classnames('promo-box', {
+      'promo-box--animated': animated,
+      'promo-box--with-image': !!imgSrc,
+      [className]: className,
+    })}
+  >
+    <div className="promo-box__outer-wrapper">
+      <div className="promo-box__content">{children}</div>
+      {imgSrc && <img className="promo-box__image" alt={imgAlt} src={imgSrc} />}
+    </div>
+  </div>
+);
 
 export default PromoBox;
