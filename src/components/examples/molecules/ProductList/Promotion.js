@@ -1,15 +1,15 @@
 import React from 'react';
 import { ProductList } from '@telia/styleguide';
 
-const items = [{
+const items = [
+  {
     iconName: 'ico_subscription',
     iconColor: 'purple',
     title: 'Kronepåfyll 50,-',
-    style: 'promo'
-}];
+    style: 'promo',
+  },
+];
 
-const PromotionProductList = () => (
-    <ProductList items={items} />
-);
+const PromotionProductList = () => <ProductList items={items} />;
 
 export default PromotionProductList;

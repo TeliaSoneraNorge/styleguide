@@ -1,22 +1,17 @@
 import React from 'react';
 import { DropDownListWithLabel } from '@telia/styleguide';
 
-const options = [
-    '1.',
-    '2.',
-    '3.',
-    '4.',
-    '5.',
-];
+const options = ['1.', '2.', '3.', '4.', '5.'];
 
 const RightDropDownListWithLabel = () => (
-    <DropDownListWithLabel
-        options={options}
-        selectedOption={options[1]}
-        changeSelectedOption={() => {}}
-        label="option"
-        labelMode="text-to-right"
-        visibleLabel />
+  <DropDownListWithLabel
+    options={options}
+    selectedOption={options[1]}
+    changeSelectedOption={() => {}}
+    label="option"
+    labelMode="text-to-right"
+    visibleLabel
+  />
 );
 
 export default RightDropDownListWithLabel;
