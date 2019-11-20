@@ -1,10 +1,9 @@
 import * as React from 'react';
 
 export interface IconAnimatedProps {
-    json?: Object;
+  json?: Object;
 }
 
 export default class IconAnimated extends React.Component<IconAnimatedProps, any> {
-    render(): JSX.Element;
-
+  render(): JSX.Element;
 }

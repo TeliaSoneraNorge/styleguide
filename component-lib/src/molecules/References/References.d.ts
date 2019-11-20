@@ -1,13 +1,13 @@
 import * as React from 'react';
 
 export interface ReferencesItems {
-    image: string;
-    alt: string;
+  image: string;
+  alt: string;
 }
 
 export interface ReferencesProps {
-    heading: string;
-    items?: ReferencesItems[];
+  heading: string;
+  items?: ReferencesItems[];
 }
 
 const References: React.FC<ReferencesProps>;

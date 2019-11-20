@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface FocusHeaderProps {
-    title: string;
+  title: string;
 }
 
 const FocusHeader: React.FC<FocusHeaderProps>;

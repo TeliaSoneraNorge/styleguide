@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-export type FocusSpinnerType = "sm" | "md" | "lg";
+export type FocusSpinnerType = 'sm' | 'md' | 'lg';
 
 export interface FocusSpinnerProps {
-    type?: FocusSpinnerType;
+  type?: FocusSpinnerType;
 }
 
 const FocusSpinner: React.FC<FocusSpinnerProps>;

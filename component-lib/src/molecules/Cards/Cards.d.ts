@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface CardsProps {
-    isGrey?: boolean;
+  isGrey?: boolean;
 }
 
 const Cards: React.FC<CardsProps>;

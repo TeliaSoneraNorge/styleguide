@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 export interface DownloadButtonsProps {
-    /**
-     * One or more of DownloadButtons.Button.
-     */
-    children?: React.ReactNode;
+  /**
+   * One or more of DownloadButtons.Button.
+   */
+  children?: React.ReactNode;
 }
 
 const DownloadButtons: React.FC<DownloadButtonsProps>;

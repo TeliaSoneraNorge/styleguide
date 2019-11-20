@@ -1,14 +1,14 @@
 import * as React from 'react';
 
 export interface ChartLegendSeries {
-    title: string;
-    color: string;
-    value: any;
-    total: any;
+  title: string;
+  color: string;
+  value: any;
+  total: any;
 }
 
 export interface ChartLegendProps {
-    series?: ChartLegendSeries[];
+  series?: ChartLegendSeries[];
 }
 
 const ChartLegend: React.FC<ChartLegendProps>;

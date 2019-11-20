@@ -1,10 +1,10 @@
 import * as React from 'react';
 
 export interface MenuSearchProps {
-    onSubmit?: (...args: any[])=>any;
-    searchLabel?: string;
-    searchButtonLabel?: string;
-    searchButtonAbortText?: string;
+  onSubmit?: (...args: any[]) => any;
+  searchLabel?: string;
+  searchButtonLabel?: string;
+  searchButtonAbortText?: string;
 }
 
 const MenuSearch: React.FC<MenuSearchProps>;
