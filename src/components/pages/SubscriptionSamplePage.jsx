@@ -140,12 +140,16 @@ export default class SubscriptionSamplePage extends React.Component {
 
     this.state = {
       selectedTabIndex: 1,
+      selectedSubscription: null,
     };
   }
   onFunkyTabSelect(e, index) {
     e.preventDefault();
     this.setState({ selectedTabIndex: index });
   }
+
+  isExpanded = subscription => subscription === this.state.selectedSubscription;
+
   render() {
     return (
       <div>
@@ -165,7 +169,14 @@ export default class SubscriptionSamplePage extends React.Component {
           >
             <section className="box-grid container container--medium container--no-padding">
               {underFemtenSubscriptionProps.map(subscriptionProps => (
-                <Subscription key={subscriptionProps.id} {...subscriptionProps} />
+                <Subscription
+                  key={subscriptionProps.id}
+                  {...subscriptionProps}
+                  scrollToOnOpen
+                  isExpanded={this.isExpanded(subscriptionProps.id)}
+                  onClose={() => this.setState({ selectedSubscription: null })}
+                  onSelect={() => this.setState({ selectedSubscription: subscriptionProps.id })}
+                />
               ))}
             </section>
           </FunkyTabs.TabPanel>
@@ -176,7 +187,14 @@ export default class SubscriptionSamplePage extends React.Component {
           >
             <section className="box-grid container container--medium container--no-padding">
               {underTjueAatteSubscriptionProps.map(subscriptionProps => (
-                <Subscription key={subscriptionProps.id} {...subscriptionProps} />
+                <Subscription
+                  key={subscriptionProps.id}
+                  {...subscriptionProps}
+                  scrollToOnOpen
+                  isExpanded={this.isExpanded(subscriptionProps.id)}
+                  onClose={() => this.setState({ selectedSubscription: null })}
+                  onSelect={() => this.setState({ selectedSubscription: subscriptionProps.id })}
+                />
               ))}
             </section>
           </FunkyTabs.TabPanel>
@@ -187,7 +205,14 @@ export default class SubscriptionSamplePage extends React.Component {
           >
             <section className="box-grid container container--medium container--no-padding">
               {forAlleSubscriptionProps.map(subscriptionProps => (
-                <Subscription key={subscriptionProps.id} {...subscriptionProps} />
+                <Subscription
+                  key={subscriptionProps.id}
+                  {...subscriptionProps}
+                  scrollToOnOpen
+                  isExpanded={this.isExpanded(subscriptionProps.id)}
+                  onClose={() => this.setState({ selectedSubscription: null })}
+                  onSelect={() => this.setState({ selectedSubscription: subscriptionProps.id })}
+                />
               ))}
             </section>
           </FunkyTabs.TabPanel>
@@ -198,7 +223,14 @@ export default class SubscriptionSamplePage extends React.Component {
           >
             <section className="box-grid container container--medium container--no-padding">
               {kontantkortSubscriptionProps.map(subscriptionProps => (
-                <Subscription key={subscriptionProps.id} {...subscriptionProps} />
+                <Subscription
+                  key={subscriptionProps.id}
+                  {...subscriptionProps}
+                  scrollToOnOpen
+                  isExpanded={this.isExpanded(subscriptionProps.id)}
+                  onClose={() => this.setState({ selectedSubscription: null })}
+                  onSelect={() => this.setState({ selectedSubscription: subscriptionProps.id })}
+                />
               ))}
             </section>
           </FunkyTabs.TabPanel>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -28,53 +28,72 @@ const Subscription = ({
   isBroadband,
   isExpanded,
   isShowingFeatures,
+  scrollToOnOpen = false,
+  onSelect,
+  onClose,
   children,
-}) => (
-  <Box
-    className={classnames('subscription', {
-      'subscription--is-showing-features': isShowingFeatures,
-      'subscription--is-standalone': isStandalone,
-      'subscription--is-broadband': isBroadband,
-    })}
-    color={color}
-    size={size}
-    id={id}
-    canExpand={!isStandalone}
-    isExpanded={isExpanded}
-  >
-    <section className="subscription__teaser">
-      <div className="subscription__teaser-content">
-        <h1 className="subscription__name">{name}</h1>
-        <span className="subscription__data-amount">{dataAmount}</span>
-        <span className="subscription__data-unit">{dataUnit}</span>
-        <span className="subscription__price">{price},-</span>
-        {priceInfo &&
-          priceInfo.map(info => (
-            <span key={info} className="subscription__price-info">
-              {info}
-            </span>
-          ))}
-        {additionalInfo && (
-          <div className="subscription__additional-info">
-            <div className="subscription__additional-info--bold">{additionalInfo.routerPrice}</div>
-            <div>{additionalInfo.binding}</div>
+}) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    if (ref.current && isExpanded && scrollToOnOpen) {
+      ref.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [isExpanded, scrollToOnOpen]);
+
+  return (
+    <Box
+      className={classnames('subscription', {
+        'subscription--is-showing-features': isShowingFeatures,
+        'subscription--is-standalone': isStandalone,
+        'subscription--is-broadband': isBroadband,
+      })}
+      color={color}
+      size={size}
+      id={id}
+      canExpand={!isStandalone}
+      isExpanded={isExpanded}
+      onClick={onSelect}
+      onClose={onClose}
+      ref={ref}
+    >
+      <section className="subscription__teaser">
+        <div className="subscription__teaser-content">
+          <h1 className="subscription__name">{name}</h1>
+          <span className="subscription__data-amount">{dataAmount}</span>
+          <span className="subscription__data-unit">{dataUnit}</span>
+          <span className="subscription__price">{price},-</span>
+          {priceInfo &&
+            priceInfo.map(info => (
+              <span key={info} className="subscription__price-info">
+                {info}
+              </span>
+            ))}
+          {additionalInfo && (
+            <div className="subscription__additional-info">
+              <div className="subscription__additional-info--bold">{additionalInfo.routerPrice}</div>
+              <div>{additionalInfo.binding}</div>
+            </div>
+          )}
+        </div>
+        {allPricesLink && (
+          <div className="subscription__teaser-links">
+            <div>
+              <a href={allPricesLink.url} className="link" target="_self">
+                {allPricesLink.text}
+              </a>
+            </div>
           </div>
         )}
-      </div>
-      {allPricesLink && (
-        <div className="subscription__teaser-links">
-          <div>
-            <a href={allPricesLink.url} className="link" target="_self">
-              {allPricesLink.text}
-            </a>
-          </div>
-        </div>
-      )}
-    </section>
-    {features && <Subscription.Features features={features} isBroadband={isBroadband} />}
-    {children && <section className="subscription__expanded-info">{children}</section>}
-  </Box>
-);
+      </section>
+      {features && <Subscription.Features features={features} isBroadband={isBroadband} />}
+      {children && <section className="subscription__expanded-info">{children}</section>}
+    </Box>
+  );
+};
 
 const Features = ({ features, isBroadband }) => (
   <section className="subscription__features">
@@ -145,6 +164,9 @@ Subscription.propTypes = {
     subtitle: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   }),
+  scrollToOnOpen: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 export default Subscription;
