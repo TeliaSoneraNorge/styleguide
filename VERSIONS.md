@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.11
+    - SubscriptionPriceBox
+    - SubscriptionPriceBoxes
+
 ## 1.29.10
 - Alert (Added scrollTo and closeButtonText props)
 - Accordion 
