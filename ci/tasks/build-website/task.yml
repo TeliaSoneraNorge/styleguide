@@ -22,5 +22,7 @@ run:
   - |
     mv cache/node_modules styleguide
     mv cache-component-lib/node_modules styleguide/component-lib
-    cd styleguide/component-lib && npm run build:css
+    cd styleguide/component-lib && npm run build:css && npm run build-storybook
     cd .. && npm run build
+    mv component-lib/dist-storybook dist/storybook
+    mv component-lib/assets/* dist
