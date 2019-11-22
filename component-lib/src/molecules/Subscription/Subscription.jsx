@@ -11,7 +11,6 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * Category: Subscription
  *
  */
-
 const Subscription = ({
   id,
   size,
@@ -89,30 +88,64 @@ const Subscription = ({
           </div>
         )}
       </section>
-      {features && <Subscription.Features features={features} isBroadband={isBroadband} />}
-      {children && <section className="subscription__expanded-info">{children}</section>}
+      {features && <Subscription.Features features={features} isBroadband={isBroadband} isExpanded={isExpanded} />}
+      {children && (
+        <section id="subscription-info" className="subscription__expanded-info">
+          {children}
+        </section>
+      )}
     </Box>
   );
 };
 
-const Features = ({ features, isBroadband }) => (
+const Features = ({ features, isBroadband, isExpanded }) => (
   <section className="subscription__features">
     {features.speechBubbleText ? (
-      <div className="box__speech-bubble">{features.speechBubbleText}</div>
+      <div className="box__speech-bubble">
+        <div className="box__speech-bubble-text">{features.speechBubbleText}</div>
+      </div>
     ) : (
       <div className="box__speech-bubble box__speech-bubble--empty"></div>
     )}
-    {features.highlightedFeature && (
-      <div className="subscription__highlighted-feature">
-        <SvgIcon
-          className="subscription__highlighted-feature-icon"
-          iconName={features.highlightedFeature.iconName}
-          role="presentation"
-          alt=""
-        />
-        <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
-      </div>
-    )}
+    {features.highlightedFeature ? (
+      features.highlightedFeature.secondIconName ? (
+        !isExpanded && (
+          <div className="subscription__highlighted-feature">
+            <SvgIcon
+              className={classnames('subscription__highlighted-feature-icon', {
+                'subscription__highlighted-feature-icon-large': features.highlightedFeature.size === 'large',
+              })}
+              iconName={features.highlightedFeature.iconName}
+              role="presentation"
+              alt=""
+            />
+            <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
+            <hr />
+            <SvgIcon
+              className={classnames('subscription__highlighted-feature-icon', {
+                'subscription__highlighted-feature-icon-large': features.highlightedFeature.secondSize === 'large',
+              })}
+              iconName={features.highlightedFeature.secondIconName}
+              role="presentation"
+              alt=""
+            />
+            <span className="subscription__highlighted-feature-text">{features.highlightedFeature.secondName}</span>
+          </div>
+        )
+      ) : (
+        <div className="subscription__highlighted-feature">
+          <SvgIcon
+            className={classnames('subscription__highlighted-feature-icon', {
+              'subscription__highlighted-feature-icon-large': features.highlightedFeature.size === 'large',
+            })}
+            iconName={features.highlightedFeature.iconName}
+            role="presentation"
+            alt=""
+          />
+          <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
+        </div>
+      )
+    ) : null}
     {features.specialMessageText && <strong className="special-message">{features.specialMessageText}</strong>}
     {isBroadband && (
       <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
@@ -120,6 +153,32 @@ const Features = ({ features, isBroadband }) => (
     {features.button}
   </section>
 );
+
+Features.propTypes = {
+  isBroadband: PropTypes.bool,
+  isExpanded: PropTypes.bool,
+  features: PropTypes.shape({
+    speechBubbleText: PropTypes.string,
+    highlightedFeature: PropTypes.shape({
+      iconName: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      size: PropTypes.string,
+      secondIconName: PropTypes.string,
+      secondName: PropTypes.string,
+      secondSize: PropTypes.string,
+    }),
+    specialMessageText: PropTypes.string,
+    productList: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string,
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      })
+    ),
+    button: PropTypes.node,
+  }),
+};
+
 Subscription.Features = Features;
 
 Subscription.propTypes = {
@@ -148,6 +207,10 @@ Subscription.propTypes = {
     highlightedFeature: PropTypes.shape({
       iconName: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      size: PropTypes.string,
+      secondIconName: PropTypes.string,
+      secondName: PropTypes.string,
+      secondSize: PropTypes.string,
     }),
     specialMessageText: PropTypes.string,
     productList: PropTypes.arrayOf(
@@ -157,7 +220,7 @@ Subscription.propTypes = {
         price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       })
     ),
-    button: PropTypes.Button,
+    button: PropTypes.node,
   }),
   totalCalculation: PropTypes.shape({
     title: PropTypes.string.isRequired,
