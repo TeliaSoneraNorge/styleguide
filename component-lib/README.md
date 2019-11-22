@@ -2,7 +2,7 @@
 
 This is a React component library of the Atomic Design components found in the Telia Styleguide.
 
-- The styleguide can be [found on the web](http://telia-styleguide.herokuapp.com).
+- The styleguide can be [found on the web](https://styleguide.channelapi.telia.no/).
 - The React component library can be [found on NPM as a JavaScript module](https://www.npmjs.com/package/@telia/styleguide).
 
 # Development
