@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="64" height="64" viewBox="0 0 64 64">
-    <defs>
-        <path id="a" d="M13.386 4.714L27.728 25.55c.502.73.289 1.71-.477 2.19-.27.169-.586.259-.91.259H-2.342C-3.257 28-4 27.292-4 26.419c0-.309.095-.61.272-.868L10.613 4.714c.503-.73 1.531-.934 2.297-.455"/>
-    </defs>
-    <use fill="#222" fill-rule="evenodd" transform="rotate(90 15 35)" xlink:href="#a"/>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64"><defs><path id="a" d="M13.386 4.714L27.728 25.55c.502.73.289 1.71-.477 2.19-.27.169-.586.259-.91.259H-2.342C-3.257 28-4 27.292-4 26.419c0-.309.095-.61.272-.868L10.613 4.714c.503-.73 1.531-.934 2.297-.455"/></defs><use fill="#222" fill-rule="evenodd" transform="rotate(90 15 35)" xlink:href="#a"/></svg>
