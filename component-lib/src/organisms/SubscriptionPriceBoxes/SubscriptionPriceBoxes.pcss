@@ -1,0 +1,72 @@
+.subscription-price-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 62rem;
+    margin: 0 auto;
+
+    .subscription-price-box {
+        box-shadow: 0 0 4px 3px rgba(0, 0, 0, 0.12);
+        border-radius: 0.3rem;
+        text-align: center;
+        padding: 2rem 2rem;
+        margin: 0.7rem;
+
+        &__top-text {
+            font-family: 'pebble';
+            font-size: 1.6rem;
+            min-height: 2.375rem;
+        }
+
+        &__extra {
+            padding: 1rem;
+            width: 10rem;
+            border: 3px solid var(--core-purple);
+            border-style: dashed;
+
+            &-gb {
+                margin: 0;
+                font-family: 'pebble';
+                font-size: 1.6rem;
+                color: var(--core-purple);
+            }
+
+            &-price {
+                margin: 0;
+                color: var(--darkest-grey);
+            }
+        }
+
+        &__data-purple {
+            margin: 0;
+            width: 10rem;
+            padding: 1rem;
+            font-family: 'pebble';
+            font-size: 1.6rem;
+            color: var(--white);
+            background-color: var(--core-purple);
+        }
+
+        &__data {
+            margin-bottom: 0;
+            font-family: 'pebble';
+            font-size: 2.5rem;
+        }
+
+        &__monthly-price {
+            margin-top: 0;
+            font-family: 'pebble';
+        }
+
+        &__sim {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        &__sim-icon {
+            margin-right: 0.4rem;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
+    }
+}
