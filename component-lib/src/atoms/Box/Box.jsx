@@ -1,5 +1,4 @@
 import React, { forwardRef } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
@@ -64,19 +63,6 @@ const Box = (
       {children}
     </article>
   );
-};
-
-Box.propTypes = {
-  className: PropTypes.string,
-  isExpanded: PropTypes.bool,
-  canExpand: PropTypes.bool,
-  color: PropTypes.oneOf(['purple', 'pink', 'light-orange', 'green', 'blue', 'teal', 'grey', 'black']),
-  size: PropTypes.oneOf(['small', 'medium']),
-  speechBubbleText: PropTypes.string,
-  /** close button aria-controls */
-  id: PropTypes.string,
-  onClick: PropTypes.func,
-  onClose: PropTypes.func,
 };
 
 const BoxWithForwardRef = forwardRef(Box);
