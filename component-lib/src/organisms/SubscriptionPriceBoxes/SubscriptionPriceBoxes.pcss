@@ -10,6 +10,10 @@
         text-align: center;
         padding: 2rem 2rem;
         margin: 0.7rem;
+        display: flex;
+        flex-flow: column;
+        justify-content: flex-end;
+        background-color: var(--white);
 
         &__top-text {
             font-family: 'pebble';
@@ -17,34 +21,50 @@
             min-height: 2.375rem;
         }
 
-        &__extra {
-            padding: 1rem;
-            width: 10rem;
-            border: 3px solid var(--core-purple);
-            border-style: dashed;
+        &__square {
+            &-small {}
+            &-medium { height: 12em; }
+            &-large  { height: 14em; }
+            &-xlarge  { height: 16em; }
 
-            &-gb {
+            &__extra {
+                padding: 1rem;
+                width: 10rem;
+                border: 3px solid var(--core-purple);
+                border-style: dashed;
+                height: 50%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-flow: column;
+
+                &-gb {
+                    margin: 0;
+                    font-family: 'pebble';
+                    font-size: 1.6rem;
+                    color: var(--core-purple);
+                }
+
+                &-price {
+                    margin: 0;
+                    color: var(--darkest-grey);
+                }
+            }
+            &__data-purple {
+                height: 50%;
                 margin: 0;
+                width: 10rem;
+                padding: 1rem;
                 font-family: 'pebble';
                 font-size: 1.6rem;
-                color: var(--core-purple);
-            }
-
-            &-price {
-                margin: 0;
-                color: var(--darkest-grey);
+                color: var(--white);
+                background-color: var(--core-purple);
+                display: flex;
+                justify-content: center;
+                align-items: center;
             }
         }
 
-        &__data-purple {
-            margin: 0;
-            width: 10rem;
-            padding: 1rem;
-            font-family: 'pebble';
-            font-size: 1.6rem;
-            color: var(--white);
-            background-color: var(--core-purple);
-        }
 
         &__data {
             margin-bottom: 0;
@@ -61,6 +81,10 @@
             display: flex;
             justify-content: center;
             align-items: center;
+
+            &-hidden {
+                visibility: hidden;
+            }
         }
 
         &__sim-icon {

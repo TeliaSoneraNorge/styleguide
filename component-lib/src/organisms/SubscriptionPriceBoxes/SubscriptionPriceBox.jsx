@@ -7,27 +7,27 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * Category: Boxes
  **/
 
-const SubscriptionPriceBox = ({ topText, extraGB, extraPrice, data, monthlyPrice, simIncluded, bottomText }) => (
+const SubscriptionPriceBox = ({ topText, extraGB, extraPrice, data, monthlyPrice, simIncluded, bottomText, size }) => (
   <div className="subscription-price-box">
-    <p className="subscription-price-box__top-text">{topText}</p>
-    <div className="subscription-price-box__extra">
-      <p className="subscription-price-box__extra-gb">{extraGB}</p>
-      <p className="subscription-price-box__extra-price">{extraPrice}</p>
+    {topText && <p className="subscription-price-box__top-text">{topText}</p>}
+    <div className={`subscription-price-box__square subscription-price-box__square-${size}`}>
+      <div className="subscription-price-box__square__extra">
+        <p className="subscription-price-box__square__extra-gb">{extraGB}</p>
+        <p className="subscription-price-box__square__extra-price">{extraPrice}</p>
+      </div>
+      <p className="subscription-price-box__square__data-purple">{data}</p>
     </div>
-    <p className="subscription-price-box__data-purple">{data}</p>
     <p className="subscription-price-box__data">{data}</p>
     <p className="subscription-price-box__monthly-price">{monthlyPrice}</p>
-    {simIncluded && (
-      <div className="subscription-price-box__sim">
-        <SvgIcon
-          aria-hidden="true"
-          className="subscription-price-box__sim-icon"
-          iconName="ico_subscription"
-          color="black"
-        />
-        {bottomText}
-      </div>
-    )}
+    <div className={`${simIncluded ? 'subscription-price-box__sim' : 'subscription-price-box__sim-hidden'}`}>
+      <SvgIcon
+        aria-hidden="true"
+        className="subscription-price-box__sim-icon"
+        iconName="ico_subscription"
+        color="black"
+      />
+      {bottomText}
+    </div>
   </div>
 );
 
