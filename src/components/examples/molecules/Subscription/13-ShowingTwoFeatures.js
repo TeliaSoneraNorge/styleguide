@@ -1,37 +1,55 @@
 import React, { useState } from 'react';
-import { Button, Subscription } from '@telia/styleguide';
+import { Subscription } from '@telia/styleguide';
+
+const SubscriptionGroupForm = ({ postToUrl, id }) => (
+  <div className="subscription__button-container">
+    <form method="post" action={postToUrl}>
+      <input type="hidden" name="offeringCode" value={id} />
+      <button className="button button--primary">Bestill for en</button>
+    </form>
+    <a
+      className="button button--secondary subscription__group-subs-button"
+      href="#/components/subscription#subscription-info"
+    >
+      Flere sammen?
+    </a>
+  </div>
+);
 
 const features = {
-  specialMessageText: 'Listen to as music as you want without using your data quota!',
   highlightedFeature: {
-    iconName: 'ico_music',
-    name: 'Music Freedom',
+    iconName: 'ico_data_freedom',
+    name: 'Surf og stream uten å gå tom for data.',
+    secondIconName: 'ico_group',
+    secondName: 'Flere sammen gir lavere pris',
+    secondSize: 'large',
   },
-  button: <Button text="Gå videre" kind="primary" onClick={() => {}} />,
+  button: <SubscriptionGroupForm postToUrl="#" id="x" />,
 };
 
-const B2BExpandedNoSpeechBubble = () => {
+const ShowingTwoFeatures = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <Subscription
-      name="SMART Bedrift"
-      id="smart-bedrift-expanded"
-      dataAmount={40}
+      name="Telia"
+      id="x"
+      dataAmount="X"
       dataUnit="GB"
-      price={699}
+      price={579}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
       allPricesLink={{
         url: '#',
         text: 'Se alle priser',
       }}
-      color="purple"
+      color="black"
       size="medium"
       features={features}
       isShowingFeatures
       isExpanded={isExpanded}
       onSelect={() => setIsExpanded(true)}
       onClose={() => setIsExpanded(false)}
+      scrollToOnOpen
     >
       <div className="rich-text">
         <h2 className="heading heading--level-2">Om abonnement</h2>
@@ -67,4 +85,4 @@ const B2BExpandedNoSpeechBubble = () => {
   );
 };
 
-export default B2BExpandedNoSpeechBubble;
+export default ShowingTwoFeatures;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -11,7 +11,6 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * Category: Subscription
  *
  */
-
 const Subscription = ({
   id,
   size,
@@ -28,72 +27,125 @@ const Subscription = ({
   isBroadband,
   isExpanded,
   isShowingFeatures,
+  scrollToOnOpen = false,
+  onSelect,
+  onClose,
   children,
-}) => (
-  <Box
-    className={classnames('subscription', {
-      'subscription--is-showing-features': isShowingFeatures,
-      'subscription--is-standalone': isStandalone,
-      'subscription--is-broadband': isBroadband,
-    })}
-    color={color}
-    size={size}
-    id={id}
-    canExpand={!isStandalone}
-    isExpanded={isExpanded}
-  >
-    <section className="subscription__teaser">
-      <div className="subscription__teaser-content">
-        <h1 className="subscription__name">{name}</h1>
-        <span className="subscription__data-amount">{dataAmount}</span>
-        <span className="subscription__data-unit">{dataUnit}</span>
-        <span className="subscription__price">{price},-</span>
-        {priceInfo &&
-          priceInfo.map(info => (
-            <span key={info} className="subscription__price-info">
-              {info}
-            </span>
-          ))}
-        {additionalInfo && (
-          <div className="subscription__additional-info">
-            <div className="subscription__additional-info--bold">{additionalInfo.routerPrice}</div>
-            <div>{additionalInfo.binding}</div>
+}) => {
+  const ref = useRef();
+
+  useEffect(() => {
+    if (ref.current && isExpanded && scrollToOnOpen) {
+      ref.current.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start',
+      });
+    }
+  }, [isExpanded, scrollToOnOpen]);
+
+  return (
+    <Box
+      className={classnames('subscription', {
+        'subscription--is-showing-features': isShowingFeatures,
+        'subscription--is-standalone': isStandalone,
+        'subscription--is-broadband': isBroadband,
+      })}
+      color={color}
+      size={size}
+      id={id}
+      canExpand={!isStandalone}
+      isExpanded={isExpanded}
+      onClick={onSelect}
+      onClose={onClose}
+      ref={ref}
+    >
+      <section className="subscription__teaser">
+        <div className="subscription__teaser-content">
+          <h1 className="subscription__name">{name}</h1>
+          <span className="subscription__data-amount">{dataAmount}</span>
+          <span className="subscription__data-unit">{dataUnit}</span>
+          <span className="subscription__price">{price},-</span>
+          {priceInfo &&
+            priceInfo.map(info => (
+              <span key={info} className="subscription__price-info">
+                {info}
+              </span>
+            ))}
+          {additionalInfo && (
+            <div className="subscription__additional-info">
+              <div className="subscription__additional-info--bold">{additionalInfo.routerPrice}</div>
+              <div>{additionalInfo.binding}</div>
+            </div>
+          )}
+        </div>
+        {allPricesLink && (
+          <div className="subscription__teaser-links">
+            <div>
+              <a href={allPricesLink.url} className="link" target="_self">
+                {allPricesLink.text}
+              </a>
+            </div>
           </div>
         )}
-      </div>
-      {allPricesLink && (
-        <div className="subscription__teaser-links">
-          <div>
-            <a href={allPricesLink.url} className="link" target="_self">
-              {allPricesLink.text}
-            </a>
-          </div>
-        </div>
+      </section>
+      {features && <Subscription.Features features={features} isBroadband={isBroadband} isExpanded={isExpanded} />}
+      {children && (
+        <section id="subscription-info" className="subscription__expanded-info">
+          {children}
+        </section>
       )}
-    </section>
-    {features && <Subscription.Features features={features} isBroadband={isBroadband} />}
-    {children && <section className="subscription__expanded-info">{children}</section>}
-  </Box>
-);
+    </Box>
+  );
+};
 
-const Features = ({ features, isBroadband }) => (
+const Features = ({ features, isBroadband, isExpanded }) => (
   <section className="subscription__features">
     {features.speechBubbleText ? (
-      <div className="box__speech-bubble">{features.speechBubbleText}</div>
+      <div className="box__speech-bubble">
+        <div className="box__speech-bubble-text">{features.speechBubbleText}</div>
+      </div>
     ) : (
       <div className="box__speech-bubble box__speech-bubble--empty"></div>
     )}
-    {features.highlightedFeature && (
-      <div className="subscription__highlighted-feature">
-        <SvgIcon
-          className="subscription__highlighted-feature-icon"
-          iconName={features.highlightedFeature.iconName}
-          role="presentation"
-          alt=""
-        />
-        <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
-      </div>
-    )}
+    {features.highlightedFeature ? (
+      features.highlightedFeature.secondIconName ? (
+        !isExpanded && (
+          <div className="subscription__highlighted-feature">
+            <SvgIcon
+              className={classnames('subscription__highlighted-feature-icon', {
+                'subscription__highlighted-feature-icon-large': features.highlightedFeature.size === 'large',
+              })}
+              iconName={features.highlightedFeature.iconName}
+              role="presentation"
+              alt=""
+            />
+            <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
+            <hr />
+            <SvgIcon
+              className={classnames('subscription__highlighted-feature-icon', {
+                'subscription__highlighted-feature-icon-large': features.highlightedFeature.secondSize === 'large',
+              })}
+              iconName={features.highlightedFeature.secondIconName}
+              role="presentation"
+              alt=""
+            />
+            <span className="subscription__highlighted-feature-text">{features.highlightedFeature.secondName}</span>
+          </div>
+        )
+      ) : (
+        <div className="subscription__highlighted-feature">
+          <SvgIcon
+            className={classnames('subscription__highlighted-feature-icon', {
+              'subscription__highlighted-feature-icon-large': features.highlightedFeature.size === 'large',
+            })}
+            iconName={features.highlightedFeature.iconName}
+            role="presentation"
+            alt=""
+          />
+          <span className="subscription__highlighted-feature-text">{features.highlightedFeature.name}</span>
+        </div>
+      )
+    ) : null}
     {features.specialMessageText && <strong className="special-message">{features.specialMessageText}</strong>}
     {isBroadband && (
       <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
@@ -101,6 +153,32 @@ const Features = ({ features, isBroadband }) => (
     {features.button}
   </section>
 );
+
+Features.propTypes = {
+  isBroadband: PropTypes.bool,
+  isExpanded: PropTypes.bool,
+  features: PropTypes.shape({
+    speechBubbleText: PropTypes.string,
+    highlightedFeature: PropTypes.shape({
+      iconName: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      size: PropTypes.string,
+      secondIconName: PropTypes.string,
+      secondName: PropTypes.string,
+      secondSize: PropTypes.string,
+    }),
+    specialMessageText: PropTypes.string,
+    productList: PropTypes.arrayOf(
+      PropTypes.shape({
+        title: PropTypes.string.isRequired,
+        subtitle: PropTypes.string,
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      })
+    ),
+    button: PropTypes.node,
+  }),
+};
+
 Subscription.Features = Features;
 
 Subscription.propTypes = {
@@ -129,6 +207,10 @@ Subscription.propTypes = {
     highlightedFeature: PropTypes.shape({
       iconName: PropTypes.string.isRequired,
       name: PropTypes.string.isRequired,
+      size: PropTypes.string,
+      secondIconName: PropTypes.string,
+      secondName: PropTypes.string,
+      secondSize: PropTypes.string,
     }),
     specialMessageText: PropTypes.string,
     productList: PropTypes.arrayOf(
@@ -138,13 +220,16 @@ Subscription.propTypes = {
         price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
       })
     ),
-    button: PropTypes.Button,
+    button: PropTypes.node,
   }),
   totalCalculation: PropTypes.shape({
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string,
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   }),
+  scrollToOnOpen: PropTypes.bool,
+  onSelect: PropTypes.func,
+  onClose: PropTypes.func,
 };
 
 export default Subscription;

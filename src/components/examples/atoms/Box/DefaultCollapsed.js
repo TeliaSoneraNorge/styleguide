@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box } from '@telia/styleguide';
+import { StatefulBox } from '@telia/styleguide';
 
 const DefaultCollapsed = () => (
-  <Box color="pink" canExpand>
+  <StatefulBox color="pink" canExpand>
     Example 1 - Default Collapsed Box
-  </Box>
+  </StatefulBox>
 );
 
 export default DefaultCollapsed;

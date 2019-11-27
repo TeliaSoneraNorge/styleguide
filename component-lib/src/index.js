@@ -1,6 +1,7 @@
 // Atoms
 export { default as AlertText } from './atoms/AlertText';
 export { default as Box } from './atoms/Box';
+export { StatefulBox } from './atoms/Box';
 export { default as Button } from './atoms/Button';
 export { default as Caption } from './atoms/Caption';
 export { default as Container } from './atoms/Container';

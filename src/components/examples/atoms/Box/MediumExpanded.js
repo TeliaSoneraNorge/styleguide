@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box } from '@telia/styleguide';
+import { StatefulBox } from '@telia/styleguide';
 
 const MediumExpanded = () => (
-  <Box color="pink" size="medium" canExpand isExpanded>
+  <StatefulBox color="pink" size="medium" canExpand isExpanded>
     Example 7 - Medium Expanded Box
-  </Box>
+  </StatefulBox>
 );
 
 export default MediumExpanded;

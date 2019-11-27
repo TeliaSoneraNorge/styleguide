@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Box from '../../atoms/Box/Box';
+import StatefulBox from '../../atoms/Box/StatefulBox';
 import IconLink from '../../atoms/IconLink/IconLink';
 
 /**
@@ -19,7 +19,7 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
   const titleLinkedInProfile = `${name}'s LinkedIn profile`;
   const titleTwitterProfile = `${name}'s Twitter profile`;
   return (
-    <Box color={color} id={id} canExpand={true} isExpanded={isExpanded}>
+    <StatefulBox color={color} id={id} canExpand={true} isExpanded={isExpanded}>
       <div className="person-box">
         <div className="person-box__image-label">
           <img className="person-box__image" src={imagePath} alt={imageAltText} />
@@ -50,7 +50,7 @@ const PersonBox = ({ id, color, isExpanded, imagePath, name, title, description,
           </div>
         </div>
       </div>
-    </Box>
+    </StatefulBox>
   );
 };
 PersonBox.propTypes = {
