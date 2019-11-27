@@ -5,6 +5,7 @@ const Default = () => (
   <Container size="large">
     <SubscriptionPriceBoxes>
       <SubscriptionPriceBox
+        size="small"
         topText=""
         extraGB="+2GB"
         extraPrice="for 99,-"
@@ -13,6 +14,7 @@ const Default = () => (
         simIncluded={false}
       />
       <SubscriptionPriceBox
+        size="medium"
         topText=""
         extraGB="+6GB"
         extraPrice="for 99,-"
@@ -21,6 +23,7 @@ const Default = () => (
         simIncluded={false}
       />
       <SubscriptionPriceBox
+        size="large"
         topText="MEST SOLGT"
         extraGB="+50 GB"
         extraPrice="for 99,-"
@@ -30,6 +33,7 @@ const Default = () => (
         bottomText="Data-SIM inkl."
       />
       <SubscriptionPriceBox
+        size="xlarge"
         topText=""
         extraGB="+50 GB"
         extraPrice="for 99,-"
