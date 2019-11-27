@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.12
+Switch from using Box to StatefulBox most likely, and update how the usage of Subscription.
+
+- Separated Box into stateless and stateful
+- Added scrollToOnOpen, second feature highlight, onSelect and onClose to Subscription
+- Added jsx and knobs to storybook, and added story for Subscription.
+
 ## 1.29.11
     - SubscriptionPriceBox
     - SubscriptionPriceBoxes
