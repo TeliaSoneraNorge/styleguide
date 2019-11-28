@@ -67,6 +67,7 @@ const availableIconMap: { [key in IconDefinition]: key } = {
   add: 'add',
   'ai-robot': 'ai-robot',
   alarm: 'alarm',
+  'alarm-off': 'alarm-off',
   alert: 'alert',
   'arrow-down': 'arrow-down',
   'arrow-large-down': 'arrow-large-down',
