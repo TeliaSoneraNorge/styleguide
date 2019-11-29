@@ -19,12 +19,16 @@ stories.add('Icon', () => (
     <h1>Icon</h1>
 
     <p>
-      The component <code>{'<AllBusinessIcons />'}</code> (which itself is invisible) must be present in order for the
-      SVGs to be available to the <code>{'<Icon />'}</code> component.
+      The component <code>{'<AllBusinessIcons />'}</code> (which itself is invisible) must be present and rendered
+      somewhere on the page in order for the SVGs to be available to the <code>{'<Icon />'}</code> component.
     </p>
 
     <p>
-      The icon inherits its color from the surrounding element (<code>{'fill: currentColor;'}</code>).
+      The icon inherits its color from the surrounding element by use of CSS (
+      <small>
+        <code>fill: currentColor; stroke: currentColor;</code>
+      </small>
+      ).
     </p>
 
     <h2>Sample icon</h2>
@@ -35,7 +39,7 @@ stories.add('Icon', () => (
         color: color('Color', 'red'),
       }}
     >
-      <Icon icon={select('Sample icon', availableIcons, 'ai-robot') as IconDefinition} />
+      <Icon icon={select('Sample icon', availableIcons, 'robot') as IconDefinition} />
     </div>
 
     <h2>All icons</h2>
