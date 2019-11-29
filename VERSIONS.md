@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.14
+Subscription speechbubble font from italic to regular
+
 ## 1.29.13
 Build and deploy storybook with web site
 
