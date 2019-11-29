@@ -1,5 +1,12 @@
-import { addParameters, configure } from '@storybook/react';
+import { addParameters, addDecorator, configure, setAddon } from '@storybook/react';
+import { withKnobs } from "@storybook/addon-knobs";
 import teliaTheme from './teliaTheme';
+import JSXAddon from 'storybook-addon-jsx';
+
+setAddon(JSXAddon);
+
+// Default decorators
+addDecorator(withKnobs);
 
 addParameters({
   options: {

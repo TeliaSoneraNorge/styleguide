@@ -122,6 +122,7 @@ export function isFullWidthComponent(componentName) {
     'ThemeBoxesWithImage',
     'ProductListGrid',
     'FeatureBoxes',
+    'SubscriptionPriceBoxes',
   ];
   return _.includes(fullWidthComponents, componentName);
 }

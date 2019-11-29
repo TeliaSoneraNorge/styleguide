@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Subscription } from '@telia/styleguide';
 
 const features = {
@@ -11,23 +11,30 @@ const features = {
   button: <Button text="Gå videre" kind="primary" onClick={() => {}} />,
 };
 
-const B2BCollapsedShowingFeaturesAndSpeechBubble = () => (
-  <Subscription
-    name="SMART Bedrift"
-    dataAmount={40}
-    dataUnit="GB"
-    price={699}
-    priceInfo={['pr. md', 'Ingen bindingstid.']}
-    allPricesLink={{
-      url: '#',
-      text: 'Se alle priser',
-    }}
-    id="smart-bedrift-expanded"
-    color="purple"
-    size="medium"
-    features={features}
-    isShowingFeatures
-  />
-);
+const B2BCollapsedShowingFeaturesAndSpeechBubble = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <Subscription
+      name="SMART Bedrift"
+      dataAmount={40}
+      dataUnit="GB"
+      price={699}
+      priceInfo={['pr. md', 'Ingen bindingstid.']}
+      allPricesLink={{
+        url: '#',
+        text: 'Se alle priser',
+      }}
+      id="smart-bedrift-expanded"
+      color="purple"
+      size="medium"
+      features={features}
+      isShowingFeatures
+      isExpanded={isExpanded}
+      onSelect={() => setIsExpanded(true)}
+      onClose={() => setIsExpanded(false)}
+    />
+  );
+};
 
 export default B2BCollapsedShowingFeaturesAndSpeechBubble;

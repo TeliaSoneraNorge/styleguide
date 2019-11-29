@@ -1,28 +1,25 @@
 import React, { useState } from 'react';
 import { Subscription } from '@telia/styleguide';
 
-const BroadbandCollapsed = () => {
+const ScrollToOnOpen = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <Subscription
-      id="broadband-subscription-collapsed"
-      dataAmount={40}
+      name="SMART Mini"
+      id="smartMini"
+      dataAmount={1}
       dataUnit="GB"
-      price={699}
+      price={249}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
-      additionalInfo={{
-        routerPrice: 'Ruter fra 499,-',
-        binding: 'ved 12 mnd binding',
-      }}
-      color="blue"
+      color="pink"
       size="small"
-      isBroadband
       isExpanded={isExpanded}
       onSelect={() => setIsExpanded(true)}
       onClose={() => setIsExpanded(false)}
+      scrollToOnOpen
     />
   );
 };
 
-export default BroadbandCollapsed;
+export default ScrollToOnOpen;

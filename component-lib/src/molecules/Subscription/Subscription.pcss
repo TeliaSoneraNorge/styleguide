@@ -3,6 +3,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    min-height: 300px;
 
     /* Teaser */
     &__teaser {
@@ -44,6 +45,7 @@
     &__price-info {
         display: block;
         font-size: 0.75rem;
+        font-weight: lighter;
     }
     &__additional-info {
         display: block;
@@ -77,9 +79,15 @@
     &__highlighted-feature-icon {
         height: 32px;
         width: 32px;
+
+        &-large {
+            height: 64px;
+            width: 64px
+        }
     }
     &__highlighted-feature-text {
         display: block;
+        font-weight: lighter;
     }
 
     &--is-showing-features {

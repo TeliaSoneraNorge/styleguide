@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.29.10",
+  "version": "1.29.14",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -90,6 +90,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "rimraf": "^2.6.3",
+    "storybook-addon-jsx": "^7.1.13",
     "svg4everybody": "^2.1.9",
     "svgo": "^1.2.2",
     "typescript": "^3.6.4"
