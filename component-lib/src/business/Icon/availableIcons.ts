@@ -98,7 +98,6 @@ export const availableIcons: IconDefinition[] = [
   'phone',
   'pie-chart',
   'place',
-  'placeholder',
   'play',
   'police',
   'position',

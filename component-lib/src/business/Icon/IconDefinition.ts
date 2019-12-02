@@ -96,7 +96,6 @@ export type IconDefinition =
   | 'phone'
   | 'pie-chart'
   | 'place'
-  | 'placeholder'
   | 'play'
   | 'police'
   | 'position'
