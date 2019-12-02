@@ -239,6 +239,7 @@
 .Business-Icon--play,
 .Business-Icon--police,
 .Business-Icon--position,
+.Business-Icon--pulse,
 .Business-Icon--question,
 .Business-Icon--recycle,
 .Business-Icon--replace,
@@ -296,14 +297,6 @@
 .Business-Icon--filter {
   fill: #220;
   fill-rule: nonzero;
-}
-.Business-Icon--pulse {
-  fill: none;
-  fill-rule: evenodd;
-  stroke: #220;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 4;
 }
 .Business-Icon--refresh,
 .Business-Icon--world {
