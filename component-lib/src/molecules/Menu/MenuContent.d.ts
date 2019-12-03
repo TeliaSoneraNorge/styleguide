@@ -20,6 +20,7 @@ export interface MenuContentProps {
   onToggleSubmenu?: (...args: any[]) => any;
   searchLabel?: string;
   searchButtonAbortText?: string;
+  onlyLogo?: boolean;
 }
 
 const MenuContent: React.FC<MenuContentProps>;

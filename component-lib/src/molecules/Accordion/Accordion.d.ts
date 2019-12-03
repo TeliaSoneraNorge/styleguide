@@ -3,14 +3,20 @@ import * as React from 'react';
 export interface AccordionProps {
   isExpanded?: boolean;
   id?: string;
-  title?: React.ReactNode;
+  title?: string;
   accordionRef?: any;
   children?: React.ReactNode;
   icon?: string;
   text?: string;
   button?: string;
+  buttonType?: string;
+  iconTitle?: string;
+  imageUrl?: string;
+  onButtonClick?: (...args: any[]) => any;
+  toggleIsExpanded?: (...args: any[]) => any;
+  footer?: React.ReactNode;
 }
 
-export default class Accordion extends React.Component<AccordionProps, any> {
-  render(): JSX.Element;
-}
+const Accordion: React.FC<AccordionProps>;
+
+export default Accordion;

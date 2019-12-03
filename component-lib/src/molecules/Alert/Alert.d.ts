@@ -10,11 +10,13 @@ export interface AlertLinks {
 }
 
 export interface AlertProps {
+  closeButtonText?: string;
   kind?: AlertKind;
   size?: AlertSize;
   onOpen?: (...args: any[]) => any;
   onClose?: (...args: any[]) => any;
   isOpen?: boolean;
+  scrollTo?: boolean;
   minimizedText?: string;
   links?: AlertLinks[];
 }

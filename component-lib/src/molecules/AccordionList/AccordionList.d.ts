@@ -11,6 +11,7 @@ export interface AccordionListProps {
   setItemRef?: (...args: any[]) => any;
   toggleIsExpanded?: (...args: any[]) => any;
   isExpandedAccordionIndex: number;
+  noBorder?: boolean;
 }
 
 const AccordionList: React.FC<AccordionListProps>;

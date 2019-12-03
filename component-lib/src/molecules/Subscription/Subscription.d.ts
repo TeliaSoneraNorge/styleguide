@@ -19,6 +19,10 @@ export interface SubscriptionFeatures {
   highlightedFeature?: {
     iconName: string;
     name: string;
+    size?: string;
+    secondIconName?: string;
+    secondName?: string;
+    secondSize?: string;
   };
   specialMessageText?: string;
   productList?: {
@@ -26,7 +30,7 @@ export interface SubscriptionFeatures {
     subtitle?: string;
     price: string | number;
   }[];
-  button?: any;
+  button?: React.ReactNode;
 }
 
 export interface SubscriptionTotalCalculation {
@@ -52,6 +56,9 @@ export interface SubscriptionProps {
   allPricesLink?: SubscriptionAllPricesLink;
   features?: SubscriptionFeatures;
   totalCalculation?: SubscriptionTotalCalculation;
+  scrollToOnOpen?: boolean;
+  onSelect?: (...args: any[]) => any;
+  onClose?: (...args: any[]) => any;
 }
 
 const Subscription: React.FC<SubscriptionProps>;

@@ -31,6 +31,7 @@ export interface MenuProps {
   myPageUrl?: string;
   cartUrl?: string;
   isLoading?: boolean;
+  onlyLogo?: boolean;
 }
 
 const Menu: React.FC<MenuProps>;
