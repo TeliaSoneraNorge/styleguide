@@ -31,6 +31,17 @@ stories.add('Icon', () => (
       ).
     </p>
 
+    {process.env.NODE_ENV === 'production' ? (
+      <p>
+        You can also download <a href="telia-styleguide-business-icons.zip">all icons as a .zip file</a>.
+      </p>
+    ) : (
+      <p>
+        You can also download <span style={{ textDecoration: 'line-through' }}>all icons as a .zip file</span>{' '}
+        <em>(this is disabled in development mode)</em>.
+      </p>
+    )}
+
     <h2>Sample icon</h2>
 
     <div
