@@ -36,7 +36,7 @@ stories.add('Icon', () => (
     <div
       style={{
         transition: 'color 0.15s ease-in-out',
-        color: color('Color', 'red'),
+        color: color('Color', '#222'),
       }}
     >
       <Icon icon={select('Sample icon', availableIcons, 'robot') as IconDefinition} />
@@ -51,7 +51,7 @@ stories.add('Icon', () => (
           style={{
             padding: '8px',
             display: 'inline-block',
-            color: color('Color for all icons', 'red'),
+            color: color('Color for all icons', '#222'),
           }}
           title={key}
         >
