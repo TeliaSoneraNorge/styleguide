@@ -35,6 +35,7 @@ storiesOf('Business|MainMenu', module).add('default', () => {
             label="Hjem"
             icon={<Icon className="Business-MainMenu-icon" icon="home" />}
           />
+
           <MainMenuItem
             onClick={onClickItem}
             active={true}
@@ -49,11 +50,11 @@ storiesOf('Business|MainMenu', module).add('default', () => {
 
           <MainMenuItem onClick={onClickItem} label="Kostnader" icon="money" />
 
-          <MainMenuItem onClick={onClickItem} label="Fakturaer" icon="invoice" />
+          <MainMenuItem onClick={onClickItem} label="Fakturaer" icon="document" />
 
-          <MainMenuItem onClick={onClickItem} label="Bestilling" icon="buy" />
+          <MainMenuItem onClick={onClickItem} label="Bestilling" icon="shoppingcart" />
 
-          <MainMenuItem onClick={onClickItem} label="Personer" icon="person" />
+          <MainMenuItem onClick={onClickItem} label="Personer" icon="user" />
 
           <MainMenuItem onClick={onClickItem} label="Dokumenter" icon="folder" />
 
