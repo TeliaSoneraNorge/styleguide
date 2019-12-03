@@ -100,6 +100,7 @@ export { default as Menu } from './molecules/Menu';
 export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
 export { default as Gallery } from './molecules/Gallery';
+export { ShoppingCart, ShoppingCartAccordion } from './molecules/ShoppingCart';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
