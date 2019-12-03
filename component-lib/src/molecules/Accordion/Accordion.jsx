@@ -25,6 +25,7 @@ const Accordion = ({
   buttonType,
   onButtonClick,
   toggleIsExpanded,
+  footer,
 }) => {
   function accordionHeaderClicked() {
     toggleIsExpanded();
@@ -67,6 +68,7 @@ const Accordion = ({
       <div className="accordion__panel rich-text" id={id}>
         {children}
       </div>
+      {footer}
     </section>
   );
 };
@@ -85,6 +87,7 @@ Accordion.propTypes = {
   imageUrl: PropTypes.string,
   onButtonClick: PropTypes.func,
   toggleIsExpanded: PropTypes.func,
+  footer: PropTypes.node,
 };
 
 export default Accordion;

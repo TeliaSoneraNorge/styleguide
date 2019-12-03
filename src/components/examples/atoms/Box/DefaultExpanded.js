@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box } from '@telia/styleguide';
+import { StatefulBox } from '@telia/styleguide';
 
 const DefaultExpanded = () => (
-  <Box color="pink" canExpand isExpanded>
+  <StatefulBox color="pink" canExpand isExpanded>
     Example 2 - Default Expanded Box
-  </Box>
+  </StatefulBox>
 );
 
 export default DefaultExpanded;

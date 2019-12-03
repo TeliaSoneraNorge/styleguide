@@ -1,10 +1,10 @@
 import React from 'react';
-import { Box } from '@telia/styleguide';
+import { StatefulBox } from '@telia/styleguide';
 
 const DefaultNotExpandable = () => (
-  <Box color="grey" canExpand={false}>
+  <StatefulBox color="grey" canExpand={false}>
     Example 3 - Default Not Expandable Box
-  </Box>
+  </StatefulBox>
 );
 
 export default DefaultNotExpandable;
