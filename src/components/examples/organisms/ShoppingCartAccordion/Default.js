@@ -1,5 +1,5 @@
-import React from 'react';
-import { Container, ShoppingCart } from '@telia/styleguide';
+import React, { useState } from 'react';
+import { ShoppingCart, ShoppingCartAccordion } from '@telia/styleguide';
 
 const cart = [
   {
@@ -145,20 +145,23 @@ const cart = [
   },
 ];
 
-const style = {
-  backgroundColor: '#f2f2f2',
-  display: 'flex',
-  justifyContent: 'center',
-};
+const Default = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-const Default = () => (
-  <Container style={style}>
-    <div style={{ width: '30rem' }}>
+  return (
+    <ShoppingCartAccordion
+      isExpanded={isExpanded}
+      numberOfItemsInCart={6}
+      onGoToCart={() => {}}
+      shouldShowButton
+      totalPriceMonthly={500}
+      totalPriceUpfront={500}
+      toggleCart={() => setIsExpanded(!isExpanded)}
+    >
       <ShoppingCart
-        heading="Handlekurv"
         cartItems={cart}
         isAnyCartItemsQuantityModifiable
-        totalPriceFirstInvoice={0}
+        totalPriceFirstInvoice={500}
         totalPriceMonthly={500}
         totalPriceUpfront={500}
         onChangeQuantity={() => {}}
@@ -166,8 +169,8 @@ const Default = () => (
         isAnyCartItemsRemovable
         formatPrice={price => `${price},-`}
       />
-    </div>
-  </Container>
-);
+    </ShoppingCartAccordion>
+  );
+};
 
 export default Default;
