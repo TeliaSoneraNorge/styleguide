@@ -26,7 +26,7 @@ stories.add('Icon', () => (
     <p>
       The icon inherits its color from the surrounding element by use of CSS (
       <small>
-        <code>fill: currentColor; stroke: currentColor;</code>
+        <code>fill: currentColor</code>
       </small>
       ).
     </p>
