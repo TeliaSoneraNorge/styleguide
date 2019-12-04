@@ -100,6 +100,7 @@ export { default as Menu } from './molecules/Menu';
 export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
 export { default as Gallery } from './molecules/Gallery';
+export { ShoppingCart } from './molecules/ShoppingCart';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
@@ -112,3 +113,4 @@ export { default as FocusBoxWithLabels } from './organisms/FocusBoxWithLabels';
 export { default as ProductListGrid } from './organisms/ProductListGrid';
 export { FeatureBox, FeatureBoxes } from './organisms/FeatureBoxes';
 export { SubscriptionPriceBox, SubscriptionPriceBoxes } from './organisms/SubscriptionPriceBoxes';
+export { default as ShoppingCartAccordion } from './organisms/ShoppingCartAccordion';
