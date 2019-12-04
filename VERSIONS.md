@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.18
+- New molecule: ShoppingCart
+- New organism: ShoppingCartAccordion
+
 ## 1.29.16
 Added footer prop to Accordion
 
