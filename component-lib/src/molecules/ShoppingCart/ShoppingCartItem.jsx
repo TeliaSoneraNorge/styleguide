@@ -61,14 +61,14 @@ const ShoppingCartItem = ({
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
-  isAnyCartItemsRemovable,
   isSubtile,
   formatPrice,
+  isCheckout,
 }) => {
   const { id, leaseMonths, name, subtitle, price, discount, type, indent } = cartItem;
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
-  const isRemovable = _.get(cartItem, 'quantity.removable');
+  const isRemovable = _.get(cartItem, 'quantity.removable') || !isCheckout;
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
   const discountValueUpfront = _.get(discount, 'value.upfront', 0);
   const discountValueMonthly = _.get(discount, 'value.monthly', 0);
@@ -152,7 +152,7 @@ const ShoppingCartItem = ({
         )}
       </ShoppingCartCell>
       <ShoppingCartCell className="shopping-cart__item__delete">
-        {isRemovable && !hasPaid && isAnyCartItemsRemovable && (
+        {isRemovable && !hasPaid && (
           <button className="button button--small shopping-cart__item__button" onClick={() => onRemoveItem(cartItem)}>
             <SvgIcon
               className="shopping-cart__item__button__icon"
@@ -173,7 +173,7 @@ ShoppingCartItem.propTypes = {
   onRemoveItem: PropTypes.func,
   shouldShowQuantity: PropTypes.bool,
   hasPaid: PropTypes.bool,
-  isAnyCartItemsRemovable: PropTypes.bool,
+  isCheckout: PropTypes.bool,
   isSubtile: PropTypes.bool,
   formatPrice: PropTypes.func,
 };
