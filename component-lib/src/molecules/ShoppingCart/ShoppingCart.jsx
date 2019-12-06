@@ -22,7 +22,7 @@ const ShoppingCart = ({
   totalPriceUpfront,
   formatPrice,
   hasPaid,
-  isAnyCartItemsRemovable,
+  isCheckout,
   disclaimers,
 }) => {
   return (
@@ -43,7 +43,7 @@ const ShoppingCart = ({
         totalPriceUpfront={totalPriceUpfront}
         formatPrice={formatPrice}
         hasPaid={hasPaid}
-        isAnyCartItemsRemovable={isAnyCartItemsRemovable}
+        isCheckout={isCheckout}
         totalPriceMonthly={totalPriceMonthly}
       />
       {disclaimers}
@@ -67,7 +67,7 @@ ShoppingCart.propTypes = {
   totalPriceUpfront: PropTypes.number,
   formatPrice: PropTypes.func,
   hasPaid: PropTypes.bool,
-  isAnyCartItemsRemovable: PropTypes.bool,
+  isCheckout: PropTypes.bool,
   disclaimers: PropTypes.node,
 };
 

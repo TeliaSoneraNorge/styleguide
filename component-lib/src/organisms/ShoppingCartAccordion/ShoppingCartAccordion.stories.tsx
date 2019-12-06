@@ -660,7 +660,7 @@ const Wrapper = ({
             totalPriceUpfront={priceUpfront}
             onChangeQuantity={() => {}}
             onRemoveItem={() => {}}
-            isAnyCartItemsRemovable
+            isCheckout
             formatPrice={price => `${price},-`}
           />
         </ShoppingCartAccordion>

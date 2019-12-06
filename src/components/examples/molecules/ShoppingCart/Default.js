@@ -163,7 +163,7 @@ const Default = () => (
         totalPriceUpfront={500}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
-        isAnyCartItemsRemovable
+        isCheckout
         formatPrice={price => `${price},-`}
       />
     </div>

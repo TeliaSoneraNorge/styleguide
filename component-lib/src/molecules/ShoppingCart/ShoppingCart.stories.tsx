@@ -650,7 +650,7 @@ stories.addWithJSX('ShoppingCart', () => {
           totalPriceUpfront={priceUpfront}
           onChangeQuantity={() => {}}
           onRemoveItem={() => {}}
-          isAnyCartItemsRemovable
+          isCheckout
           formatPrice={price => `${price},-`}
         />
     </Container>
