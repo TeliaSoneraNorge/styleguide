@@ -624,10 +624,6 @@ function getCart(item) {
   }
 }
 
-const style = {
-  backgroundColor: '#f2f2f2',
-};
-
 const Wrapper = ({
     numberOfItemsInCart,
     shouldHideOnDesktop,
@@ -636,7 +632,8 @@ const Wrapper = ({
     pricePerMonth,
     priceUpfront,
     priceFirstInvoice,
-    itemToDisplay
+    itemToDisplay,
+    isCheckout
 }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -661,7 +658,7 @@ const Wrapper = ({
             totalPriceUpfront={priceUpfront}
             onChangeQuantity={() => {}}
             onRemoveItem={() => {}}
-            isAnyCartItemsRemovable
+            isCheckout={isCheckout}
             formatPrice={price => `${price},-`}
           />
         </ShoppingCartAccordion>
@@ -682,6 +679,7 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
   const shouldHideOnDesktop = boolean('Should hide on desktop', false);
   const shouldShowGoToCartButton = boolean('Should show go to cart button', true);
   const shouldBeSticky = boolean('Should be sticky', true);
+  const isCheckout = boolean('Is Checkout', true);
 
   return (
     <Wrapper 
@@ -693,6 +691,7 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
         priceUpfront={priceUpfront}
         priceFirstInvoice={priceFirstInvoice}
         itemToDisplay={itemToDisplay}
+        isCheckout={isCheckout}
     />
   );
 });

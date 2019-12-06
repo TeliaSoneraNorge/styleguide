@@ -7,7 +7,7 @@ import ShoppingCartCell from './ShoppingCartCell';
 import ShoppingCartRow from './ShoppingCartRow';
 import ShoppingCartColumnHeading from './ShoppingCartColumnHeading';
 import ShoppingCartItemQuantityPicker from './ShoppingCartItemQuantityPicker';
-import { CART_ITEM_TYPE } from './index';
+import { CART_ITEM_TYPE, CART_ITEM_REMOVABLE_IN_CHECKOUT } from './index';
 
 const SubscriptionOrServiceIcon = ({ amount, unit }) => (
   <div className="text-circle-image" aria-hidden="true">
@@ -61,14 +61,16 @@ const ShoppingCartItem = ({
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
-  isAnyCartItemsRemovable,
+  isCheckout,
   isSubtile,
   formatPrice,
 }) => {
   const { id, leaseMonths, name, subtitle, price, discount, type, indent } = cartItem;
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
-  const isRemovable = _.get(cartItem, 'quantity.removable') || isAnyCartItemsRemovable;
+  const isRemovable =
+    (!isCheckout && _.get(cartItem, 'quantity.removable')) ||
+    (isCheckout && CART_ITEM_REMOVABLE_IN_CHECKOUT.includes(cartItem.type));
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
   const discountValueUpfront = _.get(discount, 'value.upfront', 0);
   const discountValueMonthly = _.get(discount, 'value.monthly', 0);
@@ -173,7 +175,7 @@ ShoppingCartItem.propTypes = {
   onRemoveItem: PropTypes.func,
   shouldShowQuantity: PropTypes.bool,
   hasPaid: PropTypes.bool,
-  isAnyCartItemsRemovable: PropTypes.bool,
+  isCheckout: PropTypes.bool,
   isSubtile: PropTypes.bool,
   formatPrice: PropTypes.func,
 };
