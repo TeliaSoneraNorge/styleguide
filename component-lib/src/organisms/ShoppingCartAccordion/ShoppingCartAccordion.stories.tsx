@@ -651,6 +651,7 @@ const Wrapper = ({
           totalPriceMonthly={pricePerMonth}
           totalPriceUpfront={priceUpfront}
           toggleCart={() => setIsExpanded(!isExpanded)}
+          formatPrice={price => `${price},-`}
         >
           <ShoppingCart
             cartItems={getCart(itemToDisplay)}

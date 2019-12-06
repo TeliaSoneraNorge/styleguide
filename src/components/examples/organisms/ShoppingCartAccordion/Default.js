@@ -157,6 +157,7 @@ const Default = () => {
       totalPriceMonthly={500}
       totalPriceUpfront={500}
       toggleCart={() => setIsExpanded(!isExpanded)}
+      formatPrice={price => `${price},-`}
     >
       <ShoppingCart
         cartItems={cart}
