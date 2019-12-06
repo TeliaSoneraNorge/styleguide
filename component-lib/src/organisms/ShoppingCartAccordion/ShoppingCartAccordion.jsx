@@ -20,6 +20,7 @@ const ShoppingCartAccordion = ({
   totalPriceMonthly,
   totalPriceUpfront,
   shouldBeSticky,
+  formatPrice,
 }) => {
   const accordionItems = [
     {
@@ -31,7 +32,7 @@ const ShoppingCartAccordion = ({
       icon: 'ico_buy',
       iconTitle: 'Handlekurv',
       buttonType: 'primary',
-      text: `Betales nå: ${totalPriceUpfront}. Pris pr. måned: ${totalPriceMonthly}`,
+      text: `Betales nå: ${formatPrice(totalPriceUpfront)}. Pris pr. måned: ${formatPrice(totalPriceMonthly)}`,
       ...(shouldShowButton && {
         button: 'Gå til kassen',
         onButtonClick: onGoToCart,
@@ -71,6 +72,7 @@ ShoppingCartAccordion.propTypes = {
   totalPriceUpfront: PropTypes.number,
   onGoToCart: PropTypes.func,
   toggleCart: PropTypes.func,
+  formatPrice: PropTypes.func,
 };
 
 export default ShoppingCartAccordion;
