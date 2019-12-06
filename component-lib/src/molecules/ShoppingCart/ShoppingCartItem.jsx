@@ -65,7 +65,6 @@ const ShoppingCartItem = ({
   isSubtile,
   formatPrice,
 }) => {
-  !isCheckout && cartItem.type;
   const { id, leaseMonths, name, subtitle, price, discount, type, indent } = cartItem;
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
