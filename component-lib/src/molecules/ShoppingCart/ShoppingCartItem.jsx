@@ -7,9 +7,7 @@ import ShoppingCartCell from './ShoppingCartCell';
 import ShoppingCartRow from './ShoppingCartRow';
 import ShoppingCartColumnHeading from './ShoppingCartColumnHeading';
 import ShoppingCartItemQuantityPicker from './ShoppingCartItemQuantityPicker';
-import { CART_ITEM_TYPE } from './index';
-
-const CART_ITEM_REMOVABLE_IN_CHECKOUT = [CART_ITEM_TYPE.SERVICE, CART_ITEM_TYPE.ACCESSORY, CART_ITEM_TYPE.VOUCHER];
+import { CART_ITEM_TYPE, CART_ITEM_REMOVABLE_IN_CHECKOUT } from './index';
 
 const SubscriptionOrServiceIcon = ({ amount, unit }) => (
   <div className="text-circle-image" aria-hidden="true">
