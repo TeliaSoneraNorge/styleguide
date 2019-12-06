@@ -53,7 +53,8 @@ const ShoppingCartTableGroup = ({
           hasPaid={hasPaid}
           formatPrice={formatPrice}
         />
-        {!_.isEmpty(item.items) && _.sortBy(item.items, sortShoppingCart).map(subItem => renderCartItem(subItem, true))}
+        {!_.isEmpty(item.items) &&
+          _.sortBy(item.items, [sortShoppingCart]).map(subItem => renderCartItem(subItem, true))}
       </Fragment>
     );
   };
@@ -75,7 +76,7 @@ const ShoppingCartTable = ({
   return (
     <table className="shopping-cart__table" role="table">
       <ShoppingCartHeadings shouldShowQuantity={isAnyCartItemsQuantityModifiable} />
-      {_.sortBy(cartItems, sortShoppingCart).map(item => (
+      {_.sortBy(cartItems, [sortShoppingCart]).map(item => (
         <ShoppingCartTableGroup
           cartItem={item}
           key={`${item.id}-${item.bundleId}`}
