@@ -63,7 +63,7 @@
     "lottie-web": "^5.5.5",
     "mkdirp": "0.5.1",
     "object-fit-images": "3.2.4",
-    "parcel-bundler": "1.12.3",
+    "parcel-bundler": "1.12.4",
     "picturefill": "3.0.3",
     "pretty": "2.0.0",
     "prop-types": "15.7.2",
