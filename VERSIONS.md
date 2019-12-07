@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.22
+- Upgrade dependencies to mitigate security risks in `serialize-javascript`and `serialize-to-js` packages
+
 ## 1.29.19
 - Non breaking tweaks to ShoppingCart and ShoppingCartAccordion
 - Added AllIcons to all stories
