@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.29.23
+- Changes on Box component from article to button for accessibility
+
 ## 1.29.22
 - Upgrade dependencies to mitigate security risks in `serialize-javascript`and `serialize-to-js` packages
 
@@ -51,8 +54,8 @@ Switch from using Box to StatefulBox most likely, and update how the usage of Su
 
 ## 1.29.10
 - Alert (Added scrollTo and closeButtonText props)
-- Accordion 
-- AccordionList 
+- Accordion
+- AccordionList
 - Menu (Added onlyLogo prop)
 
 ## 1.29.9

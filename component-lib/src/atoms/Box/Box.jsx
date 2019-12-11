@@ -31,37 +31,46 @@ const Box = (
     onClose(id);
   }
 
+  function renderBox(Component) {
+    return (
+      <Component
+        ref={ref}
+        id={id}
+        className={classnames('box', {
+          [className]: className,
+          [`box--${color}`]: color,
+          [`box--${size}`]: size,
+          'box--expandable': canExpand,
+          'box--is-expanded': isExpanded,
+          'button--stripped': !isExpanded,
+        })}
+        onClick={boxContainerClick}
+        onKeyUp={boxContainerClick}
+        aria-expanded={isExpanded}
+      >
+        {speechBubbleText ? (
+          <div className="box__speech-bubble">
+            <div className="box__speech-bubble-text">{speechBubbleText}</div>
+          </div>
+        ) : (
+          <div className="box__speech-bubble box__speech-bubble--empty"></div>
+        )}
+        {isExpanded ? (
+          <button className="box__close-expanded-info" onClick={closeBoxClick} aria-controls={id}>
+            <span className="box__close-text">LUKK</span>
+            <SvgIcon className="box__close-icon" iconName="ico_delete" color="black" />
+          </button>
+        ) : null}
+        {children}
+      </Component>
+    );
+  }
+
   return (
-    <article
-      ref={ref}
-      id={id}
-      className={classnames('box', {
-        [className]: className,
-        [`box--${color}`]: color,
-        [`box--${size}`]: size,
-        'box--expandable': canExpand,
-        'box--is-expanded': isExpanded,
-      })}
-      onClick={boxContainerClick}
-      onKeyUp={boxContainerClick}
-      aria-expanded={isExpanded}
-      tabIndex={canExpand && !isExpanded ? '0' : null}
-    >
-      {speechBubbleText ? (
-        <div className="box__speech-bubble">
-          <div className="box__speech-bubble-text">{speechBubbleText}</div>
-        </div>
-      ) : (
-        <div className="box__speech-bubble box__speech-bubble--empty"></div>
-      )}
-      {isExpanded ? (
-        <button className="box__close-expanded-info" onClick={closeBoxClick} aria-controls={id}>
-          <span className="box__close-text">LUKK</span>
-          <SvgIcon className="box__close-icon" iconName="ico_delete" color="black" />
-        </button>
-      ) : null}
-      {children}
-    </article>
+    <React.Fragment>
+      {!isExpanded && renderBox('button')}
+      {isExpanded && renderBox('article')}
+    </React.Fragment>
   );
 };
 

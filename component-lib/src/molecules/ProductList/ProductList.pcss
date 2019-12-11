@@ -4,7 +4,7 @@
     &__item {
         margin-bottom: 0.75rem;
         padding: 1.25rem 1.75rem 1.25rem 1.75rem;
-
+        width: 100%;
         border: 2px solid #d9d9d9;
 
         cursor: pointer;
@@ -42,6 +42,23 @@
             position: relative;
             overflow: hidden;
             border: none;
+
+            &:focus {
+
+                &:after {
+                    background: var(--core-purple);
+                }
+
+                .product-list__item-heading {
+                    color: var(--white);
+                }
+
+                .product-list__item-icon {
+                    * {
+                        fill: var(--white);
+                    }
+                }
+            }
 
             &:before {
                 content: ' ';
