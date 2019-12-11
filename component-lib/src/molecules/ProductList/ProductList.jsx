@@ -40,10 +40,10 @@ const ProductList = ({ items = [] }) => (
       }
 
       return (
-        <article key={item.title} className={productItemClassNames} onClick={item.onClick}>
+        <button key={item.title} className={`${productItemClassNames} button--stripped`} onClick={item.onClick}>
           {icon}
           {content}
-        </article>
+        </button>
       );
     })}
   </div>
