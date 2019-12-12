@@ -8,6 +8,9 @@
 
 import { IconDefinition } from './IconDefinition';
 
+/**
+ * A list of all available icons in the @telia/styleguide icon set.
+ */
 export const availableIcons: IconDefinition[] = [
   'add',
   'alarm',

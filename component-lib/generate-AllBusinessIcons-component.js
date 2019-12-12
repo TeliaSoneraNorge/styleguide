@@ -32,6 +32,9 @@ const header = `//
 
 const iconDefinition = [
   header,
+  `/**\n`,
+  ` * A list of all available icons in the @telia/styleguide icon set.\n`,
+  ` */\n`,
   `export type IconDefinition =\n`,
   availableIconIds.map(id => `  | '${id}'`).join('\n'),
   `;\n`,
