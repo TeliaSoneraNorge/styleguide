@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide-web",
-  "version": "1.29.23",
+  "version": "1.30.0",
   "private": false,
   "description": "",
   "main": "server.js",
