@@ -31,7 +31,7 @@ const SubscriptionPriceBox = ({ topText, extraGB, extraPrice, data, monthlyPrice
   </div>
 );
 
-SubscriptionPriceBox.protoTypes = {
+SubscriptionPriceBox.propTypes = {
   topText: PropTypes.string,
   extraGB: PropTypes.string,
   extraPrice: PropTypes.string,
