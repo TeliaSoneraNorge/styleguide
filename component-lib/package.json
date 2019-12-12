@@ -14,6 +14,7 @@
     "icons:add-business-icons": "node ./scripts/add-business-icons.js",
     "icons:business": "run-s icons:add-business-icons icons:svg-join-business icons:business-allicons-react",
     "icons:business-allicons-react": "node generate-AllBusinessIcons-component.js",
+    "icons:generate-business-zip": "node ./scripts/generate-business-icons-zip-file.js",
     "icons:svg-join-business": "svg-join -s \"assets/business-icons/*.svg\" -o ./assets/business-allicons -n business-allicons -p Business-Icon-- --mono",
     "build": "run-p build:commonjs build:es build:css build:ts-types && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist",
