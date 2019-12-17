@@ -5,7 +5,8 @@ const list = [
   { label: 'I am checked', value: '0' },
   { label: 'I am not checked', value: '1' },
   {
-    label: 'I have a very very very long content that can wrap on mobile devices and should be right aligned',
+    label:
+      'I have a very very very long content that can wrap on mobile devices and should be still at the bottom of the list',
     value: '2',
   },
 ];
