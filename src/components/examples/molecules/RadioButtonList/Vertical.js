@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { RadioButtonList } from '@telia/styleguide';
 
 const list = [
@@ -10,8 +10,22 @@ const list = [
   },
 ];
 
-const VerticalRadioButtonList = () => (
-  <RadioButtonList type="vertical" selectedIndex={0} onChange={() => {}} name="radiobutton-test-2" list={list} />
-);
+const VerticalRadioButtonList = () => {
+  const [value, setValue] = useState(0);
+
+  const onClick = e => {
+    setValue(Number(e.target.value));
+  };
+
+  return (
+    <RadioButtonList
+      type="vertical"
+      selectedIndex={value}
+      onChange={onClick}
+      name="radiobuttonlist-test-vertical"
+      list={list}
+    />
+  );
+};
 
 export default VerticalRadioButtonList;
