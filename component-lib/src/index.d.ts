@@ -20,7 +20,6 @@ export { default as Paragraph } from './atoms/Paragraph';
 export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
-// export { default as RadioButton } from './atoms/RadioButton';
 export { default as ShadowBox } from './atoms/ShadowBox';
 export { default as SpecialMessage } from './atoms/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner';
