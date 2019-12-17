@@ -1,7 +1,7 @@
 .radiobutton-group {
-   display: flex;
-   flex-direction: column;
-   align-items: left;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 
     &--horizontal {
         flex-direction: row;
@@ -9,7 +9,11 @@
         > *:not(:last-child) {
             margin-right: 1rem;
         }
-   }
+    }
+
+    &--vertical .radiobutton-container {
+        margin-bottom: 3px;
+    }
 
     &--rich-content {
         margin: 1rem 0 2rem;

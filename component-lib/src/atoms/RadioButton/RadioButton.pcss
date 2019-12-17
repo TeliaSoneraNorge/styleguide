@@ -22,6 +22,7 @@
     /* If the input is checked, display the inner circle */
 	& > input:checked ~ .radiobutton__svg-container .radiobutton__circle {
 		display: block;
+        
 	}
 
     /* Style default checkmark container */
@@ -29,7 +30,8 @@
         line-height: 0;
         border-radius: 50%;
 		cursor: pointer;
-        margin-right: 4px;
+
+        margin-right: 0.6rem;
         margin-top: 2px;
 
         /* Common parts within the SVG, in "one go" */
@@ -56,11 +58,11 @@
     
     /* On hover effect, adding a gray shadow */
 	&:hover > input ~ .radiobutton__svg-container {
-		box-shadow: 0 0 3px 3px var(--grey);
+		box-shadow: 0 0 0 calc(1.25rem/4) rgba(var(--deep-purple-rgb), 0.2);
 	}
 
 	/* On focus effect, adding a gray shadow */
 	& > input:focus + .radiobutton__svg-container {
-		box-shadow: 0 0 3px 3px var(--grey);
+		box-shadow: 0 0 0 calc(1.25rem/4) rgba(var(--deep-purple-rgb), 0.2);
 	}
 }

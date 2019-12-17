@@ -7,6 +7,7 @@ import RadioButton from '../../atoms/RadioButton';
 const getClassName = (type, children) =>
   classnames('radiobutton-group', {
     'radiobutton-group--horizontal': type === 'horizontal',
+    'radiobutton-group--vertical': type === 'vertical',
     'radiobutton-group--rich-content': children !== null,
   });
 
