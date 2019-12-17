@@ -31,6 +31,7 @@ const RadioButtonList = ({ list = [], selectedIndex, name, type, hasRichContent,
         ))}
   </div>
 );
+
 RadioButtonList.propTypes = {
   list: PropTypes.arrayOf(
     PropTypes.shape({
