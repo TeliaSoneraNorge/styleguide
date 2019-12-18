@@ -6,8 +6,12 @@
 //
 //
 
+/**
+ * A list of all available icons in the @telia/styleguide icon set.
+ */
 export type IconDefinition =
   | 'add'
+  | 'add-circle'
   | 'alarm'
   | 'alarm-off'
   | 'alert'
@@ -22,6 +26,7 @@ export type IconDefinition =
   | 'arrow-small-left'
   | 'arrow-small-right'
   | 'arrow-small-up'
+  | 'arrow-subdirectory'
   | 'arrow-up'
   | 'attach'
   | 'battery'
@@ -99,9 +104,12 @@ export type IconDefinition =
   | 'play'
   | 'police'
   | 'position'
+  | 'product-data-boost'
+  | 'product-roam-like-home'
   | 'pulse'
   | 'question'
   | 'recycle'
+  | 'refill'
   | 'refresh'
   | 'replace'
   | 'return'

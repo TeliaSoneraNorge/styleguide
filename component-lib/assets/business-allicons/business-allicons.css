@@ -1,3 +1,4 @@
+.Business-Icon--add-circle,
 .Business-Icon--add,
 .Business-Icon--alarm-off,
 .Business-Icon--alarm,
@@ -13,6 +14,7 @@
 .Business-Icon--arrow-small-left,
 .Business-Icon--arrow-small-right,
 .Business-Icon--arrow-small-up,
+.Business-Icon--arrow-subdirectory,
 .Business-Icon--arrow-up,
 .Business-Icon--attach,
 .Business-Icon--battery,
@@ -90,9 +92,12 @@
 .Business-Icon--play,
 .Business-Icon--police,
 .Business-Icon--position,
+.Business-Icon--product-data-boost,
+.Business-Icon--product-roam-like-home,
 .Business-Icon--pulse,
 .Business-Icon--question,
 .Business-Icon--recycle,
+.Business-Icon--refill,
 .Business-Icon--refresh,
 .Business-Icon--replace,
 .Business-Icon--return,
@@ -147,6 +152,7 @@
   width: 64px;
   height: 64px;
 }
+.Business-Icon--add-circle,
 .Business-Icon--add,
 .Business-Icon--alarm-off,
 .Business-Icon--alarm,
@@ -162,6 +168,7 @@
 .Business-Icon--arrow-small-left,
 .Business-Icon--arrow-small-right,
 .Business-Icon--arrow-small-up,
+.Business-Icon--arrow-subdirectory,
 .Business-Icon--arrow-up,
 .Business-Icon--attach,
 .Business-Icon--battery,
@@ -197,7 +204,6 @@
 .Business-Icon--fraud,
 .Business-Icon--games,
 .Business-Icon--gift,
-.Business-Icon--graph,
 .Business-Icon--grid-view,
 .Business-Icon--group,
 .Business-Icon--heart-filled,
@@ -238,9 +244,12 @@
 .Business-Icon--play,
 .Business-Icon--police,
 .Business-Icon--position,
+.Business-Icon--product-data-boost,
+.Business-Icon--product-roam-like-home,
 .Business-Icon--pulse,
 .Business-Icon--question,
 .Business-Icon--recycle,
+.Business-Icon--refill,
 .Business-Icon--replace,
 .Business-Icon--return,
 .Business-Icon--robot,
@@ -296,6 +305,13 @@
 .Business-Icon--filter {
   fill: #220;
   fill-rule: nonzero;
+}
+.Business-Icon--graph {
+  fill: none;
+  fill-rule: evenodd;
+  stroke: #000;
+  stroke-linecap: round;
+  stroke-width: 4;
 }
 .Business-Icon--refresh,
 .Business-Icon--world {
