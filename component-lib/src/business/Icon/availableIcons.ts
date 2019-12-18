@@ -62,7 +62,7 @@ export const availableIcons: IconDefinition[] = [
   'fraud',
   'games',
   'gift',
-  'graph',
+  'graph_',
   'grid-view',
   'group',
   'heart',
