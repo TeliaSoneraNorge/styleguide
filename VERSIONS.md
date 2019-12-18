@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.30.2
+- Added new business icons 
+
 ## 1.30.0
 - TypeScript definitions (.d.ts) for all components. This can break existing build processes using TS.
 - New business component: MainMenu
