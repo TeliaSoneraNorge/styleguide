@@ -98,4 +98,35 @@ const Th = ({ children, className, ...rest }) => (
 );
 FullWidthTable.Th = Th;
 
+const ThSortable = ({
+  children,
+  className,
+  onSort,
+  isSorted = false,
+  isSortedDesc = false,
+  sortPriority = null,
+  ...rest
+}) => (
+  <FullWidthTable.Th className={classnames('full-width-table__cell--sortable', className)} {...rest}>
+    <button
+      type="button"
+      onClick={onSort}
+      className={classnames(
+        'button',
+        'button--sortable',
+        {
+          [`button--sorted-${isSortedDesc ? 'desc' : 'asc'}`]: isSorted,
+        },
+        {
+          [`button--sorted-${sortPriority}`]: isSorted && sortPriority !== null,
+        }
+      )}
+    >
+      {children}
+    </button>
+  </FullWidthTable.Th>
+);
+
+FullWidthTable.ThSortable = ThSortable;
+
 export default FullWidthTable;
