@@ -1,7 +1,7 @@
 import React from 'react';
 import { FullWidthTable } from '@telia/styleguide';
 
-const { THead, TBody, ThSortable, Tr, Td } = FullWidthTable;
+const { THead, TBody, ThSortable, Tr, Td, useThSortable } = FullWidthTable;
 
 const people = [
   { firstName: 'Ola', lastName: 'Nordmann', birth: new Date('1990-09-09'), height: 185 },
@@ -11,21 +11,22 @@ const people = [
 ];
 
 const SortedFullWidthTable = () => {
+  const [sortedPeopleA, thSortablePropsA] = useThSortable(people, 1, [{ field: 'birth' }]);
+  const [sortedPeopleB, thSortablePropsB] = useThSortable(people, 2, ['birth', '!lastName']);
   return (
     <React.Fragment>
+      <h4>One property sorting</h4>
       <FullWidthTable>
         <THead>
           <Tr>
-            <ThSortable>Name</ThSortable>
-            <ThSortable isSorted={true} isSortedDesc={true}>
-              Last name
-            </ThSortable>
-            <ThSortable>Birth</ThSortable>
-            <ThSortable>Height</ThSortable>
+            <ThSortable {...thSortablePropsA('firstName')}>Name</ThSortable>
+            <ThSortable {...thSortablePropsA('lastName')}>Last name</ThSortable>
+            <ThSortable {...thSortablePropsA('birth')}>Birth</ThSortable>
+            <ThSortable {...thSortablePropsA('height')}>Height</ThSortable>
           </Tr>
         </THead>
         <TBody>
-          {people.map(({ firstName, lastName, birth, height }, i) => (
+          {sortedPeopleA.map(({ firstName, lastName, birth, height }, i) => (
             <Tr key={'' + i}>
               <Td>{firstName}</Td>
               <Td>{lastName}</Td>
@@ -35,21 +36,19 @@ const SortedFullWidthTable = () => {
           ))}
         </TBody>
       </FullWidthTable>
+
+      <h4>Two properties sorting</h4>
       <FullWidthTable>
         <THead>
           <Tr>
-            <ThSortable>Name</ThSortable>
-            <ThSortable isSorted={true} isSortedDesc={true} sortPriority={1}>
-              Last name
-            </ThSortable>
-            <ThSortable isSorted={true} sortPriority={2}>
-              Birth
-            </ThSortable>
-            <ThSortable>Height</ThSortable>
+            <ThSortable {...thSortablePropsB('firstName')}>Name</ThSortable>
+            <ThSortable {...thSortablePropsB('lastName')}>Last name</ThSortable>
+            <ThSortable {...thSortablePropsB('birth')}>Birth</ThSortable>
+            <ThSortable {...thSortablePropsB('height')}>Height</ThSortable>
           </Tr>
         </THead>
         <TBody>
-          {people.map(({ firstName, lastName, birth, height }, i) => (
+          {sortedPeopleB.map(({ firstName, lastName, birth, height }, i) => (
             <Tr key={'' + i}>
               <Td>{firstName}</Td>
               <Td>{lastName}</Td>
