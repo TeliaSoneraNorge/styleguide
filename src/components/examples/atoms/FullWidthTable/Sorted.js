@@ -11,18 +11,18 @@ const people = [
 ];
 
 const SortedFullWidthTable = () => {
-  const [sortedPeopleA, thSortablePropsA] = useThSortable(people, 1, [{ field: 'birth' }]);
-  const [sortedPeopleB, thSortablePropsB] = useThSortable(people, 2, ['birth', '!lastName']);
+  const [sortedPeopleA, getPropsA] = useThSortable(people, 1, [{ field: 'birth' }]);
+  const [sortedPeopleB, getPropsB] = useThSortable(people, 2, ['birth', '!lastName']);
   return (
     <React.Fragment>
       <h4>One property sorting</h4>
       <FullWidthTable>
         <THead>
           <Tr>
-            <ThSortable {...thSortablePropsA('firstName')}>Name</ThSortable>
-            <ThSortable {...thSortablePropsA('lastName')}>Last name</ThSortable>
-            <ThSortable {...thSortablePropsA('birth')}>Birth</ThSortable>
-            <ThSortable {...thSortablePropsA('height')}>Height</ThSortable>
+            <ThSortable {...getPropsA('firstName')}>Name</ThSortable>
+            <ThSortable {...getPropsA('lastName')}>Last name</ThSortable>
+            <ThSortable {...getPropsA('birth')}>Birth</ThSortable>
+            <ThSortable {...getPropsA('height')}>Height</ThSortable>
           </Tr>
         </THead>
         <TBody>
@@ -41,10 +41,10 @@ const SortedFullWidthTable = () => {
       <FullWidthTable>
         <THead>
           <Tr>
-            <ThSortable {...thSortablePropsB('firstName')}>Name</ThSortable>
-            <ThSortable {...thSortablePropsB('lastName')}>Last name</ThSortable>
-            <ThSortable {...thSortablePropsB('birth')}>Birth</ThSortable>
-            <ThSortable {...thSortablePropsB('height')}>Height</ThSortable>
+            <ThSortable {...getPropsB('firstName')}>Name</ThSortable>
+            <ThSortable {...getPropsB('lastName')}>Last name</ThSortable>
+            <ThSortable {...getPropsB('birth')}>Birth</ThSortable>
+            <ThSortable {...getPropsB('height')}>Height</ThSortable>
           </Tr>
         </THead>
         <TBody>
