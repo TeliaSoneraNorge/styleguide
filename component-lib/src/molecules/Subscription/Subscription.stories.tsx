@@ -119,3 +119,112 @@ stories.addWithJSX('Subscription', () => {
     </Container>
   );
 });
+
+stories.addWithJSX('SubscriptionWithSelect', () => {
+  const showFeaturesInTeaser = boolean("ShowFeaturesInTeaser", true);
+  const priceInfo = array('PriceInfo', ['pr. md']);
+  const transferSubscriptions = [
+    {
+        name: "Telia",
+        header: "Telia X",
+        id: "SMART_X.REGULAR",
+        dataAmount: 'X',
+        dataUnit: "GB",
+        price: 579,
+        priceInfo,
+        groupSubscriptionDiscount: 180,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: true,
+        teaserFeatures: ["Fri bruk av data"]
+    },
+    {
+        name: "SMART",
+        id: "SMART_20GB.REGULAR",
+        dataAmount: 20,
+        dataUnit: "GB",
+        price: 529,
+        priceInfo,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: false,
+        teaserFeatures: ["Music Freedom inkludert"]
+    },
+    {
+        name: "SMART",
+        id: "SMART_15GB.REGULAR",
+        dataAmount: 15,
+        dataUnit: "GB",
+        price: 479,
+        priceInfo,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: false,
+        teaserFeatures: ["Music Freedom inkludert"]
+    },
+    {
+        name: "SMART",
+        id: "SMART_10GB.REGULAR",
+        dataAmount: 10,
+        dataUnit: "GB",
+        price: 429,
+        priceInfo,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: false,
+        teaserFeatures: ["Music Freedom inkludert"]
+    },
+    {
+        name: "SMART",
+        id: "SMART_06GB.REGULAR",
+        dataAmount: 6,
+        dataUnit: "GB",
+        price: 379,
+        priceInfo,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: false,
+        teaserFeatures: []
+    },
+    {
+        name: "SMART",
+        id: "SMART_04GB.REGULAR",
+        dataAmount: 4,
+        dataUnit: "GB",
+        price: 329,
+        priceInfo,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: false,
+        teaserFeatures: []
+    },
+    {
+        name: "SMART",
+        id: "SMART_MINI_3.REGULAR",
+        dataAmount: 2,
+        dataUnit: "GB",
+        price: 249,
+        priceInfo,
+        color: "purple",
+        size: "small",
+        hasGroupSubscriptionDiscount: false,
+        teaserFeatures: []
+    }
+];
+
+  const [selectedSubscription, setSelectedSubscription] = useState("SMART_X.REGULAR");
+
+  const onSubscriptionSelect = (subscriptionId) => {
+      setSelectedSubscription(subscriptionId);
+  }
+
+  return (
+    <Container size="medium">
+      {transferSubscriptions.map((sub) => (
+          <div key={sub.id} className="tlo-summary__subscriptions__subscription-item">
+              <Subscription {...sub} onSelect={(e, subscriptionId) => onSubscriptionSelect(subscriptionId)} isSelected={selectedSubscription === sub.id} />
+          </div>
+      ))}
+    </Container>
+  );
+});

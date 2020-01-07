@@ -31,6 +31,8 @@ const Subscription = ({
   onSelect,
   onClose,
   children,
+  isSelected,
+  teaserFeatures,
 }) => {
   const ref = useRef();
 
@@ -49,6 +51,7 @@ const Subscription = ({
         'subscription--is-showing-features': isShowingFeatures,
         'subscription--is-standalone': isStandalone,
         'subscription--is-broadband': isBroadband,
+        'subscription--is-selected': isSelected,
       })}
       color={color}
       size={size}
@@ -58,6 +61,7 @@ const Subscription = ({
       onClick={onSelect}
       onClose={onClose}
       ref={ref}
+      isSelected={isSelected}
     >
       <section className="subscription__teaser">
         <div className="subscription__teaser-content">
@@ -77,6 +81,12 @@ const Subscription = ({
               <div>{additionalInfo.binding}</div>
             </div>
           )}
+          {teaserFeatures &&
+            teaserFeatures.map(feature => (
+              <div key={feature} className="subscription__feature-info">
+                {feature}
+              </div>
+            ))}
         </div>
         {allPricesLink && (
           <div className="subscription__teaser-links">
