@@ -135,9 +135,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         groupSubscriptionDiscount: 180,
         color: "purple",
         size: "small",
-        hasUnlimitedData: true,
-        hasMusicFreedom: false,
         hasGroupSubscriptionDiscount: true,
+        teaserFeatures: ["Fri bruk av data"]
     },
     {
         name: "SMART",
@@ -148,8 +147,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         priceInfo,
         color: "purple",
         size: "small",
-        hasMusicFreedom: true,
         hasGroupSubscriptionDiscount: false,
+        teaserFeatures: ["Music Freedom inkludert"]
     },
     {
         name: "SMART",
@@ -160,8 +159,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         priceInfo,
         color: "purple",
         size: "small",
-        hasMusicFreedom: true,
         hasGroupSubscriptionDiscount: false,
+        teaserFeatures: ["Music Freedom inkludert"]
     },
     {
         name: "SMART",
@@ -172,8 +171,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         priceInfo,
         color: "purple",
         size: "small",
-        hasMusicFreedom: true,
         hasGroupSubscriptionDiscount: false,
+        teaserFeatures: ["Music Freedom inkludert"]
     },
     {
         name: "SMART",
@@ -184,8 +183,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         priceInfo,
         color: "purple",
         size: "small",
-        hasMusicFreedom: false,
         hasGroupSubscriptionDiscount: false,
+        teaserFeatures: []
     },
     {
         name: "SMART",
@@ -196,8 +195,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         priceInfo,
         color: "purple",
         size: "small",
-        hasMusicFreedom: false,
         hasGroupSubscriptionDiscount: false,
+        teaserFeatures: []
     },
     {
         name: "SMART",
@@ -208,8 +207,8 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
         priceInfo,
         color: "purple",
         size: "small",
-        hasMusicFreedom: false,
         hasGroupSubscriptionDiscount: false,
+        teaserFeatures: []
     }
 ];
 
@@ -223,7 +222,7 @@ stories.addWithJSX('SubscriptionWithSelect', () => {
     <Container size="medium">
       {transferSubscriptions.map((sub) => (
           <div key={sub.id} className="tlo-summary__subscriptions__subscription-item">
-              <Subscription {...sub} onSelect={(e, subscriptionId) => onSubscriptionSelect(subscriptionId)} isSelected={selectedSubscription === sub.id} showFeaturesInTeaser={showFeaturesInTeaser} />
+              <Subscription {...sub} onSelect={(e, subscriptionId) => onSubscriptionSelect(subscriptionId)} isSelected={selectedSubscription === sub.id} />
           </div>
       ))}
     </Container>

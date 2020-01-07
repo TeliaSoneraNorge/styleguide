@@ -32,9 +32,7 @@ const Subscription = ({
   onClose,
   children,
   isSelected,
-  showFeaturesInTeaser,
-  hasMusicFreedom,
-  hasUnlimitedData,
+  teaserFeatures,
 }) => {
   const ref = useRef();
 
@@ -83,12 +81,12 @@ const Subscription = ({
               <div>{additionalInfo.binding}</div>
             </div>
           )}
-          {showFeaturesInTeaser && hasUnlimitedData && (
-            <div className="subscription__feature-info">Fri bruk av data</div>
-          )}
-          {showFeaturesInTeaser && hasMusicFreedom && (
-            <div className="subscription__feature-info">Music Freedom inkludert</div>
-          )}
+          {teaserFeatures &&
+            teaserFeatures.map(feature => (
+              <div key={feature} className="subscription__feature-info">
+                {feature}
+              </div>
+            ))}
         </div>
         {allPricesLink && (
           <div className="subscription__teaser-links">
