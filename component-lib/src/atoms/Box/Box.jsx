@@ -15,7 +15,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
  * Color can be set to transparent with box--no-background
  */
 const Box = (
-  { className, isExpanded, canExpand, color, size, speechBubbleText, children, id, onClick, onClose },
+  { className, isExpanded, canExpand, color, size, speechBubbleText, children, id, onClick, onClose, isSelected },
   ref
 ) => {
   function boxContainerClick(e) {
@@ -43,6 +43,7 @@ const Box = (
           'box--expandable': canExpand,
           'box--is-expanded': isExpanded,
           'button--stripped': !isExpanded,
+          'box--is-selected': isSelected,
         })}
         onClick={boxContainerClick}
         onKeyUp={boxContainerClick}
