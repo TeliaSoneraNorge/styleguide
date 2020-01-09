@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy versions shown (minor changes are omitted).
 
+## 1.30.6
+- Fixed bug in business icons (`arrow-small-*` and `more`)
+
 ## 1.30.2
 - Added new business icons 
 
