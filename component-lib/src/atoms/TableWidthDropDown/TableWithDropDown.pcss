@@ -1,0 +1,58 @@
+.table-with-drop-down {
+    border-collapse: collapse;
+    margin-bottom: var(--margin-bottom-large);
+    margin-top: 10px;
+    position: relative;
+    width: 100%;
+
+    caption { /*In some CMS when adding a table, it's possible to set a Heading for a table which is output as a html caption element*/
+        margin-bottom: 10px;
+        text-align: left;
+    }
+
+
+
+    &__row {
+        background-color: var(--light-grey);
+        display: flex;
+        margin: 0;
+        padding: 0 0.5rem;
+        cursor: pointer;
+    }
+
+    &__row:nth-child(2n+1){
+        background-color: white;
+    }
+
+    &__expanded {
+        background-color: red;
+    }
+
+    &__cell, th, td {
+        display: inline;
+        flex: 0 1 auto;
+        font-weight: 400;
+        padding: 0.5rem 0;
+        text-align: right;
+        width: 100%;
+
+        &:first-child {
+            text-align: left;
+        }
+    }
+}
+
+.table-with-drop-down th[align='left'],
+.table-with-drop-down td[align='left'] {
+    text-align: left;
+}
+
+.table-with-drop-down th[align='center'],
+.table-with-drop-down td[align='center'] {
+    text-align: center;
+}
+
+.table-with-drop-down th[align='right'],
+.table-with-drop-down td[align='right'] {
+    text-align: right;
+}

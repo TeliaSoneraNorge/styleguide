@@ -25,6 +25,7 @@ export { default as SpecialMessage } from './atoms/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner';
 export { default as StepIndicator } from './atoms/StepIndicator';
 export { default as SvgIcon } from './atoms/SvgIcon';
+export { default as TableWidthDropDown } from './atoms/TableWidthDropDown';
 export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink';
 export { default as TextBox } from './atoms/TextBox';
 export { default as TextArea } from './atoms/TextArea';
