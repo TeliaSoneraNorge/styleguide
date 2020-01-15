@@ -5,30 +5,9 @@
     position: relative;
     width: 100%;
 
-    caption { /*In some CMS when adding a table, it's possible to set a Heading for a table which is output as a html caption element*/
-        margin-bottom: 10px;
-        text-align: left;
-    }
-
-
-
-    &__row {
-        background-color: var(--light-grey);
-        display: flex;
-        margin: 0;
-        padding: 0 0.5rem;
-        cursor: pointer;
-    }
-
-    &__row:nth-child(2n+1){
-        background-color: white;
-    }
-
-    &__expanded {
-        background-color: red;
-    }
-
-    &__cell, th, td {
+    &__cell,
+    th,
+    td {
         display: inline;
         flex: 0 1 auto;
         font-weight: 400;
@@ -38,6 +17,60 @@
 
         &:first-child {
             text-align: left;
+        }
+
+        &:nth-child(n + 2):last-child {
+            text-align: center;
+        }
+    }
+
+    &__row {
+        background-color: var(--white);
+        display: flex;
+        margin: 0;
+        padding: 0 0 0 1rem;
+    }
+
+    &__expandable-row {
+        cursor: pointer;
+        display: flex;
+        margin: 0;
+        padding: 0 0 0 1rem;
+    }
+
+    &__icon-cell {
+        width: 8rem !important;
+        margin-left: 10%;
+
+        .table-with-drop-down__icon {
+            height: 0.9rem;
+            width: 0.9rem;
+
+            &--expanded {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            background: var(--white);
+        }
+
+        tr:nth-child(4n + 1),
+        tr:nth-child(4n + 2) {
+            background: var(--light-grey);
+        }
+    }
+
+    thead {
+        th:first-child {
+            font-family: 'Helvetica Neue Medium';
+        }
+
+        th:last-child {
+            width: 8rem !important;
+            margin-left: 10%;
         }
     }
 }

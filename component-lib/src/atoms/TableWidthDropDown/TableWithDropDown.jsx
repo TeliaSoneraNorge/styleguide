@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
+import SvgIcon from '../SvgIcon';
+import PropTypes from 'prop-types';
 
 /**
  * Status: *work in progress*
@@ -47,53 +49,73 @@ const TBody = ({ children, className, ...rest }) => (
 );
 TableWithDropDown.TBody = TBody;
 
-const TFoot = ({ children, white, className, ...rest }) => (
-  <tfoot
-    className={classnames('table-with-drop-down__footer', {
-      [className]: className,
-      'table-with-drop-down__footer--alt': white,
-    })}
-    {...rest}
-  >
-    {children}
-  </tfoot>
-);
-TableWithDropDown.TFoot = TFoot;
-
-const useExpand = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-  const toggleExpand = () => {
-    return setIsExpanded(!isExpanded);
-  };
-  return [isExpanded, toggleExpand];
-};
-
 const Tr = ({ children, className, ...rest }) => {
-  const [isExpanded, toggleExpand] = useExpand();
   return (
     <>
       <tr
         className={classnames('table-with-drop-down__row', {
           [className]: className,
         })}
-        onClick={() => toggleExpand()}
         {...rest}
       >
         {children}
       </tr>
-      {isExpanded && (
-        <tr
-          className={classnames('table-with-drop-down__expanded', {
-            [className]: className,
-          })}
-        >
-          Hei
-        </tr>
-      )}
     </>
   );
 };
 TableWithDropDown.Tr = Tr;
+
+const TrExpandable = ({ children, expandableContent, className, ...rest }) => {
+  const [isExpanded, setExpanded] = useState(false);
+  return (
+    <>
+      <tr
+        className={classnames('table-with-drop-down__expandable-row', {
+          [className]: className,
+        })}
+        onClick={() => setExpanded(!isExpanded)}
+        {...rest}
+      >
+        {children}
+        <td
+          className={classnames('table-with-drop-down__icon-cell', {
+            [className]: className,
+          })}
+        >
+          <SvgIcon
+            className={classnames('table-with-drop-down__icon', {
+              ['table-with-drop-down__icon--expanded']: isExpanded,
+              [className]: className,
+            })}
+            iconName="ico_dropArrow"
+            color="black"
+          />
+        </td>
+      </tr>
+      <tr
+        hidden={!isExpanded}
+        aria-hidden={!isExpanded}
+        className={classnames('table-with-drop-down__expandable-row--expanded', {
+          [className]: className,
+        })}
+      >
+        <td
+          className={classnames('table-with-drop-down__cell--expanded', {
+            [className]: className,
+          })}
+        >
+          {expandableContent}
+        </td>
+      </tr>
+    </>
+  );
+};
+TableWithDropDown.TrExpandable = TrExpandable;
+
+TrExpandable.propTypes = {
+  expandableContent: PropTypes.any.isRequired,
+  className: PropTypes.string,
+};
 
 const Td = ({ children, className, ...rest }) => {
   return (
