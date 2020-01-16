@@ -61,36 +61,47 @@ interface PropsExpandableContent {
 }
 
 export const TrExpandable: React.FC<
-  Props &
+    Props &
     PropsExpandableContent &
     React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>
-> = ({ children, expandableContent, className, ...rest }) => {
-  const [isExpanded, setExpanded] = useState(false);
-  return (
-    <>
-      <tr className={classnames('table-with-drop-down__expandable-row', className)}
-        onClick={() => setExpanded(!isExpanded)}
-        {...rest}
-      >
-        {children}
-        <td className={classnames('table-with-drop-down__icon-cell', className)}>
-          <SvgIcon className={classnames('table-with-drop-down__icon', className, {
-              ['table-with-drop-down__icon--expanded']: isExpanded,
-            })}
-            iconName="ico_dropArrow"
-            color="black"
-          />
-        </td>
-      </tr>
-      <tr
-        hidden={!isExpanded}
-        aria-hidden={!isExpanded}
-        className={classnames('table-with-drop-down__expandable-row--expanded', className)}
-      >
-        <td className={classnames('table-with-drop-down__cell--expanded', className)}>{expandableContent}</td>
-      </tr>
-    </>
-  );
+    > = ({ children, expandableContent, className, ...rest }) => {
+    const [isExpanded, setExpanded] = useState(false);
+    const handleKeyUp = (e: React.KeyboardEvent) => {
+        e.preventDefault();
+        if (e.keyCode === 13) {
+            setExpanded(!isExpanded);
+        }
+    };
+    return (
+        <>
+            <tr
+                tabIndex={0}
+                className={classnames('table-with-drop-down__expandable-row', className)}
+                onClick={() => setExpanded(!isExpanded)}
+                onKeyUp={handleKeyUp}
+                {...rest}
+            >
+                {children}
+                <td className={classnames('table-with-drop-down__icon-cell', className)}>
+                    <SvgIcon
+                        className={classnames('table-with-drop-down__icon', className, {
+                            ['table-with-drop-down__icon--expanded']: isExpanded,
+                        })}
+                        iconName="ico_dropArrow"
+                        color="black"
+                    />
+                </td>
+            </tr>
+            <tr
+                tabIndex={0}
+                hidden={!isExpanded}
+                aria-hidden={!isExpanded}
+                className={classnames('table-with-drop-down__expandable-row--expanded', className)}
+            >
+                <td className={classnames('table-with-drop-down__cell--expanded', className)}>{expandableContent}</td>
+            </tr>
+        </>
+    );
 };
 
 export const Td: React.FC<
