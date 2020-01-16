@@ -68,15 +68,13 @@ export const TrExpandable: React.FC<
   const [isExpanded, setExpanded] = useState(false);
   return (
     <>
-      <tr
-        className={classnames('table-with-drop-down__expandable-row', className)}
+      <tr className={classnames('table-with-drop-down__expandable-row', className)}
         onClick={() => setExpanded(!isExpanded)}
         {...rest}
       >
         {children}
         <td className={classnames('table-with-drop-down__icon-cell', className)}>
-          <SvgIcon
-            className={classnames('table-with-drop-down__icon', className, {
+          <SvgIcon className={classnames('table-with-drop-down__icon', className, {
               ['table-with-drop-down__icon--expanded']: isExpanded,
             })}
             iconName="ico_dropArrow"
