@@ -13,7 +13,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 # Version History
 
-Only noteworthy versions shown (minor changes are omitted).
+Only noteworth
+
+## 1.30.8
+- Fixed bug with showing nested buttons in `Subscription` component.
 
 ## 1.30.6
 - Fixed bug in business icons (`arrow-small-*` and `more`)
