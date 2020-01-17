@@ -54,7 +54,7 @@ const featureMapper = {
   2: features,
 };
 
-const stories = storiesOf('Molecules|Subscription', module);
+const stories = storiesOf('Component library|Molecules/Subscription', module);
 stories.addWithJSX('Subscription', () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const name = text('Name', 'Telia');
