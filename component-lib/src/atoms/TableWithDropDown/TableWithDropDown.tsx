@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import SvgIcon from '../SvgIcon';
 
 /**
- * Status: *Finish*
+ * Status: *finished*
  * Category: Table with expandable rows
  */
 
