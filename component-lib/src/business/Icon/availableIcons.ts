@@ -112,6 +112,7 @@ export const availableIcons: IconDefinition[] = [
   'recycle',
   'refill',
   'refresh',
+  'refresh2',
   'replace',
   'return',
   'robot',

@@ -113,6 +113,7 @@ export type IconDefinition =
   | 'recycle'
   | 'refill'
   | 'refresh'
+  | 'refresh2'
   | 'replace'
   | 'return'
   | 'robot'
