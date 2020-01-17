@@ -105,6 +105,7 @@ export type IconDefinition =
   | 'police'
   | 'position'
   | 'product-data-boost'
+  | 'product-music-freedom'
   | 'product-roam-like-home'
   | 'product-svitsj'
   | 'pulse'
