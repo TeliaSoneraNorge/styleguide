@@ -4,7 +4,6 @@
     margin-top: 10px;
     position: relative;
     width: 100%;
-
     &__cell,
     th,
     td {
@@ -14,28 +13,24 @@
         padding: 0.5rem 0;
         text-align: right;
         width: 100%;
-
         &:first-child {
             text-align: left;
         }
-
-        &:nth-child(n + 2):last-child {
-            text-align: center;
+        &:last-child{
+            width: 50%;
         }
-        &:last-child, &:last-child  {
-            width: 8rem;
-            margin-left: 10%;
-        }
-
     }
-
+    td:last-child {
+        svg {
+            margin-right: 1rem;
+        }
+    }
     &__row {
         background-color: var(--white);
         display: flex;
         margin: 0;
         padding: 0 0 0 1rem;
     }
-
     &__expandable-row {
         cursor: pointer;
         &:hover{
@@ -45,48 +40,38 @@
         margin: 0;
         padding: 0 0 0 1rem;
     }
-
     &__icon-cell {
         .table-with-drop-down__icon {
             height: 0.9rem;
             width: 0.9rem;
-
             &--expanded {
                 transform: rotate(180deg);
             }
         }
     }
-
-
     tbody {
         tr {
             background: var(--white);
         }
-
         tr:nth-child(4n + 1),
         tr:nth-child(4n + 2) {
             background: var(--light-grey);
         }
     }
-
     thead {
         th:first-child {
             font-family: 'Helvetica Neue Medium';
         }
-
     }
 }
-
 .table-with-drop-down th[align='left'],
 .table-with-drop-down td[align='left'] {
     text-align: left;
 }
-
 .table-with-drop-down th[align='center'],
 .table-with-drop-down td[align='center'] {
     text-align: center;
 }
-
 .table-with-drop-down th[align='right'],
 .table-with-drop-down td[align='right'] {
     text-align: right;

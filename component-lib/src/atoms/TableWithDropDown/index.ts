@@ -1,2 +1,1 @@
-export { default } from './TableWithDropDown';
-export { TBody, THead, Th, Tr, TrExpandable, Td } from './TableWithDropDown';
+export { TableWithDropDown, TBody, THead, Th, Tr, TrExpandable, Td } from './TableWithDropDown';
