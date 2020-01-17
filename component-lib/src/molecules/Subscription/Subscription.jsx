@@ -99,7 +99,7 @@ const Subscription = ({
         )}
       </section>
       {features && <Subscription.Features features={features} isBroadband={isBroadband} isExpanded={isExpanded} />}
-      {children && (
+      {isExpanded && children && (
         <section id="subscription-info" className="subscription__expanded-info">
           {children}
         </section>
@@ -160,7 +160,7 @@ const Features = ({ features, isBroadband, isExpanded }) => (
     {isBroadband && (
       <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
     )}
-    {features.button}
+    {isExpanded && features.button}
   </section>
 );
 
