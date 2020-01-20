@@ -4,9 +4,8 @@ import PropTypes from 'prop-types';
 import Label from '../../atoms/Label/Label';
 
 const RadioButton = ({ label, name, value, checked, disabled, onChange, children }) => (
-  <Label className="radiobutton-container">
+  <Label className="radiobutton">
     <input
-      className="radiobutton__input"
       type="radio"
       name={name}
       checked={checked}
