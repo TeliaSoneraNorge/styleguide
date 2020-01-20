@@ -3,10 +3,11 @@ import { storiesOf } from '@storybook/react';
 import List from '../../atoms/List';
 import TableWithDropDown from './TableWithDropDown';
 
-const {TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
+const { TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
 
 // @ts-ignore
 const { Item, Link } = List;
+
 const ListWithLinks = () => (
   <div style={{ marginLeft: '1rem' }}>
     <List>
@@ -30,8 +31,7 @@ const TextExample = () => (
   </div>
 );
 
-// @ts-ignore
-storiesOf('Atoms|TableWithDropDown', module).addWithJSX('TableWithDropDown', () => (
+storiesOf('Atoms|TableWithDropDown', module).addDecorator(() => (
   <TableWithDropDown>
     <THead>
       <Tr>
