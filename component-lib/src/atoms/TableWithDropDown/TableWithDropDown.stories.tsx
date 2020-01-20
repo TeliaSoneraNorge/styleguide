@@ -1,7 +1,10 @@
 import React from 'react';
 import { storiesOf } from '@storybook/react';
 import List from '../../atoms/List';
-import { TableWithDropDown, TBody, Td, Th, THead, Tr, TrExpandable } from './TableWithDropDown';
+import TableWithDropDown from './TableWithDropDown';
+
+const {TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
+
 // @ts-ignore
 const { Item, Link } = List;
 const ListWithLinks = () => (
@@ -26,6 +29,7 @@ const TextExample = () => (
     arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
   </div>
 );
+
 // @ts-ignore
 storiesOf('Atoms|TableWithDropDown', module).addWithJSX('TableWithDropDown', () => (
   <TableWithDropDown>
