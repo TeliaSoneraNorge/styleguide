@@ -31,6 +31,8 @@ const Subscription = ({
   onSelect,
   onClose,
   children,
+  isSelected,
+  teaserFeatures,
 }) => {
   const ref = useRef();
 
@@ -49,6 +51,7 @@ const Subscription = ({
         'subscription--is-showing-features': isShowingFeatures,
         'subscription--is-standalone': isStandalone,
         'subscription--is-broadband': isBroadband,
+        'subscription--is-selected': isSelected,
       })}
       color={color}
       size={size}
@@ -58,13 +61,14 @@ const Subscription = ({
       onClick={onSelect}
       onClose={onClose}
       ref={ref}
+      isSelected={isSelected}
     >
       <section className="subscription__teaser">
         <div className="subscription__teaser-content">
           <h1 className="subscription__name">{name}</h1>
           <span className="subscription__data-amount">{dataAmount}</span>
           <span className="subscription__data-unit">{dataUnit}</span>
-          <span className="subscription__price">{price},-</span>
+          <span className="subscription__price">{formatPrice(price)}</span>
           {priceInfo &&
             priceInfo.map(info => (
               <span key={info} className="subscription__price-info">
@@ -77,6 +81,12 @@ const Subscription = ({
               <div>{additionalInfo.binding}</div>
             </div>
           )}
+          {teaserFeatures &&
+            teaserFeatures.map(feature => (
+              <div key={feature} className="subscription__feature-info">
+                {feature}
+              </div>
+            ))}
         </div>
         {allPricesLink && (
           <div className="subscription__teaser-links">
@@ -89,7 +99,7 @@ const Subscription = ({
         )}
       </section>
       {features && <Subscription.Features features={features} isBroadband={isBroadband} isExpanded={isExpanded} />}
-      {children && (
+      {isExpanded && children && (
         <section id="subscription-info" className="subscription__expanded-info">
           {children}
         </section>
@@ -150,7 +160,7 @@ const Features = ({ features, isBroadband, isExpanded }) => (
     {isBroadband && (
       <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
     )}
-    {features.button}
+    {isExpanded && features.button}
   </section>
 );
 
@@ -230,6 +240,13 @@ Subscription.propTypes = {
   scrollToOnOpen: PropTypes.bool,
   onSelect: PropTypes.func,
   onClose: PropTypes.func,
+};
+
+const formatPrice = price => {
+  if (typeof price === 'number') {
+    return price % 1 === 0 ? price + ',-' : price + ' kr';
+  }
+  return price;
 };
 
 export default Subscription;
