@@ -19,12 +19,12 @@ const RadioButtonGroup = ({ list = [], name, type, onChange, selectedValue, chil
   <div className={getClassName(type, children)}>
     {children !== null && children !== undefined
       ? children
-      : list.map((radio, index) => (
+      : list.map(radio => (
           <RadioButton
             label={radio.label}
             name={name}
             value={radio.value}
-            checked={selectedValue === radio.value || index === selectedValue}
+            checked={radio.value === selectedValue}
             disabled={radio.disabled}
             onChange={onChange}
             key={radio.value}
