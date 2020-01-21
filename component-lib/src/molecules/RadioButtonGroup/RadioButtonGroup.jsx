@@ -17,7 +17,7 @@ const getClassName = (type, children) =>
  */
 const RadioButtonGroup = ({ list = [], name, type, onChange, selectedValue, children }) => (
   <div className={getClassName(type, children)}>
-    {children !== null && children !== undefined
+    {children != null
       ? children
       : list.map(radio => (
           <RadioButton

@@ -19,7 +19,7 @@ const RadioButton = ({ label, name, value, checked, disabled, onChange, children
         <circle className="radiobutton__circle" cx="10" cy="10" r="5" />
       </svg>
     </span>
-    <span className="radiobutton__text">{children !== null && children !== undefined ? children : label}</span>
+    <span className="radiobutton__text">{children != null ? children : label}</span>
   </Label>
 );
 RadioButton.propTypes = {
