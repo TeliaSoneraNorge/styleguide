@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface IRadioButton {
+export interface RadioButtonProps {
   label: string;
   value?: any;
   disabled?: boolean;
@@ -8,8 +8,8 @@ export interface IRadioButton {
 
 export type RadioButtonGroupType = 'horizontal' | 'vertical';
 
-export interface IRadioButtonGroup {
-  list?: IRadioButton[];
+export interface RadioButtonGroupProps {
+  list?: RadioButtonProps[];
   selectedValue?: any;
   name?: string;
   type?: RadioButtonGroupType;
@@ -18,6 +18,6 @@ export interface IRadioButtonGroup {
 }
 
 
-const RadioButtonGroup: React.FC<IRadioButtonGroup>;
+const RadioButtonGroup: React.FC<RadioButtonGroupProps>;
 
 export default RadioButtonGroup;

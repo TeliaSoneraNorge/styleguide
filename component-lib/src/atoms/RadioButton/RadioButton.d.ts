@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface IRadioButtonProps {
+export interface RadioButtonProps {
   label?: string;
   name?: string;
   value?: any;
@@ -10,6 +10,6 @@ export interface IRadioButtonProps {
   children?: React.ReactNode;
 }
 
-const RadioButton: React.FC<IRadioButtonProps>;
+const RadioButton: React.FC<RadioButtonProps>;
 
 export default RadioButton;
