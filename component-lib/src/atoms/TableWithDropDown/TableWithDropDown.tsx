@@ -61,7 +61,7 @@ interface PropsExpandableContent {
 export const TrExpandable: React.FC<Props &
     PropsExpandableContent &
     React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>> = ({ children, expandableContent, className, ...rest }) => {
-    const [isExpanded, setExpanded] = useState(false);
+    const [isExpanded, setExpanded] = useState<boolean>(false);
     const handleKeyUp = (e: React.KeyboardEvent) => {
         if (e.keyCode === 13 && expandableContent) {
             e.preventDefault();
