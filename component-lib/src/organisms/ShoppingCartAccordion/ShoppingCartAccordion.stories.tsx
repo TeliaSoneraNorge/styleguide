@@ -665,7 +665,8 @@ const Wrapper = ({
       );
 }
 
-const stories = storiesOf('Organisms|ShoppingCartAccordion', module);
+const stories = storiesOf('Component library|Organisms/ShoppingCartAccordion', module);
+
 stories.addWithJSX('ShoppingCartAccordion', () => {
   const pricePerMonth = number('Price per month', 500);
   const priceUpfront = number('Price upfront', 500);
@@ -682,7 +683,7 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
   const isCheckout = boolean('Is Checkout', true);
 
   return (
-    <Wrapper 
+    <Wrapper
         numberOfItemsInCart={numberOfItemsInCart}
         shouldHideOnDesktop={shouldHideOnDesktop}
         shouldShowGoToCartButton={shouldShowGoToCartButton}
