@@ -45,7 +45,7 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
           <Td>7 776,-/år</Td>
         </TrExpandable>
         <TrExpandable expandableContent={ListWithLinksExample()}>
-          <Td>HBO NOrdic</Td>
+          <Td>HBO Nordic</Td>
           <Td>1 308,-/år</Td>
         </TrExpandable>
         <TrExpandable expandableContent={TextExample()}>
