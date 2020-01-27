@@ -3,6 +3,7 @@ import { addDecorator, setAddon, addParameters } from '@storybook/react';
 import { withKnobs } from '@storybook/addon-knobs';
 import JSXAddon from 'storybook-addon-jsx';
 import AllIcons from '../assets/allicons/AllIcons';
+import { AllBusinessIcons } from '../src/business/Icon/AllBusinessIcons';
 
 setAddon(JSXAddon);
 
@@ -11,6 +12,7 @@ addDecorator(withKnobs);
 addDecorator(s => (
   <>
     <AllIcons />
+    <AllBusinessIcons />
     {s()}
   </>
 ));
