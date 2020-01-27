@@ -105,9 +105,10 @@ export const TrExpandable: React.FC<
       </tr>
       <tr
         tabIndex={0}
-        style={{ display: isExpanded ? 'flex' : 'none' }}
         aria-hidden={!isExpanded}
-        className={classnames('table-with-drop-down__expandable-row--expanded', className)}
+        className={classnames({
+            ['table-with-drop-down__expandable-row--expanded']: isExpanded,
+            ['table-with-drop-down__expandable-row--hidden']: !isExpanded})}
       >
         <td  className={classnames('table-with-drop-down__cell--expanded', className)}>{expandableContent}</td>
       </tr>
