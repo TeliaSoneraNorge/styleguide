@@ -9,8 +9,12 @@ export interface DescriptionListProps {
    * Whenever should each column contain only two pairs.
    */
   wrapByTwo?: boolean;
+
 }
 
-const DescriptionList: React.FC<DescriptionListProps>;
+const DescriptionList: React.FC<DescriptionListProps> & {
+  Dt: React.FC<React.ReactNode>
+  Dd: React.FC<React.ReactNode>
+};
 
 export default DescriptionList;
