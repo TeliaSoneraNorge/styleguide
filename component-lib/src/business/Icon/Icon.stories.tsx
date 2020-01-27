@@ -1,21 +1,19 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
+import { color, select } from '@storybook/addon-knobs';
 
-import { withKnobs, color, select } from '@storybook/addon-knobs';
-
-import { AllBusinessIcons } from './AllBusinessIcons';
 import { Icon } from './Icon';
 import { IconDefinition } from './IconDefinition';
 import { availableIcons } from './availableIcons';
 
-const stories = storiesOf('Business|Icon', module);
+export default {
+  title: 'Business|Icon',
+  component: Icon,
+};
 
-stories.addDecorator(withKnobs);
+export const Default = () => <Icon icon="company" />;
 
-stories.add('Icon', () => (
+export const Details = () => (
   <div style={{ padding: '24px' }}>
-    <AllBusinessIcons />
-
     <h1>Icon</h1>
 
     <p>
@@ -71,4 +69,4 @@ stories.add('Icon', () => (
       ))}
     </ul>
   </div>
-));
+);
