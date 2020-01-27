@@ -9,16 +9,21 @@ export default class ModalDialogSamplePage extends React.Component {
     this.state = {
       infoDialogActive: false,
       confirmDialogActive: false,
+      nonClosableDialogActive: false,
     };
 
     this.toggleInfoModalDialog = this.toggleInfoModalDialog.bind(this);
     this.toggleConfirmModalDialog = this.toggleConfirmModalDialog.bind(this);
+    this.toggleNonClosableDialog = this.toggleNonClosableDialog.bind(this);
   }
   toggleInfoModalDialog() {
     this.setState({ infoDialogActive: !this.state.infoDialogActive });
   }
   toggleConfirmModalDialog() {
     this.setState({ confirmDialogActive: !this.state.confirmDialogActive });
+  }
+  toggleNonClosableDialog() {
+    this.setState({ nonClosableDialogActive: !this.state.nonClosableDialogActive });
   }
   render() {
     return (
@@ -85,6 +90,21 @@ export default class ModalDialogSamplePage extends React.Component {
                 This dialog can be associated with actions where it&#39;s necessary to get the user to confirm
                 what&#39;s about to happen.
               </p>
+            </ModalDialog>
+          )}
+          <button className="button button-default button--margin-top" onClick={this.toggleNonClosableDialog}>
+            Dialog that cannot be closed by ESC key or clickout
+          </button>
+          {this.state.nonClosableDialogActive && (
+            <ModalDialog
+              name="nonclosable-dialog"
+              heading="Info dialog"
+              onSubmit={this.toggleNonClosableDialog}
+              submitText="Ok"
+              disableOverlayClick
+              disableCloseByEscKey
+            >
+              <p>This dialog can&apos;t be closed by escape key or clickout</p>
             </ModalDialog>
           )}
         </section>

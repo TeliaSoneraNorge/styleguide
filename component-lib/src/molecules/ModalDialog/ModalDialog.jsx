@@ -28,6 +28,8 @@ export default function ModalDialog({
   renderTo,
   headerElement,
   footerElement,
+  disableOverlayClick,
+  disableCloseByEscKey,
   ...rest
 }) {
   const modalNode = renderTo || useContext(Context);
@@ -59,7 +61,7 @@ export default function ModalDialog({
   };
 
   const handleKeyDown = event => {
-    if (event.keyCode === KEY_ESC) closeDialog();
+    if (event.keyCode === KEY_ESC && !disableCloseByEscKey) closeDialog();
   };
 
   useEffect(returnFocusOnDialogClose);
@@ -115,7 +117,11 @@ export default function ModalDialog({
       {ReactDOM.createPortal(
         <>
           {renderDialog(FocusTrap, { as: 'div' })}
-          <div onClick={closeDialog} tabIndex="-1" className="modal-dialog-overlay" />
+          <div
+            onClick={disableOverlayClick ? setFocusOnFirstFocusableElement : closeDialog}
+            tabIndex="-1"
+            className="modal-dialog-overlay"
+          />
         </>,
         modalNode
       )}
@@ -135,4 +141,6 @@ ModalDialog.propTypes = {
   renderTo: PropTypes.any,
   headerElement: PropTypes.element,
   footerElement: PropTypes.element,
+  disableOverlayClick: PropTypes.bool,
+  disableCloseByEscKey: PropTypes.bool,
 };
