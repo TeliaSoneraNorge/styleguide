@@ -6,6 +6,7 @@ import classnames from 'classnames';
  * Status: *finished*.
  * Category: Buttons
  */
+
 const Button = ({
   text,
   kind,
@@ -17,32 +18,55 @@ const Button = ({
   isDisabled,
   type = 'button',
   margin,
+  href,
+  target,
   ...rest
 }) => (
-  <button
-    className={classnames('button', {
-      [`button--${kind}`]: !isDisabled && kind,
-      [`button--${size}`]: size,
-      [`button--margin-${margin}`]: margin,
-      'button--processing': isProcessing,
-      'button--disabled': isDisabled,
-      [className]: className,
-    })}
-    onClick={onClick}
-    disabled={isProcessing || isDisabled}
-    type={type}
-    {...rest}
-  >
-    {!isProcessing && text}
-    {isProcessing && (
-      <span className="button__processing">
-        {processingText}
-        <span className="button__processing-dot">.</span>
-        <span className="button__processing-dot">.</span>
-        <span className="button__processing-dot">.</span>
-      </span>
+  <>
+    {href && (
+      <a
+        className={classnames('button', {
+          [`button--${kind}`]: !isDisabled && kind,
+          [`button--${size}`]: size,
+          [`button--margin-${margin}`]: margin,
+          'button--disabled': isDisabled,
+          [className]: className,
+        })}
+        disabled={isProcessing || isDisabled}
+        href={href}
+        target={target ? '_blank' : '_self'}
+        {...rest}
+      >
+        {text}
+      </a>
     )}
-  </button>
+    {!href && (
+      <button
+        className={classnames('button', {
+          [`button--${kind}`]: !isDisabled && kind,
+          [`button--${size}`]: size,
+          [`button--margin-${margin}`]: margin,
+          'button--processing': isProcessing,
+          'button--disabled': isDisabled,
+          [className]: className,
+        })}
+        onClick={onClick}
+        disabled={isProcessing || isDisabled}
+        type={type}
+        {...rest}
+      >
+        {!isProcessing && text}
+        {isProcessing && (
+          <span className="button__processing">
+            {processingText}
+            <span className="button__processing-dot">.</span>
+            <span className="button__processing-dot">.</span>
+            <span className="button__processing-dot">.</span>
+          </span>
+        )}
+      </button>
+    )}
+  </>
 );
 
 Button.types = {
@@ -83,6 +107,7 @@ Button.propTypes = {
   isProcessing: PropTypes.bool,
   /** A button can be disabled.  */
   isDisabled: PropTypes.bool,
+  href: PropTypes.string,
 };
 
 export default Button;
