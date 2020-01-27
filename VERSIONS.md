@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.30.11
+- Added TableWithDropDown component
+
 ## 1.30.10
 - Fixed Toggle components IE positioning bug
 
