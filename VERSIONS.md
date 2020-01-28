@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.30.12
+- Added disableOverlayClick and disableCloseByEscKey props to ModalDialog component
+
 ## 1.30.11
 - Added TableWithDropDown component
 
