@@ -3,7 +3,7 @@ import DescriptionList from './DescriptionList';
 
 
 export default {
-  title: 'Component library|Atoms/DescriptionList',
+  title: 'Component library|Atoms/Description List',
   component: DescriptionList,
 };
 

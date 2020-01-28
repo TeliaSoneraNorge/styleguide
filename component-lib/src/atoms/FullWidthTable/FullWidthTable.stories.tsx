@@ -3,7 +3,7 @@ import FullWidthTable from './FullWidthTable';
 
 
 export default {
-  title: 'Component library|Atoms/FullWidthTable',
+  title: 'Component library|Atoms/FullWidth Table',
   component: FullWidthTable,
 };
 
