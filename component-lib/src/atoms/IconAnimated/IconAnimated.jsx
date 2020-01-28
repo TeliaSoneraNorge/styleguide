@@ -10,6 +10,7 @@ import lottie from 'lottie-web/build/player/lottie_light';
 export default class IconAnimated extends React.Component {
   static propTypes = {
     json: PropTypes.object,
+    style: '{{ }}',
   };
 
   constructor(props) {
