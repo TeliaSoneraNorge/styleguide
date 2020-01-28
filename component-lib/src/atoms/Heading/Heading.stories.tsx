@@ -7,7 +7,7 @@ export default {
   component: Heading,
 };
 
-export const HeadingLevels = () => (
+export const Default = () => (
 
   <div>
     <Heading level={1} text="This is a level 1 heading" />

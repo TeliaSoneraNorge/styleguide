@@ -1,15 +1,12 @@
 import React from 'react';
 import IconAnimated from './IconAnimated';
 
-
 export default {
   title: 'Component library|Atoms/Icon Animated',
   component: IconAnimated,
 };
 
-
-
-export const IconAnimatedExample = () => (
+export const Default = () => (
 
   <IconAnimated
     style={{

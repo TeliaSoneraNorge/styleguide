@@ -7,6 +7,7 @@ export default {
 };
 
 export const Default = () => {
+
   const [quantity, setQuantity] = useState(2);
 
   return (

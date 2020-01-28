@@ -1,17 +1,17 @@
 import React from 'react';
 import FullWidthTable from './FullWidthTable';
 
-
 export default {
   title: 'Component library|Atoms/FullWidth Table',
   component: FullWidthTable,
 };
 
-
-export const DefaultFullWidthTable = () => {
+export const Default = () => {
+  
   const { THead, TBody, Th, Tr, Td } = FullWidthTable;
 
   return (
+
     <FullWidthTable>
       <THead>
         <Tr>
@@ -61,11 +61,13 @@ export const DefaultFullWidthTable = () => {
         </Tr>
       </TBody>
     </FullWidthTable>
+
   )
 };
 
 
 export const SortedFullWidthTable = () => {
+
   const { THead, TBody, ThSortable, Tr, Td } = FullWidthTable;
   
   const people = [
@@ -76,6 +78,7 @@ export const SortedFullWidthTable = () => {
   ];
 
   return (
+
     <React.Fragment>
       <FullWidthTable>
         <THead>
@@ -124,14 +127,17 @@ export const SortedFullWidthTable = () => {
         </TBody>
       </FullWidthTable>
     </React.Fragment>
+
   );
 };
 
 
 export const WithFooter1 = () => {
+
   const { THead, TBody, Th, Tr, Td, TFoot } = FullWidthTable;
   
   return (
+
     <FullWidthTable>
       <THead>
         <Tr>
@@ -165,14 +171,17 @@ export const WithFooter1 = () => {
         </Tr>
       </TBody>
     </FullWidthTable>
+
   )
 };
 
 
 export const WithFooter2 = () => {
+
   const { THead, TBody, Th, Tr, Td, TFoot } = FullWidthTable;
   
   return (
+
     <FullWidthTable>
       <THead>
         <Tr>
@@ -197,14 +206,17 @@ export const WithFooter2 = () => {
         </Tr>
       </TBody>
     </FullWidthTable>
+
   )
 };
 
 
 export const FullWidthTableWithLink = () => {
+
   const { THead, TBody, Th, Tr, Td } = FullWidthTable;
   
   return (
+
     <FullWidthTable clickable>
       <THead>
         <Tr>
@@ -255,5 +267,6 @@ export const FullWidthTableWithLink = () => {
         </Tr>
       </TBody>
     </FullWidthTable>
+
   );
 };

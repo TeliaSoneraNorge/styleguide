@@ -7,7 +7,7 @@ export default {
   component: StatefulBox,
 };
 
-export const DefaultBox = () => (
+export const Default = () => (
   <>
   
     <StatefulBox color="pink" canExpand>
@@ -59,7 +59,9 @@ export const SmallBox = () => (
 );
 
 export const NotExpandable = () => (
+
   <StatefulBox color="grey" canExpand={false}>
     Default Not Expandable Box
   </StatefulBox>
+  
 );

@@ -6,9 +6,7 @@ export default {
   component: StepIndicator,
 };
 
-
-
-export const StepIndicators = () => {
+export const Default = () => {
 
   const wrapperStyle = {
     width: '700px',
@@ -17,7 +15,8 @@ export const StepIndicators = () => {
   };
   
   return (
-    <div>
+    <>
+
       <div style={wrapperStyle}>
         <StepIndicator
           index={0}
@@ -40,7 +39,7 @@ export const StepIndicators = () => {
           ]}
         />
       </div>
-    </div>
-  )
 
+    </>
+  )
 };

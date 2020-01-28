@@ -1,13 +1,13 @@
 import React from 'react';
 import Caption from './Caption';
 
-
 export default {
   title: 'Component library|Atoms/Caption',
   component: Caption,
 };
 
-export const DefaultCaption = () => (
+export const Default = () => (
+
   <Caption>
     This is a caption component that is meant to be used with the{' '}
     <a className="link" href="#Image">
@@ -19,4 +19,5 @@ export const DefaultCaption = () => (
     </a>{' '}
     components.
   </Caption>
+  
 );

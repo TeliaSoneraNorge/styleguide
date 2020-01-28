@@ -6,9 +6,8 @@ export default {
   component: ToggleSwitch,
 };
 
-
-
 export const Default = () => {
+
   const [active, setActive] = useState<'left' | 'right'>('left');
 
   const exampleContainerStyle = {
@@ -20,6 +19,7 @@ export const Default = () => {
   };
 
   return (
+
     <div style={exampleContainerStyle}>
       <ToggleSwitch
         active={active}
@@ -29,5 +29,6 @@ export const Default = () => {
         rightOnClickHandler={() => setActive('right')}
       />
     </div>
+
   )
 }

@@ -27,6 +27,7 @@ export const Default = () => {
         </Item>
       </List>
     </div>
+    
   );
 
   const TextExample = () => (
@@ -38,6 +39,7 @@ export const Default = () => {
   );
 
   return (
+
     <TableWithDropDown>
       <THead>
         <Tr>
@@ -65,6 +67,6 @@ export const Default = () => {
         </TrExpandable>
       </TBody>
     </TableWithDropDown>
-  );
 
+  );
 };

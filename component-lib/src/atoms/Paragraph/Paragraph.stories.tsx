@@ -7,8 +7,8 @@ export default {
 };
 
 export const Default = () => (
+  <>
 
-  <div>
     <Paragraph kind="preamble">
       This is the preamble variation of paragraph text. Any page should only include one such paragraph.
     </Paragraph>
@@ -17,6 +17,6 @@ export const Default = () => (
       This is the fineprint variation of paragraph text. This is a necessity in the telco business. The fineprint needs
       to be readable.
     </Paragraph>
-  </div>
-  
+
+  </>
 );

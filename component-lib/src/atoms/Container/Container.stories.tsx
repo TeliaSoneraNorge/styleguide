@@ -1,15 +1,12 @@
 import React from 'react';
 import Container from './Container';
 
-
 export default {
   title: 'Component library|Atoms/Container',
   // component: Container,
 };
 
-
-
-export const DefaultContainer = () => {
+export const Default = () => {
 
   const exampleStyles = {
     backgroundColor: 'rgb(153, 10, 227)',
@@ -19,6 +16,7 @@ export const DefaultContainer = () => {
   
   return (
     <>
+
       <Container size="small" style={exampleStyles}>
         This is some content inside a small block.
       </Container>
@@ -28,6 +26,7 @@ export const DefaultContainer = () => {
       <Container size="large" style={exampleStyles}>
         This is some content inside a large block.
       </Container>
+
     </>
   )
 };
