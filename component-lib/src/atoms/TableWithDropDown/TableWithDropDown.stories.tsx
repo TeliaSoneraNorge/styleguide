@@ -1,13 +1,18 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import List from '../../atoms/List';
 import TableWithDropDown from './TableWithDropDown';
 
-const { TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
+export default {
+  title: 'Component library|Atoms/Table With DropDown',
+  // component: TableWithDropDown,
+};
 
-const { Item, Link } = List;
+export const Default = () => {
 
-storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('TableWithDropDown', () => {
+  const { TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
+
+  const { Item, Link } = List;
+
   const ListWithLinksExample = () => (
     <div>
       <List>
@@ -23,6 +28,7 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
       </List>
     </div>
   );
+
   const TextExample = () => (
     <div>
       bus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
@@ -30,6 +36,7 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
       arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
     </div>
   );
+
   return (
     <TableWithDropDown>
       <THead>
@@ -44,6 +51,10 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
           <Td>Familie</Td>
           <Td>7 776,-/år</Td>
         </TrExpandable>
+        <TrExpandable>
+          <Td >Familie</Td>
+          <Td>7 776,-/år</Td>
+        </TrExpandable>
         <TrExpandable expandableContent={ListWithLinksExample()}>
           <Td>HBO Nordic</Td>
           <Td>1 308,-/år</Td>
@@ -55,4 +66,5 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
       </TBody>
     </TableWithDropDown>
   );
-});
+
+};
