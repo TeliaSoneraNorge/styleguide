@@ -6,14 +6,15 @@ export interface SvgIconProps {
    */
   iconName?: string;
   /**
-   * The color of the icon (white, black, purple, grey or none)
+   * The color of the icon (white, black, ... Se Color Palette)
    */
-  color?: any;
+  color?: string;
   /**
    * Other class names
    */
   className?: string;
   title?: string;
+  style?: { [key: string]: string | number | boolean }
 }
 
 const SvgIcon: React.FC<SvgIconProps>;
