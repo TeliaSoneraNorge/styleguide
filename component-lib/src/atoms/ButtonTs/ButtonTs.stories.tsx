@@ -8,7 +8,7 @@ export default {
 
 export const Default = () => (
   <>
-    <ButtonTs text="Link button" href={"https://www.telia.no/"} target="_self" />
-    <ButtonTs text="Button" />
+    <ButtonTs type="link" text="Link button" href={"https://www.telia.no/"} target="_blank" />
+    <ButtonTs type="button" text="Button" />
   </>
 );
