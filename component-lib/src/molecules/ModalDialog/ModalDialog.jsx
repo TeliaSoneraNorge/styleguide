@@ -34,6 +34,7 @@ export default function ModalDialog({
 }) {
   const modalNode = renderTo || useContext(Context);
   const dialogRef = useRef();
+  const dialogOverlayRef = useRef();
 
   const returnFocusOnDialogClose = () => {
     if (standalone) return;
@@ -55,6 +56,18 @@ export default function ModalDialog({
     focusableElements[0].focus();
   };
 
+  const disableAndResetPageScroll = () => {
+    if (!dialogOverlayRef.current || standalone) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialogOverlayRef.current.scrollTop = 0;
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  };
+
   const closeDialog = () => {
     if (onClose) onClose();
     if (!onClose && onSubmit) onSubmit();
@@ -66,6 +79,7 @@ export default function ModalDialog({
 
   useEffect(returnFocusOnDialogClose);
   useEffect(setFocusOnFirstFocusableElement);
+  useEffect(disableAndResetPageScroll);
 
   const defaultHeaderElement = (
     <h2 id={`${name}-heading`} className="modal-dialog__heading">
@@ -116,12 +130,14 @@ export default function ModalDialog({
     <>
       {ReactDOM.createPortal(
         <>
-          {renderDialog(FocusTrap, { as: 'div' })}
           <div
+            ref={dialogOverlayRef}
             onClick={disableOverlayClick ? setFocusOnFirstFocusableElement : closeDialog}
             tabIndex="-1"
             className="modal-dialog-overlay"
-          />
+          >
+            {renderDialog(FocusTrap, { as: 'div' })}
+          </div>
         </>,
         modalNode
       )}
