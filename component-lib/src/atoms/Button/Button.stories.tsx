@@ -1,30 +1,47 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
-
 import Button from './Button';
 
-storiesOf('Atoms|Buttons', module).add('Button', () => (
-  <div>
+export default {
+  title: 'Component library|Atoms/Buttons',
+  component: Button,
+};
+
+export const Default = () => (
+  <Button text="Default button" />
+);
+
+export const Normal = () => (
+  <>
     <Button text="Default button" />
     <Button text="Primary button" kind="primary" />
     <Button text="Disabled button" isDisabled={true} />
-    <br />
-    <br />
+  </>
+);
+
+export const Small = () => (
+  <>
     <Button text="Default button" size="small" />
     <Button text="Primary button" kind="primary" size="small" />
     <Button text="Disabled button" isDisabled={true} size="small" />
-    <br />
-    <br />
+  </>
+);
+
+export const Loading = () => (
+  <>
     <Button text="Default button" isProcessing={true} processingText="Working" />
     <Button text="Default button" isProcessing={true} processingText="Working" kind="primary" />
-    <br />
-    <br />
+  </>
+);
+
+export const Various = () => (
+  <>
     <Button text="Confirm" />
-    <Button text="Cancel button" kind="cancel" />
     <Button text="Inverted button" kind="inverted" />
     <Button text="Negative button" kind="negative" />
-    <br />
-    <br />
-    <Button text="Link button" kind="link" />
-  </div>
-));
+    <Button text="Cancel button" kind="cancel" />
+  </>
+);
+
+export const LinkButton = () => (
+   <Button text="Link button" kind="link" />
+);

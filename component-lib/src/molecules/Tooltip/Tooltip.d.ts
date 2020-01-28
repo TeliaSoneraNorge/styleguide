@@ -1,9 +1,12 @@
 import * as React from 'react';
 
 export interface TooltipProps {
+  buttonContent?: React.ReactNode;
+  children?: React.ReactNode;
+  className?: string;
+  isExpanded?: boolean;
   label?: string;
   text?: string;
-  isExpanded?: boolean;
 }
 
 const Tooltip: React.FC<TooltipProps>;

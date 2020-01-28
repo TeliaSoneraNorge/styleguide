@@ -630,7 +630,8 @@ const style = {
   justifyContent: 'center',
 };
 
-const stories = storiesOf('Molecules|ShoppingCart', module);
+const stories = storiesOf('Component library|Molecules/ShoppingCart', module);
+
 stories.addWithJSX('ShoppingCart', () => {
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const heading = text('Heading', 'Handlekurv');

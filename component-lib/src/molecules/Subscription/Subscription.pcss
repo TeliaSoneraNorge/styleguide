@@ -3,7 +3,7 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    min-height: 300px;
+    min-height: 280px;
 
     /* Teaser */
     &__teaser {
@@ -56,6 +56,12 @@
             font-size: 0.9rem;
             font-family: "Helvetica Neue Medium";
         }
+    }
+    &__feature-info {
+        display: block;
+        font-size: 0.75rem;
+        font-family: "Helvetica Neue Medium";
+        margin-top: 1rem;
     }
     &__teaser-links {
         background-color: var(--white);
@@ -214,7 +220,7 @@
 .box--teal {
     &.box--is-expanded,
     &.subscription--is-standalone {
-         .subscription__teaser {
+        .subscription__teaser {
             border: 3px solid var(--teal);
         }
         .subscription__teaser-content {
