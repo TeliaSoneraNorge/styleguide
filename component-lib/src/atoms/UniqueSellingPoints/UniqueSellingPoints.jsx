@@ -34,6 +34,8 @@ UniqueSellingPoints.Item = Item;
 UniqueSellingPoints.propTypes = {
   /** Zero or more of UniqueSellingPoints.Item elements. */
   children: PropTypes.node,
+  /** For Vertical Listing */
+  className: PropTypes.string,
 };
 
 UniqueSellingPoints.Item.propTypes = {

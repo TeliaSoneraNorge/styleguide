@@ -7,6 +7,7 @@ export interface IconLinkProps {
    * One of 'download', 'linkedIn' or 'twitter'.
    */
   iconName?: IconLinkIconName;
+  href: string;
 }
 
 const IconLink: React.FC<IconLinkProps>;

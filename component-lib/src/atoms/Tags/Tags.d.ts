@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type TagsChildren = any | any[];
+export type TagsChildren = React.ReactNode;
 
 export type TagsColor = 'dark-grey';
 
@@ -19,6 +19,13 @@ export interface TagsProps {
   color?: TagsColor;
 }
 
-const Tags: React.FC<TagsProps>;
+export interface TagProps {
+  className?: string;
+  children?: TagsChildren;
+}
+
+const Tags: React.FC<TagsProps> & { 
+      Tag:  React.FC<TagProps>;
+};
 
 export default Tags;
