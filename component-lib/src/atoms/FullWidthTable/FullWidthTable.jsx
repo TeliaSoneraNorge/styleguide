@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { useThSortable } from './useThSortable';
 
 /**
  * Status: *finished*
@@ -128,5 +129,7 @@ const ThSortable = ({
 );
 
 FullWidthTable.ThSortable = ThSortable;
+
+FullWidthTable.useThSortable = useThSortable;
 
 export default FullWidthTable;

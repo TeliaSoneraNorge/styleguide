@@ -16,7 +16,7 @@
     "icons:business-allicons-react": "node generate-AllBusinessIcons-component.js",
     "icons:generate-business-zip": "node ./scripts/generate-business-icons-zip-file.js",
     "icons:svg-join-business": "svg-join -s \"assets/business-icons/*.svg\" -o ./assets/business-allicons -n business-allicons -p Business-Icon-- --mono",
-    "build": "run-p build:commonjs build:es build:css build:ts-types && run-s build:copy-files",
+    "build": "run-s test && run-p build:commonjs build:es build:css build:ts-types && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist",
     "build:copy-files": "node ./scripts/copy-files.js",
     "build:css": "postcss src/index.pcss src/business.pcss --dir dist --ext css --config ./postcss.config.js",
@@ -34,7 +34,9 @@
     "css:watch": "cross-env LOCAL_DEV=true postcss src/index.pcss -o dist/index.css --watch --config ./postcss.config.js",
     "svgo:pebbles": "svgo -f ./assets/pebbles -o ./assets/pebbles-optimized --config=./svgo.config.yml --multipass",
     "storybook": "start-storybook -s ./assets -p 6006",
-    "build-storybook": "cross-env STORYBOOK=true build-storybook -o dist-storybook"
+    "build-storybook": "cross-env STORYBOOK=true build-storybook -o dist-storybook",
+    "test": "jest",
+    "test:watch": "npm test -- --watch"
   },
   "publishConfig": {
     "access": "public"
@@ -48,6 +50,7 @@
     "@babel/plugin-proposal-class-properties": "^7.4.4",
     "@babel/plugin-proposal-object-rest-spread": "^7.4.4",
     "@babel/plugin-transform-object-assign": "^7.2.0",
+    "@babel/polyfill": "^7.7.0",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
@@ -74,6 +77,7 @@
     "eslint": "4.18.2",
     "eslint-plugin-react": "7.4.0",
     "fs-extra": "^7.0.1",
+    "jest": "^24.9.0",
     "js-yaml": "^3.13.1",
     "npm-run-all": "4.1.1",
     "postcss": "7.0.14",
