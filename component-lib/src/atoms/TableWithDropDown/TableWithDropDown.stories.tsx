@@ -53,10 +53,6 @@ export const Default = () => {
           <Td>Familie</Td>
           <Td>7 776,-/år</Td>
         </TrExpandable>
-        <TrExpandable>
-          <Td >Familie</Td>
-          <Td>7 776,-/år</Td>
-        </TrExpandable>
         <TrExpandable expandableContent={ListWithLinksExample()}>
           <Td>HBO Nordic</Td>
           <Td>1 308,-/år</Td>
