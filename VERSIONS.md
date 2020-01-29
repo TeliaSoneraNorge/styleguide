@@ -17,7 +17,7 @@ Only noteworth
 
 ## 1.30.14
 - Created stories for all Atoms
-- fullWidthTable component // Storybook /atoms/fullWidthTable
+- tableWithDropDown component // Storybook /atoms/tableWithDropDown
 - Sortable table hook
 
 ## 1.30.13
