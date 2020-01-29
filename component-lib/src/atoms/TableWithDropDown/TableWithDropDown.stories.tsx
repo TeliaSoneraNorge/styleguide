@@ -9,7 +9,7 @@ const { Item, Link } = List;
 
 storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('TableWithDropDown', () => {
   const ListWithLinksExample = () => (
-    <div style={{ marginLeft: '1rem' }}>
+    <div>
       <List>
         <Item>
           <Link href="#">First link in list</Link>
@@ -24,7 +24,7 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
     </div>
   );
   const TextExample = () => (
-    <div style={{ margin: '1rem' }}>
+    <div>
       bus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu,
       pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget,
       arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium.
@@ -34,14 +34,14 @@ storiesOf('Component library|Atoms/TableWithDropDown', module).addWithJSX('Table
     <TableWithDropDown>
       <THead>
         <Tr>
-          <Th style={{ fontSize: 18, fontWeight: 500 }}>TV-produkter</Th>
+          <Th>TV-produkter</Th>
           <Th>Pris</Th>
           <Th>Endre</Th>
         </Tr>
       </THead>
       <TBody>
         <TrExpandable>
-          <Td >Familie</Td>
+          <Td>Familie</Td>
           <Td>7 776,-/år</Td>
         </TrExpandable>
         <TrExpandable expandableContent={ListWithLinksExample()}>
