@@ -15,6 +15,11 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.30.14
+- Created stories for all Atoms
+- fullWidthTable component // Storybook /atoms/fullWidthTable
+- Sortable table hook
+
 ## 1.30.13
 - ModalDialog: Added option to scroll if the modal content overflows the page.
 
