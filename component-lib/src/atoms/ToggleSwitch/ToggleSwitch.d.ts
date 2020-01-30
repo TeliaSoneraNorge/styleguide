@@ -8,8 +8,8 @@ export interface ToggleSwitchProps {
   className?: string;
   leftLabel?: string;
   rightLabel?: string;
-  leftOnClickHandler?: (...args: any[]) => any;
-  rightOnClickHandler?: (...args: any[]) => any;
+  leftOnClickHandler?: () => void;
+  rightOnClickHandler?: () => void;
 }
 
 const ToggleSwitch: React.FC<ToggleSwitchProps>;

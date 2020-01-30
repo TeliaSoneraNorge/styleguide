@@ -15,6 +15,23 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.30.14
+- Created stories for all Atoms
+- tableWithDropDown component // Storybook /atoms/tableWithDropDown
+- Sortable table hook
+
+## 1.30.13
+- ModalDialog: Added option to scroll if the modal content overflows the page.
+
+## 1.30.12
+- Added disableOverlayClick and disableCloseByEscKey props to ModalDialog component
+
+## 1.30.11
+- Added TableWithDropDown component
+
+## 1.30.10
+- Fixed Toggle components IE positioning bug
+
 ## 1.30.9
 - Hide ',-' for price in Subscription component for not rounded numbers (B2B customers)
 

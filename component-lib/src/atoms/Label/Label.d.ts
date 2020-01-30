@@ -4,7 +4,7 @@ export interface LabelProps {
   /**
    * Content of this label.
    */
-  text?: React.ReactNode;
+  text?: string;
   /**
    * Content of this label.
    */

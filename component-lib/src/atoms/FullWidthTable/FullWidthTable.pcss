@@ -144,3 +144,88 @@
         }
     }
 }
+
+.full-width-table__cell--sortable {
+    padding: 0 !important;
+
+    .button--sortable {
+        background: none;
+        background-size: 1rem 1rem;
+        border: none;
+        border-radius: 0;
+        color: black;
+        width: 100%;
+        padding: 0.5rem 1.2rem 0.5rem 0 !important;
+        margin: 0;
+        height: 100%;
+        text-transform: none;
+        text-align: right;
+        position: relative;
+    }
+    .button--sortable::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        background-color: var(--darkest-gray);
+        mask-image: url('{{assetPath}}/icons/sortable.svg');
+        -webkit-mask-image: url('{{assetPath}}/icons/sortable.svg');
+        mask-repeat: no-repeat;
+        -webkit-mask-repeat: no-repeat;
+        mask-position: right center;
+        -webkit-mask-position: right center;
+        mask-size: 1rem 1rem;
+        -webkit-mask-size: 1rem 1rem;
+    }
+    .button--sortable:hover::before,
+    .button--sortable:active::before,
+    .button--sortable:focus::before {
+        background-color: var(--light-grey);
+    }
+
+    .button--sorted-asc::before {
+        mask-image: url('{{assetPath}}/icons/sorted_asc.svg');
+        -webkit-mask-image: url('{{assetPath}}/icons/sorted_asc.svg');
+    }
+
+    .button--sorted-desc::before {
+        mask-image: url('{{assetPath}}/icons/sorted_desc.svg');
+        -webkit-mask-image: url('{{assetPath}}/icons/sorted_desc.svg');
+    }
+
+    .button--sortable::after {
+        position: absolute;
+        right: 0.3rem;
+        font-size: 0.75rem;
+        color: var(--darkest-gray);
+    }
+    .button--sorted-asc::after {
+        bottom: 0.1rem;
+    }
+    .button--sorted-desc::after {
+        top: 0.1rem;
+    }
+    .button--sortable:hover::after,
+    .button--sortable:active::after,
+    .button--sortable:focus::after {
+        color: var(--light-grey);
+    }
+    .button--sorted-1::after {
+        content: '1';
+    }
+    .button--sorted-2::after {
+        content: '2';
+    }
+    .button--sorted-3::after {
+        content: '3';
+    }
+}
+
+.full-width-table__cell--sortable:first-child {
+    .button--sortable {
+        text-align: left;
+    }
+}

@@ -193,7 +193,9 @@
 .svg_ico_router_refill,
 .svg_ico_share,
 .svg_ico_truck,
-.svg_ico_wireless {
+.svg_ico_wireless,
+.svg_sorted_asc,
+.svg_sorted_desc {
   fill-rule: evenodd;
 }
 .svg_ico_login,
@@ -319,6 +321,15 @@
 .svg_silent_icon {
   width: 652.25px;
   height: 534.69px;
+}
+.svg_sortable {
+  width: 26px;
+  height: 36px;
+}
+.svg_sorted_asc,
+.svg_sorted_desc {
+  width: 18px;
+  height: 14px;
 }
 .svg_step-by-step-pebble {
   width: 66px;

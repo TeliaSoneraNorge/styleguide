@@ -28,10 +28,13 @@ export default function ModalDialog({
   renderTo,
   headerElement,
   footerElement,
+  disableOverlayClick,
+  disableCloseByEscKey,
   ...rest
 }) {
   const modalNode = renderTo || useContext(Context);
   const dialogRef = useRef();
+  const dialogOverlayRef = useRef();
 
   const returnFocusOnDialogClose = () => {
     if (standalone) return;
@@ -53,17 +56,37 @@ export default function ModalDialog({
     focusableElements[0].focus();
   };
 
+  const disableAndResetPageScroll = () => {
+    if (!dialogOverlayRef.current || standalone) return;
+
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialogOverlayRef.current.scrollTop = 0;
+
+    return () => {
+      document.body.style.overflow = previousOverflow;
+    };
+  };
+
   const closeDialog = () => {
     if (onClose) onClose();
     if (!onClose && onSubmit) onSubmit();
   };
 
-  const handleKeyDown = event => {
-    if (event.keyCode === KEY_ESC) closeDialog();
+  const onOverlayClick = event => {
+    if (event.target !== dialogOverlayRef.current) return;
+
+    if (disableOverlayClick) setFocusOnFirstFocusableElement();
+    else closeDialog();
   };
 
-  useEffect(returnFocusOnDialogClose);
-  useEffect(setFocusOnFirstFocusableElement);
+  const handleKeyDown = event => {
+    if (event.keyCode === KEY_ESC && !disableCloseByEscKey) closeDialog();
+  };
+
+  useEffect(returnFocusOnDialogClose, []);
+  useEffect(setFocusOnFirstFocusableElement, []);
+  useEffect(disableAndResetPageScroll, []);
 
   const defaultHeaderElement = (
     <h2 id={`${name}-heading`} className="modal-dialog__heading">
@@ -114,8 +137,9 @@ export default function ModalDialog({
     <>
       {ReactDOM.createPortal(
         <>
-          {renderDialog(FocusTrap, { as: 'div' })}
-          <div onClick={closeDialog} tabIndex="-1" className="modal-dialog-overlay" />
+          <div ref={dialogOverlayRef} onClick={onOverlayClick} tabIndex="-1" className="modal-dialog-overlay">
+            {renderDialog(FocusTrap, { as: 'div' })}
+          </div>
         </>,
         modalNode
       )}
@@ -135,4 +159,6 @@ ModalDialog.propTypes = {
   renderTo: PropTypes.any,
   headerElement: PropTypes.element,
   footerElement: PropTypes.element,
+  disableOverlayClick: PropTypes.bool,
+  disableCloseByEscKey: PropTypes.bool,
 };

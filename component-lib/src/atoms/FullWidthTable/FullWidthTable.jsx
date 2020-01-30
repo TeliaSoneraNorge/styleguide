@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { useThSortable } from './useThSortable';
 
 /**
  * Status: *finished*
@@ -97,5 +98,38 @@ const Th = ({ children, className, ...rest }) => (
   </th>
 );
 FullWidthTable.Th = Th;
+
+const ThSortable = ({
+  children,
+  className,
+  onSort,
+  isSorted = false,
+  isSortedDesc = false,
+  sortPriority = null,
+  ...rest
+}) => (
+  <FullWidthTable.Th className={classnames('full-width-table__cell--sortable', className)} {...rest}>
+    <button
+      type="button"
+      onClick={onSort}
+      className={classnames(
+        'button',
+        'button--sortable',
+        {
+          [`button--sorted-${isSortedDesc ? 'desc' : 'asc'}`]: isSorted,
+        },
+        {
+          [`button--sorted-${sortPriority}`]: isSorted && sortPriority !== null,
+        }
+      )}
+    >
+      {children}
+    </button>
+  </FullWidthTable.Th>
+);
+
+FullWidthTable.ThSortable = ThSortable;
+
+FullWidthTable.useThSortable = useThSortable;
 
 export default FullWidthTable;

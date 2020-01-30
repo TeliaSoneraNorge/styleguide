@@ -1,7 +1,11 @@
 import * as React from 'react';
 
 export interface IconAnimatedProps {
-  json?: Object;
+  style: {
+    height: number;
+    width: number;
+  }
+  json?: any;
 }
 
 export default class IconAnimated extends React.Component<IconAnimatedProps, any> {

@@ -28,7 +28,7 @@ const SvgIcon = ({ iconName, color, className, title, ...rest }) => (
 SvgIcon.propTypes = {
   /** The name of the icon*/
   iconName: PropTypes.string,
-  /** The color of the icon (white, black, purple, grey or none)*/
+  /** The color of the icon (white, black, ... Se Color Palette)*/
   color: PropTypes.oneOf(colorNames),
   /** Other class names*/
   className: PropTypes.string,
