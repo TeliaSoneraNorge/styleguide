@@ -12,6 +12,8 @@ export interface ModalDialogProps {
   renderTo?: any;
   headerElement?: React.ReactElement<any>;
   footerElement?: React.ReactElement<any>;
+  disableOverlayClick?: React.ReactNode;
+  disableCloseByEscKey?: React.ReactNode;
 }
 
 const ModalDialog: React.FC<ModalDialogProps>;
