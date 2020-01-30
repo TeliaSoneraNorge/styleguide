@@ -89,7 +89,7 @@ export default function ModalDialog({
   useEffect(disableAndResetPageScroll, []);
 
   const defaultHeaderElement = (
-    <h2 id={`${name}-heading`} className="modal-dialog__heading">
+    <h2 tabIndex="0" id={`${name}-heading`} className="modal-dialog__heading">
       {heading}
     </h2>
   );
