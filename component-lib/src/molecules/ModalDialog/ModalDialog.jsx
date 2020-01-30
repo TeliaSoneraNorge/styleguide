@@ -53,11 +53,12 @@ export default function ModalDialog({
   };
 
   const disableAndResetPageScroll = () => {
-    if (!dialogOverlayRef.current || standalone) return;
-
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-    dialogOverlayRef.current.scrollTop = 0;
+
+    if (dialogOverlayRef.current && !standalone) {
+      dialogOverlayRef.current.scrollTop = 0;
+    }
 
     return () => {
       document.body.style.overflow = previousOverflow;
@@ -81,7 +82,7 @@ export default function ModalDialog({
   };
 
   useEffect(returnFocusOnDialogClose, []);
-  useEffect(setFocusOnDialog, []);
+  useEffect(setFocusOnDialog, [dialogRef.current]);
   useEffect(disableAndResetPageScroll, []);
 
   const defaultHeaderElement = (
