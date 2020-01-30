@@ -17,6 +17,7 @@ Only noteworth
 
 ## 1.30.16
 - RadioButtonGroup updated
+- Fixed modal dialog focus to target the dialog itself to prevent scrolling to the bottom
 
 ## 1.30.15
 - Modal dialog invoke effects only once and fix clickout
