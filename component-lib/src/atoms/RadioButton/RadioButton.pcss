@@ -1,0 +1,67 @@
+/* Customize settings for the radiobutton container */
+.radiobutton {
+    clear: both;
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+
+    user-select: none;
+    -ms-user-select: none;          /* Edge */
+    -webkit-touch-callout: none;    /* Safari */
+    cursor: pointer;
+    
+    font-family: "Helvetica Neue"; 
+ 
+    /* Hide the browser's default radio button */
+    & input {
+	  position: absolute;
+	  opacity: 0;
+	  cursor: pointer;
+	}
+
+    /* If the input is checked, display the inner circle */
+    & > input:checked ~ .radiobutton__svg-container .radiobutton__circle {
+		display: block;
+	}
+
+    /* Style default checkmark container */
+    & > .radiobutton__svg-container {
+        line-height: 0;
+        border-radius: 50%;
+		cursor: pointer;
+
+        margin-right: 0.6rem;
+        margin-top: 2px;
+
+        /* Common parts within the SVG, in "one go" */
+        & > svg {
+            fill: none;	/* Do not fill the "background" of the svg */
+		    cursor: pointer;
+            transition: stroke .3s ease;
+            vertical-align: middle;
+        }
+
+        /* Default we show the border */
+	    & .radiobutton__border {
+    		display: block;
+		    stroke-width: 2px;
+		    stroke: var(--darkest-grey);
+	    }
+
+        /* Default we do not show the checked cicle */
+	    & .radiobutton__circle {
+		    display: none;
+            fill: var(--core-purple);
+        }
+    }
+    
+    /* On hover effect, adding a gray shadow */
+	&:hover > input ~ .radiobutton__svg-container {
+		box-shadow: 0 0 0 calc(1.25rem/4) rgba(var(--deep-purple-rgb), 0.2);
+	}
+
+	/* On focus effect, adding a gray shadow */
+	& > input:focus + .radiobutton__svg-container {
+		box-shadow: 0 0 0 calc(1.25rem/4) rgba(var(--deep-purple-rgb), 0.2);
+	}
+}

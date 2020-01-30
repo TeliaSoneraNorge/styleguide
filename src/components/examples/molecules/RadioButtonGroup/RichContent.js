@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { RadioButtonList, RadioButtonWithLabel, Heading, Paragraph } from '@telia/styleguide';
+import { RadioButton, RadioButtonGroup, Heading, Paragraph } from '@telia/styleguide';
 
-const RichContentRadioButtonList = () => {
+const RichRadioButtonGroupList = () => {
   const [value, setValue] = useState(0);
 
   const onClick = e => {
@@ -9,8 +9,8 @@ const RichContentRadioButtonList = () => {
   };
 
   return (
-    <RadioButtonList type="vertical" hasRichContent onChange={onClick}>
-      <RadioButtonWithLabel checked={value == 0} hasRichContent value="0" name="radiobutton-test-3" onChange={onClick}>
+    <RadioButtonGroup type="vertical" onChange={onClick}>
+      <RadioButton checked={value == 0} value="0" name="radiobutton-group-rich" onChange={onClick}>
         <div style={{ display: 'inline-block', width: '80%' }}>
           <Heading level="3" text="Option 1" />
           <Paragraph>
@@ -23,20 +23,20 @@ const RichContentRadioButtonList = () => {
           style={{ display: 'inline-block', float: 'right', width: '20%' }}
           src={require('assets/website-images/zens-charger.png')}
         />
-      </RadioButtonWithLabel>
+      </RadioButton>
 
-      <RadioButtonWithLabel checked={value == 1} hasRichContent value="1" name="radiobutton-test-3" onChange={onClick}>
+      <RadioButton checked={value == 1} value="1" name="radiobutton-group-rich" onChange={onClick}>
         <Heading level="3" text="Option 2" />
         <Paragraph>
           Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
         </Paragraph>
-      </RadioButtonWithLabel>
+      </RadioButton>
 
-      <RadioButtonWithLabel checked={value == 2} hasRichContent value="2" name="radiobutton-test-3" onChange={onClick}>
+      <RadioButton checked={value == 2} value="2" name="radiobutton-group-rich" onChange={onClick}>
         <Heading level="3" text="Option 3" />
-      </RadioButtonWithLabel>
-    </RadioButtonList>
+      </RadioButton>
+    </RadioButtonGroup>
   );
 };
 
-export default RichContentRadioButtonList;
+export default RichRadioButtonGroupList;

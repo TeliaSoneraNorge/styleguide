@@ -44,6 +44,12 @@ Only noteworth
 ## 1.30.2
 - Added new business icons
 
+## 1.30.1
+- New molecule: RadioButtonGroup
+- New atom: RadioButton
+- Deprecated: RadioButtonList
+- Deprecated: RadioButtonWithLabel
+
 ## 1.30.0
 - TypeScript definitions (.d.ts) for all components. This can break existing build processes using TS.
 - New business component: MainMenu

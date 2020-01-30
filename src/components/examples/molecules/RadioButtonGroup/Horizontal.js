@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { RadioButtonList } from '@telia/styleguide';
+import { RadioButtonGroup } from '@telia/styleguide';
 
 const list = [
   { label: 'I am checked', value: '0' },
@@ -10,22 +10,22 @@ const list = [
   },
 ];
 
-const HorizontalRadioButtonList = () => {
+const RadioButtonGroupHorizontal = () => {
   const [value, setValue] = useState(0);
 
   const onClick = e => {
-    setValue(Number(e.target.value));
+    setValue(e.target.value);
   };
 
   return (
-    <RadioButtonList
-      type="vertical"
-      selectedIndex={value}
-      onChange={onClick}
-      name="radiobuttonlist-test-horizontal"
+    <RadioButtonGroup
       list={list}
+      selectedValue={value ? value : '2'}
+      name="radiobutton-group-horizontal"
+      type="horizontal"
+      onChange={onClick}
     />
   );
 };
 
-export default HorizontalRadioButtonList;
+export default RadioButtonGroupHorizontal;

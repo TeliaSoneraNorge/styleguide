@@ -1,0 +1,34 @@
+.radiobutton-group {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+
+    &--horizontal {
+        flex-direction: row;
+
+        > *:not(:last-child) {
+            margin-right: 1rem;
+        }
+    }
+
+    &--vertical .radiobutton-container {
+        margin-bottom: 0.4rem;
+    }
+
+    &--rich-content {
+        margin: 1rem 0 2rem;
+
+        .radio-button {
+            padding: 1rem 0;
+            border-top: 1px solid var(--light-grey);
+        }
+
+        .radio-button:last-child {
+            border-bottom: 1px solid var(--light-grey);
+        }
+
+        .radio-button__text {
+            font-size: 1.5rem;
+        }
+    }
+}
