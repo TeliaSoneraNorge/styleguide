@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Context } from './ModalDialogProvider';
-import FocusTrap, { focusableElementsSelector } from '../../atoms/FocusTrap/FocusTrap';
+import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 
 const KEY_ESC = 27;
 
@@ -46,14 +46,10 @@ export default function ModalDialog({
     };
   };
 
-  const setFocusOnFirstFocusableElement = () => {
+  const setFocusOnDialog = () => {
     if (!dialogRef.current || standalone) return;
 
-    const focusableElements = dialogRef.current.querySelectorAll(focusableElementsSelector);
-
-    if (!focusableElements.length) return;
-
-    focusableElements[0].focus();
+    dialogRef.current.focus();
   };
 
   const disableAndResetPageScroll = () => {
@@ -76,7 +72,7 @@ export default function ModalDialog({
   const onOverlayClick = event => {
     if (event.target !== dialogOverlayRef.current) return;
 
-    if (disableOverlayClick) setFocusOnFirstFocusableElement();
+    if (disableOverlayClick) setFocusOnDialog();
     else closeDialog();
   };
 
@@ -85,11 +81,11 @@ export default function ModalDialog({
   };
 
   useEffect(returnFocusOnDialogClose, []);
-  useEffect(setFocusOnFirstFocusableElement, []);
+  useEffect(setFocusOnDialog, []);
   useEffect(disableAndResetPageScroll, []);
 
   const defaultHeaderElement = (
-    <h2 tabIndex="0" id={`${name}-heading`} className="modal-dialog__heading">
+    <h2 id={`${name}-heading`} className="modal-dialog__heading">
       {heading}
     </h2>
   );
@@ -110,6 +106,7 @@ export default function ModalDialog({
 
   const renderDialog = (Component, additionalProps = {}) => (
     <Component
+      tabIndex={0}
       onKeyDown={handleKeyDown}
       ref={dialogRef}
       className={classnames('modal-dialog container', 'container--small', { 'modal-dialog--standalone': standalone })}
