@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.30.16
+- RadioButtonGroup updated
+
+## 1.30.15
+- Modal dialog invoke effects only once and fix clickout
+
 ## 1.30.14
 - Created stories for all Atoms
 - tableWithDropDown component // Storybook /atoms/tableWithDropDown
