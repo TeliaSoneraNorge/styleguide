@@ -73,13 +73,20 @@ export default function ModalDialog({
     if (!onClose && onSubmit) onSubmit();
   };
 
+  const onOverlayClick = event => {
+    if (event.target !== dialogOverlayRef.current) return;
+
+    if (disableOverlayClick) setFocusOnFirstFocusableElement();
+    else closeDialog();
+  };
+
   const handleKeyDown = event => {
     if (event.keyCode === KEY_ESC && !disableCloseByEscKey) closeDialog();
   };
 
-  useEffect(returnFocusOnDialogClose);
-  useEffect(setFocusOnFirstFocusableElement);
-  useEffect(disableAndResetPageScroll);
+  useEffect(returnFocusOnDialogClose, []);
+  useEffect(setFocusOnFirstFocusableElement, []);
+  useEffect(disableAndResetPageScroll, []);
 
   const defaultHeaderElement = (
     <h2 id={`${name}-heading`} className="modal-dialog__heading">
@@ -130,12 +137,7 @@ export default function ModalDialog({
     <>
       {ReactDOM.createPortal(
         <>
-          <div
-            ref={dialogOverlayRef}
-            onClick={disableOverlayClick ? setFocusOnFirstFocusableElement : closeDialog}
-            tabIndex="-1"
-            className="modal-dialog-overlay"
-          >
+          <div ref={dialogOverlayRef} onClick={onOverlayClick} tabIndex="-1" className="modal-dialog-overlay">
             {renderDialog(FocusTrap, { as: 'div' })}
           </div>
         </>,
