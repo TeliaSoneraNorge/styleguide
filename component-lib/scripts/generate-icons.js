@@ -3,9 +3,72 @@
 const fs = require('fs');
 const path = require('path');
 const SVGO = require('svgo');
+const prettier = require('prettier');
 
 const iconsPath = path.join(__dirname, '../assets/business-icons');
 const iconComponentPath = path.join(__dirname, '../src/atoms/Icon/Icon.generated.tsx');
+const singleIconsPath = path.join(__dirname, '../src/atoms/Icon/icons');
+
+/**
+ *
+ * Initialize SVGO for generating clean SVGs.
+ *
+ */
+const svgo = new SVGO({
+  plugins: [
+    { cleanupAttrs: true },
+    { removeDoctype: true },
+    { removeXMLProcInst: true },
+    { removeComments: true },
+    { removeMetadata: true },
+    { removeTitle: true },
+    { removeDesc: true },
+    { removeUselessDefs: true },
+    { removeEditorsNSData: true },
+    { removeEmptyAttrs: true },
+    { removeHiddenElems: true },
+    { removeEmptyText: true },
+    { removeEmptyContainers: true },
+    { removeViewBox: false },
+    { cleanUpEnableBackground: true },
+    { convertStyleToAttrs: true },
+    { convertColors: true },
+    { convertPathData: true },
+    { convertTransform: true },
+    { removeUnknownsAndDefaults: true },
+    { removeNonInheritableGroupAttrs: true },
+    { removeUselessStrokeAndFill: true },
+    { removeUnusedNS: true },
+    { cleanupIDs: true },
+    { cleanupNumericValues: true },
+    { moveElemsAttrsToGroup: true },
+    { moveGroupAttrsToElems: true },
+    { collapseGroups: true },
+    { removeRasterImages: false },
+    { mergePaths: true },
+    { convertShapeToPath: true },
+    { sortAttrs: true },
+    { transformsWithOnePath: false },
+    { removeDimensions: true },
+  ],
+});
+
+/**
+ * Write prettified TS code to a given file
+ */
+const writeTypeScriptFile = (filename, strings) => {
+  const content = strings.join('');
+  fs.writeFileSync(
+    filename,
+    prettier.format(content, {
+      trailingComma: 'es5',
+      tabWidth: 2,
+      singleQuote: true,
+      printWidth: 120,
+      parser: 'babel',
+    })
+  );
+};
 
 async function run() {
   /**
@@ -13,48 +76,8 @@ async function run() {
    * First step, process each individual SVG file
    *
    */
-  const svgo = new SVGO({
-    plugins: [
-      { cleanupAttrs: true },
-      { removeDoctype: true },
-      { removeXMLProcInst: true },
-      { removeComments: true },
-      { removeMetadata: true },
-      { removeTitle: true },
-      { removeDesc: true },
-      { removeUselessDefs: true },
-      { removeEditorsNSData: true },
-      { removeEmptyAttrs: true },
-      { removeHiddenElems: true },
-      { removeEmptyText: true },
-      { removeEmptyContainers: true },
-      { removeViewBox: false },
-      { cleanUpEnableBackground: true },
-      { convertStyleToAttrs: true },
-      { convertColors: true },
-      { convertPathData: true },
-      { convertTransform: true },
-      { removeUnknownsAndDefaults: true },
-      { removeNonInheritableGroupAttrs: true },
-      { removeUselessStrokeAndFill: true },
-      { removeUnusedNS: true },
-      { cleanupIDs: true },
-      { cleanupNumericValues: true },
-      { moveElemsAttrsToGroup: true },
-      { moveGroupAttrsToElems: true },
-      { collapseGroups: true },
-      { removeRasterImages: false },
-      { mergePaths: true },
-      { convertShapeToPath: true },
-      { sortAttrs: true },
-      { transformsWithOnePath: false },
-      { removeDimensions: true },
-    ],
-  });
-
   const icons = [];
   const iconFiles = fs.readdirSync(iconsPath).filter(f => f[0] !== '.');
-
   let result = { processed: [], errors: [] };
   for (const i in iconFiles) {
     const iconFileName = iconFiles[i];
@@ -75,6 +98,9 @@ async function run() {
       icons.push({
         icon: iconFileName.slice(0, -4),
         filename: iconFileName,
+        singleComponentName:
+          iconFileName.replace(/(^([a-z])|-([a-z]))/g, (a, b, g2, g3) => (g2 || g3).toUpperCase()).slice(0, -4) +
+          'Icon',
         svg: svg.data,
       });
       result.processed.push(iconFileName);
@@ -83,7 +109,7 @@ async function run() {
     }
   }
 
-  console.log('generate-icons script completed. Result:', result);
+  console.log('generate-icons script completed.');
 
   if (result.errors.length > 0) {
     process.exit(1);
@@ -94,7 +120,7 @@ async function run() {
    * Second step, generate React code
    *
    */
-  const iconComponent = [
+  writeTypeScriptFile(iconComponentPath, [
     `//\n`,
     `// WARNING\n`,
     `//\n`,
@@ -114,11 +140,60 @@ async function run() {
     icons.map(i => `'${i.icon}'`).join(', '),
     `];\n\n`,
     `export const IconSvg = {\n`,
-    icons.map(i => `  '${i.icon}': ${i.svg},\n`).join(''),
+    icons
+      .map(i => {
+        const iconSvg = i.svg
+          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '')
+          .replace('</svg>', '');
+        return `  '${i.icon}': ${iconSvg},\n`;
+      })
+      .join(''),
     `};\n`,
-  ];
+  ]);
 
-  fs.writeFileSync(iconComponentPath, iconComponent.join(''));
+  /**
+   *
+   * Generate individual components for each icon (for tree shaking)
+   *
+   */
+  icons.forEach(ico => {
+    const reactSvg = ico.svg.replace(
+      '<svg ',
+      `<svg className={cs('Icon', 'Icon--${ico.icon}', props.className)} style={props.style} `
+    );
+    writeTypeScriptFile(path.join(singleIconsPath, `${ico.singleComponentName}.tsx`), [
+      `//\n`,
+      `// WARNING\n`,
+      `//\n`,
+      `// Do not make manual changes to this file.\n`,
+      `// This file was generated by scripts/generate-icons.js.\n`,
+      `//\n`,
+      `// Generated from: ${ico.filename}\n`,
+      `//\n`,
+      `\n\n`,
+      `import React from 'react';\n`,
+      `import cs from 'classnames';\n\n`,
+      `interface Props {\n`,
+      `  style?: React.CSSProperties;\n`,
+      `  className?: string;\n`,
+      `}\n\n`,
+      `export function ${ico.singleComponentName}(props: Props) {\n`,
+      `  return (${reactSvg});\n`,
+      `};\n`,
+    ]);
+  });
+
+  writeTypeScriptFile(path.join(singleIconsPath, 'index.tsx'), [
+    `//\n`,
+    `// WARNING\n`,
+    `//\n`,
+    `// Do not make manual changes to this file.\n`,
+    `// This file was generated by scripts/generate-icons.js.\n`,
+    `//\n`,
+    `\n\n`,
+    icons.map(i => `export { ${i.singleComponentName} } from './${i.singleComponentName}';\n`).join(''),
+    `\n`,
+  ]);
 }
 
 run();

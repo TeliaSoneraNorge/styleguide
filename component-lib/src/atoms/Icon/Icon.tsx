@@ -1,17 +1,11 @@
-import React from 'react';
+import React, { CSSProperties } from 'react';
 import cs from 'classnames';
-
 import { IconSvg, IconDefinition } from './Icon.generated';
-
-import './Icon.scss';
-
-export * from './Icon.generated';
 
 interface Props {
   icon?: IconDefinition;
-  alt?: string;
-  style?: React.CSSProperties;
   className?: string;
+  style?: CSSProperties;
   spin?: boolean;
 }
 
@@ -19,16 +13,13 @@ export function Icon(props: Props) {
   if (!props.icon) {
     return null;
   }
+
   return (
-    <div
+    <svg
+      className={cs('Icon', `Icon--${props.icon}`, props.spin ? 'Icon--spin' : undefined, props.className)}
       style={props.style}
-      className={cs(
-        'Icon',
-        props.spin ? 'Icon--spin' : undefined,
-        props.className
-      )}
     >
       {IconSvg[props.icon]}
-    </div>
+    </svg>
   );
 }
