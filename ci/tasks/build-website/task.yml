@@ -22,8 +22,14 @@ run:
   - |
     mv cache/node_modules styleguide
     mv cache-component-lib/node_modules styleguide/component-lib
-    cd styleguide/component-lib && npm run build:css && npm run build-storybook
-    npm run icons:generate-business-zip
-    cd .. && npm run build
+    cd styleguide/component-lib
+    npm run build:css
+    npm run build:icons
+    npm run build-storybook
+    # Important: the icon zip will be placed inside dist-storybook, so it must
+    #            be run _after_ build-storybook.
+    npm run build:icons-zip
+    cd ..
+    npm run build
     mv component-lib/dist-storybook dist/storybook
     mv component-lib/assets/* dist
