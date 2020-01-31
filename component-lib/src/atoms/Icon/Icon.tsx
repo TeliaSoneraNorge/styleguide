@@ -18,6 +18,8 @@ export function Icon(props: Props) {
     <svg
       className={cs('Icon', `Icon--${props.icon}`, props.spin ? 'Icon--spin' : undefined, props.className)}
       style={props.style}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 64 64"
     >
       {IconSvg[props.icon]}
     </svg>
