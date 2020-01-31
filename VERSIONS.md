@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.30.18
+- Modals: Border-radius from % to rem
+
+## 1.30.17
+- Modals: Ensure that overflow hidden is set on modal window
+
 ## 1.30.16
 - RadioButtonGroup updated
 - Fixed modal dialog focus to target the dialog itself to prevent scrolling to the bottom
