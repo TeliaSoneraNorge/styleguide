@@ -1,6 +1,6 @@
 import React from 'react';
 import cs from 'classnames';
-import { Icon, IconDefinition } from '../Icon';
+import { Icon, IconDefinition } from '../../atoms/Icon';
 
 export type MainMenuItemProps = {
   /**
