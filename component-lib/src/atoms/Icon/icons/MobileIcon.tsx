@@ -25,7 +25,7 @@ export function MobileIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M40 4a8 8 0 0 1 8 8v40a8 8 0 0 1-8 8H24a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8zm4 44H20v4a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-4zm-12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm8-42H24a4 4 0 0 0-4 4v32h24V12a4 4 0 0 0-4-4z"
       />
     </svg>

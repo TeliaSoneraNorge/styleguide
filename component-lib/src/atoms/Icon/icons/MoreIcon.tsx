@@ -25,7 +25,7 @@ export function MoreIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M43 32c0 2.75 2.25 5 5 5s5-2.25 5-5-2.25-5-5-5-5 2.25-5 5zm-6 0c0-2.75-2.25-5-5-5s-5 2.25-5 5 2.25 5 5 5 5-2.25 5-5zm-16 0c0-2.75-2.25-5-5-5s-5 2.25-5 5 2.25 5 5 5 5-2.25 5-5z"
       />
     </svg>

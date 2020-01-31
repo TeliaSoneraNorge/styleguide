@@ -25,7 +25,7 @@ export function AddCircleIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M32 6a26 26 0 0 1 26 26c0 14.36-11.64 26-26 26S6 46.36 6 32 17.64 6 32 6zm0 4c-12.15 0-22 9.85-22 22s9.85 22 22 22 22-9.85 22-22-9.85-22-22-22zm0 10a2 2 0 0 1 2 2v8h8a2 2 0 1 1 0 4h-8v8a2 2 0 1 1-4 0v-8h-8a2 2 0 1 1 0-4h8v-8a2 2 0 0 1 2-2z"
       />
     </svg>

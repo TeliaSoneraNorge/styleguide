@@ -25,7 +25,7 @@ export function DevicesIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M50 4a8 8 0 0 1 8 8v34a8 8 0 0 1-8 8H31.74A8 8 0 0 1 24 60H14a8 8 0 0 1-8-8V24a8 8 0 0 1 8-8h8v-4a8 8 0 0 1 8-8zM28 48H10v4a4 4 0 0 0 4 4h10a4 4 0 0 0 4-4v-4zm-8.99 2.01a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM54 42H32v8h18a4 4 0 0 0 4-4v-4zm-13.99 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zM24 20H14a4 4 0 0 0-4 4v20h18V24a4 4 0 0 0-4-4zM50 8H30a4 4 0 0 0-4 4v4.27A8 8 0 0 1 32 24v14h22V12a4 4 0 0 0-4-4z"
       />
     </svg>

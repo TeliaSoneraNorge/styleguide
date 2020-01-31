@@ -25,7 +25,7 @@ export function ServicesIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M13 46a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm20 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm18 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM13 27a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm19 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm19 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10zM13 8a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm19 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm19 0a5 5 0 1 1 0 10 5 5 0 0 1 0-10z"
       />
     </svg>

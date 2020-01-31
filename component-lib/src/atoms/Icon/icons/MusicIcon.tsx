@@ -25,7 +25,7 @@ export function MusicIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M28 6a8 8 0 0 0-8 8v27.52A9 9 0 1 0 24 49V22h30v19.52A9 9 0 1 0 58 49V6H28zM15 54a5 5 0 1 1 0-10 5 5 0 0 1 0 10zm34 0a5 5 0 1 1 0-10 5 5 0 0 1 0 10zM24 18v-4a4 4 0 0 1 4-4h26v8H24z"
       />
     </svg>

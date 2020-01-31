@@ -25,7 +25,7 @@ export function LaptopIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M58.34 46.21L56 41.53V16a4 4 0 0 0-4-4H12a4 4 0 0 0-4 4v25.53l-2.34 4.68A4 4 0 0 0 9.24 52h45.52a4 4 0 0 0 3.58-5.79zM12 16h40v24H12V16zM9.24 48l2-4h41.52l2 4H9.24z"
       />
     </svg>

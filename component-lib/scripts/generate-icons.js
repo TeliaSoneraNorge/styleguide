@@ -144,6 +144,7 @@ async function run() {
       .map(i => {
         const iconSvg = i.svg
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '')
+          .replace('fill-rule', 'fillRule')
           .replace('</svg>', '');
         return `  '${i.icon}': ${iconSvg},\n`;
       })
@@ -157,10 +158,9 @@ async function run() {
    *
    */
   icons.forEach(ico => {
-    const reactSvg = ico.svg.replace(
-      '<svg ',
-      `<svg className={cs('Icon', 'Icon--${ico.icon}', props.className)} style={props.style} `
-    );
+    const reactSvg = ico.svg
+      .replace('<svg ', `<svg className={cs('Icon', 'Icon--${ico.icon}', props.className)} style={props.style} `)
+      .replace('fill-rule', 'fillRule');
     writeTypeScriptFile(path.join(singleIconsPath, `${ico.singleComponentName}.tsx`), [
       `//\n`,
       `// WARNING\n`,
