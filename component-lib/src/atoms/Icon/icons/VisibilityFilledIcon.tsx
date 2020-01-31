@@ -25,7 +25,7 @@ export function VisibilityFilledIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M32 12c15.464 0 28 14 28 20S47.464 52 32 52 4 38 4 32s12.536-20 28-20zm0 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 4.8a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4z"
       />
     </svg>

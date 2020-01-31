@@ -25,7 +25,7 @@ export function ArrowDownIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M31.147 44.903L11.554 20.74a2 2 0 0 0-3.107 2.52l21.083 26a2 2 0 0 0 3.054.063l22.916-26a2 2 0 1 0-3-2.645L31.147 44.903z"
       />
     </svg>

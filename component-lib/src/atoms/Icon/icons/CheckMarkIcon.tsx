@@ -25,7 +25,7 @@ export function CheckMarkIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M11.365 34.538a2 2 0 1 0-2.73 2.924l15 14a2 2 0 0 0 2.847-.119l29-32a2 2 0 1 0-2.964-2.686L24.881 47.153 11.365 34.538z"
       />
     </svg>

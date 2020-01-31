@@ -25,7 +25,7 @@ export function SimCardIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M33.51 4a8 8 0 0 1 5.66 2.34l10.49 10.49A8 8 0 0 1 52 22.49V52a8 8 0 0 1-8 8H20a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8zm0 4H20a4 4 0 0 0-4 4v40a4 4 0 0 0 4 4h24a4 4 0 0 0 4-4V22.49a4 4 0 0 0-1.17-2.83L36.34 9.17A4 4 0 0 0 33.51 8zM40 32a4 4 0 0 1 4 4v12a4 4 0 0 1-4 4H24a4 4 0 0 1-4-4V36a4 4 0 0 1 4-4zm-10 4h-6v12h6V36zm10 8h-6v4h6v-4zm0-8h-6v4h6v-4z"
       />
     </svg>

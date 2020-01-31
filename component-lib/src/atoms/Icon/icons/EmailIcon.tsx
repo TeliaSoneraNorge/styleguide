@@ -25,7 +25,7 @@ export function EmailIcon(props: Props) {
     >
       <path
         fill="#222"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M52 12H12a8 8 0 0 0-8 8v24a8 8 0 0 0 8 8h40a8 8 0 0 0 8-8V20a8 8 0 0 0-8-8zm0 4a3.81 3.81 0 0 1 1 .15L39.17 30H24.83L11 16.15a3.81 3.81 0 0 1 1-.15h40zm4 28a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V20a3.81 3.81 0 0 1 .15-1L22 32.83A4 4 0 0 0 24.83 34h14.34A4 4 0 0 0 42 32.83L55.85 19a3.8 3.8 0 0 1 .15 1v24z"
       />
     </svg>
