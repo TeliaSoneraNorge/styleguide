@@ -23,7 +23,7 @@ export const IconStory = () => (
 
     {process.env.NODE_ENV === 'production' ? (
       <p>
-        You can also download <a href="telia-styleguide-business-icons.zip">all icons as a .zip file</a>.
+        You can also download <a href="telia-styleguide-icons.zip">all icons as a .zip file</a>.
       </p>
     ) : (
       <p>
