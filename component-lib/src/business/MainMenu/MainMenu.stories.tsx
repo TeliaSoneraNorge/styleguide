@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { storiesOf } from '@storybook/react';
 
 import { MainMenu } from './MainMenu';
 import { MainMenuItem } from './MainMenuItem';
-import { Icon, AllBusinessIcons } from '../Icon';
+import { Icon } from '../../atoms/Icon';
 
 storiesOf('Business|MainMenu', module).add('default', () => {
   function onClickItem() {
@@ -12,8 +12,6 @@ storiesOf('Business|MainMenu', module).add('default', () => {
 
   return (
     <>
-      <AllBusinessIcons />
-
       <h1>MainMenu</h1>
 
       <p>
