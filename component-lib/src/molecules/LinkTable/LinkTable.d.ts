@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 export interface LinkTableProps {
-
+    wrapByTwo?: boolean;
 }
 
 export interface LinkTableItemProps {

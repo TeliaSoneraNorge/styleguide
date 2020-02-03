@@ -1,9 +1,19 @@
 import React from 'react';
+import classnames from 'classnames';
+
 import SvgIcon from '../../atoms/SvgIcon';
 import Link from '../../atoms/Link';
 
-function LinkTable({ children }) {
-  return <ul className="link-table">{children}</ul>;
+function LinkTable({ children, wrapByTwo }) {
+  return (
+    <ul
+      className={classnames('link-table', {
+        'link-table--wrap-by-two': wrapByTwo,
+      })}
+    >
+      {children}
+    </ul>
+  );
 }
 
 function LinkTableItem({ text, icon, href }) {
