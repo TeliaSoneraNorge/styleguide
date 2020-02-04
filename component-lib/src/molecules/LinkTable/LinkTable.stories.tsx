@@ -1,6 +1,7 @@
 import React from 'react';
 import LinkTable from './LinkTable';
 import Container from '../../atoms/Container';
+import {AllBusinessIcons} from '../../business/Icon/AllBusinessIcons'
 
 export default {
     title: 'Component library|Molecules/Link table',
@@ -8,27 +9,29 @@ export default {
 };
 
 export const EightItems = () => (
-    <Container>
+    <Container size="large">
+        <AllBusinessIcons />
         <LinkTable>
-            <LinkTable.Item href="#" icon="ico_share" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_mobile" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_mobile_o" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_quote" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_refill" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="twitter_icon" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="silent_icon" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_heart" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="shoppingcart" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="sim-card" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="product-svitsj" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="document" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="kontantkort" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="insurance" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="money-euro" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="user" text="Lorem ipsum" />
         </LinkTable>
     </Container>
 );
 
 export const WrapByTwoItems = () => (
     <Container size="medium">
+        <AllBusinessIcons />
         <LinkTable wrapByTwo={true}>
-            <LinkTable.Item href="#" icon="ico_share" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_mobile" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_mobile_o" text="Lorem ipsum" />
-            <LinkTable.Item href="#" icon="ico_quote" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="shoppingcart" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="sim-card" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="product-svitsj" text="Lorem ipsum" />
+            <LinkTable.Item href="#" icon="document" text="Lorem ipsum" />
         </LinkTable>
     </Container>
 );
