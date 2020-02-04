@@ -9,6 +9,7 @@
 import { IconDefinition } from './IconDefinition';
 
 export const availableIcons: IconDefinition[] = [
+  'abroad',
   'add',
   'add-circle',
   'alarm',
@@ -41,6 +42,7 @@ export const availableIcons: IconDefinition[] = [
   'child-girl',
   'close',
   'cloud',
+  'coffee',
   'company',
   'contact',
   'delivery',

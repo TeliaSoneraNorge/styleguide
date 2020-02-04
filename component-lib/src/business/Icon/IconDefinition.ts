@@ -10,6 +10,7 @@
  * A list of all available icons in the @telia/styleguide icon set.
  */
 export type IconDefinition =
+  | 'abroad'
   | 'add'
   | 'add-circle'
   | 'alarm'
@@ -42,6 +43,7 @@ export type IconDefinition =
   | 'child-girl'
   | 'close'
   | 'cloud'
+  | 'coffee'
   | 'company'
   | 'contact'
   | 'delivery'
