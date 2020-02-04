@@ -53,10 +53,12 @@ export default function ModalDialog({
   };
 
   const disableAndResetPageScroll = () => {
+    if (standalone) return;
+
     const previousOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
 
-    if (dialogOverlayRef.current && !standalone) {
+    if (dialogOverlayRef.current) {
       dialogOverlayRef.current.scrollTop = 0;
     }
 
