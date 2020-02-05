@@ -12,6 +12,7 @@ import React from 'react';
  * A list of all available icons in the icon set.
  */
 export type IconDefinition =
+  | 'abroad'
   | 'add-circle'
   | 'add'
   | 'alarm-off'
@@ -44,6 +45,7 @@ export type IconDefinition =
   | 'child-girl'
   | 'close'
   | 'cloud'
+  | 'coffee'
   | 'company'
   | 'contact'
   | 'delivery'
@@ -175,6 +177,7 @@ export type IconDefinition =
   | 'wrench';
 
 export const availableIcons: IconDefinition[] = [
+  'abroad',
   'add-circle',
   'add',
   'alarm-off',
@@ -207,6 +210,7 @@ export const availableIcons: IconDefinition[] = [
   'child-girl',
   'close',
   'cloud',
+  'coffee',
   'company',
   'contact',
   'delivery',
@@ -339,6 +343,12 @@ export const availableIcons: IconDefinition[] = [
 ];
 
 export const IconSvg = {
+  abroad: (
+    <path
+      fillRule="evenodd"
+      d="M57.48 30.94L50 26.19A14 14 0 0 0 42.51 24h-1.68L30 13.07l-.14-.07a4 4 0 0 0-2.6-1h-2.9a4 4 0 0 0-3.94 4.66L21.64 24H17l-4.8-6.4A4 4 0 0 0 9 16H8a4 4 0 0 0-4 4v11.53a6 6 0 0 0 3.32 5.36L12 39.26a26.15 26.15 0 0 0 5.71 2.05l-3.12 4.37a4 4 0 0 0 3.3 6.32h5.42a4.002 4.002 0 0 0 2.46-.84L37.54 42h16.72a6 6 0 0 0 3.22-11.06zM24.36 16h2.89l8 8h-9.56l-1.33-8zm-1.05 32h-5.42L25 38h11.16H36v.13L23.31 48zm32.87-11.44A1.91 1.91 0 0 1 54.26 38H40.17a4 4 0 0 0-4-4H25a4 4 0 0 0-3.26 1.68l-1.46 2a22.16 22.16 0 0 1-6.48-2l-4.69-2.36A2 2 0 0 1 8 31.53V20h1l4.8 6.4A4 4 0 0 0 17 28h25.51a10 10 0 0 1 5.36 1.56l7.47 4.75a1.94 1.94 0 0 1 .84 2.25z"
+    />
+  ),
   'add-circle': (
     <path
       fillRule="evenodd"
@@ -529,6 +539,12 @@ export const IconSvg = {
     <path
       fillRule="evenodd"
       d="M50 50H16a12 12 0 0 1-1.88-23.85 14 14 0 0 1 26.58-4.06c.43-.06.865-.09 1.3-.09a10 10 0 0 1 9.83 8.17A10 10 0 0 1 50 50zM16 30a8 8 0 1 0 0 16h34a6 6 0 1 0 0-12h-2v-2a6 6 0 0 0-7.91-5.68l-1.93.68-.61-2A10 10 0 0 0 18 28v2h-2z"
+    />
+  ),
+  coffee: (
+    <path
+      fillRule="evenodd"
+      d="M49 40.89a7 7 0 0 0 1.4-13.86 10.57 10.57 0 0 0-1.3-.14H48a4 4 0 0 0-4-4H14a4 4 0 0 0-4 4v8a18 18 0 0 0 4.58 12H11a3 3 0 0 0-3 3v1a8 8 0 0 0 8 8h26a8 8 0 0 0 8-8v-1a3 3 0 0 0-3-3h-3.58a18.23 18.23 0 0 0 3.58-6h2zm0-10c.214.008.428.028.64.06a3 3 0 0 1-.64 5.94h-1.12a19 19 0 0 0 .12-2v-4h1zm-7 24H16a4 4 0 0 1-4-4h34a4 4 0 0 1-4 4zm-21.2-8a14 14 0 0 1-6.8-12v-8h30v8a14 14 0 0 1-6.8 12H20.8zm1-34.59a2 2 0 0 0 0-2.82L20.59 8.3a2 2 0 0 1 2.82-2.82l1.18 1.17a6 6 0 0 1 0 8.48l-.35.35a2 2 0 0 0-.31 2.41 2 2 0 0 1-.72 2.74 2.07 2.07 0 0 1-1 .27 2 2 0 0 1-1.73-1 6 6 0 0 1 .94-7.26l.38-.34zm10 0a2 2 0 0 0 0-2.82L30.59 8.3a2 2 0 0 1 2.82-2.82l1.18 1.17a6 6 0 0 1 0 8.48l-.35.35a2 2 0 0 0-.31 2.41 2 2 0 0 1-3.46 2 6 6 0 0 1 .94-7.26l.39-.33z"
     />
   ),
   company: (

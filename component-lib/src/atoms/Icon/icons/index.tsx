@@ -6,6 +6,7 @@
 //
 //
 
+export { AbroadIcon } from './AbroadIcon';
 export { AddCircleIcon } from './AddCircleIcon';
 export { AddIcon } from './AddIcon';
 export { AlarmOffIcon } from './AlarmOffIcon';
@@ -38,6 +39,7 @@ export { ChildBoyIcon } from './ChildBoyIcon';
 export { ChildGirlIcon } from './ChildGirlIcon';
 export { CloseIcon } from './CloseIcon';
 export { CloudIcon } from './CloudIcon';
+export { CoffeeIcon } from './CoffeeIcon';
 export { CompanyIcon } from './CompanyIcon';
 export { ContactIcon } from './ContactIcon';
 export { DeliveryIcon } from './DeliveryIcon';
