@@ -103,6 +103,7 @@ export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
 export { default as Gallery } from './molecules/Gallery';
 export { ShoppingCart } from './molecules/ShoppingCart';
+export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
