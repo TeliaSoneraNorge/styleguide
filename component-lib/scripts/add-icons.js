@@ -16,7 +16,7 @@ async function run() {
   }
   const svgo = new SVGO(svgoConfig);
 
-  const finalIconsFolder = path.resolve(__dirname, '../assets/icons');
+  const finalIconsFolder = path.resolve(__dirname, '../assets/icons-legacy');
   const newIconsFolder = path.resolve(finalIconsFolder, 'dropHereNewIcons');
   const iconFiles = fs.readdirSync(newIconsFolder).filter(f => f !== '.gitkeep');
 

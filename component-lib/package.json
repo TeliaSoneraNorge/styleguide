@@ -9,7 +9,7 @@
   "scripts": {
     "icons": "run-s icons:add-icons icons:svg-join icons:allicons-react",
     "icons:allicons-react": "node generate-AllIcons-component.js && babel ./assets/allicons/AllIcons.jsx.generated --out-file ./assets/allicons/AllIcons.js && cross-env BABEL_ENV=commonjs babel ./assets/allicons/AllIcons.jsx.generated --out-file ./assets/allicons/AllIcons.cjs.js",
-    "icons:svg-join": "svg-join -s \"assets/icons/*.svg\" -o ./assets/allicons -n allicons  --mono",
+    "icons:svg-join": "svg-join -s \"assets/icons-legacy/*.svg\" -o ./assets/allicons -n allicons  --mono",
     "icons:add-icons": "node ./scripts/add-icons.js",
     "build:icons-zip": "node ./scripts/generate-icons-zip-file.js",
     "build:icons": "node scripts/generate-icons.js",

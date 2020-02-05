@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const SVGO = require('svgo');
 
-const iconsPath = path.join(__dirname, '../../assets/business-icons');
+const iconsPath = path.join(__dirname, '../../assets/icons');
 
 /**
  *
