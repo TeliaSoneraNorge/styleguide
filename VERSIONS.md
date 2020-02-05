@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.31.0
+- Added new icons & <Icon /> component
+
 ## 1.30.18
 - Added new LinkTable molecule.
 
