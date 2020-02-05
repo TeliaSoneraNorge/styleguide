@@ -24,7 +24,6 @@ export function VoicemailIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       <path
-        fill="#222"
         fillRule="evenodd"
         d="M48 21a12 12 0 0 0-9 20H25a12 12 0 1 0-9 4h32c6.627 0 12-5.373 12-12s-5.373-12-12-12zM16 41a8 8 0 1 1 0-16 8 8 0 0 1 0 16zm32 0a8 8 0 1 1 0-16 8 8 0 0 1 0 16z"
       />

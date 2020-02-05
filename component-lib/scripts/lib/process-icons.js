@@ -14,6 +14,7 @@ const iconsPath = path.join(__dirname, '../../assets/business-icons');
 const svgo = new SVGO({
   plugins: [
     { cleanupAttrs: true },
+    { removeAttrs: { attrs: '(stroke|fill)' } },
     { removeDoctype: true },
     { removeXMLProcInst: true },
     { removeComments: true },

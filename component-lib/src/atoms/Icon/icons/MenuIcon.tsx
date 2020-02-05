@@ -24,7 +24,6 @@ export function MenuIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       <path
-        fill="#222"
         fillRule="evenodd"
         d="M50 44a2 2 0 1 1 0 4H14a2 2 0 1 1 0-4zm0-14a2 2 0 1 1 0 4H14a2 2 0 1 1 0-4zm0-14a2 2 0 1 1 0 4H14a2 2 0 1 1 0-4z"
       />
