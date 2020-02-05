@@ -66,6 +66,9 @@ async function run() {
    * Generate individual components for each icon (for tree shaking)
    *
    */
+  // First, delete the old icons to make sure no old icons remain
+  const existingIcons = await fs.promises.readdir(singleIconsPath);
+  await Promise.all(existingIcons.map(f => fs.promises.unlink(path.join(singleIconsPath, f))));
   icons.forEach(ico => {
     writeTypeScriptFile(path.join(singleIconsPath, `${ico.singleComponentName}.tsx`), [
       header(`Generated from: ${ico.filename}`),
