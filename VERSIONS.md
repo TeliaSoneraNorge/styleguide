@@ -16,6 +16,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 Only noteworth
 
 ## 1.30.18
+- Added new LinkTable molecule.
+
+## 1.30.18
 - Modals: Border-radius from % to rem
 
 ## 1.30.17
