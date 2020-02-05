@@ -24,7 +24,6 @@ export function DocumentIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       <path
-        fill="#222"
         fillRule="evenodd"
         d="M50 4a4 4 0 0 1 4 4v44a8 8 0 0 1-8 8H14a4 4 0 0 1-4-4V12a8 8 0 0 1 8-8zm0 4H18a4 4 0 0 0-4 4v44h32a4 4 0 0 0 4-4V8zm-8 18a2 2 0 1 1 0 4H30a2 2 0 1 1 0-4zm-20 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm20-8a2 2 0 1 1 0 4H30a2 2 0 1 1 0-4zm-20 0a2 2 0 1 1 0 4 2 2 0 0 1 0-4z"
       />

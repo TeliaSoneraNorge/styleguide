@@ -24,7 +24,6 @@ export function StatisticsIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       <path
-        fill="#222"
         fillRule="evenodd"
         d="M58 52h-6V12a4 4 0 0 0-4-4h-8a4 4 0 0 0-4 4v12h-8a4 4 0 0 0-4 4v4h-8a4 4 0 0 0-4 4v16H6a2 2 0 1 0 0 4h52a2 2 0 1 0 0-4zm-42 0V36h8v16h-8zm12 0V28h8v24h-8zm12 0V12h8v40h-8z"
       />

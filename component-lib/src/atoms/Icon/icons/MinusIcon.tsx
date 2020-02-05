@@ -24,7 +24,6 @@ export function MinusIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       <path
-        fill="#222"
         fillRule="evenodd"
         d="M17.333 35h29.334c.736 0 1.333-.895 1.333-2s-.597-2-1.333-2H17.333c-.736 0-1.333.895-1.333 2s.597 2 1.333 2z"
       />

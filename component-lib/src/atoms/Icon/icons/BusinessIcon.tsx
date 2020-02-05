@@ -24,7 +24,6 @@ export function BusinessIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       <path
-        fill="#222"
         fillRule="evenodd"
         d="M38 8a6 6 0 0 1 6 6v2h10a6 6 0 0 1 6 6v28a6 6 0 0 1-6 6H10a6 6 0 0 1-6-6V22a6 6 0 0 1 6-6h10v-2a6 6 0 0 1 6-6zm18 33.65a5.8 5.8 0 0 1-2 .35H10a5.8 5.8 0 0 1-2-.35V50a2 2 0 0 0 2 2h44a2 2 0 0 0 2-2zM54 20H10a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h44a2 2 0 0 0 2-2V22a2 2 0 0 0-2-2zM32 32a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm6-20H26a2 2 0 0 0-2 2v2h16v-2a2 2 0 0 0-2-2z"
       />
