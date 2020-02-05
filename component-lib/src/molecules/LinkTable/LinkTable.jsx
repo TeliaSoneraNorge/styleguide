@@ -2,7 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 import Link from '../../atoms/Link';
-import { Icon } from '../../business/Icon';
+import { Icon } from '../../atoms/Icon';
 
 function LinkTable({ children, wrapByTwo }) {
   return (
