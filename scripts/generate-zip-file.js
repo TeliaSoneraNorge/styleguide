@@ -38,6 +38,6 @@ archive
   .append(css, { name: 'telia-styleguide.css' })
   .directory(path.resolve(__dirname, '../component-lib/assets/fonts/'), 'fonts')
   .directory(path.resolve(__dirname, '../component-lib/assets/allicons/'), 'allicons')
-  .glob('icons/*.*', { cwd: path.resolve(__dirname, '../component-lib/assets') })
+  .glob('icons-legacy/*.*', { cwd: path.resolve(__dirname, '../component-lib/assets') })
   .directory(path.resolve(__dirname, '../component-lib/assets/pebbles/'), 'pebbles')
   .finalize();
