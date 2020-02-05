@@ -2,14 +2,14 @@ import React from 'react';
 import { color, select } from '@storybook/addon-knobs';
 
 import { Icon } from './Icon';
-import { HeartIcon } from './icons';
+import { HeartIcon, CheckMarkIcon } from './icons';
 import { IconDefinition, availableIcons } from './Icon.generated';
 
 export default {
   title: 'Component library|Atoms/Icon',
 };
 
-export const IconStory = () => (
+export const Default = () => (
   <div style={{ padding: '24px' }}>
     <h1>Icon</h1>
 
@@ -73,3 +73,20 @@ export const IconStory = () => (
     <HeartIcon style={{ width: '100px', height: '100px' }} />
   </div>
 );
+
+export const InlineIcon = () => (
+  <>
+    {/* {`import { CheckMarkIcon } from '@telia/styleguide';`} */}
+
+    <CheckMarkIcon style={{ width: '100px', height: '100px', color: '#00CC66' }} />
+
+  </>
+)
+export const AllIconsFromProps = () => (
+  <>
+    {/* {`import { Icon } from '@telia/styleguide';`} */}
+
+    <Icon icon="like" style={{ width: '100px', height: '100px', color: '#009999' }} />
+
+  </>
+)
