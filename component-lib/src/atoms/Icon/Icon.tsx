@@ -2,8 +2,6 @@ import React, { CSSProperties } from 'react';
 import cs from 'classnames';
 import { IconSvg, IconDefinition } from './Icon.generated';
 
-export { IconDefinition };
-
 interface Props {
   icon?: IconDefinition;
   className?: string;
