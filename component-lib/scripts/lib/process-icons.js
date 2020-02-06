@@ -91,7 +91,11 @@ async function processIcons() {
           .replace('fill-rule', 'fillRule')
           .replace('</svg>', ''),
         outerJsxWithClassNameAndStyle: svg.data
-          .replace('<svg ', `<svg className={cs('Icon', 'Icon--${iconName}', props.className)} style={props.style} `)
+          .replace(
+            '<svg ',
+            `<svg className={cs('Icon', 'Icon--${iconName}', props.className)} style={props.style} aria-hidden={props.title ? undefined : true} `
+          )
+          .replace('>', '>{props.title && <title>{props.title}</title>}')
           .replace('fill-rule', 'fillRule'),
       });
       result.processed.push(iconFileName);

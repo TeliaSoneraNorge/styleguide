@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function StopIcon(props: Props) {
@@ -20,9 +21,11 @@ export function StopIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--stop', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M32 4a28 28 0 0 1 28 28c0 15.464-12.536 28-28 28S4 47.464 4 32 16.536 4 32 4zm0 4C18.745 8 8 18.745 8 32s10.745 24 24 24 24-10.745 24-24S45.255 8 32 8zm12 22a2 2 0 1 1 0 4H20a2 2 0 1 1 0-4h24z"

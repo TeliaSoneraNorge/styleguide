@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function FacebookIcon(props: Props) {
@@ -20,9 +21,11 @@ export function FacebookIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--facebook', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M37.268 60h-11.47V32H20.07v-9.654h5.73v-5.79C25.798 8.681 29.03 4 38.222 4h7.662v9.654h-4.786c-3.578 0-3.82 1.356-3.82 3.864l-.01 4.828h8.673L44.93 32h-7.65v28h-.012z"
