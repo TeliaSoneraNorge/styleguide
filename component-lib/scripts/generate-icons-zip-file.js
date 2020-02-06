@@ -14,7 +14,9 @@ async function run() {
   const outputDir = path.join(__dirname, '../dist-storybook');
   const outputPath = path.join(outputDir, fileName);
 
-  fs.mkdirSync(outputDir, { recursive: true });
+  if (!fs.existsSync(outputDir)) {
+    fs.mkdirSync(outputDir, { recursive: true });
+  }
 
   const output = fs.createWriteStream(outputPath);
   const archive = archiver('zip');
