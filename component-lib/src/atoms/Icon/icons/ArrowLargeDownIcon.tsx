@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function ArrowLargeDownIcon(props: Props) {
@@ -20,9 +21,11 @@ export function ArrowLargeDownIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--arrow-large-down', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M12.662 32.513a2 2 0 0 1 2.704.026l.12.123L30 48.788V10a2 2 0 0 1 1.85-1.995L32 8a2 2 0 0 1 1.995 1.85L34 10v38.789l14.513-16.127a2 2 0 0 1 2.692-.259l.133.11a2 2 0 0 1 .259 2.692l-.11.133-18.008 20.008-.141.14-.075.065-.085.065-.129.087-.206.111-.166.068-.19.058-.192.038-.131.015-.165.007-.162-.007-.166-.02-.105-.02-.167-.045-.15-.054-.154-.07-.144-.08-.164-.114-.133-.111-.168-.172-17.973-19.97a2 2 0 0 1 .15-2.824z"

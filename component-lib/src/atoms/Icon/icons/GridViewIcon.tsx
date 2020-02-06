@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function GridViewIcon(props: Props) {
@@ -20,9 +21,11 @@ export function GridViewIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--grid-view', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M28 34a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V36a2 2 0 0 1 2-2h18zm26 0a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H36a2 2 0 0 1-2-2V36a2 2 0 0 1 2-2h18zm-28 4H12v14h14V38zm26 0H38v14h14V38zM28 8a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h18zm26 0a2 2 0 0 1 2 2v18a2 2 0 0 1-2 2H36a2 2 0 0 1-2-2V10a2 2 0 0 1 2-2h18zm-28 4H12v14h14V12zm26 0H38v14h14V12z"

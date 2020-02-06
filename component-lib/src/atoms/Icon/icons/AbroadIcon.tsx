@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function AbroadIcon(props: Props) {
@@ -20,9 +21,11 @@ export function AbroadIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--abroad', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M57.48 30.94L50 26.19A14 14 0 0 0 42.51 24h-1.68L30 13.07l-.14-.07a4 4 0 0 0-2.6-1h-2.9a4 4 0 0 0-3.94 4.66L21.64 24H17l-4.8-6.4A4 4 0 0 0 9 16H8a4 4 0 0 0-4 4v11.53a6 6 0 0 0 3.32 5.36L12 39.26a26.15 26.15 0 0 0 5.71 2.05l-3.12 4.37a4 4 0 0 0 3.3 6.32h5.42a4.002 4.002 0 0 0 2.46-.84L37.54 42h16.72a6 6 0 0 0 3.22-11.06zM24.36 16h2.89l8 8h-9.56l-1.33-8zm-1.05 32h-5.42L25 38h11.16H36v.13L23.31 48zm32.87-11.44A1.91 1.91 0 0 1 54.26 38H40.17a4 4 0 0 0-4-4H25a4 4 0 0 0-3.26 1.68l-1.46 2a22.16 22.16 0 0 1-6.48-2l-4.69-2.36A2 2 0 0 1 8 31.53V20h1l4.8 6.4A4 4 0 0 0 17 28h25.51a10 10 0 0 1 5.36 1.56l7.47 4.75a1.94 1.94 0 0 1 .84 2.25z"

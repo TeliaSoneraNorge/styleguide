@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function DownloadIcon(props: Props) {
@@ -20,9 +21,11 @@ export function DownloadIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--download', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M56 30a2 2 0 0 1 2 2v18a8 8 0 0 1-8 8H14a8 8 0 0 1-8-8V32a2 2 0 1 1 4 0v18a4 4 0 0 0 4 4h36a4 4 0 0 0 4-4V32a2 2 0 0 1 2-2zM32 10a2 2 0 0 1 2 2v27.17l8.59-8.58a2 2 0 0 1 2.82 2.82l-11.29 11.3a3 3 0 0 1-4.24 0l-11.29-11.3a2 2 0 0 1 2.82-2.82L30 39.17V12a2 2 0 0 1 2-2z"

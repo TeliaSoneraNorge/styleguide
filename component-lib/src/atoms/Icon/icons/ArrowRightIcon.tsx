@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function ArrowRightIcon(props: Props) {
@@ -20,9 +21,11 @@ export function ArrowRightIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--arrow-right', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M44.903 32.853L20.74 52.447a2 2 0 0 0 2.52 3.106l26-21.083a2 2 0 0 0 .062-3.054l-26-22.916a2 2 0 1 0-2.644 3l24.225 21.353z"
