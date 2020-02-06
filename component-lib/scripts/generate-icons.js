@@ -77,6 +77,7 @@ async function run() {
       `interface Props {\n`,
       `  style?: React.CSSProperties;\n`,
       `  className?: string;\n`,
+      `  title?: string;\n`,
       `}\n\n`,
       `export function ${ico.singleComponentName}(props: Props) {\n`,
       `  return (${ico.outerJsxWithClassNameAndStyle});\n`,
