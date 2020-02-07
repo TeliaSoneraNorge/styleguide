@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Heading from '../../atoms/Heading/Heading';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import ShoppingCartTable from './ShoppingCartTable';
+import { Icon } from '../../atoms/Icon';
 
 /**
  * Status: *in progress*.
@@ -30,7 +30,7 @@ const ShoppingCart = ({
       {heading && (
         <div className="shopping-cart__heading">
           <Heading level={2}>
-            <SvgIcon className="shopping-cart__icon" iconName="ico_buy" /> {heading}
+            <Icon icon="shoppingcart" className="shopping-cart__icon" /> {heading}
           </Heading>
         </div>
       )}

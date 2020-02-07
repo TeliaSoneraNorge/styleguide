@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import React from 'react';
 import range from 'lodash/range';
-import SvgIcon from '../SvgIcon/SvgIcon';
+import { CheckMarkIcon } from '../Icon/';
 
 const renderLine = (number, numberOfSteps, index) => {
   if (number >= numberOfSteps - 1) {
@@ -44,8 +44,8 @@ const renderStep = (index, number, numberOfSteps, label, link) => {
           })}
         >
           {index > number ? (
-            <span className="icon-wrapper">
-              <SvgIcon className="icon" iconName="ico_check" role="presentation" title={`${number + 1}`} />
+            <span className="step-indicator__icon-wrapper">
+              <CheckMarkIcon className="step-indicator__icon" role="presentation" title={`${number + 1}`} />
             </span>
           ) : (
             number + 1

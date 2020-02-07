@@ -33,21 +33,25 @@
     padding: 0;
     height: 2.5rem;
     width: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
     &[disabled] {
-        .svg-icon {
-            fill: var(--border-grey);
+        .Icon {
+            color: var(--border-grey);
         }
     }
 
     &:active, &:hover, &:focus {
-        &:not([disabled]) .svg-icon {
-            fill: var(--white);
+        &:not([disabled]) .Icon {
+            color: var(--white);
         }
     }
 
     &__icon {
-        width: 0.7rem;
-        height: 0.7rem;
+        color: black;
+        width: 1.2rem;
+        height: 1.2rem;
     }
 }

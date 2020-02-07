@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import { Icon } from '../Icon';
 
 const QuantityButton = ({ icon, isDisabled, onClick, text }) => (
   <button
@@ -11,7 +11,7 @@ const QuantityButton = ({ icon, isDisabled, onClick, text }) => (
     disabled={isDisabled}
     onClick={onClick}
   >
-    <SvgIcon className="quantity-picker__button__icon" iconName={icon} title={text} />
+    <Icon className="quantity-picker__button__icon" icon={icon} title={text} />
   </button>
 );
 

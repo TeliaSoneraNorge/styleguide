@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import { Icon } from '../../atoms/Icon';
 
 const maxQuantity = 10;
 const minQuantity = 1;
@@ -14,14 +14,14 @@ const ShoppingCartItemQuantityButton = ({ icon, isDisabled, onClick, text }) => 
     disabled={isDisabled}
     onClick={onClick}
   >
-    <SvgIcon className="shopping-cart__item__button__icon" iconName={icon} title={text} />
+    <Icon className="shopping-cart__item__icon-quantity" icon={icon} title={text} />
   </button>
 );
 
 const ShoppingCartItemQuantityPicker = ({ cartItem, name, onChangeQuantity, quantity }) => (
   <div className="shopping-cart__quantity-picker">
     <ShoppingCartItemQuantityButton
-      icon="ico_minus"
+      icon="minus"
       isDisabled={quantity <= minQuantity}
       onClick={() => onChangeQuantity(cartItem, Math.max(quantity - 1, minQuantity))}
       text={`Fjern en ${name}`}
@@ -39,7 +39,7 @@ const ShoppingCartItemQuantityPicker = ({ cartItem, name, onChangeQuantity, quan
       />
     </label>
     <ShoppingCartItemQuantityButton
-      icon="ico_add"
+      icon="add"
       isDisabled={quantity >= maxQuantity}
       onClick={() => onChangeQuantity(cartItem, Math.min(quantity + 1, maxQuantity))}
       text={`Legg til en ${name}`}

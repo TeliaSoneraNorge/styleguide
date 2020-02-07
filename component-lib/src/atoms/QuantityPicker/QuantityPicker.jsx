@@ -24,7 +24,7 @@ const QuantityPicker = ({
   return (
     <div className="quantity-picker">
       <QuantityButton
-        icon="ico_minus"
+        icon="minus"
         isDisabled={quantity <= minQuantity || !quantity}
         onClick={() => onChangeQuantity(Math.max(quantity - 1, minQuantity))}
         text={reduceText}
@@ -46,7 +46,7 @@ const QuantityPicker = ({
       </span>
 
       <QuantityButton
-        icon="ico_add"
+        icon="add"
         isDisabled={quantity >= maxQuantity || !quantity}
         onClick={() => onChangeQuantity(Math.min(quantity + 1, maxQuantity))}
         text={addText}

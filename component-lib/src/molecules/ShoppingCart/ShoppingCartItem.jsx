@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import _ from 'lodash';
 import cn from 'classnames';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import ShoppingCartCell from './ShoppingCartCell';
 import ShoppingCartRow from './ShoppingCartRow';
 import ShoppingCartColumnHeading from './ShoppingCartColumnHeading';
 import ShoppingCartItemQuantityPicker from './ShoppingCartItemQuantityPicker';
 import { CART_ITEM_TYPE, CART_ITEM_REMOVABLE_IN_CHECKOUT } from './index';
+import { Icon } from '../../atoms/Icon';
 
 const SubscriptionOrServiceIcon = ({ amount, unit }) => (
   <div className="text-circle-image" aria-hidden="true">
@@ -24,10 +24,12 @@ const CartItemImage = ({ image, isSubtile }) => {
     <div className="shopping-cart__item__image__container">
       {(image.url && <img className="shopping-cart__item__image" src={`${image.url}?w=44&h=75`} alt="" />) ||
         (image.icon && (
-          <SvgIcon
-            className={cn('shopping-cart__item__image', { 'shopping-cart__item__image--small': isSubtile })}
-            color={image.color || 'black'}
-            iconName={image.icon}
+          <Icon
+            className={cn('shopping-cart__item__image', {
+              'shopping-cart__item__image--small': isSubtile,
+              [`shopping-cart__item__image--${image.color || 'black'}`]: true,
+            })}
+            icon={image.icon}
             title=""
           />
         )) ||
@@ -156,11 +158,7 @@ const ShoppingCartItem = ({
       <ShoppingCartCell className="shopping-cart__item__delete">
         {isRemovable && !hasPaid && (
           <button className="button button--small shopping-cart__item__button" onClick={() => onRemoveItem(cartItem)}>
-            <SvgIcon
-              className="shopping-cart__item__button__icon"
-              iconName="ico_delete"
-              title={`Fjern ${name} fra handlekurven`}
-            />
+            <Icon className="shopping-cart__item__icon-close" icon="close" title={`Fjern ${name} fra handlekurven`} />
           </button>
         )}
       </ShoppingCartCell>

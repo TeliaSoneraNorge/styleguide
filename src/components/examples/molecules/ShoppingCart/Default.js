@@ -64,7 +64,7 @@ const cart = [
             type: 'SERVICE',
             id: 'INSURANCE_SWITCH_2+INSURLS2V',
             image: {
-              icon: 'ico_info',
+              icon: 'info',
             },
             name: '2 måneder SVITSJ Plussforsikring inkludert',
             price: {
@@ -88,7 +88,8 @@ const cart = [
           monthly: 579,
         },
         image: {
-          icon: 'ico_subscription',
+          icon: 'sim-card',
+          color: 'purple',
         },
         subtitle: 'Nummer: 900 90 900',
       },
@@ -132,7 +133,7 @@ const cart = [
     type: 'DELIVERY',
     id: 'PICK_UP_POINT',
     image: {
-      icon: 'ico_truck',
+      icon: 'delivery',
     },
     name: 'Levert til postkontor – 2-4 dagers leveringstid',
     price: {
