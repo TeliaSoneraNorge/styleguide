@@ -153,6 +153,7 @@ export type IconDefinition =
   | 'time-waiting'
   | 'trash'
   | 'tv'
+  | 'tv-simple'
   | 'twitter'
   | 'undo'
   | 'upload'
