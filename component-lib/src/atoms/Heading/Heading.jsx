@@ -15,21 +15,42 @@ import classnames from 'classnames';
  *
  * Heading can be centered by applying heading--centered.
  */
-const Heading = ({ level, tagName, text, children, className, ...rest }) => {
+const Heading = ({ level, tagName, text, children, className, size, align, ...rest }) => {
   const TagName = tagName ? tagName : `h${level}`;
-  return (
-    <TagName
-      className={classnames('heading', {
-        [className]: className,
-        [`heading--level-${level}`]: level,
-      })}
-      {...rest}
-    >
-      {text}
-      {children}
-    </TagName>
-  );
+
+  if (size) {
+    return (
+      <TagName
+        className={classnames('heading', {
+          [className]: className,
+          [`heading--${size}`]: size,
+          [`heading--align-${align}`]: align,
+        })}
+        {...rest}
+      >
+        {text}
+        {children}
+      </TagName>
+    );
+  }
+
+  // OLD DEPRECATED
+  if (!size) {
+    return (
+      <TagName
+        className={classnames('heading', {
+          [className]: className,
+          [`heading--level-${level}`]: level,
+        })}
+        {...rest}
+      >
+        {text}
+        {children}
+      </TagName>
+    );
+  }
 };
+
 Heading.propTypes = {
   /** Level of this heading (1-6). */
   level: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
@@ -39,6 +60,7 @@ Heading.propTypes = {
   text: PropTypes.node,
   /** Content of this heading. */
   children: PropTypes.node,
+  size: PropTypes.string,
 };
 
 export default Heading;

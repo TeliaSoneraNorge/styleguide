@@ -1,6 +1,39 @@
 @import "../../colors.pcss";
 
 .heading {
+    &--align-left {
+        text-align: left;
+    }
+    &--align-center {
+        text-align: center;
+    }
+    &--align-right {
+        text-align: right;
+    }
+    &--align-justify {
+        text-align: justify;
+    }
+}
+
+.heading {
+    &--mega {
+        color: var(--core-purple);
+        font-family: 'pebble';
+        font-size: rem(80);
+        line-height: rem(96);
+        text-transform: uppercase;
+
+        @media all and (max-width: em(480)) {
+            font-size: rem(48);
+            line-height: rem(60);
+        }
+    }
+}
+
+
+
+/* OLD DEPRECATED */
+.heading {
     font-weight: 400;
 
     &--level-1 {

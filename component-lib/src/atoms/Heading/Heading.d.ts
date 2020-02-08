@@ -21,6 +21,9 @@ export interface HeadingProps {
    * Content of this heading.
    */
   children?: React.ReactNode;
+
+  size?: string;
+  align?: 'left' | 'center' | 'right' | 'justify';
 }
 
 const Heading: React.FC<HeadingProps>;

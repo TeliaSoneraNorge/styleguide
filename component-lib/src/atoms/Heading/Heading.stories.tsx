@@ -36,3 +36,13 @@ export const Default = () => (
   </div>
   
 );
+
+export const HeadingWithSize = () => (
+  <>
+  <Heading level={1} size="mega" align="center" text="This is a mega heading" />
+  <p className="paragraph">
+    With some additional text like lorem ipsum dolor sit amet. Sed libero. Vivamus in erat ut urna cursus vestibulum.
+    Sed fringilla mauris sit amet nibh. Nullam quis ante. Aenean imperdiet. Phasellus magna.
+  </p>
+  </>
+)
