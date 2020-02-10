@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.31.3
+- Added `title` attr and removed `block` styling for `Icon`.
+- Updated `QuantityPicker`, `QuantityButton`, `StepIndicator`, `ShoppingCartItem`, `ShoppingCart` and `ShoppingCartAccordion` with new icons.
+
 ## 1.31.0
 - Added new icons & <Icon /> component
 
