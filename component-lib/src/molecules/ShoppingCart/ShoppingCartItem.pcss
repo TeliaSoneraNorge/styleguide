@@ -27,9 +27,11 @@
         }
 
         &__image {
-            max-height: 2.5rem;
             margin-right: 1rem;
+            max-height: 2.5rem;
             max-width: 2.5rem;
+            width: auto;
+            height: 2.5rem;
             display: block;
 
             &--small {
@@ -46,6 +48,14 @@
                 @media screen and (min-width: 23rem) {
                     display: block;
                 }
+            }
+
+            &--purple {
+                color: var(--core-purple);
+            }
+
+            &--black {
+                color: var(--black);
             }
         }
 
@@ -167,8 +177,8 @@
             width: 8vw;
 
             &[disabled] {
-                .svg-icon {
-                    fill: var(--shopping-cart-font-color-disabled);
+                .Icon {
+                    color: var(--shopping-cart-font-color-disabled);
                 }
             }
 
@@ -183,19 +193,31 @@
             }
 
             &:active, &:hover, &:focus {
-                &:not([disabled]) .svg-icon {
-                    fill: var(--white);
+                &:not([disabled]) .Icon {
+                    color: var(--white);
                 }
             }
+        }
 
-            &__icon {
-                width: 0.5rem;
-                height: 0.5rem;
+        &__icon-close {
+            width: 0.8rem;
+            height: 0.8rem;
+            color: black;
 
-                @media screen and (min-width: 45em) {
-                    width: 0.7rem;
-                    height: 0.7rem;
-                }
+            @media screen and (min-width: 45em) {
+                width: 1rem;
+                height: 1rem;
+            }
+        }
+
+        &__icon-quantity {
+            width: 0.8rem;
+            height: 0.8rem;
+            color: black;
+
+            @media screen and (min-width: 45em) {
+                width: 1rem;
+                height: 1rem;
             }
         }
 

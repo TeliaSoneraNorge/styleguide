@@ -29,7 +29,7 @@ const ShoppingCartAccordion = ({
         numberOfItemsInCart > 1 ? 'er' : ''
       }`,
       children: children,
-      icon: 'ico_buy',
+      icon: 'shoppingcart',
       iconTitle: 'Handlekurv',
       buttonType: 'primary',
       text: `Betales nå: ${formatPrice(totalPriceUpfront)}. Pris pr. måned: ${formatPrice(totalPriceMonthly)}`,

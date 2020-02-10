@@ -64,7 +64,7 @@ const cart = [
             type: 'SERVICE',
             id: 'INSURANCE_SWITCH_2+INSURLS2V',
             image: {
-              icon: 'ico_info',
+              icon: 'info',
             },
             name: '2 måneder SVITSJ Plussforsikring inkludert',
             price: {
@@ -88,7 +88,7 @@ const cart = [
           monthly: 579,
         },
         image: {
-          icon: 'ico_subscription',
+          icon: 'sim-card',
         },
         subtitle: 'Nummer: 900 90 900',
       },
