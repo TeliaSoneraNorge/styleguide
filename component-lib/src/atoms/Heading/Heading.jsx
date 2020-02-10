@@ -15,6 +15,7 @@ import classnames from 'classnames';
  *
  * Heading can be centered by applying heading--centered.
  */
+
 const Heading = ({ level, tagName, text, children, className, size, align, ...rest }) => {
   const TagName = tagName ? tagName : `h${level}`;
 

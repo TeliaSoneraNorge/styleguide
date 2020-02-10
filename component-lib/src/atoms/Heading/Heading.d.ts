@@ -24,6 +24,7 @@ export interface HeadingProps {
 
   size?: string;
   align?: 'left' | 'center' | 'right' | 'justify';
+  style?: CSSProperties;
 }
 
 const Heading: React.FC<HeadingProps>;
