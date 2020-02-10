@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function TrashIcon(props: Props) {
@@ -20,9 +21,11 @@ export function TrashIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--trash', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M38 4a6 6 0 0 1 6 6v2h12a2 2 0 1 1 0 4h-4v38a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V16H8a2 2 0 1 1 0-4h12v-2a6 6 0 0 1 6-6zm10 12H16v38a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V16zm-24 6a2 2 0 0 1 2 2v24a2 2 0 1 1-4 0V24a2 2 0 0 1 2-2zm8 0a2 2 0 0 1 2 2v24a2 2 0 1 1-4 0V24a2 2 0 0 1 2-2zm8 0a2 2 0 0 1 2 2v24a2 2 0 1 1-4 0V24a2 2 0 0 1 2-2zM38 8H26a2 2 0 0 0-2 2v2h16v-2a2 2 0 0 0-2-2z"

@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function ProductTeliaStartupIcon(props: Props) {
@@ -20,9 +21,11 @@ export function ProductTeliaStartupIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--product-telia-startup', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path d="M57.52 12.9a4 4 0 0 0-3.25-1.13c-5.11.55-17.48 2.62-21.85 9.89-1.89 3.14-2 6.75-.45 10.73a9.62 9.62 0 0 0 1.08 1.93 8.87 8.87 0 0 0-1 2.09A14.1 14.1 0 0 0 29.53 35a8.34 8.34 0 0 0-.85-5.21c-3.95-7.39-15.39-6.11-20.12-5.22a4 4 0 0 0-2.73 6c1.75 3 7.59 12 15 12a9.33 9.33 0 0 0 2.67-.39 8.4 8.4 0 0 0 4.52-3.36c1.39.68 2.76 1.69 2.84 2.68v.11a57.62 57.62 0 0 0-.27 8.83 2 2 0 0 0 2 1.92h.1a2 2 0 0 0 1.91-2.11c-.19-4.08.15-10.6 1.41-13.06a10.57 10.57 0 0 0 5.48 1.59 7.94 7.94 0 0 0 1-.05c9.28-.94 15.26-12.31 16.17-22.52a4 4 0 0 0-1.14-3.31zM22.39 38.21c-4.67 1.38-9.82-4.13-13.08-9.74a34 34 0 0 1 6.21-.61c4.26 0 8.13 1 9.61 3.78a4.78 4.78 0 0 1-2.74 6.57zm19.74-3.59a6.61 6.61 0 0 1-5.36-2.1 5.14 5.14 0 0 1-1.06-1.63c-1.12-2.79-1.06-5.13.16-7.16 2.38-4 9.43-6.94 18.82-8-.78 8.74-5.69 18.19-12.56 18.89z" />
     </svg>
   );

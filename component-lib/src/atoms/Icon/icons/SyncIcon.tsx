@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function SyncIcon(props: Props) {
@@ -20,9 +21,11 @@ export function SyncIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--sync', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M12.4 35.4a20.54 20.54 0 0 0 37.8 7.68 22.59 22.59 0 0 0 1.16-2.17l-4.13 1a2.014 2.014 0 1 1-.97-3.91l8.12-1.94a2.95 2.95 0 0 1 3.53 2.17l1.93 8.12a2 2 0 0 1-1.48 2.45c-.15.04-.305.06-.46.06a2 2 0 0 1-1.9-1.54l-1.08-4.54a24.61 24.61 0 0 1-22.3 14.11C20.496 56.863 10.207 47.989 8.4 36a2.022 2.022 0 1 1 4-.6zM35.379 8.217A24.54 24.54 0 0 1 56.19 27.53a2 2 0 0 1-3.057 2.077 2 2 0 0 1-.863-1.267A20.54 20.54 0 0 0 15 21.28a18.77 18.77 0 0 0-1.21 2.13l4.15-.87a2.001 2.001 0 0 1 .81 3.92l-8.17 1.7a2.48 2.48 0 0 1-.61.07 2.94 2.94 0 0 1-2.87-2.34l-1.7-8.17a2.001 2.001 0 1 1 3.92-.81l.95 4.56A24.54 24.54 0 0 1 35.379 8.217z"

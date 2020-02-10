@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function VisibilityFilledIcon(props: Props) {
@@ -20,9 +21,11 @@ export function VisibilityFilledIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--visibility-filled', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M32 12c15.464 0 28 14 28 20S47.464 52 32 52 4 38 4 32s12.536-20 28-20zm0 8c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm0 4.8a7.2 7.2 0 1 1 0 14.4 7.2 7.2 0 0 1 0-14.4z"

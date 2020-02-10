@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function MenuIcon(props: Props) {
@@ -20,9 +21,11 @@ export function MenuIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--menu', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M50 44a2 2 0 1 1 0 4H14a2 2 0 1 1 0-4zm0-14a2 2 0 1 1 0 4H14a2 2 0 1 1 0-4zm0-14a2 2 0 1 1 0 4H14a2 2 0 1 1 0-4z"

@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function CardViewIcon(props: Props) {
@@ -20,9 +21,11 @@ export function CardViewIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--card-view', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M52 34a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V38a4 4 0 0 1 4-4h40zm-30 4H12v14h10V38zm30 0H26v14h26V38zm0-30a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4V12a4 4 0 0 1 4-4h40zm-30 4H12v14h10V12zm30 0H26v14h26V12z"

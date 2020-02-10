@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function HeartFilledIcon(props: Props) {
@@ -20,9 +21,11 @@ export function HeartFilledIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--heart-filled', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M53.82 12.35a14.08 14.08 0 0 0-20.35 0L32 13.87l-1.47-1.52a14.08 14.08 0 0 0-20.35 0c-5.562 5.833-5.562 15.007 0 20.84l19 19.59a4 4 0 0 0 5.74 0l19-19.59c5.534-5.86 5.49-15.033-.1-20.84z"

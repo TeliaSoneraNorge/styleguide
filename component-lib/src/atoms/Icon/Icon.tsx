@@ -7,6 +7,7 @@ interface Props {
   className?: string;
   style?: CSSProperties;
   spin?: boolean;
+  title?: string;
 }
 
 export function Icon(props: Props) {
@@ -20,7 +21,9 @@ export function Icon(props: Props) {
       style={props.style}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
+      aria-hidden={props.title ? undefined : true}
     >
+      {props.title && <title>{props.title}</title>}
       {IconSvg[props.icon]}
     </svg>
   );

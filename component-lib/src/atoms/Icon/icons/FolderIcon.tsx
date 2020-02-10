@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function FolderIcon(props: Props) {
@@ -20,9 +21,11 @@ export function FolderIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--folder', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M30 12a6 6 0 0 1 5.66 4H52a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H12a8 8 0 0 1-8-8V18a6 6 0 0 1 6-6zm0 4H10a2 2 0 0 0-2 2v28a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V24a4 4 0 0 0-4-4H32v-2a2 2 0 0 0-2-2zm18 10a2 2 0 1 1 0 4H16a2 2 0 1 1 0-4h32z"

@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function MoreIcon(props: Props) {
@@ -20,9 +21,11 @@ export function MoreIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--more', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M43 32c0 2.75 2.25 5 5 5s5-2.25 5-5-2.25-5-5-5-5 2.25-5 5zm-6 0c0-2.75-2.25-5-5-5s-5 2.25-5 5 2.25 5 5 5 5-2.25 5-5zm-16 0c0-2.75-2.25-5-5-5s-5 2.25-5 5 2.25 5 5 5 5-2.25 5-5z"

@@ -13,6 +13,7 @@ import cs from 'classnames';
 interface Props {
   style?: React.CSSProperties;
   className?: string;
+  title?: string;
 }
 
 export function ArrowSmallLeftIcon(props: Props) {
@@ -20,9 +21,11 @@ export function ArrowSmallLeftIcon(props: Props) {
     <svg
       className={cs('Icon', 'Icon--arrow-small-left', props.className)}
       style={props.style}
+      aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 64 64"
     >
+      {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
         d="M18.714 30.614L39.55 16.272c.73-.502 1.71-.289 2.19.477.169.27.259.586.259.91v28.683C42 47.257 41.292 48 40.419 48c-.309 0-.61-.095-.868-.272L18.714 33.387c-.73-.503-.934-1.531-.455-2.297"
