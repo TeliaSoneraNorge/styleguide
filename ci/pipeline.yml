@@ -67,7 +67,7 @@ resources:
     source: &source-config
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: master
-      private_key: ((channel-api-functions-deploy-key))
+      private_key: ((styleguide-deploy-key))
       ignore_paths: [ component-lib/assets/allicons/ ]
 
   - name: node-tasks
@@ -75,7 +75,7 @@ resources:
     source:
         uri: git@github.com:mhd999/go-tasks.git
         branch: master
-        private_key: ((channel-api-functions-deploy-key))
+        private_key: ((styleguide-deploy-key))
 
   - name: slack-alert
     type: slack-notification
