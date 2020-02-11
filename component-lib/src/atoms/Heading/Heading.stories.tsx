@@ -61,8 +61,8 @@ export const HeadingWithColors = () => (
   <>
   <p style={{ color: 'red', fontWeight: 800 }}>Rules of colors in headings MEGA - LARGE</p>
   
-  <Heading level={1} size="l" text="Purple Text" style={{ color: corePurple }} />
-  <Heading level={1} size="l" text="Purple Text, Light Grey Background" style={{ color: corePurple, background: lightGrey }} />
+  <Heading level={1} size="l" text="Core Purple Text" style={{ color: corePurple }} />
+  <Heading level={1} size="l" text="Core Purple Text on Light Grey Background" style={{ color: corePurple, background: lightGrey }} />
   <Heading level={1} size="l" text="Black Text" style={{ color: black }} />
   <Heading level={1} size="l" text="Black Text, Light Grey Background" style={{ color: black, background: lightGrey }} />
   <Heading level={1} size="l" text="White Text, Deep Purple Background" style={{ color: white, background: deepPurple }} />
@@ -71,11 +71,13 @@ export const HeadingWithColors = () => (
   <p style={{ color: 'red', fontWeight: 800 }}>Rules of colors in headings MEDIUM - XTRA SMALL</p>
 
   <Heading level={1} size="s" text="Black Text" style={{ color: black }} />
-  <Heading level={1} size="s" text="Black Text, Light Grey Background" style={{ color: black, background: lightGrey }} />
+  <Heading level={1} size="s" text="Black Text on Light Grey Background" style={{ color: black, background: lightGrey }} />
   <Heading level={1} size="s" text="Darker Grey Text" style={{ color: '#6E6E6E' }} />
-  <Heading level={1} size="s" text="Darker Grey Text, Light Grey Background" style={{ color: '#6E6E6E', background: lightGrey }} />
-  <Heading level={1} size="s" text="Dark Grey Text, Deep Purple Background" style={{ color: darkGrey, background: deepPurple }} />
-  <Heading level={1} size="s" text="Dark Grey Text, Black Purple Background" style={{ color: darkGrey, background: blackPurple }} />
+  <Heading level={1} size="s" text="Darker Grey Text on Light Grey Background" style={{ color: '#6E6E6E', background: lightGrey }} />
+  <Heading level={1} size="s" text="white Text on Deep Purple Background" style={{ color: white, background: deepPurple }} />
+  <Heading level={1} size="s" text="Dark Grey Text on Deep Purple Background" style={{ color: darkGrey, background: deepPurple }} />
+  <Heading level={1} size="s" text="White Text on Black Purple Background" style={{ color: white, background: blackPurple }} />
+  <Heading level={1} size="s" text="Dark Grey Text on Black Purple Background" style={{ color: darkGrey, background: blackPurple }} />
 
   </>
 )
