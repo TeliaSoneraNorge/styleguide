@@ -7,6 +7,9 @@ export interface IconLinkProps {
    * One of 'download', 'linkedIn' or 'twitter'.
    */
   iconName?: IconLinkIconName;
+  icon?: string;
+  iconColor?: 'black' | 'core-purple' | 'white';
+  style?: CSSProperties;
   href: string;
 }
 
