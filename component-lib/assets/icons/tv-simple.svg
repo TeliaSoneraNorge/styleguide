@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 62 (91390) - https://sketch.com -->
+    <title>Icons/tv-simple</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Icons/tv-simple" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M46,50 C47.1045695,50 48,50.8954305 48,52 C48,53.1045695 47.1045695,54 46,54 L20,54 C18.8954305,54 18,53.1045695 18,52 C18,50.8954305 18.8954305,50 20,50 L46,50 Z M52,10 C56.418278,10 60,13.581722 60,18 L60,40 C60,44.418278 56.418278,48 52,48 L12,48 C7.581722,48 4,44.418278 4,40 L4,18 C4,13.581722 7.581722,10 12,10 L52,10 Z M52,14 L12,14 C9.790861,14 8,15.790861 8,18 L8,40 C8,42.209139 9.790861,44 12,44 L52,44 C54.209139,44 56,42.209139 56,40 L56,18 C56,15.790861 54.209139,14 52,14 Z" id="Combined-Shape" fill="#222222"></path>
+    </g>
+</svg>

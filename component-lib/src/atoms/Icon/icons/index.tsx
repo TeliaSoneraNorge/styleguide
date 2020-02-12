@@ -148,6 +148,7 @@ export { TagsIcon } from './TagsIcon';
 export { TimeWaitingIcon } from './TimeWaitingIcon';
 export { TimeIcon } from './TimeIcon';
 export { TrashIcon } from './TrashIcon';
+export { TvSimpleIcon } from './TvSimpleIcon';
 export { TvIcon } from './TvIcon';
 export { TwitterIcon } from './TwitterIcon';
 export { UndoIcon } from './UndoIcon';

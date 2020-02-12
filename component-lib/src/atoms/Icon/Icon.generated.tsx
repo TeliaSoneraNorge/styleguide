@@ -154,6 +154,7 @@ export type IconDefinition =
   | 'time-waiting'
   | 'time'
   | 'trash'
+  | 'tv-simple'
   | 'tv'
   | 'twitter'
   | 'undo'
@@ -319,6 +320,7 @@ export const availableIcons: IconDefinition[] = [
   'time-waiting',
   'time',
   'trash',
+  'tv-simple',
   'tv',
   'twitter',
   'undo',
@@ -1184,6 +1186,12 @@ export const IconSvg = {
     <path
       fillRule="evenodd"
       d="M38 4a6 6 0 0 1 6 6v2h12a2 2 0 1 1 0 4h-4v38a6 6 0 0 1-6 6H18a6 6 0 0 1-6-6V16H8a2 2 0 1 1 0-4h12v-2a6 6 0 0 1 6-6zm10 12H16v38a2 2 0 0 0 2 2h28a2 2 0 0 0 2-2V16zm-24 6a2 2 0 0 1 2 2v24a2 2 0 1 1-4 0V24a2 2 0 0 1 2-2zm8 0a2 2 0 0 1 2 2v24a2 2 0 1 1-4 0V24a2 2 0 0 1 2-2zm8 0a2 2 0 0 1 2 2v24a2 2 0 1 1-4 0V24a2 2 0 0 1 2-2zM38 8H26a2 2 0 0 0-2 2v2h16v-2a2 2 0 0 0-2-2z"
+    />
+  ),
+  'tv-simple': (
+    <path
+      fillRule="evenodd"
+      d="M46 50a2 2 0 1 1 0 4H20a2 2 0 1 1 0-4h26zm6-40a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H12a8 8 0 0 1-8-8V18a8 8 0 0 1 8-8h40zm0 4H12a4 4 0 0 0-4 4v22a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V18a4 4 0 0 0-4-4z"
     />
   ),
   tv: (
