@@ -65,6 +65,7 @@ const cart = [
             id: 'INSURANCE_SWITCH_2+INSURLS2V',
             image: {
               icon: 'info',
+              color: 'purple',
             },
             name: '2 måneder SVITSJ Plussforsikring inkludert',
             price: {
@@ -89,7 +90,7 @@ const cart = [
         },
         image: {
           icon: 'sim-card',
-          color: 'purple',
+          color: 'dark-green',
         },
         subtitle: 'Nummer: 900 90 900',
       },
