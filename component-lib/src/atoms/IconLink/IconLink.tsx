@@ -4,12 +4,21 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import upperFirst from 'lodash/upperFirst';
 
 import { Icon } from '../Icon';
+import { IconDefinition } from '../Icon/Icon.generated';
+
+interface IconLinkProps {
+  className?: any;
+  icon?: IconDefinition;
+  iconName?: string;
+  iconColor?: 'black' | 'core-purple' | 'white';
+  href: string;
+}
 
 /**
  * Status: *finished*.
  * Category: Links
  */
-const IconLink = ({ className, iconName, icon, iconColor, ...rest }) => (
+const IconLink: React.FC<IconLinkProps> = ({ className, iconName, icon, iconColor, ...rest }) => (
   <>
     {icon && (
       <a

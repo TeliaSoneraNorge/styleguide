@@ -3,7 +3,6 @@ import IconLink from './IconLink';
 
 export default {
   title: 'Component library|Atoms/Icon Link',
-  component: IconLink,
 };
 
 export const Default = () => (
