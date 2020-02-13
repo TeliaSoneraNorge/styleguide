@@ -1,5 +1,5 @@
 import React from 'react';
-import classnames from 'classnames';
+import cs from 'classnames';
 
 /**
  * Status: *finished*.
@@ -15,60 +15,83 @@ import classnames from 'classnames';
  * Heading can be centered by applying heading--centered.
  */
 
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span';
 
-type HeadingTagName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | number;
-type HeadingSizes = 'mega' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs';
+type HeadingSize = 'mega' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs';
 
-interface HeadingProps {
-  className?: any;
-  level: HeadingTagName;
-  tagName?: number | string;
-  text?: React.ReactNode;
-  children?: React.ReactNode;
-  size?: HeadingSizes;
+export interface HeadingProps {
+  /**
+   * This should always be provided. The visual size of the heading. Does not affect the semantic tag.
+   */
+  size?: HeadingSize;
+
+  /**
+   * This should always be provided. Use `tag` to select semantic element (h1,h2 etc.) and `size` to set the visual heading size.
+   */
+  tag?: HeadingTag;
+
+  /**
+   * @deprecated Use `tag` to select semantic element (h1,h2 etc.) and `size` to set the visual heading size.
+   */
+  level?: 1 | 2 | 3 | 4 | 5 | 6;
+
+  /**
+   * @deprecated  Use `tag` to select semantic element (h1,h2 etc.) and `size` to set the visual heading size.
+   */
+  tagName?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6';
+
+  /**
+   * Additional custom CSS classes to provide to the component.
+   */
+  className?: string;
+
+  /**
+   * Custom styling set on the Heading component.
+   */
   style?: React.CSSProperties;
+
+  /**
+   * The contents of the heading tag. `children` and `text` can be used interchangeably.
+   */
+  text?: React.ReactNode;
+
+  /**
+   * The contents of the heading tag. `children` and `text` can be used interchangeably.
+   */
+  children?: React.ReactNode;
 }
 
+HTMLHeadingElement;
 
-const Heading: React.FC<HeadingProps> = ({ level, tagName, text, children, className, size, ...rest }): any => {
-  
-  if (size) {
-    const TagName: any = tagName ? tagName : `${level}`;
+const Heading: React.FC<HeadingProps> = props => {
+  const { level, tagName, text, children, className, size, ...rest } = props;
 
-    return (
-      <TagName
-      className={classnames('heading', {
-        [className]: className,
-        [`heading--${size}`]: size,
-      })}
+  let Tag: HeadingTag = 'h1';
+  let hSize: HeadingSize = props.size || 'mega';
+
+  // Check deprecated values for level and tagName
+  if (props.level) {
+    Tag = `h${props.level}` as HeadingTag;
+  }
+  if (props.tagName) {
+    Tag = props.tagName as HeadingTag;
+  }
+
+  return (
+    <Tag
+      className={cs(
+        'heading',
+        props.className,
+        hSize ? `heading--${hSize}` : undefined,
+        props.level ? `heading--level-${props.level}` : undefined
+      )}
+      style={props.style}
       {...rest}
-      >
-        {text}
-        {children}
-      </TagName>
-    );
-  }
-
-  
-  // DEPRECATED!
-  if (!size) {
-    const DeprecatedTagName: any = tagName ? tagName : `h${level}`;
-
-    return (
-      <DeprecatedTagName
-        className={classnames('heading', {
-          [className]: className,
-          [`heading--level-${level}`]: level,
-        })}
-        {...rest}
-      >
-        {text}
-        {children}
-      </DeprecatedTagName>
-    );
-  }
+    >
+      {text}
+      {children}
+    </Tag>
+  );
 };
-
-
 
 export default Heading;
