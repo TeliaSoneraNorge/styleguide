@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 /**
@@ -16,18 +15,33 @@ import classnames from 'classnames';
  * Heading can be centered by applying heading--centered.
  */
 
-const Heading = ({ level, tagName, text, children, className, size, align, ...rest }) => {
-  const TagName = tagName ? tagName : `h${level}`;
 
+type HeadingTagName = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | number;
+type HeadingSizes = 'mega' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs';
+
+interface HeadingProps {
+  className?: any;
+  level: HeadingTagName;
+  tagName?: number | string;
+  text?: React.ReactNode;
+  children?: React.ReactNode;
+  size?: HeadingSizes;
+  style?: React.CSSProperties;
+}
+
+
+const Heading: React.FC<HeadingProps> = ({ level, tagName, text, children, className, size, ...rest }): any => {
+  
   if (size) {
+    const TagName: any = tagName ? tagName : `${level}`;
+
     return (
       <TagName
-        className={classnames('heading', {
-          [className]: className,
-          [`heading--${size}`]: size,
-          [`heading--align-${align}`]: align,
-        })}
-        {...rest}
+      className={classnames('heading', {
+        [className]: className,
+        [`heading--${size}`]: size,
+      })}
+      {...rest}
       >
         {text}
         {children}
@@ -35,10 +49,13 @@ const Heading = ({ level, tagName, text, children, className, size, align, ...re
     );
   }
 
-  // OLD DEPRECATED
+  
+  // DEPRECATED!
   if (!size) {
+    const DeprecatedTagName: any = tagName ? tagName : `h${level}`;
+
     return (
-      <TagName
+      <DeprecatedTagName
         className={classnames('heading', {
           [className]: className,
           [`heading--level-${level}`]: level,
@@ -47,21 +64,11 @@ const Heading = ({ level, tagName, text, children, className, size, align, ...re
       >
         {text}
         {children}
-      </TagName>
+      </DeprecatedTagName>
     );
   }
 };
 
-Heading.propTypes = {
-  /** Level of this heading (1-6). */
-  level: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
-  /** The tag name */
-  tagName: PropTypes.oneOf(['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'strong']),
-  /** Content of this heading. */
-  text: PropTypes.node,
-  /** Content of this heading. */
-  children: PropTypes.node,
-  size: PropTypes.string,
-};
+
 
 export default Heading;
