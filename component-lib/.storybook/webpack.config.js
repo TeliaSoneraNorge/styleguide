@@ -9,6 +9,11 @@ module.exports = ({ config, mode }) => {
     loader: require.resolve('babel-loader'),
   });
 
+  config.module.rules.push({
+    test: /\.md$/,
+    loader: require.resolve('markdown-loader'),
+  });
+
   config.resolve.extensions.push('.ts', '.tsx');
 
   /**
