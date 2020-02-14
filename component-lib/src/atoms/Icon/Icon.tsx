@@ -3,11 +3,30 @@ import cs from 'classnames';
 import { IconSvg, IconDefinition } from './Icon.generated';
 
 interface Props {
+  /**
+   * The icon to show. Must be a valid `IconDefinition`.
+   */
   icon?: IconDefinition;
-  className?: string;
-  style?: CSSProperties;
-  spin?: boolean;
+
+  /**
+   * An optional title for accessibility.
+   */
   title?: string;
+
+  /**
+   * Add a slow spin to the icon (e.g. loading indicators)
+   */
+  spin?: boolean;
+
+  /**
+   * Any additional CSS classes.
+   */
+  className?: string;
+
+  /**
+   * Any additional CSS properties.
+   */
+  style?: CSSProperties;
 }
 
 export function Icon(props: Props) {

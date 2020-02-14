@@ -7,6 +7,7 @@ import { IconDefinition, availableIcons } from './Icon.generated';
 
 export default {
   title: 'Component library|Atoms/Icon',
+  component: Icon,
 };
 
 export const Default = () => (
@@ -79,14 +80,12 @@ export const InlineIcon = () => (
     {/* {`import { CheckMarkIcon } from '@telia/styleguide';`} */}
 
     <CheckMarkIcon style={{ width: '100px', height: '100px', color: '#00CC66' }} />
-
   </>
-)
+);
 export const AllIconsFromProps = () => (
   <>
     {/* {`import { Icon } from '@telia/styleguide';`} */}
 
     <Icon icon="like" style={{ width: '100px', height: '100px', color: '#009999' }} />
-
   </>
-)
+);
