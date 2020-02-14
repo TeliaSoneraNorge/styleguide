@@ -61,8 +61,6 @@ export interface HeadingProps {
   children?: React.ReactNode;
 }
 
-HTMLHeadingElement;
-
 const Heading: React.FC<HeadingProps> = props => {
   const { level, tagName, text, children, className, size, ...rest } = props;
 
