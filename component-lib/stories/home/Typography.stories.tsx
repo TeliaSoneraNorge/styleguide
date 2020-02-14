@@ -3,7 +3,11 @@ import React from 'react';
 
 import Heading from '../../src/atoms/Heading/Heading';
 
-const Typography = () => (
+export default {
+  title: 'Introduction/Styleguide',
+};
+
+export const Typography = () => (
   <div>
     <div className="container container--small">
       <Heading level={2} text="Typography" />
@@ -45,5 +49,3 @@ const Typography = () => (
     </div>
   </div>
 );
-
-export default Typography;

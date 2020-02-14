@@ -11,13 +11,11 @@ import '../src/business.pcss';
 
 import HomePage from './home/HomePage';
 import ColorPalette from './home/ColorPalette';
-import Typography from './home/Typography';
 
 import Contributing from './business/Contributing';
 
 storiesOf('Introduction|Home', module)
   .add('Greetings', () => <HomePage />)
-  .add('Color palette', () => <ColorPalette />)
-  .add('Typography', () => <Typography />);
+  .add('Color palette', () => <ColorPalette />);
 
 storiesOf('Introduction|Business', module).add('Contributing', () => <Contributing />);
