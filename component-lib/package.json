@@ -76,6 +76,7 @@
     "fs-extra": "^7.0.1",
     "jest": "^24.9.0",
     "js-yaml": "^3.13.1",
+    "markdown-loader": "^5.1.0",
     "npm-run-all": "4.1.1",
     "postcss": "7.0.14",
     "postcss-calc": "7.0.1",
