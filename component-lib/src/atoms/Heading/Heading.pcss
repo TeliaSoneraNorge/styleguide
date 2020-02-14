@@ -1,144 +1,139 @@
-@import "../../colors.pcss";
+@import '../../colors.pcss';
 
 .heading {
-    &--mega {
-        font-family: 'pebble';
-        font-size: rem(80);
-        line-height: rem(96);
-        text-transform: uppercase;
+  &--mega {
+    font-family: 'pebble';
+    font-size: rem(80);
+    line-height: rem(96);
+    text-transform: uppercase;
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(48);
-            line-height: rem(60);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(48);
+      line-height: rem(60);
     }
-    &--xxl {
-        font-family: 'pebble';
-        font-size: rem(60);
-        line-height: rem(66);
-        text-transform: uppercase;
+  }
+  &--xxl {
+    font-family: 'pebble';
+    font-size: rem(60);
+    line-height: rem(66);
+    text-transform: uppercase;
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(36);
-            line-height: rem(44);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(36);
+      line-height: rem(44);
     }
-    &--xl {
-        font-family: 'pebble';
-        font-size: rem(48);
-        line-height: rem(56);
-        text-transform: uppercase;
+  }
+  &--xl {
+    font-family: 'pebble';
+    font-size: rem(48);
+    line-height: rem(56);
+    text-transform: uppercase;
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(32);
-            line-height: rem(40);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(32);
+      line-height: rem(40);
     }
-    &--l {
-        font-family: 'pebble';
-        font-size: rem(36);
-        line-height: rem(44);
-        text-transform: uppercase;
+  }
+  &--l {
+    font-family: 'pebble';
+    font-size: rem(36);
+    line-height: rem(44);
+    text-transform: uppercase;
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(24);
-            line-height: rem(32);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(24);
+      line-height: rem(32);
     }
-    &--m {
-        font-family: 'Helvetica Neue Medium';
-        font-size: rem(32);
-        line-height: rem(38);
+  }
+  &--m {
+    font-family: 'Helvetica Neue Medium';
+    font-size: rem(32);
+    line-height: rem(38);
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(22);
-            line-height: rem(28);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(22);
+      line-height: rem(28);
     }
-    &--s {
-        font-family: 'Helvetica Neue Medium';
-        font-size: rem(22);
-        line-height: rem(28);
+  }
+  &--s {
+    font-family: 'Helvetica Neue Medium';
+    font-size: rem(22);
+    line-height: rem(28);
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(20);
-            line-height: rem(26);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(20);
+      line-height: rem(26);
     }
-    &--xs {
-        font-family: 'Helvetica Neue Medium';
-        font-size: rem(18);
-        line-height: rem(24);
+  }
+  &--xs {
+    font-family: 'Helvetica Neue Medium';
+    font-size: rem(18);
+    line-height: rem(24);
 
-        @media all and (max-width: em(480)) {
-            font-size: rem(14);
-            line-height: rem(20);
-        }
+    @media all and (max-width: em(480)) {
+      font-size: rem(14);
+      line-height: rem(20);
     }
+  }
 }
-
-
-
-
-
 
 /* OLD DEPRECATED */
 .heading {
-    font-weight: 400;
+  font-weight: 400;
 
-    &--level-1 {
-        color: var(--core-purple);
-        font-family: 'pebble';
-        font-size: rem(30);
-        line-height: 1;
-        margin: 0 0 rem(5) 0;
-        text-transform: uppercase;
+  &--level-1 {
+    color: var(--core-purple);
+    font-family: 'pebble';
+    font-size: rem(30);
+    line-height: 1;
+    margin: 0 0 rem(5) 0;
+    text-transform: uppercase;
 
-        @media all and (min-width: em(450)) {
-            font-size: rem(45);
-            margin: rem(5) 0 rem(10) 0;
-        }
-
-        @media all and (min-width: em(768)) {
-            font-size: rem(55);
-            margin-bottom: rem(20);
-        }
+    @media all and (min-width: em(450)) {
+      font-size: rem(45);
+      margin: rem(5) 0 rem(10) 0;
     }
 
-    &--level-2 {
-        font-family: 'Helvetica Neue Medium';
-        color: var(--black);
-        font-size: rem(18);
-        letter-spacing: rem(0.3);
-        line-height: rem(24);
-
-        @media all and (min-width: em(450)) {
-            font-size: rem(21);
-            line-height: rem(27);
-        }
+    @media all and (min-width: em(768)) {
+      font-size: rem(55);
+      margin-bottom: rem(20);
     }
+  }
 
-    &--level-3 {
-        font-family: 'Helvetica Neue Medium';
-        color: var(--black);
-        font-size: rem(16);
-        line-height: rem(21);
-        margin: 0;
+  &--level-2 {
+    font-family: 'Helvetica Neue Medium';
+    color: var(--black);
+    font-size: rem(18);
+    letter-spacing: rem(0.3);
+    line-height: rem(24);
 
-        @media all and (min-width: em(450)) {
-            font-size: rem(18);
-            line-height: rem(25);
-        }
+    @media all and (min-width: em(450)) {
+      font-size: rem(21);
+      line-height: rem(27);
     }
+  }
 
-    &--level-4 {
-        font-family: 'Helvetica Neue Medium';
-        color: var(--black);
-        font-size: rem(16);
-        line-height: rem(21);
-        margin: 0;
+  &--level-3 {
+    font-family: 'Helvetica Neue Medium';
+    color: var(--black);
+    font-size: rem(16);
+    line-height: rem(21);
+    margin: 0;
+
+    @media all and (min-width: em(450)) {
+      font-size: rem(18);
+      line-height: rem(25);
     }
-    &--centered {
-        text-align: center;
-    }
+  }
+
+  &--level-4 {
+    font-family: 'Helvetica Neue Medium';
+    color: var(--black);
+    font-size: rem(16);
+    line-height: rem(21);
+    margin: 0;
+  }
+  &--centered {
+    text-align: center;
+  }
 }
