@@ -21,7 +21,7 @@ type HeadingSize = 'mega' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs';
 
 export interface HeadingProps {
   /**
-   * This should always be provided. The visual size of the heading. Does not affect the semantic tag.
+   * This should always be provided. The visual size of the heading. Does not affect the semantic tag. Default size is `xxl` for h1 down to `xs` for h6 tags.
    */
   size?: HeadingSize;
 
@@ -61,11 +61,19 @@ export interface HeadingProps {
   children?: React.ReactNode;
 }
 
-const Heading: React.FC<HeadingProps> = props => {
-  const { level, tagName, text, children, className, size, ...rest } = props;
+const defaultSizeByTag: { [key: string]: HeadingSize } = {
+  h1: 'xxl',
+  h2: 'xl',
+  h3: 'l',
+  h4: 'm',
+  h5: 's',
+  h6: 'xs',
+};
 
-  let Tag: HeadingTag = 'h1';
-  let hSize: HeadingSize = props.size || 'mega';
+const Heading: React.FC<HeadingProps> = props => {
+  const { level, tag, tagName, text, children, className, size, ...rest } = props;
+
+  let Tag: HeadingTag = tag || 'h1';
 
   // Check deprecated values for level and tagName
   if (props.level) {
@@ -74,6 +82,8 @@ const Heading: React.FC<HeadingProps> = props => {
   if (props.tagName) {
     Tag = props.tagName as HeadingTag;
   }
+
+  const hSize: HeadingSize = size || defaultSizeByTag[Tag] || 'mega';
 
   return (
     <Tag

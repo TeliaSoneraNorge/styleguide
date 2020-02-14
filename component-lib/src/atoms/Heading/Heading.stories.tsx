@@ -8,7 +8,35 @@ export default {
 
 export const Default = () => (
   <div>
-    <p style={{ color: 'red', fontWeight: 800 }}>DEPRECATED!</p>
+    <Heading tag="h1" text="This is heading 1" />
+    <p className="paragraph">
+      With some additional text like lorem ipsum dolor sit amet. Sed libero. Vivamus in erat ut urna cursus vestibulum.
+      Sed fringilla mauris sit amet nibh. Nullam quis ante. Aenean imperdiet. Phasellus magna.
+    </p>
+
+    <Heading tag="h2" text="This is heading 2" />
+    <p className="paragraph">
+      With some additional text like lorem ipsum dolor sit amet. Sed libero. Vivamus in erat ut urna cursus vestibulum.
+      Sed fringilla mauris sit amet nibh. Nullam quis ante. Aenean imperdiet. Phasellus magna.
+    </p>
+
+    <Heading tag="h3" text="This is heading 3" />
+    <p className="paragraph">
+      With some additional text like lorem ipsum dolor sit amet. Sed libero. Vivamus in erat ut urna cursus vestibulum.
+      Sed fringilla mauris sit amet nibh. Nullam quis ante. Aenean imperdiet. Phasellus magna.
+    </p>
+
+    <Heading tag="h4" text="This is heading 4" />
+    <p className="paragraph">
+      With some additional text like lorem ipsum dolor sit amet. Sed libero. Vivamus in erat ut urna cursus vestibulum.
+      Sed fringilla mauris sit amet nibh. Nullam quis ante. Aenean imperdiet. Phasellus magna.
+    </p>
+  </div>
+);
+
+export const HeadingWithLevel = () => (
+  <div>
+    <p style={{ color: 'red', fontWeight: 800 }}>DEPRECATED! Use <code>size</code> and <code>tag</code> properties.</p>
 
     <Heading level={1} text="This is a level 1 heading" />
     <p className="paragraph">
