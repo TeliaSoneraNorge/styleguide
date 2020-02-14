@@ -12,7 +12,7 @@ export default [
   },
   {
     Black: {
-      hex: '#000000',
+      hex: '#222222',
       textColor: '#FFFFFF',
       priority: '2',
     },
