@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Context } from './ModalDialogProvider';
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
+import Button from '../../atoms/Button/Button';
 
 const KEY_ESC = 27;
 
@@ -22,14 +23,15 @@ export default function ModalDialog({
   children,
   onSubmit,
   submitText,
+  submitKind,
   onClose,
   closeText,
+  closeKind,
   standalone,
   renderTo,
   headerElement,
   footerElement,
-  disableOverlayClick,
-  disableCloseByEscKey,
+  size,
   ...rest
 }) {
   const modalNode = renderTo || useContext(Context);
@@ -67,20 +69,13 @@ export default function ModalDialog({
     };
   };
 
-  const closeDialog = () => {
-    if (onClose) onClose();
-    if (!onClose && onSubmit) onSubmit();
-  };
-
   const onOverlayClick = event => {
     if (event.target !== dialogOverlayRef.current) return;
-
-    if (disableOverlayClick) setFocusOnDialog();
-    else closeDialog();
+    if (onClose) onClose();
   };
 
   const handleKeyDown = event => {
-    if (event.keyCode === KEY_ESC && !disableCloseByEscKey) closeDialog();
+    if (event.keyCode === KEY_ESC && onClose) onClose();
   };
 
   useEffect(returnFocusOnDialogClose, []);
@@ -94,16 +89,8 @@ export default function ModalDialog({
   );
   const defaultFooterElement = (
     <>
-      {submitText && (
-        <button className="button button--margin-top" onClick={onSubmit}>
-          {submitText}
-        </button>
-      )}
-      {closeText && (
-        <button className="button button--cancel button--margin-top" onClick={onClose}>
-          {closeText}
-        </button>
-      )}
+      {submitText && onSubmit && <Button kind={submitKind} margin="top" onClick={onSubmit} text={submitText} />}
+      {closeText && onClose && <Button kind={closeKind} margin="top" onClick={onClose} text={closeText} />}
     </>
   );
 
@@ -112,7 +99,7 @@ export default function ModalDialog({
       tabIndex={0}
       onKeyDown={handleKeyDown}
       ref={dialogRef}
-      className={classnames('modal-dialog container', 'container--small', { 'modal-dialog--standalone': standalone })}
+      className={classnames('modal-dialog container', `container--${size}`, { 'modal-dialog--standalone': standalone })}
       role="dialog"
       aria-labelledby={`${name}-heading`}
       aria-describedby={`${name}-description`}
@@ -147,18 +134,30 @@ export default function ModalDialog({
   );
 }
 
+ModalDialog.sizes = {
+  small: 'small',
+  medium: 'medium',
+  large: 'large',
+};
+
+ModalDialog.defaultProps = {
+  closeKind: Button.kinds.cancel,
+  size: ModalDialog.sizes.small,
+};
+
 ModalDialog.propTypes = {
   name: PropTypes.string.isRequired,
   heading: PropTypes.string,
   children: PropTypes.node,
   onSubmit: PropTypes.func,
   submitText: PropTypes.string,
+  submitKind: PropTypes.oneOf(Object.values(Button.kinds)),
   onClose: PropTypes.func,
   closeText: PropTypes.string,
+  closeKind: PropTypes.oneOf(Object.values(Button.kinds)),
   standalone: PropTypes.bool,
   renderTo: PropTypes.any,
   headerElement: PropTypes.element,
   footerElement: PropTypes.element,
-  disableOverlayClick: PropTypes.bool,
-  disableCloseByEscKey: PropTypes.bool,
+  size: PropTypes.oneOf(Object.keys(ModalDialog.sizes)),
 };
