@@ -108,8 +108,6 @@ export default class ModalDialogSamplePage extends React.Component {
               heading="Info dialog"
               onSubmit={this.toggleNonClosableDialog}
               submitText="Ok"
-              disableOverlayClick
-              disableCloseByEscKey
             >
               <p>This dialog can&apos;t be closed by escape key or clickout</p>
             </ModalDialog>

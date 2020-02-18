@@ -2,11 +2,13 @@ import React, { ReactNode } from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
+export type ContainerSize = 'small' | 'medium' | 'large';
+
 interface Props {
   /**
    * Container size. Body text should be in a small container to reduce line width and make reading easier.
    */
-  size?: 'small' | 'medium' | 'large';
+  size?: ContainerSize;
   noMargin?: boolean;
   noPadding?: boolean;
   noPaddingTop?: boolean;

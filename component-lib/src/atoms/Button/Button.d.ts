@@ -1,5 +1,7 @@
 import * as React from 'react';
 
+export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
+
 export interface ButtonProps {
   /**
    * A button can have a text.
@@ -9,7 +11,7 @@ export interface ButtonProps {
   /**
    * A button can have different appearances e.g. 'primary', 'cancel'.
    */
-  kind?: 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
+  kind?: ButtonKind;
   /**
    * One of ['top', 'bottom']
    */
