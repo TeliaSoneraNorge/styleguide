@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.32.0
+- Added `Button` kind `normal`, has no specific styling, same effect as not defining the button's `kind`
+- In `ModalDialog`:
+    - Remove `disableOverlayClick` and `disableCloseByEscKey` props. It's implicitly defined by `onClose` function.
+    - Added `size` prop for the container size
+    - Added `submitKind` and `closeKind` to overwrite the submit and close buttons kinds
+
 ## 1.31.3
 - Added `title` attr and removed `block` styling for `Icon`.
 - Updated `QuantityPicker`, `QuantityButton`, `StepIndicator`, `ShoppingCartItem`, `ShoppingCart` and `ShoppingCartAccordion` with new icons.

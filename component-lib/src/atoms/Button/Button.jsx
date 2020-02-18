@@ -52,6 +52,7 @@ Button.types = {
 };
 
 Button.kinds = {
+  normal: 'normal',
   primary: 'primary',
   cancel: 'cancel',
   link: 'link',

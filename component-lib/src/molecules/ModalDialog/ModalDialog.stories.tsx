@@ -64,7 +64,7 @@ export const Default = () => {
   return (
     <ModalDialogProvider>
       <article>
-        
+
         <section className="container container--small" style={{ textAlign: 'center' }}>
           <button className="button button-default button--margin-top" onClick={toggleInfoModalDialog}>
             Info modal dialog
@@ -103,8 +103,6 @@ export const Default = () => {
               heading="Info dialog"
               onSubmit={toggleNonClosableDialog}
               submitText="Ok"
-              disableOverlayClick
-              disableCloseByEscKey
             >
               <p>This dialog can&apos;t be closed by escape key or clickout</p>
             </ModalDialog>
