@@ -15,7 +15,7 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
-## 1.32.0
+## 1.33.0
 - Added `Button` kind `normal`, has no specific styling, same effect as not defining the button's `kind`
 - In `ModalDialog`:
     - Remove `disableOverlayClick` and `disableCloseByEscKey` props. It's implicitly defined by `onClose` function.
