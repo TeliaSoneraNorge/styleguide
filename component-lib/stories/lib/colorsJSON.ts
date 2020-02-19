@@ -19,6 +19,7 @@ function convertToRgb(hex: string) {
 
 function textColor(hex: string) {
   const rgb = hexToRgb(hex);
+  // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
   if (rgb && rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114 > 186) {
     return colors.black;
   }
