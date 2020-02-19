@@ -1,307 +1,51 @@
-import { colors } from '../../src/utils/colors';
+import { colorDefinitions, colorAliases, colors } from '../../src/utils/colors';
 
-const white = '#FFFFFF';
-const black = '#222222';
-
-const convertToRgb = (hex) => {
+function hexToRgb(hex: string) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-
-  return result ? `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` : null;
+  if (!result) {
+    return null;
+  }
+  return {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16),
+  };
 }
 
-export default [
-  {
-    name: 'Core Purple 100',
-    hex: colors.corePurple100,
-    rgb: convertToRgb(colors.corePurple100),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Core Purple 200',
-    hex: colors.corePurple200,
-    rgb: convertToRgb(colors.corePurple200),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Core Purple 300',
-    hex: colors.corePurple300,
-    rgb: convertToRgb(colors.corePurple300),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Core Purple 400',
-    hex: colors.corePurple400,
-    rgb: convertToRgb(colors.corePurple400),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Core Purple 500',
-    hex: colors.corePurple500,
-    rgb: convertToRgb(colors.corePurple500),
-    textColor: white,
-    alias: 'corePurple',
-  },
-  {
-    name: 'Core Purple 600',
-    hex: colors.corePurple600,
-    rgb: convertToRgb(colors.corePurple600),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Core Purple 700',
-    hex: colors.corePurple700,
-    rgb: convertToRgb(colors.corePurple700),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Core Purple 800',
-    hex: colors.corePurple800,
-    rgb: convertToRgb(colors.corePurple800),
-    textColor: white,
-    alias: 'deepPurple',
-  },
-  {
-    name: 'Core Purple 900',
-    hex: colors.corePurple900,
-    rgb: convertToRgb(colors.corePurple900),
-    textColor: white,
-    alias: 'blackPurple',
-  },
-  {
-    name: 'Grey 100',
-    hex: colors.grey100,
-    rgb: convertToRgb(colors.grey100),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Grey 200',
-    hex: colors.grey200,
-    rgb: convertToRgb(colors.grey200),
-    textColor: black,
-    alias: 'lightGrey',
-  },
-  {
-    name: 'Grey 300',
-    hex: colors.grey300,
-    rgb: convertToRgb(colors.grey300),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Grey 400',
-    hex: colors.grey400,
-    rgb: convertToRgb(colors.grey400),
-    textColor: black,
-    alias: 'darkGrey',
-  },
-  {
-    name: 'Grey 500',
-    hex: colors.grey500,
-    rgb: convertToRgb(colors.grey500),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Grey 600',
-    hex: colors.grey600,
-    rgb: convertToRgb(colors.grey600),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Grey 700',
-    hex: colors.grey700,
-    rgb: convertToRgb(colors.grey700),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Grey 800',
-    hex: colors.grey800,
-    rgb: convertToRgb(colors.grey800),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Grey 900',
-    hex: colors.grey900,
-    rgb: convertToRgb(colors.grey900),
-    textColor: white,
-    alias: 'black',
-  },
-  {
-    name: 'Green 100',
-    hex: colors.green100,
-    rgb: convertToRgb(colors.green100),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Green 200',
-    hex: colors.green200,
-    rgb: convertToRgb(colors.green200),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Green 300',
-    hex: colors.green300,
-    rgb: convertToRgb(colors.green300),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Green 400',
-    hex: colors.green400,
-    rgb: convertToRgb(colors.green400),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Green 500',
-    hex: colors.green500,
-    rgb: convertToRgb(colors.green500),
-    textColor: black,
-    alias: 'green',
-  },
-  {
-    name: 'Green 600',
-    hex: colors.green600,
-    rgb: convertToRgb(colors.green600),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Red 100',
-    hex: colors.red100,
-    rgb: convertToRgb(colors.red100),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Red 200',
-    hex: colors.red200,
-    rgb: convertToRgb(colors.red200),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Red 300',
-    hex: colors.red300,
-    rgb: convertToRgb(colors.red300),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Red 400',
-    hex: colors.red400,
-    rgb: convertToRgb(colors.red400),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Red 500',
-    hex: colors.red500,
-    rgb: convertToRgb(colors.red500),
-    textColor: white,
-    alias: 'red',
-  },
-  {
-    name: 'Red 600',
-    hex: colors.red600,
-    rgb: convertToRgb(colors.red600),
-    textColor: white,
-    alias: null,
-  },
-  {
-    name: 'Orange 100',
-    hex: colors.orange100,
-    rgb: convertToRgb(colors.orange100),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Orange 200',
-    hex: colors.orange200,
-    rgb: convertToRgb(colors.orange200),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Orange 300',
-    hex: colors.orange300,
-    rgb: convertToRgb(colors.orange300),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Orange 400',
-    hex: colors.orange400,
-    rgb: convertToRgb(colors.orange400),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Orange 500',
-    hex: colors.orange500,
-    rgb: convertToRgb(colors.orange500),
-    textColor: black,
-    alias: 'orange',
-  },
-  {
-    name: 'Orange 600',
-    hex: colors.orange600,
-    rgb: convertToRgb(colors.orange600),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Blue 100',
-    hex: colors.blue100,
-    rgb: convertToRgb(colors.blue100),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Blue 200',
-    hex: colors.blue200,
-    rgb: convertToRgb(colors.blue200),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Blue 300',
-    hex: colors.blue300,
-    rgb: convertToRgb(colors.blue300),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Blue 400',
-    hex: colors.blue400,
-    rgb: convertToRgb(colors.blue400),
-    textColor: black,
-    alias: null,
-  },
-  {
-    name: 'Blue 500',
-    hex: colors.blue500,
-    rgb: convertToRgb(colors.blue500),
-    textColor: black,
-    alias: 'blue',
-  },
-  {
-    name: 'Blue 600',
-    hex: colors.blue600,
-    rgb: convertToRgb(colors.blue600),
-    textColor: white,
-    alias: null,
-  },
-]
+function convertToRgb(hex: string) {
+  const rgb = hexToRgb(hex);
+  return rgb ? `${rgb.r}, ${rgb.g}, ${rgb.b}` : null;
+}
+
+function textColor(hex: string) {
+  const rgb = hexToRgb(hex);
+  if (rgb && rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114 > 186) {
+    return colors.black;
+  }
+  return '#ffffff';
+}
+
+export default Object.keys(colorDefinitions).map(k => {
+  return {
+    // Convert from 'corePurple500' to 'Core Purple 500'
+    name: k
+      .replace(/[A-Z0-9]+/g, m => ` ${m}`)
+      .replace(/\s./g, match => match.toUpperCase())
+      .replace(/^./, m => m.toUpperCase())
+      .trim(),
+
+    // Hex representation: '#ff0000'
+    hex: colorDefinitions[k],
+
+    // RGB representation: '255, 0, 0'
+    rgb: convertToRgb(colorDefinitions[k]),
+
+    // Light or dark text color for best contrast
+    textColor: textColor(colorDefinitions[k]),
+
+    // Any aliases for this color
+    alias: Object.keys(colorAliases)
+      .filter(a => colorAliases[a] === colorDefinitions[k])
+      .join(', '),
+  };
+});
