@@ -54,4 +54,9 @@
         width: 1.2rem;
         height: 1.2rem;
     }
+
+    &.button {
+        /* Need !important since .box--is-expanded .subscription__features .button selector in Subscription.pscss is hard to outrule */
+        margin: 0 !important; 
+    }
 }
