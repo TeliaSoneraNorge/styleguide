@@ -10,8 +10,16 @@ export const Default = () => (
   <>
     <h3>How to use colors</h3>
     <p>{`import { colors } from '@telia/styleguide'`}</p>
-    <div style={{ width: '30px', height: '30px', background: colors.blue }}></div>
-    <Icon icon="like" style={{ width: '100px', height: '100px', color: colors.red }} />
+    <div style={{ display: 'flex', marginRight: '1rem'}}>
+      
+      <div style={{ background: colors.corePurple, width: '30px', height: '30px', marginRight: 'inherit'  }}></div>
+      <div style={{ background: colors.corePurple500, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
+      <div style={{ background: colors.darkGrey, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
+      <div style={{ background: colors.grey400, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
+      <div style={{ background: colors.green, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
+      <div style={{ background: colors.green500, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
+      
+    </div>
   </>
 );
 
