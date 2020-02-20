@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.1
+- Added `Initial Expanded State` to `TableWithDropDown`
+
 ## 1.33.0
 - Added `Button` kind `normal`, has no specific styling, same effect as not defining the button's `kind`
 - In `ModalDialog`:
