@@ -65,15 +65,15 @@ TableWithDropDown.Tr = Tr;
 
 interface PropsExpandableContent {
   expandableContent?: ReactNode;
-  initialExpandable?: boolean;
+  initialExpanded?: boolean;
 }
 
 export const TrExpandable: React.FC<
   Props &
     PropsExpandableContent &
     React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>
-> = ({ children, expandableContent, initialExpandable = false, className, ...rest }) => {
-  const [isExpanded, setExpanded] = useState<boolean>(initialExpandable);
+> = ({ children, expandableContent, initialExpanded = false, className, ...rest }) => {
+  const [isExpanded, setExpanded] = useState<boolean>(initialExpanded);
   const handleKeyUp = (e: React.KeyboardEvent) => {
     if (e.keyCode === 13 && expandableContent) {
       e.preventDefault();

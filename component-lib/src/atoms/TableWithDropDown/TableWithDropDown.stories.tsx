@@ -107,11 +107,11 @@ export const TableWithInitialExpandedState = () => {
             <Td>Familie</Td>
             <Td>7 776,-/år</Td>
           </TrExpandable>
-          <TrExpandable expandableContent={ListWithLinksExample()} initialExpandable={true}>
+          <TrExpandable expandableContent={ListWithLinksExample()} initialExpanded={true}>
             <Td>HBO Nordic</Td>
             <Td>1 308,-/år</Td>
           </TrExpandable>
-          <TrExpandable expandableContent={TextExample()} initialExpandable={true}>
+          <TrExpandable expandableContent={TextExample()} initialExpanded={true}>
             <Td>TV2 Sport Premium med C More</Td>
             <Td>0,-/år</Td>
           </TrExpandable>
