@@ -52,12 +52,25 @@ const TextBoxWithLabel = React.forwardRef(
           iconColor={iconColor}
           iconIsButton={iconIsButton}
           iconLabel={iconLabel}
+          aria-invalid={!!errorMessage}
           {...rest}
         />
       ) : (
-        <TextBox ref={ref} type={type} placeholder={placeholder} disabled={disabled} error={!!errorMessage} {...rest} />
+        <TextBox
+          ref={ref}
+          type={type}
+          placeholder={placeholder}
+          disabled={disabled}
+          error={!!errorMessage}
+          aria-invalid={!!errorMessage}
+          {...rest}
+        />
       )}
-      {errorMessage && <p className="input-error">{errorMessage}</p>}
+      {errorMessage && (
+        <p role="alert" className="input-error" aria-live="polite">
+          {errorMessage}
+        </p>
+      )}
     </Label>
   )
 );
