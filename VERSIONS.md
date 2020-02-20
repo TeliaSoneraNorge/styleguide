@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.2
+- New Color Component, more info on home/color palette in storybook
+
 ## 1.33.1
 - Added `Initial Expanded State` to `TableWithDropDown`
 
