@@ -118,3 +118,6 @@ export { default as ProductListGrid } from './organisms/ProductListGrid';
 export { FeatureBox, FeatureBoxes } from './organisms/FeatureBoxes';
 export { SubscriptionPriceBox, SubscriptionPriceBoxes } from './organisms/SubscriptionPriceBoxes';
 export { default as ShoppingCartAccordion } from './organisms/ShoppingCartAccordion';
+
+// Utils
+export { colors } from './utils/colors';

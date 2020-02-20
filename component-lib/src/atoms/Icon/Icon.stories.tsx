@@ -4,6 +4,7 @@ import { color, select } from '@storybook/addon-knobs';
 import { Icon } from './Icon';
 import { HeartIcon, CheckMarkIcon } from './icons';
 import { IconDefinition, availableIcons } from './Icon.generated';
+import { colors } from '../../utils/colors';
 
 export default {
   title: 'Component library|Atoms/Icon',
@@ -82,10 +83,12 @@ export const InlineIcon = () => (
     <CheckMarkIcon style={{ width: '100px', height: '100px', color: '#00CC66' }} />
   </>
 );
+
 export const AllIconsFromProps = () => (
   <>
     {/* {`import { Icon } from '@telia/styleguide';`} */}
 
-    <Icon icon="like" style={{ width: '100px', height: '100px', color: '#009999' }} />
+    <Icon icon="like" style={{ width: '100px', height: '100px', color: colors.corePurple }} />
+
   </>
 );
