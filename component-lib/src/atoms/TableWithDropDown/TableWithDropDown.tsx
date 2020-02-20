@@ -7,13 +7,13 @@ import SvgIcon from '../SvgIcon';
  * Category: Table with expandable rows
  */
 
-interface Props {
+export interface Props {
   className?: string;
   children: ReactNode;
   rest?: any;
 }
 
-interface TableWithDropDownElements {
+export interface TableWithDropDownElements {
   THead: typeof THead;
   TBody: typeof TBody;
   Tr: typeof Tr;
@@ -65,14 +65,15 @@ TableWithDropDown.Tr = Tr;
 
 interface PropsExpandableContent {
   expandableContent?: ReactNode;
+  initialExpandable?: boolean;
 }
 
 export const TrExpandable: React.FC<
   Props &
     PropsExpandableContent &
     React.DetailedHTMLProps<React.HTMLAttributes<HTMLTableRowElement>, HTMLTableRowElement>
-> = ({ children, expandableContent, className, ...rest }) => {
-  const [isExpanded, setExpanded] = useState<boolean>(false);
+> = ({ children, expandableContent, initialExpandable = false, className, ...rest }) => {
+  const [isExpanded, setExpanded] = useState<boolean>(initialExpandable);
   const handleKeyUp = (e: React.KeyboardEvent) => {
     if (e.keyCode === 13 && expandableContent) {
       e.preventDefault();
