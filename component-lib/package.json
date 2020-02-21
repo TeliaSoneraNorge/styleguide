@@ -12,6 +12,7 @@
     "icons:svg-join": "svg-join -s \"assets/icons-legacy/*.svg\" -o ./assets/allicons -n allicons  --mono",
     "icons:add-icons": "node ./scripts/add-icons.js",
     "build:icons-zip": "node ./scripts/generate-icons-zip-file.js",
+    "build:zip": "node ./scripts/generate-zip-file.js",
     "build:icons": "node scripts/generate-icons.js",
     "build": "run-s test && run-p build:commonjs build:es build:css build:ts-types && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist",
