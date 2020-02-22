@@ -100,7 +100,7 @@
     "svg4everybody": "^2.1.9",
     "svgo": "^1.2.2",
     "ts-loader": "^6.2.1",
-    "typescript": "^3.6.4"
+    "typescript": "^3.8.2"
   },
   "dependencies": {
     "classnames": "2.2.5",
