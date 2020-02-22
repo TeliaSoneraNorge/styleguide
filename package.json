@@ -5,7 +5,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "build": "run-s clean generate-static-data generate-component-docs build:css && parcel build src/index.html && npm run generate-zip",
+    "build": "run-s clean generate-static-data generate-component-docs build:css && parcel build src/index.html",
     "build:component-lib": "cd component-lib && npm install && npm run build",
     "build:css": "postcss src/css/index.pcss -o ./src/css/index.css",
     "clean": "npm run rimraf -- dist && mkdirp dist -p",
@@ -16,7 +16,6 @@
     "git:checkout-master-and-pull": "git checkout master && git pull --rebase",
     "generate-component-docs": "react-docgen ./component-lib/src --out ./src/component-docs.json --extension [jsx] --exclude index.js --exclude utils.js --exclude constants.js --exclude useThSortable.js --pretty",
     "generate-static-data": "node scripts/generate-static-data.js",
-    "generate-zip": "node scripts/generate-zip-file.js",
     "lint": "eslint ./component-lib/src ./src --ext .jsx,.js",
     "lint:fix": "eslint --fix ./component-lib/src ./src --ext .jsx,.js",
     "rimraf": "rimraf",
