@@ -5,7 +5,7 @@ const fs = require('fs');
 const path = require('path');
 
 const fileName = 'TeliaStyleguide-Latest.zip';
-const outputPath = path.join(__dirname, '../dist/', fileName);
+const outputPath = path.join(__dirname, '../dist-storybook', fileName);
 const output = fs.createWriteStream(outputPath);
 const archive = archiver('zip');
 
@@ -27,17 +27,15 @@ archive.on('error', err => {
 
 archive.pipe(output);
 
-const css = fs
-  .readFileSync(path.resolve(__dirname, '../component-lib/dist/index.css'), 'utf8')
-  .replace(/\.\/assets\//g, '');
+const css = fs.readFileSync(path.resolve(__dirname, '../dist/index.css'), 'utf8').replace(/\.\/assets\//g, '');
 const packageJson = require('../package.json');
 
 archive
   .append(packageJson.version, { name: 'version.txt' })
   .append('Follow the instuctions on the Telia Styleguide for usage.', { name: 'README.txt' })
   .append(css, { name: 'telia-styleguide.css' })
-  .directory(path.resolve(__dirname, '../component-lib/assets/fonts/'), 'fonts')
-  .directory(path.resolve(__dirname, '../component-lib/assets/allicons/'), 'allicons')
-  .glob('icons-legacy/*.*', { cwd: path.resolve(__dirname, '../component-lib/assets') })
-  .directory(path.resolve(__dirname, '../component-lib/assets/pebbles/'), 'pebbles')
+  .directory(path.resolve(__dirname, '../assets/fonts/'), 'fonts')
+  .directory(path.resolve(__dirname, '../assets/allicons/'), 'allicons')
+  .glob('icons-legacy/*.*', { cwd: path.resolve(__dirname, '../assets') })
+  .directory(path.resolve(__dirname, '../assets/pebbles/'), 'pebbles')
   .finalize();
