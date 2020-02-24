@@ -4,6 +4,9 @@ import { withKnobs } from '@storybook/addon-knobs';
 import JSXAddon from 'storybook-addon-jsx';
 import AllIcons from '../assets/allicons/AllIcons';
 
+import '../src/index.pcss';
+import '../src/business.pcss';
+
 setAddon(JSXAddon);
 
 addDecorator(withKnobs);
