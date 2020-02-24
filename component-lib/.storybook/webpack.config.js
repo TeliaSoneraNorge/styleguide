@@ -33,5 +33,13 @@ module.exports = ({ config, mode }) => {
     loaders: ['style-loader', 'postcss-loader'],
   });
 
+  config.module.rules.push({
+    test: '/.(png|jpg)',
+    loader: 'file-loader',
+    options: {
+      name: 'static/media/[name].[hash:8].[ext]',
+    },
+  });
+
   return config;
 };
