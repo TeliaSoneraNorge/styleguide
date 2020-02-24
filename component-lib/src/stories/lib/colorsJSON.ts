@@ -1,4 +1,4 @@
-import { colorDefinitions, colorAliases, colors } from '../../src/utils/colors';
+import { colorDefinitions, colorAliases, colors } from '../../utils/colors';
 
 function hexToRgb(hex: string) {
   const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Header } from '../../src/index';
+import { Header } from '../../index';
 
-import versionsMd from '../../../VERSIONS.md';
+import versionsMd from '../../../../VERSIONS.md';
 
 export default {
   title: 'Introduction/Styleguide',

@@ -16,7 +16,11 @@ function Code(props: { children: any }) {
   );
 }
 
-export default () => {
+export default {
+  title: 'Introduction|Business',
+};
+
+export const Contributing = () => {
   return (
     <div style={{ margin: '30px', maxWidth: '800px' }}>
       <h1>Contributing</h1>
