@@ -6,6 +6,15 @@ export interface FunkyTabsProps {
   uniqueId?: string;
 }
 
-const FunkyTabs: React.FC<FunkyTabsProps>;
+const FunkyTabs: React.FC<FunkyTabsProps> & {
+  TabPanel: React.FC<{
+    index?: number;
+    uniqueId?: string;
+    isSelected?: boolean;
+    heading?: string;
+    url?: string;
+    imagePath?: string;
+  }>;
+};
 
 export default FunkyTabs;

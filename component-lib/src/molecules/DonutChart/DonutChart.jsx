@@ -110,6 +110,8 @@ DonutChart.propTypes = {
     })
   ),
   radius: PropTypes.number,
+  showLineCaps: PropTypes.bool,
+  showSegmentSeparators: PropTypes.bool,
   strokeWidthInPercents: PropTypes.number,
 };
 
