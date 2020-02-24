@@ -67,6 +67,7 @@ Only noteworth
 
 ## 1.30.10
 - Fixed Toggle components IE positioning bug
+- New ThSortable component in FullWidthTable
 
 ## 1.30.9
 - Hide ',-' for price in Subscription component for not rounded numbers (B2B customers)
