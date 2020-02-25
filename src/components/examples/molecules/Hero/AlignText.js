@@ -6,7 +6,7 @@ const sources = [
   { type: 'desktop', srcSet: '/public/website-images/hero.jpg' },
 ];
 
-const DefaultHero = () => (
+const AlignText = () => (
   <Hero
     href="#Hero"
     heading="A heading for this Hero"
@@ -18,4 +18,4 @@ const DefaultHero = () => (
   />
 );
 
-export default DefaultHero;
+export default AlignText;

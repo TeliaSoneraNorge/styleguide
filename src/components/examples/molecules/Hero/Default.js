@@ -6,7 +6,7 @@ const sources = [
   { type: 'desktop', srcSet: require('assets/website-images/hero.jpg') },
 ];
 
-const DefaultHero = () => (
+const Default = () => (
   <Hero
     href="#Hero"
     heading="A heading for this Hero"
@@ -17,4 +17,4 @@ const DefaultHero = () => (
   />
 );
 
-export default DefaultHero;
+export default Default;

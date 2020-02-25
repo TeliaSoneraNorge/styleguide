@@ -1,8 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
 import uniqueId from 'lodash/uniqueId';
+import HorizontalRule from '../../atoms/HorizontalRule/HorizontalRule';
 
 /**
  * Status: *finished*
@@ -34,29 +33,51 @@ import uniqueId from 'lodash/uniqueId';
  * There is also one for black friday <code>.hero--with-pebbles-black-friday</code> and
  * one for easter <code>.hero--with-pebbles-easter</code>.
  */
-const Hero = ({
-  className,
-  heading,
-  subheading,
-  alt,
-  sources = [],
-  logoSources = [],
-  pebbles,
-  mode,
-  align,
-  logoAlign,
-  alignBox,
-  ...rest
-}) => (
-  <a
-    className={classnames('hero heading-link', {
-      [className]: className,
-      [`hero--with-pebbles hero--with-pebbles-${pebbles}`]: pebbles,
-      [`hero--with-pebbles-only-on-${mode}`]: mode,
-    })}
-    {...rest}
-  >
-    <React.Fragment>
+
+interface HeroSources {
+  type?: 'mobile' | 'desktop';
+  srcSet?: string;
+}
+
+export interface HeroProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+  className?: string;
+  heading: string;
+  subheading: string;
+  alt: string;
+  logoSources?: HeroSources[];
+  sources?: HeroSources[];
+  pebbles?: 'easter' | 'black-friday' | 'variant-1' | 'variant-2' | 'variant-3' | 'variant-4';
+  mode?: 'mobile' | 'desktop';
+  align?: 'top' | 'bottom';
+  alignBox?: 'left' | 'right' | 'center';
+  logoAlign?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+}
+
+const Hero: React.FC<HeroProps> = props => {
+  const {
+    className = '',
+    heading,
+    subheading,
+    alt,
+    sources = [],
+    logoSources = [],
+    pebbles,
+    mode,
+    align,
+    logoAlign,
+    alignBox,
+    ...rest
+  } = props;
+
+  return (
+    <a
+      className={classnames('hero heading-link', {
+        [className]: className,
+        [`hero--with-pebbles hero--with-pebbles-${pebbles}`]: pebbles,
+        [`hero--with-pebbles-only-on-${mode}`]: mode,
+      })}
+      {...rest}
+    >
       <picture className="hero__picture">
         {sources.map(it => (
           <source
@@ -82,17 +103,19 @@ const Hero = ({
             />
           ))}
           <img
-            className={classnames('hero__logo-image', {
-              [`hero__logo-image--align-${logoAlign || 'top-right'}`]: logoAlign,
-            })}
+            className={classnames(
+              'hero__logo-image',
+              `hero__logo-image--align-${logoAlign || 'top-right'}`
+            )}
             alt={alt}
           />
         </picture>
       )}
       <div
-        className={classnames('hero__box heading-link--focus-area', {
-          [`hero__box--align-${alignBox || 'left'}`]: alignBox,
-        })}
+        className={classnames(
+          'hero__box heading-link--focus-area',
+          `hero__box--align-${alignBox || 'left'}`
+        )}
       >
         <h2 className="hero__heading">{heading}</h2>
         <div className="hero__subheading">
@@ -100,30 +123,8 @@ const Hero = ({
           <HorizontalRule short left />
         </div>
       </div>
-    </React.Fragment>
-  </a>
-);
-
-Hero.propTypes = {
-  heading: PropTypes.string.isRequired,
-  subheading: PropTypes.string.isRequired,
-  alt: PropTypes.string.isRequired,
-  logoSources: PropTypes.array,
-  /** Set of sources. */
-  sources: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.oneOf(['mobile', 'desktop']),
-      srcSet: PropTypes.string,
-    })
-  ),
-  /** One of ['easter', 'black-friday', 'variant-1', 'variant-2', 'variant-3', 'variant-4'] */
-  pebbles: PropTypes.oneOf(['easter', 'black-friday', 'variant-1', 'variant-2', 'variant-3', 'variant-4']),
-  /** One of ['mobile', 'desktop'] */
-  mode: PropTypes.oneOf(['mobile', 'desktop']),
-  /** One of ['top', 'bottom'] */
-  align: PropTypes.oneOf(['top', 'bottom']),
-  /** One of ['left', 'right' or 'center'] */
-  alignBox: PropTypes.oneOf(['left', 'right', 'center']),
-};
+    </a>
+  );
+}
 
 export default Hero;
