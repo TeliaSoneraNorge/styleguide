@@ -27,7 +27,7 @@ export default function CodeSnippet(props: Props) {
 
       {showCodeSnippet && (
         <pre className={`language-${props.language}`}>
-          <code className={`language-${props.language}`}>{pretty(props.code)}</code>
+          <code className={`language-${props.language}`}>{props.code ? pretty(props.code) : ''}</code>
         </pre>
       )}
     </div>
