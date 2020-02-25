@@ -1,13 +1,13 @@
 import _ from 'lodash';
 import React from 'react';
 
-import Heading from '../../src/atoms/Heading/Heading';
-import Header from '../../src/molecules/Header/Header';
-import Color from '../lib/Color';
+import { Header } from '../../index';
 
-import colors from '../colors';
+export default {
+  title: 'Introduction|Home',
+};
 
-const HomePage = () => (
+export const Greetings = () => (
   <div>
     <Header
       iconName="ico_code-2"
@@ -26,5 +26,3 @@ const HomePage = () => (
     </Header>
   </div>
 );
-
-export default HomePage;

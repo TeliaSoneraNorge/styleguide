@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Heading, Header, FocusBox } from '../../src/index';
+import { Heading, Header, FocusBox } from '../../index';
 
 export default {
   title: 'Introduction/Styleguide',

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import CodeSnippet from '../lib/CodeSnippet';
-import { Heading, Header } from '../../src/index';
+import { Heading, Header } from '../../index';
 
 const codeSnippets = {
   bem: '.block {}\n.block__element {}\n.block__element--modifier {}',

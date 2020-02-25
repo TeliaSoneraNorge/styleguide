@@ -2,7 +2,7 @@ import React from 'react';
 
 import CodeSnippet from '../lib/CodeSnippet';
 
-import { Header, Alert } from '../../src/index';
+import { Header, Alert } from '../../index';
 
 export default {
   title: 'Introduction/Styleguide',

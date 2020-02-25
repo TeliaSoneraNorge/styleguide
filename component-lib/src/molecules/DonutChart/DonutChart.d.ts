@@ -20,6 +20,8 @@ export interface DonutChartProps {
   upperCaption?: string;
   thresholds?: DonutChartThresholds[];
   radius?: number;
+  showLineCaps?: boolean;
+  showSegmentSeparators?: boolean;
   strokeWidthInPercents?: number;
 }
 
