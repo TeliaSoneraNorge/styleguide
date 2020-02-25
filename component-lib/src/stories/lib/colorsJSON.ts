@@ -26,27 +26,29 @@ function textColor(hex: string) {
   return '#ffffff';
 }
 
-export default Object.keys(colorDefinitions).map(k => {
+export default Object.keys(colorDefinitions).map(key => {
+  // We know that `key` is only ever one of the valid keys.
+  const definition = colorDefinitions[key as keyof typeof colorDefinitions];
   return {
     // Convert from 'corePurple500' to 'Core Purple 500'
-    name: k
+    name: key
       .replace(/[A-Z0-9]+/g, m => ` ${m}`)
       .replace(/\s./g, match => match.toUpperCase())
       .replace(/^./, m => m.toUpperCase())
       .trim(),
 
     // Hex representation: '#ff0000'
-    hex: colorDefinitions[k],
+    hex: definition,
 
     // RGB representation: '255, 0, 0'
-    rgb: convertToRgb(colorDefinitions[k]),
+    rgb: convertToRgb(definition),
 
     // Light or dark text color for best contrast
-    textColor: textColor(colorDefinitions[k]),
+    textColor: textColor(definition),
 
     // Any aliases for this color
     alias: Object.keys(colorAliases)
-      .filter(a => colorAliases[a] === colorDefinitions[k])
+      .filter(a => colorAliases[a as keyof typeof colorAliases] === definition)
       .join(', '),
   };
 });
