@@ -1,9 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import pretty from 'pretty';
-
-interface State {
-  isOpen: boolean;
-}
 
 interface Props {
   toggle?: boolean;
@@ -11,35 +7,29 @@ interface Props {
   code?: string;
 }
 
-export default class CodeSnippet extends React.Component<Props, State> {
-  constructor(props) {
-    super(props);
+export default function CodeSnippet(props: Props) {
+  const [isOpen, setOpen] = useState(false);
 
-    this.state = {
-      isOpen: false,
-    };
+  function toggleHtmlClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
+    event.preventDefault();
+    setOpen(b => !b);
   }
-  toggleHtmlClick(e) {
-    e.preventDefault();
 
-    this.setState({ isOpen: !this.state.isOpen });
-  }
-  render() {
-    const showCodeSnippet = this.props.toggle && !this.state.isOpen ? false : true;
+  const showCodeSnippet = !props.toggle || isOpen;
 
-    return (
-      <div className="sg-code-snippet">
-        {this.props.toggle && (
-          <a href="#" className="link" onClick={e => this.toggleHtmlClick(e)}>
-            {this.state.isOpen ? 'Hide HTML' : 'Show HTML'}
-          </a>
-        )}
-        {showCodeSnippet && (
-          <pre className={`language-${this.props.language}`}>
-            <code className={`language-${this.props.language}`}>{pretty(this.props.code)}</code>
-          </pre>
-        )}
-      </div>
-    );
-  }
+  return (
+    <div className="sg-code-snippet">
+      {props.toggle && (
+        <a href="#" className="link" onClick={toggleHtmlClick}>
+          {isOpen ? 'Hide HTML' : 'Show HTML'}
+        </a>
+      )}
+
+      {showCodeSnippet && (
+        <pre className={`language-${props.language}`}>
+          <code className={`language-${props.language}`}>{pretty(props.code)}</code>
+        </pre>
+      )}
+    </div>
+  );
 }
