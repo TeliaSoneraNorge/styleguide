@@ -3,9 +3,8 @@
         background-color: var(--white);
         height: 4.3rem;
 
-        &__subtile {
+        &__dashed {
             background-color: inherit;
-            color: var(--core-purple);
 
             /* Due to table having border-collapse: separate we can't */
             /* use border directly on the <tr>. Hence, need to hack around with the children of <tr> */
@@ -24,6 +23,10 @@
                 border: 2px dashed var(--dark-grey);
                 border-left: none;
             }
+        }
+
+        &__subtile {
+            color: var(--core-purple);
         }
 
         &__image {
@@ -60,6 +63,10 @@
 
             &--black {
                 color: var(--black);
+            }
+
+            &--dark-grey {
+                color: var(--dark-grey);
             }
         }
 
