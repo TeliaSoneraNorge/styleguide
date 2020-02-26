@@ -92,7 +92,7 @@ const cart = [
           icon: 'sim-card',
           color: 'dark-green',
         },
-        subtitle: 'Nummer: 900 90 900',
+        subtitle: 'ikke tildelt ennå',
       },
     ],
   },

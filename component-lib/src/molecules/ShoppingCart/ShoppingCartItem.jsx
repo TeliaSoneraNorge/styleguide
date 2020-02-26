@@ -77,7 +77,7 @@ const ShoppingCartItem = ({
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
   const discountValueUpfront = _.get(discount, 'value.upfront', 0);
   const discountValueMonthly = _.get(discount, 'value.monthly', 0);
-  const isDraft = type === 'SUBSCRIPTION_DRAFT';
+  const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT;
 
   return (
     <ShoppingCartRow
