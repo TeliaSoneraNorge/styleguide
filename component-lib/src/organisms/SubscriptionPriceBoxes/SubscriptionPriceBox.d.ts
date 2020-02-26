@@ -8,6 +8,7 @@ export interface SubscriptionPriceBoxProps {
     monthlyPrice?: string;
     simIncluded?: boolean;
     bottomText?: string;
+    size: string;
 }
 
 const SubscriptionPriceBox: React.FC<SubscriptionPriceBoxProps>;
