@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-import { CART_ITEM_TYPE_SUBTILE } from './index';
+import { CART_ITEM_TYPE_SUBTILE, CART_ITEM_TYPE } from './index';
 import ShoppingCartItem from './ShoppingCartItem';
 import ShoppingCartHeadings from './ShoppingCartTableHeadings';
 import ShoppingCartTableFooter from './ShoppingCartTableFooter';
@@ -46,6 +46,7 @@ const ShoppingCartTableGroup = ({
           cartItem={item}
           isSubItem={isSubItem}
           isSubtile={CART_ITEM_TYPE_SUBTILE.includes(item.type)}
+          isDraft={item.type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT}
           onChangeQuantity={onChangeQuantity}
           onRemoveItem={onRemoveItem}
           isCheckout={isCheckout}

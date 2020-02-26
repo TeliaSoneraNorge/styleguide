@@ -39,7 +39,7 @@ const cart = [
     subtitle: 'Telia SVITSJ i 24 md.',
     items: [
       {
-        type: 'SUBSCRIPTION',
+        type: 'SUBSCRIPTION_DRAFT',
         id: 'SMART_X.REGULAR',
         bundleId: 'b96ccc',
         items: [
@@ -92,7 +92,7 @@ const cart = [
           icon: 'sim-card',
           color: 'dark-green',
         },
-        subtitle: 'Nummer: 900 90 900',
+        subtitle: 'ikke tildelt ennå',
       },
     ],
   },
