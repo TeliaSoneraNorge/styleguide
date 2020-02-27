@@ -6,49 +6,90 @@
     font-family: 'Helvetica Neue Medium';
     text-decoration: none;
 
-    &:hover, &:active {
+    &:hover {
         color: var(--core-purple);
-        border-bottom: 1px solid var(--core-purple);
+        border-bottom: 1px solid var(--core-purple);   
     }
 
-    &:focus {
+    &:focus, &:active {
         color: var(--white);
         background-color: var(--core-purple);
         outline: none;
+
+        .link--icon--core-purple, .link--icon--black {
+            fill: var(--white);
+        }
     }
 
-    &--with-icon {
+    &--icon {
         border-bottom: none;
-        background-size: 0.875rem 0.875rem;
-        background-repeat: no-repeat;
 
-        &:hover, &:active {
+        &:hover {
             border-bottom: none;
         }
-    }
 
-    &--forward-icon {
-        background-image: url('{{assetPath}}/icons-legacy/ico_linkarrow_purple.svg');
-        &:focus {
-            background-image: url('{{assetPath}}/icons-legacy/ico_linkarrow_white.svg');
+        &--after {
+            margin-left: .5rem;
+        }
+
+        &--before {
+            margin-right: .5rem;
+        }
+
+        svg {
+            top: 3px;
+            position: relative;
+            width: 1.2rem;
+            height: 1.2rem;
         }
     }
 
-    &--icon-after {
-        padding-right: 1.25rem;
-        background-position: right center;
+    &--icon--core-purple {
+        fill: var(--core-purple);
     }
 
-    &--back-icon {
-        background-image: url('{{assetPath}}/icons-legacy/ico_backarrow_purple.svg');
-        &:focus {
-            background-image: url('{{assetPath}}/icons-legacy/ico_backarrow_white.svg');
+    &--icon--black {
+        fill: var(--black);
+    }
+}
+
+.link--negative {
+    border-bottom: 1px solid var(--white);
+    color: var(--white);
+    font-family: 'Helvetica Neue Medium';
+    text-decoration: none;
+
+    &:hover {
+        color: var(--dark-grey);
+        border-bottom: 1px solid var(--dark-grey);   
+    }
+
+    &:focus, &:active {
+        color: var(--core-purple);
+        background-color: var(--white);
+        outline: none;
+
+        .link--negative--icon--white {
+            fill: var(--core-purple);
         }
     }
 
-    &--icon-before {
-        padding-left: 1.25rem;
-        background-position: left center;
+    &--icon {
+        border-bottom: none;
+
+        &:hover {
+            border-bottom: none;
+        }
+
+        svg {
+            top: 3px;
+            position: relative;
+            width: 1.2rem;
+            height: 1.2rem;
+        }
     }
 
+    &--icon--white {
+        fill: var(--white);
+    }
 }
