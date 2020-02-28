@@ -1,7 +1,8 @@
 import React from 'react';
 import List from './List';
+import Link from '../Link/Link';
 
-const { Item, Link, BubbleLink } = List;
+const { Item, BubbleLink } = List;
 
 export default {
   title: 'Component library|Atoms/List',
@@ -16,6 +17,26 @@ export const Default = () => (
   </List>
 );
 
+export const ListWithLinks = () => (
+  <List>
+    <Item>
+      <Link href="#" icon="arrow-right" iconPosition="before">
+        List with default color icon
+      </Link>
+    </Item>
+    <Item>
+      <Link href="#" icon="arrow-right" iconPosition="before" iconColor="core-purple">
+        List with core purple color icon
+      </Link>
+    </Item>
+    <Item>
+      <Link href="#" icon="arrow-right" iconPosition="before" iconColor="black">
+        List with black color icon 
+      </Link>
+    </Item>
+  </List>
+);
+
 export const WrapByFour = () => (
   <List wrapByFour>
     <Item>First item in list</Item>
@@ -25,7 +46,7 @@ export const WrapByFour = () => (
     <Item>Fifth item in list</Item>
     <Item>Sixth item in list</Item>
     <Item>Seventh item in list</Item>
-    <Item>Eighth item in list</Item>
+    <Item>Eigth item in list</Item>
   </List>
 );
 
@@ -39,45 +60,18 @@ export const WrapByThree = () => (
   </List>
 );
 
-export const WithLinks = () => (
-  <List>
-    <Item>
-      <Link href="#">First link in list</Link>
-    </Item>
-    <Item>
-      <Link href="#">Second link in list</Link>
-    </Item>
-    <Item>
-      <Link href="#">Third link in list</Link>
-    </Item>
-  </List>
-);
 
 export const WithBubbleLinks = () => (
   <List>
     <Item>
-      <BubbleLink href="#" iconName="facebook_icon">
+      <BubbleLink href="#" icon="facebook">
         Facebook
       </BubbleLink>
     </Item>
     <Item>
-      <BubbleLink href="#" iconName="twitter_icon">
+      <BubbleLink href="#" icon="twitter">
         Twitter
       </BubbleLink>
-    </Item>
-  </List>
-);
-
-export const WithBlackLinks = () => (
-  <List black>
-    <Item>
-      <Link href="#">First link in list</Link>
-    </Item>
-    <Item>
-      <Link href="#">Second link in list</Link>
-    </Item>
-    <Item>
-      <Link href="#">Third link in list</Link>
     </Item>
   </List>
 );
