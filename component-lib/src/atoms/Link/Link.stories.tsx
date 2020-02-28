@@ -1,5 +1,4 @@
 import React from 'react';
-// import Link from './Link';
 import { Link, colors } from '../../index';
 
 export default {
@@ -10,8 +9,8 @@ export default {
 export const Default = () => (
   <>
     <Link href="#" text="Standard text link" />
-    <br/>
-    <br/>
+    <br />
+    <br />
     <div style={{ background: colors.deepPurple }}>
       <Link href="#" negative={true} text="Link with icon after" icon="arrow-right" />
     </div>
@@ -20,16 +19,40 @@ export const Default = () => (
 
 export const LinkWithIconOnPositive = () => (
   <>
-    <Link href="#" text="Link with icon before" icon="arrow-left" iconPosition="before" iconColor="black" />
-    <br/>
-    <Link href="#" text="Link with icon after" icon="arrow-right" iconPosition="after"  />
+    <Link href="#" icon="arrow-left" iconPosition="before">
+      Link with icon before
+    </Link>
+    <br />
+    <Link href="#" icon="arrow-left" iconPosition="before" iconColor="core-purple">
+      Link with icon before
+    </Link>
+    <br />
+    <Link href="#" icon="arrow-left" iconPosition="before" iconColor="black">
+      Link with icon before
+    </Link>
+    <br />
+    <Link href="#" icon="arrow-right" iconPosition="after">
+      Link with icon after
+    </Link>
+    <br />
+    <Link href="#" icon="arrow-right" iconPosition="after" iconColor="core-purple">
+      Link with icon after
+    </Link>
+    <br />
+    <Link href="#" icon="arrow-right" iconPosition="after" iconColor="black">
+      Link with icon after
+    </Link>
   </>
 );
 
 export const LinkWithIconOnNegative = () => (
   <div style={{ background: colors.deepPurple, padding: '1rem' }}>
-    <Link href="#" negative={true} text="Link with icon after" icon="arrow-left" iconPosition="before" iconColor="white"  />
-    <br/>
-    <Link href="#" negative={true} text="Link with icon after" icon="arrow-right" iconPosition="after" iconColor="white"  />
+    <Link href="#" negative={true} icon="arrow-left" iconPosition="before" iconColor="white">
+      Link with icon before
+    </Link>
+    <br />
+    <Link href="#" negative={true} icon="arrow-right" iconPosition="after" iconColor="white">
+      Link with icon after
+    </Link>
   </div>
 );

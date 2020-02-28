@@ -1,6 +1,6 @@
 import React from 'react';
 import cs from 'classnames';
-import { Icon, IconDefinition } from '../Icon';
+import { Icon } from '../Icon';
 
 /**
  * Status: *finished*.
@@ -12,14 +12,10 @@ import { Icon, IconDefinition } from '../Icon';
  * Our links have _two visual means_ of being identified: an underline and bolder font.
  */
 
-export type LinkIcon = 'forward-icon' | 'back-icon';
-
-export type LinkIconPosition = 'before' | 'after';
-
 export interface LinkProps {
   className?: string;
   /**
-   * Content of this link.
+   * Deprecated! Use children.
    */
   text?: React.ReactNode;
 
@@ -30,23 +26,28 @@ export interface LinkProps {
 
   target?: string;
 
+  href: string;
+  style?: React.CSSProperties;
+
   /**
-   * Choose between forward arrow (forward-icon) and backward arrow (back-icon) icon
+   * Choose between forward arrow (arrow-left) and backward arrow (arrow-right) icon
    */
-  icon?: IconDefinition;
+  icon?: 'arrow-left' | 'arrow-right';
 
   /**
    * Set position of icon (before or after)
    */
-  iconPosition?: LinkIconPosition;
+  iconPosition?: 'before' | 'after';
 
-  href: string;
-  style?: React.CSSProperties;
-  negative?: boolean;
   iconColor?: 'core-purple' | 'black' | 'white';
+
+  /**
+   * Only true if Link are on a dark background
+   */
+  negative?: boolean;
 }
 
-const Link: React.FC<LinkProps> = props => {
+export const Link = (props: LinkProps) => {
   const {
     className,
     text,
@@ -56,7 +57,7 @@ const Link: React.FC<LinkProps> = props => {
     iconPosition,
     iconColor = 'core-purple',
     negative,
-    target = '_self',
+    target = undefined,
     ...rest
   } = props;
 
@@ -79,6 +80,7 @@ const Link: React.FC<LinkProps> = props => {
         />
       ) : null}
       {text}
+      {children}
       {icon && iconPosition === 'after' ? (
         <Icon
           icon={icon}
