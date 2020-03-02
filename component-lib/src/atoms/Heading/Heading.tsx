@@ -70,7 +70,7 @@ const defaultSizeByTag: { [key: string]: HeadingSize } = {
   h6: 'xs',
 };
 
-const Heading: React.FC<HeadingProps> = props => {
+const Heading = (props: HeadingProps) => {
   const { level, tag, tagName, text, children, className, size, ...rest } = props;
 
   let Tag: HeadingTag = tag || 'h1';

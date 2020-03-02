@@ -15,7 +15,7 @@ import { Icon } from '../Icon';
 export interface LinkProps {
   className?: string;
   /**
-   * Deprecated! Use children.
+   * @deprecated Use children.
    */
   text?: React.ReactNode;
 
