@@ -15,7 +15,8 @@ import { Icon } from '../Icon';
 export interface LinkProps {
   className?: string;
   /**
-   * @deprecated Use children.
+    * The text to display in the component. We prefer to use `children` instead.
+    * @deprecated Use `children` instead.
    */
   text?: React.ReactNode;
 
