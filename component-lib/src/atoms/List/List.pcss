@@ -49,8 +49,40 @@
     }
 
     &--icon-text-links {
+        .list__item {
+            background: none;
+            margin-bottom: 1.5rem;
+            padding: 0;
+        }
 
         .list__link {
+            border-bottom: none;
+            display: inline-block;
+            padding: 1px;
+
+            &:hover {
+                .list__link-text {
+                    color: var(--core-purple);
+                }
+            }
+
+            &:focus, &:active {
+                background: var(--core-purple);
+                background-image: none;
+                outline: none;
+
+                .list__link-text {
+                    color: var(--white);
+                }
+
+                .list__link-bubble {
+                    background-color: var(--white);
+
+                    svg {
+                        fill: var(--core-purple);
+                    }
+                }
+            }
 
             &-icon {
                 display: inline-block;
@@ -87,16 +119,6 @@
                 margin: calc(var(--link-icon-size-large) + var(--bubble-margin) - 1rem / 2) 1rem 0 1rem;
                 padding: 0 .2rem;
 
-                &:hover {
-                    color: var(--core-purple);
-                    border-bottom: 1px solid var(--core-purple);   
-                }
-
-                &:focus, &:active {
-                    color: var(--white);
-                    background-color: var(--core-purple);
-                    outline: none;
-                }
             }
         }
     }

@@ -1,10 +1,5 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import classnames from 'classnames';
-
-import Link from '../Link';
-import { LinkProps } from '../Link/Link';
-// import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import { Icon, IconDefinition } from '../Icon';
 
 /**
@@ -63,7 +58,6 @@ export const List = (props: ListProps) => {
       className={classnames('list', {
         'className': className,
         'list--icon-text-links': hasBubbleLinks,
-        // 'list--links': hasLinks,
         'list--black': black,
         'list--wrap list--wrap-by-three': wrapByThree,
         'list--wrap list--wrap-by-four': wrapByFour,
@@ -91,7 +85,7 @@ const Item = ({ children, ...rest }: ItemProps) => {
 List.Item = Item;
 
 const BubbleLink = ({ children, href, icon, ...rest }: BubbleLinkProps) => (
-  <a href={href}>
+  <a href={href} className="link list__link">
     <span className="list__link-bubble">
       <Icon icon={icon} style={{ color: '#FFFFFF' }}  className="list__link-icon" />
     </span>
@@ -102,31 +96,3 @@ List.BubbleLink = BubbleLink;
 
 
 export default List;
-
-
-/* const BubbleLink = ({ children, iconName, ...rest }) => (
-  <List.Link {...rest}>
-    <span className="list__link-bubble">
-      <SvgIcon iconName={iconName} color="white" className="list__link-icon" />
-    </span>
-    <span className="list__link-text">{children}</span>
-  </List.Link>
-);
-List.BubbleLink = BubbleLink;
-
-type ChildrenProps = React.FC & {
-  Item: React.ReactNode;
-  Link: React.FC<LinkProps>;
-  BubbleLink: React.FC<LinkProps & { iconName: string }>;
-};
-
-const ListLink = ({ children, className, ...rest }: ListLinkProps) => (
-  <Link
-    className={classnames('list__link', {
-      'className': className,
-    })}
-    {...rest}
-    text={children}
-  />
-);
-List.Link = ListLink; */
