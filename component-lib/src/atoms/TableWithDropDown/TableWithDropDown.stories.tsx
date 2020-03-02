@@ -1,5 +1,6 @@
 import React from 'react';
 import List from '../../atoms/List';
+import Link from '../Link/Link';
 import TableWithDropDown from './TableWithDropDown';
 
 export default {
@@ -10,19 +11,25 @@ export default {
 export const Default = () => {
   const { TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
 
-  const { Item, Link } = List;
+  const { Item } = List;
 
   const ListWithLinksExample = () => (
     <div>
       <List>
         <Item>
-          <Link href="#">First link in list</Link>
+          <Link href="#" icon="arrow-right" iconPosition="before">
+            First link in list
+          </Link>
         </Item>
         <Item>
-          <Link href="#">Second link in list</Link>
+          <Link href="#" icon="arrow-right" iconPosition="before">
+            Second link in list
+          </Link>
         </Item>
         <Item>
-          <Link href="#">Third link in list</Link>
+          <Link href="#" icon="arrow-right" iconPosition="before">
+            Third link in list
+          </Link>
         </Item>
       </List>
     </div>
@@ -66,19 +73,25 @@ export const Default = () => {
 export const TableWithInitialExpandedState = () => {
   const { TBody, Td, Th, THead, Tr, TrExpandable } = TableWithDropDown;
 
-  const { Item, Link } = List;
+  const { Item } = List;
 
   const ListWithLinksExample = () => (
     <div>
       <List>
         <Item>
-          <Link href="#">First link in list</Link>
+          <Link href="#" icon="arrow-right" iconPosition="before">
+            First link in list
+          </Link>
         </Item>
         <Item>
-          <Link href="#">Second link in list</Link>
+          <Link href="#" icon="arrow-right" iconPosition="before">
+            Second link in list
+          </Link>
         </Item>
         <Item>
-          <Link href="#">Third link in list</Link>
+          <Link href="#" icon="arrow-right" iconPosition="before">
+            Third link in list
+          </Link>
         </Item>
       </List>
     </div>
