@@ -1,6 +1,7 @@
 import React from 'react';
 import ProductListGrid from './ProductListGrid';
 import { Container, Heading, List, ProductList } from '../../index';
+import Link from '../../atoms/Link/Link';
 
 export default {
   title: 'Component library|Organisms/ProductListGrid',
@@ -43,10 +44,14 @@ export const Default = () => (
         />
         <List>
           <List.Item>
-            <List.Link href="#">First link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              First link in list
+            </Link>
           </List.Item>
           <List.Item>
-            <List.Link href="#">Second link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              Second link in list
+            </Link>
           </List.Item>
         </List>
       </ProductListGrid.Section>
@@ -90,10 +95,14 @@ export const ProductListGridExampleMedium = () => (
         />
         <List>
           <List.Item>
-            <List.Link href="#">First link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              First link in list
+            </Link>
           </List.Item>
           <List.Item>
-            <List.Link href="#">Second link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              Second link in list
+            </Link>
           </List.Item>
         </List>
       </ProductListGrid.Section>
@@ -166,10 +175,14 @@ export const ProductListGridExample2 = () => (
         />
         <List>
           <List.Item>
-            <List.Link href="#">First link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              First link in list
+            </Link>
           </List.Item>
           <List.Item>
-            <List.Link href="#">Second link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              Second link in list
+            </Link>
           </List.Item>
         </List>
       </ProductListGrid.Section>
@@ -242,10 +255,14 @@ export const ProductListGridExample3 = () => (
         />
         <List>
           <List.Item>
-            <List.Link href="#">First link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              First link in list
+            </Link>
           </List.Item>
           <List.Item>
-            <List.Link href="#">Second link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              Second link in list
+            </Link>
           </List.Item>
         </List>
       </ProductListGrid.Section>
@@ -347,10 +364,14 @@ export const ProductListGridExample4 = () => (
         />
         <List>
           <List.Item>
-            <List.Link href="#">First link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              First link in list
+            </Link>
           </List.Item>
           <List.Item>
-            <List.Link href="#">Second link in list</List.Link>
+            <Link href="#" icon="arrow-right" iconPosition="before">
+              Second link in list
+            </Link>
           </List.Item>
         </List>
       </ProductListGrid.Section>
