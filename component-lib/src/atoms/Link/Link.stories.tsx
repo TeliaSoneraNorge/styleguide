@@ -56,3 +56,16 @@ export const LinkWithIconOnNegative = () => (
     </Link>
   </div>
 );
+
+export const Deprecated = () => (
+  <>
+    <Link href="#" icon="back-icon" iconPosition="before">
+      Link with icon before
+    </Link>
+    <br />
+    <Link href="#" icon="forward-icon" iconPosition="after">
+      Link with icon after
+    </Link>
+    <br />
+  </>
+);

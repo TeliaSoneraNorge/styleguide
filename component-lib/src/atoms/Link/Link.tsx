@@ -1,6 +1,7 @@
 import React from 'react';
 import cs from 'classnames';
 import { Icon } from '../Icon';
+import { SvgIcon } from '../../index';
 
 /**
  * Status: *finished*.
@@ -31,9 +32,11 @@ export interface LinkProps {
   style?: React.CSSProperties;
 
   /**
-   * Choose between forward arrow (arrow-left) and backward arrow (arrow-right) icon
+   * Choose between forward arrow 'arrow-left' and backward arrow 'arrow-right' icon.
+   * 
+   * 'back-icon' & 'forward-icon' are  deprecated!
    */
-  icon?: 'arrow-left' | 'arrow-right';
+  icon?: 'arrow-left' | 'arrow-right' | 'back-icon' | 'forward-icon';
 
   /**
    * Set position of icon (before or after)
@@ -75,18 +78,34 @@ export const Link = (props: LinkProps) => {
       {...rest}
     >
       {icon && iconPosition === 'before' ? (
-        <Icon
-          icon={icon}
-          className={`link--icon--before link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
-        />
+        <>
+          {icon === 'back-icon' || icon === 'forward-icon' ? 
+            <SvgIcon 
+              iconName="arrow-left" 
+              className={`link--icon--before link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
+            /> : 
+            <Icon
+              icon={icon}
+              className={`link--icon--before link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
+            />
+          }
+        </>
       ) : null}
       {text}
       {children}
       {icon && iconPosition === 'after' ? (
-        <Icon
-          icon={icon}
-          className={`link--icon--after link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
-        />
+        <>
+          {icon === 'forward-icon' || icon === 'back-icon' ? 
+            <SvgIcon 
+              iconName="arrow-right" 
+              className={`link--icon--after link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
+            /> : 
+            <Icon
+              icon={icon}
+              className={`link--icon--after link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
+            />
+          }
+        </> 
       ) : null}
     </a>
   );
