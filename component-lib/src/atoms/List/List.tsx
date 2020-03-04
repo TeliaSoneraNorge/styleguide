@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Icon, IconDefinition } from '../Icon';
+import { Link } from '../../index';
 
 /**
  * Status: *finished*
@@ -37,6 +38,7 @@ export interface ListProps {
 
 export interface ItemProps {
   children?: any;
+  black?: boolean;
 }
 
 export interface BubbleLinkProps {
@@ -45,6 +47,9 @@ export interface BubbleLinkProps {
   icon: IconDefinition;
 }
 
+
+let deprecatedBlackBoolean: boolean | undefined;
+
 export const List = (props: ListProps) => {
 
   const { children, className, wrapByThree, wrapByFour, black, ...rest } = props
@@ -52,6 +57,7 @@ export const List = (props: ListProps) => {
   // Determine css classes to use based on the children.
   const childrenArray = React.Children.toArray(children);
   const hasBubbleLinks = childrenArray.find((item: any) => item.type === List.Item && item.props.children.type === List.BubbleLink);
+  deprecatedBlackBoolean = black;
 
   return (
     <ul
@@ -75,10 +81,22 @@ const Item = ({ children, ...rest }: ItemProps) => {
                       children.props.href ? true : false 
                     : false;
 
+  // used for Deprecated List With Links
+  const deprecatedChildren = hasLinks && !children.props.icon ? true : false;
+
+
   return (
     <li className="list__item" {...rest}>
       {!hasLinks && <Icon icon="check-mark" style={{ position: 'relative', top: '.1rem'}} />}
-      {children}
+
+      {/* used for Deprecated List With Links */}
+      {deprecatedChildren && 
+        <Link href="#" icon="arrow-right" iconPosition="before" iconColor={deprecatedBlackBoolean ? 'black': 'core-purple'}>
+          {children.props.children}
+        </Link>
+      }
+
+      {!deprecatedChildren && children}
     </li>
   );
 }

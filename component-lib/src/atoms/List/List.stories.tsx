@@ -1,6 +1,6 @@
 import React from 'react';
 import List from './List';
-import Link from '../Link/Link';
+import {Link} from '../../index';
 
 const { Item, BubbleLink } = List;
 
@@ -10,6 +10,9 @@ export default {
 };
 
 export const Default = () => (
+
+  // You must define Item: const { Item } = List;
+
   <List>
     <Item>First item in list</Item>
     <Item>Second item in list</Item>
@@ -18,6 +21,10 @@ export const Default = () => (
 );
 
 export const ListWithLinks = () => (
+
+  // You must define Item: const { Item } = List;
+  // Dont forget to import { Link } from '@telia/styleguide'
+
   <List>
     <Item>
       <Link href="#" icon="arrow-right" iconPosition="before">
@@ -37,7 +44,36 @@ export const ListWithLinks = () => (
   </List>
 );
 
+export const DeprecatedListWithLinks = () => (
+  <List>
+    <Item>
+      <Link href="#">First item with link in list</Link>
+    </Item>
+    <Item>
+      <Link href="#">Second item with link in list</Link>
+    </Item>
+    <Item>
+      <Link href="#">Third item with link in list</Link>
+    </Item>
+  </List>
+);
+
+export const DeprecatedListWithBlackLinks = () => (
+  <List black>
+    <Item>
+      <Link href="#">First item with link in list</Link>
+    </Item>
+    <Item>
+      <Link href="#">Second item with link in list</Link>
+    </Item>
+    <Item>
+      <Link href="#">Third item with link in list</Link>
+    </Item>
+  </List>
+);
+
 export const WrapByFour = () => (
+  // You must define Item: const { Item } = List;
   <List wrapByFour>
     <Item>First item in list</Item>
     <Item>Second item in list</Item>
@@ -51,6 +87,7 @@ export const WrapByFour = () => (
 );
 
 export const WrapByThree = () => (
+  // You must define Item: const { Item } = List;
   <List wrapByThree>
     <Item>First item in list</Item>
     <Item>Second item in list</Item>
@@ -60,8 +97,8 @@ export const WrapByThree = () => (
   </List>
 );
 
-
 export const WithBubbleLinks = () => (
+  // You must define Item: const { Item, Bubblelink } = List;
   <List>
     <Item>
       <BubbleLink href="#" icon="facebook">
