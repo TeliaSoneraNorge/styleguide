@@ -10,6 +10,7 @@ import TextBoxWithLabel from '../../molecules/TextBoxWithLabel/TextBoxWithLabel'
 
 const QuantityPicker = ({
   onChangeQuantity,
+  onBlur,
   quantity,
   minQuantity,
   maxQuantity,
@@ -38,6 +39,7 @@ const QuantityPicker = ({
           onChange={event =>
             onChangeQuantity(Math.max(Math.min(parseInt(event.target.value), maxQuantity), minQuantity))
           }
+          onBlur={onBlur}
           type="number"
           value={quantity}
           labelText={quantityLabel}
@@ -57,6 +59,7 @@ const QuantityPicker = ({
 
 QuantityPicker.propTypes = {
   onChangeQuantity: PropTypes.func,
+  onBlur: PropTypes.func,
   quantity: PropTypes.number.isRequired,
   minQuantity: PropTypes.number,
   maxQuantity: PropTypes.number,
