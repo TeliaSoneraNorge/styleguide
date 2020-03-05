@@ -7,6 +7,7 @@ export interface VideoProps {
   description?: string;
   videoTitle?: string;
   autoplay?: boolean;
+  onClick?: () => void;
 }
 
 const Video: React.FC<VideoProps>;
