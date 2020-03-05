@@ -13,12 +13,13 @@ const sortShoppingCart = item => {
     HANDSET: 2,
     WEARABLE: 3,
     SUBSCRIPTION: 4,
-    SUBSCRIPTION_EXISTING_MEMBER: 4,
-    SIM: 5,
-    NEW_NUMBER: 6,
-    SERVICE: 7,
-    ACCESSORY: 8,
-    DELIVERY: 9,
+    SUBSCRIPTION_EXISTING_MEMBER: 5,
+    SUBSCRIPTION_DRAFT: 6,
+    SIM: 7,
+    NEW_NUMBER: 8,
+    SERVICE: 9,
+    ACCESSORY: 10,
+    DELIVERY: 11,
   };
 
   return cartItemTypes[item.type];
