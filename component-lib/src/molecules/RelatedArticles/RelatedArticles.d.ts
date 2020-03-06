@@ -12,6 +12,7 @@ export interface RelatedArticlesProps {
   heading: string;
   id: string;
   relatedArticles?: RelatedArticlesRelatedArticles[];
+  isExpandedAccordionIndex?: number; 
 }
 
 export default class RelatedArticles extends React.Component<RelatedArticlesProps, any> {
