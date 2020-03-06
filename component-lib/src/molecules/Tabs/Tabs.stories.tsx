@@ -6,7 +6,7 @@ export default {
   component: Tabs,
 };
 
-export const TabsExample = () => {
+export const Default = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const onSelect = (selectedIndex: number) => {
