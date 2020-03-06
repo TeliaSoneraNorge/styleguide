@@ -1,3 +1,4 @@
+import appleAirpods from './assets/apple-airpods.png';
 import boyIpad from './assets/boy-ipad.jpg';
 import forAlle from './assets/for-alle.png';
 import icoInfo from './assets/ico_info.svg';
@@ -7,10 +8,13 @@ import kontantkort from './assets/kontantkort.png';
 import themeBoxWithImage from './assets/themeBoxWithImage.jpg';
 import under15 from './assets/under15.png';
 import under28 from './assets/under28.png';
+import urbanistaSeattleHeadset from './assets/urbanista_seattle_headset.png';
 import womanHoldingIpad from './assets/woman-holding-ipad.jpg';
 import womanMobile from './assets/woman-mobile.jpg';
+import zensCharger from './assets/zens-charger.png';
 
 export default {
+  appleAirpods,
   boyIpad,
   forAlle,
   icoInfo,
@@ -20,6 +24,8 @@ export default {
   themeBoxWithImage,
   under15,
   under28,
+  urbanistaSeattleHeadset,
   womanHoldingIpad,
   womanMobile,
+  zensCharger,
 };
