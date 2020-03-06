@@ -3,6 +3,7 @@ import boyIpad from './assets/boy-ipad.jpg';
 import forAlle from './assets/for-alle.png';
 import icoInfo from './assets/ico_info.svg';
 import icoShare from './assets/ico_share.svg';
+import iPhone from './assets/iPhone.png';
 import kidsIpad from './assets/kids-ipad.jpg';
 import kontantkort from './assets/kontantkort.png';
 import themeBoxWithImage from './assets/themeBoxWithImage.jpg';
@@ -19,6 +20,7 @@ export default {
   forAlle,
   icoInfo,
   icoShare,
+  iPhone,
   kidsIpad,
   kontantkort,
   themeBoxWithImage,
