@@ -20,6 +20,7 @@ const Tabs: React.FC<TabsProps> & {
     index?: number;
     uniqueId?: string;
     isSelected?: boolean;
+    heading?: string;
   }>;
 
   TabList: React.FC;
