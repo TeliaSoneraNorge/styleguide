@@ -92,11 +92,15 @@ const ShoppingCartTable = ({
           formatPrice={formatPrice}
         />
       ))}
-    </table>
-    {additionalItems && (
-      <>
-        <hr className="shopping-cart__separation-line" />
-        <table className="shopping-cart__table" role="table">
+      {additionalItems && (
+        <>
+          <tbody>
+            <tr>
+              <td colSpan="100%">
+                <hr className="shopping-cart__table__separation-line" />
+              </td>
+            </tr>
+          </tbody>
           {additionalItems.map(item => (
             <ShoppingCartTableGroup
               cartItem={item}
@@ -110,10 +114,8 @@ const ShoppingCartTable = ({
               formatPrice={formatPrice}
             />
           ))}
-        </table>
-      </>
-    )}
-    <table className="shopping-cart__table shopping-cart__table__footer" role="table">
+        </>
+      )}
       <ShoppingCartTableFooter
         totalPriceMonthly={totalPriceMonthly}
         totalPriceUpfront={totalPriceUpfront}
