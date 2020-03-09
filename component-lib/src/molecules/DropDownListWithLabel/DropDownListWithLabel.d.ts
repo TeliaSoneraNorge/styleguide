@@ -19,6 +19,7 @@ export interface DropDownListWithLabelProps {
    */
   changeSelectedOption?: (...args: any[]) => any;
   options?: DropDownListWithLabelOptions[];
+  disabled?: boolean;
 }
 
 const DropDownListWithLabel: React.FC<DropDownListWithLabelProps>;

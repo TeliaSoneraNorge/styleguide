@@ -23,6 +23,8 @@ export interface DonutChartProps {
   showLineCaps?: boolean;
   showSegmentSeparators?: boolean;
   strokeWidthInPercents?: number;
+  totalFormatted?: string;
+  link?: string;
 }
 
 const DonutChart: React.FC<DonutChartProps>;

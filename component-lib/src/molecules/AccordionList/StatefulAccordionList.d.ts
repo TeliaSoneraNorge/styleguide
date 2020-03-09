@@ -3,7 +3,12 @@ import * as React from 'react';
 export interface StatefulAccordionListAccordionItems {
   id: string;
   title: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
+  text?: string;
+  icon?: string;
+  imageUrl?: string;
+  button?: string;
+  buttonType?: string;
 }
 
 export interface StatefulAccordionListProps {

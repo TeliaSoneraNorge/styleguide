@@ -7,6 +7,16 @@ export interface DownloadButtonsProps {
   children?: React.ReactNode;
 }
 
-const DownloadButtons: React.FC<DownloadButtonsProps>;
+export interface ButtonProps {
+  href: string;
+  src: string;
+  alt: string;
+  title: string;
+  'aria-label': string;
+}
+
+const DownloadButtons: React.FC<DownloadButtonsProps> & {
+  Button: React.FC<ButtonProps>
+};
 
 export default DownloadButtons;
