@@ -91,7 +91,7 @@ const ShoppingCartTable = ({
         formatPrice={formatPrice}
       />
     ))}
-    {additionalItems && (
+    {_.size(additionalItems) > 0 && (
       <>
         <tbody>
           <tr>
