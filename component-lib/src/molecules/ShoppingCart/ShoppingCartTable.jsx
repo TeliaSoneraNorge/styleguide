@@ -76,55 +76,53 @@ const ShoppingCartTable = ({
   formatPrice,
   additionalItems,
 }) => (
-  <>
-    <table className="shopping-cart__table" role="table">
-      <ShoppingCartHeadings shouldShowQuantity={isAnyCartItemsQuantityModifiable} />
-      {_.sortBy(cartItems, [sortShoppingCart]).map(item => (
-        <ShoppingCartTableGroup
-          cartItem={item}
-          key={`${item.id}-${item.bundleId}`}
-          item={item}
-          onChangeQuantity={onChangeQuantity}
-          onRemoveItem={onRemoveItem}
-          hasPaid={hasPaid}
-          isCheckout={isCheckout}
-          shouldShowQuantity={isAnyCartItemsQuantityModifiable}
-          formatPrice={formatPrice}
-        />
-      ))}
-      {additionalItems && (
-        <>
-          <tbody>
-            <tr>
-              <td colSpan="100%">
-                <hr className="shopping-cart__table__separation-line" />
-              </td>
-            </tr>
-          </tbody>
-          {additionalItems.map(item => (
-            <ShoppingCartTableGroup
-              cartItem={item}
-              key={`${item.id}-${item.bundleId}`}
-              item={item}
-              onChangeQuantity={onChangeQuantity}
-              onRemoveItem={onRemoveItem}
-              hasPaid={hasPaid}
-              isCheckout={isCheckout}
-              shouldShowQuantity={isAnyCartItemsQuantityModifiable}
-              formatPrice={formatPrice}
-            />
-          ))}
-        </>
-      )}
-      <ShoppingCartTableFooter
-        totalPriceMonthly={totalPriceMonthly}
-        totalPriceUpfront={totalPriceUpfront}
-        totalPriceFirstInvoice={totalPriceFirstInvoice}
+  <table className="shopping-cart__table" role="table">
+    <ShoppingCartHeadings shouldShowQuantity={isAnyCartItemsQuantityModifiable} />
+    {_.sortBy(cartItems, [sortShoppingCart]).map(item => (
+      <ShoppingCartTableGroup
+        cartItem={item}
+        key={`${item.id}-${item.bundleId}`}
+        item={item}
+        onChangeQuantity={onChangeQuantity}
+        onRemoveItem={onRemoveItem}
         hasPaid={hasPaid}
+        isCheckout={isCheckout}
+        shouldShowQuantity={isAnyCartItemsQuantityModifiable}
         formatPrice={formatPrice}
       />
-    </table>
-  </>
+    ))}
+    {additionalItems && (
+      <>
+        <tbody>
+          <tr>
+            <td colSpan="4">
+              <hr className="shopping-cart__table__separation-line" />
+            </td>
+          </tr>
+        </tbody>
+        {additionalItems.map(item => (
+          <ShoppingCartTableGroup
+            cartItem={item}
+            key={`${item.id}-${item.bundleId}`}
+            item={item}
+            onChangeQuantity={onChangeQuantity}
+            onRemoveItem={onRemoveItem}
+            hasPaid={hasPaid}
+            isCheckout={isCheckout}
+            shouldShowQuantity={isAnyCartItemsQuantityModifiable}
+            formatPrice={formatPrice}
+          />
+        ))}
+      </>
+    )}
+    <ShoppingCartTableFooter
+      totalPriceMonthly={totalPriceMonthly}
+      totalPriceUpfront={totalPriceUpfront}
+      totalPriceFirstInvoice={totalPriceFirstInvoice}
+      hasPaid={hasPaid}
+      formatPrice={formatPrice}
+    />
+  </table>
 );
 
 ShoppingCartTable.propTypes = {
