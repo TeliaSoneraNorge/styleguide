@@ -7,38 +7,38 @@ export default {
   component: Menu,
 };
 
-const menuLinks = [
-  {
-    heading: { text: 'Privat', url: '#' },
-    links: [
-      {
-        text: 'Mobiler og tilbehør',
-        subLinks: [
-          { text: 'Mobiltelefoner', url: '#' },
-          { text: 'Smartklokker', url: '#' },
-          { text: 'Nettbrett', url: '#' },
-          { text: 'Tilbehør', url: '#' },
-        ],
-      },
-      { text: 'Mobilabonnement', url: '#' },
-      { text: 'Mobilt bredbånd', url: '#' },
-      { text: 'Dekning', url: '#' },
-      { text: 'Hjelp', url: '#' },
-    ],
-  },
-  {
-    heading: { text: 'Bedrift', url: '#' },
-    links: [
-      { text: 'Tjenester', url: '#' },
-      { text: 'Digitalisering', url: '#' },
-      { text: 'Nettbutikk', url: '#' },
-      { text: 'Kundeservice', url: '#' },
-    ],
-  },
-];
-
-export const Default = () => (
-  // <Router history={history}>
+export const Default = () => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Mobiler og tilbehør',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+  
+  return (
     <Menu
       loginUrl="#Menu"
       logoUrl="#"
@@ -55,5 +55,137 @@ export const Default = () => (
       mobileMenuCloseButtonLabel="Lukk"
       lockBodyOnMenuOpen
     />
-  // </Router>
+  )
+};
+
+export const LoadingMenu = () => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [{ text: 'Hjelp', url: '#' }],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      activeLinkIndex={-1}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen
+      isLoading={true}
+    />
+  )
+};
+
+
+
+export const LoggedInMenuB2C = () => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Mobiler og tilbehør',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+  
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      isLoggedIn={true}
+      myPageUrl="#"
+    />
+  )
+};
+
+export const OnlyLogo = () => (
+  <Menu
+    logoUrl="#"
+    logoTitle="Telia logo"
+    logoImageDesktopPath={img.logo}
+    logoImageInverseDesktopPath={img.logoInverted}
+    onlyLogo
+  />
 );
+
+export const SingleTopLevelMenu = () => {
+  const menuLinks = [
+    {
+      links: [
+        {
+          text: 'Mobiler og tilbehør',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+  ];
+  
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      isLoggedIn={true}
+      myPageUrl="#"
+    />
+  )
+};

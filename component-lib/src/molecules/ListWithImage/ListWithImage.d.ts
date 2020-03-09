@@ -26,6 +26,8 @@ export interface ListWithImageProps {
   hideImageForMobile?: boolean;
 }
 
-const ListWithImage: React.FC<ListWithImageProps>;
+const ListWithImage: React.FC<ListWithImageProps> & {
+  Item: React.FC;
+};
 
 export default ListWithImage;
