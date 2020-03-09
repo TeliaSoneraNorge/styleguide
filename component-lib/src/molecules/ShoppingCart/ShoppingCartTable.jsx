@@ -74,8 +74,9 @@ const ShoppingCartTable = ({
   hasPaid,
   isCheckout,
   formatPrice,
-}) => {
-  return (
+  additionalItems,
+}) => (
+  <>
     <table className="shopping-cart__table" role="table">
       <ShoppingCartHeadings shouldShowQuantity={isAnyCartItemsQuantityModifiable} />
       {_.sortBy(cartItems, [sortShoppingCart]).map(item => (
@@ -91,6 +92,28 @@ const ShoppingCartTable = ({
           formatPrice={formatPrice}
         />
       ))}
+    </table>
+    {additionalItems && (
+      <>
+        <hr className="shopping-cart__separation-line" />
+        <table className="shopping-cart__table" role="table">
+          {additionalItems.map(item => (
+            <ShoppingCartTableGroup
+              cartItem={item}
+              key={`${item.id}-${item.bundleId}`}
+              item={item}
+              onChangeQuantity={onChangeQuantity}
+              onRemoveItem={onRemoveItem}
+              hasPaid={hasPaid}
+              isCheckout={isCheckout}
+              shouldShowQuantity={isAnyCartItemsQuantityModifiable}
+              formatPrice={formatPrice}
+            />
+          ))}
+        </table>
+      </>
+    )}
+    <table className="shopping-cart__table shopping-cart__table__footer" role="table">
       <ShoppingCartTableFooter
         totalPriceMonthly={totalPriceMonthly}
         totalPriceUpfront={totalPriceUpfront}
@@ -99,8 +122,8 @@ const ShoppingCartTable = ({
         formatPrice={formatPrice}
       />
     </table>
-  );
-};
+  </>
+);
 
 ShoppingCartTable.propTypes = {
   cartItems: PropTypes.array,
@@ -113,6 +136,7 @@ ShoppingCartTable.propTypes = {
   hasPaid: PropTypes.bool,
   isCheckout: PropTypes.bool,
   formatPrice: PropTypes.func,
+  additionalItems: PropTypes.array,
 };
 
 export default ShoppingCartTable;
