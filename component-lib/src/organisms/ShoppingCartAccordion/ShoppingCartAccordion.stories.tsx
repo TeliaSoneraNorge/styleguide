@@ -471,53 +471,6 @@ const mbbContent = [
 
 const groupContent = [
   {
-    type: 'SUBSCRIPTION_EXISTING_MEMBER',
-    id: 'SMART_X',
-    name: 'Eksisterende Telia X i gruppen',
-    subtitle: 'Nummer: 404 50 494',
-    quantity: {
-      modifiable: false,
-      removable: false,
-      value: 1,
-    },
-    image: {
-      color: 'purple',
-      icon: 'ico_telia_x_group',
-    },
-    price: {
-      monthly: 579,
-    },
-    discount: {
-      value: {
-        monthly: 135,
-      },
-    },
-  },
-  {
-    type: 'SUBSCRIPTION_EXISTING_MEMBER',
-    id: 'SMART_X',
-    name: 'Eksisterende Telia X i gruppen',
-    subtitle: 'Nummer: 413 18 281',
-    quantity: {
-      modifiable: false,
-      removable: false,
-      value: 1,
-    },
-    image: {
-      color: 'purple',
-      icon: 'ico_sim',
-    },
-    indent: true,
-    price: {
-      monthly: 579,
-    },
-    discount: {
-      value: {
-        monthly: 135,
-      },
-    },
-  },
-  {
     type: 'SUBSCRIPTION',
     id: 'SMART_X.REGULAR',
     bundleId: '29166a',
@@ -603,6 +556,57 @@ const groupContent = [
   },
 ];
 
+const additionalItems = [
+  {
+    type: 'SUBSCRIPTION_EXISTING_MEMBER',
+    id: 'SMART_X',
+    bundleId: 'b53aaa',
+    name: 'Eksisterende Telia X i gruppen',
+    subtitle: 'Nummer: 404 50 494',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    image: {
+      color: 'purple',
+      icon: 'ico_telia_x_group',
+    },
+    price: {
+      monthly: 579,
+    },
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SUBSCRIPTION_EXISTING_MEMBER',
+    id: 'SMART_X',
+    bundleId: 'b53aab',
+    name: 'Eksisterende Telia X i gruppen',
+    subtitle: 'Nummer: 413 18 281',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    image: {
+      color: 'purple',
+      icon: 'ico_sim',
+    },
+    price: {
+      monthly: 579,
+    },
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+];
+
 function getCart(item) {
   switch (item) {
     case 'switch':
@@ -624,6 +628,15 @@ function getCart(item) {
   }
 }
 
+function getAdditionalItems(option) {
+  switch(option) {
+    case 'existingSubscriptions':
+      return additionalItems;
+    default:
+      return null
+  }
+}
+
 const Wrapper = ({
     numberOfItemsInCart,
     shouldHideOnDesktop,
@@ -633,8 +646,9 @@ const Wrapper = ({
     priceUpfront,
     priceFirstInvoice,
     itemToDisplay,
-    isCheckout
-}) => {
+    isCheckout,
+    additionalItemsToDisplay
+  }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
     return (
@@ -660,6 +674,7 @@ const Wrapper = ({
             onRemoveItem={() => {}}
             isCheckout={isCheckout}
             formatPrice={price => `${price},-`}
+            additionalItems={getAdditionalItems(additionalItemsToDisplay)}
           />
         </ShoppingCartAccordion>
       );
@@ -681,7 +696,11 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
   const shouldShowGoToCartButton = boolean('Should show go to cart button', true);
   const shouldBeSticky = boolean('Should be sticky', true);
   const isCheckout = boolean('Is Checkout', true);
-
+  const additionalItemsToDisplay = select(
+    'AdditionalItems',
+    ['existingSubscriptions', 'none'],
+    'existingSubscriptions'
+  )
   return (
     <Wrapper
         numberOfItemsInCart={numberOfItemsInCart}
@@ -693,6 +712,7 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
         priceFirstInvoice={priceFirstInvoice}
         itemToDisplay={itemToDisplay}
         isCheckout={isCheckout}
+        additionalItemsToDisplay={additionalItemsToDisplay}
     />
   );
 });

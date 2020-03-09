@@ -24,6 +24,7 @@ const ShoppingCart = ({
   hasPaid,
   isCheckout,
   disclaimers,
+  additionalItems,
 }) => {
   return (
     <div className="shopping-cart">
@@ -45,6 +46,7 @@ const ShoppingCart = ({
         hasPaid={hasPaid}
         isCheckout={isCheckout}
         totalPriceMonthly={totalPriceMonthly}
+        additionalItems={additionalItems}
       />
       {disclaimers}
       {onGoToCart && (
@@ -69,6 +71,7 @@ ShoppingCart.propTypes = {
   hasPaid: PropTypes.bool,
   isCheckout: PropTypes.bool,
   disclaimers: PropTypes.node,
+  additionalItems: PropTypes.array,
 };
 
 export default ShoppingCart;
