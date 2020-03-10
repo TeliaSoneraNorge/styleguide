@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Heading from '../../atoms/Heading/Heading';
+import { Heading, colors } from '../../index';
 
 /**
  * Status: *finished*.
@@ -10,7 +10,7 @@ import Heading from '../../atoms/Heading/Heading';
  */
 const InfoBox = ({ title, children }) => (
   <div className="info-box">
-    <Heading level="2" text={title} />
+    <Heading tag="h2" size="s" text={title} style={{ color: colors.black }} />
     {children}
   </div>
 );

@@ -1,8 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
-import Heading from '../../atoms/Heading/Heading';
+import { Icon, Heading, colors } from '../../index';
 
 /**
  * Status: *in progress*.
@@ -18,8 +17,8 @@ const LightAlert = ({ title, children, className, noMargin }) => (
   >
     <div className="light-alert__content">
       <div className="light-alert__header-container">
-        <Heading level="2" text={title} className="light-alert__heading" />
-        <SvgIcon iconName="ico_info" color="black" className="light-alert__icon" role="presentation" alt="" />
+        <Heading tag="h2" size="s" text={title} style={{ color: colors.black }} className="light-alert__heading" />
+        <Icon icon="info" color={colors.black} className="light-alert__icon" role="presentation" alt="" />
       </div>
       <div className="light-alert__text-container">{children}</div>
     </div>
