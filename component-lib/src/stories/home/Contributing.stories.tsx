@@ -9,6 +9,11 @@ const codeSnippets = {
 
 export default {
   title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 export const Contributing = () => (

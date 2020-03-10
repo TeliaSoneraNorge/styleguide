@@ -4,6 +4,11 @@ import { Heading, Header, FocusBox } from '../../index';
 
 export default {
   title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 const containerStyles = {
