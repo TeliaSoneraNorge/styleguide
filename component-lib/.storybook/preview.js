@@ -36,6 +36,11 @@ const chapterOrder = [
 
 addParameters({
   options: {
+    // Explicitly setting `showPanel` to true here lets us individually disable it
+    // for particular stories that don't use addons.
+    // See: https://github.com/storybookjs/storybook/issues/7149
+    showPanel: true,
+
     storySort: (a, b) => {
       const chapterA = a[1].kind.substr(0, a[1].kind.indexOf('|'));
       const chapterB = b[1].kind.substr(0, b[1].kind.indexOf('|'));

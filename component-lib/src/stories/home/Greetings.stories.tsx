@@ -4,7 +4,12 @@ import React from 'react';
 import { Header } from '../../index';
 
 export default {
-  title: 'Introduction|Home',
+  title: 'Introduction',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 export const Greetings = () => (

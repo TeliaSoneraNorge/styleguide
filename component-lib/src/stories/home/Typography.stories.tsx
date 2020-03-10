@@ -5,6 +5,11 @@ import Heading from '../../atoms/Heading/Heading';
 
 export default {
   title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 export const Typography = () => (

@@ -6,6 +6,11 @@ import versionsMd from '../../../../VERSIONS.md';
 
 export default {
   title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 export const Versions = () => (

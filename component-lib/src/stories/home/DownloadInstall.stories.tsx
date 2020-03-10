@@ -6,6 +6,11 @@ import { Header, Alert } from '../../index';
 
 export default {
   title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 const codeSnippets = {

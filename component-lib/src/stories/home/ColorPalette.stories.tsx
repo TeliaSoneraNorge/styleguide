@@ -3,22 +3,25 @@ import colorsJSON from '../lib/colorsJSON';
 import { colors, Icon } from '../../index';
 
 export default {
-  title: 'introduction|Home/Color Palette',
+  title: 'Introduction|Home/Color Palette',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
 };
 
 export const Default = () => (
   <>
     <h3>How to use colors</h3>
     <p>{`import { colors } from '@telia/styleguide'`}</p>
-    <div style={{ display: 'flex', marginRight: '1rem'}}>
-
-      <div style={{ background: colors.corePurple, width: '30px', height: '30px', marginRight: 'inherit'  }}></div>
+    <div style={{ display: 'flex', marginRight: '1rem' }}>
+      <div style={{ background: colors.corePurple, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
       <div style={{ background: colors.corePurple500, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
       <div style={{ background: colors.darkGrey, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
       <div style={{ background: colors.grey400, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
       <div style={{ background: colors.green, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
       <div style={{ background: colors.green500, width: '30px', height: '30px', marginRight: 'inherit' }}></div>
-
     </div>
   </>
 );
