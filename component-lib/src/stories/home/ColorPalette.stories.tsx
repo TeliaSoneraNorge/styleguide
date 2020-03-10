@@ -3,7 +3,7 @@ import colorsJSON from '../lib/colorsJSON';
 import { colors, Icon } from '../../index';
 
 export default {
-  title: 'introduction|Home/Color Palette',
+  title: 'Introduction|Home/Color Palette',
 };
 
 export const Default = () => (
