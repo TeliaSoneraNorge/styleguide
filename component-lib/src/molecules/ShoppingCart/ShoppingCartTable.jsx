@@ -37,7 +37,6 @@ const ShoppingCartTableGroup = ({
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
-  isCheckout,
   formatPrice,
 }) => {
   const renderCartItem = (item, isSubItem = false) => {
@@ -50,7 +49,6 @@ const ShoppingCartTableGroup = ({
           isDraft={item.type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT}
           onChangeQuantity={onChangeQuantity}
           onRemoveItem={onRemoveItem}
-          isCheckout={isCheckout}
           shouldShowQuantity={shouldShowQuantity}
           hasPaid={hasPaid}
           formatPrice={formatPrice}
@@ -72,7 +70,6 @@ const ShoppingCartTable = ({
   totalPriceMonthly,
   totalPriceUpfront,
   hasPaid,
-  isCheckout,
   formatPrice,
   additionalItems,
 }) => (
@@ -86,7 +83,6 @@ const ShoppingCartTable = ({
         onChangeQuantity={onChangeQuantity}
         onRemoveItem={onRemoveItem}
         hasPaid={hasPaid}
-        isCheckout={isCheckout}
         shouldShowQuantity={isAnyCartItemsQuantityModifiable}
         formatPrice={formatPrice}
       />
@@ -108,7 +104,6 @@ const ShoppingCartTable = ({
             onChangeQuantity={onChangeQuantity}
             onRemoveItem={onRemoveItem}
             hasPaid={hasPaid}
-            isCheckout={isCheckout}
             shouldShowQuantity={isAnyCartItemsQuantityModifiable}
             formatPrice={formatPrice}
           />
@@ -134,7 +129,6 @@ ShoppingCartTable.propTypes = {
   totalPriceMonthly: PropTypes.number,
   totalPriceUpfront: PropTypes.number,
   hasPaid: PropTypes.bool,
-  isCheckout: PropTypes.bool,
   formatPrice: PropTypes.func,
   additionalItems: PropTypes.array,
 };

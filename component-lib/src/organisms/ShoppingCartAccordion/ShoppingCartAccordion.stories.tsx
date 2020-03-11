@@ -646,7 +646,6 @@ const Wrapper = ({
     priceUpfront,
     priceFirstInvoice,
     itemToDisplay,
-    isCheckout,
     additionalItemsToDisplay
   }) => {
     const [isExpanded, setIsExpanded] = useState(false);
@@ -672,7 +671,6 @@ const Wrapper = ({
             totalPriceUpfront={priceUpfront}
             onChangeQuantity={() => {}}
             onRemoveItem={() => {}}
-            isCheckout={isCheckout}
             formatPrice={price => `${price},-`}
             additionalItems={getAdditionalItems(additionalItemsToDisplay)}
           />
@@ -695,7 +693,6 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
   const shouldHideOnDesktop = boolean('Should hide on desktop', false);
   const shouldShowGoToCartButton = boolean('Should show go to cart button', true);
   const shouldBeSticky = boolean('Should be sticky', true);
-  const isCheckout = boolean('Is Checkout', true);
   const additionalItemsToDisplay = select(
     'AdditionalItems',
     ['existingSubscriptions', 'none'],
@@ -711,7 +708,6 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
         priceUpfront={priceUpfront}
         priceFirstInvoice={priceFirstInvoice}
         itemToDisplay={itemToDisplay}
-        isCheckout={isCheckout}
         additionalItemsToDisplay={additionalItemsToDisplay}
     />
   );
