@@ -22,7 +22,6 @@ const ShoppingCart = ({
   totalPriceUpfront,
   formatPrice,
   hasPaid,
-  isCheckout,
   disclaimers,
   additionalItems,
 }) => {
@@ -44,7 +43,6 @@ const ShoppingCart = ({
         totalPriceUpfront={totalPriceUpfront}
         formatPrice={formatPrice}
         hasPaid={hasPaid}
-        isCheckout={isCheckout}
         totalPriceMonthly={totalPriceMonthly}
         additionalItems={additionalItems}
       />
@@ -69,7 +67,6 @@ ShoppingCart.propTypes = {
   totalPriceUpfront: PropTypes.number,
   formatPrice: PropTypes.func,
   hasPaid: PropTypes.bool,
-  isCheckout: PropTypes.bool,
   disclaimers: PropTypes.node,
   additionalItems: PropTypes.array,
 };
