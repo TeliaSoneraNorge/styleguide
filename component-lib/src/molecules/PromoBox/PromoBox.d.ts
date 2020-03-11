@@ -1,5 +1,11 @@
 import * as React from 'react';
 
-const PromoBox: React.FC;
+export interface PromoBoxProps {
+  animated?: boolean;
+  imgSrc?: string;
+  imgAlt?: string;
+}
+
+const PromoBox: React.FC<PromoBoxProps>;
 
 export default PromoBox;

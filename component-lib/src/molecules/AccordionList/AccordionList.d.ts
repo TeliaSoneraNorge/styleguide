@@ -4,6 +4,8 @@ export interface AccordionListAccordionItems {
   id: string;
   title: string;
   children: React.ReactNode;
+  icon?: string;
+  text?: string;
 }
 
 export interface AccordionListProps {

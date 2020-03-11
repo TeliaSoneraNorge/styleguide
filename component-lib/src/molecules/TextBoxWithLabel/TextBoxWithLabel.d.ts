@@ -12,7 +12,9 @@ export interface TextBoxWithLabelProps {
   iconColor?: string;
   iconIsButton?: boolean;
   iconLabel?: string;
-  onChange?: (...args: any[]) => any;
+  value?: string;
+  ref?: any;
+  onChange?: (e: React.SyntheticEvent) => void;
 }
 
 const TextBoxWithLabel: React.FC<TextBoxWithLabelProps>;

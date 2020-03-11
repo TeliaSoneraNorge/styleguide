@@ -22,3 +22,5 @@ export interface StepByStepProps {
 export default class StepByStep extends React.Component<StepByStepProps, any> {
   render(): JSX.Element;
 }
+
+// export default StepByStep as (typeof StepByStep & { Step: typeof Step; Description: typeof Description; Content: typeof Content; });

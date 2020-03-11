@@ -8,6 +8,8 @@ export interface ImageHeadingLinkProps {
   onClick?: (...args: any[]) => any;
 }
 
-const ImageHeadingLink: React.FC<ImageHeadingLinkProps>;
+const ImageHeadingLink: React.FC<ImageHeadingLinkProps> & {
+  Small: React.FC;
+};
 
 export default ImageHeadingLink;

@@ -17,6 +17,7 @@ export interface ProductPromoBoxProps {
   isShowingFeatures?: boolean;
   speechBubbleText?: string;
   onClick?: (...args: any[]) => any;
+  showActionOnNewLine?: boolean;
 }
 
 const ProductPromoBox: React.FC<ProductPromoBoxProps>;

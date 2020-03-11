@@ -16,6 +16,7 @@ export interface StatefulAlertProps {
   onClose?: (...args: any[]) => any;
   minimizedText?: string;
   links?: StatefulAlertLinks[];
+  minimizable?: boolean;
 }
 
 export default class StatefulAlert extends React.Component<StatefulAlertProps, any> {
