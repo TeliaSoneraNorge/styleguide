@@ -182,10 +182,17 @@
         }
 
         &__button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
             border: 0;
             margin-right: 0.5rem;
             padding: 0.3rem 0.5rem;
             width: 8vw;
+            background-color: transparent;
+            height: 2.5rem;
+            width: 3rem;
 
             &[disabled] {
                 .Icon {
@@ -193,31 +200,39 @@
                 }
             }
 
-            @media screen and (min-width: 43em) {
-                height: 1rem;
-                width: 1rem;
-            }
 
             @media screen and (min-width: 45em) {
-                height: 2rem;
-                width: 2.5rem;
+                height: 3rem;
+                width: 3.5rem;
             }
 
             &:active, &:hover, &:focus {
-                &:not([disabled]) .Icon {
+                &:not([disabled]) * {
                     color: var(--white);
                 }
             }
         }
 
-        &__icon-close {
-            width: 0.8rem;
-            height: 0.8rem;
-            color: black;
+        &__close {
+            color: #E12364;
+            font-family: Pebble;
+            font-size: 1rem;
+            line-height: 1.1375rem;
 
             @media screen and (min-width: 45em) {
-                width: 1rem;
-                height: 1rem;
+                font-size: 1.125rem;
+            }
+
+            &__text {
+                color: black;
+                font-family: Helvetica Neue Regular;
+                font-size: 0.75rem;
+                text-transform: none;
+                letter-spacing: 0;
+
+                @media screen and (min-width: 45em) {
+                    margin-top: 0.2rem;
+                }
             }
         }
 
