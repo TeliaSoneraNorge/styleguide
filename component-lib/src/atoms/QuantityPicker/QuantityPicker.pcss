@@ -6,12 +6,11 @@
 
     &__container {
         margin: 0 0.4rem;
-        width: 3.2rem;
+        width: 3rem;
 
         @media all and (min-width: 48em) {
             width: 3.5rem;
             margin: 0 1rem;
-
         }
     }
 
@@ -36,11 +35,16 @@
 .quantity-picker__button {
     margin: 0;
     padding: 0;
-    height: 2.5rem;
-    width: 2.5rem;
+    height: 2rem;
+    width: 2rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media all and (min-width: 48em) {
+        height: 2.5rem;
+        width: 2.5rem;
+    }
 
     &[disabled] {
         .Icon {
