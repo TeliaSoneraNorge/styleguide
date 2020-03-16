@@ -121,6 +121,21 @@
         }
     }
 
+    &__button-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__separation-line {
+        border: none;
+        margin: 2rem auto;
+        height: 2px;
+        max-width: 12.5rem;
+        background-color: var(--grey);
+    }
+
     /* Expanded info */
     &__expanded-info {
         display: none;
@@ -303,7 +318,7 @@
         }
         .button {
             display: inline-block;
-            margin: 2rem 0 0 0;
+            margin: 2rem auto 0;
         }
     }
     .subscription__expanded-info {

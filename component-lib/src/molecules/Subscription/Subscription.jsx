@@ -117,6 +117,10 @@ const Features = ({ features, isBroadband, isExpanded }) => (
     ) : (
       <div className="box__speech-bubble box__speech-bubble--empty"></div>
     )}
+    {isExpanded && !!features.button && <div className="subscription__button-container">{features.button}</div>}
+    {isExpanded && features.button && (features.highlightedFeature || isBroadband) && (
+      <hr className="subscription__separation-line" />
+    )}
     {features.highlightedFeature ? (
       features.highlightedFeature.secondIconName ? (
         !isExpanded && (
@@ -160,7 +164,6 @@ const Features = ({ features, isBroadband, isExpanded }) => (
     {isBroadband && (
       <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
     )}
-    {isExpanded && features.button}
   </section>
 );
 
