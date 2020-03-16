@@ -134,14 +134,12 @@
             text-align: right;
             width: 30vw;
             color: var(--shopping-cart-font-color);
+            padding-right: 1rem;
 
             @media screen and (min-width: 30vw) {
                 width: 7rem;
             }
 
-            &--monthly {
-                padding-right: 0.1rem;
-            }
 
             &-per {
                 color: var(--shopping-cart-font-color-medium);
@@ -174,7 +172,6 @@
         }
 
         &__delete {
-            padding: 0.5rem;
             height: 2rem;
             width: 2rem;
             background-color: transparent;
@@ -187,12 +184,21 @@
             justify-content: center;
             align-items: center;
             border: 0;
-            margin-right: 0.5rem;
             padding: 0.3rem 0.5rem;
             width: 8vw;
             background-color: transparent;
             height: 2.5rem;
             width: 3rem;
+
+            &__container {
+                height: 2.5rem;
+                border-left: 2px var(--grey) solid;
+                padding: 0.3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
 
             &[disabled] {
                 .Icon {
