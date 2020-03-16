@@ -177,8 +177,8 @@
             background-color: transparent;
             border: 0;
         }
-
-        &__button {
+        
+        &__delete-button {
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -214,6 +214,35 @@
 
             &:active, &:hover, &:focus {
                 &:not([disabled]) * {
+                    color: var(--white);
+                }
+            }
+        }
+
+        &__button {
+            border: 0;
+            margin-right: 0.5rem;
+            padding: 0.3rem 0.5rem;
+            width: 8vw;
+
+            &[disabled] {
+                .Icon {
+                    color: var(--shopping-cart-font-color-disabled);
+                }
+            }
+
+            @media screen and (min-width: 43em) {
+                height: 1rem;
+                width: 1rem;
+            }
+
+            @media screen and (min-width: 45em) {
+                height: 2rem;
+                width: 2.5rem;
+            }
+
+            &:active, &:hover, &:focus {
+                &:not([disabled]) .Icon {
                     color: var(--white);
                 }
             }
