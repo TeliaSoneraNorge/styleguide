@@ -134,14 +134,12 @@
             text-align: right;
             width: 30vw;
             color: var(--shopping-cart-font-color);
+            padding-right: 1rem;
 
             @media screen and (min-width: 30vw) {
                 width: 7rem;
             }
 
-            &--monthly {
-                padding-right: 0.1rem;
-            }
 
             &-per {
                 color: var(--shopping-cart-font-color-medium);
@@ -174,11 +172,51 @@
         }
 
         &__delete {
-            padding: 0.5rem;
             height: 2rem;
             width: 2rem;
             background-color: transparent;
             border: 0;
+        }
+        
+        &__delete-button {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 0;
+            padding: 0.3rem 0.5rem;
+            width: 8vw;
+            background-color: transparent;
+            height: 2.5rem;
+            width: 3rem;
+
+            &__container {
+                height: 2.5rem;
+                border-left: 2px var(--grey) solid;
+                padding: 0.3rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+            }
+
+            &[disabled] {
+                .Icon {
+                    color: var(--shopping-cart-font-color-disabled);
+                }
+            }
+
+
+            @media screen and (min-width: 45em) {
+                height: 3rem;
+                width: 3.5rem;
+            }
+
+            &:active, &:hover, &:focus {
+                &:not([disabled]) * {
+                    color: var(--white);
+                }
+            }
         }
 
         &__button {
@@ -210,14 +248,26 @@
             }
         }
 
-        &__icon-close {
-            width: 0.8rem;
-            height: 0.8rem;
-            color: black;
+        &__close {
+            color: var(--red);
+            font-family: Pebble;
+            font-size: 1rem;
+            line-height: 1.1375rem;
 
             @media screen and (min-width: 45em) {
-                width: 1rem;
-                height: 1rem;
+                font-size: 1.125rem;
+            }
+
+            &__text {
+                color: black;
+                font-family: Helvetica Neue Regular;
+                font-size: 0.75rem;
+                text-transform: none;
+                letter-spacing: 0;
+
+                @media screen and (min-width: 45em) {
+                    margin-top: 0.2rem;
+                }
             }
         }
 

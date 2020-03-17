@@ -157,9 +157,12 @@ const ShoppingCartItem = ({
       </ShoppingCartCell>
       <ShoppingCartCell className="shopping-cart__item__delete">
         {isRemovable && !hasPaid && (
-          <button className="button button--small shopping-cart__item__button" onClick={() => onRemoveItem(cartItem)}>
-            <Icon className="shopping-cart__item__icon-close" icon="close" title={`Fjern ${name} fra handlekurven`} />
-          </button>
+          <div className="shopping-cart__item__delete-button__container">
+            <button className="button button--small shopping-cart__item__delete-button" onClick={() => onRemoveItem(cartItem)}>
+              <div className="shopping-cart__item__close">x</div>
+              <div className="shopping-cart__item__close__text">Slett</div>
+            </button>
+          </div>
         )}
       </ShoppingCartCell>
     </ShoppingCartRow>
