@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.10
+- Added `hideIcon` prop to `Alert`.
+
 ## 1.33.9
 - Change look of delete icon for `ShoppingCart`
 - Change size of `QuantityPicker` for small devices.
