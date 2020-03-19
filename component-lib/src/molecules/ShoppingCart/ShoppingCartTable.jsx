@@ -9,17 +9,22 @@ import ShoppingCartTableFooter from './ShoppingCartTableFooter';
 
 const sortShoppingCart = item => {
   const cartItemTypes = {
-    WEBDEAL: 1,
-    HANDSET: 2,
-    WEARABLE: 3,
-    SUBSCRIPTION: 4,
-    SUBSCRIPTION_EXISTING_MEMBER: 5,
-    SUBSCRIPTION_DRAFT: 6,
-    SIM: 7,
-    NEW_NUMBER: 8,
-    SERVICE: 9,
-    ACCESSORY: 10,
-    DELIVERY: 11,
+    WEBDEAL: 10,
+    HANDSET: 20,
+    TABLET: 30,
+    MODEM: 40,
+    WEARABLE: 50,
+    CONNECTED_DEVICE: 60,
+    SUBSCRIPTION: 70,
+    SPECIALPRODUCT: 71,
+    SUBSCRIPTION_EXISTING_MEMBER: 72,
+    SUBSCRIPTION_DRAFT: 73,
+    SIM: 80,
+    NEW_NUMBER: 90,
+    SERVICE: 100,
+    ACCESSORY: 110,
+    DELIVERY: 120,
+    VOUCHER: 130,
   };
 
   return cartItemTypes[item.type];
