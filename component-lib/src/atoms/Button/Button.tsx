@@ -1,12 +1,31 @@
 import React from 'react';
 import classnames from 'classnames';
+import { LinkProps } from '../Link/Link'
 
-export interface ButtonProps {
-  component?: 'button' | 'a' | 'div';
+
+interface isALink {
+  /**
+   * defining a component with either {Link} | 'button' | 'div'
+   */
+  component?: React.FC<LinkProps>;
+  href: string;
+}
+
+interface isAButton {
+  component?: 'button';
+}
+
+interface isADiv {
+  component?: 'div';
+}
+
+
+interface CommonButtonProps {
   /**
    * A button can have a text.
    */
   text?: string;
+  href?: string;
   type?: 'button' | 'reset' | 'submit';
   /**
    * A button can have different appearances e.g. 'primary', 'cancel'.
@@ -20,11 +39,11 @@ export interface ButtonProps {
    * A button can have different sizes e.g. 'small'.
    */
   size?: 'small';
-  onClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler;
   /**
    * Additional classes.
    */
-  className?: string;
+  className?: any;
   /**
    * A button can change text while it is processing.
    */
@@ -43,7 +62,14 @@ export interface ButtonProps {
    * See https://github.com/DefinitelyTyped/DefinitelyTyped/issues/34237
    */
   children?: never;
+
+  /**
+   * rest propeties are set to any
+   */
+  [key: string]: any;
 }
+
+export type ButtonProps = CommonButtonProps & (isALink | isAButton | isADiv)
 
 /**
  * Status: *finished*.
@@ -51,7 +77,8 @@ export interface ButtonProps {
  */
 const Button = (props: ButtonProps) => {
   const {
-    component, 
+    component = 'button',
+    href,
     text,
     kind,
     size,
@@ -64,11 +91,41 @@ const Button = (props: ButtonProps) => {
     margin,
     ...rest
   } = props;
-  
+
+  const Tag = component;
   
   return (
     <>
-    {!component && 
+    {/* {component &&  */}
+      <Tag
+        className={classnames('button', {
+          [`button--${kind}`]: !isDisabled && kind,
+          [`button--${size}`]: size,
+          [`button--margin-${margin}`]: margin,
+          'button--processing': isProcessing,
+          'button--disabled': isDisabled,
+          [className]: className,
+        })}
+        href={href ? href : undefined}
+        onClick={onClick}
+        disabled={isProcessing || isDisabled}
+        type={type}
+        {...rest}
+      >
+        {!isProcessing && text}
+        {isProcessing && (
+          <span className="button__processing">
+            {processingText}
+            <span className="button__processing-dot">.</span>
+            <span className="button__processing-dot">.</span>
+            <span className="button__processing-dot">.</span>
+          </span>
+        )}
+      </Tag>
+    {/* } */}
+
+
+    {/* {!component && 
       <button
         className={classnames('button', {
           [`button--${kind}`]: !isDisabled && kind,
@@ -93,7 +150,7 @@ const Button = (props: ButtonProps) => {
           </span>
         )}
       </button>
-    }
+    } */}
     </>
   )
 };

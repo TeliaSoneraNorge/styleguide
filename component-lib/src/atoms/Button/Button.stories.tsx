@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import { Link } from '../../index';
 
 export default {
   title: 'Component library|Atoms/Buttons',
@@ -7,8 +8,12 @@ export default {
 };
 
 export const Default = () => (
-  <Button text="Default button" />
-  );
+  <>
+  <Button component={Link} href="#" text="Button Link" />
+  <Button component={'button'} href="#" text="Button" />
+  <Button component={'div'} href="#" text="Button" />
+  </>
+);
 
 export const Normal = () => (
   <>
