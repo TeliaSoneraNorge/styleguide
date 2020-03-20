@@ -8,7 +8,7 @@ export default {
 
 export const Default = () => (
   <Button text="Default button" />
-);
+  );
 
 export const Normal = () => (
   <>
@@ -39,6 +39,14 @@ export const Various = () => (
     <Button text="Inverted button" kind="inverted" />
     <Button text="Negative button" kind="negative" />
     <Button text="Cancel button" kind="cancel" />
+  </>
+);
+
+export const ButtonInForms = () => (
+  <>
+    <Button text="Type Button" />
+    <Button text="Type Reset" type="reset" />
+    <Button text="Type Submit" type="submit" />
   </>
 );
 
