@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import { Icon, IconDefinition } from '../../index';
 import { LinkProps } from '../Link/Link'
 
 
@@ -26,6 +27,7 @@ interface CommonButtonProps {
    */
   text?: string;
   href?: string;
+  icon?: IconDefinition;
   type?: 'button' | 'reset' | 'submit';
   /**
    * A button can have different appearances e.g. 'primary', 'cancel'.
@@ -81,6 +83,7 @@ const Button = (props: ButtonProps) => {
     href,
     text,
     kind,
+    icon,
     size,
     onClick,
     className,
@@ -95,84 +98,45 @@ const Button = (props: ButtonProps) => {
   const Tag = component;
   
   return (
-    <>
-    {/* {component &&  */}
-      <Tag
-        className={classnames('button', {
-          [`button--${kind}`]: !isDisabled && kind,
-          [`button--${size}`]: size,
-          [`button--margin-${margin}`]: margin,
-          'button--processing': isProcessing,
-          'button--disabled': isDisabled,
-          [className]: className,
-        })}
-        href={href ? href : undefined}
-        onClick={onClick}
-        disabled={isProcessing || isDisabled}
-        type={type}
-        {...rest}
-      >
-        {!isProcessing && text}
-        {isProcessing && (
-          <span className="button__processing">
-            {processingText}
-            <span className="button__processing-dot">.</span>
-            <span className="button__processing-dot">.</span>
-            <span className="button__processing-dot">.</span>
-          </span>
-        )}
-      </Tag>
-    {/* } */}
-
-
-    {/* {!component && 
-      <button
-        className={classnames('button', {
-          [`button--${kind}`]: !isDisabled && kind,
-          [`button--${size}`]: size,
-          [`button--margin-${margin}`]: margin,
-          'button--processing': isProcessing,
-          'button--disabled': isDisabled,
-          [className]: className,
-        })}
-        onClick={onClick}
-        disabled={isProcessing || isDisabled}
-        type={type}
-        {...rest}
-      >
-        {!isProcessing && text}
-        {isProcessing && (
-          <span className="button__processing">
-            {processingText}
-            <span className="button__processing-dot">.</span>
-            <span className="button__processing-dot">.</span>
-            <span className="button__processing-dot">.</span>
-          </span>
-        )}
-      </button>
-    } */}
-    </>
+    <Tag
+      className={classnames('button', {
+        [`button--${kind}`]: !isDisabled && kind,
+        [`button--${size}`]: size,
+        [`button--margin-${margin}`]: margin,
+        'button--processing': isProcessing,
+        'button--disabled': isDisabled,
+        [className]: className,
+      })}
+      href={href ? href : undefined}
+      onClick={onClick}
+      disabled={isProcessing || isDisabled}
+      type={type}
+      {...rest}
+    > 
+      {icon && 
+        <Icon icon={icon} style={{
+          fill: 'currentColor',
+          height: '20px',
+          marginBottom: '-8px',
+          marginLeft: '-6px',
+          marginRight: '10px',
+          position: 'relative',
+          top: '-3.5px',
+          width: '20px',
+          }} 
+        />
+      }
+      {!isProcessing && text}
+      {isProcessing && (
+        <span className="button__processing">
+          {processingText}
+          <span className="button__processing-dot">.</span>
+          <span className="button__processing-dot">.</span>
+          <span className="button__processing-dot">.</span>
+        </span>
+      )}
+    </Tag>
   )
-};
-
-Button.types = {
-  button: 'button',
-  reset: 'reset',
-  submit: 'submit',
-};
-
-Button.kinds = {
-  normal: 'normal',
-  primary: 'primary',
-  cancel: 'cancel',
-  link: 'link',
-  inverted: 'inverted',
-  negative: 'negative',
-};
-
-Button.margins = {
-  top: 'top',
-  bottom: 'bottom',
 };
 
 export default Button;

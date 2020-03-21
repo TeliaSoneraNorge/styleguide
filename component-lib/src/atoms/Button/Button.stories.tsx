@@ -10,8 +10,13 @@ export default {
 export const Default = () => (
   <>
   <Button component={Link} href="#" text="Button Link" />
-  <Button component={'button'} href="#" text="Button" />
-  <Button component={'div'} href="#" text="Button" />
+  <Button component={Link} href="#" text="Button Link" icon="insurance" />
+  <br/><br/>
+  <Button component={'button'} text="Button" />
+  <Button component={'button'} text="Button" icon="police" />
+  <br/><br/>
+  <Button component={'div'} text="Button Div" />
+  <Button component={'div'} text="Button Div" icon="info" />
   </>
 );
 
