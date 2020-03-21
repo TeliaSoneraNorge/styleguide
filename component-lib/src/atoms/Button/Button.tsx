@@ -1,19 +1,20 @@
 import React from 'react';
 import classnames from 'classnames';
 import { Icon, IconDefinition } from '../../index';
-import { LinkProps } from '../Link/Link'
 
 
-interface isALink {
-  /**
-   * defining a component with either {Link} | 'button' | 'div'
-   */
-  component?: React.FC<LinkProps>;
-  href: string;
-}
 
 interface isAButton {
+  /**
+   * you can define a component tag with one of these below.
+   * 'button' are default and is not necessary to define
+   */
   component?: 'button';
+}
+
+interface isALink {
+  component?: 'link';
+  href: string;
 }
 
 interface isADiv {
@@ -26,7 +27,13 @@ interface CommonButtonProps {
    * A button can have a text.
    */
   text?: string;
+  /**
+   * When defining component as 'link', href needs to be added
+   */
   href?: string;
+  /**
+   * Look at Icon component for aviable icons to choose from
+   */
   icon?: IconDefinition;
   type?: 'button' | 'reset' | 'submit';
   /**
@@ -71,7 +78,7 @@ interface CommonButtonProps {
   [key: string]: any;
 }
 
-export type ButtonProps = CommonButtonProps & (isALink | isAButton | isADiv)
+export type ButtonProps = (isAButton | isALink | isADiv) & CommonButtonProps
 
 /**
  * Status: *finished*.
@@ -95,7 +102,7 @@ const Button = (props: ButtonProps) => {
     ...rest
   } = props;
 
-  const Tag = component;
+  const Tag = component === 'link' ? 'a': component;
   
   return (
     <Tag

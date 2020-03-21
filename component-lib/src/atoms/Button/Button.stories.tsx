@@ -1,6 +1,5 @@
 import React from 'react';
 import Button from './Button';
-import { Link } from '../../index';
 
 export default {
   title: 'Component library|Atoms/Buttons',
@@ -9,14 +8,7 @@ export default {
 
 export const Default = () => (
   <>
-  <Button component={Link} href="#" text="Button Link" />
-  <Button component={Link} href="#" text="Button Link" icon="insurance" />
-  <br/><br/>
-  <Button component={'button'} text="Button" />
-  <Button component={'button'} text="Button" icon="police" />
-  <br/><br/>
-  <Button component={'div'} text="Button Div" />
-  <Button component={'div'} text="Button Div" icon="info" />
+  <Button text="Default button" />
   </>
 );
 
@@ -25,6 +17,31 @@ export const Normal = () => (
     <Button text="Default button" />
     <Button text="Primary button" kind="primary" />
     <Button text="Disabled button" isDisabled={true} />
+    <br/><br/>
+    <Button text="Inverted button" kind="inverted" />
+    <Button text="Negative button" kind="negative" />
+  </>
+);
+
+
+export const WithIcon = () => (
+  <>
+    <Button text="Default button" icon="map" />
+    <Button text="Primary button" icon="star" kind="primary" />
+    <Button text="Disabled button" icon="games" isDisabled={true} />
+    <br/><br/>
+    <Button text="Inverted button" kind="inverted" icon="tv" />
+    <Button text="Negative button" kind="negative" icon="wrench" />
+    <br/><br/>
+    <Button text="Default button" isProcessing={true} icon="alert" processingText="Working" />
+    <Button text="Default button" isProcessing={true} icon="cloud" processingText="Working" kind="primary" />
+  </>
+);
+
+
+export const AsLink = () => (
+  <>
+    <Button component='link' href="#" text="Button with a tag" />
   </>
 );
 
@@ -43,20 +60,17 @@ export const Loading = () => (
   </>
 );
 
-export const Various = () => (
-  <>
-    <Button text="Confirm" />
-    <Button text="Inverted button" kind="inverted" />
-    <Button text="Negative button" kind="negative" />
-    <Button text="Cancel button" kind="cancel" />
-  </>
-);
-
 export const ButtonInForms = () => (
   <>
     <Button text="Type Button" />
     <Button text="Type Reset" type="reset" />
     <Button text="Type Submit" type="submit" />
+  </>
+);
+
+export const CancelButton = () => (
+  <>
+    <Button text="Cancel button" kind="cancel" />
   </>
 );
 
