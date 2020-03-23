@@ -639,7 +639,6 @@ stories.addWithJSX('ShoppingCart', () => {
   const priceUpfront = number('Price upfront', 500);
   const priceFirstInvoice = number('Price first invoice', 500);
   const itemToDisplay = select('Item', ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'], 'switch');
-  const isCheckout = boolean('Is Checkout', true);
 
   return (
     <Container style={style} size={containerSize}>
@@ -652,7 +651,6 @@ stories.addWithJSX('ShoppingCart', () => {
           totalPriceUpfront={priceUpfront}
           onChangeQuantity={() => {}}
           onRemoveItem={() => {}}
-          isCheckout={isCheckout}
           formatPrice={price => `${price},-`}
         />
     </Container>

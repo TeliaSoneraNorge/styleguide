@@ -9,17 +9,22 @@ import ShoppingCartTableFooter from './ShoppingCartTableFooter';
 
 const sortShoppingCart = item => {
   const cartItemTypes = {
-    WEBDEAL: 1,
-    HANDSET: 2,
-    WEARABLE: 3,
-    SUBSCRIPTION: 4,
-    SUBSCRIPTION_EXISTING_MEMBER: 5,
-    SUBSCRIPTION_DRAFT: 6,
-    SIM: 7,
-    NEW_NUMBER: 8,
-    SERVICE: 9,
-    ACCESSORY: 10,
-    DELIVERY: 11,
+    WEBDEAL: 10,
+    HANDSET: 20,
+    TABLET: 30,
+    MODEM: 40,
+    WEARABLE: 50,
+    CONNECTED_DEVICE: 60,
+    SUBSCRIPTION: 70,
+    SPECIALPRODUCT: 71,
+    SUBSCRIPTION_EXISTING_MEMBER: 72,
+    SUBSCRIPTION_DRAFT: 73,
+    SIM: 80,
+    NEW_NUMBER: 90,
+    SERVICE: 100,
+    ACCESSORY: 110,
+    DELIVERY: 120,
+    VOUCHER: 130,
   };
 
   return cartItemTypes[item.type];
@@ -37,7 +42,6 @@ const ShoppingCartTableGroup = ({
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
-  isCheckout,
   formatPrice,
 }) => {
   const renderCartItem = (item, isSubItem = false) => {
@@ -50,7 +54,6 @@ const ShoppingCartTableGroup = ({
           isDraft={item.type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT}
           onChangeQuantity={onChangeQuantity}
           onRemoveItem={onRemoveItem}
-          isCheckout={isCheckout}
           shouldShowQuantity={shouldShowQuantity}
           hasPaid={hasPaid}
           formatPrice={formatPrice}
@@ -72,7 +75,6 @@ const ShoppingCartTable = ({
   totalPriceMonthly,
   totalPriceUpfront,
   hasPaid,
-  isCheckout,
   formatPrice,
   additionalItems,
 }) => (
@@ -86,7 +88,6 @@ const ShoppingCartTable = ({
         onChangeQuantity={onChangeQuantity}
         onRemoveItem={onRemoveItem}
         hasPaid={hasPaid}
-        isCheckout={isCheckout}
         shouldShowQuantity={isAnyCartItemsQuantityModifiable}
         formatPrice={formatPrice}
       />
@@ -108,7 +109,6 @@ const ShoppingCartTable = ({
             onChangeQuantity={onChangeQuantity}
             onRemoveItem={onRemoveItem}
             hasPaid={hasPaid}
-            isCheckout={isCheckout}
             shouldShowQuantity={isAnyCartItemsQuantityModifiable}
             formatPrice={formatPrice}
           />
@@ -134,7 +134,6 @@ ShoppingCartTable.propTypes = {
   totalPriceMonthly: PropTypes.number,
   totalPriceUpfront: PropTypes.number,
   hasPaid: PropTypes.bool,
-  isCheckout: PropTypes.bool,
   formatPrice: PropTypes.func,
   additionalItems: PropTypes.array,
 };

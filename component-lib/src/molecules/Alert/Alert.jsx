@@ -23,6 +23,7 @@ const Alert = ({
   scrollTo = false,
   minimizedText,
   className,
+  hideIcon,
   ...rest
 }) => {
   const alertRef = useRef();
@@ -50,9 +51,11 @@ const Alert = ({
       {...rest}
     >
       <div className="alert__content">
-        <div className="alert__icon-container">
-          <SvgIcon iconName="ico_info" color="black" className="alert__icon" role="presentation" alt="" />
-        </div>
+        {!hideIcon &&
+          <div className="alert__icon-container">
+            <SvgIcon iconName="ico_info" color="black" className="alert__icon" role="presentation" alt="" />
+          </div>
+        }
         <div className="alert__text-container">
           {children ? children : bodyHtml}
           {links.length > 0 ? (
@@ -96,6 +99,7 @@ Alert.propTypes = {
       url: PropTypes.string,
     })
   ),
+  hideIcon: PropTypes.bool,
 };
 
 export default Alert;
