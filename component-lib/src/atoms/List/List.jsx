@@ -2,13 +2,30 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import { default as Link } from '../../atoms/Link';
+// import { default as Link } from '../../atoms/Link';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
  * Category: Lists
  */
+
+export const Link = ({ className, text, children, href, icon, iconPosition, target = '_self', ...rest }) => (
+  <a
+    className={classnames('link', {
+      [`link--with-icon link--${icon}`]: icon,
+      [`link--icon-${iconPosition}`]: icon && iconPosition,
+      [className]: className,
+    })}
+    href={href}
+    target={target}
+    {...rest}
+  >
+    {text}
+    {children}
+  </a>
+);
+
 const List = ({ children, className, wrapByThree, wrapByFour, black, ...rest }) => {
   // Determine css classes to use based on the children.
   const childrenArray = React.Children.toArray(children);
