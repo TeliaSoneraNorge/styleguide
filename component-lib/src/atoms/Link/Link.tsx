@@ -59,6 +59,11 @@ export interface CommonLinkProps {
   negative?: boolean;
 
   type?: 'link' | 'bubble-link';
+
+  /**
+   * ...rest are defined as any
+   */
+  [key: string]: any
 }
 
 export type LinkProps = (isLink | isBubbleLink) & CommonLinkProps;
@@ -123,6 +128,7 @@ export const Link = (props: LinkProps) => {
     {type === 'bubble-link' &&
       <a
         href={href}
+        target={target}
         {...rest}
         className={`bubble-link bubble-link--${iconColor}`}
       > 
