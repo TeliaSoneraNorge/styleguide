@@ -7,7 +7,9 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 /**
  * Status: *finished*
- * Category: Lists
+ * Category: FormElements
+ *
+ * Standard color is black. Labels used with TextBoxWithLabel, TextAreaWithLabel and DropDownListWithLabel should appear on top of input element and be in grey color.
  */
 
 export const Link = ({ className, text, children, href, icon, iconPosition, target = '_self', ...rest }) => (

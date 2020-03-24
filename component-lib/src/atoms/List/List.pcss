@@ -39,16 +39,18 @@
     }
 
     &__item, li {
-        background: transparent url('{{assetPath}}/icons-legacy/ico_check.svg') no-repeat left 0.5rem;
-        background-size: 0.875rem 0.875rem;
-        padding: 0.25rem 0 0.25rem 1.25rem;
+        background: transparent url('{{assetPath}}/icons/check-mark.svg') no-repeat left 0.5rem;
+        background-size: 1.2rem 1.2rem;
+        padding: .4rem 0rem 0rem 1.5rem;
     }
 
     &__link {
         border-bottom: none;
         color: var(--black);
-        padding: 0.325rem 0.25rem 0.325rem 1.25rem;
+        padding: 0 0 0 1.7rem;
         text-decoration: none;
+        position: relative;
+        top: .15rem;
         font-family: 'Helvetica Neue Medium';
 
         &:hover {
@@ -68,7 +70,7 @@
         .list__item, li {
             font-family: 'Helvetica Neue Medium';
 
-            background-image: url('{{assetPath}}/icons-legacy/ico_linkarrow_purple.svg');
+            background-image: url('{{assetPath}}/icons-legacy/arrow-right-purple.svg');
             padding: 0.25rem 0 0.25rem 0;
         }
     }
@@ -86,7 +88,7 @@
             }
         }
         .list__item {
-            background-image: url('{{assetPath}}/icons-legacy/ico_linkarrow.svg');
+            background-image: url('{{assetPath}}/icons/arrow-right.svg');
         }
     }
 

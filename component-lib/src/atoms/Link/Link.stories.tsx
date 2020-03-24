@@ -83,7 +83,7 @@ export const BubbleLink = () => (
   </>
 );
 
-export const DeprecatedIcons = () => (
+export const DeprecatedIconNames = () => (
   <>
     <Link href="#" icon="back-icon" iconPosition="before">
       Link with icon before

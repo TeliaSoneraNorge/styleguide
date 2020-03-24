@@ -1,9 +1,20 @@
 import React from 'react';
 import List from './List';
+import { Link as TeliaLink } from '../../index'
 
 export default {
   title: 'Component library|Atoms/List',
   component: List,
+};
+
+
+export const Warning = () => {
+  return (
+    <h4 style={{ color: 'red'}}>
+      List component are not deprecated yet, but we advice not to use them!<br/>
+      For list accessibility use this refrence: <a href="https://www.w3.org/WAI/tutorials/page-structure/content/#lists" target="_blank">W3 List Structure</a>
+    </h4>
+  )
 };
 
 export const Default = () => {
@@ -64,6 +75,33 @@ export const WithLinks = () => {
         <Link href="#">Third link in list</Link>
       </Item>
     </List>
+  )
+};
+
+export const ListLinksAndNormalLinks = () => {
+  // import { List, Link as TeliaLink } from '@telia/styleguide/'
+  const { Item, Link } = List;
+
+  return (
+    <>
+    <TeliaLink href="#" icon="security" iconPosition="before">
+      Normal Link with icon before
+    </TeliaLink>
+    <br/>
+    <br/>
+
+    <List>
+      <Item>
+        <Link href="#">List Link First link in list</Link>
+      </Item>
+      <Item>
+        <Link href="#">List Link Second link in list</Link>
+      </Item>
+      <Item>
+        <Link href="#">List Link Third link in list</Link>
+      </Item>
+    </List>
+    </>
   )
 };
 
