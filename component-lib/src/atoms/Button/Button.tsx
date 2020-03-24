@@ -52,7 +52,7 @@ interface CommonButtonProps {
   /**
    * Additional classes.
    */
-  className?: any;
+  className?: string;
   /**
    * A button can change text while it is processing.
    */
@@ -106,14 +106,16 @@ const Button = (props: ButtonProps) => {
   
   return (
     <Tag
-      className={classnames('button', {
-        [`button--${kind}`]: !isDisabled && kind,
-        [`button--${size}`]: size,
-        [`button--margin-${margin}`]: margin,
-        'button--processing': isProcessing,
-        'button--disabled': isDisabled,
-        [className]: className,
-      })}
+      className={classnames('button',
+        {
+          [`button--${kind}`]: !isDisabled && kind,
+          [`button--${size}`]: size,
+          [`button--margin-${margin}`]: margin,
+          'button--processing': isProcessing,
+          'button--disabled': isDisabled,
+        },
+        className ? className : undefined
+      )}
       href={href ? href : undefined}
       onClick={onClick}
       disabled={isProcessing || isDisabled}
