@@ -90,42 +90,9 @@ export const Link = (props: LinkProps) => {
     if(props.icon === 'forward-icon') return icon = 'arrow-right';
     return icon = props.icon;
   }; checkForDeprecatedIcons();
-  
-  return (
-    <>
 
-    {type === 'link' && 
-      <a
-        className={cs(
-          negative ? 'link--negative' : 'link',
-          icon && iconColor !== 'white' ? 'link--icon' : '',
-          icon && iconColor === 'white' ? 'link--negative--icon' : '',
-          className ? className : undefined
-        )}
-        href={href}
-        target={target}
-        {...rest}
-      >
-        {icon && iconPosition === 'before' ? (
-          <Icon
-            icon={icon}
-            className={`link--icon--before link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
-          />
-        ) : null}
-
-        {text}
-        {children}
-
-        {icon && iconPosition === 'after' ? (
-          <Icon
-            icon={icon}
-            className={`link--icon--after link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
-          />
-        ) : null}
-      </a>
-    }
-
-    {type === 'bubble-link' &&
+  if (type === 'bubble-link') {
+    return (
       <a
         href={href}
         target={target}
@@ -141,8 +108,38 @@ export const Link = (props: LinkProps) => {
           </span>
         </div>
       </a>
-    }
-    </>
+    )
+  }
+  
+  return (
+    <a
+      className={cs(
+        negative ? 'link--negative' : 'link',
+        icon && iconColor !== 'white' ? 'link--icon' : '',
+        icon && iconColor === 'white' ? 'link--negative--icon' : '',
+        className ? className : undefined
+      )}
+      href={href}
+      target={target}
+      {...rest}
+    >
+      {icon && iconPosition === 'before' ? (
+        <Icon
+          icon={icon}
+          className={`link--icon--before link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
+        />
+      ) : null}
+
+      {text}
+      {children}
+
+      {icon && iconPosition === 'after' ? (
+        <Icon
+          icon={icon}
+          className={`link--icon--after link--${iconColor === 'white' ? 'negative--' : ''}icon--${iconColor}`}
+        />
+      ) : null}
+    </a>
   );
 };
 
