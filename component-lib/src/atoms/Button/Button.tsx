@@ -1,36 +1,39 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, CSSProperties } from 'react';
 import classnames from 'classnames';
 import { Icon, IconDefinition } from '../../index';
 
 
 
-interface isAButton {
-  /**
-   * you can define a component tag with one of these below.
-   * 'button' are default and is not necessary to define
-   */
+interface HTMLButtonProps {
   component?: 'button';
 }
 
-interface isALink {
+interface HTMLAElementProps {
   component?: 'link';
   href: string;
 }
 
-interface isADiv {
+interface HTMLDivElementProps {
   component?: 'div';
 }
 
 
 interface CommonButtonProps {
   /**
+   * you can define a component tag with one of these below.
+   * 'button' are default and is not necessary to define
+   */
+  component?: 'button' | 'link' | 'div';
+  /**
    * A button can have a text.
    */
   text?: string;
+
   /**
    * When defining component as 'link', href needs to be added
    */
   href?: string;
+
   /**
    * Look at Icon component for aviable icons to choose from
    */
@@ -72,13 +75,20 @@ interface CommonButtonProps {
    */
   children?: never;
 
+  style?: CSSProperties;
+
   /**
    * rest propeties are set to any
    */
-  [key: string]: any;
+  // [key: string]: any;
 }
 
-export type ButtonProps = (isAButton | isALink | isADiv) & CommonButtonProps
+export type ButtonProps = CommonButtonProps & (
+  HTMLButtonProps & ButtonHTMLAttributes<HTMLButtonElement> | 
+  HTMLAElementProps & AnchorHTMLAttributes<HTMLAnchorElement> | 
+  HTMLDivElementProps
+);
+
 
 /**
  * Status: *finished*.
@@ -99,10 +109,11 @@ const Button = (props: ButtonProps) => {
     isDisabled,
     type = 'button',
     margin,
+    style,
     ...rest
   } = props;
 
-  const Tag = component === 'link' ? 'a': component;
+  const Tag:any = component === 'link' ? 'a': component;
   
   return (
     <Tag
@@ -120,6 +131,7 @@ const Button = (props: ButtonProps) => {
       onClick={onClick}
       disabled={isProcessing || isDisabled}
       type={type}
+      style={style}
       {...rest}
     > 
       {icon && 

@@ -41,7 +41,7 @@ export const WithIcon = () => (
 
 export const AsLink = () => (
   <>
-    <Button component='link' href="#" text="Button with a tag" />
+    <Button component='link' href="#" text="Button with <a> tag" />
   </>
 );
 
