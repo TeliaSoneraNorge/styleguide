@@ -16,13 +16,13 @@ interface isLink {
   type?: 'link';
   /**
    * Choose between 'arrow-left' and 'arrow-right' icon.
-   * 
+   *
    * 'back-icon' & 'forward-icon' are  deprecated!
-   * 
+   *
    *  look on Icon component when using bubble-link
    */
   icon?: 'arrow-left' | 'arrow-right' | 'back-icon' | 'forward-icon';
-};
+}
 
 interface isBubbleLink {
   type?: 'bubble-link';
@@ -32,8 +32,8 @@ interface isBubbleLink {
 export interface CommonLinkProps {
   className?: string;
   /**
-    * The text to display in the component. We prefer to use `children` instead.
-    * @deprecated Use `children` instead.
+   * The text to display in the component. We prefer to use `children` instead.
+   * @deprecated Use `children` instead.
    */
   text?: React.ReactNode;
 
@@ -59,11 +59,12 @@ export interface CommonLinkProps {
   negative?: boolean;
 
   type?: 'link' | 'bubble-link';
+  inverted?: boolean;
 
   /**
    * ...rest are defined as any
    */
-  [key: string]: any
+  [key: string]: any;
 }
 
 export type LinkProps = (isLink | isBubbleLink) & CommonLinkProps;
@@ -79,6 +80,7 @@ export const Link = (props: LinkProps) => {
     negative,
     target = undefined,
     type = 'link',
+    inverted = false,
     ...rest
   } = props;
 
@@ -86,10 +88,11 @@ export const Link = (props: LinkProps) => {
 
   // Support for deprecated icons
   function checkForDeprecatedIcons(): string | undefined {
-    if(props.icon === 'back-icon') return icon = 'arrow-left';
-    if(props.icon === 'forward-icon') return icon = 'arrow-right';
-    return icon = props.icon;
-  }; checkForDeprecatedIcons();
+    if (props.icon === 'back-icon') return (icon = 'arrow-left');
+    if (props.icon === 'forward-icon') return (icon = 'arrow-right');
+    return (icon = props.icon);
+  }
+  checkForDeprecatedIcons();
 
   if (type === 'bubble-link') {
     return (
@@ -97,20 +100,26 @@ export const Link = (props: LinkProps) => {
         href={href}
         target={target}
         {...rest}
-        className={`bubble-link bubble-link--${iconColor}`}
-      > 
+        className={`bubble-link bubble-link--${iconColor}${inverted ? '-inverted' : ''}`}
+      >
         <div className="bubble-link--flex-container">
-          <span className={`bubble-link--icon-circle bubble-link--circle-background--${iconColor}`}>
-            <Icon icon={icon} className={`bubble-link--icon bubble-link--icon-color--${iconColor}`}/>
+          <span
+            className={`bubble-link--icon-circle 
+              bubble-link--circle-background--${iconColor}${
+              inverted ? '-inverted' : ''
+            }`}
+          >
+            <Icon
+              icon={icon}
+              className={`bubble-link--icon bubble-link--icon-color--${iconColor}${inverted ? '-inverted' : ''}`}
+            />
           </span>
-          <span className={`bubble-link--text`}>
-            {children}
-          </span>
+          <span className={`bubble-link--text`}>{children}</span>
         </div>
       </a>
-    )
+    );
   }
-  
+
   return (
     <a
       className={cs(

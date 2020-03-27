@@ -130,8 +130,18 @@
         background: var(--core-purple);
     }
 
+    &--circle-background--core-purple-inverted {
+        background: var(--white);
+        border: 1px solid var(--core-purple);
+    }
+
     &--circle-background--black {
         background: var(--black);
+    }
+
+    &--circle-background--black-inverted {
+        background: var(--white);
+        border: 1px solid var(--black);
     }
 
     &--circle-background--white {
@@ -147,6 +157,14 @@
         color: var(--white);
     }
 
+    &--icon-color--core-purple-inverted {
+        color: var(--core-purple);
+    }
+    
+    &--icon-color--black-inverted {
+        color: var(--black);
+    }
+
     &--icon-color--white {
         color: var(--core-purple);
     }
@@ -159,7 +177,9 @@
 }
 
 .bubble-link--core-purple,
-.bubble-link--black {
+.bubble-link--core-purple-inverted,
+.bubble-link--black,
+.bubble-link--black-inverted {
     color: var(--black);
 
     &:hover {
@@ -172,12 +192,17 @@
         outline: none;
 
         .bubble-link--circle-background--core-purple,
-        .bubble-link--circle-background--black {
+        .bubble-link--circle-background--core-purple-inverted,
+        .bubble-link--circle-background--black,
+        .bubble-link--circle-background--black-inverted {
             background: var(--white);
+            border: none;
         }
 
         .bubble-link--icon-color--core-purple, 
-        .bubble-link--icon-color--black {
+        .bubble-link--icon-color--core-purple-inverted, 
+        .bubble-link--icon-color--black,
+        .bubble-link--icon-color--black-inverted {
             color: var(--core-purple);
         }
     }

@@ -68,8 +68,18 @@ export const BubbleLink = () => (
     </Link>
     <br /><br />
 
+    <Link type="bubble-link" href="#" icon="play" inverted={true} >
+      Core-Purple BubbleLink Inverted
+    </Link>
+    <br /><br />
+
     <Link type="bubble-link" href="#" icon="settings" iconColor="black">
       Black BubbleLink
+    </Link>
+    <br /><br />
+    
+    <Link type="bubble-link" href="#" icon="settings" iconColor="black" inverted={true}>
+      Black BubbleLink Inverted
     </Link>
     <br /><br />
 
