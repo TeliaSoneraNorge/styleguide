@@ -140,8 +140,17 @@ ModalDialog.sizes = {
   large: 'large',
 };
 
+ModalDialog.kinds = {
+  normal: 'normal',
+  primary: 'primary',
+  cancel: 'cancel',
+  link: 'link',
+  inverted: 'inverted',
+  negative: 'negative',
+};
+
 ModalDialog.defaultProps = {
-  closeKind: Button.kinds.cancel,
+  closeKind: ModalDialog.kinds.cancel,
   size: ModalDialog.sizes.small,
 };
 
@@ -151,10 +160,10 @@ ModalDialog.propTypes = {
   children: PropTypes.node,
   onSubmit: PropTypes.func,
   submitText: PropTypes.string,
-  submitKind: PropTypes.oneOf(Object.values(Button.kinds)),
+  submitKind: PropTypes.oneOf(Object.values(ModalDialog.kinds)),
   onClose: PropTypes.func,
   closeText: PropTypes.string,
-  closeKind: PropTypes.oneOf(Object.values(Button.kinds)),
+  closeKind: PropTypes.oneOf(Object.values(ModalDialog.kinds)),
   standalone: PropTypes.bool,
   renderTo: PropTypes.any,
   headerElement: PropTypes.element,
