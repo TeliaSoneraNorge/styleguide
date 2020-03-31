@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.14
+- New Links & List
+
+## 1.33.13
+- New Button 
+
 ## 1.33.10
 - Added `hideIcon` prop to `Alert`.
 
