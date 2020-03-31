@@ -1,7 +1,5 @@
 import * as React from 'react';
 
-import { LinkProps } from '../Link';
-
 export interface ListProps {
   /**
    * Additional classes.
@@ -26,8 +24,8 @@ export interface ListProps {
 
 const List: React.FC<ListProps> & {
   Item: React.FC<React.HTMLProps<HTMLLIElement>>;
-  Link: React.FC<LinkProps>;
-  BubbleLink: React.FC<LinkProps & { iconName: string }>;
+  Link: React.FC<AnchorHTMLAttributes<HTMLAnchorElement>>;
+  BubbleLink: React.FC<AnchorHTMLAttributes<HTMLAnchorElement> & { iconName: string }>;
 };
 
 export default List;
