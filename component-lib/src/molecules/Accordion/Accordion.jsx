@@ -32,12 +32,12 @@ const Accordion = ({
   }
 
   return (
-    <section className={`accordion${isExpanded ? ' accordion--open' : ''}`} ref={accordionRef}>
+    <section id={`accordion-${id}`} className={`accordion${isExpanded ? ' accordion--open' : ''}`} ref={accordionRef}>
       <h3 className={`accordion__header${button ? ' accordion__header--with-button' : ''} heading heading--level-3`}>
         <button
           className="accordion__header-button"
           aria-expanded={isExpanded}
-          aria-controls={id}
+          aria-controls={`panel-${id}`}
           onClick={accordionHeaderClicked}
         >
           {icon && <SvgIcon className="accordion__icon" iconName={icon} title={iconTitle} />}
@@ -65,7 +65,7 @@ const Accordion = ({
           onClick={onButtonClick}
         />
       )}
-      <div className="accordion__panel rich-text" id={id}>
+      <div className="accordion__panel rich-text" id={`panel-${id}`}>
         {children}
       </div>
       {footer}
