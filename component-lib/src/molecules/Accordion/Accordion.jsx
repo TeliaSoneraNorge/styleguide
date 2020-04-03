@@ -26,6 +26,7 @@ const Accordion = ({
   onButtonClick,
   toggleIsExpanded,
   footer,
+  shouldAnimateHeaderButtonTextBox
 }) => {
   function accordionHeaderClicked() {
     toggleIsExpanded();
@@ -49,6 +50,7 @@ const Accordion = ({
           <div
             className={classnames('accordion__header-button--text-box', {
               'accordion__header-button--text-box-no-icon': !icon,
+              'accordion__header-button--text-box--animate': shouldAnimateHeaderButtonTextBox,
             })}
           >
             {title}
@@ -88,6 +90,7 @@ Accordion.propTypes = {
   onButtonClick: PropTypes.func,
   toggleIsExpanded: PropTypes.func,
   footer: PropTypes.node,
+  shouldAnimateHeaderButtonTextBox: PropTypes.bool
 };
 
 export default Accordion;

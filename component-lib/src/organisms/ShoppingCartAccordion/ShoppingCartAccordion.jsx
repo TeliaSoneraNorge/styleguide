@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import AccordionList from '../../molecules/AccordionList/AccordionList';
@@ -22,6 +22,17 @@ const ShoppingCartAccordion = ({
   shouldBeSticky,
   formatPrice,
 }) => {
+  const [shouldAnimateNumberOfCartItems, setShouldAnimateNumberOfCartItems] = useState(false)
+
+  useEffect(() => {
+    setShouldAnimateNumberOfCartItems(true)
+    setTimeout(() => setShouldAnimateNumberOfCartItems(false), 300)
+  }, [numberOfItemsInCart])
+
+  useEffect(() => {
+    setShouldAnimateNumberOfCartItems(false)
+  }, [])
+
   const accordionItems = [
     {
       id: 'shopping-cart',
@@ -57,6 +68,7 @@ const ShoppingCartAccordion = ({
         })}
         isExpandedAccordionIndex={isExpanded ? 0 : -1}
         toggleIsExpanded={() => toggleCart()}
+        shouldAnimateHeaderButtonTextBox={shouldAnimateNumberOfCartItems}
       />
     </div>
   );
