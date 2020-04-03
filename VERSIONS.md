@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.15
+- Added animation prop to `Accordion`.
+- Added top level id to `Accordion` element.
+
 ## 1.33.14
 - New Links & List
 
