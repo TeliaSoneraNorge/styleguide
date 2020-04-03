@@ -75,6 +75,14 @@
                         z-index: -1;
                     }
 
+                    &--animate {
+                        &:before {
+                            background-color: #ffb74a;
+                            animation-name: blinking-animation;
+                            animation-duration: 0.3s;
+                        }
+                }
+
                     .shopping-cart__accordion--has-double-digit-count& {
                         padding-left: 1rem;
 
@@ -164,4 +172,12 @@
             display: none;
         }
     }
+}
+
+@keyframes blinking-animation {
+    0% {background-color: #ffb74a}
+    25% {background-color: #feeacb}
+    50% {background-color: #ffb74a}
+    75% {background-color: #feeacb}
+    100% {background-color: #ffb74a}
 }
