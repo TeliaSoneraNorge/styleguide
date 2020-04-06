@@ -3,7 +3,20 @@ import cs from 'classnames';
 
 import {Icon} from '../../atoms/Icon';
 
-export const Checkbox: React.FC<any> = (props) => {
+type CheckboxProps = {
+    label: string,
+    checked: boolean,
+    onChange?: () => void,
+    hiddenLabel?: boolean,
+    id?: string,
+    controls?: string,
+    name?: string,
+    mixed?: boolean,
+    disabled?: boolean,
+    className?: string | any
+}
+
+export const Checkbox: React.FC<CheckboxProps> = (props) => {
     return (
         <label className="checkbox">
             <span className={cs({
@@ -19,12 +32,13 @@ export const Checkbox: React.FC<any> = (props) => {
                 name={props.name}
                 checked={props.checked}
                 disabled={props.disabled}
-                onChange={() => props.disabled ? null : props.onChange()}/>
+                onChange={props.onChange}/>
             <div className={cs({
                 "checkbox__icon-container": true,
                 "checkbox__icon-container--checked": props.mixed || props.checked,
                 "checkbox__icon-container--disabled": props.disabled,
-                "checkbox__icon-container--disabled-and-checked": props.disabled && (props.checked || props.mixed)
+                "checkbox__icon-container--disabled-and-checked": props.disabled && (props.checked || props.mixed),
+                [props.className]: props.className
                 })}>
                 <Icon icon="check-mark" className={cs({"checkbox__icon": true, "checkbox__icon--visible": props.checked })} />
                 <Icon icon="minus" className={cs({"checkbox__icon": true, "checkbox__icon--visible": !props.checked && props.mixed })} />

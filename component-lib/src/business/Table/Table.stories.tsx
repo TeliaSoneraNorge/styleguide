@@ -29,8 +29,10 @@ function reducer(oldState: typeof initialState, action: { type: String, payload:
         case "SET_SORTED_DATA": return { ...oldState, sortedData: action.payload };
         case "SELECT_ALL": return { ...oldState, selected: oldState.data.reduce((acc, elem) => [...acc, elem.subscription_id], []), allSelected: true };
         case "DESELECT_ALL": return { ...oldState, selected: [], allSelected: false };
-        case "SELECT_ROW": return { ...oldState, selected: [...oldState.selected, action.payload] };
         case "UNSELECT_ROW": return { ...oldState, selected: oldState.selected.filter((elem) => elem !== action.payload), allSelected: false };
+        case "SELECT_ROW":
+            const newSelected = [...oldState.selected, action.payload];
+            return { ...oldState, selected: newSelected, allSelected: oldState.data.reduce((acc, sub) => acc && newSelected.includes(sub.subscription_id), true) };
 
         case "SORT_COLUMN":
             const newSortKey = action.payload;

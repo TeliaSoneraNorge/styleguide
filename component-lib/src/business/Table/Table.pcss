@@ -1,5 +1,5 @@
 .data-table {
-    border: solid 1px var(--table-border-grey);
+    border: solid 1px var(--medium-light-grey);
     border-radius: .25rem;
     display: table;
 
@@ -7,7 +7,7 @@
         border-collapse: collapse;
         text-align: left;
         vertical-align: middle;
-        color: var(--table-body-text-grey);
+        color: var(--even-darker-grey);
     }
 
     &__icon {
@@ -17,11 +17,16 @@
         top: .16rem;
     }
 
+    &__checkbox {
+        align: center;
+        vertical-align: middle;
+    }
+
     &__row {
-        border-top: solid 1px var(--table-border-grey);
+        border-top: solid 1px var(--medium-light-grey);
 
         &:hover {
-            background-color: var(--table-border-grey);
+            background-color: var(--medium-light-grey);
         }
 
         &--header {
@@ -39,7 +44,7 @@
 
         &--header {
             height: 3.5rem;
-            color: var(--table-header-text-grey);
+            color: var(--medium-dark-grey);
         }
 
         &--sortable {
