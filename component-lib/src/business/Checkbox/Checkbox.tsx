@@ -27,10 +27,6 @@ type CheckboxProps = {
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
     return (
         <label className="checkbox">
-            <span className={cs({
-                "checkbox__label": true,
-                "checkbox__label--hidden": props.hiddenLabel
-            })}>{props.label}</span>
             <input
                 id={props.id}
                 aria-checked={'checked' in props && props.checked ? "true" : 'partial' in props && props.partial ? "mixed" : "false" }
@@ -51,6 +47,10 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
                 <Icon icon="check-mark" className={cs({"checkbox__icon": true, "checkbox__icon--visible": 'checked' in props && props.checked })} />
                 <Icon icon="minus" className={cs({"checkbox__icon": true, "checkbox__icon--visible": 'checked' in props && !props.checked && 'partial' in props && props.partial })} />
             </div>
+            <span className={cs({
+                "checkbox__label": true,
+                "checkbox__label--hidden": props.hiddenLabel
+            })}>{props.label}</span>
         </label>
     )
 }
