@@ -1,6 +1,27 @@
 .checkbox {
     &__checkbox {
-        display: none;
+        opacity: 0;
+        width: 0;
+        height: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    &__checkbox:focus + &__icon-container {
+        outline: 0;
+    }
+
+    &__checkbox:focus + &__icon-container:before {
+        content: " ";
+        display: inline-block;
+        width: 1px;
+        height: 1px;
+        border: 1rem solid var(--grey);
+        border-radius: 1rem;
+        position: absolute;
+        top: -.5rem;
+        left: -.5rem;
+        z-index: -100;
     }
 
     &__icon-container {
@@ -28,23 +49,6 @@
 
         &--disabled-and-checked {
             background-color: var(--dark-grey);
-        }
-
-        &:focus {
-            outline: 0;
-        }
-
-        &:focus:before {
-            content: " ";
-            display: inline-block;
-            width: 1px;
-            height: 1px;
-            border: 1rem solid var(--grey);
-            border-radius: 1rem;
-            position: absolute;
-            top: -.5rem;
-            left: -.5rem;
-            z-index: -100;
         }
 
         &:hover:before {
