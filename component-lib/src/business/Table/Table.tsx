@@ -125,7 +125,7 @@ export const Table: React.FC<TableProps> = (props) => {
                             <TableHeadCell>
                                 <Checkbox
                                     className="data-table__checkbox"
-                                    label={props.allSelected ? props.checkAllLabel || "Fjern alle rader" : props.uncheckAllLabel || "Velg alle rader"}
+                                    label={props.allSelected ? props.uncheckAllLabel || "Fjern alle rader" : props.checkAllLabel || "Velg alle rader"}
                                     hiddenLabel={true}
                                     checked={props.allSelected ? true : false}
                                     mixed={props.selected && props.selected.length > 0 && !props.allSelected}
