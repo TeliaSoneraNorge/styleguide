@@ -16,8 +16,8 @@ storiesOf('Business|Checkbox', module).add('default', () => {
                     <Checkbox checked={true} />
                 </li>
                 <li>
-                    Mixed <br />
-                    <Checkbox mixed={true} />
+                    Partial <br />
+                    <Checkbox partial={true} />
                 </li>
                 <li>
                     Disabled <br />
@@ -28,8 +28,8 @@ storiesOf('Business|Checkbox', module).add('default', () => {
                     <Checkbox checked={true} disabled={true} />
                 </li>
                 <li>
-                    Disabled and mixed <br />
-                    <Checkbox mixed={true} disabled={true} />
+                    Disabled and partial <br />
+                    <Checkbox partial={true} disabled={true} />
                 </li>
             </ul>
         </React.Fragment>

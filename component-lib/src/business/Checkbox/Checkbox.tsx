@@ -11,7 +11,7 @@ type CheckboxProps = {
     id?: string,
     controls?: string,
     name?: string,
-    mixed?: boolean,
+    partial?: boolean,
     disabled?: boolean,
     className?: string | any
 }
@@ -25,7 +25,7 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
             })}>{props.label}</span>
             <input
                 id={props.id}
-                aria-checked={props.checked ? "true" : props.mixed ? "mixed" : "false" }
+                aria-checked={props.checked ? "true" : props.partial ? "mixed" : "false" }
                 aria-controls={props.controls ? props.controls : ""}
                 className="checkbox__checkbox"
                 type="checkbox"
@@ -35,13 +35,13 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
                 onChange={props.onChange}/>
             <div className={cs({
                 "checkbox__icon-container": true,
-                "checkbox__icon-container--checked": props.mixed || props.checked,
+                "checkbox__icon-container--checked": props.partial || props.checked,
                 "checkbox__icon-container--disabled": props.disabled,
-                "checkbox__icon-container--disabled-and-checked": props.disabled && (props.checked || props.mixed),
+                "checkbox__icon-container--disabled-and-checked": props.disabled && (props.checked || props.partial),
                 [props.className]: props.className
                 })}>
                 <Icon icon="check-mark" className={cs({"checkbox__icon": true, "checkbox__icon--visible": props.checked })} />
-                <Icon icon="minus" className={cs({"checkbox__icon": true, "checkbox__icon--visible": !props.checked && props.mixed })} />
+                <Icon icon="minus" className={cs({"checkbox__icon": true, "checkbox__icon--visible": !props.checked && props.partial })} />
             </div>
         </label>
     )

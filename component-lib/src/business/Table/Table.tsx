@@ -128,7 +128,7 @@ export const Table: React.FC<TableProps> = (props) => {
                                     label={props.allSelected ? props.uncheckAllLabel || "Fjern alle rader" : props.checkAllLabel || "Velg alle rader"}
                                     hiddenLabel={true}
                                     checked={props.allSelected ? true : false}
-                                    mixed={props.selected && props.selected.length > 0 && !props.allSelected}
+                                    partial={props.selected && props.selected.length > 0 && !props.allSelected}
                                     controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(" ")}
                                     onChange={props.onSelectAll} />
                             </TableHeadCell>}
