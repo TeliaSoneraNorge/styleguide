@@ -57,7 +57,7 @@ type TableHeadCellProps = {
     onClick?: () => void
 }
 
-const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
+export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
     const { children } = props;
 
     return (
@@ -75,7 +75,7 @@ type SortedTableHeadCellProps = {
     rightAligned?: boolean,
     onClick: () => void
 }
-const SortedTableHeadCell: React.FC<SortedTableHeadCellProps> = (props) => {
+export const SortedTableHeadCell: React.FC<SortedTableHeadCellProps> = (props) => {
     return (
         <TableHeadCell onClick={props.onClick} sortable={true} rightAligned={props.rightAligned}>
             {props.children}&nbsp;
@@ -93,7 +93,8 @@ type TableHeading = {
 }
 
 type TableProps = {
-    headings: Array<TableHeading>,
+    headerCells?: React.ReactNode,
+    headings?: Array<TableHeading>,
 
     // Required for sorting columns
     onClickColumnHeader?: (columnId: string | number) => void,
@@ -115,40 +116,41 @@ type TableProps = {
 const UniqueIdContext = React.createContext<any>({ uniqueId: "styleguide-table" });
 
 export const Table: React.FC<TableProps> = (props) => {
-    const uniqueId = `table-${Math.round(Math.random()*10000)}`;
+    const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
     return (
         <UniqueIdContext.Provider value={{ uniqueId }}>
-        <span className="data-table">
-            <table className="data-table__table">
-                <thead>
-                    <tr className="data-table__row data-table__row--header">
-                        {props.selected &&
-                            <TableHeadCell>
-                                <Checkbox
-                                    className="data-table__checkbox"
-                                    label={props.allSelected ? props.uncheckAllLabel || "Fjern alle rader" : props.checkAllLabel || "Velg alle rader"}
-                                    hiddenLabel={true}
-                                    checked={props.allSelected ? true : false}
-                                    partial={props.selected && props.selected.length > 0 && !props.allSelected}
-                                    controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(" ")}
-                                    onChange={props.onSelectAll} />
-                            </TableHeadCell>}
-                        {_.map(props.headings, ({ id, label, rightAligned }) =>
-                            props.sortedColumnId ?
-                                <SortedTableHeadCell
-                                    key={id}
-                                    rightAligned={rightAligned}
-                                    sortDirection={props.sortedColumnId === id ? props.sortedColumnDirection : "NONE"}
-                                    onClick={() => props.onClickColumnHeader && props.onClickColumnHeader(id)}>{label}</SortedTableHeadCell> :
-                                <TableHeadCell key={id} rightAligned={rightAligned}>{label}</TableHeadCell>)}
-                    </tr>
-                </thead>
-                <tbody>
-                    {props.children}
-                </tbody>
-            </table>
-            {props.paging && <div className="data-table__paging">{props.paging}</div>}
-        </span>
+            <span className="data-table">
+                <table className="data-table__table">
+                    <thead>
+                        {props.headings ?
+                            <tr className="data-table__row data-table__row--header">
+                                {props.selected &&
+                                    <TableHeadCell>
+                                        <Checkbox
+                                            className="data-table__checkbox"
+                                            label={props.allSelected ? props.uncheckAllLabel || "Fjern alle rader" : props.checkAllLabel || "Velg alle rader"}
+                                            hiddenLabel={true}
+                                            checked={props.allSelected ? true : false}
+                                            partial={props.selected && props.selected.length > 0 && !props.allSelected}
+                                            controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(" ")}
+                                            onChange={props.onSelectAll} />
+                                    </TableHeadCell>}
+                                {_.map(props.headings, ({ id, label, rightAligned }) =>
+                                    props.sortedColumnId ?
+                                        <SortedTableHeadCell
+                                            key={id}
+                                            rightAligned={rightAligned}
+                                            sortDirection={props.sortedColumnId === id ? props.sortedColumnDirection : "NONE"}
+                                            onClick={() => props.onClickColumnHeader && props.onClickColumnHeader(id)}>{label}</SortedTableHeadCell> :
+                                        <TableHeadCell key={id} rightAligned={rightAligned}>{label}</TableHeadCell>)}
+                            </tr> : props.headerCells}
+                    </thead>
+                    <tbody>
+                        {props.children}
+                    </tbody>
+                </table>
+                {props.paging && <div className="data-table__paging">{props.paging}</div>}
+            </span>
         </UniqueIdContext.Provider>
     )
 }
