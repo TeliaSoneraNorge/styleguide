@@ -9,7 +9,7 @@ export type SortDirection = "ASC" | "DESC" | "NONE";
 
 type TableBodyCellProps = {
     rightAligned?: boolean,
-    onClick?: () => void
+    onClick?: (e?: React.MouseEvent<HTMLTableDataCellElement>) => void
 }
 
 export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
@@ -24,19 +24,23 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
 }
 
 type TableBodyRowProps = {
-    onSelect?: () => void,
-    selected?: boolean,
-    selectId?: string,
-    checkboxLabel?: string,
     onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void
-}
+} & (
+    | {
+        onSelect: (e?: React.MouseEvent<HTMLInputElement>) => void,
+        selected: boolean,
+        selectId: string,
+        checkboxLabel: string,
+    }
+    | {}
+)
 
 export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
     const { uniqueId } = React.useContext(UniqueIdContext);
 
     return (
         <tr className="data-table__row" onClick={props.onClickRow}>
-            {props.onSelect &&
+            {'onSelect' in props &&
                 <TableBodyCell>
                     <Checkbox
                         className="data-table__checkbox"
@@ -52,10 +56,14 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
 }
 
 type TableHeadCellProps = {
-    sortable?: boolean,
     rightAligned?: boolean,
-    onClick?: () => void
-}
+} & (
+    | {
+        sortDirection: "ASC" | "DESC" | "NONE" | undefined,
+        onClick: (e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void
+    }
+    | {}
+)
 
 export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
     const { children } = props;
@@ -64,25 +72,19 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
         <th className={cs({
             "data-table__cell": true,
             "data-table__cell--header": true,
-            "data-table__cell--sortable": props.sortable,
+            "data-table__cell--sortable": 'onClick' in props,
             "data-table__cell--right-aligned": props.rightAligned
-        })} onClick={props.onClick}>{children}</th>
-    )
-}
-
-type SortedTableHeadCellProps = {
-    sortDirection: SortDirection | undefined,
-    rightAligned?: boolean,
-    onClick: () => void
-}
-export const SortedTableHeadCell: React.FC<SortedTableHeadCellProps> = (props) => {
-    return (
-        <TableHeadCell onClick={props.onClick} sortable={true} rightAligned={props.rightAligned}>
-            {props.children}&nbsp;
-            {props.sortDirection === "ASC" ? <Icon icon="arrow-small-up" className="data-table__icon" /> : null}
-            {props.sortDirection === "DESC" ? <Icon icon="arrow-small-down" className="data-table__icon" /> : null}
-            {props.sortDirection === "NONE" ? "" : null}
-        </TableHeadCell>
+        })} onClick={'onClick' in props ? props.onClick : undefined} onKeyDown={'onClick' in props ? (e: React.KeyboardEvent) => {
+            if(e.keyCode === 32 || e.keyCode === 13) {
+                e.preventDefault();
+                props.onClick();
+            }
+        } : undefined} role={'onClick' in props ? "button" : undefined} tabIndex={'sortable' in props ? 0 : 1}>
+            {children}
+            {'onClick' in props && props.sortDirection && props.sortDirection !== "NONE" && " "}
+            {'onClick' in props && props.sortDirection === "ASC" && <Icon icon="arrow-small-up" className="data-table__icon" />}
+            {'onClick' in props && props.sortDirection === "DESC" && <Icon icon="arrow-small-down" className="data-table__icon" />}
+        </th>
     )
 }
 
@@ -93,27 +95,29 @@ type TableHeading = {
 }
 
 type TableProps = {
-    headerCells?: React.ReactNode,
-    headings?: Array<TableHeading>,
-
-    // Required for sorting columns
-    onClickColumnHeader?: (columnId: string | number) => void,
-    sortedColumnId?: string | number,
-    sortedColumnDirection?: SortDirection,
-
-    // Required for "select all" functionality
-    selected?: Array<String | number>,
-    onSelectAll?: () => void,
-    allSelected?: boolean,
-
-    // Optional for "select all" functionality
-    checkAllLabel?: string,
-    uncheckAllLabel?: string,
-
     paging?: React.ReactNode
-}
+} & (
+    | { headerCells: React.ReactNode }
+    | { headings: Array<TableHeading> }
+) & (
+    | {
+        selected: Array<String | number>,
+        allSelected: boolean,
+        onSelectAll: (e?: React.MouseEvent<HTMLInputElement>) => void,
+        checkAllLabel?: string,
+        uncheckAllLabel?: string,
+    }
+    | { }
+) & (
+    | {
+        onClickColumnHeader: (columnId: string | number, e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void,
+        sortedColumnId: string | number,
+        sortedColumnDirection: SortDirection,
+    }
+    | { }
+)
 
-const UniqueIdContext = React.createContext<any>({ uniqueId: "styleguide-table" });
+const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: "styleguide-table" });
 
 export const Table: React.FC<TableProps> = (props) => {
     const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
@@ -122,9 +126,9 @@ export const Table: React.FC<TableProps> = (props) => {
             <span className="data-table">
                 <table className="data-table__table">
                     <thead>
-                        {props.headings ?
+                        {'headings' in props ?
                             <tr className="data-table__row data-table__row--header">
-                                {props.selected &&
+                                {'selected' in props &&
                                     <TableHeadCell>
                                         <Checkbox
                                             className="data-table__checkbox"
@@ -136,12 +140,12 @@ export const Table: React.FC<TableProps> = (props) => {
                                             onChange={props.onSelectAll} />
                                     </TableHeadCell>}
                                 {_.map(props.headings, ({ id, label, rightAligned }) =>
-                                    props.sortedColumnId ?
-                                        <SortedTableHeadCell
+                                    'onClickColumnHeader' in props ?
+                                        <TableHeadCell
                                             key={id}
                                             rightAligned={rightAligned}
                                             sortDirection={props.sortedColumnId === id ? props.sortedColumnDirection : "NONE"}
-                                            onClick={() => props.onClickColumnHeader && props.onClickColumnHeader(id)}>{label}</SortedTableHeadCell> :
+                                            onClick={(e) => props.onClickColumnHeader(id, e)}>{label}</TableHeadCell> :
                                         <TableHeadCell key={id} rightAligned={rightAligned}>{label}</TableHeadCell>)}
                             </tr> : props.headerCells}
                     </thead>
@@ -155,13 +159,28 @@ export const Table: React.FC<TableProps> = (props) => {
     )
 }
 
+type TablePagingControlsProps = {
+    from: number,
+    to: number,
+    perPage: number,
+    dataLength: number,
+    page: number,
+    maxPage: number,
 
-export const TablePagingControls: React.FC<any> = (props) => {
+    onPerPageChange: (perPage: number, e?: React.ChangeEvent<HTMLSelectElement>) => void,
+    onPageChange: (page: number, e?: React.MouseEvent<HTMLButtonElement>) => void,
+
+    fromToString?: string,
+    perPageString?: string,
+    selectOptions?: Array<number>
+}
+
+export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) => {
     return (
         <form onSubmit={(e) => e.preventDefault()} className="table-paging">
             <label className="table-paging__text">
                 {props.perPageString || "Rader per side: "}
-                <select value={props.perPage} onChange={(e) => props.onPerPageChange(parseInt(e.target.value))} className="table-paging__per-page">
+                <select value={props.perPage} onChange={(e) => props.onPerPageChange(parseInt(e.target.value), e)} className="table-paging__per-page">
                     {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => <option value={option} key={key}>{option}</option>)}
                 </select>
             </label>
@@ -170,11 +189,11 @@ export const TablePagingControls: React.FC<any> = (props) => {
             </span>
             <button disabled={props.page === 1} aria-label="Forrige side" className="table-paging__button" onClick={(e) => {
                 e.preventDefault();
-                props.onPageChange(props.page - 1);
+                props.onPageChange(props.page - 1, e);
             }}><Icon icon="arrow-left" className="data-table__icon" /></button>
             <button disabled={props.page === props.maxPage} aria-label="Neste side" className="table-paging__button" onClick={(e) => {
                 e.preventDefault();
-                props.onPageChange(props.page + 1);
+                props.onPageChange(props.page + 1, e);
             }}><Icon icon="arrow-right" className="data-table__icon" /></button>
         </form>
     )

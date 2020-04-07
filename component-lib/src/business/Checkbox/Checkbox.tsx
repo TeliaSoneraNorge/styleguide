@@ -5,16 +5,24 @@ import {Icon} from '../../atoms/Icon';
 
 type CheckboxProps = {
     label: string,
-    checked: boolean,
-    onChange?: () => void,
     hiddenLabel?: boolean,
     id?: string,
-    controls?: string,
     name?: string,
-    partial?: boolean,
     disabled?: boolean,
     className?: string | any
-}
+} & (
+    | {
+        checked: boolean,
+        onChange: () => void,
+    }
+    | {}
+) & (
+    | {
+        controls: string,
+        partial: boolean,
+    }
+    | {}
+)
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
     return (
@@ -25,23 +33,23 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
             })}>{props.label}</span>
             <input
                 id={props.id}
-                aria-checked={props.checked ? "true" : props.partial ? "mixed" : "false" }
-                aria-controls={props.controls ? props.controls : ""}
+                aria-checked={'checked' in props && props.checked ? "true" : 'partial' in props && props.partial ? "mixed" : "false" }
+                aria-controls={'controls' in props && props.controls ? props.controls : ""}
                 className="checkbox__checkbox"
                 type="checkbox"
                 name={props.name}
-                checked={props.checked}
+                checked={'checked' in props && props.checked}
                 disabled={props.disabled}
-                onChange={props.onChange}/>
+                onChange={'checked' in props ? props.onChange : undefined}/>
             <div className={cs({
                 "checkbox__icon-container": true,
-                "checkbox__icon-container--checked": props.partial || props.checked,
+                "checkbox__icon-container--checked": 'partial' in props && props.partial || 'checked' in props && props.checked,
                 "checkbox__icon-container--disabled": props.disabled,
-                "checkbox__icon-container--disabled-and-checked": props.disabled && (props.checked || props.partial),
+                "checkbox__icon-container--disabled-and-checked": props.disabled && ('checked' in props && props.checked || 'partial' in props && props.partial),
                 [props.className]: props.className
                 })}>
-                <Icon icon="check-mark" className={cs({"checkbox__icon": true, "checkbox__icon--visible": props.checked })} />
-                <Icon icon="minus" className={cs({"checkbox__icon": true, "checkbox__icon--visible": !props.checked && props.partial })} />
+                <Icon icon="check-mark" className={cs({"checkbox__icon": true, "checkbox__icon--visible": 'checked' in props && props.checked })} />
+                <Icon icon="minus" className={cs({"checkbox__icon": true, "checkbox__icon--visible": 'checked' in props && !props.checked && 'partial' in props && props.partial })} />
             </div>
         </label>
     )
