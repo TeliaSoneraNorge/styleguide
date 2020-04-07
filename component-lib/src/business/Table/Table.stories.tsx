@@ -167,6 +167,114 @@ export const WithPaging = () => {
     </React.Fragment>)
 };
 
+export const WithClickableRows = () => {
+    const [state, dispatch] = React.useReducer(reducer, initialState);
+
+    React.useEffect(() => {
+        dispatch({ type: "SET_DATA", payload: { data: state.sortedData.slice(state.currentFrom, state.currentTo+1) } })
+    }, [ state.currentFrom, state.currentTo, state.sortedData ])
+
+    return (<React.Fragment>
+        <Table headings={[
+            { id: "formal_name",
+              label: "Navn",
+              rightAligned: false  },
+            { id: "subscription_id",
+              label: "Telefonnummer",
+              rightAligned: true  },
+            { id: "account_id",
+              label: "Avdelingsnummer",
+              rightAligned: true  },
+            { id: "account_name",
+              label: "Avdeling",
+              rightAligned: false  },
+            { id: "resource_type",
+              label: "Enhetstype",
+              rightAligned: false  },
+            { id: "subscription_type",
+              label: "Abonnement",
+              rightAligned: false  }
+        ]}
+            paging={<TablePagingControls
+                from={state.currentFrom + 1}
+                to={state.currentTo + 1}
+                dataLength={subscribers.length}
+                perPage={state.currentPerPage}
+                page={state.currentPage}
+                maxPage={Math.ceil(subscribers.length / state.currentPerPage)}
+                onPageChange={(page: number) => dispatch({ type: "SET_PAGE", payload: page })}
+                onPerPageChange={(perPage: number) => dispatch({ type: "SET_PER_PAGE", payload: perPage })}
+            />}
+        >
+            {state.data.map((subscriber: any, index: number) =>
+                <TableBodyRow
+                    onClickRow={() => console.log("You clicked row", index)}
+                    key={subscriber.subscription_id}>
+                        {flow(
+                            pick([ "formal_name", "subscription_id", "account_id", "account_name", "resource_type", "subscription_type" ]),
+                            map((field: any) =>
+                                <TableBodyCell key={Math.ceil(Math.random()*1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>{field ? field.toString() : ""}</TableBodyCell>),
+                        )(subscriber)}
+                </TableBodyRow>)}
+        </Table>
+
+    </React.Fragment>)
+};
+
+export const WithClickableRowsAndCells = () => {
+    const [state, dispatch] = React.useReducer(reducer, initialState);
+
+    React.useEffect(() => {
+        dispatch({ type: "SET_DATA", payload: { data: state.sortedData.slice(state.currentFrom, state.currentTo+1) } })
+    }, [ state.currentFrom, state.currentTo, state.sortedData ])
+
+    return (<React.Fragment>
+        <Table headings={[
+            { id: "formal_name",
+              label: "Navn",
+              rightAligned: false  },
+            { id: "subscription_id",
+              label: "Telefonnummer",
+              rightAligned: true  },
+            { id: "account_id",
+              label: "Avdelingsnummer",
+              rightAligned: true  },
+            { id: "account_name",
+              label: "Avdeling",
+              rightAligned: false  },
+            { id: "resource_type",
+              label: "Enhetstype",
+              rightAligned: false  },
+            { id: "subscription_type",
+              label: "Abonnement",
+              rightAligned: false  }
+        ]}
+            paging={<TablePagingControls
+                from={state.currentFrom + 1}
+                to={state.currentTo + 1}
+                dataLength={subscribers.length}
+                perPage={state.currentPerPage}
+                page={state.currentPage}
+                maxPage={Math.ceil(subscribers.length / state.currentPerPage)}
+                onPageChange={(page: number) => dispatch({ type: "SET_PAGE", payload: page })}
+                onPerPageChange={(perPage: number) => dispatch({ type: "SET_PER_PAGE", payload: perPage })}
+            />}
+        >
+            {state.data.map((subscriber: any, index: number) =>
+                <TableBodyRow
+                    onClickRow={() => console.log("You clicked row", index)}
+                    key={subscriber.subscription_id}>
+                        {flow(
+                            pick([ "formal_name", "subscription_id", "account_id", "account_name", "resource_type", "subscription_type" ]),
+                            map((field: any) =>
+                                <TableBodyCell key={Math.ceil(Math.random()*1000000)} onClick={() => console.log("You clicked cell with data", field ? field.toString() : "")} rightAligned={!Number.isNaN(parseFloat(field))}>{field ? field.toString() : ""}</TableBodyCell>),
+                        )(subscriber)}
+                </TableBodyRow>)}
+        </Table>
+
+    </React.Fragment>)
+};
+
 export const Selectable = () => {
     const [state, dispatch] = React.useReducer(reducer, initialState);
 

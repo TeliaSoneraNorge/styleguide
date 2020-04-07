@@ -5,8 +5,6 @@ import _ from 'lodash';
 import { Icon } from '../../atoms/Icon';
 import { Checkbox } from '../Checkbox';
 
-export type SortDirection = "ASC" | "DESC" | "NONE";
-
 type TableBodyCellProps = {
     rightAligned?: boolean,
     onClick?: (e?: React.MouseEvent<HTMLTableDataCellElement>) => void
@@ -16,30 +14,52 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
     const { children } = props;
 
     return (
-        <td onClick={props.onClick} className={cs({
-            "data-table__cell": true,
-            "data-table__cell--right-aligned": props.rightAligned
-        })}>{children}</td>
+        <td onClick={props.onClick ? (e) => {
+                e.stopPropagation();
+                props.onClick && props.onClick();
+            } : undefined}
+            role={props.onClick ? "button" : undefined}
+            onKeyDown={props.onClick ? (e) => {
+                e.stopPropagation();
+                if (e.keyCode === 32 || e.keyCode === 13) {
+                    e.preventDefault();
+                    props.onClick && props.onClick();
+                }
+            } : undefined}
+            tabIndex={props.onClick ? 0 : undefined}
+            className={cs({
+                "data-table__cell": true,
+                "data-table__cell--right-aligned": props.rightAligned
+            })}>{children}</td>
     )
 }
 
 type TableBodyRowProps = {
     onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void
 } & (
-    | {
-        onSelect: (e?: React.MouseEvent<HTMLInputElement>) => void,
-        selected: boolean,
-        selectId: string,
-        checkboxLabel: string,
-    }
-    | {}
-)
+        | {
+            onSelect: (e?: React.MouseEvent<HTMLInputElement>) => void,
+            selected: boolean,
+            selectId: string,
+            checkboxLabel: string,
+        }
+        | {}
+    )
 
 export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
     const { uniqueId } = React.useContext(UniqueIdContext);
 
     return (
-        <tr className="data-table__row" onClick={props.onClickRow}>
+        <tr className="data-table__row"
+            onClick={props.onClickRow}
+            role={props.onClickRow ? "button" : undefined}
+            onKeyDown={(e) => {
+                if (e.keyCode === 32 || e.keyCode === 13) {
+                    e.preventDefault();
+                    props.onClickRow && props.onClickRow();
+                }
+            }}
+            tabIndex={props.onClickRow ? 0 : undefined}>
             {'onSelect' in props &&
                 <TableBodyCell>
                     <Checkbox
@@ -58,12 +78,12 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
 type TableHeadCellProps = {
     rightAligned?: boolean,
 } & (
-    | {
-        sortDirection: "ASC" | "DESC" | "NONE" | undefined,
-        onClick: (e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void
-    }
-    | {}
-)
+        | {
+            sortDirection: "ASC" | "DESC" | "NONE",
+            onClick: (e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void
+        }
+        | {}
+    )
 
 export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
     const { children } = props;
@@ -75,11 +95,11 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
             "data-table__cell--sortable": 'onClick' in props,
             "data-table__cell--right-aligned": props.rightAligned
         })} onClick={'onClick' in props ? props.onClick : undefined} onKeyDown={'onClick' in props ? (e: React.KeyboardEvent) => {
-            if(e.keyCode === 32 || e.keyCode === 13) {
+            if (e.keyCode === 32 || e.keyCode === 13) {
                 e.preventDefault();
                 props.onClick();
             }
-        } : undefined} role={'onClick' in props ? "button" : undefined} tabIndex={'sortable' in props ? 0 : 1}>
+        } : undefined} role={'onClick' in props ? "button" : undefined} tabIndex={'onClick' in props ? 0 : undefined}>
             {children}
             {'onClick' in props && props.sortDirection && props.sortDirection !== "NONE" && " "}
             {'onClick' in props && props.sortDirection === "ASC" && <Icon icon="arrow-small-up" className="data-table__icon" />}
@@ -97,25 +117,25 @@ type TableHeading = {
 type TableProps = {
     paging?: React.ReactNode
 } & (
-    | { headerCells: React.ReactNode }
-    | { headings: Array<TableHeading> }
-) & (
-    | {
-        selected: Array<String | number>,
-        allSelected: boolean,
-        onSelectAll: (e?: React.MouseEvent<HTMLInputElement>) => void,
-        checkAllLabel?: string,
-        uncheckAllLabel?: string,
-    }
-    | { }
-) & (
-    | {
-        onClickColumnHeader: (columnId: string | number, e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void,
-        sortedColumnId: string | number,
-        sortedColumnDirection: SortDirection,
-    }
-    | { }
-)
+        | { headerCells: React.ReactNode }
+        | { headings: Array<TableHeading> }
+    ) & (
+        | {
+            selected: Array<String | number>,
+            allSelected: boolean,
+            onSelectAll: (e?: React.MouseEvent<HTMLInputElement>) => void,
+            checkAllLabel?: string,
+            uncheckAllLabel?: string,
+        }
+        | {}
+    ) & (
+        | {
+            onClickColumnHeader: (columnId: string | number, e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void,
+            sortedColumnId: string | number,
+            sortedColumnDirection: "ASC" | "DESC" | "NONE",
+        }
+        | {}
+    )
 
 const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: "styleguide-table" });
 
