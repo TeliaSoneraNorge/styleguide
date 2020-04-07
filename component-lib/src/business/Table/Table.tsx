@@ -27,14 +27,15 @@ type TableBodyRowProps = {
     onSelect?: () => void,
     selected?: boolean,
     selectId?: string,
-    checkboxLabel?: string
+    checkboxLabel?: string,
+    onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void
 }
 
 export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
     const { uniqueId } = React.useContext(UniqueIdContext);
 
     return (
-        <tr className="data-table__row">
+        <tr className="data-table__row" onClick={props.onClickRow}>
             {props.onSelect &&
                 <TableBodyCell>
                     <Checkbox
