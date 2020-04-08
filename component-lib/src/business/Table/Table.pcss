@@ -1,0 +1,85 @@
+.data-table {
+    border: solid 1px var(--medium-light-grey);
+    border-radius: .25rem;
+    display: table;
+
+    &__table {
+        border-collapse: collapse;
+        text-align: left;
+        vertical-align: middle;
+        color: var(--even-darker-grey);
+    }
+
+    &__icon {
+        max-height: 1rem;
+        max-width: 1rem;
+        position: relative;
+        top: .16rem;
+    }
+
+    &__checkbox {
+        align: center;
+        vertical-align: middle;
+    }
+
+    &__row {
+        border-top: solid 1px var(--medium-light-grey);
+
+        &:hover {
+            background-color: var(--medium-light-grey);
+        }
+
+        &--header {
+            border-top: none;
+
+            &:hover {
+                background-color: inherit;
+            }
+        }
+    }
+
+    &__cell {
+        padding: 0 1rem;
+        height: 3.25rem;
+
+        &--header {
+            height: 3.5rem;
+            color: var(--medium-dark-grey);
+        }
+
+        &--sortable {
+            cursor: pointer;
+        }
+
+        &--right-aligned {
+            text-align: right;
+        }
+    }
+
+    &__paging {
+        height: 3.25rem;
+        text-align: right;
+        border-top: solid 1px var(--light-grey)
+    }
+}
+
+.table-paging {
+    padding-top: .7rem;
+    &__text {
+        margin: 0 1rem;
+
+    }
+
+    &__per-page {
+        border: none;
+        text-align: right;
+
+    }
+
+    &__button {
+        margin: 0 1rem;
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+    }
+}
