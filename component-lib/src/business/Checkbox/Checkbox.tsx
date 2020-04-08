@@ -13,7 +13,7 @@ type CheckboxProps = {
 } & (
     | {
         checked: boolean,
-        onChange: () => void,
+        onChange: (e?: React.ChangeEvent<HTMLInputElement>) => void,
     }
     | {}
 ) & (
