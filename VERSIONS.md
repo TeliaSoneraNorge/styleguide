@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.16
+- Added `Table` to business components
+- Added `Checkbox` to business components
+
 ## 1.33.15
 - Added animation prop to `Accordion`.
 - Added top level id to `Accordion` element.
@@ -23,7 +27,7 @@ Only noteworth
 - New Links & List
 
 ## 1.33.13
-- New Button 
+- New Button
 
 ## 1.33.10
 - Added `hideIcon` prop to `Alert`.
