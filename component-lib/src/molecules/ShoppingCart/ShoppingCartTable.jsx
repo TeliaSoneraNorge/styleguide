@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import _ from 'lodash';
 import PropTypes from 'prop-types';
 
-import { CART_ITEM_TYPE_SUBTILE, CART_ITEM_TYPE } from './index';
+import { CART_ITEM_TYPE } from './index';
 import ShoppingCartItem from './ShoppingCartItem';
 import ShoppingCartHeadings from './ShoppingCartTableHeadings';
 import ShoppingCartTableFooter from './ShoppingCartTableFooter';
@@ -17,7 +17,6 @@ const sortShoppingCart = item => {
     CONNECTED_DEVICE: 60,
     SUBSCRIPTION: 70,
     SPECIALPRODUCT: 71,
-    SUBSCRIPTION_EXISTING_MEMBER: 72,
     SUBSCRIPTION_DRAFT: 73,
     SIM: 80,
     NEW_NUMBER: 90,
@@ -50,7 +49,6 @@ const ShoppingCartTableGroup = ({
         <ShoppingCartItem
           cartItem={item}
           isSubItem={isSubItem}
-          isSubtile={CART_ITEM_TYPE_SUBTILE.includes(item.type)}
           isDraft={item.type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT}
           onChangeQuantity={onChangeQuantity}
           onRemoveItem={onRemoveItem}
@@ -76,7 +74,6 @@ const ShoppingCartTable = ({
   totalPriceUpfront,
   hasPaid,
   formatPrice,
-  additionalItems,
 }) => (
   <table className="shopping-cart__table" role="table">
     <ShoppingCartHeadings shouldShowQuantity={isAnyCartItemsQuantityModifiable} />
@@ -92,29 +89,6 @@ const ShoppingCartTable = ({
         formatPrice={formatPrice}
       />
     ))}
-    {_.size(additionalItems) > 0 && (
-      <>
-        <tbody>
-          <tr>
-            <td colSpan="4">
-              <hr className="shopping-cart__table__separation-line" />
-            </td>
-          </tr>
-        </tbody>
-        {additionalItems.map(item => (
-          <ShoppingCartTableGroup
-            cartItem={item}
-            key={`${item.id}-${item.bundleId}`}
-            item={item}
-            onChangeQuantity={onChangeQuantity}
-            onRemoveItem={onRemoveItem}
-            hasPaid={hasPaid}
-            shouldShowQuantity={isAnyCartItemsQuantityModifiable}
-            formatPrice={formatPrice}
-          />
-        ))}
-      </>
-    )}
     <ShoppingCartTableFooter
       totalPriceMonthly={totalPriceMonthly}
       totalPriceUpfront={totalPriceUpfront}
@@ -135,7 +109,6 @@ ShoppingCartTable.propTypes = {
   totalPriceUpfront: PropTypes.number,
   hasPaid: PropTypes.bool,
   formatPrice: PropTypes.func,
-  additionalItems: PropTypes.array,
 };
 
 export default ShoppingCartTable;

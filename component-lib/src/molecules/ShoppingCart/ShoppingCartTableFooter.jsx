@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import ShoppingCartColumnHeading from './ShoppingCartColumnHeading';
 import ShoppingCartCell from './ShoppingCartCell';
 import ShoppingCartRow from './ShoppingCartRow';
+import cn from 'classnames';
 
-const ShoppingCartTableFooterRow = ({ label, price }) => (
-  <ShoppingCartRow className="shopping-cart__table__foot__row">
+const ShoppingCartTableFooterRow = ({ label, price, type }) => (
+  <ShoppingCartRow className={cn("shopping-cart__table__foot__row", {"shopping-cart__table__foot__row--monthly" : type === "MONTHLY" })}>
     <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
       {label}
     </ShoppingCartColumnHeading>
@@ -26,7 +27,7 @@ const ShoppingCartTableFooter = ({
   formatPrice,
 }) => (
   <tfoot className="shopping-cart__table__foot" role="rowgroup">
-    {!!totalPriceMonthly && <ShoppingCartTableFooterRow label="Pr. måned:" price={formatPrice(totalPriceMonthly)} />}
+    {!!totalPriceMonthly && <ShoppingCartTableFooterRow label="Pr. måned:" price={formatPrice(totalPriceMonthly)} type="MONTHLY" />}
     {!!totalPriceUpfront && hasPaid && (
       <ShoppingCartTableFooterRow label="Betalt:" price={formatPrice(totalPriceUpfront)} />
     )}

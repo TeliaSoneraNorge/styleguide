@@ -16,7 +16,7 @@ const SubscriptionOrServiceIcon = ({ amount, unit }) => (
   </div>
 );
 
-const CartItemImage = ({ image, isSubtile, isDraft }) => {
+const CartItemImage = ({ image, isDraft }) => {
   if (!image) {
     return <div className="shopping-cart__item__no-image__container"></div>;
   }
@@ -26,7 +26,6 @@ const CartItemImage = ({ image, isSubtile, isDraft }) => {
         (image.icon && (
           <Icon
             className={cn('shopping-cart__item__image', {
-              'shopping-cart__item__image--small': isSubtile,
               [`shopping-cart__item__image--${image.color || 'black'}`]: !isDraft,
               [`shopping-cart__item__image--dark-grey`]: isDraft,
             })}
@@ -64,7 +63,6 @@ const ShoppingCartItem = ({
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
-  isSubtile,
   formatPrice,
 }) => {
   const { id, leaseMonths, name, subtitle, price, discount, type, indent } = cartItem;
@@ -74,13 +72,13 @@ const ShoppingCartItem = ({
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
   const discountValueUpfront = _.get(discount, 'value.upfront', 0);
   const discountValueMonthly = _.get(discount, 'value.monthly', 0);
+  const hasGroupDiscount = _.get(discount, 'hasGroupDiscount', false);
   const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT;
 
   return (
     <ShoppingCartRow
       className={cn('shopping-cart__item', {
-        'shopping-cart__item__dashed': isSubtile || isDraft,
-        'shopping-cart__item__subtile': isSubtile,
+        'shopping-cart__item__dashed': isDraft,
       })}
       key={id}
     >
@@ -94,7 +92,7 @@ const ShoppingCartItem = ({
             'shopping-cart__item__name--subitem': isSubItem || indent,
           })}
         >
-          <CartItemImage image={cartItem.image} isSubtile={isSubtile} isDraft={isDraft} />
+          <CartItemImage image={cartItem.image} isDraft={isDraft} />
           <div className="shopping-cart__item__name__text__container">
             {name}
             {subtitle && (
@@ -147,7 +145,7 @@ const ShoppingCartItem = ({
             <span className="shopping-cart__item__price__number shopping-cart__item__price--discount">
               {getPrice(formatPrice, price, 0, 0, quantity)}
             </span>
-            {!isNaN(price.monthly) && <span className="shopping-cart__item__price--discount">/md.</span>}
+            {!isNaN(price.monthly) && <span className="shopping-cart__item__price--discount">/md.{hasGroupDiscount && "*"}</span>}
             <span className="shopping-cart__item__price__number">
               {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
             </span>
@@ -176,7 +174,6 @@ ShoppingCartItem.propTypes = {
   onRemoveItem: PropTypes.func,
   shouldShowQuantity: PropTypes.bool,
   hasPaid: PropTypes.bool,
-  isSubtile: PropTypes.bool,
   formatPrice: PropTypes.func,
 };
 

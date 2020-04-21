@@ -23,7 +23,6 @@ const ShoppingCart = ({
   formatPrice,
   hasPaid,
   disclaimers,
-  additionalItems,
 }) => {
   return (
     <div className="shopping-cart">
@@ -44,7 +43,6 @@ const ShoppingCart = ({
         formatPrice={formatPrice}
         hasPaid={hasPaid}
         totalPriceMonthly={totalPriceMonthly}
-        additionalItems={additionalItems}
       />
       {disclaimers}
       {onGoToCart && (
@@ -68,7 +66,6 @@ ShoppingCart.propTypes = {
   formatPrice: PropTypes.func,
   hasPaid: PropTypes.bool,
   disclaimers: PropTypes.node,
-  additionalItems: PropTypes.array,
 };
 
 export default ShoppingCart;
