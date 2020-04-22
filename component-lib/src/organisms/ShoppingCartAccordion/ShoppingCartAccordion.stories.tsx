@@ -556,57 +556,6 @@ const groupContent = [
   },
 ];
 
-const additionalItems = [
-  {
-    type: 'SUBSCRIPTION_EXISTING_MEMBER',
-    id: 'SMART_X',
-    bundleId: 'b53aaa',
-    name: 'Eksisterende Telia X i gruppen',
-    subtitle: 'Nummer: 404 50 494',
-    quantity: {
-      modifiable: false,
-      removable: false,
-      value: 1,
-    },
-    image: {
-      color: 'purple',
-      icon: 'ico_telia_x_group',
-    },
-    price: {
-      monthly: 579,
-    },
-    discount: {
-      value: {
-        monthly: 135,
-      },
-    },
-  },
-  {
-    type: 'SUBSCRIPTION_EXISTING_MEMBER',
-    id: 'SMART_X',
-    bundleId: 'b53aab',
-    name: 'Eksisterende Telia X i gruppen',
-    subtitle: 'Nummer: 413 18 281',
-    quantity: {
-      modifiable: false,
-      removable: false,
-      value: 1,
-    },
-    image: {
-      color: 'purple',
-      icon: 'ico_sim',
-    },
-    price: {
-      monthly: 579,
-    },
-    discount: {
-      value: {
-        monthly: 135,
-      },
-    },
-  },
-];
-
 function getCart(item) {
   switch (item) {
     case 'switch':
@@ -628,15 +577,6 @@ function getCart(item) {
   }
 }
 
-function getAdditionalItems(option) {
-  switch(option) {
-    case 'existingSubscriptions':
-      return additionalItems;
-    default:
-      return null
-  }
-}
-
 const Wrapper = ({
     numberOfItemsInCart,
     shouldHideOnDesktop,
@@ -646,7 +586,6 @@ const Wrapper = ({
     priceUpfront,
     priceFirstInvoice,
     itemToDisplay,
-    additionalItemsToDisplay
   }) => {
     const [isExpanded, setIsExpanded] = useState(false);
 
@@ -672,7 +611,6 @@ const Wrapper = ({
             onChangeQuantity={() => {}}
             onRemoveItem={() => {}}
             formatPrice={price => `${price},-`}
-            additionalItems={getAdditionalItems(additionalItemsToDisplay)}
           />
         </ShoppingCartAccordion>
       );
@@ -693,11 +631,6 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
   const shouldHideOnDesktop = boolean('Should hide on desktop', false);
   const shouldShowGoToCartButton = boolean('Should show go to cart button', true);
   const shouldBeSticky = boolean('Should be sticky', true);
-  const additionalItemsToDisplay = select(
-    'AdditionalItems',
-    ['existingSubscriptions', 'none'],
-    'existingSubscriptions'
-  )
   return (
     <Wrapper
         numberOfItemsInCart={numberOfItemsInCart}
@@ -708,7 +641,6 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
         priceUpfront={priceUpfront}
         priceFirstInvoice={priceFirstInvoice}
         itemToDisplay={itemToDisplay}
-        additionalItemsToDisplay={additionalItemsToDisplay}
     />
   );
 });

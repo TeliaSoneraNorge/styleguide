@@ -471,53 +471,6 @@ const mbbContent = [
 
 const groupContent = [
     {
-      type: 'SUBSCRIPTION_EXISTING_MEMBER',
-      id: 'SMART_X',
-      name: 'Eksisterende Telia X i gruppen',
-      subtitle: 'Nummer: 404 50 494',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1
-      },
-      image: {
-        color: 'purple',
-        icon: 'ico_telia_x_group'
-      },
-      price: {
-        monthly: 579
-      },
-      discount: {
-        value: {
-          monthly: 135
-        }
-      }
-    },
-    {
-      type: 'SUBSCRIPTION_EXISTING_MEMBER',
-      id: 'SMART_X',
-      name: 'Eksisterende Telia X i gruppen',
-      subtitle: 'Nummer: 413 18 281',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1
-      },
-      image: {
-        color: 'purple',
-        icon: 'ico_sim'
-      },
-      indent: true,
-      price: {
-        monthly: 579
-      },
-      discount: {
-        value: {
-          monthly: 135
-        }
-      }
-    },
-    {
       type: 'SUBSCRIPTION',
       id: 'SMART_X.REGULAR',
       bundleId: '29166a',
@@ -537,6 +490,7 @@ const groupContent = [
       subtitle: 'Nummer: 413 18 854',
       indent: true,
       discount: {
+        hasGroupDiscount: true,
         value: {
           monthly: 135
         }
@@ -562,6 +516,7 @@ const groupContent = [
       subtitle: 'Nummer: 413 20 853',
       indent: true,
       discount: {
+        hasGroupDiscount: true,
         value: {
           monthly: 135
         }
