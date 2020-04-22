@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.19
+- Changes to `ShoppingCart`. Removing prop `additionalItems` and some style changes.
+
 ## 1.33.16
 - Added `Table` to business components
 - Added `Checkbox` to business components
