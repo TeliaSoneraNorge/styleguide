@@ -5,6 +5,7 @@ import MenuTop from './MenuTop';
 import MenuContent from './MenuContent';
 import MobileMenu from './MobileMenu';
 import FocusTrap, { focusableElementsSelector } from '../../atoms/FocusTrap/FocusTrap';
+import Button from '../../atoms/Button/Button';
 
 /**
  * Status: *In progress*.
@@ -135,6 +136,8 @@ const Menu = ({
       {!onlyLogo && menuLinks && menuLinks.length > 1 && (
         <MenuTop activeIndex={activeIndex} menuLinks={menuLinks} LinkTemplate={LinkTemplate} />
       )}
+
+      <Button text="Default button" icon="map" />
 
       <MenuContent
         logo={{

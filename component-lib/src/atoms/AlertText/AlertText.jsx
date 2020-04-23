@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 import Heading from '../Heading';
+import Button from '../Button/Button';
 
 /**
  * Status: *finished*.
@@ -14,14 +15,17 @@ import Heading from '../Heading';
  * It's recommended to use this component with any heading component and only for short texts (for instance maximum five words).
  */
 const AlertText = ({ children, className, ...rest }) => (
-  <Heading
-    className={classnames('alert-text', {
-      [className]: className,
-    })}
-    level={2}
-    text={children}
-    {...rest}
-  />
+  <>
+    <Button text="Default button" icon="map" />
+    <Heading
+      className={classnames('alert-text', {
+        [className]: className,
+      })}
+      level={2}
+      text={children}
+      {...rest}
+    />
+  </>
 );
 
 export default AlertText;
