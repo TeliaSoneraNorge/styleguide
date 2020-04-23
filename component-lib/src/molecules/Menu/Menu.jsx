@@ -31,6 +31,7 @@ const Menu = ({
   myPageUrl,
   isLoading,
   onlyLogo,
+  dropDownMenu,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lastActiveMenuContentElement, setLastActiveMenuContentElement] = useState(undefined);
@@ -158,6 +159,7 @@ const Menu = ({
         myPageUrl={myPageUrl}
         isLoading={isLoading}
         onlyLogo={onlyLogo}
+        dropDownMenu={dropDownMenu}
       />
       {!onlyLogo && mobileMenuOpen && renderMobileMenu(FocusTrap, { as: 'div' })}
     </div>

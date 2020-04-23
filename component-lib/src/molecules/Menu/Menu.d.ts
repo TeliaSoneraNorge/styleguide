@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { MenuDropdownProps } from './MenuDropdown.d.ts'
 
 export interface MenuMenuLinks {
   heading?: {
@@ -32,8 +33,9 @@ export interface MenuProps {
   cartUrl?: string;
   isLoading?: boolean;
   onlyLogo?: boolean;
+  dropDownMenu?: MenuDropdownProps;
 }
 
-const Menu: React.FC<MenuProps>;
+export const Menu: React.FC<MenuProps>;
 
 export default Menu;

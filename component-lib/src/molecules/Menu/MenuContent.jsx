@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
+import MenuDropdown from './MenuDropdown';
+// import Button from '../../atoms/Button';
 
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
   <button
@@ -55,11 +57,18 @@ const LoginButton = ({ loginUrl, LinkTemplate }) => (
   </LinkTemplate>
 );
 
-const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
-  <LinkTemplate className="menu__mypage-button button button--small" url={myPageUrl}>
-    <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
-    min side
-  </LinkTemplate>
+const MyPageButton = ({ myPageUrl, LinkTemplate, dropDownMenu }) => (
+  <>
+    {!dropDownMenu && (
+      <LinkTemplate className="menu__mypage-button button button--small" url={myPageUrl}>
+        <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
+        min side
+      </LinkTemplate>
+    )}
+    {/* {dropDownMenu && 
+    <Button component='link' href="#" text="Button with <a> tag" />
+  } */}
+  </>
 );
 
 const MobileMenuButton = ({ onMenuToggle }) => (
@@ -93,7 +102,11 @@ const MenuContent = ({
   myPageUrl,
   isLoading,
   onlyLogo,
+  dropDownMenu,
 }) => {
+  const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(true);
+  const handleMenuDropdownVisibilty = () => setMenuDropdownVisibilty(!menuDropdownIsVisible);
+
   if (onlyLogo) {
     return (
       <div className="menu__content">
@@ -130,9 +143,18 @@ const MenuContent = ({
           />
         )}
         {loginUrl && !isLoggedIn && <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />}
-        {myPageUrl && isLoggedIn && <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />}
+        {myPageUrl && isLoggedIn && (
+          <MyPageButton
+            LinkTemplate={LinkTemplate}
+            myPageUrl={myPageUrl}
+            dropDownMenu={dropDownMenu}
+            onClick={handleMenuDropdownVisibilty}
+          />
+        )}
         <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
       </div>
+
+      {menuDropdownIsVisible && <MenuDropdown dropDownMenu={dropDownMenu} />}
     </div>
   );
 };
