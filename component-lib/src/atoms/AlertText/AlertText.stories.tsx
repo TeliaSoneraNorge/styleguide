@@ -6,4 +6,8 @@ export default {
   component: AlertText,
 };
 
-export const Default = () => <AlertText>Chat is closed</AlertText>;
+export const Default = () => {
+  console.log('AlertText', AlertText);
+
+  return <AlertText>Chat is closed</AlertText>;
+};
