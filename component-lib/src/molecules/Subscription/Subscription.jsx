@@ -157,7 +157,7 @@ const Features = ({ features, isBroadband, isExpanded }) => (
       )
     ) : null}
     {features.specialMessageText && <strong className="special-message">{features.specialMessageText}</strong>}
-    {isBroadband && (
+    {isExpanded && isBroadband && (
       <PriceTable productListWithPrice={features.productList} totalTextWithPrice={features.totalCalculation} />
     )}
     {isExpanded && features.button}
