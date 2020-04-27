@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.21
+- New Icon: check-mark-circle
+
 ## 1.33.19
 - Changes to `ShoppingCart`. Removing prop `additionalItems` and some style changes.
 
