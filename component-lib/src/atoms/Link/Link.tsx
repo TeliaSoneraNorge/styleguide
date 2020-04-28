@@ -128,6 +128,7 @@ export const Link = (props: LinkProps) => {
         icon && iconColor === 'white' ? 'link--negative--icon' : '',
         className ? className : undefined
       )}
+      style={!icon ? {padding: 0}: {}}
       href={href}
       target={target}
       {...rest}

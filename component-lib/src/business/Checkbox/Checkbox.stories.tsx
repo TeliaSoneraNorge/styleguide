@@ -5,7 +5,7 @@ import { withKnobs, text, boolean } from "@storybook/addon-knobs";
 
 export default {
     component: Checkbox,
-    title: "Business/Checkbox",
+    title: "Business|Checkbox",
     decorators: [withKnobs]
 }
 
