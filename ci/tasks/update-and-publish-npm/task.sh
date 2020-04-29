@@ -22,6 +22,7 @@ echo "Update component lib version:"
 cd component-lib
 npm version ${update_type} --no-git-tag
 
+npm run build:icons
 npm run build
 
 export NPM_TOKEN=${npm_token}
