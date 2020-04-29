@@ -15,6 +15,11 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.22
+- Storybook organizing sidebar
+- Link table border bottom removed
+- Link padding removal on links without icon
+
 ## 1.33.21
 - New Icon: check-mark-circle
 
