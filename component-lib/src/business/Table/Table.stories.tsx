@@ -7,7 +7,7 @@ import flow from 'lodash/fp/flow';
 
 export default {
     component: Table,
-    title: 'Business/Table'
+    title: 'Business|Table'
 }
 
 const subscribers = require('./sampledata.json');

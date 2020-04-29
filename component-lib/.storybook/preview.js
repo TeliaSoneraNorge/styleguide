@@ -27,8 +27,9 @@ addDecorator(s => (
  *
  */
 const chapterOrder = [
-  { name: 'Introduction', chapters: ['Home', 'Business'] },
+  { name: 'Introduction' },
   { name: 'Component library' },
+  { name: 'Examples' },
   { name: 'Business' },
 ];
 
