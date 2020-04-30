@@ -40,6 +40,7 @@ export type IconDefinition =
   | 'camera'
   | 'card-view'
   | 'chat'
+  | 'check-mark-circle'
   | 'check-mark'
   | 'child-boy'
   | 'child-girl'
@@ -206,6 +207,7 @@ export const availableIcons: IconDefinition[] = [
   'camera',
   'card-view',
   'chat',
+  'check-mark-circle',
   'check-mark',
   'child-boy',
   'child-girl',
@@ -511,6 +513,12 @@ export const IconSvg = {
     <path
       fillRule="evenodd"
       d="M52 10H24a8 8 0 0 0-8 8v8h-4a8 8 0 0 0-8 8v12a8 8 0 0 0 8 8h7.17l5.71 5.71a3 3 0 0 0 2.12.88 3 3 0 0 0 3-3V54h10a8 8 0 0 0 8-8v-8h4a8 8 0 0 0 8-8V18a8 8 0 0 0-8-8zm-8 36a4 4 0 0 1-4 4H26v5.17L20.83 50H12a4 4 0 0 1-4-4V34a4 4 0 0 1 4-4h4a8 8 0 0 0 8 8h6v3.59a3 3 0 0 0 5.12 2.12L40.83 38H44v8zm12-16a4 4 0 0 1-4 4H39.17L34 39.17V34H24a4 4 0 0 1-4-4V18a4 4 0 0 1 4-4h28a4 4 0 0 1 4 4v12z"
+    />
+  ),
+  'check-mark-circle': (
+    <path
+      fillRule="evenodd"
+      d="M32 6a26 26 0 0 1 26 26c0 14.36-11.64 26-26 26S6 46.36 6 32 17.64 6 32 6zm0 4c-12.15 0-22 9.85-22 22s9.85 22 22 22 22-9.85 22-22-9.85-22-22-22zm10.498 12.007a2 2 0 0 1 1.042 3.463L30.17 41.11a2 2 0 0 1-1.44.7h-.08a2 2 0 0 1-1.41-.58l-6.7-6.7a2.001 2.001 0 0 1 2.83-2.83l5.17 5.17 12-14a2 2 0 0 1 1.958-.863z"
     />
   ),
   'check-mark': (

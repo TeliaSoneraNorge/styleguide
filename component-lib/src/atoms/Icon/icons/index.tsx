@@ -34,6 +34,7 @@ export { CalendarIcon } from './CalendarIcon';
 export { CameraIcon } from './CameraIcon';
 export { CardViewIcon } from './CardViewIcon';
 export { ChatIcon } from './ChatIcon';
+export { CheckMarkCircleIcon } from './CheckMarkCircleIcon';
 export { CheckMarkIcon } from './CheckMarkIcon';
 export { ChildBoyIcon } from './ChildBoyIcon';
 export { ChildGirlIcon } from './ChildGirlIcon';
