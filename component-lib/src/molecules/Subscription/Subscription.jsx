@@ -21,7 +21,6 @@ const Subscription = ({
   price,
   priceInfo,
   additionalInfo,
-  allPricesLink,
   features,
   isStandalone,
   isBroadband,
@@ -33,6 +32,7 @@ const Subscription = ({
   children,
   isSelected,
   teaserFeatures,
+  extraDataAmount,
 }) => {
   const ref = useRef();
 
@@ -66,8 +66,23 @@ const Subscription = ({
       <section className="subscription__teaser">
         <div className="subscription__teaser-content">
           <h1 className="subscription__name">{name}</h1>
-          <span className="subscription__data-amount">{dataAmount}</span>
-          <span className="subscription__data-unit">{dataUnit}</span>
+          {extraDataAmount ? (
+            <>
+              <span className="subscription__data-amount">
+                {dataAmount}
+                <span className="subscription__data-unit--extra">GB</span>
+              </span>
+
+              <span className="subscription__data-amount--extra">+{extraDataAmount}GB</span>
+              <span className="subscription__data-label">EKSTRA PR/MD.</span>
+            </>
+          ) : (
+            <>
+              <span className="subscription__data-amount">{dataAmount}</span>
+              <span className="subscription__data-unit">{dataUnit}</span>
+            </>
+          )}
+
           <span className="subscription__price">{formatPrice(price)}</span>
           {priceInfo &&
             priceInfo.map(info => (
@@ -88,15 +103,6 @@ const Subscription = ({
               </div>
             ))}
         </div>
-        {allPricesLink && (
-          <div className="subscription__teaser-links">
-            <div>
-              <a href={allPricesLink.url} className="link" target="_self">
-                {allPricesLink.text}
-              </a>
-            </div>
-          </div>
-        )}
       </section>
       {features && <Subscription.Features features={features} isBroadband={isBroadband} isExpanded={isExpanded} />}
       {isExpanded && children && (
@@ -207,10 +213,6 @@ Subscription.propTypes = {
   additionalInfo: PropTypes.shape({
     routerPrice: PropTypes.string,
     binding: PropTypes.string,
-  }),
-  allPricesLink: PropTypes.shape({
-    url: PropTypes.string,
-    text: PropTypes.string,
   }),
   features: PropTypes.shape({
     speechBubbleText: PropTypes.string,

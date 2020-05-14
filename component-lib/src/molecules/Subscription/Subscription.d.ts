@@ -9,11 +9,6 @@ export interface SubscriptionAdditionalInfo {
   binding?: string;
 }
 
-export interface SubscriptionAllPricesLink {
-  url?: string;
-  text?: string;
-}
-
 export interface SubscriptionFeatures {
   speechBubbleText?: string;
   highlightedFeature?: {
@@ -49,11 +44,11 @@ export interface SubscriptionProps {
   id?: string;
   name?: string;
   dataAmount?: SubscriptionDataAmount;
+  extraDataAmount?: SubscriptionDataAmount;
   dataUnit?: string;
   price?: SubscriptionPrice;
   priceInfo?: string[];
   additionalInfo?: SubscriptionAdditionalInfo;
-  allPricesLink?: SubscriptionAllPricesLink;
   features?: SubscriptionFeatures;
   totalCalculation?: SubscriptionTotalCalculation;
   scrollToOnOpen?: boolean;
