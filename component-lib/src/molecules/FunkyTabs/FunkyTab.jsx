@@ -10,6 +10,14 @@ export default function FunkyTab({ element, isSelected, index, uniqueId, onSelec
     }
   }, [isSelected]);
 
+  function renderImage(src) {
+    if (!src) {
+      return <div className="funky-tabs__tab-no-image" />;
+    }
+
+    return <img className="funky-tabs__tab-image" src={src} />;
+  }
+
   return (
     <li
       key={element.props.heading}
@@ -29,7 +37,7 @@ export default function FunkyTab({ element, isSelected, index, uniqueId, onSelec
         href={element.props.url}
         onClick={e => onSelect(e, index, element.props.url, element.props.heading)}
       >
-        <img className="funky-tabs__tab-image" src={element.props.imagePath} />
+        {renderImage(element.props.imagePath)}
         <div className="funky-tabs__tab-text">
           <span className="link">{element.props.heading}</span>
         </div>
