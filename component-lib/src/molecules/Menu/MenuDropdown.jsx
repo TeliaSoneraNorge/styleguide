@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from '../../index';
 
 const MenuDropdown = props => {
-  const { dropDownMenu } = props;
+  const { dropDownMenu, isLoggedIn } = props;
   if (!dropDownMenu) return null;
 
   const [type, setType] = useState(dropDownMenu.type);
@@ -27,34 +27,43 @@ const MenuDropdown = props => {
 
       {type === 'B2C' && (
         <div className="menu__dropdown--links">
-          <Link type="bubble-link" href="#" icon="mobile" inverted={channel === 'mobile' ? false : true}>
-            Mobiltelefon
+          <Link type="bubble-link" href="#" icon="mobile" inverted={channel === 'mobil' ? false : true}>
+            <span style={{ marginLeft: '.5rem' }}>Mobil</span>
           </Link>
-          <br />
+          {/* 
+          ** WHEN LAUNCHING SPRINGSTAR, ACTIVATE THIS **
           <Link type="bubble-link" href="#" icon="wireless" inverted={channel === 'tv-internet' ? false : true}>
-            TV og internett
-          </Link>
+            <span style={{marginLeft: '.5rem'}}>TV og internett</span>
+          </Link> */}
         </div>
       )}
 
       {type === 'B2B' && (
         <div className="menu__dropdown--links">
           <Link type="bubble-link" href="#" icon="mobile" inverted={channel === 'min-bedrift' ? false : true}>
-            Min Bedrift
+            <span style={{ marginLeft: '.5rem' }}>Min Bedrift</span>
           </Link>
-          <br />
           <Link type="bubble-link" href="#" icon="wireless" inverted={channel === 'min-portal' ? false : true}>
-            Min Portal
+            <span style={{ marginLeft: '.5rem' }}>Min Portal</span>
           </Link>
-          <br />
-          <Link type="bubble-link" href="#" icon="support" inverted={channel === 'bedriftsnett' ? false : true}>
-            Bedriftsnett
+          <Link
+            type="bubble-link"
+            href="#"
+            icon="product-bedriftsnett"
+            inverted={channel === 'bedriftsnett' ? false : true}
+          >
+            <span style={{ marginLeft: '.5rem' }}>Bedriftsnett</span>
+          </Link>
+          <div style={{ marginBottom: '1rem' }}></div>
+          <Link href="#" icon="list-view" iconPosition="before" iconColor="black" style={{ paddingLeft: '.97rem' }}>
+            <span style={{ paddingLeft: '.8rem' }}>Andre portaler</span>
           </Link>
         </div>
       )}
 
       <div className="menu__dropdown--logout">
-        <Link href="#">Logg ut</Link>
+        {isLoggedIn && <p className="menu__dropdown--logout--not-logged-in">Logg ut</p>}
+        {!isLoggedIn && <Link href="#">Logg ut</Link>}
       </div>
     </div>
   );
