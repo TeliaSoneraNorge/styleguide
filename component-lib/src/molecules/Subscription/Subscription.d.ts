@@ -8,12 +8,10 @@ export interface SubscriptionAdditionalInfo {
   routerPrice?: string;
   binding?: string;
 }
-
 export interface SubscriptionAllPricesLink {
   url?: string;
   text?: string;
 }
-
 export interface SubscriptionFeatures {
   speechBubbleText?: string;
   highlightedFeature?: {
@@ -49,7 +47,9 @@ export interface SubscriptionProps {
   id?: string;
   name?: string;
   dataAmount?: SubscriptionDataAmount;
+  extraDataAmount?: SubscriptionDataAmount;
   dataUnit?: string;
+  extraDataUnit?: string;
   price?: SubscriptionPrice;
   priceInfo?: string[];
   additionalInfo?: SubscriptionAdditionalInfo;

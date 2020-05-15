@@ -33,6 +33,8 @@ const Subscription = ({
   children,
   isSelected,
   teaserFeatures,
+  extraDataAmount,
+  extraDataUnit,
 }) => {
   const ref = useRef();
 
@@ -66,8 +68,26 @@ const Subscription = ({
       <section className="subscription__teaser">
         <div className="subscription__teaser-content">
           <h1 className="subscription__name">{name}</h1>
-          <span className="subscription__data-amount">{dataAmount}</span>
-          <span className="subscription__data-unit">{dataUnit}</span>
+          {extraDataAmount && extraDataUnit ? (
+            <>
+              <span className="subscription__data-amount">
+                {dataAmount}
+                <span className="subscription__data-unit--extra">GB</span>
+              </span>
+
+              <span className="subscription__data-amount--extra">
+                +{extraDataAmount}
+                {extraDataUnit}
+              </span>
+              <span className="subscription__data-label">EKSTRA PR/MD.</span>
+            </>
+          ) : (
+            <>
+              <span className="subscription__data-amount">{dataAmount}</span>
+              <span className="subscription__data-unit">{dataUnit}</span>
+            </>
+          )}
+
           <span className="subscription__price">{formatPrice(price)}</span>
           {priceInfo &&
             priceInfo.map(info => (

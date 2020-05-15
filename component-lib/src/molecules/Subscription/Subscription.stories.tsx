@@ -16,10 +16,6 @@ export const StandaloneSubscription = () => (
     dataUnit="GB"
     price={249}
     priceInfo={['pr. md', 'Ingen bindingstid.']}
-    allPricesLink={{
-      url: '#',
-      text: 'Se alle priser',
-    }}
     color="green"
     isStandalone
   />
@@ -90,10 +86,6 @@ export const ShowingFeaturesAndSpeechBubble = () => {
     	  dataUnit="GB"
     	  price={699}
     	  priceInfo={['pr. md', 'Ingen bindingstid.']}
-    	  allPricesLink={{
-    	    url: '#',
-    	    text: 'Se alle priser',
-    	  }}
     	  color="blue"
     	  size="medium"
     	  features={features}
@@ -126,10 +118,6 @@ export const FullyExpandedAndNoSpeechBubble = () => {
       dataUnit="GB"
       price={399}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
-      allPricesLink={{
-        url: '#',
-        text: 'Se alle priser',
-      }}
       color="green"
       size="small"
       features={features}
@@ -193,10 +181,6 @@ export const FullyExpandedAndSpeechBubble = () => {
         dataUnit="GB"
         price={399}
         priceInfo={['pr. md', 'Ingen bindingstid.']}
-        allPricesLink={{
-          url: '#',
-          text: 'Se alle priser',
-        }}
         color="green"
         size="medium"
         features={features}
@@ -257,6 +241,10 @@ export const B2BCollapsed = () => {
       dataUnit="GB"
       price={699}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
+      allPricesLink={{
+        url: '#',
+        text: 'Se alle priser',
+      }}
       color="purple"
       size="small"
       highlightedFeature={feature}
@@ -547,10 +535,6 @@ export const ShowingTwoFeatures = () => {
       dataUnit="GB"
       price={579}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
-      allPricesLink={{
-        url: '#',
-        text: 'Se alle priser',
-      }}
       color="black"
       size="medium"
       features={features}
@@ -703,5 +687,39 @@ export const subscriptionWithSelect = () => {
           </div>
       ))}
     </Container>
+  );
+};
+
+export const subscriptionWithExtraData = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  const features = {
+    highlightedFeature: {
+      iconName: 'ico_music',
+      name: 'Music Freedom',
+    },
+    button: <Button text="Gå videre" kind="primary" onClick={() => {}} />,
+  };
+
+  return (
+    <div className="subscription__container">
+      <Subscription
+        name="SMART Total"
+        id="smartTotal2"
+        dataAmount={40}
+        dataUnit="GB"
+        price={699}
+        priceInfo={['pr. md', 'Ingen bindingstid.']}
+        color="blue"
+        size="medium"
+        features={features}
+        isShowingFeatures
+        isExpanded={isExpanded}
+        onSelect={() => setIsExpanded(true)}
+        onClose={() => setIsExpanded(false)}
+        extraDataAmount={5}
+        extraDataUnit="GB"
+      />
+    </div>
   );
 };
