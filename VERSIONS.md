@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.24
+- Changes to `Subscription`. Adding `extraDataAmount`, `extraDataUnit` props and always light gray teaser on expand.
+- Change to `FunkyTabs`. Added support for no image on tabs.
+
 ## 1.33.22
 - Storybook organizing sidebar
 - Link table border bottom removed
