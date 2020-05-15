@@ -241,6 +241,10 @@ export const B2BCollapsed = () => {
       dataUnit="GB"
       price={699}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
+      allPricesLink={{
+        url: '#',
+        text: 'Se alle priser',
+      }}
       color="purple"
       size="small"
       highlightedFeature={feature}
@@ -273,6 +277,10 @@ export const B2BCollapsedShowingFeaturesAndSpeechBubble = () => {
         dataUnit="GB"
         price={699}
         priceInfo={['pr. md', 'Ingen bindingstid.']}
+        allPricesLink={{
+          url: '#',
+          text: 'Se alle priser',
+        }}
         id="smart-bedrift-expanded"
         color="purple"
         size="medium"
@@ -306,6 +314,10 @@ export const B2BExpandedNoSpeechBubble = () => {
       dataUnit="GB"
       price={699}
       priceInfo={['pr. md', 'Ingen bindingstid.']}
+      allPricesLink={{
+        url: '#',
+        text: 'Se alle priser',
+      }}
       color="purple"
       size="medium"
       features={features}
@@ -706,6 +718,7 @@ export const subscriptionWithExtraData = () => {
         onSelect={() => setIsExpanded(true)}
         onClose={() => setIsExpanded(false)}
         extraDataAmount={5}
+        extraDataUnit="GB"
       />
     </div>
   );

@@ -36,7 +36,7 @@
         &--extra {
             display: block;
             font-size: 2rem;
-            color: var(--light-pink);
+            color: var(--pink2);
         }
     }
     &__data-unit {
@@ -52,7 +52,7 @@
     &__data-label {
         display: block;
         font-size: 0.8rem;
-        color: var(--light-pink);
+        color: var(--pink2);
         margin-top: -0.8rem;
     }
     &__price {
@@ -184,8 +184,11 @@
 .box--purple, .box--black, .box--pink, .box--light-orange, .box--green, .box--teal, .box--blue, .box--grey {
     &.box--is-expanded,
     &.subscription--is-standalone {
+        .subscription__teaser {
+            border: 3px solid var(--light-grey);
+        }
         .subscription__teaser-content {
-            background-color: var(--grey);
+            background-color: var(--light-grey);
         }
     }
 }
