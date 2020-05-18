@@ -98,6 +98,7 @@ export const NoImageFunkyTabs = () => {
       uniqueId="default-funky-tabs"
       onSelect={(e, index) => onFunkyTabSelect(e, index)}
       selectedIndex={funkyTabSelectedIndex}
+      noImages={true}
     >
       <FunkyTabs.TabPanel heading="Under 15 år" url="/tabs/under-15">
         <section className="container container--small rich-text">

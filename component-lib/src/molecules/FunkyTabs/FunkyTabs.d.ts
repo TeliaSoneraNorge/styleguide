@@ -4,6 +4,7 @@ export interface FunkyTabsProps {
   selectedIndex?: number;
   onSelect?: (...args: any[]) => any;
   uniqueId?: string;
+  noImages?: boolean;
 }
 
 const FunkyTabs: React.FC<FunkyTabsProps> & {

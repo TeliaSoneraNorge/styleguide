@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import classNames from 'classnames';
 
-export default function FunkyTab({ element, isSelected, index, uniqueId, onSelect }) {
+export default function FunkyTab({ element, isSelected, index, uniqueId, onSelect, noImages }) {
   const linkRef = useRef();
 
   useEffect(() => {
@@ -10,8 +10,8 @@ export default function FunkyTab({ element, isSelected, index, uniqueId, onSelec
     }
   }, [isSelected]);
 
-  function renderImage(src) {
-    if (!src) {
+  function renderImage(src, noImages) {
+    if (noImages) {
       return <div className="funky-tabs__tab-no-image" />;
     }
 
@@ -37,7 +37,7 @@ export default function FunkyTab({ element, isSelected, index, uniqueId, onSelec
         href={element.props.url}
         onClick={e => onSelect(e, index, element.props.url, element.props.heading)}
       >
-        {renderImage(element.props.imagePath)}
+        {renderImage(element.props.imagePath, noImages)}
         <div className="funky-tabs__tab-text">
           <span className="link">{element.props.heading}</span>
         </div>

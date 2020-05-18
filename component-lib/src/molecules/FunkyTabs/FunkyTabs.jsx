@@ -21,7 +21,7 @@ const DOWN_ARROW_KEY = 40;
  * changes to indicate to the user that he/she are looking at some new content.
  * </p>
  */
-const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
+const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect, noImages = false }) => {
   const selectedChild = children.find((_, index) => index === selectedIndex);
   const containerRef = useRef();
 
@@ -40,7 +40,11 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
 
   return (
     <div className="funky-tabs">
-      <ul className="funky-tabs__tabs" role="tablist" onKeyDown={handleKeyDown}>
+      <ul
+        className={classNames('funky-tabs__tabs', { 'funky-tabs__tabs--no-images': noImages })}
+        role="tablist"
+        onKeyDown={handleKeyDown}
+      >
         {children.map((element, index) => (
           <FunkyTab
             element={element}
@@ -49,6 +53,7 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
             uniqueId={uniqueId}
             key={element.props.heading}
             onSelect={onSelect}
+            noImages={noImages}
           />
         ))}
       </ul>
@@ -59,16 +64,20 @@ const FunkyTabs = ({ uniqueId, children, selectedIndex, onSelect }) => {
           uniqueId,
           isSelected: true,
           containerRef,
+          noImages,
         })}
     </div>
   );
 };
 
-const TabPanel = ({ index, uniqueId, isSelected, children, containerRef }) => (
+const TabPanel = ({ index, uniqueId, isSelected, children, containerRef, noImages }) => (
   <section
     tabIndex={-1}
     ref={containerRef}
-    className={classNames('funky-tabs__panel', { 'funky-tabs__panel--selected': isSelected })}
+    className={classNames('funky-tabs__panel', {
+      'funky-tabs__panel--selected': isSelected,
+      'funky-tabs__panel--no-images': noImages,
+    })}
     id={`${uniqueId}-panel-${index}`}
     aria-labelledby={`${uniqueId}-tab-${index}`}
     role="tabpanel"
@@ -85,6 +94,7 @@ FunkyTabs.TabPanel.propTypes = {
   isSelected: PropTypes.bool,
   heading: PropTypes.string,
   url: PropTypes.string,
+  noImages: PropTypes.bool,
   children: PropTypes.node,
 };
 
@@ -92,6 +102,7 @@ FunkyTabs.propTypes = {
   selectedIndex: PropTypes.number,
   onSelect: PropTypes.func,
   uniqueId: PropTypes.string,
+  noImages: PropTypes.bool,
 };
 
 FunkyTabs.defaultProps = {
