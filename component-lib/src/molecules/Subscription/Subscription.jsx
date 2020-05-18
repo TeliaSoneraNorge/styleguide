@@ -72,9 +72,8 @@ const Subscription = ({
             <>
               <span className="subscription__data-amount">
                 {dataAmount}
-                <span className="subscription__data-unit--extra">GB</span>
+                <span className="subscription__data-unit--extra">{dataUnit}</span>
               </span>
-
               <span className="subscription__data-amount--extra">
                 +{extraDataAmount}
                 {extraDataUnit}
