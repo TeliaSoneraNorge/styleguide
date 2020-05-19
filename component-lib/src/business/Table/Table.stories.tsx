@@ -12,7 +12,7 @@ export default {
 
 const subscribers = require('./sampledata.json');
 
-import { useTableState } from './tableHooks';
+import { useTableState } from './useTableState';
 
 const headings = [
     { id: "formal_name",
@@ -53,7 +53,7 @@ export const Standard = () => {
 };
 
 export const WithPaging = () => {
-    const [ state, { changePage, changePerPage } ] = useTableState({ paging: true, data: subscribers });
+    const [ state, { setPage, setPerPage } ] = useTableState({ paging: true, data: subscribers });
 
     return (<>
         <Table headings={headings}
@@ -62,8 +62,8 @@ export const WithPaging = () => {
                 to={state.to}
                 dataLength={subscribers.length}
                 perPage={state.perPage}
-                onPageChange={changePage}
-                onPerPageChange={changePerPage}
+                onPageChange={setPage}
+                onPerPageChange={setPerPage}
             />}
         >
             {state.data.slice(state.from, state.to).map((subscriber: any, index: number) =>
@@ -81,7 +81,7 @@ export const WithPaging = () => {
 };
 
 export const WithClickableRows = () => {
-    const [ state, { changePage, changePerPage } ] = useTableState({ data: subscribers });
+    const [ state, { setPage, setPerPage } ] = useTableState({ data: subscribers });
 
     return (<>
         <Table headings={headings}
@@ -90,8 +90,8 @@ export const WithClickableRows = () => {
                 to={state.to}
                 dataLength={subscribers.length}
                 perPage={state.perPage}
-                onPageChange={changePage}
-                onPerPageChange={changePerPage}
+                onPageChange={setPage}
+                onPerPageChange={setPerPage}
             />}
         >
             {state.data.slice(state.from, state.to).map((subscriber: any, index: number) =>
@@ -110,7 +110,7 @@ export const WithClickableRows = () => {
 };
 
 export const WithClickableRowsAndCells = () => {
-    const [ state, { changePage, changePerPage } ] = useTableState({ data: subscribers });
+    const [ state, { setPage, setPerPage } ] = useTableState({ data: subscribers });
 
     return (<>
         <Table headings={headings}
@@ -119,8 +119,8 @@ export const WithClickableRowsAndCells = () => {
                 to={state.to}
                 dataLength={subscribers.length}
                 perPage={state.perPage}
-                onPageChange={changePage}
-                onPerPageChange={changePerPage}
+                onPageChange={setPage}
+                onPerPageChange={setPerPage}
             />}
         >
             {state.data.slice(state.from, state.to).map((subscriber: any, index: number) =>
@@ -139,12 +139,12 @@ export const WithClickableRowsAndCells = () => {
 };
 
 export const Selectable = () => {
-    const [ state, { changePage, changePerPage, toggleAll, toggleRow } ] = useTableState({ data: subscribers, paging: true, selecting: true, selectionId: 'subscription_id' });
+    const [ state, { setPage, setPerPage, setSelectAll, setSelectRow } ] = useTableState({ data: subscribers, paging: true, selecting: true, selectionId: 'subscription_id' });
 
     return (<>
         <Table headings={headings}
 
-            onSelectAll={toggleAll}
+            onSelectAll={setSelectAll}
             allSelected={state.allSelected}
             selected={state.selectedRows}
             paging={<TablePagingControls
@@ -152,15 +152,15 @@ export const Selectable = () => {
                 to={state.to}
                 dataLength={subscribers.length}
                 perPage={state.perPage}
-                onPageChange={changePage}
-                onPerPageChange={changePerPage}
+                onPageChange={setPage}
+                onPerPageChange={setPerPage}
             />}
         >
             {state.data.slice(state.from, state.to).map((subscriber: any, index: number) =>
                 <TableBodyRow
                     selectId={subscriber.subscription_id}
                     key={subscriber.subscription_id}
-                    onSelect={() => toggleRow(subscriber.subscription_id)}
+                    onSelect={() => setSelectRow(subscriber.subscription_id)}
                     selected={state.selectedRows.includes(subscriber.subscription_id)}>
                         {flow(
                             pick([ "formal_name", "subscription_id", "account_id", "account_name", "resource_type", "subscription_type" ]),
@@ -174,20 +174,20 @@ export const Selectable = () => {
 };
 
 export const Sortable = () => {
-    const [ state, { changeSorting, changePage, changePerPage } ] = useTableState({ data: subscribers, paging: true, sorting: true, sortColumn: 'subscription_id' });
+    const [ state, { setSorting, setPage, setPerPage } ] = useTableState({ data: subscribers, paging: true, sorting: true, sortColumn: 'subscription_id' });
 
     return (<>
         <Table headings={headings}
             sortedColumnId={state.sortColumn}
             sortedColumnDirection={state.sortDirection}
-            onClickColumnHeader={(sortId) => changeSorting(sortId)}
+            onClickColumnHeader={(sortId) => setSorting(sortId)}
             paging={<TablePagingControls
                 from={state.from + 1}
                 to={state.to}
                 dataLength={subscribers.length}
                 perPage={state.perPage}
-                onPageChange={changePage}
-                onPerPageChange={changePerPage}
+                onPageChange={setPage}
+                onPerPageChange={setPerPage}
             />}
         >
             {state.data.slice(state.from, state.to).map((subscriber: any, index: number) =>
@@ -205,31 +205,31 @@ export const Sortable = () => {
 };
 
 export const SortableAndSelectable = () => {
-    const [ state, { changeSorting, changePage, changePerPage, toggleAll, toggleRow } ] = useTableState({ data: subscribers, paging: true, selecting: true, selectionId: 'subscription_id', sorting: true, sortColumn: 'subscription_id' });
+    const [ state, { setSorting, setPage, setPerPage, setSelectAll, setSelectRow } ] = useTableState({ data: subscribers, paging: true, selecting: true, selectionId: 'subscription_id', sorting: true, sortColumn: 'subscription_id' });
 
     return (<>
         <Table headings={headings}
-            onSelectAll={toggleAll}
+            onSelectAll={setSelectAll}
             allSelected={state.allSelected}
             selected={state.selectedRows}
             sortedColumnId={state.sortColumn}
             sortedColumnDirection={state.sortDirection}
-            onClickColumnHeader={(sortId) => changeSorting(sortId)}
+            onClickColumnHeader={(sortId) => setSorting(sortId)}
             paging={<TablePagingControls
                 from={state.from + 1}
                 to={state.to}
                 dataLength={subscribers.length}
                 perPage={state.perPage}
-                onPageChange={changePage}
-                onPerPageChange={changePerPage}
-                amountOfSelectedRows={state.selectedRows.length}
+                onPageChange={setPage}
+                onPerPageChange={setPerPage}
+                numberOfSelectedRows={state.selectedRows.length}
             />}
         >
             {state.data.slice(state.from, state.to).map((subscriber: any, index: number) =>
                 <TableBodyRow
                     selectId={subscriber.subscription_id}
                     key={subscriber.subscription_id}
-                    onSelect={() => toggleRow(subscriber.subscription_id)}
+                    onSelect={() => setSelectRow(subscriber.subscription_id)}
                     selected={state.selectedRows.includes(subscriber.subscription_id)}>
                         {flow(
                             pick([ "formal_name", "subscription_id", "account_id", "account_name", "resource_type", "subscription_type" ]),

@@ -240,25 +240,25 @@ type TablePagingControlsProps = {
   to: number;
   perPage: number;
   dataLength: number;
-  amountOfSelectedRows?: number;
-  selectedRowsString?: string
+  numberOfSelectedRows?: number;
+  selectedRowsLabel?: string
 
   onPerPageChange: (perPage: number, e?: React.ChangeEvent<HTMLSelectElement>) => void;
   onPageChange: (forward: boolean, e?: React.MouseEvent<HTMLButtonElement>) => void;
 
-  fromToString?: string;
-  perPageString?: string;
+  fromToLabel?: string;
+  perPageLabel?: string;
   selectOptions?: Array<number>;
 };
 
 export const TablePagingControls: React.FC<TablePagingControlsProps> = props => {
   return (
     <form onSubmit={e => e.preventDefault()} className="table-paging">
-        {props.amountOfSelectedRows ? <span className="table-paging__text">
-            {`${props.amountOfSelectedRows} ${props.selectedRowsString || "rader er valgt"}`}
+        {props.numberOfSelectedRows ? <span className="table-paging__text">
+            {`${props.numberOfSelectedRows} ${props.selectedRowsLabel || "rader er valgt"}`}
         </span> : null}
       <label className="table-paging__text">
-        {props.perPageString || 'Rader per side: '}
+        {props.perPageLabel || 'Rader per side: '}
         <select
           value={props.perPage}
           onChange={e => props.onPerPageChange(parseInt(e.target.value), e)}
@@ -272,7 +272,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = props => 
         </select>
       </label>
       <span className="table-paging__text">
-        {props.fromToString || `${props.from}-${props.to} av ${props.dataLength}`}
+        {props.fromToLabel || `${props.from}-${props.to} av ${props.dataLength}`}
       </span>
       <button
         disabled={props.from === 1}

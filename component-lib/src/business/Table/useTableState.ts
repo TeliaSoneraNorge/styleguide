@@ -18,11 +18,11 @@ interface TableState {
     paging: boolean
 }
 
-type changeSortingAction = (sortColumn: string | number) => void;
-type changePageAction = (forward: boolean) => void;
-type changePerPageAction = (perPage: number) => void;
-type toggleRowAction = (rowId: string | number) => void;
-type toggleAllAction = () => void;
+type setSortingAction = (sortColumn: string | number) => void;
+type setPageAction = (forward: boolean) => void;
+type setPerPageAction = (perPage: number) => void;
+type setSelectRowAction = (rowId: string | number) => void;
+type setSelectAllAction = () => void;
 
 type tableStateAction = {
     type: 'CHANGE_PAGE',
@@ -46,11 +46,11 @@ type tableStateAction = {
 type TableStateHookType = [
     TableState,
     {
-        changeSorting: changeSortingAction,
-        changePage: changePageAction,
-        changePerPage: changePerPageAction,
-        toggleRow: toggleRowAction,
-        toggleAll: toggleAllAction,
+        setSorting: setSortingAction,
+        setPage: setPageAction,
+        setPerPage: setPerPageAction,
+        setSelectRow: setSelectRowAction,
+        setSelectAll: setSelectAllAction,
         dispatch: React.Dispatch<tableStateAction>
     }
 ]
@@ -175,11 +175,11 @@ export function useTableState(args: TableStateArgs): TableStateHookType {
         dispatch({ type: "SET_DATA", data: args.data });
     }, [args.data])
 
-    const changeSorting: changeSortingAction = (sortColumn) => dispatch({ type: "SORT_COLUMN", sortColumn });
-    const changePage: changePageAction = (forward) => dispatch({ type: "CHANGE_PAGE", forward });
-    const changePerPage: changePerPageAction = (perPage) => dispatch({ type: "CHANGE_PER_PAGE", perPage });
-    const toggleRow: toggleRowAction = (id) => dispatch({ type: state.selectedRows.includes(id) ? 'DESELECT_ROW' : 'SELECT_ROW', id });
-    const toggleAll: toggleAllAction = () => dispatch({ type: state.allSelected ? 'DESELECT_ALL' : 'SELECT_ALL' });
+    const setSorting: setSortingAction = (sortColumn) => dispatch({ type: "SORT_COLUMN", sortColumn });
+    const setPage: setPageAction = (forward) => dispatch({ type: "CHANGE_PAGE", forward });
+    const setPerPage: setPerPageAction = (perPage) => dispatch({ type: "CHANGE_PER_PAGE", perPage });
+    const setSelectRow: setSelectRowAction = (id) => dispatch({ type: state.selectedRows.includes(id) ? 'DESELECT_ROW' : 'SELECT_ROW', id });
+    const setSelectAll: setSelectAllAction = () => dispatch({ type: state.allSelected ? 'DESELECT_ALL' : 'SELECT_ALL' });
 
-    return [state, { changeSorting, changePage, changePerPage, toggleRow, toggleAll, dispatch }];
+    return [state, { setSorting, setPage, setPerPage, setSelectRow, setSelectAll, dispatch }];
 }
