@@ -78,7 +78,6 @@ const Subscription = ({
                 +{extraDataAmount}
                 {extraDataUnit}
               </span>
-              <span className="subscription__data-label">EKSTRA PR/MD.</span>
             </>
           ) : (
             <>
