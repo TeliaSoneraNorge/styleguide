@@ -7,6 +7,7 @@ export interface ModalDialogProps {
   heading?: string;
   children?: React.ReactNode;
   onSubmit?: (...args: any[]) => any;
+  submitDisabled?: boolean;
   submitText?: string;
   submitKind?: ButtonKind;
   onClose?: (...args: any[]) => any;
