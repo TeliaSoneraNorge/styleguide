@@ -22,6 +22,7 @@ export default function ModalDialog({
   heading,
   children,
   onSubmit,
+  submitDisabled,
   submitText,
   submitKind,
   onClose,
@@ -89,7 +90,9 @@ export default function ModalDialog({
   );
   const defaultFooterElement = (
     <>
-      {submitText && onSubmit && <Button kind={submitKind} margin="top" onClick={onSubmit} text={submitText} />}
+      {submitText && onSubmit && (
+        <Button kind={submitKind} margin="top" onClick={onSubmit} text={submitText} isDisabled={submitDisabled} />
+      )}
       {closeText && onClose && <Button kind={closeKind} margin="top" onClick={onClose} text={closeText} />}
     </>
   );
@@ -159,6 +162,7 @@ ModalDialog.propTypes = {
   heading: PropTypes.string,
   children: PropTypes.node,
   onSubmit: PropTypes.func,
+  submitDisabled: PropTypes.bool,
   submitText: PropTypes.string,
   submitKind: PropTypes.oneOf(Object.values(ModalDialog.kinds)),
   onClose: PropTypes.func,
