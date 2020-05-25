@@ -188,7 +188,8 @@ export const LoggedInDropdownMenuB2C = () => {
       myPageUrl="#"
       dropDownMenu={{
         type: 'B2C', 
-        channel: 'mobil'
+        channel: 'mobil',
+        visible: false,
       }}
     />
   )

@@ -2,9 +2,10 @@ import * as React from 'react';
 
 export interface MenuDropdownProps {
   type: 'B2C' | 'B2B'; 
-  channel: 'mobile' | 'tv-internet' | 'min-bedrift' | 'min-portal' | 'bedriftsnett';
+  channel: 'mobil' | 'tv-internet' | 'min-bedrift' | 'min-portal' | 'bedriftsnett';
+  visible: boolean;
 }
 
-export const MenuDropdown: React.FC<{dropDownMenu: MenuDropdownProps}>;
+export const MenuDropdown: React.FC<{dropDownMenu: MenuDropdownProps, isLoggedIn?: boolean}>;
 
 export default MenuDropdown;

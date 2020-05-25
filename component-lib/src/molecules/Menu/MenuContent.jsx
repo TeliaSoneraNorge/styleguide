@@ -96,7 +96,7 @@ const MenuContent = ({
   onlyLogo,
   dropDownMenu,
 }) => {
-  const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(true);
+  const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(dropDownMenu.visible);
 
   const handleMenuDropdownVisibilty = () => {
     setMenuDropdownVisibilty(!menuDropdownIsVisible);
