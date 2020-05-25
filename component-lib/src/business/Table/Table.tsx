@@ -240,22 +240,25 @@ type TablePagingControlsProps = {
   to: number;
   perPage: number;
   dataLength: number;
-  page: number;
-  maxPage: number;
+  numberOfSelectedRows?: number;
+  selectedRowsLabel?: string
 
   onPerPageChange: (perPage: number, e?: React.ChangeEvent<HTMLSelectElement>) => void;
-  onPageChange: (page: number, e?: React.MouseEvent<HTMLButtonElement>) => void;
+  onPageChange: (forward: boolean, e?: React.MouseEvent<HTMLButtonElement>) => void;
 
-  fromToString?: string;
-  perPageString?: string;
+  fromToLabel?: string;
+  perPageLabel?: string;
   selectOptions?: Array<number>;
 };
 
 export const TablePagingControls: React.FC<TablePagingControlsProps> = props => {
   return (
     <form onSubmit={e => e.preventDefault()} className="table-paging">
+        {props.numberOfSelectedRows ? <span className="table-paging__text">
+            {`${props.numberOfSelectedRows} ${props.selectedRowsLabel || "rader er valgt"}`}
+        </span> : null}
       <label className="table-paging__text">
-        {props.perPageString || 'Rader per side: '}
+        {props.perPageLabel || 'Rader per side: '}
         <select
           value={props.perPage}
           onChange={e => props.onPerPageChange(parseInt(e.target.value), e)}
@@ -269,26 +272,26 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = props => 
         </select>
       </label>
       <span className="table-paging__text">
-        {props.fromToString || `${props.from}-${props.to} av ${props.dataLength}`}
+        {props.fromToLabel || `${props.from}-${props.to} av ${props.dataLength}`}
       </span>
       <button
-        disabled={props.page === 1}
+        disabled={props.from === 1}
         aria-label="Forrige side"
         className="table-paging__button"
         onClick={e => {
           e.preventDefault();
-          props.onPageChange(props.page - 1, e);
+          props.onPageChange(false, e);
         }}
       >
         <Icon icon="arrow-left" className="data-table__icon" />
       </button>
       <button
-        disabled={props.page === props.maxPage}
+        disabled={props.to === props.dataLength}
         aria-label="Neste side"
         className="table-paging__button"
         onClick={e => {
           e.preventDefault();
-          props.onPageChange(props.page + 1, e);
+          props.onPageChange(true, e);
         }}
       >
         <Icon icon="arrow-right" className="data-table__icon" />
