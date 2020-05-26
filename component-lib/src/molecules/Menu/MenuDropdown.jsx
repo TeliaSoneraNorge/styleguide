@@ -8,6 +8,14 @@ const MenuDropdown = props => {
   const [type, setType] = useState(dropDownMenu.type);
   const [channel] = useState(dropDownMenu.channel);
 
+  function checkEnv(host) {
+    if (host === 'stage.telia.no' || host === 'at-min-side.telia.no') return 'https://stage.telia.no/min-side/';
+    if (host === 'pt.stage.telia.no') return 'https://pt.stage.telia.no/min-side/';
+
+    return false;
+  }
+  const stageEnv = checkEnv(window.location.host);
+
   return (
     <div className="menu__dropdown">
       <div className="menu__dropdown--button">
@@ -29,7 +37,7 @@ const MenuDropdown = props => {
         <div className="menu__dropdown--links">
           <Link
             type="bubble-link"
-            href="https://www.telia.no/"
+            href={stageEnv ? stageEnv : 'https://www.telia.no/min-side/'}
             icon="mobile"
             inverted={channel === 'mobil' ? false : true}
           >
@@ -37,9 +45,14 @@ const MenuDropdown = props => {
           </Link>
 
           {/* ** WHEN LAUNCHING SPRINGSTAR, ACTIVATE THIS ** */}
-          <Link type="bubble-link" href="#" icon="wireless" inverted={channel === 'tv-internet' ? false : true}>
+          {/* <Link 
+            type="bubble-link"
+            href="FILL IN URL !!!"
+            icon="wireless"
+            inverted={channel === 'tv-internet' ? false : true}
+          >
             <span style={{ marginLeft: '.5rem' }}>TV og internett</span>
-          </Link>
+          </Link> */}
         </div>
       )}
 
@@ -76,7 +89,7 @@ const MenuDropdown = props => {
             icon="list-view"
             iconPosition="before"
             iconColor="black"
-            style={{ marginLeft: '2.28rem' }}
+            style={{ marginLeft: '2.25rem' }}
           >
             <span style={{ paddingLeft: '.8rem' }}>Andre portaler</span>
           </Link>
