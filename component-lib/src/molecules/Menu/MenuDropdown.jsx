@@ -76,7 +76,7 @@ const MenuDropdown = props => {
             icon="list-view"
             iconPosition="before"
             iconColor="black"
-            style={{ paddingLeft: '2.28rem' }}
+            style={{ marginLeft: '2.28rem' }}
           >
             <span style={{ paddingLeft: '.8rem' }}>Andre portaler</span>
           </Link>
