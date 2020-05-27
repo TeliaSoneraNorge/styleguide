@@ -189,7 +189,7 @@ export const LoggedInDropdownMenuB2C = () => {
       dropDownMenu={{
         type: 'B2C', 
         channel: 'mobil',
-        visible: false
+        visible: true
       }}
     />
   )
