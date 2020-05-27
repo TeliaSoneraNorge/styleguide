@@ -63,7 +63,7 @@ const MyPageButton = ({ myPageUrl, LinkTemplate, onClick, dropDownMenu }) => (
     url={!dropDownMenu ? myPageUrl : undefined}
   >
     <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
-    min side
+    mine sider
   </LinkTemplate>
 );
 
