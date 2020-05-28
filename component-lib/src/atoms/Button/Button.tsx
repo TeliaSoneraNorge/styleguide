@@ -1,6 +1,6 @@
 import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, CSSProperties } from 'react';
 import classnames from 'classnames';
-import { Icon, IconDefinition } from '../../index';
+import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
 export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
 export type ButtonType = 'button' | 'reset' | 'submit';

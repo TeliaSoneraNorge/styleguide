@@ -1,6 +1,6 @@
 import React from 'react';
 import cs from 'classnames';
-import { Icon, IconDefinition } from '../../index';
+import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
 /**
  * Status: *finished*.
@@ -104,7 +104,7 @@ export const Link = (props: LinkProps) => {
       >
         <div className="bubble-link--flex-container">
           <span
-            className={`bubble-link--icon-circle 
+            className={`bubble-link--icon-circle
               bubble-link--circle-background--${iconColor}${
               inverted ? '-inverted' : ''
             }`}
