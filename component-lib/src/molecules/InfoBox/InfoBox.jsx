@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Heading, colors } from '../../index';
+import Heading from '../../atoms/Heading/Heading';
+import { colors } from '../../utils/colors';
 
 /**
  * Status: *finished*.

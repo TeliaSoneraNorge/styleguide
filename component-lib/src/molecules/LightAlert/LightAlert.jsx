@@ -1,7 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import { Icon, Heading, colors } from '../../index';
+import { Icon } from '../../atoms/Icon/index';
+import Heading from '../../atoms/Heading/Heading';
+import { colors } from '../../utils/colors';
 
 /**
  * Status: *in progress*.
