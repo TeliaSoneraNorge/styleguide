@@ -4,12 +4,14 @@ export interface PriceTableProductListWithPrice {
   title: string;
   subtitles?: string[];
   price: string | number;
+  originalPrice?: string | number;
 }
 
 export interface PriceTableTotalTextWithPrice {
   title: string;
   subtitles?: string[];
   price: string | number;
+  originalPrice?: string | number;
 }
 
 export interface PriceTableProps {

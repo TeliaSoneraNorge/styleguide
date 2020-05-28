@@ -19,6 +19,9 @@ const PriceTable = ({ productListWithPrice, totalTextWithPrice, additionalLine }
                 </div>
               ))}
           </td>
+          {product.originalPrice && (
+            <td className="price-table__item-cell price-table__item-original-price">{product.originalPrice}</td>
+          )}
           <td className="price-table__item-cell price-table__item-price">{product.price}</td>
         </tr>
       ))}
