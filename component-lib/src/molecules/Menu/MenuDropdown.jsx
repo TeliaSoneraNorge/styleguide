@@ -2,11 +2,10 @@ import React, { useState } from 'react';
 import { Link } from '../../index';
 
 const MenuDropdown = props => {
-  const { dropDownMenu, isLoggedIn } = props;
-  if (!dropDownMenu) return null;
+  const { dropdownMenu, isLoggedIn } = props;
+  if (!dropdownMenu) return null;
 
-  const [type, setType] = useState(dropDownMenu.type);
-  const [channel] = useState(dropDownMenu.channel);
+  const [type, setType] = useState(dropdownMenu.type);
 
   function checkEnv(host) {
     if (host === 'stage.telia.no' || host === 'at-min-side.telia.no') return 'https://stage.telia.no/min-side/';
@@ -39,7 +38,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href={stageEnv ? stageEnv : 'https://www.telia.no/min-side/'}
             icon="mobile"
-            inverted={channel === 'mobil' ? false : true}
+            inverted={dropdownMenu.channel !== 'mobil' ? true : false}
           >
             <span style={{ marginLeft: '.5rem' }}>Mobil</span>
           </Link>
@@ -49,7 +48,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="FILL IN URL !!!"
             icon="wireless"
-            inverted={channel === 'tv-internet' ? false : true}
+            inverted={dropDownMenu.channel !== 'tv-internet' ? true : false}
           >
             <span style={{ marginLeft: '.5rem' }}>TV og internett</span>
           </Link> */}
@@ -62,7 +61,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="https://minbedrift.telia.no/"
             icon="mobile"
-            inverted={channel === 'min-bedrift' ? false : true}
+            inverted={dropdownMenu.channel !== 'min-bedrift' ? true : false}
           >
             <span style={{ marginLeft: '.5rem' }}>Min Bedrift</span>
           </Link>
@@ -70,7 +69,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="https://minportal.telia.no/"
             icon="wireless"
-            inverted={channel === 'min-portal' ? false : true}
+            inverted={dropdownMenu.channel !== 'min-portal' ? true : false}
           >
             <span style={{ marginLeft: '.5rem' }}>Min Portal</span>
           </Link>
@@ -78,7 +77,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="https://sb.telia.no/bn/login"
             icon="product-bedriftsnett"
-            inverted={channel === 'bedriftsnett' ? false : true}
+            inverted={dropdownMenu.channel !== 'bedriftsnett' ? true : false}
           >
             <span style={{ marginLeft: '.5rem' }}>Bedriftsnett</span>
           </Link>

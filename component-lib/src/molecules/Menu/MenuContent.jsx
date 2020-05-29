@@ -56,12 +56,15 @@ const LoginButton = ({ loginUrl, LinkTemplate }) => (
   </LinkTemplate>
 );
 
-const MyPageButton = ({ myPageUrl, LinkTemplate, onClick, dropDownMenu }) => (
-  <LinkTemplate
-    className="menu__mypage-button button button--small"
-    onClick={dropDownMenu ? onClick : undefined}
-    url={!dropDownMenu ? myPageUrl : undefined}
-  >
+const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
+  <LinkTemplate className="menu__mypage-button button button--small" url={myPageUrl}>
+    <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
+    min side
+  </LinkTemplate>
+);
+
+const MyAppsDropdown = ({ LinkTemplate, onClick }) => (
+  <LinkTemplate className="menu__mypage-button button button--small" onClick={onClick}>
     <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
     mine sider
   </LinkTemplate>
@@ -98,11 +101,11 @@ const MenuContent = ({
   myPageUrl,
   isLoading,
   onlyLogo,
-  dropDownMenu,
+  dropdownMenu,
 }) => {
-  const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(dropDownMenu ? dropDownMenu.visible : false);
+  const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(!!dropdownMenu?.visible);
 
-  const handleMenuDropdownVisibilty = () => {
+  const toggleMenuDropdownVisibilty = () => {
     setMenuDropdownVisibilty(!menuDropdownIsVisible);
   };
 
@@ -142,18 +145,16 @@ const MenuContent = ({
           />
         )}
         {loginUrl && !isLoggedIn && <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />}
-        {myPageUrl && isLoggedIn && (
-          <MyPageButton
-            LinkTemplate={LinkTemplate}
-            myPageUrl={myPageUrl}
-            onClick={handleMenuDropdownVisibilty}
-            dropDownMenu={dropDownMenu}
-          />
+        {myPageUrl && isLoggedIn && !dropdownMenu && (
+          <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} onClick={toggleMenuDropdownVisibilty} />
+        )}
+        {myPageUrl && isLoggedIn && dropdownMenu && (
+          <MyAppsDropdown LinkTemplate={LinkTemplate} onClick={toggleMenuDropdownVisibilty} />
         )}
         <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
       </div>
 
-      {menuDropdownIsVisible && <MenuDropdown dropDownMenu={dropDownMenu} isLoggedIn={isLoggedIn} />}
+      {menuDropdownIsVisible && <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} />}
     </div>
   );
 };

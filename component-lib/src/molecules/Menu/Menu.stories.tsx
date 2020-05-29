@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu } from '../../index';
+import Menu from './Menu';
 import img from '../../stories/sampleImages';
 
 export default {
@@ -186,7 +186,7 @@ export const LoggedInDropdownMenuB2C = () => {
       lockBodyOnMenuOpen={true}
       isLoggedIn={true}
       myPageUrl="#"
-      dropDownMenu={{
+      dropdownMenu={{
         type: 'B2C', 
         channel: 'mobil',
         visible: true

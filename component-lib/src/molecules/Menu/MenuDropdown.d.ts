@@ -6,6 +6,6 @@ export interface MenuDropdownProps {
   visible: boolean;
 }
 
-export const MenuDropdown: React.FC<{dropDownMenu: MenuDropdownProps, isLoggedIn?: boolean}>;
+export const MenuDropdown: React.FC<{dropdownMenu: MenuDropdownProps, isLoggedIn?: boolean}>;
 
 export default MenuDropdown;
