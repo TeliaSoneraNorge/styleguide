@@ -38,7 +38,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href={stageEnv ? stageEnv : 'https://www.telia.no/min-side/'}
             icon="mobile"
-            inverted={dropdownMenu.channel !== 'mobil' ? true : false}
+            inverted={dropdownMenu.channel !== 'mobil'}
           >
             <span style={{ marginLeft: '.5rem' }}>Mobil</span>
           </Link>
@@ -48,7 +48,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="FILL IN URL !!!"
             icon="wireless"
-            inverted={dropDownMenu.channel !== 'tv-internet' ? true : false}
+            inverted={dropDownMenu.channel !== 'tv-internet'}
           >
             <span style={{ marginLeft: '.5rem' }}>TV og internett</span>
           </Link> */}
@@ -61,7 +61,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="https://minbedrift.telia.no/"
             icon="mobile"
-            inverted={dropdownMenu.channel !== 'min-bedrift' ? true : false}
+            inverted={dropdownMenu.channel !== 'min-bedrift'}
           >
             <span style={{ marginLeft: '.5rem' }}>Min Bedrift</span>
           </Link>
@@ -69,7 +69,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="https://minportal.telia.no/"
             icon="wireless"
-            inverted={dropdownMenu.channel !== 'min-portal' ? true : false}
+            inverted={dropdownMenu.channel !== 'min-portal'}
           >
             <span style={{ marginLeft: '.5rem' }}>Min Portal</span>
           </Link>
@@ -77,7 +77,7 @@ const MenuDropdown = props => {
             type="bubble-link"
             href="https://sb.telia.no/bn/login"
             icon="product-bedriftsnett"
-            inverted={dropdownMenu.channel !== 'bedriftsnett' ? true : false}
+            inverted={dropdownMenu.channel !== 'bedriftsnett'}
           >
             <span style={{ marginLeft: '.5rem' }}>Bedriftsnett</span>
           </Link>
