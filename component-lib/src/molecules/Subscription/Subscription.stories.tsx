@@ -498,7 +498,7 @@ export const ScrollToOnOpen = () => {
   );
 };
 
-export const ShowingTwoFeatures = () => {
+export const ShowingTwoFeaturesAndNoDataUnit = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const SubscriptionGroupForm = ({ postToUrl, id }) => (
@@ -519,7 +519,7 @@ export const ShowingTwoFeatures = () => {
   const features = {
     highlightedFeature: {
       iconName: 'ico_data_freedom',
-      name: 'Surf og stream uten å gå tom for data.',
+      name: 'Ubegrenset data',
       secondIconName: 'ico_group',
       secondName: 'Flere sammen gir lavere pris',
       secondSize: 'large',
@@ -529,12 +529,12 @@ export const ShowingTwoFeatures = () => {
 
   return (
     <Subscription
-      name="Telia"
+      name="Telia X"
       id="x"
-      dataAmount="X"
-      dataUnit="GB"
+      dataAmount="∞"
+      dataUnit=""
       price={579}
-      priceInfo={['pr. md', 'Ingen bindingstid.']}
+      priceInfo={['per md.', 'Ingen bindingstid']}
       color="black"
       size="medium"
       features={features}

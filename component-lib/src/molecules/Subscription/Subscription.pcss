@@ -19,6 +19,18 @@
         font-weight: 400;
         margin: 0;
         text-transform: uppercase;
+
+        &--big {
+            text-transform: uppercase;
+            font-family: 'pebble';
+            font-size: 1.7rem;
+            margin-bottom: 0rem;
+            margin-top: 1rem;
+
+            @media all and (min-width: 25.3125em) {
+                font-size: 2rem;
+            }
+        }
     }
     &__data-amount {
         display: block;
@@ -40,6 +52,14 @@
             line-height: 2rem;
             color: var(--pink2);
             margin-bottom: 0.8rem;
+        }
+
+        &--big {
+            font-size: 9rem;
+
+            @media all and (min-width: 25.3125em) {
+                font-size: 10rem;
+            }
         }
     }
     &__data-unit {

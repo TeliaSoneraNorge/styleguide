@@ -67,7 +67,7 @@ const Subscription = ({
     >
       <section className="subscription__teaser">
         <div className="subscription__teaser-content">
-          <h1 className="subscription__name">{name}</h1>
+          {dataUnit && <h1 className="subscription__name">{name}</h1>}
           {extraDataAmount && extraDataUnit ? (
             <>
               <span className="subscription__data-amount">
@@ -79,10 +79,15 @@ const Subscription = ({
                 {extraDataUnit}
               </span>
             </>
-          ) : (
+          ) : dataUnit ? (
             <>
               <span className="subscription__data-amount">{dataAmount}</span>
               <span className="subscription__data-unit">{dataUnit}</span>
+            </>
+          ) : (
+            <>
+              <span className="subscription__data-amount subscription__data-amount--big">{dataAmount}</span>
+              <h1 className="subscription__name--big">{name}</h1>
             </>
           )}
 
