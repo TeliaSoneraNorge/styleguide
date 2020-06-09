@@ -35,6 +35,7 @@ const Subscription = ({
   teaserFeatures,
   extraDataAmount,
   extraDataUnit,
+  dataAmountIcon,
 }) => {
   const ref = useRef();
 
@@ -86,7 +87,14 @@ const Subscription = ({
             </>
           ) : (
             <>
-              <span className="subscription__data-amount subscription__data-amount--big">{dataAmount}</span>
+              {dataAmountIcon ? (
+                <SvgIcon
+                  className="subscription__data-amount subscription__data-amount__icon"
+                  iconName={dataAmountIcon}
+                />
+              ) : (
+                <span className="subscription__data-amount subscription__data-amount--big">{dataAmount}</span>
+              )}
               <h1 className="subscription__name--big">{name}</h1>
             </>
           )}
@@ -225,6 +233,7 @@ Subscription.propTypes = {
   name: PropTypes.string,
   dataAmount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   dataUnit: PropTypes.string,
+  dataAmountIcon: PropTypes.string,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   priceInfo: PropTypes.arrayOf(PropTypes.string),
   additionalInfo: PropTypes.shape({

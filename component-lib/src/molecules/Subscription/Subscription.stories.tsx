@@ -521,7 +521,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
       iconName: 'ico_data_freedom',
       name: 'Ubegrenset data',
       secondIconName: 'ico_group',
-      secondName: 'Flere sammen gir lavere pris',
+      secondName: 'Samler du fler, sparer du mer.',
       secondSize: 'large',
     },
     button: <SubscriptionGroupForm postToUrl="#" id="x" />,
@@ -532,6 +532,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
       name="Telia X"
       id="x"
       dataAmount="∞"
+      dataAmountIcon="ico_infinity"
       dataUnit=""
       price={579}
       priceInfo={['per md.', 'Ingen bindingstid']}
