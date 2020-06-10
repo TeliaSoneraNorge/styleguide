@@ -7,6 +7,7 @@ import Heading from '../../atoms/Heading/Heading';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import RadioButtonList from '../RadioButtonList/RadioButtonList';
 import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
+import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
 
 export const StandaloneSubscription = () => (
   <Subscription
@@ -521,7 +522,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
       iconName: 'ico_data_freedom',
       name: 'Ubegrenset data',
       secondIconName: 'ico_group',
-      secondName: 'Flere sammen gir lavere pris',
+      secondName: 'Samler du fler, sparer du mer.',
       secondSize: 'large',
     },
     button: <SubscriptionGroupForm postToUrl="#" id="x" />,
@@ -532,6 +533,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
       name="Telia X"
       id="x"
       dataAmount="∞"
+      dataAmountIcon={<InfiniteIcon />}
       dataUnit=""
       price={579}
       priceInfo={['per md.', 'Ingen bindingstid']}
