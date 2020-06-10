@@ -88,10 +88,7 @@ const Subscription = ({
           ) : (
             <>
               {dataAmountIcon ? (
-                <SvgIcon
-                  className="subscription__data-amount subscription__data-amount__icon"
-                  iconName={dataAmountIcon}
-                />
+                <div className="subscription__data-amount__icon">{dataAmountIcon}</div>
               ) : (
                 <span className="subscription__data-amount subscription__data-amount--big">{dataAmount}</span>
               )}

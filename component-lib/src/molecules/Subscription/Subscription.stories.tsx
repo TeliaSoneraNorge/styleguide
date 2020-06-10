@@ -7,6 +7,7 @@ import Heading from '../../atoms/Heading/Heading';
 import Paragraph from '../../atoms/Paragraph/Paragraph';
 import RadioButtonList from '../RadioButtonList/RadioButtonList';
 import RadioButtonWithLabel from '../RadioButtonList/RadioButtonWithLabel';
+import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
 
 export const StandaloneSubscription = () => (
   <Subscription
@@ -532,7 +533,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
       name="Telia X"
       id="x"
       dataAmount="∞"
-      dataAmountIcon="ico_infinity"
+      dataAmountIcon={<InfiniteIcon />}
       dataUnit=""
       price={579}
       priceInfo={['per md.', 'Ingen bindingstid']}
