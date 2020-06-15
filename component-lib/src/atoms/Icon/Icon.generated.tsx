@@ -109,6 +109,7 @@ export type IconDefinition =
   | 'play'
   | 'police'
   | 'position'
+  | 'product-bankid-mobile'
   | 'product-bedrift-click'
   | 'product-bedriftsnett'
   | 'product-data-boost'
@@ -276,6 +277,7 @@ export const availableIcons: IconDefinition[] = [
   'play',
   'police',
   'position',
+  'product-bankid-mobile',
   'product-bedrift-click',
   'product-bedriftsnett',
   'product-data-boost',
@@ -924,6 +926,12 @@ export const IconSvg = {
     <path
       fillRule="evenodd"
       d="M4.683 29.9L53.21 8.149a2 2 0 0 1 2.643 2.643L34.1 59.317a2 2 0 0 1-3.722-.186L24 40 4.869 33.623a2 2 0 0 1-.186-3.722zm6.32 1.551l14.262 4.754a4 4 0 0 1 2.53 2.53l4.754 14.262 17.506-39.052-39.052 17.506z"
+    />
+  ),
+  'product-bankid-mobile': (
+    <path
+      fillRule="evenodd"
+      d="M40 4a8 8 0 0 1 8 8v40a8 8 0 0 1-8 8H24a8 8 0 0 1-8-8V12a8 8 0 0 1 8-8zm4 44H20v4a4 4 0 0 0 4 4h16a4 4 0 0 0 4-4v-4zm-12 2a2 2 0 1 1 0 4 2 2 0 0 1 0-4zm8-42H24a4 4 0 0 0-4 4v32h24V12a4 4 0 0 0-4-4zm1 23a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm-7 0a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm-7 0a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm7-4a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm-7 0a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm14-4a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm-7 0a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm7-4a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4zm-14 0a1 1 0 0 1 0 2h-4a1 1 0 0 1 0-2h4z"
     />
   ),
   'product-bedrift-click': (
