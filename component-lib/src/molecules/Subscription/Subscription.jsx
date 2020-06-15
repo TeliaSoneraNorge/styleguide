@@ -230,7 +230,7 @@ Subscription.propTypes = {
   name: PropTypes.string,
   dataAmount: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   dataUnit: PropTypes.string,
-  dataAmountIcon: PropTypes.string,
+  dataAmountIcon: PropTypes.element,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   priceInfo: PropTypes.arrayOf(PropTypes.string),
   additionalInfo: PropTypes.shape({
