@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu } from '../../index';
+import Menu from './Menu';
 import img from '../../stories/sampleImages';
 
 export default {
@@ -138,6 +138,59 @@ export const LoggedInMenuB2C = () => {
       lockBodyOnMenuOpen={true}
       isLoggedIn={true}
       myPageUrl="#"
+    />
+  )
+};
+
+export const LoggedInDropdownMenuB2C = () => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Mobiler og tilbehør',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+  
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      isLoggedIn={true}
+      myPageUrl="#"
+      dropdownMenu={{
+        type: 'B2C', 
+        channel: 'mobil',
+        visible: true
+      }}
     />
   )
 };

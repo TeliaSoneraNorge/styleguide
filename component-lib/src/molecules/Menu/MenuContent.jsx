@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
+import MenuDropdown from './MenuDropdown';
 
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
   <button
@@ -62,6 +63,13 @@ const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
   </LinkTemplate>
 );
 
+const MyAppsDropdown = ({ LinkTemplate, onClick }) => (
+  <LinkTemplate className="menu__mypage-button button button--small" onClick={onClick}>
+    <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
+    mine sider
+  </LinkTemplate>
+);
+
 const MobileMenuButton = ({ onMenuToggle }) => (
   <button className="menu__mobile-button" onClick={onMenuToggle} aria-label="Meny">
     <SvgIcon className="menu__mobile-button-icon" iconName="ico_menu_mobile" color="black" />
@@ -93,7 +101,14 @@ const MenuContent = ({
   myPageUrl,
   isLoading,
   onlyLogo,
+  dropdownMenu,
 }) => {
+  const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(!!dropdownMenu?.visible);
+
+  const toggleMenuDropdownVisibilty = () => {
+    setMenuDropdownVisibilty(!menuDropdownIsVisible);
+  };
+
   if (onlyLogo) {
     return (
       <div className="menu__content">
@@ -130,9 +145,16 @@ const MenuContent = ({
           />
         )}
         {loginUrl && !isLoggedIn && <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />}
-        {myPageUrl && isLoggedIn && <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} />}
+        {myPageUrl && isLoggedIn && !dropdownMenu && (
+          <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} onClick={toggleMenuDropdownVisibilty} />
+        )}
+        {myPageUrl && isLoggedIn && dropdownMenu && (
+          <MyAppsDropdown LinkTemplate={LinkTemplate} onClick={toggleMenuDropdownVisibilty} />
+        )}
         <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
       </div>
+
+      {menuDropdownIsVisible && <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} />}
     </div>
   );
 };
