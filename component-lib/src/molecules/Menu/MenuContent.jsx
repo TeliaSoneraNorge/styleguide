@@ -63,11 +63,11 @@ const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
   </LinkTemplate>
 );
 
-const MyAppsDropdown = ({ LinkTemplate, onClick }) => (
-  <LinkTemplate className="menu__mypage-button button button--small" onClick={onClick}>
+const MyAppsDropdown = ({ onClick }) => (
+  <button className="menu__mypage-button button button--small" onClick={onClick} style={{ margin: 0 }}>
     <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
     mine sider
-  </LinkTemplate>
+  </button>
 );
 
 const MobileMenuButton = ({ onMenuToggle }) => (
