@@ -64,7 +64,7 @@ const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
 );
 
 const MyAppsDropdown = ({ onClick }) => (
-  <button className="menu__mypage-button button button--small" onClick={onClick} style={{ margin: 0 }}>
+  <button className="menu__mypage-button button button--small" onClick={onClick} style={{ marginRight: 0 }}>
     <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
     mine sider
   </button>
