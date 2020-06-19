@@ -19,7 +19,7 @@ function LinkTable({ children, wrapByTwo }) {
 function LinkTableItem({ text, icon, href }) {
   return (
     <li className="link-table__item">
-      <Link href={href} className="link-table__link link--with-icon" iconPosition="before">
+      <Link href={href} className="link-table__link link--with-icon" iconPosition="before" style={{ padding: '1rem' }}>
         {typeof icon === 'string' ? <Icon className="link-table__icon" icon={icon} /> : icon}
         <span className="link-table__text">{text}</span>
       </Link>
