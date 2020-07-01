@@ -2,8 +2,8 @@ import * as React from 'react';
 import cs from 'classnames';
 
 export type TabProps = {
+  label: string;
   exact?: boolean;
-  label: string | React.ReactNode;
   active?: boolean;
   onClick: (value: string) => void;
 } & (
@@ -12,7 +12,7 @@ export type TabProps = {
     }
   | { value: string });
 
-export const Tab: React.FC<TabProps> = props => {
+export const Tab = (props: TabProps) => {
   const element =
     'path' in props ? (
       <a
