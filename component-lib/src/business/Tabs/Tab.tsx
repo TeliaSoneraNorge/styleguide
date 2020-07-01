@@ -5,7 +5,7 @@ export type TabProps = {
   label: string;
   exact?: boolean;
   active?: boolean;
-  onClick: (value: string) => void;
+  onClick?: (value: string) => void;
 } & (
   | {
       path: string;
@@ -21,13 +21,23 @@ export const Tab = (props: TabProps) => {
         rel="noopener"
         onClick={e => {
           e.preventDefault();
-          props.onClick(props.path);
+          if (props.onClick) {
+            props.onClick(props.path);
+          }
         }}
       >
         {props.label}
       </a>
     ) : (
-      <button onClick={() => props.onClick(props.value)}>{props.label}</button>
+      <button
+        onClick={() => {
+          if (props.onClick) {
+            props.onClick(props.value);
+          }
+        }}
+      >
+        {props.label}
+      </button>
     );
 
   return (
