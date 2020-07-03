@@ -10,6 +10,6 @@ export interface ReferencesProps {
   items?: ReferencesItems[];
 }
 
-const References: React.FC<ReferencesProps>;
+export const References: React.FC<ReferencesProps>;
 
 export default References;

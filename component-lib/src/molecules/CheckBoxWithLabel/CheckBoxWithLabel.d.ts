@@ -9,6 +9,6 @@ export interface CheckBoxWithLabelProps {
   name?: string;
 }
 
-const CheckBoxWithLabel: React.FC<CheckBoxWithLabelProps>;
+export const CheckBoxWithLabel: React.FC<CheckBoxWithLabelProps>;
 
 export default CheckBoxWithLabel;

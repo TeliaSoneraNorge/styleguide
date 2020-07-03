@@ -16,7 +16,7 @@ export interface ItemProps {
   iconColor?: string;
 }
 
-const UniqueSellingPoints: React.FC<UniqueSellingPointsProps> & {
+export const UniqueSellingPoints: React.FC<UniqueSellingPointsProps> & {
       Item: React.FC<ItemProps>;
 };
 

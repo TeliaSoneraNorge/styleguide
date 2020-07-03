@@ -11,6 +11,6 @@ export interface SubscriptionPriceBoxProps {
     size: string;
 }
 
-const SubscriptionPriceBox: React.FC<SubscriptionPriceBoxProps>;
+export const SubscriptionPriceBox: React.FC<SubscriptionPriceBoxProps>;
 
 export default SubscriptionPriceBox;

@@ -12,7 +12,7 @@ export interface DescriptionListProps {
 
 }
 
-const DescriptionList: React.FC<DescriptionListProps> & {
+export const DescriptionList: React.FC<DescriptionListProps> & {
   Dt: React.FC<React.ReactNode>
   Dd: React.FC<React.ReactNode>
 };

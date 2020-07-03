@@ -7,6 +7,6 @@ export interface GalleryProps {
   children?: React.ReactNode;
 }
 
-const Gallery: React.FC<GalleryProps>;
+export const Gallery: React.FC<GalleryProps>;
 
 export default Gallery;

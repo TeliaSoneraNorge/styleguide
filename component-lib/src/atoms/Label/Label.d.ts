@@ -12,6 +12,6 @@ export interface LabelProps {
   isUsingGrayText?: boolean;
 }
 
-const Label: React.FC<LabelProps>;
+export const Label: React.FC<LabelProps>;
 
 export default Label;

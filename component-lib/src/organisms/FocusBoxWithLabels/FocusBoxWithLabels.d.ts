@@ -5,6 +5,6 @@ export interface FocusBoxWithLabelsProps {
   padding?: boolean;
 }
 
-const FocusBoxWithLabels: React.FC<FocusBoxWithLabelsProps>;
+export const FocusBoxWithLabels: React.FC<FocusBoxWithLabelsProps>;
 
 export default FocusBoxWithLabels;

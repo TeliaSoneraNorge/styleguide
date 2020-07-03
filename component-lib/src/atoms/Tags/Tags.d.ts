@@ -24,7 +24,7 @@ export interface TagProps {
   children?: TagsChildren;
 }
 
-const Tags: React.FC<TagsProps> & { 
+export const Tags: React.FC<TagsProps> & { 
       Tag:  React.FC<TagProps>;
 };
 

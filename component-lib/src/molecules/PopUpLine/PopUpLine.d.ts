@@ -7,6 +7,6 @@ export interface PopUpLineProps {
   cancelButtonText?: string;
 }
 
-const PopUpLine: React.FC<PopUpLineProps>;
+export const PopUpLine: React.FC<PopUpLineProps>;
 
 export default PopUpLine;

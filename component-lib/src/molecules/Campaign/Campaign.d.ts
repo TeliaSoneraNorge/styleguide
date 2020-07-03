@@ -12,6 +12,6 @@ export interface CampaignProps {
   children?: React.ReactNode;
 }
 
-const Campaign: React.FC<CampaignProps>;
+export const Campaign: React.FC<CampaignProps>;
 
 export default Campaign;

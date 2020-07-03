@@ -19,6 +19,6 @@ export interface StepIndicatorProps {
   links?: string[];
 }
 
-const StepIndicator: React.FC<StepIndicatorProps>;
+export const StepIndicator: React.FC<StepIndicatorProps>;
 
 export default StepIndicator;

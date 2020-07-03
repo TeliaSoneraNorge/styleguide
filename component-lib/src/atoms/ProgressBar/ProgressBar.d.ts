@@ -8,6 +8,6 @@ export interface ProgressBarProps {
   disabled?: boolean;
 }
 
-const ProgressBar: React.FC<ProgressBarProps>;
+export const ProgressBar: React.FC<ProgressBarProps>;
 
 export default ProgressBar;

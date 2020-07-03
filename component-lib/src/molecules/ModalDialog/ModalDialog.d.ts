@@ -20,10 +20,10 @@ export interface ModalDialogProps {
   size?: ContainerSize;
 }
 
-const ModalDialog: React.FC<ModalDialogProps>;
+export const ModalDialog: React.FC<ModalDialogProps>;
 
 export default ModalDialog;
 
-const renderDialog: React.FC;
+export const renderDialog: React.FC;
 
 export default renderDialog;

@@ -9,6 +9,6 @@ export interface ParagraphProps {
   kind?: ParagraphKind;
 }
 
-const Paragraph: React.FC<ParagraphProps>;
+export const Paragraph: React.FC<ParagraphProps>;
 
 export default Paragraph;

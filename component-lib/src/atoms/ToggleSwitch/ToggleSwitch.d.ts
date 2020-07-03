@@ -12,6 +12,6 @@ export interface ToggleSwitchProps {
   rightOnClickHandler?: () => void;
 }
 
-const ToggleSwitch: React.FC<ToggleSwitchProps>;
+export const ToggleSwitch: React.FC<ToggleSwitchProps>;
 
 export default ToggleSwitch;

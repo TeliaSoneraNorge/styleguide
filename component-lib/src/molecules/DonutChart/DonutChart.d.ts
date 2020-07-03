@@ -27,6 +27,6 @@ export interface DonutChartProps {
   link?: string;
 }
 
-const DonutChart: React.FC<DonutChartProps>;
+export const DonutChart: React.FC<DonutChartProps>;
 
 export default DonutChart;

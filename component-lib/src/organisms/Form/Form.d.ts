@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Form: React.FC<DOMAttributes<HTMLFormElement>> & {
+export const Form: React.FC<React.DOMAttributes<HTMLFormElement>> & {
   FormRow: React.FC;
 
   FormColumn: React.FC<{ size?: string }>;

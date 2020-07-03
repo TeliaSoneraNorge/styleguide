@@ -7,6 +7,6 @@ export interface TelephoneNumberLinkProps {
   children: string;
 }
 
-const TelephoneNumberLink: React.FC<TelephoneNumberLinkProps>;
+export const TelephoneNumberLink: React.FC<TelephoneNumberLinkProps>;
 
 export default TelephoneNumberLink;

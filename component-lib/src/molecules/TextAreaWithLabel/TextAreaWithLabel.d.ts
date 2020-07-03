@@ -8,6 +8,6 @@ export interface TextAreaWithLabelProps {
   disabled?: boolean;
 }
 
-const TextAreaWithLabel: React.FC<TextAreaWithLabelProps>;
+export const TextAreaWithLabel: React.FC<TextAreaWithLabelProps>;
 
 export default TextAreaWithLabel;

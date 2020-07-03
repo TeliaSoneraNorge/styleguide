@@ -9,6 +9,6 @@ export interface DataBoostChartProps {
   link?: string;
 }
 
-const DataBoostChart: React.FC<DataBoostChartProps>;
+export const DataBoostChart: React.FC<DataBoostChartProps>;
 
 export default DataBoostChart;

@@ -19,6 +19,6 @@ export interface ArticleMetaDataProps {
   author: string;
 }
 
-const ArticleMetaData: React.FC<ArticleMetaDataProps>;
+export const ArticleMetaData: React.FC<ArticleMetaDataProps>;
 
 export default ArticleMetaData;

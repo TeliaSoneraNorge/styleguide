@@ -6,6 +6,6 @@ export interface FocusSpinnerProps {
   type?: FocusSpinnerType;
 }
 
-const FocusSpinner: React.FC<FocusSpinnerProps>;
+export const FocusSpinner: React.FC<FocusSpinnerProps>;
 
 export default FocusSpinner;

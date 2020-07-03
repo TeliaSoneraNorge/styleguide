@@ -1,24 +1,24 @@
 import * as React from 'react';
 
-type FullWidthTableProps = {
+export type FullWidthTableProps = {
   clickable?: boolean;
 }
 
-type TrProps = {
+export type TrProps = {
   onClick: () => void
 }
 
-type ThSortableProps = {
+export type ThSortableProps = {
   isSorted?: boolean;
   isSortedDesc?: boolean;
   sortPriority?: number;
 }
 
-type TFootProps = {
+export type TFootProps = {
   white?: boolean;
 }
 
-const FullWidthTable: React.FC<React.ReactNode | FullWidthTableProps> & {
+export const FullWidthTable: React.FC<React.ReactNode | FullWidthTableProps> & {
   THead: React.FC<React.ReactNode>
   TBody: React.FC<React.ReactNode>
   Th: React.FC<React.ReactNode>

@@ -17,6 +17,6 @@ export interface ProductListProps {
   items?: ProductListItems[];
 }
 
-const ProductList: React.FC<ProductListProps>;
+export const ProductList: React.FC<ProductListProps>;
 
 export default ProductList;

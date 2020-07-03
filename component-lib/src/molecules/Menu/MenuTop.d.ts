@@ -6,6 +6,6 @@ export interface MenuTopProps {
   LinkTemplate?: (...args: any[]) => any;
 }
 
-const MenuTop: React.FC<MenuTopProps>;
+export const MenuTop: React.FC<MenuTopProps>;
 
 export default MenuTop;

@@ -9,6 +9,6 @@ export interface TooltipProps {
   text?: string;
 }
 
-const Tooltip: React.FC<TooltipProps>;
+export const Tooltip: React.FC<TooltipProps>;
 
 export default Tooltip;

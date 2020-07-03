@@ -17,6 +17,6 @@ export interface TextBoxWithLabelProps {
   onChange?: (e: React.SyntheticEvent) => void;
 }
 
-const TextBoxWithLabel: React.FC<TextBoxWithLabelProps>;
+export const TextBoxWithLabel: React.FC<TextBoxWithLabelProps>;
 
 export default TextBoxWithLabel;

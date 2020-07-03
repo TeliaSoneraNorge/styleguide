@@ -16,6 +16,6 @@ export interface RecommendedProductsProps {
   buttonText: string;
 }
 
-const RecommendedProducts: React.FC<RecommendedProductsProps>;
+export const RecommendedProducts: React.FC<RecommendedProductsProps>;
 
 export default RecommendedProducts;

@@ -12,6 +12,6 @@ export interface CardProps {
   img?: CardImg;
 }
 
-const Card: React.FC<CardProps>;
+export const Card: React.FC<CardProps>;
 
 export default Card;

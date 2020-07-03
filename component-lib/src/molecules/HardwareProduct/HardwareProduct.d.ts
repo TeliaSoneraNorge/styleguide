@@ -20,6 +20,6 @@ export interface HardwareProductProps {
   priceDisclaimerLine2?: React.ReactNode;
 }
 
-const HardwareProduct: React.FC<HardwareProductProps>;
+export const HardwareProduct: React.FC<HardwareProductProps>;
 
 export default HardwareProduct;

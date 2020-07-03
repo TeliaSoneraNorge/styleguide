@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-const ModalDialogProvider: React.FC;
+export const ModalDialogProvider: React.FC;
 
 export default ModalDialogProvider;

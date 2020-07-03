@@ -11,6 +11,6 @@ export interface HorizontalRuleProps {
   left?: any;
 }
 
-const HorizontalRule: React.FC<HorizontalRuleProps>;
+export const HorizontalRule: React.FC<HorizontalRuleProps>;
 
 export default HorizontalRule;

@@ -1,24 +1,24 @@
-type Comparator<T> = (a: T, b: T) => number;
+export type Comparator<T> = (a: T, b: T) => number;
 
-interface ComparatorDictionary {
+export interface ComparatorDictionary {
   [key: string]: Comparator;
 }
 
-interface Sorting {
+export interface Sorting {
   field: string;
   inverted?: boolean;
 }
 
-type InitialSorting = string | Sorting;
+export type InitialSorting = string | Sorting;
 
-interface ThSortableProps {
+export interface ThSortableProps {
   onSort: () => void;
   isSorted?: boolean;
   isSortedDesc?: boolean;
   sortPriority?: number;
 }
 
-type ThSortablePropsGetter = (fieldName: string) => ThSortableProps;
+export type ThSortablePropsGetter = (fieldName: string) => ThSortableProps;
 
 /**
  * Returns a sorted version of the objects parameter,

@@ -7,7 +7,7 @@ export interface TabsProps {
   skipPanelRendering?: boolean;
 }
 
-const Tabs: React.FC<TabsProps> & {
+export const Tabs: React.FC<TabsProps> & {
   Tab: React.FC<{
     index?: number;
     uniqueId?: string;

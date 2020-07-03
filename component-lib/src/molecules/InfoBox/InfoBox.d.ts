@@ -5,6 +5,6 @@ export interface InfoBoxProps {
   children?: React.ReactNode;
 }
 
-const InfoBox: React.FC<InfoBoxProps>;
+export const InfoBox: React.FC<InfoBoxProps>;
 
 export default InfoBox;

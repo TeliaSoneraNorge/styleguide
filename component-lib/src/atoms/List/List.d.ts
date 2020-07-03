@@ -22,10 +22,10 @@ export interface ListProps {
   black?: boolean;
 }
 
-const List: React.FC<ListProps> & {
+export const List: React.FC<ListProps> & {
   Item: React.FC<React.HTMLProps<HTMLLIElement>>;
-  Link: React.FC<AnchorHTMLAttributes<HTMLAnchorElement>>;
-  BubbleLink: React.FC<AnchorHTMLAttributes<HTMLAnchorElement> & { iconName: string }>;
+  Link: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement>>;
+  BubbleLink: React.FC<React.AnchorHTMLAttributes<HTMLAnchorElement> & { iconName: string }>;
 };
 
 export default List;

@@ -17,6 +17,6 @@ export interface SvgIconProps {
   style?: { [key: string]: string | number | boolean }
 }
 
-const SvgIcon: React.FC<SvgIconProps>;
+export const SvgIcon: React.FC<SvgIconProps>;
 
 export default SvgIcon;

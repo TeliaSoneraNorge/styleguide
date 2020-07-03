@@ -14,6 +14,6 @@ export interface FullWidthImageProps {
   logoAlign?: string;
 }
 
-const FullWidthImage: React.FC<FullWidthImageProps>;
+export const FullWidthImage: React.FC<FullWidthImageProps>;
 
 export default FullWidthImage;

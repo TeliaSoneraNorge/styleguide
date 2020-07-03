@@ -6,6 +6,6 @@ export interface PromoBoxProps {
   imgAlt?: string;
 }
 
-const PromoBox: React.FC<PromoBoxProps>;
+export const PromoBox: React.FC<PromoBoxProps>;
 
 export default PromoBox;

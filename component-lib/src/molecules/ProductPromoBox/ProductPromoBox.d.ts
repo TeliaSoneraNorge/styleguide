@@ -20,6 +20,6 @@ export interface ProductPromoBoxProps {
   showActionOnNewLine?: boolean;
 }
 
-const ProductPromoBox: React.FC<ProductPromoBoxProps>;
+export const ProductPromoBox: React.FC<ProductPromoBoxProps>;
 
 export default ProductPromoBox;

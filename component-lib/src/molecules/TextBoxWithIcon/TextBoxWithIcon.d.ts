@@ -15,6 +15,6 @@ export interface TextBoxWithIconProps {
   onChange?: (...args: any[]) => any;
 }
 
-const TextBoxWithIcon: React.FC<TextBoxWithIconProps>;
+export const TextBoxWithIcon: React.FC<TextBoxWithIconProps>;
 
 export default TextBoxWithIcon;

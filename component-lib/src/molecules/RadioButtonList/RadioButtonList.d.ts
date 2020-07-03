@@ -18,6 +18,6 @@ export interface RadioButtonListProps {
   children?: React.ReactNode;
 }
 
-const RadioButtonList: React.FC<RadioButtonListProps>;
+export const RadioButtonList: React.FC<RadioButtonListProps>;
 
 export default RadioButtonList;

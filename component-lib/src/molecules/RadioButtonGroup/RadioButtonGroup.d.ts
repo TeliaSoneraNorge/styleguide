@@ -18,6 +18,6 @@ export interface RadioButtonGroupProps {
 }
 
 
-const RadioButtonGroup: React.FC<RadioButtonGroupProps>;
+export const RadioButtonGroup: React.FC<RadioButtonGroupProps>;
 
 export default RadioButtonGroup;

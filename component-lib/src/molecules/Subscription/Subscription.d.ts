@@ -61,6 +61,6 @@ export interface SubscriptionProps {
   onClose?: (...args: any[]) => any;
 }
 
-const Subscription: React.FC<SubscriptionProps>;
+export const Subscription: React.FC<SubscriptionProps>;
 
 export default Subscription;

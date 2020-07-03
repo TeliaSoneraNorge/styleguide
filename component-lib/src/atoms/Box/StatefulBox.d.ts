@@ -17,6 +17,6 @@ export interface StatefulBoxProps {
   id?: string;
 }
 
-const StatefulBox: React.FC<StatefulBoxProps>;
+export const StatefulBox: React.FC<StatefulBoxProps>;
 
 export default StatefulBox;

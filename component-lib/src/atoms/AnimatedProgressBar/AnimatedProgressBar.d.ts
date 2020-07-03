@@ -9,6 +9,6 @@ export interface AnimatedProgressBarProps {
   color?: AnimatedProgressBarColor;
 }
 
-const AnimatedProgressBar: React.FC<AnimatedProgressBarProps>;
+export const AnimatedProgressBar: React.FC<AnimatedProgressBarProps>;
 
 export default AnimatedProgressBar;

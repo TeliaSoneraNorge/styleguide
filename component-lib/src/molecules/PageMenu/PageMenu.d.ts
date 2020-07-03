@@ -27,6 +27,6 @@ export interface PageMenuProps {
   onTabSelect?: (...args: any[]) => any;
 }
 
-const PageMenu: React.FC<PageMenuProps>;
+export const PageMenu: React.FC<PageMenuProps>;
 
 export default PageMenu;

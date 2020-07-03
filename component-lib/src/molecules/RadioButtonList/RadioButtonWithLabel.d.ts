@@ -14,6 +14,6 @@ export interface RadioButtonWithLabelProps {
   children?: React.ReactNode;
 }
 
-const RadioButtonWithLabel: React.FC<RadioButtonWithLabelProps>;
+export const RadioButtonWithLabel: React.FC<RadioButtonWithLabelProps>;
 
 export default RadioButtonWithLabel;

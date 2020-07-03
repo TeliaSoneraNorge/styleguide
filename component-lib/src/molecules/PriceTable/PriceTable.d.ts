@@ -20,6 +20,6 @@ export interface PriceTableProps {
   additionalLine?: string;
 }
 
-const PriceTable: React.FC<PriceTableProps>;
+export const PriceTable: React.FC<PriceTableProps>;
 
 export default PriceTable;

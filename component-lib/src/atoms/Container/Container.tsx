@@ -4,7 +4,7 @@ import classnames from 'classnames';
 
 export type ContainerSize = 'small' | 'medium' | 'large';
 
-interface Props {
+export interface Props {
   /**
    * Container size. Body text should be in a small container to reduce line width and make reading easier.
    */

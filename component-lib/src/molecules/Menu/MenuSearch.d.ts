@@ -7,10 +7,10 @@ export interface MenuSearchProps {
   searchButtonAbortText?: string;
 }
 
-const MenuSearch: React.FC<MenuSearchProps>;
+export const MenuSearch: React.FC<MenuSearchProps>;
 
 export default MenuSearch;
 
-const renderSearchField: React.FC;
+export const renderSearchField: React.FC;
 
 export default renderSearchField;

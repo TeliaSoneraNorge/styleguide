@@ -20,6 +20,6 @@ export interface PersonBoxProps {
   twitterProfile?: string;
 }
 
-const PersonBox: React.FC<PersonBoxProps>;
+export const PersonBox: React.FC<PersonBoxProps>;
 
 export default PersonBox;

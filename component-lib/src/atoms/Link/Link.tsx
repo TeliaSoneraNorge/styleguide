@@ -12,7 +12,7 @@ import { Icon, IconDefinition } from '../../atoms/Icon/index';
  * Our links have _two visual means_ of being identified: an underline and bolder font.
  */
 
-interface isLink {
+export interface isLink {
   type?: 'link';
   /**
    * Choose between 'arrow-left' and 'arrow-right' icon.
@@ -24,7 +24,7 @@ interface isLink {
   icon?: 'arrow-left' | 'arrow-right' | 'back-icon' | 'forward-icon';
 }
 
-interface isBubbleLink {
+export interface isBubbleLink {
   type?: 'bubble-link';
   icon?: IconDefinition;
 }

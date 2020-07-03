@@ -7,7 +7,7 @@ export interface FunkyTabsProps {
   noImages?: boolean;
 }
 
-const FunkyTabs: React.FC<FunkyTabsProps> & {
+export const FunkyTabs: React.FC<FunkyTabsProps> & {
   TabPanel: React.FC<{
     index?: number;
     uniqueId?: string;

@@ -20,6 +20,6 @@ export interface RelatedArticleProps {
   children?: React.ReactNode;
 }
 
-const RelatedArticle: React.FC<RelatedArticleProps>;
+export const RelatedArticle: React.FC<RelatedArticleProps>;
 
 export default RelatedArticle;

@@ -14,6 +14,6 @@ export interface ProgressChartProps {
   thresholds?: ProgressChartThresholds[];
 }
 
-const ProgressChart: React.FC<ProgressChartProps>;
+export const ProgressChart: React.FC<ProgressChartProps>;
 
 export default ProgressChart;

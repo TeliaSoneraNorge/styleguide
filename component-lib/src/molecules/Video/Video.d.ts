@@ -10,6 +10,6 @@ export interface VideoProps {
   onClick?: () => void;
 }
 
-const Video: React.FC<VideoProps>;
+export const Video: React.FC<VideoProps>;
 
 export default Video;
