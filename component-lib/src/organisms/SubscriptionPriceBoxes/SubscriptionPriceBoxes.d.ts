@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-export const SubscriptionPriceBoxes: React.FC;
+declare const SubscriptionPriceBoxes: React.FC;
 
 export default SubscriptionPriceBoxes;

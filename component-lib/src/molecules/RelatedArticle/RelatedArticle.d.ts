@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface RelatedArticleProps {
+declare interface RelatedArticleProps {
   /**
    * Source of the image.
    */
@@ -20,6 +20,6 @@ export interface RelatedArticleProps {
   children?: React.ReactNode;
 }
 
-export const RelatedArticle: React.FC<RelatedArticleProps>;
+declare const RelatedArticle: React.FC<RelatedArticleProps>;
 
 export default RelatedArticle;

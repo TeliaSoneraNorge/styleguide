@@ -1,8 +1,8 @@
 import * as React from 'react';
-import {ButtonKind} from "../../atoms/Button";
-import {ContainerSize} from "../../atoms/Container";
+import { ButtonKind } from '../../atoms/Button';
+import { ContainerSize } from '../../atoms/Container';
 
-export interface ModalDialogProps {
+declare interface ModalDialogProps {
   name: string;
   heading?: string;
   children?: React.ReactNode;
@@ -20,10 +20,6 @@ export interface ModalDialogProps {
   size?: ContainerSize;
 }
 
-export const ModalDialog: React.FC<ModalDialogProps>;
+declare const ModalDialog: React.FC<ModalDialogProps>;
 
 export default ModalDialog;
-
-export const renderDialog: React.FC;
-
-export default renderDialog;

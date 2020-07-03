@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-export interface RecommendedProductsProducts {
+declare interface RecommendedProductsProducts {
   url: string;
   image: string;
   name: string;
   price: string | number;
 }
 
-export interface RecommendedProductsProps {
+declare interface RecommendedProductsProps {
   mainHeading: string;
   products?: RecommendedProductsProducts[];
   image: string;
@@ -16,6 +16,6 @@ export interface RecommendedProductsProps {
   buttonText: string;
 }
 
-export const RecommendedProducts: React.FC<RecommendedProductsProps>;
+declare const RecommendedProducts: React.FC<RecommendedProductsProps>;
 
 export default RecommendedProducts;

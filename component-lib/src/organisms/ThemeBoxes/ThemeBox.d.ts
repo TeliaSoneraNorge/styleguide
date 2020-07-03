@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface ThemeBoxProps {
+declare interface ThemeBoxProps {
   isExpanded?: boolean;
   canExpand?: boolean;
   id?: string;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface ListProps {
+declare interface ListProps {
   /**
    * Additional classes.
    */

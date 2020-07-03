@@ -1,24 +1,24 @@
-export type Comparator<T> = (a: T, b: T) => number;
+type Comparator<T> = (a: T, b: T) => number;
 
-export interface ComparatorDictionary {
+interface ComparatorDictionary {
   [key: string]: Comparator;
 }
 
-export interface Sorting {
+interface Sorting {
   field: string;
   inverted?: boolean;
 }
 
-export type InitialSorting = string | Sorting;
+type InitialSorting = string | Sorting;
 
-export interface ThSortableProps {
+interface ThSortableProps {
   onSort: () => void;
   isSorted?: boolean;
   isSortedDesc?: boolean;
   sortPriority?: number;
 }
 
-export type ThSortablePropsGetter = (fieldName: string) => ThSortableProps;
+type ThSortablePropsGetter = (fieldName: string) => ThSortableProps;
 
 /**
  * Returns a sorted version of the objects parameter,
@@ -30,7 +30,7 @@ export type ThSortablePropsGetter = (fieldName: string) => ThSortableProps;
  *                          When using [[string]] format, the value is the name of the object's property, prefix if '!' to invert the sorting.
  * @param specialFieldComparators   A dictionary object for special object's property comparators.
  */
-export declare function useThSortable<object>(
+export function useThSortable<object>(
   objects: object[],
   maxSortedFields?: number,
   initialSorting?: InitialSorting[],

@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const ProductListGrid: React.FC<{layout?: string}> & {
+declare const ProductListGrid: React.FC<{layout?: string}> & {
   Section: React.FC<{children?: React.ReactNode;}>;
 };
 

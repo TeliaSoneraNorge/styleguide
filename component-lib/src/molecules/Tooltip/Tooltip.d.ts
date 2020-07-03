@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface TooltipProps {
+declare interface TooltipProps {
   buttonContent?: React.ReactNode;
   children?: React.ReactNode;
   className?: string;
@@ -9,6 +9,6 @@ export interface TooltipProps {
   text?: string;
 }
 
-export const Tooltip: React.FC<TooltipProps>;
+declare const Tooltip: React.FC<TooltipProps>;
 
 export default Tooltip;

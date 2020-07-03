@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-export interface RelatedArticlesRelatedArticles {
+declare interface RelatedArticlesRelatedArticles {
   link: string;
   imageSrc: string;
   heading: string;
   tags: string[];
 }
 
-export interface RelatedArticlesProps {
+declare interface RelatedArticlesProps {
   headingLink: string;
   heading: string;
   id: string;
   relatedArticles?: RelatedArticlesRelatedArticles[];
-  isExpandedAccordionIndex?: number; 
+  isExpandedAccordionIndex?: number;
 }
 
 export default class RelatedArticles extends React.Component<RelatedArticlesProps, any> {

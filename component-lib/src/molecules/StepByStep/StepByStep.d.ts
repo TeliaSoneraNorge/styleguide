@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface StepByStepProps {
+declare interface StepByStepProps {
   /**
    * StepByStep.Step
    */

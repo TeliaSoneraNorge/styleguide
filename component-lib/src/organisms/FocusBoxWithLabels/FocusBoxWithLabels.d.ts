@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export interface FocusBoxWithLabelsProps {
+declare interface FocusBoxWithLabelsProps {
   content?: any;
   padding?: boolean;
 }
 
-export const FocusBoxWithLabels: React.FC<FocusBoxWithLabelsProps>;
+declare const FocusBoxWithLabels: React.FC<FocusBoxWithLabelsProps>;
 
 export default FocusBoxWithLabels;

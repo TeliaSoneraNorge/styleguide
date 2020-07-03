@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface PageMenuMenuLinks {
+declare interface PageMenuMenuLinks {
   heading?: string;
   loggedInLinks?: {
     text?: string;
@@ -14,7 +14,7 @@ export interface PageMenuMenuLinks {
   }[];
 }
 
-export interface PageMenuProps {
+declare interface PageMenuProps {
   menuLinks?: PageMenuMenuLinks[];
   menuId?: string;
   isExpanded?: boolean;
@@ -27,6 +27,6 @@ export interface PageMenuProps {
   onTabSelect?: (...args: any[]) => any;
 }
 
-export const PageMenu: React.FC<PageMenuProps>;
+declare const PageMenu: React.FC<PageMenuProps>;
 
 export default PageMenu;

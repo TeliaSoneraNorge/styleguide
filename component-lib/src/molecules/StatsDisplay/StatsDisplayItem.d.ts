@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface StatsDisplayItemProps {
+declare interface StatsDisplayItemProps {
   iconSvg?: React.ReactNode;
   useIcon?: boolean;
   heading?: string;

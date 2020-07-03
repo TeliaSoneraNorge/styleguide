@@ -1,11 +1,11 @@
 import * as React from 'react';
 
-export interface ProgressChartThresholds {
+declare interface ProgressChartThresholds {
   to: number;
   type: string;
 }
 
-export interface ProgressChartProps {
+declare interface ProgressChartProps {
   loading?: boolean;
   loadingCaption?: string;
   value?: string;
@@ -14,6 +14,6 @@ export interface ProgressChartProps {
   thresholds?: ProgressChartThresholds[];
 }
 
-export const ProgressChart: React.FC<ProgressChartProps>;
+declare const ProgressChart: React.FC<ProgressChartProps>;
 
 export default ProgressChart;

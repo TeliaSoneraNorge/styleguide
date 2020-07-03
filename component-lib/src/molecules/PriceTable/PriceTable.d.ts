@@ -1,25 +1,25 @@
 import * as React from 'react';
 
-export interface PriceTableProductListWithPrice {
+declare interface PriceTableProductListWithPrice {
   title: string;
   subtitles?: string[];
   price: string | number;
   originalPrice?: string | number;
 }
 
-export interface PriceTableTotalTextWithPrice {
+declare interface PriceTableTotalTextWithPrice {
   title: string;
   subtitles?: string[];
   price: string | number;
   originalPrice?: string | number;
 }
 
-export interface PriceTableProps {
+declare interface PriceTableProps {
   productListWithPrice?: PriceTableProductListWithPrice[];
   totalTextWithPrice?: PriceTableTotalTextWithPrice;
   additionalLine?: string;
 }
 
-export const PriceTable: React.FC<PriceTableProps>;
+declare const PriceTable: React.FC<PriceTableProps>;
 
 export default PriceTable;

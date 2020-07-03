@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-export interface TabsProps {
+declare interface TabsProps {
   uniqueId?: string;
   selectedIndex?: number;
   onSelect?: (...args: any[]) => any;
   skipPanelRendering?: boolean;
 }
 
-export const Tabs: React.FC<TabsProps> & {
+declare const Tabs: React.FC<TabsProps> & {
   Tab: React.FC<{
     index?: number;
     uniqueId?: string;

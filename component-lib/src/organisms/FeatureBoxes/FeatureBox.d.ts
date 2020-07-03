@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface FeatureBoxProps {
+declare interface FeatureBoxProps {
   iconSvg?: React.ReactNode;
   heading?: string;
   text?: string;

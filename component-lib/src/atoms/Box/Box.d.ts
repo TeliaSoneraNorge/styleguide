@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export type BoxColor = 'purple' | 'pink' | 'light-orange' | 'green' | 'blue' | 'teal' | 'grey' | 'black';
+declare type BoxColor = 'purple' | 'pink' | 'light-orange' | 'green' | 'blue' | 'teal' | 'grey' | 'black';
 
-export type BoxSize = 'small' | 'medium';
+declare type BoxSize = 'small' | 'medium';
 
-export interface BoxProps {
+declare interface BoxProps {
   isExpanded?: boolean;
   canExpand?: boolean;
   color?: BoxColor;
