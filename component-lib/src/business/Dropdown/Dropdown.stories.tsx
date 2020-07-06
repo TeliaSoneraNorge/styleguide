@@ -2,6 +2,7 @@ import React from 'react';
 import { storiesOf } from '@storybook/react';
 import { Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from './index';
 import Button from '../../atoms/Button';
+import { action } from '@storybook/addon-actions';
 
 storiesOf('Business|Dropdown', module)
   .add('Default', () => {
@@ -12,14 +13,14 @@ storiesOf('Business|Dropdown', module)
           <DropdownToggle label="Toggle" />
           <DropdownMenu>
             <DropdownItem header={true} label="Header" />
-            <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-            <DropdownItem label="Option 2" onClick={() => console.log('click')} />
+            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
             <DropdownItem divider={true} />
-            <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-            <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+            <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+            <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
               Child
             </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
           </DropdownMenu>
         </Dropdown>
 
@@ -29,14 +30,14 @@ storiesOf('Business|Dropdown', module)
           <DropdownToggle label="Toggle" />
           <DropdownMenu wrapContent={true}>
             <DropdownItem header={true} label="Header" />
-            <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-            <DropdownItem label="Option 2" onClick={() => console.log('click')} />
+            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
             <DropdownItem divider={true} />
-            <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-            <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+            <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+            <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
               Child
             </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
           </DropdownMenu>
         </Dropdown>
         <br />
@@ -44,13 +45,13 @@ storiesOf('Business|Dropdown', module)
         <Dropdown>
           <DropdownToggle label="Toggle" icon="user" />
           <DropdownMenu>
-            <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-            <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-            <DropdownItem label="Option 3" onClick={() => console.log('click')} />
-            <DropdownItem icon="user" label="Longer option" onClick={() => console.log('click')}>
+            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+            <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
               Child
             </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
           </DropdownMenu>
         </Dropdown>
         <br />
@@ -58,13 +59,13 @@ storiesOf('Business|Dropdown', module)
         <Dropdown>
           <DropdownToggle label="Toggle" icon="user" hideLabel={true} />
           <DropdownMenu>
-            <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-            <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-            <DropdownItem label="Option 3" onClick={() => console.log('click')} />
-            <DropdownItem icon="user" label="Longer option" onClick={() => console.log('click')}>
+            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+            <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
               Child
             </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
           </DropdownMenu>
         </Dropdown>
       </div>
@@ -76,13 +77,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle color="purple" label="Toggle" />
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
       <br />
@@ -90,13 +91,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle color="purple" label="Toggle" />
         <DropdownMenu wrapContent={true}>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
 
@@ -106,13 +107,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle color="purple" label="Toggle" icon="user" />
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 3" onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
 
@@ -121,13 +122,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle color="purple" label="Toggle" icon="user" hideLabel={true} />
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 3" onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
     </div>
@@ -138,13 +139,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle label="Toggle" outline={false} />
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
       <br />
@@ -152,13 +153,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle label="Toggle" outline={false} />
         <DropdownMenu wrapContent={true}>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
       <br />
@@ -167,13 +168,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle label="Toggle" icon="user" outline={false} />
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 3" onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
 
@@ -182,13 +183,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle label="Toggle" icon="user" hideLabel={true} outline={false} />
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 3" onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
     </div>
@@ -201,13 +202,13 @@ storiesOf('Business|Dropdown', module)
           <Button text="Button" />
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
       <br />
@@ -215,13 +216,13 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle>Hei</DropdownToggle>
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
       <br />
@@ -231,13 +232,13 @@ storiesOf('Business|Dropdown', module)
           <Button text="Button" size="small" icon="attach" />
         </DropdownToggle>
         <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
-          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
-          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
         </DropdownMenu>
       </Dropdown>
       <br />
