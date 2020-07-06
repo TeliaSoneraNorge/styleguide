@@ -22,9 +22,9 @@
 }
 
 .Business-Dropdown-toggle {
-  border: 1px solid var(--medium-light-grey);
   padding: 0 1rem;
   border-radius: 4px;
+  border: none;
   font-size: 16px;
   height: 2.25rem;
   line-height: 24px;
@@ -59,6 +59,22 @@
     .Business-Dropdown-toggle-label,
     .Business-Dropdown-toggle-caret {
       display: none;
+    }
+  }
+  &--outline {
+    border: 1px solid var(--medium-light-grey);
+    &.Business-Dropdown-toggle--purple {
+      border-color: var(--core-purple);
+    }
+  }
+  &--purple {
+    color: var(--core-purple);
+    &:hover {
+      background-color: var(--core-purple-100);
+    }
+    &:active,
+    &:focus {
+      background-color: var(--core-purple-200);
     }
   }
 }
@@ -97,14 +113,8 @@
     align-items: center;
     color: var(--medium-dark-grey);
     padding: 0.75rem 0.5rem;
-    /* @include typeSmall; */
-    font-size: 14px;
 
-    &:active,
-    &.active {
-      color: var(--black);
-      background-color: transparent;
-    }
+    font-size: 14px;
 
     .Icon {
       width: 1rem;
@@ -112,7 +122,6 @@
       margin-right: 0.5rem;
     }
   }
-
   &-header:focus {
     outline: none;
   }

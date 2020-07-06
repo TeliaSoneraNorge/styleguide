@@ -100,14 +100,26 @@ interface DropdownToggleProps {
   label: string;
   icon?: IconDefinition;
   hideLabel?: boolean;
+  color?: 'purple' | 'default';
+  outline?: boolean;
 }
 export const DropdownToggle = (props: DropdownToggleProps) => {
-  const { toggle } = useDropdownContext();
-
+  const { toggle, open } = useDropdownContext();
+  const toggelRef = useRef<HTMLButtonElement>(null);
+  useEffect(() => {
+    if (toggelRef.current) {
+      toggelRef.current.blur();
+    }
+  }, [open]);
   return (
     <button
+      ref={toggelRef}
       onClick={toggle}
-      className={cs('Business-Dropdown-toggle', { 'Business-Dropdown-toggle--hideLabel': props.hideLabel })}
+      className={cs('Business-Dropdown-toggle', {
+        'Business-Dropdown-toggle--hideLabel': props.hideLabel,
+        'Business-Dropdown-toggle--purple': props.color === 'purple',
+        'Business-Dropdown-toggle--outline': props.outline !== false,
+      })}
     >
       {props.icon ? <Icon className="Business-Dropdown-toggle-icon" icon={props.icon} /> : null}
       <span className="Business-Dropdown-toggle-label">{props.label}</span>
