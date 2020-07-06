@@ -1,0 +1,103 @@
+.Business-Tabs {
+  --border-width: 4px;
+  --side-padding: 16px;
+  --link-padding-bottom: 10px;
+  overflow: visible;
+
+  & > ul {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  & > ul > li {
+    display: inline-block;
+    width: 160px;
+    text-align: center;
+    white-space: nowrap;
+    border-bottom: 3px solid transparent;
+    transition: border 0.2s ease-in-out;
+
+    & > a,
+    & > button {
+      text-decoration: none;
+      color: var(--medium-dark-grey);
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 600;
+      display: block;
+      padding: 6px var(--side-padding) var(--link-padding-bottom) var(--side-padding);
+      transition: color 0.2s ease-in-out;
+      position: relative;
+    }
+
+    & > button {
+      border: none;
+      outline: none;
+      background: transparent;
+      width: 100%;
+      text-transform: none;
+    }
+
+    &.active {
+      border-bottom: 3px solid var(--core-purple);
+    }
+
+    &.active > a,
+    &.active > button {
+      color: var(--core-purple);
+    }
+
+    & > a:hover,
+    & > button:hover {
+      cursor: pointer;
+      text-decoration: none;
+      color: var(--core-purple);
+    }
+  }
+
+  &--fullwidth {
+    & > ul {
+      justify-content: stretch;
+    }
+    & > ul > li {
+      width: 100%;
+      flex: 1 0 0;
+    }
+  }
+}
+
+.Business-Tabs--outlined {
+  & > ul {
+    > li > a,
+    > li > button {
+      padding: 6px var(--side-padding);
+    }
+    li:first-child {
+      border-bottom-left-radius: 4px;
+      border-top-left-radius: 4px;
+    }
+    li:last-child {
+      border-bottom-right-radius: 4px;
+      border-top-right-radius: 4px;
+    }
+    li {
+      border: 1px solid var(--light-grey);
+      color: var(--medium-dark-grey);
+    }
+    li:not(:last-child) {
+      border-right: none;
+    }
+    li.active {
+      border: 1px solid var(--core-purple);
+      background-color: rgba(153, 10, 227, 0.06);
+    }
+  }
+}
+
+.Business-Tabs--centered {
+  & > ul {
+    justify-content: center;
+  }
+}
