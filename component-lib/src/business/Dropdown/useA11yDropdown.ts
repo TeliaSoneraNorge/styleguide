@@ -8,6 +8,7 @@ export const useA11yDropdown = () => {
     setMenuOpen,
     setHighlightIndex,
     highlightIndex,
+    open,
     maxHighlightIndex,
   } = useDropdownContext();
 
