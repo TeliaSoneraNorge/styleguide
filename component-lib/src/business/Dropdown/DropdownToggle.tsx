@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { useDropdownContext } from './index';
+import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
 

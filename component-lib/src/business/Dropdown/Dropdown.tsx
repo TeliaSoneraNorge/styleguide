@@ -1,21 +1,10 @@
 import React, { useRef, useState } from 'react';
-import { DropdownContext, useDropdownContext, useA11yDropdown } from './index';
+import { DropdownContext, useDropdownContext, DropdownContextValues } from './context';
+import { useA11yDropdown } from './useA11yDropdown';
 
 type Props = {
   open?: boolean;
   toggle?: () => void;
-};
-
-export type DropdownContextValues = {
-  open: boolean;
-  toggle: () => void;
-  menuRef: React.RefObject<HTMLDivElement>;
-  dropdownRef: React.RefObject<HTMLDivElement>;
-  highlightIndex: number;
-  setHighlightIndex: (index: number) => void;
-  setMaxHighlightIndex: (index: number) => void;
-  maxHighlightIndex: number;
-  setMenuOpen: (open: boolean) => void;
 };
 
 export const Dropdown: React.FC<Props> = props => {

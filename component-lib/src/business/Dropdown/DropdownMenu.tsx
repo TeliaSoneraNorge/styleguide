@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
-import { useDropdownContext, DropdownItemProps } from './index';
+import { useDropdownContext } from './context';
+import { DropdownItemProps } from './DropdownItem';
 import cs from 'classnames';
 
 interface DropdownMenuProps {

@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import cs from 'classnames';
-import { useDropdownContext } from './index';
+import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
 export interface DropdownItemProps {
