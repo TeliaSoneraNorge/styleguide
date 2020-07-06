@@ -9,7 +9,7 @@ storiesOf('Business|Dropdown', module)
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
         <h4>Default toggle, with default items, items with icon, header and divider item</h4>
         <Dropdown>
-          <DropdownToggle label="Toggel" />
+          <DropdownToggle label="Toggle" />
           <DropdownMenu>
             <DropdownItem header={true} label="Header" />
             <DropdownItem label="Option 1" onClick={() => console.log('click')} />
@@ -26,7 +26,7 @@ storiesOf('Business|Dropdown', module)
         <br />
         <h4>Wrap content in items</h4>
         <Dropdown>
-          <DropdownToggle label="Toggel" />
+          <DropdownToggle label="Toggle" />
           <DropdownMenu wrapContent={true}>
             <DropdownItem header={true} label="Header" />
             <DropdownItem label="Option 1" onClick={() => console.log('click')} />
@@ -42,7 +42,7 @@ storiesOf('Business|Dropdown', module)
         <br />
         <h4>With icon in toggle</h4>
         <Dropdown>
-          <DropdownToggle label="Toggel" icon="user" />
+          <DropdownToggle label="Toggle" icon="user" />
           <DropdownMenu>
             <DropdownItem label="Option 1" onClick={() => console.log('click')} />
             <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -56,7 +56,7 @@ storiesOf('Business|Dropdown', module)
         <br />
         <h4>Icon Only</h4>
         <Dropdown>
-          <DropdownToggle label="Toggel" icon="user" hideLabel={true} />
+          <DropdownToggle label="Toggle" icon="user" hideLabel={true} />
           <DropdownMenu>
             <DropdownItem label="Option 1" onClick={() => console.log('click')} />
             <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -74,7 +74,7 @@ storiesOf('Business|Dropdown', module)
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h4>Default</h4>
       <Dropdown>
-        <DropdownToggle color="purple" label="Toggel" />
+        <DropdownToggle color="purple" label="Toggle" />
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -88,7 +88,7 @@ storiesOf('Business|Dropdown', module)
       <br />
       <h4>wrap content in items</h4>
       <Dropdown>
-        <DropdownToggle color="purple" label="Toggel" />
+        <DropdownToggle color="purple" label="Toggle" />
         <DropdownMenu wrapContent={true}>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -104,7 +104,7 @@ storiesOf('Business|Dropdown', module)
       <h4>With icon in toggle</h4>
 
       <Dropdown>
-        <DropdownToggle color="purple" label="Toggel" icon="user" />
+        <DropdownToggle color="purple" label="Toggle" icon="user" />
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -119,7 +119,7 @@ storiesOf('Business|Dropdown', module)
       <br />
       <h4>Icon Only</h4>
       <Dropdown>
-        <DropdownToggle color="purple" label="Toggel" icon="user" hideLabel={true} />
+        <DropdownToggle color="purple" label="Toggle" icon="user" hideLabel={true} />
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -136,7 +136,7 @@ storiesOf('Business|Dropdown', module)
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h4>Default</h4>
       <Dropdown>
-        <DropdownToggle label="Toggel" outline={false} />
+        <DropdownToggle label="Toggle" outline={false} />
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -150,7 +150,7 @@ storiesOf('Business|Dropdown', module)
       <br />
       <h4>wrap content in items</h4>
       <Dropdown>
-        <DropdownToggle label="Toggel" outline={false} />
+        <DropdownToggle label="Toggle" outline={false} />
         <DropdownMenu wrapContent={true}>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -165,7 +165,7 @@ storiesOf('Business|Dropdown', module)
       <h4>With icon in toggle</h4>
 
       <Dropdown>
-        <DropdownToggle label="Toggel" icon="user" outline={false} />
+        <DropdownToggle label="Toggle" icon="user" outline={false} />
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
@@ -180,7 +180,7 @@ storiesOf('Business|Dropdown', module)
       <br />
       <h4>Icon Only</h4>
       <Dropdown>
-        <DropdownToggle label="Toggel" icon="user" hideLabel={true} outline={false} />
+        <DropdownToggle label="Toggle" icon="user" hideLabel={true} outline={false} />
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />

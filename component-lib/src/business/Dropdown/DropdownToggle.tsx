@@ -13,10 +13,10 @@ interface DropdownToggleProps {
 }
 export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   const { toggle, open } = useDropdownContext();
-  const toggelRef = useRef<HTMLButtonElement>(null);
+  const toggleRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
-    if (toggelRef.current) {
-      toggelRef.current.blur();
+    if (toggleRef.current) {
+      toggleRef.current.blur();
     }
   }, [open]);
 
@@ -36,7 +36,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   }
   return (
     <button
-      ref={toggelRef}
+      ref={toggleRef}
       onClick={toggle}
       className={cs('Business-Dropdown-toggle Business-Dropdown-toggle--default', {
         'Business-Dropdown-toggle--hideLabel': props.hideLabel,
