@@ -1,6 +1,6 @@
 import * as React from 'react';
 import cs from 'classnames';
-import { TabProps } from './index';
+import { TabProps } from './Tab';
 
 type Props = {
   onClick: (value: string) => void;
