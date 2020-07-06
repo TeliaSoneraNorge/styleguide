@@ -9,7 +9,7 @@ type Props = {
 
 export const Dropdown: React.FC<Props> = props => {
   const [open, setOpen] = useState(props.open || false);
-  const [highlightIndex, setHighlightIndex] = useState(-1);
+  const [highlightIndex, setHighlightIndex] = useState<number>(-1); // -1 indicates no highlighted item
   const [maxHighlightIndex, setMaxHighlightIndex] = useState(highlightIndex);
 
   const toggle = () => setOpen(!open);

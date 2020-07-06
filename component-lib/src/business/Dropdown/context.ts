@@ -28,6 +28,7 @@ export type DropdownContextValues = {
   /**
    * The indext of the current active DropdownItem.
    * Only clickable items can be highlighted
+   * -1 indicates no highlighted item
    */
   highlightIndex: number;
 
