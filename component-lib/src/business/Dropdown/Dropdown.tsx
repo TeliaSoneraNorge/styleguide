@@ -6,7 +6,9 @@ type Props = {
   toggle?: () => void;
 };
 
-export type DropdownContextValues = Props & {
+export type DropdownContextValues = {
+  open: boolean;
+  toggle: () => void;
   menuRef: React.RefObject<HTMLDivElement>;
   dropdownRef: React.RefObject<HTMLDivElement>;
   highlightIndex: number;
