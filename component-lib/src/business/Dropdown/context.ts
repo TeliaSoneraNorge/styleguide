@@ -16,7 +16,9 @@ export const DropdownContext = React.createContext<DropdownContextValues | null>
 export const useDropdownContext = () => {
   const value = useContext(DropdownContext);
   if (!value) {
-    throw new Error('No dropdown context');
+    throw new Error(
+      'No dropdown context found. This is typically caused by trying to render DropdownItem, DropdownToggle or DropdownMenu components outside of a Dropdown.'
+    );
   }
   return value;
 };
