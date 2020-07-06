@@ -1,15 +1,55 @@
 import React, { useContext } from 'react';
 
 export type DropdownContextValues = {
+  /**
+   * Whetherthe dropdown menu is open or not
+   */
   open: boolean;
+
+  /**
+   * Toggle dropdown menu open/close
+   */
   toggle: () => void;
-  menuRef: React.RefObject<HTMLDivElement>;
-  dropdownRef: React.RefObject<HTMLDivElement>;
-  highlightIndex: number;
-  setHighlightIndex: (index: number) => void;
-  setMaxHighlightIndex: (index: number) => void;
-  maxHighlightIndex: number;
+
+  /**
+   * Set spesific open state of the dropdown menu
+   */
   setMenuOpen: (open: boolean) => void;
+
+  /**
+   * Reference to the dropdown menu element
+   */
+  menuRef: React.RefObject<HTMLDivElement>;
+
+  /**
+   * Reference to the container of the entire dropdown wrapper
+   */
+  dropdownRef: React.RefObject<HTMLDivElement>;
+  /**
+   * The indext of the current active DropdownItem.
+   * Only clickable items can be highlighted
+   */
+  highlightIndex: number;
+
+  /**
+   * Set the index of the highlighted element
+   */
+  setHighlightIndex: (index: number) => void;
+
+  /**
+   * The highest index of any item that can be highlighted.
+   * This is used to know when the highlighted index should
+   * be set back to 0 for circular navigation,
+   * and prevent navigation to non-existing elements
+   */
+  maxHighlightIndex: number;
+
+  /**
+   * Set the value for the highest highlight index possible
+   * This is used in DropdownMenu, where we count the number
+   * of clickable children provided to the dropdown
+   */
+  setMaxHighlightIndex: (index: number) => void;
 };
 
 export const DropdownContext = React.createContext<DropdownContextValues | null>(null);
