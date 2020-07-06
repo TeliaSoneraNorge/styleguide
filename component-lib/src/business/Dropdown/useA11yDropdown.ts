@@ -2,20 +2,12 @@ import { useEffect } from 'react';
 import { useDropdownContext } from './index';
 
 export const useA11yDropdown = () => {
-  const {
-    dropdownRef,
-    menuRef,
-    setMenuOpen,
-    setHighlightIndex,
-    highlightIndex,
-    open,
-    maxHighlightIndex,
-  } = useDropdownContext();
+  const ctx = useDropdownContext();
 
   useEffect(() => {
     const closeMenu = (e: MouseEvent | FocusEvent) => {
-      if (open && e.target && dropdownRef.current && !dropdownRef.current.contains((e.target as any) as Node)) {
-        setMenuOpen(false);
+      if (open && e.target && ctx.dropdownRef.current && !ctx.dropdownRef.current.contains((e.target as any) as Node)) {
+        ctx.setMenuOpen(false);
       }
     };
     window.addEventListener('click', closeMenu);
@@ -25,24 +17,29 @@ export const useA11yDropdown = () => {
       window.removeEventListener('click', closeMenu);
       window.removeEventListener('focusin', closeMenu);
     };
-  }, [open, dropdownRef]);
+  }, [open, ctx.dropdownRef]);
 
   useEffect(() => {
     const navigate = (e: KeyboardEvent) => {
-      if (open && e.target && menuRef.current && menuRef.current.contains((document.activeElement as any) as Node)) {
+      if (
+        open &&
+        e.target &&
+        ctx.menuRef.current &&
+        ctx.menuRef.current.contains((document.activeElement as any) as Node)
+      ) {
         if (e.key === 'ArrowDown') {
           e.preventDefault();
-          if (highlightIndex === maxHighlightIndex) {
-            setHighlightIndex(0);
+          if (ctx.highlightIndex === ctx.maxHighlightIndex) {
+            ctx.setHighlightIndex(0);
           } else {
-            setHighlightIndex(highlightIndex + 1);
+            ctx.setHighlightIndex(ctx.highlightIndex + 1);
           }
         } else if (e.key === 'ArrowUp') {
           e.preventDefault();
-          if (highlightIndex === 0) {
-            setHighlightIndex(maxHighlightIndex);
+          if (ctx.highlightIndex === 0) {
+            ctx.setHighlightIndex(ctx.maxHighlightIndex);
           } else {
-            setHighlightIndex(highlightIndex - 1);
+            ctx.setHighlightIndex(ctx.highlightIndex - 1);
           }
         }
       }
@@ -51,11 +48,11 @@ export const useA11yDropdown = () => {
     return () => {
       window.removeEventListener('keydown', navigate);
     };
-  }, [open, highlightIndex]);
+  }, [open, ctx.highlightIndex, ctx.menuRef]);
 
   useEffect(() => {
     if (!open) {
-      setHighlightIndex(-1);
+      ctx.setHighlightIndex(-1);
     }
   }, [open]);
 };
