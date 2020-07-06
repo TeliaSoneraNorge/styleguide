@@ -49,12 +49,14 @@ export const Dropdown: React.FC<DropdownProps> = props => {
     const navigate = (e: KeyboardEvent) => {
       if (open && e.target && menuRef.current && menuRef.current.contains((document.activeElement as any) as Node)) {
         if (e.key === 'ArrowDown') {
+          e.preventDefault();
           if (highlightIndex === maxHighlightIndex) {
             setHighlightIndex(0);
           } else {
             setHighlightIndex(highlightIndex + 1);
           }
         } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
           if (highlightIndex === 0) {
             setHighlightIndex(maxHighlightIndex);
           } else {
