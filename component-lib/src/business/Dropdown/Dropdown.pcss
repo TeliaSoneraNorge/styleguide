@@ -22,33 +22,37 @@
 }
 
 .Business-Dropdown-toggle {
-  padding: 0 1rem;
-  border-radius: 4px;
-  border: none;
-  font-size: 16px;
-  height: 2.25rem;
-  line-height: 24px;
-  display: flex;
-  align-items: center;
-  &:hover {
-    cursor: pointer;
-    background-color: var(--medium-light-grey);
+  &--default {
+    padding: 0 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    height: 2.25rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    &:hover {
+      cursor: pointer;
+      background-color: var(--medium-light-grey);
+    }
+    &:active,
+    &:focus {
+      outline: none;
+      background-color: var(--grey);
+    }
+
+    .Business-Dropdown-toggle-icon {
+      header: 1rem;
+      width: 1rem;
+      margin-right: 8px;
+    }
+    .Business-Dropdown-toggle-caret {
+      margin-left: 8px;
+      height: 1rem;
+      width: 1rem;
+    }
   }
-  &:active,
-  &:focus {
-    outline: none;
-    background-color: var(--grey);
-  }
-  &-icon {
-    header: 1rem;
-    width: 1rem;
-    margin-right: 8px;
-  }
-  &-caret {
-    margin-left: 8px;
-    height: 1rem;
-    width: 1rem;
-  }
+
   &--hideLabel {
     padding: 6px;
     .Business-Dropdown-toggle-icon {

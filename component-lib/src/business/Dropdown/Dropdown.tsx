@@ -32,6 +32,8 @@ export const Dropdown: React.FC<DropdownProps> = props => {
 
   useEffect(() => {
     const closeMenu = (e: MouseEvent | FocusEvent) => {
+      console.log(e.target);
+
       if (open && e.target && dropdownRef.current && !dropdownRef.current.contains((e.target as any) as Node)) {
         setOpen(false);
       }
@@ -99,13 +101,14 @@ export const Dropdown: React.FC<DropdownProps> = props => {
 };
 
 interface DropdownToggleProps {
-  label: string;
+  label?: string;
   icon?: IconDefinition;
   hideLabel?: boolean;
   color?: 'purple' | 'default';
   outline?: boolean;
+  tag?: 'div' | 'span';
 }
-export const DropdownToggle = (props: DropdownToggleProps) => {
+export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   const { toggle, open } = useDropdownContext();
   const toggelRef = useRef<HTMLButtonElement>(null);
   useEffect(() => {
@@ -113,11 +116,26 @@ export const DropdownToggle = (props: DropdownToggleProps) => {
       toggelRef.current.blur();
     }
   }, [open]);
+
+  const Tag = props.tag || 'span';
+  if (props.children) {
+    return (
+      <Tag className="Business-Dropdown-toggle">
+        {React.Children.map(props.children, child =>
+          typeof child === 'string' ? (
+            <div onClick={toggle}>{child}</div>
+          ) : React.isValidElement(child) ? (
+            React.cloneElement(child, { onClick: toggle, ...props })
+          ) : null
+        )}
+      </Tag>
+    );
+  }
   return (
     <button
       ref={toggelRef}
       onClick={toggle}
-      className={cs('Business-Dropdown-toggle', {
+      className={cs('Business-Dropdown-toggle Business-Dropdown-toggle--default', {
         'Business-Dropdown-toggle--hideLabel': props.hideLabel,
         'Business-Dropdown-toggle--purple': props.color === 'purple',
         'Business-Dropdown-toggle--outline': props.outline !== false,
@@ -134,7 +152,7 @@ interface DropdownMenuProps {
   position?: 'right' | 'left';
 }
 export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
-  const { menuRef, open, setHighlightIndex, setMaxHighlightIndex } = useDropdownContext();
+  const { menuRef, open, toggle, setHighlightIndex, setMaxHighlightIndex } = useDropdownContext();
   let index = -1;
 
   const clickableChildren = React.Children.toArray(props.children).filter(child =>
