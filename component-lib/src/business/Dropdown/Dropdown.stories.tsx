@@ -7,12 +7,14 @@ storiesOf('Business|Dropdown', module)
   .add('Default', () => {
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <h4>Default</h4>
+        <h4>Default toggle, with default items, items with icon, header and divider item</h4>
         <Dropdown>
           <DropdownToggle label="Toggel" />
           <DropdownMenu>
+            <DropdownItem header={true} label="Header" />
             <DropdownItem label="Option 1" onClick={() => console.log('click')} />
             <DropdownItem label="Option 2" onClick={() => console.log('click')} />
+            <DropdownItem divider={true} />
             <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
             <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
               Child

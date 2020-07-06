@@ -5,13 +5,15 @@ import cs from 'classnames';
 interface DropdownMenuProps {
   position?: 'right' | 'left';
 }
+const isClickable = (child: any) =>
+  React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider;
+
 export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
   const { menuRef, open, setHighlightIndex, setMaxHighlightIndex } = useDropdownContext();
   let index = -1;
 
-  const clickableChildren = React.Children.toArray(props.children).filter(child =>
-    React.isValidElement<DropdownItemProps>(child)
-  );
+  const clickableChildren = React.Children.toArray(props.children).filter(isClickable);
+
   useEffect(() => {
     if (setMaxHighlightIndex) {
       setMaxHighlightIndex(clickableChildren.length - 1);
@@ -30,7 +32,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
       }}
     >
       {React.Children.map(props.children, child => {
-        if (React.isValidElement<DropdownItemProps>(child)) {
+        if (React.isValidElement<DropdownItemProps>(child) && isClickable(child)) {
           index += 1;
           return React.cloneElement(child, {
             index: index,
