@@ -5,6 +5,7 @@ import cs from 'classnames';
 
 interface DropdownMenuProps {
   position?: 'right' | 'left';
+  wrapContent?: boolean;
 }
 const isClickable = (child: any) =>
   React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider;
@@ -23,7 +24,11 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
 
   return (
     <div
-      className={cs('Business-Dropdown-content', { open: open, right: props.position === 'right' })}
+      className={cs('Business-Dropdown-content', {
+        'Business-Dropdown-content--nowrap': !props.wrapContent,
+        open: open,
+        right: props.position === 'right',
+      })}
       tabIndex={0}
       ref={menuRef}
       onFocus={() => {

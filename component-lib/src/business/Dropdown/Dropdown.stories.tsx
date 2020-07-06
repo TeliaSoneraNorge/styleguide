@@ -22,6 +22,23 @@ storiesOf('Business|Dropdown', module)
             <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
           </DropdownMenu>
         </Dropdown>
+
+        <br />
+        <h4>Wrap content in items</h4>
+        <Dropdown>
+          <DropdownToggle label="Toggel" />
+          <DropdownMenu wrapContent={true}>
+            <DropdownItem header={true} label="Header" />
+            <DropdownItem label="Option 1" onClick={() => console.log('click')} />
+            <DropdownItem label="Option 2" onClick={() => console.log('click')} />
+            <DropdownItem divider={true} />
+            <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
+            <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+              Child
+            </DropdownItem>
+            <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+          </DropdownMenu>
+        </Dropdown>
         <br />
         <h4>With icon in toggle</h4>
         <Dropdown>
@@ -59,6 +76,20 @@ storiesOf('Business|Dropdown', module)
       <Dropdown>
         <DropdownToggle color="purple" label="Toggel" />
         <DropdownMenu>
+          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
+          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
+          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+            Child
+          </DropdownItem>
+          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+        </DropdownMenu>
+      </Dropdown>
+      <br />
+      <h4>wrap content in items</h4>
+      <Dropdown>
+        <DropdownToggle color="purple" label="Toggel" />
+        <DropdownMenu wrapContent={true}>
           <DropdownItem label="Option 1" onClick={() => console.log('click')} />
           <DropdownItem label="Option 2" onClick={() => console.log('click')} />
           <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
@@ -116,7 +147,20 @@ storiesOf('Business|Dropdown', module)
           <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
         </DropdownMenu>
       </Dropdown>
-
+      <br />
+      <h4>wrap content in items</h4>
+      <Dropdown>
+        <DropdownToggle label="Toggel" outline={false} />
+        <DropdownMenu wrapContent={true}>
+          <DropdownItem label="Option 1" onClick={() => console.log('click')} />
+          <DropdownItem label="Option 2" onClick={() => console.log('click')} />
+          <DropdownItem label="Centered" centere={true} onClick={() => console.log('click')} />
+          <DropdownItem icon="user" label="Longer option with child" onClick={() => console.log('click')}>
+            Child
+          </DropdownItem>
+          <DropdownItem label="Even longer than the long option" onClick={() => console.log('click')} />
+        </DropdownMenu>
+      </Dropdown>
       <br />
       <h4>With icon in toggle</h4>
 
