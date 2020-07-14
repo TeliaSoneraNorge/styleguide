@@ -17,6 +17,7 @@ const SubscriptionAccordion = ({
   disclaimers,
   scrollToOnOpen = false,
   children,
+  className,
   onOpen = () => {},
   onSelect = () => {},
 }) => {
@@ -35,7 +36,7 @@ const SubscriptionAccordion = ({
     <section
       ref={ref}
       id={id}
-      className={cn('subscription-accordion', { 'subscription-accordion__inverted': isInverted })}
+      className={cn('subscription-accordion', className, { 'subscription-accordion__inverted': isInverted })}
     >
       <button className="subscription-accordion__header" onClick={onOpen}>
         <Heading tag="h2" size="s" text={name} />
@@ -103,6 +104,7 @@ SubscriptionAccordion.propTypes = {
   }),
   disclaimers: PropTypes.element,
   scrollToOnOpen: PropTypes.bool,
+  className: PropTypes.string,
   onOpen: PropTypes.func,
   onSelect: PropTypes.func,
 };

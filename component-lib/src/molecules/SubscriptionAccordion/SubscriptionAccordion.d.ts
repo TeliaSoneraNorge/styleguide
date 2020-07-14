@@ -25,6 +25,7 @@ export interface SubscriptionAccordionProps {
   feature?: SubscriptionFeature;
   disclaimers?: any;
   scrollToOnOpen?: boolean;
+  className?: string;
   onOpen?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
 }
