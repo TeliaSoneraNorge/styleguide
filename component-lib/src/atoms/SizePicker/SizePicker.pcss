@@ -1,5 +1,8 @@
 .size-picker {
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
 
     &__button {
         cursor: pointer;
@@ -35,10 +38,7 @@
             }
         }
 
-        margin: .5rem 0;
-        &:not(:last-of-type) {
-            margin-right: 1.5rem;
-        }
+        margin: .5rem .75rem;
     }
 
     &__selected {
