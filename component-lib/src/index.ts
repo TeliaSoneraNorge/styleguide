@@ -72,6 +72,7 @@ export { default as PriceTable } from './molecules/PriceTable';
 export { default as ProductPromoBox } from './molecules/ProductPromoBox';
 export { default as ProgressChart } from './molecules/ProgressChart';
 export { default as PromoBox } from './molecules/PromoBox';
+export { default as ProductModalDialog } from './molecules/ProductModalDialog';
 export { RadioButton, RadioButtonGroup } from './molecules/RadioButtonGroup';
 export { RadioButtonWithLabel, RadioButtonList } from './molecules/RadioButtonList';
 export { default as RecommendedProducts } from './molecules/RecommendedProducts';
