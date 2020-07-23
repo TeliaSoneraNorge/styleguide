@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.36
+- Added `ColorPicker` component.
+- Added `SmallBoxList` component.
+- Added `BigImageModal` component.
+- Added `SubscriptionAccordion` component.
+- Added `InfoCard` component.
+
 ## 1.33.33
 - Dropdown Menu in the Menu component. A new feature that will advance when identity login are launched for all channels 
 
