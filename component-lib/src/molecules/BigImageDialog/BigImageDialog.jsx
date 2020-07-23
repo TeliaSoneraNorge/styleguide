@@ -4,31 +4,15 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { Context } from '../ModalDialog/ModalDialogProvider';
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
-import Button from '../../atoms/Button/Button';
 import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
-import ColorPicker from '../../atoms/ColorPicker';
 
 const KEY_ESC = 27;
 
-const ProductModalDialog = ({
-  name,
-  heading,
-  description,
-  variants,
-  selected,
-  onSelect,
-  onSubmit,
-  submitText,
-  onClose,
-  standalone,
-  renderTo,
-  ...rest
-}) => {
+const BigImageDialog = ({ name, heading, description, src, children, onClose, standalone, renderTo, ...rest }) => {
   const modalNode = renderTo || useContext(Context);
   const dialogRef = useRef();
   const dialogOverlayRef = useRef();
-  const selectedVariant = variants.find(variant => variant.id === selected.id) || variants[0];
 
   const returnFocusOnDialogClose = () => {
     if (standalone) return;
@@ -78,8 +62,8 @@ const ProductModalDialog = ({
       tabIndex={0}
       onKeyDown={handleKeyDown}
       ref={dialogRef}
-      className={classnames('product-modal-dialog container', 'container--medium', 'container--no-padding', {
-        'product-modal-dialog--standalone': standalone,
+      className={classnames('big-image-dialog container', 'container--medium', 'container--no-padding', {
+        'big-image-dialog--standalone': standalone,
       })}
       role="dialog"
       aria-labelledby={`${name}-heading`}
@@ -87,32 +71,20 @@ const ProductModalDialog = ({
       {...rest}
       {...additionalProps}
     >
-      <section className="product-modal-dialog__container">
-        <button className="product-modal-dialog__close-container" onClick={onClose}>
-          <span className="product-modal-dialog__close-text">LUKK</span>
-          <Icon className="product-modal-dialog__close-icon" icon="close" color="black" />
+      <section className="big-image-dialog__container">
+        <button className="big-image-dialog__close-container" onClick={onClose}>
+          <span className="big-image-dialog__close-text">LUKK</span>
+          <Icon className="big-image-dialog__close-icon" icon="close" color="black" />
         </button>
-        <div className="product-modal-dialog__image-container">
-          <img alt="" src={selectedVariant.src} />
+        <div className="big-image-dialog__image-container">
+          <img alt="" src={src} />
         </div>
-        <div className="product-modal-dialog__content">
-          <h2 id={`${name}-heading`} className="product-modal-dialog__heading">
+        <div className="big-image-dialog__content">
+          <h2 id={`${name}-heading`} className="big-image-dialog__heading">
             {heading}
           </h2>
           <Paragraph id={`${name}-content`}>{description}</Paragraph>
-          <div className="product-modal-dialog__color-picker">
-            <ColorPicker colors={variants} selected={selectedVariant} onSelect={onSelect} />
-          </div>
-          <div className="product-modal-dialog__footer">
-            <span className="product-modal-dialog__price">{formatPrice(selectedVariant.price)}</span>
-            <Button
-              kind="primary"
-              icon="shoppingcart"
-              margin="top"
-              onClick={() => onSubmit(selectedVariant)}
-              text={submitText}
-            />
-          </div>
+          {children}
         </div>
       </section>
     </Component>
@@ -130,7 +102,7 @@ const ProductModalDialog = ({
     <>
       {ReactDOM.createPortal(
         <>
-          <div ref={dialogOverlayRef} onClick={onOverlayClick} tabIndex="-1" className="product-modal-dialog__overlay">
+          <div ref={dialogOverlayRef} onClick={onOverlayClick} tabIndex="-1" className="big-image-dialog__overlay">
             {renderDialog(FocusTrap, { as: 'div' })}
           </div>
         </>,
@@ -140,33 +112,14 @@ const ProductModalDialog = ({
   );
 };
 
-const formatPrice = price => {
-  if (typeof price === 'number') {
-    return price % 1 === 0 ? price + ',-' : price + ' kr';
-  }
-  return price;
-};
-
-ProductModalDialog.propTypes = {
+BigImageDialog.propTypes = {
   name: PropTypes.string.isRequired,
   heading: PropTypes.string,
   description: PropTypes.string,
-  variants: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string,
-      name: PropTypes.string,
-      color: PropTypes.string,
-      src: PropTypes.string,
-      price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-    })
-  ),
-  selected: PropTypes.object,
-  onSelect: PropTypes.func,
-  onSubmit: PropTypes.func,
-  submitText: PropTypes.string,
+  children: PropTypes.node,
   onClose: PropTypes.func,
   standalone: PropTypes.bool,
   renderTo: PropTypes.any,
 };
 
-export default ProductModalDialog;
+export default BigImageDialog;
