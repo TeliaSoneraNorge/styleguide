@@ -98,6 +98,7 @@ export { default as Video } from './molecules/Video';
 export { default as ArticleList } from './molecules/ArticleList';
 export { default as LightAlert } from './molecules/LightAlert';
 export { default as InfoBox } from './molecules/InfoBox';
+export { default as InfoCard } from './molecules/InfoCard';
 export { default as DisplayFunctionality } from './molecules/DisplayFunctionality';
 export { default as Banner } from './molecules/Banner';
 export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
