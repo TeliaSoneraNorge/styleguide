@@ -6,9 +6,9 @@ export interface BigImageDialogProps {
   description?: string;
   src: string;
   children: React.ReactNode;
-  onClose?: (...args: any[]) => any;
+  onClose?: () => void;
   standalone?: boolean;
-  renderTo?: any;
+  renderTo?: React.ReactNode;
 }
 
 const BigImageDialog: React.FC<BigImageDialogProps>;
