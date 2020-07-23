@@ -7,9 +7,9 @@ export interface Color {
 }
 
 export interface ColorPickerProps {
-    selected?: Color | null;
+    selected?: Color;
     colors: Color[];
-    onSelect?: (...args: any[]) => any;
+    onSelect?: (color: Color) => void;
 }
 
 const ColorPicker: React.FC<ColorPickerProps>;

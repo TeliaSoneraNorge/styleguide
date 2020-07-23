@@ -23,6 +23,7 @@ export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
 export { default as ShadowBox } from './atoms/ShadowBox';
+export { default as SmallBoxList } from './atoms/SmallBoxList'
 export { default as SpecialMessage } from './atoms/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner';
 export { default as StepIndicator } from './atoms/StepIndicator';
@@ -98,6 +99,7 @@ export { default as Video } from './molecules/Video';
 export { default as ArticleList } from './molecules/ArticleList';
 export { default as LightAlert } from './molecules/LightAlert';
 export { default as InfoBox } from './molecules/InfoBox';
+export { default as InfoCard } from './molecules/InfoCard';
 export { default as DisplayFunctionality } from './molecules/DisplayFunctionality';
 export { default as Banner } from './molecules/Banner';
 export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';

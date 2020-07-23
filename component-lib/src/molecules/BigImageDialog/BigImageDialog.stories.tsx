@@ -57,7 +57,7 @@ const priceStyle = {
 };
 
 export const Default = () => {
-  const [selected, setSelected] = useState(variants[0]);
+  const [selected, setSelected] = useState<Color>(variants[0]);
   const selectedVariant = variants.find(variant => variant.id === selected.id) || variants[0];
 
   return (
