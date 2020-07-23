@@ -1,0 +1,48 @@
+.small-box-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+
+    &__button {
+        cursor: pointer;
+        border: none;
+        border-radius: 3px;
+        height: 2.375rem;
+        width: 4.5rem;
+        background-color: #EAEAEA;
+
+        color: var(--black);
+        font-family: "Helvetica Neue";
+        font-size: 1rem;
+        font-weight: bold;
+
+        &:focus,
+        &:active,
+        &:hover,
+        &--selected {
+            outline: none;
+            cursor: pointer;
+            background-color: #EAEAEA;
+            box-shadow: 0 0 0 2px var(--core-purple);
+            box-sizing: border-box;
+        }
+
+        &--selected {
+            background-color: var(--white);
+            
+            &:focus,
+            &:active,
+            &:hover {
+                background-color: var(--white);
+            }
+        }
+
+        margin: .5rem .75rem;
+    }
+
+    &__selected {
+        background-color: var(--white);
+        box-shadow: 0 0 0 2px var(--core-purple);
+    }
+}

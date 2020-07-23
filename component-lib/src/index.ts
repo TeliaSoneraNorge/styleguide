@@ -23,6 +23,7 @@ export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
 export { default as ShadowBox } from './atoms/ShadowBox';
+export { default as SmallBoxList } from './atoms/SmallBoxList'
 export { default as SpecialMessage } from './atoms/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner';
 export { default as StepIndicator } from './atoms/StepIndicator';
