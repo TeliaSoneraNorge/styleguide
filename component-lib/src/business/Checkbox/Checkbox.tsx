@@ -60,6 +60,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
         <Icon
           icon="check-mark"
           className={cs({ checkbox__icon: true, 'checkbox__icon--visible': 'checked' in props && props.checked })}
+          style={{width: "1rem", height: "1rem"}}
         />
         <Icon
           icon="minus"
@@ -67,6 +68,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
             checkbox__icon: true,
             'checkbox__icon--visible': 'checked' in props && !props.checked && 'partial' in props && props.partial,
           })}
+          style={{width: "1rem", height: "1rem"}}
         />
       </div>
       <span
