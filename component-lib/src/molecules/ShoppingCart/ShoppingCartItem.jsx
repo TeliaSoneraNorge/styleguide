@@ -76,94 +76,117 @@ const ShoppingCartItem = ({
   const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT;
 
   return (
-    <ShoppingCartRow
-      className={cn('shopping-cart__item', {
-        'shopping-cart__item__dashed': isDraft,
-      })}
-      key={id}
-    >
-      <ShoppingCartColumnHeading
-        className="shopping-cart__table__cell shopping-cart__item__name"
-        colSpan={!isQuantityModifiable || hasPaid ? 2 : undefined}
-        scope="row"
+    <>
+      <ShoppingCartRow
+        className={cn('shopping-cart__item', {
+          'shopping-cart__item__dashed': isDraft,
+        })}
+        key={id}
       >
-        <div
-          className={cn('shopping-cart__item__name__container', {
-            'shopping-cart__item__name--subitem': isSubItem || indent,
+        <ShoppingCartColumnHeading
+          className="shopping-cart__table__cell shopping-cart__item__name"
+          colSpan={!isQuantityModifiable || hasPaid ? 2 : undefined}
+          scope="row"
+        >
+          <div
+            className={cn('shopping-cart__item__name__container', {
+              'shopping-cart__item__name--subitem': isSubItem || indent,
+            })}
+          >
+            <CartItemImage image={cartItem.image} isDraft={isDraft} />
+            <div className="shopping-cart__item__name__text__container">
+              {name}
+              {subtitle && (
+                <span
+                  className="shopping-cart__item__name__text__subtitle"
+                  data-hj-suppress={type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
+                >
+                  {subtitle}
+                </span>
+              )}
+              {leaseMonths !== null && leaseMonths !== undefined && price.upfront && (
+                <span className="shopping-cart__item__name__text__subtitle">
+                  Betales nå: {`${formatPrice(price.upfront - discountValueUpfront)}`}
+                </span>
+              )}
+              {shouldShowPricePerUnit && (
+                <span className="shopping-cart__item__price-per">
+                  {quantity > 1 && !isQuantityModifiable && `${quantity} x `}
+                  {`${getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, 1)}/stk`}
+                </span>
+              )}
+              {quantity > 1 && !shouldShowPricePerUnit && (
+                <span className="shopping-cart__item__price-per">{`${quantity} stk`}</span>
+              )}
+            </div>
+          </div>
+        </ShoppingCartColumnHeading>
+        {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
+          <ShoppingCartCell className="shopping-cart__item__quantity">
+            <ShoppingCartItemQuantityPicker
+              cartItem={cartItem}
+              name={name}
+              quantity={quantity}
+              onChangeQuantity={onChangeQuantity}
+            />
+          </ShoppingCartCell>
+        )}
+        <ShoppingCartCell
+          className={cn('shopping-cart__item__price', {
+            'shopping-cart__item__price--monthly': price.monthly,
           })}
         >
-          <CartItemImage image={cartItem.image} isDraft={isDraft} />
-          <div className="shopping-cart__item__name__text__container">
-            {name}
-            {subtitle && (
-              <span
-                className="shopping-cart__item__name__text__subtitle"
-                data-hj-suppress={type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
-              >
-                {subtitle}
+          {discountValueMonthly === 0 && discountValueUpfront === 0 ? (
+            <div className="shopping-cart__item__price__container">
+              <span>{getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}</span>
+              {!isNaN(price.monthly) && <span>/md.</span>}
+            </div>
+          ) : (
+            <div className="shopping-cart__item__price__container">
+              <span className="shopping-cart__item__price__number shopping-cart__item__price--discount">
+                {getPrice(formatPrice, price, 0, 0, quantity)}
               </span>
-            )}
-            {leaseMonths !== null && leaseMonths !== undefined && price.upfront && (
-              <span className="shopping-cart__item__name__text__subtitle">
-                Betales nå: {`${formatPrice(price.upfront - discountValueUpfront)}`}
+              {!isNaN(price.monthly) && (
+                <span className="shopping-cart__item__price--discount">/md.{hasGroupDiscount && '*'}</span>
+              )}
+              <span className="shopping-cart__item__price__number">
+                {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
               </span>
-            )}
-            {shouldShowPricePerUnit && (
-              <span className="shopping-cart__item__price-per">
-                {quantity > 1 && !isQuantityModifiable && `${quantity} x `}
-                {`${getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, 1)}/stk`}
-              </span>
-            )}
-            {quantity > 1 && !shouldShowPricePerUnit && (
-              <span className="shopping-cart__item__price-per">{`${quantity} stk`}</span>
-            )}
-          </div>
-        </div>
-      </ShoppingCartColumnHeading>
-      {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
-        <ShoppingCartCell className="shopping-cart__item__quantity">
-          <ShoppingCartItemQuantityPicker
-            cartItem={cartItem}
-            name={name}
-            quantity={quantity}
-            onChangeQuantity={onChangeQuantity}
-          />
+              {!isNaN(price.monthly) && <span className="">/md.</span>}
+            </div>
+          )}
         </ShoppingCartCell>
+        <ShoppingCartCell className="shopping-cart__item__delete">
+          {isRemovable && !hasPaid && (
+            <div className="shopping-cart__item__delete-button__container">
+              <button
+                className="button button--small shopping-cart__item__delete-button"
+                onClick={() => onRemoveItem(cartItem)}
+              >
+                <div className="shopping-cart__item__close">x</div>
+                <div className="shopping-cart__item__close__text">Slett</div>
+              </button>
+            </div>
+          )}
+        </ShoppingCartCell>
+      </ShoppingCartRow>
+      {_.get(discount, 'leaseDiscount') && (
+        <ShoppingCartRow className="shopping-cart__item__lease-discount">
+            <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
+              <div className="shopping-cart__item__name--subitem shopping-cart__item__lease-discount__header">
+                {discount.leaseDiscount.name}
+              </div>
+          </ShoppingCartColumnHeading>
+        <ShoppingCartCell className="shopping-cart__table__foot__cell">
+          <div className="shopping-cart__item__price__container">
+            <span>{`${discount.leaseDiscount.value},-`}</span>
+          </div>
+        </ShoppingCartCell>
+        <ShoppingCartCell>
+        </ShoppingCartCell>
+        </ShoppingCartRow>
       )}
-      <ShoppingCartCell
-        className={cn('shopping-cart__item__price', {
-          'shopping-cart__item__price--monthly': price.monthly,
-        })}
-      >
-        {discountValueMonthly === 0 && discountValueUpfront === 0 ? (
-          <div className="shopping-cart__item__price__container">
-            <span>{getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}</span>
-            {!isNaN(price.monthly) && <span>/md.</span>}
-          </div>
-        ) : (
-          <div className="shopping-cart__item__price__container">
-            <span className="shopping-cart__item__price__number shopping-cart__item__price--discount">
-              {getPrice(formatPrice, price, 0, 0, quantity)}
-            </span>
-            {!isNaN(price.monthly) && <span className="shopping-cart__item__price--discount">/md.{hasGroupDiscount && "*"}</span>}
-            <span className="shopping-cart__item__price__number">
-              {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
-            </span>
-            {!isNaN(price.monthly) && <span className="">/md.</span>}
-          </div>
-        )}
-      </ShoppingCartCell>
-      <ShoppingCartCell className="shopping-cart__item__delete">
-        {isRemovable && !hasPaid && (
-          <div className="shopping-cart__item__delete-button__container">
-            <button className="button button--small shopping-cart__item__delete-button" onClick={() => onRemoveItem(cartItem)}>
-              <div className="shopping-cart__item__close">x</div>
-              <div className="shopping-cart__item__close__text">Slett</div>
-            </button>
-          </div>
-        )}
-      </ShoppingCartCell>
-    </ShoppingCartRow>
+    </>
   );
 };
 

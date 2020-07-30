@@ -99,6 +99,74 @@ const switchContent = [
   },
 ];
 
+const leaseContent = [
+  {
+    type: 'HANDSET',
+    subtype: '',
+    id: '9076528',
+    bundleId: 'e16132',
+    brand: 'Samsung',
+    brandSlug: 'samsung',
+    model: 'Galaxy S20 Ultra 5G 128 GB',
+    modelSlug: 'galaxy-s20-ultra',
+    color: 'Grå',
+    image: {
+      url: '//images.ctfassets.net/iz15t1lxx44v/6wL89AOWs6Z7dMISvz6Ta1/0eee85d33d7b20632d706ce51df0836e/samsung-galaxy-s20-ultra-5g-cosmic-gray-2.png'
+    },
+    name: 'Samsung Galaxy S20 Ultra 5G 128 GB Grå',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1
+    },
+    price: {
+      upfront: 10799,
+      monthly: 0,
+      originalSalesPrice: 15790
+    },
+    discount: {
+      value: {
+        upfront: 0
+      },
+      description: '',
+      leaseDiscount: {
+        name: "Telefonrabatt, 12 md. binding og TeliaX",
+        value: 2121
+      }
+    },
+    leaseMonths: 0,
+    isReSwitch: false,
+    isWebDeal: false,
+    items: [
+      {
+        type: 'SUBSCRIPTION_DRAFT',
+        id: 'SMART_X.TLF12PLEAS',
+        bundleId: 'e16132',
+        items: [],
+        name: 'Telia X med telefon og 12 md. avtaletid',
+        quantity: {
+          modifiable: false,
+          removable: false,
+          value: 1
+        },
+        price: {
+          monthly: 549
+        },
+        image: {
+          icon: 'sim-card'
+        },
+        subtitle: '',
+        discount: {
+          hasGroupDiscount: false,
+          value: {
+            monthly: 0
+          }
+        }
+      }
+    ]
+  }
+];
+
 const subscriptionContent = [
   {
     type: 'SUBSCRIPTION',
@@ -562,6 +630,8 @@ function getCart(item) {
   switch (item) {
     case 'switch':
       return switchContent;
+    case 'lease':
+      return leaseContent;
     case 'subscription':
       return subscriptionContent;
     case 'accessories':
@@ -593,7 +663,7 @@ stories.addWithJSX('ShoppingCart', () => {
   const pricePerMonth = number('Price per month', 500);
   const priceUpfront = number('Price upfront', 500);
   const priceFirstInvoice = number('Price first invoice', 500);
-  const itemToDisplay = select('Item', ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'], 'switch');
+  const itemToDisplay = select('Item', ['switch', 'lease', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'], 'switch');
 
   return (
     <Container style={style} size={containerSize}>
