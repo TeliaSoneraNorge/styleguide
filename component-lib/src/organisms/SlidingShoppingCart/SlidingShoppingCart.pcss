@@ -11,7 +11,7 @@
         color: var(--core-purple);
     }
     &__container {
-        width: 50vw;
+        width: 100vw;
         position: fixed;
         right: -100px;
         height: 100vh;
@@ -21,10 +21,15 @@
         padding: 0 0.5rem 0 2rem;
         opacity:0;
         transition: 0.2s;
+        overflow-y: auto;
         &--show {
             right: 0;
             opacity: 1;
             transition: 0.2s;
+        }
+        @media screen and (min-width: 45em) {
+            width: 50vw;
+            min-width: 40rem;
         }
     }
     &__checkout-button-container {
@@ -42,11 +47,10 @@
         background: transparent;
         font-size: 1.3rem;
         font-family: Pebble;
-        &:focus {
-            outline:0;
-        }
-        &:hover {
+        cursor: pointer;
+        &:hover, &:focus {
             transform: scale(1.2);
+            outline:0;
         }
     }
 }

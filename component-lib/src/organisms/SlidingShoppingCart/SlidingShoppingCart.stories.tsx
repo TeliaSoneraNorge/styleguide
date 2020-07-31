@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 
-import SlidingShoppingCart from './SlidingShoppingCart';
+import SlidingShoppingCart from './SlidingShoppingCart.tsx';
 import Container from '../../atoms/Container/Container';
+import { Icon } from '../../atoms/Icon/Icon';
 
 const switchContent = [
   {
@@ -589,8 +590,14 @@ stories.addWithJSX('SlidingShoppingCart', () => {
   const priceFirstInvoice = number('Price first invoice', 500);
   const itemToDisplay = select('Item', ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'], 'switch');
 
+  const [shouldShowCart, setShouldShowCart] = useState(false);
+
+
   return (
     <Container size={containerSize}>
+        <button onClick={() => setShouldShowCart(!shouldShowCart)} className="sliding-shopping-cart__cart-button">
+          <Icon icon="shoppingcart" className="sliding-shopping-cart__cart-icon" />
+        </button>
         <SlidingShoppingCart
           heading={heading}
           cartItems={getCart(itemToDisplay)}
@@ -601,6 +608,8 @@ stories.addWithJSX('SlidingShoppingCart', () => {
           onChangeQuantity={() => {}}
           onRemoveItem={() => {}}
           formatPrice={price => `${price},-`}
+          shouldShowCart={shouldShowCart}
+          setShouldShowCart={setShouldShowCart}
         />
     </Container>
   );
