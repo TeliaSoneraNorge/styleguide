@@ -172,18 +172,17 @@ const ShoppingCartItem = ({
       </ShoppingCartRow>
       {_.get(discount, 'leaseDiscount') && (
         <ShoppingCartRow className="shopping-cart__item__lease-discount">
-            <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
-              <div className="shopping-cart__item__name--subitem shopping-cart__item__lease-discount__header">
-                {discount.leaseDiscount.name}
-              </div>
+          <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
+            <div className="shopping-cart__item__name--subitem shopping-cart__item__lease-discount__header">
+              {discount.leaseDiscount.name}
+            </div>
           </ShoppingCartColumnHeading>
-        <ShoppingCartCell className="shopping-cart__table__foot__cell">
-          <div className="shopping-cart__item__price__container">
-            <span>{`${discount.leaseDiscount.value},-`}</span>
-          </div>
-        </ShoppingCartCell>
-        <ShoppingCartCell>
-        </ShoppingCartCell>
+          <ShoppingCartCell className="shopping-cart__table__foot__cell">
+            <div className="shopping-cart__item__price__container">
+              <span>{`${discount.leaseDiscount.value},-`}</span>
+            </div>
+          </ShoppingCartCell>
+          <ShoppingCartCell></ShoppingCartCell>
         </ShoppingCartRow>
       )}
     </>
