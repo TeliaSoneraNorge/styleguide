@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import Button from '../../atoms/Button/Button';
 import cn from 'classnames';
@@ -14,7 +13,7 @@ export interface SlidingShoppingCartProps {
   totalPriceFirstInvoice: number;
   totalPriceMonthly: number;
   totalPriceUpfront: number;
-  formatPrice: (price: string | number) => string,
+  formatPrice: (price: string | number) => string;
   hasPaid: boolean;
   disclaimers: any;
   shouldShowCart: boolean;
@@ -35,8 +34,8 @@ const SlidingShoppingCart = ({
   hasPaid,
   disclaimers,
   shouldShowCart,
-  setShouldShowCart
-}:SlidingShoppingCartProps) => {
+  setShouldShowCart,
+}: SlidingShoppingCartProps) => {
   return (
     <div
       className={cn('sliding-shopping-cart__container', {
