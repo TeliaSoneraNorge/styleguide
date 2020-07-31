@@ -1,0 +1,56 @@
+.sliding-shopping-cart {
+    &__cart-button {
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+        &:focus {
+            outline: 0;
+        }
+    }
+    &__cart-icon {
+        color: var(--core-purple);
+    }
+    &__container {
+        width: 100vw;
+        position: fixed;
+        right: -100px;
+        height: 100vh;
+        top: 0;
+        background-color: #F5F5F5;
+        box-shadow: -5px 0 12px 0 rgba(0,0,0,0.2);
+        padding: 0 0.5rem 0 2rem;
+        opacity:0;
+        transition: 0.2s;
+        overflow-y: auto;
+        &--show {
+            right: 0;
+            opacity: 1;
+            transition: 0.2s;
+        }
+        @media screen and (min-width: 45em) {
+            width: 50vw;
+            min-width: 40rem;
+        }
+    }
+    &__checkout-button-container {
+        display: flex;
+        justify-content: flex-end;
+    }
+    &__checkout-button {
+        margin: 1rem 1rem 0 0 !important;
+    }
+    &__close-button {
+        border: 0;
+        position: absolute;
+        right: 1rem;
+        top: 0.5rem;
+        background: transparent;
+        font-size: 1.3rem;
+        font-family: Pebble;
+        cursor: pointer;
+        &:hover, &:focus {
+            transform: scale(1.2);
+            outline:0;
+        }
+    }
+}
