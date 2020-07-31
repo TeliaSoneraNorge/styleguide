@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 
-import SlidingShoppingCart from './SlidingShoppingCart.tsx';
+import SlidingShoppingCart from './SlidingShoppingCart';
 import Container from '../../atoms/Container/Container';
 import { Icon } from '../../atoms/Icon/Icon';
 

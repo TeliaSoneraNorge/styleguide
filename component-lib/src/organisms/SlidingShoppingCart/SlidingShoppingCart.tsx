@@ -4,6 +4,23 @@ import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import Button from '../../atoms/Button/Button';
 import cn from 'classnames';
 
+export interface SlidingShoppingCartProps {
+  cartItems?: any;
+  heading?: string;
+  isAnyCartItemsQuantityModifiable: boolean;
+  onChangeQuantity: (item: any, quantity: number) => void;
+  onGoToCart: () => void;
+  onRemoveItem: (item: any) => void;
+  totalPriceFirstInvoice: number;
+  totalPriceMonthly: number;
+  totalPriceUpfront: number;
+  formatPrice: (price: string | number) => string,
+  hasPaid: boolean;
+  disclaimers: any;
+  shouldShowCart: boolean;
+  setShouldShowCart(shouldShowCart: boolean): void;
+}
+
 const SlidingShoppingCart = ({
   cartItems,
   heading,
@@ -19,8 +36,7 @@ const SlidingShoppingCart = ({
   disclaimers,
   shouldShowCart,
   setShouldShowCart
-}) => {
-
+}:SlidingShoppingCartProps) => {
   return (
     <div
       className={cn('sliding-shopping-cart__container', {
@@ -55,14 +71,6 @@ const SlidingShoppingCart = ({
       </div>
     </div>
   );
-};
-
-SlidingShoppingCart.propTypes = {
-  totalPriceMonthly: PropTypes.number,
-  totalPriceUpfront: PropTypes.number,
-  onGoToCart: PropTypes.func,
-  toggleCart: PropTypes.func,
-  formatPrice: PropTypes.func,
 };
 
 export default SlidingShoppingCart;
