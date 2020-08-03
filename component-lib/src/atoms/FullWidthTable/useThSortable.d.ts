@@ -30,7 +30,7 @@ type ThSortablePropsGetter = (fieldName: string) => ThSortableProps;
  *                          When using [[string]] format, the value is the name of the object's property, prefix if '!' to invert the sorting.
  * @param specialFieldComparators   A dictionary object for special object's property comparators.
  */
-export declare function useThSortable<object>(
+export function useThSortable<object>(
   objects: object[],
   maxSortedFields?: number,
   initialSorting?: InitialSorting[],

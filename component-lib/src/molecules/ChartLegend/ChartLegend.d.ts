@@ -11,6 +11,6 @@ export interface ChartLegendProps {
   series?: ChartLegendSeries[];
 }
 
-const ChartLegend: React.FC<ChartLegendProps>;
+export const ChartLegend: React.FC<ChartLegendProps>;
 
 export default ChartLegend;

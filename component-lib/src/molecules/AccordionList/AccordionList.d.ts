@@ -16,6 +16,6 @@ export interface AccordionListProps {
   noBorder?: boolean;
 }
 
-const AccordionList: React.FC<AccordionListProps>;
+export const AccordionList: React.FC<AccordionListProps>;
 
 export default AccordionList;

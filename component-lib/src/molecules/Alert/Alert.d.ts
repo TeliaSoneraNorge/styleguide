@@ -21,6 +21,6 @@ export interface AlertProps {
   links?: AlertLinks[];
 }
 
-const Alert: React.FC<AlertProps>;
+export const Alert: React.FC<AlertProps>;
 
 export default Alert;

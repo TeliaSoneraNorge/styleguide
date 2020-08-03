@@ -17,6 +17,6 @@ export interface AccordionProps {
   footer?: React.ReactNode;
 }
 
-const Accordion: React.FC<AccordionProps>;
+export const Accordion: React.FC<AccordionProps>;
 
 export default Accordion;

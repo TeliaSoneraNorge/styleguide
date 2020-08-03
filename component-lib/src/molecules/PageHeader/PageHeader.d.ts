@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface PageHeaderProps {
+declare interface PageHeaderProps {
   hideMenu?: boolean;
   menuLinks?: any;
   menuId: string;

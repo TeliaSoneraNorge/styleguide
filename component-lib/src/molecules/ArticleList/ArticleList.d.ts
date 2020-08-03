@@ -7,6 +7,6 @@ export interface ArticleListItemsProps {
   description: string;
 }
 
-const ArticleList: React.FC<{articles: ArticleListItemsProps[]}>;
+export const ArticleList: React.FC<{articles: ArticleListItemsProps[]}>;
 
 export default ArticleList;

@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { IconDefinition } from '../../business/Icon'
+import { IconDefinition } from '../../atoms/Icon'
 
 export interface LinkTableProps {
     wrapByTwo?: boolean;
@@ -11,6 +11,6 @@ export interface LinkTableItemProps {
     href: string;
 }
 
-const LinkTable: React.FC<LinkTableProps> & { Item: React.FC<LinkTableItemProps> };
+export const LinkTable: React.FC<LinkTableProps> & { Item: React.FC<LinkTableItemProps> };
 
 export default LinkTable;

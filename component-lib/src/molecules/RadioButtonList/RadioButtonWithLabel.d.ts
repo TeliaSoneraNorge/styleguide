@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface RadioButtonWithLabelProps {
+declare interface RadioButtonWithLabelProps {
   label?: string;
   checked?: boolean;
   disabled?: boolean;
@@ -14,6 +14,6 @@ export interface RadioButtonWithLabelProps {
   children?: React.ReactNode;
 }
 
-const RadioButtonWithLabel: React.FC<RadioButtonWithLabelProps>;
+declare const RadioButtonWithLabel: React.FC<RadioButtonWithLabelProps>;
 
 export default RadioButtonWithLabel;

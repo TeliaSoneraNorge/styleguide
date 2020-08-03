@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface FocusSubscriptionProps {
+declare interface FocusSubscriptionProps {
   id: string;
   name: string;
   dataAmount: number;

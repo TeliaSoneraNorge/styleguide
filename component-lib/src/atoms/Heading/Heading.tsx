@@ -15,9 +15,9 @@ import cs from 'classnames';
  * Heading can be centered by applying heading--centered.
  */
 
-type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span';
+export type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'div' | 'span';
 
-type HeadingSize = 'mega' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs';
+export type HeadingSize = 'mega' | 'xxl' | 'xl' | 'l' | 'm' | 's' | 'xs';
 
 export interface HeadingProps {
   /**

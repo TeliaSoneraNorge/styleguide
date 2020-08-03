@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface VideoProps {
+declare interface VideoProps {
   src?: string;
   allowFullScreen?: boolean;
   img?: string;
@@ -10,6 +10,6 @@ export interface VideoProps {
   onClick?: () => void;
 }
 
-const Video: React.FC<VideoProps>;
+declare const Video: React.FC<VideoProps>;
 
 export default Video;

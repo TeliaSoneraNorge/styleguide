@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface TextBoxWithLabelProps {
+declare interface TextBoxWithLabelProps {
   labelText?: string;
   hideLabel?: boolean;
   type?: string;
@@ -17,6 +17,6 @@ export interface TextBoxWithLabelProps {
   onChange?: (e: React.SyntheticEvent) => void;
 }
 
-const TextBoxWithLabel: React.FC<TextBoxWithLabelProps>;
+declare const TextBoxWithLabel: React.FC<TextBoxWithLabelProps>;
 
 export default TextBoxWithLabel;

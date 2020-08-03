@@ -23,6 +23,6 @@ export interface MenuContentProps {
   onlyLogo?: boolean;
 }
 
-const MenuContent: React.FC<MenuContentProps>;
+export const MenuContent: React.FC<MenuContentProps>;
 
 export default MenuContent;

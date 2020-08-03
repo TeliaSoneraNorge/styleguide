@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-const HeadingLink: React.FC<{ href?: string; }>;
+export const HeadingLink: React.FC<{ href?: string; }>;
 
 export default HeadingLink;

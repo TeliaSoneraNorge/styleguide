@@ -7,6 +7,6 @@ export interface SpinnerProps {
   type?: SpinnerType;
 }
 
-const Spinner: React.FC<SpinnerProps>;
+export const Spinner: React.FC<SpinnerProps>;
 
 export default Spinner;

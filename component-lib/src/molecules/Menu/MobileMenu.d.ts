@@ -21,6 +21,6 @@ export interface MobileMenuProps {
   mobileMenuCloseButtonLabel?: string;
 }
 
-const MobileMenu: React.FC<MobileMenuProps>;
+export const MobileMenu: React.FC<MobileMenuProps>;
 
 export default MobileMenu;

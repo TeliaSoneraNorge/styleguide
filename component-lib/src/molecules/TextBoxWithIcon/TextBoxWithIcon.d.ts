@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface TextBoxWithIconProps {
+declare interface TextBoxWithIconProps {
   type?: string;
   placeholder?: string;
   disabled?: boolean;
@@ -15,6 +15,6 @@ export interface TextBoxWithIconProps {
   onChange?: (...args: any[]) => any;
 }
 
-const TextBoxWithIcon: React.FC<TextBoxWithIconProps>;
+declare const TextBoxWithIcon: React.FC<TextBoxWithIconProps>;
 
 export default TextBoxWithIcon;

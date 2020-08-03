@@ -10,6 +10,6 @@ export interface TextBoxProps {
   onChange?: (...args: any[]) => any;
 }
 
-const TextBox: React.FC<TextBoxProps>;
+export const TextBox: React.FC<TextBoxProps>;
 
 export default TextBox;

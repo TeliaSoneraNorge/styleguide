@@ -15,7 +15,7 @@ export interface ButtonProps {
   'aria-label': string;
 }
 
-const DownloadButtons: React.FC<DownloadButtonsProps> & {
+export const DownloadButtons: React.FC<DownloadButtonsProps> & {
   Button: React.FC<ButtonProps>
 };
 

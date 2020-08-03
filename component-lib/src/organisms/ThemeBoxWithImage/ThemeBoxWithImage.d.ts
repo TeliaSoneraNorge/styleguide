@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface ThemeBoxWithImageProps {
+declare interface ThemeBoxWithImageProps {
   id?: string;
   /**
    * State if box starts in expanded state

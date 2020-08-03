@@ -15,6 +15,6 @@ export interface PageFooterProps {
   specialLink?: PageFooterSpecialLink;
 }
 
-const PageFooter: React.FC<PageFooterProps>;
+export const PageFooter: React.FC<PageFooterProps>;
 
 export default PageFooter;

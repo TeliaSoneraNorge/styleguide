@@ -7,6 +7,6 @@ export interface QuantityButtonProps {
   text?: string;
 }
 
-const QuantityButton: React.FC<QuantityButtonProps>;
+export const QuantityButton: React.FC<QuantityButtonProps>;
 
 export default QuantityButton;

@@ -40,6 +40,6 @@ export interface HeroProps {
   alignBox?: HeroAlignBox;
 }
 
-const Hero: React.FC<HeroProps>;
+export const Hero: React.FC<HeroProps>;
 
 export default Hero;

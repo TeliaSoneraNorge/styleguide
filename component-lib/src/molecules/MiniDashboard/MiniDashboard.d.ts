@@ -12,6 +12,6 @@ export interface MiniDashboardProps {
   links?: MiniDashboardLinks[];
 }
 
-const MiniDashboard: React.FC<MiniDashboardProps>;
+export const MiniDashboard: React.FC<MiniDashboardProps>;
 
 export default MiniDashboard;

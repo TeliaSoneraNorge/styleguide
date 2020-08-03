@@ -10,6 +10,6 @@ export interface HeaderWithImageProps {
   children?: React.ReactNode;
 }
 
-const HeaderWithImage: React.FC<HeaderWithImageProps>;
+export const HeaderWithImage: React.FC<HeaderWithImageProps>;
 
 export default HeaderWithImage;

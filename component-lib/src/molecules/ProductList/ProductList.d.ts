@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface ProductListItems {
+declare interface ProductListItems {
   iconName: string;
   iconColor?: 'white' | 'black' | 'purple';
   title: string;
@@ -10,13 +10,13 @@ export interface ProductListItems {
   style?: 'promo';
 }
 
-export interface ProductListProps {
+declare interface ProductListProps {
   /**
    * An array of items where each item can have properties of icon name, icon color, title, description and href.
    */
   items?: ProductListItems[];
 }
 
-const ProductList: React.FC<ProductListProps>;
+declare const ProductList: React.FC<ProductListProps>;
 
 export default ProductList;

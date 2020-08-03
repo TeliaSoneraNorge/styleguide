@@ -1,5 +1,5 @@
 import * as React from 'react';
 
-const ShoppingCart: React.FC<any>;
+declare const ShoppingCart: React.FC<any>;
 
 export default ShoppingCart;

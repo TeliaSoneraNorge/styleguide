@@ -27,6 +27,6 @@ export interface FactBoxProps {
   centerIcon?: boolean;
 }
 
-const FactBox: React.FC<FactBoxProps>;
+export const FactBox: React.FC<FactBoxProps>;
 
 export default FactBox;

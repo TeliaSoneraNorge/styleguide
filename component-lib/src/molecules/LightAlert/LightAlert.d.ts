@@ -7,6 +7,6 @@ export interface LightAlertProps {
   children?: React.ReactNode;
 }
 
-const LightAlert: React.FC<LightAlertProps>;
+export const LightAlert: React.FC<LightAlertProps>;
 
 export default LightAlert;

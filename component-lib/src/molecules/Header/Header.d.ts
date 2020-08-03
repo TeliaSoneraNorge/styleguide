@@ -16,6 +16,6 @@ export interface HeaderProps {
   children?: React.ReactNode;
 }
 
-const Header: React.FC<HeaderProps>;
+export const Header: React.FC<HeaderProps>;
 
 export default Header;

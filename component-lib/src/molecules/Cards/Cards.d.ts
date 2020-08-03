@@ -4,6 +4,6 @@ export interface CardsProps {
   isGrey?: boolean;
 }
 
-const Cards: React.FC<CardsProps>;
+export const Cards: React.FC<CardsProps>;
 
 export default Cards;

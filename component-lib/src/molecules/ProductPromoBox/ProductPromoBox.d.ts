@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-export type ProductPromoBoxPrice = string | number;
+declare type ProductPromoBoxPrice = string | number;
 
-export interface ProductPromoBoxProps {
+declare interface ProductPromoBoxProps {
   id?: string;
   productName?: string;
   productColor?: string;
@@ -20,6 +20,6 @@ export interface ProductPromoBoxProps {
   showActionOnNewLine?: boolean;
 }
 
-const ProductPromoBox: React.FC<ProductPromoBoxProps>;
+declare const ProductPromoBox: React.FC<ProductPromoBoxProps>;
 
 export default ProductPromoBox;

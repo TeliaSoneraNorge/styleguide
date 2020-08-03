@@ -1,15 +1,15 @@
 import * as React from 'react';
 
-export interface ReferencesItems {
+declare interface ReferencesItems {
   image: string;
   alt: string;
 }
 
-export interface ReferencesProps {
+declare interface ReferencesProps {
   heading: string;
   items?: ReferencesItems[];
 }
 
-const References: React.FC<ReferencesProps>;
+declare const References: React.FC<ReferencesProps>;
 
 export default References;

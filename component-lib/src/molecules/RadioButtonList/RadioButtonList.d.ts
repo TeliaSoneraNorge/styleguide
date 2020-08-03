@@ -1,14 +1,14 @@
 import * as React from 'react';
 
-export interface RadioButtonListList {
+declare interface RadioButtonListList {
   label: string;
   value?: any;
   disabled?: boolean;
 }
 
-export type RadioButtonListType = 'horizontal' | 'vertical';
+declare type RadioButtonListType = 'horizontal' | 'vertical';
 
-export interface RadioButtonListProps {
+declare interface RadioButtonListProps {
   list?: RadioButtonListList[];
   selectedIndex?: number;
   name?: string;
@@ -18,6 +18,6 @@ export interface RadioButtonListProps {
   children?: React.ReactNode;
 }
 
-const RadioButtonList: React.FC<RadioButtonListProps>;
+declare const RadioButtonList: React.FC<RadioButtonListProps>;
 
 export default RadioButtonList;

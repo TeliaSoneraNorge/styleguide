@@ -10,6 +10,6 @@ export interface ToggleButtonProps {
   toggleOnLeftSide?: boolean;
 }
 
-const ToggleButton: React.FC<ToggleButtonProps>;
+export const ToggleButton: React.FC<ToggleButtonProps>;
 
 export default ToggleButton;

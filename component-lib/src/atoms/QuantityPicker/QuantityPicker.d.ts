@@ -10,6 +10,6 @@ export interface QuantityPickerProps {
   quantityLabel?: string;
 }
 
-const QuantityPicker: React.FC<QuantityPickerProps>;
+export const QuantityPicker: React.FC<QuantityPickerProps>;
 
 export default QuantityPicker;

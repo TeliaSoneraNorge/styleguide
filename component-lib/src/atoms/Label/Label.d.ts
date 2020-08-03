@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface LabelProps {
+declare interface LabelProps {
   /**
    * Content of this label.
    */
@@ -12,6 +12,6 @@ export interface LabelProps {
   isUsingGrayText?: boolean;
 }
 
-const Label: React.FC<LabelProps>;
+declare const Label: React.FC<LabelProps>;
 
 export default Label;

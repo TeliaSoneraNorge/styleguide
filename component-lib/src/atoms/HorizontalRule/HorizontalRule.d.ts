@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface HorizontalRuleProps {
+declare interface HorizontalRuleProps {
   /**
    * Whenever this should be short or not.
    */
@@ -11,6 +11,6 @@ export interface HorizontalRuleProps {
   left?: any;
 }
 
-const HorizontalRule: React.FC<HorizontalRuleProps>;
+declare const HorizontalRule: React.FC<HorizontalRuleProps>;
 
 export default HorizontalRule;

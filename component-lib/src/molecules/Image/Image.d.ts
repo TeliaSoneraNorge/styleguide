@@ -8,6 +8,6 @@ export interface ImageProps {
   alt?: string;
 }
 
-const Image: React.FC<ImageProps>;
+export const Image: React.FC<ImageProps>;
 
 export default Image;

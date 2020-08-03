@@ -7,6 +7,6 @@ export interface TextAreaProps {
   error?: boolean;
 }
 
-const TextArea: React.FC<TextAreaProps>;
+export const TextArea: React.FC<TextAreaProps>;
 
 export default TextArea;

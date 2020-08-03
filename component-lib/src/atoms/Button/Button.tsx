@@ -6,21 +6,21 @@ export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'inverted' |
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonMargin = 'top'|'bottom';
 
-interface HTMLButtonProps {
+export interface HTMLButtonProps {
   component?: 'button';
 }
 
-interface HTMLAElementProps {
+export interface HTMLAElementProps {
   component?: 'link';
   href: string;
 }
 
-interface HTMLDivElementProps {
+export interface HTMLDivElementProps {
   component?: 'div';
 }
 
 
-interface CommonButtonProps {
+export interface CommonButtonProps {
   /**
    * you can define a component tag with one of these below.
    * 'button' are default and is not necessary to define

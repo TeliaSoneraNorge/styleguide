@@ -1,18 +1,18 @@
 import * as React from 'react';
 
-export type SubscriptionDataAmount = string | number;
+declare type SubscriptionDataAmount = string | number;
 
-export type SubscriptionPrice = string | number;
+declare type SubscriptionPrice = string | number;
 
-export interface SubscriptionAdditionalInfo {
+declare interface SubscriptionAdditionalInfo {
   routerPrice?: string;
   binding?: string;
 }
-export interface SubscriptionAllPricesLink {
+declare interface SubscriptionAllPricesLink {
   url?: string;
   text?: string;
 }
-export interface SubscriptionFeatures {
+declare interface SubscriptionFeatures {
   speechBubbleText?: string;
   highlightedFeature?: {
     iconName: string;
@@ -31,13 +31,13 @@ export interface SubscriptionFeatures {
   button?: React.ReactNode;
 }
 
-export interface SubscriptionTotalCalculation {
+declare interface SubscriptionTotalCalculation {
   title: string;
   subtitle?: string;
   price: string | number;
 }
 
-export interface SubscriptionProps {
+declare interface SubscriptionProps {
   isShowingFeatures?: boolean;
   isStandalone?: boolean;
   isBroadband?: boolean;
@@ -61,6 +61,6 @@ export interface SubscriptionProps {
   onClose?: (...args: any[]) => any;
 }
 
-const Subscription: React.FC<SubscriptionProps>;
+declare const Subscription: React.FC<SubscriptionProps>;
 
 export default Subscription;

@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-export type PersonBoxColor = 'purple' | 'pink' | 'light-orange' | 'green' | 'blue' | 'teal' | 'grey';
+declare type PersonBoxColor = 'purple' | 'pink' | 'light-orange' | 'green' | 'blue' | 'teal' | 'grey';
 
-export interface PersonBoxProps {
+declare interface PersonBoxProps {
   id?: string;
   color?: PersonBoxColor;
   isExpanded?: boolean;
@@ -20,6 +20,6 @@ export interface PersonBoxProps {
   twitterProfile?: string;
 }
 
-const PersonBox: React.FC<PersonBoxProps>;
+declare const PersonBox: React.FC<PersonBoxProps>;
 
 export default PersonBox;

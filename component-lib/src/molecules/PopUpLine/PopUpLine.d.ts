@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-export interface PopUpLineProps {
+declare interface PopUpLineProps {
   description: string;
   isConfirmationLine?: boolean;
   confirmButtonText?: string;
   cancelButtonText?: string;
 }
 
-const PopUpLine: React.FC<PopUpLineProps>;
+declare const PopUpLine: React.FC<PopUpLineProps>;
 
 export default PopUpLine;

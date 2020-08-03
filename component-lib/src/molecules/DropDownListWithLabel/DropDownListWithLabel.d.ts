@@ -22,6 +22,6 @@ export interface DropDownListWithLabelProps {
   disabled?: boolean;
 }
 
-const DropDownListWithLabel: React.FC<DropDownListWithLabelProps>;
+export const DropDownListWithLabel: React.FC<DropDownListWithLabelProps>;
 
 export default DropDownListWithLabel;

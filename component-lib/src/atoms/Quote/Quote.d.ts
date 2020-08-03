@@ -15,6 +15,6 @@ export interface QuoteProps {
   source: string;
 }
 
-const Quote: React.FC<QuoteProps>;
+export const Quote: React.FC<QuoteProps>;
 
 export default Quote;

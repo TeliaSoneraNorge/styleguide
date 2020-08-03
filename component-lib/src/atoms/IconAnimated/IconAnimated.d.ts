@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export interface IconAnimatedProps {
+declare interface IconAnimatedProps {
   style: {
     height: number;
     width: number;
-  }
+  };
   json?: any;
 }
 

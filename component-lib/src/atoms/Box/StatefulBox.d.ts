@@ -1,10 +1,10 @@
 import * as React from 'react';
 
-export type StatefulBoxColor = 'purple' | 'pink' | 'light-orange' | 'green' | 'blue' | 'teal' | 'grey' | 'black';
+declare type StatefulBoxColor = 'purple' | 'pink' | 'light-orange' | 'green' | 'blue' | 'teal' | 'grey' | 'black';
 
-export type StatefulBoxSize = 'small' | 'medium';
+declare type StatefulBoxSize = 'small' | 'medium';
 
-export interface StatefulBoxProps {
+declare interface StatefulBoxProps {
   className?: string;
   isExpanded?: boolean;
   canExpand?: boolean;
@@ -17,6 +17,6 @@ export interface StatefulBoxProps {
   id?: string;
 }
 
-const StatefulBox: React.FC<StatefulBoxProps>;
+declare const StatefulBox: React.FC<StatefulBoxProps>;
 
 export default StatefulBox;

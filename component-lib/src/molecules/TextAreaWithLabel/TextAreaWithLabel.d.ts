@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export interface TextAreaWithLabelProps {
+declare interface TextAreaWithLabelProps {
   labelText: string;
   hideLabel?: boolean;
   placeholder?: string;
@@ -8,6 +8,6 @@ export interface TextAreaWithLabelProps {
   disabled?: boolean;
 }
 
-const TextAreaWithLabel: React.FC<TextAreaWithLabelProps>;
+declare const TextAreaWithLabel: React.FC<TextAreaWithLabelProps>;
 
 export default TextAreaWithLabel;
