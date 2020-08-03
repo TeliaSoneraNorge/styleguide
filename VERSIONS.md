@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.38
+- Added `SlidingShoppingCart` component.
+
 ## 1.33.36
 - Added `ColorPicker` component.
 - Added `SmallBoxList` component.
