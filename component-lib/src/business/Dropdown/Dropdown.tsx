@@ -39,10 +39,8 @@ const InnerDropdown: React.FC = props => {
   const { dropdownRef } = useDropdownContext();
   useA11yDropdown();
   return (
-    <div>
-      <div className="Business-Dropdown" ref={dropdownRef}>
-        {props.children}
-      </div>
+    <div className="Business-Dropdown" ref={dropdownRef}>
+      {props.children}
     </div>
   );
 };
