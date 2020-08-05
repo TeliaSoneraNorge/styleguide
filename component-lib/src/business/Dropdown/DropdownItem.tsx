@@ -4,13 +4,50 @@ import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
 export interface DropdownItemProps {
+  /**
+   * Main content for dropdown item.
+   */
   label?: string;
+
+  /**
+   * Handle click on a dropdown item
+   */
   onClick?: () => void;
+
+  /**
+   * Icon displayd before label in the item
+   */
   icon?: IconDefinition;
+
+  /**
+   * Wheter the content of the item should be centered
+   */
   centered?: boolean;
+
+  /**
+   * Position of item in the dropdown menu.
+   * Used for navigation with keyboard.
+   * Applied from the DropdownMenu
+   */
   index?: number;
+
+  /**
+   * Whether the item is a header.
+   * Non clickable. Applies different styling
+   */
   header?: boolean;
+
+  /**
+   * Whether the item is a divider.
+   * Renders a simple fullwidth line in the dropdown
+   */
   divider?: boolean;
+
+  /**
+   * Optional content to display under label.
+   * Can also be used instead of label.
+   */
+  children?: React.ReactNode;
 }
 export const DropdownItem: React.FC<DropdownItemProps> = props => {
   const { open, toggle, highlightIndex } = useDropdownContext();
