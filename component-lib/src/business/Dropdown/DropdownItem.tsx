@@ -7,7 +7,7 @@ export interface DropdownItemProps {
   label?: string;
   onClick?: () => void;
   icon?: IconDefinition;
-  centere?: boolean;
+  centered?: boolean;
   index?: number;
   header?: boolean;
   divider?: boolean;
@@ -51,7 +51,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   }
   return (
     <button
-      className={cs('Business-Dropdown-item', { 'Business-Dropdown-item--centered': props.centere })}
+      className={cs('Business-Dropdown-item', { 'Business-Dropdown-item--centered': props.centered })}
       ref={itemRef}
       tabIndex={-1}
       onFocus={e => e.stopPropagation()}

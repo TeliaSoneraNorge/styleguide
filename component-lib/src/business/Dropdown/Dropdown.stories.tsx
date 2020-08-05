@@ -16,7 +16,7 @@ storiesOf('Business|Dropdown', module)
             <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
             <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
             <DropdownItem divider={true} />
-            <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
             <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
               Child
             </DropdownItem>
@@ -33,7 +33,7 @@ storiesOf('Business|Dropdown', module)
             <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
             <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
             <DropdownItem divider={true} />
-            <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
             <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
               Child
             </DropdownItem>
@@ -79,7 +79,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
@@ -93,7 +93,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu wrapContent={true}>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
@@ -141,7 +141,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
@@ -155,7 +155,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu wrapContent={true}>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
@@ -204,7 +204,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
@@ -218,7 +218,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
@@ -234,7 +234,7 @@ storiesOf('Business|Dropdown', module)
         <DropdownMenu>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centere={true} onClick={action('DropdownItem clicked')} />
+          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
           <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
             Child
           </DropdownItem>
