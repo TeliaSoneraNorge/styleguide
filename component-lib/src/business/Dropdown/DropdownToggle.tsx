@@ -29,8 +29,9 @@ interface DropdownToggleProps {
   outline?: boolean;
 
   /**
-   * This component renders a styled dropdown toggle by default,
-   * but provided children it will render the child/children as the toggle component.
+   * This component renders a new dropdown toggle by default,
+   * Provided children it will render the child/children as the toggle component,
+   * applied with the toggle function from dropdown context on the onClick prop.
    */
   children?: React.ReactNode;
 
