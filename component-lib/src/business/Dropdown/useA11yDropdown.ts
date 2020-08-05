@@ -14,7 +14,12 @@ export const useA11yDropdown = () => {
 
   useEffect(() => {
     const closeMenu = (e: MouseEvent | FocusEvent) => {
-      if (open && e.target && ctx.dropdownRef.current && !ctx.dropdownRef.current.contains((e.target as any) as Node)) {
+      if (
+        ctx.open &&
+        e.target &&
+        ctx.dropdownRef.current &&
+        !ctx.dropdownRef.current.contains((e.target as any) as Node)
+      ) {
         ctx.setMenuOpen(false);
       }
     };
@@ -25,12 +30,12 @@ export const useA11yDropdown = () => {
       window.removeEventListener('click', closeMenu);
       window.removeEventListener('focusin', closeMenu);
     };
-  }, [open, ctx.dropdownRef]);
+  }, [ctx.open, ctx.dropdownRef]);
 
   useEffect(() => {
     const navigate = (e: KeyboardEvent) => {
       if (
-        open &&
+        ctx.open &&
         e.target &&
         ctx.menuRef.current &&
         ctx.menuRef.current.contains((document.activeElement as any) as Node)
@@ -56,11 +61,11 @@ export const useA11yDropdown = () => {
     return () => {
       window.removeEventListener('keydown', navigate);
     };
-  }, [open, ctx.highlightIndex, ctx.menuRef]);
+  }, [ctx.open, ctx.highlightIndex, ctx.menuRef]);
 
   useEffect(() => {
-    if (!open) {
+    if (!ctx.open) {
       ctx.setHighlightIndex(-1);
     }
-  }, [open]);
+  }, [ctx.open]);
 };
