@@ -232,6 +232,7 @@ export const Selectable = () => {
             perPage={state.perPage}
             onPageChange={setPage}
             onPerPageChange={setPerPage}
+            numberOfSelectedRows={state.selectedRows.length}
           />
         }
       >

@@ -249,11 +249,14 @@ type TablePagingControlsProps = {
 };
 
 export const TablePagingControls: React.FC<TablePagingControlsProps> = props => {
+  console.log(props.numberOfSelectedRows, props.selectedRowsLabel);
+
   return (
     <form onSubmit={e => e.preventDefault()} className="table-paging">
       {props.numberOfSelectedRows ? (
         <span className="table-paging__text">
-          {`${props.numberOfSelectedRows} ${props.selectedRowsLabel || 'rader er valgt'}`}
+          {`${props.numberOfSelectedRows} ${props.selectedRowsLabel ||
+            `${props.numberOfSelectedRows > 1 ? 'rader' : 'rad'} er valgt`}`}
         </span>
       ) : null}
       <label className="table-paging__text">
