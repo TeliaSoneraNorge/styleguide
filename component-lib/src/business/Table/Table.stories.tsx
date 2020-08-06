@@ -51,6 +51,34 @@ export const Standard = () => {
   );
 };
 
+export const FullWidth = () => {
+  return (
+    <>
+      <Table headings={headings} fullWidth={true}>
+        {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
+          <TableBodyRow key={subscriber.subscription_id}>
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};
+
 export const WithPaging = () => {
   const [state, { setPage, setPerPage }] = useTableState({ paging: true, data: subscribers });
 
