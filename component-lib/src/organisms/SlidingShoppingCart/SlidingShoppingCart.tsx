@@ -50,7 +50,6 @@ const SlidingShoppingCart = ({
         heading={heading}
         isAnyCartItemsQuantityModifiable={isAnyCartItemsQuantityModifiable}
         onChangeQuantity={onChangeQuantity}
-        onGoToCart={onGoToCart}
         onRemoveItem={onRemoveItem}
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceMonthly={totalPriceMonthly}

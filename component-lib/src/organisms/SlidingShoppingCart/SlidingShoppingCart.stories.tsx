@@ -610,6 +610,7 @@ stories.addWithJSX('SlidingShoppingCart', () => {
           formatPrice={price => `${price},-`}
           shouldShowCart={shouldShowCart}
           setShouldShowCart={setShouldShowCart}
+          onGoToCart={() => alert("Go to cart")}
         />
     </Container>
   );
