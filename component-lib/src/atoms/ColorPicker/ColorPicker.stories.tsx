@@ -7,14 +7,14 @@ export default {
 };
 
 const colors = [
-    { name: "Grey", color: "grey", id: "grey" },
-    { name: "Light", color: "#FFDAAF", id: "light" },
-    { name: "Black", color: "#000", id: "black" }
-]
+  { name: 'Grey', color: 'grey', id: 'grey' },
+  { name: 'Light', color: '#FFDAAF', id: 'light' },
+  { name: 'Black', color: '#000', id: 'black' },
+];
 
 export const Default = () => {
-    const [selected, setSelected] = useState<Color>();
-    return (
-        <ColorPicker selected={selected} onSelect={setSelected} colors={colors} />
-    )
-}
+  const [selected, setSelected] = useState<Color>();
+  return (
+    <ColorPicker selected={selected} onSelect={id => setSelected(colors.find(c => c.id === id))} colors={colors} />
+  );
+};

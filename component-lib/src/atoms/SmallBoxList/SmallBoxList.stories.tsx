@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import SmallBoxList, { SmallBox } from './SmallBoxList';
+import SmallBoxList from './SmallBoxList';
 
 export default {
   title: 'Component library|Atoms/SmallBoxList',
@@ -13,7 +13,7 @@ const boxes = [
 ];
 
 export const Default = () => {
-    const [selected, setSelected] = useState<SmallBox>();
+    const [selected, setSelected] = useState<string>();
     return (
         <SmallBoxList selected={selected} onSelect={setSelected} boxes={boxes} />
     )
