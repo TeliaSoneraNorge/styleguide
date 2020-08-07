@@ -55,8 +55,7 @@ type TableBodyRowProps = {
       selectId: string;
       checkboxLabel: string;
     }
-  | {}
-);
+  | {});
 
 export const TableBodyRow: React.FC<TableBodyRowProps> = props => {
   const { uniqueId } = React.useContext(UniqueIdContext);
@@ -102,8 +101,7 @@ type TableHeadCellProps = {
       sortDirection: 'ASC' | 'DESC' | 'NONE';
       onClick: (e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
     }
-  | {}
-);
+  | {});
 
 export const TableHeadCell: React.FC<TableHeadCellProps> = props => {
   const { children } = props;
@@ -158,6 +156,7 @@ type TableHeading = {
 
 type TableProps = {
   paging?: React.ReactNode;
+  fullWidth?: boolean;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {
@@ -167,16 +166,14 @@ type TableProps = {
         checkAllLabel?: string;
         uncheckAllLabel?: string;
       }
-    | {}
-  ) &
+    | {}) &
   (
     | {
         onClickColumnHeader: (columnId: string | number, e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
         sortedColumnId: string | number;
         sortedColumnDirection: 'ASC' | 'DESC' | 'NONE';
       }
-    | {}
-  );
+    | {});
 
 const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: 'styleguide-table' });
 
@@ -184,7 +181,7 @@ export const Table: React.FC<TableProps> = props => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
     <UniqueIdContext.Provider value={{ uniqueId }}>
-      <span className="data-table">
+      <span className={cs('data-table', { 'data-table--fullWidth': props.fullWidth })}>
         <table className="data-table__table">
           <thead>
             {'headings' in props ? (
@@ -241,7 +238,7 @@ type TablePagingControlsProps = {
   perPage: number;
   dataLength: number;
   numberOfSelectedRows?: number;
-  selectedRowsLabel?: string
+  selectedRowsLabel?: string;
 
   onPerPageChange: (perPage: number, e?: React.ChangeEvent<HTMLSelectElement>) => void;
   onPageChange: (forward: boolean, e?: React.MouseEvent<HTMLButtonElement>) => void;
@@ -252,11 +249,16 @@ type TablePagingControlsProps = {
 };
 
 export const TablePagingControls: React.FC<TablePagingControlsProps> = props => {
+  console.log(props.numberOfSelectedRows, props.selectedRowsLabel);
+
   return (
     <form onSubmit={e => e.preventDefault()} className="table-paging">
-        {props.numberOfSelectedRows ? <span className="table-paging__text">
-            {`${props.numberOfSelectedRows} ${props.selectedRowsLabel || "rader er valgt"}`}
-        </span> : null}
+      {props.numberOfSelectedRows ? (
+        <span className="table-paging__text">
+          {`${props.numberOfSelectedRows} ${props.selectedRowsLabel ||
+            `${props.numberOfSelectedRows > 1 ? 'rader' : 'rad'} er valgt`}`}
+        </span>
+      ) : null}
       <label className="table-paging__text">
         {props.perPageLabel || 'Rader per side: '}
         <select
