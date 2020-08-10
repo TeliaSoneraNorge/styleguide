@@ -11,10 +11,21 @@ to achieve a common look & feel, and therefore user experience.
 ## Getting started
 
 - Clone the repository
-- Build the component library: `npm run build:component-lib`
+
+### The out-going, pre-storybook styleguide
+
+- Build the component library: `npm run build:component-lib; npm run build:css`
 - Install dependencies: `npm install`
 - Run in development mode: `npm run dev`
 - Go to this URL in your browser: `http://localhost:3000/`
+
+### The new, storybook-based styleguide
+
+- cd component-lib/
+- Install dependencies: `npm install`
+- Run in development mode: `npm run storybook`
+- - Go to this URL in your browser: `http://localhost:6006/`
+
 
 ## Adding a new component
 
