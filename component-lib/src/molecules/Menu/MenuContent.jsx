@@ -5,6 +5,7 @@ import Spinner from '../../atoms/Spinner';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 import MenuDropdown from './MenuDropdown';
+import MenuCart from './MenuCart';
 
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
   <button
@@ -102,8 +103,11 @@ const MenuContent = ({
   isLoading,
   onlyLogo,
   dropdownMenu,
+  onCartClick,
+  numberOfItemsInCart,
 }) => {
   const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(!!dropdownMenu?.visible);
+  const shouldShowCartIcon = !!onCartClick && numberOfItemsInCart > 0;
 
   const toggleMenuDropdownVisibilty = () => {
     setMenuDropdownVisibilty(!menuDropdownIsVisible);
@@ -136,6 +140,7 @@ const MenuContent = ({
         </ul>
       )}
       <div className="menu__content-right">
+        {shouldShowCartIcon ? <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} /> : null}
         {onSearchSubmit && (
           <MenuSearch
             onSubmit={onSearchSubmit}
