@@ -21,6 +21,8 @@ export interface MenuContentProps {
   searchLabel?: string;
   searchButtonAbortText?: string;
   onlyLogo?: boolean;
+  onCartClick?: (...args: any[]) => any;
+  numberOfItemsInCart?: number;  
 }
 
 export const MenuContent: React.FC<MenuContentProps>;
