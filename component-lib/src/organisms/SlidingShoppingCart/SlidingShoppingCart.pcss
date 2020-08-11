@@ -22,7 +22,9 @@
         opacity:0;
         transition: 0.2s;
         overflow-y: auto;
+        z-index: -50;
         &--show {
+            z-index: 50;
             right: 0;
             opacity: 1;
             transition: 0.2s;
@@ -50,6 +52,7 @@
         cursor: pointer;
         &:hover, &:focus {
             transform: scale(1.2);
+            color: var(--core-purple);
             outline:0;
         }
     }

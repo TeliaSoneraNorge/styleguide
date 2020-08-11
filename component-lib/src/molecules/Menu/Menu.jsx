@@ -32,6 +32,8 @@ const Menu = ({
   isLoading,
   onlyLogo,
   dropdownMenu,
+  onCartClick,
+  numberOfItemsInCart,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lastActiveMenuContentElement, setLastActiveMenuContentElement] = useState(undefined);
@@ -160,6 +162,8 @@ const Menu = ({
         isLoading={isLoading}
         onlyLogo={onlyLogo}
         dropdownMenu={dropdownMenu}
+        onCartClick={onCartClick}
+        numberOfItemsInCart={numberOfItemsInCart}
       />
       {!onlyLogo && mobileMenuOpen && renderMobileMenu(FocusTrap, { as: 'div' })}
     </div>
