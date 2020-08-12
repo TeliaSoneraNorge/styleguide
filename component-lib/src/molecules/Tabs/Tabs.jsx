@@ -82,6 +82,12 @@ Tabs.propTypes = {
   uniqueId: PropTypes.string,
   selectedIndex: PropTypes.number,
   onSelect: PropTypes.func,
+  /** If true, render only the TabList of the children's headings */
+  skipPanelRendering: PropTypes.bool,
+  /** Styling */
+  noMargin: PropTypes.bool,
+  /** Styling */
+  compact: PropTypes.bool,
 };
 
 Tabs.defaultProps = {
