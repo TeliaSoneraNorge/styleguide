@@ -2,7 +2,7 @@ import _ from 'lodash';
 import React from 'react';
 
 import Color from '../common/Color';
-import { Heading, Header } from '../../../component-lib/src/index';
+import { Heading, Header, Alert } from '../../../component-lib/src/index';
 import { getStaticData } from '../../utils/staticDataUtil';
 
 const colors = getStaticData('colors');
@@ -15,6 +15,12 @@ const HomePage = () => (
       pageTitle="Telia Norge Styleguide"
       withMask={true}
     >
+      <Alert kind="info">
+        <p>
+          We are in the process of migrating to a <a href="/storybook/">Storybook-based styleguide</a> and new
+          components are only there.
+        </p>
+      </Alert>
       <p>
         This styleguide offers color schemes, components (both plain HTML and React) and CSS to be used in Telia
         Norway&#39;s digital channels.
