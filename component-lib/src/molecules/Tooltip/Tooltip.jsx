@@ -40,11 +40,15 @@ const Tooltip = ({ buttonContent, children, className, isExpanded, label, text }
 };
 
 Tooltip.propTypes = {
+  /** Content of the tooltip button; defaults to "i". */
   buttonContent: PropTypes.node,
+  /** The content of the tooltip (if a plain string is not enough). Provide either `text` or `children`. */
   children: PropTypes.node,
   className: PropTypes.string,
   isExpanded: PropTypes.bool,
+  /** If provided, add a label to the tooltip button. */
   label: PropTypes.string,
+  /** The content of the tooltip as a plain string. Provide either `text` or `children`. */
   text: PropTypes.string,
 };
 
