@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.45
+- Support for typescript on AllIcons
+
 ## 1.33.42
 - Added `onCartClick` and `numberOfItemsInCart` optional props to `Menu` to show cart icon with number of items in cart.
 
