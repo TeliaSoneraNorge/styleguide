@@ -3,8 +3,8 @@ import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
 
 import SlidingShoppingCart from './SlidingShoppingCart';
-import Container from '../../atoms/Container/Container';
-import { Icon } from '../../atoms/Icon/Icon';
+import Menu from '../../molecules/Menu/Menu';
+import img from '../../stories/sampleImages';
 
 const switchContent = [
   {
@@ -583,7 +583,6 @@ function getCart(item) {
 const stories = storiesOf('Component library|Organisms/SlidingShoppingCart', module);
 
 stories.addWithJSX('SlidingShoppingCart', () => {
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const heading = text('Heading', 'Handlekurv');
   const pricePerMonth = number('Price per month', 500);
   const priceUpfront = number('Price upfront', 500);
@@ -592,8 +591,6 @@ stories.addWithJSX('SlidingShoppingCart', () => {
 
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
-<<<<<<< Updated upstream
-=======
   const menuLinks = [
     {
       heading: { text: 'Privat', url: '#' },
@@ -623,13 +620,27 @@ stories.addWithJSX('SlidingShoppingCart', () => {
       ],
     },
   ];
->>>>>>> Stashed changes
 
   return (
-    <Container size={containerSize}>
-        <button onClick={() => setShouldShowCart(!shouldShowCart)} className="sliding-shopping-cart__cart-button">
-          <Icon icon="shoppingcart" className="sliding-shopping-cart__cart-icon" />
-        </button>
+    <>
+        <Menu
+          loginUrl="#Menu"
+          logoUrl="#"
+          logoTitle="Telia logo"
+          activeIndex={0}
+          activeLinkIndex={-1}
+          menuLinks={menuLinks}
+          logoImageDesktopPath={img.logo}
+          logoImageInverseDesktopPath={img.logoInverted}
+          onSearchSubmit={() => {}}
+          searchLabel="Fyll inn det du skal søke på"
+          searchButtonLabel="Søk"
+          searchButtonAbortText="Lukk"
+          mobileMenuCloseButtonLabel="Lukk"
+          lockBodyOnMenuOpen
+          onCartClick={() => setShouldShowCart(!shouldShowCart)}
+          numberOfItemsInCart={3}
+        />
         <SlidingShoppingCart
           heading={heading}
           cartItems={getCart(itemToDisplay)}
@@ -644,6 +655,6 @@ stories.addWithJSX('SlidingShoppingCart', () => {
           setShouldShowCart={setShouldShowCart}
           onGoToCart={() => alert("Go to cart")}
         />
-    </Container>
+    </>
   );
 });

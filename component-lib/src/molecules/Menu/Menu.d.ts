@@ -34,6 +34,8 @@ export interface MenuProps {
   isLoading?: boolean;
   onlyLogo?: boolean;
   dropdownMenu?: MenuDropdownProps;
+  onCartClick?: (...args: any[]) => any;
+  numberOfItemsInCart?: number;  
 }
 
 export const Menu: React.FC<MenuProps>;
