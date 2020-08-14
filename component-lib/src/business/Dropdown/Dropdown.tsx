@@ -11,6 +11,7 @@ export const Dropdown: React.FC<Props> = props => {
   const [open, setOpen] = useState(props.open || false);
   const [highlightIndex, setHighlightIndex] = useState<number>(-1); // -1 indicates no highlighted item
   const [maxHighlightIndex, setMaxHighlightIndex] = useState(highlightIndex);
+  const [clickHandlers, setClickHandlers] = useState<Array<() => void>>([]);
 
   const toggle = () => setOpen(!open);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,8 @@ export const Dropdown: React.FC<Props> = props => {
     setHighlightIndex,
     maxHighlightIndex,
     setMaxHighlightIndex,
+    clickHandlers,
+    setClickHandlers,
   };
 
   return (

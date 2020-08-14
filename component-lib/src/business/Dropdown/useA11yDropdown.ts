@@ -20,7 +20,7 @@ export const useA11yDropdown = () => {
         ctx.dropdownRef.current &&
         !ctx.dropdownRef.current.contains((e.target as any) as Node)
       ) {
-        ctx.setMenuOpen(false);
+        ctx.toggle();
       }
     };
     window.addEventListener('click', closeMenu);
@@ -33,13 +33,16 @@ export const useA11yDropdown = () => {
   }, [ctx.open, ctx.dropdownRef]);
 
   useEffect(() => {
+    const click = (e: KeyboardEvent) => {
+      if (e.keyCode === 13) {
+        if (ctx.clickHandlers && ctx.clickHandlers[ctx.highlightIndex]) {
+          ctx.clickHandlers[ctx.highlightIndex]();
+          ctx.toggle();
+        }
+      }
+    };
     const navigate = (e: KeyboardEvent) => {
-      if (
-        ctx.open &&
-        e.target &&
-        ctx.menuRef.current &&
-        ctx.menuRef.current.contains((document.activeElement as any) as Node)
-      ) {
+      if (ctx.open && e.target && ctx.menuRef.current) {
         if (e.key === 'ArrowDown') {
           e.preventDefault();
           if (ctx.highlightIndex === ctx.maxHighlightIndex) {
@@ -57,11 +60,15 @@ export const useA11yDropdown = () => {
         }
       }
     };
-    window.addEventListener('keydown', navigate);
-    return () => {
-      window.removeEventListener('keydown', navigate);
+    const handleKeydown = (e: KeyboardEvent) => {
+      navigate(e);
+      click(e);
     };
-  }, [ctx.open, ctx.highlightIndex, ctx.menuRef]);
+    window.addEventListener('keydown', handleKeydown);
+    return () => {
+      window.removeEventListener('keydown', handleKeydown);
+    };
+  }, [ctx.open, ctx.highlightIndex, ctx.menuRef, ctx.clickHandlers]);
 
   useEffect(() => {
     if (!ctx.open) {
