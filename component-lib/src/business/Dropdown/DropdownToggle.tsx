@@ -102,14 +102,21 @@ type DropdownSearchToggleProps = {
    * Whether to render the dropdown  immediately
    */
   openImmediatley?: boolean;
+
+  /**
+   * Icon to diplay in front of search input
+   */
+  icon?: IconDefinition;
 };
 export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
   const { setMenuOpen, setHighlightIndex } = useDropdownContext();
 
   return (
-    <span className="Business-Dropdown-toggle">
+    <span className="Business-Dropdown-toggle Business-Dropdown-toggle--search textbox">
+      {props.icon ? (
+        <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem', marginRight: '0.5rem' }} />
+      ) : null}
       <input
-        className="textbox"
         value={props.value}
         placeholder={props.placeholder}
         onChange={e => {
