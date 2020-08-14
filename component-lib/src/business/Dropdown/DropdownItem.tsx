@@ -3,7 +3,7 @@ import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
-export interface DropdownItemProps {
+export type DropdownItemProps = {
   /**
    * Main content for dropdown item.
    */
@@ -48,16 +48,10 @@ export interface DropdownItemProps {
    * Can also be used instead of label.
    */
   children?: React.ReactNode;
-}
+};
 export const DropdownItem: React.FC<DropdownItemProps> = props => {
   const { open, toggle, highlightIndex } = useDropdownContext();
   const itemRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (open && props.index === highlightIndex && itemRef.current) {
-      itemRef.current.focus();
-    }
-  }, [open, highlightIndex]);
 
   const onClick = () => {
     if (props.onClick) {
@@ -88,7 +82,10 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   }
   return (
     <button
-      className={cs('Business-Dropdown-item', { 'Business-Dropdown-item--centered': props.centered })}
+      className={cs('Business-Dropdown-item', {
+        'Business-Dropdown-item--centered': props.centered,
+        'Business-Dropdown-item--active': open && props.index === highlightIndex && itemRef.current,
+      })}
       ref={itemRef}
       tabIndex={-1}
       onFocus={e => e.stopPropagation()}
@@ -96,5 +93,27 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     >
       {content}
     </button>
+  );
+};
+
+export const DropdownSearchItem = (props: { onInputChange: (value: string) => void }) => {
+  const { open, setHighlightIndex } = useDropdownContext();
+  const itemRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (itemRef.current && open) {
+      itemRef.current.focus();
+    }
+  }, [open, itemRef.current]);
+
+  return (
+    <input
+      ref={itemRef}
+      className="Business-Dropdown-item Business-Dropdown-item--search textbox"
+      onChange={e => {
+        props.onInputChange(e.target.value);
+        setHighlightIndex(0);
+      }}
+    />
   );
 };
