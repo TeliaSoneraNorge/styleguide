@@ -592,6 +592,38 @@ stories.addWithJSX('SlidingShoppingCart', () => {
 
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
+<<<<<<< Updated upstream
+=======
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Nettbutikk',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+>>>>>>> Stashed changes
 
   return (
     <Container size={containerSize}>

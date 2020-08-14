@@ -13,7 +13,7 @@ export const Default = () => {
       heading: { text: 'Privat', url: '#' },
       links: [
         {
-          text: 'Mobiler og tilbehør',
+          text: 'Nettbutikk',
           subLinks: [
             { text: 'Mobiltelefoner', url: '#' },
             { text: 'Smartklokker', url: '#' },
@@ -100,7 +100,7 @@ export const LoggedInMenuB2C = () => {
       heading: { text: 'Privat', url: '#' },
       links: [
         {
-          text: 'Mobiler og tilbehør',
+          text: 'Nettbutikk',
           subLinks: [
             { text: 'Mobiltelefoner', url: '#' },
             { text: 'Smartklokker', url: '#' },
@@ -148,7 +148,7 @@ export const LoggedInDropdownMenuB2C = () => {
       heading: { text: 'Privat', url: '#' },
       links: [
         {
-          text: 'Mobiler og tilbehør',
+          text: 'Nettbutikk',
           subLinks: [
             { text: 'Mobiltelefoner', url: '#' },
             { text: 'Smartklokker', url: '#' },
@@ -210,7 +210,7 @@ export const SingleTopLevelMenu = () => {
     {
       links: [
         {
-          text: 'Mobiler og tilbehør',
+          text: 'Nettbutikk',
           subLinks: [
             { text: 'Mobiltelefoner', url: '#' },
             { text: 'Smartklokker', url: '#' },
