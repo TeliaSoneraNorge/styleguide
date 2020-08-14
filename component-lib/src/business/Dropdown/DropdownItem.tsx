@@ -96,7 +96,23 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   );
 };
 
-export const DropdownSearchItem = (props: { onInputChange: (value: string) => void }) => {
+interface DropdownSearchItemProps {
+  /**
+   * Handle input change
+   */
+  onInputChange: (value: string) => void;
+
+  /**
+   * String to display inside input field
+   */
+  placeholder?: string;
+
+  /**
+   * value of the search input
+   */
+  value?: string;
+}
+export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
   const { open, setHighlightIndex } = useDropdownContext();
   const itemRef = useRef<HTMLInputElement>(null);
 
@@ -109,6 +125,8 @@ export const DropdownSearchItem = (props: { onInputChange: (value: string) => vo
   return (
     <input
       ref={itemRef}
+      value={props.value}
+      placeholder={props.placeholder}
       className="Business-Dropdown-item Business-Dropdown-item--search textbox"
       onChange={e => {
         props.onInputChange(e.target.value);
