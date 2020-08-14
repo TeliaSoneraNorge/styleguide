@@ -8,7 +8,7 @@ const menuLinks = [
     heading: { text: 'Privat', url: '#' },
     links: [
       {
-        text: 'Mobiler og tilbehør',
+        text: 'Nettbutikk',
         subLinks: [
           { text: 'Mobiltelefoner', url: '#' },
           { text: 'Smartklokker', url: '#' },
