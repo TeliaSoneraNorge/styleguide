@@ -2,6 +2,8 @@ import React, { useRef, useEffect } from 'react';
 import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
+import TextBox from '../../atoms/TextBox';
+import TextBoxWithIcon from '../../molecules/TextBoxWithIcon';
 
 export type DropdownItemProps = {
   /**
@@ -111,6 +113,11 @@ interface DropdownSearchItemProps {
    * value of the search input
    */
   value?: string;
+
+  /**
+   * icon to display in front of
+   */
+  icon?: IconDefinition;
 }
 export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
   const { open, setHighlightIndex } = useDropdownContext();
@@ -123,15 +130,17 @@ export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
   }, [open, itemRef.current]);
 
   return (
-    <input
-      ref={itemRef}
-      value={props.value}
-      placeholder={props.placeholder}
-      className="Business-Dropdown-item Business-Dropdown-item--search textbox"
-      onChange={e => {
-        props.onInputChange(e.target.value);
-        setHighlightIndex(0);
-      }}
-    />
+    <div className="Business-Dropdown-item Business-Dropdown-item--search">
+      {props.icon ? <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem' }} /> : null}
+      <input
+        ref={itemRef}
+        value={props.value}
+        placeholder={props.placeholder}
+        onChange={e => {
+          props.onInputChange(e.target.value);
+          setHighlightIndex(0);
+        }}
+      />
+    </div>
   );
 };
