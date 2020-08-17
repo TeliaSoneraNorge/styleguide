@@ -339,7 +339,7 @@ storiesOf('Business|Dropdown', module)
           <DropdownSearchToggle
             placeholder="Velg et land"
             onInputChange={setInput}
-            openImmediatley={true}
+            openImmediately={true}
             value={input}
           />
           <DropdownMenu>

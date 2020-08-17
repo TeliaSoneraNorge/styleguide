@@ -101,7 +101,7 @@ type DropdownSearchToggleProps = {
   /**
    * Whether to render the dropdown  immediately
    */
-  openImmediatley?: boolean;
+  openImmediately?: boolean;
 
   /**
    * Icon to diplay in front of search input
@@ -124,7 +124,7 @@ export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
           setHighlightIndex(0);
         }}
         onFocus={() => {
-          if (props.openImmediatley) {
+          if (props.openImmediately) {
             setMenuOpen(true);
           }
         }}
