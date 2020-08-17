@@ -51,6 +51,16 @@ export type DropdownContextValues = {
    * of clickable children provided to the dropdown
    */
   setMaxHighlightIndex: (index: number) => void;
+
+  /**
+   * An indexed list of the clickhandlers for clickable dropdown items.
+   * Used to "click" highlighted item by hightlight index, in useAccessibleDropdown
+   */
+  clickHandlers?: Array<() => void>;
+  /**
+   * Function to set the click handlers. Se use in DropdownMenu.
+   */
+  setClickHandlers?: (handler: Array<() => void>) => void;
 };
 
 export const DropdownContext = React.createContext<DropdownContextValues | null>(null);

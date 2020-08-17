@@ -3,7 +3,7 @@ import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
 
-interface DropdownToggleProps {
+type DropdownToggleProps = {
   /**
    * Text to display in the toggle button
    */
@@ -40,7 +40,7 @@ interface DropdownToggleProps {
    * using a custom toggle component (passing children)
    */
   tag?: 'div' | 'span';
-}
+};
 
 export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   const { toggle, open } = useDropdownContext();
@@ -79,5 +79,56 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
       <span className="Business-Dropdown-toggle-label">{props.label}</span>
       <Icon className="Business-Dropdown-toggle-caret" icon="arrow-small-down" />
     </button>
+  );
+};
+
+type DropdownSearchToggleProps = {
+  /**
+   * Handle input change
+   */
+  onInputChange: (value: string) => void;
+
+  /**
+   * String to display inside input field
+   */
+  placeholder?: string;
+
+  /**
+   * value of the search input
+   */
+  value?: string;
+
+  /**
+   * Whether to render the dropdown  immediately
+   */
+  openImmediately?: boolean;
+
+  /**
+   * Icon to diplay in front of search input
+   */
+  icon?: IconDefinition;
+};
+export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
+  const { setMenuOpen, setHighlightIndex } = useDropdownContext();
+
+  return (
+    <span className="Business-Dropdown-toggle Business-Dropdown-toggle--search textbox">
+      {props.icon ? (
+        <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem', marginRight: '0.5rem' }} />
+      ) : null}
+      <input
+        value={props.value}
+        placeholder={props.placeholder}
+        onChange={e => {
+          props.onInputChange(e.target.value);
+          setHighlightIndex(0);
+        }}
+        onFocus={() => {
+          if (props.openImmediately) {
+            setMenuOpen(true);
+          }
+        }}
+      />
+    </span>
   );
 };

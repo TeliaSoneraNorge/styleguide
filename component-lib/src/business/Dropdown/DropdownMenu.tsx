@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import { useDropdownContext } from './context';
 import { DropdownItemProps } from './DropdownItem';
 import cs from 'classnames';
@@ -7,18 +7,31 @@ interface DropdownMenuProps {
   position?: 'right' | 'left';
   wrapContent?: boolean;
 }
-const isClickable = (child: any) =>
-  React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider;
+
+function isDefined(entry: false | (() => void) | undefined): entry is () => void {
+  return !!entry;
+}
+const isValidChild = (child: any) =>
+  child.type.name === 'DropdownItem' && React.isValidElement<DropdownItemProps>(child);
+const isClickable = (child: any) => {
+  return isValidChild(child) && !child.props.header && !child.props.divider;
+};
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
-  const { menuRef, open, setHighlightIndex, setMaxHighlightIndex } = useDropdownContext();
+  const { menuRef, open, setMaxHighlightIndex, setClickHandlers } = useDropdownContext();
   let index = -1;
 
-  const clickableChildren = React.Children.toArray(props.children).filter(isClickable);
+  const clickableChildren = useMemo(() => React.Children.toArray(props.children).filter(isClickable), [props.children]);
 
   useEffect(() => {
     if (setMaxHighlightIndex) {
       setMaxHighlightIndex(clickableChildren.length - 1);
+    }
+    const clickHandlers = clickableChildren
+      .map(child => React.isValidElement<DropdownItemProps>(child) && child.props.onClick)
+      .filter(isDefined);
+    if (setClickHandlers) {
+      setClickHandlers(clickHandlers);
     }
   }, [clickableChildren]);
 
@@ -29,13 +42,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
         open: open,
         right: props.position === 'right',
       })}
-      tabIndex={0}
       ref={menuRef}
-      onFocus={() => {
-        if (setHighlightIndex) {
-          setHighlightIndex(0);
-        }
-      }}
     >
       {React.Children.map(props.children, child => {
         if (React.isValidElement<DropdownItemProps>(child) && isClickable(child)) {

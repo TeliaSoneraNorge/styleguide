@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { DropdownContext, useDropdownContext, DropdownContextValues } from './context';
-import { useA11yDropdown } from './useA11yDropdown';
+import { useAccessibleDropdown } from './useAccessibleDropdown';
 
 type Props = {
   open?: boolean;
@@ -11,6 +11,7 @@ export const Dropdown: React.FC<Props> = props => {
   const [open, setOpen] = useState(props.open || false);
   const [highlightIndex, setHighlightIndex] = useState<number>(-1); // -1 indicates no highlighted item
   const [maxHighlightIndex, setMaxHighlightIndex] = useState(highlightIndex);
+  const [clickHandlers, setClickHandlers] = useState<Array<() => void>>([]);
 
   const toggle = () => setOpen(!open);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -26,6 +27,8 @@ export const Dropdown: React.FC<Props> = props => {
     setHighlightIndex,
     maxHighlightIndex,
     setMaxHighlightIndex,
+    clickHandlers,
+    setClickHandlers,
   };
 
   return (
@@ -37,7 +40,7 @@ export const Dropdown: React.FC<Props> = props => {
 
 const InnerDropdown: React.FC = props => {
   const { dropdownRef } = useDropdownContext();
-  useA11yDropdown();
+  useAccessibleDropdown();
   return (
     <div className="Business-Dropdown" ref={dropdownRef}>
       {props.children}

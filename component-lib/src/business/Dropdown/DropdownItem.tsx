@@ -2,8 +2,10 @@ import React, { useRef, useEffect } from 'react';
 import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
+import TextBox from '../../atoms/TextBox';
+import TextBoxWithIcon from '../../molecules/TextBoxWithIcon';
 
-export interface DropdownItemProps {
+export type DropdownItemProps = {
   /**
    * Main content for dropdown item.
    */
@@ -48,16 +50,10 @@ export interface DropdownItemProps {
    * Can also be used instead of label.
    */
   children?: React.ReactNode;
-}
+};
 export const DropdownItem: React.FC<DropdownItemProps> = props => {
   const { open, toggle, highlightIndex } = useDropdownContext();
   const itemRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (open && props.index === highlightIndex && itemRef.current) {
-      itemRef.current.focus();
-    }
-  }, [open, highlightIndex]);
 
   const onClick = () => {
     if (props.onClick) {
@@ -88,7 +84,10 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   }
   return (
     <button
-      className={cs('Business-Dropdown-item', { 'Business-Dropdown-item--centered': props.centered })}
+      className={cs('Business-Dropdown-item', {
+        'Business-Dropdown-item--centered': props.centered,
+        'Business-Dropdown-item--active': open && props.index === highlightIndex && itemRef.current,
+      })}
       ref={itemRef}
       tabIndex={-1}
       onFocus={e => e.stopPropagation()}
@@ -96,5 +95,52 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     >
       {content}
     </button>
+  );
+};
+
+interface DropdownSearchItemProps {
+  /**
+   * Handle input change
+   */
+  onInputChange: (value: string) => void;
+
+  /**
+   * String to display inside input field
+   */
+  placeholder?: string;
+
+  /**
+   * value of the search input
+   */
+  value?: string;
+
+  /**
+   * icon to display in front of
+   */
+  icon?: IconDefinition;
+}
+export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
+  const { open, setHighlightIndex } = useDropdownContext();
+  const itemRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (itemRef.current && open) {
+      itemRef.current.focus();
+    }
+  }, [open, itemRef.current]);
+
+  return (
+    <div className="Business-Dropdown-item Business-Dropdown-item--search">
+      {props.icon ? <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem' }} /> : null}
+      <input
+        ref={itemRef}
+        value={props.value}
+        placeholder={props.placeholder}
+        onChange={e => {
+          props.onInputChange(e.target.value);
+          setHighlightIndex(0);
+        }}
+      />
+    </div>
   );
 };

@@ -88,6 +88,17 @@
       background-color: var(--core-purple-200);
     }
   }
+  &--search {
+    padding-left: 0.5rem;
+    display: flex;
+    input,
+    input:focus {
+      width: 100%;
+      border: none;
+      outline: none;
+      font: inherit;
+    }
+  }
 }
 
 .Business-Dropdown-item {
@@ -117,6 +128,7 @@
     cursor: pointer;
     background-color: var(--medium-light-grey);
   }
+  &--active,
   &:active,
   &:focus {
     outline: none;
@@ -135,5 +147,29 @@
   &--header {
     pointer-events: none;
     color: var(--grey-400);
+  }
+  &--search {
+    background-color: var(--white);
+    &:not(last-child) {
+      border-bottom: 1px solid var(--medium-light-grey);
+    }
+    &:not(first-child) {
+      border-top: 1px solid var(--medium-light-grey);
+    }
+
+    padding: 0.25rem 0.5rem;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: var(--white);
+    }
+    input,
+    input:focus {
+      height: 2rem;
+      width: 100%;
+      border: none;
+      outline: none;
+      font: inherit;
+    }
   }
 }
