@@ -22,7 +22,7 @@ export type ProgressBarProps = {
  * Status: *in progress*.
  * Category: Graphs
  */
-export const ProgressBar: React.FC<ProgressBarProps> = props => {
+export const ProgressBar = (props: ProgressBarProps) => {
   const { value, min, max, disabled } = props;
   let color = '';
   let barColor = 'green';
@@ -55,13 +55,6 @@ const clamp = (min: number, max: number, value: number) => {
   if (value > max) return max;
 
   return value;
-};
-
-ProgressBar.propTypes = {
-  value: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  disabled: PropTypes.bool,
 };
 
 export default ProgressBar;
