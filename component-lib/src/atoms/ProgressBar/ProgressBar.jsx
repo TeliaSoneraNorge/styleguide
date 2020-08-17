@@ -16,7 +16,9 @@ const clamp = (min, max, value) => {
 const ProgressBar = ({ value, min, max, barColor, disabled }) => (
   <div className="progress">
     <div
-      className={classNames('progress__bar', `progress__bar--${barColor}`, { 'progress__bar--disabled': disabled })}
+      className={classNames('progress__bar', `progress__bar--${barColor ?? 'green'}`, {
+        'progress__bar--disabled': disabled,
+      })}
       role="progressbar"
       aria-valuenow={clamp(min, max, value)}
       aria-valuemin={min}
