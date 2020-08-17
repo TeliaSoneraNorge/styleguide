@@ -54,7 +54,7 @@ export type DropdownContextValues = {
 
   /**
    * An indexed list of the clickhandlers for clickable dropdown items.
-   * Used to "click" highlighted item by hightlight index, in useA11yDropdown
+   * Used to "click" highlighted item by hightlight index, in useAccessibleDropdown
    */
   clickHandlers?: Array<() => void>;
   /**

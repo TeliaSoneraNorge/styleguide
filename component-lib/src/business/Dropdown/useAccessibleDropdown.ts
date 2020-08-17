@@ -9,7 +9,7 @@ import { useDropdownContext } from './index';
  * and is only intended for use in the Stylguide
  * -- no need to apply accessibility manualy when using the Dropdown
  */
-export const useA11yDropdown = () => {
+export const useAccessibleDropdown = () => {
   const ctx = useDropdownContext();
 
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { DropdownContext, useDropdownContext, DropdownContextValues } from './context';
-import { useA11yDropdown } from './useA11yDropdown';
+import { useAccessibleDropdown } from './useAccessibleDropdown';
 
 type Props = {
   open?: boolean;
@@ -40,7 +40,7 @@ export const Dropdown: React.FC<Props> = props => {
 
 const InnerDropdown: React.FC = props => {
   const { dropdownRef } = useDropdownContext();
-  useA11yDropdown();
+  useAccessibleDropdown();
   return (
     <div className="Business-Dropdown" ref={dropdownRef}>
       {props.children}
