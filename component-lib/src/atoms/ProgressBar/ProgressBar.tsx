@@ -4,9 +4,21 @@ import classNames from 'classnames';
 import { colors } from '../../utils/colors';
 
 export type ProgressBarProps = {
+  /**
+   * Value of the progress.
+   */
   value: number;
+  /**
+   * Minimum value of the progress.
+   */
   min: number;
+  /**
+   * Maximum value of the progress bar.
+   */
   max: number;
+  /**
+   * @default false
+   */
   disabled?: boolean;
 } & (
   | {
@@ -14,12 +26,14 @@ export type ProgressBarProps = {
        * @deprecated Use `color` prop to use the new supported colors.
        */
       barColor?: string;
+      /**
+       * @default green
+       */
       color?: undefined;
     }
   | { color?: keyof typeof colors });
 
 /**
- * Status: *in progress*.
  * Category: Graphs
  */
 export const ProgressBar = (props: ProgressBarProps) => {
