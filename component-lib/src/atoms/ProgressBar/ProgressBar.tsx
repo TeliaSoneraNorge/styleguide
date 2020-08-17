@@ -71,4 +71,11 @@ const clamp = (min: number, max: number, value: number) => {
   return value;
 };
 
+ProgressBar.propTypes = {
+  value: PropTypes.number.isRequired,
+  min: PropTypes.number.isRequired,
+  max: PropTypes.number.isRequired,
+  disabled: PropTypes.bool,
+};
+
 export default ProgressBar;
