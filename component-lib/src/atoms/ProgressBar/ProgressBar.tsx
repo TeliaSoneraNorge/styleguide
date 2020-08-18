@@ -92,8 +92,8 @@ ProgressBar.propTypes = {
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   disabled: PropTypes.bool,
-  color: colors,
-  height: progressBarSize,
+  color: PropTypes.oneOf(Object.keys(colors)),
+  height: PropTypes.oneOf(Object.keys(progressBarSize)),
 };
 
 export default ProgressBar;
