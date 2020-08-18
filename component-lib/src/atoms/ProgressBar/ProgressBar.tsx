@@ -53,11 +53,11 @@ export const ProgressBar = (props: ProgressBarProps) => {
     barColor = barColor;
   }
   if ('height' in props) {
-    height = progressBarSize[props.height || 'md'];
+    height = progressBarSize[props.height || 'lg'];
   }
 
   return (
-    <div className="progress" style={{ height: height }}>
+    <div className="progress" style={{ height }}>
       <div
         className={classNames('progress__bar', `progress__bar--${barColor}`, {
           'progress__bar--disabled': disabled,
@@ -79,7 +79,7 @@ const clamp = (min: number, max: number, value: number) => {
   return value;
 };
 
-const progressBarSize = {
+export const progressBarSize = {
   xs: '0.5rem',
   sm: '0.8rem',
   md: '1rem',
