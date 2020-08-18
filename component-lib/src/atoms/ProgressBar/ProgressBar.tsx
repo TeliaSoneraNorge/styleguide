@@ -20,6 +20,10 @@ export type ProgressBarProps = {
    * @default false
    */
   disabled?: boolean;
+  /**
+   * The thickness of the progress bar.
+   */
+  height?: keyof typeof progressBarSize;
 } & (
   | {
       /**
@@ -38,6 +42,7 @@ export type ProgressBarProps = {
  */
 export const ProgressBar = (props: ProgressBarProps) => {
   const { value, min, max, disabled } = props;
+  let height = '';
   let color = '';
   let barColor = 'green';
 
@@ -47,9 +52,12 @@ export const ProgressBar = (props: ProgressBarProps) => {
   if ('barColor' in props) {
     barColor = barColor;
   }
+  if ('height' in props) {
+    height = progressBarSize[props.height || 'md'];
+  }
 
   return (
-    <div className="progress">
+    <div className="progress" style={{ height: height }}>
       <div
         className={classNames('progress__bar', `progress__bar--${barColor}`, {
           'progress__bar--disabled': disabled,
@@ -71,11 +79,21 @@ const clamp = (min: number, max: number, value: number) => {
   return value;
 };
 
+const progressBarSize = {
+  xs: '0.5rem',
+  sm: '0.8rem',
+  md: '1rem',
+  lg: '1.2rem',
+  xl: '1.6rem',
+};
+
 ProgressBar.propTypes = {
   value: PropTypes.number.isRequired,
   min: PropTypes.number.isRequired,
   max: PropTypes.number.isRequired,
   disabled: PropTypes.bool,
+  color: colors,
+  height: progressBarSize,
 };
 
 export default ProgressBar;

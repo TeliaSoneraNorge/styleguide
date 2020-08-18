@@ -13,5 +13,11 @@ export const Default = () => (
 
     <p>Progress bar with color property</p>
     <ProgressBar min={0} max={40} value={15} color="corePurple400" />
+
+    <p>Progress bar with height property</p>
+    <ProgressBar min={0} max={40} value={25} height="xs" />
+
+    <p>Disabled progress bar</p>
+    <ProgressBar min={0} max={40} value={25} disabled={true} />
   </>
 );
