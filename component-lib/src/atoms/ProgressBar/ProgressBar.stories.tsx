@@ -16,7 +16,7 @@ export const Default = () => (
 
     <p>Progress bar with height property:</p>
     {Object.keys(progressBarSize).map(size => (
-      <p>
+      <p key={size}>
         {size as keyof typeof progressBarSize}
         <ProgressBar min={0} max={40} value={25} height={size as keyof typeof progressBarSize} />
       </p>

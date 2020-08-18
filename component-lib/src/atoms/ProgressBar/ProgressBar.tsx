@@ -42,26 +42,22 @@ export type ProgressBarProps = {
  */
 export const ProgressBar = (props: ProgressBarProps) => {
   const { value, min, max, disabled } = props;
-  let height = '';
   let color = '';
-  let barColor = 'green';
 
   if ('color' in props) {
     color = colors[props.color || 'green'];
   }
-  if ('barColor' in props) {
-    barColor = barColor;
-  }
-  if ('height' in props) {
-    height = progressBarSize[props.height || 'lg'];
-  }
 
   return (
-    <div className="progress" style={{ height }}>
+    <div className={classNames('progress', 'height' in props ? `progress--${props.height}` : '')}>
       <div
-        className={classNames('progress__bar', `progress__bar--${barColor}`, {
-          'progress__bar--disabled': disabled,
-        })}
+        className={classNames(
+          'progress__bar',
+          'barColor' in props ? `progress__bar--${props.barColor}` : 'progress__bar--green',
+          {
+            'progress__bar--disabled': disabled,
+          }
+        )}
         role="progressbar"
         aria-valuenow={clamp(min, max, value)}
         aria-valuemin={min}
