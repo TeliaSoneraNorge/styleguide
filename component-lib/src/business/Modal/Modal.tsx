@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import cn from 'classnames';
-import './Modal.pcss';
+
 import { useFocusTrap } from './useFocusTrap';
 interface Props {
   open: boolean;
