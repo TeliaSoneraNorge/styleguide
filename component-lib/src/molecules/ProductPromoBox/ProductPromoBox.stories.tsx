@@ -3,7 +3,7 @@ import { ProductPromoBox } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/ProductPromoBox',
+  title: 'Component library/Molecules/ProductPromoBox',
   component: ProductPromoBox,
 };
 

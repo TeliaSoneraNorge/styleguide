@@ -2,7 +2,7 @@ import React from 'react';
 import { Campaign } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Campaign',
+  title: 'Component library/Molecules/Campaign',
   component: Campaign,
 };
 

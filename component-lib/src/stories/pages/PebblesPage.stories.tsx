@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { Header } from '../../index';
 
 export default {
-  title: 'Examples|Pages',
+  title: 'Examples/Pages',
 };
 
 const PebbleVariant = {

@@ -2,7 +2,7 @@ import React from 'react';
 import IconLink from './IconLink';
 
 export default {
-  title: 'Component library|Atoms/IconLink',
+  title: 'Component library/Atoms/IconLink',
   component: IconLink,
 };
 

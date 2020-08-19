@@ -2,7 +2,7 @@ import React from 'react';
 import AlertText from './AlertText';
 
 export default {
-  title: 'Component library|Atoms/Alert Text',
+  title: 'Component library/Atoms/Alert Text',
   component: AlertText,
 };
 

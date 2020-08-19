@@ -3,7 +3,7 @@ import { HeaderWithImage} from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/HeaderWithImage',
+  title: 'Component library/Molecules/HeaderWithImage',
   component: HeaderWithImage,
 };
 

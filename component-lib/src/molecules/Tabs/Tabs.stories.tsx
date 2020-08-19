@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Tabs, Heading } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Tabs',
+  title: 'Component library/Molecules/Tabs',
   component: Tabs,
 };
 

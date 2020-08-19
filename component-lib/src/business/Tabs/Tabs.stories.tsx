@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { storiesOf } from '@storybook/react';
 import { Tabs, Tab } from './index';
 
-storiesOf('Business|Tabs', module)
+storiesOf('Business/Tabs', module)
   .add('Underlined', () => {
     return (
       <>

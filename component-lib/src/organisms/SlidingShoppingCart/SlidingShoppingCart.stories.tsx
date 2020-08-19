@@ -580,7 +580,7 @@ function getCart(item) {
   }
 }
 
-const stories = storiesOf('Component library|Organisms/SlidingShoppingCart', module);
+const stories = storiesOf('Component library/Organisms/SlidingShoppingCart', module);
 
 stories.addWithJSX('SlidingShoppingCart', () => {
   const heading = text('Heading', 'Handlekurv');

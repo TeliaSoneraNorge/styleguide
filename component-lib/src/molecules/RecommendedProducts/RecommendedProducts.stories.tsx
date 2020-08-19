@@ -3,7 +3,7 @@ import { RecommendedProducts } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/RecommendedProducts',
+  title: 'Component library/Molecules/RecommendedProducts',
   component: RecommendedProducts,
 };
 

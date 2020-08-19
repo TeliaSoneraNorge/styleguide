@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { TextBoxWithLabel } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/TextBoxWithLabel',
+  title: 'Component library/Molecules/TextBoxWithLabel',
   component: TextBoxWithLabel,
 };
 
@@ -32,10 +32,10 @@ export const TypeColoredIcon = () => (
   <TextBoxWithLabel labelText="Label for text box" type="text" withIcon iconName="ico_check" iconColor="purple" />
 );
 
-export const TypeDynamicallyTogglingIcon = () => {  
+export const TypeDynamicallyTogglingIcon = () => {
   const [showIcon, setShowIcon] = useState(false);
   const [value, setValue] = useState('');
-  
+
   const handleOnChange = (e: React.BaseSyntheticEvent) => {
     e.preventDefault()
 

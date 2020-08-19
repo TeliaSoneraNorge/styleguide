@@ -7,7 +7,7 @@ import { IconDefinition, availableIcons } from './Icon.generated';
 import { colors } from '../../utils/colors';
 
 export default {
-  title: 'Component library|Atoms/Icon',
+  title: 'Component library/Atoms/Icon',
   component: Icon,
 };
 

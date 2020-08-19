@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 import { TextBoxWithIcon } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/TextBoxWithIcon',
+  title: 'Component library/Molecules/TextBoxWithIcon',
   component: TextBoxWithIcon,
 };
 

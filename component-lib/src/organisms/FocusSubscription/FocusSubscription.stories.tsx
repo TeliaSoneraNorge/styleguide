@@ -3,7 +3,7 @@ import FocusSubscription from './FocusSubscription';
 import { colors } from '../../index';
 
 export default {
-  title: 'Component library|Organisms/FocusSubscription',
+  title: 'Component library/Organisms/FocusSubscription',
   component: FocusSubscription,
 };
 

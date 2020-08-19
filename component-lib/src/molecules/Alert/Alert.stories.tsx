@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Alert, StatefulAlert, Button, Container } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Alert',
+  title: 'Component library/Molecules/Alert',
   component: Alert,
 };
 

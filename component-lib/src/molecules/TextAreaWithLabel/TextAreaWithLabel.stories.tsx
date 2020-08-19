@@ -2,7 +2,7 @@ import React from 'react';
 import { TextAreaWithLabel } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/TextAreaWithLabel',
+  title: 'Component library/Molecules/TextAreaWithLabel',
   component: TextAreaWithLabel,
 };
 

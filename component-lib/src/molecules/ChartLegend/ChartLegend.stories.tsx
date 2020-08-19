@@ -2,7 +2,7 @@ import React from 'react';
 import { ChartLegend } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/ChartLegend',
+  title: 'Component library/Molecules/ChartLegend',
   component: ChartLegend,
 };
 

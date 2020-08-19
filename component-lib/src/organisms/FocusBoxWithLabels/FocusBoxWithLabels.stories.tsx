@@ -2,7 +2,7 @@ import React from 'react';
 import FocusBoxWithLabels from './FocusBoxWithLabels';
 
 export default {
-  title: 'Component library|Organisms/FocusBoxWithLabels',
+  title: 'Component library/Organisms/FocusBoxWithLabels',
   component: FocusBoxWithLabels,
 };
 

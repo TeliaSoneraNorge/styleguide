@@ -3,7 +3,7 @@ import { FunkyTabs, Heading, colors } from '../../index';
 import img from '../../stories/sampleImages'
 
 export default {
-  title: 'Component library|Molecules/FunkyTabs',
+  title: 'Component library/Molecules/FunkyTabs',
   component: FunkyTabs,
 };
 

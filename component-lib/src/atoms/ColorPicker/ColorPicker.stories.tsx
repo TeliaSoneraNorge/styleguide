@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ColorPicker, { Color } from './ColorPicker';
 
 export default {
-  title: 'Component library|Atoms/ColorPicker',
+  title: 'Component library/Atoms/ColorPicker',
   component: ColorPicker,
 };
 

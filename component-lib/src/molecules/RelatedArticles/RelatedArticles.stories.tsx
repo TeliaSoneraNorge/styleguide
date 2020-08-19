@@ -3,7 +3,7 @@ import { RelatedArticles } from '../../index';
 import img from '../../stories/sampleImages'
 
 export default {
-  title: 'Component library|Molecules/RelatedArticles',
+  title: 'Component library/Molecules/RelatedArticles',
   component: RelatedArticles,
 };
 

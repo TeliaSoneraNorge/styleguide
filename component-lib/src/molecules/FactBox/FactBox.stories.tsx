@@ -2,7 +2,7 @@ import React from 'react';
 import { FactBox } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/FactBox',
+  title: 'Component library/Molecules/FactBox',
   component: FactBox,
 };
 

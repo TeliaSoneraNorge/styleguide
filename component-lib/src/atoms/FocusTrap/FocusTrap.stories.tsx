@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import FocusTrapWithForwardRef from './FocusTrap';
 
 export default {
-  title: 'Component library|Atoms/Focus Trap',
+  title: 'Component library/Atoms/Focus Trap',
   component: FocusTrapWithForwardRef,
 };
 

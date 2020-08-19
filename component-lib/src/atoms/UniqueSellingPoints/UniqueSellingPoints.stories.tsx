@@ -2,7 +2,7 @@ import React from 'react';
 import UniqueSellingPoints from './UniqueSellingPoints';
 
 export default {
-  title: 'Component library|Atoms/Unique Selling Points',
+  title: 'Component library/Atoms/Unique Selling Points',
   component: UniqueSellingPoints,
 };
 

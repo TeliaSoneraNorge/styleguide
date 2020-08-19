@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PersonBox } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/PersonBox',
+  title: 'Component library/Molecules/PersonBox',
   component: PersonBox,
 };
 

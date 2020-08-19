@@ -3,7 +3,7 @@ import List from './List';
 import { Link as TeliaLink } from '../../index'
 
 export default {
-  title: 'Component library|Atoms/List',
+  title: 'Component library/Atoms/List',
   component: List,
 };
 

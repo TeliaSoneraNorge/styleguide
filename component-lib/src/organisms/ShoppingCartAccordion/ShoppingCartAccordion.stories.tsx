@@ -616,7 +616,7 @@ const Wrapper = ({
       );
 }
 
-const stories = storiesOf('Component library|Organisms/ShoppingCartAccordion', module);
+const stories = storiesOf('Component library/Organisms/ShoppingCartAccordion', module);
 
 stories.addWithJSX('ShoppingCartAccordion', () => {
   const pricePerMonth = number('Price per month', 500);

@@ -2,7 +2,7 @@ import React from 'react';
 import Caption from './Caption';
 
 export default {
-  title: 'Component library|Atoms/Caption',
+  title: 'Component library/Atoms/Caption',
   component: Caption,
 };
 

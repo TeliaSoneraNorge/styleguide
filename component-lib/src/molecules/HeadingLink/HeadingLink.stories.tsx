@@ -2,7 +2,7 @@ import React from 'react';
 import { HeadingLink } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/HeadingLink',
+  title: 'Component library/Molecules/HeadingLink',
   component: HeadingLink,
 };
 

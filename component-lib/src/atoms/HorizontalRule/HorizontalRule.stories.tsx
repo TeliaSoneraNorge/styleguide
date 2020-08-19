@@ -3,7 +3,7 @@ import HorizontalRule from './HorizontalRule';
 
 
 export default {
-  title: 'Component library|Atoms/Horizontal Rule',
+  title: 'Component library/Atoms/Horizontal Rule',
   component: HorizontalRule,
 };
 

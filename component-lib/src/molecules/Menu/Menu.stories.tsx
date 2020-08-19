@@ -3,7 +3,7 @@ import Menu from './Menu';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/Menu',
+  title: 'Component library/Molecules/Menu',
   component: Menu,
 };
 

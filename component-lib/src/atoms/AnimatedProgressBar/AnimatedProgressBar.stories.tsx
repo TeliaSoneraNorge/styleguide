@@ -2,7 +2,7 @@ import React from 'react';
 import AnimatedProgressBar from './AnimatedProgressBar';
 
 export default {
-  title: 'Component library|Atoms/Animated Progress Bar',
+  title: 'Component library/Atoms/Animated Progress Bar',
   component: AnimatedProgressBar,
 };
 

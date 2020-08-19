@@ -3,7 +3,7 @@ import { DisplayFunctionality } from '../../index';
 import img from '../../stories/sampleImages'
 
 export default {
-  title: 'Component library|Molecules/DisplayFunctionality',
+  title: 'Component library/Molecules/DisplayFunctionality',
   component: DisplayFunctionality,
 };
 

@@ -3,7 +3,7 @@ import { ListWithImage } from '../../index';
 import img from '../../stories/sampleImages'
 
 export default {
-  title: 'Component library|Molecules/ListWithImage',
+  title: 'Component library/Molecules/ListWithImage',
   component: ListWithImage,
 };
 

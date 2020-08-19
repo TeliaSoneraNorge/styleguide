@@ -2,7 +2,7 @@ import React from 'react';
 import { Accordion } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Accordion',
+  title: 'Component library/Molecules/Accordion',
   component: Accordion,
 };
 

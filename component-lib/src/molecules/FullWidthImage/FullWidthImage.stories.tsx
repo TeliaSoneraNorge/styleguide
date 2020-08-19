@@ -3,7 +3,7 @@ import { FullWidthImage } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/FullWidthImage',
+  title: 'Component library/Molecules/FullWidthImage',
   component: FullWidthImage,
 };
 

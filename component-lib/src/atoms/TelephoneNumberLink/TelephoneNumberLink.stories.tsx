@@ -2,7 +2,7 @@ import React from 'react';
 import TelephoneNumberLink from './TelephoneNumberLink';
 
 export default {
-  title: 'Component library|Atoms/Telephone Number Link',
+  title: 'Component library/Atoms/Telephone Number Link',
   component: TelephoneNumberLink,
 };
 

@@ -3,7 +3,7 @@ import { ImageHeadingLink } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/ImageHeadingLink',
+  title: 'Component library/Molecules/ImageHeadingLink',
   component: ImageHeadingLink,
 };
 

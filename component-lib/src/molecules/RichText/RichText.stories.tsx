@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { RichText } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/RichText',
+  title: 'Component library/Molecules/RichText',
   component: RichText,
 };
 

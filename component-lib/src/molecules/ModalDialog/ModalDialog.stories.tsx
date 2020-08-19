@@ -4,7 +4,7 @@ import ModalDialog from './ModalDialog';
 import ModalDialogProvider from './ModalDialogProvider';
 
 export default {
-  title: 'Component library|Molecules/ModalDialog',
+  title: 'Component library/Molecules/ModalDialog',
   component: ModalDialog,
 };
 

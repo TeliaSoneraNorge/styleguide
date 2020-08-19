@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import ToggleSwitch from './ToggleSwitch';
 
 export default {
-  title: 'Component library|Atoms/Toggle Switch',
+  title: 'Component library/Atoms/Toggle Switch',
   component: ToggleSwitch,
 };
 

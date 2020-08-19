@@ -3,7 +3,7 @@ import List from '../../atoms/List';
 import TableWithDropDown from './TableWithDropDown';
 
 export default {
-  title: 'Component library|Atoms/Table With DropDown',
+  title: 'Component library/Atoms/Table With DropDown',
   component: TableWithDropDown,
 };
 
@@ -122,5 +122,5 @@ export const TableWithInitialExpandedState = () => {
 };
 
 TableWithInitialExpandedState.story = {
-    parameters: { notes: 'popover tooltip' },
+  parameters: { notes: 'popover tooltip' },
 };

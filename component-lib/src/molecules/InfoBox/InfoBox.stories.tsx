@@ -2,7 +2,7 @@ import React from 'react';
 import { InfoBox, Paragraph } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/InfoBox',
+  title: 'Component library/Molecules/InfoBox',
   component: InfoBox,
 };
 

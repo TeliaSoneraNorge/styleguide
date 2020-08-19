@@ -2,7 +2,7 @@ import React from 'react';
 import SpecialMessage from './SpecialMessage';
 
 export default {
-  title: 'Component library|Atoms/Special Message',
+  title: 'Component library/Atoms/Special Message',
   component: SpecialMessage,
 };
 

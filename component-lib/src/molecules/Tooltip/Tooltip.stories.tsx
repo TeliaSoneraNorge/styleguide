@@ -2,7 +2,7 @@ import React from 'react';
 import { Tooltip } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Tooltip',
+  title: 'Component library/Molecules/Tooltip',
   component: Tooltip,
 };
 

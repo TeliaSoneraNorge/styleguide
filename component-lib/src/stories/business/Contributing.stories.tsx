@@ -17,7 +17,7 @@ function Code(props: { children: any }) {
 }
 
 export default {
-  title: 'Introduction|Business',
+  title: 'Introduction/Business',
   parameters: {
     options: {
       showPanel: false,

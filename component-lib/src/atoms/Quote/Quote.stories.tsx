@@ -2,7 +2,7 @@ import React from 'react';
 import Quote from './Quote';
 
 export default {
-  title: 'Component library|Atoms/Quote',
+  title: 'Component library/Atoms/Quote',
   component: Quote,
 };
 
