@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Header, DonutChart, ChartLegend, DataBoostChart } from '../../index';
 
+export default {
+  title: 'Examples/Pages',
+};
+
 function getRandomData() {
   const maxData = 60;
   const maxExtra = 20;
@@ -43,7 +47,7 @@ function getRandomData() {
   };
 }
 
-function UsagePage() {
+export function UsagePage() {
   const [isLoading, setIsLoading] = useState(true);
   const [showRemainingTime, setShowRemainingTime] = useState(false);
   const [data, setData] = useState<any>({});
@@ -105,5 +109,3 @@ function UsagePage() {
     </div>
   );
 }
-
-export default UsagePage;
