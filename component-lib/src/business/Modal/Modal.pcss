@@ -1,0 +1,59 @@
+.Business-Modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+
+  &-container {
+    background: white;
+    position: fixed;
+    width: 50%;
+    height: auto;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 var(--black-12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+    border: solid 1px #ebebeb;
+    min-height: 160px;
+    &--small {
+      width: 30%;
+    }
+    &--large {
+      width: 80%;
+    }
+  }
+
+  &--invisible {
+    visibility: hidden;
+  }
+}
+.Business-Modal-header {
+  padding: 1.5rem;
+  padding-bottom: 1rem;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 20px;
+    margin: 0;
+  }
+  &--border {
+    border-bottom: 1px solid grey;
+  }
+}
+
+.Business-Modal-body {
+  padding: 0 1.5rem;
+  padding-bottom: 1rem;
+  font-size: 14px;
+}
+
+.Business-Modal-footer {
+  padding: 1rem 1.5rem;
+  text-align: end;
+}
