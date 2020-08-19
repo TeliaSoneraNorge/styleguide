@@ -1,6 +1,8 @@
 import { useRef, useEffect } from 'react';
 
-const getFirstFocus = (elementList: NodeListOf<HTMLElement> | HTMLElement[]) => {
+const getFirstFocus = (elementList?: NodeListOf<HTMLElement> | HTMLElement[]) => {
+  if (!elementList) return undefined;
+
   let first: HTMLElement;
   for (let i = 0; i < elementList.length; i++) {
     if (!elementList[i]['disabled']) {
@@ -11,7 +13,8 @@ const getFirstFocus = (elementList: NodeListOf<HTMLElement> | HTMLElement[]) => 
   return first;
 };
 
-const getLastFocus = (elementList: NodeListOf<HTMLElement>) => {
+const getLastFocus = (elementList?: NodeListOf<HTMLElement>) => {
+  if (!elementList) return undefined;
   let reverse: HTMLElement[] = [];
   elementList.forEach(elemnt => {
     reverse = [elemnt, ...reverse];
@@ -29,18 +32,22 @@ export const useFocusTrap = () => {
   const container = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const focusable = container.current
-      ? container.current.querySelectorAll<HTMLElement>(
-          'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-        )
-      : undefined;
-
-    const firstFocusableElement = getFirstFocus(focusable);
-    const lastFocusableElement = getLastFocus(focusable);
-
     const handleTab = (e: KeyboardEvent) => {
       const tabKeyPressed = e.key === 'Tab' || e.keyCode === 9;
       if (!tabKeyPressed) return;
+
+      /**
+       * We keep this logic in the handler to count for
+       * any state changes on focuable items.
+       * Such as disabling while subitting etc.
+       */
+      const focusable = container.current
+        ? container.current.querySelectorAll<HTMLElement>(
+            'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+          )
+        : undefined;
+      const firstFocusableElement = getFirstFocus(focusable);
+      const lastFocusableElement = getLastFocus(focusable);
 
       if (e.shiftKey) {
         if (lastFocusableElement && document.activeElement === firstFocusableElement) {
