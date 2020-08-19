@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import cn from 'classnames';
 
 import { useFocusTrap } from './useFocusTrap';
+import { useEscapeListener } from './useEscapeListener';
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -9,16 +10,8 @@ interface Props {
 }
 export const Modal: React.FC<Props> = props => {
   const { container } = useFocusTrap();
-
-  useEffect(() => {
-    const closeModal = (e: KeyboardEvent) => {
-      if (e.keyCode === 27 && props.open) props.setOpen(false);
-    };
-    window.addEventListener('keydown', closeModal);
-    return () => {
-      window.removeEventListener('keydown', closeModal);
-    };
-  }, [props.open]);
+  const closeModal = () => props.setOpen(false);
+  useEscapeListener({ onEscape: closeModal });
 
   return (
     <div ref={container} className={cn('Business-Modal', { 'Business-Modal--invisible': !props.open })}>
