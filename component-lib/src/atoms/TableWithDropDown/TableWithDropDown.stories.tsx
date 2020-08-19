@@ -121,6 +121,6 @@ export const TableWithInitialExpandedState = () => {
   );
 };
 
-TableWithInitialExpandedState.story = {
-  parameters: { notes: 'popover tooltip' },
+TableWithInitialExpandedState.parameters = {
+  notes: 'popover tooltip',
 };
