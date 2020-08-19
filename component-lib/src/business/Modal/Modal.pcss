@@ -43,7 +43,8 @@
     margin: 0;
   }
   &--border {
-    border-bottom: 1px solid grey;
+    border-bottom: 1px solid var(--light-grey);
+    margin-bottom: 1rem;
   }
 }
 
@@ -51,6 +52,17 @@
   padding: 0 1.5rem;
   padding-bottom: 1rem;
   font-size: 14px;
+}
+
+.Business-Modal-divider {
+  height: 1px;
+  width: 100%;
+  margin: 0.5rem 0;
+  background-color: var(--light-grey);
+  &--fullWidth {
+    width: calc(100% + 3rem);
+    margin-left: -1.5rem;
+  }
 }
 
 .Business-Modal-footer {
