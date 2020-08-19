@@ -15,5 +15,5 @@ export const useEscapeListener = (params: Params) => {
     return () => {
       window.removeEventListener('keydown', closeModal);
     };
-  }, []);
+  }, [params.onEscape]);
 };
