@@ -6,7 +6,7 @@ import { useEscapeListener } from './useEscapeListener';
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
-  size?: 'sm' | 'm' | 'lg';
+  size?: 'sm' | 'md' | 'lg';
 }
 export const Modal: React.FC<Props> = props => {
   const { container } = useFocusTrap();
@@ -18,11 +18,8 @@ export const Modal: React.FC<Props> = props => {
       <div
         className={cn(
           'Business-Modal-container',
-          {
-            'Business-Modal-container--small': props.size === 'sm',
-            'Business-Modal-container--large': props.size === 'lg',
-          },
-          props.open ? '' : ''
+          props.open ? '' : '',
+          props.size ? `Business-Modal-container--${props.size}` : 'Business-Modal-container--md'
         )}
       >
         {props.children}
