@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { number, select, boolean } from '@storybook/addon-knobs';
+import { jsxDecorator } from 'storybook-addon-jsx';
 
 import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import ShoppingCartAccordion from './ShoppingCartAccordion';
+
+export default {
+  title: 'Component library/Organisms/ShoppingCartAccordion',
+  decorators: [jsxDecorator],
+};
 
 const switchContent = [
   {
@@ -578,47 +583,45 @@ function getCart(item) {
 }
 
 const Wrapper = ({
-    numberOfItemsInCart,
-    shouldHideOnDesktop,
-    shouldShowGoToCartButton,
-    shouldBeSticky,
-    pricePerMonth,
-    priceUpfront,
-    priceFirstInvoice,
-    itemToDisplay,
-  }) => {
-    const [isExpanded, setIsExpanded] = useState(false);
+  numberOfItemsInCart,
+  shouldHideOnDesktop,
+  shouldShowGoToCartButton,
+  shouldBeSticky,
+  pricePerMonth,
+  priceUpfront,
+  priceFirstInvoice,
+  itemToDisplay,
+}) => {
+  const [isExpanded, setIsExpanded] = useState(false);
 
-    return (
-        <ShoppingCartAccordion
-          isExpanded={isExpanded}
-          numberOfItemsInCart={numberOfItemsInCart}
-          onGoToCart={() => {}}
-          shouldHideOnDesktop={shouldHideOnDesktop}
-          shouldShowButton={shouldShowGoToCartButton}
-          shouldBeSticky={shouldBeSticky}
-          totalPriceMonthly={pricePerMonth}
-          totalPriceUpfront={priceUpfront}
-          toggleCart={() => setIsExpanded(!isExpanded)}
-          formatPrice={price => `${price},-`}
-        >
-          <ShoppingCart
-            cartItems={getCart(itemToDisplay)}
-            isAnyCartItemsQuantityModifiable
-            totalPriceFirstInvoice={priceFirstInvoice}
-            totalPriceMonthly={pricePerMonth}
-            totalPriceUpfront={priceUpfront}
-            onChangeQuantity={() => {}}
-            onRemoveItem={() => {}}
-            formatPrice={price => `${price},-`}
-          />
-        </ShoppingCartAccordion>
-      );
-}
+  return (
+    <ShoppingCartAccordion
+      isExpanded={isExpanded}
+      numberOfItemsInCart={numberOfItemsInCart}
+      onGoToCart={() => {}}
+      shouldHideOnDesktop={shouldHideOnDesktop}
+      shouldShowButton={shouldShowGoToCartButton}
+      shouldBeSticky={shouldBeSticky}
+      totalPriceMonthly={pricePerMonth}
+      totalPriceUpfront={priceUpfront}
+      toggleCart={() => setIsExpanded(!isExpanded)}
+      formatPrice={price => `${price},-`}
+    >
+      <ShoppingCart
+        cartItems={getCart(itemToDisplay)}
+        isAnyCartItemsQuantityModifiable
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={price => `${price},-`}
+      />
+    </ShoppingCartAccordion>
+  );
+};
 
-const stories = storiesOf('Component library/Organisms/ShoppingCartAccordion', module);
-
-stories.addWithJSX('ShoppingCartAccordion', () => {
+export const Default = () => {
   const pricePerMonth = number('Price per month', 500);
   const priceUpfront = number('Price upfront', 500);
   const priceFirstInvoice = number('Price first invoice', 500);
@@ -633,14 +636,14 @@ stories.addWithJSX('ShoppingCartAccordion', () => {
   const shouldBeSticky = boolean('Should be sticky', true);
   return (
     <Wrapper
-        numberOfItemsInCart={numberOfItemsInCart}
-        shouldHideOnDesktop={shouldHideOnDesktop}
-        shouldShowGoToCartButton={shouldShowGoToCartButton}
-        shouldBeSticky={shouldBeSticky}
-        pricePerMonth={pricePerMonth}
-        priceUpfront={priceUpfront}
-        priceFirstInvoice={priceFirstInvoice}
-        itemToDisplay={itemToDisplay}
+      numberOfItemsInCart={numberOfItemsInCart}
+      shouldHideOnDesktop={shouldHideOnDesktop}
+      shouldShowGoToCartButton={shouldShowGoToCartButton}
+      shouldBeSticky={shouldBeSticky}
+      pricePerMonth={pricePerMonth}
+      priceUpfront={priceUpfront}
+      priceFirstInvoice={priceFirstInvoice}
+      itemToDisplay={itemToDisplay}
     />
   );
-});
+};

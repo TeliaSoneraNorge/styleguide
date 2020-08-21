@@ -1,9 +1,14 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
+import { jsxDecorator } from 'storybook-addon-jsx';
 
 import ShoppingCart from './ShoppingCart';
 import Container from '../../atoms/Container/Container';
+
+export default {
+  title: 'Component library/Molecules/ShoppingCart',
+  decorators: [jsxDecorator],
+};
 
 const switchContent = [
   {
@@ -111,28 +116,29 @@ const leaseContent = [
     modelSlug: 'galaxy-s20-ultra',
     color: 'Grå',
     image: {
-      url: '//images.ctfassets.net/iz15t1lxx44v/6wL89AOWs6Z7dMISvz6Ta1/0eee85d33d7b20632d706ce51df0836e/samsung-galaxy-s20-ultra-5g-cosmic-gray-2.png'
+      url:
+        '//images.ctfassets.net/iz15t1lxx44v/6wL89AOWs6Z7dMISvz6Ta1/0eee85d33d7b20632d706ce51df0836e/samsung-galaxy-s20-ultra-5g-cosmic-gray-2.png',
     },
     name: 'Samsung Galaxy S20 Ultra 5G 128 GB Grå',
     quantity: {
       modifiable: false,
       removable: false,
-      value: 1
+      value: 1,
     },
     price: {
       upfront: 10799,
       monthly: 0,
-      originalSalesPrice: 15790
+      originalSalesPrice: 15790,
     },
     discount: {
       value: {
-        upfront: 0
+        upfront: 0,
       },
       description: '',
       leaseDiscount: {
-        name: "Telefonrabatt, 12 md. binding og TeliaX",
-        value: 2121
-      }
+        name: 'Telefonrabatt, 12 md. binding og TeliaX',
+        value: 2121,
+      },
     },
     leaseMonths: 0,
     isReSwitch: false,
@@ -147,24 +153,24 @@ const leaseContent = [
         quantity: {
           modifiable: false,
           removable: false,
-          value: 1
+          value: 1,
         },
         price: {
-          monthly: 549
+          monthly: 549,
         },
         image: {
-          icon: 'sim-card'
+          icon: 'sim-card',
         },
         subtitle: '',
         discount: {
           hasGroupDiscount: false,
           value: {
-            monthly: 0
-          }
-        }
-      }
-    ]
-  }
+            monthly: 0,
+          },
+        },
+      },
+    ],
+  },
 ];
 
 const subscriptionContent = [
@@ -538,93 +544,93 @@ const mbbContent = [
 ];
 
 const groupContent = [
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '29166a',
-      items: [],
-      name: 'Telia X',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1
-      },
-      price: {
-        monthly: 579
-      },
-      image: {
-        icon: 'ico_sim'
-      },
-      subtitle: 'Nummer: 413 18 854',
-      indent: true,
-      discount: {
-        hasGroupDiscount: true,
-        value: {
-          monthly: 135
-        }
-      }
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '29166a',
+    items: [],
+    name: 'Telia X',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
     },
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '2b629a',
-      items: [],
-      name: 'Telia X',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1
-      },
-      price: {
-        monthly: 579
-      },
-      image: {
-        icon: 'ico_sim'
-      },
-      subtitle: 'Nummer: 413 20 853',
-      indent: true,
-      discount: {
-        hasGroupDiscount: true,
-        value: {
-          monthly: 135
-        }
-      }
+    price: {
+      monthly: 579,
     },
-    {
-      type: 'SIM',
-      id: '9054990',
-      image: {
-        icon: 'ico_sim'
-      },
-      name: 'SIM-kort',
-      price: {
-        upfront: 0
-      },
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 2
-      },
-      indent: true
+    image: {
+      icon: 'ico_sim',
     },
-    {
-      type: 'NEW_NUMBER',
-      id: '',
-      image: {
-        icon: 'ico_info_v2'
+    subtitle: 'Nummer: 413 18 854',
+    indent: true,
+    discount: {
+      hasGroupDiscount: true,
+      value: {
+        monthly: 135,
       },
-      name: 'Etableringspris nytt nummer',
-      price: {
-        firstInvoice: 199
+    },
+  },
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '2b629a',
+    items: [],
+    name: 'Telia X',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      monthly: 579,
+    },
+    image: {
+      icon: 'ico_sim',
+    },
+    subtitle: 'Nummer: 413 20 853',
+    indent: true,
+    discount: {
+      hasGroupDiscount: true,
+      value: {
+        monthly: 135,
       },
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 2
-      },
-      indent: true
-    }
-  ];
+    },
+  },
+  {
+    type: 'SIM',
+    id: '9054990',
+    image: {
+      icon: 'ico_sim',
+    },
+    name: 'SIM-kort',
+    price: {
+      upfront: 0,
+    },
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 2,
+    },
+    indent: true,
+  },
+  {
+    type: 'NEW_NUMBER',
+    id: '',
+    image: {
+      icon: 'ico_info_v2',
+    },
+    name: 'Etableringspris nytt nummer',
+    price: {
+      firstInvoice: 199,
+    },
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 2,
+    },
+    indent: true,
+  },
+];
 
 function getCart(item) {
   switch (item) {
@@ -655,29 +661,31 @@ const style = {
   justifyContent: 'center',
 };
 
-const stories = storiesOf('Component library/Molecules/ShoppingCart', module);
-
-stories.addWithJSX('ShoppingCart', () => {
+export const Default = () => {
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const heading = text('Heading', 'Handlekurv');
   const pricePerMonth = number('Price per month', 500);
   const priceUpfront = number('Price upfront', 500);
   const priceFirstInvoice = number('Price first invoice', 500);
-  const itemToDisplay = select('Item', ['switch', 'lease', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'], 'switch');
+  const itemToDisplay = select(
+    'Item',
+    ['switch', 'lease', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'],
+    'switch'
+  );
 
   return (
     <Container style={style} size={containerSize}>
-        <ShoppingCart
-          heading={heading}
-          cartItems={getCart(itemToDisplay)}
-          isAnyCartItemsQuantityModifiable
-          totalPriceFirstInvoice={priceFirstInvoice}
-          totalPriceMonthly={pricePerMonth}
-          totalPriceUpfront={priceUpfront}
-          onChangeQuantity={() => {}}
-          onRemoveItem={() => {}}
-          formatPrice={price => `${price},-`}
-        />
+      <ShoppingCart
+        heading={heading}
+        cartItems={getCart(itemToDisplay)}
+        isAnyCartItemsQuantityModifiable
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={price => `${price},-`}
+      />
     </Container>
   );
-});
+};
