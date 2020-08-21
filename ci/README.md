@@ -1,4 +1,4 @@
-## Concourse
+# Concourse
 
 Login to the team:
 
@@ -7,6 +7,7 @@ fly -t channel-api login -n channel-api -c https://concourse.common-services.tel
 ```
 
 Instructions to update styleguide pipeline.
+
 ```bash
 fly -t channel-api set-pipeline -p styleguide -c pipeline.yml
 fly -t channel-api unpause-pipeline -p styleguide

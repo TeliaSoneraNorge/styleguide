@@ -9,7 +9,6 @@ const calculateHash = url => {
     const hash = crypto.createHash('sha1');
     const fileContent = fs.readFileSync(filePath);
     hash.update(fileContent);
-
     return hash.digest('hex');
   }
 
@@ -36,7 +35,9 @@ module.exports = {
     'postcss-calc': {},
     'postcss-replace': {
       data: {
-        assetPath: '../../component-lib/assets',
+        // For Storybook, we serve the contents of /assets directly under /
+        // (i.e. ./assets/fonts/* is served under http://localhost:6006/fonts/*)
+        assetPath: process.env.STORYBOOK === 'true' ? '' : process.env.LOCAL_DEV === 'true' ? '../assets' : './assets',
       },
     },
     'postcss-url': {

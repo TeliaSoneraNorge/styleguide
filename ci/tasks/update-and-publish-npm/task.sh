@@ -5,9 +5,10 @@ export GREEN='\033[1;32m'
 export NC='\033[0m'
 export CHECK="√"
 
-mv cache/node_modules styleguide/component-lib
+mv cache/node_modules styleguide
 
 echo "Installing git"
+
 apk add --update --no-cache git
 git config --global user.email "concourse-ci@localhost"
 git config --global user.name "concourse-ci"
@@ -15,11 +16,6 @@ git config --global user.name "concourse-ci"
 echo "Update styleguide version:"
 
 cd styleguide
-npm version ${update_type} --no-git-tag
-
-echo "Update component lib version:"
-
-cd component-lib
 npm version ${update_type} --no-git-tag
 
 npm run build:icons
@@ -32,6 +28,7 @@ echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
 echo -e "${GREEN}${CHECK} Registered npm token ${NC}"
 
 ls dist
+
 npm publish dist
 
 echo -e "${GREEN}${CHECK} Latest version deployed to npm${NC}"
