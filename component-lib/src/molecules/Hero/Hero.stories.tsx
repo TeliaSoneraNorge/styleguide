@@ -3,7 +3,7 @@ import { Hero } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/Hero',
+  title: 'Component library/Molecules/Hero',
   component: Hero,
 };
 

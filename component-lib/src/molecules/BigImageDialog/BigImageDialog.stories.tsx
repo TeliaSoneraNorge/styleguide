@@ -5,13 +5,13 @@ import ColorPicker from '../../atoms/ColorPicker';
 import Button from '../../atoms/Button';
 
 export default {
-  title: 'Component library|Molecules/BigImageDialog',
+  title: 'Component library/Molecules/BigImageDialog',
   component: BigImageDialog,
 };
 
 const variants = [
-    { 
-        color: "black", 
+    {
+        color: "black",
         name: "Svart",
         id: "9074855",
         src: "//images.ctfassets.net/iz15t1lxx44v/4OTDLSaQzMUudOJ2rkXxNv/b8d8d9e0d314f8535e5d53393888d79b/Apple-iPhone-11-Pro-Silver-Silicone-Case-Black-Pure-Back.png?w=230",
@@ -62,9 +62,9 @@ export const Default = () => {
 
   return (
     <ModalDialogProvider>
-      <BigImageDialog 
-        name="big-image-dialog" 
-        heading="Apple iPhone 11 Pro Silicone Case" 
+      <BigImageDialog
+        name="big-image-dialog"
+        heading="Apple iPhone 11 Pro Silicone Case"
         description="Disse Apple-designede silikondekslene sitter perfekt rundt volumknappene og Dvale/vekke-knappen, og følger formene til din iPhone uten å gjøre den mye større. Det myke foret på innsiden av etuiet beskytter din iPhone. Utsiden, som er i silkemyk silikon, gjør det ekstra behagelig å holde iPhone i hånden. Velg mellom rosa eller svart silikondeksel."
         src={selected.src}
         standalone // <– 'standalone' are only used for example purposes.

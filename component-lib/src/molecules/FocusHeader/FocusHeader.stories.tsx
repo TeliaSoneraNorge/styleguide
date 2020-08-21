@@ -2,7 +2,7 @@ import React from 'react';
 import { FocusHeader, Button } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/FocusHeader',
+  title: 'Component library/Molecules/FocusHeader',
   component: FocusHeader,
 };
 

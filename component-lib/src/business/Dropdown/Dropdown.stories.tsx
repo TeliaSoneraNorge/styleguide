@@ -65,7 +65,7 @@ const countries = [
   { name: 'Zimbabwe' },
 ];
 
-storiesOf('Business|Dropdown', module)
+storiesOf('Business/Dropdown', module)
   .add('Default', () => {
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>

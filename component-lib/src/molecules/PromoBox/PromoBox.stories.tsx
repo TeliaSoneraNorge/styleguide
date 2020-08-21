@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PromoBox } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/PromoBox',
+  title: 'Component library/Molecules/PromoBox',
   component: PromoBox,
 };
 

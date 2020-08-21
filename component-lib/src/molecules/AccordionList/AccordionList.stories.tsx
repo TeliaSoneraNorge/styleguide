@@ -2,7 +2,7 @@ import React from 'react';
 import { AccordionList, StatefulAccordionList } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/AccordionList',
+  title: 'Component library/Molecules/AccordionList',
   component: AccordionList,
 };
 

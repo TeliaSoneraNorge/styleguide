@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, colors } from '../../index';
 
 export default {
-  title: 'Component library|Atoms/Link',
+  title: 'Component library/Atoms/Link',
   component: Link,
 };
 

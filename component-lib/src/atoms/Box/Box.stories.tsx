@@ -3,7 +3,7 @@ import StatefulBox from './StatefulBox';
 
 
 export default {
-  title: 'Component library|Atoms/Box',
+  title: 'Component library/Atoms/Box',
   component: StatefulBox,
 };
 

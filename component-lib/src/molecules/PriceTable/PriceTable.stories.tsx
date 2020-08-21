@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PriceTable } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/PriceTable',
+  title: 'Component library/Molecules/PriceTable',
   component: PriceTable,
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { StatsDisplay, StatsDisplayItem, SvgIcon, Container } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/StatsDisplay',
+  title: 'Component library/Molecules/StatsDisplay',
   component: StatsDisplay,
 };
 

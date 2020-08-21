@@ -3,7 +3,7 @@ import { Banner, Container } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/Banner',
+  title: 'Component library/Molecules/Banner',
   component: Banner,
 };
 

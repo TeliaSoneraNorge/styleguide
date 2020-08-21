@@ -2,7 +2,7 @@ import React from 'react';
 import { DataBoostChart } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/DataBoostChart',
+  title: 'Component library/Molecules/DataBoostChart',
   component: DataBoostChart,
 };
 

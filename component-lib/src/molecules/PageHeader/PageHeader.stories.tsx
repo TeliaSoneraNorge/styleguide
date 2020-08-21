@@ -2,7 +2,7 @@ import React from 'react';
 import { PageHeader } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/PageHeader',
+  title: 'Component library/Molecules/PageHeader',
   component: PageHeader,
 };
 

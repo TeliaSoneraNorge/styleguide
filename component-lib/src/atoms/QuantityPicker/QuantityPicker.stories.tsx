@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import QuantityPicker from './QuantityPicker';
 
 export default {
-  title: 'Component library|Atoms/Quantity Picker',
+  title: 'Component library/Atoms/Quantity Picker',
   component: QuantityPicker,
 };
 

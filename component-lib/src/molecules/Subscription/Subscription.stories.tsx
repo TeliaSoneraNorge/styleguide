@@ -581,7 +581,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
 };
 
 export default {
-  title: 'Component library|Molecules/Subscription',
+  title: 'Component library/Molecules/Subscription',
   component: StandaloneSubscription,
 };
 

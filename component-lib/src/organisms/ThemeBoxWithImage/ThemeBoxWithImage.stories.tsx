@@ -4,7 +4,7 @@ import { ThemeBoxes } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Organisms/ThemeBoxWithImage',
+  title: 'Component library/Organisms/ThemeBoxWithImage',
   component: ThemeBoxWithImage,
 };
 

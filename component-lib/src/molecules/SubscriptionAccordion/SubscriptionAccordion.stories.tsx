@@ -3,7 +3,7 @@ import SubscriptionAccordion from './SubscriptionAccordion';
 import { StatefulAccordionList } from '../AccordionList';
 
 export default {
-  title: 'Component library|Molecules/SubscriptionAccordion',
+  title: 'Component library/Molecules/SubscriptionAccordion',
   component: SubscriptionAccordion,
 };
 

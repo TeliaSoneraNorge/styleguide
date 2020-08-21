@@ -2,7 +2,7 @@ import React from 'react';
 import StepIndicator from './StepIndicator';
 
 export default {
-  title: 'Component library|Atoms/Step Indicator',
+  title: 'Component library/Atoms/Step Indicator',
   component: StepIndicator,
 };
 

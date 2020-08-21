@@ -2,7 +2,7 @@ import React from 'react';
 import { Gallery } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Gallery',
+  title: 'Component library/Molecules/Gallery',
   component: Gallery,
 };
 

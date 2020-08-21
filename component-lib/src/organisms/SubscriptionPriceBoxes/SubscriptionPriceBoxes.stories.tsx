@@ -3,7 +3,7 @@ import { SubscriptionPriceBoxes, SubscriptionPriceBox } from './index';
 import { Container } from '../../index';
 
 export default {
-  title: 'Component library|Organisms/SubscriptionPriceBoxes',
+  title: 'Component library/Organisms/SubscriptionPriceBoxes',
   component: SubscriptionPriceBoxes,
 };
 

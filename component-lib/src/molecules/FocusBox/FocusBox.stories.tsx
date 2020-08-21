@@ -2,7 +2,7 @@ import React from 'react';
 import { FocusBox } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/FocusBox',
+  title: 'Component library/Molecules/FocusBox',
   component: FocusBox,
 };
 

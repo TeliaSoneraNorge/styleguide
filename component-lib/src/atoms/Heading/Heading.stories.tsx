@@ -2,7 +2,7 @@ import React from 'react';
 import Heading from './Heading';
 
 export default {
-  title: 'Component library|Atoms/Heading',
+  title: 'Component library/Atoms/Heading',
   component: Heading,
 };
 

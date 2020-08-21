@@ -2,7 +2,7 @@ import React from 'react';
 import InfoCard from './InfoCard';
 
 export default {
-  title: 'Component library|Molecules/InfoCard',
+  title: 'Component library/Molecules/InfoCard',
   component: InfoCard,
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Video } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Video',
+  title: 'Component library/Molecules/Video',
   component: Video,
 };
 

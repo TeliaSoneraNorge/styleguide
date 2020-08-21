@@ -11,7 +11,7 @@ import {
 } from '../../index';
 
 export default {
-  title: 'Examples|Pages',
+  title: 'Examples/Pages',
 };
 
 export const FormsSamplePage = () => (

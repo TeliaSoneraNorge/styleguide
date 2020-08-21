@@ -3,7 +3,7 @@ import { ThemeBox, ThemeBoxes } from './index';
 import { Icon, SvgIcon, colors } from '../../index';
 
 export default {
-  title: 'Component library|Organisms/ThemeBoxes',
+  title: 'Component library/Organisms/ThemeBoxes',
   component: ThemeBoxes,
 };
 

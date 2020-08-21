@@ -2,7 +2,7 @@ import React from 'react';
 import { Header } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Header',
+  title: 'Component library/Molecules/Header',
   component: Header,
 };
 

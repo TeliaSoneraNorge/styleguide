@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PageFooter } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/PageFooter',
+  title: 'Component library/Molecules/PageFooter',
   component: PageFooter,
 };
 

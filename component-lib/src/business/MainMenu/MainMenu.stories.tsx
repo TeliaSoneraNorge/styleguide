@@ -5,7 +5,7 @@ import { MainMenu } from './MainMenu';
 import { MainMenuItem } from './MainMenuItem';
 import { Icon } from '../../atoms/Icon';
 
-storiesOf('Business|MainMenu', module).add('default', () => {
+storiesOf('Business/MainMenu', module).add('default', () => {
   function onClickItem() {
     console.log('onClickItem');
   }

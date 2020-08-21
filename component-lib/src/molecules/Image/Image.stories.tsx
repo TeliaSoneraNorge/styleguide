@@ -3,7 +3,7 @@ import { Image, Caption } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/Image',
+  title: 'Component library/Molecules/Image',
   component: Image,
 };
 

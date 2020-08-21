@@ -2,7 +2,7 @@ import React from 'react';
 import { TextBoxWithCharCount } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/TextBoxWithCharCount',
+  title: 'Component library/Molecules/TextBoxWithCharCount',
   component: TextBoxWithCharCount,
 };
 
