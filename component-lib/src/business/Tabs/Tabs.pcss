@@ -19,6 +19,10 @@
     border-bottom: 3px solid transparent;
     transition: border 0.2s ease-in-out;
 
+    &:hover {
+      border-color: var(--core-purple) !important;
+    }
+
     & > a,
     & > button {
       text-decoration: none;
@@ -92,6 +96,9 @@
     li.active {
       border: 1px solid var(--core-purple);
       background-color: rgba(153, 10, 227, 0.06);
+    }
+    li:hover {
+      border-right: solid 1px;
     }
   }
 }
