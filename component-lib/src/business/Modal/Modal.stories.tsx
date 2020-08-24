@@ -26,7 +26,7 @@ storiesOf('Business|Modal', module)
       </div>
     );
   })
-  .add('With boardered header', () => {
+  .add('With bordered header', () => {
     return (
       <div style={{ height: '300px' }}>
         <Modal open={true} setOpen={() => {}}>
