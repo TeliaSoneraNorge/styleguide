@@ -1,4 +1,6 @@
-import React, { useRef, useEffect } from 'react';
+import React from 'react';
+import { createPortal } from 'react-dom';
+import { getModalRoot } from './getModalRoot';
 import cn from 'classnames';
 
 import { useFocusTrap } from './useFocusTrap';
@@ -12,8 +14,9 @@ export const Modal: React.FC<Props> = props => {
   const { container } = useFocusTrap();
   const closeModal = () => props.setOpen(false);
   useEscapeListener({ onEscape: closeModal });
+  const modalPortal = getModalRoot();
 
-  return (
+  return createPortal(
     <div ref={container} className={cn('Business-Modal', { 'Business-Modal--invisible': !props.open })}>
       <div
         className={cn(
@@ -24,6 +27,7 @@ export const Modal: React.FC<Props> = props => {
       >
         {props.children}
       </div>
-    </div>
+    </div>,
+    modalPortal
   );
 };

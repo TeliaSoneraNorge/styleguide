@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { storiesOf } from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from './index';
 import Button from '../../atoms/Button';
 import TextBox from '../../atoms/TextBox';
@@ -146,6 +147,35 @@ storiesOf('Business|Modal', module)
           </ModalBody>
           <ModalFooter>
             <Button text="Close" size="small" onClick={() => setOpen(false)} />
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  })
+  .add('Two open modal', () => {
+    return (
+      <div style={{ height: '300px' }}>
+        <Modal open={true} setOpen={action('back modal toggle')}>
+          <ModalHeader>
+            <h2>You launched a modal!</h2>
+          </ModalHeader>
+          <ModalBody>
+            click the button og press <code>escape</code> to close the modal
+          </ModalBody>
+          <ModalFooter>
+            <Button text="Close" size="small" onClick={action('back modal click close')} />
+          </ModalFooter>
+        </Modal>
+
+        <Modal open={true} size="sm" setOpen={action('front modal toggle')}>
+          <ModalHeader>
+            <h2>You launched a modal!</h2>
+          </ModalHeader>
+          <ModalBody>
+            click the button og press <code>escape</code> to close the modal
+          </ModalBody>
+          <ModalFooter>
+            <Button text="Close" size="small" onClick={action('front modal click close')} />{' '}
           </ModalFooter>
         </Modal>
       </div>
