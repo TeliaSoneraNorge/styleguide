@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import SubscriptionAccordion from './SubscriptionAccordion';
 import { StatefulAccordionList } from '../AccordionList';
+import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
 
 export default {
   title: 'Component library|Molecules/SubscriptionAccordion',
@@ -129,5 +130,78 @@ export const DiscountSubscriptionAccordion = () => {
           </li>
       </ul>
     </SubscriptionAccordion>
+  );
+};
+
+export const SubscriptionAccordionsWithDescription = () => {
+  const [currentSubscription, setCurrentSubscription] = useState(null)
+
+  return (
+    <>
+    <SubscriptionAccordion
+      name="500 GB"
+      id="smart500"
+      description={
+        <span style={{ display: "flex", alignItems: "center" }}>
+          <InfiniteIcon style={{ marginRight: "0.4rem" }} />
+          <span style={{ fontFamily: "Helvetica Neue Medium" }}>med 10mbit/s etter</span>
+        </span>
+      }
+      price={529}
+      priceInfo={['pr. md']}
+      isExpanded={currentSubscription === "smart500"}
+      feature={{
+        iconName: "infinite",
+        name: "Ubegrenset data med 10mbit/s hastighet etter 500GB"
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => { currentSubscription === "smart500" ? setCurrentSubscription(null) : setCurrentSubscription("smart500") }}
+      buttonText="Neste: Velg ruter"
+    >
+      <ul className="list">
+          <li className="list__item">
+            Mustic Freedom inkludert
+          </li>
+          <li className="list__item">
+            Bruk i Norge, Norden og Baltikum er inkludert
+          </li>
+          <li className="list__item">
+            Ruter fra 1,-
+          </li>
+      </ul>
+    </SubscriptionAccordion>
+    <SubscriptionAccordion
+      name="250 GB"
+      id="smart250"
+      description={
+        <span style={{ display: "flex", alignItems: "center" }}>
+          <InfiniteIcon style={{ marginRight: "0.4rem" }} />
+          <span style={{ fontFamily: "Helvetica Neue Medium" }}>med 10mbit/s etter</span>
+        </span>
+      }
+      price={529}
+      priceInfo={['pr. md']}
+      isExpanded={currentSubscription === "smart250"}
+      feature={{
+        iconName: "infinite",
+        name: "Ubegrenset data med 10mbit/s hastighet etter 500GB"
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => { currentSubscription === "smart250" ? setCurrentSubscription(null) : setCurrentSubscription("smart250") }}
+      buttonText="Neste: Velg ruter"
+    >
+      <ul className="list">
+          <li className="list__item">
+            Mustic Freedom inkludert
+          </li>
+          <li className="list__item">
+            Bruk i Norge, Norden og Baltikum er inkludert
+          </li>
+          <li className="list__item">
+            Ruter fra 1,-
+          </li>
+      </ul>
+    </SubscriptionAccordion>
+    </>
   );
 };
