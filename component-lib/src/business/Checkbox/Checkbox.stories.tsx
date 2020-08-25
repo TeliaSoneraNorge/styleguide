@@ -1,12 +1,11 @@
 import React from 'react';
 import {Checkbox} from './Checkbox';
 
-import { withKnobs, text, boolean } from "@storybook/addon-knobs";
+import { text, boolean } from "@storybook/addon-knobs";
 
 export default {
     component: Checkbox,
-    title: 'Business/Checkbox',
-    decorators: [withKnobs]
+    title: 'Business/Checkbox'
 }
 
 export const Default = ({}) => {
