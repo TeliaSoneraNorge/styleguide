@@ -10,6 +10,7 @@ const SubscriptionAccordion = ({
   isExpanded,
   isInverted,
   name,
+  description,
   price,
   priceInfo,
   discount,
@@ -18,6 +19,7 @@ const SubscriptionAccordion = ({
   scrollToOnOpen = false,
   children,
   className,
+  buttonText = 'Velg',
   onOpen = () => {},
   onSelect = () => {},
 }) => {
@@ -40,11 +42,13 @@ const SubscriptionAccordion = ({
     >
       <button className="subscription-accordion__header" onClick={onOpen}>
         <Heading tag="h2" size="s" text={name} />
-        {discount && (
+        {discount ? (
           <div className="subscription-accordion__discount">
             <span className="subscription-accordion__discount-price">-{discount.price}</span>
             {discount.description}
           </div>
+        ) : (
+          description
         )}
         <div className="subscription-accordion__aside">
           <span className="subscription-accordion__price">{formatPrice(price)}</span>
@@ -74,7 +78,7 @@ const SubscriptionAccordion = ({
           {children}
           <Button
             className="subscription-accordion__button-choose"
-            text="Velg"
+            text={buttonText}
             size="small"
             margin="top"
             onClick={() => onSelect(id)}
@@ -107,6 +111,8 @@ SubscriptionAccordion.propTypes = {
   className: PropTypes.string,
   onOpen: PropTypes.func,
   onSelect: PropTypes.func,
+  buttonText: PropTypes.string,
+  description: PropTypes.element,
 };
 
 const formatPrice = price => {
