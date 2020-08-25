@@ -4,10 +4,6 @@ import { FunkyTabs, Subscription } from '../../index';
 
 import img from '../sampleImages';
 
-export default {
-  title: 'Examples/Pages',
-};
-
 const SubscriptionGroupForm = ({ postToUrl, id }: { postToUrl: any; id: any }) => (
   <div className="subscription__button-container">
     <form method="post" action={postToUrl}>
