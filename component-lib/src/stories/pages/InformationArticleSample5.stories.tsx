@@ -112,6 +112,7 @@ export const InformationArticleSample5 = () => (
           <li className="list__item">Third link in list</li>
         </ul>
         {accordionListProps.map(props => (
+          // @ts-expect-error ts-migrate(2783) FIXME: 'key' is specified more than once, so this usage w... Remove this comment to see the full error message
           <AccordionList key={props.key} {...props} />
         ))}
         <table className="full-width-table">
@@ -160,6 +161,7 @@ export const InformationArticleSample5 = () => (
         </p>
         <h2 className="heading heading--level-2">Heading 2 for accordions</h2>
         {accordionListProps.map(props => (
+          // @ts-expect-error ts-migrate(2783) FIXME: 'key' is specified more than once, so this usage w... Remove this comment to see the full error message
           <AccordionList key={props.key} {...props} />
         ))}
         <h3 className="heading heading--level-3">Heading 3</h3>

@@ -207,7 +207,7 @@ export function SubscriptionSamplePage() {
 
       <FunkyTabs
         uniqueId="subscription-tabs"
-        onSelect={(e, index) => onFunkyTabSelect(e, index)}
+        onSelect={(e: any, index: any) => onFunkyTabSelect(e, index)}
         selectedIndex={selectedTabIndex}
       >
         <FunkyTabs.TabPanel heading="Under 15 år" imagePath={img.under15} url="/tabs/under-15">

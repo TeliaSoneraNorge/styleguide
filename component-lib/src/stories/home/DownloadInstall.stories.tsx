@@ -28,6 +28,7 @@ export const DownloadAndInstall = () => (
     <Header pageTitle="Download/Install Styleguide" />
 
     <div className="container container--small">
+      {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
       <Alert kind="info">
         <p>
           The styleguide is now <strong>production-ready</strong>, but we still want to know who is using it. Drop us a

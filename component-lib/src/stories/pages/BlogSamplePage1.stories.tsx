@@ -151,6 +151,7 @@ export const BlogSamplePage1 = () => (
       </section>
     </section>
     {RelatedArticlesProps.map((props, i) => (
+      // @ts-expect-error ts-migrate(2769) FIXME: Type '{ link: string; imageSrc: any; heading: stri... Remove this comment to see the full error message
       <RelatedArticles id={`article-${i}`} key={props.heading} {...props} />
     ))}
   </div>

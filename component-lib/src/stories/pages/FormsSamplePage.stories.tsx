@@ -64,11 +64,13 @@ export const FormsSamplePage = () => (
       <Form action="/get.html" method="GET">
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Phone Number" type="text" placeholder="number" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Password" type="password" placeholder="password" />
           </Form.FormColumn>
         </Form.FormRow>
@@ -88,11 +90,13 @@ export const FormsSamplePage = () => (
       >
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Phone Number" type="text" placeholder="number" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Password" type="password" placeholder="password" />
           </Form.FormColumn>
         </Form.FormRow>
@@ -108,35 +112,43 @@ export const FormsSamplePage = () => (
       <Form>
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Name" type="text" placeholder="name" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn size="half">
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="D.O.B" type="text" placeholder="01/01/2018" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn size="half">
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Telephone" type="text" placeholder="telephone" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Email" type="text" placeholder="email" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Address" type="text" placeholder="address" />
           </Form.FormColumn>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Entrance" type="text" placeholder="entrance" />
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Apt.No." type="text" placeholder="apt. no" />
           </Form.FormColumn>
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn size="half">
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="Post Code" type="text" placeholder="Post Code" />
           </Form.FormColumn>
         </Form.FormRow>
@@ -147,6 +159,7 @@ export const FormsSamplePage = () => (
         </Form.FormRow>
         <Form.FormRow>
           <Form.FormColumn>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'labelText' does not exist on type 'Intri... Remove this comment to see the full error message */}
             <TextBoxWithLabel labelText="C/O Address" type="text" placeholder="c/o address" />
           </Form.FormColumn>
         </Form.FormRow>

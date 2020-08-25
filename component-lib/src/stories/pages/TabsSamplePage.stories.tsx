@@ -25,7 +25,7 @@ export function TabsSamplePage() {
         <h1 className="heading heading--level-1">Tabs</h1>
       </div>
 
-      <FunkyTabs onSelect={(e, index) => onFunkyTabSelect(e, index)} selectedIndex={funkyTabSelectedIndex}>
+      <FunkyTabs onSelect={(e: any, index: any) => onFunkyTabSelect(e, index)} selectedIndex={funkyTabSelectedIndex}>
         <FunkyTabs.TabPanel heading="Under 15 år" imagePath={img.under15} url="/tabs/under-15">
           <section className="container container--small rich-text">
             <Heading level={2} text="Funky tab 1" />
@@ -84,7 +84,7 @@ export function TabsSamplePage() {
       <section className="container container--small">
         <Tabs
           uniqueId="regular-tabs"
-          onSelect={index => setOtherTabSelectedIndex(index)}
+          onSelect={(index: any) => setOtherTabSelectedIndex(index)}
           selectedIndex={otherTabSelectedIndex}
         >
           <Tabs.TabPanel>
@@ -121,7 +121,7 @@ export function TabsSamplePage() {
       <section className="container container--small">
         <Tabs
           uniqueId="prices-tabs"
-          onSelect={index => setPricesTabSelectedIndex(index)}
+          onSelect={(index: any) => setPricesTabSelectedIndex(index)}
           selectedIndex={pricesTabSelectedIndex}
         >
           <Tabs.TabPanel>
@@ -144,7 +144,7 @@ export function TabsSamplePage() {
       <section className="container container--small">
         <Tabs
           uniqueId="separated-tabs"
-          onSelect={index => setSeparatedTabSelectedIndex(index)}
+          onSelect={(index: any) => setSeparatedTabSelectedIndex(index)}
           selectedIndex={separatedTabSelectedIndex}
           skipPanelRendering={true}
         >

@@ -71,6 +71,7 @@ export const InformationArticleSample1 = () => (
       </div>
       <div className="rich-text container container--small">
         {accordionListProps.map(props => (
+          // @ts-expect-error ts-migrate(2783) FIXME: 'key' is specified more than once, so this usage w... Remove this comment to see the full error message
           <AccordionList key={props.key} {...props} />
         ))}
       </div>
