@@ -8,6 +8,7 @@ export default {
 };
 
 const disclaimers = (
+  // @ts-expect-error ts-migrate(2769) FIXME: Object literal may only specify known properties, ... Remove this comment to see the full error message
   <StatefulAccordionList
     accordionItems={[
       {
@@ -37,6 +38,7 @@ export const StandaloneSubscriptionAccordion = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <SubscriptionAccordion
       name="20 GB"
       id="smart20"
@@ -66,6 +68,7 @@ export const InvertedSubscriptionAccordion = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <SubscriptionAccordion
       name="Telia X"
       id="smartX"
@@ -100,6 +103,7 @@ export const DiscountSubscriptionAccordion = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <SubscriptionAccordion
       name="Telia X"
       id="smartX"

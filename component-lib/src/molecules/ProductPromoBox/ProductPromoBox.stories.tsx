@@ -89,6 +89,7 @@ export const WithActionOnNewLine = () => (
     priceSmallprint1="/md. med Svitsj"
     priceSmallprint2="Total tlf.pris 24 md. 17 891,-"
     buttonText="Les mer"
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'showActionOnNewLine' does not exist on t... Remove this comment to see the full error message
     showActionOnNewLine
   />
 );

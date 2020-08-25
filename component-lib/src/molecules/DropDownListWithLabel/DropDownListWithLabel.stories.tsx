@@ -29,6 +29,7 @@ export const DropDownListDisabled = () => {
       selectedOption={options[1]}
       changeSelectedOption={() => {}}
       label="Select your mobile phone"
+      // @ts-expect-error ts-migrate(2322) FIXME: Property 'disabled' does not exist on type 'Intrin... Remove this comment to see the full error message
       disabled
       visibleLabel
     />

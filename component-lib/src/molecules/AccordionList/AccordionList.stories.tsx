@@ -26,6 +26,7 @@ export const ListOfAccordions = () => (
         title: 'Accordion with icon and preamble',
         children:
           'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.',
+        // @ts-expect-error ts-migrate(2322) FIXME: Object literal may only specify known properties, ... Remove this comment to see the full error message
         icon: 'ico_mobile_o',
         text: 'Ønsker du å gi dine ansatte større frihet, og samtidig sikre selskapets…',
       },
@@ -35,6 +36,7 @@ export const ListOfAccordions = () => (
 );
 
 export const ListOfStatefulAccordions = () => (
+  // @ts-expect-error ts-migrate(2769) FIXME: Object literal may only specify known properties, ... Remove this comment to see the full error message
   <StatefulAccordionList
     accordionItems={[
       {
@@ -89,6 +91,7 @@ export const ListOfStatefulAccordions = () => (
 );
 
 export const ListOfStatefulAccordionsNoBorder = () => (
+  // @ts-expect-error ts-migrate(2769) FIXME: Object literal may only specify known properties, ... Remove this comment to see the full error message
   <StatefulAccordionList
     noBorder
     accordionItems={[

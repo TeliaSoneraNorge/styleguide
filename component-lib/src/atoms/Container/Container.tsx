@@ -1,5 +1,4 @@
 import React, { ReactNode } from 'react';
-import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
 export type ContainerSize = 'small' | 'medium' | 'large';
@@ -19,25 +18,25 @@ export interface Props {
   children?: ReactNode;
 }
 
+type Props1 = {
+    size?: 'small' | 'medium' | 'large';
+    noMargin?: boolean;
+    noPadding?: boolean;
+    noPaddingTop?: boolean;
+    extraPaddingTop?: boolean;
+    extraMarginBottom?: boolean;
+    whiteBg?: boolean;
+    overlappingFullWidthImage?: boolean;
+};
+
 /**
  * Status: *in progress*
  * Category: Misc
  *
  * There are three main container widths: small, medium and large. Body text should be in a small container to reduce line width and make reading easier.
  */
-const Container: React.FC<Props & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = ({
-  children,
-  className,
-  size,
-  noMargin,
-  noPadding,
-  noPaddingTop,
-  extraPaddingTop,
-  extraMarginBottom,
-  whiteBg,
-  overlappingFullWidthImage,
-  ...rest
-}) => (
+// @ts-expect-error ts-migrate(2339) FIXME: Property 'children' does not exist on type 'Props1... Remove this comment to see the full error message
+const Container: React.FC<Props & React.DetailedHTMLProps<React.HTMLAttributes<HTMLDivElement>, HTMLDivElement>> = ({ children, className, size, noMargin, noPadding, noPaddingTop, extraPaddingTop, extraMarginBottom, whiteBg, overlappingFullWidthImage, ...rest }: Props1) => (
   <div
     className={classnames('container', className, {
       [`container--${size}`]: size,
@@ -54,16 +53,5 @@ const Container: React.FC<Props & React.DetailedHTMLProps<React.HTMLAttributes<H
     {children}
   </div>
 );
-
-Container.propTypes = {
-  size: PropTypes.oneOf(['small', 'medium', 'large']),
-  noMargin: PropTypes.bool,
-  noPadding: PropTypes.bool,
-  noPaddingTop: PropTypes.bool,
-  extraPaddingTop: PropTypes.bool,
-  extraMarginBottom: PropTypes.bool,
-  whiteBg: PropTypes.bool,
-  overlappingFullWidthImage: PropTypes.bool,
-};
 
 export default Container;

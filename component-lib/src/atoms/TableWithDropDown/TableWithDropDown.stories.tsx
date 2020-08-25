@@ -14,6 +14,7 @@ export const Default = () => {
 
   const ListWithLinksExample = () => (
     <div>
+      {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
       <List>
         <Item>
           <Link href="#">First link in list</Link>
@@ -70,6 +71,7 @@ export const TableWithInitialExpandedState = () => {
 
   const ListWithLinksExample = () => (
     <div>
+      {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
       <List>
         <Item>
           <Link href="#">First link in list</Link>

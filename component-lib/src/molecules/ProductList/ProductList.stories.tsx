@@ -36,6 +36,7 @@ export const Default = () => {
   ];
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"purple" ... Remove this comment to see the full error message
     <ProductList items={items} />
   )
 };
@@ -52,6 +53,7 @@ export const PromotionProductList = () => {
   ];
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"purple" ... Remove this comment to see the full error message
     <ProductList items={items} />
   )
 };

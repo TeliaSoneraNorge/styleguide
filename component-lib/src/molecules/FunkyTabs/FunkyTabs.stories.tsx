@@ -19,7 +19,7 @@ export const  DefaultFunkyTabs = () => {
   return (
     <FunkyTabs
       uniqueId="default-funky-tabs"
-      onSelect={(e, index) => onFunkyTabSelect(e, index)}
+      onSelect={(e: any, index: any) => onFunkyTabSelect(e, index)}
       selectedIndex={funkyTabSelectedIndex}
     >
       <FunkyTabs.TabPanel heading="Under 15 år" imagePath={img.under15} url="/tabs/under-15">
@@ -96,7 +96,7 @@ export const NoImageFunkyTabs = () => {
   return (
     <FunkyTabs
       uniqueId="default-funky-tabs"
-      onSelect={(e, index) => onFunkyTabSelect(e, index)}
+      onSelect={(e: any, index: any) => onFunkyTabSelect(e, index)}
       selectedIndex={funkyTabSelectedIndex}
       noImages={true}
     >

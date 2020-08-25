@@ -8,6 +8,7 @@ export default {
 };
 
 export const Default = () => (
+  // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
   <Image src={img.kidsIpad} alt="Kids playing with tablet">
     <Caption>
       Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in
@@ -19,6 +20,7 @@ export const Default = () => (
 
 export const InlineLeft = () => (
   <div>
+    {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
     <Image src={img.womanHoldingIpad} alt="Woman looking at tablet" inline="left">
       <Caption>Woman looking at tablet</Caption>
     </Image>
@@ -45,6 +47,7 @@ export const InlineRight = () => (
       elementum id enim. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh
       pulvinar a. Donec sollicitudin molestie malesuada.
     </p>
+    {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
     <Image src={img.womanMobile} alt="Woman looking at mobile" inline="right">
       <Caption>Woman looking at mobile</Caption>
     </Image>
@@ -62,6 +65,7 @@ export const InlineRight = () => (
 export const SmallImageInline = () => (
   <div>
     <Image
+      // @ts-expect-error ts-migrate(2322) FIXME: Property 'src' does not exist on type 'IntrinsicAt... Remove this comment to see the full error message
       src={img.businessDevelopmentPebble}
       alt="Woman looking at tablet"
       inline="left"
@@ -72,6 +76,7 @@ export const SmallImageInline = () => (
       pulvinar a. Donec sollicitudin molestie malesuada.
     </p>
     <Image
+      // @ts-expect-error ts-migrate(2322) FIXME: Property 'src' does not exist on type 'IntrinsicAt... Remove this comment to see the full error message
       src={img.businessDevelopmentPebble}
       alt="Woman looking at mobile"
       inline="right"

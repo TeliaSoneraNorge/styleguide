@@ -11,6 +11,7 @@ export const Default = () => (
   <Container size="large">
     <SubscriptionPriceBoxes>
       <SubscriptionPriceBox
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'size' does not exist on type 'IntrinsicA... Remove this comment to see the full error message
         size="small"
         topText=""
         extraGB="+2GB"
@@ -20,6 +21,7 @@ export const Default = () => (
         simIncluded={false}
       />
       <SubscriptionPriceBox
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'size' does not exist on type 'IntrinsicA... Remove this comment to see the full error message
         size="medium"
         topText=""
         extraGB="+6GB"
@@ -29,6 +31,7 @@ export const Default = () => (
         simIncluded={false}
       />
       <SubscriptionPriceBox
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'size' does not exist on type 'IntrinsicA... Remove this comment to see the full error message
         size="large"
         topText="MEST SOLGT"
         extraGB="+50 GB"
@@ -39,6 +42,7 @@ export const Default = () => (
         bottomText="Data-SIM inkl."
       />
       <SubscriptionPriceBox
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'size' does not exist on type 'IntrinsicA... Remove this comment to see the full error message
         size="xlarge"
         topText=""
         extraGB="+50 GB"

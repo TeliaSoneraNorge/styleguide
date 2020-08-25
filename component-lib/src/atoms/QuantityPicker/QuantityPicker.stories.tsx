@@ -11,13 +11,11 @@ export const Default = () => {
   const [quantity, setQuantity] = useState(2);
 
   return (
-    
     <QuantityPicker
       quantity={quantity}
-      onChangeQuantity={quantity => setQuantity(quantity)}
+      onChangeQuantity={(quantity: any) => setQuantity(quantity)}
       minQuantity={2}
       maxQuantity={8}
     />
-    
   );
 };

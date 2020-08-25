@@ -64,10 +64,12 @@ export const RichContentRadioButtonList = () => {
       <RadioButtonWithLabel checked={value == 0} hasRichContent value="0" name="radiobutton-test-3" onChange={onClick}>
         <div style={{ display: 'inline-block', width: '80%' }}>
           <Heading tag="h3" size="xs" text="Option 1" style={{ color: colors.black, margin: '0 0 .25rem' }} />
+          {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: string; }' has no properties in ... Remove this comment to see the full error message */}
           <Paragraph>
             A longer description text here. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan
             id imperdiet et, porttitor at sem.
           </Paragraph>
+          {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
           <Paragraph kind="fineprint">A fineprint text here</Paragraph>
         </div>
         <img
@@ -78,6 +80,7 @@ export const RichContentRadioButtonList = () => {
 
       <RadioButtonWithLabel checked={value == 1} hasRichContent value="1" name="radiobutton-test-3" onChange={onClick}>
         <Heading tag="h3" size="xs" text="Option 2" style={{ color: colors.black, margin: '0 0 .25rem' }} />
+        {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: string; }' has no properties in ... Remove this comment to see the full error message */}
         <Paragraph>
           Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem.
         </Paragraph>

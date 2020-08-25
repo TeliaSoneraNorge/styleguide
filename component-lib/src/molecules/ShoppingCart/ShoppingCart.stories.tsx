@@ -632,7 +632,7 @@ const groupContent = [
   },
 ];
 
-function getCart(item) {
+function getCart(item: any) {
   switch (item) {
     case 'switch':
       return switchContent;
@@ -676,6 +676,7 @@ export const Default = () => {
   return (
     <Container style={style} size={containerSize}>
       <ShoppingCart
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'heading' does not exist on type 'Intrins... Remove this comment to see the full error message
         heading={heading}
         cartItems={getCart(itemToDisplay)}
         isAnyCartItemsQuantityModifiable

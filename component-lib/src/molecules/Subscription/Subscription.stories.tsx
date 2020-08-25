@@ -112,6 +112,7 @@ export const FullyExpandedAndNoSpeechBubble = () => {
   };
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <Subscription
       name="SMART Pluss"
       id="smartPluss"
@@ -175,6 +176,7 @@ export const FullyExpandedAndSpeechBubble = () => {
 
   return (
     <div className="subscription__container">
+      {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
       <Subscription
         name="SMART Pluss"
         id="smartPluss2"
@@ -248,6 +250,7 @@ export const B2BCollapsed = () => {
       }}
       color="purple"
       size="small"
+      // @ts-expect-error ts-migrate(2322) FIXME: Property 'highlightedFeature' does not exist on ty... Remove this comment to see the full error message
       highlightedFeature={feature}
       isExpanded={isExpanded}
       onSelect={() => setIsExpanded(true)}
@@ -308,6 +311,7 @@ export const B2BExpandedNoSpeechBubble = () => {
   };
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <Subscription
       name="SMART Bedrift"
       id="smart-bedrift-expanded"
@@ -395,6 +399,7 @@ export const BroadbandExpanded = () => {
   };
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <Subscription
       id="broadband-subscription-expanded"
       dataAmount={40}
@@ -418,12 +423,16 @@ export const BroadbandExpanded = () => {
       <RadioButtonList type="vertical" hasRichContent>
         <RadioButtonWithLabel hasRichContent value="0" name="radiobutton-broadband">
           <div style={{ display: 'inline-block', width: '80%' }}>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '2 | 1 | 6... Remove this comment to see the full error message */}
             <Heading level="3" text="Batteridrevet 4G-ruter" />
+            {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: string; }' has no properties in ... Remove this comment to see the full error message */}
             <Paragraph>
               A longer description text here. Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat,
               accumsan id imperdiet et, porttitor at sem.
             </Paragraph>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '2 | 1 | 6... Remove this comment to see the full error message */}
             <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
             <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
           </div>
           <img
@@ -433,12 +442,16 @@ export const BroadbandExpanded = () => {
         </RadioButtonWithLabel>
         <RadioButtonWithLabel hasRichContent value="1" name="radiobutton-broadband">
           <div style={{ display: 'inline-block', width: '80%' }}>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '2 | 1 | 6... Remove this comment to see the full error message */}
             <Heading level="3" text="Markedets kraftigste 4G-ruter" />
+            {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: string; }' has no properties in ... Remove this comment to see the full error message */}
             <Paragraph>
               Nulla quis lorem ut libero malesuada feugiat. Curabitur arcu erat, accumsan id imperdiet et, porttitor at
               sem.
             </Paragraph>
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '2 | 1 | 6... Remove this comment to see the full error message */}
             <Heading level="2" text="499,-" className="heading--pebble subscription__price" />
+            {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message */}
             <Paragraph kind="fineprint">Forutsetter binding av abonnement i 12mnd</Paragraph>
           </div>
           <img
@@ -447,6 +460,7 @@ export const BroadbandExpanded = () => {
           />
         </RadioButtonWithLabel>
         <RadioButtonWithLabel hasRichContent value="2" name="radiobutton-broadband">
+          {/* @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '2 | 1 | 6... Remove this comment to see the full error message */}
           <Heading level="3" text="Jeg ønsker ikke å kjøpe ruter" />
         </RadioButtonWithLabel>
       </RadioButtonList>
@@ -502,6 +516,7 @@ export const ScrollToOnOpen = () => {
 export const ShowingTwoFeaturesAndNoDataUnit = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // @ts-expect-error ts-migrate(7031) FIXME: Binding element 'postToUrl' implicitly has an 'any... Remove this comment to see the full error message
   const SubscriptionGroupForm = ({ postToUrl, id }) => (
     <div className="subscription__button-container">
       <form method="post" action={postToUrl}>
@@ -529,6 +544,7 @@ export const ShowingTwoFeaturesAndNoDataUnit = () => {
   };
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <Subscription
       name="Telia X"
       id="x"
@@ -677,6 +693,7 @@ export const subscriptionWithSelect = () => {
 
   const [selectedSubscription, setSelectedSubscription] = useState("SMART_X.REGULAR");
 
+  // @ts-expect-error ts-migrate(7006) FIXME: Parameter 'subscriptionId' implicitly has an 'any'... Remove this comment to see the full error message
   const onSubscriptionSelect = (subscriptionId) => {
       setSelectedSubscription(subscriptionId);
   }
@@ -685,6 +702,7 @@ export const subscriptionWithSelect = () => {
     <Container size="medium">
       {transferSubscriptions.map((sub) => (
           <div key={sub.id} className="tlo-summary__subscriptions__subscription-item">
+              {/* @ts-expect-error ts-migrate(2322) FIXME: Property 'isSelected' does not exist on type 'Intr... Remove this comment to see the full error message */}
               <Subscription {...sub} onSelect={(e, subscriptionId) => onSubscriptionSelect(subscriptionId)} isSelected={selectedSubscription === sub.id} />
           </div>
       ))}
@@ -719,6 +737,7 @@ export const subscriptionWithExtraData = () => {
         isExpanded={isExpanded}
         onSelect={() => setIsExpanded(true)}
         onClose={() => setIsExpanded(false)}
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'extraDataAmount' does not exist on type ... Remove this comment to see the full error message
         extraDataAmount={5}
         extraDataUnit="GB"
       />

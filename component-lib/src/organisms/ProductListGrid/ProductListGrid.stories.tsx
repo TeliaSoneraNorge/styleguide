@@ -41,6 +41,7 @@ export const Default = () => (
             },
           ]}
         />
+        {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
         <List>
           <List.Item>
             <List.Link href="#">First link in list</List.Link>
@@ -88,6 +89,7 @@ export const ProductListGridExampleMedium = () => (
             },
           ]}
         />
+        {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
         <List>
           <List.Item>
             <List.Link href="#">First link in list</List.Link>
@@ -164,6 +166,7 @@ export const ProductListGridExample2 = () => (
             },
           ]}
         />
+        {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
         <List>
           <List.Item>
             <List.Link href="#">First link in list</List.Link>
@@ -240,6 +243,7 @@ export const ProductListGridExample3 = () => (
             },
           ]}
         />
+        {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
         <List>
           <List.Item>
             <List.Link href="#">First link in list</List.Link>
@@ -345,6 +349,7 @@ export const ProductListGridExample4 = () => (
             },
           ]}
         />
+        {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
         <List>
           <List.Item>
             <List.Link href="#">First link in list</List.Link>

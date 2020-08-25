@@ -27,6 +27,7 @@ export const VideoWithCustomThumbnail = () => {
       src="https://www.youtube.com/embed/-yWZdilQQnk"
       description="Videotext here"
       videoTitle="A random video"
+      // @ts-expect-error ts-migrate(2322) FIXME: Property 'onClick' does not exist on type 'Intrins... Remove this comment to see the full error message
       onClick={handleClick}
     ></Video>
   );

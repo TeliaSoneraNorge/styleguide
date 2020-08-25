@@ -560,7 +560,7 @@ const groupContent = [
   },
 ];
 
-function getCart(item) {
+function getCart(item: any) {
   switch (item) {
     case 'switch':
       return switchContent;
@@ -646,9 +646,11 @@ export const Default = () => {
         searchButtonAbortText="Lukk"
         mobileMenuCloseButtonLabel="Lukk"
         lockBodyOnMenuOpen
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'onCartClick' does not exist on type 'Int... Remove this comment to see the full error message
         onCartClick={() => setShouldShowCart(!shouldShowCart)}
         numberOfItemsInCart={3}
       />
+      {/* @ts-expect-error ts-migrate(2739) FIXME: Type '{ heading: string; cartItems: { type: string... Remove this comment to see the full error message */}
       <SlidingShoppingCart
         heading={heading}
         cartItems={getCart(itemToDisplay)}

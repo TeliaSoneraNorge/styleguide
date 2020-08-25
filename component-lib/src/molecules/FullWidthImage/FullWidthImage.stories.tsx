@@ -8,6 +8,7 @@ export default {
 };
 
 export const Default = () => (
+  // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
   <FullWidthImage src="https://placekitten.com/1440/440" alt="Kitten">
     Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Pellentesque in
     ipsum id orci porta dapibus. Curabitur aliquet quam id dui posuere blandit. Donec rutrum congue leo eget malesuada.
@@ -57,6 +58,7 @@ export const FullWidthImageWithLogo = () => {
   ];
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'logoSources' does not exist on type 'Int... Remove this comment to see the full error message
     <FullWidthImage logoSources={logoSources} logoAlign="top-right" src="https://placekitten.com/1440/440" alt="Kitten" />
   )
 };

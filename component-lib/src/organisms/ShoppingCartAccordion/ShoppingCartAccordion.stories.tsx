@@ -561,7 +561,7 @@ const groupContent = [
   },
 ];
 
-function getCart(item) {
+function getCart(item: any) {
   switch (item) {
     case 'switch':
       return switchContent;
@@ -590,11 +590,12 @@ const Wrapper = ({
   pricePerMonth,
   priceUpfront,
   priceFirstInvoice,
-  itemToDisplay,
-}) => {
+  itemToDisplay
+}: any) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <ShoppingCartAccordion
       isExpanded={isExpanded}
       numberOfItemsInCart={numberOfItemsInCart}

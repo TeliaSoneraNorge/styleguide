@@ -11,6 +11,7 @@ export const DefaultCards = () => {
   const imgSrc = img.screenshot1;
   
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <Cards isGrey={true}>
       <Card img={{ src: imgSrc, alt: 'Man and woman looking at an iPad.' }} link="#" title="Dette er cardsblokk 1" />
       <Card img={{ src: imgSrc, alt: 'Man and woman looking at an iPad.' }} link="#" title="Dette er cardsblokk 2" />
@@ -28,6 +29,7 @@ export const WhiteCards = () => {
   
   return (
     <div className="card--background-grey">
+      {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
       <Cards>
         <Card img={{ src: imgSrc, alt: 'Man and woman looking at an iPad.' }} link="#" title="Dette er cardsblokk 1" />
         <Card img={{ src: imgSrc, alt: 'Man and woman looking at an iPad.' }} link="#" title="Dette er cardsblokk 2" />

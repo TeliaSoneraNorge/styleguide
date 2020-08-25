@@ -57,6 +57,7 @@ const priceStyle = {
 };
 
 export const Default = () => {
+  // @ts-expect-error ts-migrate(2304) FIXME: Cannot find name 'Color'.
   const [selected, setSelected] = useState<Color>(variants[0]);
   const selectedVariant = variants.find(variant => variant.id === selected.id) || variants[0];
 
@@ -66,12 +67,14 @@ export const Default = () => {
         name="big-image-dialog"
         heading="Apple iPhone 11 Pro Silicone Case"
         description="Disse Apple-designede silikondekslene sitter perfekt rundt volumknappene og Dvale/vekke-knappen, og følger formene til din iPhone uten å gjøre den mye større. Det myke foret på innsiden av etuiet beskytter din iPhone. Utsiden, som er i silkemyk silikon, gjør det ekstra behagelig å holde iPhone i hånden. Velg mellom rosa eller svart silikondeksel."
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'src' does not exist on type 'IntrinsicAt... Remove this comment to see the full error message
         src={selected.src}
         standalone // <– 'standalone' are only used for example purposes.
       >
         <div style={colorPickerStyle}>
             <ColorPicker colors={variants} selected={selectedVariant} onSelect={setSelected} />
           </div>
+          {/* @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"column" ... Remove this comment to see the full error message */}
           <div style={footerStyle}>
             <span style={priceStyle}>{formatPrice(selectedVariant.price)}</span>
             <Button

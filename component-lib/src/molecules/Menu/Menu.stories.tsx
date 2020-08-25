@@ -186,6 +186,7 @@ export const LoggedInDropdownMenuB2C = () => {
       lockBodyOnMenuOpen={true}
       isLoggedIn={true}
       myPageUrl="#"
+      // @ts-expect-error ts-migrate(2322) FIXME: Property 'dropdownMenu' does not exist on type 'In... Remove this comment to see the full error message
       dropdownMenu={{
         type: 'B2C', 
         channel: 'mobil',

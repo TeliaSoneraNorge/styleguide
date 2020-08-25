@@ -47,6 +47,7 @@ const SlidingShoppingCart = ({
       </button>
       <ShoppingCart
         cartItems={cartItems}
+        // @ts-expect-error ts-migrate(2322) FIXME: Property 'heading' does not exist on type 'Intrins... Remove this comment to see the full error message
         heading={heading}
         isAnyCartItemsQuantityModifiable={isAnyCartItemsQuantityModifiable}
         onChangeQuantity={onChangeQuantity}

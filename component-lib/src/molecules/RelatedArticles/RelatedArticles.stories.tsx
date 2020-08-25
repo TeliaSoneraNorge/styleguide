@@ -39,6 +39,7 @@ export const DefaultRelatedArticles = () => (
     heading="Related articles"
     headingLink="#"
     id="related-articles"
+    // @ts-expect-error ts-migrate(2769) FIXME: Type '{ link: string; imageSrc: any; heading: stri... Remove this comment to see the full error message
     relatedArticles={articles}
     isExpandedAccordionIndex={1}
   />

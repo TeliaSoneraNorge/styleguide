@@ -20,6 +20,7 @@ export const Default = () => {
       subheading="And this hero image is top aligned"
       alt="Woman taking photo with her mobile phone by a lake"
       align="top"
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"mobile" ... Remove this comment to see the full error message
       sources={sources}
     />
   )
@@ -39,6 +40,7 @@ export const HeroAlignBoxRight = () => {
       alt="Woman taking photo with her mobile phone by a lake"
       align="top"
       alignBox="right"
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"mobile" ... Remove this comment to see the full error message
       sources={sources}
     />
   )
@@ -61,6 +63,7 @@ export const HeroWithLogo = () => {
       heading="Hero with static logo image"
       subheading="The logo image is top right aligned"
       alt="Woman smiling while looking at her mobile phone"
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"mobile" ... Remove this comment to see the full error message
       sources={sources}
       logoSources={logoSources}
       logoAlign="top-right"
@@ -80,6 +83,7 @@ export const WithPebbles = () => {
       heading="Hero with pebbles on mobile &amp; desktop"
       subheading="A subheading for this Hero"
       alt="Woman taking photo with her mobile phone by a lake"
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"mobile" ... Remove this comment to see the full error message
       sources={sources}
       pebbles="variant-3"
     />
@@ -98,6 +102,7 @@ export const WithPebblesOnlyOnDesktop = () => {
       heading="Hero with pebbles only on desktop"
       subheading="The image is bottom aligned, seen when browser is bigger than 1440px.o"
       alt="Man stretching his leg by a lake"
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"mobile" ... Remove this comment to see the full error message
       sources={sources}
       pebbles="variant-3"
       mode="desktop"
@@ -117,6 +122,7 @@ export const WithPebblesOnlyOnMobile = () => {
       heading="Hero with pebbles only on mobile"
       subheading="The hero image is center aligned"
       alt="Woman smiling while looking at her mobile phone"
+      // @ts-expect-error ts-migrate(2322) FIXME: Type 'string' is not assignable to type '"mobile" ... Remove this comment to see the full error message
       sources={sources}
       pebbles="variant-3"
       mode="mobile"

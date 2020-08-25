@@ -21,6 +21,7 @@ export const Default = () => {
   const { Item } = List;
 
   return (
+    // @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message
     <List>
       <Item>First item in list</Item>
       <Item>Second item in list</Item>
@@ -33,6 +34,7 @@ export const WrapByFour = () => {
   const { Item } = List; 
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <List wrapByFour>
       <Item>First item in list</Item>
       <Item>Second item in list</Item>
@@ -50,6 +52,7 @@ export const WrapByThree = () => {
   const { Item } = List;
 
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <List wrapByThree>
       <Item>First item in list</Item>
       <Item>Second item in list</Item>
@@ -64,6 +67,7 @@ export const WithLinks = () => {
   const { Item, Link } = List;
 
   return (
+    // @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message
     <List>
       <Item>
         <Link href="#">First link in list</Link>
@@ -90,6 +94,7 @@ export const ListLinksAndNormalLinks = () => {
     <br/>
     <br/>
 
+    {/* @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message */}
     <List>
       <Item>
         <Link href="#">List Link First link in list</Link>
@@ -109,6 +114,7 @@ export const WithBubbleLinks = () => {
   const { Item, BubbleLink } = List;
   
   return (
+    // @ts-expect-error ts-migrate(2559) FIXME: Type '{ children: Element[]; }' has no properties ... Remove this comment to see the full error message
     <List>
       <Item>
         <BubbleLink href="#" iconName="facebook_icon">
@@ -128,6 +134,7 @@ export const WithBlackLinks = () => {
   const { Item, Link } = List;
   
   return (
+    // @ts-expect-error ts-migrate(2322) FIXME: Property 'children' does not exist on type 'Intrin... Remove this comment to see the full error message
     <List black>
       <Item>
         <Link href="#">First link in list</Link>
