@@ -16,12 +16,12 @@ const SubscriptionAccordion = ({
   discount,
   feature,
   disclaimers,
-  scrollToOnOpen,
+  scrollToOnOpen = false,
   children,
   className,
-  onOpen,
-  onSelect,
-  buttonText,
+  buttonText = 'Velg',
+  onOpen = () => {},
+  onSelect = () => {},
 }) => {
   const ref = useRef();
 
@@ -89,13 +89,6 @@ const SubscriptionAccordion = ({
       )}
     </section>
   );
-};
-
-SubscriptionAccordion.defaultProps = {
-  onOpen: () => {},
-  onSelect: () => {},
-  scrollToOnOpen: false,
-  buttonText: 'Velg',
 };
 
 SubscriptionAccordion.propTypes = {
