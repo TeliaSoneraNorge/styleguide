@@ -6,8 +6,6 @@ interface Props {
 }
 export const ModalHeader: React.FC<Props> = props => {
   return (
-    <div className={cn('business-modal-header', { 'business-modal-header__border': props.border })}>
-      {props.children}
-    </div>
+    <div className={cn('telia-modal-header', { 'telia-modal-header__border': props.border })}>{props.children}</div>
   );
 };
