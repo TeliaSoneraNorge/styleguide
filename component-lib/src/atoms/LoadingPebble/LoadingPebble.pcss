@@ -1,0 +1,67 @@
+:root {
+  /* To get path length: document.querySelector('path').getTotalLength() */
+  --telia-loading-pebble-length: 196.47589111328125;
+
+  /**
+   * Sum of patterns in the segment should = var(--telia-loading-pebble-length).
+   * $pattern: (var(--telia-loading-pebble-length) / 4) (var(--telia-loading-pebble-length)/8) (var(--telia-loading-pebble-length) / 4) (3 * var(--telia-loading-pebble-length)/8); //  var(--telia-loading-pebble-length)/15 var(--telia-loading-pebble-length)/5 (var(--telia-loading-pebble-length)/3 - var(--telia-loading-pebble-length)/20);
+   */
+  --telia-loading-pebble-pattern: calc(var(--telia-loading-pebble-length) * 3 / 4)
+    calc(var(--telia-loading-pebble-length) * 1 / 4);
+
+  --telia-loading-pebble-first-position: 0;
+  --telia-loading-pebble-last-position: var(--telia-loading-pebble-length);
+}
+
+.LoadingPebble {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: auto;
+
+  width: 20vw;
+  max-width: 100px;
+
+  &-bg {
+    fill: none;
+    stroke: var(--core-purple);
+    stroke-width: 3px;
+    stroke-linecap: butt;
+    opacity: 0.04;
+  }
+
+  &-fg {
+    fill: none;
+    stroke: var(--core-purple);
+    stroke-width: 3px;
+    stroke-linecap: butt;
+    stroke-dasharray: var(--telia-loading-pebble-pattern);
+
+    /**
+     * To test positions:
+     */
+    /* stroke-dashoffset: $firstPos; */
+    /* stroke-dashoffset: $lastPos; */
+
+    animation-name: spinner;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-delay: 0;
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-fill-mode: both;
+    animation-play-state: running;
+  }
+}
+
+@keyframes spinner {
+  /* Trick to a smooth animation is that the first and last positions must look identical */
+  0% {
+    stroke-dashoffset: var(--telia-loading-pebble-first-position);
+  }
+  100% {
+    stroke-dashoffset: var(--telia-loading-pebble-last-position);
+  }
+}
