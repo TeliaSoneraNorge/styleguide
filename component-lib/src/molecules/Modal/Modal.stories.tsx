@@ -4,9 +4,9 @@ import { action } from '@storybook/addon-actions';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from './index';
 import Button from '../../atoms/Button';
 import TextBox from '../../atoms/TextBox';
-import { Toggle } from '../Toggle';
+import { Toggle } from '../../business';
 import { ModalDivider } from './ModalDivider';
-storiesOf('Business|Modal', module)
+storiesOf('Component library|Molecules/Modal', module)
   .add('Default', () => {
     return (
       <div style={{ height: '300px' }}>
