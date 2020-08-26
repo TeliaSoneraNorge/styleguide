@@ -3,7 +3,7 @@ import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import TextBox from '../../atoms/TextBox';
-import TextBoxWithIcon from '../../molecules/TextBoxWithIcon';
+import TextBoxWithIcon from '../TextBoxWithIcon';
 
 export type DropdownItemProps = {
   /**
