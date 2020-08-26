@@ -26,7 +26,7 @@ export const ListOfAccordions = () => (
         title: 'Accordion with icon and preamble',
         children:
           'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.',
-        icon: 'ico_mobile_o',
+        icon: 'mobile',
         text: 'Ønsker du å gi dine ansatte større frihet, og samtidig sikre selskapets…',
       },
     ]}
@@ -54,14 +54,14 @@ export const ListOfStatefulAccordions = () => (
         title: 'Accordion with icon',
         children:
           'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.',
-        icon: 'ico_mobile_o',
+        icon: 'mobile',
       },
       {
         id: 'example-3',
         title: 'Accordion with icon and preamble',
         children:
           'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.',
-        icon: 'ico_mobile_o',
+        icon: 'record',
         text: 'Ønsker du å gi dine ansatte større frihet, og samtidig sikre selskapets…',
       },
       {
@@ -109,14 +109,14 @@ export const ListOfStatefulAccordionsNoBorder = () => (
         title: 'Accordion with icon',
         children:
           'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.',
-        icon: 'ico_mobile_o',
+        icon: 'mobile',
       },
       {
         id: 'example-3',
         title: 'Accordion with icon and preamble',
         children:
           'Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Proin eget tortor risus. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Donec sollicitudin molestie malesuada.',
-        icon: 'ico_mobile_o',
+        icon: 'mobile',
         text: 'Ønsker du å gi dine ansatte større frihet, og samtidig sikre selskapets…',
       },
       {
