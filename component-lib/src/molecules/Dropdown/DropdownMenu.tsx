@@ -11,8 +11,8 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
   const { menuRef, open, allItems } = useDropdownContext();
   return (
     <div
-      className={cs('Business-Dropdown-content', {
-        'Business-Dropdown-content--nowrap': !props.wrapContent,
+      className={cs('telia-dropdown-content', {
+        'telia-dropdown-content__nowrap': !props.wrapContent,
         open: open,
         right: props.position === 'right',
       })}

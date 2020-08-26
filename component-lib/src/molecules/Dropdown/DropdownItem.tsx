@@ -2,8 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
-import TextBox from '../../atoms/TextBox';
-import TextBoxWithIcon from '../TextBoxWithIcon';
 
 export type DropdownItemProps = {
   /**
@@ -77,16 +75,16 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   );
 
   if (props.divider) {
-    return <div className="Business-Dropdown-item Business-Dropdown-item--divider" />;
+    return <div className="telia-dropdown-item telia-dropdown-item__divider" />;
   }
   if (props.header) {
-    return <div className="Business-Dropdown-item Business-Dropdown-item--header">{content}</div>;
+    return <div className="telia-dropdown-item telia-dropdown-item__header">{content}</div>;
   }
   return (
     <button
-      className={cs('Business-Dropdown-item', {
-        'Business-Dropdown-item--centered': props.centered,
-        'Business-Dropdown-item--active': open && props.index === highlightIndex && itemRef.current,
+      className={cs('telia-dropdown-item', {
+        'telia-dropdown-item__centered': props.centered,
+        'telia-dropdown-item__active': open && props.index === highlightIndex && itemRef.current,
       })}
       ref={itemRef}
       tabIndex={-1}
@@ -130,7 +128,7 @@ export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
   }, [open, itemRef.current]);
 
   return (
-    <div className="Business-Dropdown-item Business-Dropdown-item--search">
+    <div className="telia-dropdown-item telia-dropdown-item__search">
       {props.icon ? <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem' }} /> : null}
       <input
         ref={itemRef}

@@ -51,7 +51,7 @@ const InnerDropdown: React.FC = props => {
   const { dropdownRef } = useDropdownContext();
   useAccessibleDropdown();
   return (
-    <div className="Business-Dropdown" ref={dropdownRef}>
+    <div className="telia-dropdown" ref={dropdownRef}>
       {props.children}
     </div>
   );
