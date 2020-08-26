@@ -5,5 +5,5 @@ interface Props {
   fullWidth?: boolean;
 }
 export const ModalDivider = (props: Props) => {
-  return <div className={cn('Business-Modal-divider', { 'Business-Modal-divider--fullWidth': props.fullWidth })} />;
+  return <div className={cn('business-modal-divider', { 'business-modal-divider__fullWidth': props.fullWidth })} />;
 };

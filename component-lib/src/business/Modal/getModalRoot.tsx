@@ -1,5 +1,5 @@
 export const getModalRoot = () => {
-  const className = 'Telia-styleguide-modal-root';
+  const className = 'telia-styleguide-modal-root';
 
   const portalContainer = document.querySelectorAll<HTMLDivElement>(`div[class=${className}]`);
   if (portalContainer && !!portalContainer.length) {
