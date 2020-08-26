@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
-
 type DropdownToggleProps = {
   /**
    * Text to display in the toggle button
