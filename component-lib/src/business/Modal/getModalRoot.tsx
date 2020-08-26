@@ -2,7 +2,7 @@ export const getModalRoot = () => {
   const className = 'telia-styleguide-modal-root';
 
   const portalContainer = document.querySelectorAll<HTMLDivElement>(`div[class=${className}]`);
-  if (portalContainer && !!portalContainer.length) {
+  if (portalContainer && portalContainer.length >= 1) {
     return portalContainer[0];
   } else {
     const element = document.createElement('div');
