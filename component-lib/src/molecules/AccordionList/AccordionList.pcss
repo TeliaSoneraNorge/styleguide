@@ -60,7 +60,7 @@ p + .accordion-list {
         font-family: inherit;
         font-size: inherit;
         font-weight: inherit;
-        padding: 1rem 2.8rem 0.5rem 1rem;
+        padding: 1rem 2.8rem 1rem 1rem;
         position: relative;
         text-align: left;
         width: 100%;
@@ -72,16 +72,11 @@ p + .accordion-list {
         &--text-box {
             padding-left: 1rem;
 
-            &-no-icon {
-                padding-bottom: 0.5rem;
-            }
-
             &-text {
                 font-size: 16px;
                 color: #3C3C3CB3;
                 font-family: Helvetica;
                 padding-top: 0.2rem;
-                padding-bottom: 0.5rem;
             }
         }
 
@@ -125,8 +120,8 @@ p + .accordion-list {
     &__header-icon {
         fill: var(--core-purple);
 
-        height: 15px;
-        width: 15px;
+        height: 1.2rem;
+        width: 1.2rem;
 
         position: absolute;
         right: 1rem;
@@ -196,7 +191,7 @@ p + .accordion-list {
         }
 
         .accordion__header-icon {
-            transform: rotate(180deg);
+            transform: translateY(-50%) rotate(180deg);
         }
         .accordion__panel {
             height: auto;
