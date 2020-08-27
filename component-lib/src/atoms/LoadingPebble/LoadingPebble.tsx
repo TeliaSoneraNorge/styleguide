@@ -6,7 +6,7 @@ interface Props {
   style?: CSSProperties;
 }
 
-export function LoadingPebble(props: Props) {
+const LoadingPebble = (props: Props) => {
   return (
     <svg
       width="66"
