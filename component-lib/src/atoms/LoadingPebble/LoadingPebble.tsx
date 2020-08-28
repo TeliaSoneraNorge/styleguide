@@ -1,7 +1,7 @@
 import React, { CSSProperties } from 'react';
 import cn from 'classnames';
 
-interface Props {
+export interface Props {
   className?: string;
   style?: CSSProperties;
 }
