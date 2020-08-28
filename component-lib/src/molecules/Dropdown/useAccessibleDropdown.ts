@@ -42,15 +42,17 @@ export const useAccessibleDropdown = () => {
       }
     };
     const navigate = (e: KeyboardEvent) => {
+      const arrowDown = 40;
+      const arrowUp = 38;
       if (ctx.open && e.target && ctx.menuRef.current) {
-        if (e.key === 'ArrowDown') {
+        if (e.keyCode === arrowDown) {
           e.preventDefault();
           if (ctx.highlightIndex === ctx.maxHighlightIndex) {
             ctx.setHighlightIndex(0);
           } else {
             ctx.setHighlightIndex(ctx.highlightIndex + 1);
           }
-        } else if (e.key === 'ArrowUp') {
+        } else if (e.keyCode === arrowUp) {
           e.preventDefault();
           if (ctx.highlightIndex === 0) {
             ctx.setHighlightIndex(ctx.maxHighlightIndex);
