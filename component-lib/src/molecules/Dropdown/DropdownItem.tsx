@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
+import computeScrollIntoView from 'compute-scroll-into-view';
 
 export type DropdownItemProps = {
   /**
@@ -52,12 +53,6 @@ export type DropdownItemProps = {
 export const DropdownItem: React.FC<DropdownItemProps> = props => {
   const { open, toggle, highlightIndex } = useDropdownContext();
   const itemRef = useRef<HTMLButtonElement>(null);
-
-  useEffect(() => {
-    if (props.index === highlightIndex && itemRef.current) {
-      itemRef.current.scrollIntoView({ block: 'nearest', inline: 'nearest' });
-    }
-  }, [props.index, highlightIndex, itemRef.current]);
 
   const onClick = () => {
     if (props.onClick) {
