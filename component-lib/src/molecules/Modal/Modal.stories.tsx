@@ -7,7 +7,7 @@ import TextBox from '../../atoms/TextBox';
 import { Toggle } from '../../business';
 import { ModalDivider } from './ModalDivider';
 
-storiesOf('Component library|Molecules/Modal', module)
+storiesOf('Component library/Molecules/Modal', module)
   .add('Default', () => {
     return (
       <div style={{ height: '300px' }}>
