@@ -27,7 +27,7 @@ The files which couldn't be processed successfully remain in the _drop folder_
 
 ## Usage
 
-- In your project import styles `import '@telia/styleguide/dist/index.css';`
+- In your project import styles `import '@telia/styleguide/dist/index.css';`. You can also import `@telia/styleguide/dist/components.css` instead, if you only want the components CSS and not the global styles.
 - Then import components `import { Button } from '@telia/styleguide';`
 
 # Other
