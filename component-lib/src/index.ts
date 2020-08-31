@@ -17,6 +17,7 @@ export { default as FullWidthTable } from './atoms/FullWidthTable';
 export { default as Label } from './atoms/Label';
 export { default as Link } from './atoms/Link';
 export { default as List } from './atoms/List';
+export { default as LoadingPebble } from './atoms/LoadingPebble';
 export { default as PagePebbles } from './atoms/PagePebbles';
 export { default as Paragraph } from './atoms/Paragraph';
 export { default as ProgressBar } from './atoms/ProgressBar';

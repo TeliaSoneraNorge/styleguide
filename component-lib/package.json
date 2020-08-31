@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide",
-  "version": "1.33.49",
+  "version": "1.33.54",
   "private": true,
   "description": "",
   "main": "dist/index.js",
@@ -17,7 +17,7 @@
     "build": "run-s test && run-p build:commonjs build:es build:css build:ts-types && run-s build:copy-files",
     "build:commonjs": "cross-env BABEL_ENV=commonjs babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist",
     "build:copy-files": "node ./scripts/copy-files.js",
-    "build:css": "postcss src/index.pcss src/business.pcss --dir dist --ext css --config ./postcss.config.js",
+    "build:css": "postcss src/index.pcss src/components.pcss src/business.pcss --dir dist --ext css --config ./postcss.config.js",
     "build:es": "cross-env BABEL_ENV=es babel src --extensions '.js,.jsx,.ts,.tsx' --out-dir dist/es",
     "build:ts-types": "run-s build:ts-emit-declarations build:ts-copy-type-files",
     "build:ts-emit-declarations": "./node_modules/.bin/tsc --build tsconfig.dist.json",

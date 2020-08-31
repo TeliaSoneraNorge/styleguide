@@ -88,7 +88,7 @@ export const AllIconsFromProps = () => (
   <>
     {/* {`import { Icon } from '@telia/styleguide';`} */}
 
-    <Icon icon="like" style={{ width: '100px', height: '100px', color: colors.corePurple }} />
+    <Icon icon="record" style={{ width: '100px', height: '100px', color: colors.corePurple }} />
 
   </>
 );
