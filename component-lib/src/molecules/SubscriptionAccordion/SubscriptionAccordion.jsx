@@ -76,14 +76,16 @@ const SubscriptionAccordion = ({
             </>
           )}
           {children}
-          <Button
-            kind="primary"
-            className="subscription-accordion__button-choose"
-            text={buttonText}
-            size="small"
-            margin="top"
-            onClick={() => onSelect(id)}
-          />
+          {buttonText && (
+            <Button
+              kind="primary"
+              className="subscription-accordion__button-choose"
+              text={buttonText}
+              size="small"
+              margin="top"
+              onClick={() => onSelect(id)}
+            />
+          )}
           <div className="subscription-accordion__disclaimers">{disclaimers}</div>
         </section>
       )}
