@@ -20,6 +20,7 @@ const SubscriptionAccordion = ({
   children,
   className,
   buttonText = 'Velg',
+  buttonIsProcessing,
   onOpen = () => {},
   onSelect = () => {},
 }) => {
@@ -84,6 +85,7 @@ const SubscriptionAccordion = ({
               size="small"
               margin="top"
               onClick={() => onSelect(id)}
+              isProcessing={buttonIsProcessing}
             />
           )}
           <div className="subscription-accordion__disclaimers">{disclaimers}</div>
@@ -114,6 +116,7 @@ SubscriptionAccordion.propTypes = {
   onOpen: PropTypes.func,
   onSelect: PropTypes.func,
   buttonText: PropTypes.string,
+  buttonIsProcessing: PropTypes.bool,
   description: PropTypes.element,
 };
 
