@@ -57,8 +57,8 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
    * Work in progress
    *
    * Currently works for dropdown menus without search item(s).
-   * NB: Not supported properly in ie11 from the styleguiden. This currently
-   * needs to be handled by the user
+   * NB: scrollIntoView is not supported properly in ie11. This currently
+   * needs to be handled by the user with a polyfill
    */
   useEffect(() => {
     if (props.index === highlightIndex && itemRef.current) {
