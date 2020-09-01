@@ -86,6 +86,8 @@ const SubscriptionAccordion = ({
               margin="top"
               onClick={() => onSelect(id)}
               isProcessing={buttonIsProcessing}
+              processingText={buttonText}
+              isDisabled={buttonIsProcessing}
             />
           )}
           <div className="subscription-accordion__disclaimers">{disclaimers}</div>
