@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Heading from '../../atoms/Heading';
 import { Icon } from '../../atoms/Icon';
@@ -84,6 +85,28 @@ const formatPrice = price => {
     return price % 1 === 0 ? price + ',-' : price + ' kr';
   }
   return price;
+};
+
+SubscriptionAccordion.propTypes = {
+  id: PropTypes.string,
+  isExpanded: PropTypes.bool,
+  isInverted: PropTypes.bool,
+  name: PropTypes.string,
+  price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  priceInfo: PropTypes.arrayOf(PropTypes.string),
+  discount: PropTypes.shape({
+    price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+    description: PropTypes.string,
+  }),
+  feature: PropTypes.shape({
+    iconName: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+  }),
+  disclaimers: PropTypes.element,
+  scrollToOnOpen: PropTypes.bool,
+  className: PropTypes.string,
+  onOpen: PropTypes.func,
+  description: PropTypes.element,
 };
 
 export default SubscriptionAccordion;
