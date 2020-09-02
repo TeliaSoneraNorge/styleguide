@@ -26,10 +26,8 @@ export interface SubscriptionAccordionProps {
   disclaimers?: any;
   scrollToOnOpen?: boolean;
   className?: string;
-  buttonText?: any;
-  buttonIsProcessing?: boolean;
   onOpen?: (...args: any[]) => any;
-  onSelect?: (...args: any[]) => any;
+  description?: any;
 }
 
 const SubscriptionAccordion: React.FC<SubscriptionAccordionProps>;

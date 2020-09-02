@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Heading from '../../atoms/Heading';
-import Button from '../../atoms/Button';
 import { Icon } from '../../atoms/Icon';
 
 const SubscriptionAccordion = ({
@@ -19,10 +18,7 @@ const SubscriptionAccordion = ({
   scrollToOnOpen = false,
   children,
   className,
-  buttonText = 'Velg',
-  buttonIsProcessing,
   onOpen = () => {},
-  onSelect = () => {},
 }) => {
   const ref = useRef();
 
@@ -77,24 +73,18 @@ const SubscriptionAccordion = ({
             </>
           )}
           {children}
-          {buttonText && (
-            <Button
-              kind="primary"
-              className="subscription-accordion__button-choose"
-              text={buttonText}
-              size="small"
-              margin="top"
-              onClick={() => onSelect(id)}
-              isProcessing={buttonIsProcessing}
-              processingText={buttonText}
-              isDisabled={buttonIsProcessing}
-            />
-          )}
           <div className="subscription-accordion__disclaimers">{disclaimers}</div>
         </section>
       )}
     </section>
   );
+};
+
+const formatPrice = price => {
+  if (typeof price === 'number') {
+    return price % 1 === 0 ? price + ',-' : price + ' kr';
+  }
+  return price;
 };
 
 SubscriptionAccordion.propTypes = {
@@ -116,17 +106,7 @@ SubscriptionAccordion.propTypes = {
   scrollToOnOpen: PropTypes.bool,
   className: PropTypes.string,
   onOpen: PropTypes.func,
-  onSelect: PropTypes.func,
-  buttonText: PropTypes.string,
-  buttonIsProcessing: PropTypes.bool,
   description: PropTypes.element,
-};
-
-const formatPrice = price => {
-  if (typeof price === 'number') {
-    return price % 1 === 0 ? price + ',-' : price + ' kr';
-  }
-  return price;
 };
 
 export default SubscriptionAccordion;
