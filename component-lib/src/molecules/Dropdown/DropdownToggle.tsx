@@ -2,7 +2,6 @@ import React, { useEffect, useRef } from 'react';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
-
 type DropdownToggleProps = {
   /**
    * Text to display in the toggle button
@@ -54,7 +53,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   const Tag = props.tag || 'span';
   if (props.children) {
     return (
-      <Tag className="Business-Dropdown-toggle">
+      <Tag className="telia-dropdown-toggle">
         {React.Children.map(props.children, child =>
           typeof child === 'string' ? (
             <div onClick={toggle}>{child}</div>
@@ -69,15 +68,15 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
     <button
       ref={toggleRef}
       onClick={toggle}
-      className={cs('Business-Dropdown-toggle Business-Dropdown-toggle--default', {
-        'Business-Dropdown-toggle--hideLabel': props.hideLabel,
-        'Business-Dropdown-toggle--purple': props.color === 'purple',
-        'Business-Dropdown-toggle--outline': props.outline !== false,
+      className={cs('telia-dropdown-toggle telia-dropdown-toggle__default', {
+        'telia-dropdown-toggle__hideLabel': props.hideLabel,
+        'telia-dropdown-toggle__purple': props.color === 'purple',
+        'telia-dropdown-toggle__outline': props.outline !== false,
       })}
     >
-      {props.icon ? <Icon className="Business-Dropdown-toggle-icon" icon={props.icon} /> : null}
-      <span className="Business-Dropdown-toggle-label">{props.label}</span>
-      <Icon className="Business-Dropdown-toggle-caret" icon="arrow-small-down" />
+      {props.icon ? <Icon className="telia-dropdown-toggle-icon" icon={props.icon} /> : null}
+      <span className="telia-dropdown-toggle-label">{props.label}</span>
+      <Icon className="telia-dropdown-toggle-caret" icon="arrow-small-down" />
     </button>
   );
 };
@@ -112,7 +111,7 @@ export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
   const { setMenuOpen, setHighlightIndex } = useDropdownContext();
 
   return (
-    <span className="Business-Dropdown-toggle Business-Dropdown-toggle--search textbox">
+    <span className="telia-dropdown-toggle telia-dropdown-toggle__search textbox">
       {props.icon ? (
         <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem', marginRight: '0.5rem' }} />
       ) : null}

@@ -24,7 +24,7 @@ export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
 export { default as ShadowBox } from './atoms/ShadowBox';
-export { default as SmallBoxList } from './atoms/SmallBoxList'
+export { default as SmallBoxList } from './atoms/SmallBoxList';
 export { default as SpecialMessage } from './atoms/SpecialMessage';
 export { default as Spinner } from './atoms/Spinner';
 export { default as StepIndicator } from './atoms/StepIndicator';
@@ -67,6 +67,15 @@ export { default as HeadingLink } from './molecules/HeadingLink';
 export { default as Image } from './molecules/Image';
 export { default as ListWithImage } from './molecules/ListWithImage';
 export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';
+export {
+  Dropdown,
+  DropdownItem,
+  DropdownSearchItem,
+  DropdownMenu,
+  DropdownToggle,
+  DropdownSearchToggle,
+} from './molecules/Dropdown';
+
 export { default as PageFooter } from './molecules/PageFooter';
 export { default as PageHeader } from './molecules/PageHeader';
 export { default as PersonBox } from './molecules/PersonBox';

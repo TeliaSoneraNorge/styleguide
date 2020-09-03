@@ -43,14 +43,17 @@ export const useAccessibleDropdown = () => {
     };
     const navigate = (e: KeyboardEvent) => {
       if (ctx.open && e.target && ctx.menuRef.current) {
-        if (e.key === 'ArrowDown') {
+        // arrow down
+        if (e.keyCode === 40) {
           e.preventDefault();
           if (ctx.highlightIndex === ctx.maxHighlightIndex) {
             ctx.setHighlightIndex(0);
           } else {
             ctx.setHighlightIndex(ctx.highlightIndex + 1);
           }
-        } else if (e.key === 'ArrowUp') {
+        }
+        // arrow up
+        else if (e.keyCode === 38) {
           e.preventDefault();
           if (ctx.highlightIndex === 0) {
             ctx.setHighlightIndex(ctx.maxHighlightIndex);

@@ -65,7 +65,7 @@ const countries = [
   { name: 'Zimbabwe' },
 ];
 
-storiesOf('Business/Dropdown', module)
+storiesOf('Component library/Molecules/Dropdown', module)
   .add('Default', () => {
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
@@ -390,4 +390,29 @@ storiesOf('Business/Dropdown', module)
         </Dropdown>
       </div>
     );
+  })
+  .add('With dropdown items nested in other tags/components', () => {
+    const [input, setInput] = useState('');
+    const [activeCountry, setActiveCountry] = useState<string | undefined>(undefined);
+    const items = countries.filter(country => country.name.toLowerCase().includes(input.toLowerCase()));
+
+    return (
+      <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
+        <h4>With search as dropdown item</h4>
+        <Dropdown>
+          <DropdownToggle label={activeCountry ? activeCountry : 'Velg land'} />
+          <DropdownMenu>
+            <DropdownItem header={true} label="Search for something:" />
+            <DropdownSearchItem icon="search" onInputChange={setInput} />
+            <Wrapper>
+              {items.map(r => (
+                <DropdownItem label={r.name} onClick={() => setActiveCountry(r.name)} />
+              ))}
+            </Wrapper>
+          </DropdownMenu>
+        </Dropdown>
+      </div>
+    );
   });
+
+const Wrapper: React.FC = props => <div>{props.children}</div>;

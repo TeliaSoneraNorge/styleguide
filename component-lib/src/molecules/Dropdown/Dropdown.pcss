@@ -1,9 +1,9 @@
-.Business-Dropdown {
+.telia-dropdown {
   position: relative;
   display: inline-block;
 }
 
-.Business-Dropdown-content {
+.telia-dropdown-content {
   display: none;
   position: absolute;
   border-radius: 4px;
@@ -19,15 +19,15 @@
   &:focus {
     outline: none;
   }
-  &--nowrap {
-    .Business-Dropdown-item {
+  &__nowrap {
+    .telia-dropdown-item {
       white-space: nowrap;
     }
   }
 }
 
-.Business-Dropdown-toggle {
-  &--default {
+.telia-dropdown-toggle {
+  &__default {
     padding: 0 1rem;
     border-radius: 4px;
     border: none;
@@ -47,39 +47,39 @@
       background-color: var(--grey);
     }
 
-    .Business-Dropdown-toggle-icon {
+    .telia-dropdown-toggle-icon {
       header: 1rem;
       width: 1rem;
       margin-right: 8px;
     }
-    .Business-Dropdown-toggle-caret {
+    .telia-dropdown-toggle-caret {
       margin-left: 8px;
       height: 1rem;
       width: 1rem;
     }
   }
 
-  &--hideLabel {
+  &__hideLabel {
     padding: 6px;
-    .Business-Dropdown-toggle-icon {
+    .telia-dropdown-toggle-icon {
       margin: 0;
       height: 1.5rem;
       width: 1.5rem;
     }
-    .Business-Dropdown-toggle-label,
-    .Business-Dropdown-toggle-caret {
+    .telia-dropdown-toggle-label,
+    .telia-dropdown-toggle-caret {
       display: none;
     }
   }
-  &--outline {
+  &__outline {
     border: 1px solid var(--medium-light-grey);
-    &.Business-Dropdown-toggle--purple {
+    &.telia-dropdown-toggle__purple {
       border-color: var(--core-purple);
     }
   }
-  &--purple {
+  &__purple {
     color: var(--core-purple);
-    background-color: var(----white);
+    background-color: var(--white);
     &:hover {
       background-color: var(--core-purple-100);
     }
@@ -88,7 +88,7 @@
       background-color: var(--core-purple-200);
     }
   }
-  &--search {
+  &__search {
     &.textbox {
       padding-left: 0.5rem;
       display: flex;
@@ -104,7 +104,7 @@
   }
 }
 
-.Business-Dropdown-item {
+.telia-dropdown-item {
   display: flex;
   align-items: center;
   color: var(--medium-dark-grey);
@@ -131,27 +131,27 @@
     cursor: pointer;
     background-color: var(--medium-light-grey);
   }
-  &--active,
+  &__active,
   &:active,
   &:focus {
     outline: none;
     background-color: var(--grey);
   }
-  &--centered {
+  &__centered {
     justify-content: center;
   }
 
-  &--divider {
+  &__divider {
     padding: 0;
     height: 1px;
     background-color: var(--medium-light-grey);
     pointer-events: none;
   }
-  &--header {
+  &__header {
     pointer-events: none;
     color: var(--grey-400);
   }
-  &--search {
+  &__search {
     background-color: var(--white);
     &:not(last-child) {
       border-bottom: 1px solid var(--medium-light-grey);
