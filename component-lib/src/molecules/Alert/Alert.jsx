@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import map from 'lodash/map';
 
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import { Icon } from '../../atoms/Icon/Icon';
+import { colors } from '../../utils/colors';
 
 /**
  * Status: *finished*.
@@ -51,11 +52,19 @@ const Alert = ({
       {...rest}
     >
       <div className="alert__content">
-        {!hideIcon &&
+        {!hideIcon && (
           <div className="alert__icon-container">
-            <SvgIcon iconName="ico_info" color="black" className="alert__icon" role="presentation" alt="" />
+            <Icon
+              icon="info"
+              style={{
+                color: colors.black,
+                width: '2.5rem',
+                height: '2.5rem',
+                marginRight: '1rem',
+              }}
+            />
           </div>
-        }
+        )}
         <div className="alert__text-container">
           {children ? children : bodyHtml}
           {links.length > 0 ? (
@@ -74,7 +83,16 @@ const Alert = ({
       {minimizable && (
         <button onClick={onClose} className="alert__close">
           <span className="alert__close-text">{closeButtonText}</span>
-          <SvgIcon iconName="ico_delete" color="black" className="box__close-icon" />
+          <Icon
+            icon="close"
+            className="box__close-icon"
+            style={{
+              width: '1.7rem',
+              height: '1.7rem',
+              position: 'relative',
+              top: '-0.3rem',
+            }}
+          />
         </button>
       )}
       <button onClick={onOpen} className="alert__expand">
