@@ -5,7 +5,7 @@ import { Header, ProductPromoBox, RelatedArticles } from '../../index';
 import img from '../sampleImages';
 
 export default {
-  title: 'Examples|Pages',
+  title: 'Examples/Pages',
 };
 
 const RelatedArticlesProps = [

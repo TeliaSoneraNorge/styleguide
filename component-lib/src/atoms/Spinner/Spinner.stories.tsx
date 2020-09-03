@@ -2,7 +2,7 @@ import React from 'react';
 import Spinner from './Spinner';
 
 export default {
-  title: 'Component library|Atoms/Spinner',
+  title: 'Component library/Atoms/Spinner',
   component: Spinner,
 };
 

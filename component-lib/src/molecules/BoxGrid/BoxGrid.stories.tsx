@@ -2,7 +2,7 @@ import React from 'react';
 import { BoxGrid, Box, StatefulBox, Container } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/BoxGrid',
+  title: 'Component library/Molecules/BoxGrid',
   component: BoxGrid,
 };
 

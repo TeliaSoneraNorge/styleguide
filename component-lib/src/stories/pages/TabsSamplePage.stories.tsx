@@ -5,7 +5,7 @@ import { Heading, FunkyTabs, Tabs } from '../../index';
 import img from '../sampleImages';
 
 export default {
-  title: 'Examples|Pages',
+  title: 'Examples/Pages',
 };
 
 export function TabsSamplePage() {

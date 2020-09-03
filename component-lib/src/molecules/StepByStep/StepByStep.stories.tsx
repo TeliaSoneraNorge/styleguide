@@ -3,7 +3,7 @@ import { StepByStep, Button } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/StepByStep',
+  title: 'Component library/Molecules/StepByStep',
   // component: StepByStep,
 };
 
@@ -97,7 +97,7 @@ export const InteractivePebblesManuallyStepByStep = () => {
   const handleSelect = (index: number) => {
     setSelectedIndex(index)
   };
-  
+
   const nextStep = () => {
     setSelectedIndex(selectedIndex + 1)
   };

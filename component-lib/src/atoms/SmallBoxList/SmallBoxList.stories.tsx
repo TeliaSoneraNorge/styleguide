@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SmallBoxList from './SmallBoxList';
 
 export default {
-  title: 'Component library|Atoms/SmallBoxList',
+  title: 'Component library/Atoms/SmallBoxList',
   component: SmallBoxList,
 };
 

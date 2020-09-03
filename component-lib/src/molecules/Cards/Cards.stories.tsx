@@ -3,7 +3,7 @@ import { Cards, Card } from '../../index';
 import img from '../../stories/sampleImages'
 
 export default {
-  title: 'Component library|Molecules/Cards',
+  title: 'Component library/Molecules/Cards',
   component: Cards,
 };
 

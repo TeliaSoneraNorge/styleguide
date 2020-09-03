@@ -2,7 +2,7 @@ import React from 'react';
 import ShadowBox from './ShadowBox';
 
 export default {
-  title: 'Component library|Atoms/Shadow Box',
+  title: 'Component library/Atoms/Shadow Box',
   component: ShadowBox,
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { References } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/References',
+  title: 'Component library/Molecules/References',
   component: References,
 };
 

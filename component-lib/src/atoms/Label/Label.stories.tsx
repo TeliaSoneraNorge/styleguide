@@ -2,7 +2,7 @@ import React from 'react';
 import Label from './Label';
 
 export default {
-  title: 'Component library|Atoms/Label',
+  title: 'Component library/Atoms/Label',
   component: Label,
 };
 

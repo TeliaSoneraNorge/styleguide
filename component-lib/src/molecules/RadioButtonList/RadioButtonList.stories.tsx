@@ -3,7 +3,7 @@ import { RadioButtonList, RadioButtonWithLabel, Heading, Paragraph, colors } fro
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/RadioButtonList',
+  title: 'Component library/Molecules/RadioButtonList',
   component: RadioButtonList,
 };
 

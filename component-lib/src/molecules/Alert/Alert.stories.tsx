@@ -2,15 +2,14 @@ import React, { useState } from 'react';
 import { Alert, StatefulAlert, Button, Container } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/Alert',
+  title: 'Component library/Molecules/Alert',
   component: Alert,
 };
 
 export const Default = () => (
   <Alert kind="info">
     <p>
-      This is a info alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-      labore et dolore magna aliqua.
+      This is a info alert. Lorem ipsum dolor sit amet consectetur.
     </p>
   </Alert>
 );

@@ -2,7 +2,7 @@ import React from 'react';
 import { LightAlert, Container } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/LightAlert',
+  title: 'Component library/Molecules/LightAlert',
   component: LightAlert,
 };
 

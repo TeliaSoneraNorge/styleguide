@@ -2,7 +2,7 @@ import React from 'react';
 import ContentRating from './ContentRating';
 
 export default {
-  title: 'Component library|Organisms/ContentRating',
+  title: 'Component library/Organisms/ContentRating',
   component: ContentRating,
 };
 

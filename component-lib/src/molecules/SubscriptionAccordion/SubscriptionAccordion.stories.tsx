@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import SubscriptionAccordion from './SubscriptionAccordion';
 import { StatefulAccordionList } from '../AccordionList';
+import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
+import Button from './../../atoms/Button';
 
 export default {
-  title: 'Component library|Molecules/SubscriptionAccordion',
+  title: 'Component library/Molecules/SubscriptionAccordion',
   component: SubscriptionAccordion,
 };
 
@@ -33,6 +35,16 @@ const disclaimers = (
   />
 );
 
+const SExampleButton = () => (
+  <Button
+    kind="primary"
+    text="Velg"
+    size="small"
+    margin="bottom"
+    onClick={() => {}}
+  />
+);
+
 export const StandaloneSubscriptionAccordion = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -58,6 +70,33 @@ export const StandaloneSubscriptionAccordion = () => {
             Roam Like Home
           </li>
       </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+  );
+};
+
+export const WithoutFeature = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionAccordion
+      name="20 GB"
+      id="smart20"
+      price={529}
+      priceInfo={['pr. md']}
+      isExpanded={isExpanded}
+      disclaimers={disclaimers}
+      onOpen={() => setIsExpanded(!isExpanded)}
+    >
+      <ul className="list">
+          <li className="list__item">
+            Fri bruk av samtaler, SMS og MMS
+          </li>
+          <li className="list__item">
+            Roam Like Home
+          </li>
+      </ul>
+      <SExampleButton />
     </SubscriptionAccordion>
   );
 };
@@ -92,6 +131,7 @@ export const InvertedSubscriptionAccordion = () => {
             Roam Like Home
           </li>
       </ul>
+      <SExampleButton />
     </SubscriptionAccordion>
   );
 };
@@ -128,6 +168,80 @@ export const DiscountSubscriptionAccordion = () => {
             Roam Like Home
           </li>
       </ul>
+      <SExampleButton />
     </SubscriptionAccordion>
+  );
+};
+
+export const SubscriptionAccordionsWithDescription = () => {
+  const [currentSubscription, setCurrentSubscription] = useState(null)
+
+  return (
+    <>
+    <SubscriptionAccordion
+      name="500 GB"
+      id="smart500"
+      description={
+        <span style={{ display: "flex", alignItems: "center" }}>
+          <InfiniteIcon style={{ marginRight: "0.4rem" }} />
+          <span style={{ fontFamily: "Helvetica Neue Medium" }}>med 10mbit/s etter</span>
+        </span>
+      }
+      price={529}
+      priceInfo={['pr. md']}
+      isExpanded={currentSubscription === "smart500"}
+      feature={{
+        iconName: "infinite",
+        name: "Ubegrenset data med 10mbit/s hastighet etter 500GB"
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => { currentSubscription === "smart500" ? setCurrentSubscription(null) : setCurrentSubscription("smart500") }}
+    >
+      <ul className="list">
+          <li className="list__item">
+            Mustic Freedom inkludert
+          </li>
+          <li className="list__item">
+            Bruk i Norge, Norden og Baltikum er inkludert
+          </li>
+          <li className="list__item">
+            Ruter fra 1,-
+          </li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+    <SubscriptionAccordion
+      name="250 GB"
+      id="smart250"
+      description={
+        <span style={{ display: "flex", alignItems: "center" }}>
+          <InfiniteIcon style={{ marginRight: "0.4rem" }} />
+          <span style={{ fontFamily: "Helvetica Neue Medium" }}>med 10mbit/s etter</span>
+        </span>
+      }
+      price={529}
+      priceInfo={['pr. md']}
+      isExpanded={currentSubscription === "smart250"}
+      feature={{
+        iconName: "infinite",
+        name: "Ubegrenset data med 10mbit/s hastighet etter 500GB"
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => { currentSubscription === "smart250" ? setCurrentSubscription(null) : setCurrentSubscription("smart250") }}
+    >
+      <ul className="list">
+          <li className="list__item">
+            Mustic Freedom inkludert
+          </li>
+          <li className="list__item">
+            Bruk i Norge, Norden og Baltikum er inkludert
+          </li>
+          <li className="list__item">
+            Ruter fra 1,-
+          </li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+    </>
   );
 };

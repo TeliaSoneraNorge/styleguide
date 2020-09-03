@@ -2,7 +2,7 @@ import React from 'react';
 import { ProductList } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/ProductList',
+  title: 'Component library/Molecules/ProductList',
   component: ProductList,
 };
 

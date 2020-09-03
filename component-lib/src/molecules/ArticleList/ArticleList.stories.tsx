@@ -2,7 +2,7 @@ import React from 'react';
 import { ArticleList } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/ArticleList',
+  title: 'Component library/Molecules/ArticleList',
   component: ArticleList,
 };
 

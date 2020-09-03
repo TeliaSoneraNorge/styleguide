@@ -2,7 +2,7 @@ import React from 'react';
 import Container from './Container';
 
 export default {
-  title: 'Component library|Atoms/Container',
+  title: 'Component library/Atoms/Container',
   // component: Container,
 };
 

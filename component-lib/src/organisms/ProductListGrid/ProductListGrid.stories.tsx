@@ -3,7 +3,7 @@ import ProductListGrid from './ProductListGrid';
 import { Container, Heading, List, ProductList } from '../../index';
 
 export default {
-  title: 'Component library|Organisms/ProductListGrid',
+  title: 'Component library/Organisms/ProductListGrid',
   component: ProductListGrid,
 };
 

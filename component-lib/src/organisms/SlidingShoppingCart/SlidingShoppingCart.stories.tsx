@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { storiesOf } from '@storybook/react';
 import { text, number, select, boolean } from '@storybook/addon-knobs';
+import { jsxDecorator } from 'storybook-addon-jsx';
 
 import SlidingShoppingCart from './SlidingShoppingCart';
 import Menu from '../../molecules/Menu/Menu';
 import img from '../../stories/sampleImages';
+
 
 const switchContent = [
   {
@@ -471,93 +472,93 @@ const mbbContent = [
 ];
 
 const groupContent = [
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '29166a',
-      items: [],
-      name: 'Telia X',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1
-      },
-      price: {
-        monthly: 579
-      },
-      image: {
-        icon: 'ico_sim'
-      },
-      subtitle: 'Nummer: 413 18 854',
-      indent: true,
-      discount: {
-        hasGroupDiscount: true,
-        value: {
-          monthly: 135
-        }
-      }
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '29166a',
+    items: [],
+    name: 'Telia X',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
     },
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '2b629a',
-      items: [],
-      name: 'Telia X',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1
-      },
-      price: {
-        monthly: 579
-      },
-      image: {
-        icon: 'ico_sim'
-      },
-      subtitle: 'Nummer: 413 20 853',
-      indent: true,
-      discount: {
-        hasGroupDiscount: true,
-        value: {
-          monthly: 135
-        }
-      }
+    price: {
+      monthly: 579,
     },
-    {
-      type: 'SIM',
-      id: '9054990',
-      image: {
-        icon: 'ico_sim'
-      },
-      name: 'SIM-kort',
-      price: {
-        upfront: 0
-      },
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 2
-      },
-      indent: true
+    image: {
+      icon: 'ico_sim',
     },
-    {
-      type: 'NEW_NUMBER',
-      id: '',
-      image: {
-        icon: 'ico_info_v2'
+    subtitle: 'Nummer: 413 18 854',
+    indent: true,
+    discount: {
+      hasGroupDiscount: true,
+      value: {
+        monthly: 135,
       },
-      name: 'Etableringspris nytt nummer',
-      price: {
-        firstInvoice: 199
+    },
+  },
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '2b629a',
+    items: [],
+    name: 'Telia X',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      monthly: 579,
+    },
+    image: {
+      icon: 'ico_sim',
+    },
+    subtitle: 'Nummer: 413 20 853',
+    indent: true,
+    discount: {
+      hasGroupDiscount: true,
+      value: {
+        monthly: 135,
       },
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 2
-      },
-      indent: true
-    }
-  ];
+    },
+  },
+  {
+    type: 'SIM',
+    id: '9054990',
+    image: {
+      icon: 'ico_sim',
+    },
+    name: 'SIM-kort',
+    price: {
+      upfront: 0,
+    },
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 2,
+    },
+    indent: true,
+  },
+  {
+    type: 'NEW_NUMBER',
+    id: '',
+    image: {
+      icon: 'ico_info_v2',
+    },
+    name: 'Etableringspris nytt nummer',
+    price: {
+      firstInvoice: 199,
+    },
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 2,
+    },
+    indent: true,
+  },
+];
 
 function getCart(item) {
   switch (item) {
@@ -580,14 +581,21 @@ function getCart(item) {
   }
 }
 
-const stories = storiesOf('Component library|Organisms/SlidingShoppingCart', module);
+export default {
+  title: 'Component library/Organisms/SlidingShoppingCart',
+  decorators: [jsxDecorator],
+};
 
-stories.addWithJSX('SlidingShoppingCart', () => {
+export const Default = () => {
   const heading = text('Heading', 'Handlekurv');
   const pricePerMonth = number('Price per month', 500);
   const priceUpfront = number('Price upfront', 500);
   const priceFirstInvoice = number('Price first invoice', 500);
-  const itemToDisplay = select('Item', ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'], 'switch');
+  const itemToDisplay = select(
+    'Item',
+    ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'],
+    'switch'
+  );
 
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
@@ -623,38 +631,38 @@ stories.addWithJSX('SlidingShoppingCart', () => {
 
   return (
     <>
-        <Menu
-          loginUrl="#Menu"
-          logoUrl="#"
-          logoTitle="Telia logo"
-          activeIndex={0}
-          activeLinkIndex={-1}
-          menuLinks={menuLinks}
-          logoImageDesktopPath={img.logo}
-          logoImageInverseDesktopPath={img.logoInverted}
-          onSearchSubmit={() => {}}
-          searchLabel="Fyll inn det du skal søke på"
-          searchButtonLabel="Søk"
-          searchButtonAbortText="Lukk"
-          mobileMenuCloseButtonLabel="Lukk"
-          lockBodyOnMenuOpen
-          onCartClick={() => setShouldShowCart(!shouldShowCart)}
-          numberOfItemsInCart={3}
-        />
-        <SlidingShoppingCart
-          heading={heading}
-          cartItems={getCart(itemToDisplay)}
-          isAnyCartItemsQuantityModifiable
-          totalPriceFirstInvoice={priceFirstInvoice}
-          totalPriceMonthly={pricePerMonth}
-          totalPriceUpfront={priceUpfront}
-          onChangeQuantity={() => {}}
-          onRemoveItem={() => {}}
-          formatPrice={price => `${price},-`}
-          shouldShowCart={shouldShowCart}
-          setShouldShowCart={setShouldShowCart}
-          onGoToCart={() => alert("Go to cart")}
-        />
+      <Menu
+        loginUrl="#Menu"
+        logoUrl="#"
+        logoTitle="Telia logo"
+        activeIndex={0}
+        activeLinkIndex={-1}
+        menuLinks={menuLinks}
+        logoImageDesktopPath={img.logo}
+        logoImageInverseDesktopPath={img.logoInverted}
+        onSearchSubmit={() => {}}
+        searchLabel="Fyll inn det du skal søke på"
+        searchButtonLabel="Søk"
+        searchButtonAbortText="Lukk"
+        mobileMenuCloseButtonLabel="Lukk"
+        lockBodyOnMenuOpen
+        onCartClick={() => setShouldShowCart(!shouldShowCart)}
+        numberOfItemsInCart={3}
+      />
+      <SlidingShoppingCart
+        heading={heading}
+        cartItems={getCart(itemToDisplay)}
+        isAnyCartItemsQuantityModifiable
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={price => `${price},-`}
+        shouldShowCart={shouldShowCart}
+        setShouldShowCart={setShouldShowCart}
+        onGoToCart={() => alert('Go to cart')}
+      />
     </>
   );
-});
+};

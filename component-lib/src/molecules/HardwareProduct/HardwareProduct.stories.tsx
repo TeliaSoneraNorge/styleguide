@@ -3,7 +3,7 @@ import { HardwareProduct } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/HardwareProduct',
+  title: 'Component library/Molecules/HardwareProduct',
   component: HardwareProduct,
 };
 

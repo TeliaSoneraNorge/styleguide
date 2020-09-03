@@ -2,7 +2,6 @@ import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import Heading from '../../atoms/Heading';
-import Button from '../../atoms/Button';
 import { Icon } from '../../atoms/Icon';
 
 const SubscriptionAccordion = ({
@@ -10,6 +9,7 @@ const SubscriptionAccordion = ({
   isExpanded,
   isInverted,
   name,
+  description,
   price,
   priceInfo,
   discount,
@@ -19,7 +19,6 @@ const SubscriptionAccordion = ({
   children,
   className,
   onOpen = () => {},
-  onSelect = () => {},
 }) => {
   const ref = useRef();
 
@@ -40,11 +39,13 @@ const SubscriptionAccordion = ({
     >
       <button className="subscription-accordion__header" onClick={onOpen}>
         <Heading tag="h2" size="s" text={name} />
-        {discount && (
+        {discount ? (
           <div className="subscription-accordion__discount">
             <span className="subscription-accordion__discount-price">-{discount.price}</span>
             {discount.description}
           </div>
+        ) : (
+          description
         )}
         <div className="subscription-accordion__aside">
           <span className="subscription-accordion__price">{formatPrice(price)}</span>
@@ -72,19 +73,18 @@ const SubscriptionAccordion = ({
             </>
           )}
           {children}
-          <Button
-            className="subscription-accordion__button-choose"
-            text="Velg"
-            size="small"
-            margin="top"
-            onClick={() => onSelect(id)}
-          />
-          <hr className="subscription-accordion__separation-line" />
           <div className="subscription-accordion__disclaimers">{disclaimers}</div>
         </section>
       )}
     </section>
   );
+};
+
+const formatPrice = price => {
+  if (typeof price === 'number') {
+    return price % 1 === 0 ? price + ',-' : price + ' kr';
+  }
+  return price;
 };
 
 SubscriptionAccordion.propTypes = {
@@ -106,14 +106,7 @@ SubscriptionAccordion.propTypes = {
   scrollToOnOpen: PropTypes.bool,
   className: PropTypes.string,
   onOpen: PropTypes.func,
-  onSelect: PropTypes.func,
-};
-
-const formatPrice = price => {
-  if (typeof price === 'number') {
-    return price % 1 === 0 ? price + ',-' : price + ' kr';
-  }
-  return price;
+  description: PropTypes.element,
 };
 
 export default SubscriptionAccordion;

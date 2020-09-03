@@ -2,7 +2,7 @@ import React from 'react';
 import DescriptionList from './DescriptionList';
 
 export default {
-  title: 'Component library|Atoms/Description List',
+  title: 'Component library/Atoms/Description List',
   component: DescriptionList,
 };
 

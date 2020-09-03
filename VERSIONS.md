@@ -14,6 +14,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworth
+
+## 1.33.51
+- Changed from SvgIcon to Icon on Accordion
+
 ## 1.33.47
 - Deprecate barColor prop in ProgressBar. Add color prop, typed by colors object. 
 - Add support for dropdown search (search input with dropdown menu, and dropdown with search input inside menu)

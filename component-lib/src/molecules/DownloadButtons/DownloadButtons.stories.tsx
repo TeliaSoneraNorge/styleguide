@@ -3,7 +3,7 @@ import { DownloadButtons } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library|Molecules/DownloadButtons',
+  title: 'Component library/Molecules/DownloadButtons',
   component: DownloadButtons,
 };
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { DropDownListWithLabel } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/DropDownListWithLabel',
+  title: 'Component library/Molecules/DropDownListWithLabel',
   component: DropDownListWithLabel,
 };
 

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { CheckBoxWithLabel } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/CheckBoxWithLabel',
+  title: 'Component library/Molecules/CheckBoxWithLabel',
   component: CheckBoxWithLabel,
 };
 

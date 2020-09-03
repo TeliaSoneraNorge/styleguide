@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ProgressChart } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/ProgressChart',
+  title: 'Component library/Molecules/ProgressChart',
   component: ProgressChart,
 };
 

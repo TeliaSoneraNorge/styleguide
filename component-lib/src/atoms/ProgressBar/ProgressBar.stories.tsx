@@ -2,7 +2,7 @@ import React from 'react';
 import ProgressBar, { progressBarSize } from './ProgressBar';
 
 export default {
-  title: 'Component library|Atoms/Progress Bar',
+  title: 'Component library/Atoms/Progress Bar',
   component: ProgressBar,
 };
 

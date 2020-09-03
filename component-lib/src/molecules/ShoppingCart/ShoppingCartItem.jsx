@@ -43,15 +43,15 @@ const getPrice = (formatPrice, price, discountValueUpfront, discountValueMonthly
     return null;
   }
 
-  if (!isNaN(price.monthly)) {
+  if (_.isNumber(price.monthly)) {
     return formatPrice(price.monthly - discountValueMonthly || 0);
   }
 
-  if (!isNaN(price.firstInvoice)) {
+  if (_.isNumber(price.firstInvoice)) {
     return formatPrice(price.firstInvoice * quantity);
   }
 
-  if (!isNaN(price.upfront)) {
+  if (_.isNumber(price.upfront)) {
     return formatPrice((price.upfront - discountValueUpfront || 0) * quantity);
   }
   return null;
@@ -70,8 +70,8 @@ const ShoppingCartItem = ({
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
   const isRemovable = _.get(cartItem, 'quantity.removable');
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
-  const discountValueUpfront = _.get(discount, 'value.upfront', 0);
-  const discountValueMonthly = _.get(discount, 'value.monthly', 0);
+  const discountValueUpfront = _.get(discount, 'value.upfront') || 0;
+  const discountValueMonthly = _.get(discount, 'value.monthly') || 0;
   const hasGroupDiscount = _.get(discount, 'hasGroupDiscount', false);
   const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT;
 
@@ -139,20 +139,20 @@ const ShoppingCartItem = ({
           {discountValueMonthly === 0 && discountValueUpfront === 0 ? (
             <div className="shopping-cart__item__price__container">
               <span>{getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}</span>
-              {!isNaN(price.monthly) && <span>/md.</span>}
+              {_.isNumber(price.monthly) && <span>/md.</span>}
             </div>
           ) : (
             <div className="shopping-cart__item__price__container">
               <span className="shopping-cart__item__price__number shopping-cart__item__price--discount">
                 {getPrice(formatPrice, price, 0, 0, quantity)}
               </span>
-              {!isNaN(price.monthly) && (
+              {_.isNumber(price.monthly) && (
                 <span className="shopping-cart__item__price--discount">/md.{hasGroupDiscount && '*'}</span>
               )}
               <span className="shopping-cart__item__price__number">
                 {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
               </span>
-              {!isNaN(price.monthly) && <span className="">/md.</span>}
+              {_.isNumber(price.monthly) && <span className="">/md.</span>}
             </div>
           )}
         </ShoppingCartCell>

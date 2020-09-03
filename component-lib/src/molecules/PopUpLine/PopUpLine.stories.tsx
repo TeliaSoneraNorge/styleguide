@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { PopUpLine } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/PopUpLine',
+  title: 'Component library/Molecules/PopUpLine',
   component: PopUpLine,
 };
 

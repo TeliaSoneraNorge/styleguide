@@ -2,7 +2,7 @@ import React from 'react';
 import { ArticleMetaData } from '../../index';
 
 export default {
-  title: 'Component library|Molecules/ArticleMetaData',
+  title: 'Component library/Molecules/ArticleMetaData',
   component: ArticleMetaData,
 };
 

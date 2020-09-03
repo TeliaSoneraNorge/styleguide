@@ -3,7 +3,7 @@ import LinkTable from './LinkTable';
 import Container from '../../atoms/Container';
 
 export default {
-  title: 'Component library|Molecules/Link table',
+  title: 'Component library/Molecules/Link table',
   component: LinkTable,
 };
 

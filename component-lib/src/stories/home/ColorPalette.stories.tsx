@@ -3,7 +3,7 @@ import colorsJSON from '../lib/colorsJSON';
 import { colors, Icon } from '../../index';
 
 export default {
-  title: 'Introduction|Color Palette',
+  title: 'Introduction/Color Palette',
   parameters: {
     options: {
       showPanel: false,

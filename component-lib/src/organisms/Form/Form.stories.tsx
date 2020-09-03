@@ -3,7 +3,7 @@ import Form from './Form';
 import { Button } from '../../index';
 
 export default {
-  title: 'Component library|Organisms/Form',
+  title: 'Component library/Organisms/Form',
   component: Form,
 };
 

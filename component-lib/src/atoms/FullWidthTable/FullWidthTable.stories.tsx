@@ -2,7 +2,7 @@ import React from 'react';
 import FullWidthTable from './FullWidthTable';
 
 export default {
-  title: 'Component library|Atoms/FullWidth Table',
+  title: 'Component library/Atoms/FullWidth Table',
   component: FullWidthTable,
 };
 

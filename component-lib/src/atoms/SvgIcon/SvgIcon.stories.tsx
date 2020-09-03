@@ -2,7 +2,7 @@ import React from 'react';
 import SvgIcon from './SvgIcon';
 
 export default {
-  title: 'Component library|Atoms/Svg Icon',
+  title: 'Component library/Atoms/Svg Icon',
   component: SvgIcon,
 };
 
