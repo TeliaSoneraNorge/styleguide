@@ -4,10 +4,6 @@ import { Header, PersonBox } from '../../index';
 
 type PersonBoxProps = React.ComponentProps<typeof PersonBox>;
 
-export default {
-  title: 'Examples/Pages',
-};
-
 const personBoxesProps: PersonBoxProps[] = [
   {
     id: 'person-1',

@@ -4,10 +4,6 @@ import { Header, SvgIcon } from '../../index';
 
 import img from '../sampleImages';
 
-export default {
-  title: 'Examples/Pages',
-};
-
 export const InformationArticleSample3 = () => (
   <div>
     <Header pageTitle="Information Article" withMask={false} withContentOverlap={false}>

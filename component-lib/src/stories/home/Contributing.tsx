@@ -7,15 +7,6 @@ const codeSnippets = {
   bem: '.block {}\n.block__element {}\n.block__element--modifier {}',
 };
 
-export default {
-  title: 'Introduction/Styleguide',
-  parameters: {
-    options: {
-      showPanel: false,
-    },
-  },
-};
-
 export const Contributing = () => (
   <div>
     <Header pageTitle="Contributing">
