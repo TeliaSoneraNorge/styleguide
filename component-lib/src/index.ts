@@ -67,7 +67,6 @@ export { default as HeadingLink } from './molecules/HeadingLink';
 export { default as Image } from './molecules/Image';
 export { default as ListWithImage } from './molecules/ListWithImage';
 export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';
-export { ModalDivider, ModalFooter, ModalHeader, Modal, ModalBody } from './molecules/Modal';
 export {
   Dropdown,
   DropdownItem,
