@@ -1,7 +1,17 @@
 import React from 'react';
+
 import CodeSnippet from '../lib/CodeSnippet';
 
 import { Header, Alert } from '../../index';
+
+export default {
+  title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+};
 
 const codeSnippets = {
   stylesheetHtmlTag: '<link href="/path/to/your/styleguide/telia-styleguide.css" rel="stylesheet" type="text/css" />',

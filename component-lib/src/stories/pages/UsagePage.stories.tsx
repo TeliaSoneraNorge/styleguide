@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Header, DonutChart, ChartLegend, DataBoostChart } from '../../index';
 
+export default {
+  title: 'Examples/Pages',
+};
+
 function getRandomData() {
   const maxData = 60;
   const maxExtra = 20;

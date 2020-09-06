@@ -2,7 +2,16 @@ import React from 'react';
 import colorsJSON from '../lib/colorsJSON';
 import { colors, Icon } from '../../index';
 
-export const Colors = () => (
+export default {
+  title: 'Introduction/Color Palette',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+};
+
+export const Default = () => (
   <>
     <h3>How to use colors</h3>
     <p>{`import { colors } from '@telia/styleguide'`}</p>
@@ -17,7 +26,7 @@ export const Colors = () => (
   </>
 );
 
-export const ColorPalette = () => {
+export const ThePalette = () => {
   const style = {
     minWidth: '12rem',
   };

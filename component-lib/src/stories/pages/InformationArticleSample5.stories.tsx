@@ -2,6 +2,10 @@ import React from 'react';
 
 import { AccordionList, Header, UniqueSellingPoints } from '../../index';
 
+export default {
+  title: 'Examples/Pages',
+};
+
 const accordionListProps = [
   {
     key: 'accordion-list-1',

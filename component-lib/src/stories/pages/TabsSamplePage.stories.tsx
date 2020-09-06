@@ -4,6 +4,10 @@ import { Heading, FunkyTabs, Tabs } from '../../index';
 
 import img from '../sampleImages';
 
+export default {
+  title: 'Examples/Pages',
+};
+
 export function TabsSamplePage() {
   const [funkyTabSelectedIndex, setFunkyTabSelectedIndex] = useState(2);
   const [otherTabSelectedIndex, setOtherTabSelectedIndex] = useState(1);

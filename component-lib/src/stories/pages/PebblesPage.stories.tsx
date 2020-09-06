@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import _ from 'lodash';
 import { Header } from '../../index';
 
+export default {
+  title: 'Examples/Pages',
+};
+
 const PebbleVariant = {
   VARIANT_0: { value: 'page-pebbles', description: 'Page Pebble' },
   VARIANT_1: { value: 'page-pebbles page-pebbles--variant-1', description: 'Variant 1' },

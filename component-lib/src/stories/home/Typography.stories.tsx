@@ -1,7 +1,16 @@
-import React from 'react';
 import _ from 'lodash';
+import React from 'react';
 
 import Heading from '../../atoms/Heading/Heading';
+
+export default {
+  title: 'Introduction/Styleguide',
+  parameters: {
+    options: {
+      showPanel: false,
+    },
+  },
+};
 
 export const Typography = () => (
   <div>
