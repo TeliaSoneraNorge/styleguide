@@ -1,11 +1,11 @@
 import { useRef, useEffect } from 'react';
 
 const getFirstFocus = (elementList?: NodeListOf<HTMLElement> | HTMLElement[]) => {
-  if (!elementList) return undefined;
+  if (!elementList) return null;
 
-  let first: HTMLElement;
+  let first: HTMLElement | null = null;
   for (let i = 0; i < elementList.length; i++) {
-    if (!elementList[i]['disabled']) {
+    if (!elementList[i].hasAttribute('disabled')) {
       first = elementList[i];
       break;
     }
