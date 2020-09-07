@@ -85,7 +85,9 @@ storiesOf('Component library/Molecules/Modal', module)
           <ModalBody>
             Tab throught me to test accessibility
             <Button size="small" isDisabled={true} text="I should be skipped" />
-            <TextBox small={true} placeholder="First name" />
+            <input disabled={true} />
+            <input disabled={false} />
+            <TextBox small={true} disabled={true} placeholder="First name" />
             <TextBox small={true} placeholder="Last name" />
             <Toggle checked={checked} onChange={e => setChecked(e.target.checked)} />
             <Button size="small" text="Click" />
@@ -102,7 +104,7 @@ storiesOf('Component library/Molecules/Modal', module)
   })
   .add('Small', () => (
     <div style={{ height: '300px' }}>
-      <Modal open={true} setOpen={() => {}} size="sm">
+      <Modal open={true} setOpen={() => {}} size="small">
         <ModalHeader>
           <h2>A small modal</h2>
         </ModalHeader>
@@ -115,7 +117,7 @@ storiesOf('Component library/Molecules/Modal', module)
   ))
   .add('Large', () => (
     <div style={{ height: '300px' }}>
-      <Modal open={true} setOpen={() => {}} size="lg">
+      <Modal open={true} setOpen={() => {}} size="large">
         <ModalHeader>
           <h2>A large modal</h2>
         </ModalHeader>
@@ -168,7 +170,7 @@ storiesOf('Component library/Molecules/Modal', module)
           </ModalFooter>
         </Modal>
 
-        <Modal open={true} size="sm" setOpen={action('front modal toggle')}>
+        <Modal open={true} size="small" setOpen={action('front modal toggle')}>
           <ModalHeader>
             <h2>You launched a modal!</h2>
           </ModalHeader>
