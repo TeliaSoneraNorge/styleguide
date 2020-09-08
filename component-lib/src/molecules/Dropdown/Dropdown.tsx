@@ -53,9 +53,6 @@ const InnerDropdown: React.FC = props => {
   );
 };
 
-function isDefined(entry: false | (() => void) | undefined): entry is () => void {
-  return !!entry;
-}
 const isClickable = (child: React.ReactNode) =>
   React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider && child.props.onClick;
 
