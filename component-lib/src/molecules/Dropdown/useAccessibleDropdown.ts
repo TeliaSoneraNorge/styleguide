@@ -34,9 +34,12 @@ export const useAccessibleDropdown = () => {
 
   useEffect(() => {
     const click = (e: KeyboardEvent) => {
+      const clickItem = ctx.menuRef.current
+        ? ctx.menuRef.current.querySelector<HTMLButtonElement>('button.telia-dropdown-item__active')
+        : null;
       if (e.keyCode === 13) {
-        if (ctx.clickHandlers && ctx.clickHandlers[ctx.highlightIndex]) {
-          ctx.clickHandlers[ctx.highlightIndex]();
+        if (clickItem) {
+          clickItem.click();
           ctx.toggle();
         }
       }
@@ -71,7 +74,9 @@ export const useAccessibleDropdown = () => {
     return () => {
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [ctx.open, ctx.highlightIndex, ctx.menuRef, ctx.clickHandlers]);
+  }, [ctx.open, ctx.highlightIndex, ctx.menuRef]);
+
+  console.log(ctx.highlightIndex);
 
   useEffect(() => {
     if (!ctx.open) {
