@@ -22,9 +22,6 @@ export const Dropdown: React.FC<Props> = props => {
   const clickableItems = allItems.filter(isClickable);
 
   const maxHighlightIndex = clickableItems.length - 1;
-  const clickHandlers = clickableItems
-    .map(child => React.isValidElement<DropdownItemProps>(child) && child.props.onClick)
-    .filter(isDefined);
 
   const toggle = () => setOpen(!open);
 
@@ -37,7 +34,6 @@ export const Dropdown: React.FC<Props> = props => {
     highlightIndex,
     setHighlightIndex,
     maxHighlightIndex,
-    clickHandlers,
     allItems,
   };
   return (
@@ -57,9 +53,6 @@ const InnerDropdown: React.FC = props => {
   );
 };
 
-function isDefined(entry: false | (() => void) | undefined): entry is () => void {
-  return !!entry;
-}
 const isClickable = (child: React.ReactNode) =>
   React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider && child.props.onClick;
 
@@ -76,7 +69,7 @@ function getRecursiveItems(children: React.ReactNode, index: number) {
         index,
       });
     } else if (React.isValidElement<{ children: React.ReactNode }>(child) && child.props.children) {
-      return getRecursiveItems(child.props.children, index);
+      return React.cloneElement(child, { ...child.props, children: getRecursiveItems(child.props.children, index) });
     }
     return child;
   });

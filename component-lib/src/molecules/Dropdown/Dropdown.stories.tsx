@@ -415,4 +415,4 @@ storiesOf('Component library/Molecules/Dropdown', module)
     );
   });
 
-const Wrapper: React.FC = props => <div>{props.children}</div>;
+const Wrapper: React.FC = props => <div style={{ height: '200px', overflowY: 'scroll' }}>{props.children}</div>;

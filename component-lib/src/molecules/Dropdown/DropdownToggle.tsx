@@ -42,11 +42,17 @@ type DropdownToggleProps = {
 };
 
 export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
-  const { toggle, open } = useDropdownContext();
+  const { toggle, open, dropdownRef } = useDropdownContext();
   const toggleRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
-    if (toggleRef.current) {
-      toggleRef.current.blur();
+    if (dropdownRef.current) {
+      const toggleItem = toggleRef.current
+        ? toggleRef.current
+        : dropdownRef.current.querySelector<HTMLButtonElement>('.telia-dropdown-toggle > button');
+      if (toggleItem) {
+        toggleItem.blur();
+      }
     }
   }, [open]);
 
@@ -58,7 +64,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
           typeof child === 'string' ? (
             <div onClick={toggle}>{child}</div>
           ) : React.isValidElement(child) ? (
-            React.cloneElement(child, { onClick: toggle, ...props })
+            React.cloneElement(child, { onClick: toggle, ref: toggleRef, ...props })
           ) : null
         )}
       </Tag>
