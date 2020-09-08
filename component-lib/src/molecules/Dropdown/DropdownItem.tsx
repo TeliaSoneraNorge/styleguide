@@ -50,21 +50,24 @@ export type DropdownItemProps = {
   children?: React.ReactNode;
 };
 export const DropdownItem: React.FC<DropdownItemProps> = props => {
-  const { open, toggle, highlightIndex } = useDropdownContext();
+  const { open, toggle, highlightIndex, menuRef } = useDropdownContext();
   const itemRef = useRef<HTMLButtonElement>(null);
 
   /**
-   * Work in progress
-   *
-   * Currently works for dropdown menus without search item(s).
    * NB: scrollIntoView is not supported properly in ie11. This currently
    * needs to be handled by the user with a polyfill
    */
   useEffect(() => {
+    if (highlightIndex === -1 && menuRef.current) {
+      const firstItem = menuRef.current.querySelector('button.telia-dropdown-item');
+      if (firstItem && itemRef.current && firstItem === itemRef.current) {
+        itemRef.current.scrollIntoView({ block: 'nearest', inline: 'nearest' });
+      }
+    }
     if (props.index === highlightIndex && itemRef.current) {
       itemRef.current.scrollIntoView({ block: 'nearest', inline: 'nearest' });
     }
-  }, [props.index, highlightIndex, itemRef.current]);
+  }, [props.index, highlightIndex, itemRef.current, open]);
 
   const onClick = () => {
     if (props.onClick) {
