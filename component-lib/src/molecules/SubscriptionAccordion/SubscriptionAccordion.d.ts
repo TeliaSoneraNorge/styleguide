@@ -27,7 +27,7 @@ export interface SubscriptionAccordionProps {
   scrollToOnOpen?: boolean;
   className?: string;
   onOpen?: (...args: any[]) => any;
-  onSelect?: (...args: any[]) => any;
+  description?: any;
 }
 
 const SubscriptionAccordion: React.FC<SubscriptionAccordionProps>;

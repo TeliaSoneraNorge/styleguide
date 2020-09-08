@@ -51,6 +51,7 @@ declare interface SubscriptionProps {
   dataUnit?: string;
   extraDataUnit?: string;
   price?: SubscriptionPrice;
+  discountedPrice?: SubscriptionPrice;
   priceInfo?: string[];
   additionalInfo?: SubscriptionAdditionalInfo;
   allPricesLink?: SubscriptionAllPricesLink;

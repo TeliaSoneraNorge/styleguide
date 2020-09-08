@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworth
 
+## 1.33.61
+- Add now Modal component and deprecate old 
+
 ## 1.33.51
 - Changed from SvgIcon to Icon on Accordion
 

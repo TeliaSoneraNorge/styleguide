@@ -5,7 +5,7 @@ import classnames from 'classnames';
 import { Context } from './ModalDialogProvider';
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 import Button from '../../atoms/Button/Button';
-
+import deprecate from 'util-deprecate';
 const KEY_ESC = 27;
 
 /**
@@ -17,7 +17,8 @@ const KEY_ESC = 27;
  * TODO:
  ** &lt;div role="dialog"&gt; can be changed to &lt;dialog&gt; when this element is more widely supported
  */
-export default function ModalDialog({
+
+function ModalDialog({
   name,
   heading,
   children,
@@ -165,3 +166,8 @@ ModalDialog.propTypes = {
   footerElement: PropTypes.element,
   size: PropTypes.oneOf(Object.keys(ModalDialog.sizes)),
 };
+
+export default deprecate(
+  ModalDialog,
+  '<ModalDialog/> from Telia Styleguide is a deprecated component. Use <Modal/> instead'
+);

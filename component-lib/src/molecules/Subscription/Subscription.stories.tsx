@@ -42,6 +42,27 @@ export const SmallSubscription = () => {
   );
 };
 
+export const DiscountedSubscription = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <Subscription
+      name="SMART Mini"
+      id="smartMini"
+      dataAmount={1}
+      dataUnit="GB"
+      price={249}
+      discountedPrice={99}
+      priceInfo={['pr. md', 'Ingen bindingstid.']}
+      color="green"
+      size="small"
+      isExpanded={isExpanded}
+      onSelect={() => setIsExpanded(true)}
+      onClose={() => setIsExpanded(false)}
+    />
+  );
+};
+
 export const ThreeDigitsMBSubscription = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const features = {
@@ -723,5 +744,28 @@ export const subscriptionWithExtraData = () => {
         extraDataUnit="GB"
       />
     </div>
+  );
+};
+
+export const DiscountedSubscriptionWithExtraData = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <Subscription
+      name="SMART Mini"
+      id="smartMini"
+      dataAmount={40}
+      dataUnit="GB"
+      price={699}
+      discountedPrice={349.5}
+      priceInfo={['pr. md i 3 måneder', 'Ingen bindingstid.']}
+      color="green"
+      size="small"
+      isExpanded={isExpanded}
+      onSelect={() => setIsExpanded(true)}
+      onClose={() => setIsExpanded(false)}
+      extraDataAmount={5}
+      extraDataUnit="GB"
+    />
   );
 };

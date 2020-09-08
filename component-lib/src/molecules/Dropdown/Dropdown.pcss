@@ -1,0 +1,181 @@
+.telia-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.telia-dropdown-content {
+  display: none;
+  position: absolute;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
+  z-index: 1000;
+  &.open {
+    display: block;
+  }
+  &.right {
+    right: 0;
+  }
+  &:active,
+  &:focus {
+    outline: none;
+  }
+  &__nowrap {
+    .telia-dropdown-item {
+      white-space: nowrap;
+    }
+  }
+}
+
+.telia-dropdown-toggle {
+  &__default {
+    padding: 0 1rem;
+    border-radius: 4px;
+    border: none;
+    font-size: 16px;
+    height: 2.25rem;
+    line-height: 24px;
+    display: flex;
+    align-items: center;
+    background-color: var(--light-grey);
+    &:hover {
+      cursor: pointer;
+      background-color: var(--medium-light-grey);
+    }
+    &:active,
+    &:focus {
+      outline: none;
+      background-color: var(--grey);
+    }
+
+    .telia-dropdown-toggle-icon {
+      header: 1rem;
+      width: 1rem;
+      margin-right: 8px;
+    }
+    .telia-dropdown-toggle-caret {
+      margin-left: 8px;
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+
+  &__hideLabel {
+    padding: 6px;
+    .telia-dropdown-toggle-icon {
+      margin: 0;
+      height: 1.5rem;
+      width: 1.5rem;
+    }
+    .telia-dropdown-toggle-label,
+    .telia-dropdown-toggle-caret {
+      display: none;
+    }
+  }
+  &__outline {
+    border: 1px solid var(--medium-light-grey);
+    &.telia-dropdown-toggle__purple {
+      border-color: var(--core-purple);
+    }
+  }
+  &__purple {
+    color: var(--core-purple);
+    background-color: var(--white);
+    &:hover {
+      background-color: var(--core-purple-100);
+    }
+    &:active,
+    &:focus {
+      background-color: var(--core-purple-200);
+    }
+  }
+  &__search {
+    &.textbox {
+      padding-left: 0.5rem;
+      display: flex;
+    }
+    background-color: white;
+    input,
+    input:focus {
+      width: 100%;
+      border: none;
+      outline: none;
+      font: inherit;
+    }
+  }
+}
+
+.telia-dropdown-item {
+  display: flex;
+  align-items: center;
+  color: var(--medium-dark-grey);
+  padding: 0.75rem 0.5rem;
+  font-size: 14px;
+  background-color: white;
+  border: none;
+  text-align: left;
+  width: 100%;
+  .Icon {
+    width: 1rem;
+    height: 1rem;
+    margin-right: 0.5rem;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: var(--medium-light-grey);
+  }
+  &__active,
+  &:active,
+  &:focus {
+    outline: none;
+    background-color: var(--grey);
+  }
+  &__centered {
+    justify-content: center;
+  }
+
+  &__divider {
+    padding: 0;
+    height: 1px;
+    background-color: var(--medium-light-grey);
+    pointer-events: none;
+  }
+  &__header {
+    pointer-events: none;
+    color: var(--grey-400);
+  }
+  &__search {
+    background-color: var(--white);
+    &:not(last-child) {
+      border-bottom: 1px solid var(--medium-light-grey);
+    }
+    &:not(first-child) {
+      border-top: 1px solid var(--medium-light-grey);
+    }
+
+    padding: 0.25rem 0.5rem;
+    &:active,
+    &:focus,
+    &:hover {
+      background-color: var(--white);
+    }
+    input,
+    input:focus {
+      height: 2rem;
+      width: 100%;
+      border: none;
+      outline: none;
+      font: inherit;
+    }
+  }
+}
+
+.telia-dropdown-content > .telia-dropdown-item {
+  &:first-child {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+  }
+  &:last-child {
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+  }
+}

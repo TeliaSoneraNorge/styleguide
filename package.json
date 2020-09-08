@@ -1,6 +1,6 @@
 {
   "name": "@telia/styleguide-web",
-  "version": "1.33.54",
+  "version": "1.33.63",
   "private": false,
   "description": "",
   "main": "server.js",
@@ -16,8 +16,8 @@
     "git:checkout-master-and-pull": "git checkout master && git pull --rebase",
     "generate-component-docs": "react-docgen ./component-lib/src --out ./src/component-docs.json --extension [jsx] --exclude index.js --exclude utils.js --exclude constants.js --exclude useThSortable.js --pretty",
     "generate-static-data": "node scripts/generate-static-data.js",
-    "lint": "eslint ./component-lib/src ./src --ext .jsx,.js",
-    "lint:fix": "eslint --fix ./component-lib/src ./src --ext .jsx,.js",
+    "lint": "eslint ./component-lib/src --ext .jsx,.js",
+    "lint:fix": "eslint --fix ./component-lib/src --ext .jsx,.js",
     "rimraf": "rimraf",
     "start": "node server.js"
   },

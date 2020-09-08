@@ -1,4 +1,5 @@
 import React, { useRef, useEffect } from 'react';
+import _ from 'lodash';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
@@ -19,6 +20,7 @@ const Subscription = ({
   dataAmount,
   dataUnit,
   price,
+  discountedPrice,
   priceInfo,
   additionalInfo,
   allPricesLink,
@@ -95,8 +97,14 @@ const Subscription = ({
               <h1 className="subscription__name--big">{name}</h1>
             </>
           )}
-
-          <span className="subscription__price">{formatPrice(price)}</span>
+          {_.isNumber(discountedPrice) ? (
+            <div className="subscription__discount">
+              <span className="subscription__price--strikethrough">{formatPrice(price)}</span>
+              <span className="subscription__price subscription__price--discount">{formatPrice(discountedPrice)}</span>
+            </div>
+          ) : (
+            <span className="subscription__price">{formatPrice(price)}</span>
+          )}
           {priceInfo &&
             priceInfo.map(info => (
               <span key={info} className="subscription__price-info">
@@ -232,6 +240,7 @@ Subscription.propTypes = {
   dataUnit: PropTypes.string,
   dataAmountIcon: PropTypes.element,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  discountedPrice: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   priceInfo: PropTypes.arrayOf(PropTypes.string),
   additionalInfo: PropTypes.shape({
     routerPrice: PropTypes.string,

@@ -31,6 +31,5 @@ run:
     npm run build:icons-zip
     npm run build:zip
     cd ..
-    npm run build
-    mv component-lib/dist-storybook dist/storybook
+    mv component-lib/dist-storybook dist
     mv component-lib/assets/* dist
