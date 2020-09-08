@@ -89,10 +89,24 @@
             top: -1rem;
         }
     }
+    &__discount {
+        margin-top: 1rem;
+    }
     &__price {
         display: block;
         font-family: 'pebble';
         font-size: 2rem;
+
+        &--strikethrough {
+            text-decoration: line-through;
+            color: #737373;
+            font-size: 1rem;
+        }
+
+        &--discount {
+            line-height: 2rem;
+            margin-bottom: 1rem;
+        }
     }
     &__price-info {
         display: block;
