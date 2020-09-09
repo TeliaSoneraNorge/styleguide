@@ -16,12 +16,6 @@ echo "Update styleguide version:"
 
 cd styleguide
 npm version ${update_type} --no-git-tag
-
-echo "Update component lib version:"
-
-cd component-lib
-npm version ${update_type} --no-git-tag
-
 npm run build:icons
 npm run build
 
