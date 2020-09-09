@@ -68,7 +68,7 @@ resources:
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: master
       private_key: ((styleguide-deploy-key))
-      ignore_paths: [ component-lib/assets/allicons/ ]
+      ignore_paths: [ assets/allicons/ ]
 
   - name: node-tasks
     type: git
