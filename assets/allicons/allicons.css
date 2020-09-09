@@ -9,6 +9,8 @@
 .svg_arrow-large-right,
 .svg_arrow-large-up,
 .svg_arrow-left,
+.svg_arrow-right-purple,
+.svg_arrow-right-white,
 .svg_arrow-right,
 .svg_arrow-small-down,
 .svg_arrow-small-left,
@@ -320,6 +322,14 @@
 .svg_world-question,
 .svg_wrench {
   fill: #222;
+  fill-rule: evenodd;
+}
+.svg_arrow-right-purple {
+  fill: #990ae3;
+  fill-rule: evenodd;
+}
+.svg_arrow-right-white {
+  fill: #fff;
   fill-rule: evenodd;
 }
 .svg_facebook_icon {
