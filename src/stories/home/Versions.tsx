@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Header } from '../../index';
 
-import versionsMd from '../../../../VERSIONS.md';
+import versionsMd from '../../../VERSIONS.md';
 
 export const Versions = () => (
   <div>
