@@ -16,11 +16,14 @@ export const Dropdown: React.FC<Props> = props => {
   const [highlightIndex, setHighlightIndex] = useState<number>(-1); // -1 indicates no highlighted item
 
   /**
-   * Recursively get all valid dropdown items to support of wrapping components etc.
+   *Get all valid dropdown items and recursively set index of items
    */
   const allItems: React.ReactNode[] = getDropdownItems(props.children);
-  const clickableItems = allItems.filter(isClickable);
 
+  /**
+   * Retrieve a flat list of all clickable dropdown items
+   */
+  const clickableItems = getDropdownItems(props.children, true).filter(isClickable);
   const maxHighlightIndex = clickableItems.length - 1;
 
   const toggle = () => setOpen(!open);
@@ -57,7 +60,7 @@ const isClickable = (child: React.ReactNode) =>
   React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider && child.props.onClick;
 
 // @ts-ignore
-function getRecursiveItems(children: React.ReactNode, index: number) {
+function getRecursiveItems(children: React.ReactNode, index: number, flat?: boolean) {
   return React.Children.map(children, child => {
     if (
       React.isValidElement<DropdownItemProps>(child) &&
@@ -69,16 +72,20 @@ function getRecursiveItems(children: React.ReactNode, index: number) {
         index,
       });
     } else if (React.isValidElement<{ children: React.ReactNode }>(child) && child.props.children) {
-      return React.cloneElement(child, { ...child.props, children: getRecursiveItems(child.props.children, index) });
+      if (flat) {
+        return getRecursiveItems(child.props.children, index);
+      } else {
+        return React.cloneElement(child, { ...child.props, children: getRecursiveItems(child.props.children, index) });
+      }
     }
     return child;
   });
 }
 
-function getDropdownItems(children: React.ReactNode) {
+function getDropdownItems(children: React.ReactNode, flat?: boolean) {
   return React.Children.map(children, child => {
     if (React.isValidElement<{ children: React.ReactNode }>(child) && (child as any).type.name === 'DropdownMenu') {
-      return getRecursiveItems(child.props.children, -1);
+      return getRecursiveItems(child.props.children, -1, flat);
     } else {
       return null;
     }
