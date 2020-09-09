@@ -1,18 +1,6 @@
 import React from 'react';
 
-import {
-  Button,
-  Heading,
-  Header,
-  TextBoxWithLabel,
-  Form,
-  CheckBoxWithLabel,
-  DropDownListWithLabel,
-} from '../../index';
-
-export default {
-  title: 'Examples/Pages',
-};
+import { Button, Heading, Header, TextBoxWithLabel, Form, CheckBoxWithLabel, DropDownListWithLabel } from '../../index';
 
 export const FormsSamplePage = () => (
   <div>
