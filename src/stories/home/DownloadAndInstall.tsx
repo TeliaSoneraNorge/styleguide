@@ -35,7 +35,7 @@ export const DownloadAndInstall = () => (
       <p className="paragraph">
         <strong>Do not link directly to anything on the styleguide website!</strong>
       </p>
-      <a className="button button--margin-top" href="/storybook/TeliaStyleguide-Latest.zip" target="_blank">
+      <a className="button button--margin-top" href="/TeliaStyleguide-Latest.zip" target="_blank">
         Download
       </a>
     </div>
