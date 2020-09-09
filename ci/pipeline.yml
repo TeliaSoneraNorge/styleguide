@@ -88,6 +88,7 @@ resources:
       <<: *source-config
       paths:
         - package.json
+        - package-lock.json
 
 groups:
   - name: Master
