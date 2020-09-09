@@ -89,5 +89,5 @@ function getDropdownItems(children: React.ReactNode, flat?: boolean) {
     } else {
       return null;
     }
-  });
+  }) ?? [];
 }
