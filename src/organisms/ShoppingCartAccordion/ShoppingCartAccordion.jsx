@@ -22,16 +22,16 @@ const ShoppingCartAccordion = ({
   shouldBeSticky,
   formatPrice,
 }) => {
-  const [shouldAnimateNumberOfCartItems, setShouldAnimateNumberOfCartItems] = useState(false)
+  const [shouldAnimateNumberOfCartItems, setShouldAnimateNumberOfCartItems] = useState(false);
 
   useEffect(() => {
-    setShouldAnimateNumberOfCartItems(true)
-    setTimeout(() => setShouldAnimateNumberOfCartItems(false), 300)
-  }, [numberOfItemsInCart])
+    setShouldAnimateNumberOfCartItems(true);
+    setTimeout(() => setShouldAnimateNumberOfCartItems(false), 300);
+  }, [numberOfItemsInCart]);
 
   useEffect(() => {
-    setShouldAnimateNumberOfCartItems(false)
-  }, [])
+    setShouldAnimateNumberOfCartItems(false);
+  }, []);
 
   const accordionItems = [
     {

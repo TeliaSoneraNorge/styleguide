@@ -34,7 +34,7 @@ const AccordionList = ({
   toggleIsExpanded,
   noBorder,
   className,
-  shouldAnimateHeaderButtonTextBox
+  shouldAnimateHeaderButtonTextBox,
 }) => (
   <div className={cn('accordion-list', { 'accordion-list__no-border': noBorder, [className]: className })}>
     {accordionItems.map((accordionItem, i) => (
@@ -64,7 +64,7 @@ AccordionList.propTypes = {
   toggleIsExpanded: PropTypes.func,
   isExpandedAccordionIndex: PropTypes.number.isRequired,
   noBorder: PropTypes.bool,
-  shouldAnimateHeaderButtonTextBox: PropTypes.bool
+  shouldAnimateHeaderButtonTextBox: PropTypes.bool,
 };
 
 export default AccordionList;
