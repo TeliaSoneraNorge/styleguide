@@ -213,7 +213,7 @@ jobs:
       input_mapping:
         styleguide: styleguide
       params:
-        source: dist/
+        source: dist-storybook/
         destination: s3://styleguide.channelapi.telia.no
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
