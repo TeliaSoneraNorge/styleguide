@@ -28,7 +28,7 @@ export function TvSimpleIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M46 50a2 2 0 1 1 0 4H20a2 2 0 1 1 0-4h26zm6-40a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H12a8 8 0 0 1-8-8V18a8 8 0 0 1 8-8h40zm0 4H12a4 4 0 0 0-4 4v22a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V18a4 4 0 0 0-4-4z"
+        d="M46 50a2 2 0 110 4H20a2 2 0 110-4h26zm6-40a8 8 0 018 8v22a8 8 0 01-8 8H12a8 8 0 01-8-8V18a8 8 0 018-8h40zm0 4H12a4 4 0 00-4 4v22a4 4 0 004 4h40a4 4 0 004-4V18a4 4 0 00-4-4z"
       />
     </svg>
   );

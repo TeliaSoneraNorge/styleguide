@@ -28,7 +28,7 @@ export function FolderIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M30 12a6 6 0 0 1 5.66 4H52a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8H12a8 8 0 0 1-8-8V18a6 6 0 0 1 6-6zm0 4H10a2 2 0 0 0-2 2v28a4 4 0 0 0 4 4h40a4 4 0 0 0 4-4V24a4 4 0 0 0-4-4H32v-2a2 2 0 0 0-2-2zm18 10a2 2 0 1 1 0 4H16a2 2 0 1 1 0-4h32z"
+        d="M30 12a6 6 0 015.66 4H52a8 8 0 018 8v22a8 8 0 01-8 8H12a8 8 0 01-8-8V18a6 6 0 016-6zm0 4H10a2 2 0 00-2 2v28a4 4 0 004 4h40a4 4 0 004-4V24a4 4 0 00-4-4H32v-2a2 2 0 00-2-2zm18 10a2 2 0 110 4H16a2 2 0 110-4h32z"
       />
     </svg>
   );
