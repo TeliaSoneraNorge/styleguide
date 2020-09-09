@@ -30,6 +30,5 @@ npm publish dist
 
 echo -e "${GREEN}${CHECK} Latest version deployed to npm${NC}"
 
-cd ..
 git commit -a -m ":airplane: Updating styleguide version type: ${update_type}"
 git clone "${DIR}/styleguide" "${DIR}/updated-version"
