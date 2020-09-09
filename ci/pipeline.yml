@@ -68,7 +68,7 @@ resources:
       uri: git@github.com:TeliaSoneraNorge/styleguide.git
       branch: master
       private_key: ((styleguide-deploy-key))
-      ignore_paths: [ component-lib/assets/allicons/ ]
+      ignore_paths: [ assets/allicons/ ]
 
   - name: node-tasks
     type: git
@@ -88,14 +88,6 @@ resources:
       <<: *source-config
       paths:
         - package.json
-
-  - name: node_modules-component-lib
-    type: node_modules-cache-resource-type
-    source:
-      <<: *source-config
-      project-path: component-lib
-      paths:
-        - component-lib/package.json
 
 groups:
   - name: Master
@@ -121,8 +113,6 @@ jobs:
         trigger: true
         passed:
       - get: node_modules
-        passed:
-      - get: node_modules-component-lib
         passed:
 
   - name: lint-test-pr
@@ -158,8 +148,6 @@ jobs:
         trigger: true
         passed:
       - get: node_modules
-        passed:
-      - get: node_modules-component-lib
         passed:
 
   - name: lint-test
@@ -198,14 +186,11 @@ jobs:
         passed: [ lint-test ]
       - get: node_modules
         passed: [ lint-test ]
-      - get: node_modules-component-lib
-        passed: [ cache ]
     - task: build
       file: styleguide/ci/tasks/build-website/task.yml
       input_mapping:
         styleguide: styleguide
         node_modules: node_modules
-        node_modules-component-lib: node_modules-component-lib
       on_failure: *slack-failure
 
     - task: release-to-s3
@@ -213,7 +198,7 @@ jobs:
       input_mapping:
         styleguide: styleguide
       params:
-        source: dist/
+        source: dist-storybook/
         destination: s3://styleguide.channelapi.telia.no
         AWS_DEFAULT_REGION: eu-west-1
         AWS_ACCESS_KEY_ID: ((telia-no-channelapi-prod-access-key))
@@ -229,13 +214,13 @@ jobs:
     - in_parallel:
       - get: styleguide
         passed: [ publish-website ]
-      - get: node_modules-component-lib
+      - get: node_modules
         passed: [ publish-website ]
     - task: update-and-publish
       file: styleguide/ci/tasks/update-and-publish-npm/task.yml
       input_mapping:
         styleguide: styleguide
-        node_modules: node_modules-component-lib
+        node_modules: node_modules
       params:
         npm_token: ((styleguide-npm-token))
         update_type: patch
@@ -254,13 +239,13 @@ jobs:
     - in_parallel:
       - get: styleguide
         passed: [ publish-website ]
-      - get: node_modules-component-lib
+      - get: node_modules
         passed: [ publish-website ]
     - task: update-and-publish
       file: styleguide/ci/tasks/update-and-publish-npm/task.yml
       input_mapping:
         styleguide: styleguide
-        node_modules: node_modules-component-lib
+        node_modules: node_modules
       params:
         npm_token: ((styleguide-npm-token))
         update_type: minor
@@ -278,13 +263,13 @@ jobs:
     - in_parallel:
       - get: styleguide
         passed: [ publish-website ]
-      - get: node_modules-component-lib
+      - get: node_modules
         passed: [ publish-website ]
     - task: update-and-publish
       file: styleguide/ci/tasks/update-and-publish-npm/task.yml
       input_mapping:
         styleguide: styleguide
-        node_modules: node_modules-component-lib
+        node_modules: node_modules
       params:
         npm_token: ((styleguide-npm-token))
         update_type: major

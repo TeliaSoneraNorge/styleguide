@@ -8,8 +8,8 @@ node_modules
 dist
 dist-storybook
 npm-debug.log
-component-docs.json
-static-data.json
 public/icons
 *.tgz
 src/css/index.css
+
+assets/icons/dropHereNewIcons

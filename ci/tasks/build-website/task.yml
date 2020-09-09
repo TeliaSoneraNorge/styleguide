@@ -9,8 +9,6 @@ inputs:
   - name: styleguide
   - name: node_modules
     path: /cache
-  - name: node_modules-component-lib
-    path: /cache-component-lib
 
 outputs:
   - name: styleguide
@@ -21,8 +19,7 @@ run:
   - -exc
   - |
     mv cache/node_modules styleguide
-    mv cache-component-lib/node_modules styleguide/component-lib
-    cd styleguide/component-lib
+    cd styleguide
     npm run build:css
     npm run build:icons
     npm run build-storybook
@@ -30,6 +27,4 @@ run:
     #            be run _after_ build-storybook.
     npm run build:icons-zip
     npm run build:zip
-    cd ..
-    mv component-lib/dist-storybook dist
-    mv component-lib/assets/* dist
+    mv assets/* dist-storybook
