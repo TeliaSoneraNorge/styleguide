@@ -47,11 +47,6 @@ async function run() {
   Follow the instructions on the Telia Styleguide for usage.
 
   https://styleguide.channelapi.telia.no/
-
-
-  Storybook (component showcase):
-
-  https://styleguide.channelapi.telia.no/storybook/
   `;
 
   archive.append(packageJson.version, { name: 'version.txt' });
