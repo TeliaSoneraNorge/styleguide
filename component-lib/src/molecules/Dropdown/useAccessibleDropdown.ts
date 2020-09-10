@@ -71,7 +71,7 @@ export const useAccessibleDropdown = () => {
     return () => {
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [ctx.open, ctx.highlightIndex, ctx.menuRef]);
+  }, [ctx.open, ctx.highlightIndex, ctx.menuRef, ctx.maxHighlightIndex, ctx.allItems]);
 
   useEffect(() => {
     if (!ctx.open) {
