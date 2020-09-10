@@ -45,7 +45,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   const { toggle, open, dropdownRef } = useDropdownContext();
   const toggleRef = useRef<HTMLButtonElement>(null);
 
-  useEffect(() => {
+  const blurToggleButton = () => {
     if (dropdownRef.current) {
       const toggleItem = toggleRef.current
         ? toggleRef.current
@@ -54,6 +54,10 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
         toggleItem.blur();
       }
     }
+  };
+
+  useEffect(() => {
+    blurToggleButton();
   }, [open]);
 
   const Tag = props.tag || 'span';
