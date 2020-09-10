@@ -69,7 +69,14 @@ storiesOf('Component library/Molecules/Dropdown', module)
   .add('Default', () => {
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <h4>Default toggle, with default items, items with icon, header and divider item</h4>
+        <h3>Default toggle, with default items, items with icon, header and divider item</h3>
+        <br />
+        <div>
+          DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+          images or other componentes to fit you need
+        </div>
+        <br />
+        <br />
         <Dropdown>
           <DropdownToggle label="Toggle" />
           <DropdownMenu>
@@ -134,7 +141,14 @@ storiesOf('Component library/Molecules/Dropdown', module)
   })
   .add('Purple', () => (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <h4>Default</h4>
+      <h3>Purple color</h3>
+      <br />
+      <div>
+        DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+        images or other componentes to fit you need
+      </div>
+      <br />
+      <br />
       <Dropdown>
         <DropdownToggle color="purple" label="Toggle" />
         <DropdownMenu>
@@ -196,7 +210,14 @@ storiesOf('Component library/Molecules/Dropdown', module)
   ))
   .add('No border', () => (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <h4>Default</h4>
+      <h4>No borders</h4>
+      <br />
+      <div>
+        DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+        images or other componentes to fit you need
+      </div>
+      <br />
+      <br />
       <Dropdown>
         <DropdownToggle label="Toggle" outline={false} />
         <DropdownMenu>
@@ -212,7 +233,7 @@ storiesOf('Component library/Molecules/Dropdown', module)
       <br />
       <h4>wrap content in items</h4>
       <Dropdown>
-        <DropdownToggle label="Toggle" outline={false} />
+        <DropdownToggle label="Toggle" outline={false} color="purple" />
         <DropdownMenu wrapContent={true}>
           <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
           <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
@@ -257,6 +278,14 @@ storiesOf('Component library/Molecules/Dropdown', module)
   ))
   .add('Custom toggle', () => (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
+      <h3> With custom toggle components</h3>
+      <br />
+      <div>
+        DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+        images or other componentes to fit you need
+      </div>
+      <br />
+      <br />
       <h4>Button as toggle</h4>
       <Dropdown>
         <DropdownToggle>
@@ -334,7 +363,32 @@ storiesOf('Component library/Molecules/Dropdown', module)
     };
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <h4>props openImmedialey set to true</h4>
+        <h3>And input field with support for displaying a list of search results</h3>
+        <div>
+          input state yourself and implement filtering/search on the client or backend as desired. The DropdownMenu is
+          simply a map of the result from the search/filter
+        </div>
+
+        <div>
+          Example use:
+          <ul>
+            <li>Search for addresses and display matched</li>
+            <li>Global search on objects in your application</li>
+            <li>Search for products, display relevant product information and images</li>
+          </ul>
+        </div>
+        <br />
+
+        <div>
+          DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+          images or other componentes to fit you need
+        </div>
+        <br />
+        <br />
+        <div>
+          Prop <code>openImmedialey</code> set to true
+        </div>
+        <div>Useful when you have a predefined set of options you wish to preset the user</div>
         <Dropdown>
           <DropdownSearchToggle
             placeholder="Velg et land"
@@ -352,7 +406,11 @@ storiesOf('Component library/Molecules/Dropdown', module)
 
         <br />
 
-        <h4>controlled open state. With icon</h4>
+        <div>controlled open state. With icon</div>
+        <div>
+          Prop <code>openImmedialey</code> not set. Requires user input to show results
+        </div>
+
         <Dropdown open={open} toggle={() => setOpen(!open)}>
           <DropdownSearchToggle
             placeholder="Søk etter et land"
@@ -377,7 +435,22 @@ storiesOf('Component library/Molecules/Dropdown', module)
 
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <h4>With search as dropdown item</h4>
+        <h3>A dropdown with a search field inside the menu</h3>
+        <div>Useful when you need a label for you dropdown, but need search/filtering functionality</div>
+        <div>
+          Example use:
+          <ul>
+            <li>selection a store/location</li>
+            <li>setting filters on a list/tabel of products/subscrptions.</li>
+          </ul>
+        </div>
+
+        <br />
+        <div>
+          DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+          images or other componentes to fit you need
+        </div>
+        <br />
         <Dropdown>
           <DropdownToggle label={activeCountry ? activeCountry : 'Velg land'} />
           <DropdownMenu>
@@ -398,7 +471,24 @@ storiesOf('Component library/Molecules/Dropdown', module)
 
     return (
       <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-        <h4>With search as dropdown item</h4>
+        <h3>A dropdown with a search field inside the menu -- with scroll</h3>
+        <div>Useful when you need a label for you dropdown, but need search/filtering functionality</div>
+        <div>
+          Example use:
+          <ul>
+            <li>selection a store/location</li>
+            <li>setting filters on a list/tabel of products/subscrptions.</li>
+          </ul>
+        </div>
+        <br />
+        <div>
+          DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+          images or other componentes to fit you need
+        </div>
+        <br />
+        <div>This story also uses a wrapper around the DropdownItems, to set a max heigh and scroll on the items</div>
+        <br />
+
         <Dropdown>
           <DropdownToggle label={activeCountry ? activeCountry : 'Velg land'} />
           <DropdownMenu>
