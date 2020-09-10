@@ -5,7 +5,7 @@ export GREEN='\033[1;32m'
 export NC='\033[0m'
 export CHECK="√"
 
-mv cache/node_modules styleguide/component-lib
+mv cache/node_modules styleguide
 
 echo "Installing git"
 apk add --update --no-cache git
@@ -16,12 +16,6 @@ echo "Update styleguide version:"
 
 cd styleguide
 npm version ${update_type} --no-git-tag
-
-echo "Update component lib version:"
-
-cd component-lib
-npm version ${update_type} --no-git-tag
-
 npm run build:icons
 npm run build
 
@@ -36,6 +30,5 @@ npm publish dist
 
 echo -e "${GREEN}${CHECK} Latest version deployed to npm${NC}"
 
-cd ..
 git commit -a -m ":airplane: Updating styleguide version type: ${update_type}"
 git clone "${DIR}/styleguide" "${DIR}/updated-version"

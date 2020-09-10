@@ -13,7 +13,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 # Version History
 
-Only noteworth
+Only noteworthy changes.
+
+## 1.33.66
+- Removed component-lib directory, move everything to the root directory.
 
 ## 1.33.61
 - Add now Modal component and deprecate old 
