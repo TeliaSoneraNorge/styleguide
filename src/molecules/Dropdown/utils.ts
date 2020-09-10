@@ -20,8 +20,8 @@ const isClickableItem = (child: React.ReactNode) =>
  * and only returns the actula dropdown items
  * ie. retuns a flat list of items
  */
-// @ts-ignore
-function getItemsRecursive(children: React.ReactNode, index: number, flat?: boolean) {
+
+function getItemsRecursive(children: React.ReactNode, index: number, flat?: boolean): React.ReactNode {
   return React.Children.map(children, child => {
     /**
      * Clickable dropdown items receive an indexed
@@ -69,7 +69,7 @@ function getIndexedDropdownItems(children: React.ReactNode, flat?: boolean) {
     if (React.isValidElement<{ children: React.ReactNode }>(child) && (child as any).type.name === 'DropdownMenu') {
       return getItemsRecursive(child.props.children, -1, flat);
     } else {
-      return null;
+      return [];
     }
   });
 }
@@ -81,7 +81,8 @@ const getMaxHighlightIndex = (children: React.ReactNode) => {
   /**
    * Retrieve a flat list of all clickable dropdown items
    */
-  const clickableItems = getIndexedDropdownItems(children, true).filter(isClickableItem);
+  const flatList = getIndexedDropdownItems(children, true);
+  const clickableItems = flatList ? flatList.filter(isClickableItem) : [];
   return clickableItems.length - 1;
 };
 export { isClickableItem, getIndexedDropdownItems, getMaxHighlightIndex };

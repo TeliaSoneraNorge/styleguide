@@ -15,7 +15,7 @@ export const Dropdown: React.FC<Props> = props => {
   const [open, setOpen] = useState(props.open || false);
   const [highlightIndex, setHighlightIndex] = useState<number>(-1); // -1 indicates no highlighted item
 
-  const allItems: React.ReactNode[] = getIndexedDropdownItems(props.children);
+  const allItems: React.ReactNode = getIndexedDropdownItems(props.children);
   const maxHighlightIndex = getMaxHighlightIndex(props.children);
 
   const toggle = () => setOpen(!open);

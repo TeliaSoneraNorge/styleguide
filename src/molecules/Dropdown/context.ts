@@ -48,7 +48,7 @@ export type DropdownContextValues = {
   /**
    * All dropdown items / content of the dropdown menu
    */
-  allItems: React.ReactNode[];
+  allItems: React.ReactNode;
 };
 
 export const DropdownContext = React.createContext<DropdownContextValues | null>(null);
