@@ -8,7 +8,7 @@ const MenuDropdown = props => {
   const [type, setType] = useState(dropdownMenu.type);
 
   function checkEnv(host) {
-    if (host === 'stage.telia.no' || host === 'at-min-side.telia.no') return 'https://stage.telia.no/min-side/';
+    if (host === 'stage.telia.no' || host === 'at-min-side.telia.no') return 'https://stage.telia.no';
     if (host === 'pt.stage.telia.no') return 'https://pt.stage.telia.no/min-side/';
 
     return false;
@@ -36,22 +36,21 @@ const MenuDropdown = props => {
         <div className="menu__dropdown--links">
           <Link
             type="bubble-link"
-            href={stageEnv ? stageEnv : 'https://www.telia.no/min-side/'}
+            href={stageEnv ? `${stageEnv}/min-side/` : 'https://www.telia.no/min-side/'}
             icon="mobile"
             inverted={dropdownMenu.channel !== 'mobil'}
           >
             <span style={{ marginLeft: '.5rem' }}>Mobil</span>
           </Link>
 
-          {/* ** WHEN LAUNCHING SPRINGSTAR, ACTIVATE THIS ** */}
-          {/* <Link 
+          <Link
             type="bubble-link"
-            href="FILL IN URL !!!"
+            href={stageEnv ? `${stageEnv}/minside/` : 'https://www.telia.no/minside/'}
             icon="wireless"
-            inverted={dropDownMenu.channel !== 'tv-internet'}
+            inverted={dropdownMenu.channel !== 'tv-internet'}
           >
             <span style={{ marginLeft: '.5rem' }}>TV og internett</span>
-          </Link> */}
+          </Link>
         </div>
       )}
 
