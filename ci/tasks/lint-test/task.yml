@@ -10,14 +10,14 @@ inputs:
   - name: node_modules
     path: /cache
 
-params:
-  npm_token:
-  update_type:
-
 outputs:
   - name: styleguide
 
 run:
   path: sh
   args:
-  - styleguide/ci/tasks/update-and-publish-npm/task.sh
+  - -exc
+  - |
+    mv cache/node_modules styleguide
+    cd styleguide
+    npm run lint
