@@ -27,11 +27,7 @@ function getItemsRecursive(children: React.ReactNode, index: number, flat?: bool
      * Clickable dropdown items receive an indexed
      * used to keep track active item
      */
-    if (
-      React.isValidElement<DropdownItemProps>(child) &&
-      isClickableItem(child) &&
-      (child as any).type.name === 'DropdownItem'
-    ) {
+    if (React.isValidElement<DropdownItemProps>(child) && isClickableItem(child)) {
       index += 1;
       return React.cloneElement(child, {
         index,
