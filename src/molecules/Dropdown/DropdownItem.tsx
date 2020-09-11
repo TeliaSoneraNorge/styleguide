@@ -111,7 +111,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     <button
       className={cs('telia-dropdown-item', {
         'telia-dropdown-item__centered': props.centered,
-        'telia-dropdown-item__active': open && props.index === highlightIndex && itemRef.current,
+        'telia-dropdown-item__active': open && props.index === highlightIndex,
       })}
       ref={itemRef}
       tabIndex={-1}
