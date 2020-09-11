@@ -70,13 +70,6 @@ resources:
       private_key: ((styleguide-deploy-key))
       ignore_paths: [ assets/allicons/ ]
 
-  - name: node-tasks
-    type: git
-    source:
-        uri: git@github.com:mhd999/go-tasks.git
-        branch: master
-        private_key: ((styleguide-deploy-key))
-
   - name: slack-alert
     type: slack-notification
     source:
@@ -126,18 +119,11 @@ jobs:
         version: every
       - get: node_modules
         passed: [ cache-pr ]
-      - get: node-tasks
-        params:
-          submodules:
-          - node
     - task: run-lint
-      file: node-tasks/node/lts.yml
+      file: styleguide/ci/tasks/lint-test/task.yml
       input_mapping:
-        source: styleguide-pr
-        dependencies: node_modules
-      params:
-        command: lint
-        directory: /
+        styleguide: styleguide-pr
+        node_modules: node_modules
       on_failure: *slack-failure
 
   - name: cache
@@ -163,18 +149,11 @@ jobs:
         version: every
       - get: node_modules
         passed: [ cache ]
-      - get: node-tasks
-        params:
-          submodules:
-          - node
     - task: run-lint
-      file: node-tasks/node/lts.yml
+      file: styleguide/ci/tasks/lint-test/task.yml
       input_mapping:
-        source: styleguide
-        dependencies: node_modules
-      params:
-        command: lint
-        directory: /
+        styleguide: styleguide
+        node_modules: node_modules
       on_failure: *slack-failure
 
   - name: publish-website

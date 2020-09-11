@@ -1,0 +1,23 @@
+---
+platform: linux
+
+image_resource:
+  type: docker-image
+  source: {repository: node, tag: "lts-alpine" }
+
+inputs:
+  - name: styleguide
+  - name: node_modules
+    path: /cache
+
+outputs:
+  - name: styleguide
+
+run:
+  path: sh
+  args:
+  - -exc
+  - |
+    mv cache/node_modules styleguide
+    cd styleguide
+    npm run lint
