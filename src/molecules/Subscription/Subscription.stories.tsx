@@ -101,21 +101,21 @@ export const ShowingFeaturesAndSpeechBubble = () => {
 
   return (
     <div className="subscription__container">
-    	<Subscription
-    	  name="SMART Total"
-    	  id="smartTotal2"
-    	  dataAmount={40}
-    	  dataUnit="GB"
-    	  price={699}
-    	  priceInfo={['pr. md', 'Ingen bindingstid.']}
-    	  color="blue"
-    	  size="medium"
-    	  features={features}
-    	  isShowingFeatures
-    	  isExpanded={isExpanded}
-    	  onSelect={() => setIsExpanded(true)}
-    	  onClose={() => setIsExpanded(false)}
-    	/>
+      <Subscription
+        name="SMART Total"
+        id="smartTotal2"
+        dataAmount={40}
+        dataUnit="GB"
+        price={699}
+        priceInfo={['pr. md', 'Ingen bindingstid.']}
+        color="blue"
+        size="medium"
+        features={features}
+        isShowingFeatures
+        isExpanded={isExpanded}
+        onSelect={() => setIsExpanded(true)}
+        onClose={() => setIsExpanded(false)}
+      />
     </div>
   );
 };
@@ -223,10 +223,10 @@ export const FullyExpandedAndSpeechBubble = () => {
           <p>
             I was going to say something extremely rough to Lorem Ipsum, to its family, and I said to myself, &quot;I
             can&apos;t do it. I just can&apos;t do it. It&apos;s inappropriate. It&apos;s not nice.&quot; When other
-            websites give you text, they’re not sending the best. They’re not sending you, they’re sending words that have
-            lots of problems and they’re bringing those problems with us. They’re bringing mistakes. They’re bringing
-            misspellings. They’re typists… And some, I assume, are good words. I think the only card she has is the Lorem
-            card.
+            websites give you text, they’re not sending the best. They’re not sending you, they’re sending words that
+            have lots of problems and they’re bringing those problems with us. They’re bringing mistakes. They’re
+            bringing misspellings. They’re typists… And some, I assume, are good words. I think the only card she has is
+            the Lorem card.
           </p>
           <h3 className="heading heading--level-3">Utland</h3>
           <p>
@@ -276,7 +276,6 @@ export const B2BCollapsed = () => {
     />
   );
 };
-
 
 export const B2BCollapsedShowingFeaturesAndSpeechBubble = () => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -609,105 +608,109 @@ export default {
 export const subscriptionWithSelect = () => {
   const transferSubscriptions = [
     {
-        name: "Telia",
-        header: "Telia X",
-        id: "SMART_X.REGULAR",
-        dataAmount: 'X',
-        dataUnit: "GB",
-        price: 579,
-        priceInfo: ['pr. md'],
-        groupSubscriptionDiscount: 180,
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: true,
-        teaserFeatures: ["Fri bruk av data"]
+      name: 'Telia',
+      header: 'Telia X',
+      id: 'SMART_X.REGULAR',
+      dataAmount: 'X',
+      dataUnit: 'GB',
+      price: 579,
+      priceInfo: ['pr. md'],
+      groupSubscriptionDiscount: 180,
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: true,
+      teaserFeatures: ['Fri bruk av data'],
     },
     {
-        name: "SMART",
-        id: "SMART_20GB.REGULAR",
-        dataAmount: 20,
-        dataUnit: "GB",
-        price: 529,
-        priceInfo: ['pr. md'],
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: false,
-        teaserFeatures: ["Music Freedom inkludert"]
+      name: 'SMART',
+      id: 'SMART_20GB.REGULAR',
+      dataAmount: 20,
+      dataUnit: 'GB',
+      price: 529,
+      priceInfo: ['pr. md'],
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: false,
+      teaserFeatures: ['Music Freedom inkludert'],
     },
     {
-        name: "SMART",
-        id: "SMART_15GB.REGULAR",
-        dataAmount: 15,
-        dataUnit: "GB",
-        price: 479,
-        priceInfo: ['pr. md'],
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: false,
-        teaserFeatures: ["Music Freedom inkludert"]
+      name: 'SMART',
+      id: 'SMART_15GB.REGULAR',
+      dataAmount: 15,
+      dataUnit: 'GB',
+      price: 479,
+      priceInfo: ['pr. md'],
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: false,
+      teaserFeatures: ['Music Freedom inkludert'],
     },
     {
-        name: "SMART",
-        id: "SMART_10GB.REGULAR",
-        dataAmount: 10,
-        dataUnit: "GB",
-        price: 429,
-        priceInfo: ['pr. md'],
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: false,
-        teaserFeatures: ["Music Freedom inkludert"]
+      name: 'SMART',
+      id: 'SMART_10GB.REGULAR',
+      dataAmount: 10,
+      dataUnit: 'GB',
+      price: 429,
+      priceInfo: ['pr. md'],
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: false,
+      teaserFeatures: ['Music Freedom inkludert'],
     },
     {
-        name: "SMART",
-        id: "SMART_06GB.REGULAR",
-        dataAmount: 6,
-        dataUnit: "GB",
-        price: 379,
-        priceInfo: ['pr. md'],
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: false,
-        teaserFeatures: []
+      name: 'SMART',
+      id: 'SMART_06GB.REGULAR',
+      dataAmount: 6,
+      dataUnit: 'GB',
+      price: 379,
+      priceInfo: ['pr. md'],
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: false,
+      teaserFeatures: [],
     },
     {
-        name: "SMART",
-        id: "SMART_04GB.REGULAR",
-        dataAmount: 4,
-        dataUnit: "GB",
-        price: 329,
-        priceInfo: ['pr. md'],
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: false,
-        teaserFeatures: []
+      name: 'SMART',
+      id: 'SMART_04GB.REGULAR',
+      dataAmount: 4,
+      dataUnit: 'GB',
+      price: 329,
+      priceInfo: ['pr. md'],
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: false,
+      teaserFeatures: [],
     },
     {
-        name: "SMART",
-        id: "SMART_MINI_3.REGULAR",
-        dataAmount: 2,
-        dataUnit: "GB",
-        price: 249,
-        priceInfo: ['pr. md'],
-        color: "purple",
-        size: "small",
-        hasGroupSubscriptionDiscount: false,
-        teaserFeatures: []
-    }
-];
+      name: 'SMART',
+      id: 'SMART_MINI_3.REGULAR',
+      dataAmount: 2,
+      dataUnit: 'GB',
+      price: 249,
+      priceInfo: ['pr. md'],
+      color: 'purple',
+      size: 'small',
+      hasGroupSubscriptionDiscount: false,
+      teaserFeatures: [],
+    },
+  ];
 
-  const [selectedSubscription, setSelectedSubscription] = useState("SMART_X.REGULAR");
+  const [selectedSubscription, setSelectedSubscription] = useState('SMART_X.REGULAR');
 
-  const onSubscriptionSelect = (subscriptionId) => {
-      setSelectedSubscription(subscriptionId);
-  }
+  const onSubscriptionSelect = subscriptionId => {
+    setSelectedSubscription(subscriptionId);
+  };
 
   return (
     <Container size="medium">
-      {transferSubscriptions.map((sub) => (
-          <div key={sub.id} className="tlo-summary__subscriptions__subscription-item">
-              <Subscription {...sub} onSelect={(e, subscriptionId) => onSubscriptionSelect(subscriptionId)} isSelected={selectedSubscription === sub.id} />
-          </div>
+      {transferSubscriptions.map(sub => (
+        <div key={sub.id} className="tlo-summary__subscriptions__subscription-item">
+          <Subscription
+            {...sub}
+            onSelect={(e, subscriptionId) => onSubscriptionSelect(subscriptionId)}
+            isSelected={selectedSubscription === sub.id}
+          />
+        </div>
       ))}
     </Container>
   );

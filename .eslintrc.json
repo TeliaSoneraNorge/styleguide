@@ -1,4 +1,5 @@
 {
+    "root": true,
     "env": {
         "browser": true,
         "es6": true,
@@ -7,12 +8,16 @@
     },
     "extends": [
         "eslint:recommended",
-        "plugin:react/recommended"
+        "plugin:react/recommended",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier",
+        "prettier/react"
     ],
     "globals": {
         "React": "readonly"
     },
-    "parser": "babel-eslint",
+    "parser": "@typescript-eslint/parser",
     "parserOptions": {
         "codeFrame": false,
         "ecmaFeatures": {
@@ -22,9 +27,22 @@
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
+        "@typescript-eslint/ban-types": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "@typescript-eslint/no-empty-interface": "off",
+        "@typescript-eslint/no-explicit-any": "off",
+        "@typescript-eslint/no-unused-vars": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "no-empty-pattern": "off",
+        "react/jsx-key": "off",
+        "react/jsx-no-target-blank": "off",
+        "react/no-unescaped-entities": "off",
         "react/prop-types": "off"
     },
     "settings": {

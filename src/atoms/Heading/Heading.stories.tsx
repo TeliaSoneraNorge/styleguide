@@ -78,7 +78,7 @@ export const HeadingWithSizes = () => (
 
 export const HeadingWithColors = () => (
   <>
-    <p style={{ color: 'red', fontWeight: 800 }}>Rules of colors in headings MEGA - LARGE</p>
+    <p style={{ color: 'red', fontWeight: 800 }}>Rules of colors in headings MEGA - LARGE</p>
 
     <Heading tag="h1" size="l" text="Core Purple Text" style={{ color: '#990AE3' }} />
     <Heading
@@ -107,7 +107,7 @@ export const HeadingWithColors = () => (
       style={{ color: '#FFF', background: '#1F012F' }}
     />
 
-    <p style={{ color: 'red', fontWeight: 800 }}>Rules of colors in headings MEDIUM - XTRA SMALL</p>
+    <p style={{ color: 'red', fontWeight: 800 }}>Rules of colors in headings MEDIUM - XTRA SMALL</p>
 
     <Heading tag="h1" size="s" text="Black Text" style={{ color: '#222' }} />
     <Heading
