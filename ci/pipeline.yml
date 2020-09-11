@@ -131,7 +131,7 @@ jobs:
           submodules:
           - node
     - task: run-lint
-      file: node-tasks/node/8.10.0.yml
+      file: node-tasks/node/lts.yml
       input_mapping:
         source: styleguide-pr
         dependencies: node_modules
@@ -168,7 +168,7 @@ jobs:
           submodules:
           - node
     - task: run-lint
-      file: node-tasks/node/8.10.0.yml
+      file: node-tasks/node/lts.yml
       input_mapping:
         source: styleguide
         dependencies: node_modules
