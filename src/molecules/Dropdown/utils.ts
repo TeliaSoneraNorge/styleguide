@@ -27,11 +27,7 @@ function getItemsRecursive(children: React.ReactNode, index: number, flat?: bool
      * Clickable dropdown items receive an indexed
      * used to keep track active item
      */
-    if (
-      React.isValidElement<DropdownItemProps>(child) &&
-      isClickableItem(child) &&
-      (child as any).type.name === 'DropdownItem'
-    ) {
+    if (React.isValidElement<DropdownItemProps>(child) && isClickableItem(child)) {
       index += 1;
       return React.cloneElement(child, {
         index,
@@ -63,13 +59,19 @@ function getItemsRecursive(children: React.ReactNode, index: number, flat?: bool
 function getIndexedDropdownItems(children: React.ReactNode, flat?: boolean) {
   return React.Children.map(children, child => {
     /**
-     * Any first-level dropdown child other than DropdownMenu
-     * will be disregarded
+     * If the child is a DropdownMenu we set indecies on all child dropdown items.
      */
-    if (React.isValidElement<{ children: React.ReactNode }>(child) && (child as any).type.name === 'DropdownMenu') {
+    if (
+      React.isValidElement<{ children: React.ReactNode }>(child) &&
+      child.type.toString().includes('telia-dropdown-content')
+    ) {
       return getItemsRecursive(child.props.children, -1, flat);
     } else {
-      return [];
+      /**
+       * Any other children of the Dropdown will be disregarded in the process of setting indecies.
+       * They will be rendered as provided.
+       */
+      return null;
     }
   });
 }
