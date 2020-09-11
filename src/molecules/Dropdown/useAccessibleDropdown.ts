@@ -12,14 +12,30 @@ import { useDropdownContext } from './index';
 export const useAccessibleDropdown = () => {
   const ctx = useDropdownContext();
 
+  const navigateUp = () => {
+    if (ctx.highlightIndex === 0) {
+      ctx.setHighlightIndex(ctx.maxHighlightIndex);
+    } else {
+      ctx.setHighlightIndex(ctx.highlightIndex - 1);
+    }
+  };
+  const navigateDown = () => {
+    if (ctx.highlightIndex === ctx.maxHighlightIndex) {
+      ctx.setHighlightIndex(0);
+    } else {
+      ctx.setHighlightIndex(ctx.highlightIndex + 1);
+    }
+  };
+
+  /**
+   * Close the dropdown menu if click or focus outside of menu
+   */
   useEffect(() => {
     const closeMenu = (e: MouseEvent | FocusEvent) => {
-      if (
-        ctx.open &&
-        e.target &&
-        ctx.dropdownRef.current &&
-        !ctx.dropdownRef.current.contains((e.target as any) as Node)
-      ) {
+      const targetIsOutside =
+        e.target && ctx.dropdownRef.current && !ctx.dropdownRef.current.contains((e.target as any) as Node);
+
+      if (ctx.open && targetIsOutside) {
         ctx.toggle();
       }
     };
@@ -46,20 +62,12 @@ export const useAccessibleDropdown = () => {
         // arrow down
         if (e.keyCode === 40) {
           e.preventDefault();
-          if (ctx.highlightIndex === ctx.maxHighlightIndex) {
-            ctx.setHighlightIndex(0);
-          } else {
-            ctx.setHighlightIndex(ctx.highlightIndex + 1);
-          }
+          navigateDown();
         }
         // arrow up
         else if (e.keyCode === 38) {
           e.preventDefault();
-          if (ctx.highlightIndex === 0) {
-            ctx.setHighlightIndex(ctx.maxHighlightIndex);
-          } else {
-            ctx.setHighlightIndex(ctx.highlightIndex - 1);
-          }
+          navigateUp();
         }
       }
     };
@@ -71,8 +79,11 @@ export const useAccessibleDropdown = () => {
     return () => {
       window.removeEventListener('keydown', handleKeydown);
     };
-  }, [ctx.open, ctx.highlightIndex, ctx.menuRef]);
+  }, [ctx.open, ctx.highlightIndex, ctx.menuRef, ctx.maxHighlightIndex, ctx.allItems]);
 
+  /**
+   * Reset highlight state on menu close
+   */
   useEffect(() => {
     if (!ctx.open) {
       ctx.setHighlightIndex(-1);
