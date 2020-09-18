@@ -1,0 +1,226 @@
+@import '../../colors.pcss';
+
+.business-button {
+  background-color: var(--core-purple);
+  border: none;
+  border-radius: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  font-family: 'Helvetica Neue';
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+
+  &--icon {
+    height: 1rem;
+    width: 1rem;
+    transform: translateX(-50%);
+
+    &--right {
+      height: 1rem;
+      width: 1rem;
+      transform: translateX(50%);
+    }
+
+    &--ball {
+      transform: none;
+    }
+  }
+
+  &--iconRight {
+    flex-direction: row-reverse;
+  }
+
+  &--ball {
+    padding: 0.81rem;
+  }
+
+  &--primary {
+    &:hover {
+      background-color: var(--core-purple-600);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--core-purple-700);
+    }
+
+    &:disabled {
+      background-color: var(--grey-200);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--primary-text {
+    background-color: transparent;
+    border-radius: 2rem;
+    color: var(--core-purple);
+
+    &:hover {
+      background-color: var(--core-purple-100);
+    }
+
+    &:focus {
+      background-color: var(--core-purple-100);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--core-purple-200);
+    }
+
+    &:disabled {
+      background-color: var(--white);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--secondary {
+    background-color: var(--grey-200);
+    border-radius: 2rem;
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--grey-300);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--grey-400);
+    }
+
+    &:disabled {
+      background-color: var(--grey-100);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--secondary-text {
+    background-color: var(--white);
+    border-radius: 2rem;
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--grey-200);
+    }
+
+    &:focus {
+      background-color: var(--grey-200);
+    }
+
+    &:active {
+      background-color: var(--grey-300);
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:disabled {
+      background-color: var(--white);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--ghost {
+    background-color: var(--white);
+    border: 1px solid var(--core-purple);
+    border-radius: 2rem;
+    color: var(--core-purple);
+
+    &:hover {
+      background-color: var(--core-purple-500);
+      color: var(--white);
+    }
+
+    &:focus {
+      background-color: var(--core-purple-500);
+      color: var(--white);
+    }
+
+    &:active {
+      background-color: var(--core-purple-600);
+      outline: none;
+      box-shadow: none;
+      color: var(--white);
+    }
+
+    &:disabled {
+      background-color: var(--white);
+      border-color: var(--grey-200);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--positive {
+    background-color: var(--green-500);
+    border-radius: 2rem;
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--green-400);
+    }
+
+    &:active {
+      background-color: var(--green-300);
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:disabled {
+      background-color: var(--grey-200);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--negative {
+    background-color: var(--red-500);
+    color: var(--white);
+    border-radius: 2rem;
+
+    &:hover {
+      background-color: var(--red-400);
+    }
+
+    &:active {
+      background-color: var(--red-300);
+      outline: none;
+      box-shadow: none;
+    }
+
+    &:disabled {
+      background-color: var(--grey-200);
+      color: var(--grey-300);
+      cursor: default;
+      disabled: true;
+    }
+  }
+
+  &--iconRight {
+    flex-direction: row-reverse;
+  }
+}
