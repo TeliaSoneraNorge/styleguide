@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { UseThSortable } from './useThSortable';
 
 declare type FullWidthTableProps = {
   clickable?: boolean;
@@ -28,6 +29,8 @@ declare const FullWidthTable: React.FC<React.ReactNode | FullWidthTableProps> & 
   ThSortable: React.FC<React.ReactNode | ThSortableProps>;
 
   TFoot: React.FC<React.ReactNode | TFootProps>;
+
+  useThSortable: UseThSortable;
 };
 
 export default FullWidthTable;
