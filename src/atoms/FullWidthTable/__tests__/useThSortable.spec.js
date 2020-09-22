@@ -1,7 +1,7 @@
 import {
   parseInitialSorting,
   updateSorting,
-  comparator,
+  createComparator,
   sortObjects,
   findFieldSorting,
   thSortableProps,
@@ -35,14 +35,14 @@ describe('useThSortable', () => {
 
   describe('findFieldSorting', () => {
     const sorted = [{ field: 'name' }, { field: 'date', inverted: true }, { field: 'num' }];
-    it('returns null with empty values or no match', () => {
-      expect(findFieldSorting()).toBeNull();
-      expect(findFieldSorting(null, null)).toBeNull();
-      expect(findFieldSorting(null, [])).toBeNull();
-      expect(findFieldSorting('name', null)).toBeNull();
-      expect(findFieldSorting('name', [])).toBeNull();
-      expect(findFieldSorting(null, sorted)).toBeNull();
-      expect(findFieldSorting('other field', sorted)).toBeNull();
+    it('returns undefined with empty values or no match', () => {
+      expect(findFieldSorting()).toBeUndefined();
+      expect(findFieldSorting(null, null)).toBeUndefined();
+      expect(findFieldSorting(null, [])).toBeUndefined();
+      expect(findFieldSorting('name', null)).toBeUndefined();
+      expect(findFieldSorting('name', [])).toBeUndefined();
+      expect(findFieldSorting(null, sorted)).toBeUndefined();
+      expect(findFieldSorting('other field', sorted)).toBeUndefined();
     });
     it('finds the filed sorting priority and inverted value', () => {
       expect(findFieldSorting('name', sorted)).toEqual({ priority: 1, inverted: false });
@@ -205,8 +205,8 @@ describe('useThSortable', () => {
       }
 
       it('should return dumb comparator with no existing field', () => {
-        ensureIsDumbComparator(comparator());
-        ensureIsDumbComparator(comparator({ field: 'not existing' }));
+        ensureIsDumbComparator(createComparator({}));
+        ensureIsDumbComparator(createComparator({ field: 'not existing' }));
       });
 
       const expectCorrectOrder = compareResult => expect(compareResult).toBeLessThan(0);
@@ -215,12 +215,12 @@ describe('useThSortable', () => {
 
       it('precedence for empty values', () => {
         const stat = { foo: 0 };
-        const compare = comparator({ field: 'foo' });
+        const compare = createComparator({ field: 'foo' });
         expectCorrectOrder(compare(null, stat));
         expectCorrectOrder(compare({}, stat));
         expectWrongOrder(compare(stat, null));
         expectWrongOrder(compare(stat, {}));
-        const invertCompare = comparator({ field: 'foo', inverted: true });
+        const invertCompare = createComparator({ field: 'foo', inverted: true });
         expectWrongOrder(invertCompare(null, stat));
         expectWrongOrder(invertCompare({}, stat));
         expectCorrectOrder(invertCompare(stat, null));
@@ -228,7 +228,7 @@ describe('useThSortable', () => {
       });
 
       it('indifference for equal values', () => {
-        const compare = comparator({ field: 'foo' });
+        const compare = createComparator({ field: 'foo' });
         expectIndifferentOrder(compare({}, {}));
         expectIndifferentOrder(compare({ foo: 1 }, { foo: 1 }));
         expectIndifferentOrder(compare({ foo: '1' }, { foo: '1' }));
@@ -236,30 +236,33 @@ describe('useThSortable', () => {
         expectIndifferentOrder(compare({ foo: '2000-01-01' }, { foo: '2000-01-01' }));
 
         expectIndifferentOrder(
-          comparator({ field: 'accessNumber' })({ accessNumber: '0123' }, { accessNumber: '0123' })
+          createComparator({ field: 'accessNumber' })({ accessNumber: '0123' }, { accessNumber: '0123' })
         );
       });
 
       it('precedence for lower values', () => {
-        const compare = comparator({ field: 'foo' });
+        const compare = createComparator({ field: 'foo' });
         expectCorrectOrder(compare({ foo: 1 }, { foo: 2 }));
         expectCorrectOrder(compare({ foo: '1' }, { foo: '2' }));
         expectCorrectOrder(compare({ foo: 'a' }, { foo: 'b' }));
         expectCorrectOrder(compare({ foo: '2000-01-01' }, { foo: '2000-01-02' }));
 
-        const accessNumberCompare = comparator({ field: 'accessNumber' }, specialFieldComparators);
+        const accessNumberCompare = createComparator({ field: 'accessNumber' }, specialFieldComparators);
         expectCorrectOrder(accessNumberCompare({ accessNumber: '0123' }, { accessNumber: '1234' }));
         expectCorrectOrder(accessNumberCompare({ accessNumber: '123' }, { accessNumber: '0123' }));
       });
 
       it('inverted precedence for lower values', () => {
-        const compare = comparator({ field: 'foo', inverted: true });
+        const compare = createComparator({ field: 'foo', inverted: true });
         expectWrongOrder(compare({ foo: 1 }, { foo: 2 }));
         expectWrongOrder(compare({ foo: '1' }, { foo: '2' }));
         expectWrongOrder(compare({ foo: 'a' }, { foo: 'b' }));
         expectWrongOrder(compare({ foo: '2000-01-01' }, { foo: '2000-01-02' }));
 
-        const accessNumberCompare = comparator({ field: 'accessNumber', inverted: true }, specialFieldComparators);
+        const accessNumberCompare = createComparator(
+          { field: 'accessNumber', inverted: true },
+          specialFieldComparators
+        );
         expectWrongOrder(accessNumberCompare({ accessNumber: '0123' }, { accessNumber: '1234' }));
         expectWrongOrder(accessNumberCompare({ accessNumber: '123' }, { accessNumber: '0123' }));
       });
@@ -272,8 +275,8 @@ describe('useThSortable', () => {
       const bar2 = { date: '2000-01-02', name: 'Bar', accessNumber: '4', num: 4 };
       const bar22 = { date: '2000-01-02', name: 'Bar', accessNumber: '2', num: -4 };
       const statistics = [foo1, bar1, foo2, bar2, bar22];
-      it('should return null', () => {
-        expect(sortObjects()).toBeNull();
+      it('should return no objects', () => {
+        expect(sortObjects()).toBeUndefined();
         expect(sortObjects(null)).toBeNull();
       });
       it('should return original statistics', () => {
