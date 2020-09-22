@@ -1,6 +1,6 @@
 import React from 'react';
 import FullWidthTable from './FullWidthTable';
-import { number } from '@storybook/addon-knobs';
+import { boolean, number, optionsKnob } from '@storybook/addon-knobs';
 
 export default {
   title: 'Component library/Atoms/FullWidth Table',
@@ -9,35 +9,45 @@ export default {
 
 export const Default = () => {
   const { THead, TBody, Th, Tr, Td } = FullWidthTable;
+  const column2classNames = optionsKnob(
+    'Column 2 classNames',
+    { Purple: 'purple', Italic: 'italic', LineThrough: 'lineThrough' },
+    '',
+    {
+      display: 'check',
+    }
+  )
+    .toString()
+    .replaceAll(',', ' ');
 
   return (
-    <FullWidthTable>
+    <FullWidthTable className={'no-ts-error'}>
       <THead>
         <Tr>
           <Th>Column 1</Th>
-          <Th>Column 2</Th>
+          <Th className={column2classNames}>Column 2</Th>
           <Th>Column 3</Th>
         </Tr>
       </THead>
       <TBody>
         <Tr>
           <Td>Nulla quis lorem ut libero malesuada feugiat</Td>
-          <Td>Lorem</Td>
+          <Td className={column2classNames}>Lorem</Td>
           <Td>Ipsum</Td>
         </Tr>
         <Tr>
           <Td>Lorem ipsum dolor sit amet</Td>
-          <Td>Consectetur</Td>
+          <Td className={column2classNames}>Consectetur</Td>
           <Td>Elit</Td>
         </Tr>
         <Tr>
           <Td>Donec ruTrum congue leo</Td>
-          <Td>Eget</Td>
+          <Td className={column2classNames}>Eget</Td>
           <Td>Malesuada</Td>
         </Tr>
         <Tr>
           <Td>Nulla quis lorem ut libero malesuada feugiat</Td>
-          <Td>Lorem</Td>
+          <Td className={column2classNames}>Lorem</Td>
           <Td>Ipsum</Td>
         </Tr>
         <Tr>
@@ -46,7 +56,7 @@ export const Default = () => {
               Lorem ipsum dolor sit amet
             </a>
           </Td>
-          <Td>Consectetur</Td>
+          <Td className={column2classNames}>Consectetur</Td>
           <Td>Elit</Td>
         </Tr>
         <Tr>
@@ -55,7 +65,7 @@ export const Default = () => {
               Donec ruTrum congue leo
             </a>
           </Td>
-          <Td>Eget</Td>
+          <Td className={column2classNames}>Eget</Td>
           <Td>Malesuada</Td>
         </Tr>
       </TBody>
@@ -110,8 +120,9 @@ export const SortedFullWidthTable = () => {
   );
 };
 
-export const WithFooter1 = () => {
+export const WithFooter = () => {
   const { THead, TBody, Th, Tr, Td, TFoot } = FullWidthTable;
+  const whiteFooter = boolean('White footer', false);
 
   return (
     <FullWidthTable>
@@ -122,7 +133,7 @@ export const WithFooter1 = () => {
           <Th>Pris</Th>
         </Tr>
       </THead>
-      <TFoot>
+      <TFoot white={whiteFooter}>
         <Tr>
           <Td>Sum</Td>
           <Td>Foo</Td>
@@ -144,37 +155,6 @@ export const WithFooter1 = () => {
           <Td>Bruk</Td>
           <Td>Foobar</Td>
           <Td>254,-</Td>
-        </Tr>
-      </TBody>
-    </FullWidthTable>
-  );
-};
-
-export const WithFooter2 = () => {
-  const { THead, TBody, Th, Tr, Td, TFoot } = FullWidthTable;
-
-  return (
-    <FullWidthTable>
-      <THead>
-        <Tr>
-          <Th>Kostnader</Th>
-          <Th>Pris</Th>
-        </Tr>
-      </THead>
-      <TFoot white>
-        <Tr>
-          <Td>Sum</Td>
-          <Td>299,-</Td>
-        </Tr>
-      </TFoot>
-      <TBody>
-        <Tr>
-          <Td>Fast avgifter</Td>
-          <Td>399,-</Td>
-        </Tr>
-        <Tr>
-          <Td>Rabatter</Td>
-          <Td>-100,-</Td>
         </Tr>
       </TBody>
     </FullWidthTable>
