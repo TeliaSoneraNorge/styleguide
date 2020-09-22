@@ -12,29 +12,32 @@ type ButtonProps = {
   href?: string;
   disabled?: boolean;
   iconRight?: boolean;
+  compact?: boolean;
 };
 
 export const Button = (props: ButtonProps) => {
-  const { type = 'primary', label, href, onClick, icon, iconRight, disabled = false } = props;
+  const { type = 'primary', label, href, onClick, icon, iconRight, disabled = false, compact } = props;
   const Tag: any = href ? 'a' : 'button';
 
   return (
     <Tag
-      className={cs('business-button', {
-        [`business-button--${type}`]: type,
-        'business-button--iconRight': iconRight,
-        'business-button--ball': icon && !label,
+      className={cs('telia-button', `telia-button--${type}`, {
+        'telia-button--iconRight': iconRight,
+        'telia-button--ball': icon && !label,
+        'telia-button--compact': compact,
       })}
       href={href ? href : undefined}
       onClick={onClick}
       disabled={disabled}
+      type="button"
     >
       {icon && (
         <Icon
           icon={icon}
-          className={cs('business-button--icon', {
-            'business-button--icon--right': iconRight,
-            'business-button--icon--ball': icon && !label,
+          className={cs('telia-button-icon', {
+            'telia-button-icon--right': iconRight,
+            'telia-button-icon--ball': icon && !label,
+            'telia-button-icon--compact': compact,
           })}
         />
       )}

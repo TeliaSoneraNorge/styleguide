@@ -1,6 +1,6 @@
 @import '../../colors.pcss';
 
-.business-button {
+.telia-button {
   background-color: var(--core-purple);
   border: none;
   border-radius: 2rem;
@@ -22,7 +22,12 @@
     box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
   }
 
-  &--icon {
+  &--compact {
+    padding: 0.5rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  &-icon {
     height: 1rem;
     width: 1rem;
     transform: translateX(-50%);
@@ -35,6 +40,11 @@
 
     &--ball {
       transform: none;
+    }
+
+    &--compact {
+      height: 0.875rem;
+      width: 0.875rem;
     }
   }
 
@@ -218,9 +228,5 @@
       cursor: default;
       disabled: true;
     }
-  }
-
-  &--iconRight {
-    flex-direction: row-reverse;
   }
 }

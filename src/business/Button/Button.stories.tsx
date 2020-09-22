@@ -32,8 +32,8 @@ export const ButtonPrimary = () => (
     <h3>Button with link </h3>
     <Button label="Button" href="https://en.wikipedia.org/wiki/Success" />
     <br />
-    <h3>Button with custom style</h3>
-    <Button label="Button" />
+    <h3>Compact button</h3>
+    <Button label="Button" icon="add" compact={true} />
     <br />
     <h3>Button with no parameters</h3>
     <Button />
