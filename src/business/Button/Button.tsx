@@ -2,10 +2,10 @@ import React from 'react';
 import cs from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon';
 
-type ButtonType = 'primary' | 'primary-text' | 'secondary' | 'secondary-text' | 'ghost' | 'positive' | 'negative';
+type ButtonKind = 'primary' | 'primary-text' | 'secondary' | 'secondary-text' | 'ghost' | 'positive' | 'negative';
 
 type ButtonProps = {
-  type?: ButtonType;
+  kind?: ButtonKind;
   label?: string;
   icon?: IconDefinition;
   onClick?: React.MouseEventHandler;
@@ -16,15 +16,15 @@ type ButtonProps = {
 };
 
 export const Button = (props: ButtonProps) => {
-  const { type = 'primary', label, href, onClick, icon, iconRight, disabled = false, compact } = props;
+  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, compact } = props;
   const Tag: any = href ? 'a' : 'button';
 
   return (
     <Tag
-      className={cs('telia-button', `telia-button--${type}`, {
+      className={cs('telia-button', `telia-button--${kind}`, {
         'telia-button--iconRight': iconRight,
         'telia-button--ball': icon && !label,
-        [`telia-button--${type}--disabled`]: href && disabled,
+        [`telia-button--${kind}--disabled`]: href && disabled,
         'telia-button--compact': compact,
       })}
       href={href ? href : undefined}
