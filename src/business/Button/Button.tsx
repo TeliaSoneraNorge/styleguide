@@ -24,6 +24,7 @@ export const Button = (props: ButtonProps) => {
       className={cs('telia-button', `telia-button--${type}`, {
         'telia-button--iconRight': iconRight,
         'telia-button--ball': icon && !label,
+        [`telia-button--${type}--disabled`]: href && disabled,
         'telia-button--compact': compact,
       })}
       href={href ? href : undefined}

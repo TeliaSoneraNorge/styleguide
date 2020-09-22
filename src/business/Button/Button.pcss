@@ -10,7 +10,7 @@
   font-family: 'Helvetica Neue';
   font-size: 1rem;
   letter-spacing: 0.05rem;
-  line-height: 1;
+  line-height: 1.25;
   width: fit-content;
   padding: 0.75rem 1.5rem;
   position: relative;
@@ -67,11 +67,13 @@
       background-color: var(--core-purple-700);
     }
 
+    &--disabled,
     &:disabled {
       background-color: var(--grey-200);
       color: var(--grey-300);
       cursor: default;
       disabled: true;
+      pointer-events: none;
     }
   }
 

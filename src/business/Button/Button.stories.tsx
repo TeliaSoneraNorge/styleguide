@@ -33,7 +33,7 @@ export const ButtonPrimary = () => (
     <Button label="Button" href="https://en.wikipedia.org/wiki/Success" />
     <br />
     <h3>Compact button</h3>
-    <Button label="Button" icon="add" compact={true} />
+    <Button label="Button" compact={true} />
     <br />
     <h3>Button with no parameters</h3>
     <Button />
@@ -54,6 +54,10 @@ export const ButtonPrimaryText = () => (
     <br />
     <h3>Button ball (with icon and without label)</h3>
     <Button type={'primary-text'} icon={'add'} />
+    <br />
+    <h3>Compact button</h3>
+    <Button type={'primary-text'} label="Button" compact={true} />
+    <br />
   </div>
 );
 
@@ -70,6 +74,9 @@ export const ButtonSecondary = () => (
     <br />
     <h3>Button ball (with icon and without label)</h3>
     <Button type={'secondary'} icon={'add'} />
+    <br />
+    <h3>Compact button</h3>
+    <Button type={'secondary'} label="Button" compact={true} />
   </div>
 );
 
