@@ -26,7 +26,7 @@ export const Default = ({}) => {
       </div>
 
       <div style={{ paddingRight: '1rem' }}>
-        <h3>Ancor</h3>
+        <h3>Anchor</h3>
         <Avatar text="HG" href="my/path" onClick={action('Anchor avatar with text')} />
         <Avatar icon="abroad" href="my/path" onClick={action('Anchor avatar with icon')} />
         <Avatar img={images.hero1} href="my/path" onClick={action('Anchor avatar with image')} alt="user" />
@@ -52,7 +52,7 @@ export const Compact = ({}) => {
       </div>
 
       <div style={{ paddingRight: '1rem' }}>
-        <h3>Ancor</h3>
+        <h3>Anchor</h3>
         <Avatar text="HG" href="my/path" onClick={action('Anchor avatar with text')} compact={true} />
         <Avatar icon="abroad" href="my/path" onClick={action('Anchor avatar with icon')} compact={true} />
         <Avatar
