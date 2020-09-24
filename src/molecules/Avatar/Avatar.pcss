@@ -1,0 +1,50 @@
+.telia-avatar {
+  font-size: 16px;
+  background-color: #f2f2f2;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 4px;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+
+  &-image {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+
+    /*
+    Not supported in ie11.
+    The image will appear a bit squashed
+    */
+    object-fit: cover;
+  }
+}
+
+button.telia-avatar {
+  padding: 0;
+  maringe: 0;
+  border: 0;
+  cursor: pointer;
+}
+
+a.telia-avatar {
+  text-decoration: none;
+  color: var(--black);
+}
+
+.telia-avatar--compact {
+  width: 2rem;
+  height: 2rem;
+  font-size: 14px;
+  .Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

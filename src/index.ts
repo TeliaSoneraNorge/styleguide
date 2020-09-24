@@ -45,6 +45,7 @@ export { default as AccordionList } from './molecules/AccordionList';
 export { StatefulAccordionList } from './molecules/AccordionList';
 export { default as Alert } from './molecules/Alert';
 export { StatefulAlert } from './molecules/Alert';
+export { Avatar } from './molecules/Avatar';
 export { default as BoxGrid } from './molecules/BoxGrid';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign';
