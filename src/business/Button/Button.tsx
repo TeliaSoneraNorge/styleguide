@@ -26,6 +26,7 @@ export const Button = (props: ButtonProps) => {
         'telia-button--ball': icon && !label,
         [`telia-button--${kind}--disabled`]: href && disabled,
         'telia-button--compact': compact,
+        'telia-button--ball--compact': compact && icon && !label,
       })}
       href={href ? href : undefined}
       onClick={onClick}
