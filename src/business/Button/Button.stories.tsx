@@ -56,7 +56,7 @@ export const ButtonPrimaryText = () => (
     <Button kind={'primary-text'} icon={'add'} />
     <br />
     <h3>Compact button</h3>
-    <Button kind={'primary-text'} label="Button" compact={true} />
+    <Button kind={'primary-text'} label="Button" size="compact" />
     <br />
   </div>
 );
@@ -79,7 +79,7 @@ export const ButtonSecondary = () => (
     <Button kind={'secondary'} icon={'add'} />
     <br />
     <h3>Compact button</h3>
-    <Button kind={'secondary'} label="Button" compact={true} />
+    <Button kind={'secondary'} label="Button" size="compact" />
   </div>
 );
 
@@ -162,18 +162,18 @@ export const ButtonNegative = () => (
 export const ButtonCompact = () => (
   <div>
     <h3>Normal state</h3>
-    <Button label="Button" compact={true} />
+    <Button label="Button" size="compact" />
     <br />
     <h3>Disabled state</h3>
-    <Button label="Button" disabled={true} compact={true} />
+    <Button label="Button" disabled={true} size="compact" />
     <br />
     <h3>Button with icon</h3>
-    <Button label="Button" icon={'add'} compact={true} />
+    <Button label="Button" icon={'add'} size="compact" />
     <br />
     <h3>Button with icon right</h3>
-    <Button label="Button" icon={'arrow-right'} iconRight={true} compact={true} />
+    <Button label="Button" icon={'arrow-right'} iconRight={true} size="compact" />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button icon={'add'} compact={true} />
+    <Button icon={'add'} size="compact" />
   </div>
 );

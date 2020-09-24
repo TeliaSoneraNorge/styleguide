@@ -12,11 +12,11 @@ type ButtonProps = {
   href?: string;
   disabled?: boolean;
   iconRight?: boolean;
-  compact?: boolean;
+  size?: 'compact';
 };
 
 export const Button = (props: ButtonProps) => {
-  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, compact } = props;
+  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size } = props;
   const Tag: any = href ? 'a' : 'button';
 
   return (
@@ -25,8 +25,8 @@ export const Button = (props: ButtonProps) => {
         'telia-button--iconRight': iconRight,
         'telia-button--ball': icon && !label,
         [`telia-button--${kind}--disabled`]: href && disabled,
-        'telia-button--compact': compact,
-        'telia-button--ball--compact': compact && icon && !label,
+        'telia-button--compact': !!size,
+        'telia-button--ball--compact': !!size && icon && !label,
       })}
       href={href ? href : undefined}
       onClick={onClick}
@@ -39,7 +39,7 @@ export const Button = (props: ButtonProps) => {
           className={cs('telia-button-icon', {
             'telia-button-icon--right': iconRight,
             'telia-button-icon--ball': icon && !label,
-            'telia-button-icon--compact': compact,
+            'telia-button-icon--compact': !!size,
           })}
         />
       )}
