@@ -26,20 +26,20 @@ type Props = {
    * Terminology from the desginers of the Design System
    */
   compact?: boolean;
-} & (
-  | {
-      onClick?: () => void;
-    }
-  | {
-      href: string;
-      onClick?: () => void;
-    });
+
+  /**
+   * Provided an href the avatar vil render as an ancor tag
+   */
+  href: string;
+
+  onClick?: () => void;
+};
 
 export const Avatar = (props: Props) => {
-  const Tag = 'href' in props ? 'a' : props.onClick ? 'button' : 'div';
+  const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
 
   const handleClick = (e: React.SyntheticEvent) => {
-    if ('href' in props && props.onClick) {
+    if (props.href && props.onClick) {
       e.preventDefault();
     }
     if (props.onClick) {
@@ -50,7 +50,7 @@ export const Avatar = (props: Props) => {
   return (
     <Tag
       className={cn('telia-avatar', { 'telia-avatar--compact': props.compact })}
-      href={'href' in props ? props.href : undefined}
+      href={props.href}
       onClick={handleClick}
     >
       {props.img ? (
