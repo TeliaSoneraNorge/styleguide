@@ -25,18 +25,19 @@ type Props = {
    * Makes the avatar smaller.
    * Terminology from the desginers of the Design System
    */
-  compact?: boolean;
+  size?: 'compact' | 'default';
 
   /**
    * Provided an href the avatar vil render as an ancor tag
    */
-  href: string;
+  href?: string;
 
   onClick?: () => void;
 };
 
 export const Avatar = (props: Props) => {
   const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
+  const size = props.size ? props.size : 'default';
 
   const handleClick = (e: React.SyntheticEvent) => {
     if (props.href && props.onClick) {
@@ -48,11 +49,7 @@ export const Avatar = (props: Props) => {
   };
 
   return (
-    <Tag
-      className={cn('telia-avatar', { 'telia-avatar--compact': props.compact })}
-      href={props.href}
-      onClick={handleClick}
-    >
+    <Tag className={cn('telia-avatar', `telia-avatar--${size}`)} href={props.href} onClick={handleClick}>
       {props.img ? (
         <img className="telia-avatar-image" src={props.img} alt={props.alt} />
       ) : props.text ? (
