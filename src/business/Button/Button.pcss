@@ -31,33 +31,14 @@
     height: 1.125rem;
     width: 1.125rem;
     transform: translateX(-50%);
-
-    &--right {
-      height: 1.125rem;
-      width: 1.125rem;
-      transform: translateX(50%);
-    }
-
-    &--ball {
-      transform: none;
-    }
-
-    &--compact {
-      height: 0.875rem;
-      width: 0.875rem;
-    }
-  }
-
-  &--iconRight {
-    flex-direction: row-reverse;
   }
 
   &--ball {
     padding: 0.81rem;
+  }
 
-    &--compact {
-      padding: 0.64rem;
-    }
+  &--iconRight {
+    flex-direction: row-reverse;
   }
 
   &--primary {
@@ -69,15 +50,6 @@
       outline: none;
       box-shadow: none;
       background-color: var(--core-purple-700);
-    }
-
-    &--disabled,
-    &:disabled {
-      background-color: var(--grey-200);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
-      pointer-events: none;
     }
   }
 
@@ -99,13 +71,6 @@
       box-shadow: none;
       background-color: var(--core-purple-200);
     }
-
-    &:disabled {
-      background-color: var(--white);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
-    }
   }
 
   &--secondary {
@@ -121,13 +86,6 @@
       outline: none;
       box-shadow: none;
       background-color: var(--grey-400);
-    }
-
-    &:disabled {
-      background-color: var(--grey-100);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
     }
   }
 
@@ -148,13 +106,6 @@
       background-color: var(--grey-300);
       outline: none;
       box-shadow: none;
-    }
-
-    &:disabled {
-      background-color: var(--white);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
     }
   }
 
@@ -180,14 +131,6 @@
       box-shadow: none;
       color: var(--white);
     }
-
-    &:disabled {
-      background-color: var(--white);
-      border-color: var(--grey-200);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
-    }
   }
 
   &--positive {
@@ -203,13 +146,6 @@
       background-color: var(--green-300);
       outline: none;
       box-shadow: none;
-    }
-
-    &:disabled {
-      background-color: var(--grey-200);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
     }
   }
 
@@ -227,12 +163,78 @@
       outline: none;
       box-shadow: none;
     }
-
-    &:disabled {
-      background-color: var(--grey-200);
-      color: var(--grey-300);
-      cursor: default;
-      disabled: true;
-    }
   }
+}
+
+.telia-button--primary.telia-button--disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--primary-text.telia-button--disabled {
+  background-color: var(--white);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--secondary.telia-button--disabled {
+  background-color: var(--grey-100);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--secondary-text.telia-button--disabled {
+  background-color: var(--white);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--ghost.telia-button--disabled {
+  background-color: var(--white);
+  border-color: var(--grey-200);
+  color: var(--grey-300);
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--positive.telia-button--disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--negative.telia-button--disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--ball.telia-button--compact {
+  padding: 0.64rem;
+}
+
+.telia-button--ball > .telia-button-icon {
+  transform: none;
+}
+
+.telia-button--compact > .telia-button-icon {
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+.telia-button--iconRight > .telia-button-icon {
+  transform: translateX(50%);
 }
