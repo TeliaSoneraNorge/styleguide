@@ -33,6 +33,7 @@ export const Default = ({}) => {
           <SideMenuFooter>
             <SideMenuItem label="Innstillinger" icon="settings" onClick={action('settings')} active={true} />
             <SideMenuItem label="Log ut" icon="logout" onClick={action('settings')} />
+            <SideMenuItem label="Helene Grini" avatar={{ text: 'HG' }} onClick={action('settings')} />
           </SideMenuFooter>
         </SideMenu>
         <h4>Try to change the viewport size in the storybook toolbar </h4>
