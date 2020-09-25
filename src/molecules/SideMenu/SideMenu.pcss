@@ -1,0 +1,103 @@
+.telia-side-menu {
+  background-color: #fbfbfb;
+  height: 100%;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+}
+
+.telia-side-menu-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  padding-left: 1.5rem;
+
+  &:hover {
+    background-color: #f2f2f2;
+  }
+  &-icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+}
+
+a.telia-side-menu-item {
+  text-decoration: none;
+  color: var(--black);
+  &--active {
+    color: #990ae3;
+  }
+}
+button.telia-side-menu-item {
+  background-color: #fbfbfb;
+  border: none;
+  cursor: pointer;
+  &--active {
+    background-color: #f2f2f2;
+  }
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+.telia-side-menu-header {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid #f2f2f2;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: start;
+  background-color: #fbfbfb;
+
+  &-label {
+    font-size: 18px;
+  }
+  &--compact {
+    display: none;
+  }
+}
+button.telia-side-menu-header--default {
+  background-color: #fbfbfb;
+  border: none;
+  border-bottom: 1px solid #f2f2f2;
+  &:hover {
+    background-color: #f2f2f2;
+  }
+  &:focus {
+    box-shadow: none;
+    outline: none;
+  }
+}
+
+.telia-side-menu-footer {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+@media (max-width: 840px) {
+  .telia-side-menu {
+    min-width: fit-content;
+    max-width: fit-content;
+  }
+  .telia-side-menu-item {
+    padding: 1rem;
+    &-label {
+      display: none;
+    }
+    &-icon {
+      margin: 0;
+    }
+  }
+
+  .telia-side-menu-header--default {
+    display: none;
+  }
+  .telia-side-menu-header--compact {
+    display: block;
+    padding: 1.25rem 0.5rem;
+  }
+}
