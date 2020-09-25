@@ -25,7 +25,7 @@ export const SideMenuItem: React.FC<Props> = props => {
     props.onClick();
   };
   return (
-    <>
+    <li>
       <div
         className={cn('telia-side-menu-item telia-side-menu-item--compact', {
           'telia-side-menu-item--active': props.active,
@@ -58,6 +58,6 @@ export const SideMenuItem: React.FC<Props> = props => {
         {props.icon && <Icon className="telia-side-menu-item-icon" icon={props.icon} />}
         <div className="telia-side-menu-item-label">{props.label}</div>
       </Tag>
-    </>
+    </li>
   );
 };

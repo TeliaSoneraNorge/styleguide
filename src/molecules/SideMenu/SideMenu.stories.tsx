@@ -12,7 +12,7 @@ export const Default = ({}) => {
   return (
     <>
       <div style={{ display: 'flex', height: '90vh' }}>
-        <SideMenu>
+        <SideMenu aria-labelledby="main_menu">
           <SideMenuHeader onClick={() => console.log('')} label="Hello world" labelCompact="HW" />
           <SideMenuItem label="Hjem" icon="home" onClick={() => setActive(0)} active={active === 0} href="/" />
           <SideMenuItem
