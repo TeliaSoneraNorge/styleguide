@@ -1,0 +1,240 @@
+@import '../../colors.pcss';
+
+.telia-button {
+  background-color: var(--core-purple);
+  border: none;
+  border-radius: 2rem;
+  color: var(--white);
+  cursor: pointer;
+  display: flex;
+  font-family: 'Helvetica Neue';
+  font-size: 1rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.25;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  position: relative;
+  text-decoration: none;
+  transition: background-color 0.15s, color 0.15s;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+
+  &--compact {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  &-icon {
+    height: 1.125rem;
+    width: 1.125rem;
+    transform: translateX(-50%);
+  }
+
+  &--ball {
+    padding: 0.81rem;
+  }
+
+  &--iconRight {
+    flex-direction: row-reverse;
+  }
+
+  &--primary {
+    &:hover {
+      background-color: var(--core-purple-600);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--core-purple-700);
+    }
+  }
+
+  &--primary-text {
+    background-color: transparent;
+    border-radius: 2rem;
+    color: var(--core-purple);
+
+    &:hover {
+      background-color: var(--core-purple-100);
+    }
+
+    &:focus {
+      background-color: var(--core-purple-100);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--core-purple-200);
+    }
+  }
+
+  &--secondary {
+    background-color: var(--grey-200);
+    border-radius: 2rem;
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--grey-300);
+    }
+
+    &:active {
+      outline: none;
+      box-shadow: none;
+      background-color: var(--grey-400);
+    }
+  }
+
+  &--secondary-text {
+    background-color: var(--white);
+    border-radius: 2rem;
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--grey-200);
+    }
+
+    &:focus {
+      background-color: var(--grey-200);
+    }
+
+    &:active {
+      background-color: var(--grey-300);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &--ghost {
+    background-color: var(--white);
+    border: 1px solid var(--core-purple);
+    border-radius: 2rem;
+    color: var(--core-purple);
+
+    &:hover {
+      background-color: var(--core-purple-500);
+      color: var(--white);
+    }
+
+    &:focus {
+      background-color: var(--core-purple-500);
+      color: var(--white);
+    }
+
+    &:active {
+      background-color: var(--core-purple-600);
+      outline: none;
+      box-shadow: none;
+      color: var(--white);
+    }
+  }
+
+  &--positive {
+    background-color: var(--green-500);
+    border-radius: 2rem;
+    color: var(--black);
+
+    &:hover {
+      background-color: var(--green-400);
+    }
+
+    &:active {
+      background-color: var(--green-300);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &--negative {
+    background-color: var(--red-500);
+    color: var(--white);
+    border-radius: 2rem;
+
+    &:hover {
+      background-color: var(--red-400);
+    }
+
+    &:active {
+      background-color: var(--red-300);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.telia-button--primary.telia-button--disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--primary-text.telia-button--disabled {
+  background-color: var(--white);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--secondary.telia-button--disabled {
+  background-color: var(--grey-100);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--secondary-text.telia-button--disabled {
+  background-color: var(--white);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--ghost.telia-button--disabled {
+  background-color: var(--white);
+  border-color: var(--grey-200);
+  color: var(--grey-300);
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--positive.telia-button--disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--negative.telia-button--disabled {
+  background-color: var(--grey-200);
+  color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-button--ball.telia-button--compact {
+  padding: 0.64rem;
+}
+
+.telia-button--ball > .telia-button-icon {
+  transform: none;
+}
+
+.telia-button--compact > .telia-button-icon {
+  height: 0.875rem;
+  width: 0.875rem;
+}
+
+.telia-button--iconRight > .telia-button-icon {
+  transform: translateX(50%);
+}
