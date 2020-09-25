@@ -1,10 +1,14 @@
 .telia-side-menu {
-  background-color: #fbfbfb;
-  height: 100%;
+  background-color: var(--grey-100);
   width: 200px;
-  display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
+  ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+    padding: 0;
+    margin: 0;
+  }
 }
 
 .telia-side-menu-item {
@@ -31,12 +35,12 @@
       background-color: transparent;
     }
     &:hover {
-      background-color: #f2f2f2;
+      background-color: var(--light-grey);
     }
     &:focus {
       box-shadow: none;
       outline: none;
-      background-color: #f2f2f2;
+      background-color: var(--light-grey);
     }
   }
 }
@@ -45,41 +49,41 @@ a.telia-side-menu-item {
   text-decoration: none;
   color: var(--black);
   &--active {
-    color: #990ae3;
+    color: var(--core-purple-500);
   }
   &:hover {
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
   &:focus {
     box-shadow: none;
     outline: none;
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
 }
 
 button.telia-side-menu-item {
-  background-color: #fbfbfb;
+  background-color: var(--grey-100);
   border: none;
   cursor: pointer;
   &--active {
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
   &:hover {
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
   &:focus {
     box-shadow: none;
     outline: none;
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
 }
 .telia-side-menu-header {
   padding: 1.25rem 1rem;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid var(--light-grey);
   margin-bottom: 1rem;
   width: 100%;
   text-align: start;
-  background-color: #fbfbfb;
+  background-color: var(--grey-100);
 
   &-label {
     font-size: 18px;
@@ -89,20 +93,21 @@ button.telia-side-menu-item {
   }
 }
 button.telia-side-menu-header--default {
-  background-color: #fbfbfb;
+  background-color: var(--grey-100);
   border: none;
-  border-bottom: 1px solid #f2f2f2;
+  border-bottom: 1px solid var(--light-grey);
   &:hover {
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
   &:focus {
     box-shadow: none;
     outline: none;
-    background-color: #f2f2f2;
+    background-color: var(--light-grey);
   }
 }
 
-.telia-side-menu-footer {
+.telia-side-menu-footer,
+.telia-side-menu-footer > ul {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
