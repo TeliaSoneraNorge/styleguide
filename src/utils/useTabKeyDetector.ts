@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 
 /**
  * Detect usage of tab keys and add class .user-is-tabbing to the ref.
@@ -24,7 +24,10 @@ export function useTabKeyDetector() {
     }
   }
 
-  window.addEventListener('keydown', tabKeyHandler);
+  useEffect(() => {
+    window.addEventListener('keydown', tabKeyHandler);
+    return () => window.removeEventListener('keydown', tabKeyHandler);
+  }, []);
 
   return ref;
 }
