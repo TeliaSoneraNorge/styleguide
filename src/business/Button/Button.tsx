@@ -60,6 +60,7 @@ export const Button = (props: ButtonProps) => {
       })}
       href={href}
       onClick={handleClick}
+      disabled={props.disabled}
       type="button"
       ref={ref}
     >
