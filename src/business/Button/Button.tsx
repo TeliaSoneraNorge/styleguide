@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import cs from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon';
-
+import { useTabKeyDetector } from '../../utils/useTabKeyDetector';
 type ButtonKind = 'primary' | 'primary-text' | 'secondary' | 'secondary-text' | 'ghost' | 'positive' | 'negative';
 
 type ButtonProps = {
@@ -40,6 +40,7 @@ type ButtonProps = {
 export const Button = (props: ButtonProps) => {
   const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size } = props;
   const Tag = href ? 'a' : 'button';
+  const ref = useTabKeyDetector();
 
   const handleClick = (e: React.SyntheticEvent) => {
     if (href && onClick) {
@@ -60,6 +61,7 @@ export const Button = (props: ButtonProps) => {
       href={href}
       onClick={handleClick}
       type="button"
+      ref={ref}
     >
       {icon && <Icon icon={icon} className="telia-button-icon" />}
       {label}
