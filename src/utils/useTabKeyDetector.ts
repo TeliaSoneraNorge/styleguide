@@ -4,11 +4,6 @@ import { useRef } from 'react';
  * Detect usage of tab keys and add class .user-is-tabbing to the ref.
  */
 
-// export const useTabKeyDetector = () => {
-//   const ref = useRef(null);
-//   return useInnerTabKeyDetector(ref);
-// };
-
 export function useTabKeyDetector() {
   const ref = useRef<any>(null);
   function mouseDownHandler() {
