@@ -1,11 +1,6 @@
 import React, { useState, useRef } from 'react';
 import cs from 'classnames';
 
-const colors = {
-  white: '#ffffff',
-  greyDark: '#a0a0a0',
-};
-
 interface Props {
   checked: boolean;
   disabled?: boolean;
@@ -67,28 +62,14 @@ export const Toggle: React.FC<Props> = props => {
       onKeyUp={handleKeyUp}
       tabIndex={props.disabled ? -1 : 0}
     >
-      <div className="Business-Toggle-track">
-        <svg xmlns="http://www.w3.org/2000/svg" height="16px" width="16px" viewBox="0 0 18 18">
-          <path
-            id="check"
-            d="M 2 13 L 9 13 L 9 2"
-            stroke={props.disabled && !props.checked ? colors.greyDark : colors.white}
-            strokeLinejoin="round"
-            strokeLinecap="round"
-            fill="transparent"
-            transform="rotate(45 9 11)"
-            strokeWidth="3"
-          />
-        </svg>
-        <svg xmlns="http://www.w3.org/2000/svg" width="16px" height="16px" viewBox="0 0 32 32">
-          <path
-            fill={props.disabled ? colors.greyDark : colors.white}
-            d="M8.87 6.492L16 13.623l7.13-7.13a1.68 1.68 0 0 1 2.378 2.376L18.377 16l7.13 7.13a1.68 1.68 0 0 1-2.376 2.378L16 18.377l-7.13 7.13a1.68 1.68 0 0 1-2.378-2.376L13.623 16l-7.13-7.13a1.68 1.68 0 0 1 2.376-2.378z"
-            stroke={props.disabled && !props.checked ? colors.greyDark : colors.white}
-          />
-        </svg>
+      <div className="Business-Toggle-track"></div>
+      <div className="Business-Toggle-thumb">
+        <div
+          className={cs({
+            'Business-Toggle-thumb-indicator': props.checked,
+          })}
+        />
       </div>
-      <div className="Business-Toggle-thumb" />
 
       <input
         {...props}
