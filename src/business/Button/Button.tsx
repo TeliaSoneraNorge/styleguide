@@ -40,7 +40,6 @@ type ButtonProps = {
 export const Button = (props: ButtonProps) => {
   const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size } = props;
   const Tag = href ? 'a' : 'button';
-  //   useTabKeyDetection();
 
   const handleClick = (e: React.SyntheticEvent) => {
     if (href && onClick) {
