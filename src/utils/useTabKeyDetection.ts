@@ -12,7 +12,7 @@ import { useEffect } from 'react';
  * to apply focus style again.
  *
  * For yout application to supprt this,
- * call the hook og render the component, at the root of
+ * call the hook or render the component, at the root of
  * you application.
  */
 export function useTabKeyDetection() {
