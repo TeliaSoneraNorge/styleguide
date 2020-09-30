@@ -16,21 +16,20 @@ import { useEffect } from 'react';
  * you application.
  */
 export function useTabKeyDetection() {
-  function mouseDownHandler() {
-    document.body.classList.add('telia-hide-focus');
-    window.removeEventListener('mousedown', mouseDownHandler);
-    window.addEventListener('keydown', tabKeyHandler);
-  }
-
-  function tabKeyHandler(e: KeyboardEvent) {
-    if (e.keyCode === 9) {
-      document.body.classList.remove('telia-hide-focus');
-      window.removeEventListener('keydown', tabKeyHandler);
-      window.addEventListener('mousedown', mouseDownHandler);
-    }
-  }
-
   useEffect(() => {
+    function mouseDownHandler() {
+      document.body.classList.add('telia-hide-focus');
+      window.removeEventListener('mousedown', mouseDownHandler);
+      window.addEventListener('keydown', tabKeyHandler);
+    }
+
+    function tabKeyHandler(e: KeyboardEvent) {
+      if (e.keyCode === 9) {
+        document.body.classList.remove('telia-hide-focus');
+        window.removeEventListener('keydown', tabKeyHandler);
+        window.addEventListener('mousedown', mouseDownHandler);
+      }
+    }
     document.body.classList.add('telia-hide-focus');
     window.addEventListener('keydown', tabKeyHandler);
     return () => {
