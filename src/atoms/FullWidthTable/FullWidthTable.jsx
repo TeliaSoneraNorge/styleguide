@@ -62,12 +62,11 @@ const TFoot = ({ children, white, className, ...rest }) => (
 );
 FullWidthTable.TFoot = TFoot;
 
-const Tr = ({ children, onClick, className, ...rest }) => (
+const Tr = ({ children, className, ...rest }) => (
   <tr
     className={classnames('full-width-table__row', {
       [className]: className,
     })}
-    onClick={onClick ? onClick : null}
     {...rest}
   >
     {children}

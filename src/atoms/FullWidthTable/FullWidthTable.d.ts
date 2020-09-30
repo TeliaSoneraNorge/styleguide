@@ -1,17 +1,10 @@
 import * as React from 'react';
 import { UseThSortable } from './useThSortable';
-import { MouseEventHandler } from 'react';
 
-declare type CommonProps = {
-  className?: string;
-};
+declare type CommonProps = React.HTMLAttributes<HTMLElement>;
 
 declare type FullWidthTableProps = CommonProps & {
   clickable?: boolean;
-};
-
-declare type TrProps = CommonProps & {
-  onClick?: MouseEventHandler;
 };
 
 declare type ThSortableProps = CommonProps & {
@@ -29,7 +22,7 @@ declare const FullWidthTable: React.FC<FullWidthTableProps> & {
   THead: React.FC<CommonProps>;
   TBody: React.FC<CommonProps>;
   Th: React.FC<CommonProps>;
-  Tr: React.FC<TrProps>;
+  Tr: React.FC<CommonProps>;
   Td: React.FC<CommonProps>;
 
   ThSortable: React.FC<ThSortableProps>;
