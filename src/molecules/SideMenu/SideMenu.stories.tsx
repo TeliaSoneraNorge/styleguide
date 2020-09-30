@@ -9,6 +9,7 @@ export default {
 
 export const Default = ({}) => {
   const [active, setActive] = useState(0);
+
   return (
     <>
       <div style={{ display: 'flex', height: '90vh' }}>
@@ -33,9 +34,9 @@ export const Default = ({}) => {
           </SideMenuTop>
 
           <SideMenuBottom>
-            <SideMenuItem label="Innstillinger" icon="settings" onClick={action('settings')} active={true} />
-            <SideMenuItem label="Log ut" icon="logout" onClick={action('settings')} />
-            <SideMenuItem label="Helene Grini" avatar={{ text: 'HG' }} onClick={action('settings')} />
+            <SideMenuItem label="Innstillinger" icon="settings" onClick={() => setActive(3)} active={active === 3} />
+            <SideMenuItem label="Log ut" icon="logout" onClick={() => setActive(4)} active={active === 4} />
+            <SideMenuItem label="Helene Grini" avatar={{ text: 'HG' }} onClick={action('user')} />
           </SideMenuBottom>
         </SideMenu>
         <h4>Try to change the viewport size in the storybook toolbar </h4>
