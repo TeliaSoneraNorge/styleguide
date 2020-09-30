@@ -11,8 +11,7 @@ const codeSnippets = {
   componentLibraryIconsImport: `import AllIcons from '@telia/styleguide/assets/allicons/AllIcons';`,
   componentLibraryIconsInsert: `<AllIcons />`,
   componentLibraryIconsExample: `<SvgIcon iconName="ico_heart" color="purple" />`,
-  TabKeyDetection: 'ReactDOM.render(<><TabKeyDetection/><App /> </>, document.getElementById("root"));',
-  useTabKeyDetection: 'const App = () => { useTabKeyDetection(); return ...}',
+  enableTabKeyDetection: 'enableTabKeyDetection(); \n ReactDOM.render(<App />, \n document.getElementById("root"));',
 };
 
 export const DownloadAndInstall = () => (
@@ -72,17 +71,13 @@ export const DownloadAndInstall = () => (
     <div className="container container--small container--extra-margin-bottom">
       <h2 className="heading heading--level-2">Tab detection</h2>
       <p className="paragraph">
-        To enable focus style only when user is tabbing either add the TabKeyDetection component somewhere at the root
-        of your project
+        To enable focus style only when user is tabbing call the enableTabKeyDetection at the root of your project. Eg.
+        in
+        <code> index.tsx</code>
       </p>
-      <CodeSnippet code={codeSnippets.TabKeyDetection} language="javascript" />
+      <CodeSnippet code={codeSnippets.enableTabKeyDetection} language="javascript" />
       <br />
-      <p className="paragraph">Or call the hook in your root component</p>
-      <CodeSnippet code={codeSnippets.useTabKeyDetection} language="javascript" />
-      <br />
-      <p className="paragraph">
-        To test in development call the hook or render the TabKeyDetection component in your component
-      </p>
+      <p className="paragraph">To test in development call the fucntion in your component</p>
     </div>
   </div>
 );
