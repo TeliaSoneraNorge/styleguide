@@ -10,3 +10,15 @@ export const SideMenu: React.FC<Props> = props => {
     </nav>
   );
 };
+
+export const SideMenuTop: React.FC = props => (
+  <li className="telia-side-menu-top">
+    <ul>{props.children}</ul>
+  </li>
+);
+
+export const SideMenuBottom: React.FC = props => (
+  <li className="telia-side-menu-bottom">
+    <ul>{props.children}</ul>
+  </li>
+);

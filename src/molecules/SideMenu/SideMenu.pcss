@@ -8,11 +8,43 @@
     overflow-y: scroll;
     padding: 0;
     margin: 0;
-    li:not(.telia-side-menu-footer) {
+    li:first-child {
       padding: 0.25rem;
     }
   }
 }
+
+.telia-side-menu-header {
+  padding: 1.25rem 1rem;
+  border-bottom: 1px solid var(--light-grey);
+  paddin-top: 0.25rem;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: start;
+  background-color: var(--grey-100);
+
+  &-label {
+    font-size: 18px;
+  }
+  &--compact {
+    display: none;
+  }
+}
+button.telia-side-menu-header--default {
+  background-color: var(--grey-100);
+  border: none;
+  cursor: pointer;
+  border-bottom: 1px solid var(--light-grey);
+  &:hover {
+    background-color: var(--light-grey);
+    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+}
+
 .telia-side-menu-item {
   width: 100%;
   display: flex;
@@ -36,82 +68,72 @@
   &--compact {
     display: none;
   }
+}
 
+.telia-side-menu-top,
+.telia-side-menu-top > ul {
+  li {
+    padding: 0.25rem;
+  }
   .telia-button {
-    &--secondary-text,
-    &--primary-text {
-      background-color: transparent;
-      &:focus {
-        background-color: transparent;
-      }
+    background-color: transparent;
+    &:hover {
+      background-color: var(--core-purple-100);
+    }
+  }
+  .telia-side-menu-item:not(.telia-side-menu-item--compact) {
+    text-decoration: none;
+    color: var(--black);
+    &.telia-side-menu-item--active {
+      color: var(--core-purple-500);
     }
     &:hover {
-      background-color: var(--light-grey);
+      background-color: var(--core-purple-100);
+      box-shadow: 0 0 0 2px var(--core-purple-100), 0 0 0 4px var(--core-purple-100);
     }
+    /* &:active {
+      background-color: var(--core-purple-200);
+      box-shadow: 0 0 0 2px var(--grey-300), 0 0 0 4px var(--core-purple-200);
+    } */
   }
 }
 
-a.telia-side-menu-item {
-  text-decoration: none;
-  color: var(--black);
-  &--active {
-    color: var(--core-purple-500);
+.telia-side-menu-bottom,
+.telia-side-menu-bottom > ul {
+  li {
+    padding: 0.25rem;
   }
-  &:hover {
-    background-color: var(--light-grey);
-    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
-  }
-}
-
-button.telia-side-menu-item {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  &--active {
-    background-color: var(--light-grey);
-    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
-  }
-  &:hover {
-    background-color: var(--light-grey);
-    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
-  }
-}
-.telia-side-menu-header {
-  padding: 1.25rem 1rem;
-  border-bottom: 1px solid var(--light-grey);
-  paddin-top: 0.25rem;
-  margin-bottom: 1rem;
-  width: 100%;
-  text-align: start;
-  background-color: var(--grey-100);
-
-  &-label {
-    font-size: 18px;
-  }
-  &--compact {
-    display: none;
-  }
-}
-button.telia-side-menu-header--default {
-  background-color: var(--grey-100);
-  border: none;
-  border-bottom: 1px solid var(--light-grey);
-  &:hover {
-    background-color: var(--light-grey);
-  }
-  &:focus {
-    outline: none;
-    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
-  }
-}
-
-.telia-side-menu-footer,
-.telia-side-menu-footer > ul {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   padding-bottom: 0.25rem;
+  .telia-button {
+    &--secondary-text {
+      background-color: transparent;
+    }
+    &:hover {
+      background-color: var(--light-grey);
+    }
+  }
+  .telia-side-menu-item:not(.telia-side-menu-item--compact) {
+    font-size: 16px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    &.telia-side-menu-item--active {
+      background-color: var(--light-grey);
+      box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
+    }
+    &:hover {
+      background-color: var(--light-grey);
+      box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
+    }
+    /* &:active {
+      background-color: var(--grey-300);
+      box-shadow: 0 0 0 2px var(--grey-300), 0 0 0 4px var(--grey-300);
+    } */
+  }
 }
 
 @media (max-width: 840px) {
