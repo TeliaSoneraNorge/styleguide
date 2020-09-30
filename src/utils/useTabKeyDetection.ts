@@ -24,7 +24,7 @@ export function useTabKeyDetection() {
     }
 
     function tabKeyHandler(e: KeyboardEvent) {
-      if (e.keyCode === 9) {
+      if (e.key === 'Tab') {
         document.body.classList.remove('telia-hide-focus');
         window.removeEventListener('keydown', tabKeyHandler);
         window.addEventListener('mousedown', mouseDownHandler);
