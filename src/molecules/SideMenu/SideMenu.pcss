@@ -8,15 +8,22 @@
     overflow-y: scroll;
     padding: 0;
     margin: 0;
+    li:not(.telia-side-menu-footer) {
+      padding: 0.25rem;
+    }
   }
 }
-
 .telia-side-menu-item {
   width: 100%;
   display: flex;
   align-items: center;
   padding: 1rem;
   padding-left: 1.5rem;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
 
   &-avatar {
     transform: translateX(calc(-25% + 2px));
@@ -31,15 +38,14 @@
   }
 
   .telia-button {
-    &--secondary-text {
+    &--secondary-text,
+    &--primary-text {
       background-color: transparent;
+      &:focus {
+        background-color: transparent;
+      }
     }
     &:hover {
-      background-color: var(--light-grey);
-    }
-    &:focus {
-      box-shadow: none;
-      outline: none;
       background-color: var(--light-grey);
     }
   }
@@ -53,33 +59,27 @@ a.telia-side-menu-item {
   }
   &:hover {
     background-color: var(--light-grey);
-  }
-  &:focus {
-    box-shadow: none;
-    outline: none;
-    background-color: var(--light-grey);
+    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
   }
 }
 
 button.telia-side-menu-item {
-  background-color: var(--grey-100);
+  background-color: transparent;
   border: none;
   cursor: pointer;
   &--active {
     background-color: var(--light-grey);
+    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
   }
   &:hover {
     background-color: var(--light-grey);
-  }
-  &:focus {
-    box-shadow: none;
-    outline: none;
-    background-color: var(--light-grey);
+    box-shadow: 0 0 0 2px var(--light-grey), 0 0 0 4px var(--light-grey);
   }
 }
 .telia-side-menu-header {
   padding: 1.25rem 1rem;
   border-bottom: 1px solid var(--light-grey);
+  paddin-top: 0.25rem;
   margin-bottom: 1rem;
   width: 100%;
   text-align: start;
@@ -100,9 +100,8 @@ button.telia-side-menu-header--default {
     background-color: var(--light-grey);
   }
   &:focus {
-    box-shadow: none;
     outline: none;
-    background-color: var(--light-grey);
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
   }
 }
 
@@ -112,6 +111,7 @@ button.telia-side-menu-header--default {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  padding-bottom: 0.25rem;
 }
 
 @media (max-width: 840px) {
