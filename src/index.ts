@@ -77,7 +77,7 @@ export {
   DropdownToggle,
   DropdownSearchToggle,
 } from './molecules/Dropdown';
-export { SideMenu, SideMenuItem, SideMenuFooter, SideMenuHeader } from './molecules/SideMenu';
+export { SideMenu, SideMenuItem, SideMenuBottom, SideMenuTop, SideMenuHeader } from './molecules/SideMenu';
 export { default as PageFooter } from './molecules/PageFooter';
 export { default as PageHeader } from './molecules/PageHeader';
 export { default as PersonBox } from './molecules/PersonBox';
