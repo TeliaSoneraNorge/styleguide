@@ -69,6 +69,7 @@ export { default as Image } from './molecules/Image';
 export { default as ListWithImage } from './molecules/ListWithImage';
 export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';
 export { ModalDivider, ModalFooter, ModalHeader, Modal, ModalBody } from './molecules/Modal';
+export { NavFooter, NavFooterItem } from './molecules/NavFooter';
 export {
   Dropdown,
   DropdownItem,
