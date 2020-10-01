@@ -15,6 +15,14 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.33.73
+
+- Added Avatar component 
+- Added new side menu 
+- Added navigation bar for mobile
+- Adjustments to Toggle Button (business) 
+- Added support for only displaying focus style when user is tabbing (enableTabKeyDetetcion)
+
 ## 1.33.71
 
 - Add new Button component in business part
