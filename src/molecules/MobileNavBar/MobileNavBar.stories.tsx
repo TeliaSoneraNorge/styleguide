@@ -7,6 +7,7 @@ export default {
 };
 export const Default = () => {
   const [active, setActive] = useState(0);
+
   return (
     <>
       <div style={{ paddingBottom: '2rem' }}>
@@ -24,7 +25,7 @@ export const Default = () => {
           onClick={() => setActive(2)}
           icon="gift"
           active={active === 2}
-          label="long label long labes"
+          label="long label long label"
         />
         <MobileNavBarItem onClick={() => setActive(3)} icon="abroad" active={active === 3} label="l" />
       </MobileNavBar>
