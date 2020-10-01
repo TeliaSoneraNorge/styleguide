@@ -139,3 +139,4 @@ export { default as SlidingShoppingCart } from './organisms/SlidingShoppingCart'
 
 // Utils
 export { colors } from './utils/colors';
+export { enableTabKeyDetection } from './utils/enableTabKeyDetection';

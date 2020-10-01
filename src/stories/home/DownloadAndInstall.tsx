@@ -11,6 +11,7 @@ const codeSnippets = {
   componentLibraryIconsImport: `import AllIcons from '@telia/styleguide/assets/allicons/AllIcons';`,
   componentLibraryIconsInsert: `<AllIcons />`,
   componentLibraryIconsExample: `<SvgIcon iconName="ico_heart" color="purple" />`,
+  enableTabKeyDetection: 'enableTabKeyDetection(); \n ReactDOM.render(<App />, \n document.getElementById("root"));',
 };
 
 export const DownloadAndInstall = () => (
@@ -65,6 +66,18 @@ export const DownloadAndInstall = () => (
         If you are not using the React component library, you need to insert the icoons into the DOM some other way -
         manually, or by loading the file from disk on the server side and printing its contents into your HTML.
       </p>
+    </div>
+
+    <div className="container container--small container--extra-margin-bottom">
+      <h2 className="heading heading--level-2">Tab detection</h2>
+      <p className="paragraph">
+        To enable focus style only when user is tabbing call the enableTabKeyDetection at the root of your project. Eg.
+        in
+        <code> index.tsx</code>
+      </p>
+      <CodeSnippet code={codeSnippets.enableTabKeyDetection} language="javascript" />
+      <br />
+      <p className="paragraph">To test in development call the fucntion in your component</p>
     </div>
   </div>
 );
