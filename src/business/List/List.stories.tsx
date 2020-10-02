@@ -10,6 +10,12 @@ export default {
 
 export const Default = ({}) => (
   <div>
+    <List type="card" style="shadow">
+      <ListItem itemName="Test" style="underlined" />
+      <ListItem itemName="Test" caption="success" style="dark" />
+      <ListItem itemName="Test" />
+      <ListItem itemName="Test" />
+    </List>
     <List>
       <ListItem decorator={<Avatar icon="user-admin" />} itemName="Item 1" caption="Active" style="flat" />
       <ListItem
