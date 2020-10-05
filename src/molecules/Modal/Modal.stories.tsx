@@ -104,6 +104,8 @@ storiesOf('Component library/Molecules/Modal', module)
   })
   .add('Small', () => (
     <div style={{ height: '300px' }}>
+      <div>Stuff in the backgound</div>
+      <Button text="hei" />
       <Modal open={true} setOpen={() => {}} size="small">
         <ModalHeader>
           <h2>A small modal</h2>
@@ -179,6 +181,25 @@ storiesOf('Component library/Molecules/Modal', module)
           </ModalBody>
           <ModalFooter>
             <Button text="Close" size="small" onClick={action('front modal click close')} />{' '}
+          </ModalFooter>
+        </Modal>
+      </div>
+    );
+  })
+  .add('No body padding', () => {
+    return (
+      <div style={{ height: '300px' }}>
+        <Modal open={true} setOpen={() => {}}>
+          <ModalHeader>
+            <h2>En modal</h2>
+          </ModalHeader>
+          <ModalBody noPadding={true}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, porro? Ipsa ab inventore vel praesentium ea,
+            cupiditate sed eius dolorum veritatis, optio possimus debitis deleniti tempore quas exercitationem unde.
+            Repudiandae.
+          </ModalBody>
+          <ModalFooter>
+            <Button text="Close" size="small" />
           </ModalFooter>
         </Modal>
       </div>
