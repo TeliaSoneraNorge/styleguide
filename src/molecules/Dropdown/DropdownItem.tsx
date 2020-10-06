@@ -15,6 +15,12 @@ export type DropdownItemProps = {
   onClick?: () => void;
 
   /**
+   * Sets link role on button.
+   * Use together with onClick function.
+   */
+  href?: string;
+
+  /**
    * Icon displayd before label in the item
    */
   icon?: IconDefinition;
@@ -80,7 +86,10 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     }
   }, [props.index, highlightIndex, itemRef.current, open]);
 
-  const onClick = () => {
+  const onClick = (e: React.SyntheticEvent) => {
+    if (props.href) {
+      e.preventDefault();
+    }
     if (props.onClick) {
       props.onClick();
     }
@@ -115,6 +124,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
       })}
       ref={itemRef}
       tabIndex={-1}
+      role={props.href ? 'link' : 'button'}
       onFocus={e => e.stopPropagation()}
       onClick={onClick}
     >

@@ -82,7 +82,7 @@ storiesOf('Component library/Molecules/Dropdown', module)
           <DropdownMenu>
             <DropdownItem header={true} label="Header" />
             <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
             <DropdownItem divider={true} />
             <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
             <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
