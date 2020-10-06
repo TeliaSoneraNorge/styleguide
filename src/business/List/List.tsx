@@ -6,6 +6,7 @@ type BaseListItemProps = {
   decorator?: React.ReactChild;
   description?: string;
   caption?: string | React.ReactChild;
+  onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
 };
 
 type ListItemModifiers = {
@@ -28,7 +29,7 @@ function containsStyleProps(props: ListItemModifiers) {
 const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
   const context = React.useContext<ListItemModifiers>(ListStyleContext);
 
-  const { decorator, itemName, description, caption, compact, underlined, card, shadow, dark, flat, none } = {
+  const { decorator, itemName, description, caption, onClick, compact, underlined, card, shadow, dark, flat, none } = {
     ...(containsStyleProps(props) ? props : { ...props, ...context }),
   };
   return (
@@ -42,6 +43,7 @@ const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
         'telia-listItem--flat': flat,
         'telia-listItem--noBG': none || (!dark && !flat),
       })}
+      onClick={onClick}
     >
       {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
       <div className="telia-listItem__mainContent">

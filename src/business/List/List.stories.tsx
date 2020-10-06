@@ -6,7 +6,29 @@ import { Checkbox } from '../Checkbox';
 export default {
   component: List,
   title: 'Business/List',
+  subComponents: { ListItem, ListCard, ListHeading },
 };
+
+export const Default = ({}) => (
+  <div>
+    <ul>
+      <ListItem
+        itemName="ListItem"
+        decorator={<Avatar text="LI" />}
+        description="<li> element of item type"
+        caption="unstyled"
+      />
+    </ul>
+    <ul>
+      <ListCard
+        itemName="ListCard"
+        decorator={<Avatar text="LC" />}
+        description="<li> element of card type"
+        caption="shadow"
+      />
+    </ul>
+  </div>
+);
 
 export const Card = ({}) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
