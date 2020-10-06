@@ -1,0 +1,65 @@
+.telia-mobile-nav-bar {
+  background-color: var(--white);
+  border-top: 1px solid var(--grey-200);
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+
+    /* NB:  not supported in IE.
+     * Items will align left.
+     */
+    justify-content: space-around;
+  }
+}
+.telia-mobile-nav-bar-item {
+  border: none;
+  width: 4rem;
+  height: 4rem;
+  margin: 4px;
+  border-radius: 50%;
+  color: var(--grey-700);
+  background-color: var(--white);
+  cursor: pointer;
+  font-size: 12px;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  &:hover {
+    background-color: var(--grey-100);
+  }
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+  .Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  &-label {
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+.telia-mobile-nav-bar-item--active {
+  color: var(--core-purple-500);
+  &:hover {
+    background-color: var(--core-purple-100);
+  }
+}
+
+.telia-mobile-nav-bar-item--compact {
+  width: 2rem;
+  height: 2rem;
+  .Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
