@@ -86,10 +86,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     }
   }, [props.index, highlightIndex, itemRef.current, open]);
 
-  const onClick = (e: React.SyntheticEvent) => {
-    if (props.href) {
-      e.preventDefault();
-    }
+  const onClick = () => {
     if (props.onClick) {
       props.onClick();
     }
