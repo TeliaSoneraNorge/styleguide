@@ -21,7 +21,7 @@ export const Default = () => {
     .replaceAll(',', ' ');
 
   return (
-    <FullWidthTable id={'defaultFullWidthTable'} className={'no-ts-error'}>
+    <FullWidthTable id="defaultFullWidthTable" className="no-ts-error">
       <THead>
         <Tr>
           <Th>Column 1</Th>
