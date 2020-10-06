@@ -1,34 +1,31 @@
 import * as React from 'react';
 import { UseThSortable } from './useThSortable';
 
-declare type FullWidthTableProps = {
+declare type FullWidthTableProps = React.HTMLAttributes<HTMLTableElement> & {
   clickable?: boolean;
 };
 
-declare type TrProps = {
-  onClick: () => void;
-};
-
-declare type ThSortableProps = {
+declare type ThSortableProps = React.HTMLAttributes<HTMLTableHeaderCellElement> & {
+  onSort: () => void;
   isSorted?: boolean;
   isSortedDesc?: boolean;
   sortPriority?: number;
 };
 
-declare type TFootProps = {
+declare type TFootProps = React.HTMLAttributes<HTMLTableSectionElement> & {
   white?: boolean;
 };
 
-declare const FullWidthTable: React.FC<React.ReactNode | FullWidthTableProps> & {
-  THead: React.FC<React.ReactNode>;
-  TBody: React.FC<React.ReactNode>;
-  Th: React.FC<React.ReactNode>;
-  Tr: React.FC<React.ReactNode | TrProps>;
-  Td: React.FC<React.ReactNode>;
+declare const FullWidthTable: React.FC<FullWidthTableProps> & {
+  THead: React.FC<React.HTMLAttributes<HTMLTableSectionElement>>;
+  TBody: React.FC<React.HTMLAttributes<HTMLTableSectionElement>>;
+  Th: React.FC<React.HTMLAttributes<HTMLTableHeaderCellElement>>;
+  Tr: React.FC<React.HTMLAttributes<HTMLTableRowElement>>;
+  Td: React.FC<React.HTMLAttributes<HTMLTableDataCellElement>>;
 
-  ThSortable: React.FC<React.ReactNode | ThSortableProps>;
+  ThSortable: React.FC<ThSortableProps>;
 
-  TFoot: React.FC<React.ReactNode | TFootProps>;
+  TFoot: React.FC<TFootProps>;
 
   useThSortable: UseThSortable;
 };

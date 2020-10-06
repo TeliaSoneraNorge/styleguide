@@ -1,6 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 import { useThSortable } from './useThSortable';
+import './FullWidthTable.stories.css';
 
 /**
  * Status: *finished*
@@ -62,12 +63,11 @@ const TFoot = ({ children, white, className, ...rest }) => (
 );
 FullWidthTable.TFoot = TFoot;
 
-const Tr = ({ children, onClick, className, ...rest }) => (
+const Tr = ({ children, className, ...rest }) => (
   <tr
     className={classnames('full-width-table__row', {
       [className]: className,
     })}
-    onClick={onClick ? onClick : null}
     {...rest}
   >
     {children}
