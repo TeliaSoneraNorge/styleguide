@@ -8,33 +8,52 @@
   padding: 1.875rem 1.5rem;
 
   &--compact {
-      padding: 1.25rem 1.5rem;
+    padding: 1.25rem 1.5rem;
   }
 
   &--underlined {
-      border-bottom: solid 1px var(--grey-200);
+    border-bottom: solid 1px var(--grey-200);
   }
 
   &--card {
-      border-radius: .5rem;
+    border-radius: 0.5rem;
   }
 
   &--shadow {
-      box-shadow: 0 1px 2px var(--grey-300);
+    box-shadow: 0 1px 2px var(--grey-300);
   }
 
   &--dark {
-      background-color: var(--grey-800);
-      color: var(--white);
+    background-color: var(--grey-800);
+    color: var(--white);
+
+    &:hover {
+      background-color: var(--grey-600);
+    }
   }
 
   &--flat {
     background-color: var(--grey-200);
+
+    &:hover {
+      background-color: var(--grey-300);
+    }
   }
-  
-  &:hover {
+
+  &--noBG {
+    &:hover {
       background-color: var(--grey-200);
+    }
   }
+
+  &--heading {
+    padding: 1rem;
+  }
+
+  &--compactHeading {
+    padding: .75rem;
+  }
+
 
   &__decorator {
     flex: 1 0 2.5rem;

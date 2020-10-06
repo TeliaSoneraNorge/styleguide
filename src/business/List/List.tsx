@@ -15,14 +15,21 @@ type ListItemModifiers = {
   shadow?: boolean;
   dark?: boolean;
   flat?: boolean;
+  none?: boolean;
 };
+
+function containsStyleProps(props: ListItemModifiers) {
+  return ['compact', 'card', 'underlined', 'shadow', 'dark', 'flat', 'none'].reduce(
+    (acc, curr) => acc || curr in props,
+    false
+  );
+}
 
 const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
   const context = React.useContext<ListItemModifiers>(ListStyleContext);
 
-  const { decorator, itemName, description, caption, compact, underlined, card, shadow, dark, flat } = {
-    ...context,
-    ...props,
+  const { decorator, itemName, description, caption, compact, underlined, card, shadow, dark, flat, none } = {
+    ...(containsStyleProps(props) ? props : { ...props, ...context }),
   };
   return (
     <li
@@ -33,6 +40,7 @@ const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
         'telia-listItem--shadow': shadow,
         'telia-listItem--dark': dark,
         'telia-listItem--flat': flat,
+        'telia-listItem--noBG': none || (!dark && !flat),
       })}
     >
       {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
@@ -65,7 +73,7 @@ function propsWithStyle(
   return { ...props, [style]: true };
 }
 
-type ListItemStyle = 'dark' | 'flat' | 'underlined';
+type ListItemStyle = 'dark' | 'flat' | 'underlined' | 'none';
 type ListItemProps = BaseListItemProps & {
   style?: ListItemStyle;
   compact?: boolean;
@@ -75,7 +83,7 @@ export const ListItem = ({ style, ...props }: ListItemProps) => (
   <BaseListItem {...propsWithStyle(props, style as ListItemStyle)} />
 );
 
-type ListCardStyle = 'dark' | 'flat' | 'shadow';
+type ListCardStyle = 'dark' | 'flat' | 'shadow' | 'none';
 type ListCardProps = BaseListItemProps & {
   style?: ListCardStyle;
   compact?: boolean;
@@ -105,8 +113,22 @@ const ListStyleContext = React.createContext<ListItemModifiers>({});
 export const List = ({ children, type, style }: ListProps) => (
   <ListStyleContext.Provider value={listContext({}, { children, type, style })}>
     <section className="telia-list">
-      <h2 className="telia-list__title">List title</h2>
       <ul className="telia-list__list">{children}</ul>
     </section>
   </ListStyleContext.Provider>
+);
+
+type ListHeadingProps = {
+  title: string;
+  compact?: boolean;
+};
+export const ListHeading = ({ title, compact }: ListHeadingProps) => (
+  <li
+    className={cn('telia-listItem', {
+      'telia-listItem--compactHeading': compact,
+      'telia-listItem--heading': !compact,
+    })}
+  >
+    <h3 className="telia-listItem__name">{title}</h3>
+  </li>
 );
