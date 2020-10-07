@@ -10,27 +10,60 @@ export default {
   subComponents: { ListItem, ListCard, ListHeading },
 };
 
-export const Default = ({}) => (
-  <div>
-    <ul>
-      <ListItem
-        label="ListItem"
-        decorator={<Avatar text="LI" />}
-        description="<li> element of item type"
-        caption="unstyled"
-      />
-    </ul>
-    <ul>
-      <ListCard
-        label="ListCard"
-        decorator={<Avatar text="LC" />}
-        description="<li> element of card type"
-        caption="shadow"
-      />
-    </ul>
-  </div>
-);
+export const Default = ({}) => {
+  const [style, setStyle] = React.useState('shadow');
+  function setNextStyle() {
+    const styles = ['shadow', 'dark', 'flat'];
+    const currStyle = styles.indexOf(style);
+    let nextStyle = currStyle + 1;
 
+    if (nextStyle >= styles.length) nextStyle = 0;
+    setStyle(styles[nextStyle]);
+  }
+
+  return (
+    <div>
+      <List>
+        <ListHeading title="Normal list heading" />
+        <ListItem
+          label="ListItem"
+          decorator={<Avatar text="LI" />}
+          description="<li> element of item type"
+          caption="unstyled"
+        />
+        <ListItem
+          label="Compact ListItem"
+          compact={true}
+          decorator={<Avatar text="CLI" />}
+          description="<li> element of item type"
+          caption="unstyled"
+        />
+        <ListHeading title="Compact list heading" compact={true} />
+        <ListCard
+          label="ListCard"
+          decorator={<Avatar text="LC" />}
+          description="<li> element of card type"
+          caption="shadow"
+        />
+        <ListCard
+          label="Compact ListCard"
+          compact={true}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+        />
+        <ListCard
+          label="ListCard w/onClick"
+          onClick={setNextStyle}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+          style={style as 'shadow' | 'dark' | 'flat'}
+        />
+      </List>
+    </div>
+  );
+};
 export const Card = ({}) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
     <div style={{ flex: '0 0 auto' }}>
