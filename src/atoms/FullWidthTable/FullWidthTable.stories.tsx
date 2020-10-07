@@ -1,7 +1,7 @@
 import React from 'react';
 import FullWidthTable from './FullWidthTable';
 import { boolean, number, optionsKnob } from '@storybook/addon-knobs';
-import './FullWidthTable.storeis.css';
+import './FullWidthTable.stories.css';
 export default {
   title: 'Component library/Atoms/FullWidth Table',
   component: FullWidthTable,
