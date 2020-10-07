@@ -1,7 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
 import { useThSortable } from './useThSortable';
-import './FullWidthTable.stories.css';
 
 /**
  * Status: *finished*
