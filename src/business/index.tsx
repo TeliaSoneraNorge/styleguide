@@ -4,3 +4,4 @@ export { Table, TableBodyCell, TableBodyRow, TableHeadCell, TablePagingControls,
 export { Checkbox } from './Checkbox';
 export { Tabs, Tab } from './Tabs';
 export { Button } from './Button';
+export { Tooltip } from './Tooltip';
