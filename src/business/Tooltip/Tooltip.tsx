@@ -27,10 +27,10 @@ export const Tooltip: React.FC<TooltipProps> = (props: TooltipProps) => {
   const { label, color = 'dark', position = 'bottom', children } = props;
 
   return (
-    <div className="tooltip-container">
+    <div className="telia-tooltip-container">
       {children}
-      <div className={cs('tooltip', `tooltip--${color}`, `tooltip--${position}`)}>
-        <div className="tooltip-arrow"></div>
+      <div className={cs('telia-tooltip', `telia-tooltip--${color}`, `telia-tooltip--${position}`)}>
+        <div className="telia-tooltip-arrow"></div>
         <div>{label}</div>
       </div>
     </div>
