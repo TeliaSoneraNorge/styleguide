@@ -46,6 +46,14 @@ export const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
         'telia-listItem--noBG': none || (!dark && !flat),
       })}
       onClick={onClick}
+      onKeyDown={e => {
+        if (onClick && (e.key === ' ' || e.key === 'Enter')) {
+          e.preventDefault();
+          onClick(e as any);
+        }
+      }}
+      tabIndex={onClick && 0}
+      role={onClick && 'button'}
     >
       {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
       <div className="telia-listItem__content">
