@@ -24,7 +24,6 @@ type Props = {
   active?: boolean;
   /**
    * Renders the item as an anchor tag.
-   * Use together with onClick
    */
   href?: string;
 
@@ -48,7 +47,7 @@ export const SideMenuItem: React.FC<Props> = props => {
   const Tag = props.href ? 'a' : 'button';
   const WrapperTag = props.tag ? props.tag : 'li';
   const handleClick = (e: React.SyntheticEvent) => {
-    if (props.href) {
+    if (props.href && props.onClick) {
       e.preventDefault();
     }
     props.onClick();
