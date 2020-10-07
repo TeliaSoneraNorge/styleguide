@@ -1,7 +1,7 @@
 import React from 'react';
 import FullWidthTable from './FullWidthTable';
 import { boolean, number, optionsKnob } from '@storybook/addon-knobs';
-
+import './FullWidthTable.storeis.css';
 export default {
   title: 'Component library/Atoms/FullWidth Table',
   component: FullWidthTable,
@@ -18,7 +18,7 @@ export const Default = () => {
     }
   )
     .toString()
-    .replaceAll(',', ' ');
+    .replace(/,/g, ' ');
 
   return (
     <FullWidthTable id="defaultFullWidthTable" className="no-ts-error">
