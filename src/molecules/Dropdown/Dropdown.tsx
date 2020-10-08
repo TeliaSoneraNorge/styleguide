@@ -2,10 +2,12 @@ import React, { useRef, useState } from 'react';
 import { DropdownContext, useDropdownContext, DropdownContextValues } from './context';
 import { useAccessibleDropdown } from './useAccessibleDropdown';
 import { getIndexedDropdownItems, getMaxHighlightIndex } from './utils';
+import cn from 'classnames';
 
 type Props = {
   open?: boolean;
   toggle?: () => void;
+  fullWidth?: boolean;
 };
 
 export const Dropdown: React.FC<Props> = props => {
@@ -33,16 +35,16 @@ export const Dropdown: React.FC<Props> = props => {
   };
   return (
     <DropdownContext.Provider value={contextValue}>
-      <InnerDropdown>{props.children}</InnerDropdown>
+      <InnerDropdown fullWidth={props.fullWidth}>{props.children}</InnerDropdown>
     </DropdownContext.Provider>
   );
 };
 
-const InnerDropdown: React.FC = props => {
+const InnerDropdown: React.FC<{ fullWidth?: boolean }> = props => {
   const { dropdownRef } = useDropdownContext();
   useAccessibleDropdown();
   return (
-    <div className="telia-dropdown" ref={dropdownRef}>
+    <div className={cn('telia-dropdown', { 'telia-dropdown--fullWidth': props.fullWidth })} ref={dropdownRef}>
       {props.children}
     </div>
   );
