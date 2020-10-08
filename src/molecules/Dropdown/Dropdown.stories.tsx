@@ -7,6 +7,7 @@ import {
   DropdownItem,
   DropdownSearchItem,
   DropdownMenu,
+  Color,
 } from './index';
 import Button from '../../atoms/Button';
 import { action } from '@storybook/addon-actions';
@@ -77,137 +78,74 @@ storiesOf('Component library/Molecules/Dropdown', module)
         </div>
         <br />
         <br />
-        <Dropdown>
-          <DropdownToggle label="Toggle" />
-          <DropdownMenu>
-            <DropdownItem header={true} label="Header" />
-            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
-            <DropdownItem divider={true} />
-            <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
-            <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-              Child
-            </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-          </DropdownMenu>
-        </Dropdown>
+        <div style={{ display: 'flex' }}>
+          {['default', 'purple', 'white'].map(color => (
+            <div>
+              <Dropdown>
+                <DropdownToggle label="Toggle" color={color as Color} />
+                <DropdownMenu>
+                  <DropdownItem header={true} label="Header" />
+                  <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem divider={true} />
+                  <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+                  <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
+                    Child
+                  </DropdownItem>
+                  <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+                </DropdownMenu>
+              </Dropdown>
 
-        <br />
-        <h4>Wrap content in items</h4>
-        <Dropdown>
-          <DropdownToggle label="Toggle" />
-          <DropdownMenu wrapContent={true}>
-            <DropdownItem header={true} label="Header" />
-            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-            <DropdownItem divider={true} />
-            <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
-            <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-              Child
-            </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-          </DropdownMenu>
-        </Dropdown>
-        <br />
-        <h4>With icon in toggle</h4>
-        <Dropdown>
-          <DropdownToggle label="Toggle" icon="user" />
-          <DropdownMenu>
-            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
-            <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
-              Child
-            </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-          </DropdownMenu>
-        </Dropdown>
-        <br />
-        <h4>Icon Only</h4>
-        <Dropdown>
-          <DropdownToggle label="Toggle" icon="user" hideLabel={true} />
-          <DropdownMenu>
-            <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
-            <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
-              Child
-            </DropdownItem>
-            <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-          </DropdownMenu>
-        </Dropdown>
+              <br />
+              <h4>Wrap content in items</h4>
+              <Dropdown>
+                <DropdownToggle label="Toggle" color={color as Color} />
+                <DropdownMenu wrapContent={true}>
+                  <DropdownItem header={true} label="Header" />
+                  <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem divider={true} />
+                  <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+                  <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
+                    Child
+                  </DropdownItem>
+                  <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+                </DropdownMenu>
+              </Dropdown>
+              <br />
+              <h4>With icon in toggle</h4>
+              <Dropdown>
+                <DropdownToggle label="Toggle" icon="user" color={color as Color} />
+                <DropdownMenu>
+                  <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
+                    Child
+                  </DropdownItem>
+                  <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+                </DropdownMenu>
+              </Dropdown>
+              <br />
+              <h4>Icon Only</h4>
+              <Dropdown>
+                <DropdownToggle label="Toggle" icon="user" hideLabel={true} color={color as Color} />
+                <DropdownMenu>
+                  <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+                  <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
+                    Child
+                  </DropdownItem>
+                  <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+                </DropdownMenu>
+              </Dropdown>
+            </div>
+          ))}
+        </div>
       </div>
     );
   })
-  .add('Purple', () => (
-    <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <h3>Purple color</h3>
-      <br />
-      <div>
-        DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
-        images or other componentes to fit you need
-      </div>
-      <br />
-      <br />
-      <Dropdown>
-        <DropdownToggle color="purple" label="Toggle" />
-        <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
-      <br />
-      <h4>wrap content in items</h4>
-      <Dropdown>
-        <DropdownToggle color="purple" label="Toggle" />
-        <DropdownMenu wrapContent={true}>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
-
-      <br />
-      <h4>With icon in toggle</h4>
-
-      <Dropdown>
-        <DropdownToggle color="purple" label="Toggle" icon="user" />
-        <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
-
-      <br />
-      <h4>Icon Only</h4>
-      <Dropdown>
-        <DropdownToggle color="purple" label="Toggle" icon="user" hideLabel={true} />
-        <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
-    </div>
-  ))
   .add('No border', () => (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h4>No borders</h4>
@@ -218,62 +156,72 @@ storiesOf('Component library/Molecules/Dropdown', module)
       </div>
       <br />
       <br />
-      <Dropdown>
-        <DropdownToggle label="Toggle" outline={false} />
-        <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
-      <br />
-      <h4>wrap content in items</h4>
-      <Dropdown>
-        <DropdownToggle label="Toggle" outline={false} color="purple" />
-        <DropdownMenu wrapContent={true}>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
-      <br />
-      <h4>With icon in toggle</h4>
 
-      <Dropdown>
-        <DropdownToggle label="Toggle" icon="user" outline={false} />
-        <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
+      <div style={{ display: 'flex' }}>
+        {['default', 'purple', 'white'].map(color => (
+          <div>
+            <Dropdown>
+              <DropdownToggle label="Toggle" color={color as Color} outline={false} />
+              <DropdownMenu>
+                <DropdownItem header={true} label="Header" />
+                <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
+                <DropdownItem divider={true} />
+                <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+                <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
+                  Child
+                </DropdownItem>
+                <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+              </DropdownMenu>
+            </Dropdown>
 
-      <br />
-      <h4>Icon Only</h4>
-      <Dropdown>
-        <DropdownToggle label="Toggle" icon="user" hideLabel={true} outline={false} />
-        <DropdownMenu>
-          <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
-          <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
-          <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
-            Child
-          </DropdownItem>
-          <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
-        </DropdownMenu>
-      </Dropdown>
+            <br />
+            <h4>Wrap content in items</h4>
+            <Dropdown>
+              <DropdownToggle label="Toggle" color={color as Color} outline={false} />
+              <DropdownMenu wrapContent={true}>
+                <DropdownItem header={true} label="Header" />
+                <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+                <DropdownItem divider={true} />
+                <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+                <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
+                  Child
+                </DropdownItem>
+                <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+              </DropdownMenu>
+            </Dropdown>
+            <br />
+            <h4>With icon in toggle</h4>
+            <Dropdown>
+              <DropdownToggle label="Toggle" icon="user" color={color as Color} outline={false} />
+              <DropdownMenu>
+                <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+                <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
+                  Child
+                </DropdownItem>
+                <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+              </DropdownMenu>
+            </Dropdown>
+            <br />
+            <h4>Icon Only</h4>
+            <Dropdown>
+              <DropdownToggle label="Toggle" icon="user" hideLabel={true} color={color as Color} outline={false} />
+              <DropdownMenu>
+                <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 2" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 3" onClick={action('DropdownItem clicked')} />
+                <DropdownItem icon="user" label="Longer option" onClick={action('DropdownItem clicked')}>
+                  Child
+                </DropdownItem>
+                <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+              </DropdownMenu>
+            </Dropdown>
+          </div>
+        ))}
+      </div>
     </div>
   ))
   .add('Custom toggle', () => (
