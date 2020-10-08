@@ -224,6 +224,38 @@ storiesOf('Component library/Molecules/Dropdown', module)
       </div>
     </div>
   ))
+  .add('Full width', () => (
+    <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
+      <h4>Full width dropdowns</h4>
+      <br />
+      <div>
+        DropdownItems can take any type of child and has dynamic height. You can add multiple lines of information,
+        images or other componentes to fit you need
+      </div>
+      <br />
+      <br />
+
+      {['default', 'purple', 'white'].map(color => (
+        <>
+          <Dropdown fullWidth={true}>
+            <DropdownToggle label="Toggle" color={color as Color} />
+            <DropdownMenu>
+              <DropdownItem header={true} label="Header" />
+              <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+              <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
+              <DropdownItem divider={true} />
+              <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+              <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
+                Child
+              </DropdownItem>
+              <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+            </DropdownMenu>
+          </Dropdown>
+          <br />
+        </>
+      ))}
+    </div>
+  ))
   .add('Custom toggle', () => (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h3> With custom toggle components</h3>
