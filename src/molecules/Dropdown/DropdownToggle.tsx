@@ -2,6 +2,8 @@ import React, { useEffect, useRef } from 'react';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
+
+export type Color = 'purple' | 'default' | 'white';
 type DropdownToggleProps = {
   /**
    * Text to display in the toggle button
@@ -20,7 +22,7 @@ type DropdownToggleProps = {
   /**
    * Base color for the toggle. Border, text and icon
    */
-  color?: 'purple' | 'default';
+  color?: Color;
 
   /**
    * Wheter to display borders around the toggle.
@@ -81,6 +83,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
       className={cs('telia-dropdown-toggle telia-dropdown-toggle__default', {
         'telia-dropdown-toggle__hideLabel': props.hideLabel,
         'telia-dropdown-toggle__purple': props.color === 'purple',
+        'telia-dropdown-toggle__white': props.color === 'white',
         'telia-dropdown-toggle__outline': props.outline !== false,
       })}
     >
