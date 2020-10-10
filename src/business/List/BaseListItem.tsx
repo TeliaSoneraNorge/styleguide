@@ -31,6 +31,8 @@ function containsStyleProps(props: ListItemModifiers) {
 export const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
   const context = React.useContext<ListItemModifiers>(ListStyleContext);
 
+  // Allows setting style on the List component instead of individual list items.
+  // See ContextProvider in List.tsx
   const { decorator, label, description, caption, onClick, compact, underlined, card, shadow, dark, flat, none } = {
     ...(containsStyleProps(props) ? props : { ...props, ...context }),
   };
