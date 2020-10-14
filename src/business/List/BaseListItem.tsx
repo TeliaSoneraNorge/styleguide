@@ -11,27 +11,6 @@ export type BaseListItemProps = {
   compact?: boolean;
 } & ListStyle;
 
-export type ListItemModifiers = {
-  none?: boolean;
-  compact?: boolean;
-  /**
-   * type
-   */
-  card?: boolean;
-  item?: boolean;
-  /**
-   * border
-   */
-  underlined?: boolean;
-  shadow?: boolean;
-  /**
-   * colors
-   */
-  dark?: boolean;
-  light?: boolean;
-  medium?: boolean;
-};
-
 export const BaseListItem = (props: BaseListItemProps) => {
   const context = React.useContext(ListStyleContext);
   const { decorator, label, description, caption, onClick } = props;
