@@ -1,6 +1,8 @@
 import React from 'react';
 import { List } from './List';
-import { ListItem, ListCard, ListHeading } from './ListItems';
+import { ListCard } from './ListCard';
+import { ListItem } from './ListItem';
+import { ListHeading } from './ListHeading';
 import { ListItemColor } from './utils';
 import { Avatar } from '../../molecules/Avatar';
 import { Checkbox } from '../Checkbox';

@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { getStyleContext, ListStyleContext, ListStyle } from './utils';
 
-export type BaseListItemProps = {
+export type ListItemProps = {
   label: string;
   decorator?: React.ReactChild;
   description?: string;
@@ -11,7 +11,7 @@ export type BaseListItemProps = {
   compact?: boolean;
 } & ListStyle;
 
-export const BaseListItem = (props: BaseListItemProps) => {
+export const ListItem = (props: ListItemProps) => {
   const context = React.useContext(ListStyleContext);
   const { decorator, label, description, caption, onClick } = props;
 

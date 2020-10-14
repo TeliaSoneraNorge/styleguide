@@ -1,2 +1,4 @@
 export { List } from './List';
-export { ListItem, ListCard, ListHeading } from './ListItems';
+export { ListItem } from './ListItem';
+export { ListCard } from './ListCard';
+export { ListHeading } from './ListHeading';
