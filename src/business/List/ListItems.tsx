@@ -1,33 +1,10 @@
 import cn from 'classnames';
 import React from 'react';
+import { BaseListItemProps, BaseListItem } from './BaseListItem';
 
-import { BaseListItemProps, ListItemModifiers, BaseListItem } from './BaseListItem';
-
-function propsWithStyle(
-  props: ListItemProps | ListCardProps,
-  style: ListItemStyle | ListCardStyle
-): BaseListItemProps & ListItemModifiers {
-  return { ...props, [style]: true };
-}
-
-type ListItemStyle = 'dark' | 'flat' | 'underlined' | 'none';
-type ListItemProps = BaseListItemProps & {
-  style?: ListItemStyle;
-  compact?: boolean;
-};
-
-export const ListItem = ({ style, ...props }: ListItemProps) => (
-  <BaseListItem {...propsWithStyle(props, style as ListItemStyle)} />
-);
-
-type ListCardStyle = 'dark' | 'flat' | 'shadow' | 'none';
-type ListCardProps = BaseListItemProps & {
-  style?: ListCardStyle;
-  compact?: boolean;
-};
-
-export const ListCard = ({ style, ...props }: ListCardProps) => (
-  <BaseListItem {...propsWithStyle(props, style || ('shadow' as ListCardStyle))} card={true} />
+export const ListItem = (props: BaseListItemProps) => <BaseListItem {...props} />;
+export const ListCard = ({ border, ...props }: BaseListItemProps) => (
+  <BaseListItem {...props} border={border ? border : 'shadow'} type="card" />
 );
 
 type ListHeadingProps = {
@@ -45,4 +22,4 @@ export const ListHeading = ({ title, compact }: ListHeadingProps) => (
   </li>
 );
 
-export type ListItemElement = React.ReactElement<ListCardProps | ListItemProps>;
+export type ListItemElement = React.ReactElement<BaseListItemProps>;

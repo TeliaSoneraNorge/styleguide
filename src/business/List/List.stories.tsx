@@ -1,6 +1,7 @@
 import React from 'react';
 import { List } from './List';
 import { ListItem, ListCard, ListHeading } from './ListItems';
+import { ListItemColor } from './utils';
 import { Avatar } from '../../molecules/Avatar';
 import { Checkbox } from '../Checkbox';
 
@@ -11,14 +12,14 @@ export default {
 };
 
 export const Default = ({}) => {
-  const [style, setStyle] = React.useState('shadow');
+  const [color, setColor] = React.useState<ListItemColor>('light');
   function setNextStyle() {
-    const styles = ['shadow', 'dark', 'flat'];
-    const currStyle = styles.indexOf(style);
+    const colors: ListItemColor[] = ['light', 'dark', 'medium'];
+    const currStyle = colors.indexOf(color);
     let nextStyle = currStyle + 1;
 
-    if (nextStyle >= styles.length) nextStyle = 0;
-    setStyle(styles[nextStyle]);
+    if (nextStyle >= colors.length) nextStyle = 0;
+    setColor(colors[nextStyle]);
   }
 
   return (
@@ -58,7 +59,7 @@ export const Default = ({}) => {
           decorator={<Avatar text="CLC" />}
           description="<li> element of card type"
           caption="shadow"
-          style={style as 'shadow' | 'dark' | 'flat'}
+          color={color}
         />
       </List>
     </div>
@@ -66,7 +67,7 @@ export const Default = ({}) => {
 };
 export const Card = ({}) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-    <div style={{ flex: '0 0 auto' }}>
+    <div style={{ flex: '1 1 0px' }}>
       <List type="card">
         <ListHeading title="List Standard" compact={true} />
         <ListItem label="Element 1" />
@@ -76,8 +77,8 @@ export const Card = ({}) => (
         <ListItem label="Element 5" />
       </List>
     </div>
-    <div style={{ flex: '0 0 auto' }}>
-      <List type="card" style="flat">
+    <div style={{ flex: '1 1 0px' }}>
+      <List type="card" color="medium">
         <ListHeading title="List Flat w/Icons and captions" />
         <ListItem label="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
         <ListItem label="Element 2" decorator={<Avatar icon="business" />} caption="caption" />
@@ -86,8 +87,8 @@ export const Card = ({}) => (
         <ListItem label="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
       </List>
     </div>
-    <div style={{ flex: '0 0 auto' }}>
-      <List type="card" style="underlined">
+    <div style={{ flex: '1 1 0px' }}>
+      <List type="card" border="underlined">
         <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
         <ListItem
           label="Element 1"
@@ -121,12 +122,12 @@ export const Card = ({}) => (
         />
       </List>
     </div>
-    <div style={{ flex: '0 0 auto' }}>
-      <List type="card" style="dark">
+    <div style={{ flex: '1 1 0px' }}>
+      <List type="card" color="dark">
         <ListHeading title="List dark w/Individual styles" />
         <ListItem label="Element 1" caption="caption" description="Description" />
-        <ListItem label="Element 2" caption="caption" description="Description" style="flat" />
-        <ListItem label="Element 3" caption="caption" description="Description" style="none" />
+        <ListItem label="Element 2" caption="caption" description="Description" color="medium" />
+        <ListItem label="Element 3" caption="caption" description="Description" color="light" />
         <ListItem label="Element 4" caption="caption" description="Description" />
         <ListItem label="Element 5" caption="caption" description="Description" />
       </List>
@@ -136,7 +137,7 @@ export const Card = ({}) => (
 
 export const Item = ({}) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-    <div style={{ flex: '0 0 auto' }}>
+    <div style={{ flex: '1 1 0px' }}>
       <List>
         <ListHeading title="List Standard" />
         <ListItem label="Element 1" />
@@ -146,8 +147,8 @@ export const Item = ({}) => (
         <ListItem label="Element 5" />
       </List>
     </div>
-    <div style={{ flex: '0 0 auto' }}>
-      <List style="flat">
+    <div style={{ flex: '1 1 0px' }}>
+      <List color="medium">
         <ListHeading title="List Flat w/Icons and captions" />
         <ListItem label="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
         <ListItem label="Element 2" decorator={<Avatar icon="business" />} caption="caption" />
@@ -156,8 +157,8 @@ export const Item = ({}) => (
         <ListItem label="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
       </List>
     </div>
-    <div style={{ flex: '0 0 auto' }}>
-      <List style="underlined">
+    <div style={{ flex: '1 1 0px' }}>
+      <List border="underlined">
         <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
         <ListItem
           label="Element 1"
@@ -191,12 +192,12 @@ export const Item = ({}) => (
         />
       </List>
     </div>
-    <div style={{ flex: '0 0 auto' }}>
-      <List style="dark">
+    <div style={{ flex: '1 1 0px' }}>
+      <List color="dark">
         <ListHeading title="List dark w/Individual styles" />
         <ListItem label="Element 1" caption="caption" description="Description" />
-        <ListItem label="Element 2" caption="caption" description="Description" style="flat" />
-        <ListItem label="Element 3" caption="caption" description="Description" style="none" />
+        <ListItem label="Element 2" caption="caption" description="Description" color="medium" />
+        <ListItem label="Element 3" caption="caption" description="Description" color="light" />
         <ListItem label="Element 4" caption="caption" description="Description" />
         <ListItem label="Element 5" caption="caption" description="Description" />
       </List>

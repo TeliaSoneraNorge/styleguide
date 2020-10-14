@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { getStyleContext, ListStyleContext, ListStyle } from './utils';
 
 export type BaseListItemProps = {
   label: string;
@@ -7,35 +8,38 @@ export type BaseListItemProps = {
   description?: string;
   caption?: string | React.ReactChild;
   onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
-};
+  compact?: boolean;
+} & ListStyle;
 
 export type ListItemModifiers = {
+  none?: boolean;
   compact?: boolean;
+  /**
+   * type
+   */
   card?: boolean;
+  item?: boolean;
+  /**
+   * decoration
+   */
   underlined?: boolean;
   shadow?: boolean;
+  /**
+   * colors
+   */
   dark?: boolean;
-  flat?: boolean;
-  none?: boolean;
+  light?: boolean;
+  medium?: boolean;
 };
 
-export const ListStyleContext = React.createContext<ListItemModifiers>({});
-
-function containsStyleProps(props: ListItemModifiers) {
-  return ['compact', 'card', 'underlined', 'shadow', 'dark', 'flat', 'none'].reduce(
-    (acc, curr) => acc || curr in props,
-    false
-  );
-}
-
-export const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
-  const context = React.useContext<ListItemModifiers>(ListStyleContext);
+export const BaseListItem = (props: BaseListItemProps) => {
+  const context = React.useContext(ListStyleContext);
+  const { decorator, label, description, caption, onClick } = props;
 
   // Allows setting style on the List component instead of individual list items.
   // See ContextProvider in List.tsx
-  const { decorator, label, description, caption, onClick, compact, underlined, card, shadow, dark, flat, none } = {
-    ...(containsStyleProps(props) ? props : { ...props, ...context }),
-  };
+  const { compact, underlined, card, shadow, dark, medium, none } = getStyleContext({ ...context, ...props });
+
   return (
     <li
       className={cn('telia-listItem', {
@@ -44,8 +48,8 @@ export const BaseListItem = (props: BaseListItemProps & ListItemModifiers) => {
         'telia-listItem--card': card,
         'telia-listItem--shadow': shadow,
         'telia-listItem--dark': dark,
-        'telia-listItem--flat': flat,
-        'telia-listItem--noBG': none || (!dark && !flat),
+        'telia-listItem--medium': medium,
+        'telia-listItem--noBG': none || (!dark && !medium),
       })}
       onClick={onClick}
       onKeyDown={e => {
