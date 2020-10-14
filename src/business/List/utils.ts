@@ -31,7 +31,7 @@ export type ListStyle = {
   color?: ListItemColor;
 };
 
-function getStyleContext(params: ListStyle): ListItemModifiers {
+export function getStyleContext(params: ListStyle): ListItemModifiers {
   const context: ListItemModifiers = {};
   if (params.type) context[params.type] = true;
   if (params.border) context[params.border] = true;
@@ -39,6 +39,4 @@ function getStyleContext(params: ListStyle): ListItemModifiers {
   return context;
 }
 
-const ListStyleContext = React.createContext<ListStyle | undefined>(undefined);
-
-export { getStyleContext, ListStyleContext };
+export const ListStyleContext = React.createContext<ListStyle | undefined>(undefined);

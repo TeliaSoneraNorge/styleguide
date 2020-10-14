@@ -20,7 +20,7 @@ export type ListItemModifiers = {
   card?: boolean;
   item?: boolean;
   /**
-   * decoration
+   * border
    */
   underlined?: boolean;
   shadow?: boolean;
@@ -37,7 +37,7 @@ export const BaseListItem = (props: BaseListItemProps) => {
   const { decorator, label, description, caption, onClick } = props;
 
   // Allows setting style on the List component instead of individual list items.
-  // See ContextProvider in List.tsx
+  // See ContextProvider in utils.ts
   const { compact, underlined, card, shadow, dark, medium, none } = getStyleContext({ ...context, ...props });
 
   return (

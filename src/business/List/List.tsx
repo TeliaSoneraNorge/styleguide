@@ -2,12 +2,12 @@ import React from 'react';
 import { ListItemElement } from './ListItems';
 import { ListStyleContext, ListStyle } from './utils';
 
-type ListProps = {
+type ListProps = ListStyle & {
   children: ListItemElement | Array<ListItemElement>;
-} & ListStyle;
+};
 
-export const List = ({ children, type, color, border }: ListProps) => (
-  <ListStyleContext.Provider value={{ type, color, border }}>
+export const List = ({ children, ...styleProps }: ListProps) => (
+  <ListStyleContext.Provider value={styleProps}>
     <section className="telia-list">
       <ul className="telia-list__list">{children}</ul>
     </section>
