@@ -25,7 +25,7 @@ type Props = {
    * Makes the avatar smaller.
    * Terminology from the desginers of the Design System
    */
-  size?: 'compact' | 'default';
+  size?: 'compact' | 'big' | 'default';
 
   /**
    * Provided an href the avatar vil render as an ancor tag

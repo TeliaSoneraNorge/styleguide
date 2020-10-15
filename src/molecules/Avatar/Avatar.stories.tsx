@@ -65,6 +65,37 @@ export const Default = ({}) => {
           />
         </div>
       </div>
+      <h2 style={{ marginBottom: 0 }}>
+        <code>size='big'</code>
+      </h2>
+      <div style={{ display: 'flex' }}>
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Default</h3>
+          <Avatar text="HG" size="big" />
+          <Avatar icon="abroad" size="big" />
+          <Avatar img={images.hero1} size="big" alt="user" />
+        </div>
+
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Button</h3>
+          <Avatar text="HG" onClick={action('Button avatar with text')} size="big" />
+          <Avatar icon="abroad" onClick={action('Button avatar with icon')} size="big" />
+          <Avatar img={images.hero1} onClick={action('Button avatar with image')} alt="user" size="big" />
+        </div>
+
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Anchor</h3>
+          <Avatar text="HG" href="my/path" onClick={action('Anchor avatar with text')} size="big" />
+          <Avatar icon="abroad" href="my/path" onClick={action('Anchor avatar with icon')} size="big" />
+          <Avatar
+            img={images.hero1}
+            href="my/path"
+            onClick={action('Anchor avatar with image')}
+            alt="user"
+            size="big"
+          />
+        </div>
+      </div>
     </div>
   );
 };
