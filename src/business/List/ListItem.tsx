@@ -45,7 +45,7 @@ export const ListItem = (props: ListItemProps) => {
         {description && (
           <div
             className={cn('telia-listItem__description', {
-              'telia-listItem__description--dark': props.color === 'dark',
+              'telia-listItem__description--dark': color === 'dark',
             })}
           >
             {description}
@@ -56,7 +56,7 @@ export const ListItem = (props: ListItemProps) => {
         <div
           className={cn('telia-listItem__caption', {
             'telia-listItem__caption--text': typeof caption === 'string',
-            'telia-listItem__caption--dark': props.color === 'dark',
+            'telia-listItem__caption--dark': color === 'dark',
           })}
         >
           {caption}
