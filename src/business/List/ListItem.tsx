@@ -22,8 +22,8 @@ export const ListItem = (props: ListItemProps) => {
     <li
       className={cn('telia-listItem', {
         'telia-listItem--compact': compact,
-        'telia-listItem--underlined': border === 'shadow',
         'telia-listItem--card': type === 'card',
+        'telia-listItem--underlined': border === 'underlined',
         'telia-listItem--shadow': border === 'shadow',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
