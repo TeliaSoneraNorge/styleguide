@@ -1,6 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
-import { getStyleContext, ListStyleContext, ListStyle } from './utils';
+import { ListStyleContext, ListStyle } from './utils';
 
 export type ListItemProps = {
   label: string;
@@ -15,20 +15,19 @@ export const ListItem = (props: ListItemProps) => {
   const context = React.useContext(ListStyleContext);
   const { decorator, label, description, caption, onClick } = props;
 
-  // Allows setting style on the List component instead of individual list items.
-  // See ContextProvider in utils.ts
-  const { compact, underlined, card, shadow, dark, medium, none } = getStyleContext({ ...context, ...props });
+  // Inherit List style from context, override with individual style from props.
+  const { border, color, type, compact } = { ...context, ...props };
 
   return (
     <li
       className={cn('telia-listItem', {
         'telia-listItem--compact': compact,
-        'telia-listItem--underlined': underlined,
-        'telia-listItem--card': card,
-        'telia-listItem--shadow': shadow,
-        'telia-listItem--dark': dark,
-        'telia-listItem--medium': medium,
-        'telia-listItem--noBG': none || (!dark && !medium),
+        'telia-listItem--underlined': border === 'shadow',
+        'telia-listItem--card': type === 'card',
+        'telia-listItem--shadow': border === 'shadow',
+        'telia-listItem--dark': color === 'dark',
+        'telia-listItem--medium': color === 'medium',
+        'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
       })}
       onClick={onClick}
       onKeyDown={e => {
@@ -42,9 +41,13 @@ export const ListItem = (props: ListItemProps) => {
     >
       {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
       <div className="telia-listItem__content">
-        <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': dark })}>{label}</h3>
+        <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
         {description && (
-          <div className={cn('telia-listItem__description', { 'telia-listItem__description--dark': dark })}>
+          <div
+            className={cn('telia-listItem__description', {
+              'telia-listItem__description--dark': props.color === 'dark',
+            })}
+          >
             {description}
           </div>
         )}
@@ -53,7 +56,7 @@ export const ListItem = (props: ListItemProps) => {
         <div
           className={cn('telia-listItem__caption', {
             'telia-listItem__caption--text': typeof caption === 'string',
-            'telia-listItem__caption--dark': dark,
+            'telia-listItem__caption--dark': props.color === 'dark',
           })}
         >
           {caption}
