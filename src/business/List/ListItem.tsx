@@ -12,11 +12,11 @@ export type ListItemProps = {
 } & ListStyle;
 
 export const ListItem = (props: ListItemProps) => {
-  const context = React.useContext(ListStyleContext);
-  const { decorator, label, description, caption, onClick } = props;
+  const listStyle = React.useContext(ListStyleContext);
+  const { decorator, label, description, caption, onClick, compact, ...listItemStyle } = props;
 
   // Inherit List style from context, override with individual style from props.
-  const { border, color, type, compact } = { ...context, ...props };
+  const { border, color, type } = { ...listStyle, ...listItemStyle };
 
   return (
     <li
