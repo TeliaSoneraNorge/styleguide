@@ -1,23 +1,15 @@
 import React from 'react';
+import { ListItemProps } from './ListItem';
+import { ListStyleContext, ListStyle } from './utils';
 
-import { ListItemModifiers, ListStyleContext } from './BaseListItem';
-import { ListItemElement } from './ListItems';
+type ListItemElement = React.ReactElement<ListItemProps>;
 
-type ListProps = {
+type Props = ListStyle & {
   children: ListItemElement | Array<ListItemElement>;
-  type?: 'item' | 'card';
-  style?: 'dark' | 'flat' | 'underlined' | 'shadow';
 };
 
-function getListContext(styles: ListItemModifiers, props: ListProps): ListItemModifiers {
-  const context: ListItemModifiers = { ...styles };
-  if ('type' in props && props.type === 'card') context.card = true;
-  if ('style' in props && props.style) context[props.style] = true;
-  return context;
-}
-
-export const List = ({ children, type, style }: ListProps) => (
-  <ListStyleContext.Provider value={getListContext({}, { children, type, style })}>
+export const List = ({ children, ...styleProps }: Props) => (
+  <ListStyleContext.Provider value={styleProps}>
     <section className="telia-list">
       <ul className="telia-list__list">{children}</ul>
     </section>
