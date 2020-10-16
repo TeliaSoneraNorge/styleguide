@@ -9,26 +9,31 @@ export type ListItemProps = {
   caption?: string | React.ReactChild;
   onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
   compact?: boolean;
+  className?: string;
 } & ListStyle;
 
 export const ListItem = (props: ListItemProps) => {
   const listStyle = React.useContext(ListStyleContext);
-  const { decorator, label, description, caption, onClick, compact, ...listItemStyle } = props;
+  const { decorator, label, description, caption, onClick, compact, className, ...listItemStyle } = props;
 
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
 
   return (
     <li
-      className={cn('telia-listItem', {
-        'telia-listItem--compact': compact,
-        'telia-listItem--card': type === 'card',
-        'telia-listItem--underlined': border === 'underlined',
-        'telia-listItem--shadow': border === 'shadow',
-        'telia-listItem--dark': color === 'dark',
-        'telia-listItem--medium': color === 'medium',
-        'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
-      })}
+      className={cn(
+        'telia-listItem',
+        {
+          'telia-listItem--compact': compact,
+          'telia-listItem--card': type === 'card',
+          'telia-listItem--underlined': border === 'underlined',
+          'telia-listItem--shadow': border === 'shadow',
+          'telia-listItem--dark': color === 'dark',
+          'telia-listItem--medium': color === 'medium',
+          'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
+        },
+        className
+      )}
       onClick={onClick}
       onKeyDown={e => {
         if (onClick && (e.key === ' ' || e.key === 'Enter')) {
