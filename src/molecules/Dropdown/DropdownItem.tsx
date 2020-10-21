@@ -54,6 +54,7 @@ export type DropdownItemProps = {
    * Can also be used instead of label.
    */
   children?: React.ReactNode;
+  className?: string;
 };
 export const DropdownItem: React.FC<DropdownItemProps> = props => {
   const { open, toggle, highlightIndex, menuRef } = useDropdownContext();
@@ -115,10 +116,14 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   }
   return (
     <button
-      className={cs('telia-dropdown-item', {
-        'telia-dropdown-item__centered': props.centered,
-        'telia-dropdown-item__active': open && props.index === highlightIndex,
-      })}
+      className={cs(
+        'telia-dropdown-item',
+        {
+          'telia-dropdown-item__centered': props.centered,
+          'telia-dropdown-item__active': open && props.index === highlightIndex,
+        },
+        props.className
+      )}
       ref={itemRef}
       tabIndex={-1}
       role={props.href ? 'link' : 'button'}
