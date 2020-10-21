@@ -7,6 +7,7 @@ declare type AnimatedProgressBarColor = 'light-grey' | 'white' | 'purple' | 'gre
 declare interface AnimatedProgressBarProps {
   backgroundColor?: AnimatedProgressBarBackgroundColor;
   color?: AnimatedProgressBarColor;
+  noMarginTop?: boolean;
 }
 
 declare const AnimatedProgressBar: React.FC<AnimatedProgressBarProps>;
