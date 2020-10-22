@@ -18,10 +18,10 @@ export interface SubscriptionLinesAccordionProps {
   dataUnit: SubscriptionDataUnit;
   price?: SubscriptionPrice;
   priceInfo?: string[];
-  moneySaved: number;
-  normalPrice: number;
+  description1?: string;
+  description2?: string;
+  showCalculationText?: string;
   numberOfSubscriptions: number;
-  discount?: SubscriptionDiscount;
   feature?: SubscriptionFeature;
   disclaimers?: any;
   scrollToOnOpen?: boolean;

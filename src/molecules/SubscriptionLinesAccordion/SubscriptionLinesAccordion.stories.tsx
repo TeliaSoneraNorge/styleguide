@@ -45,8 +45,9 @@ export const Normal = () => {
       id="smart20"
       price={529}
       priceInfo={['pr. md']}
-      moneySaved={400}
-      normalPrice={1347}
+      description1="Du sparer 400,- pr md."
+      description2="Normalpris 1647,- pr md."
+      showCalculationText="Se utregning"
       numberOfSubscriptions={3}
       isExpanded={isExpanded}
       feature={{
@@ -77,8 +78,9 @@ export const Inverted = () => {
       id="smart20"
       price={529}
       priceInfo={['pr. md']}
-      moneySaved={400}
-      normalPrice={1347}
+      description1="Du sparer 400,- pr md."
+      description2="Normalpris 1647,- pr md."
+      showCalculationText="Se utregning"
       numberOfSubscriptions={3}
       isInverted={true}
       isExpanded={isExpanded}
@@ -110,8 +112,9 @@ export const WithIcon = () => {
       id="smart20"
       price={529}
       priceInfo={['pr. md']}
-      moneySaved={400}
-      normalPrice={1347}
+      description1="Du sparer 400,- pr md."
+      description2="Normalpris 1647,- pr md."
+      showCalculationText="Se utregning"
       numberOfSubscriptions={3}
       isInverted={true}
       isExpanded={isExpanded}

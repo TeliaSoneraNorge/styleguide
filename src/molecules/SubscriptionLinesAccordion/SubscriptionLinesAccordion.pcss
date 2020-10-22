@@ -10,7 +10,6 @@
 
     &__radio-button {
         margin-right: -2rem;
-        background-color: none;
 
         .radiobutton__svg-container {
             background-color: white;
@@ -22,7 +21,7 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
-        padding: 1rem .75rem;
+        padding: 1rem .75rem 0.2rem .75rem;
         color: black;
         border: none;
         background-color: var(--white);
@@ -35,8 +34,38 @@
             cursor: pointer;
 
             .subscription-lines-accordion__footer {
-                display: none;
-                margin: 10rem;
+                * {
+                color: var(--darkest-grey);
+                }
+            }
+
+            ~ .subscription-lines-accordion__expanded-info  {
+                background-image:
+                linear-gradient(to bottom,
+                    white,
+                    white 100%),
+                linear-gradient(to bottom,
+                    var(--light-grey),
+                    var(--light-grey) 100%);
+            }
+
+            ~ .subscription-lines-accordion__footer-container, .subscription-lines-accordion__footer-container {
+                background-color: var(--light-grey);
+
+                .subscription-lines-accordion__footer {
+                    * {
+                    color: var(--darkest-grey);
+                    }
+                }
+
+                &--inverted {
+                    * {
+                        color: var(--darkest-grey);
+                    }
+                    .subscription-lines-accordion__price {
+                        color: var(--black);
+                    }
+                }
             }
         }
 
@@ -51,6 +80,7 @@
 
     &__header-first-row {
         display: flex;
+        position: relative;
         align-items: center;
         justify-content: space-between;
         height: 100%;
@@ -224,7 +254,7 @@
                     color: var(--black);
                 }
                 
-                .subscription-lines-accordion__discount-description-normal--inverted {
+                .subscription-lines-accordion__description1--inverted {
                     color: var(--darkest-grey);
                 }
             }
@@ -235,11 +265,11 @@
         }
     }
 
-    &__discount-description-save {
+    &__description2 {
         font-weight: bold;
         font-size: 1rem;
         color: var(--dark-green);
-        margin: 0.5rem 0 0 3.2rem;
+        margin: 0rem 0 1rem 3.2rem;
 
         @media all and (min-width: 37.5em)
         {
@@ -247,7 +277,7 @@
         }
     }
 
-    &__discount-description-normal {
+    &__description1 {
         font-size: 1rem;
         font-family: "Helvetica Neue Regular";
         color: var(--darkest-grey);
@@ -269,11 +299,15 @@
     }
 
     &__footer-container {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
         .subscription-lines-accordion__price {
             color: black;
         }
+
         &--inverted {
-            background-color: var(--black);
             * {
                 color: var(--grey);
             }
@@ -285,11 +319,15 @@
         &--expanded {
             background-color: var(--light-grey);
         }
+
+        &--inverted-expanded {
+            background-color: var(--black);
+        }
     }
 
     &__footer-line {
         border: 0;
-        margin: 0rem 1rem;
+        margin: 0rem 1rem 0.2rem 1rem;
         border-top: 1px solid var(--grey-darker);
 
         &--inverted {
@@ -298,7 +336,8 @@
     }
 
     &__footer {
-        padding: 0.2rem 0rem 0.2rem 4.0rem;
+        padding: 0.2rem 0rem 0.2rem 3.3rem;
+        align-self: flex-start;
     }
 
     &__footer-mobile {

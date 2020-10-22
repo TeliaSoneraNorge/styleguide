@@ -14,14 +14,15 @@ const SubscriptionLinesAccordion = ({
   dataUnit,
   price,
   priceInfo,
-  moneySaved,
-  normalPrice,
   numberOfSubscriptions,
   feature,
   disclaimers,
   scrollToOnOpen = false,
   children,
   className,
+  description1,
+  description2,
+  showCalculationText = 'Se utregning',
   onOpen = () => {},
   onSelect = () => {},
   onClickShowCalculation = () => {},
@@ -47,6 +48,57 @@ const SubscriptionLinesAccordion = ({
       onOpen();
     }
   };
+
+  const handleOnClickShowCalculation = event => {
+    event.stopPropagation();
+    onClickShowCalculation();
+  };
+
+  const Footer = () => (
+    <div
+      className={cn('subscription-lines-accordion__footer-container', {
+        'subscription-lines-accordion__footer-container--inverted': isInverted,
+        'subscription-lines-accordion__footer-container--inverted-expanded': isExpanded && isInverted,
+        'subscription-lines-accordion__footer-container--expanded': isExpanded,
+      })}
+    >
+      {!isExpanded && (
+        <hr
+          className={cn('subscription-lines-accordion__footer-line', {
+            'subscription-lines-accordion__footer-line--inverted': isInverted,
+          })}
+        />
+      )}
+      <div className="subscription-lines-accordion__footer subscription-lines-accordion__desktop-only">
+        <Button
+          component="div"
+          onClick={event => handleOnClickShowCalculation(event)}
+          href="#"
+          kind="link"
+          text={showCalculationText}
+        />
+      </div>
+      <div className="subscription-lines-accordion__footer subscription-lines-accordion__mobile-only">
+        <div className="subscription-lines-accordion__price-container">
+          <div
+            className={cn('subscription-lines-accordion__description1', {
+              'subscription-lines-accordion__description1--inverted': isInverted,
+            })}
+          >
+            Totalt for{' '}
+            <span className="subscription-lines-accordion__description1--bold">{numberOfSubscriptions} stk.</span>
+            <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
+            {priceInfo &&
+              priceInfo.map(info => (
+                <span key={info} className="subscription-lines-accordion__price-info">
+                  {info}
+                </span>
+              ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 
   return (
     <section
@@ -95,19 +147,16 @@ const SubscriptionLinesAccordion = ({
               </div>
             </div>
           )}
-          <div className="subscription-lines-accordion__discount-description">
-            <div className="subscription-lines-accordion__discount-description-save subscription-lines-accordion__desktop-only">
-              Du sparer {moneySaved},- pr md.
+          <div className="subscription-lines-accordion__description">
+            <div className="subscription-lines-accordion__description2 subscription-lines-accordion__desktop-only">
+              {description1}
             </div>
             <div
-              className={cn(
-                'subscription-lines-accordion__discount-description-normal subscription-lines-accordion__desktop-only',
-                {
-                  'subscription-lines-accordion__discount-description-normal--inverted': isInverted,
-                }
-              )}
+              className={cn('subscription-lines-accordion__description1 subscription-lines-accordion__desktop-only', {
+                'subscription-lines-accordion__description1--inverted': isInverted,
+              })}
             >
-              Normalpris {normalPrice},- pr md.
+              {description2}
             </div>
           </div>
           <div>
@@ -116,18 +165,12 @@ const SubscriptionLinesAccordion = ({
           <div className="subscription-lines-accordion__aside">
             <div className="subscription-lines-accordion__price-container">
               <div
-                className={cn(
-                  'subscription-lines-accordion__discount-description-normal subscription-lines-accordion__desktop-only',
-                  {
-                    'subscription-lines-accordion__discount-description-normal--inverted': isInverted,
-                  }
-                )}
+                className={cn('subscription-lines-accordion__description1 subscription-lines-accordion__desktop-only', {
+                  'subscription-lines-accordion__description1--inverted': isInverted,
+                })}
               >
                 Totalt for{' '}
-                <span className="subscription-lines-accordion__discount-description-normal--bold">
-                  {numberOfSubscriptions} stk
-                </span>
-                .
+                <span className="subscription-lines-accordion__description1--bold">{numberOfSubscriptions} stk</span>.
               </div>
               <div className="subscription-lines-accordion__desktop-only">
                 <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
@@ -147,9 +190,10 @@ const SubscriptionLinesAccordion = ({
             })}
           />
         </div>
-        <div className="subscription-lines-accordion__discount-description-save subscription-lines-accordion__mobile-only">
-          Du sparer {moneySaved},- pr md.
+        <div className="subscription-lines-accordion__description2 subscription-lines-accordion__mobile-only">
+          {description1}
         </div>
+        {!isExpanded && <Footer />}
       </button>
       {isExpanded && children && (
         <section
@@ -168,44 +212,7 @@ const SubscriptionLinesAccordion = ({
           <div className="subscription-lines-accordion__disclaimers">{disclaimers}</div>
         </section>
       )}
-      <div
-        className={cn('subscription-lines-accordion__footer-container', {
-          'subscription-lines-accordion__footer-container--inverted': isInverted,
-          'subscription-lines-accordion__footer-container--expanded': isExpanded && !isInverted,
-        })}
-      >
-        {!isExpanded && (
-          <hr
-            className={cn('subscription-lines-accordion__footer-line', {
-              'subscription-lines-accordion__footer-line--inverted': isInverted,
-            })}
-          />
-        )}
-        <div className="subscription-lines-accordion__footer subscription-lines-accordion__desktop-only">
-          <Button onClick={onClickShowCalculation} href="#" kind="link" text="Se utregning" />
-        </div>
-        <div className="subscription-lines-accordion__footer subscription-lines-accordion__mobile-only">
-          <div className="subscription-lines-accordion__price-container">
-            <div
-              className={cn('subscription-lines-accordion__discount-description-normal', {
-                'subscription-lines-accordion__discount-description-normal--inverted': isInverted,
-              })}
-            >
-              Totalt for{' '}
-              <span className="subscription-lines-accordion__discount-description-normal--bold">
-                {numberOfSubscriptions} stk.
-              </span>
-              <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
-              {priceInfo &&
-                priceInfo.map(info => (
-                  <span key={info} className="subscription-lines-accordion__price-info">
-                    {info}
-                  </span>
-                ))}
-            </div>
-          </div>
-        </div>
-      </div>
+      {isExpanded && <Footer />}
     </section>
   );
 };
