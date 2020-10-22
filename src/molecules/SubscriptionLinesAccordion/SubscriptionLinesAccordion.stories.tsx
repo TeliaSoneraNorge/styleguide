@@ -35,8 +35,6 @@ const disclaimers = (
   />
 );
 
-const Footer = () => <Button style={{ margin: '0.5rem 0rem 0.5rem 3rem' }} href="#" kind="link" text="Se utregning" />;
-
 export const Normal = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -56,10 +54,10 @@ export const Normal = () => {
         name: 'Music Freedom',
       }}
       disclaimers={disclaimers}
-      footer={<Footer />}
       onOpen={() => {
         setIsExpanded(!isExpanded);
       }}
+      onClickShowCalculation={() => console.log('Clicked show calculation')}
     >
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
@@ -90,8 +88,8 @@ export const Inverted = () => {
       }}
       disclaimers={disclaimers}
       scrollToOnOpen={true}
-      footer={<Footer />}
       onOpen={() => setIsExpanded(!isExpanded)}
+      onClickShowCalculation={() => console.log('Clicked show calculation')}
     >
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
@@ -122,8 +120,8 @@ export const WithIcon = () => {
         name: 'Ubegrenset data',
       }}
       disclaimers={disclaimers}
-      footer={<Footer />}
       onOpen={() => setIsExpanded(!isExpanded)}
+      onClickShowCalculation={() => console.log('Clicked show calculation')}
     >
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>

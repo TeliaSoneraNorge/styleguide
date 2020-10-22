@@ -10,12 +10,16 @@
 
     &__radio-button {
         margin-right: -2rem;
+        background-color: none;
+
+        .radiobutton__svg-container {
+            background-color: white;
+        }
     }
 
     &__header {
         display: flex;
-        align-items: center;
-        justify-content: space-between;
+        flex-direction: column;
         height: 100%;
         width: 100%;
         padding: 1rem .75rem;
@@ -29,6 +33,11 @@
             outline: none;
             background-color: var(--light-grey);
             cursor: pointer;
+
+            .subscription-lines-accordion__footer {
+                display: none;
+                margin: 10rem;
+            }
         }
 
         h2 {
@@ -40,15 +49,33 @@
         }
     }
 
+    &__header-first-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 100%;
+        width: 100%;
+        padding: 1rem .75rem;
+    }
+
     &__heading-name {
-        font-size: 3.75rem;
-        position: relative;
+        font-size: 2rem;
+
+        @media all and (min-width: 37.5em) {
+            position: relative;
+            font-size: 3.75rem;
+        }
     }
     &__heading-icon {
         position: relative;
         display: inline;
         width: 100%;
         height: 100%;
+        margin-right: 0.5rem;
+
+        @media all and (min-width: 37.5em) {
+            margin-right: 0;
+        }
 
         .Icon {
             margin: -1.75rem 0;
@@ -61,7 +88,7 @@
             right: -20px;
         }
     }
-    
+
     &__heading-unit {
         font-size: 1rem;
         position: absolute;
@@ -74,6 +101,11 @@
       border-left: 1px solid var(--grey-darker);
       height: 70%;
       top: 15%;
+      display: none;
+      
+      @media all and (min-width: 37.5em) {
+        display: block;
+        }
     }
 
     &__aside {
@@ -85,8 +117,13 @@
 
     &__price {
         font-family: 'pebble';
-        font-size: 1.5rem;
         margin-right: .5rem;
+        margin-left: 0.5rem;
+
+        @media all and (min-width: 37.5em) {
+            font-size: 1.5rem;
+            margin-left: 0rem;
+        }
     }
 
     &__price-info {
@@ -202,7 +239,12 @@
         font-weight: bold;
         font-size: 1rem;
         color: var(--dark-green);
-        margin-bottom: 0.2rem;
+        margin: 0.5rem 0 0 3.2rem;
+
+        @media all and (min-width: 37.5em)
+        {
+            margin: 0 0 0.2rem 0;
+        }
     }
 
     &__discount-description-normal {
@@ -226,12 +268,17 @@
         align-items: flex-start;
     }
 
-    &__footer {
+    &__footer-container {
+        .subscription-lines-accordion__price {
+            color: black;
+        }
         &--inverted {
             background-color: var(--black);
-
             * {
                 color: var(--grey);
+            }
+            .subscription-lines-accordion__price {
+                color: white;
             }
         }
 
@@ -246,7 +293,45 @@
         border-top: 1px solid var(--grey-darker);
 
         &--inverted {
-            border-top: 1px solid var(--grey)
+            border-top: 1px solid var(--grey);
+        }
+    }
+
+    &__footer {
+        padding: 0.2rem 0rem 0.2rem 4.0rem;
+    }
+
+    &__footer-mobile {
+        display: block; 
+        @media all and (min-width: 37.5em)
+        {
+            display: none;
+        }
+    }
+
+    &__desktop-only {
+        display: none; 
+        @media all and (min-width: 37.5em)
+        {
+            display: block;
+        }
+    }
+
+    &__mobile-only {
+        display: block; 
+        @media all and (min-width: 37.5em)
+        {
+            display: none;
+        }
+    }
+
+    &__heading-icon-container {
+        display: flex;
+        align-items: center;
+        
+        @media all and (min-width: 37.5em)
+        {
+            display: none;
         }
     }
 }

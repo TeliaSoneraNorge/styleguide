@@ -27,8 +27,8 @@ export interface SubscriptionLinesAccordionProps {
   scrollToOnOpen?: boolean;
   className?: string;
   onOpen?: (...args: any[]) => any;
-  footer?: any;
   onSelect?: (...args: any[]) => any;
+  onClickShowCalculation?: (...args: any[]) => any;
 }
 
 const SubscriptionLinesAccordion: React.FC<SubscriptionLinesAccordionProps>;
