@@ -3,13 +3,15 @@ import PropTypes from 'prop-types';
 
 import Label from '../../atoms/Label/Label';
 
-const RadioButton = ({ label, name, value, checked, disabled, onChange, children }) => (
+const RadioButton = ({ label, name, value, checked, disabled, onChange, children, onMouseEnter, onMouseLeave }) => (
   <Label className="radiobutton">
     <input
       type="radio"
       name={name}
       checked={checked}
       onChange={onChange ? onChange : null}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
       disabled={disabled}
       value={value}
     />
