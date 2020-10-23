@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.34.8
+- Added SubscriptionLinesAccordion component
+
 ## 1.34.0
 
 - Rename icon "pen" to "edit"
