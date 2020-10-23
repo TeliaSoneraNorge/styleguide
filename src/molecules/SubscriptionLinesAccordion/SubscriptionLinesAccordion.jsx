@@ -23,6 +23,7 @@ const SubscriptionLinesAccordion = ({
   description1,
   description2,
   showCalculationText = 'Se utregning',
+  isSelected,
   onOpen = () => {},
   onSelect = () => {},
   onClickShowCalculation = () => {},
@@ -115,6 +116,7 @@ const SubscriptionLinesAccordion = ({
               onMouseEnter={() => setIsHoveringRadioButton(true)}
               onMouseLeave={() => setIsHoveringRadioButton(false)}
               onChange={() => handleOnSelect()}
+              checked={isSelected}
             />
           </div>
           {dataAmountIcon ? (

@@ -26,6 +26,7 @@ export interface SubscriptionLinesAccordionProps {
   disclaimers?: any;
   scrollToOnOpen?: boolean;
   className?: string;
+  isSelected: boolean;
   onOpen?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
   onClickShowCalculation?: (...args: any[]) => any;
