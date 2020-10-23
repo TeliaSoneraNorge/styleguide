@@ -35,6 +35,39 @@ const disclaimers = (
   />
 );
 
+const SUBSCRIPTIONS = [
+  {
+    dataAmount: 20,
+    dataUnit: 'GB',
+    id: 'smart20',
+    price: 529,
+    priceInfo: ['pr. md'],
+    description1: 'Du sparer 400,- pr md.',
+    description2: 'Normalpris 1647,- pr md.',
+    showCalculationText: 'Se utregning',
+    isInverted: true,
+    feature: {
+      iconName: 'infinite',
+      name: 'Ubegrenset data',
+    },
+  },
+  {
+    dataAmount: 10,
+    dataUnit: 'GB',
+    id: 'smart10',
+    price: 120,
+    priceInfo: ['pr. md'],
+    description1: 'Du sparer 300,- pr md.',
+    description2: 'Normalpris 1247,- pr md.',
+    showCalculationText: 'Se utregning',
+    isInverted: false,
+    feature: {
+      iconName: 'infinite',
+      name: 'Ubegrenset data',
+    },
+  },
+];
+
 export const Normal = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -131,5 +164,49 @@ export const WithIcon = () => {
         <li className="list__item">Roam Like Home</li>
       </ul>
     </SubscriptionLinesAccordion>
+  );
+};
+
+export const Multiple = () => {
+  const [expandedSubscriptionIndex, setExpandedSubscriptionIndex] = useState(-1);
+  const [selectedSubscriptionIndex, setSelectedSubscriptionIndex] = useState(-1);
+
+  return (
+    <>
+      {SUBSCRIPTIONS.map((subscription, index) => (
+        <SubscriptionLinesAccordion
+          key={index}
+          dataAmount={subscription.dataAmount}
+          dataUnit={subscription.dataUnit}
+          id={subscription.id}
+          price={subscription.price}
+          priceInfo={subscription.priceInfo}
+          description1={subscription.description1}
+          description2={subscription.description2}
+          showCalculationText={subscription.showCalculationText}
+          numberOfSubscriptions={3}
+          isExpanded={expandedSubscriptionIndex === index}
+          isInverted={subscription.isInverted}
+          feature={{
+            iconName: 'product-music-freedom',
+            name: 'Music Freedom',
+          }}
+          disclaimers={disclaimers}
+          isSelected={selectedSubscriptionIndex === index}
+          onSelect={() => setSelectedSubscriptionIndex(index)}
+          onOpen={() => {
+            expandedSubscriptionIndex === index
+              ? setExpandedSubscriptionIndex(-1)
+              : setExpandedSubscriptionIndex(index);
+          }}
+          onClickShowCalculation={() => console.log('Clicked show calculation')}
+        >
+          <ul className="list">
+            <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+            <li className="list__item">Roam Like Home</li>
+          </ul>
+        </SubscriptionLinesAccordion>
+      ))}
+    </>
   );
 };
