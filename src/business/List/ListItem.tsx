@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { ListStyleContext, ListStyle } from './utils';
 
 export type ListItemProps = {
-  label: string;
+  label: React.ReactNode;
   decorator?: React.ReactChild;
   description?: string;
   caption?: string | React.ReactChild;
