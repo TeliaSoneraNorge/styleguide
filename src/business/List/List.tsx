@@ -5,6 +5,7 @@ import { ListStyleContext, ListStyle } from './utils';
 type ListItemElement = React.ReactElement<ListItemProps>;
 
 type Props = ListStyle & {
+  className?: string;
   children: ListItemElement | Array<ListItemElement>;
 };
 
