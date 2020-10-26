@@ -109,7 +109,12 @@ const SubscriptionLinesAccordion = ({
         'subscription-lines-accordion__inverted': isInverted,
       })}
     >
-      <button className="subscription-lines-accordion__header" onClick={e => handleOnOpen(e)}>
+      <button
+        className={cn('subscription-lines-accordion__header', {
+          'subscription-lines-accordion__header--expanded': isExpanded,
+        })}
+        onClick={e => handleOnOpen(e)}
+      >
         <div className="subscription-lines-accordion__header-first-row">
           <div className="subscription-lines-accordion__radio-button">
             <RadioButton
