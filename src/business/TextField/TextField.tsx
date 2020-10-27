@@ -9,7 +9,6 @@ export interface Props {
   label?: string;
   /**
    * The id of the `input` element.
-   * Use this prop to make `label` and `helpeText` accessible for screen readers.
    */
   id?: string;
   /**
@@ -17,17 +16,13 @@ export interface Props {
    */
   name?: string;
   /**
-   * The helpe text content
+   * The helpe text content displayed under the input
    */
   helpText?: React.ReactNode;
   /**
    * Override or extend the styles applied to the component.
    */
   className?: string;
-  /**
-   * The color of the component.
-   */
-  color?: 'primary' | 'secondary';
 
   /**
    * If `true`, the `input` element will be disabled.
@@ -45,11 +40,6 @@ export interface Props {
    * @default false
    */
   success?: boolean;
-  /**
-   * If `true`, the input will take up the full width of its container.
-   * @default false
-   */
-  fullWidth?: boolean;
 
   /**
    * Actions to add to the right within the borders of the TextField
@@ -96,12 +86,11 @@ export interface Props {
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 
-  autoComplete?: string;
-
   /**
    * For compact TextFields vi use the lable as a placeholder
    */
   placeholder?: string;
+  autoComplete?: string;
 }
 
 export const TextField = (props: Props) => {
