@@ -13,7 +13,7 @@ storiesOf('Business/TextField', module)
         <a href="https://www.figma.com/file/DY2nAi4QVg4DZWQSGP1A0n/Text-field?node-id=2%3A2"> Figma skisser</a> <p></p>
         <div style={{ display: 'flex' }}>
           <div style={{ width: '30%', marginRight: '1rem' }}>
-            <TextField label="Field label" />
+            <TextField label="Field label" placeholder="Placeholder text" />
             <TextField label="Field label" helpText="Help or instrictions" />
             <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>} />
             <TextField label="Field label" error={true} helpText="Error message" />

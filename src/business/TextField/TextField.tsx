@@ -97,12 +97,19 @@ export interface Props {
   onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 
   autoComplete?: string;
+
+  /**
+   * For compact TextFields vi use the lable as a placeholder
+   */
+  placeholder?: string;
 }
 
 export const TextField = (props: Props) => {
   const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useTextField(props);
   const inputLabelId = props.label && props.id ? `${props.id}-label` : undefined;
   const statusIcon = props.success ? <Icon icon="check-mark-circle" /> : props.error ? <Icon icon="alert" /> : null;
+  const placeholder = props.size === 'compact' ? props.label : props.placeholder;
+
   return (
     <div
       className={cn(
@@ -134,11 +141,12 @@ export const TextField = (props: Props) => {
             </div>
           ) : null}
           <input
+            className="telia-textfield-input"
             id={props.id}
             name={props.id}
             ref={inputRef}
-            className="telia-textfield-input"
             type={props.type || 'text'}
+            placeholder={placeholder}
             disabled={props.disabled}
             value={props.value}
             aria-label={props['aria-label']}
