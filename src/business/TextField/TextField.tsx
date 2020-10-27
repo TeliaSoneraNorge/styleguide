@@ -16,7 +16,7 @@ export interface Props {
    */
   name?: string;
   /**
-   * The helpe text content displayed under the input
+   * The help text content displayed under the input
    */
   helpText?: React.ReactNode;
   /**
