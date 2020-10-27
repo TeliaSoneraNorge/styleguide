@@ -12,8 +12,9 @@ export const useTextField = (props: Props) => {
     if (inputRef.current) {
       if (focus) {
         inputRef.current.focus();
+      } else {
+        inputRef.current.blur();
       }
-      inputRef.current.blur();
     }
   }, [focus, inputRef.current]);
 

@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useTextField } from './useTextField';
 import { Icon } from '../../index';
@@ -108,7 +108,24 @@ export const TextField = (props: Props) => {
   const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useTextField(props);
   const inputLabelId = props.label && props.id ? `${props.id}-label` : undefined;
   const statusIcon = props.success ? <Icon icon="check-mark-circle" /> : props.error ? <Icon icon="alert" /> : null;
-  const placeholder = props.size === 'compact' ? props.label : props.placeholder;
+  const placeholder = props.size === 'compact' ? undefined : props.placeholder;
+  const inputHasValue = (props.value && props.value.length) || (inputRef.current && inputRef.current.value.length);
+
+  /**
+   * To support the compact TextField we need to position the lable within the input,
+   * and move to the borde when input is active.
+   * To position it correctly we need to find the width of the items in front of the input
+   * an apply the appropriate offset.
+   */
+  const [compactLableLeftOffset, setCompactLableLeftOffset] = useState<number | undefined>(undefined);
+  const leftContentRef = useRef<HTMLDivElement>(null);
+  useEffect(() => setCompactLableLeftOffset(leftContentRef.current ? leftContentRef.current.clientWidth : undefined), [
+    leftContentRef.current,
+  ]);
+  const lableStyle =
+    props.size === 'compact' && !(focus || inputHasValue) && compactLableLeftOffset
+      ? { left: `calc(${compactLableLeftOffset}px + 0.75rem)` }
+      : undefined;
 
   return (
     <div
@@ -119,6 +136,8 @@ export const TextField = (props: Props) => {
           'telia-textfield__success': !!props.success,
           'telia-textfield__error': !!props.error,
           'telia-textfield__disabled': !!props.disabled,
+          'telia-textfield__compact': props.size === 'compact',
+          'telia-textfield__withValue': inputHasValue,
         },
         props.className
       )}
@@ -130,13 +149,13 @@ export const TextField = (props: Props) => {
     >
       <div>
         {props.label ? (
-          <label className={cn('telia-textfield-label')} id={inputLabelId}>
+          <label style={lableStyle} className={cn('telia-textfield-label')} id={inputLabelId}>
             {props.label}
           </label>
         ) : null}
         <div className="telia-textfield-content">
           {props.leftContent ? (
-            <div className="telia-textfield-leftContent" onClick={e => e.stopPropagation()}>
+            <div ref={leftContentRef} className="telia-textfield-leftContent" onClick={e => e.stopPropagation()}>
               {props.leftContent}
             </div>
           ) : null}
