@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { TextField } from './index';
 import { Icon } from '../../index';
 import { Button } from '../Button';

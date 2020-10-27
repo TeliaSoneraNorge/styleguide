@@ -3,7 +3,6 @@
   input {
     flex-grow: 1;
     padding: 0.625rem;
-    padding-right: 2rem;
     font-size: 16px;
     line-height: 20px;
     border: none;
@@ -102,8 +101,8 @@
     position: absolute;
     left: 0.75rem;
     cursor: text;
-
-    top: 8px;
+    line-height: 20px;
+    top: 10px;
     font-size: 16px;
     color: var(--grey-400);
     transition-property: font-size, top, left, color;
@@ -116,8 +115,9 @@
 .telia-textfield__compact.telia-textfield__withValue {
   .telia-textfield-label {
     background: white;
-    top: -8px;
+    top: -6px;
     left: 7px;
+    line-height: 12px;
     font-size: 12px;
     padding: 0px 3px;
     color: var(--core-purple-500);
