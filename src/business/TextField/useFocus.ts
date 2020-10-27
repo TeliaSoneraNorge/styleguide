@@ -2,9 +2,10 @@ import React, { useRef, useState, useEffect } from 'react';
 import { Props } from './TextField';
 
 /**
- * Handle internal focus state for TextField to set appropriate style when input is focued
+ * Handle internal focus state for TextField to set appropriate style when input is focued.
+ * Add focus handling to the event handlers
  */
-export const useTextField = (props: Props) => {
+export const useFocus = (props: Props) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [focus, setFocus] = useState(false);
 

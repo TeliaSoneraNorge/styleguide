@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
-import { useTextField } from './useTextField';
+import { useFocus } from './useFocus';
 import { Icon } from '../../index';
 export interface Props {
   /**
@@ -105,7 +105,7 @@ export interface Props {
 }
 
 export const TextField = (props: Props) => {
-  const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useTextField(props);
+  const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useFocus(props);
   const inputLabelId = props.label && props.id ? `${props.id}-label` : undefined;
   const statusIcon = props.success ? <Icon icon="check-mark-circle" /> : props.error ? <Icon icon="alert" /> : null;
   const placeholder = props.size === 'compact' ? undefined : props.placeholder;
