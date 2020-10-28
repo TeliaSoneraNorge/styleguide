@@ -169,6 +169,12 @@ export const QuickSearch = () => {
           />
         </div>
       </div>
+      <p>
+        Looking for a search field with a dropdown menu to display results? See{' '}
+        <a href="http://localhost:6006/?path=/story/component-library-molecules-dropdown--with-search-toggle">
+          the dropdown with search toggle
+        </a>
+      </p>
     </>
   );
 };
