@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
+import { TextField, TextFieldProps } from '../../business/TextField/TextField';
 
 export type Color = 'purple' | 'default' | 'white';
 type DropdownToggleProps = {
@@ -94,7 +95,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   );
 };
 
-type DropdownSearchToggleProps = {
+type DropdownSearchToggleProps = TextFieldProps & {
   /**
    * Handle input change
    */
@@ -120,27 +121,32 @@ type DropdownSearchToggleProps = {
    */
   icon?: IconDefinition;
 };
+
 export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
   const { setMenuOpen, setHighlightIndex } = useDropdownContext();
+  const leftContent = props.icon ? (
+    <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem' }} />
+  ) : (
+    props.leftContent
+  );
 
   return (
-    <span className="telia-dropdown-toggle telia-dropdown-toggle__search textbox">
-      {props.icon ? (
-        <Icon icon={props.icon} style={{ height: '1.5rem', width: '1.5rem', marginRight: '0.5rem' }} />
-      ) : null}
-      <input
-        value={props.value}
-        placeholder={props.placeholder}
-        onChange={e => {
-          props.onInputChange(e.target.value);
-          setHighlightIndex(0);
-        }}
-        onFocus={() => {
-          if (props.openImmediately) {
-            setMenuOpen(true);
-          }
-        }}
-      />
-    </span>
+    <TextField
+      className="telia-dropdown-toggle telia-dropdown-toggle__search"
+      value={props.value}
+      placeholder={props.placeholder}
+      onChange={e => {
+        props.onInputChange(e.target.value);
+        setHighlightIndex(0);
+      }}
+      onFocus={() => {
+        if (props.openImmediately) {
+          setMenuOpen(true);
+        }
+      }}
+      leftContent={leftContent}
+      autoComplete="new-off"
+      {...props}
+    />
   );
 };
