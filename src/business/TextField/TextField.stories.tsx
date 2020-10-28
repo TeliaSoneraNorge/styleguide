@@ -109,3 +109,66 @@ export const Compact = () => {
     </>
   );
 };
+
+export const QuickSearch = () => {
+  return (
+    <>
+      <h3>TextField - QuickSearch</h3>
+      <a href="https://www.figma.com/file/DY2nAi4QVg4DZWQSGP1A0n/Text-field?node-id=2%3A2"> Figma skisser</a> <p></p>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '30%', marginRight: '1rem' }}>
+          <TextField
+            placeholder="Søk i..."
+            kind="grey"
+            leftContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+          />
+          <br />
+          <TextField
+            placeholder="Søk i..."
+            kind="grey"
+            leftContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+            rightContent={<Button kind="secondary-text" size="compact" icon="close" onClick={action('clear')} />}
+          />
+          <br />
+          <TextField
+            placeholder="Søk i..."
+            kind="grey"
+            leftContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+            rightContent={
+              <div style={{ display: 'flex', paddingRight: '4px' }}>
+                <Button kind="secondary-text" size="compact" icon="close" onClick={action('clear')} />{' '}
+                <Button kind="secondary-text" size="compact" icon="filter" onClick={action('clear')} />{' '}
+              </div>
+            }
+          />
+        </div>
+        <div style={{ width: '30%', marginRight: '1rem' }}>
+          <TextField
+            placeholder="Søk i..."
+            kind="white"
+            leftContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+          />
+          <br />
+          <TextField
+            placeholder="Søk i..."
+            kind="white"
+            leftContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+            rightContent={<Button kind="secondary-text" size="compact" icon="close" onClick={action('clear')} />}
+          />
+          <br />
+          <TextField
+            placeholder="Søk i..."
+            kind="white"
+            leftContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+            rightContent={
+              <div style={{ display: 'flex', paddingRight: '4px' }}>
+                <Button kind="secondary-text" size="compact" icon="close" onClick={action('clear')} />{' '}
+                <Button kind="secondary-text" size="compact" icon="filter" onClick={action('clear')} />{' '}
+              </div>
+            }
+          />
+        </div>
+      </div>
+    </>
+  );
+};

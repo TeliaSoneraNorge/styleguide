@@ -59,6 +59,13 @@ export interface Props {
   size?: 'default' | 'compact';
 
   /**
+   * White: white background with light grey border
+   * Grey: grey background with no border
+   * Defaukt: white background with purple border when active
+   */
+  kind?: 'white' | 'grey' | 'default';
+
+  /**
    * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
    */
   type?: string;
@@ -127,6 +134,8 @@ export const TextField = (props: Props) => {
           'telia-textfield__disabled': !!props.disabled,
           'telia-textfield__compact': props.size === 'compact',
           'telia-textfield__withValue': inputHasValue,
+          'telia-textfield__white': props.kind === 'white',
+          'telia-textfield__grey': props.kind === 'grey',
         },
         props.className
       )}

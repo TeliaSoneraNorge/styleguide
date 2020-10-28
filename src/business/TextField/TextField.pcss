@@ -147,3 +147,26 @@
     color: var(--red-600);
   }
 }
+
+.telia-textfield__white.telia-textfield__focus {
+  .telia-textfield-content {
+    border: 1px solid var(--grey-400);
+  }
+}
+
+.telia-textfield__grey,
+.telia-textfield__white {
+  input::placeholder {
+    color: var(--grey-700);
+  }
+}
+
+.telia-textfield__grey {
+  .telia-textfield-content {
+    border: none;
+    background-color: var(--grey-200);
+    input {
+      background-color: var(--grey-200);
+    }
+  }
+}
