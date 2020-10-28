@@ -2,10 +2,13 @@ import React from 'react';
 import { Avatar } from './Avatar';
 import images from '../../stories/sampleImages';
 import { action } from '@storybook/addon-actions';
+import { withDesign } from 'storybook-addon-designs';
+import { colors } from '../../index';
 
 export default {
   component: Avatar,
   title: 'Component library/Molecules/Avatar',
+  decorations: [withDesign],
 };
 
 export const Default = ({}) => {
@@ -98,4 +101,36 @@ export const Default = ({}) => {
       </div>
     </div>
   );
+};
+
+export const Colors = () => {
+  return (
+    <>
+      <p>
+        <h3>The avatar supports all Telia colors.</h3>
+        <br />
+        Providing a color, the color of the Avatar will be set to the color from props, and the background will be set
+        to the color from props with a transparency
+      </p>
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {Object.keys(colors).map(key => (
+          <Avatar icon="folder" color={key as keyof typeof colors} />
+        ))}
+      </div>
+      <br />
+      <br />
+      <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        {Object.keys(colors).map(key => (
+          <Avatar text="HG" color={key as keyof typeof colors} />
+        ))}
+      </div>
+    </>
+  );
+};
+
+Default.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/GWW1v1iOiprfTaQ8uapU6e/Avatars?node-id=13%3A21',
+  },
 };
