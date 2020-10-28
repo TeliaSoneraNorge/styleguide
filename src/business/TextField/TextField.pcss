@@ -1,0 +1,149 @@
+.telia-textfield {
+  position: relative;
+  input {
+    flex-grow: 1;
+    padding: 0.625rem;
+    font-size: 16px;
+    line-height: 20px;
+    border: none;
+    border-radius: 4px;
+
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: var(--grey-400);
+    }
+  }
+}
+
+.telia-textfield-label {
+  font-size: 14px;
+}
+
+.telia-textfield-content {
+  display: flex;
+  border: 1px solid var(--grey-400);
+  border-radius: 4px;
+}
+
+.telia-textfield-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  .Icon {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+.telia-textfield-leftContent,
+.telia-textfield-rightContent {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 40px;
+}
+
+.telia-textfield-helptext {
+  color: var(--grey-500);
+}
+
+.telia-textfield__focus {
+  .telia-textfield-content {
+    border: 1px solid var(--core-purple-500);
+  }
+}
+
+.telia-textfield__error {
+  .telia-textfield-content {
+    border: 1px solid var(--red-600);
+  }
+  .telia-textfield-status {
+    color: var(--red-600);
+  }
+  .telia-textfield-helptext {
+    color: var(--red-600);
+  }
+}
+.telia-textfield__success {
+  .telia-textfield-content {
+    border: 1px solid var(--green-600);
+  }
+  .telia-textfield-status {
+    color: var(--green-600);
+  }
+  .telia-textfield-helptext {
+    color: var(--green-600);
+  }
+}
+
+.telia-textfield__disabled {
+  .telia-textfield-label,
+  .telia-textfield-helptext {
+    color: var(--grey-400);
+  }
+  .telia-textfield-content {
+    background-color: var(--grey-100);
+    border: 1px solid var(--grey-300);
+    input:disabled {
+      background-color: var(--grey-100);
+    }
+  }
+}
+
+.telia-textfield__compact {
+  margin-top: 8px;
+
+  .telia-textfield-label {
+    position: absolute;
+    left: 0.75rem;
+    cursor: text;
+    line-height: 20px;
+    top: 10px;
+    font-size: 16px;
+    color: var(--grey-400);
+    transition-property: font-size, top, left, color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.telia-textfield__compact.telia-textfield__focus,
+.telia-textfield__compact.telia-textfield__withValue {
+  .telia-textfield-label {
+    background: white;
+    top: -6px;
+    left: 7px;
+    line-height: 12px;
+    font-size: 12px;
+    padding: 0px 3px;
+    color: var(--core-purple-500);
+
+    transition-property: font-size, top, left, color;
+    transition-duration: 200ms;
+    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}
+
+.telia-textfield__compact.telia-textfield__withValue:not(.telia-textfield__focus) {
+  .telia-textfield-label {
+    color: var(--grey-400);
+  }
+}
+
+.telia-textfield__compact.telia-textfield__focus.telia-textfield__success,
+.telia-textfield__compact.telia-textfield__withValue.telia-textfield__success {
+  .telia-textfield-label {
+    color: var(--green-600);
+  }
+}
+
+.telia-textfield__compact.telia-textfield__focus.telia-textfield__error,
+.telia-textfield__compact.telia-textfield__withValue.telia-textfield__error {
+  .telia-textfield-label {
+    color: var(--red-600);
+  }
+}
