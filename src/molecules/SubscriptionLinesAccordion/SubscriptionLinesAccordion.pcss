@@ -77,11 +77,14 @@
     }
 
     &__heading-name {
+        display: flex;
         font-size: 2rem;
+        line-height: 2rem;
 
         @media all and (min-width: 37.5em) {
             position: relative;
             font-size: 3.75rem;
+            line-height: 3.75rem;
         }
     }
     &__heading-icon {
@@ -112,6 +115,20 @@
         position: absolute;
         top: -12px;
         right: -25px;
+    }
+
+    &__heading-extra {
+        display: block;
+        font-size: 1rem;
+        font-family: 'pebble';
+        line-height: 1rem;
+        color: var(--pink2);
+    }
+
+    &__heading-extra-same-line {
+        font-family: 'pebble';
+        color: var(--pink2);
+        margin-left: .5rem;
     }
 
     &__vertical-line {

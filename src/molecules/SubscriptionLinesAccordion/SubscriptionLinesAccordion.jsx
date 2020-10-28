@@ -12,6 +12,8 @@ const SubscriptionLinesAccordion = ({
   dataAmount,
   dataAmountIcon,
   dataUnit,
+  extraDataAmount,
+  extraDataUnit,
   price,
   priceInfo,
   numberOfSubscriptions,
@@ -23,7 +25,7 @@ const SubscriptionLinesAccordion = ({
   description1,
   description2,
   showCalculationText = 'Se utregning',
-  isSelected,
+  isSelected = false,
   onOpen = () => {},
   onSelect = () => {},
   onClickShowCalculation = () => {},
@@ -101,6 +103,8 @@ const SubscriptionLinesAccordion = ({
     </div>
   );
 
+  const extraDataString = extraDataUnit && extraDataUnit ? `+${extraDataAmount}${extraDataUnit}` : '';
+
   return (
     <section
       ref={ref}
@@ -140,17 +144,21 @@ const SubscriptionLinesAccordion = ({
           ) : (
             <div className="subscription-lines-accordion__heading-container">
               <div className="subscription-lines-accordion__mobile-only">
-                <Heading
-                  className="subscription-lines-accordion__heading-name"
-                  tag="h2"
-                  size="s"
-                  text={`${dataAmount} ${dataUnit}`}
-                />
+                <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s">
+                  {dataAmount}
+                  {dataUnit}
+                  {extraDataString && (
+                    <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
+                  )}
+                </Heading>
               </div>
               <div className="subscription-lines-accordion__desktop-only">
                 <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s" text={dataAmount}>
                   <div className="subscription-lines-accordion__heading-unit">{dataUnit}</div>
                 </Heading>
+                {extraDataString && (
+                  <div className="subscription-lines-accordion__heading-extra">{extraDataString}</div>
+                )}
               </div>
             </div>
           )}

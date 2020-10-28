@@ -16,6 +16,8 @@ export interface SubscriptionLinesAccordionProps {
   dataAmount: SubscriptionDataAmount;
   dataAmountIcon?: any;
   dataUnit: SubscriptionDataUnit;
+  extraDataAmount?: SubscriptionDataAmount;
+  extraDataUnit?: SubscriptionDataUnit;
   price?: SubscriptionPrice;
   priceInfo?: string[];
   description1?: string;
@@ -26,7 +28,7 @@ export interface SubscriptionLinesAccordionProps {
   disclaimers?: any;
   scrollToOnOpen?: boolean;
   className?: string;
-  isSelected: boolean;
+  isSelected?: boolean;
   onOpen?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
   onClickShowCalculation?: (...args: any[]) => any;
