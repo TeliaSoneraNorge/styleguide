@@ -43,6 +43,7 @@
     }
     &:active,
     &:focus {
+      box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
       outline: none;
       background-color: var(--grey);
     }
@@ -97,21 +98,6 @@
     &:active,
     &:focus {
       background-color: var(--medium-light-grey);
-    }
-  }
-  &__search {
-    &.textbox {
-      padding-left: 0.5rem;
-      display: flex;
-    }
-    background-color: white;
-    input,
-    input:focus {
-      box-shadow: none;
-      width: 100%;
-      border: none;
-      outline: none;
-      font: inherit;
     }
   }
 }
