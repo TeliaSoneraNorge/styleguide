@@ -108,6 +108,7 @@
         "react-docgen-typescript-loader": "^3.6.0",
         "react-dom": "^16.11.0",
         "rimraf": "^2.6.3",
+        "storybook-addon-designs": "^5.4.2",
         "storybook-addon-jsx": "^7.3.4",
         "svg4everybody": "^2.1.9",
         "svgo": "^1.2.2",
