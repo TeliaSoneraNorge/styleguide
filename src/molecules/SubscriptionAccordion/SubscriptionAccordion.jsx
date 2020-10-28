@@ -38,7 +38,12 @@ const SubscriptionAccordion = ({
       id={id}
       className={cn('subscription-accordion', className, { 'subscription-accordion__inverted': isInverted })}
     >
-      <button className="subscription-accordion__header" onClick={onOpen}>
+      <button
+        className={cn('subscription-accordion__header', {
+          'subscription-accordion__header--expanded': isExpanded,
+        })}
+        onClick={onOpen}
+      >
         <Heading className="subscription-accordion__heading" tag="h2" size="s">
           {name}
           {highlight && <div className="subscription-accordion__heading-highlight">{highlight}</div>}

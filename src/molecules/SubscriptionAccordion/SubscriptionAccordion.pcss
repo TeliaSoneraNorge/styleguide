@@ -16,14 +16,29 @@
         width: 100%;
         padding: 1rem .75rem;
         color: black;
-        border: none;
+        border: 3px solid transparent;
         background-color: var(--white);
+        transition : border 150ms ease-out;
 
         &:hover,
         &:focus {
             outline: none;
-            background-color: var(--light-grey);
             cursor: pointer;
+            border: 3px solid var(--core-purple);
+
+            ~ .subscription-accordion__expanded-info {
+                border-left: 3px solid var(--core-purple);
+                border-right: 3px solid var(--core-purple);
+                border-bottom: 3px solid var(--core-purple);
+            }
+        }
+
+        &--expanded {
+            border-bottom: 0;
+            &:hover,
+            &:focus {
+                border-bottom: 0;
+            }
         }
     }
 
@@ -136,6 +151,11 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-bottom: 3px solid transparent;
+        transition : border 150ms ease-out;
+        padding: 0rem 0.5rem 0.5rem 0.5rem;
     }
 
     &__inverted {
@@ -145,14 +165,8 @@
 
             &:hover,
             &:focus {
-                color: black;
                 outline: none;
-                background-color: var(--light-grey);
                 cursor: pointer;
-
-                .subscription-accordion__icon-arrow {
-                    color: var(--black);
-                }
             }
         }
 
