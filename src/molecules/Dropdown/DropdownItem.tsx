@@ -135,7 +135,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   );
 };
 
-interface DropdownSearchItemProps {
+type DropdownSearchItemProps = {
   /**
    * Handle input change
    */
@@ -155,7 +155,7 @@ interface DropdownSearchItemProps {
    * icon to display in front of
    */
   icon?: IconDefinition;
-}
+};
 export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
   const { open, setHighlightIndex } = useDropdownContext();
   const itemRef = useRef<HTMLInputElement>(null);
