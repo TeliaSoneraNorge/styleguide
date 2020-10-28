@@ -2,10 +2,10 @@ import React from 'react';
 import { useDropdownContext } from './context';
 import cs from 'classnames';
 
-interface DropdownMenuProps {
+type DropdownMenuProps = {
   position?: 'right' | 'left';
   wrapContent?: boolean;
-}
+};
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
   const { menuRef, open, allItems } = useDropdownContext();

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useFocus } from './useFocus';
 import { Icon } from '../../index';
-export interface Props {
+export interface TextFieldProps {
   /**
    * The label content.
    */
@@ -100,7 +100,7 @@ export interface Props {
   autoComplete?: string;
 }
 
-export const TextField = (props: Props) => {
+export const TextField = (props: TextFieldProps) => {
   const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useFocus(props);
   const inputLabelId = props.label && props.id ? `${props.id}-label` : undefined;
   const statusIcon = props.success ? <Icon icon="check-mark-circle" /> : props.error ? <Icon icon="alert" /> : null;
