@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon, IconDefinition } from '../../index';
 import cn from 'classnames';
-
+import { colors } from '../../index';
 type Props = {
   /**
    * Image to fill the avatar.
@@ -33,6 +33,8 @@ type Props = {
   href?: string;
 
   onClick?: () => void;
+
+  color?: keyof typeof colors;
 };
 
 export const Avatar = (props: Props) => {
@@ -48,8 +50,17 @@ export const Avatar = (props: Props) => {
     }
   };
 
+  // Set ransparent bg color. 24 is 14%. https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
+  const bgcolor = props.color ? colors[props.color] + '24' : undefined;
+  const color = props.color ? colors[props.color] : undefined;
+
   return (
-    <Tag className={cn('telia-avatar', `telia-avatar--${size}`)} href={props.href} onClick={handleClick}>
+    <Tag
+      className={cn('telia-avatar', `telia-avatar--${size}`)}
+      style={{ backgroundColor: bgcolor, color }}
+      href={props.href}
+      onClick={handleClick}
+    >
       {props.img ? (
         <img className="telia-avatar-image" src={props.img} alt={props.alt} />
       ) : props.text ? (
