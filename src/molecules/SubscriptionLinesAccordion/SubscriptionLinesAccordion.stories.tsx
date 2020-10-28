@@ -101,6 +101,41 @@ export const Normal = () => {
   );
 };
 
+export const ExtraData = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionLinesAccordion
+      dataAmount={20}
+      dataUnit="GB"
+      extraDataAmount={5}
+      extraDataUnit="GB"
+      id="smart20"
+      price={529}
+      priceInfo={['pr. md']}
+      description1="Du sparer 400,- pr md."
+      description2="Normalpris 1647,- pr md."
+      showCalculationText="Se utregning"
+      numberOfSubscriptions={3}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'product-music-freedom',
+        name: 'Music Freedom',
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      onClickShowCalculation={() => console.log('Clicked show calculation')}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+    </SubscriptionLinesAccordion>
+  );
+};
+
 export const Inverted = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
