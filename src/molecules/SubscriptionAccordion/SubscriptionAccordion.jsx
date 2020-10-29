@@ -9,6 +9,7 @@ const SubscriptionAccordion = ({
   isExpanded,
   isInverted,
   name,
+  highlight,
   description,
   price,
   priceInfo,
@@ -37,8 +38,16 @@ const SubscriptionAccordion = ({
       id={id}
       className={cn('subscription-accordion', className, { 'subscription-accordion__inverted': isInverted })}
     >
-      <button className="subscription-accordion__header" onClick={onOpen}>
-        <Heading tag="h2" size="s" text={name} />
+      <button
+        className={cn('subscription-accordion__header', {
+          'subscription-accordion__header--expanded': isExpanded,
+        })}
+        onClick={onOpen}
+      >
+        <Heading className="subscription-accordion__heading" tag="h2" size="s">
+          {name}
+          {highlight && <div className="subscription-accordion__heading-highlight">{highlight}</div>}
+        </Heading>
         {discount ? (
           <div className="subscription-accordion__discount">
             <span className="subscription-accordion__discount-price">-{discount.price}</span>
