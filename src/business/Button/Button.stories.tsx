@@ -1,46 +1,10 @@
 import React from 'react';
-import { Button, ButtonKind } from './Button';
+import { Button } from './Button';
 
 export default {
   component: Button,
   title: 'Business/Button',
 };
-
-const kinds: ButtonKind[] = ['primary', 'primary-text', 'secondary', 'secondary-text', 'ghost', 'positive', 'negative'];
-
-const renderButtons = (kind: ButtonKind, size?: 'compact') => {
-  return (
-    <>
-      <h3>Normal state</h3>
-      <Button kind={kind} size={size} label="Button" />
-      <br />
-      <h3>Disabled state</h3>
-      <Button kind={kind} size={size} label="Button" disabled={true} />
-      <br />
-      <h3>Button with icon</h3>
-      <Button kind={kind} size={size} label="Button" icon={'add'} />
-      <br />
-      <h3>Button with icon right</h3>
-      <Button kind={kind} size={size} label="Button" icon={'arrow-right'} iconRight={true} />
-      <br />
-      <h3>Button ball (with icon and without label)</h3>
-      <Button kind={kind} size={size} icon={'add'} />
-      <br />
-      <h3>Button with action</h3>
-      <Button kind={kind} size={size} label="Click" onClick={() => alert('Hi')} />
-      <br />
-      <h3>Button with link </h3>
-      <Button kind={kind} size={size} label="Button" href="https://en.wikipedia.org/wiki/Success" />
-      <h3>Button with link and target props</h3>
-      <Button kind={kind} size={size} label="Button" href="https://en.wikipedia.org/wiki/Success" target="_blank" />
-      <br />
-      <h3>Button with no parameters</h3>
-      <Button kind={kind} size={size} />
-      <br />
-    </>
-  );
-};
-
 export const ButtonPrimary = () => (
   <div>
     <h2>Button Primary</h2>
