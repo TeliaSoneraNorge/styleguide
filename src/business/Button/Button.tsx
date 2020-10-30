@@ -35,6 +35,12 @@ type ButtonProps = {
    * Terminology from the designers of the Design System
    */
   size?: 'compact' | 'default';
+
+  /**
+   * For use with href.
+   * Eg pass `_blank` to open link in a new tab
+   */
+  target?: string;
 };
 
 export const Button = (props: ButtonProps) => {
@@ -61,6 +67,7 @@ export const Button = (props: ButtonProps) => {
       onClick={handleClick}
       disabled={props.disabled}
       type="button"
+      target={props.href ? props.target : undefined}
     >
       {icon && <Icon icon={icon} className="telia-button-icon" />}
       {label}
