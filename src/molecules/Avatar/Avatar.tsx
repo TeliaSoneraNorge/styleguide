@@ -35,12 +35,19 @@ type Props = {
   onClick?: () => void;
 
   color?: keyof typeof colors;
-
-  /**
-   *  Status indicator. Online, offline and inactive = green, red and yellow dot
-   */
-  status?: 'online' | 'offline' | 'inactive';
-};
+} & (
+  | {
+      /**
+       *  Status indicator. Online, offline and inactive = green, red and yellow dot
+       */
+      status?: 'online' | 'offline' | 'inactive';
+    }
+  | {
+      /**
+       *  Status indicator. Online, offline and inactive = green, red and yellow dot
+       */
+      avatar?: React.ReactNode;
+    });
 
 export const Avatar = (props: Props) => {
   const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
@@ -73,7 +80,8 @@ export const Avatar = (props: Props) => {
       ) : props.icon ? (
         <Icon className="telia-avatar-icon" icon={props.icon} />
       ) : null}
-      {props.status && <div className={`telia-avatar-status telia-avatar-${props.status}`} />}
+      {'status' in props && props.status && <div className={`telia-avatar-status telia-avatar-${props.status}`} />}
+      {'avatar' in props && props.avatar && <div className="telia-avatar-couple">{props.avatar}</div>}
     </Tag>
   );
 };

@@ -68,6 +68,8 @@ export const Default = ({}) => {
           />
         </div>
       </div>
+      <br />
+
       <h2 style={{ marginBottom: 0 }}>
         <code>size='big'</code>
       </h2>
@@ -99,9 +101,7 @@ export const Default = ({}) => {
           />
         </div>
       </div>
-      <h2 style={{ marginBottom: 0 }}>
-        <code>With status</code>
-      </h2>
+      <h2 style={{ marginBottom: 0 }}>With status</h2>
       <div style={{ display: 'flex' }}>
         <div style={{ paddingRight: '1rem' }}>
           <h3>Online</h3>
@@ -128,6 +128,18 @@ export const Default = ({}) => {
             alt="user"
             status="inactive"
           />
+        </div>
+      </div>
+      <br />
+
+      <h2 style={{ marginBottom: 0 }}>Couple</h2>
+      <div>An avatar can contain another avatar, shown as a couple</div>
+      <div style={{ display: 'flex' }}>
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Online</h3>
+          <Avatar text="HG" avatar={<Avatar text="HG" />} />
+          <Avatar icon="abroad" size="compact" avatar={<Avatar img={images.hero1} alt="user" />} />
+          <Avatar img={images.hero1} alt="user" size="big" avatar={<Avatar icon="phone" />} />
         </div>
       </div>
     </div>

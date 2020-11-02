@@ -49,6 +49,18 @@
   &-inactive {
     background-color: var(--orange-500);
   }
+
+  .telia-avatar {
+    position: absolute;
+    right: -2px;
+    bottom: -2px;
+    height: 1.5rem;
+    width: 1.5rem;
+    font-size: 8px;
+    border: 2px solid var(--white);
+    border-radius: 50%;
+    margin: 0;
+  }
 }
 
 button.telia-avatar {
@@ -92,8 +104,30 @@ a.telia-avatar {
   border-width: 3px;
 }
 
+.telia-avatar--big * .telia-avatar {
+  height: 3rem;
+  width: 3rem;
+  border: 3px solid var(--white);
+  font-size: 16px;
+  .Icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
 .telia-avatar--compact .telia-avatar-status {
   height: 0.75rem;
   width: 0.75rem;
   border-width: 2px;
+}
+
+.telia-avatar--compact * .telia-avatar {
+  height: 1rem;
+  width: 1rem;
+  border: 1px solid var(--white);
+  font-size: 6px;
+  .Icon {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
 }
