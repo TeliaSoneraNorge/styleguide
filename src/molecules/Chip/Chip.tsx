@@ -28,7 +28,7 @@ type Props = {
   /**
    * The click event for the whole chip (in filter mode) or for the remove button (in select mode).
    */
-  onClick?: (e: React.SyntheticEvent<HTMLButtonElement>) => void;
+  onClick?: () => void;
   className?: string;
 };
 
@@ -41,26 +41,26 @@ export const Chip = ({ label, icon, active, disabled, kind, mode = 'choice', onC
       type={Tag === 'button' ? 'button' : undefined}
       className={cs(
         'telia-chip',
-        `telia-chip--${mode}`,
+        `telia-chip__${mode}`,
         {
-          disabled: disabled,
-          active: active || mode === 'input',
-          grey: kind === 'grey',
+          'telia-chip__disabled': disabled,
+          'telia-chip__active': active || mode === 'input',
+          'telia-chip__grey': kind === 'grey',
         },
         className
       )}
-      onClick={(e: any) => {
+      onClick={() => {
         if (active && mode === 'input') {
           return;
         } else if (onClick) {
-          onClick(e);
+          onClick();
         }
       }}
       tabIndex={disabled || (active && mode === 'input') ? -1 : 0}
     >
       {icon && <Icon className="telia-chip-icon" icon={icon} />}
       <div className="telia-chip-label">{label}</div>
-      {mode === 'input' && <Button kind="secondary-text" icon="close" onClick={() => onClick} disabled={disabled} />}
+      {mode === 'input' && <Button kind="secondary-text" icon="close" onClick={onClick} disabled={disabled} />}
     </Tag>
   );
 };
