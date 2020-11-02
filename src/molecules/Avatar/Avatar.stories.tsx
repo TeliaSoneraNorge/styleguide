@@ -99,6 +99,37 @@ export const Default = ({}) => {
           />
         </div>
       </div>
+      <h2 style={{ marginBottom: 0 }}>
+        <code>With status</code>
+      </h2>
+      <div style={{ display: 'flex' }}>
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Online</h3>
+          <Avatar text="HG" status="online" />
+          <Avatar icon="abroad" status="online" />
+          <Avatar img={images.hero1} alt="user" status="online" />
+        </div>
+
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Offline</h3>
+          <Avatar text="HG" onClick={action('Button avatar with text')} status="offline" />
+          <Avatar icon="abroad" onClick={action('Button avatar with icon')} status="offline" />
+          <Avatar img={images.hero1} onClick={action('Button avatar with image')} alt="user" status="offline" />
+        </div>
+
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Inactive</h3>
+          <Avatar text="HG" href="my/path" onClick={action('Anchor avatar with text')} status="inactive" />
+          <Avatar icon="abroad" href="my/path" onClick={action('Anchor avatar with icon')} status="inactive" />
+          <Avatar
+            img={images.hero1}
+            href="my/path"
+            onClick={action('Anchor avatar with image')}
+            alt="user"
+            status="inactive"
+          />
+        </div>
+      </div>
     </div>
   );
 };

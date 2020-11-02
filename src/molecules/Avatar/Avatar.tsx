@@ -35,6 +35,11 @@ type Props = {
   onClick?: () => void;
 
   color?: keyof typeof colors;
+
+  /**
+   *  Status indicator. Online, offline and inactive = green, red and yellow dot
+   */
+  status?: 'online' | 'offline' | 'inactive';
 };
 
 export const Avatar = (props: Props) => {
@@ -68,6 +73,7 @@ export const Avatar = (props: Props) => {
       ) : props.icon ? (
         <Icon className="telia-avatar-icon" icon={props.icon} />
       ) : null}
+      {props.status && <div className={`telia-avatar-status telia-avatar-${props.status}`} />}
     </Tag>
   );
 };
