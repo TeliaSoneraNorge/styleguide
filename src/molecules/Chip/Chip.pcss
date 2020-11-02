@@ -1,0 +1,116 @@
+@import '../../colors.pcss';
+
+.telia-chip {
+  background-color: var(--white);
+  border: 1px solid var(--grey-300);
+  border-radius: 2rem;
+  color: var(--grey-700);
+  cursor: pointer;
+  display: flex;
+  font-family: 'Helvetica Neue';
+  font-size: 0.875rem;
+  letter-spacing: 0.05rem;
+  line-height: 1.25;
+  width: fit-content;
+  padding: 0.5rem 1.2rem;
+  position: relative;
+  text-decoration: none;
+  align-items: center;
+
+  &-label {
+    display: inline-flex;
+    overflow: hidden;
+    text-align: start;
+    @include typeSmall;
+  }
+
+  &-icon {
+    height: 1rem;
+    width: 1rem;
+    margin-right: 0.2rem;
+    align-self: flex-start;
+  }
+
+  &:hover {
+    background-color: var(--grey-100);
+    color: var(--grey-900);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+
+  &:active {
+    outline: none;
+    box-shadow: none;
+  }
+
+  &.grey {
+    background-color: var(--grey-200);
+    border: 1px solid var(--grey-200);
+    color: var(--grey-700);
+
+    &:hover {
+      background-color: var(--grey-300);
+      color: var(--grey-900);
+    }
+
+    &.disabled {
+      background-color: var(--grey-100);
+      border-color: var(--grey-100);
+      color: var(--grey-400);
+    }
+  }
+
+  &.telia-chip--choice.grey.active {
+    background-color: var(--core-purple-100);
+    border-color: var(--core-purple-100);
+    color: var(--core-purple-500);
+  }
+
+  &.active {
+    &.telia-chip--input {
+      cursor: default;
+      padding: 0.2rem;
+      padding-left: 1rem;
+    }
+
+    &.telia-chip--choice {
+      background-color: var(--core-purple-100);
+      border-color: var(--core-purple-200);
+      color: var(--core-purple-500);
+    }
+  }
+
+  &.disabled {
+    pointer-events: none;
+    background-color: var(--grey-100);
+    color: var(--grey-500);
+
+    &.telia-chip--input {
+      padding: 0.2rem;
+      padding-left: 1rem;
+    }
+
+    &.telia-chip .telia-button {
+      background-color: var(--grey-200);
+      color: var(--grey-400);
+    }
+  }
+}
+
+.telia-chip .telia-button {
+  background-color: var(--grey-400);
+  color: var(--white);
+  padding: 0.2rem;
+  margin-left: 0.4rem;
+
+  &:hover {
+    background-color: var(--grey-700);
+  }
+}
+
+.telia-chip--input .telia-chip-icon {
+  align-self: center;
+}
