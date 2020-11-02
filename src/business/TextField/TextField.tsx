@@ -136,6 +136,8 @@ export const TextField = (props: TextFieldProps) => {
           'telia-textfield__withValue': inputHasValue,
           'telia-textfield__white': props.kind === 'white',
           'telia-textfield__grey': props.kind === 'grey',
+          'telia-textfield__prepended': !!props.leftContent,
+          'telia-textfield__appended': !!props.rightContent || props.success || props.error,
         },
         props.className
       )}
