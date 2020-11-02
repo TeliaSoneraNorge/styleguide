@@ -8,7 +8,7 @@ export default {
   decorators: [withDesign],
 };
 
-export const Default = () => (
+export const ChoiceChips = () => (
   <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
     <h3>Choice Chip</h3>
     <strong>Default chip is white with grey border</strong>
@@ -84,7 +84,7 @@ export const InputChips = () => (
   </div>
 );
 
-Default.parameters = {
+ChoiceChips.parameters = {
   design: {
     type: 'figma',
     url: 'https://www.figma.com/file/E4qyw4OeADmgYAofHceD9Z/Chips?node-id=2%3A2',
