@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { DatePicker } from './DatePicker';
+import { DatePickerMenu } from './DatePickerMenu';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: DatePicker,
   title: 'Component library/Molecules/DatePicker',
-  subComponents: {},
+  subComponents: { DatePickerMenu },
   decorators: [withDesign],
 };
 

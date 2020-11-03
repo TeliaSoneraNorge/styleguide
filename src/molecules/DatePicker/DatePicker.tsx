@@ -21,14 +21,13 @@ type Props = {
 
   /**
    * Intial date value
+   * @default today
    */
   intialValue?: string;
 };
 
 export const DatePicker = (props: Props) => {
-  const { container } = useFocusTrap();
   const [calendarOpen, setCalendarOpen] = useState(false);
-  useEscapeListener({ onEscape: () => setCalendarOpen(false) });
 
   return (
     <div className="telia-date-picker">
