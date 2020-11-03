@@ -33,8 +33,8 @@ type Props = {
 };
 
 export const Chip = ({ label, icon, active, disabled, kind, mode = 'choice', onClick, className }: Props) => {
-  const Tag = mode === 'input' && active ? 'div' : 'button';
-  const role = Tag === 'div' && !(mode === 'input' && active) ? 'button' : undefined;
+  const Tag = mode === 'input' ? 'div' : 'button';
+  const role = Tag === 'div' && !(mode === 'input') ? 'button' : undefined;
   return (
     <Tag
       role={role}
@@ -56,7 +56,7 @@ export const Chip = ({ label, icon, active, disabled, kind, mode = 'choice', onC
           onClick();
         }
       }}
-      tabIndex={disabled || (active && mode === 'input') ? -1 : 0}
+      tabIndex={disabled || mode === 'input' ? -1 : 0}
     >
       {icon && <Icon className="telia-chip-icon" icon={icon} />}
       <div className="telia-chip-label">{label}</div>
