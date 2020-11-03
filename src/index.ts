@@ -50,6 +50,7 @@ export { default as BoxGrid } from './molecules/BoxGrid';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel';
+export { Chip } from './molecules/Chip';
 export { default as DownloadButtons } from './molecules/DownloadButtons';
 export { default as DropDownListWithLabel } from './molecules/DropDownListWithLabel';
 export { DonutChart } from './molecules/DonutChart';
