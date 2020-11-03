@@ -189,9 +189,9 @@ export const Cluster = () => {
       <code>stack='right'</code>
       <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
         <AvatarCluster stack="right">
-          <Avatar icon="folder" size="big" />
-          <Avatar text="HG" size="big" />
-          <Avatar img={images.hero1} alt="user" size="big" />
+          <Avatar icon="folder" />
+          <Avatar text="HG" />
+          <Avatar img={images.hero1} alt="user" />
         </AvatarCluster>
       </div>
     </>
