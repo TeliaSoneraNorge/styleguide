@@ -177,6 +177,8 @@ export const Cluster = () => {
     <>
       <h2>Avatar cluster</h2>
       <strong>Default cluster - left stacked</strong>
+      <br />
+      Default avatar size:
       <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
         <AvatarCluster>
           <Avatar icon="folder" />
@@ -185,13 +187,53 @@ export const Cluster = () => {
         </AvatarCluster>
       </div>
       <br />
+      Big avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster>
+          <Avatar icon="folder" size="big" />
+          <Avatar text="HG" size="big" />
+          <Avatar img={images.hero1} alt="user" size="big" />
+        </AvatarCluster>
+      </div>
       <br />
-      <code>stack='right'</code>
+      Compact avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster>
+          <Avatar icon="folder" size="compact" />
+          <Avatar text="HG" size="compact" />
+          <Avatar img={images.hero1} alt="user" size="compact" />
+        </AvatarCluster>
+      </div>
+      <br />
+      <br />
+      <strong>
+        <code>stack='right'</code>
+      </strong>
+      <br />
+      Default avatar size:
       <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
         <AvatarCluster stack="right">
           <Avatar icon="folder" />
           <Avatar text="HG" />
           <Avatar img={images.hero1} alt="user" />
+        </AvatarCluster>
+      </div>
+      <br />
+      Big avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster stack="right">
+          <Avatar icon="folder" size="big" />
+          <Avatar text="HG" size="big" />
+          <Avatar img={images.hero1} alt="user" size="big" />
+        </AvatarCluster>
+      </div>
+      <br />
+      Compact avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster stack="right">
+          <Avatar icon="folder" size="compact" />
+          <Avatar text="HG" size="compact" />
+          <Avatar img={images.hero1} alt="user" size="compact" />
         </AvatarCluster>
       </div>
     </>
