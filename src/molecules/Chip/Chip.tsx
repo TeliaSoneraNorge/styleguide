@@ -2,7 +2,6 @@ import React from 'react';
 import cs from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon';
 import { Button } from '../../business/Button';
-import './Chip.pcss';
 
 type Props = {
   /**
