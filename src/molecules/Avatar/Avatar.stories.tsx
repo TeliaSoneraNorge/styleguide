@@ -150,22 +150,23 @@ export const Default = ({}) => {
 export const Colors = () => {
   return (
     <>
-      <p>
+      <div>
         <h3>The avatar supports all Telia colors.</h3>
         <br />
         Providing a color, the color of the Avatar will be set to the color from props, and the background will be set
         to the color from props with a transparency
-      </p>
+        <br />
+      </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {Object.keys(colors).map(key => (
-          <Avatar icon="folder" color={key as keyof typeof colors} />
+        {Object.keys(colors).map((key, i) => (
+          <Avatar key={i} icon="folder" color={key as keyof typeof colors} />
         ))}
       </div>
       <br />
       <br />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {Object.keys(colors).map(key => (
-          <Avatar text="HG" color={key as keyof typeof colors} />
+        {Object.keys(colors).map((key, i) => (
+          <Avatar key={i} text="HG" color={key as keyof typeof colors} />
         ))}
       </div>
     </>

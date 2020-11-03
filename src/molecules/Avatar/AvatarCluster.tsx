@@ -21,9 +21,8 @@ export const AvatarCluster = (props: Props) => {
   return (
     <div className="telia-avatar-cluster">
       {React.Children.map(children, (child, index) => {
-        // 200 is just a random number to help decreasing the index.
         const zIndex = stack === 'left' ? React.Children.count(children) - index : index;
-        return React.cloneElement(child, { style: { zIndex: zIndex, ...child.props } });
+        return React.cloneElement(child, { style: { zIndex: zIndex }, ...child.props, key: index });
       })}
     </div>
   );
