@@ -133,12 +133,6 @@ a.telia-avatar {
   display: flex;
   position: relative;
 
-  .telia-avatar {
-    &:first-child {
-      margin-left: 0px;
-    }
-  }
-
   .telia-avatar.telia-avatar--default {
     margin-left: -1.5rem;
     border: 3px solid var(--white);
@@ -152,5 +146,11 @@ a.telia-avatar {
   .telia-avatar.telia-avatar--compact {
     margin-left: -1rem;
     border: 2px solid var(--white);
+  }
+
+  .telia-avatar {
+    &:first-child {
+      margin-left: 0px;
+    }
   }
 }
