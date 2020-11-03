@@ -45,6 +45,7 @@
     margin-right: 0.2rem;
     align-self: flex-start;
   }
+
   &__grey {
     background-color: var(--grey-200);
     border: 1px solid var(--grey-200);
@@ -68,9 +69,6 @@
     color: var(--grey-500);
   }
 }
-.telia-chip__input.telia__grey {
-  background-color: blue;
-}
 
 .telia-chip__input.telia-chip__disabled {
   padding: 0.2rem;
@@ -83,22 +81,25 @@
   padding-left: 1rem;
 }
 
-.telia-chip__choice.telia__grey {
-  background-color: blue;
-}
-
-.telia-chip__choice.telia-chip__disabled {
-}
-
 .telia-chip__choice.telia-chip__active {
   background-color: var(--core-purple-100);
   border-color: var(--core-purple-200);
   color: var(--core-purple-500);
 
-  &__grey {
-    background-color: var(--core-purple-100);
-    border-color: var(--core-purple-100);
-    color: var(--core-purple-500);
+  &:hover {
+    background-color: var(--core-purple-200);
+    color: var(--core-purple-600);
+  }
+}
+
+.telia-chip__choice.telia-chip__active.telia-chip__grey {
+  background-color: var(--core-purple-100);
+  border-color: var(--core-purple-100);
+  color: var(--core-purple-500);
+
+  &:hover {
+    background-color: var(--core-purple-200);
+    color: var(--core-purple-600);
   }
 }
 
