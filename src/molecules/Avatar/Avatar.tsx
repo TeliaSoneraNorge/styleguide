@@ -84,7 +84,7 @@ export const Avatar = (props: AvatarProps) => {
       ) : props.icon ? (
         <Icon className="telia-avatar-icon" icon={props.icon} />
       ) : null}
-      {'status' in props && <div className={`telia-avatar-status telia-avatar-${status}`} />}
+      {'status' in props && <div className={`telia-avatar-status telia-avatar-status--${status}`} />}
       {'avatar' in props && props.avatar && <div className="telia-avatar-couple">{props.avatar}</div>}
     </Tag>
   );
