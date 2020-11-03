@@ -29,6 +29,7 @@ const SubscriptionLinesAccordion = ({
   onOpen = () => {},
   onSelect = () => {},
   onClickShowCalculation = () => {},
+  style,
 }) => {
   const ref = useRef();
   const [isHoveringRadioButton, setIsHoveringRadioButton] = useState(false);
@@ -107,6 +108,7 @@ const SubscriptionLinesAccordion = ({
 
   return (
     <section
+      style={style}
       ref={ref}
       id={id}
       className={cn('subscription-lines-accordion', className, {
