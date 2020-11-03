@@ -2,7 +2,8 @@ import React from 'react';
 import { Icon, IconDefinition } from '../../index';
 import cn from 'classnames';
 import { colors } from '../../index';
-type Props = {
+
+export type AvatarProps = {
   /**
    * Image to fill the avatar.
    */
@@ -35,11 +36,26 @@ type Props = {
   onClick?: () => void;
 
   color?: keyof typeof colors;
-};
 
-export const Avatar = (props: Props) => {
+  style?: React.CSSProperties;
+} & (
+  | {
+      /**
+       *  Status indicator. Online, offline and inactive = green, red and yellow dot
+       */
+      status?: 'online' | 'offline' | 'inactive';
+    }
+  | {
+      /**
+       *  Status indicator. Online, offline and inactive = green, red and yellow dot
+       */
+      avatar?: React.ReactNode;
+    });
+
+export const Avatar = (props: AvatarProps) => {
   const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
   const size = props.size ? props.size : 'default';
+  const status = 'status' in props && props.status ? props.status : 'online';
 
   const handleClick = (e: React.SyntheticEvent) => {
     if (props.href && props.onClick) {
@@ -57,7 +73,7 @@ export const Avatar = (props: Props) => {
   return (
     <Tag
       className={cn('telia-avatar', `telia-avatar--${size}`)}
-      style={{ backgroundColor: bgcolor, color }}
+      style={{ ...props.style, backgroundColor: bgcolor, color }}
       href={props.href}
       onClick={handleClick}
     >
@@ -68,6 +84,8 @@ export const Avatar = (props: Props) => {
       ) : props.icon ? (
         <Icon className="telia-avatar-icon" icon={props.icon} />
       ) : null}
+      {'status' in props && <div className={`telia-avatar-status telia-avatar-status--${status}`} />}
+      {'avatar' in props && props.avatar && <div className="telia-avatar-couple">{props.avatar}</div>}
     </Tag>
   );
 };
