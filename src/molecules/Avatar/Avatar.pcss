@@ -131,3 +131,27 @@ a.telia-avatar {
     height: 0.5rem;
   }
 }
+
+.telia-avatar-cluster {
+  display: flex;
+  position: relative;
+
+  .telia-avatar.telia-avatar--default {
+    margin-left: -1.5rem;
+    border: 3px solid var(--white);
+  }
+
+  .telia-avatar.telia-avatar--big {
+    margin-left: -2.2rem;
+    border: 4px solid var(--white);
+  }
+
+  .telia-avatar.telia-avatar--compact {
+    margin-left: -1rem;
+    border: 2px solid var(--white);
+  }
+
+  &:first-child {
+    margin-left: 0px;
+  }
+}

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar } from './Avatar';
+import { AvatarCluster } from './AvatarCluster';
 import images from '../../stories/sampleImages';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
@@ -166,6 +167,32 @@ export const Colors = () => {
         {Object.keys(colors).map(key => (
           <Avatar text="HG" color={key as keyof typeof colors} />
         ))}
+      </div>
+    </>
+  );
+};
+
+export const Cluster = () => {
+  return (
+    <>
+      <h2>Avatar cluster</h2>
+      <strong>Default cluster - left stacked</strong>
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster>
+          <Avatar icon="folder" />
+          <Avatar text="HG" />
+          <Avatar img={images.hero1} alt="user" />
+        </AvatarCluster>
+      </div>
+      <br />
+      <br />
+      <code>stack='right'</code>
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster stack="right">
+          <Avatar icon="folder" size="big" />
+          <Avatar text="HG" size="big" />
+          <Avatar img={images.hero1} alt="user" size="big" />
+        </AvatarCluster>
       </div>
     </>
   );
