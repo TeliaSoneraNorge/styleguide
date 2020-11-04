@@ -15,6 +15,12 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.34.21
+Contains new components 
+- Lozenge
+- Chip 
+- TextField (in busienss area)
+
 ## 1.34.8
 - Added SubscriptionLinesAccordion component
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Avatar } from './Avatar';
+import { AvatarCluster } from './AvatarCluster';
 import images from '../../stories/sampleImages';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
@@ -68,6 +69,8 @@ export const Default = ({}) => {
           />
         </div>
       </div>
+      <br />
+
       <h2 style={{ marginBottom: 0 }}>
         <code>size='big'</code>
       </h2>
@@ -99,6 +102,47 @@ export const Default = ({}) => {
           />
         </div>
       </div>
+      <h2 style={{ marginBottom: 0 }}>With status</h2>
+      <div style={{ display: 'flex' }}>
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Online</h3>
+          <Avatar text="HG" status="online" />
+          <Avatar icon="abroad" status="online" />
+          <Avatar img={images.hero1} alt="user" status="online" />
+        </div>
+
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Offline</h3>
+          <Avatar text="HG" onClick={action('Button avatar with text')} status="offline" />
+          <Avatar icon="abroad" onClick={action('Button avatar with icon')} status="offline" />
+          <Avatar img={images.hero1} onClick={action('Button avatar with image')} alt="user" status="offline" />
+        </div>
+
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Inactive</h3>
+          <Avatar text="HG" href="my/path" onClick={action('Anchor avatar with text')} status="inactive" />
+          <Avatar icon="abroad" href="my/path" onClick={action('Anchor avatar with icon')} status="inactive" />
+          <Avatar
+            img={images.hero1}
+            href="my/path"
+            onClick={action('Anchor avatar with image')}
+            alt="user"
+            status="inactive"
+          />
+        </div>
+      </div>
+      <br />
+
+      <h2 style={{ marginBottom: 0 }}>Couple</h2>
+      <div>An avatar can contain another avatar, shown as a couple</div>
+      <div style={{ display: 'flex' }}>
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>Online</h3>
+          <Avatar text="HG" avatar={<Avatar text="HG" />} />
+          <Avatar icon="abroad" size="compact" avatar={<Avatar img={images.hero1} alt="user" />} />
+          <Avatar img={images.hero1} alt="user" size="big" avatar={<Avatar icon="phone" />} />
+        </div>
+      </div>
     </div>
   );
 };
@@ -106,23 +150,92 @@ export const Default = ({}) => {
 export const Colors = () => {
   return (
     <>
-      <p>
+      <div>
         <h3>The avatar supports all Telia colors.</h3>
         <br />
         Providing a color, the color of the Avatar will be set to the color from props, and the background will be set
         to the color from props with a transparency
-      </p>
+        <br />
+      </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {Object.keys(colors).map(key => (
-          <Avatar icon="folder" color={key as keyof typeof colors} />
+        {Object.keys(colors).map((key, i) => (
+          <Avatar key={i} icon="folder" color={key as keyof typeof colors} />
         ))}
       </div>
       <br />
       <br />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-        {Object.keys(colors).map(key => (
-          <Avatar text="HG" color={key as keyof typeof colors} />
+        {Object.keys(colors).map((key, i) => (
+          <Avatar key={i} text="HG" color={key as keyof typeof colors} />
         ))}
+      </div>
+    </>
+  );
+};
+
+export const Cluster = () => {
+  return (
+    <>
+      <h2>Avatar cluster</h2>
+      <strong>Default cluster - left stacked</strong>
+      <br />
+      Default avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster>
+          <Avatar icon="folder" />
+          <Avatar text="HG" />
+          <Avatar img={images.hero1} alt="user" />
+        </AvatarCluster>
+      </div>
+      <br />
+      Big avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster>
+          <Avatar icon="folder" size="big" />
+          <Avatar text="HG" size="big" />
+          <Avatar img={images.hero1} alt="user" size="big" />
+        </AvatarCluster>
+      </div>
+      <br />
+      Compact avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster>
+          <Avatar icon="folder" size="compact" />
+          <Avatar text="HG" size="compact" />
+          <Avatar img={images.hero1} alt="user" size="compact" />
+        </AvatarCluster>
+      </div>
+      <br />
+      <br />
+      <strong>
+        <code>stack='right'</code>
+      </strong>
+      <br />
+      Default avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster stack="right">
+          <Avatar icon="folder" />
+          <Avatar text="HG" />
+          <Avatar img={images.hero1} alt="user" />
+        </AvatarCluster>
+      </div>
+      <br />
+      Big avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster stack="right">
+          <Avatar icon="folder" size="big" />
+          <Avatar text="HG" size="big" />
+          <Avatar img={images.hero1} alt="user" size="big" />
+        </AvatarCluster>
+      </div>
+      <br />
+      Compact avatar size:
+      <div style={{ display: 'flex', flexWrap: 'wrap', margin: '20px' }}>
+        <AvatarCluster stack="right">
+          <Avatar icon="folder" size="compact" />
+          <Avatar text="HG" size="compact" />
+          <Avatar img={images.hero1} alt="user" size="compact" />
+        </AvatarCluster>
       </div>
     </>
   );

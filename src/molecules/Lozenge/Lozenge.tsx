@@ -23,7 +23,7 @@ export interface LozengeProps {
 }
 
 export const Lozenge = (props: LozengeProps) => {
-  const { label, status, type, className } = props;
+  const { label, status = 'neutral', type = 'round', className } = props;
 
   return (
     <div className={cn('telia-lozenge', `telia-lozenge__${status}`, `telia-lozenge__${type}`, className)}>{label}</div>
