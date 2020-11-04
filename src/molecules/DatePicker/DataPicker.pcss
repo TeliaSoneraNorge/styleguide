@@ -9,24 +9,39 @@
   border-radius: 4px;
   z-index: 10;
   width: 350px;
-  height: 320px;
-  &-header {
-    padding: 1rem 1.5rem;
-  }
+  height: 350px;
+}
+
+.telia-date-picker--header {
+  padding: 1rem 1.5rem;
+  padding-bottom: 0;
 }
 
 .telia-date-picker--month {
   display: grid;
-  grid-template-columns: 50px 50px 50px 50px 50px 50px 50px;
-  grid-template-rows: 50px 50px 50px 50px 50px 50px;
+  grid-template-columns: 45px 45px 45px 45px 45px 45px 45px;
+  grid-template-rows: 45px 45px 45px 45px 45px 45px;
+  justify-content: center;
+  place-items: center;
 }
 .telia-date-picker--day {
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
-
+  cursor: pointer;
+  background-color: white;
+  border: none;
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+  &:hover {
+    color: var(--black);
+    background-color: var(--grey-200);
+  }
+  &:active,
+  &__active {
+    color: var(--white);
+    background-color: var(--core-purple-500);
   }
 }

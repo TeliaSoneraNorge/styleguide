@@ -1,36 +1,59 @@
 import React, { useState } from 'react';
-import { TextField } from '../../business/TextField';
+import { useDatePicker } from './DatePicker';
 import { useFocusTrap } from '../Modal/useFocusTrap';
 import { useEscapeListener } from '../Modal/useEscapeListener';
-import { DatePickerDay } from './DatePickerDay';
-type Props = {
-  open: boolean;
-  setOpen: (open: boolean) => void;
-};
+import { DatePickerDay, DatePickerDayPlaceholder } from './DatePickerDay';
+import { DatePickerHeader } from './DatePickerHeader';
 
-export const DatePickerMenu = (props: Props) => {
+export const DatePickerMenu = () => {
+  const { year, month, setCalendarOpen, calendarOpen } = useDatePicker();
   const { container } = useFocusTrap();
-  useEscapeListener({ onEscape: () => props.setOpen(false) });
+  useEscapeListener({ onEscape: () => setCalendarOpen(false) });
 
-  const days = new Date(2020, 2, 0).getDate();
+  const numberOfDays = new Date(year, month, 0).getDate();
+  const dayOfStart = new Date(year, month, 1).getDay();
 
-  if (!props.open) return null;
+  if (!calendarOpen) return null;
+
+  const renderEmptySlots = () => {
+    const numerOfSlots = dayOfStart === 0 ? 6 : dayOfStart - 1;
+    const slots = [];
+    for (let i = 1; i <= numerOfSlots; i++) {
+      slots.push(<DatePickerDayPlaceholder key={`nothing-${i}`} />);
+    }
+    return slots;
+  };
+
+  const renderDates = () => {
+    const dates = [];
+    for (let i = 1; i <= numberOfDays; i++) {
+      dates.push(<DatePickerDay key={`day-${i}`} day={i} />);
+    }
+    return dates;
+  };
 
   const renderDays = () => {
-    const dayList = [];
-    for (let i = 1; i <= days; i++) {
-      dayList.push(<DatePickerDay key={`day-${i}`} day={i} onClick={() => console.log(i)} />);
-    }
-    return dayList;
+    return (
+      <>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+        <div style={{ fontSize: '14px' }}> Mon</div>
+      </>
+    );
   };
 
   return (
     <div ref={container} className="telia-date-picker--menu">
-      <div ref={container} className="telia-date-picker--menu-header">
-        Header
+      <DatePickerHeader />
+      <div className="telia-date-picker--month">
+        {renderDays()}
+        {renderEmptySlots()}
+        {renderDates()}
       </div>
-
-      <div className="telia-date-picker--month">{renderDays()}</div>
     </div>
   );
 };
