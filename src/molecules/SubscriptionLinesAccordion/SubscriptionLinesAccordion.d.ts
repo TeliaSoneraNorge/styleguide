@@ -13,7 +13,7 @@ export interface SubscriptionLinesAccordionProps {
   id?: string;
   isExpanded?: boolean;
   isInverted?: boolean;
-  dataAmount: SubscriptionDataAmount;
+  dataAmount?: SubscriptionDataAmount;
   dataAmountIcon?: any;
   dataUnit: SubscriptionDataUnit;
   extraDataAmount?: SubscriptionDataAmount;
@@ -32,6 +32,7 @@ export interface SubscriptionLinesAccordionProps {
   onOpen?: (...args: any[]) => any;
   onSelect?: (...args: any[]) => any;
   onClickShowCalculation?: (...args: any[]) => any;
+  style?: React.CSSProperties;
 }
 
 const SubscriptionLinesAccordion: React.FC<SubscriptionLinesAccordionProps>;

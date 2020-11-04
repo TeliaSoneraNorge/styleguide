@@ -73,6 +73,7 @@ export const Normal = () => {
 
   return (
     <SubscriptionLinesAccordion
+      style={{ margin: '0 auto' }}
       dataAmount={20}
       dataUnit="GB"
       id="smart20"
