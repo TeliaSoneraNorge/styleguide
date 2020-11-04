@@ -5,6 +5,7 @@ import { ListItem } from './ListItem';
 import { ListHeading } from './ListHeading';
 import { ListItemColor } from './utils';
 import { Avatar } from '../../molecules/Avatar';
+import { Lozenge } from '../../molecules/Lozenge';
 import { Checkbox } from '../Checkbox';
 
 export default {
@@ -132,6 +133,38 @@ export const Card = ({}) => (
         <ListItem label="Element 3" caption="caption" description="Description" color="light" />
         <ListItem label="Element 4" caption="caption" description="Description" />
         <ListItem label="Element 5" caption="caption" description="Description" />
+      </List>
+    </div>
+    <div style={{ flex: '1 1 0px' }}>
+      <List type="card">
+        <ListHeading title="List with Lozenge captions" />
+        <ListItem label="Element 1" caption={<Lozenge label="Element 1" />} />
+        <ListItem label="Element 2" caption={<Lozenge label="Element 2" />} />
+        <ListItem label="Element 3" caption={<Lozenge label="Element 3" status="positive" />} />
+        <ListItem label="Element 4" caption={<Lozenge label="Element 4" />} />
+        <ListItem label="Element 5" caption={<Lozenge label="Element 5" status="negative" />} />
+      </List>
+    </div>
+    <div style={{ flex: '1 1 0px' }}>
+      <List type="card">
+        <ListHeading title="List with decorators and captions" />
+        <ListItem label="Element 1" decorator={<Avatar icon="abroad" />} caption={<Lozenge label="Element 1" />} />
+        <ListItem
+          label="Element 2"
+          decorator={<Avatar icon="check-mark" />}
+          caption={<Lozenge label="Element 2" status="positive" />}
+        />
+        <ListItem
+          label="Element 3"
+          decorator={<Avatar icon="abroad" />}
+          caption={<Lozenge label="Element 3" status="positive" />}
+        />
+        <ListItem label="Element 4" decorator={<Lozenge label="Element 4" />} caption={<Avatar icon="alarm" />} />
+        <ListItem
+          label="Element 5"
+          decorator={<Lozenge label="5" status="positive" />}
+          caption={<Avatar icon="alarm" />}
+        />
       </List>
     </div>
   </div>
