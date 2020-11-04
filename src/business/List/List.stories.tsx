@@ -70,7 +70,7 @@ export const Default = ({}) => {
 };
 export const Card = ({}) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List type="card">
         <ListHeading title="List Standard" compact={true} />
         <ListItem label="Element 1" />
@@ -80,7 +80,7 @@ export const Card = ({}) => (
         <ListItem label="Element 5" />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List type="card" color="medium">
         <ListHeading title="List Flat w/Icons and captions" />
         <ListItem label="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
@@ -90,7 +90,7 @@ export const Card = ({}) => (
         <ListItem label="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List type="card" border="underlined">
         <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
         <ListItem
@@ -125,7 +125,7 @@ export const Card = ({}) => (
         />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List type="card" color="dark">
         <ListHeading title="List dark w/Individual styles" />
         <ListItem label="Element 1" caption="caption" description="Description" />
@@ -135,7 +135,7 @@ export const Card = ({}) => (
         <ListItem label="Element 5" caption="caption" description="Description" />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List type="card">
         <ListHeading title="List with Lozenge captions" />
         <ListItem label="Element 1" caption={<Lozenge label="Element 1" />} />
@@ -145,7 +145,7 @@ export const Card = ({}) => (
         <ListItem label="Element 5" caption={<Lozenge label="Element 5" status="negative" />} />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List type="card">
         <ListHeading title="List with decorators and captions" />
         <ListItem label="Element 1" decorator={<Avatar icon="abroad" />} caption={<Lozenge label="Element 1" />} />
@@ -162,7 +162,7 @@ export const Card = ({}) => (
         <ListItem label="Element 4" decorator={<Lozenge label="Element 4" />} caption={<Avatar icon="alarm" />} />
         <ListItem
           label="Element 5"
-          decorator={<Lozenge label="5" status="positive" />}
+          decorator={<Lozenge label="Element 5" status="positive" />}
           caption={<Avatar icon="alarm" />}
         />
       </List>
@@ -172,7 +172,7 @@ export const Card = ({}) => (
 
 export const Item = ({}) => (
   <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List>
         <ListHeading title="List Standard" />
         <ListItem label="Element 1" />
@@ -182,7 +182,7 @@ export const Item = ({}) => (
         <ListItem label="Element 5" />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List color="medium">
         <ListHeading title="List Flat w/Icons and captions" />
         <ListItem label="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
@@ -192,7 +192,7 @@ export const Item = ({}) => (
         <ListItem label="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List border="underlined">
         <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
         <ListItem
@@ -227,7 +227,7 @@ export const Item = ({}) => (
         />
       </List>
     </div>
-    <div style={{ flex: '1 1 0px' }}>
+    <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
       <List color="dark">
         <ListHeading title="List dark w/Individual styles" />
         <ListItem label="Element 1" caption="caption" description="Description" />
