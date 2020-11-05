@@ -63,6 +63,21 @@
   }
 }
 
+.data-table__row--connected {
+  border-top: none;
+  .data-table__cell:first-child {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 1rem;
+      top: -14%;
+      border-left: 4px solid var(--grey);
+      border-radius: 4px;
+    }
+  }
+}
+
 .data-table--fullWidth {
   width: 100%;
   .data-table__table {

@@ -48,6 +48,8 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = props => {
 
 type TableBodyRowProps = {
   onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void;
+  className?: string;
+  connectedToPrevious?: boolean;
 } & (
   | {
       onSelect: (e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -62,7 +64,7 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = props => {
 
   return (
     <tr
-      className="data-table__row"
+      className={cs('data-table__row', { 'data-table__row--connected': props.connectedToPrevious }, props.className)}
       onClick={e => {
         e && e.stopPropagation();
         props.onClickRow && props.onClickRow(e);
@@ -249,7 +251,6 @@ type TablePagingControlsProps = {
 };
 
 export const TablePagingControls: React.FC<TablePagingControlsProps> = props => {
-
   return (
     <form onSubmit={e => e.preventDefault()} className="table-paging">
       {props.numberOfSelectedRows ? (
@@ -287,7 +288,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = props => 
         <Icon icon="arrow-left" className="data-table__icon" />
       </button>
       <button
-        disabled={props.to === props.dataLength}
+        disabled={props.to <= props.dataLength}
         aria-label="Neste side"
         className="table-paging__button"
         onClick={e => {

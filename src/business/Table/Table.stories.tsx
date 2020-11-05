@@ -375,3 +375,30 @@ export const SortableAndSelectable = () => {
     </>
   );
 };
+export const WithConnectedRows = () => {
+  return (
+    <>
+      <Table headings={headings}>
+        {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
+          <TableBodyRow key={subscriber.subscription_id} connectedToPrevious={index === 3 || index === 7}>
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};
