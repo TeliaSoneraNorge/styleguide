@@ -37,6 +37,12 @@ export const Default = ({}) => {
           <Avatar img={images.hero1} href="my/path" onClick={action('Anchor avatar with image')} alt="user" />
         </div>
       </div>
+      <div style={{ display: 'flex' }}>
+        <div style={{ paddingRight: '1rem' }}>
+          <h3>The avatar only shows the first two letters of the text prop</h3>
+          <Avatar text="HELLO" href="my/path" onClick={action('Anchor avatar with text')} />
+        </div>
+      </div>
       <br />
       <h2 style={{ marginBottom: 0 }}>
         <code>size='compact'</code>
