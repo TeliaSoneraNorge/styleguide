@@ -160,6 +160,16 @@ type TableHeading = {
 type TableProps = {
   paging?: React.ReactNode;
   fullWidth?: boolean;
+  /**
+   * rows per page.
+   * used to render skeleton
+   */
+  pageSize?: number;
+
+  /**
+   * used to render skeleton
+   */
+  loading?: boolean;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {
@@ -229,7 +239,16 @@ export const Table: React.FC<TableProps> = (props) => {
               props.headerCells
             )}
           </thead>
-          <tbody>{props.children}</tbody>
+          {props.loading ? (
+            <tbody>
+              <TableSkeletonLoading
+                rowsCount={props.pageSize ?? 20}
+                columnCount={'headings' in props ? props.headings.length : React.Children.count(props.headerCells)}
+              />
+            </tbody>
+          ) : (
+            <tbody>{props.children}</tbody>
+          )}
         </table>
         {props.paging && <div className="data-table__paging">{props.paging}</div>}
       </span>
@@ -305,3 +324,17 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
     </form>
   );
 };
+
+const TableSkeletonLoading: React.FC<{ rowsCount: number; columnCount: number }> = (props) => (
+  <>
+    {_.times(props.rowsCount, (idx) => (
+      <tr className="data-table__skeleton data-table__row" key={idx}>
+        {_.times(props.columnCount, (i) => (
+          <td className="data-table__cell" key={`${i}-${idx}`}>
+            <div>&nbsp;</div>
+          </td>
+        ))}
+      </tr>
+    ))}
+  </>
+);

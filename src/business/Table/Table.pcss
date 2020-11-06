@@ -74,6 +74,7 @@
       top: -14%;
       border-left: 4px solid var(--grey);
       border-radius: 4px;
+      left: 25%;
     }
   }
 }
@@ -102,5 +103,43 @@
     border: none;
     background-color: inherit;
     cursor: pointer;
+  }
+}
+
+tr.data-table__skeleton {
+  pointer-events: none;
+  td,
+  div {
+    position: relative;
+    &:after {
+      content: '-';
+      visibility: hidden;
+    }
+
+    & > div {
+      width: calc(100% - 2rem);
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      max-height: 1.25rem;
+
+      background: linear-gradient(-45deg, var(--grey-100), var(--grey-200));
+      background-size: 200% 200%;
+      animation: Loading 1.5s ease infinite;
+      border-radius: 4rem;
+
+      @keyframes Loading {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    }
   }
 }

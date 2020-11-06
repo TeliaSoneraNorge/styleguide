@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Table, TableBodyRow, TableBodyCell, TablePagingControls } from './Table';
 import _ from 'lodash';
 import map from 'lodash/fp/map';
@@ -280,7 +280,7 @@ export const Sortable = () => {
         headings={headings}
         sortedColumnId={state.sortColumn}
         sortedColumnDirection={state.sortDirection}
-        onClickColumnHeader={sortId => setSorting(sortId)}
+        onClickColumnHeader={(sortId) => setSorting(sortId)}
         paging={
           <TablePagingControls
             from={state.from + 1}
@@ -335,7 +335,7 @@ export const SortableAndSelectable = () => {
         selected={state.selectedRows}
         sortedColumnId={state.sortColumn}
         sortedColumnDirection={state.sortDirection}
-        onClickColumnHeader={sortId => setSorting(sortId)}
+        onClickColumnHeader={(sortId) => setSorting(sortId)}
         paging={
           <TablePagingControls
             from={state.from + 1}
@@ -423,7 +423,7 @@ export const SortableSelectableClickableRows = () => {
         selected={state.selectedRows}
         sortedColumnId={state.sortColumn}
         sortedColumnDirection={state.sortDirection}
-        onClickColumnHeader={sortId => setSorting(sortId)}
+        onClickColumnHeader={(sortId) => setSorting(sortId)}
         paging={
           <TablePagingControls
             from={state.from + 1}
@@ -444,6 +444,37 @@ export const SortableSelectableClickableRows = () => {
             onSelect={() => setSelectRow(subscriber.subscription_id)}
             selected={state.selectedRows.includes(subscriber.subscription_id)}
           >
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};
+
+export const Loading = () => {
+  const [loading, setLoading] = useState(true);
+  setTimeout(() => setLoading(!loading), loading ? 3000 : 1000);
+
+  return (
+    <>
+      <Table headings={headings} loading={loading} pageSize={10} fullWidth={true}>
+        {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
+          <TableBodyRow key={subscriber.subscription_id}>
             {flow(
               pick([
                 'formal_name',
