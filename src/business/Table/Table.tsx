@@ -64,7 +64,14 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
 
   return (
     <tr
-      className={cs('data-table__row', { 'data-table__row--connected': props.connectedToPrevious }, props.className)}
+      className={cs(
+        'data-table__row',
+        {
+          'data-table__row--connected': props.connectedToPrevious,
+          'data-table__row--selected': 'selected' in props && props.selected,
+        },
+        props.className
+      )}
       onClick={(e) => {
         e && e.stopPropagation();
         props.onClickRow && props.onClickRow(e);
