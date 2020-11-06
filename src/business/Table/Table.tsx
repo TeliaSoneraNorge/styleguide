@@ -327,7 +327,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
         <Icon icon="arrow-left" className="data-table__icon" />
       </button>
       <button
-        disabled={props.to <= props.dataLength}
+        disabled={props.to >= props.dataLength}
         aria-label="Neste side"
         className="table-paging__button"
         onClick={(e) => {
