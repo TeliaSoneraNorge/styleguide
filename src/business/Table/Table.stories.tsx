@@ -4,6 +4,7 @@ import _ from 'lodash';
 import map from 'lodash/fp/map';
 import pick from 'lodash/fp/pick';
 import flow from 'lodash/fp/flow';
+import { action } from '@storybook/addon-actions';
 
 export default {
   component: Table,
@@ -381,6 +382,68 @@ export const WithConnectedRows = () => {
       <Table headings={headings}>
         {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
           <TableBodyRow key={subscriber.subscription_id} connectedToPrevious={index === 3 || index === 7}>
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};
+
+export const SortableSelectableClickableRows = () => {
+  const [state, { setSorting, setPage, setPerPage, setSelectAll, setSelectRow }] = useTableState({
+    data: subscribers,
+    paging: true,
+    selecting: true,
+    selectionId: 'subscription_id',
+    sorting: true,
+    sortColumn: 'subscription_id',
+  });
+
+  return (
+    <>
+      <Table
+        headings={headings}
+        onSelectAll={setSelectAll}
+        allSelected={state.allSelected}
+        selected={state.selectedRows}
+        sortedColumnId={state.sortColumn}
+        sortedColumnDirection={state.sortDirection}
+        onClickColumnHeader={sortId => setSorting(sortId)}
+        paging={
+          <TablePagingControls
+            from={state.from + 1}
+            to={state.to}
+            dataLength={subscribers.length}
+            perPage={state.perPage}
+            onPageChange={setPage}
+            onPerPageChange={setPerPage}
+            numberOfSelectedRows={state.selectedRows.length}
+          />
+        }
+      >
+        {state.data.slice(state.from, state.to).map((subscriber: any, index: number) => (
+          <TableBodyRow
+            selectId={subscriber.subscription_id}
+            key={subscriber.subscription_id}
+            onClickRow={action('click row')}
+            onSelect={() => setSelectRow(subscriber.subscription_id)}
+            selected={state.selectedRows.includes(subscriber.subscription_id)}
+          >
             {flow(
               pick([
                 'formal_name',

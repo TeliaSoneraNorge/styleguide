@@ -8,25 +8,24 @@ import { Checkbox } from '../Checkbox';
 type TableBodyCellProps = {
   rightAligned?: boolean;
   onClick?: (e?: React.MouseEvent<HTMLTableDataCellElement>) => void;
+  isCheckbox?: boolean;
 };
 
-export const TableBodyCell: React.FC<TableBodyCellProps> = props => {
+export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
   const { children } = props;
 
   return (
     <td
-      onClick={
-        props.onClick
-          ? e => {
-              e.stopPropagation();
-              props.onClick && props.onClick();
-            }
-          : undefined
-      }
+      onClick={(e) => {
+        if (props.isCheckbox || props.onClick) {
+          e.stopPropagation();
+        }
+        props.onClick && props.onClick();
+      }}
       role={props.onClick ? 'button' : undefined}
       onKeyDown={
         props.onClick
-          ? e => {
+          ? (e) => {
               if (e.keyCode === 32 || e.keyCode === 13) {
                 e.stopPropagation();
                 e.preventDefault();
@@ -57,20 +56,21 @@ type TableBodyRowProps = {
       selectId: string;
       checkboxLabel: string;
     }
-  | {});
+  | {}
+);
 
-export const TableBodyRow: React.FC<TableBodyRowProps> = props => {
+export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
   const { uniqueId } = React.useContext(UniqueIdContext);
 
   return (
     <tr
       className={cs('data-table__row', { 'data-table__row--connected': props.connectedToPrevious }, props.className)}
-      onClick={e => {
+      onClick={(e) => {
         e && e.stopPropagation();
         props.onClickRow && props.onClickRow(e);
       }}
       role={props.onClickRow ? 'button' : undefined}
-      onKeyDown={e => {
+      onKeyDown={(e) => {
         if (e.keyCode === 32 || e.keyCode === 13) {
           e.stopPropagation();
           e.preventDefault();
@@ -80,7 +80,7 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = props => {
       tabIndex={props.onClickRow ? 0 : undefined}
     >
       {'onSelect' in props && (
-        <TableBodyCell>
+        <TableBodyCell isCheckbox={true}>
           <Checkbox
             className="data-table__checkbox"
             label={props.checkboxLabel || 'Velg rad'}
@@ -103,9 +103,10 @@ type TableHeadCellProps = {
       sortDirection: 'ASC' | 'DESC' | 'NONE';
       onClick: (e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
     }
-  | {});
+  | {}
+);
 
-export const TableHeadCell: React.FC<TableHeadCellProps> = props => {
+export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
   const { children } = props;
 
   return (
@@ -118,7 +119,7 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = props => {
       })}
       onClick={
         'onClick' in props
-          ? e => {
+          ? (e) => {
               e.stopPropagation();
               props.onClick && props.onClick(e);
             }
@@ -126,7 +127,7 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = props => {
       }
       onKeyDown={
         'onClick' in props
-          ? e => {
+          ? (e) => {
               if (e.keyCode === 32 || e.keyCode === 13) {
                 e.stopPropagation();
                 e.preventDefault();
@@ -168,18 +169,20 @@ type TableProps = {
         checkAllLabel?: string;
         uncheckAllLabel?: string;
       }
-    | {}) &
+    | {}
+  ) &
   (
     | {
         onClickColumnHeader: (columnId: string | number, e?: React.MouseEvent<HTMLTableHeaderCellElement>) => void;
         sortedColumnId: string | number;
         sortedColumnDirection: 'ASC' | 'DESC' | 'NONE';
       }
-    | {});
+    | {}
+  );
 
 const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: 'styleguide-table' });
 
-export const Table: React.FC<TableProps> = props => {
+export const Table: React.FC<TableProps> = (props) => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
     <UniqueIdContext.Provider value={{ uniqueId }}>
@@ -200,7 +203,7 @@ export const Table: React.FC<TableProps> = props => {
                       hiddenLabel={true}
                       checked={props.allSelected ? true : false}
                       partial={props.selected && props.selected.length > 0 && !props.allSelected}
-                      controls={props.selected && props.selected.map(id => `${uniqueId}-${id}`).join(' ')}
+                      controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(' ')}
                       onChange={props.onSelectAll}
                     />
                   </TableHeadCell>
@@ -211,7 +214,7 @@ export const Table: React.FC<TableProps> = props => {
                       key={id}
                       rightAligned={rightAligned}
                       sortDirection={props.sortedColumnId === id ? props.sortedColumnDirection : 'NONE'}
-                      onClick={e => props.onClickColumnHeader(id, e)}
+                      onClick={(e) => props.onClickColumnHeader(id, e)}
                     >
                       {label}
                     </TableHeadCell>
@@ -250,20 +253,21 @@ type TablePagingControlsProps = {
   selectOptions?: Array<number>;
 };
 
-export const TablePagingControls: React.FC<TablePagingControlsProps> = props => {
+export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) => {
   return (
-    <form onSubmit={e => e.preventDefault()} className="table-paging">
+    <form onSubmit={(e) => e.preventDefault()} className="table-paging">
       {props.numberOfSelectedRows ? (
         <span className="table-paging__text">
-          {`${props.numberOfSelectedRows} ${props.selectedRowsLabel ||
-            `${props.numberOfSelectedRows > 1 ? 'rader' : 'rad'} er valgt`}`}
+          {`${props.numberOfSelectedRows} ${
+            props.selectedRowsLabel || `${props.numberOfSelectedRows > 1 ? 'rader' : 'rad'} er valgt`
+          }`}
         </span>
       ) : null}
       <label className="table-paging__text">
         {props.perPageLabel || 'Rader per side: '}
         <select
           value={props.perPage}
-          onChange={e => props.onPerPageChange(parseInt(e.target.value), e)}
+          onChange={(e) => props.onPerPageChange(parseInt(e.target.value), e)}
           className="table-paging__per-page"
         >
           {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
@@ -280,7 +284,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = props => 
         disabled={props.from === 1}
         aria-label="Forrige side"
         className="table-paging__button"
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           props.onPageChange(false, e);
         }}
@@ -291,7 +295,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = props => 
         disabled={props.to <= props.dataLength}
         aria-label="Neste side"
         className="table-paging__button"
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           props.onPageChange(true, e);
         }}
