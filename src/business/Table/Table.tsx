@@ -98,6 +98,10 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
 
 type TableHeadCellProps = {
   rightAligned?: boolean;
+  /**
+   * set fixed columns width
+   */
+  width?: number;
 } & (
   | {
       sortDirection: 'ASC' | 'DESC' | 'NONE';
@@ -138,6 +142,7 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
       }
       role={'onClick' in props ? 'button' : undefined}
       tabIndex={'onClick' in props ? 0 : undefined}
+      style={props.width ? { width: props.width } : undefined}
     >
       {children}
       {'onClick' in props && props.sortDirection && props.sortDirection !== 'NONE' && ' '}
@@ -155,6 +160,10 @@ type TableHeading = {
   label: string;
   id: string;
   rightAligned?: boolean;
+  /**
+   * set fixed columns width
+   */
+  width?: number;
 };
 
 type TableProps = {
@@ -163,6 +172,7 @@ type TableProps = {
   /**
    * rows per page.
    * used to render skeleton
+   * @default is 20
    */
   pageSize?: number;
 
@@ -218,20 +228,19 @@ export const Table: React.FC<TableProps> = (props) => {
                     />
                   </TableHeadCell>
                 )}
-                {_.map(props.headings, ({ id, label, rightAligned }) =>
+                {_.map(props.headings, (heading) =>
                   'onClickColumnHeader' in props ? (
                     <TableHeadCell
-                      key={id}
-                      rightAligned={rightAligned}
-                      sortDirection={props.sortedColumnId === id ? props.sortedColumnDirection : 'NONE'}
-                      onClick={(e) => props.onClickColumnHeader(id, e)}
+                      key={heading.id}
+                      rightAligned={heading.rightAligned}
+                      width={heading.width}
+                      sortDirection={props.sortedColumnId === heading.id ? props.sortedColumnDirection : 'NONE'}
+                      onClick={(e) => props.onClickColumnHeader(heading.id, e)}
                     >
-                      {label}
+                      {heading.label}
                     </TableHeadCell>
                   ) : (
-                    <TableHeadCell key={id} rightAligned={rightAligned}>
-                      {label}
-                    </TableHeadCell>
+                    <TableHeadCell {...heading}>{heading.label}</TableHeadCell>
                   )
                 )}
               </tr>

@@ -24,6 +24,14 @@ const headings = [
   { id: 'subscription_type', label: 'Abonnement', rightAligned: false },
 ];
 
+const headingsFixedWidth = [
+  { id: 'formal_name', label: 'Navn', rightAligned: false, width: 120 },
+  { id: 'subscription_id', label: 'Telefonnummer', rightAligned: true, width: 120 },
+  { id: 'account_id', label: 'Avdelingsnummer', rightAligned: true, width: 120 },
+  { id: 'account_name', label: 'Avdeling', rightAligned: false, width: 100 },
+  { id: 'resource_type', label: 'Enhetstype', rightAligned: false, width: 120 },
+  { id: 'subscription_type', label: 'Abonnement', rightAligned: false, width: 120 },
+];
 export const Standard = () => {
   return (
     <>
@@ -472,7 +480,7 @@ export const Loading = () => {
 
   return (
     <>
-      <Table headings={headings} loading={loading} pageSize={10} fullWidth={true}>
+      <Table headings={headingsFixedWidth} loading={loading} pageSize={10} fullWidth={true}>
         {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
           <TableBodyRow key={subscriber.subscription_id}>
             {flow(
