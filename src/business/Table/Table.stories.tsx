@@ -5,7 +5,7 @@ import map from 'lodash/fp/map';
 import pick from 'lodash/fp/pick';
 import flow from 'lodash/fp/flow';
 import { action } from '@storybook/addon-actions';
-
+import { Avatar } from '../../index';
 export default {
   component: Table,
   title: 'Business/Table',
@@ -390,6 +390,9 @@ export const WithConnectedRows = () => {
       <Table headings={headings}>
         {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
           <TableBodyRow key={subscriber.subscription_id} connectedToPrevious={index === 3 || index === 7}>
+            <TableBodyCell>
+              <Avatar icon="wireless" size="compact" />
+            </TableBodyCell>
             {flow(
               pick([
                 'formal_name',
