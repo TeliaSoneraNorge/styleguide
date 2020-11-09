@@ -483,7 +483,7 @@ export const Loading = () => {
 
   return (
     <>
-      <Table headings={headingsFixedWidth} loading={loading} pageSize={10} fullWidth={true}>
+      <Table headings={headingsFixedWidth} loading={loading} dimension={{ rows: 10 }} fullWidth={true}>
         {subscribers.slice(0, 10).map((subscriber: any, index: number) => (
           <TableBodyRow key={subscriber.subscription_id}>
             {flow(

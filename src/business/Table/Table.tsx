@@ -186,11 +186,13 @@ type TableProps = {
   fullWidth?: boolean;
   className?: string;
   /**
-   * rows per page.
-   * used to render skeleton
-   * @default is 20
+   * used to render skeleton.
+   * @default rows is 20
+   *
+   * Spescify columns when rendering headings using `headerCells`
+   * @default columns is 5
    */
-  pageSize?: number;
+  dimension?: { rows?: number; columns?: number };
 
   /**
    * used to render skeleton
@@ -267,8 +269,8 @@ export const Table: React.FC<TableProps> = (props) => {
           {props.loading ? (
             <tbody>
               <TableSkeletonLoading
-                rowsCount={props.pageSize ?? 20}
-                columnCount={'headings' in props ? props.headings.length : React.Children.count(props.headerCells)}
+                rowsCount={props.dimension?.rows ?? 20}
+                columnCount={'headings' in props ? props.headings.length : props.dimension?.columns ?? 5}
               />
             </tbody>
           ) : (
