@@ -34,6 +34,7 @@ function ModalDialog({
   headerElement,
   footerElement,
   size,
+  className,
   ...rest
 }) {
   const modalNode = renderTo || useContext(Context);
@@ -103,7 +104,12 @@ function ModalDialog({
       tabIndex={0}
       onKeyDown={handleKeyDown}
       ref={dialogRef}
-      className={classnames('modal-dialog container', `container--${size}`, { 'modal-dialog--standalone': standalone })}
+      className={classnames(
+        'modal-dialog container',
+        `container--${size}`,
+        { 'modal-dialog--standalone': standalone },
+        className ? className : undefined
+      )}
       role="dialog"
       aria-labelledby={`${name}-heading`}
       aria-describedby={`${name}-description`}
