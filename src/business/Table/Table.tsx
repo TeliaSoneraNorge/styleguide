@@ -9,6 +9,7 @@ type TableBodyCellProps = {
   rightAligned?: boolean;
   onClick?: (e?: React.MouseEvent<HTMLTableDataCellElement>) => void;
   isCheckbox?: boolean;
+  className?: string;
 };
 
 export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
@@ -35,10 +36,13 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
           : undefined
       }
       tabIndex={props.onClick ? 0 : undefined}
-      className={cs({
-        'data-table__cell': true,
-        'data-table__cell--right-aligned': props.rightAligned,
-      })}
+      className={cs(
+        {
+          'data-table__cell': true,
+          'data-table__cell--right-aligned': props.rightAligned,
+        },
+        props.className
+      )}
     >
       {children}
     </td>
@@ -105,6 +109,7 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
 
 type TableHeadCellProps = {
   rightAligned?: boolean;
+  className?: string;
   /**
    * set fixed columns width
    */
@@ -122,12 +127,15 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
 
   return (
     <th
-      className={cs({
-        'data-table__cell': true,
-        'data-table__cell--header': true,
-        'data-table__cell--sortable': 'onClick' in props,
-        'data-table__cell--right-aligned': props.rightAligned,
-      })}
+      className={cs(
+        {
+          'data-table__cell': true,
+          'data-table__cell--header': true,
+          'data-table__cell--sortable': 'onClick' in props,
+          'data-table__cell--right-aligned': props.rightAligned,
+        },
+        props.className
+      )}
       onClick={
         'onClick' in props
           ? (e) => {
@@ -176,6 +184,7 @@ type TableHeading = {
 type TableProps = {
   paging?: React.ReactNode;
   fullWidth?: boolean;
+  className?: string;
   /**
    * rows per page.
    * used to render skeleton
@@ -213,7 +222,7 @@ export const Table: React.FC<TableProps> = (props) => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
     <UniqueIdContext.Provider value={{ uniqueId }}>
-      <span className={cs('data-table', { 'data-table--fullWidth': props.fullWidth })}>
+      <span className={cs('data-table', { 'data-table--fullWidth': props.fullWidth }, props.className)}>
         <table className="data-table__table">
           <thead>
             {'headings' in props ? (
