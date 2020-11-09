@@ -190,7 +190,7 @@ type TableProps = {
    * @default rows is 20
    *
    * Spescify columns when rendering headings using `headerCells`
-   * @default columns is 1
+   * @default columns is 5
    */
   dimension?: { rows?: number; columns?: number };
 
@@ -270,7 +270,7 @@ export const Table: React.FC<TableProps> = (props) => {
             <tbody>
               <TableSkeletonLoading
                 rowsCount={props.dimension?.rows ?? 20}
-                columnCount={'headings' in props ? props.headings.length : props.dimension?.columns ?? 1}
+                columnCount={'headings' in props ? props.headings.length : props.dimension?.columns ?? 5}
               />
             </tbody>
           ) : (
