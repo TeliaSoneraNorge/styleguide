@@ -42,9 +42,11 @@ type DropdownToggleProps = {
    * using a custom toggle component (passing children)
    */
   tag?: 'div' | 'span';
+
+  className?: string;
 };
 
-export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
+export const DropdownToggle: React.FC<DropdownToggleProps> = (props) => {
   const { toggle, open, dropdownRef } = useDropdownContext();
   const toggleRef = useRef<HTMLButtonElement>(null);
 
@@ -67,7 +69,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
   if (props.children) {
     return (
       <Tag className="telia-dropdown-toggle">
-        {React.Children.map(props.children, child =>
+        {React.Children.map(props.children, (child) =>
           typeof child === 'string' ? (
             <div onClick={toggle}>{child}</div>
           ) : React.isValidElement(child) ? (
@@ -81,12 +83,16 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = props => {
     <button
       ref={toggleRef}
       onClick={toggle}
-      className={cs('telia-dropdown-toggle telia-dropdown-toggle__default', {
-        'telia-dropdown-toggle__hideLabel': props.hideLabel,
-        'telia-dropdown-toggle__purple': props.color === 'purple',
-        'telia-dropdown-toggle__white': props.color === 'white',
-        'telia-dropdown-toggle__outline': props.outline !== false,
-      })}
+      className={cs(
+        'telia-dropdown-toggle telia-dropdown-toggle__default',
+        {
+          'telia-dropdown-toggle__hideLabel': props.hideLabel,
+          'telia-dropdown-toggle__purple': props.color === 'purple',
+          'telia-dropdown-toggle__white': props.color === 'white',
+          'telia-dropdown-toggle__outline': props.outline !== false,
+        },
+        props.className
+      )}
     >
       {props.icon ? <Icon className="telia-dropdown-toggle-icon" icon={props.icon} /> : null}
       <span className="telia-dropdown-toggle-label">{props.label}</span>
@@ -135,7 +141,7 @@ export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
       className="telia-dropdown-toggle telia-dropdown-toggle__search"
       value={props.value}
       placeholder={props.placeholder}
-      onChange={e => {
+      onChange={(e) => {
         props.onInputChange(e.target.value);
         setHighlightIndex(0);
       }}
