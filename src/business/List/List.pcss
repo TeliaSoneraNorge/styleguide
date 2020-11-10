@@ -123,3 +123,68 @@
     margin: 0;
   }
 }
+
+.telia-listItem--skeleton {
+  pointer-events: none;
+
+  .telia-listItem__decorator {
+    height: 2.75rem;
+    width: 2.75rem;
+    margin: 0.25rem;
+    flex: none;
+    padding: 0;
+    margin-right: 0.75rem;
+  }
+
+  .telia-listItem__name {
+    width: 80%;
+  }
+
+  .telia-listItem__description {
+    width: 80%;
+    margin-top: 0.75rem;
+  }
+
+  .telia-listItem__caption {
+    width: 20%;
+  }
+  .telia-listItem__decorator,
+  .telia-listItem__name,
+  .telia-listItem__description,
+  .telia-listItem__caption {
+    background: linear-gradient(-45deg, var(--grey-100), var(--grey-200));
+    background-size: 200% 200%;
+    animation: Loading 1.5s ease infinite;
+    border-radius: 4rem;
+
+    @keyframes Loading {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 50% 100%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+  }
+}
+
+.telia-listItem--skeleton.telia-listItem--dark {
+  .telia-listItem__decorator,
+  .telia-listItem__name,
+  .telia-listItem__description,
+  .telia-listItem__caption {
+    background: linear-gradient(-45deg, var(--grey-600), var(--grey-700));
+  }
+}
+
+.telia-listItem--skeleton.telia-listItem--medium {
+  .telia-listItem__decorator,
+  .telia-listItem__name,
+  .telia-listItem__description,
+  .telia-listItem__caption {
+    background: linear-gradient(-45deg, var(--grey-200), var(--grey-300));
+  }
+}
