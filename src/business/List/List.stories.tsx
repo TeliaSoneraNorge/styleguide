@@ -2,6 +2,7 @@ import React from 'react';
 import { List } from './List';
 import { ListCard } from './ListCard';
 import { ListItem } from './ListItem';
+import { ListItemSkeleton } from './ListItemSkeleton';
 import { ListHeading } from './ListHeading';
 import { ListItemColor } from './utils';
 import { Avatar } from '../../molecules/Avatar';
@@ -239,3 +240,375 @@ export const Item = ({}) => (
     </div>
   </div>
 );
+
+export const Skeleton = ({}) => {
+  const [loading, setLoading] = React.useState(true);
+  setTimeout(() => setLoading(!loading), loading ? 3000 : 1000);
+
+  return (
+    <>
+      <div>
+        <h2>Default </h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List>
+              <ListHeading title="Default" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                </>
+              ) : (
+                <>
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="medium">
+              <ListHeading title="Color medium" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                </>
+              ) : (
+                <>
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="dark">
+              <ListHeading title="Color dark" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                </>
+              ) : (
+                <>
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                </>
+              )}
+            </List>
+          </div>
+        </div>
+
+        <h2>type: card </h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List border="shadow" type="card">
+              <ListHeading title="default" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                </>
+              ) : (
+                <>
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="medium" border="shadow" type="card">
+              <ListHeading title="color medium" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                </>
+              ) : (
+                <>
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="dark" border="shadow" type="card">
+              <ListHeading title="color dark" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                  <ListItemSkeleton />
+                </>
+              ) : (
+                <>
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                </>
+              )}
+            </List>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2>compact: true</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List>
+              <ListHeading title="default" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                </>
+              ) : (
+                <>
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="medium">
+              <ListHeading title="color medium" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                </>
+              ) : (
+                <>
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="dark">
+              <ListHeading title="color dark" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                </>
+              ) : (
+                <>
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                </>
+              )}
+            </List>
+          </div>
+        </div>
+
+        <h2>compact: true, type: card</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List border="shadow" type="card">
+              <ListHeading title="default" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                </>
+              ) : (
+                <>
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="medium" border="shadow" type="card">
+              <ListHeading title="color medium" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                </>
+              ) : (
+                <>
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                </>
+              )}
+            </List>
+          </div>
+
+          <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+            <List color="dark" border="shadow" type="card">
+              <ListHeading title="color dark" />
+              {loading ? (
+                <>
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                  <ListItemSkeleton compact={true} />
+                </>
+              ) : (
+                <>
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                  <ListItem
+                    compact={true}
+                    decorator={<Avatar icon="mobile" />}
+                    label="Element 1"
+                    description="Description"
+                  />
+                </>
+              )}
+            </List>
+          </div>
+        </div>
+      </div>
+      <h2>description: false, caption: true</h2>
+      <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+        <List type="card" border="shadow">
+          {loading ? (
+            <>
+              <ListItemSkeleton description={false} caption={true} />
+              <ListItemSkeleton description={false} caption={true} />
+              <ListItemSkeleton description={false} caption={true} />
+            </>
+          ) : (
+            <>
+              <ListItem
+                caption={<Lozenge status="positive" label="lozenge" />}
+                decorator={<Avatar icon="mobile" />}
+                label="Element 1"
+              />
+              <ListItem
+                caption={<Lozenge status="positive" label="lozenge" />}
+                decorator={<Avatar icon="mobile" />}
+                label="Element 1"
+              />
+              <ListItem
+                caption={<Lozenge status="positive" label="lozenge" />}
+                decorator={<Avatar icon="mobile" />}
+                label="Element 1"
+              />
+            </>
+          )}
+        </List>
+      </div>
+    </>
+  );
+};
