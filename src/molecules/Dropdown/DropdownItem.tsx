@@ -87,8 +87,9 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     }
   }, [props.index, highlightIndex, itemRef.current, open]);
 
-  const onClick = () => {
+  const onClick = (e: React.MouseEvent) => {
     if (props.onClick) {
+      e.preventDefault();
       props.onClick();
     }
     toggle();

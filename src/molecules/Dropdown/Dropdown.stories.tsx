@@ -10,6 +10,7 @@ import {
   Color,
 } from './index';
 import Button from '../../atoms/Button';
+import { Checkbox } from '../../business';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
@@ -75,6 +76,7 @@ export default {
 };
 
 export const Default = () => {
+  const [checked, setChecked] = useState<boolean>();
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h3>Default toggle, with default items, items with icon, header and divider item</h3>
@@ -145,6 +147,16 @@ export const Default = () => {
                   Child
                 </DropdownItem>
                 <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+              </DropdownMenu>
+            </Dropdown>
+            <br />
+            <h4>With checkbox</h4>
+            <Dropdown open={true}>
+              <DropdownToggle label="Toggle" icon="user" color={color as Color} />
+              <DropdownMenu>
+                <DropdownItem onClick={() => setChecked(!checked)}>
+                  <Checkbox checked={checked} label="Check me" />
+                </DropdownItem>
               </DropdownMenu>
             </Dropdown>
           </div>
