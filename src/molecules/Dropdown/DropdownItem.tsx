@@ -129,7 +129,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
         'telia-dropdown-item',
         {
           'telia-dropdown-item__centered': props.centered,
-          'telia-dropdown-item__active': open && props.index === highlightIndex,
+          'telia-dropdown-item__active': open && isClickable && props.index === highlightIndex,
           'telia-dropdown-item__clickable': isClickable,
         },
         props.className

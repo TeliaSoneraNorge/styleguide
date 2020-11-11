@@ -119,6 +119,7 @@
     margin-right: 0.5rem;
   }
 
+  &__active,
   &:active,
   &:focus {
     outline: none;
@@ -170,11 +171,13 @@
     cursor: pointer;
     background-color: var(--medium-light-grey);
   }
-  &__active,
   &:active,
   &:focus {
     background-color: var(--grey);
   }
+}
+.telia-dropdown-item__clickable.telia-dropdown-item__active {
+  background-color: var(--grey);
 }
 
 .telia-dropdown-content > .telia-dropdown-item {
