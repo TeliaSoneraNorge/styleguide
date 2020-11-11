@@ -161,18 +161,18 @@ export const Default = () => {
       </div>
       <br />
       <h4>With checkbox</h4>
-      <Dropdown open={open} toggle={() => setOpen((prevState) => !prevState)} itemToggle={false}>
+      <Dropdown open={open} toggle={() => setOpen(!open)} itemToggle={false}>
         <DropdownToggle label="Toggle" icon="user" />
         <DropdownMenu>
-          <DropdownItem onClick={() => setSelected((prevState) => ({ ...prevState, item1: !prevState.item1 }))}>
+          <DropdownItem onClick={() => setSelected({ ...selected, item1: !selected.item1 })}>
             <Checkbox checked={selected.item1} label="Check me" />
           </DropdownItem>
-          <DropdownItem onClick={() => setSelected((prevState) => ({ ...prevState, item2: !prevState.item2 }))}>
+          <DropdownItem onClick={() => setSelected({ ...selected, item2: !selected.item2 })}>
             <Checkbox checked={selected.item2} label="Check me" />
           </DropdownItem>
           <DropdownItem divider />
           <DropdownItem>
-            <Button label="Save" size="compact" onClick={() => setOpen((prevState) => !prevState)} />
+            <Button label="Save" size="compact" onClick={() => setOpen(!open)} />
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
