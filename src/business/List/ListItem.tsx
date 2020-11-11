@@ -10,17 +10,22 @@ export type ListItemProps = {
   onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
   compact?: boolean;
   className?: string;
+  /**
+   * @default li
+   */
+  tag?: 'div' | 'span' | 'li';
 } & ListStyle;
 
-export const ListItem = (props: ListItemProps) => {
+export const ListItem: React.FC<ListItemProps> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
   const { decorator, label, description, caption, onClick, compact, className, ...listItemStyle } = props;
 
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
+  const Tag = props.tag ? props.tag : 'li';
 
   return (
-    <li
+    <Tag
       className={cn(
         'telia-listItem',
         {
@@ -35,7 +40,7 @@ export const ListItem = (props: ListItemProps) => {
         className
       )}
       onClick={onClick}
-      onKeyDown={e => {
+      onKeyDown={(e) => {
         if (onClick && (e.key === ' ' || e.key === 'Enter')) {
           e.preventDefault();
           onClick(e as any);
@@ -44,29 +49,32 @@ export const ListItem = (props: ListItemProps) => {
       tabIndex={onClick && 0}
       role={onClick && 'button'}
     >
-      {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
-      <div className="telia-listItem__content">
-        <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
-        {description && (
+      <div className="telia-listItem__main">
+        {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
+        <div className="telia-listItem__content">
+          <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
+          {description && (
+            <div
+              className={cn('telia-listItem__description', {
+                'telia-listItem__description--dark': color === 'dark',
+              })}
+            >
+              {description}
+            </div>
+          )}
+        </div>
+        {caption && (
           <div
-            className={cn('telia-listItem__description', {
-              'telia-listItem__description--dark': color === 'dark',
+            className={cn('telia-listItem__caption', {
+              'telia-listItem__caption--text': typeof caption === 'string',
+              'telia-listItem__caption--dark': color === 'dark',
             })}
           >
-            {description}
+            {caption}
           </div>
         )}
       </div>
-      {caption && (
-        <div
-          className={cn('telia-listItem__caption', {
-            'telia-listItem__caption--text': typeof caption === 'string',
-            'telia-listItem__caption--dark': color === 'dark',
-          })}
-        >
-          {caption}
-        </div>
-      )}
-    </li>
+      {props.children}
+    </Tag>
   );
 };

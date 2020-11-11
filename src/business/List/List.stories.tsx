@@ -612,3 +612,64 @@ export const Skeleton = ({}) => {
     </>
   );
 };
+
+export const WithChildren = ({}) => {
+  return (
+    <div>
+      <List>
+        <ListHeading title="Normal list heading" />
+        <ListItem
+          label="ListItem"
+          decorator={<Avatar text="LI" />}
+          description="<li> element of item type"
+          caption="unstyled"
+        >
+          <ListItem
+            label="I am a child. A list item"
+            description="Dont worry. I am a div, not an li"
+            compact={true}
+            tag="div"
+          />
+        </ListItem>
+
+        <ListCard
+          label="Compact ListCard"
+          compact={true}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+        >
+          <div>Hello child</div>
+        </ListCard>
+
+        <ListCard
+          label="Compact ListCard"
+          compact={true}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+        >
+          <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+            <Lozenge label="Hello world" /> <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+            <Lozenge label="Hello world" />
+          </div>
+        </ListCard>
+      </List>
+    </div>
+  );
+};
