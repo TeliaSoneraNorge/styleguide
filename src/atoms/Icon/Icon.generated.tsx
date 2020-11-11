@@ -58,6 +58,7 @@ export type IconDefinition =
   | 'document-xls'
   | 'document'
   | 'download'
+  | 'edit'
   | 'email'
   | 'entertainment'
   | 'facebook'
@@ -95,6 +96,7 @@ export type IconDefinition =
   | 'minus'
   | 'mms'
   | 'mobile'
+  | 'moisture'
   | 'money-euro'
   | 'money'
   | 'more'
@@ -102,7 +104,6 @@ export type IconDefinition =
   | 'open'
   | 'org-chart'
   | 'payment'
-  | 'pen'
   | 'phone'
   | 'pie-chart'
   | 'place'
@@ -130,7 +131,7 @@ export type IconDefinition =
   | 'refill'
   | 'refresh'
   | 'replace'
-  | 'return'
+  | 'return-arrow'
   | 'robot'
   | 'router'
   | 'search'
@@ -227,6 +228,7 @@ export const availableIcons: IconDefinition[] = [
   'document-xls',
   'document',
   'download',
+  'edit',
   'email',
   'entertainment',
   'facebook',
@@ -264,6 +266,7 @@ export const availableIcons: IconDefinition[] = [
   'minus',
   'mms',
   'mobile',
+  'moisture',
   'money-euro',
   'money',
   'more',
@@ -271,7 +274,6 @@ export const availableIcons: IconDefinition[] = [
   'open',
   'org-chart',
   'payment',
-  'pen',
   'phone',
   'pie-chart',
   'place',
@@ -299,7 +301,7 @@ export const availableIcons: IconDefinition[] = [
   'refill',
   'refresh',
   'replace',
-  'return',
+  'return-arrow',
   'robot',
   'router',
   'search',
@@ -627,6 +629,12 @@ export const IconSvg = {
       d="M56 30a2 2 0 012 2v18a8 8 0 01-8 8H14a8 8 0 01-8-8V32a2 2 0 114 0v18a4 4 0 004 4h36a4 4 0 004-4V32a2 2 0 012-2zM32 10a2 2 0 012 2v27.17l8.59-8.58a2 2 0 012.82 2.82l-11.29 11.3a3 3 0 01-4.24 0l-11.29-11.3a2 2 0 012.82-2.82L30 39.17V12a2 2 0 012-2z"
     />
   ),
+  edit: (
+    <path
+      fillRule="evenodd"
+      d="M51.12 12.88c-4.3-4.29-8.58-5.56-10.92-3.22L12.07 37.8l-.16.15a2.26 2.26 0 00-.28.35c-1.54 2.22-2.55 9.29-3.12 15a2 2 0 002 2.2h.2c5.71-.57 12.78-1.58 15-3.12a2.26 2.26 0 00.35-.28l28.28-28.29c2.34-2.35 1.07-6.63-3.22-10.93zM12.76 51.24a71.59 71.59 0 011.69-9.62 35.94 35.94 0 017.93 7.93 71.59 71.59 0 01-9.62 1.69zM51.51 21l-26 26a32.82 32.82 0 00-3.93-4.56A32.12 32.12 0 0017 38.51l26-26c.45-.17 2.61.51 5.3 3.2 2.69 2.69 3.36 4.85 3.21 5.29z"
+    />
+  ),
   email: (
     <path
       fillRule="evenodd"
@@ -846,6 +854,12 @@ export const IconSvg = {
       d="M40 4a8 8 0 018 8v40a8 8 0 01-8 8H24a8 8 0 01-8-8V12a8 8 0 018-8zm4 44H20v4a4 4 0 004 4h16a4 4 0 004-4v-4zm-12 2a2 2 0 110 4 2 2 0 010-4zm8-42H24a4 4 0 00-4 4v32h24V12a4 4 0 00-4-4z"
     />
   ),
+  moisture: (
+    <path
+      d="M22 36a10 10 0 01-10-10c0-4.8 7-15.12 8.35-17.14L22 6.48l1.65 2.38C25 10.88 32 21.2 32 26a10 10 0 01-10 10zm0-22.38c-2.88 4.49-6 10.2-6 12.38a6 6 0 0012 0c0-2.18-3.12-7.89-6-12.38zM30 60a8 8 0 01-8-8c0-3.75 5.29-11.6 6.35-13.14L30 36.48l1.65 2.38C32.71 40.4 38 48.25 38 52a8 8 0 01-8 8zm0-16.36c-2.13 3.41-4 7-4 8.36a4 4 0 008 0c0-1.33-1.87-4.95-4-8.36zM44 40a8 8 0 01-8-8c0-3.75 5.29-11.6 6.35-13.14L44 16.48l1.65 2.38C46.71 20.4 52 28.25 52 32a8 8 0 01-8 8zm0-16.36c-2.13 3.41-4 7-4 8.36a4 4 0 008 0c0-1.33-1.87-4.95-4-8.36z"
+      className="cls-1"
+    />
+  ),
   'money-euro': (
     <path
       fillRule="evenodd"
@@ -886,12 +900,6 @@ export const IconSvg = {
     <path
       fillRule="evenodd"
       d="M44 8a8 8 0 017.93 6.91c.044.362.067.726.07 1.09a8 8 0 018 8v24a8 8 0 01-8 8H12a8 8 0 01-8-8V14a6 6 0 016-6zM8 19.65V48a4 4 0 004 4h40a4 4 0 004-4v-4H46a8 8 0 110-16h10v-4a4 4 0 00-4-4H10a5.8 5.8 0 01-2-.35zM56 32H46a4 4 0 100 8h10v-8zm-10 2a2 2 0 110 4 2 2 0 010-4zm-2-22H10a2 2 0 000 4h38a3.882 3.882 0 00-.18-1.19l-.067-.198A4 4 0 0044 12z"
-    />
-  ),
-  pen: (
-    <path
-      fillRule="evenodd"
-      d="M51.12 12.88c-4.3-4.29-8.58-5.56-10.92-3.22L12.07 37.8l-.16.15a2.26 2.26 0 00-.28.35c-1.54 2.22-2.55 9.29-3.12 15a2 2 0 002 2.2h.2c5.71-.57 12.78-1.58 15-3.12a2.26 2.26 0 00.35-.28l28.28-28.29c2.34-2.35 1.07-6.63-3.22-10.93zM12.76 51.24a71.59 71.59 0 011.69-9.62 35.94 35.94 0 017.93 7.93 71.59 71.59 0 01-9.62 1.69zM51.51 21l-26 26a32.82 32.82 0 00-3.93-4.56A32.12 32.12 0 0017 38.51l26-26c.45-.17 2.61.51 5.3 3.2 2.69 2.69 3.36 4.85 3.21 5.29z"
     />
   ),
   phone: (
@@ -1050,7 +1058,7 @@ export const IconSvg = {
       d="M22.68 30.66a2.001 2.001 0 010 2.83l-8.21 8.21H54a2 2 0 110 4H14.47l8.21 8.21a2 2 0 01-2.83 2.83L9.39 46.27a3.64 3.64 0 010-5.15l10.46-10.46a2.001 2.001 0 012.83 0zm21.47-23l10.46 10.46a3.65 3.65 0 01.01 5.15L44.15 33.74a2 2 0 11-2.83-2.83l8.21-8.21H10a2 2 0 110-4h39.53l-8.21-8.22a2 2 0 012.83-2.82z"
     />
   ),
-  return: (
+  'return-arrow': (
     <path
       fillRule="evenodd"
       d="M60 28v12a8 8 0 01-8 8H10.44l8.29 8.29a2 2 0 11-2.83 2.83L5.44 48.65a3.65 3.65 0 010-5.15L15.9 33a2 2 0 112.83 2.82L10.6 44H52a4 4 0 004-4V28a4 4 0 00-4-4h-9.18a2 2 0 110-4H52a8 8 0 018 8z"
