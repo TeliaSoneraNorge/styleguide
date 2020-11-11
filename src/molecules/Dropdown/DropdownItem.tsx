@@ -121,6 +121,8 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
 
   const Tag = props.onClick ? 'button' : 'div';
 
+  const isClickable = props.onClick || itemToggle;
+
   return (
     <Tag
       className={cs(
@@ -128,7 +130,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
         {
           'telia-dropdown-item__centered': props.centered,
           'telia-dropdown-item__active': open && props.index === highlightIndex,
-          'telia-dropdown-item__clickable': props.onClick || itemToggle,
+          'telia-dropdown-item__clickable': isClickable,
         },
         props.className
       )}
@@ -136,7 +138,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
       tabIndex={-1}
       role={props.href ? 'link' : 'button'}
       onFocus={(e: { stopPropagation: () => any }) => e.stopPropagation()}
-      onClick={onClick}
+      onClick={isClickable ? onClick : undefined}
     >
       {content}
     </Tag>
