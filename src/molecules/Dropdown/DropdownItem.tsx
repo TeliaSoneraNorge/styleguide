@@ -11,6 +11,7 @@ export type DropdownItemProps = {
 
   /**
    * Handle click on a dropdown item
+   * Items without onClick will not be hoverable
    */
   onClick?: () => void;
 
@@ -56,9 +57,9 @@ export type DropdownItemProps = {
   children?: React.ReactNode;
   className?: string;
 };
-export const DropdownItem: React.FC<DropdownItemProps> = props => {
-  const { open, toggle, highlightIndex, menuRef } = useDropdownContext();
-  const itemRef = useRef<HTMLButtonElement>(null);
+export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
+  const { open, toggle, itemToggle, highlightIndex, menuRef } = useDropdownContext();
+  const itemRef = useRef<HTMLElement | HTMLDivElement | null>(null);
 
   const scrollToTop = () => {
     if (menuRef.current) {
@@ -87,11 +88,14 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
     }
   }, [props.index, highlightIndex, itemRef.current, open]);
 
-  const onClick = () => {
+  const onClick = (e: React.MouseEvent) => {
     if (props.onClick) {
+      e.preventDefault();
       props.onClick();
     }
-    toggle();
+    if (itemToggle) {
+      toggle();
+    }
   };
 
   const content = (
@@ -114,24 +118,30 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
   if (props.header) {
     return <div className="telia-dropdown-item telia-dropdown-item__header">{content}</div>;
   }
+
+  const Tag = props.onClick ? 'button' : 'div';
+
+  const isClickable = props.onClick || itemToggle;
+
   return (
-    <button
+    <Tag
       className={cs(
         'telia-dropdown-item',
         {
           'telia-dropdown-item__centered': props.centered,
-          'telia-dropdown-item__active': open && props.index === highlightIndex,
+          'telia-dropdown-item__active': open && isClickable && props.index === highlightIndex,
+          'telia-dropdown-item__clickable': isClickable,
         },
         props.className
       )}
-      ref={itemRef}
+      ref={(instance: HTMLElement | HTMLDivElement | null) => (itemRef.current = instance)}
       tabIndex={-1}
-      role={props.href ? 'link' : 'button'}
-      onFocus={e => e.stopPropagation()}
-      onClick={onClick}
+      role={isClickable ? (props.href ? 'link' : 'button') : undefined}
+      onFocus={(e: { stopPropagation: () => any }) => e.stopPropagation()}
+      onClick={isClickable ? onClick : undefined}
     >
       {content}
-    </button>
+    </Tag>
   );
 };
 
@@ -173,7 +183,7 @@ export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
         ref={itemRef}
         value={props.value}
         placeholder={props.placeholder}
-        onChange={e => {
+        onChange={(e) => {
           props.onInputChange(e.target.value);
           setHighlightIndex(0);
         }}

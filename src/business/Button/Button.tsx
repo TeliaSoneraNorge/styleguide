@@ -20,7 +20,7 @@ type ButtonProps = {
   /**
    * Action triggered when clicking the button.
    */
-  onClick?: () => void;
+  onClick?: (e: React.SyntheticEvent) => void;
   /**
    * If href is specified, the Button will be rendered using an anchor tag
    */
@@ -52,7 +52,7 @@ export const Button = (props: ButtonProps) => {
       e.preventDefault();
     }
     if (onClick) {
-      onClick();
+      onClick(e);
     }
   };
 

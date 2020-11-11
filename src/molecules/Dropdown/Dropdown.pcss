@@ -118,16 +118,13 @@
     height: 1rem;
     margin-right: 0.5rem;
   }
-  &:hover {
-    cursor: pointer;
-    background-color: var(--medium-light-grey);
-  }
+
   &__active,
   &:active,
   &:focus {
     outline: none;
-    background-color: var(--grey);
   }
+
   &__centered {
     justify-content: center;
   }
@@ -167,6 +164,20 @@
       font: inherit;
     }
   }
+}
+
+.telia-dropdown-item__clickable {
+  &:hover {
+    cursor: pointer;
+    background-color: var(--medium-light-grey);
+  }
+  &:active,
+  &:focus {
+    background-color: var(--grey);
+  }
+}
+.telia-dropdown-item__clickable.telia-dropdown-item__active {
+  background-color: var(--grey);
 }
 
 .telia-dropdown-content > .telia-dropdown-item {

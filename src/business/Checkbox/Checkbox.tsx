@@ -9,6 +9,11 @@ type CheckboxProps = {
   id?: string;
   name?: string;
   disabled?: boolean;
+
+  /**
+   * If the checkbox is being used inside another clickable element, for example a dropdownItem, this should be set to -1
+   */
+  tabIndex?: number;
   className?: string | any;
 } & (
   | {
@@ -25,7 +30,7 @@ type CheckboxProps = {
     | {}
   );
 
-export const Checkbox: React.FC<CheckboxProps> = props => {
+export const Checkbox: React.FC<CheckboxProps> = (props) => {
   return (
     <label className="checkbox">
       <input
@@ -40,11 +45,12 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
         checked={'checked' in props && props.checked}
         disabled={props.disabled}
         onChange={'checked' in props ? props.onChange : undefined}
-        onKeyDown={e => {
+        onKeyDown={(e) => {
           if (e.keyCode === 32 || e.keyCode === 13) {
             e.stopPropagation();
           }
         }}
+        tabIndex={props.tabIndex ?? 0}
       />
       <div
         className={cs({
@@ -60,7 +66,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
         <Icon
           icon="check-mark"
           className={cs({ checkbox__icon: true, 'checkbox__icon--visible': 'checked' in props && props.checked })}
-          style={{width: "1rem", height: "1rem"}}
+          style={{ width: '1rem', height: '1rem' }}
         />
         <Icon
           icon="minus"
@@ -68,7 +74,7 @@ export const Checkbox: React.FC<CheckboxProps> = props => {
             checkbox__icon: true,
             'checkbox__icon--visible': 'checked' in props && !props.checked && 'partial' in props && props.partial,
           })}
-          style={{width: "1rem", height: "1rem"}}
+          style={{ width: '1rem', height: '1rem' }}
         />
       </div>
       <span
