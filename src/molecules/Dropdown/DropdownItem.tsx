@@ -136,7 +136,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
       )}
       ref={(instance: HTMLElement | HTMLDivElement | null) => (itemRef.current = instance)}
       tabIndex={-1}
-      role={isClickable ? (props.href ? 'link' : 'button') : 'div'}
+      role={isClickable ? (props.href ? 'link' : 'button') : undefined}
       onFocus={(e: { stopPropagation: () => any }) => e.stopPropagation()}
       onClick={isClickable ? onClick : undefined}
     >
