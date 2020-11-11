@@ -165,10 +165,10 @@ export const Default = () => {
         <DropdownToggle label="Toggle" icon="user" />
         <DropdownMenu>
           <DropdownItem onClick={() => setSelected({ ...selected, item1: !selected.item1 })}>
-            <Checkbox checked={selected.item1} label="Check me" />
+            <Checkbox checked={selected.item1} label="Check me" tabIndex={-1} />
           </DropdownItem>
           <DropdownItem onClick={() => setSelected({ ...selected, item2: !selected.item2 })}>
-            <Checkbox checked={selected.item2} label="Check me" />
+            <Checkbox checked={selected.item2} label="Check me" tabIndex={-1} />
           </DropdownItem>
           <DropdownItem divider />
           <DropdownItem>
