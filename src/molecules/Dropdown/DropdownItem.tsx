@@ -11,6 +11,7 @@ export type DropdownItemProps = {
 
   /**
    * Handle click on a dropdown item
+   * Items without onClick will not be hoverable
    */
   onClick?: () => void;
 
@@ -124,6 +125,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
         {
           'telia-dropdown-item__centered': props.centered,
           'telia-dropdown-item__active': open && props.index === highlightIndex,
+          'telia-dropdown-item--noHover': !props.onClick,
         },
         props.className
       )}
