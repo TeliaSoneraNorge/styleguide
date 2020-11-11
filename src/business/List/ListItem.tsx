@@ -24,7 +24,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   const { border, color, type } = { ...listStyle, ...listItemStyle };
   const Tag = props.tag ? props.tag : 'li';
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLLIElement> | React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (onClick && (e.key === ' ' || e.key === 'Enter')) {
       e.preventDefault();
       onClick(e as any);
