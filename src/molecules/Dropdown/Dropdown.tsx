@@ -7,6 +7,7 @@ import cn from 'classnames';
 type Props = {
   open?: boolean;
   toggle?: () => void;
+  itemToggle?: boolean;
   fullWidth?: boolean;
   className?: string;
 };
@@ -26,6 +27,7 @@ export const Dropdown: React.FC<Props> = (props) => {
   const contextValue: DropdownContextValues = {
     open: props.open ? props.open : open,
     toggle: props.toggle ? props.toggle : toggle,
+    itemToggle: props.itemToggle ?? true,
     setMenuOpen: setOpen,
     menuRef,
     dropdownRef,

@@ -12,6 +12,11 @@ export type DropdownContextValues = {
   toggle: () => void;
 
   /**
+   * Toggle dropdown menu open/close
+   */
+  itemToggle: boolean;
+
+  /**
    * Set spesific open state of the dropdown menu
    */
   setMenuOpen: (open: boolean) => void;

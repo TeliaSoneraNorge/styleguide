@@ -56,8 +56,8 @@ export type DropdownItemProps = {
   children?: React.ReactNode;
   className?: string;
 };
-export const DropdownItem: React.FC<DropdownItemProps> = props => {
-  const { open, toggle, highlightIndex, menuRef } = useDropdownContext();
+export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
+  const { open, toggle, itemToggle, highlightIndex, menuRef } = useDropdownContext();
   const itemRef = useRef<HTMLButtonElement>(null);
 
   const scrollToTop = () => {
@@ -92,7 +92,9 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
       e.preventDefault();
       props.onClick();
     }
-    toggle();
+    if (itemToggle) {
+      toggle();
+    }
   };
 
   const content = (
@@ -128,7 +130,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = props => {
       ref={itemRef}
       tabIndex={-1}
       role={props.href ? 'link' : 'button'}
-      onFocus={e => e.stopPropagation()}
+      onFocus={(e) => e.stopPropagation()}
       onClick={onClick}
     >
       {content}
@@ -174,7 +176,7 @@ export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
         ref={itemRef}
         value={props.value}
         placeholder={props.placeholder}
-        onChange={e => {
+        onChange={(e) => {
           props.onInputChange(e.target.value);
           setHighlightIndex(0);
         }}
