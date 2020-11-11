@@ -128,7 +128,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
         {
           'telia-dropdown-item__centered': props.centered,
           'telia-dropdown-item__active': open && props.index === highlightIndex,
-          'telia-dropdown-item--noHover': !props.onClick,
+          'telia-dropdown-item__clickable': props.onClick || itemToggle,
         },
         props.className
       )}
