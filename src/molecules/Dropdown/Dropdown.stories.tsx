@@ -9,10 +9,14 @@ import {
   DropdownMenu,
   Color,
 } from './index';
-import Button from '../../atoms/Button';
-import { Checkbox } from '../../business';
+import { Checkbox, Button } from '../../business';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
+
+type checkedState = {
+  item1: boolean;
+  item2: boolean;
+};
 
 /**
  * for use in stories for dropdowns with search
@@ -76,7 +80,10 @@ export default {
 };
 
 export const Default = () => {
-  const [checked, setChecked] = useState<boolean>();
+  const [open, setOpen] = useState<boolean>(false);
+
+  const [selected, setSelected] = useState<checkedState>({ item1: false, item2: false });
+
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h3>Default toggle, with default items, items with icon, header and divider item</h3>
@@ -88,7 +95,7 @@ export const Default = () => {
       <br />
       <br />
       <div style={{ display: 'flex' }}>
-        {['default', 'purple', 'white'].map(color => (
+        {['default', 'purple', 'white'].map((color) => (
           <div>
             <Dropdown>
               <DropdownToggle label="Toggle" color={color as Color} />
@@ -149,19 +156,26 @@ export const Default = () => {
                 <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
               </DropdownMenu>
             </Dropdown>
-            <br />
-            <h4>With checkbox</h4>
-            <Dropdown open={true}>
-              <DropdownToggle label="Toggle" icon="user" color={color as Color} />
-              <DropdownMenu>
-                <DropdownItem onClick={() => setChecked(!checked)}>
-                  <Checkbox checked={checked} label="Check me" />
-                </DropdownItem>
-              </DropdownMenu>
-            </Dropdown>
           </div>
         ))}
       </div>
+      <br />
+      <h4>With checkbox</h4>
+      <Dropdown open={open} toggle={() => setOpen((prevState) => !prevState)} itemToggle={false}>
+        <DropdownToggle label="Toggle" icon="user" />
+        <DropdownMenu>
+          <DropdownItem onClick={() => setSelected((prevState) => ({ ...prevState, item1: !prevState.item1 }))}>
+            <Checkbox checked={selected.item1} label="Check me" />
+          </DropdownItem>
+          <DropdownItem onClick={() => setSelected((prevState) => ({ ...prevState, item2: !prevState.item2 }))}>
+            <Checkbox checked={selected.item2} label="Check me" />
+          </DropdownItem>
+          <DropdownItem divider />
+          <DropdownItem>
+            <Button label="Save" size="compact" onClick={() => setOpen((prevState) => !prevState)} />
+          </DropdownItem>
+        </DropdownMenu>
+      </Dropdown>
     </div>
   );
 };
@@ -177,7 +191,7 @@ export const NoBorder = () => (
     <br />
 
     <div style={{ display: 'flex' }}>
-      {['default', 'purple', 'white'].map(color => (
+      {['default', 'purple', 'white'].map((color) => (
         <div>
           <Dropdown>
             <DropdownToggle label="Toggle" color={color as Color} outline={false} />
@@ -254,7 +268,7 @@ export const FullWidth = () => (
     <br />
     <br />
 
-    {['default', 'purple', 'white'].map(color => (
+    {['default', 'purple', 'white'].map((color) => (
       <>
         <Dropdown fullWidth={true}>
           <DropdownToggle label="Toggle" color={color as Color} />
@@ -289,7 +303,7 @@ export const CustomToggle = () => (
     <h4>Button as toggle</h4>
     <Dropdown>
       <DropdownToggle>
-        <Button text="Button" />
+        <Button label="Button" />
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
@@ -319,7 +333,7 @@ export const CustomToggle = () => (
     <h4>Small Button as toggle</h4>
     <Dropdown>
       <DropdownToggle>
-        <Button text="Button" size="small" icon="attach" />
+        <Button label="Button" size="compact" icon="attach" />
       </DropdownToggle>
       <DropdownMenu>
         <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
@@ -347,10 +361,10 @@ export const SearchToggle = () => {
   const [activeCountry3, setActiveCountry3] = useState<string | undefined>(undefined);
   const [activeCountry4, setActiveCountry4] = useState<string | undefined>(undefined);
 
-  const items = countries.filter(country => country.name.toLowerCase().includes(input.toLowerCase()));
-  const items2 = countries.filter(country => country.name.toLowerCase().includes(input2.toLowerCase()));
-  const items3 = countries.filter(country => country.name.toLowerCase().includes(input3.toLowerCase()));
-  const items4 = countries.filter(country => country.name.toLowerCase().includes(input4.toLowerCase()));
+  const items = countries.filter((country) => country.name.toLowerCase().includes(input.toLowerCase()));
+  const items2 = countries.filter((country) => country.name.toLowerCase().includes(input2.toLowerCase()));
+  const items3 = countries.filter((country) => country.name.toLowerCase().includes(input3.toLowerCase()));
+  const items4 = countries.filter((country) => country.name.toLowerCase().includes(input4.toLowerCase()));
 
   useEffect(() => {
     setInput(activeCountry ? activeCountry : '');
@@ -417,7 +431,7 @@ export const SearchToggle = () => {
         />
         <DropdownMenu>
           <DropdownItem header={true} label="Header" />
-          {items.map(i => (
+          {items.map((i) => (
             <DropdownItem label={i.name} onClick={() => setActiveCountry(i.name)} />
           ))}
         </DropdownMenu>
@@ -441,7 +455,7 @@ export const SearchToggle = () => {
         />
         <DropdownMenu>
           <DropdownItem header={true} label="Header" />
-          {items2.map(i => (
+          {items2.map((i) => (
             <DropdownItem label={i.name} onClick={() => setActiveCountry2(i.name)} />
           ))}
         </DropdownMenu>
@@ -460,7 +474,7 @@ export const SearchToggle = () => {
         />
         <DropdownMenu>
           <DropdownItem header={true} label="Header" />
-          {items3.map(i => (
+          {items3.map((i) => (
             <DropdownItem label={i.name} onClick={() => setActiveCountry3(i.name)} />
           ))}
         </DropdownMenu>
@@ -478,7 +492,7 @@ export const SearchToggle = () => {
         />
         <DropdownMenu>
           <DropdownItem header={true} label="Header" />
-          {items4.map(i => (
+          {items4.map((i) => (
             <DropdownItem label={i.name} onClick={() => setActiveCountry4(i.name)} />
           ))}
         </DropdownMenu>
@@ -491,7 +505,7 @@ export const SearchToggle = () => {
 export const SearchItem = () => {
   const [input, setInput] = useState('');
   const [activeCountry, setActiveCountry] = useState<string | undefined>(undefined);
-  const items = countries.filter(country => country.name.toLowerCase().includes(input.toLowerCase()));
+  const items = countries.filter((country) => country.name.toLowerCase().includes(input.toLowerCase()));
 
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
@@ -516,7 +530,7 @@ export const SearchItem = () => {
         <DropdownMenu>
           <DropdownItem header={true} label="Search for something:" />
           <DropdownSearchItem icon="search" onInputChange={setInput} />
-          {items.map(r => (
+          {items.map((r) => (
             <DropdownItem label={r.name} onClick={() => setActiveCountry(r.name)} />
           ))}
         </DropdownMenu>
@@ -527,7 +541,7 @@ export const SearchItem = () => {
 export const MultiLevelItems = () => {
   const [input, setInput] = useState('');
   const [activeCountry, setActiveCountry] = useState<string | undefined>(undefined);
-  const items = countries.filter(country => country.name.toLowerCase().includes(input.toLowerCase()));
+  const items = countries.filter((country) => country.name.toLowerCase().includes(input.toLowerCase()));
 
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
@@ -555,7 +569,7 @@ export const MultiLevelItems = () => {
           <DropdownItem header={true} label="Search for something:" />
           <DropdownSearchItem icon="search" onInputChange={setInput} />
           <div style={{ height: '200px', overflowY: 'scroll' }}>
-            {items.map(r => (
+            {items.map((r) => (
               <DropdownItem label={r.name} onClick={() => setActiveCountry(r.name)} />
             ))}
           </div>
