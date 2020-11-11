@@ -59,7 +59,7 @@ export type DropdownItemProps = {
 };
 export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   const { open, toggle, itemToggle, highlightIndex, menuRef } = useDropdownContext();
-  const itemRef = useRef<HTMLButtonElement>(null);
+  const itemRef = useRef<HTMLElement | HTMLDivElement | null>(null);
 
   const scrollToTop = () => {
     if (menuRef.current) {
@@ -118,8 +118,11 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   if (props.header) {
     return <div className="telia-dropdown-item telia-dropdown-item__header">{content}</div>;
   }
+
+  const Tag = props.onClick ? 'button' : 'div';
+
   return (
-    <button
+    <Tag
       className={cs(
         'telia-dropdown-item',
         {
@@ -129,14 +132,14 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
         },
         props.className
       )}
-      ref={itemRef}
+      ref={(instance: HTMLElement | HTMLDivElement | null) => (itemRef.current = instance)}
       tabIndex={-1}
       role={props.href ? 'link' : 'button'}
-      onFocus={(e) => e.stopPropagation()}
+      onFocus={(e: { stopPropagation: () => any }) => e.stopPropagation()}
       onClick={onClick}
     >
       {content}
-    </button>
+    </Tag>
   );
 };
 
