@@ -7,7 +7,7 @@ export type ListItemProps = {
   decorator?: React.ReactChild;
   description?: string;
   caption?: string | React.ReactChild;
-  onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent>) => void;
+  onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   compact?: boolean;
   className?: string;
   /**
@@ -23,6 +23,15 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
   const Tag = props.tag ? props.tag : 'li';
+
+  const handleKeyDown = (
+    e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>
+  ) => {
+    if (onClick && (e.key === ' ' || e.key === 'Enter')) {
+      e.preventDefault();
+      onClick(e as any);
+    }
+  };
 
   return (
     <Tag
@@ -40,12 +49,7 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
         className
       )}
       onClick={onClick}
-      onKeyDown={(e) => {
-        if (onClick && (e.key === ' ' || e.key === 'Enter')) {
-          e.preventDefault();
-          onClick(e as any);
-        }
-      }}
+      onKeyDown={handleKeyDown}
       tabIndex={onClick && 0}
       role={onClick && 'button'}
     >
