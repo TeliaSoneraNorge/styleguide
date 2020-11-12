@@ -4,6 +4,8 @@ import _ from 'lodash';
 
 import { Icon } from '../../atoms/Icon';
 import { Checkbox } from '../Checkbox';
+import { Button } from '../Button';
+import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from '../../molecules/Dropdown';
 
 type TableBodyCellProps = {
   rightAligned?: boolean;
@@ -291,8 +293,8 @@ type TablePagingControlsProps = {
   numberOfSelectedRows?: number;
   selectedRowsLabel?: string;
 
-  onPerPageChange: (perPage: number, e?: React.ChangeEvent<HTMLSelectElement>) => void;
-  onPageChange: (forward: boolean, e?: React.MouseEvent<HTMLButtonElement>) => void;
+  onPerPageChange: (perPage: number, e?: React.MouseEvent) => void;
+  onPageChange: (forward: boolean, e?: React.MouseEvent) => void;
 
   fromToLabel?: string;
   perPageLabel?: string;
@@ -301,7 +303,7 @@ type TablePagingControlsProps = {
 
 export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) => {
   return (
-    <form onSubmit={(e) => e.preventDefault()} className="table-paging">
+    <div className="table-paging">
       {props.numberOfSelectedRows ? (
         <span className="table-paging__text">
           {`${props.numberOfSelectedRows} ${
@@ -309,46 +311,42 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           }`}
         </span>
       ) : null}
-      <label className="table-paging__text">
-        {props.perPageLabel || 'Rader per side: '}
-        <select
-          value={props.perPage}
-          onChange={(e) => props.onPerPageChange(parseInt(e.target.value), e)}
-          className="table-paging__per-page"
-        >
-          {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
-            <option value={option} key={key}>
-              {option}
-            </option>
-          ))}
-        </select>
-      </label>
+      <div>
+        <Dropdown fullWidth={true}>
+          <DropdownToggle
+            outline={false}
+            color="white"
+            label={(props.perPageLabel || 'Rader per side: ') + props.perPage}
+          />
+          <DropdownMenu>
+            {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
+              <DropdownItem onClick={() => props.onPerPageChange(option)}>{option}</DropdownItem>
+            ))}
+          </DropdownMenu>
+        </Dropdown>
+      </div>
+
       <span className="table-paging__text">
         {props.fromToLabel || `${props.from}-${props.to} av ${props.dataLength}`}
       </span>
-      <button
-        disabled={props.from === 1}
-        aria-label="Forrige side"
-        className="table-paging__button"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onPageChange(false, e);
-        }}
-      >
-        <Icon icon="arrow-left" className="data-table__icon" />
-      </button>
-      <button
-        disabled={props.to >= props.dataLength}
-        aria-label="Neste side"
-        className="table-paging__button"
-        onClick={(e) => {
-          e.preventDefault();
-          props.onPageChange(true, e);
-        }}
-      >
-        <Icon icon="arrow-right" className="data-table__icon" />
-      </button>
-    </form>
+      <div className="table-paging__navigation">
+        <Button
+          size="compact"
+          kind="secondary-text"
+          icon="arrow-left"
+          aria-label="Forrige side"
+          onClick={(e) => props.onPageChange(false, e)}
+        />
+
+        <Button
+          size="compact"
+          kind="secondary-text"
+          icon="arrow-right"
+          aria-label="Neste side"
+          onClick={(e) => props.onPageChange(true, e)}
+        />
+      </div>
+    </div>
   );
 };
 

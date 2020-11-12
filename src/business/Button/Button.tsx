@@ -20,7 +20,7 @@ type ButtonProps = {
   /**
    * Action triggered when clicking the button.
    */
-  onClick?: (e: React.SyntheticEvent) => void;
+  onClick?: (e: React.MouseEvent) => void;
   /**
    * If href is specified, the Button will be rendered using an anchor tag
    */
@@ -47,7 +47,7 @@ export const Button = (props: ButtonProps) => {
   const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size } = props;
   const Tag = href ? 'a' : 'button';
 
-  const handleClick = (e: React.SyntheticEvent) => {
+  const handleClick = (e: React.MouseEvent) => {
     if (href && onClick) {
       e.preventDefault();
     }
