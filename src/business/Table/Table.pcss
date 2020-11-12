@@ -88,7 +88,10 @@
 }
 
 .table-paging {
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
   &__text {
     margin: 0 1rem;
@@ -99,11 +102,12 @@
     text-align: right;
   }
 
-  &__button {
+  &__navigation {
+    display: inline;
     margin: 0 1rem;
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
+    button:first-child {
+      margin-right: 0.5rem;
+    }
   }
 }
 

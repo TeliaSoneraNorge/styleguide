@@ -13,7 +13,7 @@ export type DropdownItemProps = {
    * Handle click on a dropdown item
    * Items without onClick will not be hoverable
    */
-  onClick?: () => void;
+  onClick?: (e?: React.MouseEvent) => void;
 
   /**
    * Sets link role on button.
@@ -91,7 +91,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   const onClick = (e: React.MouseEvent) => {
     if (props.onClick) {
       e.preventDefault();
-      props.onClick();
+      props.onClick(e);
     }
     if (itemToggle) {
       toggle();
