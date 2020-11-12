@@ -1,5 +1,6 @@
 import React from 'react';
 import cn from 'classnames';
+import { Icon, IconDefinition } from '../../atoms/Icon';
 
 type Status = 'positive' | 'negative' | 'warning' | 'neutral';
 type Type = 'round' | 'square';
@@ -20,12 +21,15 @@ export interface LozengeProps {
    */
   type?: Type;
   className?: string;
+  icon?: IconDefinition;
 }
 
 export const Lozenge = (props: LozengeProps) => {
   const { label, status = 'neutral', type = 'round', className } = props;
 
   return (
-    <div className={cn('telia-lozenge', `telia-lozenge__${status}`, `telia-lozenge__${type}`, className)}>{label}</div>
+    <div className={cn('telia-lozenge', `telia-lozenge__${status}`, `telia-lozenge__${type}`, className)}>
+      {props.icon && <Icon icon={props.icon} />} {label}
+    </div>
   );
 };

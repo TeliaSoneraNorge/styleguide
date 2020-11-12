@@ -10,44 +10,84 @@ export default {
 
 export const Default = () => {
   return (
-    <>
-      <h3>Round Lozenge</h3>
-      <div style={{ display: 'flex' }}>
-        <div style={{ width: '30%', marginRight: '1rem' }}>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" />
+    <div style={{ display: 'flex' }}>
+      <div style={{ marginRight: '4rem' }}>
+        <h3>Round Lozenge</h3>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '30%', marginRight: '1rem' }}>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="positive" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="negative" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="warning" />
+            </div>
           </div>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" status="positive" />
-          </div>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" status="negative" />
-          </div>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" status="warning" />
+        </div>
+        <br />
+        <br />
+        <h3>Square Lozenge</h3>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '30%', marginRight: '1rem' }}>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="positive" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="negative" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="warning" type="square" />
+            </div>
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <h3>Square Lozenge</h3>
-      <div style={{ display: 'flex' }}>
-        <div style={{ width: '30%', marginRight: '1rem' }}>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" type="square" />
+      <div>
+        <h3>Round Lozenge</h3>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '30%', marginRight: '1rem' }}>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="positive" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="negative" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="warning" />
+            </div>
           </div>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" status="positive" type="square" />
-          </div>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" status="negative" type="square" />
-          </div>
-          <div style={{ paddingBottom: '10px' }}>
-            <Lozenge label="Lozenge" status="warning" type="square" />
+        </div>
+        <br />
+        <br />
+        <h3>Square Lozenge</h3>
+        <div style={{ display: 'flex' }}>
+          <div style={{ width: '30%', marginRight: '1rem' }}>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="positive" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="negative" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="warning" type="square" />
+            </div>
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
