@@ -58,7 +58,7 @@ async function processIcons() {
    *
    */
   const icons = [];
-  const iconFiles = fs.readdirSync(iconsPath).filter(f => f[0] !== '.');
+  const iconFiles = fs.readdirSync(iconsPath).filter((f) => f[0] !== '.');
   let result = { processed: [], errors: [] };
   for (const i in iconFiles) {
     const iconFileName = iconFiles[i];
