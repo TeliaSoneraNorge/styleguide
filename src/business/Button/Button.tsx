@@ -41,10 +41,11 @@ type ButtonProps = {
    * Eg pass `_blank` to open link in a new tab
    */
   target?: string;
+  className?: string;
 };
 
 export const Button = (props: ButtonProps) => {
-  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size } = props;
+  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size, className } = props;
   const Tag = href ? 'a' : 'button';
 
   const handleClick = (e: React.MouseEvent) => {
@@ -58,11 +59,17 @@ export const Button = (props: ButtonProps) => {
 
   return (
     <Tag
-      className={cs('telia-button', `telia-button--${kind}`, `telia-button--${size}`, {
-        'telia-button--iconRight': iconRight,
-        'telia-button--ball': icon && !label,
-        'telia-button--disabled': disabled,
-      })}
+      className={cs(
+        'telia-button',
+        `telia-button--${kind}`,
+        `telia-button--${size}`,
+        {
+          'telia-button--iconRight': iconRight,
+          'telia-button--ball': icon && !label,
+          'telia-button--disabled': disabled,
+        },
+        className
+      )}
       href={href}
       onClick={handleClick}
       disabled={props.disabled}
