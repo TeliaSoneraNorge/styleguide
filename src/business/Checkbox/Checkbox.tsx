@@ -18,7 +18,7 @@ type CheckboxProps = {
 } & (
   | {
       checked: boolean;
-      onChange: () => void;
+      onChange: (e?: React.ChangeEvent) => void;
     }
   | {}
 ) &
@@ -32,7 +32,7 @@ type CheckboxProps = {
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
   return (
-    <label className="checkbox">
+    <label className="checkbox" onClick={(e) => e.stopPropagation()}>
       <input
         id={props.id}
         aria-checked={
