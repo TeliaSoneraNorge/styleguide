@@ -32,7 +32,7 @@ type CheckboxProps = {
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
   return (
-    <label className="checkbox" onClick={(e) => e.stopPropagation()}>
+    <label className="checkbox">
       <input
         id={props.id}
         aria-checked={

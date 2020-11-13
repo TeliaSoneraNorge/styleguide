@@ -52,7 +52,11 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
       role={onClick && 'button'}
     >
       <div className="telia-listItem__main">
-        {decorator && <div className="telia-listItem__decorator">{decorator}</div>}
+        {decorator && (
+          <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
+            {decorator}
+          </div>
+        )}
         <div className="telia-listItem__content">
           <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
           {description && (
