@@ -38,6 +38,7 @@ export { CheckMarkCircleIcon } from './CheckMarkCircleIcon';
 export { CheckMarkIcon } from './CheckMarkIcon';
 export { ChildBoyIcon } from './ChildBoyIcon';
 export { ChildGirlIcon } from './ChildGirlIcon';
+export { CloseCircleIcon } from './CloseCircleIcon';
 export { CloseIcon } from './CloseIcon';
 export { CloudIcon } from './CloudIcon';
 export { CoffeeIcon } from './CoffeeIcon';
