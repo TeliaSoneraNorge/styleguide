@@ -8,8 +8,16 @@ type DropdownMenuProps = {
   className?: string;
 };
 
-export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
-  const { menuRef, open, allItems } = useDropdownContext();
+export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
+  const { menuRef, open, allItems, dropdownRef } = useDropdownContext();
+
+  /**
+   * Place the dropdown menu above toggle if we are close to (less than 50px) the bottom of the page.
+   */
+  const dropdownPosition = (dropdownRef.current?.offsetTop ?? 0) + (dropdownRef.current?.offsetHeight ?? 0);
+  const threshold = 50;
+  const positionTop = document.body.offsetHeight - dropdownPosition < threshold;
+
   return (
     <div
       className={cs(
@@ -21,6 +29,13 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = props => {
         },
         props.className
       )}
+      style={
+        positionTop
+          ? {
+              transform: `translateY(calc(-100% - ${dropdownRef?.current?.offsetHeight ?? 0}px - 2px))`,
+            }
+          : undefined
+      }
       ref={menuRef}
     >
       {allItems}
