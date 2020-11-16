@@ -5,7 +5,6 @@
   color: var(--grey-700);
   cursor: pointer;
   display: flex;
-  font-family: 'Helvetica Neue';
   font-size: 0.875rem;
   letter-spacing: 0.05rem;
   line-height: 1.25;
@@ -18,23 +17,26 @@
   &:hover {
     background-color: var(--grey-100);
     color: var(--grey-900);
+    transition: all 200ms ease-in-out;
   }
 
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+    transition: all 200ms ease-in-out;
   }
 
   &:active {
     outline: none;
     box-shadow: none;
+    transition: all 200ms ease-in-out;
   }
 
   &-label {
     display: inline-flex;
     overflow: hidden;
     text-align: start;
-    @include typeSmall;
+    font-size: 14px;
   }
 
   &-icon {

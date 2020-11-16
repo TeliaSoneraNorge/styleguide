@@ -58,7 +58,7 @@ async function processIcons() {
    *
    */
   const icons = [];
-  const iconFiles = fs.readdirSync(iconsPath).filter(f => f[0] !== '.');
+  const iconFiles = fs.readdirSync(iconsPath).filter((f) => f[0] !== '.');
   let result = { processed: [], errors: [] };
   for (const i in iconFiles) {
     const iconFileName = iconFiles[i];
@@ -87,9 +87,9 @@ async function processIcons() {
           'Icon',
         svg: svg.data,
         innerJsx: svg.data
-          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '')
+          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '<>')
           .replace('fill-rule', 'fillRule')
-          .replace('</svg>', ''),
+          .replace('</svg>', '</>'),
         outerJsxWithClassNameAndStyle: svg.data
           .replace(
             '<svg ',

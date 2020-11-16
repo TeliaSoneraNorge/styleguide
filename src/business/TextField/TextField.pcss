@@ -17,6 +17,15 @@
   }
 }
 
+.telia-textfield-leftContent + .telia-textfield-input {
+  padding-left: 0;
+}
+
+.telia-textfield-leftContent .telia-button--compact .telia-button-icon {
+  width: 1.125rem;
+  height: 1.125rem;
+}
+
 .telia-textfield-label {
   font-size: 14px;
 }
@@ -59,6 +68,12 @@
   border-bottom-right-radius: 4px;
 }
 
+.telia-textfield-leftContent > .Icon,
+.telia-textfield-rightContent > .Icon {
+  width: 27px;
+  height: 27px;
+}
+
 .telia-textfield-helptext {
   color: var(--grey-500);
 }
@@ -66,6 +81,7 @@
 .telia-textfield__focus {
   .telia-textfield-content {
     border-color: var(--core-purple-500);
+    transition: all 150ms ease-in-out;
   }
 }
 
@@ -103,6 +119,10 @@
     input:disabled {
       background-color: var(--grey-100);
     }
+  }
+  .telia-textfield-leftContent,
+  .telia-textfield-rightContent {
+    background-color: var(--grey-100);
   }
 }
 

@@ -18,6 +18,7 @@ declare interface ModalDialogProps {
   headerElement?: React.ReactElement<any>;
   footerElement?: React.ReactElement<any>;
   size?: ContainerSize;
+  className?: string;
 }
 
 declare const ModalDialog: React.FC<ModalDialogProps>;

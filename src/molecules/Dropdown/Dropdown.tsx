@@ -7,10 +7,12 @@ import cn from 'classnames';
 type Props = {
   open?: boolean;
   toggle?: () => void;
+  itemToggle?: boolean;
   fullWidth?: boolean;
+  className?: string;
 };
 
-export const Dropdown: React.FC<Props> = props => {
+export const Dropdown: React.FC<Props> = (props) => {
   const dropdownRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -25,6 +27,7 @@ export const Dropdown: React.FC<Props> = props => {
   const contextValue: DropdownContextValues = {
     open: props.open ? props.open : open,
     toggle: props.toggle ? props.toggle : toggle,
+    itemToggle: props.itemToggle ?? true,
     setMenuOpen: setOpen,
     menuRef,
     dropdownRef,
@@ -35,16 +38,21 @@ export const Dropdown: React.FC<Props> = props => {
   };
   return (
     <DropdownContext.Provider value={contextValue}>
-      <InnerDropdown fullWidth={props.fullWidth}>{props.children}</InnerDropdown>
+      <InnerDropdown fullWidth={props.fullWidth} className={props.className}>
+        {props.children}
+      </InnerDropdown>
     </DropdownContext.Provider>
   );
 };
 
-const InnerDropdown: React.FC<{ fullWidth?: boolean }> = props => {
+const InnerDropdown: React.FC<{ fullWidth?: boolean; className?: string }> = (props) => {
   const { dropdownRef } = useDropdownContext();
   useAccessibleDropdown();
   return (
-    <div className={cn('telia-dropdown', { 'telia-dropdown--fullWidth': props.fullWidth })} ref={dropdownRef}>
+    <div
+      className={cn('telia-dropdown', { 'telia-dropdown--fullWidth': props.fullWidth }, props.className)}
+      ref={dropdownRef}
+    >
       {props.children}
     </div>
   );

@@ -26,7 +26,7 @@
     border-top: solid 1px var(--medium-light-grey);
 
     &:hover {
-      background-color: var(--medium-light-grey);
+      background-color: var(--grey-200);
     }
 
     &--header {
@@ -63,6 +63,23 @@
   }
 }
 
+.data-table__row--connected {
+  border-top: none;
+  .data-table__cell:first-child {
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 1rem;
+      top: -15%;
+      border-left: 4px solid var(--grey);
+      border-radius: 4px;
+      left: 50%;
+      transform: translate(-50%);
+    }
+  }
+}
+
 .data-table--fullWidth {
   width: 100%;
   .data-table__table {
@@ -71,7 +88,10 @@
 }
 
 .table-paging {
-  padding-top: 0.7rem;
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 
   &__text {
     margin: 0 1rem;
@@ -82,10 +102,49 @@
     text-align: right;
   }
 
-  &__button {
+  &__navigation {
+    display: inline;
     margin: 0 1rem;
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
+    button:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}
+
+tr.data-table__skeleton {
+  pointer-events: none;
+  td,
+  div {
+    position: relative;
+    &:after {
+      content: '-';
+      visibility: hidden;
+    }
+
+    & > div {
+      width: calc(100% - 2rem);
+      position: absolute;
+      left: 1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      max-height: 1.25rem;
+
+      background: linear-gradient(-45deg, var(--grey-100), var(--grey-200));
+      background-size: 200% 200%;
+      animation: Loading 1.5s ease infinite;
+      border-radius: 4rem;
+
+      @keyframes Loading {
+        0% {
+          background-position: 0% 50%;
+        }
+        50% {
+          background-position: 50% 100%;
+        }
+        100% {
+          background-position: 0% 50%;
+        }
+      }
+    }
   }
 }

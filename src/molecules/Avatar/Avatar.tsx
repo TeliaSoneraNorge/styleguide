@@ -15,6 +15,7 @@ export type AvatarProps = {
   /**
    * Text to display in the avatar
    * e.g a user's initials
+   * Only the first two letters will be shown
    */
   text?: string;
   /**
@@ -80,7 +81,7 @@ export const Avatar = (props: AvatarProps) => {
       {props.img ? (
         <img className="telia-avatar-image" src={props.img} alt={props.alt} />
       ) : props.text ? (
-        <div className="telia-avatar-text">{props.text}</div>
+        <div className="telia-avatar-text">{props.text.slice(0, 2)}</div>
       ) : props.icon ? (
         <Icon className="telia-avatar-icon" icon={props.icon} />
       ) : null}

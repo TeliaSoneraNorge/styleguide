@@ -20,7 +20,7 @@ type ButtonProps = {
   /**
    * Action triggered when clicking the button.
    */
-  onClick?: () => void;
+  onClick?: (e: React.MouseEvent) => void;
   /**
    * If href is specified, the Button will be rendered using an anchor tag
    */
@@ -41,28 +41,35 @@ type ButtonProps = {
    * Eg pass `_blank` to open link in a new tab
    */
   target?: string;
+  className?: string;
 };
 
 export const Button = (props: ButtonProps) => {
-  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size } = props;
+  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size, className } = props;
   const Tag = href ? 'a' : 'button';
 
-  const handleClick = (e: React.SyntheticEvent) => {
+  const handleClick = (e: React.MouseEvent) => {
     if (href && onClick) {
       e.preventDefault();
     }
     if (onClick) {
-      onClick();
+      onClick(e);
     }
   };
 
   return (
     <Tag
-      className={cs('telia-button', `telia-button--${kind}`, `telia-button--${size}`, {
-        'telia-button--iconRight': iconRight,
-        'telia-button--ball': icon && !label,
-        'telia-button--disabled': disabled,
-      })}
+      className={cs(
+        'telia-button',
+        `telia-button--${kind}`,
+        `telia-button--${size}`,
+        {
+          'telia-button--iconRight': iconRight,
+          'telia-button--ball': icon && !label,
+          'telia-button--disabled': disabled,
+        },
+        className
+      )}
       href={href}
       onClick={handleClick}
       disabled={props.disabled}

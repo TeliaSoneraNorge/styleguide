@@ -5,5 +5,5 @@ export { Checkbox } from './Checkbox';
 export { Tabs, Tab } from './Tabs';
 export { Button } from './Button';
 export { Tooltip } from './Tooltip';
-export { List, ListItem, ListCard, ListHeading } from './List';
+export { List, ListItem, ListCard, ListHeading, ListItemSkeleton } from './List';
 export { TextField } from './TextField';

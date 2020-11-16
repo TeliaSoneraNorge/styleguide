@@ -6,8 +6,12 @@ import { DropdownItemProps } from './DropdownItem';
  * Used to set an index on clickable items only.
  * Non-clicable items should never be highlighted.
  */
-const isClickableItem = (child: React.ReactNode) =>
-  React.isValidElement<DropdownItemProps>(child) && !child.props.header && !child.props.divider && child.props.onClick;
+const isClickableDropdownItem = (child: React.ReactNode) =>
+  React.isValidElement<DropdownItemProps>(child) &&
+  child.type.toString().includes('telia-dropdown-item') &&
+  !child.props.header &&
+  !child.props.divider &&
+  child.props.onClick;
 
 /**
  * In order to set programatically set the indices on the dropdown items,
@@ -22,12 +26,12 @@ const isClickableItem = (child: React.ReactNode) =>
  */
 
 function getItemsRecursive(children: React.ReactNode, index: number, flat?: boolean): React.ReactNode {
-  return React.Children.map(children, child => {
+  return React.Children.map(children, (child) => {
     /**
      * Clickable dropdown items receive an indexed
      * used to keep track active item
      */
-    if (React.isValidElement<DropdownItemProps>(child) && isClickableItem(child)) {
+    if (React.isValidElement<DropdownItemProps>(child) && isClickableDropdownItem(child)) {
       index += 1;
       return React.cloneElement(child, {
         index,
@@ -57,7 +61,7 @@ function getItemsRecursive(children: React.ReactNode, index: number, flat?: bool
  * Returns a flat list of only DropdownItems if flat = true
  */
 function getIndexedDropdownItems(children: React.ReactNode, flat?: boolean) {
-  return React.Children.map(children, child => {
+  return React.Children.map(children, (child) => {
     /**
      * If the child is a DropdownMenu we set indecies on all child dropdown items.
      */
@@ -84,7 +88,7 @@ const getMaxHighlightIndex = (children: React.ReactNode) => {
    * Retrieve a flat list of all clickable dropdown items
    */
   const flatList = getIndexedDropdownItems(children, true);
-  const clickableItems = flatList ? flatList.filter(isClickableItem) : [];
+  const clickableItems = flatList ? flatList.filter(isClickableDropdownItem) : [];
   return clickableItems.length - 1;
 };
-export { isClickableItem, getIndexedDropdownItems, getMaxHighlightIndex };
+export { getIndexedDropdownItems, getMaxHighlightIndex };
