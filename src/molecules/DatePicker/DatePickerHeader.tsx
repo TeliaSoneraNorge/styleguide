@@ -9,19 +9,27 @@ export const DatePickerHeader = () => {
     if (month === 0) {
       setMonth(11);
       setYear(year - 1);
+    } else {
+      setMonth(month - 1);
     }
+  };
+
+  const next = () => {
     if (month === 11) {
       setMonth(0);
       setYear(year + 1);
+    } else {
+      setMonth(month + 1);
     }
   };
   return (
     <div className="telia-date-picker--header">
-      <Button onClick={prev} icon="arrow-left" kind="secondary-text" /> {monthNames[month]} {year}
-      <Button icon="arrow-right" kind="secondary-text" />
+      <Button onClick={prev} icon="arrow-left" kind="secondary-text" size="compact" /> {monthNames[month]} {year}
+      <Button icon="arrow-right" onClick={next} kind="secondary-text" size="compact" />
     </div>
   );
 };
+
 const monthNames = [
   'January',
   'February',

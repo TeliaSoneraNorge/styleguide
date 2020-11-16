@@ -27,7 +27,7 @@ export const DatePickerMenu = () => {
   const renderDates = () => {
     const dates = [];
     for (let i = 1; i <= numberOfDays; i++) {
-      dates.push(<DatePickerDay key={`day-${i}`} day={i} />);
+      dates.push(<DatePickerDay key={`day-${i}`} day={i} date={new Date(`${year}-${month + 1}-${i}`)} />);
     }
     return dates;
   };

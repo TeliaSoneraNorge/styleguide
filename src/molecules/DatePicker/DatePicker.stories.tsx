@@ -14,7 +14,7 @@ export default {
 export const Default = () => {
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <DatePicker />
+      <DatePicker intialValue="2020-11-16" />
       <DatePicker />
     </div>
   );
