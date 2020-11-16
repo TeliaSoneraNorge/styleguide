@@ -33,6 +33,7 @@ const SubscriptionLinesAccordion = ({
 }) => {
   const ref = useRef();
   const [isHoveringRadioButton, setIsHoveringRadioButton] = useState(false);
+  const [isHoveringExpand, setIsHoveringExpand] = useState(false);
 
   useEffect(() => {
     if (ref.current && isExpanded && scrollToOnOpen) {
@@ -53,7 +54,7 @@ const SubscriptionLinesAccordion = ({
     }
   };
 
-  const handleOnClickShowCalculation = event => {
+  const handleOnClickShowCalculation = (event) => {
     event.stopPropagation();
     onClickShowCalculation();
   };
@@ -76,7 +77,7 @@ const SubscriptionLinesAccordion = ({
       <div className="subscription-lines-accordion__footer subscription-lines-accordion__desktop-only">
         <Button
           component="div"
-          onClick={event => handleOnClickShowCalculation(event)}
+          onClick={(event) => handleOnClickShowCalculation(event)}
           href="#"
           kind="link"
           text={showCalculationText}
@@ -93,7 +94,7 @@ const SubscriptionLinesAccordion = ({
             <span className="subscription-lines-accordion__description1--bold">{numberOfSubscriptions} stk.</span>
             <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
             {priceInfo &&
-              priceInfo.map(info => (
+              priceInfo.map((info) => (
                 <span key={info} className="subscription-lines-accordion__price-info">
                   {info}
                 </span>
@@ -115,12 +116,19 @@ const SubscriptionLinesAccordion = ({
         'subscription-lines-accordion__inverted': isInverted,
       })}
     >
-      <button
+      <div
         className={cn('subscription-lines-accordion__header', {
           'subscription-lines-accordion__header--expanded': isExpanded,
         })}
-        onClick={e => handleOnOpen(e)}
       >
+        <button className="subscription-lines-accordion__choose-button" onClick={() => handleOnSelect()} />
+        <button
+          onClick={(e) => handleOnOpen(e)}
+          onMouseEnter={() => setIsHoveringExpand(true)}
+          onMouseLeave={() => setIsHoveringExpand(false)}
+          className="subscription-lines-accordion__expand-button"
+        />
+
         <div className="subscription-lines-accordion__header-first-row">
           <div className="subscription-lines-accordion__radio-button">
             <RadioButton
@@ -192,7 +200,7 @@ const SubscriptionLinesAccordion = ({
               <div className="subscription-lines-accordion__desktop-only">
                 <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
                 {priceInfo &&
-                  priceInfo.map(info => (
+                  priceInfo.map((info) => (
                     <span key={info} className="subscription-lines-accordion__price-info">
                       {info}
                     </span>
@@ -200,18 +208,24 @@ const SubscriptionLinesAccordion = ({
               </div>
             </div>
           </div>
-          <Icon
-            icon="arrow-down"
-            className={cn('subscription-lines-accordion__icon-arrow', {
-              'subscription-lines-accordion__icon-arrow--isExpanded': isExpanded,
+          <div
+            className={cn('', {
+              'subscription-lines-accordion__icon-arrow--hover': isHoveringExpand,
             })}
-          />
+          >
+            <Icon
+              icon="arrow-down"
+              className={cn('subscription-lines-accordion__icon-arrow', {
+                'subscription-lines-accordion__icon-arrow--isExpanded': isExpanded,
+              })}
+            />
+          </div>
         </div>
         <div className="subscription-lines-accordion__description2 subscription-lines-accordion__mobile-only">
           {description1}
         </div>
         {!isExpanded && <Footer />}
-      </button>
+      </div>
       {isExpanded && children && (
         <section
           className={cn('subscription-lines-accordion__expanded-info', {
@@ -234,7 +248,7 @@ const SubscriptionLinesAccordion = ({
   );
 };
 
-const formatPrice = price => {
+const formatPrice = (price) => {
   if (typeof price === 'number') {
     return price % 1 === 0 ? price + ',-' : price + ' kr';
   }

@@ -10,6 +10,7 @@
 
     &__radio-button {
         margin-right: -2rem;
+        z-index: 2;
 
         .radiobutton__svg-container {
             background-color: white;
@@ -21,7 +22,6 @@
         flex-direction: column;
         height: 100%;
         width: 100%;
-        padding: 1rem .75rem 0.2rem .75rem;
         color: black;
         border: 3px solid transparent;
         border-left: 3px solid transparent;
@@ -63,6 +63,35 @@
             font-family: 'pebble';
             text-transform: uppercase;
             margin: 0;
+        }
+    }
+
+    &__choose-button {
+        position: absolute;
+        width: 90%;
+        height: 100%;
+        background: initial;
+        z-index: 1;
+        border: none;
+
+        &:hover, &:focus {
+            outline: none;
+            cursor: pointer;
+        }
+    }
+
+    &__expand-button {
+        position: absolute;
+        width: 10%;
+        height: 100%;
+        margin-left: 90%;
+        background: initial;
+        z-index: 1;
+        border: none;
+
+        &:hover, &:focus {
+            outline: none;
+            cursor: pointer;
         }
     }
 
@@ -171,6 +200,10 @@
         width: 1rem !important;
         height: 1rem !important;
         margin: 0;
+
+        &--hover {
+            transform: scale(1.4);
+        }
 
         &--isExpanded {
             transform: rotate(180deg);
@@ -334,8 +367,9 @@
     }
 
     &__footer {
-        padding: 0.2rem 0rem 0.2rem 3.3rem;
+        margin: 0.2rem 0rem 0.2rem 3.3rem;
         align-self: flex-start;
+        z-index: 2;
     }
 
     &__footer-mobile {
