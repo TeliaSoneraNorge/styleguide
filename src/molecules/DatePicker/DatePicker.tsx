@@ -1,29 +1,15 @@
 import React, { useEffect, useState, useRef, RefObject } from 'react';
 import { DatePickerMenu } from './DatePickerMenu';
 import { TextField } from '../../business/TextField';
-import { useFocusTrap } from '../Modal/useFocusTrap';
-import { useEscapeListener } from '../Modal/useEscapeListener';
+import format from './format';
+
 type Props = {
   /**
    * After a new date has been set
    */
-  onDataChange?: (data: string) => void;
+  onSelectDate?: (date?: string) => void;
 
-  /**
-   * Handle typing in a new date
-   */
-  onInputChange?: (input: string) => void;
-
-  /**
-   * @default dd.mm.yyyy
-   */
-  format?: string;
-
-  /**
-   * Intial date value
-   * @default today
-   */
-  intialValue?: string;
+  value?: string;
 };
 
 export const DatePicker = (props: Props) => {
@@ -32,7 +18,20 @@ export const DatePicker = (props: Props) => {
       <DatePickerContext.Consumer>
         {(contextValue) => (
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>
-            <TextField placeholder="dd.mm.åååå" label="Velg dato" onFocus={() => contextValue.setCalendarOpen(true)} />
+            <TextField
+              placeholder="dd.mm.åååå"
+              value={contextValue.inputValue}
+              type="date"
+              onChange={(e) => {
+                contextValue.setInputValue(e.target.value);
+                console.log('valid', !e.target.validity.patternMismatch);
+                if (e.target.valueAsDate) {
+                  contextValue.setSelectedDate(e.target.valueAsDate);
+                }
+              }}
+              label="Velg dato"
+              onFocus={() => contextValue.setCalendarOpen(true)}
+            />
             <DatePickerMenu />
           </div>
         )}
@@ -51,6 +50,8 @@ type ContextValue = {
   selectedDate?: Date;
   setSelectedDate: (date: Date) => void;
   datePickerRef: RefObject<HTMLDivElement> | null;
+  inputValue?: string;
+  setInputValue: (input?: string) => void;
 };
 
 const DatePickerContext = React.createContext<ContextValue>({
@@ -63,27 +64,37 @@ const DatePickerContext = React.createContext<ContextValue>({
   selectedDate: undefined,
   setSelectedDate: () => {},
   datePickerRef: null,
+  inputValue: '',
+  setInputValue: () => {},
 });
 
-const DatePickerContextProvider: React.FC<{ intialValue?: string }> = (props) => {
+const DatePickerContextProvider: React.FC<Props> = (props) => {
   const datePickerRef = useRef<HTMLDivElement>(null);
-  const [selectedDate, setSelectedDate] = useState(props.intialValue ? new Date(props.intialValue) : undefined);
+  const [inputValue, setInputValue] = useState(props.value);
+  const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
   const [calendarOpen, setCalendarOpen] = useState(false);
   const [year, setYear] = useState(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
   const [month, setMonth] = useState(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
 
   const resetState = () => {
-    const date = props.intialValue ? new Date(props.intialValue) : undefined;
-    setSelectedDate(date);
-    setYear(date ? date.getFullYear() : new Date().getFullYear());
-    setMonth(date ? date.getMonth() : new Date().getMonth());
+    setYear(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
+    setMonth(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
   };
 
   useEffect(() => {
     if (!calendarOpen) {
+      props.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
       resetState();
     }
   }, [calendarOpen]);
+
+  useEffect(() => {
+    if (selectedDate) {
+      setYear(selectedDate.getFullYear());
+      setMonth(selectedDate.getMonth());
+      setInputValue(format.dateToString(selectedDate));
+    }
+  }, [selectedDate]);
 
   const value = {
     year,
@@ -95,6 +106,8 @@ const DatePickerContextProvider: React.FC<{ intialValue?: string }> = (props) =>
     setCalendarOpen,
     selectedDate,
     setSelectedDate,
+    inputValue,
+    setInputValue,
   };
   return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
 };

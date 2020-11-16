@@ -11,10 +11,11 @@ export default {
 };
 
 export const Default = () => {
+  const [date, setDate] = useState<string | undefined>('2020-11-06');
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <DatePicker intialValue="2020-11-15" />
-      <DatePicker intialValue="2010-06-1" />
+      <DatePicker value={date} />
+      <DatePicker value="2010-06-01" onSelectDate={setDate} />
     </div>
   );
 };
