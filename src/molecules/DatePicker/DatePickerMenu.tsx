@@ -1,14 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDatePicker } from './DatePicker';
 import { useFocusTrap } from '../Modal/useFocusTrap';
 import { useEscapeListener } from '../Modal/useEscapeListener';
 import { DatePickerDay, DatePickerDayPlaceholder } from './DatePickerDay';
 import { DatePickerHeader } from './DatePickerHeader';
+import { useClickOutsideListener } from './useClickOutsideListener';
 
 export const DatePickerMenu = () => {
-  const { year, month, setCalendarOpen, calendarOpen } = useDatePicker();
+  const { year, month, setCalendarOpen, calendarOpen, datePickerRef } = useDatePicker();
   const { container } = useFocusTrap();
   useEscapeListener({ onEscape: () => setCalendarOpen(false) });
+  useClickOutsideListener({ open: calendarOpen, close: () => setCalendarOpen(false), ref: datePickerRef });
 
   const numberOfDays = new Date(year, month, 0).getDate();
   const dayOfStart = new Date(year, month, 1).getDay();
@@ -33,15 +35,13 @@ export const DatePickerMenu = () => {
   };
 
   const renderDays = () => {
+    const days = ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sn'];
+
     return (
       <>
-        <div style={{ fontSize: '14px' }}> Mon</div>
-        <div style={{ fontSize: '14px' }}> Mon</div>
-        <div style={{ fontSize: '14px' }}> Mon</div>
-        <div style={{ fontSize: '14px' }}> Mon</div>
-        <div style={{ fontSize: '14px' }}> Mon</div>
-        <div style={{ fontSize: '14px' }}> Mon</div>
-        <div style={{ fontSize: '14px' }}> Mon</div>
+        {days.map((d) => (
+          <div style={{ fontSize: '14px' }}>{d}</div>
+        ))}
       </>
     );
   };

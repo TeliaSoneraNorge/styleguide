@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useRef, RefObject } from 'react';
 import { DatePickerMenu } from './DatePickerMenu';
 import { TextField } from '../../business/TextField';
 import { useFocusTrap } from '../Modal/useFocusTrap';
@@ -31,7 +31,7 @@ export const DatePicker = (props: Props) => {
     <DatePickerContextProvider {...props}>
       <DatePickerContext.Consumer>
         {(contextValue) => (
-          <div className="telia-date-picker">
+          <div className="telia-date-picker" ref={contextValue.datePickerRef}>
             <TextField placeholder="dd.mm.åååå" label="Velg dato" onFocus={() => contextValue.setCalendarOpen(true)} />
             <DatePickerMenu />
           </div>
@@ -46,17 +46,14 @@ type ContextValue = {
   setYear: (year: number) => void;
   month: number;
   setMonth: (month: number) => void;
-  //   day: number;
-  //   setDay: (day: number) => void;
   calendarOpen: boolean;
   setCalendarOpen: (open: boolean) => void;
   selectedDate?: Date;
   setSelectedDate: (date: Date) => void;
+  datePickerRef: RefObject<HTMLDivElement> | null;
 };
 
 const DatePickerContext = React.createContext<ContextValue>({
-  //   day: 0,
-  //   setDay: () => {},
   month: 0,
   setMonth: () => {},
   year: 0,
@@ -65,26 +62,35 @@ const DatePickerContext = React.createContext<ContextValue>({
   setCalendarOpen: () => {},
   selectedDate: undefined,
   setSelectedDate: () => {},
+  datePickerRef: null,
 });
 
 const DatePickerContextProvider: React.FC<{ intialValue?: string }> = (props) => {
-  //   const date = props.intialValue ? new Date(props.intialValue) : new Date();
+  const datePickerRef = useRef<HTMLDivElement>(null);
   const [selectedDate, setSelectedDate] = useState(props.intialValue ? new Date(props.intialValue) : undefined);
   const [calendarOpen, setCalendarOpen] = useState(false);
-  //   const [year, setYear] = useState(date.getFullYear());
-  //   const [month, setMonth] = useState(date.getMonth());
-  //   const [day, setDay] = useState(date.getDate());
-
   const [year, setYear] = useState(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
   const [month, setMonth] = useState(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
+
+  const resetState = () => {
+    const date = props.intialValue ? new Date(props.intialValue) : undefined;
+    setSelectedDate(date);
+    setYear(date ? date.getFullYear() : new Date().getFullYear());
+    setMonth(date ? date.getMonth() : new Date().getMonth());
+  };
+
+  useEffect(() => {
+    if (!calendarOpen) {
+      resetState();
+    }
+  }, [calendarOpen]);
 
   const value = {
     year,
     setYear,
     month,
     setMonth,
-    // day,
-    // setDay,
+    datePickerRef,
     calendarOpen,
     setCalendarOpen,
     selectedDate,

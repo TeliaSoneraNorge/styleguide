@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { DatePicker } from './DatePicker';
 import { DatePickerMenu } from './DatePickerMenu';
-import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
@@ -14,8 +13,8 @@ export default {
 export const Default = () => {
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <DatePicker intialValue="2020-11-16" />
-      <DatePicker />
+      <DatePicker intialValue="2020-11-15" />
+      <DatePicker intialValue="2010-06-1" />
     </div>
   );
 };
