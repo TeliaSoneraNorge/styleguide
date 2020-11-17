@@ -1,8 +1,10 @@
 import React, { useEffect, useState, useRef, RefObject } from 'react';
+
 import { DatePickerMenu } from './DatePickerMenu';
 import { TextField } from '../../business/TextField';
 import format from './format';
-
+import { Button } from '../../business/Button';
+import { Avatar } from '../Avatar';
 type Props = {
   /**
    * After a new date has been set
@@ -10,9 +12,12 @@ type Props = {
   onSelectDate?: (date?: string) => void;
 
   value?: string;
+
+  size?: 'compact' | 'default';
 };
 
 export const DatePicker = (props: Props) => {
+  const [hasFocus, setHasFocus] = useState(false);
   return (
     <DatePickerContextProvider {...props}>
       <DatePickerContext.Consumer>
@@ -20,17 +25,33 @@ export const DatePicker = (props: Props) => {
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>
             <TextField
               placeholder="dd.mm.åååå"
-              value={contextValue.inputValue}
-              type="date"
+              type={hasFocus || contextValue.inputValue ? 'date' : 'text'}
+              value={contextValue.inputValue ?? ''}
+              size={props.size}
               onChange={(e) => {
                 contextValue.setInputValue(e.target.value);
-                console.log('valid', !e.target.validity.patternMismatch);
-                if (e.target.valueAsDate) {
-                  contextValue.setSelectedDate(e.target.valueAsDate);
+                if (e.target.valueAsDate?.getFullYear().toString().length === 4) {
+                  contextValue.setSelectedDate(new Date(e.target.value));
                 }
               }}
+              rightContent={
+                <Avatar
+                  icon="calendar"
+                  onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}
+                  size="compact"
+                  color="transparent"
+                  // ensure that we tab into menu first
+                  tabIndex={1}
+                />
+              }
               label="Velg dato"
-              onFocus={() => contextValue.setCalendarOpen(true)}
+              onFocus={() => {
+                setHasFocus(true);
+                contextValue.setCalendarOpen(true);
+              }}
+              onBlur={() => {
+                setHasFocus(false);
+              }}
             />
             <DatePickerMenu />
           </div>

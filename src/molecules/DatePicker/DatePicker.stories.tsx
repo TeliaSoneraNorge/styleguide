@@ -16,6 +16,7 @@ export const Default = () => {
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <DatePicker value={date} />
       <DatePicker value="2010-06-01" onSelectDate={setDate} />
+      <DatePicker size="compact" />
     </div>
   );
 };

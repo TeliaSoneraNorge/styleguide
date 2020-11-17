@@ -1,8 +1,11 @@
 .telia-date-picker {
   position: relativ;
-  input[type='date']::-webkit-calendar-picker-indicator {
-    display: none;
-    -webkit-appearance: none;
+  input[type='date'] {
+    font-family: inherit;
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
   }
 }
 
