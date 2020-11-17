@@ -205,7 +205,7 @@
         height: 1px;
         max-width: 14rem;
         width: 100%;
-        background-color: var(--grey);
+        background-color: var(--darkest-grey);
     }
 
     &__feature-icon {
@@ -219,7 +219,7 @@
     }
 
     &__feature-name {
-        font-family: 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+        font-family: 'Helvetica Neue Medium', Helvetica, Roboto, Arial, sans-serif;
         font-size: 1rem;
     }
 
@@ -321,6 +321,7 @@
         display: flex;
         flex-direction: column;
         transition : border 150ms ease-out;
+        padding: 0 .5rem .5rem .5rem;
 
         .subscription-lines-accordion__price {
             color: black;
@@ -345,10 +346,14 @@
         }
     }
 
-    &__footer-line {
+    &__seperation-line-container {
+        width: 100%;
+    }
+
+    &__seperation-line {
         border: 0;
-        margin: 0rem 0rem 0.2rem 0rem;
-        border-top: 1px solid var(--grey-darker);
+        margin: 0 0 0.2rem;
+        border-top: 1px solid var(--darkest-grey);
 
         &--inverted {
             border-top: 1px solid var(--grey);

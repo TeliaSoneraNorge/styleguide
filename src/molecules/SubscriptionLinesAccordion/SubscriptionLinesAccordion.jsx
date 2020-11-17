@@ -66,13 +66,11 @@ const SubscriptionLinesAccordion = ({
         'subscription-lines-accordion__footer-container--expanded': isExpanded,
       })}
     >
-      {!isExpanded && (
-        <hr
-          className={cn('subscription-lines-accordion__footer-line', {
-            'subscription-lines-accordion__footer-line--inverted': isInverted,
-          })}
-        />
-      )}
+      <hr
+        className={cn('subscription-lines-accordion__seperation-line', {
+          'subscription-lines-accordion__seperation-line--inverted': isInverted,
+        })}
+      />
       <div className="subscription-lines-accordion__footer subscription-lines-accordion__desktop-only">
         <Button
           component="div"
@@ -231,6 +229,14 @@ const SubscriptionLinesAccordion = ({
             'subscription-lines-accordion__expanded-info--inverted': isInverted,
           })}
         >
+          <div className="subscription-lines-accordion__seperation-line-container">
+            <hr
+              className={cn('subscription-lines-accordion__seperation-line', {
+                'subscription-lines-accordion__seperation-line--inverted': isInverted,
+              })}
+            />
+          </div>
+
           {feature && (
             <>
               <Icon icon={feature.iconName} className="subscription-lines-accordion__feature-icon" />
