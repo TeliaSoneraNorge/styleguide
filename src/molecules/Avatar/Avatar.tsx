@@ -59,6 +59,7 @@ export const Avatar = (props: AvatarProps) => {
   const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
   const size = props.size ? props.size : 'default';
   const status = 'status' in props && props.status ? props.status : 'online';
+  const tabIndex = props.tabIndex ? props.tabIndex : Tag !== 'div' ? 1 : undefined;
 
   const handleClick = (e: React.SyntheticEvent) => {
     if (props.href && props.onClick) {
@@ -83,7 +84,7 @@ export const Avatar = (props: AvatarProps) => {
       style={{ ...props.style, backgroundColor: bgcolor, color }}
       href={props.href}
       onClick={handleClick}
-      tabIndex={props.tabIndex ?? 0}
+      tabIndex={tabIndex}
     >
       {props.img ? (
         <img className="telia-avatar-image" src={props.img} alt={props.alt} />
