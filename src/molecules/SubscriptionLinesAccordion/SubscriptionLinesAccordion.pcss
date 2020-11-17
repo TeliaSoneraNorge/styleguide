@@ -7,6 +7,70 @@
     background-color: var(--white);
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
     margin: 1rem 0;
+    border: 3px solid transparent;
+    border-left: 3px solid transparent;
+    border-right: 3px solid transparent;
+    position: relative;
+    transition : border 150ms ease-out;
+
+    &:hover,
+    &:focus {
+        outline: none;
+        cursor: pointer;
+        border: 3px solid var(--core-purple);
+
+        ~ .subscription-lines-accordion__expanded-info {
+            border-left: 3px solid var(--core-purple);
+            border-right: 3px solid var(--core-purple);
+        }
+
+        ~ .subscription-lines-accordion__footer-container--expanded {
+            border: 3px solid var(--core-purple);
+            border-top: 0;
+        }
+    }
+
+    .radiobutton__svg-container {
+        background-color: white;
+    }
+
+    &__icon-container {
+        display: table-cell;
+        flex: 1;
+        height: 100%;
+        width: 10rem;
+        text-align: center;
+
+        &:hover, &:focus {
+            transform: scale(1.2);
+        }
+    }
+
+    &__radio-button-container {
+        display: table-cell;
+        flex: 9;
+        flex-direction: column;
+        height: 100%;
+        width: 85%;
+        padding: 1rem 0rem 0.2rem .75rem;
+        color: black;
+
+        h2 {
+            flex-basis: 7rem;
+            text-align: left;
+            font-family: 'pebble';
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .radiobutton__svg-container {
+            margin-top: 2.5rem;
+        }
+    }
+
+    &__radio-button-content {
+        width: 100%;
+    }
 
     &__radio-button {
         margin-right: -2rem;
@@ -16,54 +80,12 @@
         }
     }
 
-    &__header {
-        display: flex;
-        flex-direction: column;
+    &__table-container {
+        display: table-row;
+        flex-direction: row;
+        align-items: center;
         height: 100%;
         width: 100%;
-        padding: 1rem .75rem 0.2rem .75rem;
-        color: black;
-        border: 3px solid transparent;
-        border-left: 3px solid transparent;
-        border-right: 3px solid transparent;
-        background-color: var(--white);
-        position: relative;
-        transition : border 150ms ease-out;
-
-        &:hover,
-        &:focus {
-            outline: none;
-            cursor: pointer;
-            border: 3px solid var(--core-purple);
-
-            ~ .subscription-lines-accordion__expanded-info {
-                border-left: 3px solid var(--core-purple);
-                border-right: 3px solid var(--core-purple);
-            }
-
-
-
-            ~ .subscription-lines-accordion__footer-container--expanded {
-                border: 3px solid var(--core-purple);
-                border-top: 0;
-            }
-        }
-
-        &--expanded {
-            border-bottom: 0;
-            &:hover,
-            &:focus {
-                border-bottom: 0;
-            }
-        }
-
-        h2 {
-            flex-basis: 7rem;
-            text-align: left;
-            font-family: 'pebble';
-            text-transform: uppercase;
-            margin: 0;
-        }
     }
 
     &__header-first-row {
@@ -238,8 +260,8 @@
         }
     }
 
-    &__inverted {
-        .subscription-lines-accordion__header {
+    &--inverted {
+        .subscription-lines-accordion__heading-name, .subscription-lines-accordion__price, .subscription-lines-accordion__price-info, .subscription-lines-accordion__table-container {
             background-color: var(--black);
             color: var(--white);
             position: relative;
@@ -265,7 +287,7 @@
         font-weight: bold;
         font-size: 1rem;
         color: var(--dark-green);
-        margin: 0rem 0 1rem 3.2rem;
+        margin: 0rem 0 1rem 1.2rem;
 
         @media all and (min-width: 37.5em)
         {
@@ -325,7 +347,7 @@
 
     &__footer-line {
         border: 0;
-        margin: 0rem 1rem 0.2rem 1rem;
+        margin: 0rem 0rem 0.2rem 0rem;
         border-top: 1px solid var(--grey-darker);
 
         &--inverted {
@@ -334,8 +356,13 @@
     }
 
     &__footer {
-        padding: 0.2rem 0rem 0.2rem 3.3rem;
+        padding: 0.2rem 0rem 0.2rem 1.3rem;
         align-self: flex-start;
+
+        @media all and (min-width: 37.5em)
+        {
+            padding: 0.2rem 0rem 0.2rem 3.3rem;
+        }
     }
 
     &__footer-mobile {
