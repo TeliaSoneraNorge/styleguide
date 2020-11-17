@@ -8,6 +8,54 @@
     box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
     margin: 1rem 0;
 
+    .radiobutton__svg-container {
+        background-color: white;
+    }
+
+    &__icon-container {
+        width: 4rem;
+        text-align: center;
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+
+        @media all and (min-width: 41em) {
+            width: 6rem;
+        }
+
+        &:hover, &:focus {
+            transform: scale(1.3);
+        }
+    }
+
+    &__radio-button-container {
+        display: table-cell;
+        height: 100%;
+        width: 85%;
+        padding: 1rem 0rem 0.2rem .75rem;
+        color: black;
+
+        h2 {
+            flex-basis: 7rem;
+            text-align: left;
+            font-family: 'pebble';
+            text-transform: uppercase;
+            margin: 0;
+        }
+
+        .radiobutton__svg-container {
+            margin-top: 2.5rem;
+        }
+    }
+
+    &__radio-button-content {
+        width: 100%;
+    }
+
     &__radio-button {
         margin-right: -2rem;
 
@@ -16,17 +64,13 @@
         }
     }
 
-    &__header {
+    &__main-container {
         display: flex;
-        flex-direction: column;
         height: 100%;
         width: 100%;
-        padding: 1rem .75rem 0.2rem .75rem;
-        color: black;
         border: 3px solid transparent;
         border-left: 3px solid transparent;
         border-right: 3px solid transparent;
-        background-color: var(--white);
         position: relative;
         transition : border 150ms ease-out;
 
@@ -41,8 +85,6 @@
                 border-right: 3px solid var(--core-purple);
             }
 
-
-
             ~ .subscription-lines-accordion__footer-container--expanded {
                 border: 3px solid var(--core-purple);
                 border-top: 0;
@@ -55,14 +97,6 @@
             &:focus {
                 border-bottom: 0;
             }
-        }
-
-        h2 {
-            flex-basis: 7rem;
-            text-align: left;
-            font-family: 'pebble';
-            text-transform: uppercase;
-            margin: 0;
         }
     }
 
@@ -81,7 +115,7 @@
         font-size: 2rem;
         line-height: 2rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 41em) {
             position: relative;
             font-size: 3.75rem;
             line-height: 3.75rem;
@@ -94,7 +128,7 @@
         height: 100%;
         margin-right: 0.5rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 41em) {
             margin-right: 0;
         }
 
@@ -138,7 +172,7 @@
       top: 15%;
       display: none;
       
-      @media all and (min-width: 37.5em) {
+      @media all and (min-width: 41em) {
         display: block;
         }
     }
@@ -155,7 +189,7 @@
         margin-right: .5rem;
         margin-left: 0.5rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 41em) {
             font-size: 1.5rem;
             margin-left: 0rem;
         }
@@ -190,7 +224,7 @@
         width: 3rem;
         height: 3rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 41em) {
             width: 4rem;
             height: 4rem;
         }
@@ -238,8 +272,8 @@
         }
     }
 
-    &__inverted {
-        .subscription-lines-accordion__header {
+    &--inverted {
+        .subscription-lines-accordion__header-first-row, .subscription-lines-accordion__main-container {
             background-color: var(--black);
             color: var(--white);
             position: relative;
@@ -265,9 +299,9 @@
         font-weight: bold;
         font-size: 1rem;
         color: var(--dark-green);
-        margin: 0rem 0 1rem 3.2rem;
+        margin: 0rem 0 1rem 1.2rem;
 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 41em)
         {
             margin: 0 0 0.2rem 0;
         }
@@ -339,13 +373,18 @@
     }
 
     &__footer {
-        padding: 0.2rem 0rem 0.2rem 3.3rem;
+        padding: 0.2rem 0rem 0.2rem 0.7rem;
         align-self: flex-start;
+
+        @media all and (min-width: 41em)
+        {
+            padding: 0.2rem 0rem 0.2rem 3.3rem;
+        }
     }
 
     &__footer-mobile {
         display: block; 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 41em)
         {
             display: none;
         }
@@ -353,7 +392,7 @@
 
     &__desktop-only {
         display: none; 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 41em)
         {
             display: block;
         }
@@ -361,7 +400,7 @@
 
     &__mobile-only {
         display: block; 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 41em)
         {
             display: none;
         }
@@ -371,7 +410,7 @@
         display: flex;
         align-items: center;
         
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 41em)
         {
             display: none;
         }

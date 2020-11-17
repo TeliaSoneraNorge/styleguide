@@ -1,9 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import classnames from 'classnames';
 
 import Label from '../../atoms/Label/Label';
 
-const RadioButton = ({ label, name, value, checked, disabled, onChange, children, onMouseEnter, onMouseLeave }) => (
+const RadioButton = ({
+  label,
+  name,
+  value,
+  checked,
+  disabled,
+  onChange,
+  children,
+  onMouseEnter,
+  onMouseLeave,
+  className,
+}) => (
   <Label className="radiobutton">
     <input
       type="radio"
@@ -21,7 +33,9 @@ const RadioButton = ({ label, name, value, checked, disabled, onChange, children
         <circle className="radiobutton__circle" cx="10" cy="10" r="5" />
       </svg>
     </span>
-    <span className="radiobutton__text">{children != null ? children : label}</span>
+    <span className={classnames('radiobutton__text', className ? className : undefined)}>
+      {children != null ? children : label}
+    </span>
   </Label>
 );
 RadioButton.propTypes = {
@@ -32,6 +46,7 @@ RadioButton.propTypes = {
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
   children: PropTypes.node,
+  className: PropTypes.string,
 };
 
 export default RadioButton;
