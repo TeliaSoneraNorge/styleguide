@@ -53,7 +53,7 @@ const SubscriptionLinesAccordion = ({
     }
   };
 
-  const handleOnClickShowCalculation = event => {
+  const handleOnClickShowCalculation = (event) => {
     event.stopPropagation();
     onClickShowCalculation();
   };
@@ -66,17 +66,15 @@ const SubscriptionLinesAccordion = ({
         'subscription-lines-accordion__footer-container--expanded': isExpanded,
       })}
     >
-      {!isExpanded && (
-        <hr
-          className={cn('subscription-lines-accordion__footer-line', {
-            'subscription-lines-accordion__footer-line--inverted': isInverted,
-          })}
-        />
-      )}
+      <hr
+        className={cn('subscription-lines-accordion__seperation-line', {
+          'subscription-lines-accordion__seperation-line--inverted': isInverted,
+        })}
+      />
       <div className="subscription-lines-accordion__footer subscription-lines-accordion__desktop-only">
         <Button
           component="div"
-          onClick={event => handleOnClickShowCalculation(event)}
+          onClick={(event) => handleOnClickShowCalculation(event)}
           href="#"
           kind="link"
           text={showCalculationText}
@@ -93,7 +91,7 @@ const SubscriptionLinesAccordion = ({
             <span className="subscription-lines-accordion__description1--bold">{numberOfSubscriptions} stk.</span>
             <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
             {priceInfo &&
-              priceInfo.map(info => (
+              priceInfo.map((info) => (
                 <span key={info} className="subscription-lines-accordion__price-info">
                   {info}
                 </span>
@@ -119,7 +117,7 @@ const SubscriptionLinesAccordion = ({
         className={cn('subscription-lines-accordion__header', {
           'subscription-lines-accordion__header--expanded': isExpanded,
         })}
-        onClick={e => handleOnOpen(e)}
+        onClick={(e) => handleOnOpen(e)}
       >
         <div className="subscription-lines-accordion__header-first-row">
           <div className="subscription-lines-accordion__radio-button">
@@ -192,7 +190,7 @@ const SubscriptionLinesAccordion = ({
               <div className="subscription-lines-accordion__desktop-only">
                 <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
                 {priceInfo &&
-                  priceInfo.map(info => (
+                  priceInfo.map((info) => (
                     <span key={info} className="subscription-lines-accordion__price-info">
                       {info}
                     </span>
@@ -218,6 +216,14 @@ const SubscriptionLinesAccordion = ({
             'subscription-lines-accordion__expanded-info--inverted': isInverted,
           })}
         >
+          <div className="subscription-lines-accordion__seperation-line-container">
+            <hr
+              className={cn('subscription-lines-accordion__seperation-line', {
+                'subscription-lines-accordion__seperation-line--inverted': isInverted,
+              })}
+            />
+          </div>
+
           {feature && (
             <>
               <Icon icon={feature.iconName} className="subscription-lines-accordion__feature-icon" />
@@ -234,7 +240,7 @@ const SubscriptionLinesAccordion = ({
   );
 };
 
-const formatPrice = price => {
+const formatPrice = (price) => {
   if (typeof price === 'number') {
     return price % 1 === 0 ? price + ',-' : price + ' kr';
   }
