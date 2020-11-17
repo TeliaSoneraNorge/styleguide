@@ -15,7 +15,7 @@
   box-shadow: 0px 8px 32px rgba(58, 58, 58, 0.18);
   border-radius: 4px;
   z-index: 10;
-  width: 350px;
+  min-width: 350px;
 }
 
 .telia-date-picker--header {
@@ -24,6 +24,17 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  &--labels {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    div:first-child {
+      margin-right: 4rem;
+    }
+  }
+}
+.telia-date-picker--months {
+  display: flex;
 }
 
 .telia-date-picker--month {
@@ -32,6 +43,8 @@
   grid-template-rows: 45px 45px 45px 45px 45px 45px;
   justify-content: center;
   place-items: center;
+  margin: 0 1.5rem;
+  margin-bottom: 1.5rem;
 }
 .telia-date-picker--day {
   border-radius: 50%;

@@ -3,29 +3,27 @@ import { useDatePicker } from './DatePicker';
 import { Button } from '../../business/Button';
 
 export const DatePickerHeader = () => {
-  const { setMonth, setYear, month, year } = useDatePicker();
+  const { prev, next, periodStart, periodEnd } = useDatePicker();
 
-  const prev = () => {
-    if (month === 0) {
-      setMonth(11);
-      setYear(year - 1);
-    } else {
-      setMonth(month - 1);
-    }
-  };
-
-  const next = () => {
-    if (month === 11) {
-      setMonth(0);
-      setYear(year + 1);
-    } else {
-      setMonth(month + 1);
-    }
-  };
   return (
     <div className="telia-date-picker--header">
-      <Button onClick={prev} icon="arrow-left" kind="secondary-text" size="compact" /> {monthNames[month]} {year}
-      <Button icon="arrow-right" onClick={next} kind="secondary-text" size="compact" />
+      <Button onClick={prev} icon="arrow-left" kind="secondary-text" size="compact" />
+      {periodEnd ? (
+        <div className="telia-date-picker--header--labels">
+          <div>
+            {monthNames[periodStart.month]} {periodStart.year}
+          </div>
+          <div>
+            {monthNames[periodEnd.month]} {periodEnd.year}
+          </div>
+        </div>
+      ) : (
+        <div>
+          {monthNames[periodStart.month]} {periodStart.year}
+        </div>
+      )}
+
+      <Button onClick={next} icon="arrow-right" kind="secondary-text" size="compact" />
     </div>
   );
 };

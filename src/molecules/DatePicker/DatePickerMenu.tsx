@@ -5,19 +5,17 @@ import { useEscapeListener } from '../Modal/useEscapeListener';
 import { DatePickerDay, DatePickerDayPlaceholder } from './DatePickerDay';
 import { DatePickerHeader } from './DatePickerHeader';
 import { useClickOutsideListener } from './useClickOutsideListener';
+import { Month } from './usePeriod';
 
 export const DatePickerMenu = () => {
-  const { year, month, setCalendarOpen, calendarOpen, datePickerRef } = useDatePicker();
+  const { setCalendarOpen, calendarOpen, datePickerRef, periodEnd, periodStart } = useDatePicker();
   const { container } = useFocusTrap();
   useEscapeListener({ onEscape: () => setCalendarOpen(false) });
   useClickOutsideListener({ open: calendarOpen, close: () => setCalendarOpen(false), ref: datePickerRef });
 
-  const numberOfDays = new Date(year, month, 0).getDate();
-  const dayOfStart = new Date(year, month, 1).getDay();
-
   if (!calendarOpen) return null;
 
-  const renderEmptySlots = () => {
+  const renderEmptySlots = (dayOfStart: number) => {
     const numerOfSlots = dayOfStart === 0 ? 6 : dayOfStart - 1;
     const slots = [];
     for (let i = 1; i <= numerOfSlots; i++) {
@@ -26,10 +24,10 @@ export const DatePickerMenu = () => {
     return slots;
   };
 
-  const renderDates = () => {
+  const renderDates = (month: Month) => {
     const dates = [];
-    for (let i = 1; i <= numberOfDays; i++) {
-      dates.push(<DatePickerDay key={`day-${i}`} day={i} date={new Date(`${year}-${month + 1}-${i}`)} />);
+    for (let i = 1; i <= month.numberOfDays; i++) {
+      dates.push(<DatePickerDay key={`day-${i}`} day={i} date={new Date(`${month.year}-${month.month + 1}-${i}`)} />);
     }
     return dates;
   };
@@ -46,14 +44,27 @@ export const DatePickerMenu = () => {
     );
   };
 
+  const renderMonth = (month: Month) => {
+    return (
+      <div className="telia-date-picker--month">
+        {renderDays()}
+        {renderEmptySlots(month.dayOfStart)}
+        {renderDates(month)}
+      </div>
+    );
+  };
+
   return (
     <div ref={container} className="telia-date-picker--menu">
       <DatePickerHeader />
-      <div className="telia-date-picker--month">
-        {renderDays()}
-        {renderEmptySlots()}
-        {renderDates()}
-      </div>
+      {periodEnd ? (
+        <div className="telia-date-picker--months">
+          {renderMonth(periodStart)}
+          {renderMonth(periodEnd)}
+        </div>
+      ) : (
+        renderMonth(periodStart)
+      )}
     </div>
   );
 };

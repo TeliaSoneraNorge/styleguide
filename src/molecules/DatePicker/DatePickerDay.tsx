@@ -7,14 +7,33 @@ type Props = {
   date: Date;
 };
 export const DatePickerDay = (props: Props) => {
-  const context = useDatePicker();
+  const { periodEnd, periodStart } = useDatePicker();
+
+  const selectDate = () => {
+    if (periodEnd) {
+      if (periodEnd.selectedDate && periodStart.selectedDate) {
+        periodStart.setSelectedDate(props.date);
+        periodEnd.setSelectedDate(undefined);
+      } else if (!periodEnd.selectedDate) {
+        periodEnd.setSelectedDate(props.date);
+      }
+    } else {
+      periodStart.setSelectedDate(props.date);
+    }
+  };
+
+  const isSelected =
+    (periodStart.selectedDate && format.dateToString(periodStart.selectedDate) === format.dateToString(props.date)) ||
+    (periodEnd &&
+      periodEnd.selectedDate &&
+      format.dateToString(periodEnd.selectedDate) === format.dateToString(props.date));
+
   return (
     <button
       className={cn('telia-date-picker--day', {
-        'telia-date-picker--day__active':
-          context.selectedDate && format.dateToString(context.selectedDate) === format.dateToString(props.date),
+        'telia-date-picker--day__active': isSelected,
       })}
-      onClick={() => context.setSelectedDate(props.date)}
+      onClick={selectDate}
     >
       {props.day}
     </button>

@@ -5,7 +5,8 @@ import { TextField } from '../../business/TextField';
 import format from './format';
 import { Button } from '../../business/Button';
 import { Avatar } from '../Avatar';
-type Props = {
+import { DatePickerInput } from './DatePickerInput';
+export type DatePickerProps = {
   /**
    * After a new date has been set
    */
@@ -14,45 +15,17 @@ type Props = {
   value?: string;
 
   size?: 'compact' | 'default';
+
+  label?: string;
 };
 
-export const DatePicker = (props: Props) => {
-  const [hasFocus, setHasFocus] = useState(false);
+export const DatePicker = (props: DatePickerProps) => {
   return (
     <DatePickerContextProvider {...props}>
       <DatePickerContext.Consumer>
         {(contextValue) => (
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>
-            <TextField
-              placeholder="dd.mm.åååå"
-              type={hasFocus || contextValue.inputValue ? 'date' : 'text'}
-              value={contextValue.inputValue ?? ''}
-              size={props.size}
-              onChange={(e) => {
-                contextValue.setInputValue(e.target.value);
-                if (e.target.valueAsDate?.getFullYear().toString().length === 4) {
-                  contextValue.setSelectedDate(new Date(e.target.value));
-                }
-              }}
-              rightContent={
-                <Avatar
-                  icon="calendar"
-                  onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}
-                  size="compact"
-                  color="transparent"
-                  // ensure that we tab into menu first
-                  tabIndex={1}
-                />
-              }
-              label="Velg dato"
-              onFocus={() => {
-                setHasFocus(true);
-                contextValue.setCalendarOpen(true);
-              }}
-              onBlur={() => {
-                setHasFocus(false);
-              }}
-            />
+            <DatePickerInput {...contextValue.periodStart} />
             <DatePickerMenu />
           </div>
         )}
@@ -62,73 +35,206 @@ export const DatePicker = (props: Props) => {
 };
 
 type ContextValue = {
+  datePickerRef: RefObject<HTMLDivElement> | null;
+  setCalendarOpen: (open: boolean) => void;
+  calendarOpen: boolean;
+  periodStart: Period;
+  periodEnd?: Period;
+  next: () => void;
+  prev: () => void;
+};
+
+type Period = {
   year: number;
   setYear: (year: number) => void;
   month: number;
   setMonth: (month: number) => void;
-  calendarOpen: boolean;
-  setCalendarOpen: (open: boolean) => void;
   selectedDate?: Date;
   setSelectedDate: (date: Date) => void;
-  datePickerRef: RefObject<HTMLDivElement> | null;
   inputValue?: string;
   setInputValue: (input?: string) => void;
+  numberOfDays: number;
+  dayOfStart: number;
 };
 
-const DatePickerContext = React.createContext<ContextValue>({
-  month: 0,
-  setMonth: () => {},
-  year: 0,
-  setYear: () => {},
+export const DatePickerContext = React.createContext<ContextValue>({
   calendarOpen: false,
   setCalendarOpen: () => {},
-  selectedDate: undefined,
-  setSelectedDate: () => {},
   datePickerRef: null,
-  inputValue: '',
-  setInputValue: () => {},
+  periodStart: {
+    month: 0,
+    setMonth: () => {},
+    year: 0,
+    setYear: () => {},
+    selectedDate: undefined,
+    setSelectedDate: () => {},
+    inputValue: '',
+    setInputValue: () => {},
+    numberOfDays: 0,
+    dayOfStart: 0,
+  },
+  next: () => {},
+  prev: () => {},
 });
 
-const DatePickerContextProvider: React.FC<Props> = (props) => {
-  const datePickerRef = useRef<HTMLDivElement>(null);
-  const [inputValue, setInputValue] = useState(props.value);
+const useSingleDatePicker = (
+  params: {
+    onSelectDate?: (date?: string) => void;
+    value?: string;
+    calendarOpen: boolean;
+    year?: number;
+    month?: number;
+  },
+  skip?: boolean
+) => {
+  const [inputValue, setInputValue] = useState(params.value);
   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
-  const [calendarOpen, setCalendarOpen] = useState(false);
-  const [year, setYear] = useState(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
-  const [month, setMonth] = useState(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
+  const [year, setYear] = useState(params.year ?? selectedDate?.getFullYear() ?? new Date().getFullYear());
+  const [month, setMonth] = useState(params.month ?? selectedDate?.getMonth() ?? new Date().getMonth());
+  console.log(params.year, params.month);
+  const numberOfDays = new Date(year, month, 0).getDate();
+  const dayOfStart = new Date(year, month, 1).getDay();
 
   const resetState = () => {
-    setYear(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
-    setMonth(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
+    setYear(params.year ?? selectedDate?.getFullYear() ?? new Date().getFullYear());
+    setMonth(params.month ?? selectedDate?.getMonth() ?? new Date().getMonth());
   };
 
   useEffect(() => {
-    if (!calendarOpen) {
-      props.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
+    if (!params.calendarOpen) {
+      params.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
       resetState();
     }
-  }, [calendarOpen]);
+  }, [params.calendarOpen]);
 
   useEffect(() => {
     if (selectedDate) {
-      setYear(selectedDate.getFullYear());
-      setMonth(selectedDate.getMonth());
+      //   setYear(selectedDate.getFullYear());
+      //   setMonth(selectedDate.getMonth());
       setInputValue(format.dateToString(selectedDate));
     }
+    console.log('selectedDate');
   }, [selectedDate]);
+
+  const prev = () => {
+    if (month === 0) {
+      setMonth(11);
+      setYear(year - 1);
+    } else {
+      setMonth(month - 1);
+    }
+  };
+
+  const next = () => {
+    if (month === 11) {
+      setMonth(0);
+      setYear(year + 1);
+    } else {
+      setMonth(month + 1);
+    }
+  };
 
   const value = {
     year,
     setYear,
     month,
     setMonth,
-    datePickerRef,
-    calendarOpen,
-    setCalendarOpen,
     selectedDate,
     setSelectedDate,
     inputValue,
     setInputValue,
+    numberOfDays,
+    dayOfStart,
+    prev,
+    next,
+  };
+
+  return skip ? undefined : value;
+};
+
+type ContextProps = {
+  onSelectDate?: (date?: string) => void;
+  value?: string;
+  period?: {
+    start: string;
+    end: string;
+  };
+  isPeriodPicker?: boolean;
+};
+export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
+  const datePickerRef = useRef<HTMLDivElement>(null);
+  const [calendarOpen, setCalendarOpen] = useState(false);
+
+  const periodStart = useSingleDatePicker({
+    onSelectDate: props.onSelectDate,
+    value: props.value ?? props.period?.start,
+    calendarOpen,
+  });
+
+  console.log(periodStart.month);
+  const periodEnd = useSingleDatePicker(
+    {
+      onSelectDate: props.onSelectDate,
+      value: props.period?.end,
+      calendarOpen,
+      year: periodStart.month === 11 ? periodStart.year + 1 : periodStart.year,
+      month: periodStart.month === 11 ? 0 : periodStart.month + 1,
+    },
+    !props.period
+  );
+  console.log(periodEnd?.month);
+
+  //   const [inputValue, setInputValue] = useState(props.value);
+  //   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
+  //   const [calendarOpen, setCalendarOpen] = useState(false);
+  //   const [year, setYear] = useState(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
+  //   const [month, setMonth] = useState(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
+
+  //   const resetState = () => {
+  //     setYear(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
+  //     setMonth(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
+  //   };
+
+  //   useEffect(() => {
+  //     if (!calendarOpen) {
+  //       props.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
+  //       resetState();
+  //     }
+  //   }, [calendarOpen]);
+
+  //   useEffect(() => {
+  //     if (selectedDate) {
+  //       setYear(selectedDate.getFullYear());
+  //       setMonth(selectedDate.getMonth());
+  //       setInputValue(format.dateToString(selectedDate));
+  //     }
+  //   }, [selectedDate]);
+
+  //   useEffect(() => {
+  //     if (periodStart.selectedDate) {
+  //       periodStart.setYear(periodStart.selectedDate.getFullYear());
+  //       periodStart.setMonth(periodStart.selectedDate.getMonth());
+  //     }
+  //   }, [periodStart.selectedDate]);
+
+  const prev = () => {
+    periodStart.prev();
+    periodEnd.prev();
+  };
+
+  const next = () => {
+    periodStart.next();
+    periodEnd.next();
+  };
+
+  const value = {
+    datePickerRef,
+    setCalendarOpen,
+    calendarOpen,
+    periodStart,
+    periodEnd,
+    next,
+    prev,
   };
   return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
 };

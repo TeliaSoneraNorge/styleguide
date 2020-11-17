@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { DatePicker } from './DatePicker';
 import { DatePickerMenu } from './DatePickerMenu';
+import { PeriodPicker } from './PeriodPicker';
+
 import { withDesign } from 'storybook-addon-designs';
 
 export default {
@@ -17,6 +19,15 @@ export const Default = () => {
       <DatePicker value={date} />
       <DatePicker value="2010-06-01" onSelectDate={setDate} />
       <DatePicker size="compact" />
+
+      <PeriodPicker size="compact" />
+      <PeriodPicker
+        size="compact"
+        period={{
+          start: '2020-11-06',
+          end: '2020-11-07',
+        }}
+      />
     </div>
   );
 };
