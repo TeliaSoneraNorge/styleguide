@@ -214,14 +214,14 @@ const SubscriptionLinesAccordion = ({
             {!isExpanded && <Footer />}
           </RadioButton>
         </div>
-        <div onClick={(e) => handleOnOpen(e)} className="subscription-lines-accordion__icon-container">
+        <button onClick={(e) => handleOnOpen(e)} className="subscription-lines-accordion__icon-container">
           <Icon
             icon="arrow-down"
             className={cn('subscription-lines-accordion__icon-arrow', {
               'subscription-lines-accordion__icon-arrow--isExpanded': isExpanded,
             })}
           />
-        </div>
+        </button>
       </div>
       {isExpanded && children && (
         <section

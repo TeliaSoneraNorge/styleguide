@@ -35,21 +35,24 @@
     }
 
     &__icon-container {
-        display: table-cell;
-        flex: 1;
-        height: 100%;
-        width: 10rem;
+        min-width: 5rem;
+        width: 6rem;
         text-align: center;
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
 
         &:hover, &:focus {
-            transform: scale(1.2);
+            transform: scale(1.3);
         }
     }
 
     &__radio-button-container {
         display: table-cell;
-        flex: 9;
-        flex-direction: column;
         height: 100%;
         width: 85%;
         padding: 1rem 0rem 0.2rem .75rem;
@@ -81,9 +84,7 @@
     }
 
     &__table-container {
-        display: table-row;
-        flex-direction: row;
-        align-items: center;
+        display: flex;
         height: 100%;
         width: 100%;
     }
@@ -103,7 +104,7 @@
         font-size: 2rem;
         line-height: 2rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 43em) {
             position: relative;
             font-size: 3.75rem;
             line-height: 3.75rem;
@@ -116,7 +117,7 @@
         height: 100%;
         margin-right: 0.5rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 43em) {
             margin-right: 0;
         }
 
@@ -160,7 +161,7 @@
       top: 15%;
       display: none;
       
-      @media all and (min-width: 37.5em) {
+      @media all and (min-width: 43em) {
         display: block;
         }
     }
@@ -177,7 +178,7 @@
         margin-right: .5rem;
         margin-left: 0.5rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 43em) {
             font-size: 1.5rem;
             margin-left: 0rem;
         }
@@ -212,7 +213,7 @@
         width: 3rem;
         height: 3rem;
 
-        @media all and (min-width: 37.5em) {
+        @media all and (min-width: 43em) {
             width: 4rem;
             height: 4rem;
         }
@@ -289,7 +290,7 @@
         color: var(--dark-green);
         margin: 0rem 0 1rem 1.2rem;
 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 43em)
         {
             margin: 0 0 0.2rem 0;
         }
@@ -364,7 +365,7 @@
         padding: 0.2rem 0rem 0.2rem 1.3rem;
         align-self: flex-start;
 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 43em)
         {
             padding: 0.2rem 0rem 0.2rem 3.3rem;
         }
@@ -372,7 +373,7 @@
 
     &__footer-mobile {
         display: block; 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 43em)
         {
             display: none;
         }
@@ -380,7 +381,7 @@
 
     &__desktop-only {
         display: none; 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 43em)
         {
             display: block;
         }
@@ -388,7 +389,7 @@
 
     &__mobile-only {
         display: block; 
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 43em)
         {
             display: none;
         }
@@ -398,7 +399,7 @@
         display: flex;
         align-items: center;
         
-        @media all and (min-width: 37.5em)
+        @media all and (min-width: 43em)
         {
             display: none;
         }
