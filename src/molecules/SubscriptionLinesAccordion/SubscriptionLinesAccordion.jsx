@@ -113,7 +113,11 @@ const SubscriptionLinesAccordion = ({
         'subscription-lines-accordion--inverted': isInverted,
       })}
     >
-      <div className="subscription-lines-accordion__table-container">
+      <div
+        className={cn('subscription-lines-accordion__main-container', {
+          'subscription-lines-accordion__main-container--expanded': isExpanded,
+        })}
+      >
         <div className="subscription-lines-accordion__radio-button-container">
           <RadioButton
             onMouseEnter={() => setIsHoveringRadioButton(true)}
