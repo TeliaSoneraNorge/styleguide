@@ -87,7 +87,7 @@ const SubscriptionLinesAccordion = ({
               'subscription-lines-accordion__description1--inverted': isInverted,
             })}
           >
-            Totalt for{' '}
+            Totalt for lo lol{' '}
             <span className="subscription-lines-accordion__description1--bold">{numberOfSubscriptions} stk.</span>
             <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
             {priceInfo &&
