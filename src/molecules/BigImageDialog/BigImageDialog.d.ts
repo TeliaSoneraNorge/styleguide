@@ -11,6 +11,6 @@ export interface BigImageDialogProps {
   renderTo?: React.ReactNode;
 }
 
-const BigImageDialog: React.FC<BigImageDialogProps>;
+export const BigImageDialog: React.FC<BigImageDialogProps>;
 
 export default BigImageDialog;
