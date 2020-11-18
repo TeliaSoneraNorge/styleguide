@@ -2,10 +2,12 @@ import React from 'react';
 import { useDatePicker } from './DatePicker';
 import cn from 'classnames';
 import format from './format';
+
 type Props = {
   day: number;
   date: Date;
 };
+
 export const DatePickerDay = (props: Props) => {
   const { periodEnd, periodStart } = useDatePicker();
 
@@ -15,7 +17,12 @@ export const DatePickerDay = (props: Props) => {
         periodStart.setSelectedDate(props.date);
         periodEnd.setSelectedDate(undefined);
       } else if (!periodEnd.selectedDate) {
-        periodEnd.setSelectedDate(props.date);
+        if (props.date?.getTime() < periodStart?.selectedDate.getTime()) {
+          periodStart.setSelectedDate(props.date);
+          periodEnd.setSelectedDate(periodStart.selectedDate);
+        } else {
+          periodEnd.setSelectedDate(props.date);
+        }
       }
     } else {
       periodStart.setSelectedDate(props.date);
@@ -28,10 +35,15 @@ export const DatePickerDay = (props: Props) => {
       periodEnd.selectedDate &&
       format.dateToString(periodEnd.selectedDate) === format.dateToString(props.date));
 
+  const isBetween =
+    !!(periodStart?.selectedDate?.getTime() < props.date?.getTime()) &&
+    !!(periodEnd?.selectedDate?.getTime() > props.date?.getTime());
+
   return (
     <button
       className={cn('telia-date-picker--day', {
         'telia-date-picker--day__active': isSelected,
+        'telia-date-picker--day__inPeriod': isBetween,
       })}
       onClick={selectDate}
     >

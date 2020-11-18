@@ -91,7 +91,6 @@ const useSingleDatePicker = (
   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
   const [year, setYear] = useState(params.year ?? selectedDate?.getFullYear() ?? new Date().getFullYear());
   const [month, setMonth] = useState(params.month ?? selectedDate?.getMonth() ?? new Date().getMonth());
-  console.log(params.year, params.month);
   const numberOfDays = new Date(year, month, 0).getDate();
   const dayOfStart = new Date(year, month, 1).getDay();
 
@@ -109,11 +108,8 @@ const useSingleDatePicker = (
 
   useEffect(() => {
     if (selectedDate) {
-      //   setYear(selectedDate.getFullYear());
-      //   setMonth(selectedDate.getMonth());
       setInputValue(format.dateToString(selectedDate));
     }
-    console.log('selectedDate');
   }, [selectedDate]);
 
   const prev = () => {
@@ -171,7 +167,6 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
     calendarOpen,
   });
 
-  console.log(periodStart.month);
   const periodEnd = useSingleDatePicker(
     {
       onSelectDate: props.onSelectDate,
@@ -182,40 +177,6 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
     },
     !props.period
   );
-  console.log(periodEnd?.month);
-
-  //   const [inputValue, setInputValue] = useState(props.value);
-  //   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
-  //   const [calendarOpen, setCalendarOpen] = useState(false);
-  //   const [year, setYear] = useState(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
-  //   const [month, setMonth] = useState(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
-
-  //   const resetState = () => {
-  //     setYear(selectedDate ? selectedDate.getFullYear() : new Date().getFullYear());
-  //     setMonth(selectedDate ? selectedDate.getMonth() : new Date().getMonth());
-  //   };
-
-  //   useEffect(() => {
-  //     if (!calendarOpen) {
-  //       props.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
-  //       resetState();
-  //     }
-  //   }, [calendarOpen]);
-
-  //   useEffect(() => {
-  //     if (selectedDate) {
-  //       setYear(selectedDate.getFullYear());
-  //       setMonth(selectedDate.getMonth());
-  //       setInputValue(format.dateToString(selectedDate));
-  //     }
-  //   }, [selectedDate]);
-
-  //   useEffect(() => {
-  //     if (periodStart.selectedDate) {
-  //       periodStart.setYear(periodStart.selectedDate.getFullYear());
-  //       periodStart.setMonth(periodStart.selectedDate.getMonth());
-  //     }
-  //   }, [periodStart.selectedDate]);
 
   const prev = () => {
     periodStart.prev();

@@ -25,7 +25,7 @@ export const Default = () => {
         size="compact"
         period={{
           start: '2020-11-06',
-          end: '2020-11-07',
+          end: '2020-11-09',
         }}
       />
     </div>

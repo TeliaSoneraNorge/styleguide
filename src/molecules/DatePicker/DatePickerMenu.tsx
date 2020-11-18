@@ -27,7 +27,10 @@ export const DatePickerMenu = () => {
   const renderDates = (month: Month) => {
     const dates = [];
     for (let i = 1; i <= month.numberOfDays; i++) {
-      dates.push(<DatePickerDay key={`day-${i}`} day={i} date={new Date(`${month.year}-${month.month + 1}-${i}`)} />);
+      const dayStr = i > 9 ? i : `0${i}`;
+      const monthStr = month.month > 8 ? month.month + 1 : `0${month.month + 1}`;
+
+      dates.push(<DatePickerDay key={`day-${i}`} day={i} date={new Date(`${month.year}-${monthStr}-${dayStr}`)} />);
     }
     return dates;
   };
@@ -37,8 +40,10 @@ export const DatePickerMenu = () => {
 
     return (
       <>
-        {days.map((d) => (
-          <div style={{ fontSize: '14px' }}>{d}</div>
+        {days.map((d, i) => (
+          <div style={{ fontSize: '14px' }} key={`${d}-${i}`}>
+            {d}
+          </div>
         ))}
       </>
     );
