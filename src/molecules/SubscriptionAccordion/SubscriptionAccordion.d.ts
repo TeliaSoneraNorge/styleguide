@@ -31,6 +31,6 @@ export interface SubscriptionAccordionProps {
   description?: any;
 }
 
-export const SubscriptionAccordion: React.FC<SubscriptionAccordionProps>;
+declare const SubscriptionAccordion: React.FC<SubscriptionAccordionProps>;
 
 export default SubscriptionAccordion;
