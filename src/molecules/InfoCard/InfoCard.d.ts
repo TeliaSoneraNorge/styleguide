@@ -6,6 +6,6 @@ export interface InfoCardProps {
   usps: string[];
 }
 
-const InfoCard: React.FC<InfoCardProps>;
+declare const InfoCard: React.FC<InfoCardProps>;
 
 export default InfoCard;

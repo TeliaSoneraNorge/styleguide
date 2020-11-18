@@ -35,6 +35,6 @@ export interface SubscriptionLinesAccordionProps {
   style?: React.CSSProperties;
 }
 
-const SubscriptionLinesAccordion: React.FC<SubscriptionLinesAccordionProps>;
+declare const SubscriptionLinesAccordion: React.FC<SubscriptionLinesAccordionProps>;
 
 export default SubscriptionLinesAccordion;
