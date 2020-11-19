@@ -25,7 +25,18 @@ export const DatePicker = (props: DatePickerProps) => {
       <DatePickerContext.Consumer>
         {(contextValue) => (
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>
-            <DatePickerInput {...contextValue.periodStart} />
+            <DatePickerInput
+              {...contextValue.periodStart}
+              leftContent={
+                <Avatar
+                  icon="calendar"
+                  onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}
+                  size="compact"
+                  color="transparent"
+                />
+              }
+              label={props.label ?? 'Velg dato'}
+            />
             <DatePickerMenu />
           </div>
         )}
@@ -89,6 +100,7 @@ const useSingleDatePicker = (
 ) => {
   const [inputValue, setInputValue] = useState(params.value);
   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
+  console.log(selectedDate);
   const [year, setYear] = useState(params.year ?? selectedDate?.getFullYear() ?? new Date().getFullYear());
   const [month, setMonth] = useState(params.month ?? selectedDate?.getMonth() ?? new Date().getMonth());
   const numberOfDays = new Date(year, month, 0).getDate();
@@ -109,6 +121,8 @@ const useSingleDatePicker = (
   useEffect(() => {
     if (selectedDate) {
       setInputValue(format.dateToString(selectedDate));
+    } else {
+      setInputValue('');
     }
   }, [selectedDate]);
 
@@ -175,7 +189,7 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       year: periodStart.month === 11 ? periodStart.year + 1 : periodStart.year,
       month: periodStart.month === 11 ? 0 : periodStart.month + 1,
     },
-    !props.period
+    !props.isPeriodPicker
   );
 
   const prev = () => {

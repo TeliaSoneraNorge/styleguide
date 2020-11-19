@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { TextField } from '../../business/TextField';
-import { Avatar } from '../Avatar';
 import { useDatePicker } from './DatePicker';
 
 export type Props = {
@@ -11,6 +10,7 @@ export type Props = {
   setSelectedDate: (date: Date) => void;
   inputValue?: string;
   setInputValue: (input?: string) => void;
+  leftContent?: React.ReactNode;
 };
 export const DatePickerInput = (props: Props) => {
   const [hasFocus, setHasFocus] = useState(false);
@@ -18,6 +18,7 @@ export const DatePickerInput = (props: Props) => {
 
   return (
     <TextField
+      className="telia-date-picker--input"
       placeholder="dd.mm.åååå"
       type={hasFocus || props.inputValue ? 'date' : 'text'}
       value={props.inputValue ?? ''}
@@ -28,10 +29,8 @@ export const DatePickerInput = (props: Props) => {
           props.setSelectedDate(new Date(e.target.value));
         }
       }}
-      rightContent={
-        <Avatar icon="calendar" onClick={() => setCalendarOpen(!calendarOpen)} size="compact" color="transparent" />
-      }
-      label={props.label ?? 'Velg dato'}
+      rightContent={props.leftContent}
+      label={props.label}
       onFocus={() => {
         setHasFocus(true);
         setCalendarOpen(true);

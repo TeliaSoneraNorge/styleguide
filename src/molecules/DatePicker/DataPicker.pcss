@@ -1,10 +1,35 @@
 .telia-date-picker {
-  position: relativ;
+  position: relative;
   input[type='date'] {
     font-family: inherit;
+    line-height: 18px;
     &::-webkit-calendar-picker-indicator {
       display: none;
       -webkit-appearance: none;
+    }
+  }
+}
+
+.telia-date-picker--input {
+  width: 200px;
+}
+.telia-date-picker__period {
+  .telia-date-picker--inputs {
+    display: flex;
+    width: fit-content;
+    .telia-date-picker--input:first-child {
+      .telia-textfield-content {
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        border-right: 0;
+      }
+    }
+    .telia-date-picker--input + .telia-date-picker--input {
+      .telia-textfield-content {
+        border-left: 0;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+      }
     }
   }
 }

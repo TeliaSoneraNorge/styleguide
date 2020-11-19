@@ -17,7 +17,9 @@ export const DatePickerDay = (props: Props) => {
         periodStart.setSelectedDate(props.date);
         periodEnd.setSelectedDate(undefined);
       } else if (!periodEnd.selectedDate) {
-        if (props.date?.getTime() < periodStart?.selectedDate.getTime()) {
+        if (!periodStart.selectedDate) {
+          periodStart.setSelectedDate(props.date);
+        } else if (props.date.getTime() < periodStart?.selectedDate?.getTime()) {
           periodStart.setSelectedDate(props.date);
           periodEnd.setSelectedDate(periodStart.selectedDate);
         } else {
