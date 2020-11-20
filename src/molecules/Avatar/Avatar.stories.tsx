@@ -164,12 +164,14 @@ export const Colors = () => {
         <br />
       </div>
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
+        <Avatar icon="folder" color="transparent" />
         {Object.keys(colors).map((key, i) => (
           <Avatar key={i} icon="folder" color={key as keyof typeof colors} />
         ))}
       </div>
       <br />
       <br />
+      <Avatar icon="folder" color="transparent" />
       <div style={{ display: 'flex', flexWrap: 'wrap' }}>
         {Object.keys(colors).map((key, i) => (
           <Avatar key={i} text="HG" color={key as keyof typeof colors} />

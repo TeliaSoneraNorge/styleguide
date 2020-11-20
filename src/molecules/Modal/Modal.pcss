@@ -77,20 +77,26 @@
 }
 
 @media (max-width: 600px) {
-  .telia-modal-container {
+  .telia-modal-container:not(.telia-modal-container__small) {
     left: 0;
     right: 0;
     bottom: 0;
     top: auto;
     width: 100%;
     transform: none;
+    overflow-y: auto;
+    height: 98%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
 
-    height: 98%;
-    overflow-y: scroll;
-    &__small {
-      height: 65%;
-    }
+  .telia-modal-container__small {
+    left: 1.25rem;
+    right: 1.25rem;
+    top: 1.5rem;
+    width: calc(100% -2rem);
+    transform: none;
+
+    overflow-y: auto;
   }
 }
