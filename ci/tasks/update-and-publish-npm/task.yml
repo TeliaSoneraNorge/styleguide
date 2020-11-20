@@ -7,7 +7,7 @@ image_resource:
   # See: https://github.com/TeliaSoneraNorge/common-artifacts-ecr-sync
   source:
     repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/node
-    tag: '12.18.4'
+    tag: '10.16.0-alpine'
 
 inputs:
   - name: styleguide
@@ -22,6 +22,6 @@ outputs:
   - name: styleguide
 
 run:
-  path: sh
+  path: bash
   args:
     - styleguide/ci/tasks/update-and-publish-npm/task.sh
