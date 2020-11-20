@@ -36,9 +36,10 @@ export type AvatarProps = {
 
   onClick?: () => void;
 
-  color?: keyof typeof colors;
+  color?: 'transparent' | keyof typeof colors;
 
   style?: React.CSSProperties;
+  className?: string;
 } & (
   | {
       /**
@@ -51,7 +52,8 @@ export type AvatarProps = {
        *  Status indicator. Online, offline and inactive = green, red and yellow dot
        */
       avatar?: React.ReactNode;
-    });
+    }
+);
 
 export const Avatar = (props: AvatarProps) => {
   const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
@@ -68,13 +70,17 @@ export const Avatar = (props: AvatarProps) => {
   };
 
   // Set ransparent bg color. 24 is 14%. https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-  const bgcolor = props.color ? colors[props.color] + '24' : undefined;
-  const color = props.color ? colors[props.color] : undefined;
+  const bgcolor = props.color
+    ? props.color === 'transparent'
+      ? 'transparent'
+      : colors[props.color] + '24'
+    : undefined;
+  const color = props.color && props.color !== 'transparent' ? colors[props.color] : undefined;
 
   return (
     <Tag
-      className={cn('telia-avatar', `telia-avatar--${size}`)}
-      style={{ ...props.style, backgroundColor: bgcolor, color }}
+      className={cn('telia-avatar', `telia-avatar--${size}`, props.className)}
+      style={{ backgroundColor: bgcolor, color, ...props.style }}
       href={props.href}
       onClick={handleClick}
     >
