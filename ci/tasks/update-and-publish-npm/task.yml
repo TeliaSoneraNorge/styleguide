@@ -3,7 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: node, tag: "lts-alpine" }
+  source: { repository: http://987227049932.dkr.ecr.eu-west-1.amazonaws.com/node:'12.18.4' }
 
 inputs:
   - name: styleguide
@@ -20,4 +20,4 @@ outputs:
 run:
   path: sh
   args:
-  - styleguide/ci/tasks/update-and-publish-npm/task.sh
+    - styleguide/ci/tasks/update-and-publish-npm/task.sh
