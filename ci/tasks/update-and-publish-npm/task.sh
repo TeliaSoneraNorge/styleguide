@@ -1,4 +1,6 @@
-set -ueo pipefail
+#!/bin/sh
+
+set -o pipefail
 
 DIR="${PWD}"
 export GREEN='\033[1;32m'
