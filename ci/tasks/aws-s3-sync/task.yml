@@ -3,7 +3,9 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: teliaoss/concourse-awscli }
+  source:
+    repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/teliaoss/concourse-awscli
+    tag: 'latest'
 
 inputs:
   - name: styleguide
@@ -22,4 +24,4 @@ params:
 run:
   path: sh
   args:
-  - styleguide/ci/tasks/aws-s3-sync/task.sh
+    - styleguide/ci/tasks/aws-s3-sync/task.sh
