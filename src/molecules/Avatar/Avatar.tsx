@@ -39,6 +39,7 @@ export type AvatarProps = {
   color?: 'transparent' | keyof typeof colors;
 
   style?: React.CSSProperties;
+  className?: string;
 } & (
   | {
       /**
@@ -78,8 +79,8 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <Tag
-      className={cn('telia-avatar', `telia-avatar--${size}`)}
-      style={{ ...props.style, backgroundColor: bgcolor, color }}
+      className={cn('telia-avatar', `telia-avatar--${size}`, props.className)}
+      style={{ backgroundColor: bgcolor, color, ...props.style }}
       href={props.href}
       onClick={handleClick}
     >
