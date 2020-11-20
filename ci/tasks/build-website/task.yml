@@ -3,7 +3,7 @@ platform: linux
 
 image_resource:
   type: docker-image
-  source: {repository: node, tag: "lts-alpine" }
+  source: { repository: http://987227049932.dkr.ecr.eu-west-1.amazonaws.com/node:'12.18.4' }
 
 inputs:
   - name: styleguide
@@ -16,15 +16,15 @@ outputs:
 run:
   path: sh
   args:
-  - -exc
-  - |
-    mv cache/node_modules styleguide
-    cd styleguide
-    npm run build:css
-    npm run build:icons
-    npm run build-storybook
-    # Important: the icon zip will be placed inside dist-storybook, so it must
-    #            be run _after_ build-storybook.
-    npm run build:icons-zip
-    npm run build:zip
-    mv assets/* dist-storybook
+    - -exc
+    - |
+      mv cache/node_modules styleguide
+      cd styleguide
+      npm run build:css
+      npm run build:icons
+      npm run build-storybook
+      # Important: the icon zip will be placed inside dist-storybook, so it must
+      #            be run _after_ build-storybook.
+      npm run build:icons-zip
+      npm run build:zip
+      mv assets/* dist-storybook
