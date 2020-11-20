@@ -33,7 +33,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
 
   useEffect(() => {
     setMenuHeight(menuRef.current?.clientHeight ?? 0);
-  }, [open]);
+  }, [open, props.children]);
 
   /**
    * To prevent the menu from rendering below,
