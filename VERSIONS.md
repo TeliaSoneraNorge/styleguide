@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.35.0 
+- Breaking: Removed SideMenuHeader component. Use SideMenuItem instead 
+- A bunch og patches and minor improvements 
+
 ## 1.34.21
 Contains new components 
 - Lozenge
