@@ -3,6 +3,8 @@ platform: linux
 
 image_resource:
   type: docker-image
+  # Pull image through Telia Company Artifacts for Docker Hub
+  # See: https://github.com/TeliaSoneraNorge/common-artifacts-ecr-sync
   source: { repository: http://987227049932.dkr.ecr.eu-west-1.amazonaws.com/node:'12.18.4' }
 
 inputs:
