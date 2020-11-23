@@ -49,11 +49,7 @@ resource_types:
   - name: node_modules-cache-resource-type
     type: docker-image
     source:
-<<<<<<< HEAD
       repository: ymedlop/npm-cache-resource
-=======
-      repository: 65536125662.dkr.ecr.eu-north-1.amazonaws.com/ymedlop/npm-cache-resource
->>>>>>> master
       tag: 'latest'
 
 resources:
