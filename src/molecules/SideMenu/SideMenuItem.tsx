@@ -82,10 +82,14 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       </div>
 
       <Tag
-        className={cn('telia-side-menu-item', {
-          'telia-side-menu-item--active': props.active,
-          'telia-side-menu-item--grey': props.color === 'grey',
-        })}
+        className={cn(
+          'telia-side-menu-item',
+          {
+            'telia-side-menu-item--active': props.active,
+            'telia-side-menu-item--grey': props.color === 'grey',
+          },
+          props.className
+        )}
         onClick={handleClick}
         href={props.href}
       >
