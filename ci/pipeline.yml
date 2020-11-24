@@ -38,13 +38,13 @@ resource_types:
     type: docker-image
     source:
       repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/cfcommunity/slack-notification-resource
-      tag: 'latest'
+      tag: latest
 
   - name: pull-request
     type: docker-image
     source:
       repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/teliaoss/github-pr-resource
-      tag: 'latest'
+      tag: latest
 
   - name: node_modules-cache-resource-type
     type: docker-image
@@ -55,8 +55,10 @@ resource_types:
 resources:
   - name: styleguide-pr
     type: pull-request
+    check_every: 24h
     source:
       repository: TeliaSoneraNorge/styleguide
+      ignore_paths: [ci]
       access_token: ((teliasoneranorge-access-token))
 
   - name: styleguide
@@ -133,12 +135,12 @@ jobs:
     serial: true
     serial_groups: [cache]
     plan:
-      - get: styleguide
-        trigger: true
-        version: every
-        passed:
-      - get: node_modules
-        passed:
+      - in_parallel:
+          - get: styleguide
+            trigger: true
+            passed:
+          - get: node_modules
+            passed:
 
   - name: lint-test
     serial: true
