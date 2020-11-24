@@ -4,7 +4,7 @@ import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
 export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
 export type ButtonType = 'button' | 'reset' | 'submit';
-export type ButtonMargin = 'top'|'bottom';
+export type ButtonMargin = 'top' | 'bottom';
 
 export interface HTMLButtonProps {
   component?: 'button';
@@ -19,7 +19,6 @@ export interface HTMLDivElementProps {
   component?: 'div';
 }
 
-
 export interface CommonButtonProps {
   /**
    * you can define a component tag with one of these below.
@@ -32,7 +31,7 @@ export interface CommonButtonProps {
   text?: string;
 
   /**
-   * When defining component as 'link', href needs to be added
+   * When defining component as 'link', href should to be added
    */
   href?: string;
 
@@ -85,12 +84,12 @@ export interface CommonButtonProps {
   // [key: string]: any;
 }
 
-export type ButtonProps = CommonButtonProps & (
-  HTMLButtonProps & ButtonHTMLAttributes<HTMLButtonElement> |
-  HTMLAElementProps & AnchorHTMLAttributes<HTMLAnchorElement> |
-  HTMLDivElementProps
-);
-
+export type ButtonProps = CommonButtonProps &
+  (
+    | (HTMLButtonProps & ButtonHTMLAttributes<HTMLButtonElement>)
+    | (HTMLAElementProps & AnchorHTMLAttributes<HTMLAnchorElement>)
+    | HTMLDivElementProps
+  );
 
 /**
  * Status: *finished*.
@@ -115,11 +114,12 @@ const Button = (props: ButtonProps) => {
     ...rest
   } = props;
 
-  const Tag:any = component === 'link' ? 'a': component;
+  const Tag: any = component === 'link' ? 'a' : component;
 
   return (
     <Tag
-      className={classnames('button',
+      className={classnames(
+        'button',
         {
           [`button--${kind}`]: !isDisabled && kind,
           [`button--${size}`]: size,
@@ -136,19 +136,21 @@ const Button = (props: ButtonProps) => {
       style={style}
       {...rest}
     >
-      {icon &&
-        <Icon icon={icon} style={{
-          fill: 'currentColor',
-          height: '20px',
-          marginBottom: '-8px',
-          marginLeft: '-6px',
-          marginRight: '10px',
-          position: 'relative',
-          top: '-3.5px',
-          width: '20px',
+      {icon && (
+        <Icon
+          icon={icon}
+          style={{
+            fill: 'currentColor',
+            height: '20px',
+            marginBottom: '-8px',
+            marginLeft: '-6px',
+            marginRight: '10px',
+            position: 'relative',
+            top: '-3.5px',
+            width: '20px',
           }}
         />
-      }
+      )}
       {!isProcessing && text}
       {isProcessing && (
         <span className="button__processing">
@@ -159,36 +161,36 @@ const Button = (props: ButtonProps) => {
         </span>
       )}
     </Tag>
-  )
+  );
 };
 
 export default Button;
 
 type ButtonTypeDict = {
-    [key in ButtonType]: ButtonType;
+  [key in ButtonType]: ButtonType;
 };
 Button.types = {
-    button: 'button',
-    reset: 'reset',
-    submit: 'submit',
+  button: 'button',
+  reset: 'reset',
+  submit: 'submit',
 } as ButtonTypeDict;
 
 type ButtonKindDict = {
-    [key in ButtonKind]: ButtonKind;
+  [key in ButtonKind]: ButtonKind;
 };
 Button.kinds = {
-    normal: 'normal',
-    primary: 'primary',
-    cancel: 'cancel',
-    link: 'link',
-    inverted: 'inverted',
-    negative: 'negative',
+  normal: 'normal',
+  primary: 'primary',
+  cancel: 'cancel',
+  link: 'link',
+  inverted: 'inverted',
+  negative: 'negative',
 } as ButtonKindDict;
 
 type ButtonMarginDict = {
-    [key in ButtonMargin]: ButtonMargin;
+  [key in ButtonMargin]: ButtonMargin;
 };
 Button.margins = {
-    top: 'top',
-    bottom: 'bottom',
+  top: 'top',
+  bottom: 'bottom',
 } as ButtonMarginDict;
