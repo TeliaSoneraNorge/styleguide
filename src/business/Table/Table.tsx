@@ -336,6 +336,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           icon="arrow-left"
           aria-label="Forrige side"
           onClick={(e) => props.onPageChange(false, e)}
+          disabled={props.from <= 1}
         />
 
         <Button
@@ -344,6 +345,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           icon="arrow-right"
           aria-label="Neste side"
           onClick={(e) => props.onPageChange(true, e)}
+          disabled={props.to >= props.dataLength}
         />
       </div>
     </div>
