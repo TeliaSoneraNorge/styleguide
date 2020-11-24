@@ -5,11 +5,12 @@ import ShoppingCartCell from './ShoppingCartCell';
 import ShoppingCartRow from './ShoppingCartRow';
 import cn from 'classnames';
 
-const ShoppingCartTableFooterRow = ({ label, price, type }) => (
+const ShoppingCartTableFooterRow = ({ label, price, type, id }) => (
   <ShoppingCartRow
     className={cn('shopping-cart__table__foot__row', {
       'shopping-cart__table__foot__row--monthly': type === 'MONTHLY',
     })}
+    id={id}
   >
     <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
       {label}
@@ -32,16 +33,25 @@ const ShoppingCartTableFooter = ({
 }) => (
   <tfoot className="shopping-cart__table__foot" role="rowgroup">
     {!!totalPriceMonthly && (
-      <ShoppingCartTableFooterRow label="Pr. måned:" price={formatPrice(totalPriceMonthly)} type="MONTHLY" />
+      <ShoppingCartTableFooterRow
+        id="sg-cart-monthly"
+        label="Pr. måned:"
+        price={formatPrice(totalPriceMonthly)}
+        type="MONTHLY"
+      />
     )}
     {!!totalPriceUpfront && hasPaid && (
-      <ShoppingCartTableFooterRow label="Betalt:" price={formatPrice(totalPriceUpfront)} />
+      <ShoppingCartTableFooterRow id="sg-cart-upfrontpaid" label="Betalt:" price={formatPrice(totalPriceUpfront)} />
     )}
     {!!totalPriceUpfront && !hasPaid && (
-      <ShoppingCartTableFooterRow label="Betales nå:" price={formatPrice(totalPriceUpfront)} />
+      <ShoppingCartTableFooterRow id="sg-cart-upfront" label="Betales nå:" price={formatPrice(totalPriceUpfront)} />
     )}
     {!!totalPriceFirstInvoice && (
-      <ShoppingCartTableFooterRow label="Betales på første faktura:" price={formatPrice(totalPriceFirstInvoice)} />
+      <ShoppingCartTableFooterRow
+        id="sg-cart-firstinvoice"
+        label="Betales på første faktura:"
+        price={formatPrice(totalPriceFirstInvoice)}
+      />
     )}
   </tfoot>
 );

@@ -54,7 +54,7 @@ const switchContent = [
         items: [
           {
             type: 'SIM',
-            id: '9054990',
+            id: 'SIM',
             image: {
               icon: 'ico_subscription',
             },
@@ -684,7 +684,7 @@ export const Default = () => {
         totalPriceUpfront={priceUpfront}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
-        formatPrice={price => `${price},-`}
+        formatPrice={(price) => `${price},-`}
       />
     </Container>
   );
