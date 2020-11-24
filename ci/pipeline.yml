@@ -37,13 +37,13 @@ resource_types:
   - name: slack-notification
     type: docker-image
     source:
-      repository: cfcommunity/slack-notification-resource
+      repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/cfcommunity/slack-notification-resource
       tag: latest
 
   - name: pull-request
     type: docker-image
     source:
-      repository: teliaoss/github-pr-resource
+      repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/teliaoss/github-pr-resource
       tag: latest
 
   - name: node_modules-cache-resource-type
