@@ -55,10 +55,8 @@ resource_types:
 resources:
   - name: styleguide-pr
     type: pull-request
-    check_every: 24h
     source:
       repository: TeliaSoneraNorge/styleguide
-      ignore_paths: [ci]
       access_token: ((teliasoneranorge-access-token))
 
   - name: styleguide
@@ -135,12 +133,12 @@ jobs:
     serial: true
     serial_groups: [cache]
     plan:
-      - in_parallel:
-          - get: styleguide
-            trigger: true
-            passed:
-          - get: node_modules
-            passed:
+      - get: styleguide
+        trigger: true
+        version: every
+        passed:
+      - get: node_modules
+        passed:
 
   - name: lint-test
     serial: true
