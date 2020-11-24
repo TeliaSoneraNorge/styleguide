@@ -89,7 +89,7 @@ resources:
 groups:
   - name: Master
     jobs:
-      - cache
+      #   - cache
       - lint-test
       - publish-website
       - version-patch-and-publish-npm
@@ -129,16 +129,16 @@ jobs:
           node_modules: node_modules
         on_failure: *slack-failure
 
-  - name: cache
-    serial: true
-    serial_groups: [cache]
-    plan:
-      - get: styleguide
-        trigger: true
-        version: every
-        passed:
-      - get: node_modules
-        passed:
+  #   - name: cache
+  #     serial: true
+  #     serial_groups: [cache]
+  #     plan:
+  #       - get: styleguide
+  #         trigger: true
+  #         version: every
+  #         passed:
+  #       - get: node_modules
+  #         passed:
 
   - name: lint-test
     serial: true
