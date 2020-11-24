@@ -31,3 +31,15 @@ export const ComplexContent = () => (
     </div>
   </Tooltip>
 );
+
+export const AbsolutePosition = () => (
+  <>
+    <div style={{ display: 'flex' }}>
+      <span>Lorem ipsum</span>
+      <div>
+        <Tooltip buttonContent="?" text="This is a tooltip with absolute positioned box." isPositionAbsolute />
+      </div>
+    </div>
+    <span>Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum </span>
+  </>
+);

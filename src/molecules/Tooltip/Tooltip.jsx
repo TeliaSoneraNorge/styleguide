@@ -8,7 +8,7 @@ let uniqueId = 0;
  * Status: *finished*
  * Category: FormElements
  **/
-const Tooltip = ({ buttonContent, children, className, isExpanded, label, text }) => {
+const Tooltip = ({ buttonContent, children, className, isExpanded, label, text, isPositionAbsolute }) => {
   const [expanded, setExpanded] = useState(isExpanded);
   const [id] = useState(uniqueId++);
 
@@ -22,7 +22,7 @@ const Tooltip = ({ buttonContent, children, className, isExpanded, label, text }
           className="tooltip__button"
           aria-controls={`tooltip__box-${id}`}
           aria-expanded={expanded}
-          onClick={e => {
+          onClick={(e) => {
             setExpanded(!expanded);
             e.stopPropagation();
           }}
@@ -32,7 +32,10 @@ const Tooltip = ({ buttonContent, children, className, isExpanded, label, text }
           {buttonContent || 'i'}
         </button>
       </div>
-      <div className="tooltip__box" id={`tooltip__box-${id}`}>
+      <div
+        className={classnames('tooltip__box', { 'tooltip__box--absolute': isPositionAbsolute })}
+        id={`tooltip__box-${id}`}
+      >
         {children || text}
       </div>
     </div>
