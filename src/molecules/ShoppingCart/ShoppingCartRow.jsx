@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-const ShoppingCartRow = ({ children, className }) => (
+const ShoppingCartRow = ({ children, className, id }) => (
   <tr
+    id={id}
     className={classnames('shopping-cart__table__row', {
       [className]: className,
     })}
@@ -16,6 +17,7 @@ const ShoppingCartRow = ({ children, className }) => (
 ShoppingCartRow.propTypes = {
   children: PropTypes.node,
   className: PropTypes.string,
+  id: PropTypes.string,
 };
 
 export default ShoppingCartRow;
