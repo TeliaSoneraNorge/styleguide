@@ -38,13 +38,13 @@ resource_types:
     type: docker-image
     source:
       repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/cfcommunity/slack-notification-resource
-      tag: latest
+      tag: 'latest'
 
   - name: pull-request
     type: docker-image
     source:
       repository: 987227049932.dkr.ecr.eu-west-1.amazonaws.com/teliaoss/github-pr-resource
-      tag: latest
+      tag: 'latest'
 
   - name: node_modules-cache-resource-type
     type: docker-image
@@ -89,7 +89,7 @@ resources:
 groups:
   - name: Master
     jobs:
-      #   - cache
+      - cache
       - lint-test
       - publish-website
       - version-patch-and-publish-npm
@@ -129,16 +129,16 @@ jobs:
           node_modules: node_modules
         on_failure: *slack-failure
 
-  #   - name: cache
-  #     serial: true
-  #     serial_groups: [cache]
-  #     plan:
-  #       - get: styleguide
-  #         trigger: true
-  #         version: every
-  #         passed:
-  #       - get: node_modules
-  #         passed:
+  - name: cache
+    serial: true
+    serial_groups: [cache]
+    plan:
+      - get: styleguide
+        trigger: true
+        version: every
+        passed:
+      - get: node_modules
+        passed:
 
   - name: lint-test
     serial: true
