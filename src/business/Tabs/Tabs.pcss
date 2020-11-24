@@ -12,28 +12,11 @@
   }
 
   & > ul > li {
-    position: relative;
     display: inline-block;
     width: 160px;
     text-align: center;
     white-space: nowrap;
-    border-bottom: 3px solid transparent;
     transition: border 0.2s ease-in-out;
-
-    &:after {
-      content: '';
-      position: absolute;
-      left: 43%;
-      bottom: 0;
-      width: 1.5rem;
-      opacity: 0;
-      transition: opacity 0.2s ease-in-out;
-    }
-
-    &:hover:after {
-      opacity: 1;
-      border-bottom: 3px solid var(--core-purple);
-    }
 
     & > a,
     & > button {
@@ -56,22 +39,15 @@
       text-transform: none;
     }
 
-    &.active:before {
-      content: '';
-      position: absolute;
-      left: 43%;
-      bottom: 0;
-      width: 1.5rem;
-      border-bottom: 3px solid var(--core-purple);
-    }
-
     &.active > a,
     &.active > button {
       color: var(--core-purple);
     }
 
     & > a:hover,
-    & > button:hover:before {
+    & > button:hover {
+      cursor: pointer;
+      text-decoration: none;
       color: var(--core-purple);
     }
   }
@@ -83,6 +59,38 @@
     & > ul > li {
       width: 100%;
       flex: 1 0 0;
+    }
+  }
+}
+
+.Business-Tabs--underlined {
+  & > ul > li {
+    position: relative;
+    border-bottom: 3px solid transparent;
+    transition: border 0.2s ease-in-out;
+
+    &:after {
+      content: '';
+      position: absolute;
+      left: 43%;
+      bottom: 0;
+      width: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &:hover:after {
+      opacity: 1;
+      border-bottom: 3px solid var(--core-purple);
+    }
+
+    &.active:before {
+      content: '';
+      position: absolute;
+      left: 43%;
+      bottom: 0;
+      width: 1.5rem;
+      border-bottom: 3px solid var(--core-purple);
     }
   }
 }
@@ -112,8 +120,17 @@
       border: 1px solid var(--core-purple);
       background-color: rgba(153, 10, 227, 0.06);
     }
+    li.active:before {
+      visible: hidden;
+    }
     li:hover {
       border-right: solid 1px;
+    }
+    li:hover:after {
+      visible: hidden;
+    }
+    li:hover {
+      border-color: var(--core-purple);
     }
   }
 }
@@ -121,5 +138,49 @@
 .Business-Tabs--centered {
   & > ul {
     justify-content: center;
+  }
+}
+
+.Business-Tabs--black {
+  & > ul > li {
+    &:hover:after {
+      border-color: black;
+    }
+
+    &.active {
+      border-color: var(--black);
+      background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    &.active:before {
+      border-bottom: 3px solid var(--black);
+    }
+
+    &.active > a,
+    &.active > button {
+      color: var(--black);
+    }
+
+    &:hover {
+      border-color: var(--black);
+    }
+
+    & > a:hover,
+    & > button:hover:before {
+      color: var(--black);
+    }
+  }
+}
+
+.Business-Tabs--underlined.Business-Tabs--black {
+  & > ul > li {
+    &.active {
+      background-color: transparent;
+      border-color: transparent;
+    }
+
+    &:hover {
+      border: none;
+    }
   }
 }

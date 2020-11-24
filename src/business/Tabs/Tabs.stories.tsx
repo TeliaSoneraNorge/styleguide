@@ -55,9 +55,36 @@ storiesOf('Business/Tabs', module)
         <TabsWithValue outlined={true} fullWidth={true} />
       </>
     );
+  })
+  .add('Black', () => {
+    return (
+      <>
+        <br />
+
+        <h2>Ancor tabs underlined</h2>
+        <TabsWithPath color="black" />
+        <h3>centered</h3>
+        <TabsWithPath centered={true} color="black" />
+        <h3>Full width version</h3>
+        <TabsWithPath fullWidth={true} color="black" />
+        <br />
+        <br />
+        <h2>Ancor tabs underlined outlined</h2>
+        <TabsWithPath outlined={true} color="black" />
+        <h3>Centered</h3>
+        <TabsWithPath outlined={true} centered={true} color="black" />
+        <h3>Full width</h3>
+        <TabsWithPath outlined={true} fullWidth={true} color="black" />
+      </>
+    );
   });
 
-const TabsWithPath = (props: { fullWidth?: boolean; outlined?: boolean; centered?: boolean }) => {
+const TabsWithPath = (props: {
+  fullWidth?: boolean;
+  outlined?: boolean;
+  centered?: boolean;
+  color?: 'purple' | 'black';
+}) => {
   const [active, setActive] = useState<string>('/one');
   return (
     <Tabs
@@ -66,6 +93,7 @@ const TabsWithPath = (props: { fullWidth?: boolean; outlined?: boolean; centered
       outlined={props.outlined}
       centered={props.centered}
       fullWidth={props.fullWidth}
+      color={props.color}
     >
       <Tab path="/one" label="One" />
       <Tab path="/two" label="Two" />
