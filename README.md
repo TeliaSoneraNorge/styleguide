@@ -2,8 +2,6 @@
 
 This is a React component library of the Atomic Design components found in the Telia Styleguide. This is a living styleguide, showing the components which should be used in Telia Norway's web applications to achieve a common look & feel, and therefore user experience.
 
-Trigger CI for test
-
 - The styleguide can be [found on the web](https://styleguide.channelapi.telia.no/).
 - The React component library can be [found on NPM as a JavaScript module](https://www.npmjs.com/package/@telia/styleguide).
 
