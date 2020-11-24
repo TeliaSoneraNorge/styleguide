@@ -61,7 +61,7 @@ const TabsWithPath = (props: { fullWidth?: boolean; outlined?: boolean; centered
   const [active, setActive] = useState<string>('/one');
   return (
     <Tabs
-      onClick={v => setActive(v)}
+      onClick={(v) => setActive(v)}
       currentValue={active}
       outlined={props.outlined}
       centered={props.centered}
@@ -80,7 +80,7 @@ const TabsWithValue = (props: { fullWidth?: boolean; outlined?: boolean; centere
 
   return (
     <Tabs
-      onClick={v => setActive(v)}
+      onClick={(v) => setActive(v)}
       currentValue={active}
       outlined={props.outlined}
       centered={props.centered}

@@ -12,6 +12,7 @@
   }
 
   & > ul > li {
+    position: relative;
     display: inline-block;
     width: 160px;
     text-align: center;
@@ -19,8 +20,19 @@
     border-bottom: 3px solid transparent;
     transition: border 0.2s ease-in-out;
 
-    &:hover {
-      border-color: var(--core-purple) !important;
+    &:after {
+      content: '';
+      position: absolute;
+      left: 43%;
+      bottom: 0;
+      width: 1.5rem;
+      opacity: 0;
+      transition: opacity 0.2s ease-in-out;
+    }
+
+    &:hover:after {
+      opacity: 1;
+      border-bottom: 3px solid var(--core-purple);
     }
 
     & > a,
@@ -44,7 +56,12 @@
       text-transform: none;
     }
 
-    &.active {
+    &.active:before {
+      content: '';
+      position: absolute;
+      left: 43%;
+      bottom: 0;
+      width: 1.5rem;
       border-bottom: 3px solid var(--core-purple);
     }
 
@@ -54,9 +71,7 @@
     }
 
     & > a:hover,
-    & > button:hover {
-      cursor: pointer;
-      text-decoration: none;
+    & > button:hover:before {
       color: var(--core-purple);
     }
   }
