@@ -65,8 +65,23 @@
 
 .Business-Tabs--underlined {
   & > ul > li {
-    position: relative;
     border-bottom: 3px solid transparent;
+    transition: border 0.2s ease-in-out;
+
+    &:hover {
+      border-bottom: 3px solid var(--core-purple);
+    }
+
+    &.active {
+      border-bottom: 3px solid var(--core-purple);
+    }
+  }
+}
+
+.Business-Tabs--narrow {
+  & > ul > li {
+    position: relative;
+    border: 0;
     transition: border 0.2s ease-in-out;
 
     &:after {
@@ -79,9 +94,17 @@
       transition: opacity 0.2s ease-in-out;
     }
 
+    &:hover {
+      border: none;
+    }
+
     &:hover:after {
       opacity: 1;
       border-bottom: 3px solid var(--core-purple);
+    }
+
+    &.active {
+      border: none;
     }
 
     &.active:before {
@@ -174,15 +197,8 @@
 
 .Business-Tabs--underlined.Business-Tabs--black {
   & > ul > li {
-    border: none;
-
     &.active {
       background-color: transparent;
-      border: none;
-    }
-
-    &:hover {
-      border: none;
     }
   }
 }
