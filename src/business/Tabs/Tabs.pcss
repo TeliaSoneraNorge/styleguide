@@ -1,4 +1,4 @@
-.Business-Tabs {
+.telia-tabs {
   --border-width: 4px;
   --side-padding: 16px;
   --link-padding-bottom: 10px;
@@ -63,7 +63,7 @@
   }
 }
 
-.Business-Tabs--underlined {
+.telia-tabs {
   & > ul > li {
     border-bottom: 3px solid transparent;
     transition: border 0.2s ease-in-out;
@@ -78,7 +78,7 @@
   }
 }
 
-.Business-Tabs--narrow {
+.telia-tabs--narrow {
   & > ul > li {
     position: relative;
     border: 0;
@@ -87,7 +87,7 @@
     &:after {
       content: '';
       position: absolute;
-      left: 43%;
+      transform: translateX(-50%);
       bottom: 0;
       width: 1.5rem;
       opacity: 0;
@@ -110,7 +110,7 @@
     &.active:before {
       content: '';
       position: absolute;
-      left: 43%;
+      transform: translateX(-50%);
       bottom: 0;
       width: 1.5rem;
       border-bottom: 3px solid var(--core-purple);
@@ -118,7 +118,7 @@
   }
 }
 
-.Business-Tabs--outlined {
+.telia-tabs--outlined {
   & > ul {
     > li > a,
     > li > button {
@@ -158,13 +158,13 @@
   }
 }
 
-.Business-Tabs--centered {
+.telia-tabs--centered {
   & > ul {
     justify-content: center;
   }
 }
 
-.Business-Tabs--black {
+.telia-tabs--black {
   & > ul > li {
     &:hover:after {
       border-color: black;
@@ -172,7 +172,7 @@
 
     &.active {
       border-color: var(--black);
-      background-color: rgba(0, 0, 0, 0.06);
+      background-color: transparent;
     }
 
     &.active:before {
@@ -195,10 +195,16 @@
   }
 }
 
-.Business-Tabs--underlined.Business-Tabs--black {
+.telia-tabs--outlined.telia-tabs--black {
   & > ul > li {
     &.active {
-      background-color: transparent;
+      background-color: rgba(0, 0, 0, 0.06);
     }
+  }
+}
+
+.telia-tabs--compact {
+  & > ul > li {
+    width: fit-content;
   }
 }

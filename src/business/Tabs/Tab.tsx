@@ -6,6 +6,7 @@ export type TabProps = {
   exact?: boolean;
   active?: boolean;
   onClick?: (value: string) => void;
+  className?: string;
 } & (
   | {
       path: string;
@@ -43,9 +44,12 @@ export const Tab = (props: TabProps) => {
 
   return (
     <li
-      className={cs({
-        active: props.active,
-      })}
+      className={cs(
+        {
+          active: props.active,
+        },
+        props.className
+      )}
     >
       {element}
     </li>
