@@ -186,7 +186,12 @@ type TableHeading = {
 type TableProps = {
   paging?: React.ReactNode;
   fullWidth?: boolean;
+  compact?: boolean;
   className?: string;
+  /**
+   * Sets borders on table.
+   */
+  borders?: boolean;
   /**
    * used to render skeleton.
    * @default rows is 20
@@ -226,7 +231,17 @@ export const Table: React.FC<TableProps> = (props) => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
     <UniqueIdContext.Provider value={{ uniqueId }}>
-      <span className={cs('data-table', { 'data-table--fullWidth': props.fullWidth }, props.className)}>
+      <span
+        className={cs(
+          'data-table',
+          {
+            'data-table--fullWidth': props.fullWidth,
+            'data-table--borders': props.borders,
+            'data-table--compact': props.compact,
+          },
+          props.className
+        )}
+      >
         <table className="data-table__table">
           <thead>
             {'headings' in props ? (
