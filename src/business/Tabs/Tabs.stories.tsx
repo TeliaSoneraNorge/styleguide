@@ -19,7 +19,14 @@ storiesOf('Business/Tabs', module)
         <TabsWithPath centered={true} />
         <h3>Full width version</h3>
         <TabsWithPath fullWidth={true} />
-
+        <br />
+        <br />
+        <h2>Compact</h2>
+        <TabsWithPath compact={true} />
+        <h3>centered</h3>
+        <TabsWithPath centered={true} compact={true} />
+        <br />
+        <br />
         <h2>Button tabs</h2>
         <TabsWithValue />
         <h3>Centered</h3>
@@ -43,6 +50,14 @@ storiesOf('Business/Tabs', module)
         <TabsWithPath narrow={true} />
         <h3>centered</h3>
         <TabsWithPath narrow={true} centered={true} />
+        <br />
+        <br />
+        <h2>Compact</h2>
+        <TabsWithPath compact={true} narrow={true} />
+        <h3>centered</h3>
+        <TabsWithPath centered={true} compact={true} narrow={true} />
+        <br />
+        <br />
         <h3>Full width version</h3>
         <TabsWithPath narrow={true} fullWidth={true} />
       </>
@@ -88,6 +103,14 @@ storiesOf('Business/Tabs', module)
         <TabsWithPath fullWidth={true} color="black" />
         <br />
         <br />
+        <h2>Compact</h2>
+        <TabsWithPath color="black" compact={true} />
+        <h3>centered</h3>
+        <TabsWithPath centered={true} color="black" compact={true} />
+        <h3>Full width version</h3>
+        <TabsWithPath fullWidth={true} color="black" compact={true} />
+        <br />
+        <br />
         <h2>Ancor tabs underlined outlined</h2>
         <TabsWithPath outlined={true} color="black" />
         <h3>Centered</h3>
@@ -113,6 +136,14 @@ storiesOf('Business/Tabs', module)
         <TabsWithPath narrow={true} centered={true} color="black" />
         <h3>Full width version</h3>
         <TabsWithPath narrow={true} fullWidth={true} color="black" />
+        <h2>Compact</h2>
+        <TabsWithPath color="black" compact={true} narrow={true} />
+        <h3>centered</h3>
+        <TabsWithPath centered={true} color="black" compact={true} narrow={true} />
+        <h3>Full width version</h3>
+        <TabsWithPath fullWidth={true} color="black" compact={true} narrow={true} />
+        <br />
+        <br />
       </>
     );
   });
@@ -123,6 +154,7 @@ const TabsWithPath = (props: {
   narrow?: boolean;
   centered?: boolean;
   color?: 'purple' | 'black';
+  compact?: boolean;
 }) => {
   const [active, setActive] = useState<string>('/one');
   return !props.outlined ? (
@@ -133,6 +165,7 @@ const TabsWithPath = (props: {
       centered={props.centered}
       fullWidth={props.fullWidth}
       color={props.color}
+      compact={props.compact}
     >
       <Tab path="/one" label="One" />
       <Tab path="/two" label="Two" />

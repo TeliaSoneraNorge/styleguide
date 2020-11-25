@@ -1,5 +1,5 @@
 import * as React from 'react';
-import cs from 'classnames';
+import cn from 'classnames';
 import { TabProps } from './Tab';
 
 type Props = {
@@ -9,18 +9,22 @@ type Props = {
   centered?: boolean;
   currentValue?: string;
   color?: 'purple' | 'black';
+  compact?: boolean;
 } & ({ outlined: true; narrow?: false } | { outlined?: false; narrow?: boolean });
 
 export const Tabs: React.FC<Props> = (props) => {
   return (
     <div
-      className={cs(
-        'Business-Tabs',
-        props.fullWidth ? 'Business-Tabs--fullwidth' : undefined,
-        props.outlined ? 'Business-Tabs--outlined' : 'Business-Tabs--underlined',
-        props.narrow ? 'Business-Tabs--narrow' : undefined,
-        props.centered ? 'Business-Tabs--centered' : undefined,
-        props.color === 'black' ? 'Business-Tabs--black' : undefined,
+      className={cn(
+        'telia-tabs',
+        {
+          'telia-tabs--outlined': props.outlined,
+          'telia-tabs--fullwidth': props.fullWidth,
+          'telia-tabs--narrow': props.narrow,
+          'telia-tabs--centered': props.centered,
+          'telia-tabs--black': props.color === 'black',
+          'telia-tabs--compact': props.compact,
+        },
         props.className
       )}
     >
@@ -32,6 +36,7 @@ export const Tabs: React.FC<Props> = (props) => {
             return React.cloneElement(ch, {
               active: active,
               onClick: props.onClick,
+              className: cn('telia-tabs__tab', ch.props.className),
             });
           }
           return null;
