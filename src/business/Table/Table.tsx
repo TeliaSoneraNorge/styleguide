@@ -191,7 +191,7 @@ type TableProps = {
   /**
    * Sets borders on table.
    */
-  borders?: boolean;
+  bordered?: boolean;
   /**
    * used to render skeleton.
    * @default rows is 20
@@ -236,7 +236,7 @@ export const Table: React.FC<TableProps> = (props) => {
           'data-table',
           {
             'data-table--fullWidth': props.fullWidth,
-            'data-table--borders': props.borders,
+            'data-table--bordered': props.bordered,
             'data-table--compact': props.compact,
           },
           props.className
