@@ -224,14 +224,6 @@
             padding: 0rem 0.5rem 0.5rem 0.5rem;
             border-left: 3px solid var(--black);
             border-right: 3px solid var(--black);
-            background-image:
-            linear-gradient(to bottom,
-                white,
-                white 100%),
-            linear-gradient(to bottom,
-                var(--black),
-                var(--black) 100%);
-            background-clip: content-box, padding-box;
         }
     }
 
@@ -345,6 +337,7 @@
         transition: border 150ms ease-out;
 
         &--inverted {
+            background-color: var(--black);
             border-left: 3px solid var(--black);
             border-right: 3px solid var(--black);
             border-bottom: 3px solid var(--black);
