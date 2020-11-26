@@ -190,3 +190,36 @@
     background: linear-gradient(-45deg, var(--grey-200), var(--grey-300));
   }
 }
+
+@media (max-width: 480px) {
+  .telia-listItem {
+    padding: 1rem 1.25rem;
+
+    &__name {
+      line-height: 1rem;
+      font-size: 1.125rem;
+      font-weight: 400;
+    }
+
+    &__decorator {
+      flex: 0;
+      padding-right: 0.75rem;
+      text-align: center;
+    }
+
+    &__caption {
+      &--text {
+        line-height: 1rem;
+        font-size: 0.625rem;
+        font-weight: 400;
+      }
+    }
+
+    .telia-avatar {
+      .Icon {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+}
