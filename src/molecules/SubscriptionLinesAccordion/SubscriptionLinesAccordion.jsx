@@ -109,8 +109,7 @@ const SubscriptionLinesAccordion = ({
               <div className="subscription-lines-accordion__heading-container">
                 <div className="subscription-lines-accordion__mobile-only">
                   <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s">
-                    {dataAmount}
-                    {dataUnit}
+                    {dataAmount} {dataUnit}
                     {extraDataString && (
                       <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
                     )}
