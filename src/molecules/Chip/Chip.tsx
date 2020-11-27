@@ -25,13 +25,29 @@ type Props = {
    */
   kind?: 'white' | 'grey';
   /**
+   * Styling of chip. Default is white.
+   */
+  size?: 'compact' | 'default';
+
+  /**
    * The click event for the whole chip (in filter mode) or for the remove button (in select mode).
    */
   onClick?: () => void;
+
   className?: string;
 };
 
-export const Chip = ({ label, icon, active, disabled, kind, mode = 'choice', onClick, className }: Props) => {
+export const Chip = ({
+  label,
+  icon,
+  active,
+  disabled,
+  kind,
+  mode = 'choice',
+  size = 'default',
+  onClick,
+  className,
+}: Props) => {
   const Tag = mode === 'input' ? 'div' : 'button';
   const role = Tag === 'div' && !(mode === 'input') ? 'button' : undefined;
   return (
@@ -42,6 +58,7 @@ export const Chip = ({ label, icon, active, disabled, kind, mode = 'choice', onC
         'telia-chip',
         `telia-chip__${mode}`,
         {
+          'telia-chip__compact': size === 'compact',
           'telia-chip__disabled': disabled,
           'telia-chip__active': active || mode === 'input',
           'telia-chip__grey': kind === 'grey',
@@ -57,9 +74,17 @@ export const Chip = ({ label, icon, active, disabled, kind, mode = 'choice', onC
       }}
       tabIndex={disabled || mode === 'input' ? -1 : 0}
     >
-      {icon && <Icon className="telia-chip-icon" icon={icon} />}
-      <div className="telia-chip-label">{label}</div>
-      {mode === 'input' && <Button kind="secondary-text" icon="close" onClick={onClick} disabled={disabled} />}
+      {icon && <Icon className="telia-chip--icon" icon={icon} />}
+      <div className="telia-chip--label">{label}</div>
+      {mode === 'input' && (
+        <Button
+          kind="secondary-text"
+          icon="close"
+          onClick={onClick}
+          disabled={disabled}
+          className="telia-chip--close"
+        />
+      )}
     </Tag>
   );
 };

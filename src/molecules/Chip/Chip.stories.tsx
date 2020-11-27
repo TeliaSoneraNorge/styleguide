@@ -13,36 +13,44 @@ export const ChoiceChips = () => (
     <h3>Choice Chip</h3>
     <strong>Default chip is white with grey border</strong>
     <br />
-    <div style={{ paddingBottom: '10px' }}>
-      Normal state:
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <div>Normal state:</div>
+      <div>Active state:</div>
+      <div>Disabled state:</div>
+      <div>Chip with icon:</div>
+    </div>
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <Chip label="Chippy" size="compact" />
+      <Chip label="Chippy" size="compact" active />
+      <Chip label="Chippy" size="compact" disabled />
+      <Chip label="Chippy" size="compact" icon="check-mark" />
+    </div>
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
       <Chip label="Chippy" />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Active state:
       <Chip label="Chippy" active />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Disabled state:
       <Chip label="Chippy" disabled />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Chip with icon:
       <Chip label="Chippy" icon="check-mark" />
     </div>
     <br />
     <br />
     <h3>Choice Chip - Grey</h3>
-    <div style={{ paddingBottom: '10px' }}>
-      Normal state:
-      <Chip label="Chippy" kind="grey" />
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <Chip label="Chippy" size="compact" kind="grey" />
+
+      <Chip label="Chippy" size="compact" active kind="grey" />
+
+      <Chip label="Chippy" size="compact" disabled kind="grey" />
+
+      <Chip label="Chippy" size="compact" icon="check-mark" kind="grey" />
     </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Active state:
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <Chip label="Chippy" size="compact" kind="grey" />
+
       <Chip label="Chippy" active kind="grey" />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Disabled state:
+
       <Chip label="Chippy" disabled kind="grey" />
+
+      <Chip label="Chippy" icon="check-mark" kind="grey" />
     </div>
   </div>
 );
@@ -53,32 +61,35 @@ export const InputChips = () => (
     <strong>An input chip will always be active</strong>
     <strong>Default input chip is white with grey border</strong>
     <br />
-    <div style={{ paddingBottom: '10px' }}>
-      Normal state:
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <div>Normal state:</div>
+      <div>Disabled state:</div>
+      <div>Chip with icon:</div>
+    </div>
+
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <Chip label="Chippy" mode="input" size="compact" />
+      <Chip label="Chippy" mode="input" size="compact" disabled />
+      <Chip label="Chippy" mode="input" size="compact" icon="check-mark" />
+    </div>
+
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
       <Chip label="Chippy" mode="input" />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Disabled state:
       <Chip label="Chippy" mode="input" disabled />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Chip with icon:
       <Chip label="Chippy" mode="input" icon="check-mark" />
     </div>
     <br />
     <br />
     <h3>Input Chip - Grey</h3>
     <br />
-    <div style={{ paddingBottom: '10px' }}>
-      Normal state:
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
+      <Chip label="Chippy" mode="input" kind="grey" size="compact" />
+      <Chip label="Chippy" mode="input" kind="grey" size="compact" disabled />
+      <Chip label="Chippy" mode="input" kind="grey" size="compact" icon="check-mark" />
+    </div>
+    <div style={{ paddingBottom: '1rem', display: 'flex', justifyContent: 'space-between' }}>
       <Chip label="Chippy" mode="input" kind="grey" />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Disabled state:
       <Chip label="Chippy" mode="input" kind="grey" disabled />
-    </div>
-    <div style={{ paddingBottom: '10px' }}>
-      Chip with icon:
       <Chip label="Chippy" mode="input" kind="grey" icon="check-mark" />
     </div>
   </div>
