@@ -47,23 +47,30 @@
     &--disabled {
       border-color: var(--dark-grey);
       cursor: initial;
+      pointer-events: none;
     }
 
     &--disabled-and-checked {
       background-color: var(--dark-grey);
     }
 
-    &:hover:before {
+    &:before {
+      transition-duration: 300ms;
+      transition-property: background-color;
+
       content: ' ';
       display: inline-block;
-      width: 1px;
-      height: 1px;
-      border: 1rem solid var(--medium-light-grey);
-      border-radius: 1rem;
+      width: 2rem;
+      height: 2rem;
+      background-color: transparent;
+      border-radius: 50%;
       position: absolute;
       top: -0.5rem;
       left: -0.5rem;
       z-index: -100;
+    }
+    &:hover:before {
+      background-color: var(--medium-light-grey);
     }
   }
 
