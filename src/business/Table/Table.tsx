@@ -335,7 +335,9 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           />
           <DropdownMenu>
             {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
-              <DropdownItem onClick={() => props.onPerPageChange(option)}>{option}</DropdownItem>
+              <DropdownItem key={option} onClick={() => props.onPerPageChange(option)}>
+                {option}
+              </DropdownItem>
             ))}
           </DropdownMenu>
         </Dropdown>
