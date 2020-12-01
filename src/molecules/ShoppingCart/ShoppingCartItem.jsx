@@ -80,9 +80,9 @@ const ShoppingCartItem = ({
       <ShoppingCartRow
         className={cn('shopping-cart__item', {
           'shopping-cart__item__dashed': isDraft,
+          [`shopping-cart__item__id--${id}`]: id,
         })}
         key={id}
-        id={id}
       >
         <ShoppingCartColumnHeading
           className="shopping-cart__table__cell shopping-cart__item__name"
