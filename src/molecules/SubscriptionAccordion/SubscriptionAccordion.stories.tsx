@@ -269,6 +269,10 @@ export const SubscriptionAccordionsWithSelection = () => {
           iconName: 'infinite',
           name: 'Ubegrenset data med 10mbit/s hastighet etter 500GB',
         }}
+        discount={{
+          price: 1891,
+          description: 'i rabatt på tlf',
+        }}
         disclaimers={disclaimers}
         onOpen={() => {
           currentSubscription === 'smart500' ? setCurrentSubscription('') : setCurrentSubscription('smart500');
@@ -291,6 +295,10 @@ export const SubscriptionAccordionsWithSelection = () => {
         feature={{
           iconName: 'infinite',
           name: 'Ubegrenset data med 10mbit/s hastighet etter 500GB',
+        }}
+        discount={{
+          price: 1891,
+          description: 'i rabatt på tlf',
         }}
         disclaimers={disclaimers}
         onOpen={() => {
