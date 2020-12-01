@@ -15,6 +15,8 @@ export const ButtonPrimary = () => (
     <br />
     <h3>Disabled state</h3>
     <Button label="Button" disabled={true} />
+    <h3>Active state</h3>
+    <Button label="Button" active={true} />
     <br />
     <h3>Button with icon</h3>
     <Button label="Button" icon={'add'} />
@@ -47,6 +49,9 @@ export const ButtonPrimaryText = () => (
     <h3>Disabled state</h3>
     <Button kind="primary-text" label="Button" disabled={true} />
     <br />
+    <h3>Active state</h3>
+    <Button kind="primary-text" label="Button" active={true} />
+    <br />
     <h3>Button with icon</h3>
     <Button kind="primary-text" label="Button" icon={'add'} />
     <br />
@@ -77,6 +82,9 @@ export const ButtonSecondary = () => (
     <br />
     <h3>Disabled state</h3>
     <Button kind="secondary" label="Button" disabled={true} />
+    <br />
+    <h3>Active state</h3>
+    <Button kind="secondary" label="Button" active={true} />
     <br />
     <h3>Button with icon</h3>
     <Button kind="secondary" label="Button" icon={'add'} />
@@ -109,6 +117,9 @@ export const ButtonSecondaryText = () => (
       <br />
       <h3>Disabled state</h3>
       <Button kind="secondary-text" label="Button" disabled={true} />
+      <br />
+      <h3>Active state</h3>
+      <Button kind="secondary-text" label="Button" active={true} />
       <br />
       <h3>Button with icon</h3>
       <Button kind="secondary-text" label="Button" icon={'add'} />
@@ -143,6 +154,9 @@ export const ButtonGhost = () => (
       <h3>Disabled state</h3>
       <Button kind="ghost" label="Button" disabled={true} />
       <br />
+      <h3>Active state</h3>
+      <Button kind="ghost" label="Button" active={true} />
+      <br />
       <h3>Button with icon</h3>
       <Button kind="ghost" label="Button" icon={'add'} />
       <br />
@@ -175,6 +189,9 @@ export const ButtonPositive = () => (
     <h3>Disabled state</h3>
     <Button kind="positive" label="Button" disabled={true} />
     <br />
+    <h3>Active state</h3>
+    <Button kind="positive" label="Button" active={true} />
+    <br />
     <h3>Button with icon</h3>
     <Button kind="positive" label="Button" icon={'add'} />
     <br />
@@ -206,6 +223,9 @@ export const ButtonNegative = () => (
     <h3>Disabled state</h3>
     <Button kind="negative" label="Button" disabled={true} />
     <br />
+    <h3>Active state</h3>
+    <Button kind="negative" label="Button" active={true} />
+    <br />
     <h3>Button with icon</h3>
     <Button kind="negative" label="Button" icon={'add'} />
     <br />
@@ -236,6 +256,9 @@ export const ButtonCompact = () => (
     <br />
     <h3>Disabled state</h3>
     <Button size="compact" label="Button" disabled={true} />
+    <br />
+    <h3>Active state</h3>
+    <Button size="compact" label="Button" active={true} />
     <br />
     <h3>Button with icon</h3>
     <Button size="compact" label="Button" icon={'add'} />

@@ -26,6 +26,7 @@ type ButtonProps = {
    */
   href?: string;
   disabled?: boolean;
+  active?: boolean;
   /**
    * If true the icon provided is right aligned
    */
@@ -45,7 +46,18 @@ type ButtonProps = {
 };
 
 export const Button = (props: ButtonProps) => {
-  const { kind = 'primary', label, href, onClick, icon, iconRight, disabled = false, size, className } = props;
+  const {
+    kind = 'primary',
+    label,
+    href,
+    onClick,
+    icon,
+    iconRight,
+    disabled = false,
+    active = false,
+    size = 'default',
+    className,
+  } = props;
   const Tag = href ? 'a' : 'button';
 
   const handleClick = (e: React.MouseEvent) => {
@@ -67,6 +79,7 @@ export const Button = (props: ButtonProps) => {
           'telia-button--iconRight': iconRight,
           'telia-button--ball': icon && !label,
           'telia-button--disabled': disabled,
+          'telia-button--active': active,
         },
         className
       )}
