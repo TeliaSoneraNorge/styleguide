@@ -39,15 +39,15 @@
 
   .telia-textfield-rightContent {
     transition: border 200ms;
-    border-top: 1px solid #a0a0a0;
-    border-bottom: 1px solid #a0a0a0;
+    border-top: 1px solid var(--grey-400);
+    border-bottom: 1px solid var(--grey-400);
     border-radius: 0;
     margin-left: -1px;
   }
   .telia-textfield-input {
     transition: border 200ms;
 
-    border: 1px solid #a0a0a0;
+    border: 1px solid var(--grey-400);
     border-right-color: transparent;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -56,13 +56,14 @@
   .telia-date-picker--input + .telia-date-picker--input {
     .telia-textfield-rightContent {
       border-radius: 4px;
-      border-right: 1px solid #a0a0a0;
+      border-right: 1px solid var(--grey-400);
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
     }
+
     .telia-textfield-input {
       margin-left: -1px;
-      border: 1px solid #a0a0a0;
+      border: 1px solid var(--grey-400);
 
       border-left-color: transparent;
       border-right-color: transparent;
@@ -70,11 +71,22 @@
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
     }
+
+    &::before {
+      content: '';
+      transition: border 200ms;
+      position: absolute;
+      width: 1px;
+      left: -1px;
+      height: 100%;
+      border-top: 1px solid var(--grey-400);
+      border-bottom: 1px solid var(--grey-400);
+    }
   }
 
   .telia-textfield__focus {
     .telia-textfield-input {
-      border-color: #990ae3;
+      border-color: var(--core-purple-500);
     }
     .telia-textfield-rightContent {
       margin: 0;
@@ -82,7 +94,11 @@
   }
   .telia-date-picker--input + .telia-date-picker--input.telia-textfield__focus {
     .telia-textfield-input {
-      border-color: #990ae3;
+      border-color: var(--core-purple-500);
+    }
+
+    &::before {
+      border-color: var(--core-purple-500);
     }
   }
 }
