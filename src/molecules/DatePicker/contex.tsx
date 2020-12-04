@@ -26,6 +26,8 @@ type ContextValue = {
   prev: () => void;
   monthLabels: string[];
   dayLabels: string[];
+  maxDate?: Date;
+  minDate?: Date;
 };
 
 type Period = {
@@ -77,7 +79,7 @@ const useSingleDatePicker = (
   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
   const [year, setYear] = useState(params.year ?? selectedDate?.getFullYear() ?? new Date().getFullYear());
   const [month, setMonth] = useState(params.month ?? selectedDate?.getMonth() ?? new Date().getMonth());
-  const numberOfDays = new Date(year, month, 0).getDate();
+  const numberOfDays = new Date(year, month + 1, 0).getDate();
   const dayOfStart = new Date(year, month, 1).getDay();
 
   const resetState = () => {
@@ -146,9 +148,15 @@ type ContextProps = {
   isPeriodPicker?: boolean;
   monthLabels?: string[];
   dayLabels?: string[];
+
+  maxDate?: string;
+  minDate?: string;
 };
 export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   const datePickerRef = useRef<HTMLDivElement>(null);
+  const maxDate = props.maxDate ? new Date(props.maxDate) : undefined;
+  const minDate = props.minDate ? new Date(props.minDate) : undefined;
+
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const periodStart = useSingleDatePicker({
@@ -192,6 +200,8 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       prev,
       monthLabels,
       dayLabels,
+      maxDate,
+      minDate,
     };
     return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
   }

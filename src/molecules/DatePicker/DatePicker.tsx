@@ -10,6 +10,10 @@ export type DatePickerProps = {
    */
   onSelectDate?: (date?: string) => void;
 
+  /**
+   * Format "yyyy-mm-dd"
+   * @default today
+   */
   value?: string;
 
   size?: 'compact' | 'default';
@@ -30,6 +34,18 @@ export type DatePickerProps = {
    * @default "Norwgian short name. ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sø']"
    */
   dayLabels?: Array<string>;
+
+  /**
+   * Format "yyyy-mm-dd"
+   * @default undefined
+   */
+  maxDate?: string;
+
+  /**
+   * Format "yyyy-mm-dd"
+   * @default undefined
+   */
+  minDate?: string;
 };
 
 export const DatePicker = (props: DatePickerProps) => {

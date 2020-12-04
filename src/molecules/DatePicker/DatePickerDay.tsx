@@ -9,7 +9,10 @@ type Props = {
 };
 
 export const DatePickerDay = (props: Props) => {
-  const { periodEnd, periodStart } = useDatePicker();
+  const { periodEnd, periodStart, minDate, maxDate } = useDatePicker();
+
+  const disabled =
+    (minDate && props.date.getTime() < minDate.getTime()) || (maxDate && props.date.getTime() > maxDate.getTime());
 
   const selectDate = () => {
     if (periodEnd) {
@@ -48,8 +51,10 @@ export const DatePickerDay = (props: Props) => {
       className={cn('telia-date-picker--day', {
         'telia-date-picker--day__active': isSelected,
         'telia-date-picker--day__inPeriod': isBetween,
+        'telia-date-picker--day__disabled': disabled,
       })}
       onClick={selectDate}
+      disabled={disabled}
     >
       {props.day}
     </button>

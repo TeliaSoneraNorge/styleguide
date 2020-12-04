@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { DatePicker } from './DatePicker';
 import { DatePickerMenu } from './DatePickerMenu';
 import { PeriodPicker } from './PeriodPicker';
-
 import { withDesign } from 'storybook-addon-designs';
+import format from './format';
 
 export default {
   component: DatePicker,
@@ -19,6 +19,11 @@ export const Default = () => {
       <DatePicker value={date} />
       <DatePicker value="2010-06-01" onSelectDate={setDate} />
       <DatePicker size="compact" />
+
+      <div style={{ marginTop: '2rem ' }}>
+        <div>With upper and lower bound</div>
+        <DatePicker size="compact" maxDate="2021-02-05" minDate={format.dateToString(new Date())} />
+      </div>
       <div style={{ marginTop: '2rem ' }}>
         <div>Custom month labels</div>
         <DatePicker
