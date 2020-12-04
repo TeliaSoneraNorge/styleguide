@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { DatePicker } from './DatePicker';
 import { DatePickerMenu } from './DatePickerMenu';
 import { PeriodPicker } from './PeriodPicker';

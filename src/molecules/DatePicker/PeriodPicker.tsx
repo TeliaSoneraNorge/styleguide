@@ -1,5 +1,5 @@
 import React from 'react';
-import { DatePickerContextProvider, DatePickerContext } from './DatePicker';
+import { DatePickerContextProvider, DatePickerContext } from './contex';
 import { DatePickerInput } from './DatePickerInput';
 import { DatePickerMenu } from './DatePickerMenu';
 import { Avatar, Icon } from '../../index';

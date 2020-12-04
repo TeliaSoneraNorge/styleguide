@@ -1,11 +1,17 @@
 import React from 'react';
-import { useDatePicker } from './DatePicker';
+import { useDatePicker } from './contex';
 import { useFocusTrap } from '../Modal/useFocusTrap';
 import { useEscapeListener } from '../Modal/useEscapeListener';
 import { DatePickerDay, DatePickerDayPlaceholder } from './DatePickerDay';
 import { DatePickerHeader } from './DatePickerHeader';
 import { useClickOutsideListener } from './useClickOutsideListener';
-import { Month } from './usePeriod';
+
+type Month = {
+  dayOfStart: number;
+  month: number;
+  year: number;
+  numberOfDays: number;
+};
 
 export const DatePickerMenu = () => {
   const { setCalendarOpen, calendarOpen, datePickerRef, periodEnd, periodStart } = useDatePicker();

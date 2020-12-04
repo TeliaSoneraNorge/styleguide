@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDatePicker } from './DatePicker';
+import { useDatePicker } from './contex';
 import cn from 'classnames';
 import format from './format';
 
@@ -38,8 +38,10 @@ export const DatePickerDay = (props: Props) => {
       format.dateToString(periodEnd.selectedDate) === format.dateToString(props.date));
 
   const isBetween =
-    !!(periodStart?.selectedDate?.getTime() < props.date?.getTime()) &&
-    !!(periodEnd?.selectedDate?.getTime() > props.date?.getTime());
+    periodStart?.selectedDate &&
+    !!(periodStart.selectedDate.getTime() < props.date?.getTime()) &&
+    periodEnd?.selectedDate &&
+    !!(periodEnd.selectedDate.getTime() > props.date?.getTime());
 
   return (
     <button
