@@ -186,32 +186,36 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       onSelectDate: props.onSelectDate,
       value: props.period?.end,
       calendarOpen,
-      year: periodStart.month === 11 ? periodStart.year + 1 : periodStart.year,
-      month: periodStart.month === 11 ? 0 : periodStart.month + 1,
+      year: periodStart?.month === 11 ? periodStart.year + 1 : periodStart?.year,
+      month: periodStart ? (periodStart.month === 11 ? 0 : periodStart.month + 1) : undefined,
     },
     !props.isPeriodPicker
   );
 
   const prev = () => {
-    periodStart.prev();
-    periodEnd.prev();
+    periodStart?.prev();
+    periodEnd?.prev();
   };
 
   const next = () => {
-    periodStart.next();
-    periodEnd.next();
+    periodStart?.next();
+    periodEnd?.next();
   };
 
-  const value = {
-    datePickerRef,
-    setCalendarOpen,
-    calendarOpen,
-    periodStart,
-    periodEnd,
-    next,
-    prev,
-  };
-  return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
+  if (periodStart) {
+    const value = {
+      datePickerRef,
+      setCalendarOpen,
+      calendarOpen,
+      periodStart,
+      periodEnd,
+      next,
+      prev,
+    };
+    return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
+  }
+  console.warn('PeriodStart is undefined in PeriodPicker!');
+  return null;
 };
 
 export const useDatePicker = () => React.useContext(DatePickerContext);

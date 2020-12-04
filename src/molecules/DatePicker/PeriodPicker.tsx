@@ -3,7 +3,7 @@ import { DatePickerContextProvider, DatePickerContext } from './DatePicker';
 import { DatePickerInput } from './DatePickerInput';
 import { DatePickerMenu } from './DatePickerMenu';
 import { Avatar, Icon } from '../../index';
-import { TextField } from '../../business';
+
 type Props = {
   /**
    * After a new date has been set
@@ -28,24 +28,26 @@ export const PeriodPicker = (props: Props) => {
           <div className="telia-date-picker telia-date-picker__period" ref={contextValue.datePickerRef}>
             <div className="telia-date-picker--inputs">
               <DatePickerInput
-                {...props}
                 {...contextValue.periodStart}
+                size={props.size}
                 label={props.label ?? 'Velg periode'}
                 leftContent={<Icon icon="arrow-right" style={{ height: '1.25rem', width: '1.25rem' }} />}
               />
-              <DatePickerInput
-                {...props}
-                {...contextValue.periodEnd}
-                label={undefined}
-                leftContent={
-                  <Avatar
-                    icon="calendar"
-                    onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}
-                    size="compact"
-                    color="transparent"
-                  />
-                }
-              />
+              {contextValue.periodEnd && (
+                <DatePickerInput
+                  {...contextValue.periodEnd}
+                  size={props.size}
+                  label={undefined}
+                  leftContent={
+                    <Avatar
+                      icon="calendar"
+                      onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}
+                      size="compact"
+                      color="transparent"
+                    />
+                  }
+                />
+              )}
             </div>
             <DatePickerMenu />
           </div>
