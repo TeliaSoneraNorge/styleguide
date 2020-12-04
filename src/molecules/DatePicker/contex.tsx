@@ -75,7 +75,6 @@ const useSingleDatePicker = (
 ) => {
   const [inputValue, setInputValue] = useState(params.value);
   const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
-  console.log(selectedDate);
   const [year, setYear] = useState(params.year ?? selectedDate?.getFullYear() ?? new Date().getFullYear());
   const [month, setMonth] = useState(params.month ?? selectedDate?.getMonth() ?? new Date().getMonth());
   const numberOfDays = new Date(year, month, 0).getDate();
