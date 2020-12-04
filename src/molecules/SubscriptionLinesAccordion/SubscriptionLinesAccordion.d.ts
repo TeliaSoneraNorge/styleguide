@@ -22,19 +22,15 @@ export interface SubscriptionLinesAccordionProps {
   priceInfo?: string[];
   description1?: string;
   description2?: string;
-  showCalculationText?: string;
   numberOfSubscriptions: number;
   feature?: SubscriptionFeature;
-  disclaimers?: any;
   scrollToOnOpen?: boolean;
   className?: string;
-  isSelected?: boolean;
   onOpen?: (...args: any[]) => any;
-  onSelect?: (...args: any[]) => any;
-  onClickShowCalculation?: (...args: any[]) => any;
   style?: React.CSSProperties;
+  footer?: React.ReactNode;
 }
 
-const SubscriptionLinesAccordion: React.FC<SubscriptionLinesAccordionProps>;
+declare const SubscriptionLinesAccordion: React.FC<SubscriptionLinesAccordionProps>;
 
 export default SubscriptionLinesAccordion;

@@ -1,3 +1,4 @@
 import React from 'react';
 
-export default AllIcons
+declare const AllIcons: React.FC;
+export default AllIcons;

@@ -1,3 +1,5 @@
+#!/bin/sh
+
 set -ueo pipefail
 
 DIR="${PWD}"

@@ -507,3 +507,133 @@ export const Loading = () => {
     </>
   );
 };
+
+export const WithBorders = () => {
+  const [state, { setPage, setPerPage }] = useTableState({ paging: true, data: subscribers });
+
+  return (
+    <>
+      <Table
+        headings={headings}
+        bordered={true}
+        paging={
+          <TablePagingControls
+            from={state.from + 1}
+            to={state.to}
+            dataLength={subscribers.length}
+            perPage={state.perPage}
+            onPageChange={setPage}
+            onPerPageChange={setPerPage}
+          />
+        }
+      >
+        {state.data.slice(state.from, state.to).map((subscriber: any, index: number) => (
+          <TableBodyRow key={subscriber.subscription_id}>
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};
+
+export const Compact = () => {
+  const [state, { setPage, setPerPage }] = useTableState({ paging: true, data: subscribers });
+
+  return (
+    <>
+      <Table
+        headings={headings}
+        compact={true}
+        paging={
+          <TablePagingControls
+            from={state.from + 1}
+            to={state.to}
+            dataLength={subscribers.length}
+            perPage={state.perPage}
+            onPageChange={setPage}
+            onPerPageChange={setPerPage}
+          />
+        }
+      >
+        {state.data.slice(state.from, state.to).map((subscriber: any, index: number) => (
+          <TableBodyRow key={subscriber.subscription_id}>
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};
+
+export const CompactBordered = () => {
+  const [state, { setPage, setPerPage }] = useTableState({ paging: true, data: subscribers });
+
+  return (
+    <>
+      <Table
+        headings={headings}
+        bordered={true}
+        compact={true}
+        paging={
+          <TablePagingControls
+            from={state.from + 1}
+            to={state.to}
+            dataLength={subscribers.length}
+            perPage={state.perPage}
+            onPageChange={setPage}
+            onPerPageChange={setPerPage}
+          />
+        }
+      >
+        {state.data.slice(state.from, state.to).map((subscriber: any, index: number) => (
+          <TableBodyRow key={subscriber.subscription_id}>
+            {flow(
+              pick([
+                'formal_name',
+                'subscription_id',
+                'account_id',
+                'account_name',
+                'resource_type',
+                'subscription_type',
+              ]),
+              map((field: any) => (
+                <TableBodyCell key={Math.ceil(Math.random() * 1000000)} rightAligned={!Number.isNaN(parseFloat(field))}>
+                  {field ? field.toString() : ''}
+                </TableBodyCell>
+              ))
+            )(subscriber)}
+          </TableBodyRow>
+        ))}
+      </Table>
+    </>
+  );
+};

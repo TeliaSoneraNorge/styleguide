@@ -7,6 +7,7 @@ declare interface TooltipProps {
   isExpanded?: boolean;
   label?: string;
   text?: string;
+  isPositionAbsolute?: boolean;
 }
 
 declare const Tooltip: React.FC<TooltipProps>;

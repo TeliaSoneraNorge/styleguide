@@ -6,11 +6,13 @@ export type TabProps = {
   exact?: boolean;
   active?: boolean;
   onClick?: (value: string) => void;
+  className?: string;
 } & (
   | {
       path: string;
     }
-  | { value: string });
+  | { value: string }
+);
 
 export const Tab = (props: TabProps) => {
   const element =
@@ -19,7 +21,7 @@ export const Tab = (props: TabProps) => {
         href={props.path}
         target="_blank"
         rel="noopener"
-        onClick={e => {
+        onClick={(e) => {
           e.preventDefault();
           if (props.onClick) {
             props.onClick(props.path);
@@ -42,9 +44,12 @@ export const Tab = (props: TabProps) => {
 
   return (
     <li
-      className={cs({
-        active: props.active,
-      })}
+      className={cs(
+        {
+          active: props.active,
+        },
+        props.className
+      )}
     >
       {element}
     </li>

@@ -186,7 +186,12 @@ type TableHeading = {
 type TableProps = {
   paging?: React.ReactNode;
   fullWidth?: boolean;
+  compact?: boolean;
   className?: string;
+  /**
+   * Sets borders on table.
+   */
+  bordered?: boolean;
   /**
    * used to render skeleton.
    * @default rows is 20
@@ -226,7 +231,17 @@ export const Table: React.FC<TableProps> = (props) => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
     <UniqueIdContext.Provider value={{ uniqueId }}>
-      <span className={cs('data-table', { 'data-table--fullWidth': props.fullWidth }, props.className)}>
+      <span
+        className={cs(
+          'data-table',
+          {
+            'data-table--fullWidth': props.fullWidth,
+            'data-table--bordered': props.bordered,
+            'data-table--compact': props.compact,
+          },
+          props.className
+        )}
+      >
         <table className="data-table__table">
           <thead>
             {'headings' in props ? (
@@ -320,7 +335,9 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           />
           <DropdownMenu>
             {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
-              <DropdownItem onClick={() => props.onPerPageChange(option)}>{option}</DropdownItem>
+              <DropdownItem key={option} onClick={() => props.onPerPageChange(option)}>
+                {option}
+              </DropdownItem>
             ))}
           </DropdownMenu>
         </Dropdown>
@@ -336,6 +353,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           icon="arrow-left"
           aria-label="Forrige side"
           onClick={(e) => props.onPageChange(false, e)}
+          disabled={props.from <= 1}
         />
 
         <Button
@@ -344,6 +362,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
           icon="arrow-right"
           aria-label="Neste side"
           onClick={(e) => props.onPageChange(true, e)}
+          disabled={props.to >= props.dataLength}
         />
       </div>
     </div>

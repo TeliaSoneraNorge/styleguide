@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import SubscriptionAccordion from './SubscriptionAccordion';
 import { StatefulAccordionList } from '../AccordionList';
 import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
+import { CheckMarkIcon } from '../../atoms/Icon/icons/CheckMarkIcon';
 import Button from './../../atoms/Button';
 
 export default {
@@ -176,6 +177,13 @@ export const DiscountSubscriptionAccordion = () => {
 export const SubscriptionAccordionsWithDescription = () => {
   const [currentSubscription, setCurrentSubscription] = useState(null);
 
+  const chosen = (
+    <span>
+      <CheckMarkIcon />
+      Du har valgt denne
+    </span>
+  );
+
   return (
     <>
       <SubscriptionAccordion
@@ -225,6 +233,76 @@ export const SubscriptionAccordionsWithDescription = () => {
         disclaimers={disclaimers}
         onOpen={() => {
           currentSubscription === 'smart250' ? setCurrentSubscription(null) : setCurrentSubscription('smart250');
+        }}
+      >
+        <ul className="list">
+          <li className="list__item">Mustic Freedom inkludert</li>
+          <li className="list__item">Bruk i Norge, Norden og Baltikum er inkludert</li>
+          <li className="list__item">Ruter fra 1,-</li>
+        </ul>
+        <SExampleButton />
+      </SubscriptionAccordion>
+    </>
+  );
+};
+
+export const SubscriptionAccordionsWithSelection = () => {
+  const [currentSubscription, setCurrentSubscription] = useState<string>('');
+
+  const chosen = (
+    <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+      <CheckMarkIcon />
+      Du har valgt denne
+    </div>
+  );
+
+  return (
+    <>
+      <SubscriptionAccordion
+        name="500 GB"
+        id="smart500"
+        description={currentSubscription === 'smart500' ? chosen : null}
+        price={529}
+        priceInfo={['pr. md']}
+        isExpanded={currentSubscription === 'smart500'}
+        feature={{
+          iconName: 'infinite',
+          name: 'Ubegrenset data med 10mbit/s hastighet etter 500GB',
+        }}
+        discount={{
+          price: 1891,
+          description: 'i rabatt på tlf',
+        }}
+        disclaimers={disclaimers}
+        onOpen={() => {
+          currentSubscription === 'smart500' ? setCurrentSubscription('') : setCurrentSubscription('smart500');
+        }}
+      >
+        <ul className="list">
+          <li className="list__item">Mustic Freedom inkludert</li>
+          <li className="list__item">Bruk i Norge, Norden og Baltikum er inkludert</li>
+          <li className="list__item">Ruter fra 1,-</li>
+        </ul>
+        <SExampleButton />
+      </SubscriptionAccordion>
+      <SubscriptionAccordion
+        name="250 GB"
+        id="smart250"
+        description={currentSubscription === 'smart250' ? chosen : null}
+        price={529}
+        priceInfo={['pr. md']}
+        isExpanded={currentSubscription === 'smart250'}
+        feature={{
+          iconName: 'infinite',
+          name: 'Ubegrenset data med 10mbit/s hastighet etter 500GB',
+        }}
+        discount={{
+          price: 1891,
+          description: 'i rabatt på tlf',
+        }}
+        disclaimers={disclaimers}
+        onOpen={() => {
+          currentSubscription === 'smart250' ? setCurrentSubscription('') : setCurrentSubscription('smart250');
         }}
       >
         <ul className="list">

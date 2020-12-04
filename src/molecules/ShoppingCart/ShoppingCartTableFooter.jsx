@@ -5,11 +5,12 @@ import ShoppingCartCell from './ShoppingCartCell';
 import ShoppingCartRow from './ShoppingCartRow';
 import cn from 'classnames';
 
-const ShoppingCartTableFooterRow = ({ label, price, type }) => (
+const ShoppingCartTableFooterRow = ({ label, price, type, id, className }) => (
   <ShoppingCartRow
-    className={cn('shopping-cart__table__foot__row', {
+    className={cn('shopping-cart__table__foot__row', className, {
       'shopping-cart__table__foot__row--monthly': type === 'MONTHLY',
     })}
+    id={id}
   >
     <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
       {label}
@@ -32,16 +33,33 @@ const ShoppingCartTableFooter = ({
 }) => (
   <tfoot className="shopping-cart__table__foot" role="rowgroup">
     {!!totalPriceMonthly && (
-      <ShoppingCartTableFooterRow label="Pr. måned:" price={formatPrice(totalPriceMonthly)} type="MONTHLY" />
+      <ShoppingCartTableFooterRow
+        className="shopping-cart__id--monthly"
+        label="Pr. måned:"
+        price={formatPrice(totalPriceMonthly)}
+        type="MONTHLY"
+      />
     )}
     {!!totalPriceUpfront && hasPaid && (
-      <ShoppingCartTableFooterRow label="Betalt:" price={formatPrice(totalPriceUpfront)} />
+      <ShoppingCartTableFooterRow
+        className="shopping-cart__id--upfrontpaid"
+        label="Betalt:"
+        price={formatPrice(totalPriceUpfront)}
+      />
     )}
     {!!totalPriceUpfront && !hasPaid && (
-      <ShoppingCartTableFooterRow label="Betales nå:" price={formatPrice(totalPriceUpfront)} />
+      <ShoppingCartTableFooterRow
+        className="shopping-cart__id--upfront"
+        label="Betales nå:"
+        price={formatPrice(totalPriceUpfront)}
+      />
     )}
     {!!totalPriceFirstInvoice && (
-      <ShoppingCartTableFooterRow label="Betales på første faktura:" price={formatPrice(totalPriceFirstInvoice)} />
+      <ShoppingCartTableFooterRow
+        label="Betales på første faktura:"
+        price={formatPrice(totalPriceFirstInvoice)}
+        className="shopping-cart__id--firstinvoice"
+      />
     )}
   </tfoot>
 );

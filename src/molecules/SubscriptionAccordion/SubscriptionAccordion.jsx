@@ -36,7 +36,10 @@ const SubscriptionAccordion = ({
     <section
       ref={ref}
       id={id}
-      className={cn('subscription-accordion', className, { 'subscription-accordion__inverted': isInverted })}
+      className={cn('subscription-accordion', className, {
+        'subscription-accordion__inverted': isInverted,
+        'subscription-accordion__extra-margin': !!discount,
+      })}
     >
       <button
         className={cn('subscription-accordion__header', {
@@ -59,7 +62,7 @@ const SubscriptionAccordion = ({
         <div className="subscription-accordion__aside">
           <span className="subscription-accordion__price">{formatPrice(price)}</span>
           {priceInfo &&
-            priceInfo.map(info => (
+            priceInfo.map((info) => (
               <span key={info} className="subscription-accordion__price-info">
                 {info}
               </span>
@@ -89,7 +92,7 @@ const SubscriptionAccordion = ({
   );
 };
 
-const formatPrice = price => {
+const formatPrice = (price) => {
   if (typeof price === 'number') {
     return price % 1 === 0 ? price + ',-' : price + ' kr';
   }

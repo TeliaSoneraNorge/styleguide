@@ -11,7 +11,8 @@ type Props = {
    * See Avatar.tsx
    */
   avatar?: {
-    text: string;
+    text?: string;
+    img?: string;
   };
   /**
    * Icon to display in front of item
@@ -41,9 +42,13 @@ type Props = {
    * and set your custom wrapper to an <li>.
    */
   tag?: 'div' | 'li';
+
+  className?: string;
+
+  color?: 'purple' | 'grey';
 };
 
-export const SideMenuItem: React.FC<Props> = props => {
+export const SideMenuItem: React.FC<Props> = (props) => {
   const Tag = props.href ? 'a' : 'button';
   const WrapperTag = props.tag ? props.tag : 'li';
   const handleClick = (e: React.SyntheticEvent) => {
@@ -55,12 +60,17 @@ export const SideMenuItem: React.FC<Props> = props => {
   return (
     <WrapperTag>
       <div
-        className={cn('telia-side-menu-item telia-side-menu-item--compact', {
-          'telia-side-menu-item--active': props.active,
-        })}
+        className={cn(
+          'telia-side-menu-item telia-side-menu-item--compact',
+          {
+            'telia-side-menu-item--active': props.active,
+            'telia-side-menu-item--grey': props.color === 'grey',
+          },
+          props.className
+        )}
       >
         {props.avatar ? (
-          <Avatar text={props.avatar.text} onClick={props.onClick} href={props.href} />
+          <Avatar text={props.avatar.text} img={props.avatar.img} onClick={props.onClick} href={props.href} />
         ) : (
           <Button
             icon={props.icon}
@@ -72,19 +82,25 @@ export const SideMenuItem: React.FC<Props> = props => {
       </div>
 
       <Tag
-        className={cn('telia-side-menu-item', {
-          'telia-side-menu-item--active': props.active,
-        })}
+        className={cn(
+          'telia-side-menu-item',
+          {
+            'telia-side-menu-item--active': props.active,
+            'telia-side-menu-item--grey': props.color === 'grey',
+          },
+          props.className
+        )}
         onClick={handleClick}
         href={props.href}
       >
         {props.avatar && (
           <div className="telia-side-menu-item-avatar">
-            <Avatar size="compact" text={props.avatar.text} />
+            <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
           </div>
         )}
         {props.icon && <Icon className="telia-side-menu-item-icon" icon={props.icon} />}
         <div className="telia-side-menu-item-label">{props.label}</div>
+        {props.children}
       </Tag>
     </WrapperTag>
   );
