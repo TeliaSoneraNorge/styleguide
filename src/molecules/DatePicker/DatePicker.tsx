@@ -14,13 +14,22 @@ export type DatePickerProps = {
 
   size?: 'compact' | 'default';
 
+  /**
+   * @default "Velg dato"
+   */
   label?: string;
 
   /**
    * ordered array of label for months, from january-december
-   * @default is norwgian
+   * @default "Norwegain full name. ['Januar','Februar','Mars','April','Mai','Juni','Juli','August','September','Oktober','November','Desember'];"
    */
   monthLabels?: Array<string>;
+
+  /**
+   * ordered array of label for months, from january-december
+   * @default "Norwgian short name. ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sø']"
+   */
+  dayLabels?: Array<string>;
 };
 
 export const DatePicker = (props: DatePickerProps) => {

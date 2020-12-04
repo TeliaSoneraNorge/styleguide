@@ -14,7 +14,7 @@ type Month = {
 };
 
 export const DatePickerMenu = () => {
-  const { setCalendarOpen, calendarOpen, datePickerRef, periodEnd, periodStart } = useDatePicker();
+  const { setCalendarOpen, calendarOpen, datePickerRef, periodEnd, periodStart, dayLabels } = useDatePicker();
   const { container } = useFocusTrap();
   useEscapeListener({ onEscape: () => setCalendarOpen(false) });
   useClickOutsideListener({ open: calendarOpen, close: () => setCalendarOpen(false), ref: datePickerRef });
@@ -42,11 +42,9 @@ export const DatePickerMenu = () => {
   };
 
   const renderDays = () => {
-    const days = ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sn'];
-
     return (
       <>
-        {days.map((d, i) => (
+        {dayLabels.map((d, i) => (
           <div style={{ fontSize: '14px' }} key={`${d}-${i}`}>
             {d}
           </div>

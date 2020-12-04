@@ -14,6 +14,7 @@ const defaultMonthLabels = [
   'November',
   'Desember',
 ];
+const defaultDayLabels = ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sø'];
 
 type ContextValue = {
   datePickerRef: RefObject<HTMLDivElement> | null;
@@ -24,6 +25,7 @@ type ContextValue = {
   next: () => void;
   prev: () => void;
   monthLabels: string[];
+  dayLabels: string[];
 };
 
 type Period = {
@@ -58,6 +60,7 @@ export const DatePickerContext = React.createContext<ContextValue>({
   next: () => {},
   prev: () => {},
   monthLabels: defaultMonthLabels,
+  dayLabels: defaultDayLabels,
 });
 
 const useSingleDatePicker = (
@@ -143,6 +146,7 @@ type ContextProps = {
   };
   isPeriodPicker?: boolean;
   monthLabels?: string[];
+  dayLabels?: string[];
 };
 export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   const datePickerRef = useRef<HTMLDivElement>(null);
@@ -176,6 +180,8 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   };
 
   const monthLabels = props.monthLabels ?? defaultMonthLabels;
+  const dayLabels = props.dayLabels ?? defaultDayLabels;
+
   if (periodStart) {
     const value = {
       datePickerRef,
@@ -186,6 +192,7 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       next,
       prev,
       monthLabels,
+      dayLabels,
     };
     return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
   }

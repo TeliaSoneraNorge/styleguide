@@ -8,7 +8,7 @@ import { withDesign } from 'storybook-addon-designs';
 export default {
   component: DatePicker,
   title: 'Component library/Molecules/DatePicker',
-  subComponents: { DatePickerMenu },
+  subComponents: { DatePickerMenu, PeriodPicker },
   decorators: [withDesign],
 };
 
@@ -19,12 +19,17 @@ export const Default = () => {
       <DatePicker value={date} />
       <DatePicker value="2010-06-01" onSelectDate={setDate} />
       <DatePicker size="compact" />
-      <div style={{ margin: '2rem 0' }}>
+      <div style={{ marginTop: '2rem ' }}>
         <div>Custom month labels</div>
         <DatePicker
           value={date}
           monthLabels={['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Des']}
         />
+      </div>
+
+      <div style={{ marginTop: '2rem ' }}>
+        <div>Custom day labels</div>
+        <DatePicker value={date} dayLabels={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
       </div>
 
       <PeriodPicker size="compact" />
