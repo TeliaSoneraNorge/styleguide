@@ -19,6 +19,13 @@ export const Default = () => {
       <DatePicker value={date} />
       <DatePicker value="2010-06-01" onSelectDate={setDate} />
       <DatePicker size="compact" />
+      <div style={{ margin: '2rem 0' }}>
+        <div>Custom month labels</div>
+        <DatePicker
+          value={date}
+          monthLabels={['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Des']}
+        />
+      </div>
 
       <PeriodPicker size="compact" />
       <PeriodPicker

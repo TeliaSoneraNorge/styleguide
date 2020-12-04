@@ -15,6 +15,12 @@ export type DatePickerProps = {
   size?: 'compact' | 'default';
 
   label?: string;
+
+  /**
+   * ordered array of label for months, from january-december
+   * @default is norwgian
+   */
+  monthLabels?: Array<string>;
 };
 
 export const DatePicker = (props: DatePickerProps) => {

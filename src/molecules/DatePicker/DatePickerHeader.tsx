@@ -3,7 +3,7 @@ import { useDatePicker } from './contex';
 import { Button } from '../../business/Button';
 
 export const DatePickerHeader = () => {
-  const { prev, next, periodStart, periodEnd } = useDatePicker();
+  const { prev, next, periodStart, periodEnd, monthLabels } = useDatePicker();
 
   return (
     <div className="telia-date-picker--header">
@@ -11,15 +11,15 @@ export const DatePickerHeader = () => {
       {periodEnd ? (
         <div className="telia-date-picker--header--labels">
           <div>
-            {monthNames[periodStart.month]} {periodStart.year}
+            {monthLabels[periodStart.month]} {periodStart.year}
           </div>
           <div>
-            {monthNames[periodEnd.month]} {periodEnd.year}
+            {monthLabels[periodEnd.month]} {periodEnd.year}
           </div>
         </div>
       ) : (
         <div>
-          {monthNames[periodStart.month]} {periodStart.year}
+          {monthLabels[periodStart.month]} {periodStart.year}
         </div>
       )}
 
@@ -27,18 +27,3 @@ export const DatePickerHeader = () => {
     </div>
   );
 };
-
-const monthNames = [
-  'January',
-  'February',
-  'March',
-  'April',
-  'May',
-  'June',
-  'July',
-  'August',
-  'September',
-  'October',
-  'November',
-  'December',
-];

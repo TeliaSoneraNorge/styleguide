@@ -1,5 +1,19 @@
 import React, { useEffect, useState, useRef, RefObject } from 'react';
 import format from './format';
+const defaultMonthLabels = [
+  'Januar',
+  'Februar',
+  'Mars',
+  'April',
+  'Mai',
+  'Juni',
+  'Juli',
+  'August',
+  'September',
+  'Oktober',
+  'November',
+  'Desember',
+];
 
 type ContextValue = {
   datePickerRef: RefObject<HTMLDivElement> | null;
@@ -9,9 +23,10 @@ type ContextValue = {
   periodEnd?: Period;
   next: () => void;
   prev: () => void;
+  monthLabels: string[];
 };
 
-export type Period = {
+type Period = {
   year: number;
   setYear: (year: number) => void;
   month: number;
@@ -42,6 +57,7 @@ export const DatePickerContext = React.createContext<ContextValue>({
   },
   next: () => {},
   prev: () => {},
+  monthLabels: defaultMonthLabels,
 });
 
 const useSingleDatePicker = (
@@ -126,6 +142,7 @@ type ContextProps = {
     end: string;
   };
   isPeriodPicker?: boolean;
+  monthLabels?: string[];
 };
 export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   const datePickerRef = useRef<HTMLDivElement>(null);
@@ -158,6 +175,7 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
     periodEnd?.next();
   };
 
+  const monthLabels = props.monthLabels ?? defaultMonthLabels;
   if (periodStart) {
     const value = {
       datePickerRef,
@@ -167,6 +185,7 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       periodEnd,
       next,
       prev,
+      monthLabels,
     };
     return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
   }
