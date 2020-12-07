@@ -78,7 +78,7 @@ export const Period = () => {
           period={{ start: dateFrom, end: dateTo }}
           onSelectDateFrom={setDateFrom}
           onSelectDateTo={setDateTo}
-          customOptions={
+          options={
             <>
               <Button
                 label="Siste 7 dager"
