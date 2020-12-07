@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDatePicker } from './contex';
+import { useDatePicker } from './context';
 import { useFocusTrap } from '../Modal/useFocusTrap';
 import { useEscapeListener } from '../Modal/useEscapeListener';
 import { DatePickerDay, DatePickerDayPlaceholder } from './DatePickerDay';

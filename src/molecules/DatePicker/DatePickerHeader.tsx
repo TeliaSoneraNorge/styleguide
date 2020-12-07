@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDatePicker } from './contex';
+import { useDatePicker } from './context';
 import { Button } from '../../business/Button';
 
 export const DatePickerHeader = () => {

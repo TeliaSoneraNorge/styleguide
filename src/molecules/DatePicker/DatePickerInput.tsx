@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { TextField } from '../../business/TextField';
-import { useDatePicker } from './contex';
+import { useDatePicker } from './context';
 
 export type Props = {
   size?: 'compact' | 'default';
@@ -14,7 +14,7 @@ export type Props = {
 };
 export const DatePickerInput = (props: Props) => {
   const [hasFocus, setHasFocus] = useState(false);
-  const { setCalendarOpen, dateIsInRange } = useDatePicker();
+  const { setCalendarOpen } = useDatePicker();
 
   return (
     <TextField
@@ -29,7 +29,6 @@ export const DatePickerInput = (props: Props) => {
           props.setSelectedDate(new Date(e.target.value));
         }
       }}
-      error={props.inputValue ? !dateIsInRange(new Date(props.inputValue)) : false}
       rightContent={props.leftContent}
       label={props.label}
       onFocus={() => {

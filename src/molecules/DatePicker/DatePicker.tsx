@@ -1,6 +1,6 @@
 import React from 'react';
 import { DatePickerMenu } from './DatePickerMenu';
-import { DatePickerContextProvider, DatePickerContext } from './contex';
+import { DatePickerContextProvider, DatePickerContext } from './context';
 import { Avatar } from '../Avatar';
 import { DatePickerInput } from './DatePickerInput';
 
@@ -50,7 +50,7 @@ export type DatePickerProps = {
 
 export const DatePicker = (props: DatePickerProps) => {
   return (
-    <DatePickerContextProvider {...props}>
+    <DatePickerContextProvider {...props} onSelectDateFrom={props.onSelectDate}>
       <DatePickerContext.Consumer>
         {(contextValue) => (
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>

@@ -36,15 +36,41 @@ export const Default = () => {
         <div>Custom day labels</div>
         <DatePicker value={date} dayLabels={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
       </div>
+    </div>
+  );
+};
 
+export const Period = () => {
+  const today = new Date();
+  const from = new Date();
+  from.setDate(from.getDate() + 7);
+
+  const [dateFrom, setDateFrom] = useState<string | undefined>(format.dateToString(today));
+  const [dateTo, setDateTo] = useState<string | undefined>(format.dateToString(from));
+
+  return (
+    <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <PeriodPicker size="compact" />
-      <PeriodPicker
-        size="compact"
-        period={{
-          start: '2020-11-06',
-          end: '2020-11-09',
-        }}
-      />
+      <div style={{ marginTop: '2rem ' }}>
+        <PeriodPicker
+          size="compact"
+          period={{
+            start: '2020-11-06',
+            end: '2020-12-09',
+          }}
+        />
+      </div>
+      <div style={{ marginTop: '2rem ' }}>
+        <div>With upper and lower bound</div>
+        <PeriodPicker
+          size="compact"
+          period={{ start: dateFrom, end: dateTo }}
+          onSelectDateFrom={setDateFrom}
+          onSelectDateTo={setDateTo}
+          maxDate="2021-02-05"
+          minDate={format.dateToString(new Date())}
+        />
+      </div>
     </div>
   );
 };
