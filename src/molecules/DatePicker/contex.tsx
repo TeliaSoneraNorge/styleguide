@@ -28,6 +28,7 @@ type ContextValue = {
   dayLabels: string[];
   maxDate?: Date;
   minDate?: Date;
+  dateIsInRange: (date: Date) => boolean;
 };
 
 type Period = {
@@ -63,16 +64,21 @@ export const DatePickerContext = React.createContext<ContextValue>({
   prev: () => {},
   monthLabels: defaultMonthLabels,
   dayLabels: defaultDayLabels,
+  dateIsInRange: () => true,
 });
 
 const useSingleDatePicker = (
   params: {
     onSelectDate?: (date?: string) => void;
+    dateIsInRange: (date: Date) => boolean;
     value?: string;
     calendarOpen: boolean;
     year?: number;
     month?: number;
+    maxDate?: Date;
+    minDate?: Date;
   },
+
   skip?: boolean
 ) => {
   const [inputValue, setInputValue] = useState(params.value);
@@ -96,7 +102,11 @@ const useSingleDatePicker = (
 
   useEffect(() => {
     if (selectedDate) {
-      setInputValue(format.dateToString(selectedDate));
+      if (params.dateIsInRange(selectedDate)) {
+        setInputValue(format.dateToString(selectedDate));
+        setYear(selectedDate.getFullYear());
+        setMonth(selectedDate.getMonth());
+      }
     } else {
       setInputValue('');
     }
@@ -157,12 +167,18 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   const maxDate = props.maxDate ? new Date(props.maxDate) : undefined;
   const minDate = props.minDate ? new Date(props.minDate) : undefined;
 
+  const dateIsInRange = (date: Date) =>
+    !(minDate && date.getTime() < minDate.getTime()) && !(maxDate && date.getTime() > maxDate.getTime());
+
   const [calendarOpen, setCalendarOpen] = useState(false);
 
   const periodStart = useSingleDatePicker({
     onSelectDate: props.onSelectDate,
     value: props.value ?? props.period?.start,
     calendarOpen,
+    minDate,
+    maxDate,
+    dateIsInRange,
   });
 
   const periodEnd = useSingleDatePicker(
@@ -172,6 +188,9 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       calendarOpen,
       year: periodStart?.month === 11 ? periodStart.year + 1 : periodStart?.year,
       month: periodStart ? (periodStart.month === 11 ? 0 : periodStart.month + 1) : undefined,
+      minDate,
+      maxDate,
+      dateIsInRange,
     },
     !props.isPeriodPicker
   );
@@ -202,6 +221,7 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       dayLabels,
       maxDate,
       minDate,
+      dateIsInRange,
     };
     return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
   }

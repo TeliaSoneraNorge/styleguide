@@ -14,7 +14,7 @@ export type Props = {
 };
 export const DatePickerInput = (props: Props) => {
   const [hasFocus, setHasFocus] = useState(false);
-  const { setCalendarOpen, calendarOpen } = useDatePicker();
+  const { setCalendarOpen, dateIsInRange } = useDatePicker();
 
   return (
     <TextField
@@ -29,6 +29,7 @@ export const DatePickerInput = (props: Props) => {
           props.setSelectedDate(new Date(e.target.value));
         }
       }}
+      error={props.inputValue ? !dateIsInRange(new Date(props.inputValue)) : false}
       rightContent={props.leftContent}
       label={props.label}
       onFocus={() => {

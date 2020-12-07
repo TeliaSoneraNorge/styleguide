@@ -9,10 +9,9 @@ type Props = {
 };
 
 export const DatePickerDay = (props: Props) => {
-  const { periodEnd, periodStart, minDate, maxDate } = useDatePicker();
+  const { periodEnd, periodStart, dateIsInRange } = useDatePicker();
 
-  const disabled =
-    (minDate && props.date.getTime() < minDate.getTime()) || (maxDate && props.date.getTime() > maxDate.getTime());
+  const disabled = !dateIsInRange(props.date);
 
   const selectDate = () => {
     if (periodEnd) {
@@ -35,9 +34,12 @@ export const DatePickerDay = (props: Props) => {
   };
 
   const isSelected =
-    (periodStart.selectedDate && format.dateToString(periodStart.selectedDate) === format.dateToString(props.date)) ||
+    (periodStart.selectedDate &&
+      dateIsInRange(periodStart.selectedDate) &&
+      format.dateToString(periodStart.selectedDate) === format.dateToString(props.date)) ||
     (periodEnd &&
       periodEnd.selectedDate &&
+      dateIsInRange(periodEnd.selectedDate) &&
       format.dateToString(periodEnd.selectedDate) === format.dateToString(props.date));
 
   const isBetween =
