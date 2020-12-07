@@ -46,6 +46,12 @@ type Props = {
    * @default undefined
    */
   minDate?: string;
+
+  /**
+   * Eg. btn for"last 7 days"
+   * Rendered in the date picker menu
+   */
+  options?: React.ReactNode;
 };
 
 export const PeriodPicker = (props: Props) => {
@@ -83,7 +89,7 @@ export const PeriodPicker = (props: Props) => {
                 />
               )}
             </div>
-            <DatePickerMenu />
+            <DatePickerMenu>{props.options}</DatePickerMenu>
           </div>
         )}
       </DatePickerContext.Consumer>

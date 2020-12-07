@@ -1,6 +1,5 @@
-import { useEffect, useState } from 'react';
-import format from '../format';
 import { PeriodParameters } from './types';
+import { useInput } from './useInput';
 
 export const useSecondPeriod = (
   params: PeriodParameters & {
@@ -9,28 +8,9 @@ export const useSecondPeriod = (
   },
   skip?: boolean
 ) => {
-  const [inputValue, setInputValue] = useState(params.value);
-  const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
+  const { selectedDate, setSelectedDate, inputValue, setInputValue } = useInput({ ...params });
   const numberOfDays = new Date(params.year, params.month + 1, 0).getDate();
   const dayOfStart = new Date(params.year, params.month, 1).getDay();
-
-  useEffect(() => {
-    if (!params.calendarOpen) {
-      params.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
-    }
-  }, [params.calendarOpen]);
-
-  useEffect(() => {
-    if (selectedDate) {
-      if (params.dateIsInRange(selectedDate)) {
-        setInputValue(format.dateToString(selectedDate));
-        params.onSelectDate?.(format.dateToString(selectedDate));
-      }
-    } else {
-      setInputValue('');
-      params.onSelectDate?.(undefined);
-    }
-  }, [selectedDate]);
 
   const value = {
     year: params.year,

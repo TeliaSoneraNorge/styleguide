@@ -1,10 +1,9 @@
 import { PeriodParameters } from './types';
 import { useEffect, useState } from 'react';
-import format from '../format';
+import { useInput } from './useInput';
 
 export const useFirstPeriod = (params: PeriodParameters) => {
-  const [inputValue, setInputValue] = useState(params.value);
-  const [selectedDate, setSelectedDate] = useState(inputValue ? new Date(inputValue) : undefined);
+  const { selectedDate, setSelectedDate, inputValue, setInputValue } = useInput({ ...params });
   const [year, setYear] = useState(selectedDate?.getFullYear() ?? new Date().getFullYear());
   const [month, setMonth] = useState(selectedDate?.getMonth() ?? new Date().getMonth());
 
@@ -18,7 +17,6 @@ export const useFirstPeriod = (params: PeriodParameters) => {
 
   useEffect(() => {
     if (!params.calendarOpen) {
-      params.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
       resetState();
     }
   }, [params.calendarOpen]);
@@ -26,14 +24,9 @@ export const useFirstPeriod = (params: PeriodParameters) => {
   useEffect(() => {
     if (selectedDate) {
       if (params.dateIsInRange(selectedDate)) {
-        setInputValue(format.dateToString(selectedDate));
         setYear(selectedDate.getFullYear());
         setMonth(selectedDate.getMonth());
-        params.onSelectDate?.(format.dateToString(selectedDate));
       }
-    } else {
-      setInputValue('');
-      params.onSelectDate?.(undefined);
     }
   }, [selectedDate]);
 

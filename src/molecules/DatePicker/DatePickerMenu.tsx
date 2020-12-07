@@ -13,7 +13,7 @@ type Month = {
   numberOfDays: number;
 };
 
-export const DatePickerMenu = () => {
+export const DatePickerMenu: React.FC = ({ children }) => {
   const { setCalendarOpen, calendarOpen, datePickerRef, periodEnd, periodStart, dayLabels } = useDatePicker();
   const { container } = useFocusTrap();
   useEscapeListener({ onEscape: () => setCalendarOpen(false) });
@@ -74,6 +74,7 @@ export const DatePickerMenu = () => {
       ) : (
         renderMonth(periodStart)
       )}
+      <div className="telia-date-picker--menu--options">{children}</div>
     </div>
   );
 };

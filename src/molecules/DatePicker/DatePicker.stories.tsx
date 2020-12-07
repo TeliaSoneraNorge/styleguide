@@ -4,6 +4,7 @@ import { DatePickerMenu } from './DatePickerMenu';
 import { PeriodPicker } from './PeriodPicker';
 import { withDesign } from 'storybook-addon-designs';
 import format from './format';
+import { Button } from '../../business';
 
 export default {
   component: DatePicker,
@@ -45,8 +46,8 @@ export const Period = () => {
   const from = new Date();
   from.setDate(from.getDate() + 7);
 
-  const [dateFrom, setDateFrom] = useState<string | undefined>(format.dateToString(today));
-  const [dateTo, setDateTo] = useState<string | undefined>(format.dateToString(from));
+  const [dateFrom, setDateFrom] = useState<string | undefined>(undefined);
+  const [dateTo, setDateTo] = useState<string | undefined>(undefined);
 
   return (
     <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
@@ -69,6 +70,43 @@ export const Period = () => {
           onSelectDateTo={setDateTo}
           maxDate="2021-02-05"
           minDate={format.dateToString(new Date())}
+        />
+      </div>
+      <div style={{ marginTop: '2rem ' }}>
+        <PeriodPicker
+          size="compact"
+          period={{ start: dateFrom, end: dateTo }}
+          onSelectDateFrom={setDateFrom}
+          onSelectDateTo={setDateTo}
+          customOptions={
+            <>
+              <Button
+                label="Siste 7 dager"
+                kind="ghost"
+                size="compact"
+                onClick={() => {
+                  const to = new Date();
+                  const from = new Date();
+                  from.setDate(from.getDate() - 6);
+                  setDateTo(format.dateToString(to));
+                  setDateFrom(format.dateToString(from));
+                }}
+              />
+              <Button
+                label="Neste 7 dager"
+                kind="ghost"
+                size="compact"
+                onClick={() => {
+                  const to = new Date();
+                  to.setDate(to.getDate() + 6);
+
+                  const from = new Date();
+                  setDateTo(format.dateToString(to));
+                  setDateFrom(format.dateToString(from));
+                }}
+              />
+            </>
+          }
         />
       </div>
     </div>
