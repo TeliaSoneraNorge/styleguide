@@ -44,7 +44,11 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
       })}
     >
       <div
-        className={cn('telia-listItem__mainWrapper', { 'telia-listItem--compact': compact }, className)}
+        className={cn(
+          'telia-listItem__mainWrapper',
+          { 'telia-listItem--compact': compact, 'telia-listItem--clickable': onClick },
+          className
+        )}
         onClick={onClick}
         onKeyDown={handleKeyDown}
         tabIndex={onClick && 0}
