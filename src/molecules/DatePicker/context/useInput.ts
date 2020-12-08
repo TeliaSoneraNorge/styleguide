@@ -11,9 +11,9 @@ export const useInput = (params: PeriodParameters) => {
   }, [params.value]);
 
   useEffect(() => {
-    if (inputValue) {
+    if (inputValue && inputValue.length === 10) {
       if (!selectedDate || inputValue !== format.dateToString(selectedDate)) {
-        setSelectedDate(new Date(inputValue));
+        setSelectedDate(new Date(inputValue.split('.').reverse().join('-')));
       }
     }
   }, [inputValue]);
@@ -27,8 +27,9 @@ export const useInput = (params: PeriodParameters) => {
   useEffect(() => {
     if (selectedDate) {
       if (params.dateIsInRange(selectedDate)) {
-        setInputValue(format.dateToString(selectedDate));
+        // console.log('set new input value', format.dateToString(selectedDate));
         params.onSelectDate?.(format.dateToString(selectedDate));
+        setInputValue(format.dateToString(selectedDate));
       }
     } else {
       setInputValue('');

@@ -1,11 +1,12 @@
 .telia-date-picker {
   position: relative;
-  input[type='date'],
+  input[type='text'],
   input[type='time'] {
     font-family: inherit;
     line-height: 20px;
 
     max-height: 42px;
+    &::-webkit-inner-spin-button,
     &::-webkit-calendar-picker-indicator {
       display: none;
       -webkit-appearance: none;

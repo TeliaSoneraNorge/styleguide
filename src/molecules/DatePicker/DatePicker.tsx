@@ -16,9 +16,7 @@ export const DatePicker = (props: DatePickerProps) => {
               {...contextValue.periodStart}
               min={props.minDate}
               max={props.maxDate}
-              rightContent={
-                !props.time && <Calendar onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)} />
-              }
+              rightContent={<Calendar onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)} />}
               label={props.label ?? 'Velg dato'}
             />
 

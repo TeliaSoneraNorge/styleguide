@@ -4,15 +4,8 @@ import { useDatePicker } from './context';
 
 export type Props = {
   size?: 'compact' | 'default';
-
   label?: string;
-
   setSelectedDate: (date: Date) => void;
-
-  /**
-   * Format "yyyy-mm-dd"
-   * @default undefined
-   */
   inputValue?: string;
   setInputValue: (input?: string) => void;
   rightContent?: React.ReactNode;
@@ -20,33 +13,35 @@ export type Props = {
   min?: string;
 };
 export const DatePickerInput = (props: Props) => {
-  const [hasFocus, setHasFocus] = useState(false);
   const { setCalendarOpen } = useDatePicker();
 
+  /**
+   * We handle the dates as yyyy-mm-dd, but want to display them as dd.mm.yyyy
+   */
+  const input =
+    props.inputValue?.length === 10 ? props.inputValue.split('-').reverse().join('.') : props.inputValue ?? '';
   return (
     <TextField
       className="telia-date-picker--input"
       placeholder="dd.mm.åååå"
-      type={hasFocus || props.inputValue ? 'date' : 'text'}
-      value={props.inputValue ?? ''}
+      type="text"
+      value={input}
       size={props.size}
+      maxlength={10}
       onChange={(e) => {
-        props.setInputValue(e.target.value);
-        if (e.target.valueAsDate?.getFullYear().toString().length === 4) {
-          props.setSelectedDate(new Date(e.target.value));
+        /**
+         * TODO: add constraints on month, day and year
+         */
+        const changeWasRemove = e.target.value.length < input.length;
+        if (!changeWasRemove && [2, 5].includes(e.target.value.length)) {
+          props.setInputValue(e.target.value + '.');
+        } else {
+          props.setInputValue(e.target.value);
         }
       }}
       rightContent={props.rightContent}
       label={props.label}
-      onFocus={() => {
-        setHasFocus(true);
-        setCalendarOpen(true);
-      }}
-      onBlur={() => {
-        setHasFocus(false);
-      }}
-      max={props.max}
-      min={props.min}
+      onFocus={() => setCalendarOpen(true)}
     />
   );
 };
