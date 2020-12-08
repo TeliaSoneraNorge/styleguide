@@ -29,8 +29,6 @@ type CommonProps = {
    * @default undefined
    */
   minDate?: string;
-
-  time?: boolean;
 };
 
 export type PeriodPickerProps = CommonProps & {
@@ -39,6 +37,11 @@ export type PeriodPickerProps = CommonProps & {
    */
   onSelectDateFrom?: (date?: string) => void;
   onSelectDateTo?: (date?: string) => void;
+
+  /**
+   * whether or not to enable selecting time
+   */
+  time?: boolean;
 
   /**
    * when a new time is set

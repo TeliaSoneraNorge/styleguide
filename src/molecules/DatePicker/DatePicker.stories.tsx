@@ -91,7 +91,7 @@ export const Period = () => {
   );
 };
 
-export const PeriodPickerWithTime = () => {
+export const DateTimePicker = () => {
   return (
     <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <PeriodPicker size="compact" time />

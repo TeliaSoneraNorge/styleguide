@@ -1,9 +1,10 @@
 import React from 'react';
 import { DatePickerMenu } from './DatePickerMenu';
 import { DatePickerContextProvider, DatePickerContext } from './context';
-import { Avatar } from '../Avatar';
+
 import { DatePickerInput } from './DatePickerInput';
 import { DatePickerProps } from './types';
+import { Calendar } from './Accessories';
 
 export const DatePicker = (props: DatePickerProps) => {
   return (
@@ -16,15 +17,11 @@ export const DatePicker = (props: DatePickerProps) => {
               min={props.minDate}
               max={props.maxDate}
               rightContent={
-                <Avatar
-                  icon="calendar"
-                  onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}
-                  size="compact"
-                  color="transparent"
-                />
+                !props.time && <Calendar onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)} />
               }
               label={props.label ?? 'Velg dato'}
             />
+
             <DatePickerMenu />
           </div>
         )}
