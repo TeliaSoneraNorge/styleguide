@@ -5,6 +5,7 @@ import { PeriodPicker } from './PeriodPicker';
 import { withDesign } from 'storybook-addon-designs';
 import format from './format';
 import { Button } from '../../business';
+import { usePeriod } from './utils/usePeriod';
 
 export default {
   component: DatePicker,
@@ -42,12 +43,8 @@ export const Default = () => {
 };
 
 export const Period = () => {
-  const today = new Date();
-  const from = new Date();
-  from.setDate(from.getDate() + 7);
-
-  const [dateFrom, setDateFrom] = useState<string | undefined>(undefined);
-  const [dateTo, setDateTo] = useState<string | undefined>(undefined);
+  const period1 = usePeriod();
+  const period2 = usePeriod();
 
   return (
     <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
@@ -65,9 +62,9 @@ export const Period = () => {
         <div>With upper and lower bound</div>
         <PeriodPicker
           size="compact"
-          period={{ start: dateFrom, end: dateTo }}
-          onSelectDateFrom={setDateFrom}
-          onSelectDateTo={setDateTo}
+          period={period1.period}
+          onSelectDateFrom={period1.setDateFrom}
+          onSelectDateTo={period1.setDateTo}
           maxDate="2021-02-05"
           minDate={format.dateToString(new Date())}
         />
@@ -75,36 +72,13 @@ export const Period = () => {
       <div style={{ marginTop: '2rem ' }}>
         <PeriodPicker
           size="compact"
-          period={{ start: dateFrom, end: dateTo }}
-          onSelectDateFrom={setDateFrom}
-          onSelectDateTo={setDateTo}
+          period={period2.period}
+          onSelectDateFrom={period2.setDateFrom}
+          onSelectDateTo={period2.setDateTo}
           options={
             <>
-              <Button
-                label="Siste 7 dager"
-                kind="ghost"
-                size="compact"
-                onClick={() => {
-                  const to = new Date();
-                  const from = new Date();
-                  from.setDate(from.getDate() - 6);
-                  setDateTo(format.dateToString(to));
-                  setDateFrom(format.dateToString(from));
-                }}
-              />
-              <Button
-                label="Neste 7 dager"
-                kind="ghost"
-                size="compact"
-                onClick={() => {
-                  const to = new Date();
-                  to.setDate(to.getDate() + 6);
-
-                  const from = new Date();
-                  setDateTo(format.dateToString(to));
-                  setDateFrom(format.dateToString(from));
-                }}
-              />
+              <Button label="Siste 7 dager" kind="ghost" size="compact" onClick={period2.pastDays(6)} />
+              <Button label="Neste 7 dager" kind="ghost" size="compact" onClick={period2.nextDays(6)} />
             </>
           }
         />
