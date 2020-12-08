@@ -15,7 +15,7 @@ export const DatePicker = (props: DatePickerProps) => {
               {...contextValue.periodStart}
               min={props.minDate}
               max={props.maxDate}
-              leftContent={
+              rightContent={
                 <Avatar
                   icon="calendar"
                   onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)}

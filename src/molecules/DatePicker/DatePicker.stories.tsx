@@ -91,6 +91,14 @@ export const Period = () => {
   );
 };
 
+export const PeriodPickerWithTime = () => {
+  return (
+    <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
+      <PeriodPicker size="compact" time />
+    </div>
+  );
+};
+
 Default.parameters = {
   design: {
     type: 'figma',

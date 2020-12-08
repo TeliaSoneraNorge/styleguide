@@ -1,17 +1,11 @@
 .telia-date-picker {
   position: relative;
-  input[type='date'] {
-    font-family: inherit;
-    line-height: 18px;
-    &::-webkit-calendar-picker-indicator {
-      display: none;
-      -webkit-appearance: none;
-    }
-  }
-
+  input[type='date'],
   input[type='time'] {
     font-family: inherit;
-    line-height: 18px;
+    line-height: 20px;
+
+    max-height: 42px;
     &::-webkit-calendar-picker-indicator {
       display: none;
       -webkit-appearance: none;
@@ -22,7 +16,7 @@
 .telia-date-picker--input {
   width: 200px;
   &__time {
-    width: 100px;
+    width: 108px;
   }
 }
 .telia-date-picker__period {

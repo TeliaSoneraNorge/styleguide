@@ -8,9 +8,14 @@ export type Props = {
   label?: string;
 
   setSelectedDate: (date: Date) => void;
+
+  /**
+   * Format "yyyy-mm-dd"
+   * @default undefined
+   */
   inputValue?: string;
   setInputValue: (input?: string) => void;
-  leftContent?: React.ReactNode;
+  rightContent?: React.ReactNode;
   max?: string;
   min?: string;
 };
@@ -31,7 +36,7 @@ export const DatePickerInput = (props: Props) => {
           props.setSelectedDate(new Date(e.target.value));
         }
       }}
-      rightContent={props.leftContent}
+      rightContent={props.rightContent}
       label={props.label}
       onFocus={() => {
         setHasFocus(true);
