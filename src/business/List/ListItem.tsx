@@ -14,11 +14,12 @@ export type ListItemProps = {
    * @default li
    */
   tag?: 'div' | 'span' | 'li';
-} & ListStyle;
+} & ({ expandable: true; open: boolean } | { expandable?: false });
 
-export const ListItem: React.FC<ListItemProps> = (props) => {
+export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
-  const { decorator, label, description, caption, onClick, compact, className, ...listItemStyle } = props;
+  const { decorator, label, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
+  const open = 'open' in props ? props.open : false;
 
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
@@ -33,54 +34,55 @@ export const ListItem: React.FC<ListItemProps> = (props) => {
 
   return (
     <Tag
-      className={cn(
-        'telia-listItem',
-        {
-          'telia-listItem--compact': compact,
-          'telia-listItem--card': type === 'card',
-          'telia-listItem--underlined': border === 'underlined',
-          'telia-listItem--shadow': border === 'shadow',
-          'telia-listItem--dark': color === 'dark',
-          'telia-listItem--medium': color === 'medium',
-          'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
-        },
-        className
-      )}
-      onClick={onClick}
-      onKeyDown={handleKeyDown}
-      tabIndex={onClick && 0}
-      role={onClick && 'button'}
+      className={cn({
+        'telia-listItem--compact': compact,
+        'telia-listItem--underlined': border === 'underlined',
+        'telia-listItem--shadow': border === 'shadow',
+        'telia-listItem--card': type === 'card',
+        'telia-listItem--dark': color === 'dark',
+        'telia-listItem--medium': color === 'medium',
+        'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
+      })}
     >
-      <div className="telia-listItem__main">
-        {decorator && (
-          <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
-            {decorator}
+      <div
+        className={cn('telia-listItem__mainWrapper', className)}
+        onClick={onClick}
+        onKeyDown={handleKeyDown}
+        tabIndex={onClick && 0}
+        role={onClick && 'button'}
+      >
+        <div className="telia-listItem__main">
+          {decorator && (
+            <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
+              {decorator}
+            </div>
+          )}
+          <div className="telia-listItem__content">
+            <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
+            {description && (
+              <div
+                className={cn('telia-listItem__description', {
+                  'telia-listItem__description--dark': color === 'dark',
+                })}
+              >
+                {description}
+              </div>
+            )}
           </div>
-        )}
-        <div className="telia-listItem__content">
-          <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
-          {description && (
+          {caption && (
             <div
-              className={cn('telia-listItem__description', {
-                'telia-listItem__description--dark': color === 'dark',
+              className={cn('telia-listItem__caption', {
+                'telia-listItem__caption--text': typeof caption === 'string',
+                'telia-listItem__caption--dark': color === 'dark',
               })}
             >
-              {description}
+              {caption}
             </div>
           )}
         </div>
-        {caption && (
-          <div
-            className={cn('telia-listItem__caption', {
-              'telia-listItem__caption--text': typeof caption === 'string',
-              'telia-listItem__caption--dark': color === 'dark',
-            })}
-          >
-            {caption}
-          </div>
-        )}
+        {!expandable && props.children}
       </div>
-      {props.children}
+      {expandable && open && <div className="telia-listItem__expandedChildren">{props.children}</div>}
     </Tag>
   );
 };

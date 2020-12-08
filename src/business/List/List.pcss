@@ -1,4 +1,4 @@
-.telia-listItem {
+.telia-listItem__mainWrapper {
   padding: 1.875rem 1.5rem;
   transition-duration: 300ms;
   transition-property: background-color;
@@ -6,7 +6,9 @@
   &:focus {
     outline: 2px solid #73c7ff;
   }
+}
 
+.telia-listItem {
   &--compact {
     padding: 1.25rem 1.5rem;
   }
@@ -28,7 +30,7 @@
     background-color: var(--grey-800);
     color: var(--white);
 
-    &:hover {
+    .telia-listItem__mainWrapper:hover {
       background-color: var(--grey-600);
     }
   }
@@ -36,16 +38,17 @@
   &--medium {
     background-color: var(--grey-200);
 
-    &:hover {
+    .telia-listItem__mainWrapper:hover {
       background-color: var(--grey-300);
     }
   }
 
   &--noBG {
-    &:hover {
+    .telia-listItem__mainWrapper:hover {
       background-color: var(--grey-200);
     }
   }
+
   &__main {
     display: flex;
     flex-direction: row;
@@ -114,6 +117,12 @@
     &--dark {
       color: var(--white);
     }
+  }
+
+  &__expandedChildren {
+    padding: 1.875rem 1.5rem;
+    transition-duration: 300ms;
+    transition-property: all;
   }
 }
 

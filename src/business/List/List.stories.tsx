@@ -703,6 +703,7 @@ export const Skeleton = ({}) => {
 };
 
 export const WithChildren = ({}) => {
+  const [open, setOpen] = React.useState<boolean>(false);
   return (
     <div>
       <List>
@@ -719,6 +720,21 @@ export const WithChildren = ({}) => {
             compact={true}
             tag="div"
           />
+        </ListItem>
+
+        <ListItem
+          label="Expandable ListItem dark"
+          type="card"
+          color="dark"
+          border="shadow"
+          decorator={<Avatar text="LI" color="grey100" />}
+          description="<li> element of item type"
+          caption="unstyled"
+          onClick={() => setOpen(!open)}
+          expandable
+          open={open}
+        >
+          <div>Now you see me!</div>
         </ListItem>
 
         <ListCard
