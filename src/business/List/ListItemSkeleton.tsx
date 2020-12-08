@@ -46,36 +46,38 @@ export const ListItemSkeleton = (props: ListItemProps) => {
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
       })}
     >
-      <div className="telia-listItem__main">
-        {decorator && (
-          <div className="telia-listItem__decorator">
-            <div>&nbsp;</div>
+      <div className="telia-listItem__mainWrapper">
+        <div className="telia-listItem__main">
+          {decorator && (
+            <div className="telia-listItem__decorator">
+              <div>&nbsp;</div>
+            </div>
+          )}
+          <div className="telia-listItem__content">
+            <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
+              <div>&nbsp;</div>
+            </h3>
+            {description && (
+              <div
+                className={cn('telia-listItem__description', {
+                  'telia-listItem__description--dark': color === 'dark',
+                })}
+              >
+                <div>&nbsp;</div>
+              </div>
+            )}
           </div>
-        )}
-        <div className="telia-listItem__content">
-          <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
-            <div>&nbsp;</div>
-          </h3>
-          {description && (
+          {caption && (
             <div
-              className={cn('telia-listItem__description', {
-                'telia-listItem__description--dark': color === 'dark',
+              className={cn('telia-listItem__caption', {
+                'telia-listItem__caption--text': typeof caption === 'string',
+                'telia-listItem__caption--dark': color === 'dark',
               })}
             >
               <div>&nbsp;</div>
             </div>
           )}
         </div>
-        {caption && (
-          <div
-            className={cn('telia-listItem__caption', {
-              'telia-listItem__caption--text': typeof caption === 'string',
-              'telia-listItem__caption--dark': color === 'dark',
-            })}
-          >
-            <div>&nbsp;</div>
-          </div>
-        )}
       </div>
     </li>
   );
