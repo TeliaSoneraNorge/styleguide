@@ -56,6 +56,8 @@ export const DatePicker = (props: DatePickerProps) => {
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>
             <DatePickerInput
               {...contextValue.periodStart}
+              min={props.minDate}
+              max={props.maxDate}
               leftContent={
                 <Avatar
                   icon="calendar"

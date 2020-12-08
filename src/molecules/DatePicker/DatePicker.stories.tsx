@@ -25,6 +25,9 @@ export const Default = () => {
       <div style={{ marginTop: '2rem ' }}>
         <div>With upper and lower bound</div>
         <DatePicker size="compact" maxDate="2021-02-05" minDate={format.dateToString(new Date())} />
+        <br />
+        <div>Only 2020</div>
+        <DatePicker size="compact" maxDate="2020-12-31" minDate="2020-01-01" value="2020-05-01" />
       </div>
       <div style={{ marginTop: '2rem ' }}>
         <div>Custom month labels</div>
@@ -70,6 +73,7 @@ export const Period = () => {
         />
       </div>
       <div style={{ marginTop: '2rem ' }}>
+        <div>With custom options</div>
         <PeriodPicker
           size="compact"
           period={period2.period}

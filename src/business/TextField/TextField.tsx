@@ -98,6 +98,12 @@ export interface TextFieldProps {
    */
   placeholder?: string;
   autoComplete?: string;
+
+  /**
+   *
+   */
+  min?: string;
+  max?: string;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -155,7 +161,7 @@ export const TextField = (props: TextFieldProps) => {
         ) : null}
         <div className="telia-textfield-content">
           {props.leftContent ? (
-            <div ref={leftContentRef} className="telia-textfield-leftContent" onClick={e => e.stopPropagation()}>
+            <div ref={leftContentRef} className="telia-textfield-leftContent" onClick={(e) => e.stopPropagation()}>
               {props.leftContent}
             </div>
           ) : null}
@@ -178,10 +184,12 @@ export const TextField = (props: TextFieldProps) => {
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
+            max={props.max}
+            min={props.min}
           />
           {statusIcon ? <span className="telia-textfield-status">{statusIcon}</span> : null}
           {props.rightContent ? (
-            <div className="telia-textfield-rightContent" onClick={e => e.stopPropagation()}>
+            <div className="telia-textfield-rightContent" onClick={(e) => e.stopPropagation()}>
               {props.rightContent}
             </div>
           ) : null}

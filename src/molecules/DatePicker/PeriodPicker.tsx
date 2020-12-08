@@ -72,6 +72,8 @@ export const PeriodPicker = (props: Props) => {
                 size={props.size}
                 label={props.label ?? 'Velg periode'}
                 leftContent={<Icon icon="arrow-right" style={{ height: '1.25rem', width: '1.25rem' }} />}
+                min={props.minDate}
+                max={props.maxDate}
               />
               {contextValue.periodEnd && (
                 <DatePickerInput
@@ -86,6 +88,8 @@ export const PeriodPicker = (props: Props) => {
                       color="transparent"
                     />
                   }
+                  min={props.minDate}
+                  max={props.maxDate}
                 />
               )}
             </div>

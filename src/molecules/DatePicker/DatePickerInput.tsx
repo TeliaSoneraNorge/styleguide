@@ -11,6 +11,8 @@ export type Props = {
   inputValue?: string;
   setInputValue: (input?: string) => void;
   leftContent?: React.ReactNode;
+  max?: string;
+  min?: string;
 };
 export const DatePickerInput = (props: Props) => {
   const [hasFocus, setHasFocus] = useState(false);
@@ -38,6 +40,8 @@ export const DatePickerInput = (props: Props) => {
       onBlur={() => {
         setHasFocus(false);
       }}
+      max={props.max}
+      min={props.min}
     />
   );
 };
