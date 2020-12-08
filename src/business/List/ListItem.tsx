@@ -34,7 +34,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
 
   return (
     <Tag
-      className={cn({
+      className={cn('telia-listItem', {
         'telia-listItem--compact': compact,
         'telia-listItem--underlined': border === 'underlined',
         'telia-listItem--shadow': border === 'shadow',
