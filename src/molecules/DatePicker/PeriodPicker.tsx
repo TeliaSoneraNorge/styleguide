@@ -3,58 +3,9 @@ import { DatePickerContextProvider, DatePickerContext } from './context';
 import { DatePickerInput } from './DatePickerInput';
 import { DatePickerMenu } from './DatePickerMenu';
 import { Avatar, Icon } from '../../index';
+import { PeriodPickerProps } from './types';
 
-type Props = {
-  /**
-   * After a new date has been set
-   */
-  onSelectDateFrom?: (date?: string) => void;
-  onSelectDateTo?: (date?: string) => void;
-
-  period?: {
-    start?: string;
-    end?: string;
-  };
-
-  size?: 'compact' | 'default';
-
-  /**
-   * @default "Velg periode"
-   */
-  label?: string;
-
-  /**
-   * ordered array of label for months, from january-december
-   * @default "Norwegain full name. ['Januar','Februar','Mars','April','Mai','Juni','Juli','August','September','Oktober','November','Desember'];"
-   */
-  monthLabels?: Array<string>;
-
-  /**
-   * ordered array of label for months, from january-december
-   * @default "Norwgian short name. ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sø']"
-   */
-  dayLabels?: Array<string>;
-
-  /**
-   * Format "yyyy-mm-dd"
-   * @default undefined
-   */
-  maxDate?: string;
-
-  /**
-   * Format "yyyy-mm-dd"
-   * @default undefined
-   */
-  minDate?: string;
-
-  /**
-   * Eg. btn for"last 7 days"
-   * Rendered in the date picker menu
-   */
-  options?: React.ReactNode;
-};
-
-export const PeriodPicker = (props: Props) => {
+export const PeriodPicker = (props: PeriodPickerProps) => {
   return (
     <DatePickerContextProvider
       {...props}
