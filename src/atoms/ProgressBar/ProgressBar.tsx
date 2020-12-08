@@ -24,6 +24,7 @@ export type ProgressBarProps = {
    * The thickness of the progress bar.
    */
   height?: keyof typeof progressBarSize;
+  className?: string;
 } & (
   | {
       /**
@@ -35,7 +36,8 @@ export type ProgressBarProps = {
        */
       color?: undefined;
     }
-  | { color?: keyof typeof colors });
+  | { color?: keyof typeof colors }
+);
 
 /**
  * Category: Graphs
@@ -49,7 +51,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
   }
 
   return (
-    <div className={classNames('progress', 'height' in props ? `progress--${props.height}` : '')}>
+    <div className={classNames('progress', 'height' in props ? `progress--${props.height}` : '', props.className)}>
       <div
         className={classNames(
           'progress__bar',
