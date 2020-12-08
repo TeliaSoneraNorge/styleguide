@@ -45,6 +45,13 @@ export const Default = ({}) => {
           description="<li> element of item type"
           caption="unstyled"
         />
+        <ListItem
+          label="List w/onClick"
+          onClick={() => {}}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of item type"
+          caption="unstyled"
+        />
         <ListHeading title="Compact list heading" compact={true} />
         <ListCard
           label="ListCard"

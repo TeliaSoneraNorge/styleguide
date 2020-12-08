@@ -35,7 +35,6 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   return (
     <Tag
       className={cn('telia-listItem', {
-        'telia-listItem--compact': compact,
         'telia-listItem--underlined': border === 'underlined',
         'telia-listItem--shadow': border === 'shadow',
         'telia-listItem--card': type === 'card',
@@ -45,7 +44,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
       })}
     >
       <div
-        className={cn('telia-listItem__mainWrapper', className)}
+        className={cn('telia-listItem__mainWrapper', { 'telia-listItem--compact': compact }, className)}
         onClick={onClick}
         onKeyDown={handleKeyDown}
         tabIndex={onClick && 0}

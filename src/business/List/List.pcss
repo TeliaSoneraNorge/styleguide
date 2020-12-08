@@ -4,22 +4,27 @@
   transition-property: background-color;
 
   &:focus {
-    outline: 2px solid #73c7ff;
+    outline: 0;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
   }
 }
 
 .telia-listItem {
-  &--compact {
-    padding: 1.25rem 1.5rem;
-  }
-
   &--underlined {
     border-bottom: solid 1px var(--grey-200);
+  }
+
+  &--compact {
+    padding: 1.25rem 1.5rem;
   }
 
   &--card {
     border-radius: 0.5rem;
     margin: 0.75rem 0;
+
+    .telia-listItem__mainWrapper:focus {
+      border-radius: 0.5rem;
+    }
   }
 
   &--shadow {
