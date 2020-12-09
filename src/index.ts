@@ -20,6 +20,7 @@ export { default as List } from './atoms/List';
 export { default as LoadingPebble } from './atoms/LoadingPebble';
 export { default as PagePebbles } from './atoms/PagePebbles';
 export { default as Paragraph } from './atoms/Paragraph';
+export { default as ProductTabs } from './atoms/ProductTabs';
 export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
