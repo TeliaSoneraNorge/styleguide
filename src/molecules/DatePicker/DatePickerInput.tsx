@@ -20,6 +20,36 @@ export const DatePickerInput = (props: Props) => {
    */
   const input =
     props.inputValue?.length === 10 ? props.inputValue.split('-').reverse().join('.') : props.inputValue ?? '';
+
+  const setDateInputValue = (value: string, previousValue: string) => {
+    const changeWasRemove = value.length < previousValue.length;
+
+    const parts = value.split('.');
+
+    const day = parts?.[0];
+    const validDay = !day || day.length < 2 || ('0' <= day && day < '32');
+
+    const month = parts?.[1];
+    const validMonth = !month || month.length < 2 || ('0' <= month && month < '13');
+
+    const year = parts?.[2] ?? '';
+    if (!validDay || !validMonth) {
+      return;
+    }
+
+    const dayString = day ? (parseInt(day) > 3 && parseInt(day) < 10 ? day.padStart(2, '0') : day) : '';
+    const monthString = month ? (parseInt(month) > 1 && parseInt(month) < 10 ? month.padStart(2, '0') : month) : '';
+
+    if (changeWasRemove) {
+      return props.setInputValue(value);
+    } else if (dayString.length == 1) {
+      return props.setInputValue(value);
+    } else if (monthString.length == 1) {
+      return props.setInputValue(value);
+    } else {
+      return props.setInputValue(`${dayString ? dayString + '.' : ''}${monthString ? monthString + '.' : ''}${year}`);
+    }
+  };
   return (
     <TextField
       className="telia-date-picker--input"
@@ -28,17 +58,7 @@ export const DatePickerInput = (props: Props) => {
       value={input}
       size={props.size}
       maxlength={10}
-      onChange={(e) => {
-        /**
-         * TODO: add constraints on month, day and year
-         */
-        const changeWasRemove = e.target.value.length < input.length;
-        if (!changeWasRemove && [2, 5].includes(e.target.value.length)) {
-          props.setInputValue(e.target.value + '.');
-        } else {
-          props.setInputValue(e.target.value);
-        }
-      }}
+      onChange={(e) => setDateInputValue(e.target.value, input)}
       rightContent={props.rightContent}
       label={props.label}
       onFocus={() => setCalendarOpen(true)}
