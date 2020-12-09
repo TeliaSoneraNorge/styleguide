@@ -37,7 +37,6 @@ export const ListItemSkeleton = (props: ListItemProps) => {
   return (
     <li
       className={cn('telia-listItem telia-listItem--skeleton ', {
-        'telia-listItem--compact': compact,
         'telia-listItem--card': type === 'card',
         'telia-listItem--underlined': border === 'underlined',
         'telia-listItem--shadow': border === 'shadow',
@@ -46,7 +45,7 @@ export const ListItemSkeleton = (props: ListItemProps) => {
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
       })}
     >
-      <div className="telia-listItem__mainWrapper">
+      <div className={cn('telia-listItem__mainWrapper', { 'telia-listItem--compact': compact })}>
         <div className="telia-listItem__main">
           {decorator && (
             <div className="telia-listItem__decorator">
