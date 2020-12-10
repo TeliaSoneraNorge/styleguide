@@ -66,21 +66,16 @@ export const ProgressBar = (props: ProgressBarProps) => {
 
   return (
     <div
-      className={classNames(
-        'telia-progress-bar',
-        'height' in props ? `telia-progress-bar--${props.height}` : '',
-        props.className,
-        {
-          'telia-progress-bar--transparent': transparent,
-        }
-      )}
+      className={classNames('progress', 'height' in props ? `progress--${props.height}` : '', props.className, {
+        'progress--transparent': transparent,
+      })}
     >
       <div
         className={classNames(
-          'telia-progress-bar__bar',
-          'barColor' in props ? `telia-progress-bar__bar--${props.barColor}` : 'telia-progress-bar__bar--green',
+          'progress__bar',
+          'barColor' in props ? `progress__bar--${props.barColor}` : 'progress__bar--green',
           {
-            'telia-progress-bar__bar--disabled': disabled,
+            'progress__bar--disabled': disabled,
           }
         )}
         role="progressbar"
