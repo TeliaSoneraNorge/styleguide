@@ -62,7 +62,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
   }
 
   const width = ((clamp(min, max, value) - min) / (max - min)) * 100;
-  const marginLeft = direction == 'left' ? `${100 - width}%` : '0';
+  const marginLeft = direction === 'left' ? `${100 - width}%` : '0';
 
   return (
     <div
