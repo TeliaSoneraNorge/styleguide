@@ -155,14 +155,14 @@ export const TextField = (props: TextFieldProps) => {
         ) : null}
         <div className="telia-textfield-content">
           {props.leftContent ? (
-            <div ref={leftContentRef} className="telia-textfield-leftContent" onClick={e => e.stopPropagation()}>
+            <div ref={leftContentRef} className="telia-textfield-leftContent" onClick={(e) => e.stopPropagation()}>
               {props.leftContent}
             </div>
           ) : null}
           <input
             className="telia-textfield-input"
             id={props.id}
-            name={props.id}
+            name={props.name}
             ref={inputRef}
             type={props.type || 'text'}
             placeholder={placeholder}
@@ -181,7 +181,7 @@ export const TextField = (props: TextFieldProps) => {
           />
           {statusIcon ? <span className="telia-textfield-status">{statusIcon}</span> : null}
           {props.rightContent ? (
-            <div className="telia-textfield-rightContent" onClick={e => e.stopPropagation()}>
+            <div className="telia-textfield-rightContent" onClick={(e) => e.stopPropagation()}>
               {props.rightContent}
             </div>
           ) : null}
