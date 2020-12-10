@@ -188,9 +188,7 @@ export const TextField = (props: TextFieldProps) => {
         </div>
       </div>
 
-      <small className={cn('telia-textfield-helptext')} style={{ height: '1rem' }}>
-        {props.helpText}
-      </small>
+      <small className={cn('telia-textfield-helptext')}>{props.helpText}</small>
     </div>
   );
 };
