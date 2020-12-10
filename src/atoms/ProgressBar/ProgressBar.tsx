@@ -24,6 +24,17 @@ export type ProgressBarProps = {
    * The thickness of the progress bar.
    */
   height?: keyof typeof progressBarSize;
+  /**
+   * The direction of the progress bar.
+   * @default right
+   */
+  direction?: 'left' | 'right';
+  /**
+   * Set this to true if you don't want to see the total shadow
+   * @default false
+   */
+  transparent?: boolean;
+
   className?: string;
 } & (
   | {
@@ -43,28 +54,40 @@ export type ProgressBarProps = {
  * Category: Graphs
  */
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { value, min, max, disabled } = props;
+  const { value, min, max, disabled, direction = 'right', transparent = false } = props;
   let color = '';
 
   if ('color' in props) {
     color = colors[props.color || 'green'];
   }
 
+  const width = ((clamp(min, max, value) - min) / (max - min)) * 100;
+  const marginLeft = direction == 'left' ? `${100 - width}%` : '0';
+
   return (
-    <div className={classNames('progress', 'height' in props ? `progress--${props.height}` : '', props.className)}>
+    <div
+      className={classNames(
+        'telia-progress-bar',
+        'height' in props ? `telia-progress-bar--${props.height}` : '',
+        props.className,
+        {
+          'telia-progress-bar--transparent': transparent,
+        }
+      )}
+    >
       <div
         className={classNames(
-          'progress__bar',
-          'barColor' in props ? `progress__bar--${props.barColor}` : 'progress__bar--green',
+          'telia-progress-bar__bar',
+          'barColor' in props ? `telia-progress-bar__bar--${props.barColor}` : 'telia-progress-bar__bar--green',
           {
-            'progress__bar--disabled': disabled,
+            'telia-progress-bar__bar--disabled': disabled,
           }
         )}
         role="progressbar"
         aria-valuenow={clamp(min, max, value)}
         aria-valuemin={min}
         aria-valuemax={max}
-        style={{ width: `${((clamp(min, max, value) - min) / (max - min)) * 100}%`, backgroundColor: color }}
+        style={{ width: `${width}%`, backgroundColor: color, marginLeft: marginLeft }}
       />
     </div>
   );
