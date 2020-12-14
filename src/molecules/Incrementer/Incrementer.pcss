@@ -10,11 +10,29 @@
       height: 1rem;
       width: 1rem;
     }
+    &[disabled] {
+      background-color: var(--grey-100);
+      cursor: auto;
+      .Icon {
+        color: var(--grey-300);
+      }
+    }
   }
+
+  button:focus,
+  input:focus {
+    z-index: 1;
+    outline: none;
+    box-shadow: 0 0 0 2px var(--blue-300);
+    transition: all 200ms ease-in-out;
+  }
+
   &--value {
     border: none;
     border-top: 1px solid var(--grey-200);
     border-bottom: 1px solid var(--grey-200);
+    width: 60px;
+    text-align: center;
   }
   &--decrement {
     border-radius: 100px 0px 0px 100px;
@@ -24,7 +42,6 @@
     border-radius: 0px 100px 100px 0px;
   }
 
-  /* remove arrows in input */
   /* Chrome, Safari, Edge, Opera */
   input::-webkit-outer-spin-button,
   input::-webkit-inner-spin-button {
