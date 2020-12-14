@@ -35,6 +35,6 @@ export const Default = () => {
 Default.parameters = {
   design: {
     type: 'figma',
-    url: 'https://www.figma.com/file/HF5bLPBAkWg3rmfcNr2K18/Lozenges?node-id=13%3A21',
+    url: 'https://www.figma.com/file/w5gRepPs7LBnW3QIx6Lly7/Incrementer?node-id=2%3A2',
   },
 };
