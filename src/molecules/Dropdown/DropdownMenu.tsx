@@ -52,7 +52,6 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
       className={cs(
         'telia-dropdown-content',
         {
-          'telia-dropdown-content__positionTop': positionTop,
           'telia-dropdown-content__nowrap': !props.wrapContent,
           open: open,
           right: props.position === 'right',
