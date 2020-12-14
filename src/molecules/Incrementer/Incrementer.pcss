@@ -1,0 +1,50 @@
+.telia-incrementer {
+  display: flex;
+  button {
+    background: var(--white);
+    border: 1px solid var(--grey-200);
+    cursor: pointer;
+    height: 2.5rem;
+    width: 2.5rem;
+    .Icon {
+      height: 1rem;
+      width: 1rem;
+    }
+  }
+  &--value {
+    border: none;
+    border-top: 1px solid var(--grey-200);
+    border-bottom: 1px solid var(--grey-200);
+  }
+  &--decrement {
+    border-radius: 100px 0px 0px 100px;
+  }
+
+  &--increment {
+    border-radius: 0px 100px 100px 0px;
+  }
+
+  /* remove arrows in input */
+  /* Chrome, Safari, Edge, Opera */
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  /* Firefox */
+  input[type='number'] {
+    -moz-appearance: textfield;
+  }
+}
+
+.telia-incrementer__compact {
+  button {
+    height: 2rem;
+    width: 2rem;
+    .Icon {
+      height: 0.75rem;
+      width: 0.75rem;
+    }
+  }
+}

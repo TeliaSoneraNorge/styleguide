@@ -69,6 +69,8 @@ export { default as HeaderWithImage } from './molecules/HeaderWithImage';
 export { default as ImageHeadingLink } from './molecules/ImageHeadingLink';
 export { default as HeadingLink } from './molecules/HeadingLink';
 export { default as Image } from './molecules/Image';
+export { Incrementer } from './molecules/Incrementer';
+
 export { default as ListWithImage } from './molecules/ListWithImage';
 export { Lozenge } from './molecules/Lozenge';
 export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';
