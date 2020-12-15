@@ -92,9 +92,19 @@ export const Period = () => {
 };
 
 export const DateTimePicker = () => {
+  const [timeFrom, setTimeFrom] = useState('00:00');
+  const [timeTo, setTimeTo] = useState('00:00');
+
   return (
-    <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <PeriodPicker size="compact" time />
+    <div style={{ height: '100%', width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
+      <PeriodPicker
+        size="compact"
+        time
+        timeFrom={timeFrom}
+        onSelectedTimeFrom={setTimeFrom}
+        timeTo={timeTo}
+        onSelectedTimeTo={setTimeTo}
+      />
     </div>
   );
 };

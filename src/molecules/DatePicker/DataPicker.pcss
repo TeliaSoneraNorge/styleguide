@@ -13,7 +13,18 @@
     }
   }
 }
-
+.telia-date-picker--input-wrapper {
+  .telia-dropdown-content {
+    max-height: 132px;
+    width: 100px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
 .telia-date-picker--input {
   width: 200px;
   &__time {
@@ -48,7 +59,6 @@
 
   .telia-date-picker--input {
     .telia-textfield-input {
-      border-radius: 0px;
       border-radius: 0px;
       border-left-color: transparent;
       border-right-color: transparent;
@@ -99,6 +109,14 @@
       content: none;
     }
   }
+  /*
+  .telia-date-picker--input:first-child.telia-date-picker--input__time {
+    .telia-textfield-input {
+      border-radius: 0px;
+      border-left-color: transparent;
+      border-right-color: transparent;
+    }
+  } */
 
   .telia-textfield__focus {
     .telia-textfield-input {

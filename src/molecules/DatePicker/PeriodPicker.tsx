@@ -28,7 +28,12 @@ export const PeriodPicker = (props: PeriodPickerProps) => {
                 max={props.maxDate}
               />
               {props.time && (
-                <DatePickerTimeInput size={props.size} setTime={props.onSelectedTimeFrom} rightContent={<Arrow />} />
+                <DatePickerTimeInput
+                  size={props.size}
+                  inputValue={props.timeFrom}
+                  setTime={props.onSelectedTimeFrom}
+                  rightContent={<Arrow />}
+                />
               )}
               {periodEnd && (
                 <>
@@ -43,6 +48,7 @@ export const PeriodPicker = (props: PeriodPickerProps) => {
                   {props.time && (
                     <DatePickerTimeInput
                       size={props.size}
+                      inputValue={props.timeTo}
                       setTime={props.onSelectedTimeTo}
                       rightContent={<Calendar onClick={() => setCalendarOpen(!calendarOpen)} />}
                     />

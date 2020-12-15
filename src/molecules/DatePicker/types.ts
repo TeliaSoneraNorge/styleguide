@@ -38,17 +38,6 @@ export type PeriodPickerProps = CommonProps & {
   onSelectDateFrom?: (date?: string) => void;
   onSelectDateTo?: (date?: string) => void;
 
-  /**
-   * whether or not to enable selecting time
-   */
-  time?: boolean;
-
-  /**
-   * when a new time is set
-   */
-  onSelectedTimeFrom?: (time: string) => void;
-  onSelectedTimeTo?: (time: string) => void;
-
   period?: {
     /**
      * Format "yyyy-mm-dd"
@@ -68,7 +57,19 @@ export type PeriodPickerProps = CommonProps & {
    * Rendered in the date picker menu
    */
   options?: React.ReactNode;
-};
+} & (
+    | {
+        time: true;
+        timeFrom?: string;
+        timeTo?: string;
+        /**
+         * Require when time is true
+         */
+        onSelectedTimeFrom: (time: string) => void;
+        onSelectedTimeTo: (time: string) => void;
+      }
+    | { time?: false }
+  );
 
 export type DatePickerProps = CommonProps & {
   /**
