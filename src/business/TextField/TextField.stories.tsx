@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { TextField } from './index';
 import { Icon } from '../../index';
 import { Button } from '../Button';
@@ -12,12 +12,21 @@ export default {
 };
 
 export const Default = () => {
+  const [state, setstate] = useState('');
   return (
     <>
       <h3>TextField</h3>
       <div style={{ display: 'flex' }}>
         <div style={{ width: '30%', marginRight: '1rem' }}>
-          <TextField label="Field label" placeholder="Placeholder text" />
+          <TextField
+            label="Field label"
+            value={state}
+            onChange={(e) => setstate(e.target.value)}
+            placeholder="Placeholder text"
+            error={state === 'error'}
+            success={state === 'success'}
+            helpText={state === 'error' ? state : ''}
+          />
           <TextField label="Field label" helpText="Help or instrictions" />
           <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />

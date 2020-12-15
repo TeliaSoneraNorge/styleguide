@@ -45,6 +45,13 @@ export const Default = ({}) => {
           description="<li> element of item type"
           caption="unstyled"
         />
+        <ListItem
+          label="List w/onClick"
+          onClick={() => {}}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of item type"
+          caption="unstyled"
+        />
         <ListHeading title="Compact list heading" compact={true} />
         <ListCard
           label="ListCard"
@@ -720,7 +727,6 @@ export const WithChildren = ({}) => {
             tag="div"
           />
         </ListItem>
-
         <ListCard
           label="Compact ListCard"
           compact={true}
@@ -757,6 +763,76 @@ export const WithChildren = ({}) => {
             <Lozenge label="Hello world" />
             <Lozenge label="Hello world" />
           </div>
+        </ListCard>
+      </List>
+    </div>
+  );
+};
+
+export const Expandable = ({}) => {
+  const [open, setOpen] = React.useState<boolean>(false);
+  const [open2, setOpen2] = React.useState<boolean>(false);
+  const [open3, setOpen3] = React.useState<boolean>(false);
+  const [open4, setOpen4] = React.useState<boolean>(false);
+  return (
+    <div>
+      <List>
+        <ListHeading title="Expandable list items heading" />
+        <ListItem
+          label="ListItem"
+          decorator={<Avatar text="LI" />}
+          description="<li> element of item type"
+          caption="unstyled"
+          onClick={() => setOpen(!open)}
+          open={open}
+          expandable
+        >
+          <ListItem
+            label="I am a child. A list item"
+            description="Dont worry. I am a div, not an li"
+            compact={true}
+            tag="div"
+          />
+        </ListItem>
+
+        <ListItem
+          label="Expandable ListItem dark"
+          color="dark"
+          border="shadow"
+          decorator={<Avatar text="LI" color="grey100" />}
+          description="<li> element of item type"
+          caption="unstyled"
+          onClick={() => setOpen2(!open2)}
+          open={open2}
+          expandable
+        >
+          <div>Now you see me!</div>
+        </ListItem>
+
+        <ListCard
+          label="Expandable ListCard"
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+          onClick={() => setOpen3(!open3)}
+          open={open3}
+          expandable
+        >
+          <div>Hello child</div>
+        </ListCard>
+
+        <ListCard
+          label="Expandable ListCard - compact"
+          compact={true}
+          color="dark"
+          decorator={<Avatar color="grey100" text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+          onClick={() => setOpen4(!open4)}
+          open={open4}
+          expandable
+        >
+          <div>Hello child</div>
         </ListCard>
       </List>
     </div>

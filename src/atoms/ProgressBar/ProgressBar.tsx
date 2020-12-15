@@ -24,6 +24,18 @@ export type ProgressBarProps = {
    * The thickness of the progress bar.
    */
   height?: keyof typeof progressBarSize;
+  /**
+   * The direction of the progress bar.
+   * @default right
+   */
+  direction?: 'left' | 'right';
+  /**
+   * Set this to true if you don't want to see the total shadow
+   * @default false
+   */
+  transparent?: boolean;
+
+  className?: string;
 } & (
   | {
       /**
@@ -35,21 +47,29 @@ export type ProgressBarProps = {
        */
       color?: undefined;
     }
-  | { color?: keyof typeof colors });
+  | { color?: keyof typeof colors }
+);
 
 /**
  * Category: Graphs
  */
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { value, min, max, disabled } = props;
+  const { value, min, max, disabled, direction = 'right', transparent = false } = props;
   let color = '';
 
   if ('color' in props) {
     color = colors[props.color || 'green'];
   }
 
+  const width = ((clamp(min, max, value) - min) / (max - min)) * 100;
+  const marginLeft = direction === 'left' ? `${100 - width}%` : '0';
+
   return (
-    <div className={classNames('progress', 'height' in props ? `progress--${props.height}` : '')}>
+    <div
+      className={classNames('progress', 'height' in props ? `progress--${props.height}` : '', props.className, {
+        'progress--transparent': transparent,
+      })}
+    >
       <div
         className={classNames(
           'progress__bar',
@@ -62,7 +82,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
         aria-valuenow={clamp(min, max, value)}
         aria-valuemin={min}
         aria-valuemax={max}
-        style={{ width: `${((clamp(min, max, value) - min) / (max - min)) * 100}%`, backgroundColor: color }}
+        style={{ width: `${width}%`, backgroundColor: color, marginLeft: marginLeft }}
       />
     </div>
   );

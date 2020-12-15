@@ -20,6 +20,7 @@ export { default as List } from './atoms/List';
 export { default as LoadingPebble } from './atoms/LoadingPebble';
 export { default as PagePebbles } from './atoms/PagePebbles';
 export { default as Paragraph } from './atoms/Paragraph';
+export { default as ProductTabs } from './atoms/ProductTabs';
 export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
@@ -68,6 +69,8 @@ export { default as HeaderWithImage } from './molecules/HeaderWithImage';
 export { default as ImageHeadingLink } from './molecules/ImageHeadingLink';
 export { default as HeadingLink } from './molecules/HeadingLink';
 export { default as Image } from './molecules/Image';
+export { Incrementer } from './molecules/Incrementer';
+
 export { default as ListWithImage } from './molecules/ListWithImage';
 export { Lozenge } from './molecules/Lozenge';
 export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';

@@ -17,11 +17,7 @@ const renderLine = (number, numberOfSteps, index) => {
 const StepElement = ({ children, isPassed, onClick }) => {
   if (isPassed) {
     return (
-      <a
-        href="javascript:void(0)"
-        className="step-indicator__element step-indicator__element__clickable"
-        onClick={onClick}
-      >
+      <a role="button" className="step-indicator__element step-indicator__element__clickable" onClick={onClick}>
         {children}
       </a>
     );
@@ -68,7 +64,7 @@ const renderStep = (index, number, numberOfSteps, label, link) => {
 const StepIndicator = ({ index, numberOfSteps, labels, links }) => (
   <div className="step-indicator">
     <ol className="step-indicator__list">
-      {range(numberOfSteps).map(number => renderStep(index, number, numberOfSteps, labels[number], links[number]))}
+      {range(numberOfSteps).map((number) => renderStep(index, number, numberOfSteps, labels[number], links[number]))}
     </ol>
   </div>
 );

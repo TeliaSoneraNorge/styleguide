@@ -169,7 +169,7 @@ export const TextField = (props: TextFieldProps) => {
           <input
             className="telia-textfield-input"
             id={props.id}
-            name={props.id}
+            name={props.name}
             ref={inputRef}
             type={props.type || 'text'}
             placeholder={placeholder}
