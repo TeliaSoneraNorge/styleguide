@@ -42,7 +42,6 @@ export const DatePickerTimeInput = (props: Props) => {
             props.setTime?.(value);
           }}
           onFocus={() => setOpen(true)}
-          onBlur={() => setOpen(false)}
           rightContent={props.rightContent}
           max={props.max}
           min={props.min}
