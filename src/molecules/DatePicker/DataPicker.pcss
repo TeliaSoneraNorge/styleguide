@@ -1,0 +1,209 @@
+.telia-date-picker {
+  position: relative;
+  input[type='text'],
+  input[type='time'] {
+    font-family: inherit;
+    line-height: 20px;
+
+    max-height: 42px;
+    &::-webkit-inner-spin-button,
+    &::-webkit-calendar-picker-indicator {
+      display: none;
+      -webkit-appearance: none;
+    }
+  }
+}
+.telia-date-picker--input-wrapper {
+  .telia-dropdown-content {
+    max-height: 132px;
+    width: 100px;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+.telia-date-picker--input {
+  width: 200px;
+  &__time {
+    width: 108px;
+  }
+}
+.telia-date-picker__period {
+  .telia-date-picker--inputs {
+    display: flex;
+    width: fit-content;
+
+    .telia-textfield-input {
+      transition: border 200ms;
+
+      border: 1px solid var(--grey-400);
+      border-right-color: transparent;
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+    .telia-textfield-content {
+      border: none;
+    }
+    .telia-date-picker--input {
+      .telia-textfield-input {
+        border-radius: 0px;
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+      &::before,
+      &::after {
+        content: '';
+        transition: border 200ms;
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        border-top: 1px solid var(--grey-400);
+        border-bottom: 1px solid var(--grey-400);
+      }
+      &::after {
+        right: 0;
+        top: 0;
+      }
+    }
+
+    > *:first-child {
+      .telia-textfield-input {
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+        border-color: var(--grey-400);
+        border-right-color: transparent;
+      }
+      &::before {
+        content: none;
+      }
+    }
+
+    > *:last-child {
+      .telia-textfield-rightContent {
+        border-right: 1px solid var(--grey-400);
+        border-top-right-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+
+      .telia-textfield-input {
+        border: 1px solid var(--grey-400);
+        border-left-color: transparent;
+        border-right-color: transparent;
+      }
+      .telia-date-picker--input::after,
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  .telia-textfield-rightContent {
+    transition: border 200ms;
+    border-top: 1px solid var(--grey-400);
+    border-bottom: 1px solid var(--grey-400);
+    border-radius: 0;
+    margin-left: -1px;
+  }
+  .telia-textfield-input {
+    transition: border 200ms;
+
+    border: 1px solid var(--grey-400);
+    border-right-color: transparent;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+
+  .telia-textfield__focus {
+    .telia-textfield-input {
+      border-color: var(--core-purple-500);
+    }
+    .telia-textfield-rightContent {
+      margin: 0;
+    }
+  }
+  .telia-date-picker--input.telia-textfield__focus {
+    .telia-textfield-input {
+      border-color: var(--core-purple-500);
+    }
+
+    &::before,
+    &::after {
+      border-color: var(--core-purple-500);
+    }
+  }
+}
+
+.telia-date-picker--menu {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0px 8px 32px rgba(58, 58, 58, 0.18);
+  border-radius: 4px;
+  z-index: 10;
+  min-width: 350px;
+  &--options {
+    margin: 1rem 1.5rem;
+    margin-top: 0rem;
+  }
+}
+
+.telia-date-picker--header {
+  padding: 1rem 1.5rem;
+  padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &--labels {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    div:first-child {
+      margin-right: 4rem;
+    }
+  }
+}
+.telia-date-picker--months {
+  display: flex;
+}
+
+.telia-date-picker--month {
+  display: grid;
+  grid-template-columns: 45px 45px 45px 45px 45px 45px 45px;
+  grid-template-rows: 45px 45px 45px 45px 45px 45px;
+  justify-content: center;
+  place-items: center;
+  margin: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.telia-date-picker--day {
+  border-radius: 50%;
+  height: 2rem;
+  width: 2rem;
+  cursor: pointer;
+  background-color: white;
+  border: none;
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+  }
+  &:hover {
+    color: var(--black);
+    background-color: var(--grey-200);
+  }
+  &:active,
+  &__active {
+    color: var(--white);
+    background-color: var(--core-purple-500);
+  }
+  &__inPeriod {
+    color: var(--core-purple);
+    background-color: var(--core-purple-100);
+  }
+
+  &__disabled {
+    color: var(--grey-300);
+    pointer-events: none;
+  }
+}
