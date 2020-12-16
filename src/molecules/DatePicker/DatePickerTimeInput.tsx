@@ -57,15 +57,16 @@ export const DatePickerTimeInput = (props: Props) => {
 
   return (
     <div className="telia-date-picker--input-wrapper">
-      <Dropdown open={open} toggle={() => setOpen(!open)}>
+      <Dropdown open={open} setOpen={setOpen}>
         <DropdownSearchToggle
           className="telia-date-picker--input telia-date-picker--input__time"
           type="text"
+          label={!props.inputValue && !open ? '--:--' : undefined}
           value={props.inputValue ?? '00:00'}
           size={props.size}
           onInputChange={(value) => setTime(value, props.inputValue)}
-          onFocus={() => setOpen(true)}
           rightContent={props.rightContent}
+          openImmediately
         />
         <DropdownMenu>{options()}</DropdownMenu>
       </Dropdown>

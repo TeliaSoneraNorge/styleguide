@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { DropdownContext, useDropdownContext, DropdownContextValues } from './context';
 import { useAccessibleDropdown } from './useAccessibleDropdown';
 import { getIndexedDropdownItems, getMaxHighlightIndex } from './utils';
@@ -6,6 +6,11 @@ import cn from 'classnames';
 
 type Props = {
   open?: boolean;
+  setOpen?: (open: boolean) => void;
+
+  /**
+   * @deprecated use setOpen instead
+   */
   toggle?: () => void;
   itemToggle?: boolean;
   fullWidth?: boolean;
@@ -23,6 +28,9 @@ export const Dropdown: React.FC<Props> = (props) => {
   const maxHighlightIndex = getMaxHighlightIndex(props.children);
 
   const toggle = () => setOpen(!open);
+  useEffect(() => {
+    props.setOpen?.(open);
+  }, [open]);
 
   const contextValue: DropdownContextValues = {
     open: props.open ? props.open : open,
