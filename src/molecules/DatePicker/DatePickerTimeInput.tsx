@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Dropdown, DropdownMenu, DropdownItem, DropdownSearchToggle } from '../Dropdown';
+import { useDatePicker } from './context';
 
 export type Props = {
   size?: 'compact' | 'default';
@@ -10,6 +11,13 @@ export type Props = {
   min?: string;
 };
 export const DatePickerTimeInput = (props: Props) => {
+  const [open, setOpen] = useState(false);
+  const { setCalendarOpen } = useDatePicker();
+
+  useEffect(() => {
+    if (open) setCalendarOpen(false);
+  }, [open]);
+
   const options = () => {
     const o = [];
     for (let i = 0; i < 24; i++) {
@@ -24,9 +32,8 @@ export const DatePickerTimeInput = (props: Props) => {
   };
   return (
     <div className="telia-date-picker--input-wrapper">
-      <Dropdown>
+      <Dropdown open={open} toggle={() => setOpen(!open)}>
         <DropdownSearchToggle
-          openImmediately={true}
           className="telia-date-picker--input telia-date-picker--input__time"
           type="time"
           value={props.inputValue ?? '00:00'}
@@ -34,10 +41,11 @@ export const DatePickerTimeInput = (props: Props) => {
           onInputChange={(value) => {
             props.setTime?.(value);
           }}
+          onFocus={() => setOpen(true)}
+          onBlur={() => setOpen(false)}
           rightContent={props.rightContent}
           max={props.max}
           min={props.min}
-          list="time-list"
         />
         <DropdownMenu>{options()}</DropdownMenu>
       </Dropdown>
