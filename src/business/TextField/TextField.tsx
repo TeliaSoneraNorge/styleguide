@@ -99,11 +99,6 @@ export interface TextFieldProps {
   placeholder?: string;
   autoComplete?: string;
 
-  /**
-   *
-   */
-  min?: string;
-  max?: string;
   maxlength?: number;
 }
 
@@ -185,8 +180,6 @@ export const TextField = (props: TextFieldProps) => {
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
-            max={props.max}
-            min={props.min}
             maxLength={props.maxlength}
           />
           {statusIcon ? <span className="telia-textfield-status">{statusIcon}</span> : null}

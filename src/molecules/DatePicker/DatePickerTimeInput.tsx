@@ -7,8 +7,6 @@ export type Props = {
   setTime: (time: string) => void;
   inputValue?: string;
   rightContent?: React.ReactNode;
-  max?: string;
-  min?: string;
 };
 export const DatePickerTimeInput = (props: Props) => {
   const [open, setOpen] = useState(false);
@@ -43,8 +41,6 @@ export const DatePickerTimeInput = (props: Props) => {
           }}
           onFocus={() => setOpen(true)}
           rightContent={props.rightContent}
-          max={props.max}
-          min={props.min}
         />
         <DropdownMenu>{options()}</DropdownMenu>
       </Dropdown>
