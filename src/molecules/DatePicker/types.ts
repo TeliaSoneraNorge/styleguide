@@ -75,12 +75,7 @@ export type DatePickerProps = CommonProps & {
   /**
    * After a new date has been set
    */
-  onSelectDate?: (date?: string) => void;
-
-  /**
-   * when a new time is set
-   */
-  onSelectedTime?: (time: string) => void;
+  onSelectDate: (date?: string) => void;
 
   /**
    * Format "yyyy-mm-dd"

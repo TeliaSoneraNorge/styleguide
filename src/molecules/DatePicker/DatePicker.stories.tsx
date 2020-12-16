@@ -16,30 +16,45 @@ export default {
 
 export const Default = () => {
   const [date, setDate] = useState<string | undefined>('2020-11-06');
+  const [date1, setDate1] = useState<string | undefined>(undefined);
+  const [date2, setDate2] = useState<string | undefined>(undefined);
+  const [date3, setDate3] = useState<string | undefined>(undefined);
+  const [date4, setDate4] = useState<string | undefined>('2020-05-01');
+  const [date5, setDate5] = useState<string | undefined>(undefined);
+  const [date6, setDate6] = useState<string | undefined>(undefined);
+
   return (
     <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
-      <DatePicker value={date} />
-      <DatePicker value="2010-06-01" onSelectDate={setDate} />
-      <DatePicker size="compact" />
+      <DatePicker value={date} onSelectDate={setDate} />
+      <DatePicker value={date1} onSelectDate={setDate1} />
+
+      <DatePicker size="compact" value={date2} onSelectDate={setDate2} />
 
       <div style={{ marginTop: '2rem ' }}>
         <div>With upper and lower bound</div>
-        <DatePicker size="compact" maxDate="2021-02-05" minDate={format.dateToString(new Date())} />
+        <DatePicker
+          size="compact"
+          maxDate="2021-02-05"
+          minDate={format.dateToString(new Date())}
+          value={date3}
+          onSelectDate={setDate3}
+        />
         <br />
         <div>Only 2020</div>
-        <DatePicker size="compact" maxDate="2020-12-31" minDate="2020-01-01" value="2020-05-01" />
+        <DatePicker size="compact" maxDate="2020-12-31" minDate="2020-01-01" value={date4} onSelectDate={setDate4} />
       </div>
       <div style={{ marginTop: '2rem ' }}>
         <div>Custom month labels</div>
         <DatePicker
-          value={date}
           monthLabels={['Jan', 'Feb', 'Mar', 'Apr', 'Mai', 'Jun', 'Jul', 'Aug', 'Sept', 'Okt', 'Nov', 'Des']}
+          value={date5}
+          onSelectDate={setDate5}
         />
       </div>
 
       <div style={{ marginTop: '2rem ' }}>
         <div>Custom day labels</div>
-        <DatePicker value={date} dayLabels={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
+        <DatePicker value={date6} onSelectDate={setDate6} dayLabels={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
       </div>
     </div>
   );
