@@ -125,10 +125,11 @@
             text-align: right;
             width: 30vw;
             color: var(--shopping-cart-font-color);
-            padding-right: 1rem;
+            padding-right: 0rem;
 
             @media screen and (min-width: 30vw) {
                 width: 7rem;
+                padding-right: 1rem;
             }
 
 
@@ -222,9 +223,13 @@
 
         &__button {
             border: 0;
-            margin-right: 0.5rem;
+            margin-right: 0rem;
             padding: 0.3rem 0.5rem;
             width: 8vw;
+
+            &:first-of-type {
+                margin-right: 0.5rem;
+            }
 
             &[disabled] {
                 .Icon {
