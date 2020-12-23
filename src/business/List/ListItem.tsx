@@ -19,16 +19,6 @@ export type ListItemProps = {
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const { decorator, label, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
   const open = 'open' in props ? props.open : false;
-  const [isExpanded, setIsExpanded] = useState(expandable && open);
-
-  useEffect(() => {
-    // add delay when closing, to ensure slide up animation
-    if (!open) {
-      setTimeout(() => setIsExpanded(false), 300);
-    } else {
-      setIsExpanded(true);
-    }
-  }, [open]);
 
   const listStyle = React.useContext(ListStyleContext);
 
@@ -96,15 +86,13 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         </div>
         {!expandable && props.children}
       </div>
-      {isExpanded && (
-        <div
-          className={cn('telia-listItem__expandedChildren', {
-            'telia-listItem__expandedChildren--expanded': expandable && open,
-          })}
-        >
-          {props.children}
-        </div>
-      )}
+      <div
+        className={cn('telia-listItem__expandedChildren', {
+          'telia-listItem__expandedChildren--expanded': expandable && open,
+        })}
+      >
+        {props.children}
+      </div>
     </Tag>
   );
 };

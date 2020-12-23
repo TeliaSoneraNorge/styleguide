@@ -129,38 +129,15 @@
   }
 
   &__expandedChildren {
-      padding: 0;
-      overflow-y: hidden;
-      animation: slide-up 0.3s ease;
-      max-height: 0;
-      &--expanded {
-          animation: slide-down 0.3s ease;
-          max-height: none;
-          overflow-y: visible;
-          padding: 1.875rem 1.5rem;
-      }
-  }
-}
-
-@keyframes slide-down {
-  from {
-    padding: 0;
+    padding: 0 1.5rem;
+    overflow-y: hidden;
     max-height: 0;
-  }
-  to {
-    max-height: 1000px;
-    padding: 1.875rem 1.5rem;
-  }
-}
-@keyframes slide-up {
-    from{
-        max-height: 1000px;
-        padding: 1.875rem 1.5rem;
+    transition: max-height 150ms ease-in-out, padding 150ms ease-in-out;
+    &--expanded {
+      max-height: 1000px; /* approximate max height */
+      padding: 1.875rem 1.5rem;
     }
-    to {
-        padding: 0;
-        max-height: 0;
-    }
+  }
 }
 
 .telia-list {
