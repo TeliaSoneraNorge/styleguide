@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import cn from 'classnames';
-import { ListStyle, ListStyleContext } from './utils';
+import { ListStyleContext, ListStyle } from './utils';
 
 export type ListItemProps = {
   label: React.ReactNode;
@@ -17,10 +17,9 @@ export type ListItemProps = {
 } & ({ expandable: true; open: boolean } | { expandable?: false });
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
+  const listStyle = React.useContext(ListStyleContext);
   const { decorator, label, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
   const open = 'open' in props ? props.open : false;
-
-  const listStyle = React.useContext(ListStyleContext);
 
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
