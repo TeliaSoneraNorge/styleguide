@@ -22,12 +22,14 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const [isExpanded, setIsExpanded] = useState(expandable && open);
 
   useEffect(() => {
+    let timer: NodeJS.Timeout;
     // add delay when closing, to ensure slide up animation
     if (!open) {
-      setTimeout(() => setIsExpanded(false), 300);
+      timer = setTimeout(() => setIsExpanded(false), 300);
     } else {
       setIsExpanded(true);
     }
+    return () => clearTimeout(timer);
   }, [open]);
 
   const listStyle = React.useContext(ListStyleContext);
