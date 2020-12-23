@@ -130,8 +130,23 @@
 
   &__expandedChildren {
     padding: 1.875rem 1.5rem;
-    transition-duration: 300ms;
-    transition-property: all;
+    -webkit-animation: slide-down 0.3s ease-in-out;
+    -moz-animation: slide-down 0.3s ease-in-out;
+    -o-animation: slide-down 0.3s ease-in-out;
+    animation: slide-down 0.3s ease-in-out;
+  }
+}
+
+@keyframes slide-down {
+  0%,
+  1% {
+    max-height: 0;
+  }
+  99% {
+    max-height: 1000px;
+  }
+  to {
+    max-height: none;
   }
 }
 
