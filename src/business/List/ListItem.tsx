@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
-import { ListStyleContext, ListStyle } from './utils';
+import { ListStyle, ListStyleContext } from './utils';
 
 export type ListItemProps = {
   label: React.ReactNode;
@@ -17,9 +17,20 @@ export type ListItemProps = {
 } & ({ expandable: true; open: boolean } | { expandable?: false });
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
-  const listStyle = React.useContext(ListStyleContext);
   const { decorator, label, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
   const open = 'open' in props ? props.open : false;
+  const [isExpanded, setIsExpanded] = useState(expandable && open);
+
+  useEffect(() => {
+    // add delay when closing, to ensure slide up animation
+    if (!open) {
+      setTimeout(() => setIsExpanded(false), 300);
+    } else {
+      setIsExpanded(true);
+    }
+  }, [open]);
+
+  const listStyle = React.useContext(ListStyleContext);
 
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
@@ -85,7 +96,15 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         </div>
         {!expandable && props.children}
       </div>
-      {expandable && open && <div className="telia-listItem__expandedChildren">{props.children}</div>}
+      {isExpanded && (
+        <div
+          className={cn('telia-listItem__expandedChildren', {
+            'telia-listItem__expandedChildren--expanded': expandable && open,
+          })}
+        >
+          {props.children}
+        </div>
+      )}
     </Tag>
   );
 };
