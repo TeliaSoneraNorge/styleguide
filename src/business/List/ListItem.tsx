@@ -85,7 +85,13 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         </div>
         {!expandable && props.children}
       </div>
-      {expandable && open && <div className="telia-listItem__expandedChildren">{props.children}</div>}
+      <div
+        className={cn('telia-listItem__expandedChildren', {
+          'telia-listItem__expandedChildren--expanded': expandable && open,
+        })}
+      >
+        {props.children}
+      </div>
     </Tag>
   );
 };
