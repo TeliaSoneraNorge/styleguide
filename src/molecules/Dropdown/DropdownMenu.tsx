@@ -66,6 +66,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
           : { visibility }
       }
       ref={menuRef}
+      tabIndex={-1}
     >
       {allItems}
     </div>

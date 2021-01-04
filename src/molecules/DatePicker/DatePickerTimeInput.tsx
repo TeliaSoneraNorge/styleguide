@@ -28,19 +28,45 @@ export const DatePickerTimeInput = (props: Props) => {
     }
     return o;
   };
+
+  const setTime = (value: string, previousValue: string) => {
+    const changeWasRemove = value.length < previousValue.length;
+    const changeWasClearReplace = previousValue.length === 5 && value.length === 1;
+
+    const parts = value.split(':');
+
+    const h = parts?.[0];
+    const validHour = !h || h.length < 2 || ('0' <= h && h < '24' && h.length < 3);
+
+    const m = parts?.[1];
+    const validMin = !m || m.length < 2 || ('0' <= m && m < '60' && m.length < 3);
+
+    if (!validHour || !validMin) {
+      return;
+    }
+
+    const hString = h ? (parseInt(h) > 2 && parseInt(h) < 10 ? h.padStart(2, '0') : h) : '';
+    const mString = m ? (parseInt(m) > 5 && parseInt(m) < 10 ? m.padStart(2, '0') : m) : '';
+
+    if ((changeWasRemove && !changeWasClearReplace) || hString.length == 1 || mString.length == 1) {
+      return props.setTime(value);
+    } else {
+      return props.setTime(`${hString ? hString + ':' : ''}${mString ? mString : ''}`);
+    }
+  };
+
   return (
     <div className="telia-date-picker--input-wrapper">
-      <Dropdown open={open} toggle={() => setOpen(!open)}>
+      <Dropdown open={open} setOpen={setOpen}>
         <DropdownSearchToggle
           className="telia-date-picker--input telia-date-picker--input__time"
-          type="time"
+          type="text"
+          label={!props.inputValue && !open ? '--:--' : undefined}
           value={props.inputValue ?? '00:00'}
           size={props.size}
-          onInputChange={(value) => {
-            props.setTime?.(value);
-          }}
-          onFocus={() => setOpen(true)}
+          onInputChange={(value) => setTime(value, props.inputValue)}
           rightContent={props.rightContent}
+          openImmediately
         />
         <DropdownMenu>{options()}</DropdownMenu>
       </Dropdown>
