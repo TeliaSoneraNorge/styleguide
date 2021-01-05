@@ -64,7 +64,7 @@ export const DatePickerTimeInput = (props: Props) => {
           label={!props.inputValue && !open ? '--:--' : undefined}
           value={props.inputValue ?? '00:00'}
           size={props.size}
-          onInputChange={(value) => setTime(value, props.inputValue)}
+          onInputChange={(value) => setTime(value, props.inputValue ?? '')}
           rightContent={props.rightContent}
           openImmediately
         />
