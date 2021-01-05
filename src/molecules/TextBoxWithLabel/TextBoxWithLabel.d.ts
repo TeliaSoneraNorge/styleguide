@@ -14,7 +14,7 @@ declare interface TextBoxWithLabelProps {
   iconLabel?: string;
   value?: string;
   ref?: any;
-  onChange?: (e: React.SyntheticEvent) => void;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 declare const TextBoxWithLabel: React.FC<TextBoxWithLabelProps>;
