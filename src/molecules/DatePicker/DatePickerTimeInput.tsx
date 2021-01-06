@@ -33,6 +33,11 @@ export const DatePickerTimeInput = (props: Props) => {
     const changeWasRemove = value.length < previousValue.length;
     const changeWasClearReplace = previousValue.length === 5 && value.length === 1;
 
+    const regExp = /[a-zA-Z]/g;
+    if (regExp.test(value)) {
+      return;
+    }
+
     const parts = value.split(':');
 
     const h = parts?.[0];

@@ -24,6 +24,11 @@ export const DatePickerInput = (props: Props) => {
   const setDateInputValue = (value: string, previousValue: string) => {
     const changeWasRemove = value.length < previousValue.length;
 
+    const regExp = /[a-zA-Z]/g;
+    if (regExp.test(value)) {
+      return;
+    }
+
     const parts = value.split('.');
 
     const day = parts?.[0];
