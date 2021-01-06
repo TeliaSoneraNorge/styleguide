@@ -5,7 +5,7 @@ import { ListStyleContext, ListStyle } from './utils';
 export type ListItemProps = {
   label: React.ReactNode;
   decorator?: React.ReactChild;
-  description?: string;
+  description?: React.ReactChild;
   caption?: string | React.ReactChild;
   onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   compact?: boolean;
