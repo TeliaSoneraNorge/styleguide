@@ -737,6 +737,19 @@ export const WithChildren = ({}) => {
           <div>Hello child</div>
         </ListCard>
 
+        <ListItem
+          onClick={() => {
+            console.log('click');
+          }}
+        >
+          <ListItem
+            label="I am a child. A list item. Inside another list item with no properties"
+            description="Dont worry. I am a div, not an li"
+            compact={true}
+            tag="div"
+          />
+        </ListItem>
+
         <ListCard
           label="Compact ListCard"
           compact={true}
