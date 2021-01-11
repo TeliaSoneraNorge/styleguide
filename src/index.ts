@@ -56,6 +56,7 @@ export { Chip } from './molecules/Chip';
 export { default as DownloadButtons } from './molecules/DownloadButtons';
 export { default as DropDownListWithLabel } from './molecules/DropDownListWithLabel';
 export { DonutChart } from './molecules/DonutChart';
+export { DatePicker, PeriodPicker } from './molecules/DatePicker';
 export { default as FactBox } from './molecules/FactBox';
 export { default as FocusBox } from './molecules/FocusBox';
 export { default as FocusHeader } from './molecules/FocusHeader';
