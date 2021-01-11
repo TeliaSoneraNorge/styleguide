@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import deprecate from 'util-deprecate';
 
 import SvgIcon from '../../atoms/SvgIcon';
 import Spinner from '../../atoms/Spinner';
@@ -50,48 +51,51 @@ const TextBoxIcon = ({ iconName, iconIsButton, iconColor, iconLabel, onClick, di
  * Category: FormElements
  **/
 const TextBoxWithIcon = React.forwardRef(
-  (
-    {
-      className,
-      type,
-      placeholder,
-      disabled,
-      error,
-      small,
-      iconName,
-      iconColor,
-      iconIsButton,
-      iconLabel,
-      onIconClick,
-      displayLoader,
-      ...rest
-    },
-    ref
-  ) => (
-    <div
-      className={classnames('textbox-with-icon', {
-        ['textbox-with-icon--small']: small,
-        [className]: className,
-      })}
-    >
-      <TextBox
-        ref={ref}
-        type={type}
-        placeholder={placeholder}
-        disabled={disabled}
-        error={error}
-        small={small}
-        {...rest}
-      />
-      <TextBoxIcon
-        iconName={iconName}
-        iconIsButton={iconIsButton}
-        iconColor={iconColor}
-        iconLabel={iconLabel}
-        onClick={onIconClick}
-        displayLoader={displayLoader}
-      />
-    </div>
+  deprecate(
+    (
+      {
+        className,
+        type,
+        placeholder,
+        disabled,
+        error,
+        small,
+        iconName,
+        iconColor,
+        iconIsButton,
+        iconLabel,
+        onIconClick,
+        displayLoader,
+        ...rest
+      },
+      ref
+    ) => (
+      <div
+        className={classnames('textbox-with-icon', {
+          ['textbox-with-icon--small']: small,
+          [className]: className,
+        })}
+      >
+        <TextBox
+          ref={ref}
+          type={type}
+          placeholder={placeholder}
+          disabled={disabled}
+          error={error}
+          small={small}
+          {...rest}
+        />
+        <TextBoxIcon
+          iconName={iconName}
+          iconIsButton={iconIsButton}
+          iconColor={iconColor}
+          iconLabel={iconLabel}
+          onClick={onIconClick}
+          displayLoader={displayLoader}
+        />
+      </div>
+    ),
+    '<TextBoxWithIcon/> from Telia Styleguide is a deprecated component. Use <TextField/> instead'
   )
 );
 TextBoxWithIcon.displayName = 'TextBoxWithIcon';

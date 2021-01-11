@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import deprecate from 'util-deprecate';
 
 import TextBox from '../../atoms/TextBox';
 
@@ -67,4 +68,9 @@ class TextBoxWithCharCount extends React.Component {
   }
 }
 
-export default React.forwardRef((props, ref) => <TextBoxWithCharCount innerRef={ref} {...props} />);
+export default React.forwardRef(
+  deprecate(
+    (props, ref) => <TextBoxWithCharCount innerRef={ref} {...props} />,
+    '<TextBoxWithCharCount/> from Telia Styleguide is a deprecated component. Use <TextField/>  with `helpText` props instead'
+  )
+);
