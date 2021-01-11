@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { ListStyleContext, ListStyle } from './utils';
 
 export type ListItemProps = {
-  label: React.ReactNode;
+  title?: React.ReactNode;
   decorator?: React.ReactChild;
   description?: React.ReactChild;
   caption?: string | React.ReactChild;
@@ -18,7 +18,7 @@ export type ListItemProps = {
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
-  const { decorator, label, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
+  const { decorator, title, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
   const open = 'open' in props ? props.open : false;
 
   // Inherit List style from context, override with individual style from props.
@@ -31,6 +31,8 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
       onClick(e as any);
     }
   };
+
+  const hasProps = title || decorator || description || caption;
 
   return (
     <Tag
@@ -54,35 +56,41 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         tabIndex={onClick && 0}
         role={onClick && 'button'}
       >
-        <div className="telia-listItem__main">
-          {decorator && (
-            <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
-              {decorator}
+        {hasProps && (
+          <div className="telia-listItem__main">
+            {decorator && (
+              <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
+                {decorator}
+              </div>
+            )}
+            <div className="telia-listItem__content">
+              {title && (
+                <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
+                  {title}
+                </h3>
+              )}
+              {description && (
+                <div
+                  className={cn('telia-listItem__description', {
+                    'telia-listItem__description--dark': color === 'dark',
+                  })}
+                >
+                  {description}
+                </div>
+              )}
             </div>
-          )}
-          <div className="telia-listItem__content">
-            <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>{label}</h3>
-            {description && (
+            {caption && (
               <div
-                className={cn('telia-listItem__description', {
-                  'telia-listItem__description--dark': color === 'dark',
+                className={cn('telia-listItem__caption', {
+                  'telia-listItem__caption--text': typeof caption === 'string',
+                  'telia-listItem__caption--dark': color === 'dark',
                 })}
               >
-                {description}
+                {caption}
               </div>
             )}
           </div>
-          {caption && (
-            <div
-              className={cn('telia-listItem__caption', {
-                'telia-listItem__caption--text': typeof caption === 'string',
-                'telia-listItem__caption--dark': color === 'dark',
-              })}
-            >
-              {caption}
-            </div>
-          )}
-        </div>
+        )}
         {!expandable && props.children}
       </div>
       <div
