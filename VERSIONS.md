@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.36.0 
+- Breaking: renamed `label` props in business ListItem to `title`
+- Added DatePicker
+- Added PeriodPicker
+- Added Incrementer
+- Support expandable list items 
+
 ## 1.35.0 
 - Breaking: Removed SideMenuHeader component. Use SideMenuItem instead 
 - A bunch og patches and minor improvements 
