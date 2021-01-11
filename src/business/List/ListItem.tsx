@@ -3,7 +3,7 @@ import cn from 'classnames';
 import { ListStyleContext, ListStyle } from './utils';
 
 export type ListItemProps = {
-  label?: React.ReactNode;
+  title?: React.ReactNode;
   decorator?: React.ReactChild;
   description?: React.ReactChild;
   caption?: string | React.ReactChild;
@@ -18,7 +18,7 @@ export type ListItemProps = {
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
-  const { decorator, label, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
+  const { decorator, title, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
   const open = 'open' in props ? props.open : false;
 
   // Inherit List style from context, override with individual style from props.
@@ -54,7 +54,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         tabIndex={onClick && 0}
         role={onClick && 'button'}
       >
-        {label && (
+        {title && (
           <div className="telia-listItem__main">
             {decorator && (
               <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
@@ -63,7 +63,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
             )}
             <div className="telia-listItem__content">
               <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
-                {label}
+                {title}
               </h3>
               {description && (
                 <div

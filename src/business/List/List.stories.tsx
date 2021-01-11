@@ -33,20 +33,20 @@ export const Default = ({}) => {
       <List>
         <ListHeading title="Normal list heading" />
         <ListItem
-          label="ListItem"
+          title="ListItem"
           decorator={<Avatar text="LI" />}
           description="<li> element of item type"
           caption="unstyled"
         />
         <ListItem
-          label="Compact ListItem"
+          title="Compact ListItem"
           compact={true}
           decorator={<Avatar text="CLI" />}
           description="<li> element of item type"
           caption="unstyled"
         />
         <ListItem
-          label="List w/onClick"
+          title="List w/onClick"
           onClick={() => {}}
           decorator={<Avatar text="CLC" />}
           description="<li> element of item type"
@@ -54,20 +54,20 @@ export const Default = ({}) => {
         />
         <ListHeading title="Compact list heading" compact={true} />
         <ListCard
-          label="ListCard"
+          title="ListCard"
           decorator={<Avatar text="LC" />}
           description="<li> element of card type"
           caption="shadow"
         />
         <ListCard
-          label="Compact ListCard"
+          title="Compact ListCard"
           compact={true}
           decorator={<Avatar text="CLC" />}
           description="<li> element of card type"
           caption="shadow"
         />
         <ListCard
-          label="ListCard w/onClick"
+          title="ListCard w/onClick"
           onClick={setNextStyle}
           decorator={<Avatar text="CLC" />}
           description="<li> element of card type"
@@ -86,28 +86,28 @@ export const Card = ({}) => {
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card">
           <ListHeading title="List Standard" compact={true} />
-          <ListItem label="Element 1" />
-          <ListItem label="Element 2" />
-          <ListItem label="Element 3" />
-          <ListItem label="Element 4" />
-          <ListItem label="Element 5" />
+          <ListItem title="Element 1" />
+          <ListItem title="Element 2" />
+          <ListItem title="Element 3" />
+          <ListItem title="Element 4" />
+          <ListItem title="Element 5" />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card" color="medium">
           <ListHeading title="List Flat w/Icons and captions" />
-          <ListItem label="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 2" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 3" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 4" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 2" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 3" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 4" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card" border="underlined">
           <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
           <ListItem
-            label="Element 1"
+            title="Element 1"
             onClick={action('click elemt 1')}
             decorator={
               <Checkbox
@@ -121,7 +121,7 @@ export const Card = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 2"
+            title="Element 2"
             onClick={action('click elemt 2')}
             decorator={
               <Checkbox
@@ -135,7 +135,7 @@ export const Card = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 3"
+            title="Element 3"
             onClick={action('click elemt 3')}
             decorator={
               <Checkbox
@@ -149,7 +149,7 @@ export const Card = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 4"
+            title="Element 4"
             onClick={action('click elemt 4')}
             decorator={
               <Checkbox
@@ -163,7 +163,7 @@ export const Card = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 5"
+            title="Element 5"
             onClick={action('click elemt 5')}
             decorator={
               <Checkbox
@@ -181,40 +181,40 @@ export const Card = ({}) => {
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card" color="dark">
           <ListHeading title="List dark w/Individual styles" />
-          <ListItem label="Element 1" caption="caption" description="Description" />
-          <ListItem label="Element 2" caption="caption" description="Description" color="medium" />
-          <ListItem label="Element 3" caption="caption" description="Description" color="light" />
-          <ListItem label="Element 4" caption="caption" description="Description" />
-          <ListItem label="Element 5" caption="caption" description="Description" />
+          <ListItem title="Element 1" caption="caption" description="Description" />
+          <ListItem title="Element 2" caption="caption" description="Description" color="medium" />
+          <ListItem title="Element 3" caption="caption" description="Description" color="light" />
+          <ListItem title="Element 4" caption="caption" description="Description" />
+          <ListItem title="Element 5" caption="caption" description="Description" />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card">
           <ListHeading title="List with Lozenge captions" />
-          <ListItem label="Element 1" caption={<Lozenge label="Element 1" />} />
-          <ListItem label="Element 2" caption={<Lozenge label="Element 2" />} />
-          <ListItem label="Element 3" caption={<Lozenge label="Element 3" status="positive" />} />
-          <ListItem label="Element 4" caption={<Lozenge label="Element 4" />} />
-          <ListItem label="Element 5" caption={<Lozenge label="Element 5" status="negative" />} />
+          <ListItem title="Element 1" caption={<Lozenge label="Element 1" />} />
+          <ListItem title="Element 2" caption={<Lozenge label="Element 2" />} />
+          <ListItem title="Element 3" caption={<Lozenge label="Element 3" status="positive" />} />
+          <ListItem title="Element 4" caption={<Lozenge label="Element 4" />} />
+          <ListItem title="Element 5" caption={<Lozenge label="Element 5" status="negative" />} />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card">
           <ListHeading title="List with decorators and captions" />
-          <ListItem label="Element 1" decorator={<Avatar icon="abroad" />} caption={<Lozenge label="Element 1" />} />
+          <ListItem title="Element 1" decorator={<Avatar icon="abroad" />} caption={<Lozenge label="Element 1" />} />
           <ListItem
-            label="Element 2"
+            title="Element 2"
             decorator={<Avatar icon="check-mark" />}
             caption={<Lozenge label="Element 2" status="positive" />}
           />
           <ListItem
-            label="Element 3"
+            title="Element 3"
             decorator={<Avatar icon="abroad" />}
             caption={<Lozenge label="Element 3" status="positive" />}
           />
-          <ListItem label="Element 4" decorator={<Lozenge label="Element 4" />} caption={<Avatar icon="alarm" />} />
+          <ListItem title="Element 4" decorator={<Lozenge label="Element 4" />} caption={<Avatar icon="alarm" />} />
           <ListItem
-            label="Element 5"
+            title="Element 5"
             decorator={<Lozenge label="Element 5" status="positive" />}
             caption={<Avatar icon="alarm" />}
           />
@@ -231,28 +231,28 @@ export const Item = ({}) => {
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List>
           <ListHeading title="List Standard" />
-          <ListItem label="Element 1" />
-          <ListItem label="Element 2" />
-          <ListItem label="Element 3" />
-          <ListItem label="Element 4" />
-          <ListItem label="Element 5" />
+          <ListItem title="Element 1" />
+          <ListItem title="Element 2" />
+          <ListItem title="Element 3" />
+          <ListItem title="Element 4" />
+          <ListItem title="Element 5" />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List color="medium">
           <ListHeading title="List Flat w/Icons and captions" />
-          <ListItem label="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 2" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 3" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 4" decorator={<Avatar icon="business" />} caption="caption" />
-          <ListItem label="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 1" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 2" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 3" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 4" decorator={<Avatar icon="business" />} caption="caption" />
+          <ListItem title="Element 5" decorator={<Avatar icon="business" />} caption="caption" />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List border="underlined">
           <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
           <ListItem
-            label="Element 1"
+            title="Element 1"
             onClick={action('click element 1')}
             decorator={
               <Checkbox
@@ -266,7 +266,7 @@ export const Item = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 2"
+            title="Element 2"
             onClick={action('click element 2')}
             decorator={
               <Checkbox
@@ -280,7 +280,7 @@ export const Item = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 3"
+            title="Element 3"
             onClick={action('click element 3')}
             decorator={
               <Checkbox
@@ -294,7 +294,7 @@ export const Item = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 4"
+            title="Element 4"
             onClick={action('click element 4')}
             decorator={
               <Checkbox
@@ -308,7 +308,7 @@ export const Item = ({}) => {
             description="Description"
           />
           <ListItem
-            label="Element 5"
+            title="Element 5"
             onClick={action('click element 5')}
             decorator={
               <Checkbox
@@ -326,11 +326,11 @@ export const Item = ({}) => {
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List color="dark">
           <ListHeading title="List dark w/Individual styles" />
-          <ListItem label="Element 1" caption="caption" description="Description" />
-          <ListItem label="Element 2" caption="caption" description="Description" color="medium" />
-          <ListItem label="Element 3" caption="caption" description="Description" color="light" />
-          <ListItem label="Element 4" caption="caption" description="Description" />
-          <ListItem label="Element 5" caption="caption" description="Description" />
+          <ListItem title="Element 1" caption="caption" description="Description" />
+          <ListItem title="Element 2" caption="caption" description="Description" color="medium" />
+          <ListItem title="Element 3" caption="caption" description="Description" color="light" />
+          <ListItem title="Element 4" caption="caption" description="Description" />
+          <ListItem title="Element 5" caption="caption" description="Description" />
         </List>
       </div>
     </div>
@@ -357,9 +357,9 @@ export const Skeleton = ({}) => {
                 </>
               ) : (
                 <>
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
                 </>
               )}
             </List>
@@ -376,9 +376,9 @@ export const Skeleton = ({}) => {
                 </>
               ) : (
                 <>
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
                 </>
               )}
             </List>
@@ -395,9 +395,9 @@ export const Skeleton = ({}) => {
                 </>
               ) : (
                 <>
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
                 </>
               )}
             </List>
@@ -417,9 +417,9 @@ export const Skeleton = ({}) => {
                 </>
               ) : (
                 <>
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
                 </>
               )}
             </List>
@@ -436,9 +436,9 @@ export const Skeleton = ({}) => {
                 </>
               ) : (
                 <>
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
                 </>
               )}
             </List>
@@ -455,9 +455,9 @@ export const Skeleton = ({}) => {
                 </>
               ) : (
                 <>
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
-                  <ListItem decorator={<Avatar icon="mobile" />} label="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
+                  <ListItem decorator={<Avatar icon="mobile" />} title="Element 1" description="Description" />
                 </>
               )}
             </List>
@@ -481,19 +481,19 @@ export const Skeleton = ({}) => {
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                 </>
@@ -515,19 +515,19 @@ export const Skeleton = ({}) => {
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                 </>
@@ -549,19 +549,19 @@ export const Skeleton = ({}) => {
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                 </>
@@ -586,19 +586,19 @@ export const Skeleton = ({}) => {
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                 </>
@@ -620,19 +620,19 @@ export const Skeleton = ({}) => {
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                 </>
@@ -654,19 +654,19 @@ export const Skeleton = ({}) => {
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                   <ListItem
                     compact={true}
                     decorator={<Avatar icon="mobile" />}
-                    label="Element 1"
+                    title="Element 1"
                     description="Description"
                   />
                 </>
@@ -689,17 +689,17 @@ export const Skeleton = ({}) => {
               <ListItem
                 caption={<Lozenge status="positive" label="lozenge" />}
                 decorator={<Avatar icon="mobile" />}
-                label="Element 1"
+                title="Element 1"
               />
               <ListItem
                 caption={<Lozenge status="positive" label="lozenge" />}
                 decorator={<Avatar icon="mobile" />}
-                label="Element 1"
+                title="Element 1"
               />
               <ListItem
                 caption={<Lozenge status="positive" label="lozenge" />}
                 decorator={<Avatar icon="mobile" />}
-                label="Element 1"
+                title="Element 1"
               />
             </>
           )}
@@ -715,20 +715,20 @@ export const WithChildren = ({}) => {
       <List>
         <ListHeading title="Normal list heading" />
         <ListItem
-          label="ListItem"
+          title="ListItem"
           decorator={<Avatar text="LI" />}
           description="<li> element of item type"
           caption="unstyled"
         >
           <ListItem
-            label="I am a child. A list item"
+            title="I am a child. A list item"
             description="Dont worry. I am a div, not an li"
             compact={true}
             tag="div"
           />
         </ListItem>
         <ListCard
-          label="Compact ListCard"
+          title="Compact ListCard"
           compact={true}
           decorator={<Avatar text="CLC" />}
           description="<li> element of card type"
@@ -743,7 +743,7 @@ export const WithChildren = ({}) => {
           }}
         >
           <ListItem
-            label="I am a child. A list item. Inside another list item with no properties"
+            title="I am a child. A list item. Inside another list item with no properties"
             description="Dont worry. I am a div, not an li"
             compact={true}
             tag="div"
@@ -751,7 +751,7 @@ export const WithChildren = ({}) => {
         </ListItem>
 
         <ListCard
-          label="Compact ListCard"
+          title="Compact ListCard"
           compact={true}
           decorator={<Avatar text="CLC" />}
           description="<li> element of card type"
@@ -792,7 +792,7 @@ export const Expandable = ({}) => {
       <List>
         <ListHeading title="Expandable list items heading" />
         <ListItem
-          label="ListItem"
+          title="ListItem"
           decorator={<Avatar text="LI" />}
           description="<li> element of item type"
           caption="unstyled"
@@ -801,7 +801,7 @@ export const Expandable = ({}) => {
           expandable
         >
           <ListItem
-            label="I am a child. A list item"
+            title="I am a child. A list item"
             description="Dont worry. I am a div, not an li"
             compact={true}
             tag="div"
@@ -809,7 +809,7 @@ export const Expandable = ({}) => {
         </ListItem>
 
         <ListItem
-          label="Expandable ListItem dark"
+          title="Expandable ListItem dark"
           color="dark"
           border="shadow"
           decorator={<Avatar text="LI" color="grey100" />}
@@ -823,7 +823,7 @@ export const Expandable = ({}) => {
         </ListItem>
 
         <ListCard
-          label="Expandable ListCard"
+          title="Expandable ListCard"
           decorator={<Avatar text="CLC" />}
           description="<li> element of card type"
           caption="shadow"
@@ -835,7 +835,7 @@ export const Expandable = ({}) => {
         </ListCard>
 
         <ListCard
-          label="Expandable ListCard - compact"
+          title="Expandable ListCard - compact"
           compact={true}
           color="dark"
           decorator={<Avatar color="grey100" text="CLC" />}
