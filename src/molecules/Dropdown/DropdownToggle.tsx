@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import cs from 'classnames';
-import { TextField, TextFieldProps } from '../../business/TextField/TextField';
+import { TextField, TextFieldProps } from '../TextField/TextField';
 
 export type Color = 'purple' | 'default' | 'white';
 type DropdownToggleProps = {

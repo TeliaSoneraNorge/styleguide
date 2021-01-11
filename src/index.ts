@@ -105,6 +105,7 @@ export { default as SubscriptionAccordion } from './molecules/SubscriptionAccord
 export { default as SubscriptionLinesAccordion } from './molecules/SubscriptionLinesAccordion';
 export { default as ChartLegend } from './molecules/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel';
+export { TextField } from './molecules/TextField';
 export { default as TextBoxWithIcon } from './molecules/TextBoxWithIcon';
 export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel';
 export { default as TextBoxWithCharCount } from './molecules/TextBoxWithCharCount';
