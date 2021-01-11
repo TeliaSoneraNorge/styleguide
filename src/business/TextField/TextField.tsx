@@ -54,7 +54,7 @@ export interface TextFieldProps {
   leftContent?: React.ReactNode;
 
   /**
-   * 'compact' displays the lable _in_ the border when input is active
+   * 'compact' displays the label _in_ the border when input is active
    */
   size?: 'default' | 'compact';
 
@@ -76,7 +76,7 @@ export interface TextFieldProps {
   value?: string;
 
   /**
-   * Accessilbility props
+   * Accessibility props
    */
   'aria-label'?: string;
   'aria-activedescendant'?: string;
@@ -94,7 +94,7 @@ export interface TextFieldProps {
   onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 
   /**
-   * For compact TextFields vi use the lable as a placeholder
+   * For compact TextFields vi use the label as a placeholder
    */
   placeholder?: string;
   autoComplete?: string;
@@ -110,19 +110,19 @@ export const TextField = (props: TextFieldProps) => {
   const inputHasValue = (props.value && props.value.length) || (inputRef.current && inputRef.current.value.length);
 
   /**
-   * To support the compact TextField we need to position the lable within the input,
+   * To support the compact TextField we need to position the label within the input,
    * and move to the borde when input is active.
    * To position it correctly we need to find the width of the items in front of the input
    * an apply the appropriate offset.
    */
-  const [compactLableLeftOffset, setCompactLableLeftOffset] = useState<number | undefined>(undefined);
+  const [compactLabelLeftOffset, setCompactLabelLeftOffset] = useState<number | undefined>(undefined);
   const leftContentRef = useRef<HTMLDivElement>(null);
-  useEffect(() => setCompactLableLeftOffset(leftContentRef.current ? leftContentRef.current.clientWidth : undefined), [
+  useEffect(() => setCompactLabelLeftOffset(leftContentRef.current ? leftContentRef.current.clientWidth : undefined), [
     leftContentRef.current,
   ]);
-  const lableStyle =
-    props.size === 'compact' && !(focus || inputHasValue) && compactLableLeftOffset
-      ? { left: `calc(${compactLableLeftOffset}px + 0.75rem)` }
+  const labelStyle =
+    props.size === 'compact' && !(focus || inputHasValue) && compactLabelLeftOffset
+      ? { left: `calc(${compactLabelLeftOffset}px + 0.75rem)` }
       : undefined;
 
   return (
@@ -151,7 +151,7 @@ export const TextField = (props: TextFieldProps) => {
     >
       <div>
         {props.label ? (
-          <label style={lableStyle} className={cn('telia-textfield-label')} id={inputLabelId}>
+          <label style={labelStyle} className={cn('telia-textfield-label')} id={inputLabelId}>
             {props.label}
           </label>
         ) : null}
