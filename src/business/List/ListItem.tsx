@@ -32,6 +32,8 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
     }
   };
 
+  const hasProps = title || decorator || description || caption;
+
   return (
     <Tag
       className={cn('telia-listItem', {
@@ -54,7 +56,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         tabIndex={onClick && 0}
         role={onClick && 'button'}
       >
-        {title && (
+        {hasProps && (
           <div className="telia-listItem__main">
             {decorator && (
               <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
@@ -62,9 +64,11 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
               </div>
             )}
             <div className="telia-listItem__content">
-              <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
-                {title}
-              </h3>
+              {title && (
+                <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
+                  {title}
+                </h3>
+              )}
               {description && (
                 <div
                   className={cn('telia-listItem__description', {

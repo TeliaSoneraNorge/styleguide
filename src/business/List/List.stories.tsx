@@ -333,6 +333,15 @@ export const Item = ({}) => {
           <ListItem title="Element 5" caption="caption" description="Description" />
         </List>
       </div>
+      <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+        <List>
+          <ListHeading title="List with only one property" />
+          <ListItem title="Title" />
+          <ListItem decorator="decorator" />
+          <ListItem caption="caption" />
+          <ListItem description="description" />
+        </List>
+      </div>
     </div>
   );
 };
