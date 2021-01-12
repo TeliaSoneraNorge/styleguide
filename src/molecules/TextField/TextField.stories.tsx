@@ -7,7 +7,7 @@ import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: TextField,
-  title: 'Business/TextField',
+  title: 'Component library/Molecules/TextField',
   decorators: [withDesign],
 };
 
