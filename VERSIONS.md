@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.37.0 
+- Breaking: moved TextField from business to molecules. 
+To fix in your app replace `import {TextField} from '@telia/styleguide/business'` 
+with the usual `import {TextField} from '@telia/styleguide'`
+- Deprecated old TextBox components 
+
+
 ## 1.36.0 
 - Breaking: renamed `label` props in business ListItem to `title`
 - Added DatePicker
