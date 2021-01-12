@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import deprecate from 'util-deprecate';
 
 import Label from '../../atoms/Label';
 import TextBox from '../../atoms/TextBox';
@@ -11,67 +12,70 @@ import TextBoxWithIcon from '../TextBoxWithIcon/TextBoxWithIcon';
  * Category: FormElements
  **/
 const TextBoxWithLabel = React.forwardRef(
-  (
-    {
-      labelText,
-      type,
-      placeholder,
-      hideLabel,
-      errorMessage,
-      disabled,
-      withIcon,
-      iconName,
-      iconColor,
-      iconIsButton,
-      iconLabel,
-      ...rest
-    },
-    ref
-  ) => (
-    <Label
-      className={classnames('textbox-with-label', {
-        'textbox-with-label--with-error': errorMessage,
-      })}
-      isUsingGrayText={true}
-    >
-      <span
-        className={classnames('textbox-with-label__label-text', {
-          'sr-only': hideLabel,
+  deprecate(
+    (
+      {
+        labelText,
+        type,
+        placeholder,
+        hideLabel,
+        errorMessage,
+        disabled,
+        withIcon,
+        iconName,
+        iconColor,
+        iconIsButton,
+        iconLabel,
+        ...rest
+      },
+      ref
+    ) => (
+      <Label
+        className={classnames('textbox-with-label', {
+          'textbox-with-label--with-error': errorMessage,
         })}
+        isUsingGrayText={true}
       >
-        {labelText}
-      </span>
-      {withIcon ? (
-        <TextBoxWithIcon
-          ref={ref}
-          type={type}
-          placeholder={placeholder}
-          disabled={disabled}
-          error={!!errorMessage}
-          iconName={iconName}
-          iconColor={iconColor}
-          iconIsButton={iconIsButton}
-          iconLabel={iconLabel}
-          aria-invalid={!!errorMessage}
-          {...rest}
-        />
-      ) : (
-        <TextBox
-          ref={ref}
-          type={type}
-          placeholder={placeholder}
-          disabled={disabled}
-          error={!!errorMessage}
-          aria-invalid={!!errorMessage}
-          {...rest}
-        />
-      )}
-      {errorMessage && (
-        <p role="alert" className="input-error" aria-live="polite">
-          {errorMessage}
-        </p>
-      )}
-    </Label>
+        <span
+          className={classnames('textbox-with-label__label-text', {
+            'sr-only': hideLabel,
+          })}
+        >
+          {labelText}
+        </span>
+        {withIcon ? (
+          <TextBoxWithIcon
+            ref={ref}
+            type={type}
+            placeholder={placeholder}
+            disabled={disabled}
+            error={!!errorMessage}
+            iconName={iconName}
+            iconColor={iconColor}
+            iconIsButton={iconIsButton}
+            iconLabel={iconLabel}
+            aria-invalid={!!errorMessage}
+            {...rest}
+          />
+        ) : (
+          <TextBox
+            ref={ref}
+            type={type}
+            placeholder={placeholder}
+            disabled={disabled}
+            error={!!errorMessage}
+            aria-invalid={!!errorMessage}
+            {...rest}
+          />
+        )}
+        {errorMessage && (
+          <p role="alert" className="input-error" aria-live="polite">
+            {errorMessage}
+          </p>
+        )}
+      </Label>
+    ),
+    '<TextBoxWithLabel/> from Telia Styleguide is a deprecated component. Use <TextField/> instead'
   )
 );
 TextBoxWithLabel.displayName = 'TextBoxWithLabel';

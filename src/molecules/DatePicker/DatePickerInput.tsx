@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField } from '../../business/TextField';
+import { TextField } from '../TextField';
 import { useDatePicker } from './context';
 
 export type Props = {

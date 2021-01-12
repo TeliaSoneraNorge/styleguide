@@ -1,27 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
+import deprecate from 'util-deprecate';
 
-/**
- * Status: *Deprecated*, use TextBoxWithLabel. To hide the label, set hideLabel to hide the label.
- * Category: FormElements
- *
- * Be sure to set the correct type when using this component as it helps the user to give correct input.
- **/
-const TextBox = React.forwardRef(({ className, type, placeholder, disabled, error, small, ...rest }, ref) => (
-  <input
-    ref={ref}
-    className={classnames('textbox', {
-      [className]: className,
-      ['textbox--with-error']: error,
-      ['textbox--small']: small,
-    })}
-    type={type}
-    placeholder={placeholder}
-    disabled={disabled}
-    {...rest}
-  />
-));
+const TextBox = React.forwardRef(
+  deprecate(
+    ({ className, type, placeholder, disabled, error, small, ...rest }, ref) => (
+      <input
+        ref={ref}
+        className={classnames('textbox', {
+          [className]: className,
+          ['textbox--with-error']: error,
+          ['textbox--small']: small,
+        })}
+        type={type}
+        placeholder={placeholder}
+        disabled={disabled}
+        {...rest}
+      />
+    ),
+    '<TextBox/> from Telia Styleguide is a deprecated component. Use <TextField/> instead'
+  )
+);
+
 TextBox.displayName = 'TextBox';
 
 TextBox.defaultProps = {
