@@ -8,6 +8,10 @@ type Props = {
   size?: 'compact' | 'default';
   max?: number;
   min?: number;
+  /**
+   * For the input field
+   */
+  name?: string;
 };
 
 export const Incrementer = (props: Props) => {
@@ -39,6 +43,7 @@ export const Incrementer = (props: Props) => {
       <input
         className="telia-incrementer--value"
         type="number"
+        name={props.name}
         min={props.min}
         max={props.max}
         value={props.value}
