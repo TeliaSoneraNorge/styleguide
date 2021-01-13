@@ -42,6 +42,7 @@ type ButtonProps = {
    * Eg pass `_blank` to open link in a new tab
    */
   target?: string;
+  type?: 'button' | 'reset' | 'submit';
   className?: string;
 };
 
@@ -56,6 +57,8 @@ export const Button = (props: ButtonProps) => {
     disabled = false,
     active = false,
     size = 'default',
+    target,
+    type = 'button',
     className,
   } = props;
   const Tag = href ? 'a' : 'button';
@@ -85,9 +88,9 @@ export const Button = (props: ButtonProps) => {
       )}
       href={href}
       onClick={handleClick}
-      disabled={props.disabled}
-      type="button"
-      target={props.href ? props.target : undefined}
+      disabled={disabled}
+      type={type}
+      target={href ? target : undefined}
     >
       {icon && <Icon icon={icon} className="telia-button-icon" />}
       {label}
