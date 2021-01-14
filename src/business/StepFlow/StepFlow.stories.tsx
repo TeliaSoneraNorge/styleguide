@@ -124,3 +124,43 @@ export const WithCustomHeaderContent = () => {
     </div>
   );
 };
+
+export const SingleStep = () => {
+  const [name, setName] = useState('');
+
+  const step1Valid = !!name.length;
+  return (
+    <div>
+      <StepFlow
+        title="Step flow"
+        description="Commonly used for large forms and orders"
+        onSubmit={action('Submit')}
+        onCancel={action('Cancel')}
+      >
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={step1Valid}>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+          <div style={{ paddingBottom: '1rem' }}>
+            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          </div>
+        </StepFlowStep>
+      </StepFlow>
+    </div>
+  );
+};
