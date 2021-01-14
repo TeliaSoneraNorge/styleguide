@@ -73,22 +73,24 @@ export const StepFlow = <T,>(props: Props<T>) => {
 
       <div className="telia-step-flow__main">
         {breakpointSm && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
-        <div className="telia-step-flow__main-form">{form}</div>
-      </div>
+        <div className="telia-step-flow__main-form">
+          {form}
 
-      <StepFlowFooter
-        isLastStep={isLastStep}
-        labels={props.labels}
-        nextStep={isLastStep ? props.onSubmit : () => setStep(step + 1)}
-        nextDisabled={!isValid}
-        singleStep={singleStep}
-        {...(!singleStep
-          ? {
-              previousStep: () => setStep(step - 1),
-              previousDisabled: step === 0,
-            }
-          : {})}
-      />
+          <StepFlowFooter
+            isLastStep={isLastStep}
+            labels={props.labels}
+            nextStep={isLastStep ? props.onSubmit : () => setStep(step + 1)}
+            nextDisabled={!isValid}
+            singleStep={singleStep}
+            {...(!singleStep
+              ? {
+                  previousStep: () => setStep(step - 1),
+                  previousDisabled: step === 0,
+                }
+              : {})}
+          />
+        </div>
+      </div>
     </div>
   );
 };
