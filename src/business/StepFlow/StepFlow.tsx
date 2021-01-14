@@ -45,8 +45,7 @@ export const StepFlow = (props: Props) => {
   const [form, setForm] = useState<React.ReactElement | null>(isValidElement(initialStep) ? initialStep : null);
   const [isValid, setIsValid] = useState(isValidElement(initialStep) ? initialStep.props.isValid : false);
 
-  const numSteps = children.length;
-  const isLastStep = step === numSteps - 1;
+  const isLastStep = step === children.length - 1;
 
   // Change form when step or forms are updated
   useEffect(() => {
