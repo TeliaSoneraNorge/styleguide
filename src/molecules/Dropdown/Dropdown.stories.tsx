@@ -9,9 +9,10 @@ import {
   DropdownMenu,
   Color,
 } from './index';
-import { Checkbox, Button } from '../../business';
+import { Button } from '../../business';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
+import { Checkbox } from '../../atoms/Checkbox';
 
 type checkedState = {
   item1: boolean;

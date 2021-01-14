@@ -6,6 +6,12 @@ import deprecate from 'util-deprecate';
 import Label from '../../atoms/Label/Label';
 
 /**
+ *
+ * THIS COMPONENT IS DEPRECATED. USE <Checkbox/> INSTEAD
+ *
+ */
+
+/**
  * Status: *in progress*.
  * Category: FormElements
  *
