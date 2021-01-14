@@ -1,6 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
+import deprecate from 'util-deprecate';
+
+/**
+ *
+ * THIS COMPONENT IS DEPRECATED. USE <Checkbox/> INSTEAD
+ *
+ */
 
 /**
  * Status: *in progress*.
@@ -51,4 +58,7 @@ ToggleButton.propTypes = {
   toggleOnLeftSide: PropTypes.bool,
 };
 
-export default ToggleButton;
+export default deprecate(
+  ToggleButton,
+  '<ToggleButton/> from Telia Styleguide is a deprecated component. Use <Toggle/> instead'
+);
