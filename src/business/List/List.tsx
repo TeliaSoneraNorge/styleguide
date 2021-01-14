@@ -7,7 +7,7 @@ type ListItemElement = React.ReactElement<ListItemProps>;
 
 type Props = ListStyle & {
   className?: string;
-  children?: ListItemElement | Array<ListItemElement>;
+  children?: ListItemElement | Array<ListItemElement> | null;
 };
 
 export const List = ({ children, className, ...styleProps }: Props) => (
