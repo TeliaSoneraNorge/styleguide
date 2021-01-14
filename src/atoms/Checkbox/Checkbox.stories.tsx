@@ -5,7 +5,7 @@ import { text, boolean } from '@storybook/addon-knobs';
 
 export default {
   component: Checkbox,
-  title: 'Business/Checkbox',
+  title: 'Component library/Atoms/Checkbox',
 };
 
 export const Default = ({}) => {
