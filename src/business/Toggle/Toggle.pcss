@@ -1,4 +1,4 @@
-.Business-Toggle {
+.telia-toggle {
   width: 2.75rem;
   height: 1.5rem;
   border-radius: 0.75rem;
@@ -20,7 +20,7 @@
 
   &:active {
     background-color: var(--grey-500);
-    .Business-Toggle-thumb {
+    .telia-toggle-thumb {
       width: 1rem;
       height: 1rem;
       top: 0.25rem;
@@ -65,7 +65,7 @@
 
   &.checked {
     background-color: var(--core-purple);
-    .Business-Toggle-thumb {
+    .telia-toggle-thumb {
       right: 0;
     }
 
@@ -80,14 +80,14 @@
 
     &:active {
       background-color: var(--core-purple-700);
-      .Business-Toggle-thumb {
+      .telia-toggle-thumb {
         width: 1rem;
         height: 1rem;
         top: 0.25rem;
         right: 0.15rem;
         transition: all 100ms ease-in;
       }
-      .Business-Toggle-thumb-indicator {
+      .telia-toggle-thumb-indicator {
         top: 0.25rem;
       }
     }
@@ -95,20 +95,20 @@
   &.disabled {
     pointer-events: none;
     background-color: var(--light-grey);
-    .Business-Toggle-thumb {
+    .telia-toggle-thumb {
       background-color: #ebebeb;
     }
   }
   &.disabled.checked {
     pointer-events: none;
     background-color: rgba(153, 10, 227, 0.5);
-    .Business-Toggle-thumb {
+    .telia-toggle-thumb {
       background-color: var(--white);
     }
   }
 }
 
-.Business-Toggle-screenreader-only {
+.telia-toggle-screenreader-only {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
