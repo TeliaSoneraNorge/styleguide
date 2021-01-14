@@ -3,7 +3,7 @@ import cs from 'classnames';
 import _ from 'lodash';
 
 import { Icon } from '../../atoms/Icon';
-import { Checkbox } from '../Checkbox';
+import { Checkbox } from '../../atoms/Checkbox';
 import { Button } from '../Button';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from '../../molecules/Dropdown';
 

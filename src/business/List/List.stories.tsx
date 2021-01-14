@@ -8,7 +8,7 @@ import { ListHeading } from './ListHeading';
 import { ListItemColor } from './utils';
 import { Avatar } from '../../molecules/Avatar';
 import { Lozenge } from '../../molecules/Lozenge';
-import { Checkbox } from '../Checkbox';
+import { Checkbox } from '../../atoms/Checkbox';
 import { useState } from '@storybook/addons';
 
 export default {

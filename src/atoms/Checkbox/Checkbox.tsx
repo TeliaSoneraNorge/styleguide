@@ -1,7 +1,7 @@
 import React from 'react';
 import cs from 'classnames';
 
-import { Icon } from '../../atoms/Icon';
+import { Icon } from '../Icon';
 
 type CheckboxProps = {
   label: string;
