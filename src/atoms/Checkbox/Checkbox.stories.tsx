@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Checkbox } from './Checkbox';
 
 import { text, boolean } from '@storybook/addon-knobs';
@@ -9,47 +9,44 @@ export default {
 };
 
 export const Default = ({}) => {
+  const [checked, setChecked] = useState(false);
+  const [checked2, setChecked2] = useState(false);
   return (
     <div>
-      <div>
-        With knobs:
-        <br />
-        <Checkbox
-          checked={boolean('checked', true, 'Standard')}
-          label={text('label', 'Checkbox', 'Standard')}
-          hiddenLabel={boolean('hiddenLabel', false, 'Standard')}
-          onChange={() => undefined}
-          disabled={boolean('disabled', false, 'Standard')}
-          partial={boolean('partial', false, 'Partial/mixed states')}
-          id={text('id', '', 'Partial/mixed states')}
-          controls={text('controls', 'id1 id2 id3', 'Partial/mixed states')}
-          className={text('className', '', 'Standard')}
-        />
-      </div>
+      <h3>With state</h3>
+
+      <Checkbox
+        className="my-class"
+        name="my-checkbox"
+        label="Checkbox"
+        checked={checked}
+        onChange={(e) => setChecked(e?.target.checked ?? false)}
+        controls="aria-controls"
+      />
+
       <br />
-      <div>
-        Examples:
-        <br />
-        <Checkbox checked={false} label={'Unchecked'} onChange={() => undefined} />
-        <br />
-        <Checkbox checked={false} partial={true} label={'Partial'} onChange={() => undefined} />
-        <br />
-        <Checkbox checked={true} label={'Checked'} onChange={() => undefined} />
-        <br />
-        <Checkbox checked={false} disabled={true} label={'Disabled'} onChange={() => undefined} />
-        <br />
-        <Checkbox
-          checked={false}
-          partial={true}
-          disabled={true}
-          label={'Disabled partial'}
-          onChange={() => undefined}
-        />
-        <br />
-        <Checkbox checked={true} disabled={true} label={'Disabled checked'} onChange={() => undefined} />
-        <br />
-        (Hidden label) <Checkbox checked={false} label={'Hidden label'} onChange={() => undefined} hiddenLabel={true} />
-      </div>
+      <br />
+      <div>(Hidden label)</div>
+      <Checkbox
+        checked={checked2}
+        label={'Hidden label'}
+        onChange={(e) => setChecked2(e?.target.checked ?? false)}
+        hiddenLabel={true}
+      />
+
+      <br />
+      <h3>Variants</h3>
+
+      <Checkbox checked={false} partial={true} label={'Partial'} onChange={() => undefined} />
+      <br />
+      <Checkbox checked={true} label={'Checked'} onChange={() => undefined} />
+      <br />
+      <Checkbox checked={false} disabled={true} label={'Disabled'} onChange={() => undefined} />
+      <br />
+      <Checkbox checked={false} partial={true} disabled={true} label={'Disabled partial'} onChange={() => undefined} />
+      <br />
+      <Checkbox checked={true} disabled={true} label={'Disabled checked'} onChange={() => undefined} />
+      <br />
     </div>
   );
 };
