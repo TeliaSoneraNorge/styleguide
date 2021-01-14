@@ -39,27 +39,20 @@ export const StepFlow = (props: Props) => {
   const breakpointSm = useBreakpoint('sm');
 
   const singleStep = React.Children.count(props.children) === 1;
+  const children = React.Children.toArray(props.children);
+  const initialStep = children[step];
 
-  const [form, setForm] = useState<React.ReactElement>(
-    singleStep && isValidElement(props.children) // we need these checks since children can be both a single node and several nodes
-      ? props.children.props.isValid
-      : props.children?.[step].props.isValid
-  );
-  const [isValid, setIsValid] = useState(
-    singleStep && React.isValidElement(props.children)
-      ? props.children.props.isValid
-      : props.children?.[step].props.isValid
-  );
+  const [form, setForm] = useState<React.ReactElement | null>(isValidElement(initialStep) ? initialStep : null);
+  const [isValid, setIsValid] = useState(isValidElement(initialStep) ? initialStep.props.isValid : false);
 
   const numSteps = React.Children.count(props.children);
   const isLastStep = step === numSteps - 1;
 
   // Change form when step or forms are updated
   useEffect(() => {
-    setForm(singleStep && isValidElement(props.children) ? props.children : props.children?.[step]);
-    setIsValid(
-      singleStep && isValidElement(props.children) ? props.children.props.isValid : props.children?.[step].props.isValid
-    );
+    const newStep = children[step];
+    setForm(isValidElement(newStep) ? newStep : null);
+    setIsValid(isValidElement(newStep) ? newStep.props.isValid : false);
   }, [step, props.children]);
 
   return (
