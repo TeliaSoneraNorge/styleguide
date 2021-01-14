@@ -1,0 +1,112 @@
+.telia-step-flow {
+  position: absolute;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  &__header {
+    border-bottom: 1px solid var(--grey-200);
+    width: 100%;
+    position: relative;
+    padding-bottom: 2rem;
+
+    h1 {
+      margin: 0.25rem 0;
+    }
+
+    &-top {
+      position: fixed;
+      display: flex;
+      align-items: center;
+      height: 60px;
+      left: 0;
+      right: 0;
+
+      padding: 0 10%;
+      margin: 0 auto;
+      background-color: white;
+      transition: all 300ms ease;
+      &--stuck {
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+      }
+    }
+    &-content {
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 80px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__step {
+    display: flex;
+    flex-direction: column;
+    &-header {
+      padding-bottom: 2.5rem;
+      h2 {
+        margin: 0.5rem 0;
+      }
+      &-description {
+        color: var(--grey-700);
+        font-weight: 400;
+      }
+    }
+  }
+  &__main {
+    display: flex;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    width: 80%;
+    margin: 0 auto;
+    &-form {
+      width: 80%;
+      margin: auto;
+    }
+  }
+  &__menu {
+    width: 20%;
+    &-item {
+      whitespace: nowrap;
+      cursor: pointer;
+      padding-left: 1rem;
+
+      transition: all 300ms ease-in-out;
+      border-left: 2px solid var(--grey-200);
+      &:hover {
+        color: var(--core-purple-500);
+      }
+      &--active {
+        border-color: var(--core-purple-500);
+        color: var(--core-purple-500);
+      }
+      &--disabled {
+        color: var(--grey-400);
+        pointer-events: none;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 1rem 0;
+  }
+}
+
+.telia-step-flow__menu + .telia-step-flow__main-form {
+  width: 60%;
+  margin: 0;
+}
+@media only screen and (max-width: 600px) {
+  .telia-step-flow__header {
+    &-content {
+      padding-top: 60px;
+      text-align: center;
+    }
+  }
+}
