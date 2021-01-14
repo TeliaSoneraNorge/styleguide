@@ -65,13 +65,14 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
       >
         <Icon
           icon="check-mark"
-          className={cs({ checkbox__icon: true, 'telia-checkbox__icon--visible': 'checked' in props && props.checked })}
+          className={cs('telia-checkbox__icon', {
+            'telia-checkbox__icon--visible': 'checked' in props && props.checked,
+          })}
           style={{ width: '1rem', height: '1rem' }}
         />
         <Icon
           icon="minus"
-          className={cs({
-            checkbox__icon: true,
+          className={cs('telia-checkbox__icon', {
             'telia-checkbox__icon--visible':
               'checked' in props && !props.checked && 'partial' in props && props.partial,
           })}
