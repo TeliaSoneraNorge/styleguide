@@ -8,7 +8,8 @@ type Props = {
   title: string;
   description: string;
   onCancel: () => void;
-  rightContent?: React.ReactNode;
+  rightContent?: (stuck: boolean) => React.ReactNode;
+
   labels?: HeaderLabels;
 };
 
@@ -42,18 +43,18 @@ export const StepFlowHeader = (props: Props) => {
           onClick={props.onCancel}
         />
         {stickyHeader && (
-          <div className="flex w-full ml-4 justify-between items-center">
+          <div className="telia-step-flow__header-top--stuck-content">
             <div className="self-center font-medium">{props.title}</div>
-            {props.rightContent}
+            {props.rightContent?.(stickyHeader)}
           </div>
         )}
       </div>
-      <div className="telia-step-flow__header-content mt-14 px-6 pb-8 pt-2 md:px-12 md:py-8 md:pt-2 lg:px-52 lg:py-14 items-center justify-center lg:justify-between">
-        <div className="lg:pb-0 items-center lg:items-start">
+      <div className="telia-step-flow__header-content">
+        <div>
           <h1 ref={headerRef}>{props.title}</h1>
-          <div className="text-grey700 text-center lg:text-left">{props.description}</div>
+          <div>{props.description}</div>
         </div>
-        <div className="flex w-full lg:w-auto justify-center">{props.rightContent}</div>
+        {props.rightContent?.(stickyHeader)}
       </div>
     </div>
   );

@@ -26,9 +26,10 @@ type Props<T> = {
    */
   children: React.ReactNode;
   /**
-   * Displayed to the right in the StepFlowHeader
+   * Displayed in the StepFlowHeader.
+   * Should only be  used for a small component or some additional text
    */
-  headerContent?: React.ReactNode;
+  headerContent?: (stuck: boolean) => React.ReactNode;
 
   labels?: Labels;
 };
