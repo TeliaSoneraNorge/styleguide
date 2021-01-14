@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import classnames from 'classnames';
+import deprecate from 'util-deprecate';
 
 import Label from '../../atoms/Label/Label';
 
@@ -42,4 +43,7 @@ CheckBoxWithLabel.propTypes = {
   name: PropTypes.string,
 };
 
-export default CheckBoxWithLabel;
+export default deprecate(
+  CheckBoxWithLabel,
+  '<CheckBoxWithLabel/> from Telia Styleguide is a deprecated component. Use <Checkbox/> with label props instead'
+);
