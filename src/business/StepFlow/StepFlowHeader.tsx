@@ -52,7 +52,7 @@ export const StepFlowHeader = (props: Props) => {
       <div className="telia-step-flow__header-content">
         <div>
           <h1 ref={headerRef}>{props.title}</h1>
-          <div>{props.description}</div>
+          <div className="telia-step-flow__header-content-description">{props.description}</div>
         </div>
         {props.rightContent?.(stickyHeader)}
       </div>
