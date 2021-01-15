@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.37.2
+- Added business StepFlow
+
+
 ## 1.37.0 
 - Breaking: moved TextField from business to molecules. 
 To fix in your app replace `import {TextField} from '@telia/styleguide/business'` 
