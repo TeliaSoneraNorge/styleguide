@@ -15,6 +15,16 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.38.0 
+- Breaking: moved Toggle from business to atoms. 
+To fix in your app replace `import {Toggle} from '@telia/styleguide/business'` 
+with the usual `import {Toggle} from '@telia/styleguide'`
+- Breaking: moved Checkbox from business to atoms. 
+To fix in your app replace `import {Checkbox} from '@telia/styleguide/business'` 
+with the usual `import {Checkbox} from '@telia/styleguide'`
+- Deprecated old CheckBoxWithLabel components 
+
+
 ## 1.37.2
 - Added business StepFlow
 
