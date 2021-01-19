@@ -13,7 +13,7 @@ interface Props {
   id?: string;
 }
 
-export const Toggle: React.FC<Props> = props => {
+export const Toggle: React.FC<Props> = (props) => {
   const [focus, setFocus] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -51,7 +51,7 @@ export const Toggle: React.FC<Props> = props => {
     <div
       className={cs(
         {
-          'Business-Toggle': true,
+          'telia-toggle': true,
           checked: props.checked,
           focus: focus,
           disabled: props.disabled,
@@ -62,11 +62,11 @@ export const Toggle: React.FC<Props> = props => {
       onKeyUp={handleKeyUp}
       tabIndex={props.disabled ? -1 : 0}
     >
-      <div className="Business-Toggle-track"></div>
-      <div className="Business-Toggle-thumb">
+      <div className="telia-toggle-track"></div>
+      <div className="telia-toggle-thumb">
         <div
           className={cs({
-            'Business-Toggle-thumb-indicator': props.checked,
+            'telia-toggle-thumb-indicator': props.checked,
           })}
         />
       </div>
@@ -77,7 +77,7 @@ export const Toggle: React.FC<Props> = props => {
         ref={inputRef}
         onFocus={handleFocus}
         onBlur={handleBlur}
-        className="Business-Toggle-screenreader-only"
+        className="telia-toggle-screenreader-only"
         type="checkbox"
         tabIndex={-1}
       />

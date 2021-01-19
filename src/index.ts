@@ -36,6 +36,7 @@ export { default as TelephoneNumberLink } from './atoms/TelephoneNumberLink';
 export { default as TextBox } from './atoms/TextBox';
 export { default as TextArea } from './atoms/TextArea';
 export { default as Tags } from './atoms/Tags';
+export { Toggle } from './atoms/Toggle';
 export { default as ToggleButton } from './atoms/ToggleButton';
 export { default as ToggleSwitch } from './atoms/ToggleSwitch';
 export { default as UniqueSellingPoints } from './atoms/UniqueSellingPoints';
