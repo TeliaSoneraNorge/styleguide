@@ -5,7 +5,7 @@ import deprecate from 'util-deprecate';
 
 /**
  *
- * THIS COMPONENT IS DEPRECATED. USE <Checkbox/> INSTEAD
+ * THIS COMPONENT IS DEPRECATED. USE <Toggle/> INSTEAD
  *
  */
 
