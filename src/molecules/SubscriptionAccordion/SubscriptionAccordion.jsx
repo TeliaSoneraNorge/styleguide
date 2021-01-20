@@ -14,6 +14,7 @@ const SubscriptionAccordion = ({
   price,
   priceInfo,
   discount,
+  welcomeOfferDiscount,
   feature,
   disclaimers,
   scrollToOnOpen = false,
@@ -55,6 +56,14 @@ const SubscriptionAccordion = ({
           <div className="subscription-accordion__discount">
             <span className="subscription-accordion__discount-price">-{discount.price}</span>
             {discount.description}
+          </div>
+        ) : (
+          description
+        )}
+        {welcomeOfferDiscount ? (
+          <div className="subscription-accordion__welcomeOfferDiscount">
+            <span className="subscription-accordion__welcomeOfferDiscount">-{welcomeOfferDiscount.price}</span>
+            {welcomeOfferDiscount.description}
           </div>
         ) : (
           description

@@ -23,6 +23,7 @@ export interface SubscriptionAccordionProps {
   price?: SubscriptionPrice;
   priceInfo?: string[];
   discount?: SubscriptionDiscount;
+  welcomeOfferDiscount?: SubscriptionDiscount;
   feature?: SubscriptionFeature;
   disclaimers?: any;
   scrollToOnOpen?: boolean;
