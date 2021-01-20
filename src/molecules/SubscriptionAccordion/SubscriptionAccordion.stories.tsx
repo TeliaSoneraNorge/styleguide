@@ -190,7 +190,7 @@ export const WelcomeOfferDiscountSubscriptionAccordion = () => {
       }}
       welcomeOfferDiscount={{
         price: 1891,
-        description: 'i rabatt på tlf',
+        description: '- i rabatt på tlf',
       }}
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}
