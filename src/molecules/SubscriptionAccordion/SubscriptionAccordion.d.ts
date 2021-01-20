@@ -12,7 +12,7 @@ export type SubscriptionFeature = {
 export type SubscriptionDiscount = {
   price: SubscriptionPrice;
   description: string;
-  color?: string;
+  color?: 'blue' | 'green';
 };
 
 export interface SubscriptionAccordionProps {
