@@ -160,6 +160,38 @@ export const DiscountSubscriptionAccordion = () => {
       discount={{
         price: 1891,
         description: 'i rabatt på tlf',
+        color: 'blue',
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => setIsExpanded(!isExpanded)}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+  );
+};
+export const DiscountSubscriptionAccordionGreen = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionAccordion
+      name="Telia X"
+      id="smartX"
+      price={549}
+      priceInfo={['pr. md']}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'infinite',
+        name: 'Ubegrenset data',
+      }}
+      discount={{
+        price: 1891,
+        description: 'i rabatt på tlf',
+        color: 'green',
       }}
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}

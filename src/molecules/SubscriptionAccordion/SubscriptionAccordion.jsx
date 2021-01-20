@@ -52,8 +52,10 @@ const SubscriptionAccordion = ({
           {highlight && <div className="subscription-accordion__heading-highlight">{highlight}</div>}
         </Heading>
         {discount ? (
-          <div className="subscription-accordion__discount">
-            <span className="subscription-accordion__discount-price">-{discount.price}</span>
+          <div
+            className={`subscription-accordion__discount subscription-accordion__discount__${discount.color || 'blue'}`}
+          >
+            <span className="subscription-accordion__discount-price">{discount.price}</span>
             {discount.description}
           </div>
         ) : (
