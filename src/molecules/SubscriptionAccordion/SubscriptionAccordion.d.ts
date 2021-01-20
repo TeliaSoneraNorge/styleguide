@@ -12,6 +12,7 @@ export type SubscriptionFeature = {
 export type SubscriptionDiscount = {
   price: SubscriptionPrice;
   description: string;
+  color?: string;
 };
 
 export interface SubscriptionAccordionProps {
@@ -23,7 +24,6 @@ export interface SubscriptionAccordionProps {
   price?: SubscriptionPrice;
   priceInfo?: string[];
   discount?: SubscriptionDiscount;
-  welcomeOfferDiscount?: SubscriptionDiscount;
   feature?: SubscriptionFeature;
   disclaimers?: any;
   scrollToOnOpen?: boolean;

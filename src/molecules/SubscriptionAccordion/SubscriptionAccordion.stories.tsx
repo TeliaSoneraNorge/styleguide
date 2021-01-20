@@ -160,6 +160,7 @@ export const DiscountSubscriptionAccordion = () => {
       discount={{
         price: 1891,
         description: 'i rabatt på tlf',
+        color: 'blue',
       }}
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}
@@ -173,8 +174,7 @@ export const DiscountSubscriptionAccordion = () => {
     </SubscriptionAccordion>
   );
 };
-
-export const WelcomeOfferDiscountSubscriptionAccordion = () => {
+export const DiscountSubscriptionAccordionGreen = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -188,9 +188,10 @@ export const WelcomeOfferDiscountSubscriptionAccordion = () => {
         iconName: 'infinite',
         name: 'Ubegrenset data',
       }}
-      welcomeOfferDiscount={{
+      discount={{
         price: 1891,
-        description: '- i rabatt på tlf',
+        description: 'i rabatt på tlf',
+        color: 'green',
       }}
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}

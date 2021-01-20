@@ -73,44 +73,26 @@
     flex-wrap: nowrap;
   }
 
-  &__welcomeOfferDiscount {
-    position: absolute;
-    top: -1.25rem;
-    right: 1rem;
-    width: 11rem;
-    height: 1.25rem;
-    line-height: 1.25rem;
-    font-size: 0.875rem;
-    border-radius: 5px 5px 0 0;
-    background-color: var(--green-600);
-    color: var(--white);
-  }
-
   &__discount {
     position: absolute;
     top: -1.25rem;
     right: 1rem;
-
     width: 11rem;
     height: 1.25rem;
     line-height: 1.25rem;
     font-size: 0.875rem;
     border-radius: 5px 5px 0 0;
-    background-color: var(--blue-500);
     color: var(--white);
 
-    @media all and (min-width: 37.5em) {
-      position: initial;
-      border-radius: 5px;
+    &__green {
+      background-color: var(--green-600);
+    }
+    &__blue {
+      background-color: var(--blue-500);
     }
   }
 
   &__discount-price {
-    font-weight: bold;
-    margin-right: 0.25rem;
-  }
-
-  &__welcomeOfferDiscount-price {
     font-weight: bold;
     margin-right: 0.25rem;
   }
