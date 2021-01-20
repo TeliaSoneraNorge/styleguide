@@ -62,7 +62,7 @@ const SubscriptionAccordion = ({
         )}
         {welcomeOfferDiscount ? (
           <div className="subscription-accordion__welcomeOfferDiscount">
-            <span className="subscription-accordion__welcomeOfferDiscount">-{welcomeOfferDiscount.price}</span>
+            <span className="subscription-accordion__welcomeOfferDiscount-price">-{welcomeOfferDiscount.price}</span>
             {welcomeOfferDiscount.description}
           </div>
         ) : (
