@@ -84,13 +84,13 @@ export const Card = ({}) => {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-        <List type="card">
+        <List>
           <ListHeading title="List Standard" compact={true} />
-          <ListItem title="Element 1" />
-          <ListItem title="Element 2" />
-          <ListItem title="Element 3" />
-          <ListItem title="Element 4" />
-          <ListItem title="Element 5" />
+          <ListCard title="Element 1" />
+          <ListCard title="Element 2" />
+          <ListCard title="Element 3" />
+          <ListCard title="Element 4" />
+          <ListCard title="Element 5" />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
@@ -219,6 +219,13 @@ export const Card = ({}) => {
             caption={<Avatar icon="alarm" />}
           />
         </List>
+      </div>
+      <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
+        <ListCard
+          title="ListCard without List wrapping"
+          caption={<Avatar icon="alarm" />}
+          onClick={() => console.log('click')}
+        />
       </div>
     </div>
   );
