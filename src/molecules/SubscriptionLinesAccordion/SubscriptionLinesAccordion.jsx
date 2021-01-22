@@ -74,7 +74,7 @@ const SubscriptionLinesAccordion = ({
     </div>
   );
 
-  const extraDataString = extraDataUnit && extraDataUnit ? `+${extraDataAmount}${extraDataUnit}` : '';
+  const extraDataString = extraDataAmount && extraDataUnit ? `+${extraDataAmount}${extraDataUnit}` : '';
 
   return (
     <section
