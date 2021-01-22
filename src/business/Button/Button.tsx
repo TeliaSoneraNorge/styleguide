@@ -89,7 +89,7 @@ export const Button = (props: ButtonProps) => {
       href={href}
       onClick={handleClick}
       disabled={disabled}
-      type={type}
+      type={href ? undefined : type}
       target={href ? target : undefined}
     >
       {icon && <Icon icon={icon} className="telia-button-icon" />}
