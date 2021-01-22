@@ -7,7 +7,7 @@ import ShoppingCartItem from './ShoppingCartItem';
 import ShoppingCartHeadings from './ShoppingCartTableHeadings';
 import ShoppingCartTableFooter from './ShoppingCartTableFooter';
 
-const sortShoppingCart = item => {
+const sortShoppingCart = (item) => {
   const cartItemTypes = {
     WEBDEAL: 10,
     HANDSET: 20,
@@ -57,7 +57,7 @@ const ShoppingCartTableGroup = ({
           formatPrice={formatPrice}
         />
         {!_.isEmpty(item.items) &&
-          _.sortBy(item.items, [sortShoppingCart]).map(subItem => renderCartItem(subItem, true))}
+          _.sortBy(item.items, [sortShoppingCart]).map((subItem) => renderCartItem(subItem, true))}
       </Fragment>
     );
   };
@@ -74,10 +74,11 @@ const ShoppingCartTable = ({
   totalPriceUpfront,
   hasPaid,
   formatPrice,
+  discount,
 }) => (
   <table className="shopping-cart__table" role="table">
     <ShoppingCartHeadings shouldShowQuantity={isAnyCartItemsQuantityModifiable} />
-    {_.sortBy(cartItems, [sortShoppingCart]).map(item => (
+    {_.sortBy(cartItems, [sortShoppingCart]).map((item) => (
       <ShoppingCartTableGroup
         cartItem={item}
         key={`${item.id}-${item.bundleId}`}
@@ -89,12 +90,14 @@ const ShoppingCartTable = ({
         formatPrice={formatPrice}
       />
     ))}
+
     <ShoppingCartTableFooter
       totalPriceMonthly={totalPriceMonthly}
       totalPriceUpfront={totalPriceUpfront}
       totalPriceFirstInvoice={totalPriceFirstInvoice}
       hasPaid={hasPaid}
       formatPrice={formatPrice}
+      discount={discount}
     />
   </table>
 );

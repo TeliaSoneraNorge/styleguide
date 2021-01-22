@@ -685,6 +685,10 @@ export const Default = () => {
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
         formatPrice={(price) => `${price},-`}
+        discount={{
+          percentage: 0.3,
+          label: '30% ekstra rabatt første 3 md.',
+        }}
       />
     </Container>
   );

@@ -23,6 +23,7 @@ const ShoppingCart = ({
   formatPrice,
   hasPaid,
   disclaimers,
+  discount,
 }) => {
   return (
     <div className="shopping-cart">
@@ -43,6 +44,7 @@ const ShoppingCart = ({
         formatPrice={formatPrice}
         hasPaid={hasPaid}
         totalPriceMonthly={totalPriceMonthly}
+        discount={discount}
       />
       {disclaimers}
       {onGoToCart && (
@@ -66,6 +68,10 @@ ShoppingCart.propTypes = {
   formatPrice: PropTypes.func,
   hasPaid: PropTypes.bool,
   disclaimers: PropTypes.node,
+  discount: PropTypes.shape({
+    label: PropTypes.string,
+    percentage: PropTypes.number,
+  }),
 };
 
 export default ShoppingCart;
