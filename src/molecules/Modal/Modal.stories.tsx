@@ -4,7 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from './index';
 import Button from '../../atoms/Button';
 import TextBox from '../../atoms/TextBox';
-import { Toggle } from '../../business';
+import { Toggle } from '../../atoms/Toggle';
 import { ModalDivider } from './ModalDivider';
 
 storiesOf('Component library/Molecules/Modal', module)
@@ -89,7 +89,7 @@ storiesOf('Component library/Molecules/Modal', module)
             <input disabled={false} />
             <TextBox small={true} disabled={true} placeholder="First name" />
             <TextBox small={true} placeholder="Last name" />
-            <Toggle checked={checked} onChange={e => setChecked(e.target.checked)} />
+            <Toggle checked={checked} onChange={(e) => setChecked(e.target.checked)} />
             <Button size="small" text="Click" />
             <Button size="small" isDisabled={true} text="I should be skipped" />
             <Button size="small" isProcessing={true} text="I should also be skipped" />
