@@ -1,21 +1,31 @@
 .shopping-cart {
-    &__table__foot {
-        &__cell {
-            text-align: right;
-        }
-
-        &__row {
-            background-color: var(--dark-orange);
-            color: var(--black);
-            height: 4rem;
-            .shopping-cart__table__header {
-                text-align: right;
-                text-align: left;
-                padding: 0.5rem 0 0.5rem 1rem;
-            }
-            &--monthly {
-                background-color: var(--light-orange-2);
-            }
-        }
+  &__table__foot {
+    &__cell {
+      text-align: right;
     }
+
+    &__row {
+      background-color: var(--dark-orange);
+      color: var(--black);
+      height: 4rem;
+      .shopping-cart__table__header {
+        text-align: right;
+        text-align: left;
+        padding: 0.5rem 0 0.5rem 1rem;
+      }
+      &--monthly {
+        background-color: var(--light-orange-2);
+      }
+
+      &--discount {
+        background-color: var(--green-600);
+        color: var(--white);
+        font-family: 'pebble';
+
+        .shopping-cart__item__label {
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
 }

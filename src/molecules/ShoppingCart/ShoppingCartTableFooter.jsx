@@ -9,10 +9,15 @@ const ShoppingCartTableFooterRow = ({ label, price, type, id, className }) => (
   <ShoppingCartRow
     className={cn('shopping-cart__table__foot__row', className, {
       'shopping-cart__table__foot__row--monthly': type === 'MONTHLY',
+      'shopping-cart__table__foot__row--discount': type === 'DISCOUNT',
     })}
     id={id}
   >
-    <ShoppingCartColumnHeading className="shopping-cart__table__cell" colSpan={2} scope="row">
+    <ShoppingCartColumnHeading
+      className="shopping-cart__table__cell shopping-cart__item__label"
+      colSpan={2}
+      scope="row"
+    >
       {label}
     </ShoppingCartColumnHeading>
     <ShoppingCartCell className="shopping-cart__table__foot__cell">
@@ -30,13 +35,22 @@ const ShoppingCartTableFooter = ({
   totalPriceUpfront,
   hasPaid,
   formatPrice,
+  discount,
 }) => (
   <tfoot className="shopping-cart__table__foot" role="rowgroup">
+    {!!discount && (
+      <ShoppingCartTableFooterRow
+        label={discount.label}
+        price={`${formatPrice(totalPriceMonthly)}/md.`}
+        className="shopping-cart__id--discount"
+        type="DISCOUNT"
+      />
+    )}
     {!!totalPriceMonthly && (
       <ShoppingCartTableFooterRow
         className="shopping-cart__id--monthly"
         label="Pr. måned:"
-        price={formatPrice(totalPriceMonthly)}
+        price={`${formatPrice(totalPriceMonthly)}/md.`}
         type="MONTHLY"
       />
     )}
@@ -70,6 +84,10 @@ ShoppingCartTableFooter.propTypes = {
   totalPriceUpfront: PropTypes.number,
   hasPaid: PropTypes.bool,
   formatPrice: PropTypes.func,
+  discount: PropTypes.shape({
+    label: PropTypes.string,
+    price: PropTypes.number,
+  }),
 };
 
 export default ShoppingCartTableFooter;
