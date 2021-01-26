@@ -70,7 +70,7 @@ ShoppingCart.propTypes = {
   disclaimers: PropTypes.node,
   discount: PropTypes.shape({
     label: PropTypes.string,
-    percentage: PropTypes.number,
+    price: PropTypes.number,
   }),
 };
 

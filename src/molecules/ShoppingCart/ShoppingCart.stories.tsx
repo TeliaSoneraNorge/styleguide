@@ -686,7 +686,7 @@ export const Default = () => {
         onRemoveItem={() => {}}
         formatPrice={(price) => `${price},-`}
         discount={{
-          percentage: 0.3,
+          price: 350,
           label: '30% ekstra rabatt første 3 md.',
         }}
       />

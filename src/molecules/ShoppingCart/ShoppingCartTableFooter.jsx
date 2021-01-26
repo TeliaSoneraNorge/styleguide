@@ -41,7 +41,7 @@ const ShoppingCartTableFooter = ({
     {!!discount && (
       <ShoppingCartTableFooterRow
         label={discount.label}
-        price={`${formatPrice(-discount.percentage * totalPriceMonthly)}/md.`}
+        price={`${formatPrice(totalPriceMonthly)}/md.`}
         className="shopping-cart__id--discount"
         type="DISCOUNT"
       />
@@ -86,7 +86,7 @@ ShoppingCartTableFooter.propTypes = {
   formatPrice: PropTypes.func,
   discount: PropTypes.shape({
     label: PropTypes.string,
-    percentage: PropTypes.number,
+    price: PropTypes.number,
   }),
 };
 
