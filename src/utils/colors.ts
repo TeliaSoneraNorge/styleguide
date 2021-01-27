@@ -1,4 +1,7 @@
 export const colorDefinitions = {
+  // White
+  white: '#FFFFFF',
+
   // Purple
   corePurple100: '#f9eefe',
   corePurple200: '#f2dbfd',
