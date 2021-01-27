@@ -1,5 +1,4 @@
 .telia-side-menu {
-  background-color: var(--white);
   width: 200px;
   height: 100%;
   ul {
@@ -22,12 +21,11 @@
   max-height: 46px;
 
   transition-duration: 300ms;
-  transition-property: background-color, color;
+  transition-property: color;
 
   &:focus {
     outline: none;
-    background: white;
-    box-shadow: 0 0 0 2px var(--white), 0 0 0 4px var(--blue-300);
+    box-shadow: 0 0 0 4px var(--blue-300);
   }
 
   &-avatar {
@@ -51,9 +49,6 @@
       background-color: var(--core-purple-100);
       color: var(--core-purple-500);
     }
-    &:focus {
-      background-color: var(--white);
-    }
   }
   &:not(.telia-side-menu-item--compact) {
     text-decoration: none;
@@ -75,9 +70,6 @@
       background-color: var(--light-grey);
       color: var(--black);
     }
-    &:focus {
-      background-color: var(--white);
-    }
   }
   &:not(.telia-side-menu-item--compact) {
     text-decoration: none;
@@ -96,7 +88,7 @@
 
 button.telia-side-menu-item {
   border: none;
-  background-color: white;
+  background-color: inherit;
   cursor: pointer;
   font-size: 16px;
 }
