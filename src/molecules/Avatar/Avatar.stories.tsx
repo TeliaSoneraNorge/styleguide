@@ -21,6 +21,8 @@ export const Default = ({}) => {
           <Avatar text="HG" />
           <Avatar icon="abroad" />
           <Avatar img={images.hero1} alt="user" />
+          <Avatar img={images.hero1} alt="user" icon="user" color="lightGrey" />
+          <Avatar img={images.hero1} alt="user" text="HG" color="lightGrey" />
         </div>
 
         <div style={{ paddingRight: '1rem' }}>
@@ -28,6 +30,20 @@ export const Default = ({}) => {
           <Avatar text="HG" onClick={action('Button avatar with text')} />
           <Avatar icon="abroad" onClick={action('Button avatar with icon')} />
           <Avatar img={images.hero1} onClick={action('Button avatar with image')} alt="user" />
+          <Avatar
+            img={images.hero1}
+            alt="user"
+            icon="user"
+            color="lightGrey"
+            onClick={action('Button avatar with image and icon')}
+          />
+          <Avatar
+            img={images.hero1}
+            alt="user"
+            text="HG"
+            color="lightGrey"
+            onClick={action('Button avatar with image and text')}
+          />
         </div>
 
         <div style={{ paddingRight: '1rem' }}>
@@ -35,6 +51,22 @@ export const Default = ({}) => {
           <Avatar text="HG" href="my/path" onClick={action('Anchor avatar with text')} />
           <Avatar icon="abroad" href="my/path" onClick={action('Anchor avatar with icon')} />
           <Avatar img={images.hero1} href="my/path" onClick={action('Anchor avatar with image')} alt="user" />
+          <Avatar
+            img={images.hero1}
+            alt="user"
+            icon="user"
+            color="lightGrey"
+            href="my/path"
+            onClick={action('Button avatar with image and icon')}
+          />
+          <Avatar
+            img={images.hero1}
+            alt="user"
+            text="HG"
+            color="lightGrey"
+            href="my/path"
+            onClick={action('Button avatar with image and text')}
+          />
         </div>
       </div>
       <div style={{ display: 'flex' }}>
@@ -86,6 +118,8 @@ export const Default = ({}) => {
           <Avatar text="HG" size="big" />
           <Avatar icon="abroad" size="big" />
           <Avatar img={images.hero1} size="big" alt="user" />
+          <Avatar img={images.hero1} alt="user" icon="user" color="lightGrey" size="big" />
+          <Avatar img={images.hero1} alt="user" text="HG" color="lightGrey" size="big" />
         </div>
 
         <div style={{ paddingRight: '1rem' }}>
@@ -93,6 +127,22 @@ export const Default = ({}) => {
           <Avatar text="HG" onClick={action('Button avatar with text')} size="big" />
           <Avatar icon="abroad" onClick={action('Button avatar with icon')} size="big" />
           <Avatar img={images.hero1} onClick={action('Button avatar with image')} alt="user" size="big" />
+          <Avatar
+            size="big"
+            img={images.hero1}
+            alt="user"
+            icon="user"
+            color="lightGrey"
+            onClick={action('Button avatar with image and icon')}
+          />
+          <Avatar
+            size="big"
+            img={images.hero1}
+            alt="user"
+            text="HG"
+            color="lightGrey"
+            onClick={action('Button avatar with image and text')}
+          />
         </div>
 
         <div style={{ paddingRight: '1rem' }}>
@@ -105,6 +155,24 @@ export const Default = ({}) => {
             onClick={action('Anchor avatar with image')}
             alt="user"
             size="big"
+          />
+          <Avatar
+            size="big"
+            img={images.hero1}
+            alt="user"
+            icon="user"
+            color="lightGrey"
+            href="my/path"
+            onClick={action('Button avatar with image and icon')}
+          />
+          <Avatar
+            size="big"
+            img={images.hero1}
+            alt="user"
+            text="HG"
+            color="lightGrey"
+            href="my/path"
+            onClick={action('Button avatar with image and text')}
           />
         </div>
       </div>

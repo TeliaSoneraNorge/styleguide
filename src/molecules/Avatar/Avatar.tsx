@@ -87,12 +87,13 @@ export const Avatar = (props: AvatarProps) => {
       onClick={handleClick}
       tabIndex={tabIndex}
     >
-      {props.img ? (
-        <img className="telia-avatar-image" src={props.img} alt={props.alt} />
-      ) : props.text ? (
-        <div className="telia-avatar-text">{props.text.slice(0, 2)}</div>
+      {props.img && <img className="telia-avatar-image" src={props.img} alt={props.alt} />}
+      {props.text ? (
+        <div className={cn('telia-avatar-text', props.img && 'telia-avatar-text--absolute')}>
+          {props.text.slice(0, 2)}
+        </div>
       ) : props.icon ? (
-        <Icon className="telia-avatar-icon" icon={props.icon} />
+        <Icon className={cn('telia-avatar-icon', props.img && 'telia-avatar-icon--absolute')} icon={props.icon} />
       ) : null}
       {'status' in props && <div className={`telia-avatar-status telia-avatar-status--${status}`} />}
       {'avatar' in props && props.avatar && <div className="telia-avatar-couple">{props.avatar}</div>}
