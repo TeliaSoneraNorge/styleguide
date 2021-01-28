@@ -6,7 +6,6 @@ import SlidingShoppingCart from './SlidingShoppingCart';
 import Menu from '../../molecules/Menu/Menu';
 import img from '../../stories/sampleImages';
 
-
 const switchContent = [
   {
     type: 'HANDSET',
@@ -658,10 +657,95 @@ export const Default = () => {
         totalPriceUpfront={priceUpfront}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
-        formatPrice={price => `${price},-`}
+        formatPrice={(price) => `${price},-`}
         shouldShowCart={shouldShowCart}
         setShouldShowCart={setShouldShowCart}
         onGoToCart={() => alert('Go to cart')}
+      />
+    </>
+  );
+};
+
+export const WithDiscount = () => {
+  const heading = text('Heading', 'Handlekurv');
+  const pricePerMonth = number('Price per month', 500);
+  const priceUpfront = number('Price upfront', 500);
+  const priceFirstInvoice = number('Price first invoice', 500);
+  const itemToDisplay = select(
+    'Item',
+    ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'],
+    'switch'
+  );
+
+  const [shouldShowCart, setShouldShowCart] = useState(false);
+
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Nettbutikk',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+
+  return (
+    <>
+      <Menu
+        loginUrl="#Menu"
+        logoUrl="#"
+        logoTitle="Telia logo"
+        activeIndex={0}
+        activeLinkIndex={-1}
+        menuLinks={menuLinks}
+        logoImageDesktopPath={img.logo}
+        logoImageInverseDesktopPath={img.logoInverted}
+        onSearchSubmit={() => {}}
+        searchLabel="Fyll inn det du skal søke på"
+        searchButtonLabel="Søk"
+        searchButtonAbortText="Lukk"
+        mobileMenuCloseButtonLabel="Lukk"
+        lockBodyOnMenuOpen
+        onCartClick={() => setShouldShowCart(!shouldShowCart)}
+        numberOfItemsInCart={3}
+      />
+      <SlidingShoppingCart
+        heading={heading}
+        cartItems={getCart(itemToDisplay)}
+        isAnyCartItemsQuantityModifiable
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price) => `${price},-`}
+        shouldShowCart={shouldShowCart}
+        setShouldShowCart={setShouldShowCart}
+        onGoToCart={() => alert('Go to cart')}
+        discount={{
+          label: '30% extra rabatt første 3 md.',
+          price: -404,
+        }}
       />
     </>
   );
