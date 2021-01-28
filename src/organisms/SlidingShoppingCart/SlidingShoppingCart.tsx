@@ -14,10 +14,14 @@ export interface SlidingShoppingCartProps {
   totalPriceMonthly: number;
   totalPriceUpfront: number;
   formatPrice: (price: string | number) => string;
-  hasPaid: boolean;
-  disclaimers: any;
+  hasPaid?: boolean;
+  disclaimers?: any;
   shouldShowCart: boolean;
   setShouldShowCart(shouldShowCart: boolean): void;
+  discount?: {
+    label: string;
+    price: number;
+  };
 }
 
 const SlidingShoppingCart = ({
@@ -33,6 +37,7 @@ const SlidingShoppingCart = ({
   formatPrice,
   hasPaid,
   disclaimers,
+  discount,
   shouldShowCart,
   setShouldShowCart,
 }: SlidingShoppingCartProps) => {
@@ -57,6 +62,7 @@ const SlidingShoppingCart = ({
         formatPrice={formatPrice}
         hasPaid={hasPaid}
         disclaimers={disclaimers}
+        discount={discount}
       />
       <div className="sliding-shopping-cart__checkout-button-container">
         <Button
