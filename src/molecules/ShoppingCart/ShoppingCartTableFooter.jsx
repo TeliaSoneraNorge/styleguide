@@ -41,7 +41,7 @@ const ShoppingCartTableFooter = ({
     {!!discount && (
       <ShoppingCartTableFooterRow
         label={discount.label}
-        price={`${formatPrice(totalPriceMonthly)}/md.`}
+        price={`${formatPrice(discount.price)}/md.`}
         className="shopping-cart__id--discount"
         type="DISCOUNT"
       />
