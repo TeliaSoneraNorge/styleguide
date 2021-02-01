@@ -32,11 +32,18 @@ type Props = {
    * Each step must be wrapped in a StepWrapper
    */
   children: React.ReactNode;
+
+  /**
+   * Displayed to the right on large screens,
+   * and at the bottom of each step on small screens.
+   */
+  additionalContent?: React.ReactNode;
 };
 
 export const StepFlow = (props: Props) => {
   const [step, setStep] = useState(props.initialStep ?? 0);
   const breakpointSm = useBreakpoint('sm');
+  const breakpointLg = useBreakpoint('lg');
 
   const singleStep = React.Children.count(props.children) === 1;
   const children = React.Children.toArray(props.children);
@@ -47,7 +54,9 @@ export const StepFlow = (props: Props) => {
 
   const isLastStep = step === children.length - 1;
 
-  // Change form when step or forms are updated
+  const renderAdditionalContentRight = breakpointLg && !isLastStep;
+  const renderAdditionalContentInStep = !breakpointLg && !isLastStep;
+
   useEffect(() => {
     const newStep = children[step];
     setForm(isValidElement(newStep) ? newStep : null);
@@ -68,6 +77,7 @@ export const StepFlow = (props: Props) => {
         {breakpointSm && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
         <div className="telia-step-flow__main-form">
           {form}
+          {renderAdditionalContentInStep ? props.additionalContent : null}
 
           <StepFlowFooter
             isLastStep={isLastStep}
@@ -83,6 +93,7 @@ export const StepFlow = (props: Props) => {
               : {})}
           />
         </div>
+        {renderAdditionalContentRight ? <div className="telia-step-flow__right">{props.additionalContent}</div> : null}
       </div>
     </div>
   );

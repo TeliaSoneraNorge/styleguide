@@ -6,6 +6,7 @@ import { action } from '@storybook/addon-actions';
 import { TextField } from '../../molecules/TextField';
 import { Icon } from '../../atoms/Icon';
 import { Button } from '../Button';
+import { Card, CardBody, CardDivider, CardHeader } from '../Card';
 
 export default {
   component: StepFlow,
@@ -14,9 +15,13 @@ export default {
 };
 
 export const Default = () => {
-  const [name, setName] = useState('');
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
 
-  const step1Valid = !!name.length;
+  const step1Valid = true;
+
   return (
     <div>
       <Button label="Hello?" />
@@ -27,11 +32,11 @@ export const Default = () => {
         onCancel={action('Cancel')}
       >
         <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={step1Valid}>
-          <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
         </StepFlowStep>
         <StepFlowStep title="Step 2" isValid={true} disabled={!step1Valid}>
           <TextField />
@@ -41,11 +46,54 @@ export const Default = () => {
   );
 };
 
-export const WithTrigger = () => {
-  const [name, setName] = useState('');
-  const [open, setOpen] = useState(false);
+export const WithAdditionalContent = () => {
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
 
-  const step1Valid = !!name.length;
+  return (
+    <div>
+      <Button label="Hello?" />
+      <StepFlow
+        title="Step flow"
+        description="Commonly used for large forms and orders"
+        onSubmit={action('Submit')}
+        onCancel={action('Cancel')}
+        additionalContent={
+          <Card>
+            <CardHeader> This can be a cart </CardHeader>
+            <CardBody>
+              Its a custom component though. You can place anything you want here
+              <CardDivider />
+              This compoent will render below the step content on small screens. Try adjusting the screensize in the
+              toolbare above
+            </CardBody>
+          </Card>
+        }
+      >
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
+        </StepFlowStep>
+        <StepFlowStep title="Step 2" isValid={true} disabled={false}>
+          <TextField />
+        </StepFlowStep>
+      </StepFlow>
+    </div>
+  );
+};
+
+export const WithTrigger = () => {
+  const [open, setOpen] = useState(false);
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
+
   return (
     <div>
       <Button label="Open step flow" onClick={() => setOpen(true)} />
@@ -56,14 +104,14 @@ export const WithTrigger = () => {
           onSubmit={() => setOpen(false)}
           onCancel={() => setOpen(false)}
         >
-          <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={step1Valid}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
+          <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+            {Object.entries(state).map(([key, val]) => (
+              <div style={{ paddingBottom: '1rem' }}>
+                <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+              </div>
+            ))}
           </StepFlowStep>
-          <StepFlowStep title="Step 2" isValid={true} disabled={!step1Valid}>
+          <StepFlowStep title="Step 2" isValid={true} disabled={false}>
             <TextField />
           </StepFlowStep>
         </StepFlow>
@@ -73,9 +121,11 @@ export const WithTrigger = () => {
 };
 
 export const WithCustomHeaderContent = () => {
-  const [name, setName] = useState('');
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
 
-  const step1Valid = !!name.length;
   return (
     <div>
       <StepFlow
@@ -94,30 +144,14 @@ export const WithCustomHeaderContent = () => {
           )
         }
       >
-        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={step1Valid}>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
         </StepFlowStep>
-        <StepFlowStep title="Step 2" isValid={true} disabled={!step1Valid}>
+        <StepFlowStep title="Step 2" isValid={true} disabled={false}>
           <TextField />
         </StepFlowStep>
       </StepFlow>
@@ -126,9 +160,11 @@ export const WithCustomHeaderContent = () => {
 };
 
 export const SingleStep = () => {
-  const [name, setName] = useState('');
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
 
-  const step1Valid = !!name.length;
   return (
     <div>
       <StepFlow
@@ -137,28 +173,12 @@ export const SingleStep = () => {
         onSubmit={action('Submit')}
         onCancel={action('Cancel')}
       >
-        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={step1Valid}>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
-          <div style={{ paddingBottom: '1rem' }}>
-            <TextField value={name} onChange={(e) => setName(e.target.value)} />
-          </div>
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
         </StepFlowStep>
       </StepFlow>
     </div>
