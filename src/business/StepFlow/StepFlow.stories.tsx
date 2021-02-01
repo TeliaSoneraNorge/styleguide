@@ -46,7 +46,7 @@ export const Default = () => {
   );
 };
 
-export const WithCart = () => {
+export const WithAdditionalContent = () => {
   const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
   const setKey = (key: string, value: string) => {
     setState({ ...state, [key]: value });

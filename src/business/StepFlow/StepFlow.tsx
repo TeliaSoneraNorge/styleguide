@@ -35,7 +35,7 @@ type Props = {
 
   /**
    * Displayed to the right on large screens,
-   * and at the bottom of each step on small screens
+   * and at the bottom of each step on small screens.
    */
   additionalContent?: React.ReactNode;
 };
