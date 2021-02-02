@@ -37,9 +37,7 @@ const RadioButton = ({
     </span>
     {children ||
       (label && (
-        <span className={classnames('radiobutton__text', className ? className : undefined)}>
-          {children != null ? children : label}
-        </span>
+        <span className={classnames('radiobutton__text', className)}>{children != null ? children : label}</span>
       ))}
   </Label>
 );
