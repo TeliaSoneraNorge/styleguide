@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import RadioButton from './RadioButton';
+import { RadioButton } from './RadioButton';
 
 export default {
-  title: 'Component library/Atoms/Radio Button',
   component: RadioButton,
+  title: 'Component library/Atoms/Radio Button',
 };
 
 export const Default = () => {
