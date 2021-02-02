@@ -25,7 +25,7 @@ export { default as ProductTabs } from './atoms/ProductTabs';
 export { default as ProgressBar } from './atoms/ProgressBar';
 export { default as QuantityPicker } from './atoms/QuantityPicker';
 export { default as Quote } from './atoms/Quote';
-export { default as RadioButton } from './atoms/RadioButton';
+export { RadioButton } from './atoms/RadioButton';
 export { default as ShadowBox } from './atoms/ShadowBox';
 export { default as SmallBoxList } from './atoms/SmallBoxList';
 export { default as SpecialMessage } from './atoms/SpecialMessage';

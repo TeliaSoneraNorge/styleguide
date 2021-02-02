@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
 
-import RadioButton from '../../atoms/RadioButton';
+import { RadioButton } from '../../atoms/RadioButton';
 
 const getClassName = (type, children) =>
   classnames('radiobutton-group', {
@@ -19,7 +19,7 @@ const RadioButtonGroup = ({ list = [], name, type, onChange, selectedValue, chil
   <div className={getClassName(type, children)}>
     {children != null
       ? children
-      : list.map(radio => (
+      : list.map((radio) => (
           <RadioButton
             label={radio.label}
             name={name}
