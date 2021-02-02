@@ -6,8 +6,7 @@ export interface RadioButtonProps {
   value?: any;
   checked?: boolean;
   disabled?: boolean;
-  onChange?: (...args: any[]) => any;
-  setChecked?: (checked: boolean) => any;
+  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   children?: React.ReactNode;
 }
 

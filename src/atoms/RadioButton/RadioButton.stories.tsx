@@ -8,14 +8,13 @@ export default {
 
 export const Default = () => {
   const [checked, setChecked] = useState(false);
-
   return (
     <>
       <p>Default radio button:</p>
       <RadioButton
         label={`I am ${checked ? '' : 'not'} checked`}
         checked={checked}
-        setChecked={() => setChecked(!checked)}
+        onChange={(e) => setChecked(e.target.checked)}
       />
       <RadioButton label="I am checked" checked />
     </>

@@ -9,7 +9,6 @@ const RadioButton = ({
   name,
   value,
   checked,
-  setChecked,
   disabled,
   onChange,
   children,
@@ -22,8 +21,7 @@ const RadioButton = ({
       type="radio"
       name={name}
       checked={checked}
-      onChange={onChange ? onChange : null}
-      onClick={setChecked ? setChecked : null}
+      onChange={onChange}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
       disabled={disabled}
@@ -48,7 +46,6 @@ RadioButton.propTypes = {
   checked: PropTypes.bool,
   disabled: PropTypes.bool,
   onChange: PropTypes.func,
-  setChecked: PropTypes.func,
   children: PropTypes.node,
   className: PropTypes.string,
 };
