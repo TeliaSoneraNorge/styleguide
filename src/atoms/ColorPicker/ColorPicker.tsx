@@ -5,24 +5,25 @@ import cn from 'classnames';
 type ColorId = string;
 
 export interface Color {
-    id: ColorId;
-    color: string;
-    name: string;
+  id: ColorId;
+  color: string;
+  name: string;
 }
 
 export interface ColorPickerProps {
-    selected?: Color;
-    colors: Color[];
-    onSelect?: (id: ColorId) => void;
+  selected?: Color;
+  showSelected?: boolean;
+  colors: Color[];
+  onSelect?: (id: ColorId) => void;
 }
 
-const ColorPicker = ({ selected, colors = [], onSelect = () => undefined } : ColorPickerProps) => (
+const ColorPicker = ({ selected, showSelected = true, colors = [], onSelect = () => undefined }: ColorPickerProps) => (
   <div className="color-picker">
     <div className="color-picker__colors">
-      {colors.map(color => (
+      {colors.map((color) => (
         <button
           className={cn('color-picker__button', {
-            'color-picker__selected': _.get(selected, "id") === color.id,
+            'color-picker__selected': _.get(selected, 'id') === color.id,
           })}
           style={{ backgroundColor: color.color }}
           aria-label={color.name}
@@ -31,7 +32,7 @@ const ColorPicker = ({ selected, colors = [], onSelect = () => undefined } : Col
         />
       ))}
     </div>
-    {!_.isEmpty(selected) && <div className="color-picker__preview">{_.get(selected, "name", "")}</div>}
+    {!_.isEmpty(selected) && showSelected && <div className="color-picker__preview">{_.get(selected, 'name', '')}</div>}
   </div>
 );
 
