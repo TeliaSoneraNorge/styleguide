@@ -10,6 +10,7 @@ declare interface LabelProps {
    */
   children?: React.ReactNode;
   isUsingGrayText?: boolean;
+  className?: string;
 }
 
 declare const Label: React.FC<LabelProps>;

@@ -3,8 +3,8 @@ import { RadioButton, RadioButtonGroup, Heading, Paragraph, colors } from '../..
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library/Molecules/RadioButtonGroup',
   component: RadioButtonGroup,
+  title: 'Component library/Molecules/RadioButtonGroup',
 };
 
 const list = [
@@ -70,10 +70,7 @@ export const RichRadioButtonGroupList = () => {
           </Paragraph>
           <Paragraph kind="fineprint">A fineprint text here</Paragraph>
         </div>
-        <img
-          style={{ display: 'inline-block', float: 'right', width: '20%' }}
-          src={img.zensCharger}
-        />
+        <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src={img.zensCharger} />
       </RadioButton>
 
       <RadioButton checked={value == 1} value="1" name="radiobutton-group-rich" onChange={onClick}>
