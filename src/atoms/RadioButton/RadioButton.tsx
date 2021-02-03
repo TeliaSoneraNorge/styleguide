@@ -10,7 +10,6 @@ type Props = {
   checked?: boolean;
   disabled?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  children?: React.ReactNode;
   className?: string;
 };
 
