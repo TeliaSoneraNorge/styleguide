@@ -70,7 +70,7 @@ export const WithHighlight = () => {
   return (
     <SubscriptionAccordion
       name="20 GB"
-      highlight="+5GB"
+      highlight="+ 5GB"
       id="smart20"
       price={529}
       priceInfo={['pr. md']}
