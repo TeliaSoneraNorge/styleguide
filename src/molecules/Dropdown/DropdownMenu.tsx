@@ -3,7 +3,7 @@ import { useDropdownContext } from './context';
 import cs from 'classnames';
 
 type DropdownMenuProps = {
-  position?: 'right' | 'left';
+  position?: 'right' | 'left' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   wrapContent?: boolean;
   className?: string;
 };
@@ -54,12 +54,13 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
         {
           'telia-dropdown-content__nowrap': !props.wrapContent,
           open: open,
-          right: props.position === 'right',
+          right: ['right', 'top-right', 'bottom-right'].includes(props.position ?? ''),
         },
         props.className
       )}
       style={
-        positionTop
+        (!['bottom-right', 'bottom-left'].includes(props.position ?? '') && positionTop) ||
+        ['top-right', 'top-left'].includes(props.position ?? '')
           ? {
               transform: `translateY(calc(-100% - ${dropdownRef?.current?.offsetHeight ?? 0}px - 2px))`,
             }
