@@ -173,6 +173,68 @@ export const Default = () => {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
+
+      <br />
+      <div>
+        <h4>Positions</h4>
+        <div>
+          When using <code>left</code> or <code>right</code> the menu will render above toggle if theres little space
+          below. This is default behavior. Using any of the other positions will render the menu in a fixed position
+        </div>
+      </div>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Dropdown>
+          <DropdownToggle label="left" icon="user" />
+          <DropdownMenu position="left">
+            <DropdownItem label="Option Option Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  3" onClick={action('DropdownItem clicked')} />
+          </DropdownMenu>
+        </Dropdown>
+        <Dropdown>
+          <DropdownToggle label="right" icon="user" />
+          <DropdownMenu position="right">
+            <DropdownItem label="Option Option Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  3" onClick={action('DropdownItem clicked')} />
+          </DropdownMenu>
+        </Dropdown>
+
+        <Dropdown>
+          <DropdownToggle label="bottom-left" icon="user" />
+          <DropdownMenu position="bottom-left">
+            <DropdownItem label="Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option  3" onClick={action('DropdownItem clicked')} />
+          </DropdownMenu>
+        </Dropdown>
+
+        <Dropdown>
+          <DropdownToggle label="bottom-right" icon="user" />
+          <DropdownMenu position="bottom-right">
+            <DropdownItem label="Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option  3" onClick={action('DropdownItem clicked')} />
+          </DropdownMenu>
+        </Dropdown>
+        <Dropdown>
+          <DropdownToggle label="top-left" icon="user" />
+          <DropdownMenu position="top-left">
+            <DropdownItem label="Option Option Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  3" onClick={action('DropdownItem clicked')} />
+          </DropdownMenu>
+        </Dropdown>
+
+        <Dropdown>
+          <DropdownToggle label="top-right" icon="user" />
+          <DropdownMenu position="top-right">
+            <DropdownItem label="Option Option Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem label="Option Option Option  3" onClick={action('DropdownItem clicked')} />
+          </DropdownMenu>
+        </Dropdown>
+      </div>
     </div>
   );
 };
