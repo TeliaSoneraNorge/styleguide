@@ -16,7 +16,7 @@ type Props = {
 export const RadioButton: React.FC<Props> = (props) => {
   const { label, name, value, checked, disabled, onChange, className, children } = props;
   return (
-    <Label className="radiobutton">
+    <Label className={classnames('radiobutton', { 'radiobutton--disabled': disabled })}>
       <input type="radio" name={name} checked={checked} onChange={onChange} disabled={disabled} value={value} />
       <span className="radiobutton__svg-container">
         <svg width="44px" height="44px" viewBox="0 0 44 44">
