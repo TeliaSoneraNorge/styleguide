@@ -52,7 +52,7 @@ export const HorizontalRadioButtonGroup = () => {
   );
 };
 
-export const RichRadioButtonGroupList = () => {
+export const RichRadioButtonGroupWithChildren = () => {
   const [value, setValue] = useState(0);
 
   const onClick = (e: React.BaseSyntheticEvent) => {
@@ -85,4 +85,14 @@ export const RichRadioButtonGroupList = () => {
       </RadioButton>
     </RadioButtonGroup>
   );
+};
+
+export const RadioButtonGroupWithBorder = () => {
+  const [value, setValue] = useState(0);
+
+  const onClick = (e: React.BaseSyntheticEvent) => {
+    setValue(e.target.value);
+  };
+
+  return <RadioButtonGroup list={list} selectedValue={value ? value : '2'} onChange={onClick} border />;
 };

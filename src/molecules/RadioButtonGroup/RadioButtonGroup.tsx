@@ -3,11 +3,12 @@ import classnames from 'classnames';
 
 import { RadioButton } from '../../atoms/RadioButton';
 
-const getClassName = (type: Type, children: React.ReactNode) =>
+const getClassName = (type: Type, children: React.ReactNode, border?: boolean) =>
   classnames('radiobutton-group', {
     'radiobutton-group--horizontal': type === 'horizontal',
     'radiobutton-group--vertical': type === 'vertical',
     'radiobutton-group--rich-content': children !== null,
+    'radiobutton-group--border': border,
   });
 
 type Type = 'horizontal' | 'vertical';
@@ -24,15 +25,14 @@ type Props = {
   onChange?: (e: React.BaseSyntheticEvent) => void;
   selectedValue?: any;
   list?: ListProps[];
+  border?: boolean;
 };
 
 const RadioButtonGroup: React.FC<Props> = (props) => {
-  const { name, type = 'horizontal', onChange, selectedValue, list } = props;
-  console.log(props);
-  console.log(props.children);
+  const { name, type = 'vertical', onChange, selectedValue, list, border } = props;
 
   return (
-    <div className={getClassName(type, props.children)}>
+    <div className={getClassName(type, props.children, border)}>
       {!!props.children === true
         ? props.children
         : list
@@ -45,6 +45,7 @@ const RadioButtonGroup: React.FC<Props> = (props) => {
               disabled={radio.disabled}
               onChange={onChange}
               key={radio.value}
+              border={border}
             />
           ))
         : null}
