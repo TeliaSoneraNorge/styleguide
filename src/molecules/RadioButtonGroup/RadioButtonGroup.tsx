@@ -21,16 +21,14 @@ type ListProps = {
 
 type Props = {
   name?: string;
-  type?: Type;
   onChange?: (e: React.BaseSyntheticEvent) => void;
   selectedValue?: any;
   list?: ListProps[];
-  border?: boolean;
-};
+} & ({ type: 'vertical' | undefined; border?: boolean } | { type?: Type });
 
 const RadioButtonGroup: React.FC<Props> = (props) => {
-  const { name, type = 'vertical', onChange, selectedValue, list, border } = props;
-
+  const { name, type = 'vertical', onChange, selectedValue, list } = props;
+  const border = 'border' in props ? props.border : false;
   return (
     <div className={getClassName(type, props.children, border)}>
       {!!props.children === true
@@ -45,7 +43,6 @@ const RadioButtonGroup: React.FC<Props> = (props) => {
               disabled={radio.disabled}
               onChange={onChange}
               key={radio.value}
-              border={border}
             />
           ))
         : null}
