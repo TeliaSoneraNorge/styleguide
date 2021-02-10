@@ -1,10 +1,12 @@
 import React from 'react';
 import { Badge } from './Badge';
 import { colors } from '../../utils/colors';
+import { withDesign } from 'storybook-addon-designs';
 
 export default {
   title: 'Component library/Atoms/Badge',
   component: Badge,
+  decorators: [withDesign],
 };
 
 export const Default = () => {
@@ -108,4 +110,11 @@ export const Default = () => {
       </div>
     </div>
   );
+};
+
+Default.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/bc6t8nX2JAsUXctf5FRayU/Badges?node-id=129%3A102',
+  },
 };
