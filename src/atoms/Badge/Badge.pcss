@@ -1,0 +1,51 @@
+.telia-badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: var(--core-purple-400);
+  color: var(--white);
+  &__active {
+    border: 3px solid var(--core-purple-200);
+  }
+  &__ok {
+    background-color: var(--green-500);
+  }
+  &__caution  {
+    background-color: var(--orange-500);
+  }
+  &__warning {
+    background-color: var(--red-500);
+  }
+}
+
+.telia-badge--text {
+  padding: 0 4px;
+  font-size: 12px;
+  line-height: 1;
+}
+
+.telia-badge__compact {
+  min-width: 12px;
+  height: 12px;
+  border-radius: 6px;
+}
+
+.telia-badge__compact.telia-badge__active {
+  border: 2px solid var(--core-purple-200);
+}
+
+.telia-badge__active.telia-badge__ok {
+  border-color: var(--green-200);
+}
+
+.telia-badge__active.telia-badge__caution {
+  border-color: var(--orange-200);
+}
+
+.telia-badge__active.telia-badge__warning {
+  border-color: var(--red-200);
+}
