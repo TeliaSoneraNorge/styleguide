@@ -7,11 +7,11 @@ See useTabDetection.ts
 
 body.telia-hide-focus {
   *:focus {
-    outline: none;
-    box-shadow: none;
+    outline: none !important;
+    box-shadow: none !important;
   }
 
-  *:focus + .radiobutton__svg-container {
+  .radiobutton > input:focus + .radiobutton__svg-container {
     box-shadow: none;
   }
 }

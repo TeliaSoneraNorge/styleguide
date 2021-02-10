@@ -23,6 +23,10 @@
     margin-top: 0.75rem;
   }
 
+  &--disabled {
+    pointer-events: none;
+  }
+
   /* If the input is checked, display the inner circle with purple color */
   & > input:checked ~ .radiobutton__svg-container .radiobutton__circle {
     display: block;
@@ -79,5 +83,23 @@
   /* On focus effect, adding a blue border */
   & > input:focus + .radiobutton__svg-container {
     box-shadow: 0 0 0 2px transparent, 0 0 0 2px var(--blue-300);
+  }
+
+  /* On hover effect on disabled radio button, remover grey shadow */
+  &:hover > input[disabled] ~ .radiobutton__svg-container {
+    background-color: transparent;
+  }
+
+  /* If the input is disabled, add grey border and circle */
+  & > input[disabled] ~ .radiobutton__svg-container .radiobutton__border {
+    stroke: var(--grey-300);
+  }
+
+  /* If the input is checked and disabled, add grey border and circle */
+  & > input[disabled]:checked ~ .radiobutton__svg-container .radiobutton__border {
+    stroke: var(--grey-300);
+  }
+  & > input[disabled]:checked ~ .radiobutton__svg-container .radiobutton__circle {
+    fill: var(--grey-300);
   }
 }

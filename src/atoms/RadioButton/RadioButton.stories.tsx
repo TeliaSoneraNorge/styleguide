@@ -17,7 +17,8 @@ export const Default = () => {
         onChange={(e) => setChecked(e.target.checked)}
       />
       <RadioButton label="I am checked" checked />
-      <RadioButton label="I am not checked" />
+      <RadioButton label="I am disabled" disabled />
+      <RadioButton label="I am checked and disabled" checked disabled />
     </>
   );
 };
