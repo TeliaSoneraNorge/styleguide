@@ -586,7 +586,7 @@ export const SearchItem = () => {
       <br />
       <Dropdown>
         <DropdownToggle label={activeCountry ? activeCountry : 'Velg land'} />
-        <DropdownMenu>
+        <DropdownMenu position="bottom-left">
           <DropdownItem header={true} label="Search for something:" />
           <DropdownSearchItem icon="search" onInputChange={setInput} />
           {items.map((r) => (

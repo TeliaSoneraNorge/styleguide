@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
@@ -171,9 +171,11 @@ export const DropdownSearchItem = (props: DropdownSearchItemProps) => {
   const itemRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (itemRef.current && open) {
-      itemRef.current.focus();
-    }
+    setTimeout(() => {
+      if (itemRef.current && open) {
+        itemRef.current.focus();
+      }
+    }, 100);
   }, [open, itemRef.current]);
 
   return (
