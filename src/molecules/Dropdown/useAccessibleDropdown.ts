@@ -50,11 +50,20 @@ export const useAccessibleDropdown = () => {
 
   useEffect(() => {
     const click = (e: KeyboardEvent) => {
-      const clickItem = ctx.menuRef.current
+      const activeItem = ctx.menuRef.current
         ? ctx.menuRef.current.querySelector<HTMLButtonElement>('button.telia-dropdown-item__active')
         : null;
-      if (e.keyCode === 13 && clickItem) {
-        clickItem.click();
+
+      /**
+       * if the target is a button itself, it should be clicked,
+       * not the active dropdown item
+       **/
+      if (e.target instanceof HTMLButtonElement && e.target.onclick) {
+        return;
+      }
+
+      if (e.key === 'Enter' && activeItem) {
+        activeItem.click();
       }
     };
     const navigate = (e: KeyboardEvent) => {
