@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import { RadioButton } from './RadioButton';
 
 export default {
@@ -8,7 +7,6 @@ export default {
 };
 
 export const Default = () => {
-  enableTabKeyDetection();
   const [checked, setChecked] = useState(false);
   return (
     <>
