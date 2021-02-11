@@ -28,6 +28,10 @@ export const Default = () => {
         <Badge kind="active" status="caution" />
         <Badge kind="active" status="warning" />
       </div>
+      <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '2rem' }}>
+        <div style={{ paddingRight: '0.5rem' }}>Pay attention to this information</div>
+        <Badge kind="active" status="warning" />
+      </div>
       <div style={{ paddingBottom: '2rem' }}>
         <code>size='compact'</code>
       </div>
@@ -44,7 +48,10 @@ export const Default = () => {
         <Badge kind="active" status="caution" size="compact" />
         <Badge kind="active" status="warning" size="compact" />
       </div>
-
+      <div style={{ display: 'flex', alignItems: 'center', paddingBottom: '2rem' }}>
+        <div style={{ paddingRight: '0.5rem' }}>Pay attention to this information</div>
+        <Badge kind="active" status="warning" size="compact" />
+      </div>
       <h3>With text</h3>
       <div style={{ display: 'flex', justifyContent: 'space-around', paddingBottom: '1rem' }}>
         <Badge text="1" />
