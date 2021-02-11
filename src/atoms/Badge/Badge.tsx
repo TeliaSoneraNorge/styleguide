@@ -7,7 +7,15 @@ interface Common {
   borderColor?: string;
   kind?: 'active' | 'default';
   className?: string;
-  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
+  /**
+   * @default 'top-right'
+   */
+  position?: 'top-right' | 'top-left' | 'bottom-right' | 'bottom-left';
+  /**
+   * If you eg. want to adjust the transform on the badge relative to its child.
+   * See story for example
+   */
+  style?: React.CSSProperties;
 }
 
 interface Compact extends Common {
@@ -35,6 +43,7 @@ export const Badge: React.FC<Compact | Default> = (props) => {
       style={{
         backgroundColor: props.color,
         borderColor: props.borderColor,
+        ...props.style,
       }}
     >
       {'text' in props && props.text && <div className="telia-badge--text">{props.text}</div>}
