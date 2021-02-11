@@ -7,6 +7,7 @@ interface Common {
   borderColor?: string;
   kind?: 'active' | 'default';
   className?: string;
+  position?: 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
 }
 
 interface Compact extends Common {
@@ -19,7 +20,7 @@ interface Default extends Common {
 }
 
 export const Badge: React.FC<Compact | Default> = (props) => {
-  return (
+  const badge = (
     <div
       className={cn(
         'telia-badge',
@@ -28,6 +29,7 @@ export const Badge: React.FC<Compact | Default> = (props) => {
           'telia-badge__active': props.kind === 'active',
         },
         props.status ? `telia-badge__${props.status}` : null,
+        props.children ? (props.position ? `telia-badge__${props.position}` : `telia-badge__top-right`) : null,
         props.className
       )}
       style={{
@@ -38,4 +40,14 @@ export const Badge: React.FC<Compact | Default> = (props) => {
       {'text' in props && props.text && <div className="telia-badge--text">{props.text}</div>}
     </div>
   );
+
+  if (props.children) {
+    return (
+      <div className="telia-badge--root">
+        {props.children}
+        {badge}
+      </div>
+    );
+  }
+  return badge;
 };

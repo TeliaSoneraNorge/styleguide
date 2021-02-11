@@ -49,3 +49,33 @@
 .telia-badge__active.telia-badge__warning {
   border-color: var(--red-200);
 }
+
+.telia-badge--root {
+  position: relative;
+  display: inline-flex;
+  .telia-badge {
+    position: absolute;
+    &__top-right {
+      transform: translate(50%, -50%);
+      top: 0;
+      right: 0;
+    }
+    &__top-left {
+      transform: translate(-50%, -50%);
+      top: 0;
+      left: 0;
+    }
+
+    &__bottom-right {
+      transform: translate(50%, 50%);
+      bottom: 0;
+      right: 0;
+    }
+
+    &__bottom-left {
+      transform: translate(-50%, 50%);
+      bottom: 0;
+      left: 0;
+    }
+  }
+}
