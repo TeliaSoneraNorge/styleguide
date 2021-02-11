@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.38.20 
+- Added Badge component
+
 ## 1.38.0 
 - Breaking: moved Toggle from business to atoms. 
 To fix in your app replace `import {Toggle} from '@telia/styleguide/business'` 
@@ -79,7 +82,7 @@ Contains new components
 
 ## 1.33.61
 
-- Add now Modal component and deprecate old
+- Add new Modal component and deprecate old
 
 ## 1.33.51
 
