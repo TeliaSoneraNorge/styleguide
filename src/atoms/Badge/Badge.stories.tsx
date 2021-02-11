@@ -196,7 +196,7 @@ export const PositionedBadges = () => {
         </Badge>
       </div>
 
-      <h4>Custom transform</h4>
+      <h4>Custom position</h4>
       <div style={{ display: 'flex', justifyContent: 'space-around', paddingBottom: '2rem' }}>
         <Badge kind="active" size="compact" style={{ transform: 'translate(25%, 10%)' }}>
           <Button label="Button" kind="secondary" size="compact" />
