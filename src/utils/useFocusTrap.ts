@@ -16,14 +16,14 @@ const getFirstFocus = (elementList?: NodeListOf<HTMLElement> | HTMLElement[]) =>
 const getLastFocus = (elementList?: NodeListOf<HTMLElement>) => {
   if (!elementList) return undefined;
   let reverse: HTMLElement[] = [];
-  elementList.forEach(elemnt => {
+  elementList.forEach((elemnt) => {
     reverse = [elemnt, ...reverse];
   });
   return getFirstFocus(reverse);
 };
 
 /**
- * This hook captures the focus within a container (now used only for Modal).
+ * This hook captures the focus within a container (eg used in Modal and StepFlow).
  * It handle disabled elements any where in the tab order,
  * and tabs to first element after last.
  * Using shift it tabs to last element after first.

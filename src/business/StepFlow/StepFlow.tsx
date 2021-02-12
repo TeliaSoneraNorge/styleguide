@@ -4,6 +4,7 @@ import { StepFlowMenu } from './StepFlowMenu';
 import { StepFlowFooter } from './StepFlowFooter';
 import { Labels } from './types';
 import { useBreakpoint } from '../../utils/useBreakpoint';
+import { useFocusTrap } from '../../utils/useFocusTrap';
 type Props = {
   initialStep?: number;
   /**
@@ -41,6 +42,8 @@ type Props = {
 };
 
 export const StepFlow = (props: Props) => {
+  const { container } = useFocusTrap();
+
   const [step, setStep] = useState(props.initialStep ?? 0);
   const breakpointSm = useBreakpoint('sm');
   const breakpointLg = useBreakpoint('lg');
@@ -64,7 +67,7 @@ export const StepFlow = (props: Props) => {
   }, [step, props.children]);
 
   return (
-    <div className="telia-step-flow">
+    <div className="telia-step-flow" ref={container}>
       <StepFlowHeader
         labels={props.labels}
         title={props.title}

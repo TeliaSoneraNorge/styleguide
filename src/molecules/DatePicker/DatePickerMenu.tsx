@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDatePicker } from './context';
-import { useFocusTrap } from '../Modal/useFocusTrap';
+import { useFocusTrap } from '../../utils/useFocusTrap';
 import { useEscapeListener } from '../Modal/useEscapeListener';
 import { DatePickerDay, DatePickerDayPlaceholder } from './DatePickerDay';
 import { DatePickerHeader } from './DatePickerHeader';
