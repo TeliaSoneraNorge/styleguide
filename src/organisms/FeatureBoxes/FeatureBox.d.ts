@@ -7,6 +7,7 @@ declare interface FeatureBoxProps {
   url?: string;
   hasBorder?: boolean;
   size?: string;
+  backgroundColor?: string;
 }
 
 export default class FeatureBox extends React.Component<FeatureBoxProps, any> {

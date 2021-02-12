@@ -1,55 +1,64 @@
 .feature-boxes {
-    margin-bottom: var(--margin-bottom-large);
+  margin-bottom: var(--margin-bottom-large);
+
+  @media (min-width: 39.5em) {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .feature-box {
+    padding: 2rem;
+    text-align: center;
+    width: 100%;
+    display: block;
+
+    &__background {
+      &--white {
+        background-color: var(--white);
+      }
+
+      &--transparent {
+        background-color: inherit;
+      }
+    }
 
     @media (min-width: 39.5em) {
-        display: flex;
-        flex-flow: row wrap;
-        justify-content: center;
+      flex-basis: 48%;
+      max-width: 48%;
     }
 
-    .feature-box {
-        background-color: var(--white);
-        padding: 2rem;
-        text-align: center;
-        width: 100%;
-        display: block;
-
-        @media (min-width: 39.5em) {
-            flex-basis: 48%;
-            max-width: 48%;
-        }
-
-        &--medium {
-            @media (min-width: 58.75em) {
-                flex-basis: 31.3333%;
-                max-width: 31.33333%;
-            }
-        }
-
-        &--small {
-            @media (min-width: 46.875em) {
-                flex-basis: 31.3333%;
-                max-width: 31.33333%;
-            }
-
-            @media (min-width: 58.75em) {
-                flex-basis: 23%;
-                max-width: 23%;
-            }
-        }
-
-        &--border {
-            border: 1px solid var(--light-grey);
-            margin: 0.3125rem;
-        }
-
-        &__icon {
-            margin-bottom: var(--margin-bottom);
-
-            svg {
-                width: 3rem;
-                height: 3rem;
-            }
-        }
+    &--medium {
+      @media (min-width: 58.75em) {
+        flex-basis: 31.3333%;
+        max-width: 31.33333%;
+      }
     }
+
+    &--small {
+      @media (min-width: 46.875em) {
+        flex-basis: 31.3333%;
+        max-width: 31.33333%;
+      }
+
+      @media (min-width: 58.75em) {
+        flex-basis: 23%;
+        max-width: 23%;
+      }
+    }
+
+    &--border {
+      border: 1px solid var(--light-grey);
+      margin: 0.3125rem;
+    }
+
+    &__icon {
+      margin-bottom: var(--margin-bottom);
+
+      svg {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+  }
 }
