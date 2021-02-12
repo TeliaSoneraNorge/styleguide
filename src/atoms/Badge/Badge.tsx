@@ -2,10 +2,10 @@ import React from 'react';
 import cn from 'classnames';
 
 interface Common {
-  status?: 'ok' | 'caution' | 'warning';
+  status?: 'ok' | 'caution' | 'warning' | 'communication';
   color?: string;
   borderColor?: string;
-  kind?: 'active' | 'default';
+  kind?: 'active' | 'outlined' | 'default';
   className?: string;
   /**
    * @default 'top-right'
@@ -34,14 +34,15 @@ export const Badge: React.FC<Compact | Default> = (props) => {
         'telia-badge',
         {
           'telia-badge__compact': props.size === 'compact',
-          'telia-badge__active': props.kind === 'active',
         },
+        props.kind ? `telia-badge__${props.kind}` : null,
         props.status ? `telia-badge__${props.status}` : null,
         props.children ? (props.position ? `telia-badge__${props.position}` : `telia-badge__top-right`) : null,
         props.className
       )}
       style={{
-        backgroundColor: props.color,
+        backgroundColor: props.kind === 'outlined' ? 'white' : props.color,
+        color: props.kind === 'outlined' ? props.borderColor : undefined,
         borderColor: props.borderColor,
         ...props.style,
       }}
