@@ -360,6 +360,9 @@ export const Skeleton = ({}) => {
   return (
     <>
       <div>
+        <h2>Standalone</h2>
+        <ListItemSkeleton />
+
         <h2>Default </h2>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
