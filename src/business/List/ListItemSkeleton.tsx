@@ -20,6 +20,7 @@ export type ListItemProps = {
    */
   caption?: boolean;
   compact?: boolean;
+  tag?: 'div' | 'li';
 } & ListStyle;
 
 /**
@@ -34,8 +35,10 @@ export const ListItemSkeleton = (props: ListItemProps) => {
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
 
+  const Tag = props.tag ?? 'li';
+
   return (
-    <li
+    <Tag
       className={cn('telia-listItem telia-listItem--skeleton ', {
         'telia-listItem--card': type === 'card',
         'telia-listItem--underlined': border === 'underlined',
@@ -78,6 +81,6 @@ export const ListItemSkeleton = (props: ListItemProps) => {
           )}
         </div>
       </div>
-    </li>
+    </Tag>
   );
 };
