@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import Button from '../../atoms/Button/Button';
 import cn from 'classnames';
+import { useClickOutsideListener } from '../../molecules/DatePicker/useClickOutsideListener';
 
 export interface SlidingShoppingCartProps {
   cartItems?: any;
@@ -41,8 +42,17 @@ const SlidingShoppingCart = ({
   shouldShowCart,
   setShouldShowCart,
 }: SlidingShoppingCartProps) => {
+  const ref = useRef<HTMLDivElement>(null);
+
+  useClickOutsideListener({
+    open: shouldShowCart,
+    close: () => setShouldShowCart(false),
+    ref,
+  });
+
   return (
     <div
+      ref={ref}
       className={cn('sliding-shopping-cart__container', {
         'sliding-shopping-cart__container--show': shouldShowCart,
       })}
