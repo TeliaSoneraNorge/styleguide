@@ -9,6 +9,7 @@ export type ListItemProps = {
   caption?: string | React.ReactChild;
   onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
   compact?: boolean;
+
   className?: string;
   /**
    * @default li
@@ -38,7 +39,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
     <Tag
       className={cn('telia-listItem', {
         'telia-listItem--underlined': border === 'underlined',
-        'telia-listItem--shadow': border === 'shadow',
+        'telia-listItem--outlined': border === 'outlined',
         'telia-listItem--card': type === 'card',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',

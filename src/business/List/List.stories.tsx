@@ -426,7 +426,7 @@ export const Skeleton = ({}) => {
         <h2>type: card </h2>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-            <List border="shadow" type="card">
+            <List border="outlined" type="card">
               <ListHeading title="default" />
               {loading ? (
                 <>
@@ -445,7 +445,7 @@ export const Skeleton = ({}) => {
           </div>
 
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-            <List color="medium" border="shadow" type="card">
+            <List color="medium" border="outlined" type="card">
               <ListHeading title="color medium" />
               {loading ? (
                 <>
@@ -464,7 +464,7 @@ export const Skeleton = ({}) => {
           </div>
 
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-            <List color="dark" border="shadow" type="card">
+            <List color="dark" border="outlined" type="card">
               <ListHeading title="color dark" />
               {loading ? (
                 <>
@@ -592,7 +592,7 @@ export const Skeleton = ({}) => {
         <h2>compact: true, type: card</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap' }}>
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-            <List border="shadow" type="card">
+            <List border="outlined" type="card">
               <ListHeading title="default" />
               {loading ? (
                 <>
@@ -626,7 +626,7 @@ export const Skeleton = ({}) => {
           </div>
 
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-            <List color="medium" border="shadow" type="card">
+            <List color="medium" border="outlined" type="card">
               <ListHeading title="color medium" />
               {loading ? (
                 <>
@@ -660,7 +660,7 @@ export const Skeleton = ({}) => {
           </div>
 
           <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-            <List color="dark" border="shadow" type="card">
+            <List color="dark" border="outlined" type="card">
               <ListHeading title="color dark" />
               {loading ? (
                 <>
@@ -696,7 +696,7 @@ export const Skeleton = ({}) => {
       </div>
       <h2>description: false, caption: true</h2>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
-        <List type="card" border="shadow">
+        <List type="card" border="outlined">
           {loading ? (
             <>
               <ListItemSkeleton description={false} caption={true} />
@@ -830,7 +830,7 @@ export const Expandable = ({}) => {
         <ListItem
           title="Expandable ListItem dark"
           color="dark"
-          border="shadow"
+          border="outlined"
           decorator={<Avatar text="LI" color="grey100" />}
           description="<li> element of item type"
           caption="unstyled"
