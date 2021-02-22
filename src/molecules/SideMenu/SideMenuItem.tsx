@@ -13,6 +13,7 @@ type Props = {
   avatar?: {
     text?: string;
     img?: string;
+    alt?: string;
   };
   /**
    * Icon to display in front of item
@@ -70,7 +71,13 @@ export const SideMenuItem: React.FC<Props> = (props) => {
         )}
       >
         {props.avatar ? (
-          <Avatar text={props.avatar.text} img={props.avatar.img} onClick={props.onClick} href={props.href} />
+          <Avatar
+            text={props.avatar.text}
+            img={props.avatar.img}
+            onClick={props.onClick}
+            href={props.href}
+            alt={props.avatar.alt}
+          />
         ) : (
           <Button
             icon={props.icon}
