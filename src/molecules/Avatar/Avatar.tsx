@@ -3,7 +3,7 @@ import { Icon, IconDefinition } from '../../index';
 import cn from 'classnames';
 import { colors } from '../../index';
 
-export type AvatarProps = {
+export interface AvatarProps extends React.HTMLAttributes<HTMLButtonElement | HTMLAnchorElement | HTMLDivElement> {
   /**
    * Image to fill the avatar.
    */
@@ -12,6 +12,7 @@ export type AvatarProps = {
    * alt props for the imgage
    */
   alt?: string;
+
   /**
    * Text to display in the avatar
    * e.g a user's initials
@@ -41,22 +42,17 @@ export type AvatarProps = {
   style?: React.CSSProperties;
   className?: string;
   tabIndex?: number;
-} & (
-  | {
-      /**
-       *  Status indicator. Online, offline and inactive = green, red and yellow dot
-       */
-      status?: 'online' | 'offline' | 'inactive';
-    }
-  | {
-      /**
-       *  Status indicator. Online, offline and inactive = green, red and yellow dot
-       */
-      avatar?: React.ReactNode;
-    }
-);
+}
 
-export const Avatar = (props: AvatarProps) => {
+interface StatusAvatarProps extends AvatarProps {
+  status: 'online' | 'offline' | 'inactive';
+}
+
+interface CoupledAvatarProps extends AvatarProps {
+  avatar?: React.ReactNode;
+}
+
+export const Avatar = (props: StatusAvatarProps | CoupledAvatarProps) => {
   const Tag = props.href ? 'a' : props.onClick ? 'button' : 'div';
   const size = props.size ? props.size : 'default';
   const status = 'status' in props && props.status ? props.status : 'online';
@@ -86,8 +82,9 @@ export const Avatar = (props: AvatarProps) => {
       href={props.href}
       onClick={handleClick}
       tabIndex={tabIndex}
+      aria-label={props['aria-label'] ?? props.text ?? props.alt ?? props.icon ?? props.href}
     >
-      {props.img && <img className="telia-avatar-image" src={props.img} alt={props.alt} />}
+      {props.img && <img className="telia-avatar-image" src={props.img} alt={props.alt ?? props.text} />}
       {props.text ? (
         <div className={cn('telia-avatar-text', props.img && 'telia-avatar-text--absolute')}>
           {props.text.slice(0, 2)}
