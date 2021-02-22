@@ -258,7 +258,7 @@ export const Table: React.FC<TableProps> = (props) => {
                       hiddenLabel={true}
                       checked={props.allSelected ? true : false}
                       partial={props.selected && props.selected.length > 0 && !props.allSelected}
-                      controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(' ')}
+                      aria-controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(' ')}
                       onChange={props.onSelectAll}
                     />
                   </TableHeadCell>

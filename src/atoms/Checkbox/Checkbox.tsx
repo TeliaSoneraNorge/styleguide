@@ -3,7 +3,7 @@ import cs from 'classnames';
 
 import { Icon } from '../Icon';
 
-type CheckboxProps = {
+interface CheckboxProps extends React.InputHTMLAttributes<HTMLInputElement> {
   label: string;
   hiddenLabel?: boolean;
   id?: string;
@@ -15,30 +15,22 @@ type CheckboxProps = {
    */
   tabIndex?: number;
   className?: string | any;
-} & (
-  | {
-      checked: boolean;
-      onChange: (e?: React.ChangeEvent<HTMLInputElement>) => void;
-    }
-  | {}
-) &
-  (
-    | {
-        controls: string;
-        partial: boolean;
-      }
-    | {}
-  );
+  partial?: boolean;
+}
 
-export const Checkbox: React.FC<CheckboxProps> = (props) => {
+interface ControlledProps extends CheckboxProps {
+  checked: boolean;
+  onChange: (e?: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const Checkbox: React.FC<ControlledProps | CheckboxProps> = (props) => {
   return (
     <label className="telia-checkbox">
       <input
         id={props.id}
-        aria-checked={
-          'checked' in props && props.checked ? 'true' : 'partial' in props && props.partial ? 'mixed' : 'false'
-        }
-        aria-controls={'controls' in props && props.controls ? props.controls : ''}
+        aria-checked={'checked' in props && props.checked ? 'true' : props.partial ? 'mixed' : 'false'}
+        aria-controls={props['aria-controls']}
+        aria-label={props['aria-label'] ?? props.label}
         className="telia-checkbox__checkbox"
         type="checkbox"
         name={props.name}
