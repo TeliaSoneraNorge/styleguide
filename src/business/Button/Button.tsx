@@ -4,7 +4,7 @@ import { Icon, IconDefinition } from '../../atoms/Icon';
 
 type ButtonKind = 'primary' | 'primary-text' | 'secondary' | 'secondary-text' | 'ghost' | 'positive' | 'negative';
 
-type ButtonProps = {
+interface Props {
   /**
    * Button style based on the design guide. Default is primary.
    */
@@ -17,14 +17,7 @@ type ButtonProps = {
    * Icon to display in the button.
    */
   icon?: IconDefinition;
-  /**
-   * Action triggered when clicking the button.
-   */
-  onClick?: (e: React.MouseEvent) => void;
-  /**
-   * If href is specified, the Button will be rendered using an anchor tag
-   */
-  href?: string;
+
   disabled?: boolean;
   active?: boolean;
   /**
@@ -37,34 +30,44 @@ type ButtonProps = {
    */
   size?: 'compact' | 'default';
 
-  /**
-   * For use with href.
-   * Eg pass `_blank` to open link in a new tab
-   */
-  target?: string;
-  type?: 'button' | 'reset' | 'submit';
   className?: string;
-};
+}
+interface ButtonProps extends Props, React.ButtonHTMLAttributes<HTMLButtonElement> {
+  type?: 'button' | 'reset' | 'submit';
+  onClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+}
+interface LinkButtonProps extends Props, React.LinkHTMLAttributes<HTMLAnchorElement> {
+  /**
+   * If href is specified, the Button will be rendered using an anchor tag
+   */
+  href: string;
+  target?: string;
+  onClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+}
 
-export const Button = (props: ButtonProps) => {
+export const Button = (props: LinkButtonProps | ButtonProps) => {
   const {
     kind = 'primary',
     label,
-    href,
     onClick,
     icon,
     iconRight,
     disabled = false,
     active = false,
     size = 'default',
-    target,
-    type = 'button',
     className,
+    ...rest
   } = props;
+  const href = 'href' in props ? props.href : undefined;
+  const target = 'target' in props ? props.target : undefined;
+  const type = 'href' in props ? props.type : props.type ?? 'button';
+
+  const ariaLabel = props['aria-label'] ?? props.label ?? props.icon;
+
   const Tag = href ? 'a' : 'button';
 
   const handleClick = (e: React.MouseEvent) => {
-    if (href && onClick) {
+    if ('href' in props && onClick) {
       e.preventDefault();
     }
     if (onClick) {
@@ -89,8 +92,10 @@ export const Button = (props: ButtonProps) => {
       href={href}
       onClick={handleClick}
       disabled={disabled}
-      type={href ? undefined : type}
-      target={href ? target : undefined}
+      type={type}
+      target={target}
+      aria-label={ariaLabel}
+      {...rest}
     >
       {icon && <Icon icon={icon} className="telia-button-icon" />}
       {label}
