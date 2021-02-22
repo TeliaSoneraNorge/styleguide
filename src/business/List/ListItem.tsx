@@ -7,7 +7,7 @@ export type ListItemProps = {
   decorator?: React.ReactChild;
   description?: React.ReactChild;
   caption?: string | React.ReactChild;
-  onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler;
   compact?: boolean;
 
   className?: string;
@@ -25,13 +25,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
   const Tag = props.tag ? props.tag : 'li';
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (onClick && (e.key === ' ' || e.key === 'Enter')) {
-      e.preventDefault();
-      onClick(e as any);
-    }
-  };
+  const InnerTag = onClick ? 'button' : 'div';
 
   const hasProps = title || decorator || description || caption;
 
@@ -46,14 +40,13 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
       })}
     >
-      <div
+      <InnerTag
         className={cn(
           'telia-listItem__mainWrapper',
           { 'telia-listItem--compact': compact, 'telia-listItem--clickable': onClick },
           className
         )}
         onClick={onClick}
-        onKeyDown={handleKeyDown}
         tabIndex={onClick && 0}
         role={onClick && 'button'}
       >
@@ -93,7 +86,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
           </div>
         )}
         {!expandable && props.children}
-      </div>
+      </InnerTag>
       {expandable && (
         <div
           className={cn('telia-listItem__expandedChildren', {
