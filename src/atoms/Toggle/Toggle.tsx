@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import cs from 'classnames';
 
 interface Props {
+  label: string;
   checked: boolean;
   disabled?: boolean;
   'aria-labelledby'?: string;
@@ -72,6 +73,7 @@ export const Toggle: React.FC<Props> = (props) => {
       </div>
 
       <input
+        aria-label={props['aria-label'] ?? props.label}
         {...props}
         onChange={props.onChange}
         ref={inputRef}
