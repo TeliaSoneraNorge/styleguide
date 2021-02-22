@@ -105,7 +105,7 @@ const ShoppingCartItem = ({
                   {subtitle}
                 </span>
               )}
-              {leaseMonths !== null && leaseMonths !== undefined && price.upfront && (
+              {!!leaseMonths && leaseMonths !== 'now' && price.upfront && (
                 <span className="shopping-cart__item__name__text__subtitle">
                   Betales nå: {`${formatPrice(price.upfront - discountValueUpfront)}`}
                 </span>

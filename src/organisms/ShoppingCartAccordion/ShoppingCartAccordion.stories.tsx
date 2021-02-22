@@ -4,6 +4,7 @@ import { jsxDecorator } from 'storybook-addon-jsx';
 
 import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import ShoppingCartAccordion from './ShoppingCartAccordion';
+import Paragraph from '../../atoms/Paragraph';
 
 export default {
   title: 'Component library/Organisms/ShoppingCartAccordion',
@@ -605,7 +606,7 @@ const Wrapper = ({
       totalPriceMonthly={pricePerMonth}
       totalPriceUpfront={priceUpfront}
       toggleCart={() => setIsExpanded(!isExpanded)}
-      formatPrice={price => `${price},-`}
+      formatPrice={(price) => `${price},-`}
     >
       <ShoppingCart
         cartItems={getCart(itemToDisplay)}
@@ -615,7 +616,8 @@ const Wrapper = ({
         totalPriceUpfront={priceUpfront}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
-        formatPrice={price => `${price},-`}
+        formatPrice={(price) => `${price},-`}
+        disclaimers={<Paragraph kind="fineprint">Minste totalpris 12 md. XXX</Paragraph>}
       />
     </ShoppingCartAccordion>
   );
