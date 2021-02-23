@@ -85,7 +85,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         )}
         {props.children}
       </InnerTag>
-      {expandable && (
+      {'expandedChildren' in props && (
         <div
           className={cn('telia-listItem__expandedChildren', {
             'telia-listItem__expandedChildren--expanded': open,
