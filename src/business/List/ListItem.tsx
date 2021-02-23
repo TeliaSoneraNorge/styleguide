@@ -9,13 +9,12 @@ export type ListItemProps = {
   caption?: string | React.ReactChild;
   onClick?: React.MouseEventHandler;
   compact?: boolean;
-  expandedChildren?: React.ReactNode;
   className?: string;
   /**
    * @default li
    */
   tag?: 'div' | 'span' | 'li';
-} & ({ expandable: true; open: boolean } | { expandable?: false });
+} & ({ expandable: true; open: boolean; expandedChildren: React.ReactNode } | { expandable?: false });
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
@@ -38,13 +37,13 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
-        className,
       })}
     >
       <InnerTag
         className={cn('telia-listItem__mainWrapper', {
           'telia-listItem--compact': compact,
           'telia-listItem--clickable': onClick,
+          className,
         })}
         onClick={onClick}
         tabIndex={onClick && 0}
