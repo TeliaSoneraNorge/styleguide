@@ -46,7 +46,6 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
           className,
         })}
         onClick={onClick}
-        tabIndex={onClick && 0}
         role={onClick && 'button'}
       >
         {hasProps && (
