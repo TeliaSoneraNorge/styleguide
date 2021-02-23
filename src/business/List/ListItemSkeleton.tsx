@@ -42,7 +42,7 @@ export const ListItemSkeleton = (props: ListItemProps) => {
       className={cn('telia-listItem telia-listItem--skeleton ', {
         'telia-listItem--card': type === 'card',
         'telia-listItem--underlined': border === 'underlined',
-        'telia-listItem--shadow': border === 'shadow',
+        'telia-listItem--outlined': border === 'outlined',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',

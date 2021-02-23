@@ -7,14 +7,14 @@ export type ListItemProps = {
   decorator?: React.ReactChild;
   description?: React.ReactChild;
   caption?: string | React.ReactChild;
-  onClick?: (e: React.MouseEvent<HTMLLIElement, MouseEvent> | React.MouseEvent<HTMLDivElement, MouseEvent>) => void;
+  onClick?: React.MouseEventHandler;
   compact?: boolean;
   className?: string;
   /**
    * @default li
    */
   tag?: 'div' | 'span' | 'li';
-} & ({ expandable: true; open: boolean } | { expandable?: false });
+} & ({ expandable: true; open: boolean; expandedChildren: React.ReactNode } | { expandable?: false });
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
@@ -24,13 +24,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
   const Tag = props.tag ? props.tag : 'li';
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (onClick && (e.key === ' ' || e.key === 'Enter')) {
-      e.preventDefault();
-      onClick(e as any);
-    }
-  };
+  const InnerTag = onClick ? 'button' : 'div';
 
   const hasProps = title || decorator || description || caption;
 
@@ -38,22 +32,20 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
     <Tag
       className={cn('telia-listItem', {
         'telia-listItem--underlined': border === 'underlined',
-        'telia-listItem--shadow': border === 'shadow',
+        'telia-listItem--outlined': border === 'outlined',
         'telia-listItem--card': type === 'card',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
       })}
     >
-      <div
-        className={cn(
-          'telia-listItem__mainWrapper',
-          { 'telia-listItem--compact': compact, 'telia-listItem--clickable': onClick },
-          className
-        )}
+      <InnerTag
+        className={cn('telia-listItem__mainWrapper', {
+          'telia-listItem--compact': compact,
+          'telia-listItem--clickable': onClick,
+          className,
+        })}
         onClick={onClick}
-        onKeyDown={handleKeyDown}
-        tabIndex={onClick && 0}
         role={onClick && 'button'}
       >
         {hasProps && (
@@ -91,15 +83,15 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
             )}
           </div>
         )}
-        {!expandable && props.children}
-      </div>
+        {props.children}
+      </InnerTag>
       {expandable && (
         <div
           className={cn('telia-listItem__expandedChildren', {
             'telia-listItem__expandedChildren--expanded': open,
           })}
         >
-          {props.children}
+          {props.expandedChildren}
         </div>
       )}
     </Tag>
