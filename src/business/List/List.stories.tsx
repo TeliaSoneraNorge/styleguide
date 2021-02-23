@@ -817,15 +817,16 @@ export const Expandable = ({}) => {
           caption="unstyled"
           onClick={() => setOpen(!open)}
           open={open}
+          expandedChildren={
+            <ListItem
+              title="I am a child. A list item"
+              description="Dont worry. I am a div, not an li"
+              compact={true}
+              tag="div"
+            />
+          }
           expandable
-        >
-          <ListItem
-            title="I am a child. A list item"
-            description="Dont worry. I am a div, not an li"
-            compact={true}
-            tag="div"
-          />
-        </ListItem>
+        />
 
         <ListItem
           title="Expandable ListItem dark"
@@ -836,10 +837,9 @@ export const Expandable = ({}) => {
           caption="unstyled"
           onClick={() => setOpen2(!open2)}
           open={open2}
+          expandedChildren={<div>Now you see me!</div>}
           expandable
-        >
-          <div>Now you see me!</div>
-        </ListItem>
+        />
 
         <ListCard
           title="Expandable ListCard"
@@ -848,10 +848,9 @@ export const Expandable = ({}) => {
           caption="shadow"
           onClick={() => setOpen3(!open3)}
           open={open3}
+          expandedChildren={<div>Hello child</div>}
           expandable
-        >
-          <div>Hello child</div>
-        </ListCard>
+        />
 
         <ListCard
           title="Expandable ListCard - compact"
@@ -862,10 +861,9 @@ export const Expandable = ({}) => {
           caption="shadow"
           onClick={() => setOpen4(!open4)}
           open={open4}
+          expandedChildren={<div>Hello child</div>}
           expandable
-        >
-          <div>Hello child</div>
-        </ListCard>
+        />
       </List>
     </div>
   );
