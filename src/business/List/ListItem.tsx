@@ -9,7 +9,7 @@ export type ListItemProps = {
   caption?: string | React.ReactChild;
   onClick?: React.MouseEventHandler;
   compact?: boolean;
-
+  expandedChildren?: React.ReactNode;
   className?: string;
   /**
    * @default li
@@ -85,7 +85,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
             )}
           </div>
         )}
-        {!expandable && props.children}
+        {props.children}
       </InnerTag>
       {expandable && (
         <div
@@ -93,7 +93,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
             'telia-listItem__expandedChildren--expanded': open,
           })}
         >
-          {props.children}
+          {props.expandedChildren}
         </div>
       )}
     </Tag>
