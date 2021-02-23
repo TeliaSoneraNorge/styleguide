@@ -45,7 +45,7 @@
     background-color: var(--grey-800);
     color: var(--white);
 
-    .telia-listItem__mainWrapper:hover {
+    .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
       background-color: var(--grey-600);
     }
   }
@@ -53,13 +53,13 @@
   &--medium {
     background-color: var(--grey-200);
 
-    .telia-listItem__mainWrapper:hover {
+    .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
       background-color: var(--grey-300);
     }
   }
 
   &--noBG {
-    .telia-listItem__mainWrapper:hover {
+    .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
       background-color: var(--grey-200);
     }
   }
@@ -257,5 +257,11 @@
         height: 1.25rem;
       }
     }
+  }
+}
+
+.telia-listItem--dark.telia-listItem--clickable {
+  .telia-listItem__mainWrapper:hover {
+    background-color: var(--grey-600);
   }
 }
