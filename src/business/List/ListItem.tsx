@@ -38,14 +38,14 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
         'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
+        className,
       })}
     >
       <InnerTag
-        className={cn(
-          'telia-listItem__mainWrapper',
-          { 'telia-listItem--compact': compact, 'telia-listItem--clickable': onClick },
-          className
-        )}
+        className={cn('telia-listItem__mainWrapper', {
+          'telia-listItem--compact': compact,
+          'telia-listItem--clickable': onClick,
+        })}
         onClick={onClick}
         tabIndex={onClick && 0}
         role={onClick && 'button'}
