@@ -40,11 +40,14 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
       })}
     >
       <InnerTag
-        className={cn('telia-listItem__mainWrapper', {
-          'telia-listItem--compact': compact,
-          'telia-listItem--clickable': onClick,
-          className,
-        })}
+        className={cn(
+          'telia-listItem__mainWrapper',
+          {
+            'telia-listItem--compact': compact,
+            'telia-listItem--clickable': onClick,
+          },
+          className
+        )}
         onClick={onClick}
         role={onClick && 'button'}
       >
