@@ -1,6 +1,6 @@
 import React from 'react';
 
-export type ListItemColor = 'dark' | 'medium' | 'light';
+export type ListItemColor = 'dark' | 'medium' | 'transparent' | 'white';
 export type ListItemBorder = 'outlined' | 'underlined' | 'none';
 export type ListItemType = 'item' | 'card';
 

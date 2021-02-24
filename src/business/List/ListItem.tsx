@@ -36,7 +36,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         'telia-listItem--card': type === 'card',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
-        'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
+        'telia-listItem--noBG': color !== 'dark' && color !== 'medium' && color !== 'white',
       })}
     >
       <InnerTag
