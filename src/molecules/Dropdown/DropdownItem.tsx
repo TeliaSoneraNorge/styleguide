@@ -101,7 +101,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   const content = (
     <>
       {props.icon ? (
-        <div>
+        <div className="telia-dropdown-item__icon-container">
           <Icon icon={props.icon} />
         </div>
       ) : null}
