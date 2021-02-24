@@ -27,11 +27,6 @@ export type DropdownItemProps = {
   icon?: IconDefinition;
 
   /**
-   * Give some additional horizontal padding around the icon if it is used
-   */
-  extraIconPadding?: boolean;
-
-  /**
    * Wheter the content of the item should be centered
    */
   centered?: boolean;
@@ -112,7 +107,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
       ) : null}
       <div>
         {props.label ? <div>{props.label}</div> : null}
-        {props.children ? <div className="telia-dropdown-item__sub-label">{props.children}</div> : null}
+        <div>{props.children}</div>
       </div>
     </>
   );
