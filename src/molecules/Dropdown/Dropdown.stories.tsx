@@ -107,14 +107,6 @@ export const Default = () => {
                 <DropdownItem divider={true} />
                 <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
                 <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
-                  Child
-                </DropdownItem>
-                <DropdownItem
-                  icon="user"
-                  extraIconPadding={true}
-                  label="Extra icon padding"
-                  onClick={action('DropdownItem clicked')}
-                >
                   <span style={{ fontSize: '12px' }}>Some attenuated text</span>
                 </DropdownItem>
                 <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
