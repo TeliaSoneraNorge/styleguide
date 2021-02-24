@@ -11,6 +11,7 @@ const SubscriptionAccordion = ({
   name,
   highlight,
   description,
+  discountPrice,
   price,
   priceInfo,
   discount,
@@ -62,7 +63,14 @@ const SubscriptionAccordion = ({
           description
         )}
         <div className="subscription-accordion__aside">
-          <span className="subscription-accordion__price">{formatPrice(price)}</span>
+          {discountPrice ? (
+            <>
+              <span className="subscription-accordion__price--st">{formatPrice(price)}</span>
+              <span className="subscription-accordion__price">{formatPrice(discountPrice)}</span>
+            </>
+          ) : (
+            <span className="subscription-accordion__price">{formatPrice(price)}</span>
+          )}
           {priceInfo &&
             priceInfo.map((info) => (
               <span key={info} className="subscription-accordion__price-info">

@@ -21,6 +21,7 @@ export interface SubscriptionAccordionProps {
   isInverted?: boolean;
   name?: string;
   highlight?: string;
+  discountPrice?: SubscriptionPrice;
   price?: SubscriptionPrice;
   priceInfo?: string[];
   discount?: SubscriptionDiscount;
