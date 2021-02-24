@@ -11,6 +11,10 @@
 
 .telia-listItem {
   list-style: none;
+  background-color: var(--white);
+  .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
+    background-color: var(--grey-200);
+  }
 
   &--underlined {
     border-bottom: solid 1px var(--grey-200);
@@ -61,9 +65,7 @@
   }
 
   &--noBG {
-    .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
-      background-color: var(--grey-200);
-    }
+    background-color: transparent;
   }
 
   &__main {
