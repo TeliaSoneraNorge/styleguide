@@ -75,7 +75,7 @@ const countries = [
 
 export default {
   component: Dropdown,
-  title: 'Business/Dropdown',
+  title: 'Component library/Molecules/Dropdown',
   subComponents: { DropdownItem, DropdownMenu, DropdownSearchItem, DropdownSearchToggle },
   decorators: [withDesign],
 };
