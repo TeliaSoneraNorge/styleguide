@@ -1,0 +1,92 @@
+@import '../../colors.pcss';
+.telia-quick-search {
+  .telia-textfield {
+    input  {
+      font-family: 'Helvetica Neue';
+      border-radius: 100px;
+      border: 1px solid var(--grey-200);
+      transition: border 200ms ease, background-color 200ms ease;
+    }
+  }
+
+  .telia-textfield__white {
+    input {
+      border: 1px solid var(--white);
+    }
+  }
+
+  .telia-textfield-content {
+    border-radius: 100px;
+    border: 1px solid var(--grey-200);
+    transition: box-shadow 150ms ease-in-out;
+  }
+
+  .telia-textfield-content:focus-within {
+    box-shadow: 0 1px 2px var(--grey-300);
+    background-color: white;
+  }
+
+  .telia-textfield-leftContent {
+    border-top-left-radius: 100px;
+    border-bottom-left-radius: 100px;
+    transition: border 200ms ease, background-color 200ms ease;
+  }
+
+  .telia-textfield-status,
+  .telia-textfield-rightContent {
+    border-top-right-radius: 100px;
+    border-bottom-right-radius: 100px;
+    transition: border 200ms ease, background-color 200ms ease;
+  }
+
+  .telia-textfield:hover {
+    .telia-textfield-leftContent {
+      background-color: white;
+    }
+
+    .telia-textfield-rightContent {
+      background-color: white;
+    }
+
+    input {
+      background-color: var(--white);
+      border: 1px solid var(--white);
+    }
+  }
+
+  .telia-textfield:active {
+    .telia-textfield-leftContent {
+      background-color: white;
+    }
+    .telia-textfield-rightContent {
+      background-color: white;
+    }
+  }
+
+  .telia-textfield:focus-within {
+    .telia-textfield-leftContent {
+      background-color: white;
+    }
+
+    input {
+      background-color: var(--white);
+      border: 1px solid var(--white);
+    }
+    .telia-textfield-rightContent {
+      background-color: white;
+    }
+  }
+
+  .telia-textfield__prepended {
+    input {
+      border-top-left-radius: 0px;
+      border-bottom-left-radius: 0px;
+    }
+  }
+  .telia-textfield__appended {
+    input {
+      border-top-right-radius: 0px;
+      border-bottom-right-radius: 0px;
+    }
+  }
+}

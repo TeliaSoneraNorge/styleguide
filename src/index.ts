@@ -1,3 +1,4 @@
+import { QuickSearch } from './molecules/TextField/TextField.stories';
 // Atoms
 export { default as AlertText } from './atoms/AlertText';
 export { default as Box } from './atoms/Box';
@@ -136,6 +137,7 @@ export { Card, Cards } from './molecules/Cards';
 export { default as Gallery } from './molecules/Gallery';
 export { ShoppingCart } from './molecules/ShoppingCart';
 export { default as LinkTable } from './molecules/LinkTable/LinkTable';
+export { QuickSearch } from './molecules/QuickSearch';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
