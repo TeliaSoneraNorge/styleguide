@@ -5,6 +5,7 @@
       font-family: 'Helvetica Neue';
       border-radius: 100px;
       border: 1px solid var(--grey-200);
+      transition: border 200ms ease, background-color 200ms ease;
     }
   }
 
@@ -17,6 +18,7 @@
   .telia-textfield-content {
     border-radius: 100px;
     border: 1px solid var(--grey-200);
+    transition: box-shadow 150ms ease-in-out;
   }
 
   .telia-textfield-content:focus-within {
@@ -27,12 +29,14 @@
   .telia-textfield-leftContent {
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
+    transition: border 200ms ease, background-color 200ms ease;
   }
 
   .telia-textfield-status,
   .telia-textfield-rightContent {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
+    transition: border 200ms ease, background-color 200ms ease;
   }
 
   .telia-textfield:hover {
