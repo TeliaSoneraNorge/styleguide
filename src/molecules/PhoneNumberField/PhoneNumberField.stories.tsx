@@ -18,6 +18,18 @@ const countryCodes: CountryCode[] = [
 export const Default = () => {
   const [number, setNumber] = React.useState('');
   const [countryCode, setCountryCode] = React.useState('+47');
+  const [error, setError] = React.useState(false);
+
+  const checkValidations = (e: React.FocusEvent<HTMLInputElement>) => {
+    if (number.length < 8) {
+      setError(true);
+    }
+  };
+
+  React.useEffect(() => {
+    if (number.length > 8) setError(true);
+    else setError(false);
+  }, [number]);
 
   return (
     <>
@@ -81,8 +93,9 @@ export const Default = () => {
             onChangeNumber={setNumber}
             onChangeCountryCode={setCountryCode}
             maxlength={8}
-            error={number.length > 8}
-            helpText={number.length > 8 ? 'Too many numbers' : undefined}
+            error={error}
+            helpText={error ? 'The number must contain 8 digits' : undefined}
+            onBlur={checkValidations}
           />
           <br />
           <br />

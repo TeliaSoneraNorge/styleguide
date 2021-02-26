@@ -21,13 +21,16 @@ export type PhoneNumberFieldProps = {
   placeholder?: string;
   label?: string;
   disabled?: boolean;
+  /**
+   * Event handler to allow handling validations after on blur
+   */
+  onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
 } & ({ error: true; helpText: string } | { error?: boolean; helpText?: string });
 
 export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
   const [open, setOpen] = React.useState(false);
   const countryCode =
     props.countryCodes.find((code) => code.value === props.countryCode)?.value ?? props.countryCodes[0].value;
-
   return (
     <div>
       <div
@@ -52,6 +55,7 @@ export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
           error={props.error}
           disabled={props.disabled}
           maxlength={props.maxlength}
+          onBlur={props.onBlur}
         />
       </div>
       <small className={cn('telia-phonenumber-helptext', { 'telia-phonenumber-helptext--error': props.error })}>
