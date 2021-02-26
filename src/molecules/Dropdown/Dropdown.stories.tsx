@@ -153,6 +153,23 @@ export const Default = () => {
                 <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
               </DropdownMenu>
             </Dropdown>
+
+            <br />
+            <h4>Disabled</h4>
+            <Dropdown disabled>
+              <DropdownToggle label="Toggle" color={color as Color} />
+              <DropdownMenu>
+                <DropdownItem header={true} label="Header" />
+                <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />
+                <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
+                <DropdownItem divider={true} />
+                <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+                <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
+                  <span style={{ fontSize: '12px' }}>Some attenuated text</span>
+                </DropdownItem>
+                <DropdownItem label="Even longer than the long option" onClick={action('DropdownItem clicked')} />
+              </DropdownMenu>
+            </Dropdown>
           </div>
         ))}
       </div>
@@ -173,7 +190,6 @@ export const Default = () => {
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
-
       <br />
       <div>
         <h4>Positions</h4>
