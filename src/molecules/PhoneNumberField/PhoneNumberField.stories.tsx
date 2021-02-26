@@ -28,6 +28,8 @@ export const Default = () => {
         <div style={{ width: '30%' }}>
           <PhoneNumberField
             countryCodes={countryCodes}
+            number={number}
+            countryCode={countryCode}
             onChangeNumber={setNumber}
             onChangeCountryCode={setCountryCode}
           />
@@ -36,6 +38,8 @@ export const Default = () => {
           <h4>With label</h4>
           <PhoneNumberField
             countryCodes={countryCodes}
+            number={number}
+            countryCode={countryCode}
             onChangeNumber={setNumber}
             onChangeCountryCode={setCountryCode}
             label="Phone number"
@@ -45,9 +49,10 @@ export const Default = () => {
           <h4>With helptext</h4>
           <PhoneNumberField
             countryCodes={countryCodes}
+            number={number}
+            countryCode={countryCode}
             onChangeNumber={setNumber}
             onChangeCountryCode={setCountryCode}
-            maxlength={8}
             helpText="Help or instructions"
           />
           <br />
@@ -57,6 +62,8 @@ export const Default = () => {
           </h4>
           <PhoneNumberField
             countryCodes={countryCodes}
+            number={number}
+            countryCode={countryCode}
             onChangeNumber={setNumber}
             onChangeCountryCode={setCountryCode}
             error={true}
@@ -64,8 +71,25 @@ export const Default = () => {
           />
           <br />
           <br />
+          <h4>
+            With <code>{'maxlength={8}'}</code>
+          </h4>
+          <PhoneNumberField
+            countryCodes={countryCodes}
+            number={number}
+            countryCode={countryCode}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
+            maxlength={8}
+            error={number.length > 8}
+            helpText={number.length > 8 ? 'Too many numbers' : undefined}
+          />
+          <br />
+          <br />
           With <code>{'disabled={true}'}</code>
           <PhoneNumberField
+            number=""
+            countryCode=""
             countryCodes={countryCodes}
             onChangeNumber={setNumber}
             onChangeCountryCode={setCountryCode}

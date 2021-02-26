@@ -13,9 +13,9 @@ export type PhoneNumberFieldProps = {
    * The landcodes to show in the dropdown.
    */
   countryCodes: CountryCode[];
-  number?: string;
+  number: string;
   onChangeNumber: (number: string) => void;
-  countryCode?: string;
+  countryCode: string;
   onChangeCountryCode: (countryCode: string) => void;
   maxlength?: number;
   placeholder?: string;
