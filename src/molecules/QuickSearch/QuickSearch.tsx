@@ -1,6 +1,5 @@
-import { TextField, TextFieldProps } from '../TextField/TextField';
 import React from 'react';
-import './QuickSearch.pcss';
+import { TextField, TextFieldProps } from '../TextField/TextField';
 
 export const QuickSearch = (props: TextFieldProps) => {
   return (
