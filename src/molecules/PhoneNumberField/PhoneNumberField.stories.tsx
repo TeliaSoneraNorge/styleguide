@@ -72,7 +72,7 @@ export const Default = () => {
           <br />
           <br />
           <h4>
-            With <code>{'maxlength={8}'}</code>
+            With <code>{'maxlength={8}'} and error handling </code>
           </h4>
           <PhoneNumberField
             countryCodes={countryCodes}
