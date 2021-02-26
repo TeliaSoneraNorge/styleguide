@@ -15,6 +15,7 @@ type Props = {
   itemToggle?: boolean;
   fullWidth?: boolean;
   className?: string;
+  disabled?: boolean;
 };
 
 export const Dropdown: React.FC<Props> = (props) => {
@@ -46,19 +47,23 @@ export const Dropdown: React.FC<Props> = (props) => {
   };
   return (
     <DropdownContext.Provider value={contextValue}>
-      <InnerDropdown fullWidth={props.fullWidth} className={props.className}>
+      <InnerDropdown fullWidth={props.fullWidth} disabled={props.disabled} className={props.className}>
         {props.children}
       </InnerDropdown>
     </DropdownContext.Provider>
   );
 };
 
-const InnerDropdown: React.FC<{ fullWidth?: boolean; className?: string }> = (props) => {
+const InnerDropdown: React.FC<{ fullWidth?: boolean; disabled?: boolean; className?: string }> = (props) => {
   const { dropdownRef } = useDropdownContext();
   useAccessibleDropdown();
   return (
     <div
-      className={cn('telia-dropdown', { 'telia-dropdown--fullWidth': props.fullWidth }, props.className)}
+      className={cn(
+        'telia-dropdown',
+        { 'telia-dropdown--fullWidth': props.fullWidth, 'telia-dropdown--disabled': props.disabled },
+        props.className
+      )}
       ref={dropdownRef}
     >
       {props.children}
