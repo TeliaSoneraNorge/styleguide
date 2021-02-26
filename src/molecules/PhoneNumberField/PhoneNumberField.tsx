@@ -13,42 +13,42 @@ export type PhoneNumberFieldProps = {
    * The landcodes to show in the dropdown.
    */
   countryCodes: CountryCode[];
+  number?: string;
+  onChangeNumber: (number: string) => void;
+  countryCode?: string;
+  onChangeCountryCode: (countryCode: string) => void;
   maxlength?: number;
-  onChange: (number: string) => void;
   placeholder?: string;
-  disabled?: boolean;
   label?: string;
-} & ({ error: true; helpText?: string } | { error?: boolean; helpText?: string });
+  disabled?: boolean;
+} & ({ error: true; helpText: string } | { error?: boolean; helpText?: string });
 
 export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
-  const [landCode, setLandCode] = React.useState(props.countryCodes[0].value);
-  const [number, setNumber] = React.useState('');
-
-  const setFullNumber = (number: string) => {
-    if (number) props.onChange(`${landCode}${number}`);
-  };
+  const [open, setOpen] = React.useState(false);
+  const countryCode =
+    props.countryCodes.find((code) => code.value === props.countryCode)?.value ?? props.countryCodes[0].value;
 
   return (
     <div>
       <div
         className={cn('telia-phonenumber', {
           'telia-phonenumber__error': props.error,
+          'telia-phonenumber-countryCode__active': open,
         })}
       >
         {props.label && <label className={cn('telia-phonenumber-label')}>{props.label}</label>}
-        <Dropdown disabled={props.disabled}>
-          <DropdownToggle label={landCode} color="white" />
+        <Dropdown disabled={props.disabled} open={open} setOpen={setOpen}>
+          <DropdownToggle label={countryCode} color="white" />
           <DropdownMenu>
             {props.countryCodes.map((code) => (
-              <DropdownItem label={code.label} onClick={() => setLandCode(code.value)} />
+              <DropdownItem label={code.label} onClick={() => props.onChangeCountryCode(code.value)} />
             ))}
           </DropdownMenu>
         </Dropdown>
         <TextField
           placeholder={props.placeholder ?? '_ _  _ _  _ _  _ _'}
-          value={number}
-          onChange={(e) => setNumber(e.target.value)}
-          onBlur={(e) => setFullNumber(e.target.value)}
+          value={props.number}
+          onChange={(e) => props.onChangeNumber(e.target.value)}
           error={props.error}
           disabled={props.disabled}
           maxlength={props.maxlength}

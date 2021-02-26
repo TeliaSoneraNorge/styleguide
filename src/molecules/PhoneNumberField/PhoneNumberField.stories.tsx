@@ -17,7 +17,7 @@ const countryCodes: CountryCode[] = [
 
 export const Default = () => {
   const [number, setNumber] = React.useState('');
-  console.log(number);
+  const [countryCode, setCountryCode] = React.useState('+47');
 
   return (
     <>
@@ -26,17 +26,27 @@ export const Default = () => {
       <p></p>
       <div style={{ display: 'flex' }}>
         <div style={{ width: '30%' }}>
-          <PhoneNumberField countryCodes={countryCodes} onChange={setNumber} />
+          <PhoneNumberField
+            countryCodes={countryCodes}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
+          />
           <br />
           <br />
           <h4>With label</h4>
-          <PhoneNumberField countryCodes={countryCodes} onChange={setNumber} label="Phone number" />
+          <PhoneNumberField
+            countryCodes={countryCodes}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
+            label="Phone number"
+          />
           <br />
           <br />
           <h4>With helptext</h4>
           <PhoneNumberField
             countryCodes={countryCodes}
-            onChange={setNumber}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
             maxlength={8}
             helpText="Help or instructions"
           />
@@ -45,11 +55,22 @@ export const Default = () => {
           <h4>
             With <code>{'error={true}'} and helptext</code>
           </h4>
-          <PhoneNumberField countryCodes={countryCodes} onChange={setNumber} error={true} helpText="Error message" />
+          <PhoneNumberField
+            countryCodes={countryCodes}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
+            error={true}
+            helpText="Error message"
+          />
           <br />
           <br />
           With <code>{'disabled={true}'}</code>
-          <PhoneNumberField countryCodes={countryCodes} onChange={setNumber} disabled />
+          <PhoneNumberField
+            countryCodes={countryCodes}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
+            disabled
+          />
         </div>
       </div>
     </>
