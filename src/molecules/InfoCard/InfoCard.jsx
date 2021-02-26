@@ -6,7 +6,6 @@ const InfoCard = ({ title, titleTag = 'h3', usps = [] }) => (
   <section className="info-card">
     <div className="info-card__title">
       <Heading tag={titleTag} size="xs" text={title} />
-      <Icon className="info-card__title-icon" icon="info" />
     </div>
     <ul className="info-card__list">
       {usps.map((usp, i) => (
