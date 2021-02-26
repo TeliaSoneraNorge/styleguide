@@ -137,6 +137,7 @@ export { default as Gallery } from './molecules/Gallery';
 export { ShoppingCart } from './molecules/ShoppingCart';
 export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 export { QuickSearch } from './molecules/QuickSearch';
+export { PhoneNumberField } from './molecules/PhoneNumberField';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
