@@ -2,9 +2,8 @@ import React from 'react';
 import cn from 'classnames';
 import { Dropdown, DropdownItem, DropdownMenu, DropdownToggle } from '../Dropdown';
 import { TextField } from '../TextField/TextField';
-import './PhoneNumberField.pcss';
 
-export type LandCode = {
+export type CountryCode = {
   value: string;
   label: string;
 };
@@ -13,7 +12,7 @@ export type PhoneNumberFieldProps = {
   /**
    * The landcodes to show in the dropdown.
    */
-  landcodes: LandCode[];
+  countryCodes: CountryCode[];
   maxlength?: number;
   onChange: (number: string) => void;
   placeholder?: string;
@@ -22,7 +21,7 @@ export type PhoneNumberFieldProps = {
 } & ({ error: true; helpText?: string } | { error?: boolean; helpText?: string });
 
 export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
-  const [landCode, setLandCode] = React.useState(props.landcodes[0].value);
+  const [landCode, setLandCode] = React.useState(props.countryCodes[0].value);
   const [number, setNumber] = React.useState('');
 
   const setFullNumber = (number: string) => {
@@ -40,7 +39,7 @@ export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
         <Dropdown disabled={props.disabled}>
           <DropdownToggle label={landCode} color="white" />
           <DropdownMenu>
-            {props.landcodes.map((code) => (
+            {props.countryCodes.map((code) => (
               <DropdownItem label={code.label} onClick={() => setLandCode(code.value)} />
             ))}
           </DropdownMenu>
