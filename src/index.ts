@@ -1,4 +1,3 @@
-import { QuickSearch } from './molecules/TextField/TextField.stories';
 // Atoms
 export { default as AlertText } from './atoms/AlertText';
 export { default as Box } from './atoms/Box';
