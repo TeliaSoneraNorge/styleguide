@@ -40,8 +40,8 @@ export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
         })}
       >
         {props.label && <label className={cn('telia-phonenumber-label')}>{props.label}</label>}
-        <Dropdown disabled={props.disabled} open={open} setOpen={setOpen}>
-          <DropdownToggle label={countryCode} color="white" />
+        <Dropdown open={open} setOpen={setOpen}>
+          <DropdownToggle label={countryCode} color="white" disabled={props.disabled} />
           <DropdownMenu>
             {props.countryCodes.map((code) => (
               <DropdownItem label={code.label} onClick={() => props.onChangeCountryCode(code.value)} />
