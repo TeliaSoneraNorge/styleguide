@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
+import cn from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
-import cs from 'classnames';
 import { TextField, TextFieldProps } from '../TextField/TextField';
 
 export type Color = 'purple' | 'default' | 'white';
@@ -43,6 +43,8 @@ type DropdownToggleProps = {
    */
   tag?: 'div' | 'span';
 
+  disabled?: boolean;
+
   className?: string;
 };
 
@@ -83,16 +85,18 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = (props) => {
     <button
       ref={toggleRef}
       onClick={toggle}
-      className={cs(
+      className={cn(
         'telia-dropdown-toggle telia-dropdown-toggle__default',
         {
           'telia-dropdown-toggle__hideLabel': props.hideLabel,
           'telia-dropdown-toggle__purple': props.color === 'purple',
           'telia-dropdown-toggle__white': props.color === 'white',
           'telia-dropdown-toggle__outline': props.outline !== false,
+          'telia-dropdown-toggle__disabled': props.disabled,
         },
         props.className
       )}
+      disabled={props.disabled}
     >
       {props.icon ? <Icon className="telia-dropdown-toggle-icon" icon={props.icon} /> : null}
       <span className="telia-dropdown-toggle-label">{props.label}</span>
