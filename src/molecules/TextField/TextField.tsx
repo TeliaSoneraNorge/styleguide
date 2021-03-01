@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useFocus } from './useFocus';
 import { Icon } from '../../index';
+import { FieldInstructions, FieldInstructionsProps } from '../FieldInstructions/FieldInstructions';
 export interface TextFieldProps {
   /**
    * The label content.
@@ -100,6 +101,11 @@ export interface TextFieldProps {
   autoComplete?: string;
 
   maxlength?: number;
+
+  /**
+   * To show field instructions for the text field
+   */
+  fieldInstructionsProps?: FieldInstructionsProps;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -155,6 +161,7 @@ export const TextField = (props: TextFieldProps) => {
             {props.label}
           </label>
         ) : null}
+        {props.fieldInstructionsProps && <FieldInstructions {...props.fieldInstructionsProps} />}
         <div className="telia-textfield-content">
           {props.leftContent ? (
             <div ref={leftContentRef} className="telia-textfield-leftContent" onClick={(e) => e.stopPropagation()}>
@@ -190,7 +197,6 @@ export const TextField = (props: TextFieldProps) => {
           ) : null}
         </div>
       </div>
-
       <small className={cn('telia-textfield-helptext')}>{props.helpText}</small>
     </div>
   );

@@ -1,0 +1,132 @@
+.telia-field-instructions {
+  position: relative;
+
+  &-icon {
+    cursor: pointer;
+  }
+
+  &-card {
+    position: absolute;
+    width: 250px;
+    background-color: var(--grey-200);
+    border-radius: 12px;
+    bottom: auto;
+    top: 30px;
+    left: -118px;
+
+    &--header {
+      display: flex;
+      padding: 0.5rem 1rem;
+      align-items: center;
+      place-content: space-between;
+
+      .telia-button:hover {
+        background-color: var(--grey-300);
+      }
+    }
+
+    &--divider {
+      background-color: var(--grey-300);
+      border: 0;
+      height: 1px;
+      width: auto;
+      margin: 0;
+    }
+
+    &--body {
+      padding: 0.5rem 1rem;
+    }
+
+    &--top,
+    &--top-start,
+    &--top-end {
+      top: auto;
+      bottom: 30px;
+      left: -118px;
+    }
+
+    &--top-start {
+      left: -224px;
+    }
+
+    &--top-end {
+      left: -14px;
+    }
+
+    &--right {
+      left: 25px;
+      top: -50px;
+    }
+
+    &--bottom-start {
+      left: -224px;
+    }
+
+    &--bottom-end {
+      left: -14px;
+    }
+
+    &--left {
+      left: -265px;
+      top: -50px;
+    }
+
+    &--arrow {
+      content: ' ';
+      position: absolute;
+      bottom: 100%; /* At the top of the field-instructions-card */
+      margin-left: -8px;
+      border-width: 8px;
+      border-style: solid;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-top-color: transparent;
+    }
+  }
+}
+
+.telia-field-instructions-card--top > .telia-field-instructions-card--arrow {
+  left: 50%;
+  top: 100%;
+  border-top-color: var(--grey-200);
+}
+
+.telia-field-instructions-card--top-start > .telia-field-instructions-card--arrow {
+  left: 92%;
+  top: 100%;
+  border-top-color: var(--grey-200);
+}
+
+.telia-field-instructions-card--top-end > .telia-field-instructions-card--arrow {
+  left: 8%;
+  top: 100%;
+  border-top-color: var(--grey-200);
+}
+
+.telia-field-instructions-card--right > .telia-field-instructions-card--arrow {
+  border-right-color: var(--grey-200);
+  top: 52px;
+  right: 100%;
+}
+
+.telia-field-instructions-card--bottom > .telia-field-instructions-card--arrow {
+  left: 50%;
+  border-bottom-color: var(--grey-200);
+}
+
+.telia-field-instructions-card--bottom-start > .telia-field-instructions-card--arrow {
+  left: 92%;
+  border-bottom-color: var(--grey-200);
+}
+
+.telia-field-instructions-card--bottom-end > .telia-field-instructions-card--arrow {
+  left: 8%;
+  border-bottom-color: var(--grey-200);
+}
+
+.telia-field-instructions-card--left > .telia-field-instructions-card--arrow {
+  border-left-color: var(--grey-200);
+  top: 52px;
+  left: calc(100% + 8px);
+}
