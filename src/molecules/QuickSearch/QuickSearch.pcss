@@ -17,8 +17,14 @@
 
   .telia-textfield-content {
     border-radius: 100px;
-    border: 1px solid var(--grey-200) !important;
+
     transition: box-shadow 150ms ease-in-out;
+  }
+
+  .telia-textfield__grey {
+    .telia-textfield-content {
+      border: 1px solid var(--grey-200);
+    }
   }
 
   .telia-textfield-content:focus-within {
