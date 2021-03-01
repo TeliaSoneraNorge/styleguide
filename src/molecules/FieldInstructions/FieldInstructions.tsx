@@ -4,8 +4,6 @@ import { Icon } from '../..';
 import { colors } from '../../utils/colors';
 import { Button } from '../../business';
 
-type color = 'dark' | 'grey' | 'purple';
-
 export type FieldInstructionsProps = {
   /**
    * Label to be shown
@@ -33,18 +31,18 @@ export const FieldInstructions = (props: FieldInstructionsProps) => {
 
   return (
     <div className="telia-field-instructions">
-      <div className="telia-field-instructions-icon" onClick={() => props.setOpen(!props.open)}>
+      <div className="telia-field-instructions--icon" onClick={() => props.setOpen(!props.open)}>
         <Icon icon="question-circle" style={{ width: '13px', height: '13px', color: colors.corePurple500 }} />
       </div>
       {props.open && (
-        <div className={cn('telia-field-instructions-card', `telia-field-instructions-card--${position}`)}>
-          <div className="telia-field-instructions-card--header">
+        <div className={cn('telia-field-instructions--card', `telia-field-instructions--card__${position}`)}>
+          <div className="telia-field-instructions--card--header">
             {props.label}
             <Button icon="close" size="compact" kind="secondary-text" onClick={() => props.setOpen(false)} />
           </div>
-          <div className="telia-field-instructions-card--divider" />
-          <div className="telia-field-instructions-card--body">{props.description}</div>
-          <div className="telia-field-instructions-card--arrow" />
+          <div className="telia-field-instructions--card--divider" />
+          <div className="telia-field-instructions--card--body">{props.description}</div>
+          <div className="telia-field-instructions--card--arrow" />
         </div>
       )}
     </div>
