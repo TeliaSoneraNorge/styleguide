@@ -105,6 +105,17 @@
       background-color: var(--medium-light-grey);
     }
   }
+
+  &__disabled {
+    pointer-events: none;
+    background-color: var(--grey-100);
+    color: var(--grey-400);
+    border-color: var(--grey-300);
+  }
+
+  &__outline.telia-dropdown-toggle__purple.telia-dropdown-toggle__disabled {
+    border-color: var(--grey-300);
+  }
 }
 
 .telia-dropdown-item {
@@ -208,14 +219,5 @@
   }
   .telia-dropdown-toggle-caret {
     margin-left: auto;
-  }
-}
-
-.telia-dropdown--disabled {
-  .telia-dropdown-toggle {
-    pointer-events: none;
-    background-color: var(--grey-100);
-    color: var(--grey-400);
-    border-color: var(--grey-300);
   }
 }
