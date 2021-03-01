@@ -103,6 +103,7 @@ export { RadioButtonWithLabel, RadioButtonList } from './molecules/RadioButtonLi
 export { default as RecommendedProducts } from './molecules/RecommendedProducts';
 export { default as RelatedArticle } from './molecules/RelatedArticle';
 export { default as RelatedArticles } from './molecules/RelatedArticles';
+export { default as Review } from './molecules/Review';
 export { default as RichText } from './molecules/RichText';
 export { default as StepByStep } from './molecules/StepByStep';
 export { default as Subscription } from './molecules/Subscription';
