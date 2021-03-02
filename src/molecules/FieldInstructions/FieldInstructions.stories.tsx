@@ -21,7 +21,8 @@ export const Default = () => {
         The field instructions component should be used together with the <code>TextField</code> component. To use it
         with other components, add <code>FieldInstructionsProps</code> to their props
       </p>
-      <div style={{ display: 'flex' }}>
+      <div>
+        <p>Textfield with FieldInstructions</p>
         <div style={{ width: '30%', marginRight: '1rem' }}>
           <TextField
             label="Field label"
@@ -33,11 +34,21 @@ export const Default = () => {
             helpText={state === 'error' ? state : ''}
             fieldInstructionsProps={{
               label: 'Why?',
-              description: 'This is is this  a description for the text field',
+              description: 'This is this a description for the text field',
               open: openFieldInstructions,
               setOpen: setOpenFieldInstructions,
             }}
             onBlur={() => setOpenFieldInstructions(false)}
+          />
+
+          <br />
+          <p style={{ marginBottom: '60px' }}>Standalone FieldInstruction</p>
+          <FieldInstructions
+            label="Why?"
+            description="This is this a description for the text field"
+            open={true}
+            position="right"
+            setOpen={() => {}}
           />
         </div>
       </div>
