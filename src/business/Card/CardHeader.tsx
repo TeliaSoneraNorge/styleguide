@@ -9,8 +9,8 @@ type Props = {
 export const CardHeader: React.FC<Props> = (props) => {
   return (
     <header
-      className={cn('telia-card--header', props.className, {
-        'telia-card--header__padded': props.padding !== false,
+      className={cn('telia-card__header', props.className, {
+        'telia-card__header--padded': props.padding !== false,
       })}
     >
       {props.children}

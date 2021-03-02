@@ -136,16 +136,16 @@ export const TextField = (props: TextFieldProps) => {
       className={cn(
         'telia-textfield',
         {
-          'telia-textfield__focus': !!focus,
-          'telia-textfield__success': !!props.success,
-          'telia-textfield__error': !!props.error,
-          'telia-textfield__disabled': !!props.disabled,
-          'telia-textfield__compact': props.size === 'compact',
-          'telia-textfield__withValue': inputHasValue,
-          'telia-textfield__white': props.kind === 'white',
-          'telia-textfield__grey': props.kind === 'grey',
-          'telia-textfield__prepended': !!props.leftContent,
-          'telia-textfield__appended': !!props.rightContent || props.success || props.error,
+          'telia-textfield--focus': !!focus,
+          'telia-textfield--success': !!props.success,
+          'telia-textfield--error': !!props.error,
+          'telia-textfield--disabled': !!props.disabled,
+          'telia-textfield--compact': props.size === 'compact',
+          'telia-textfield--withValue': inputHasValue,
+          'telia-textfield--white': props.kind === 'white',
+          'telia-textfield--grey': props.kind === 'grey',
+          'telia-textfield--prepended': !!props.leftContent,
+          'telia-textfield--appended': !!props.rightContent || props.success || props.error,
         },
         props.className
       )}
@@ -157,19 +157,19 @@ export const TextField = (props: TextFieldProps) => {
     >
       <div>
         {props.label ? (
-          <label style={labelStyle} className={cn('telia-textfield--label')} id={inputLabelId}>
+          <label style={labelStyle} className={cn('telia-textfield__label')} id={inputLabelId}>
             {props.label}
           </label>
         ) : null}
         {props.fieldInstructionsProps && <FieldInstructions {...props.fieldInstructionsProps} />}
-        <div className="telia-textfield--content">
+        <div className="telia-textfield__content">
           {props.leftContent ? (
-            <div ref={leftContentRef} className="telia-textfield--leftContent" onClick={(e) => e.stopPropagation()}>
+            <div ref={leftContentRef} className="telia-textfield__leftContent" onClick={(e) => e.stopPropagation()}>
               {props.leftContent}
             </div>
           ) : null}
           <input
-            className="telia-textfield--input"
+            className="telia-textfield__input"
             id={props.id}
             name={props.name}
             ref={inputRef}
@@ -189,16 +189,16 @@ export const TextField = (props: TextFieldProps) => {
             onKeyDown={onKeyDown}
             maxLength={props.maxlength}
           />
-          {statusIcon ? <span className="telia-textfield--status">{statusIcon}</span> : null}
+          {statusIcon ? <span className="telia-textfield__status">{statusIcon}</span> : null}
           {props.rightContent ? (
-            <div className="telia-textfield--rightContent" onClick={(e) => e.stopPropagation()}>
+            <div className="telia-textfield__rightContent" onClick={(e) => e.stopPropagation()}>
               {props.rightContent}
             </div>
           ) : null}
         </div>
       </div>
 
-      <small className={cn('telia-textfield--helptext')}>{props.helpText}</small>
+      <small className={cn('telia-textfield__helptext')}>{props.helpText}</small>
     </div>
   );
 };

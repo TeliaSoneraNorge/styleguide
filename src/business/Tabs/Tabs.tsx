@@ -18,12 +18,12 @@ export const Tabs: React.FC<Props> = (props) => {
       className={cn(
         'telia-tabs',
         {
-          'telia-tabs__outlined': props.outlined,
-          'telia-tabs__fullwidth': props.fullWidth,
-          'telia-tabs__narrow': props.narrow,
-          'telia-tabs__centered': props.centered,
-          'telia-tabs__black': props.color === 'black',
-          'telia-tabs__compact': props.compact,
+          'telia-tabs--outlined': props.outlined,
+          'telia-tabs--fullwidth': props.fullWidth,
+          'telia-tabs--narrow': props.narrow,
+          'telia-tabs--centered': props.centered,
+          'telia-tabs--black': props.color === 'black',
+          'telia-tabs--compact': props.compact,
         },
         props.className
       )}

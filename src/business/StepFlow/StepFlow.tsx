@@ -76,9 +76,9 @@ export const StepFlow = (props: Props) => {
         rightContent={props.headerContent}
       />
 
-      <div className="telia-step-flow--main">
+      <div className="telia-step-flow__main">
         {menuBreakpoint && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
-        <div className="telia-step-flow--main-form">
+        <div className="telia-step-flow__main__form">
           {form}
           {renderAdditionalContentInStep ? props.additionalContent : null}
 
@@ -96,7 +96,7 @@ export const StepFlow = (props: Props) => {
               : {})}
           />
         </div>
-        {renderAdditionalContentRight ? <div className="telia-step-flow__right">{props.additionalContent}</div> : null}
+        {renderAdditionalContentRight ? <div className="telia-step-flow--right">{props.additionalContent}</div> : null}
       </div>
     </div>
   );

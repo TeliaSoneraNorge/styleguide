@@ -8,7 +8,7 @@ type Props = {
 };
 export const StepFlowMenu = (props: Props) => {
   return (
-    <div className="telia-step-flow--menu">
+    <div className="telia-step-flow__menu">
       {React.Children.map(props.steps, (c, i) =>
         React.isValidElement(c) ? (
           <StepFlowMenuItem
@@ -34,9 +34,9 @@ type MenuItemProps = {
 const StepFlowMenuItem = (props: MenuItemProps) => {
   return (
     <div
-      className={cn('telia-step-flow--menu--item ', {
-        'telia-step-flow--menu-item__disabled': props.disabled,
-        'telia-step-flow--menu-item__active': props.active && !props.disabled,
+      className={cn('telia-step-flow__menu-item ', {
+        'telia-step-flow__menu-item--disabled': props.disabled,
+        'telia-step-flow__menu-item--active': props.active && !props.disabled,
       })}
       onClick={props.onClick}
     >
