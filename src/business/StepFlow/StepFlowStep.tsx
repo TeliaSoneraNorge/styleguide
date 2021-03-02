@@ -18,7 +18,7 @@ export const StepFlowStep: React.FC<Props> = (props) => {
     <div className="telia-step-flow__step">
       <div className="telia-step-flow__step-header">
         <h2>{props.title}</h2>
-        {props.description && <div className="telia-step-flow__step-header--description">{props.description}</div>}
+        {props.description && <div className="telia-step-flow__step-header__description">{props.description}</div>}
       </div>
       {props.children}
     </div>
