@@ -16,7 +16,7 @@
     width: 160px;
     text-align: center;
     white-space: nowrap;
-    transition: border 0.2s ease-in-out;
+    transition: border 0.2s ease;
 
     & > a,
     & > button {
@@ -27,7 +27,7 @@
       font-weight: 600;
       display: block;
       padding: 6px var(--side-padding) var(--link-padding-bottom) var(--side-padding);
-      transition: color 0.2s ease-in-out;
+      transition: color 0.2s ease;
       position: relative;
     }
 
@@ -52,7 +52,7 @@
     }
   }
 
-  &--fullwidth {
+  &__fullwidth {
     & > ul {
       justify-content: stretch;
     }
@@ -69,16 +69,16 @@
     transition: border 0.2s ease-in-out;
 
     &:hover {
-      border-bottom: 3px solid var(--core-purple);
+      border-color: var(--core-purple);
     }
 
     &.active {
-      border-bottom: 3px solid var(--core-purple);
+      border-color: var(--core-purple);
     }
   }
 }
 
-.telia-tabs--narrow {
+.telia-tabs__narrow {
   & > ul > li {
     position: relative;
     border: 0;
@@ -100,7 +100,7 @@
 
     &:hover:after {
       opacity: 1;
-      border-bottom: 3px solid var(--core-purple);
+      border-color: var(--core-purple);
     }
 
     &.active {
@@ -118,7 +118,7 @@
   }
 }
 
-.telia-tabs--outlined {
+.telia-tabs__outlined {
   & > ul {
     > li > a,
     > li > button {
@@ -159,13 +159,13 @@
   }
 }
 
-.telia-tabs--centered {
+.telia-tabs__centered {
   & > ul {
     justify-content: center;
   }
 }
 
-.telia-tabs--black {
+.telia-tabs__black {
   & > ul > li {
     &:hover:after {
       border-color: black;
@@ -196,7 +196,7 @@
   }
 }
 
-.telia-tabs--outlined.telia-tabs--black {
+.telia-tabs__outlined.telia-tabs__black {
   & > ul > li {
     &.active {
       background-color: rgba(0, 0, 0, 0.06);
@@ -204,7 +204,7 @@
   }
 }
 
-.telia-tabs--compact {
+.telia-tabs__compact {
   & > ul > li {
     width: fit-content;
   }

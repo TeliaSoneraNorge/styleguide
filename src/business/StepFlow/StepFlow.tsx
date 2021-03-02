@@ -76,9 +76,9 @@ export const StepFlow = (props: Props) => {
         rightContent={props.headerContent}
       />
 
-      <div className="telia-step-flow__main">
+      <div className="telia-step-flow--main">
         {breakpointSm && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
-        <div className="telia-step-flow__main-form">
+        <div className="telia-step-flow--main--form">
           {form}
           {renderAdditionalContentInStep ? props.additionalContent : null}
 

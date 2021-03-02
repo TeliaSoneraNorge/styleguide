@@ -40,29 +40,29 @@ export const ListItemSkeleton = (props: ListItemProps) => {
   return (
     <Tag
       className={cn('telia-listItem telia-listItem--skeleton ', {
-        'telia-listItem--card': type === 'card',
-        'telia-listItem--underlined': border === 'underlined',
-        'telia-listItem--outlined': border === 'outlined',
-        'telia-listItem--dark': color === 'dark',
-        'telia-listItem--medium': color === 'medium',
-        'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
+        'telia-listItem__card': type === 'card',
+        'telia-listItem__underlined': border === 'underlined',
+        'telia-listItem__outlined': border === 'outlined',
+        'telia-listItem__dark': color === 'dark',
+        'telia-listItem__medium': color === 'medium',
+        'telia-listItem__noBG': color !== 'dark' && color !== 'medium',
       })}
     >
-      <div className={cn('telia-listItem__mainWrapper', { 'telia-listItem--compact': compact })}>
-        <div className="telia-listItem__main">
+      <div className={cn('telia-listItem--mainWrapper', { 'telia-listItem__compact': compact })}>
+        <div className="telia-listItem--main">
           {decorator && (
-            <div className="telia-listItem__decorator">
+            <div className="telia-listItem--decorator">
               <div>&nbsp;</div>
             </div>
           )}
-          <div className="telia-listItem__content">
-            <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
+          <div className="telia-listItem--content">
+            <h3 className={cn('telia-listItem--name', { 'telia-listItem--name__dark': color === 'dark' })}>
               <div>&nbsp;</div>
             </h3>
             {description && (
               <div
-                className={cn('telia-listItem__description', {
-                  'telia-listItem__description--dark': color === 'dark',
+                className={cn('telia-listItem--description', {
+                  'telia-listItem--description__dark': color === 'dark',
                 })}
               >
                 <div>&nbsp;</div>
@@ -71,9 +71,9 @@ export const ListItemSkeleton = (props: ListItemProps) => {
           </div>
           {caption && (
             <div
-              className={cn('telia-listItem__caption', {
-                'telia-listItem__caption--text': typeof caption === 'string',
-                'telia-listItem__caption--dark': color === 'dark',
+              className={cn('telia-listItem--caption', {
+                'telia-listItem--caption--text': typeof caption === 'string',
+                'telia-listItem--caption__dark': color === 'dark',
               })}
             >
               <div>&nbsp;</div>

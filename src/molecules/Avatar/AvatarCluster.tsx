@@ -19,7 +19,7 @@ export const AvatarCluster = (props: Props) => {
   const { stack = 'left', children } = props;
 
   return (
-    <div className="telia-avatar-cluster">
+    <div className="telia-avatar--cluster">
       {React.Children.map(children, (child, index) => {
         const zIndex = stack === 'left' ? React.Children.count(children) - index : index;
         return React.cloneElement(child, { style: { zIndex: zIndex }, ...child.props, key: index });

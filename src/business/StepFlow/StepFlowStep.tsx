@@ -15,10 +15,10 @@ type Props = {
 
 export const StepFlowStep: React.FC<Props> = (props) => {
   return (
-    <div className="telia-step-flow__step">
-      <div className="telia-step-flow__step-header">
+    <div className="telia-step-flow--step">
+      <div className="telia-step-flow--step-header">
         <h2>{props.title}</h2>
-        {props.description && <div className="telia-step-flow__step-header-description">{props.description}</div>}
+        {props.description && <div className="telia-step-flow--step-header--description">{props.description}</div>}
       </div>
       {props.children}
     </div>

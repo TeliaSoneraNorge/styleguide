@@ -32,7 +32,7 @@ export type MainMenuItemProps = {
   screenReaderSuffixWhenActive?: string;
 };
 
-export const MainMenuItem: React.FC<MainMenuItemProps> = props => {
+export const MainMenuItem: React.FC<MainMenuItemProps> = (props) => {
   function onClick(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     if (props.onClick) {
       e.preventDefault();
@@ -43,16 +43,16 @@ export const MainMenuItem: React.FC<MainMenuItemProps> = props => {
   const activeClass = props.active ? 'active' : undefined;
 
   return (
-    <li className={cs('Business-MainMenu-item', activeClass)}>
+    <li className={cs('Business-MainMenu--item', activeClass)}>
       <a
-        className={cs('Business-MainMenu-link', activeClass)}
+        className={cs('Business-MainMenu--link', activeClass)}
         role="button"
         href="#"
         onClick={onClick}
         aria-current={props.active ? 'page' : undefined}
       >
         <span>
-          {typeof props.icon === 'string' ? <Icon className="Business-MainMenu-icon" icon={props.icon} /> : props.icon}
+          {typeof props.icon === 'string' ? <Icon className="Business-MainMenu--icon" icon={props.icon} /> : props.icon}
 
           {props.label}
 

@@ -14,7 +14,7 @@ type Props = {
 
 export const StepFlowFooter = (props: Props) => {
   return (
-    <div className="telia-step-flow__footer">
+    <div className="telia-step-flow--footer">
       {!props.singleStep && (
         <Button
           kind="secondary"
