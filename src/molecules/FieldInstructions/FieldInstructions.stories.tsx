@@ -42,13 +42,19 @@ export const Default = () => {
           />
 
           <br />
-          <p style={{ marginBottom: '60px' }}>Standalone FieldInstruction</p>
+          <p style={{ marginBottom: '60px' }}>Standalone FieldInstruction - always open</p>
           <FieldInstructions
             label="Why?"
             description="This is this a description for the text field"
             open={true}
             position="right"
-            setOpen={() => {}}
+          />
+          <br />
+          <p style={{ marginBottom: '60px' }}>Standalone FieldInstruction</p>
+          <FieldInstructions
+            label="Why?"
+            description="This is this a description for the text field"
+            position="right"
           />
         </div>
       </div>

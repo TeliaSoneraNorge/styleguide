@@ -22,23 +22,33 @@ export type FieldInstructionsProps = {
    * Handle open/close state. Current usage is closing instructions onBlur for TextField.
    * Want open/close on hovering? See Tooltip component
    */
-  open: boolean;
-  setOpen: (open: boolean) => void;
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
 };
 
 export const FieldInstructions = (props: FieldInstructionsProps) => {
+  const [open, setOpen] = React.useState(false);
   const { position = 'top-end' } = props;
 
+  const toggle = (o: boolean) => {
+    if (props.setOpen !== undefined) {
+      props.setOpen(o);
+    } else {
+      setOpen(o);
+    }
+  };
+
+  const showCard = props.open ?? open;
   return (
     <div className="telia-field-instructions">
-      <div className="telia-field-instructions--icon" onClick={() => props.setOpen(!props.open)}>
+      <div className="telia-field-instructions--icon" onClick={() => toggle(!props.open ?? !open)}>
         <Icon icon="question-circle" style={{ width: '13px', height: '13px', color: colors.corePurple500 }} />
       </div>
-      {props.open && (
+      {showCard && (
         <div className={cn('telia-field-instructions--card', `telia-field-instructions--card__${position}`)}>
           <div className="telia-field-instructions--card--header">
             {props.label}
-            <Button icon="close" size="compact" kind="secondary-text" onClick={() => props.setOpen(false)} />
+            <Button icon="close" size="compact" kind="secondary-text" onClick={() => toggle(false)} />
           </div>
           <div className="telia-field-instructions--card--divider" />
           <div className="telia-field-instructions--card--body">{props.description}</div>
