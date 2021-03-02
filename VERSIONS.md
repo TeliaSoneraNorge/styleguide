@@ -15,51 +15,71 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
-## 1.38.37
-- Added FieldInstructions component  
+## 1.39.0
 
-## 1.38.20 
+- Updated classes with the BEM-pattern in the following components
+  - TextField
+  - Avatar
+  - business/Tooltip
+  - business/Table
+  - business/StepFlow
+  - business/MainMenu
+  - business/List
+  - business/Card
+  - business/Button
+
+## 1.38.37
+
+- Added FieldInstructions component
+
+## 1.38.20
+
 - Added Badge component
 
-## 1.38.0 
-- Breaking: moved Toggle from business to atoms. 
-To fix in your app replace `import {Toggle} from '@telia/styleguide/business'` 
-with the usual `import {Toggle} from '@telia/styleguide'`
-- Breaking: moved Checkbox from business to atoms. 
-To fix in your app replace `import {Checkbox} from '@telia/styleguide/business'` 
-with the usual `import {Checkbox} from '@telia/styleguide'`
-- Deprecated old CheckBoxWithLabel components 
+## 1.38.0
 
+- Breaking: moved Toggle from business to atoms.
+  To fix in your app replace `import {Toggle} from '@telia/styleguide/business'`
+  with the usual `import {Toggle} from '@telia/styleguide'`
+- Breaking: moved Checkbox from business to atoms.
+  To fix in your app replace `import {Checkbox} from '@telia/styleguide/business'`
+  with the usual `import {Checkbox} from '@telia/styleguide'`
+- Deprecated old CheckBoxWithLabel components
 
 ## 1.37.2
+
 - Added business StepFlow
 
+## 1.37.0
 
-## 1.37.0 
-- Breaking: moved TextField from business to molecules. 
-To fix in your app replace `import {TextField} from '@telia/styleguide/business'` 
-with the usual `import {TextField} from '@telia/styleguide'`
-- Deprecated old TextBox components 
+- Breaking: moved TextField from business to molecules.
+  To fix in your app replace `import {TextField} from '@telia/styleguide/business'`
+  with the usual `import {TextField} from '@telia/styleguide'`
+- Deprecated old TextBox components
 
+## 1.36.0
 
-## 1.36.0 
 - Breaking: renamed `label` props in business ListItem to `title`
 - Added DatePicker
 - Added PeriodPicker
 - Added Incrementer
-- Support expandable list items 
+- Support expandable list items
 
-## 1.35.0 
-- Breaking: Removed SideMenuHeader component. Use SideMenuItem instead 
-- A bunch og patches and minor improvements 
+## 1.35.0
+
+- Breaking: Removed SideMenuHeader component. Use SideMenuItem instead
+- A bunch og patches and minor improvements
 
 ## 1.34.21
-Contains new components 
+
+Contains new components
+
 - Lozenge
-- Chip 
+- Chip
 - TextField (in busienss area)
 
 ## 1.34.8
+
 - Added SubscriptionLinesAccordion component
 
 ## 1.34.0
