@@ -8,7 +8,7 @@
   min-height: 100vh;
   z-index: 10;
 
-  &--header {
+  &__header {
     border-bottom: 1px solid var(--grey-200);
     width: 100%;
     position: relative;
@@ -20,7 +20,7 @@
       font-weight: 500;
     }
 
-    &--top {
+    &__top {
       position: fixed;
       display: flex;
       align-items: center;
@@ -33,27 +33,27 @@
       margin: 0 auto;
       background-color: var(--grey-100);
       transition: all 300ms ease;
-      &__stuck {
+      &--stuck {
         box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        &--content {
+        &__content {
           display: flex;
           flex: auto;
         }
       }
     }
-    &--content {
+    &__content {
       width: 80%;
       margin: 0 auto;
       padding-top: 80px;
       display: flex;
       flex-wrap: wrap;
-      &--description {
+      &__description {
         color: var(--grey-700);
       }
     }
   }
 
-  &--step {
+  &__step {
     display: flex;
     flex-direction: column;
     margin-bottom: 3rem;
@@ -66,23 +66,23 @@
         font-size: 1.5rem;
         font-weight: 500;
       }
-      &--description {
+      &__description {
         color: var(--grey-700);
         font-weight: 400;
       }
     }
   }
-  &--main {
+  &__main {
     display: flex;
     padding-top: 4rem;
     width: 80%;
     margin: 0 auto;
-    &--form {
+    &__form {
       width: 80%;
       margin: auto;
     }
   }
-  &--menu {
+  &__menu {
     width: 15%;
     padding-right: 1rem;
     &-item {
@@ -97,18 +97,18 @@
       &:hover {
         color: var(--core-purple-500);
       }
-      &__active {
+      &--active {
         border-color: var(--core-purple-500);
         color: var(--core-purple-500);
       }
-      &__disabled {
+      &--disabled {
         color: var(--grey-400);
         pointer-events: none;
       }
     }
   }
 
-  &--footer {
+  &__footer {
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
@@ -116,25 +116,25 @@
     margin-bottom: 1.5rem;
   }
 
-  &__right {
+  &--right {
     max-width: 33%;
     padding-left: 2.5rem;
   }
 }
 
-.telia-step-flow--menu + .telia-step-flow--main--form {
+.telia-step-flow__menu + .telia-step-flow__main__form {
   width: 70%;
   margin: 0;
 }
 @media only screen and (max-width: 600px) {
-  .telia-step-flow--header {
+  .telia-step-flow__header {
     &-content {
       padding-top: 60px;
       text-align: center;
     }
   }
 
-  .telia-step-flow--main {
+  .telia-step-flow__main {
     width: 100%;
   }
 }

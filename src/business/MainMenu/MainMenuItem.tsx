@@ -43,16 +43,16 @@ export const MainMenuItem: React.FC<MainMenuItemProps> = (props) => {
   const activeClass = props.active ? 'active' : undefined;
 
   return (
-    <li className={cs('Business-MainMenu--item', activeClass)}>
+    <li className={cs('Business-MainMenu__item', activeClass)}>
       <a
-        className={cs('Business-MainMenu--link', activeClass)}
+        className={cs('Business-MainMenu__link', activeClass)}
         role="button"
         href="#"
         onClick={onClick}
         aria-current={props.active ? 'page' : undefined}
       >
         <span>
-          {typeof props.icon === 'string' ? <Icon className="Business-MainMenu--icon" icon={props.icon} /> : props.icon}
+          {typeof props.icon === 'string' ? <Icon className="Business-MainMenu__icon" icon={props.icon} /> : props.icon}
 
           {props.label}
 

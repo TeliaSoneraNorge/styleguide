@@ -76,13 +76,13 @@ export const Button = (props: ButtonProps) => {
     <Tag
       className={cs(
         'telia-button',
-        `telia-button__${kind}`,
-        `telia-button__${size}`,
+        `telia-button--${kind}`,
+        `telia-button--${size}`,
         {
-          'telia-button__iconRight': iconRight,
-          'telia-button__ball': icon && !label,
-          'telia-button__disabled': disabled,
-          'telia-button__active': active,
+          'telia-button--iconRight': iconRight,
+          'telia-button--ball': icon && !label,
+          'telia-button--disabled': disabled,
+          'telia-button--active': active,
         },
         className
       )}
@@ -92,7 +92,7 @@ export const Button = (props: ButtonProps) => {
       type={href ? undefined : type}
       target={href ? target : undefined}
     >
-      {icon && <Icon icon={icon} className="telia-button--icon" />}
+      {icon && <Icon icon={icon} className="telia-button__icon" />}
       {label}
     </Tag>
   );

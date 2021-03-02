@@ -31,7 +31,7 @@ storiesOf('Business/MainMenu', module).add('default', () => {
           <MainMenuItem
             onClick={onClickItem}
             label="Hjem"
-            icon={<Icon className="Business-MainMenu--icon" icon="home" />}
+            icon={<Icon className="Business-MainMenu__icon" icon="home" />}
           />
 
           <MainMenuItem

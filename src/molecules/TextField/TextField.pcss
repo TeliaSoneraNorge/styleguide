@@ -23,20 +23,20 @@
   }
 }
 
-.telia-textfield--leftContent + .telia-textfield--input {
+.telia-textfield__leftContent + .telia-textfield__input {
   padding-left: 0;
 }
 
-.telia-textfield--leftContent .telia-button__compact .telia-button--icon {
+.telia-textfield__leftContent .telia-button--compact .telia-button--icon {
   width: 1.125rem;
   height: 1.125rem;
 }
 
-.telia-textfield--label {
+.telia-textfield__label {
   font-size: 14px;
 }
 
-.telia-textfield--content {
+.telia-textfield__content {
   display: flex;
   border: 1px solid var(--grey-400);
   border-radius: 4px;
@@ -44,7 +44,7 @@
   transition-property: border;
 }
 
-.telia-textfield--status {
+.telia-textfield__status {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -57,8 +57,8 @@
   }
 }
 
-.telia-textfield--leftContent,
-.telia-textfield--rightContent {
+.telia-textfield__leftContent,
+.telia-textfield__rightContent {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,79 +66,79 @@
   flex-shrink: 0;
   background-color: var(--white);
 }
-.telia-textfield--leftContent {
+.telia-textfield__leftContent {
   border-top-left-radius: 4px;
   border-bottom-left-radius: 4px;
 }
-.telia-textfield--status,
-.telia-textfield--rightContent {
+.telia-textfield__status,
+.telia-textfield__rightContent {
   border-top-right-radius: 4px;
   border-bottom-right-radius: 4px;
 }
 
-.telia-textfield--leftContent > .Icon,
-.telia-textfield--rightContent > .Icon {
+.telia-textfield__leftContent > .Icon,
+.telia-textfield__rightContent > .Icon {
   width: 27px;
   height: 27px;
 }
 
-.telia-textfield--helptext {
+.telia-textfield__helptext {
   color: var(--grey-500);
   display: block;
 }
 
-.telia-textfield__focus {
-  .telia-textfield--content {
+.telia-textfield--focus {
+  .telia-textfield__content {
     border-color: var(--core-purple-500);
     transition: all 150ms ease-in-out;
   }
 }
 
-.telia-textfield__error {
-  .telia-textfield--content {
+.telia-textfield--error {
+  .telia-textfield__content {
     border-color: var(--red-600);
   }
-  .telia-textfield--status {
+  .telia-textfield__status {
     color: var(--red-600);
   }
-  .telia-textfield--helptext {
+  .telia-textfield__helptext {
     color: var(--red-600);
   }
 }
-.telia-textfield__success {
-  .telia-textfield--content {
+.telia-textfield--success {
+  .telia-textfield__content {
     border-color: var(--green-600);
   }
-  .telia-textfield--status {
+  .telia-textfield__status {
     color: var(--green-600);
   }
-  .telia-textfield--helptext {
+  .telia-textfield__helptext {
     color: var(--green-600);
   }
 }
 
-.telia-textfield__disabled {
-  .telia-textfield--label,
-  .telia-textfield--helptext {
+.telia-textfield--disabled {
+  .telia-textfield__label,
+  .telia-textfield__helptext {
     color: var(--grey-400);
   }
-  .telia-textfield--content {
+  .telia-textfield__content {
     background-color: var(--grey-100);
     border: 1px solid var(--grey-300);
     input:disabled {
       background-color: var(--grey-100);
     }
   }
-  .telia-textfield--leftContent,
-  .telia-textfield--rightContent {
+  .telia-textfield__leftContent,
+  .telia-textfield__rightContent {
     background-color: var(--grey-100);
   }
 }
 
-.telia-textfield__compact {
+.telia-textfield--compact {
   margin-top: 8px;
 
-  .telia-textfield--label {
+  .telia-textfield__label {
     position: absolute;
     left: 0.75rem;
     cursor: text;
@@ -157,22 +157,22 @@
   }
 }
 
-.telia-textfield__prepended {
+.telia-textfield--prepended {
   input {
     border-top-left-radius: 0px;
     border-bottom-left-radius: 0px;
   }
 }
-.telia-textfield__appended {
+.telia-textfield--appended {
   input {
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
   }
 }
 
-.telia-textfield__compact.telia-textfield__focus,
-.telia-textfield__compact.telia-textfield__withValue {
-  .telia-textfield--label {
+.telia-textfield--compact.telia-textfield--focus,
+.telia-textfield--compact.telia-textfield--withValue {
+  .telia-textfield__label {
     background: white;
     top: -6px;
     left: 7px;
@@ -187,50 +187,50 @@
   }
 }
 
-.telia-textfield__compact.telia-textfield__withValue:not(.telia-textfield__focus) {
-  .telia-textfield--label {
+.telia-textfield--compact.telia-textfield--withValue:not(.telia-textfield--focus) {
+  .telia-textfield__label {
     color: var(--grey-400);
   }
 }
 
-.telia-textfield__compact.telia-textfield__focus.telia-textfield__success,
-.telia-textfield__compact.telia-textfield__withValue.telia-textfield__success {
-  .telia-textfield--label {
+.telia-textfield--compact.telia-textfield--focus.telia-textfield--success,
+.telia-textfield--compact.telia-textfield--withValue.telia-textfield--success {
+  .telia-textfield__label {
     color: var(--green-600);
   }
 }
 
-.telia-textfield__compact.telia-textfield__focus.telia-textfield__error,
-.telia-textfield__compact.telia-textfield__withValue.telia-textfield__error {
-  .telia-textfield--label {
+.telia-textfield--compact.telia-textfield--focus.telia-textfield--error,
+.telia-textfield--compact.telia-textfield--withValue.telia-textfield--error {
+  .telia-textfield__label {
     color: var(--red-600);
   }
 }
 
-.telia-textfield__white,
-.telia-textfield__white.telia-textfield__focus {
-  .telia-textfield--content {
+.telia-textfield--white,
+.telia-textfield--white.telia-textfield--focus {
+  .telia-textfield__content {
     border: 1px solid var(--grey-200);
   }
 }
 
-.telia-textfield__grey,
-.telia-textfield__white {
+.telia-textfield--grey,
+.telia-textfield--white {
   input::placeholder {
     color: var(--grey-700);
   }
 }
 
-.telia-textfield__grey {
-  .telia-textfield--content {
+.telia-textfield--grey {
+  .telia-textfield__content {
     border: none;
     background-color: var(--grey-200);
     input {
       background-color: var(--grey-200);
     }
   }
-  .telia-textfield--leftContent,
-  .telia-textfield--rightContent {
+  .telia-textfield__leftContent,
+  .telia-textfield__rightContent {
     background-color: var(--grey-200);
   }
 }

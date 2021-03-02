@@ -52,7 +52,7 @@
     }
   }
 
-  &__fullwidth {
+  &--fullwidth {
     & > ul {
       justify-content: stretch;
     }
@@ -78,7 +78,7 @@
   }
 }
 
-.telia-tabs__narrow {
+.telia-tabs--narrow {
   & > ul > li {
     position: relative;
     border: 0;
@@ -118,7 +118,7 @@
   }
 }
 
-.telia-tabs__outlined {
+.telia-tabs--outlined {
   & > ul {
     > li > a,
     > li > button {
@@ -159,13 +159,13 @@
   }
 }
 
-.telia-tabs__centered {
+.telia-tabs--centered {
   & > ul {
     justify-content: center;
   }
 }
 
-.telia-tabs__black {
+.telia-tabs--black {
   & > ul > li {
     &:hover:after {
       border-color: black;
@@ -196,7 +196,7 @@
   }
 }
 
-.telia-tabs__outlined.telia-tabs__black {
+.telia-tabs--outlined.telia-tabs--black {
   & > ul > li {
     &.active {
       background-color: rgba(0, 0, 0, 0.06);
@@ -204,7 +204,7 @@
   }
 }
 
-.telia-tabs__compact {
+.telia-tabs--compact {
   & > ul > li {
     width: fit-content;
   }
