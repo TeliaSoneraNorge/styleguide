@@ -46,7 +46,7 @@ export const StepFlow = (props: Props) => {
 
   const [step, setStep] = useState(props.initialStep ?? 0);
   const breakpointSm = useBreakpoint('sm');
-  const breakpointLg = useBreakpoint('lg');
+  const additionalContentBreakpoint = useBreakpoint('xxl');
 
   const singleStep = React.Children.count(props.children) === 1;
   const children = React.Children.toArray(props.children);
@@ -57,8 +57,8 @@ export const StepFlow = (props: Props) => {
 
   const isLastStep = step === children.length - 1;
 
-  const renderAdditionalContentRight = breakpointLg && !isLastStep;
-  const renderAdditionalContentInStep = !breakpointLg && !isLastStep;
+  const renderAdditionalContentRight = additionalContentBreakpoint && !isLastStep;
+  const renderAdditionalContentInStep = !additionalContentBreakpoint && !isLastStep;
 
   useEffect(() => {
     const newStep = children[step];
