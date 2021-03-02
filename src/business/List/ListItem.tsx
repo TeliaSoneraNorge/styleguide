@@ -31,20 +31,20 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   return (
     <Tag
       className={cn('telia-listItem', {
-        'telia-listItem--underlined': border === 'underlined',
-        'telia-listItem--outlined': border === 'outlined',
-        'telia-listItem--card': type === 'card',
-        'telia-listItem--dark': color === 'dark',
-        'telia-listItem--medium': color === 'medium',
-        'telia-listItem--noBG': color !== 'dark' && color !== 'medium' && color !== 'white',
+        'telia-listItem__underlined': border === 'underlined',
+        'telia-listItem__outlined': border === 'outlined',
+        'telia-listItem__card': type === 'card',
+        'telia-listItem__dark': color === 'dark',
+        'telia-listItem__medium': color === 'medium',
+        'telia-listItem__noBG': color !== 'dark' && color !== 'medium' && color !== 'white',
       })}
     >
       <InnerTag
         className={cn(
-          'telia-listItem__mainWrapper',
+          'telia-listItem--mainWrapper',
           {
-            'telia-listItem--compact': compact,
-            'telia-listItem--clickable': onClick,
+            'telia-listItem__compact': compact,
+            'telia-listItem__clickable': onClick,
           },
           className
         )}
@@ -52,22 +52,22 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
         role={onClick && 'button'}
       >
         {hasProps && (
-          <div className="telia-listItem__main">
+          <div className="telia-listItem--main">
             {decorator && (
-              <div className="telia-listItem__decorator" onClick={(e) => e.stopPropagation()}>
+              <div className="telia-listItem--decorator" onClick={(e) => e.stopPropagation()}>
                 {decorator}
               </div>
             )}
-            <div className="telia-listItem__content">
+            <div className="telia-listItem--content">
               {title && (
-                <h3 className={cn('telia-listItem__name', { 'telia-listItem__name--dark': color === 'dark' })}>
+                <h3 className={cn('telia-listItem--name', { 'telia-listItem--name__dark': color === 'dark' })}>
                   {title}
                 </h3>
               )}
               {description && (
                 <div
-                  className={cn('telia-listItem__description', {
-                    'telia-listItem__description--dark': color === 'dark',
+                  className={cn('telia-listItem--description', {
+                    'telia-listItem--description__dark': color === 'dark',
                   })}
                 >
                   {description}
@@ -76,9 +76,9 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
             </div>
             {caption && (
               <div
-                className={cn('telia-listItem__caption', {
-                  'telia-listItem__caption--text': typeof caption === 'string',
-                  'telia-listItem__caption--dark': color === 'dark',
+                className={cn('telia-listItem--caption', {
+                  'telia-listItem--caption__text': typeof caption === 'string',
+                  'telia-listItem--caption__dark': color === 'dark',
                 })}
               >
                 {caption}
@@ -90,8 +90,8 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
       </InnerTag>
       {'expandedChildren' in props && (
         <div
-          className={cn('telia-listItem__expandedChildren', {
-            'telia-listItem__expandedChildren--expanded': open,
+          className={cn('telia-listItem--expandedChildren', {
+            'telia-listItem--expandedChildren__expanded': open,
           })}
         >
           {props.expandedChildren}

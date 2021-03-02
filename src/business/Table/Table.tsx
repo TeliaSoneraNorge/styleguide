@@ -40,8 +40,8 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
       tabIndex={props.onClick ? 0 : undefined}
       className={cs(
         {
-          'data-table__cell': true,
-          'data-table__cell--right-aligned': props.rightAligned,
+          'data-table--cell': true,
+          'data-table--cell__right-aligned': props.rightAligned,
         },
         props.className
       )}
@@ -71,10 +71,11 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
   return (
     <tr
       className={cs(
-        'data-table__row',
+        'data-table--row',
         {
-          'data-table__row--connected': props.connectedToPrevious,
-          'data-table__row--selected': 'selected' in props && props.selected,
+          'data-table--row__connected': props.connectedToPrevious,
+          'data-table--row__clickable': props.onClickRow,
+          'data-table--row__selected': 'selected' in props && props.selected,
         },
         props.className
       )}
@@ -95,7 +96,7 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
       {'onSelect' in props && (
         <TableBodyCell isCheckbox={true}>
           <Checkbox
-            className="data-table__checkbox"
+            className="data-table--checkbox"
             label={props.checkboxLabel || 'Velg rad'}
             hiddenLabel={true}
             onChange={props.onSelect}
@@ -131,10 +132,10 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
     <th
       className={cs(
         {
-          'data-table__cell': true,
-          'data-table__cell--header': true,
-          'data-table__cell--sortable': 'onClick' in props,
-          'data-table__cell--right-aligned': props.rightAligned,
+          'data-table--cell': true,
+          'data-table--cell__header': true,
+          'data-table--cell__sortable': 'onClick' in props,
+          'data-table--cell__right-aligned': props.rightAligned,
         },
         props.className
       )}
@@ -235,21 +236,21 @@ export const Table: React.FC<TableProps> = (props) => {
         className={cs(
           'data-table',
           {
-            'data-table--fullWidth': props.fullWidth,
-            'data-table--bordered': props.bordered,
-            'data-table--compact': props.compact,
+            'data-table__fullWidth': props.fullWidth,
+            'data-table__bordered': props.bordered,
+            'data-table__compact': props.compact,
           },
           props.className
         )}
       >
-        <table className="data-table__table">
+        <table className="data-table--table">
           <thead>
             {'headings' in props ? (
-              <tr className="data-table__row data-table__row--header">
+              <tr className="data-table--row data-table--row__header">
                 {'selected' in props && (
                   <TableHeadCell>
                     <Checkbox
-                      className="data-table__checkbox"
+                      className="data-table--checkbox"
                       label={
                         props.allSelected
                           ? props.uncheckAllLabel || 'Fjern alle rader'
@@ -294,7 +295,7 @@ export const Table: React.FC<TableProps> = (props) => {
             <tbody>{props.children}</tbody>
           )}
         </table>
-        {props.paging && <div className="data-table__paging">{props.paging}</div>}
+        {props.paging && <div className="data-table--paging">{props.paging}</div>}
       </span>
     </UniqueIdContext.Provider>
   );
@@ -320,7 +321,7 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
   return (
     <div className="table-paging">
       {props.numberOfSelectedRows ? (
-        <span className="table-paging__text">
+        <span className="table-paging--text">
           {`${props.numberOfSelectedRows} ${
             props.selectedRowsLabel || `${props.numberOfSelectedRows > 1 ? 'rader' : 'rad'} er valgt`
           }`}
@@ -343,10 +344,10 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
         </Dropdown>
       </div>
 
-      <span className="table-paging__text">
+      <span className="table-paging--text">
         {props.fromToLabel || `${props.from}-${props.to} av ${props.dataLength}`}
       </span>
-      <div className="table-paging__navigation">
+      <div className="table-paging--navigation">
         <Button
           size="compact"
           kind="secondary-text"
@@ -372,9 +373,9 @@ export const TablePagingControls: React.FC<TablePagingControlsProps> = (props) =
 const TableSkeletonLoading: React.FC<{ rowsCount: number; columnCount: number }> = (props) => (
   <>
     {_.times(props.rowsCount, (idx) => (
-      <tr className="data-table__skeleton data-table__row" key={idx}>
+      <tr className="data-table--skeleton data-table--row" key={idx}>
         {_.times(props.columnCount, (i) => (
-          <td className="data-table__cell" key={`${i}-${idx}`}>
+          <td className="data-table--cell" key={`${i}-${idx}`}>
             <div>&nbsp;</div>
           </td>
         ))}

@@ -1,4 +1,4 @@
-.telia-tooltip-container {
+.telia-tooltip--container {
   position: relative;
   display: inline-block;
 }
@@ -15,59 +15,59 @@
   top: 120%;
   font-size: 14px;
 
-  &--dark {
+  &__dark {
     background-color: var(--grey-900);
     border-color: var(--grey-900);
     color: white;
   }
 
-  &--grey {
+  &__grey {
     background-color: var(--grey-200);
     border-color: var(--grey-200);
     color: var(--grey-900);
   }
 
-  &--purple {
+  &__purple {
     background-color: var(--core-purple-100);
     border-color: var(--core-purple-100);
     color: var(--core-purple-500);
   }
 
-  &--top,
-  &--top-start,
-  &--top-end {
+  &__top,
+  &__top-start,
+  &__top-end {
     top: auto;
     bottom: 120%;
   }
 
-  &--top-start {
+  &__top-start {
     right: 60%;
   }
 
-  &--top-end {
+  &__top-end {
     left: 60%;
   }
 
-  &--right {
+  &__right {
     left: 110%;
     top: 20%;
   }
 
-  &--bottom-start {
+  &__bottom-start {
     right: 60%;
   }
 
-  &--bottom-end {
+  &__bottom-end {
     left: 60%;
   }
 
-  &--left {
+  &__left {
     right: 110%;
     top: 20%;
   }
 }
 
-.telia-tooltip-arrow {
+.telia-tooltip--arrow {
   content: ' ';
   position: absolute;
   bottom: 100%; /* At the top of the tooltip */
@@ -80,50 +80,50 @@
   border-top-color: transparent;
 }
 
-.telia-tooltip-container:hover .telia-tooltip {
+.telia-tooltip--container:hover .telia-tooltip {
   visibility: visible;
 }
 
-.telia-tooltip--top > .telia-tooltip-arrow {
+.telia-tooltip__top > .telia-tooltip--arrow {
   left: 50%;
   top: 100%;
   border-top-color: inherit;
 }
 
-.telia-tooltip--top-start > .telia-tooltip-arrow {
+.telia-tooltip__top-start > .telia-tooltip--arrow {
   left: 80%;
   top: 100%;
   border-top-color: inherit;
 }
 
-.telia-tooltip--top-end > .telia-tooltip-arrow {
+.telia-tooltip__top-end > .telia-tooltip--arrow {
   left: 20%;
   top: 100%;
   border-top-color: inherit;
 }
 
-.telia-tooltip--right > .telia-tooltip-arrow {
+.telia-tooltip__right > .telia-tooltip--arrow {
   border-right-color: inherit;
   bottom: 25%;
   right: 100%;
 }
 
-.telia-tooltip--bottom > .telia-tooltip-arrow {
+.telia-tooltip__bottom > .telia-tooltip--arrow {
   left: 50%;
   border-bottom-color: inherit;
 }
 
-.telia-tooltip--bottom-start > .telia-tooltip-arrow {
+.telia-tooltip__bottom-start > .telia-tooltip--arrow {
   left: 80%;
   border-bottom-color: inherit;
 }
 
-.telia-tooltip--bottom-end > .telia-tooltip-arrow {
+.telia-tooltip__bottom-end > .telia-tooltip--arrow {
   left: 20%;
   border-bottom-color: inherit;
 }
 
-.telia-tooltip--left > .telia-tooltip-arrow {
+.telia-tooltip__left > .telia-tooltip--arrow {
   border-left-color: inherit;
   bottom: 25%;
   left: calc(100% + 8px);

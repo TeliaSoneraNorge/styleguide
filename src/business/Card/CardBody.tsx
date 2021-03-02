@@ -8,8 +8,8 @@ type Props = {
 export const CardBody: React.FC<Props> = (props) => {
   return (
     <div
-      className={cs('telia-card-body', props.className, {
-        'telia-card-body--padded': props.padding !== false,
+      className={cs('telia-card--body', props.className, {
+        'telia-card--body__padded': props.padding !== false,
       })}
     >
       {props.children}

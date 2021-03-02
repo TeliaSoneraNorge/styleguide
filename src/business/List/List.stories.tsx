@@ -18,9 +18,9 @@ export default {
 };
 
 export const Default = ({}) => {
-  const [color, setColor] = React.useState<ListItemColor>('light');
+  const [color, setColor] = React.useState<ListItemColor>('white');
   function setNextStyle() {
-    const colors: ListItemColor[] = ['light', 'dark', 'medium'];
+    const colors: ListItemColor[] = ['white', 'transparent', 'dark', 'medium'];
     const currStyle = colors.indexOf(color);
     let nextStyle = currStyle + 1;
 
@@ -88,7 +88,7 @@ export const Card = ({}) => {
           <ListHeading title="List Standard" compact={true} />
           <ListCard title="Element 1" />
           <ListCard title="Element 2" />
-          <ListCard title="Element 3" />
+          <ListCard title="Element 3 with onClick" onClick={action('click element 3')} />
           <ListCard title="Element 4" />
           <ListCard title="Element 5" />
         </List>
@@ -105,7 +105,7 @@ export const Card = ({}) => {
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
         <List type="card" border="underlined">
-          <ListHeading title="List Underlined w/Checkbox and captions and descriptions" />
+          <ListHeading title="List Underlined w/Checkbox, captions, descriptions and onClick" />
           <ListItem
             title="Element 1"
             onClick={action('click elemt 1')}
@@ -183,7 +183,7 @@ export const Card = ({}) => {
           <ListHeading title="List dark w/Individual styles" />
           <ListItem title="Element 1" caption="caption" description="Description" />
           <ListItem title="Element 2" caption="caption" description="Description" color="medium" />
-          <ListItem title="Element 3" caption="caption" description="Description" color="light" />
+          <ListItem title="Element 3" caption="caption" description="Description" color="white" />
           <ListItem title="Element 4" caption="caption" description="Description" />
           <ListItem title="Element 5" caption="caption" description="Description" />
         </List>
@@ -335,7 +335,7 @@ export const Item = ({}) => {
           <ListHeading title="List dark w/Individual styles" />
           <ListItem title="Element 1" caption="caption" description="Description" />
           <ListItem title="Element 2" caption="caption" description="Description" color="medium" />
-          <ListItem title="Element 3" caption="caption" description="Description" color="light" />
+          <ListItem title="Element 3" caption="caption" description="Description" color="white" />
           <ListItem title="Element 4" caption="caption" description="Description" />
           <ListItem title="Element 5" caption="caption" description="Description" />
         </List>

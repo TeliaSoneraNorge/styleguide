@@ -9,8 +9,8 @@ type Props = {
 export const CardFooter: React.FC<Props> = (props) => {
   return (
     <footer
-      className={cs('telia-card-footer', props.className, {
-        'telia-card-footer--padded': props.padding !== false,
+      className={cs('telia-card--footer', props.className, {
+        'telia-card--footer__padded': props.padding !== false,
       })}
     >
       {props.children}
