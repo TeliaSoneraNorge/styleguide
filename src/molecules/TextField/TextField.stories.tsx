@@ -67,12 +67,6 @@ export const Default = () => {
       <div style={{ width: '30%' }}>
         <TextField
           label="Field label"
-          value={state}
-          onChange={(e) => setstate(e.target.value)}
-          placeholder="Placeholder text"
-          error={state === 'error'}
-          success={state === 'success'}
-          helpText={state === 'error' ? state : ''}
           fieldInstructionsProps={{
             label: 'Why?',
             description: 'This is this a description for the text field',
