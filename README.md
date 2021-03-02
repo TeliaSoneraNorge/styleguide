@@ -43,6 +43,17 @@ All new components should employ TypeScript.
 
 7. Add a new storybook file `YourComponentName.stories.tsx` with detailed examples of the new component in use (look at the existing components for examples).
 
+### CSS classes
+
+All classes should be prefixed with "`telia`"
+
+We also use the [BEM-pattern](http://getbem.com/naming/): `block--elements__modifiers`
+
+- Component elements should be preceded with "`--`"
+  - Example: `telia-[component-name]--header`
+- Component modifiers should be preceded with "`__`"
+  - Example: "`telia-[component-name]__compact`"
+
 ### Add new icons
 
 `NOTE: This section needs revision`
