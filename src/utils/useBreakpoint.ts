@@ -1,12 +1,13 @@
 import { throttle } from 'lodash';
 import { useState, useEffect } from 'react';
 
-type Breakpoints = 'sm' | 'md' | 'lg' | 'xl';
+type Breakpoints = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 const breakpoints: { [key in Breakpoints]: number } = {
   sm: 640,
   md: 840,
   lg: 1024,
   xl: 1280,
+  xxl: 1440,
 };
 
 export const useBreakpoint = (breakpoint: Breakpoints): boolean => {

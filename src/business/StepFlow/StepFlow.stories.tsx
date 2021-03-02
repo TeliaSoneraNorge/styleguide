@@ -31,7 +31,7 @@ export const Default = () => {
         onSubmit={action('Submit')}
         onCancel={action('Cancel')}
       >
-        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={step1Valid}>
+        <StepFlowStep title="Onomatopoetikon" description="An explanatory text for the first step" isValid={step1Valid}>
           {Object.entries(state).map(([key, val]) => (
             <div style={{ paddingBottom: '1rem' }}>
               <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
