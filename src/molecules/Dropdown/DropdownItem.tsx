@@ -22,7 +22,14 @@ export type DropdownItemProps = {
   href?: string;
 
   /**
-   * Icon displayd before label in the item
+   * Element to show before the label and/or children of the DropdownItem.
+   * Will override any use of the icon prop
+   */
+  leading?: React.ReactNode;
+
+  /**
+   * Icon displayed before the label in the item.
+   * Cannot be used in conjunction with the leading prop
    */
   icon?: IconDefinition;
 
@@ -100,11 +107,12 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
 
   const content = (
     <>
-      {props.icon ? (
+      {props.leading ? props.leading : null}
+      {props.icon && !props.leading && (
         <div className="telia-dropdown-item__icon-container">
           <Icon icon={props.icon} />
         </div>
-      ) : null}
+      )}
       <div>
         {props.label ? <div>{props.label}</div> : null}
         <div>{props.children}</div>

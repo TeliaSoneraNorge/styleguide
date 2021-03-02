@@ -13,6 +13,7 @@ import { Button } from '../../business';
 import { action } from '@storybook/addon-actions';
 import { withDesign } from 'storybook-addon-designs';
 import { Checkbox } from '../../atoms/Checkbox';
+import { Icon } from '../../atoms/Icon';
 
 type checkedState = {
   item1: boolean;
@@ -82,9 +83,24 @@ export default {
 
 export const Default = () => {
   const [open, setOpen] = useState<boolean>(false);
-
   const [selected, setSelected] = useState<checkedState>({ item1: false, item2: false });
-
+  const leading = (
+    <div
+      style={{
+        borderRadius: '50%',
+        height: '2.1rem',
+        width: '2.1rem',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: '0.475rem',
+        marginLeft: '-0.3rem',
+        backgroundColor: 'white',
+      }}
+    >
+      <Icon icon="devices" style={{ margin: '0', width: '1.3rem', height: '1.3rem', color: '#990AE3' }}></Icon>
+    </div>
+  );
   return (
     <div style={{ margin: '2rem', display: 'flex', flexDirection: 'column' }}>
       <h3>Default toggle, with default items, items with icon, header and divider item</h3>
@@ -106,6 +122,9 @@ export const Default = () => {
                 <DropdownItem label="Option 2" href="/hei" onClick={action('DropdownItem clicked')} />
                 <DropdownItem divider={true} />
                 <DropdownItem label="Centered" centered={true} onClick={action('DropdownItem clicked')} />
+                <DropdownItem leading={leading} label="Option with leading element">
+                  <span style={{ fontSize: '12px' }}>Some attenuated text</span>
+                </DropdownItem>
                 <DropdownItem icon="user" label="Longer option with child" onClick={action('DropdownItem clicked')}>
                   <span style={{ fontSize: '12px' }}>Some attenuated text</span>
                 </DropdownItem>
