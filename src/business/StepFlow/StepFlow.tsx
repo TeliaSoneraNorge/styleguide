@@ -45,7 +45,7 @@ export const StepFlow = (props: Props) => {
   const { container } = useFocusTrap();
 
   const [step, setStep] = useState(props.initialStep ?? 0);
-  const breakpointSm = useBreakpoint('sm');
+  const menuBreakpoint = useBreakpoint('lg');
   const additionalContentBreakpoint = useBreakpoint('xxl');
 
   const singleStep = React.Children.count(props.children) === 1;
@@ -77,7 +77,7 @@ export const StepFlow = (props: Props) => {
       />
 
       <div className="telia-step-flow__main">
-        {breakpointSm && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
+        {menuBreakpoint && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
         <div className="telia-step-flow__main-form">
           {form}
           {renderAdditionalContentInStep ? props.additionalContent : null}
