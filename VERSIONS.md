@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.38.37
+- Added FieldInstructions component  
+
 ## 1.38.20 
 - Added Badge component
 
