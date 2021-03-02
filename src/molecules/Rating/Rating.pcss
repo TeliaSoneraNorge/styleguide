@@ -1,0 +1,48 @@
+.rating {
+    display:flex;
+    align-items: center;
+    flex-direction: column;
+    width: fit-content;
+
+    &__stars {
+        display:flex;
+        align-items:center;
+    }
+
+    &__link {
+        a { 
+            border-bottom: 1px solid var(--core-purple);
+            box-sizing: content-box;
+            color: #000000;
+            display: inline;
+            font-family: "Helvetica Neue Medium", Helvetica, Roboto, Arial, sans-serif;
+            text-decoration: none;
+            font-size: 90%;
+            font-weight: normal;
+            letter-spacing: 0;
+            display: block;
+            margin-top: 4px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: var(--core-purple);
+        }
+      
+    }
+}
+
+.svg-icon {
+    height: 30px;
+    width: 30px;
+}
+
+.rating-numbers {
+    margin-left: 10px;
+    display: flex;
+
+    .heading {
+        margin: 0px;
+        margin-right: 10px;
+    }
+}

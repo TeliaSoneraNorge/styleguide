@@ -1,1 +1,3 @@
-export { default } from './Review';
+export { Review } from './Review';
+export { ReviewBody } from './ReviewBody';
+export { ReviewHeader } from './ReviewHeader';

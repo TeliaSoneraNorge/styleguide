@@ -1,16 +1,27 @@
 import React from 'react';
-import { Review } from '../../index';
+import { storiesOf } from '@storybook/react';
+import { Review } from './Review';
+import { ReviewHeader } from './ReviewHeader';
+import { ReviewBody } from './ReviewBody';
 
-export default {
-  title: 'Component library/Molecules/Review',
-  component: Review,
+const review = {
+  text:
+    'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat veritatis vitae minus officia, excepturi vero labore magnam facere tenetur doloribus?',
+  name: 'Ola Nordmann',
+  buyTimestamp: undefined,
+  rating: 5,
+  timestamp: '25. Sept 2020',
+  votesUp: 10,
+  votesDown: 1,
 };
 
-const { ReviewHeader, ReviewBody } = Review;
+const { text, rating, name, buyTimestamp, timestamp, votesDown, votesUp } = review;
 
-export const Default = () => (
-  <Review>
-    <ReviewHeader buyTimestamp="20 Sept 2020" rating={5} name="Jan Erik" timestamp="22. Sept 2020"></ReviewHeader>
-    <ReviewBody votesUp={10} votesDown={10} text="Fantastisk produkt!"></ReviewBody>
-  </Review>
-);
+storiesOf('Component library/Molecules/Review', module).add('Default', () => {
+  return (
+    <Review>
+      <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
+      <ReviewBody votesUp={votesUp} votesDown={votesDown} text={text}></ReviewBody>
+    </Review>
+  );
+});
