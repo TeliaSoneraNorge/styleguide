@@ -9,6 +9,7 @@
     border-radius: 4px;
     margin: 0;
     min-width: 0;
+    color: var(--grey-500);
     &:focus {
       outline: none;
     }
@@ -38,7 +39,8 @@
 
 .telia-textfield--content {
   display: flex;
-  border: 1px solid var(--grey-400);
+  background-color: var(--white);
+  border: 1px solid var(--grey-300);
   border-radius: 4px;
   transition-duration: 300ms;
   transition-property: border;
@@ -83,7 +85,7 @@
 }
 
 .telia-textfield--helptext {
-  color: var(--grey-500);
+  color: var(--grey-700);
   display: block;
 }
 
@@ -120,18 +122,22 @@
 .telia-textfield__disabled {
   .telia-textfield--label,
   .telia-textfield--helptext {
-    color: var(--grey-400);
+    color: var(--grey-300);
   }
   .telia-textfield--content {
     background-color: var(--grey-100);
     border: 1px solid var(--grey-300);
     input:disabled {
+      color: var(--grey-300);
       background-color: var(--grey-100);
     }
   }
   .telia-textfield--leftContent,
   .telia-textfield--rightContent {
     background-color: var(--grey-100);
+  }
+  .Icon {
+    fill: var(--grey-300);
   }
 }
 

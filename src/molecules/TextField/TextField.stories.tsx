@@ -30,7 +30,7 @@ export const Default = () => {
             helpText={state === 'error' ? state : ''}
           />
           <TextField label="Field label" helpText="Help or instrictions" />
-          <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>} />
+          <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on the right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
         </div>
