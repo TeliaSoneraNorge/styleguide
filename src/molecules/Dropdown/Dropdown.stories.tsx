@@ -156,8 +156,8 @@ export const Default = () => {
 
             <br />
             <h4>Disabled</h4>
-            <Dropdown disabled>
-              <DropdownToggle label="Toggle" color={color as Color} />
+            <Dropdown>
+              <DropdownToggle label="Toggle" color={color as Color} disabled />
               <DropdownMenu>
                 <DropdownItem header={true} label="Header" />
                 <DropdownItem label="Option 1" onClick={action('DropdownItem clicked')} />

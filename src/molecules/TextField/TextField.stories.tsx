@@ -13,6 +13,8 @@ export default {
 
 export const Default = () => {
   const [state, setstate] = useState('');
+  const [openFieldInstructions, setOpenFieldInstructions] = useState(false);
+
   return (
     <>
       <h3>TextField</h3>
@@ -59,6 +61,20 @@ export const Default = () => {
             disabled={true}
           />
         </div>
+      </div>
+      <br />
+      <p>Textfield with Field instructions</p>
+      <div style={{ width: '30%' }}>
+        <TextField
+          label="Field label"
+          fieldInstructionsProps={{
+            label: 'Why?',
+            description: 'This is this a description for the text field',
+            open: openFieldInstructions,
+            setOpen: setOpenFieldInstructions,
+          }}
+          onBlur={() => setOpenFieldInstructions(false)}
+        />
       </div>
     </>
   );
