@@ -61,28 +61,31 @@
 
     &__likes {
         display: flex;
+        width: 5rem;
+        justify-content: space-between;
+        align-items: center;
+        align-content:center;
         margin-top: 5px;
+        margin-left: 5px;
     }
 
     &__like {
         display: flex;
         align-items: center;
-        margin-right: 10px;
 
         &--up {
-            height: 0px;
-            color: var(--grey-500);
-            &:hover {
-                color:  var(--grey-500) !important;
-            }
-
-            &:visited {
+            width: 0px;
+            &:hover, &:focus  {
                 color:  var(--grey-500) !important;
             }
         }
 
         &--down {
             transform: rotate(180deg);
+            width: 0px;
+            &:hover, &:focus {
+                color:  var(--grey-500) !important;
+            }
         }
 
         &--up, 
@@ -91,7 +94,7 @@
         }
 
         span {
-            margin: 3px;
+            margin: 0 25px 0 20px;
             color: var(--grey-500);
         }
     }
