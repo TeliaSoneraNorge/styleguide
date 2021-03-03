@@ -11,16 +11,19 @@ export type RatingProps = {
   width: number;
   children?: React.ReactNode;
   href?: string;
-  link?: string;
+  linkName?: string;
+  /**
+   * Number of stars
+   */
   reviewComments?: number;
 };
 
-export interface RatingWithNumbersProps {
+export type RatingWithNumbersProps = {
   rating: number;
-  reviews: number;
-}
+  numberOfRatings: number;
+};
 
-export const RatingStars = ({ rating, height, width, children, link, href, reviewComments }: RatingProps) => {
+export const RatingStars = ({ rating, height, width, children, linkName, href, reviewComments }: RatingProps) => {
   return (
     <div className="rating">
       <div className="rating__stars">
@@ -50,7 +53,7 @@ export const RatingStars = ({ rating, height, width, children, link, href, revie
       {reviewComments && (
         <span className="rating__link">
           <a href={href}>
-            {link} {`(${reviewComments})`}
+            {linkName} {`(${reviewComments})`}
           </a>
         </span>
       )}
@@ -58,8 +61,8 @@ export const RatingStars = ({ rating, height, width, children, link, href, revie
   );
 };
 
-export const RatingWithNumbers: React.FC<RatingWithNumbersProps> = ({ rating, reviews }) => (
+export const RatingWithNumbers = ({ rating, numberOfRatings }: RatingWithNumbersProps) => (
   <div className="rating-numbers">
-    <Heading tag="h5">{rating}</Heading> {`(${reviews})`}
+    <Heading tag="h5">{rating}</Heading> {`(${numberOfRatings})`}
   </div>
 );
