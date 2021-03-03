@@ -2,7 +2,7 @@ import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/index';
 import { Heading, Button } from '../../index';
 
-export type RatingProps = {
+export interface RatingProps {
   /**
    * Number of stars
    */
@@ -17,12 +17,12 @@ export type RatingProps = {
    * Number of stars
    */
   reviewComments?: number;
-};
+}
 
-export type RatingWithNumbersProps = {
+export interface RatingWithNumbersProps {
   rating: number;
   numberOfRatings: number;
-};
+}
 
 export const RatingStars = ({
   rating,
@@ -37,7 +37,7 @@ export const RatingStars = ({
   return (
     <div className="telia-rating">
       <div className="telia-rating__stars">
-        {[...Array(5)].map((star, index) => {
+        {[...Array(5)].map((_star, index) => {
           return (
             <SvgIcon
               style={{ height: height, width: width }}
