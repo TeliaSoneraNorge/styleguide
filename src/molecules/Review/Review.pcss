@@ -69,14 +69,25 @@
         align-items: center;
         margin-right: 10px;
 
+        &--up {
+            height: 0px;
+            color: var(--grey-500);
+            &:hover {
+                color:  var(--grey-500) !important;
+            }
+
+            &:visited {
+                color:  var(--grey-500) !important;
+            }
+        }
+
         &--down {
             transform: rotate(180deg);
         }
 
-        &--up, &--down {
+        &--up, 
+        &--down {
             color: var(--grey-500);
-            height: 20px;
-            width: 20px;
         }
 
         span {
