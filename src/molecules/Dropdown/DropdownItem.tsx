@@ -110,7 +110,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
       {props.leading ? props.leading : null}
       {props.icon && !props.leading && (
         <div className="telia-dropdown-item__icon-container">
-          <Icon icon={props.icon} />
+          <Icon className="telia-dropdown-item__icon" icon={props.icon} />
         </div>
       )}
       <div>
