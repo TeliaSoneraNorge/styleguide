@@ -28,13 +28,6 @@ export const DefaultReview = () => (
   </Review>
 );
 
-export const ReviewWithoutDownvotes = () => (
-  <Review>
-    <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
-    <ReviewBody votesUp={votesUp} votesDown={0} text={text}></ReviewBody>
-  </Review>
-);
-
 export const ReviewWithBuyerTag = () => (
   <Review>
     <ReviewHeader buyTimestamp={'25. Sept 2020'} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>

@@ -16,12 +16,10 @@ export const ReviewBody: React.FC<ReviewBodyProps> = ({ text, votesUp, votesDown
           <Button onClick={onClick} kind="link" className="telia-review-body__like--up" icon="like" />
           <span>{votesUp}</span>
         </div>
-        {!!votesDown && (
-          <div className="telia-review-body__like">
-            <Button onClick={onClick} kind="link" className="telia-review-body__like--down" icon="like" />
-            <span>{votesDown}</span>
-          </div>
-        )}
+        <div className="telia-review-body__like">
+          <Button onClick={onClick} kind="link" className="telia-review-body__like--down" icon="like" />
+          <span>{votesDown}</span>
+        </div>
       </div>
     </div>
   </div>
