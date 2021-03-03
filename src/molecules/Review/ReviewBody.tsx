@@ -1,6 +1,5 @@
 import React from 'react';
-import { LikeIcon } from '../../atoms/Icon/icons/LikeIcon';
-
+import { LikeIcon, Paragraph } from '../../index';
 interface ReviewBodyProps {
   text: string;
   votesUp: number;
@@ -8,17 +7,17 @@ interface ReviewBodyProps {
 }
 
 export const ReviewBody: React.FC<ReviewBodyProps> = ({ text, votesUp, votesDown }) => (
-  <div className="review-body">
-    <div className="review-body__wrapper">
-      <p>{text}</p>
-      <div className="review-body__likes">
-        <div className="review-body__like">
-          <LikeIcon className="review-body__like--up" />
+  <div className="telia-review-body">
+    <div className="telia-review-body__wrapper">
+      <Paragraph>{text}</Paragraph>
+      <div className="telia-review-body__likes">
+        <div className="telia-review-body__like">
+          <LikeIcon className="telia-review-body__like--up" />
           <span>{votesUp}</span>
         </div>
         {votesDown > 0 && (
-          <div className="review-body__like">
-            <LikeIcon className="review-body__like--down" />
+          <div className="telia-review-body__like">
+            <LikeIcon className="telia-review-body__like--down" />
             <span>{votesDown}</span>
           </div>
         )}

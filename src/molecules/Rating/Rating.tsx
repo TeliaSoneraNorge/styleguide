@@ -1,6 +1,6 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/index';
-import { Heading } from '../../index';
+import { Heading, Button } from '../../index';
 
 export type RatingProps = {
   /**
@@ -12,6 +12,7 @@ export type RatingProps = {
   children?: React.ReactNode;
   href?: string;
   linkName?: string;
+  onClick?: React.MouseEventHandler;
   /**
    * Number of stars
    */
@@ -23,46 +24,46 @@ export type RatingWithNumbersProps = {
   numberOfRatings: number;
 };
 
-export const RatingStars = ({ rating, height, width, children, linkName, href, reviewComments }: RatingProps) => {
+export const RatingStars = ({
+  rating,
+  height,
+  width,
+  children,
+  linkName,
+  href,
+  reviewComments,
+  onClick,
+}: RatingProps) => {
   return (
-    <div className="rating">
-      <div className="rating__stars">
+    <div className="telia-rating">
+      <div className="telia-rating__stars">
         {[...Array(5)].map((star, index) => {
-          if (index < rating) {
-            return (
-              <SvgIcon
-                style={{ height: height, width: width }}
-                key={index}
-                className="svg-icon--yellow"
-                iconName="star-filled"
-              />
-            );
-          } else {
-            return (
-              <SvgIcon
-                style={{ height: height, width: width }}
-                key={index}
-                className="svg-icon--dark-grey"
-                iconName="star-filled"
-              />
-            );
-          }
+          return (
+            <SvgIcon
+              style={{ height: height, width: width }}
+              key={index}
+              className={index < rating ? 'svg-icon--yellow' : 'svg-icon--dark-grey'}
+              iconName="star-filled"
+            />
+          );
         })}
         {children}
       </div>
       {reviewComments && (
-        <span className="rating__link">
-          <a href={href}>
-            {linkName} {`(${reviewComments})`}
-          </a>
-        </span>
+        <Button
+          type="button"
+          className="telia-rating__link"
+          onClick={onClick}
+          kind="link"
+          text={`${linkName} (${reviewComments})`}
+        ></Button>
       )}
     </div>
   );
 };
 
 export const RatingWithNumbers = ({ rating, numberOfRatings }: RatingWithNumbersProps) => (
-  <div className="rating-numbers">
+  <div className="telia-rating-numbers">
     <Heading tag="h5">{rating}</Heading> {`(${numberOfRatings})`}
   </div>
 );

@@ -9,12 +9,12 @@ interface ReviewHeaderProps {
 }
 
 export const ReviewHeader: React.FC<ReviewHeaderProps> = ({ name, rating, timestamp, buyTimestamp }) => (
-  <div className="review-header">
-    <div className="review-header__wrapper">
-      <div className="review-header__title">
+  <div className="telia-review-header">
+    <div className="telia-review-header__wrapper">
+      <div className="telia-review-header__title">
         <div>
-          <span className="review-header__name">{name}</span>
-          <span className="review-header__timestamp">
+          <span className="telia-review-header__name">{name}</span>
+          <span className="telia-review-header__timestamp">
             {'• '}
             {timestamp}
           </span>

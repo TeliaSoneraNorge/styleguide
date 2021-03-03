@@ -17,11 +17,21 @@ const review = {
 
 const { text, rating, name, buyTimestamp, timestamp, votesDown, votesUp } = review;
 
-storiesOf('Component library/Molecules/Review', module).add('Default', () => {
-  return (
-    <Review>
-      <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
-      <ReviewBody votesUp={votesUp} votesDown={votesDown} text={text}></ReviewBody>
-    </Review>
-  );
-});
+export default {
+  title: 'Component library/Molecules/Review',
+  component: Review,
+};
+
+export const DefaultReview = () => (
+  <Review>
+    <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
+    <ReviewBody votesUp={votesUp} votesDown={votesDown} text={text}></ReviewBody>
+  </Review>
+);
+
+export const ReviewWithoutDownvotes = () => (
+  <Review>
+    <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
+    <ReviewBody votesUp={votesUp} votesDown={0} text={text}></ReviewBody>
+  </Review>
+);
