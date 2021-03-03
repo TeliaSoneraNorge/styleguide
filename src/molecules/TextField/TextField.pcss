@@ -2,7 +2,7 @@
   position: relative;
   input {
     flex-grow: 1;
-    padding: 0.625rem;
+    padding: 0.625rem 0.625rem 0.625rem 0.75rem;
     font-size: 16px;
     line-height: 20px;
     border: none;
@@ -10,6 +10,7 @@
     margin: 0;
     min-width: 0;
     color: var(--grey-500);
+    background-color: var(--white);
     &:focus {
       outline: none;
     }
@@ -35,15 +36,24 @@
 
 .telia-textfield__label {
   font-size: 14px;
+  color: var(--grey-900);
 }
 
 .telia-textfield__content {
   display: flex;
   background-color: var(--white);
-  border: 1px solid var(--grey-300);
+  border: 1px solid var(--accent-250);
   border-radius: 4px;
   transition-duration: 300ms;
   transition-property: border;
+
+  &:hover {
+    border-color: var(--grey-300);
+  }
+}
+
+.telia-textfield--withValue .telia-textfield__content {
+  border-color: var(--grey-500);
 }
 
 .telia-textfield__status {
@@ -85,8 +95,9 @@
 }
 
 .telia-textfield__helptext {
-  color: var(--grey-500);
+  color: var(--grey-700);
   display: block;
+  text-align: end;
 }
 
 .telia-textfield--focus {
@@ -119,17 +130,10 @@
   }
 }
 
-<<<<<<< HEAD
-.telia-textfield__disabled {
-  .telia-textfield--label,
-  .telia-textfield--helptext {
-    color: var(--grey-300);
-=======
 .telia-textfield--disabled {
   .telia-textfield__label,
   .telia-textfield__helptext {
-    color: var(--grey-400);
->>>>>>> master
+    color: var(--grey-300);
   }
   .telia-textfield__content {
     background-color: var(--grey-100);
@@ -150,18 +154,19 @@
 
 .telia-textfield--compact {
   margin-top: 8px;
+  font-size: 14px;
 
   .telia-textfield__label {
-    position: absolute;
-    left: 0.75rem;
-    cursor: text;
-    line-height: 20px;
-    top: 10px;
+    //position: absolute;
+    //left: 0.75rem;
+    //cursor: text;
+    //line-height: 20px;
+    //top: 10px;
     font-size: 14px;
-    color: var(--grey-400);
-    transition-property: font-size, top, left, color;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    //color: var(--grey-400);
+    //transition-property: font-size, top, left, color;
+    //transition-duration: 200ms;
+    //transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
 
   input {
@@ -183,7 +188,7 @@
   }
 }
 
-.telia-textfield--compact.telia-textfield--focus,
+/* .telia-textfield--compact.telia-textfield--focus,
 .telia-textfield--compact.telia-textfield--withValue {
   .telia-textfield__label {
     background: white;
@@ -198,13 +203,13 @@
     transition-duration: 200ms;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
   }
-}
-
+} */
+/*
 .telia-textfield--compact.telia-textfield--withValue:not(.telia-textfield--focus) {
   .telia-textfield__label {
     color: var(--grey-400);
   }
-}
+} */
 
 .telia-textfield--compact.telia-textfield--focus.telia-textfield--success,
 .telia-textfield--compact.telia-textfield--withValue.telia-textfield--success {
