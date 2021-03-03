@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Review } from './Review';
 import { ReviewHeader } from './ReviewHeader';
 import { ReviewBody } from './ReviewBody';
