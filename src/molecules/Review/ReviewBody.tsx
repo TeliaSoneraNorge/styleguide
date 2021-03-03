@@ -1,5 +1,5 @@
 import React from 'react';
-import { LikeIcon, Paragraph, Button } from '../../index';
+import { Paragraph, Button } from '../../index';
 interface ReviewBodyProps {
   text: string;
   votesUp: number;
