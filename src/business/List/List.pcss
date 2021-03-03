@@ -1,4 +1,4 @@
-.telia-listItem--mainWrapper {
+.telia-listItem__mainWrapper {
   padding: 1.875rem 1.5rem;
   transition-duration: 300ms;
   transition-property: background-color;
@@ -12,19 +12,19 @@
 .telia-listItem {
   list-style: none;
   background-color: var(--white);
-  .telia-listItem__clickable.telia-listItem--mainWrapper:hover {
+  .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
     background-color: var(--grey-200);
   }
 
-  &__underlined {
+  &--underlined {
     border-bottom: solid 1px var(--grey-200);
   }
 
-  &__compact {
+  &--compact {
     padding: 1.25rem 1.5rem;
   }
 
-  &__clickable {
+  &--clickable {
     cursor: pointer;
     text-decoration: none;
     border: none;
@@ -33,63 +33,63 @@
     text-align: inherit;
   }
 
-  &__card {
+  &--card {
     border-radius: 12px;
     padding: 0;
     margin: 0;
 
-    .telia-listItem--mainWrapper {
+    .telia-listItem__mainWrapper {
       border-radius: 12px;
     }
   }
 
-  &__outlined {
+  &--outlined {
     border: 1px solid var(--grey-200);
   }
 
-  &__dark {
+  &--dark {
     background-color: var(--grey-800);
     color: var(--white);
 
-    .telia-listItem__clickable.telia-listItem--mainWrapper:hover {
+    .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
       background-color: var(--grey-600);
     }
   }
 
-  &__medium {
+  &--medium {
     background-color: var(--grey-200);
 
-    .telia-listItem__clickable.telia-listItem--mainWrapper:hover {
+    .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
       background-color: var(--grey-300);
     }
   }
 
-  &__noBG {
+  &--noBG {
     background-color: transparent;
   }
 
-  &--main {
+  &__main {
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
   }
-  &--heading {
+  &__heading {
     padding: 1rem;
 
-    &__compact {
+    &--compact {
       padding: 0.75rem;
     }
   }
 
-  &--decorator {
+  &__decorator {
     flex: 0;
     padding-right: 1rem;
     text-align: center;
   }
 
-  &--content {
+  &__content {
     flex: 1;
     height: 2.75rem;
     display: flex;
@@ -98,33 +98,33 @@
     margin-right: auto;
   }
 
-  &--name {
+  &__name {
     line-height: 1.5rem;
     font-size: 1.125rem;
     font-weight: 400;
     margin: 0;
     color: var(--grey-900);
 
-    &__dark {
+    &--dark {
       color: var(--white);
     }
   }
 
-  &--description {
+  &__description {
     line-height: 1.25rem;
     font-size: 0.875rem;
     font-weight: 400;
     color: var(--grey-700);
 
-    &__dark {
+    &--dark {
       color: var(--white);
     }
   }
 
-  &--caption {
+  &__caption {
     margin-left: 1rem;
 
-    &--text {
+    &__text {
       line-height: 1rem;
       font-size: 0.75rem;
       font-weight: 400;
@@ -133,17 +133,17 @@
       letter-spacing: 0.00625rem;
     }
 
-    &__dark {
+    &--dark {
       color: var(--white);
     }
   }
 
-  &--expandedChildren {
+  &__expandedChildren {
     padding: 0 1.5rem;
     overflow-y: hidden;
     max-height: 0;
     transition: max-height 150ms ease-in-out, padding 150ms ease-in-out;
-    &__expanded {
+    &--expanded {
       max-height: 2000px;
       padding: 1.875rem 1.5rem;
     }
@@ -153,21 +153,21 @@
 .telia-list {
   width: 100%;
 
-  &--list {
+  &__list {
     list-style: none;
     padding: 0;
     margin: 0;
   }
 }
 
-.telia-list .telia-listItem__card {
+.telia-list .telia-listItem--card {
   margin: 0.75rem 0;
 }
 
-.telia-listItem--skeleton {
+.telia-listItem__skeleton {
   pointer-events: none;
 
-  .telia-listItem--decorator {
+  .telia-listItem__decorator {
     height: 2.75rem;
     width: 2.75rem;
     margin: 0.25rem;
@@ -176,22 +176,22 @@
     margin-right: 0.75rem;
   }
 
-  .telia-listItem--name {
+  .telia-listItem__name {
     width: 80%;
   }
 
-  .telia-listItem--description {
+  .telia-listItem__description {
     width: 80%;
     margin-top: 0.75rem;
   }
 
-  .telia-listItem--caption {
+  .telia-listItem__caption {
     width: 20%;
   }
-  .telia-listItem--decorator,
-  .telia-listItem--name,
-  .telia-listItem--description,
-  .telia-listItem--caption {
+  .telia-listItem__decorator,
+  .telia-listItem__name,
+  .telia-listItem__description,
+  .telia-listItem__caption {
     background: linear-gradient(-45deg, var(--grey-100), var(--grey-200));
     background-size: 200% 200%;
     animation: Loading 1.5s ease infinite;
@@ -211,44 +211,44 @@
   }
 }
 
-.telia-listItem--skeleton.telia-listItem__dark {
-  .telia-listItem--decorator,
-  .telia-listItem--name,
-  .telia-listItem--description,
-  .telia-listItem--caption {
+.telia-listItem__skeleton.telia-listItem--dark {
+  .telia-listItem__decorator,
+  .telia-listItem__name,
+  .telia-listItem__description,
+  .telia-listItem__caption {
     background: linear-gradient(-45deg, var(--grey-600), var(--grey-700));
   }
 }
 
-.telia-listItem--skeleton.telia-listItem__medium {
-  .telia-listItem--decorator,
-  .telia-listItem--name,
-  .telia-listItem--description,
-  .telia-listItem--caption {
+.telia-listItem__skeleton.telia-listItem--medium {
+  .telia-listItem__decorator,
+  .telia-listItem__name,
+  .telia-listItem__description,
+  .telia-listItem__caption {
     background: linear-gradient(-45deg, var(--grey-200), var(--grey-300));
   }
 }
 
 @media (max-width: 480px) {
-  .telia-listItem--mainWrapper {
+  .telia-listItem__mainWrapper {
     padding: 1rem 1.25rem;
   }
 
   .telia-listItem {
-    &--name {
+    &__name {
       line-height: 1rem;
       font-size: 1rem;
       font-weight: 400;
     }
 
-    &--decorator {
+    &__decorator {
       flex: 0;
       padding-right: 0.75rem;
       text-align: center;
     }
 
-    &--caption {
-      &--text {
+    &__caption {
+      &__text {
         line-height: 1rem;
         font-size: 0.625rem;
         font-weight: 400;
@@ -264,8 +264,8 @@
   }
 }
 
-.telia-listItem__dark.telia-listItem__clickable {
-  .telia-listItem--mainWrapper:hover {
+.telia-listItem--dark.telia-listItem--clickable {
+  .telia-listItem__mainWrapper:hover {
     background-color: var(--grey-600);
   }
 }

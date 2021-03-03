@@ -10,6 +10,6 @@ interface Props {
 
 export const MainMenu: React.FC<Props> = (props) => (
   <nav className={cs('Business-MainMenu', props.className)}>
-    <ul className="Business-MainMenu--list">{props.children}</ul>
+    <ul className="Business-MainMenu__list">{props.children}</ul>
   </nav>
 );

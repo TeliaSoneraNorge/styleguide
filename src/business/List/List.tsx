@@ -13,7 +13,7 @@ type Props = ListStyle & {
 export const List = ({ children, className, ...styleProps }: Props) => (
   <ListStyleContext.Provider value={styleProps}>
     <section className={cn('telia-list', className)}>
-      <ul className="telia-list--list">{children}</ul>
+      <ul className="telia-list__list">{children}</ul>
     </section>
   </ListStyleContext.Provider>
 );

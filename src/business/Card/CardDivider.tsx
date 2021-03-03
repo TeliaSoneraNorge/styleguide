@@ -9,8 +9,8 @@ type Props = {
 export const CardDivider = (props: Props) => {
   return (
     <hr
-      className={cs('telia-card--divider', props.className, {
-        'telia-card--divider__padded': props.padding !== false,
+      className={cs('telia-card__divider', props.className, {
+        'telia-card__divider--padded': props.padding !== false,
       })}
     />
   );

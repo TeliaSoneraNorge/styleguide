@@ -16,7 +16,7 @@
     transition: all 200ms ease-in-out;
   }
 
-  &--image {
+  &__image {
     height: 100%;
     width: 100%;
     border-radius: 50%;
@@ -44,9 +44,9 @@
     margin: 0;
   }
 
-  &--text,
-  &--icon {
-    &__absolute {
+  &__text,
+  &__icon {
+    &--absolute {
       position: absolute;
     }
   }
@@ -64,7 +64,7 @@ a.telia-avatar {
   color: var(--black);
 }
 
-.telia-avatar__compact {
+.telia-avatar--compact {
   width: 2rem;
   height: 2rem;
   font-size: 14px;
@@ -74,7 +74,7 @@ a.telia-avatar {
   }
 }
 
-.telia-avatar__big {
+.telia-avatar--big {
   width: 5rem;
   height: 5rem;
   font-size: 28px;
@@ -84,13 +84,13 @@ a.telia-avatar {
   }
 }
 
-.telia-avatar__big .telia-avatar--status {
+.telia-avatar--big .telia-avatar__status {
   height: 1.25rem;
   width: 1.25rem;
   border-width: 3px;
 }
 
-.telia-avatar__big * .telia-avatar {
+.telia-avatar--big * .telia-avatar {
   height: 3rem;
   width: 3rem;
   border: 3px solid var(--white);
@@ -101,13 +101,13 @@ a.telia-avatar {
   }
 }
 
-.telia-avatar__compact .telia-avatar--status {
+.telia-avatar--compact .telia-avatar__status {
   height: 0.75rem;
   width: 0.75rem;
   border-width: 2px;
 }
 
-.telia-avatar__compact * .telia-avatar {
+.telia-avatar--compact * .telia-avatar {
   height: 1rem;
   width: 1rem;
   border: 1px solid var(--white);
@@ -118,7 +118,7 @@ a.telia-avatar {
   }
 }
 
-.telia-avatar--status {
+.telia-avatar__status {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -128,30 +128,30 @@ a.telia-avatar {
   border: 2.5px solid var(--white);
   border-radius: 50%;
 
-  &__offline {
+  &--offline {
     background-color: var(--red-500);
   }
 
-  &__inactive {
+  &--inactive {
     background-color: var(--orange-500);
   }
 }
 
-.telia-avatar--cluster {
+.telia-avatar__cluster {
   display: flex;
   position: relative;
 
-  .telia-avatar.telia-avatar__default {
+  .telia-avatar.telia-avatar--default {
     margin-left: -1.5rem;
     border: 3px solid var(--white);
   }
 
-  .telia-avatar.telia-avatar__big {
+  .telia-avatar.telia-avatar--big {
     margin-left: -2.2rem;
     border: 4px solid var(--white);
   }
 
-  .telia-avatar.telia-avatar__compact {
+  .telia-avatar.telia-avatar--compact {
     margin-left: -1rem;
     border: 2px solid var(--white);
   }

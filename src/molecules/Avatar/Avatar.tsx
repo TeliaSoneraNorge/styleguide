@@ -81,22 +81,22 @@ export const Avatar = (props: AvatarProps) => {
 
   return (
     <Tag
-      className={cn('telia-avatar', `telia-avatar__${size}`, props.className)}
+      className={cn('telia-avatar', `telia-avatar--${size}`, props.className)}
       style={{ backgroundColor: bgcolor, color, ...props.style }}
       href={props.href}
       onClick={handleClick}
       tabIndex={tabIndex}
     >
-      {props.img && <img className="telia-avatar--image" src={props.img} alt={props.alt} />}
+      {props.img && <img className="telia-avatar__image" src={props.img} alt={props.alt} />}
       {props.text ? (
-        <div className={cn('telia-avatar--text', props.img && 'telia-avatar--text__absolute')}>
+        <div className={cn('telia-avatar__text', props.img && 'telia-avatar__text--absolute')}>
           {props.text.slice(0, 2)}
         </div>
       ) : props.icon ? (
-        <Icon className={cn('telia-avatar--icon', props.img && 'telia-avatar-icon__absolute')} icon={props.icon} />
+        <Icon className={cn('telia-avatar__icon', props.img && 'telia-avatar__icon--absolute')} icon={props.icon} />
       ) : null}
-      {'status' in props && <div className={`telia-avatar--status telia-avatar--status__${status}`} />}
-      {'avatar' in props && props.avatar && <div className="telia-avatar--couple">{props.avatar}</div>}
+      {'status' in props && <div className={`telia-avatar__status telia-avatar__status--${status}`} />}
+      {'avatar' in props && props.avatar && <div className="telia-avatar__couple">{props.avatar}</div>}
     </Tag>
   );
 };
