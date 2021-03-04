@@ -9,48 +9,48 @@
     }
   }
 
-  .telia-textfield__white {
+  .telia-textfield--white {
     input {
       border: 1px solid var(--white);
     }
   }
 
-  .telia-textfield-content {
+  .telia-textfield__content {
     border-radius: 100px;
 
     transition: box-shadow 150ms ease-in-out;
   }
 
-  .telia-textfield__grey {
-    .telia-textfield-content {
+  .telia-textfield--grey {
+    .telia-textfield__content {
       border: 1px solid var(--grey-200);
     }
   }
 
-  .telia-textfield-content:focus-within {
+  .telia-textfield__content:focus-within {
     box-shadow: 0 1px 2px var(--grey-300);
     background-color: white;
   }
 
-  .telia-textfield-leftContent {
+  .telia-textfield__leftContent {
     border-top-left-radius: 100px;
     border-bottom-left-radius: 100px;
     transition: border 200ms ease, background-color 200ms ease;
   }
 
-  .telia-textfield-status,
-  .telia-textfield-rightContent {
+  .telia-textfield__status,
+  .telia-textfield__rightContent {
     border-top-right-radius: 100px;
     border-bottom-right-radius: 100px;
     transition: border 200ms ease, background-color 200ms ease;
   }
 
   .telia-textfield:hover {
-    .telia-textfield-leftContent {
+    .telia-textfield__leftContent {
       background-color: white;
     }
 
-    .telia-textfield-rightContent {
+    .telia-textfield__rightContent {
       background-color: white;
     }
 
@@ -61,10 +61,10 @@
   }
 
   .telia-textfield:active {
-    .telia-textfield-leftContent {
+    .telia-textfield__leftContent {
       background-color: white;
     }
-    .telia-textfield-rightContent {
+    .telia-textfield__rightContent {
       background-color: white;
     }
   }
@@ -78,18 +78,18 @@
       background-color: var(--white);
       border: 1px solid var(--white);
     }
-    .telia-textfield-rightContent {
+    .telia-textfield__rightContent {
       background-color: white;
     }
   }
 
-  .telia-textfield__prepended {
+  .telia-textfield--prepended {
     input {
       border-top-left-radius: 0px;
       border-bottom-left-radius: 0px;
     }
   }
-  .telia-textfield__appended {
+  .telia-textfield--appended {
     input {
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
