@@ -1,5 +1,4 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 import { Review } from './Review';
 import { ReviewHeader } from './ReviewHeader';
 import { ReviewBody } from './ReviewBody';
@@ -29,9 +28,16 @@ export const DefaultReview = () => (
   </Review>
 );
 
-export const ReviewWithoutDownvotes = () => (
+export const ReviewWithoutVotes = () => (
   <Review>
     <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
-    <ReviewBody votesUp={votesUp} votesDown={0} text={text}></ReviewBody>
+    <ReviewBody text={text}></ReviewBody>
+  </Review>
+);
+
+export const ReviewWithBuyerTag = () => (
+  <Review>
+    <ReviewHeader buyTimestamp={'25. Sept 2020'} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
+    <ReviewBody votesUp={votesUp} votesDown={1} text={text}></ReviewBody>
   </Review>
 );

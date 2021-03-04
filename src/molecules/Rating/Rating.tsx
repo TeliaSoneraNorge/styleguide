@@ -1,7 +1,6 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/index';
 import { Heading, Button } from '../../index';
-
 export interface RatingProps {
   /**
    * Number of stars
@@ -10,11 +9,10 @@ export interface RatingProps {
   height: number;
   width: number;
   children?: React.ReactNode;
-  href?: string;
   linkName?: string;
   onClick?: React.MouseEventHandler;
   /**
-   * Number of stars
+   * Number of comments
    */
   reviewComments?: number;
 }
@@ -24,16 +22,7 @@ export interface RatingWithNumbersProps {
   numberOfRatings: number;
 }
 
-export const RatingStars = ({
-  rating,
-  height,
-  width,
-  children,
-  linkName,
-  href,
-  reviewComments,
-  onClick,
-}: RatingProps) => {
+export const RatingStars = ({ rating, height, width, children, linkName, reviewComments, onClick }: RatingProps) => {
   return (
     <div className="telia-rating">
       <div className="telia-rating__stars">
@@ -49,7 +38,7 @@ export const RatingStars = ({
         })}
         {children}
       </div>
-      {reviewComments && (
+      {!!reviewComments && (
         <Button
           type="button"
           className="telia-rating__link"
