@@ -34,6 +34,9 @@ export const colorDefinitions = {
   green400: '#00f37a',
   green500: '#00d066',
   green600: '#00a552',
+  green700: '#008641',
+  green800: '#00592B',
+  green900: '#002E16',
 
   // Red
   red100: '#fff5f9',
@@ -42,6 +45,9 @@ export const colorDefinitions = {
   red400: '#ff3377',
   red500: '#e4175c',
   red600: '#bf134d',
+  red700: '#900030',
+  red800: '#5E0020',
+  red900: '#2E000F',
 
   // Orange
   orange100: '#fff7eb',
@@ -50,6 +56,9 @@ export const colorDefinitions = {
   orange400: '#ffb84d',
   orange500: '#ff9b00',
   orange600: '#dd8804',
+  orange700: '#A86600',
+  orange800: '#6B4100',
+  orange900: '#2E1C00',
 
   // Blue
   blue100: '#edf8ff',
@@ -58,6 +67,9 @@ export const colorDefinitions = {
   blue400: '#40b2ff',
   blue500: '#0099ff',
   blue600: '#0082d9',
+  blue700: '#005F9E',
+  blue800: '#003D65',
+  blue900: '#001C2E',
 };
 
 export const colorAliases = {
