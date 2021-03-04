@@ -15,17 +15,25 @@ export const Default = () => {
   return (
     <div style={{ display: 'flex' }}>
       <div style={{ paddingBottom: '10px' }}>
-        <div style={{ paddingBottom: '2rem' }}>
-          <div>size: 'compact'</div>
-          <Incrementer value={count} setValue={setCount} size="compact" />
-        </div>
         <div>
           <div style={{ display: 'flex' }}>
-            <div style={{ paddingRight: '1rem' }}>size: 'default'</div>
+            <div style={{ paddingRight: '1rem' }}>
+              <code>size='default'</code>
+            </div>
             <div style={{ paddingRight: '1rem' }}>max: 10</div>
             <div style={{ paddingRight: '1rem' }}>min: 0</div>
           </div>
           <Incrementer value={count1} setValue={setCount1} max={10} min={0} />
+        </div>
+        <br />
+        <div style={{ paddingBottom: '2rem' }}>
+          <code>kind='secondary'</code>
+          <Incrementer value={count} setValue={setCount} kind="secondary" />
+        </div>
+        <br />
+        <div style={{ paddingBottom: '2rem' }}>
+          <code>size='compact'</code>
+          <Incrementer value={count} setValue={setCount} size="compact" />
         </div>
       </div>
     </div>
