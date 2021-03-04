@@ -2,6 +2,9 @@ export const colorDefinitions = {
   // White
   white: '#FFFFFF',
 
+  // Accent
+  accent250: '#ebebeb',
+
   // Purple
   corePurple100: '#f9eefe',
   corePurple200: '#f2dbfd',

@@ -2,13 +2,15 @@
   position: relative;
   input {
     flex-grow: 1;
-    padding: 0.625rem;
+    padding: 0.625rem 0.625rem 0.625rem 0.75rem;
     font-size: 16px;
     line-height: 20px;
     border: none;
     border-radius: 4px;
     margin: 0;
     min-width: 0;
+    color: var(--grey-500);
+    background-color: var(--white);
     &:focus {
       outline: none;
     }
@@ -34,14 +36,25 @@
 
 .telia-textfield__label {
   font-size: 14px;
+  color: var(--grey-900);
 }
 
 .telia-textfield__content {
   display: flex;
-  border: 1px solid var(--grey-400);
+  background-color: var(--white);
+  border: 1px solid var(--accent-250);
   border-radius: 4px;
   transition-duration: 300ms;
   transition-property: border;
+
+  &:hover {
+    border-color: var(--grey-300);
+  }
+}
+
+.telia-textfield--withValue .telia-textfield__content {
+  border-color: var(--grey-300);
+  color: var(--grey-900);
 }
 
 .telia-textfield__status {
@@ -83,8 +96,9 @@
 }
 
 .telia-textfield__helptext {
-  color: var(--grey-500);
+  color: var(--grey-700);
   display: block;
+  text-align: end;
 }
 
 .telia-textfield--focus {
@@ -120,12 +134,13 @@
 .telia-textfield--disabled {
   .telia-textfield__label,
   .telia-textfield__helptext {
-    color: var(--grey-400);
+    color: var(--grey-300);
   }
   .telia-textfield__content {
     background-color: var(--grey-100);
     border: 1px solid var(--grey-300);
     input:disabled {
+      color: var(--grey-300);
       background-color: var(--grey-100);
     }
   }
@@ -133,22 +148,30 @@
   .telia-textfield__rightContent {
     background-color: var(--grey-100);
   }
+  .Icon {
+    fill: var(--grey-300);
+  }
 }
 
 .telia-textfield--compact {
   margin-top: 8px;
+  font-size: 14px;
 
   .telia-textfield__label {
+    font-size: 14px;
+    /*
+    Don't need the commented-out code after a design update on the compact label.
+    In case of changing back, keep this a couple of months
     position: absolute;
     left: 0.75rem;
     cursor: text;
     line-height: 20px;
     top: 10px;
-    font-size: 14px;
     color: var(--grey-400);
     transition-property: font-size, top, left, color;
     transition-duration: 200ms;
     transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    */
   }
 
   input {
@@ -170,6 +193,9 @@
   }
 }
 
+/*
+Don't need this after a design update on the compact label.
+In case of changing back, keep this a couple of months
 .telia-textfield--compact.telia-textfield--focus,
 .telia-textfield--compact.telia-textfield--withValue {
   .telia-textfield__label {
@@ -192,6 +218,7 @@
     color: var(--grey-400);
   }
 }
+*/
 
 .telia-textfield--compact.telia-textfield--focus.telia-textfield--success,
 .telia-textfield--compact.telia-textfield--withValue.telia-textfield--success {
