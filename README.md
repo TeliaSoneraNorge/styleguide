@@ -47,12 +47,12 @@ All new components should employ TypeScript.
 
 All classes should be prefixed with "`telia`"
 
-We also use the [BEM-pattern](http://getbem.com/naming/): `block--elements__modifiers`
+We also use the [BEM-pattern](http://getbem.com/naming/): `block__elements--modifiers`
 
-- Component elements should be preceded with "`--`"
-  - Example: `telia-[component-name]--header`
-- Component modifiers should be preceded with "`__`"
-  - Example: "`telia-[component-name]__compact`"
+- Component elements should be preceded with "`__`"
+  - Example: `telia-[component-name]__header`
+- Component modifiers should be preceded with "`--`"
+  - Example: "`telia-[component-name]--compact`"
 
 ### Add new icons
 
