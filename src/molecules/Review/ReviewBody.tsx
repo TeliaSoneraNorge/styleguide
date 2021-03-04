@@ -1,24 +1,25 @@
 import React from 'react';
-import { Paragraph, Button } from '../../index';
+import { Paragraph, LikeIcon } from '../../index';
 interface ReviewBodyProps {
   text: string;
-  votesUp: number;
-  votesDown: number;
-  onClick?: React.MouseEventHandler;
+  votesUp?: number;
+  votesDown?: number;
 }
 
-export const ReviewBody: React.FC<ReviewBodyProps> = ({ text, votesUp, votesDown, onClick }) => (
+export const ReviewBody: React.FC<ReviewBodyProps> = ({ text, votesUp, votesDown }) => (
   <div className="telia-review-body">
     <div className="telia-review-body__wrapper">
       <Paragraph>{text}</Paragraph>
       <div className="telia-review-body__likes">
-        <div className="telia-review-body__like">
-          <Button onClick={onClick} kind="link" className="telia-review-body__like--up" icon="like" />
-          <span>{votesUp}</span>
-        </div>
+        {!!votesUp && (
+          <div className="telia-review-body__like">
+            <LikeIcon className="telia-review-body__like--up" />
+            <span>{votesUp}</span>
+          </div>
+        )}
         {!!votesDown && (
           <div className="telia-review-body__like">
-            <Button onClick={onClick} kind="link" className="telia-review-body__like--down" icon="like" />
+            <LikeIcon className="telia-review-body__like--down" />
             <span>{votesDown}</span>
           </div>
         )}

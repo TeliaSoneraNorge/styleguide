@@ -28,10 +28,10 @@ export const DefaultReview = () => (
   </Review>
 );
 
-export const ReviewWithoutDownvotes = () => (
+export const ReviewWithoutVotes = () => (
   <Review>
     <ReviewHeader buyTimestamp={buyTimestamp} rating={rating} name={name} timestamp={timestamp}></ReviewHeader>
-    <ReviewBody votesUp={votesUp} votesDown={0} text={text}></ReviewBody>
+    <ReviewBody text={text}></ReviewBody>
   </Review>
 );
 
