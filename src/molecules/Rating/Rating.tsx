@@ -1,6 +1,5 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/index';
-import { Heading, Button } from '../../index';
 export interface RatingProps {
   /**
    * Number of stars
@@ -9,10 +8,10 @@ export interface RatingProps {
   height: number;
   width: number;
   children?: React.ReactNode;
-  linkName?: string;
   onClick?: React.MouseEventHandler;
   /**
-   * Number of comments
+   * Number of comments.
+   * This shows the component to be clickable if there are comments
    */
   reviewComments?: number;
 }
@@ -22,10 +21,13 @@ export interface RatingWithNumbersProps {
   numberOfRatings: number;
 }
 
-export const RatingStars = ({ rating, height, width, children, linkName, reviewComments, onClick }: RatingProps) => {
+export const RatingStars = ({ rating, height, width, children, onClick, reviewComments }: RatingProps) => {
   return (
     <div className="telia-rating">
-      <div className="telia-rating__stars">
+      <div
+        onClick={onClick ? onClick : undefined}
+        className={reviewComments ? 'telia-rating__stars--reviews' : 'telia-rating__stars'}
+      >
         {[...Array(5)].map((_star, index) => {
           return (
             <SvgIcon
@@ -38,21 +40,12 @@ export const RatingStars = ({ rating, height, width, children, linkName, reviewC
         })}
         {children}
       </div>
-      {!!reviewComments && (
-        <Button
-          type="button"
-          className="telia-rating__link"
-          onClick={onClick}
-          kind="link"
-          text={`${linkName} (${reviewComments})`}
-        ></Button>
-      )}
     </div>
   );
 };
 
 export const RatingWithNumbers = ({ rating, numberOfRatings }: RatingWithNumbersProps) => (
   <div className="telia-rating-numbers">
-    <Heading tag="h5">{rating}</Heading> {`(${numberOfRatings})`}
+    <p>{rating}</p> {`(${numberOfRatings})`}
   </div>
 );
