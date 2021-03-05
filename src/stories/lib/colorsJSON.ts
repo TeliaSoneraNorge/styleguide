@@ -19,10 +19,17 @@ function convertToRgb(hex: string) {
 
 function textColor(hex: string) {
   const rgb = hexToRgb(hex);
+  console.log('rgb: ', rgb);
   // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
-  if (rgb && rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114 > 186) {
-    return colors.black;
-  }
+  // org: rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114 > 186
+
+  if (rgb && rgb.r === 110 && rgb.g === 110 && rgb.b === 110) return colors.white; // Grey 500
+  if (rgb && rgb.r === 255 && rgb.g === 51 && rgb.b === 119) return colors.black; // Red 400
+  if (rgb && rgb.r === 168 && rgb.g === 102 && rgb.b === 0) return colors.white; // Orange 700
+  if (rgb && rgb.r === 0 && rgb.g === 130 && rgb.b === 217) return colors.white; // Blue 600
+
+  if (rgb && rgb.r * 0.2126 + rgb.g * 0.7152 + rgb.b * 0.0722 > 105) return colors.black; // The rest
+
   return '#ffffff';
 }
 
