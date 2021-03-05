@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.39.7
+- Added more colors to the [Color Palette](https://styleguide.channelapi.telia.no/?path=/docs/introduction-styleguide--color-palette)
+    - [Commit 385fc2c](https://github.com/TeliaSoneraNorge/styleguide/pull/931/commits/385fc2c34d4660a96d1b9c83318283847a2cfb2e)
+
 ## 1.39.0
 
 - Updated classes with the BEM-pattern in the following components
