@@ -2,13 +2,9 @@
     display:flex;
     align-items: center;
     flex-direction: column;
+    height: fit-content;
     width: fit-content;
 
-    .svg-icon {
-        height: 30px;
-        width: 30px;
-    }
-    
     &__link {
         color: black;
         &:hover {
@@ -25,14 +21,25 @@
     &__stars {
         display:flex;
         align-items:center;
+
+        &--reviews {
+            display:flex;
+            align-items:center;
+            cursor: pointer;
+            height: 20px;
+        }
     }
 }
-
 
 .telia-rating-numbers {
     margin-left: 10px;
     display: flex;
     align-items: center;
+    height: 20px;
+
+    p {
+        margin-right: .7rem;
+    }
 
     .heading {
         margin: 0px;
