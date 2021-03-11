@@ -2,15 +2,10 @@ import React, { useState } from 'react';
 import { Props as StepProps } from './Step';
 import cn from 'classnames';
 
-/**
- * Status: *finished*
- * Category: Wizard
- */
-
 interface Props {
   className?: string;
   /**
-   * StepByStep.Step
+   * Step components
    */
   children?: React.ReactNode;
 
@@ -30,9 +25,10 @@ interface Props {
   size?: 'xs' | 'sm' | 'md' | 'lg';
   borders?: 'solid' | 'dashed';
 }
+
 export const StepByStep: React.FC<Props> = (props) => {
   const [localSelectedIndex, setSelectedIndex] = useState(0);
-  const { children, className, interactive, size = 'lg', borders = 'solid', ...rest } = props;
+  const { children, className, interactive, size = 'lg', borders = 'solid' } = props;
 
   const selectedIndex = props.selectedIndex ?? localSelectedIndex;
   const onSelect = props.onSelect ?? setSelectedIndex;
@@ -61,9 +57,3 @@ export const StepByStep: React.FC<Props> = (props) => {
     </ul>
   );
 };
-
-export const Content: React.FC<{ className?: string }> = ({ children, className }) => (
-  <div className={cn('step-by-step__content', className)}>{children}</div>
-);
-
-export default StepByStep;

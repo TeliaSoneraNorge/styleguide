@@ -4,7 +4,7 @@ import cn from 'classnames';
 export interface Props {
   className?: string;
   /**
-   * StepByStep.Step
+   * StepDescription or StepContent
    */
   children?: React.ReactNode;
 

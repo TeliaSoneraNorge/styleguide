@@ -4,13 +4,10 @@ import { StepIcon, Props as IconProps } from './StepIcon';
 import { Icon } from '../../atoms/Icon';
 
 interface Props extends IconProps {
-  /** Short step description. */
-  children?: React.ReactNode;
-  /** Step heading. */
-  heading?: React.ReactNode;
-
   className?: string;
+  children?: React.ReactNode;
 
+  heading?: React.ReactNode;
   icon?: React.ReactNode;
 }
 
