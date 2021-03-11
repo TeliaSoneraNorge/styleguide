@@ -1,11 +1,13 @@
 import React from 'react';
 import { Icon } from '../../atoms/Icon';
 import cn from 'classnames';
+import { Button } from '../../business';
 
 type Props = {
   value: number;
   setValue: (num?: number) => void;
   size?: 'compact' | 'default';
+  kind?: 'primary' | 'secondary';
   max?: number;
   min?: number;
   /**
@@ -32,14 +34,19 @@ export const Incrementer = (props: Props) => {
   };
 
   return (
-    <div className={cn('telia-incrementer', { 'telia-incrementer__compact': props.size === 'compact' })}>
-      <button
+    <div
+      className={cn('telia-incrementer', {
+        'telia-incrementer__compact': props.size === 'compact',
+      })}
+    >
+      <Button
         className="telia-incrementer--decrement"
+        icon="minus"
+        kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={decrement}
         disabled={Boolean(props.min !== undefined && props.value <= props.min)}
-      >
-        <Icon icon="minus" />
-      </button>
+        size={props.size === 'compact' ? 'compact' : 'default'}
+      />
       <input
         className="telia-incrementer--value"
         type="number"
@@ -49,13 +56,13 @@ export const Incrementer = (props: Props) => {
         value={props.value}
         onChange={handleChange}
       />
-      <button
+      <Button
         className="telia-incrementer--increment"
+        icon="add"
+        kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={increment}
         disabled={Boolean(props.max && props.value >= props.max)}
-      >
-        <Icon icon="add" />
-      </button>
+      />
     </div>
   );
 };
