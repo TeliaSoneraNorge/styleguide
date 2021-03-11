@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Button } from '../../index';
 import { StepByStep, Step, StepContent, StepDescription, StepIcon } from './index';
 import img from '../../stories/sampleImages';
+import { Icon } from '../../atoms/Icon';
 
 export default {
   title: 'Component library/Molecules/StepByStep',
@@ -46,7 +47,7 @@ export const Default = () => (
   </StepByStep>
 );
 
-export const InteractiveStepByStep = () => (
+export const Interactive = () => (
   <StepByStep interactive>
     <Step>
       <StepDescription number={1} heading="Heading 1">
@@ -90,7 +91,7 @@ export const InteractiveStepByStep = () => (
   </StepByStep>
 );
 
-export const InteractivePebblesManuallyStepByStep = () => {
+export const InteractivePebblesManually = () => {
   const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleSelect = (index: number) => {
@@ -180,6 +181,111 @@ export const DefaultStepByStep = () => (
         leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
         augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
       </StepContent>
+    </Step>
+  </StepByStep>
+);
+
+export const ExtraSmall = () => (
+  <StepByStep size="xs">
+    <Step>
+      <StepDescription icon={<Icon icon="product-bedriftsnett" />} heading="Lorem">
+        <div style={{ color: 'gray' }}>short description</div>
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription icon={<Icon icon="product-bedriftsnett" />} heading={<div>Custom heading</div>}>
+        <div style={{ color: 'gray' }}>short description</div>
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription imageSrc={img.boyIpad} heading="Ipsum">
+        Ullamcorper massa in dictum consectetur. Sed eu luctus velit. Pellentesque aliquam, lectus eu aliquet suscipit,
+        diam sem vulputate ex, posuere cursus mi arcu ac nunc. Vestibulum dictum metus nisi, non mattis diam porttitor
+        ut. Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus
+        nec lorem. In hac habitasse platea dictumst. Integer rhoncus, massa at pretium molestie, dolor felis vulputate
+        turpis, sit amet malesuada nulla odio quis neque. Praesent vel dolor tempor, posuere dolor ultrices, malesuada
+        leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
+        augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription iconName="ico_buy" heading="Sit dolor">
+        Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus nec
+        lorem. In hac habitasse platea dictumst. Integer rhoncus, massa at pretium molestie, dolor felis vulputate
+        turpis, sit amet malesuada nulla odio quis neque. Praesent vel dolor tempor, posuere dolor ultrices, malesuada
+        leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
+        augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
+      </StepDescription>
+    </Step>
+  </StepByStep>
+);
+
+export const Small = () => (
+  <StepByStep size="sm">
+    <Step>
+      <StepDescription icon={<Icon icon="product-bedriftsnett" />} heading="Lorem">
+        <div style={{ color: 'gray' }}>short description</div>
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription icon={<Icon icon="product-bedriftsnett" />} heading={<div>Custom heading</div>}>
+        <div style={{ color: 'gray' }}>short description</div>
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription imageSrc={img.boyIpad} heading="Ipsum">
+        Ullamcorper massa in dictum consectetur. Sed eu luctus velit. Pellentesque aliquam, lectus eu aliquet suscipit,
+        diam sem vulputate ex, posuere cursus mi arcu ac nunc. Vestibulum dictum metus nisi, non mattis diam porttitor
+        ut. Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus
+        nec lorem. In hac habitasse platea dictumst. Integer rhoncus, massa at pretium molestie, dolor felis vulputate
+        turpis, sit amet malesuada nulla odio quis neque. Praesent vel dolor tempor, posuere dolor ultrices, malesuada
+        leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
+        augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription iconName="ico_buy" heading="Sit dolor">
+        Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus nec
+        lorem. In hac habitasse platea dictumst. Integer rhoncus, massa at pretium molestie, dolor felis vulputate
+        turpis, sit amet malesuada nulla odio quis neque. Praesent vel dolor tempor, posuere dolor ultrices, malesuada
+        leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
+        augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
+      </StepDescription>
+    </Step>
+  </StepByStep>
+);
+
+export const Medium = () => (
+  <StepByStep size="md">
+    <Step>
+      <StepDescription icon={<Icon icon="product-bedriftsnett" />} heading="Lorem">
+        <div style={{ color: 'gray' }}>short description</div>
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription icon={<Icon icon="product-bedriftsnett" />} heading={<div>Custom heading</div>}>
+        <div style={{ color: 'gray' }}>short description</div>
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription imageSrc={img.boyIpad} heading="Ipsum">
+        Ullamcorper massa in dictum consectetur. Sed eu luctus velit. Pellentesque aliquam, lectus eu aliquet suscipit,
+        diam sem vulputate ex, posuere cursus mi arcu ac nunc. Vestibulum dictum metus nisi, non mattis diam porttitor
+        ut. Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus
+        nec lorem. In hac habitasse platea dictumst. Integer rhoncus, massa at pretium molestie, dolor felis vulputate
+        turpis, sit amet malesuada nulla odio quis neque. Praesent vel dolor tempor, posuere dolor ultrices, malesuada
+        leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
+        augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
+      </StepDescription>
+    </Step>
+    <Step>
+      <StepDescription iconName="ico_buy" heading="Sit dolor">
+        Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus nec
+        lorem. In hac habitasse platea dictumst. Integer rhoncus, massa at pretium molestie, dolor felis vulputate
+        turpis, sit amet malesuada nulla odio quis neque. Praesent vel dolor tempor, posuere dolor ultrices, malesuada
+        leo. Suspendisse et efficitur mi. Fusce nunc arcu, lacinia quis risus ut, sollicitudin rutrum ante. Nam arcu
+        augue, feugiat eu lectus eu, bibendum cursus turpis. Duis feugiat sem a scelerisque tincidunt.
+      </StepDescription>
     </Step>
   </StepByStep>
 );

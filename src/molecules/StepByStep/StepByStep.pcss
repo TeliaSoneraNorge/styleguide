@@ -1,221 +1,299 @@
 .step-by-step {
-    display: flex;
-    flex-wrap: wrap;
-    list-style: none;
-    margin: 0 0 2rem;
-    padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0 0 2rem;
+  padding: 0;
+}
+.step-by-step:not(.step-by-step--interactive) {
+  .step-by-step__content {
+    display: none;
+  }
+}
 
-    &:after {
-        border-bottom: 1px solid var(--grey);
-        content: '';
-        display: block;
-        margin: 0 10px;
-        width: 55px;
+.step-by-step__step-wrapper {
+  position: relative;
+  display: flex;
+  flex: 1 1 100%;
+  flex-wrap: wrap;
 
-        @media screen and (max-width: 30em) {
-            border-bottom: none;
-        }
+  &:not(:last-child):after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 1px;
+    border-left: 1px solid var(--grey);
+
+    @media screen and (max-width: 30em) {
+      border-left: none;
+    }
+  }
+}
+
+.step-by-step__circle {
+  background-color: var(--light-grey);
+  border-radius: 50%;
+  border: 1px solid var(--grey);
+
+  @media screen and (max-width: 30em) {
+    transform: scaleX(0.75) scaleY(0.75);
+  }
+
+  &--no-border {
+    border: none;
+  }
+}
+.step-by-step__pebbles {
+  svg {
+    z-index: 2;
+    flex: 1 auto;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+
+    @media screen and (max-width: 30em) {
+      transform: scaleX(-0.75) scaleY(0.75);
     }
 
-    &__step-wrapper {
-        position: relative;
-        display: flex;
-        flex: 1 1 100%;
-        flex-wrap: wrap;
-
-        &:after {
-            content: "";
-            position: absolute;
-            top: 0;
-            bottom: 0;
-            left: 2.3rem;
-            height: 100%;
-            width: 1px;
-            border-left: 1px solid var(--grey);
-
-            @media screen and (max-width: 30em) {
-                border-left: none;
-            }
-        }
+    * {
+      fill: var(--light-grey);
+      stroke: var(--grey);
     }
-    &__circle {
-        background-color: var(--light-grey);
-        border-radius: 50%;
-        border: 1px solid var(--grey);
+  }
+  & > * {
+    z-index: 3;
+  }
+}
 
-        @media screen and (max-width: 30em) {
-            transform: scaleX(0.75) scaleY(0.75);
+.step-by-step--interactive {
+  .step-by-step__content {
+    margin: -2rem 0 2rem 5.3rem;
+  }
+  .step-by-step__step {
+    outline: none;
+    text-decoration: none;
+
+    &:not(&--highlighted) {
+      cursor: pointer;
+
+      &[class*='step-by-step__circle']:focus {
+        border: 2px solid var(--core-purple);
+      }
+
+      &[class*='step-by-step__pebbles']:focus {
+        path {
+          stroke: var(--core-purple);
         }
+      }
 
-        &--no-border {
-            border: none;
-        }
-    }
-    &__pebbles {
-        svg {
-            z-index: 2;
-            flex: 1 auto;
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-
-            @media screen and (max-width: 30em) {
-                transform: scaleX(-0.75) scaleY(0.75);
-            }
-
-            * {
-                fill: var(--light-grey);
-                stroke: var(--grey);
-            }
-        }
-        & > * {
-            z-index: 3;
-        }
-    }
-    &__step {
-        display: flex;
-        flex-direction: column;
-        height: 75px;
-        width: 75px;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        z-index: 1; /*To make the circle lay on top of the vertical border */
-
-        @media screen and (max-width: 30em) {
-            margin-left: -1.5rem;
-        }
-
-        &--interactive {
-            outline: none;
-            text-decoration: none;
-        }
-
-        &--interactive:not(&--highlighted) {
-            cursor: pointer;
-
-            &[class*=step-by-step__circle]:focus {
-                border: 2px solid var(--core-purple);
-            }
-
-            &[class*=step-by-step__pebbles]:focus {
-                path {
-                    stroke: var(--core-purple);
-                }
-            }
-
-            &:focus > .step-by-step__number {
-                line-height: 4.375rem;
-            }
-        }
-
-        &--highlighted {
-            &[class*=step-by-step__circle] {
-                background-color: var(--core-purple);
-            }
-            &.step-by-step__pebbles svg * {
-                stroke: var(--core-purple);
-                fill: var(--core-purple);
-            }
-
-            > .step-by-step__number,
-            > .step-by-step__text {
-                color: var(--white);
-            }
-        }
-
-        &--touched > .step-by-step__content {
-            animation: step-by-step__height-close 500ms forwards;
-        }
-
-        &--opened > .step-by-step__content {
-            visibility: visible;
-            max-height: none;
-            animation: step-by-step__height-open 500ms forwards;
-        }
-
-        &--closed > .step-by-step__content {
-            overflow: hidden;
-            max-height: 0;
-            visibility: collapse;
-            transition: visibility 500ms;
-            animation-fill-mode: forwards;
-        }
+      &:focus > .step-by-step__number {
+        line-height: 4.375rem;
+      }
     }
 
-    &__icon {
-        height: 75px;
-        padding: 15px;
-        width: 75px;
+    &--touched > .step-by-step__content {
+      animation: step-by-step__height-close 500ms forwards;
     }
 
-    &__image {
-        border-radius: 50%;
-        height: 75px;
-        width: 75px;
+    &--opened > .step-by-step__content {
+      visibility: visible;
+      max-height: none;
+      animation: step-by-step__height-open 500ms forwards;
+    }
+    &--closed > .step-by-step__content {
+      overflow: hidden;
+      max-height: 0;
+      visibility: collapse;
+      transition: visibility 500ms;
+      animation-fill-mode: forwards;
+    }
+  }
+}
+
+.step-by-step__step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1; /*To make the circle lay on top of the vertical border */
+
+  @media screen and (max-width: 30em) {
+    margin-left: -1.5rem;
+  }
+
+  &--highlighted {
+    &[class*='step-by-step__circle'] {
+      background-color: var(--core-purple);
+    }
+    &.step-by-step__pebbles svg * {
+      stroke: var(--core-purple);
+      fill: var(--core-purple);
     }
 
-    &__number {
-        color: var(--core-purple);
-        font-family: 'pebble';
-        font-size: 3rem;
-
-        @media screen and (max-width: 30em) {
-            font-size: 2rem;
-        }
+    > .step-by-step__number,
+    > .step-by-step__text {
+      color: var(--white);
     }
+  }
+}
 
-    &__text {
-        flex: 6 0 0;
-        min-height: 115px;
-        padding: 0 0 4rem .7rem;
+.step-by-step__image {
+  border-radius: 50%;
+}
 
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
+.step-by-step__number {
+  color: var(--core-purple);
+  font-family: 'pebble';
+  font-size: 3rem;
+
+  @media screen and (max-width: 30em) {
+    font-size: 2rem;
+  }
+}
+
+.step-by-step__text {
+  flex: 6 0 0;
+
+  padding-left: 1rem;
+  padding-bottom: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.step-by-step__content {
+  padding-left: 0.5rem;
+  padding-bottom: 2rem;
+  width: 100%;
+  @media screen and (max-width: 30em) {
+    margin-left: 0;
+  }
+}
+
+.step-by-step__heading {
+  margin: 0 0 0.3125rem;
+}
+
+.step-by-step__description {
+}
+
+.step-by-step--lg {
+  .step-by-step__step-wrapper {
+    min-height: calc(75px + 3rem);
+  }
+  .step-by-step__pebbles,
+  .step-by-step__circle {
+    height: 75px;
+    width: 75px;
+  }
+  .step-by-step__circle {
+    .Icon,
+    .step-by-step__icon,
+    .step-by-step__image {
+      height: 45px;
+      width: 45px;
     }
+  }
+  .step-by-step__step-wrapper:after {
+    left: 2.3rem;
+  }
+}
 
-    &__content {
-        width: 100%;
-        margin: -2rem 0 4rem 5.3rem;
-        @media screen and (max-width: 30em) {
-            margin-left: 0;
-        }
+.step-by-step--md {
+  .step-by-step__step-wrapper {
+    min-height: calc(48px + 2rem);
+  }
+  .step-by-step__pebbles,
+  .step-by-step__circle {
+    height: 48px;
+    width: 48px;
+  }
+  .step-by-step__circle {
+    .Icon,
+    .step-by-step__icon,
+    .step-by-step__image {
+      height: 32px;
+      width: 32px;
     }
+  }
+  .step-by-step__step-wrapper:after {
+    left: 24px;
+  }
+}
 
-    &__heading {
-        margin: 0 0 0.3125rem;
+.step-by-step--sm {
+  .step-by-step__step-wrapper {
+    min-height: calc(40px + 2rem);
+  }
+  .step-by-step__pebbles,
+  .step-by-step__circle {
+    height: 40px;
+    width: 40px;
+  }
+  .step-by-step__circle {
+    .Icon,
+    .step-by-step__icon,
+    .step-by-step__image {
+      height: 24px;
+      width: 24px;
     }
+  }
+  .step-by-step__step-wrapper:after {
+    left: 20px;
+  }
+}
 
-    &__description {
+.step-by-step--xs {
+  .step-by-step__step-wrapper {
+    min-height: calc(32px + 2rem);
+  }
+  .step-by-step__pebbles,
+  .step-by-step__circle {
+    height: 32px;
+    width: 32px;
+  }
+  .step-by-step__circle {
+    .Icon,
+    .step-by-step__icon,
+    .step-by-step__image {
+      height: 20px;
+      width: 20px;
     }
+  }
+  .step-by-step__step-wrapper:after {
+    left: 16px;
+  }
 }
 
 @keyframes step-by-step__height-open {
-    0%, 1% {
-        max-height: 0
-    }
-    99% {
-        max-height: 1000px
-    }
-    to {
-        max-height: none
-    }
+  0%,
+  1% {
+    max-height: 0;
+  }
+  99% {
+    max-height: 1000px;
+  }
+  to {
+    max-height: none;
+  }
 }
 @keyframes step-by-step__height-close {
-    0% {
-        max-height: none
-    }
-    1% {
-        max-height: 1000px
-    }
-    99% {
-        max-height: 0
-    }
-    to {
-        max-height: 0;
-        padding: 0
-    }
+  0% {
+    max-height: none;
+  }
+  1% {
+    max-height: 1000px;
+  }
+  99% {
+    max-height: 0;
+  }
+  to {
+    max-height: 0;
+    padding: 0;
+  }
 }

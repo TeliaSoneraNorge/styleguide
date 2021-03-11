@@ -17,21 +17,22 @@ export interface Props {
   /** Passed down from parent */
   opened?: boolean;
   onSelect?: (index?: number) => void;
-  className?: string;
+  iconClassName?: string;
   /**
    * index of the step
    */
   index?: number;
 }
 
-export const StepIcon = (props: Props) => {
-  const { className, onSelect, index, interactive, iconName, imageSrc, number, opened, pebbles, ...rest } = props;
+export const StepIcon: React.FC<Props> = (props) => {
+  const { iconClassName, onSelect, index, interactive, iconName, imageSrc, number, opened, pebbles } = props;
 
   const elementType = interactive ? 'a' : 'div';
+
   return React.createElement(
     elementType,
     {
-      className: cn('step-by-step__step', className, {
+      className: cn('step-by-step__step', iconClassName, {
         'step-by-step__step--interactive': interactive,
         'step-by-step__step--highlighted': opened,
         'step-by-step__pebbles': pebbles,
@@ -43,13 +44,18 @@ export const StepIcon = (props: Props) => {
         onSelect?.(index);
       },
       tabIndex: index,
-      ...rest,
     },
     <>
-      {pebbles && <SvgIcon iconName="step-by-step-pebble" color="grey" />}
-      {imageSrc && <img className="step-by-step__icon" src={imageSrc} />}
-      {iconName && <SvgIcon className="step-by-step__icon" iconName={iconName} color="purple" />}
-      {number !== null && <span className="step-by-step__number">{number}</span>}
+      {props.children ? (
+        props.children
+      ) : (
+        <>
+          {pebbles && <SvgIcon iconName="step-by-step-pebble" color="grey" />}
+          {imageSrc && <img className="step-by-step__icon" src={imageSrc} />}
+          {iconName && <SvgIcon className="step-by-step__icon" iconName={iconName} color="purple" />}
+          {number !== null && <span className="step-by-step__number">{number}</span>}
+        </>
+      )}
     </>
   );
 };
