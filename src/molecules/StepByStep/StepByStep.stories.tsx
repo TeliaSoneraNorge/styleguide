@@ -268,7 +268,7 @@ export const Medium = () => (
       </StepDescription>
     </Step>
     <Step>
-      <StepDescription imageSrc={img.boyIpad} heading="Ipsum">
+      <StepDescription imageSrc={img.boyIpad}>
         Ullamcorper massa in dictum consectetur. Sed eu luctus velit. Pellentesque aliquam, lectus eu aliquet suscipit,
         diam sem vulputate ex, posuere cursus mi arcu ac nunc. Vestibulum dictum metus nisi, non mattis diam porttitor
         ut. Nullam suscipit risus eget lacus gravida sagittis. Suspendisse massa augue, mollis a pretium nec, faucibus

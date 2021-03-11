@@ -7,7 +7,7 @@ interface Props extends IconProps {
   /** Short step description. */
   children?: React.ReactNode;
   /** Step heading. */
-  heading: React.ReactNode;
+  heading?: React.ReactNode;
 
   className?: string;
 
@@ -22,7 +22,7 @@ export const StepDescription = (props: Props) => {
         {typeof props.heading === 'string' ? (
           <h2 className="step-by-step__heading heading heading--level-2">{props.heading}</h2>
         ) : (
-          <div>{props.heading}</div>
+          props.heading && <div>{props.heading}</div>
         )}
         {props.children && <div className="step-by-step__description">{props.children}</div>}
       </div>
