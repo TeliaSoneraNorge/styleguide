@@ -21,7 +21,7 @@ export interface Props {
   /**
    * Handler func triggered when user clicks the icon. Use when you want to handle the state on your own.
    */
-  onSelect?: (...args: any[]) => any;
+  onSelect?: (index: number) => void;
 }
 
 export const Step: React.FC<Props> = ({ children, className, index, opened, onSelect, interactive }) => (

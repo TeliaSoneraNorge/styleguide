@@ -25,7 +25,7 @@ interface Props {
   /**
    * Handler func triggered when user clicks the icon. Use when you want to handle the state on your own.
    */
-  onSelect?: (...args: any[]) => any;
+  onSelect?: (index: number) => void;
 
   size?: 'xs' | 'sm' | 'md' | 'lg';
   borders?: 'solid' | 'dashed';
@@ -43,7 +43,6 @@ export const StepByStep: React.FC<Props> = (props) => {
         'step-by-step--interactive': props.interactive,
         'step-by-step--dashed': borders === 'dashed',
       })}
-      {...rest}
     >
       {interactive
         ? React.Children.map(
