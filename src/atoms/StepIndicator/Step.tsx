@@ -25,7 +25,7 @@ export const Step = (props: Props) => {
             'step-indicator__step--passed': isPassed,
           })}
         >
-          {index < activeStep ? (
+          {isPassed ? (
             <span className="step-indicator__icon-wrapper">
               <CheckMarkIcon className="step-indicator__icon" title={`${index + 1}`} />
             </span>
@@ -35,7 +35,7 @@ export const Step = (props: Props) => {
         </div>
         <span className={classnames('step-indicator__label', { 'step-indicator__label--active': isActive })}>
           {label}
-          {index < activeStep && <span className="sr-only">- fullført</span>}
+          {isPassed && <span className="sr-only">- fullført</span>}
         </span>
       </StepElement>
       <Line index={index} numberOfSteps={numberOfSteps} activeStep={activeStep} />
