@@ -28,10 +28,11 @@ interface Props {
   onSelect?: (...args: any[]) => any;
 
   size?: 'xs' | 'sm' | 'md' | 'lg';
+  borders?: 'solid' | 'dashed';
 }
 export const StepByStep: React.FC<Props> = (props) => {
   const [localSelectedIndex, setSelectedIndex] = useState(0);
-  const { children, className, interactive, size = 'lg', ...rest } = props;
+  const { children, className, interactive, size = 'lg', borders = 'solid', ...rest } = props;
 
   const selectedIndex = props.selectedIndex ?? localSelectedIndex;
   const onSelect = props.onSelect ?? setSelectedIndex;
@@ -40,6 +41,7 @@ export const StepByStep: React.FC<Props> = (props) => {
     <ul
       className={cn('step-by-step', `step-by-step--${size}`, className, {
         'step-by-step--interactive': props.interactive,
+        'step-by-step--dashed': borders === 'dashed',
       })}
       {...rest}
     >

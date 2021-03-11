@@ -32,6 +32,12 @@
   }
 }
 
+.step-by-step--dashed {
+  .step-by-step__step-wrapper:not(:last-child):after {
+    border-left: 1px dashed var(--grey);
+  }
+}
+
 .step-by-step__circle {
   background-color: var(--light-grey);
   border-radius: 50%;
@@ -217,8 +223,8 @@
     .Icon,
     .step-by-step__icon,
     .step-by-step__image {
-      height: 32px;
-      width: 32px;
+      height: 28px;
+      width: 28px;
     }
   }
   .step-by-step__step-wrapper:after {
