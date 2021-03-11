@@ -107,6 +107,7 @@ export { RatingStars, RatingWithNumbers } from './molecules/Rating';
 export { Review, ReviewBody, ReviewHeader } from './molecules/Review';
 export { default as RichText } from './molecules/RichText';
 export { default as StepByStep } from './molecules/StepByStep';
+export { Step } from './molecules/Step/Step';
 export { default as Subscription } from './molecules/Subscription';
 export { default as SubscriptionAccordion } from './molecules/SubscriptionAccordion';
 export { default as SubscriptionLinesAccordion } from './molecules/SubscriptionLinesAccordion';
