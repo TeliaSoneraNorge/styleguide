@@ -27,7 +27,7 @@ export interface Props {
 export const StepIcon: React.FC<Props> = (props) => {
   const { iconClassName, onSelect, index, interactive, iconName, imageSrc, number, opened, pebbles } = props;
 
-  const elementType = interactive ? 'a' : 'div';
+  const elementType = interactive ? 'button' : 'div';
 
   return React.createElement(
     elementType,
@@ -38,17 +38,10 @@ export const StepIcon: React.FC<Props> = (props) => {
         'step-by-step__pebbles': pebbles,
         'step-by-step__circle step-by-step__circle--no-border': !pebbles,
       }),
-      onClick: () => {
-        if (!interactive) return;
-
-        onSelect?.(index);
-      },
-      tabIndex: index,
+      onClick: interactive ? () => onSelect?.(index) : undefined,
     },
     <>
-      {props.children ? (
-        props.children
-      ) : (
+      {props.children ?? (
         <>
           {pebbles && <SvgIcon iconName="step-by-step-pebble" color="grey" />}
           {imageSrc && <img className="step-by-step__icon" src={imageSrc} />}
