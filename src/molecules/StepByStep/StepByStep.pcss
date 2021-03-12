@@ -5,6 +5,14 @@
   margin: 0 0 2rem;
   padding: 0;
 }
+
+button.step-by-step__pebbles {
+  border: none;
+  background-color: transparent;
+  padding: 0;
+  height: 0;
+}
+
 .step-by-step:not(.step-by-step--interactive) {
   .step-by-step__content {
     display: none;
@@ -20,7 +28,8 @@
   &:not(:last-child):after {
     content: '';
     position: absolute;
-    top: 0;
+    top: 4px;
+
     bottom: 0;
     height: 100%;
     width: 1px;
