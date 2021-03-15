@@ -2,7 +2,7 @@
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  margin: 0 0 2rem;
+  margin: 0;
   padding: 0;
 }
 
@@ -34,10 +34,6 @@ button.step-by-step__pebbles {
     height: 100%;
     width: 1px;
     border-left: 1px solid var(--grey);
-
-    @media screen and (max-width: 30em) {
-      border-left: none;
-    }
   }
 }
 
@@ -52,10 +48,6 @@ button.step-by-step__pebbles {
   border-radius: 50%;
   border: 1px solid var(--grey);
 
-  @media screen and (max-width: 30em) {
-    transform: scaleX(0.75) scaleY(0.75);
-  }
-
   &--no-border {
     border: none;
   }
@@ -69,10 +61,6 @@ button.step-by-step__pebbles {
     top: 0;
     width: 100%;
     height: 100%;
-
-    @media screen and (max-width: 30em) {
-      transform: scaleX(-0.75) scaleY(0.75);
-    }
 
     * {
       fill: var(--light-grey);
@@ -137,10 +125,6 @@ button.step-by-step__pebbles {
   position: relative;
   z-index: 1; /*To make the circle lay on top of the vertical border */
 
-  @media screen and (max-width: 30em) {
-    margin-left: -1.5rem;
-  }
-
   &--highlighted {
     &[class*='step-by-step__circle'] {
       background-color: var(--core-purple);
@@ -191,7 +175,7 @@ button.step-by-step__pebbles {
 }
 
 .step-by-step__heading {
-  margin: 0 0 0.3125rem;
+  margin: 0 0 0.5rem;
 }
 
 .step-by-step__description {
@@ -283,6 +267,15 @@ button.step-by-step__pebbles {
   .step-by-step__step-wrapper:after {
     left: 16px;
   }
+}
+
+.step-by-step__step-wrapper:last-child {
+  .step-by-step__text {
+    padding-bottom: 0;
+  }
+}
+.step-by-step__text + .step-by-step__content {
+  padding-top: 2rem;
 }
 
 @keyframes step-by-step__height-open {
