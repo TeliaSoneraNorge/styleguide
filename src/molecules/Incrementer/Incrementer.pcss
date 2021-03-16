@@ -1,19 +1,19 @@
 .telia-incrementer {
   display: flex;
   justify-content: space-between;
-  width: 7.75rem;
+  width: 7.74rem;
   height: 2.75rem;
   position: relative;
-  border: 1px solid var(--grey-200);
+  border: 1px solid var(--core-purple-100);
   border-radius: 100px;
   .telia-button {
-    top: -2px;
+    top: -1px;
     height: 2.75rem;
     width: 2.75rem;
     z-index: 2;
     .Icon {
-      height: 15px;
-      width: 15px;
+      height: 20px;
+      width: 20px;
     }
   }
   .telia-button:hover,
@@ -50,16 +50,15 @@
   }
 }
 
-.telia-incrementer__compact {
+.telia-incrementer--compact {
   height: 2.25rem;
   width: 104px;
   .telia-button {
     height: 2.25rem;
     width: 2.25rem;
-    top: -1px;
     .Icon {
-      height: 0.75rem;
-      width: 0.75rem;
+      height: 16px;
+      width: 16px;
     }
   }
   input {
@@ -68,4 +67,8 @@
     font-size: 14px;
     margin-left: 2.1rem;
   }
+}
+
+.telia-incrementer--secondary {
+  border-color: var(--grey-200);
 }
