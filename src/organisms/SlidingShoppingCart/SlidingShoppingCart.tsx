@@ -23,6 +23,8 @@ export interface SlidingShoppingCartProps {
     label: string;
     price: number;
   };
+  buttonText?: string;
+  buttonInfo?: string;
 }
 
 const SlidingShoppingCart = ({
@@ -41,6 +43,8 @@ const SlidingShoppingCart = ({
   discount,
   shouldShowCart,
   setShouldShowCart,
+  buttonText = 'Gå til bestilling',
+  buttonInfo = '',
 }: SlidingShoppingCartProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -75,13 +79,16 @@ const SlidingShoppingCart = ({
         discount={discount}
       />
       <div className="sliding-shopping-cart__checkout-button-container">
-        <Button
-          icon="shoppingcart"
-          kind="primary"
-          text="Gå til bestilling"
-          className="sliding-shopping-cart__checkout-button"
-          onClick={onGoToCart}
-        />
+        <div className="sliding-shopping-cart__checkout-button-wrapper">
+          <Button
+            icon="shoppingcart"
+            kind="primary"
+            text={buttonText}
+            className="sliding-shopping-cart__checkout-button"
+            onClick={onGoToCart}
+          />
+          {buttonInfo && <span className="sliding-shopping-cart__checkout-button-info">{buttonInfo}</span>}
+        </div>
       </div>
     </div>
   );
