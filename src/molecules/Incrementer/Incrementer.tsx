@@ -36,11 +36,12 @@ export const Incrementer = (props: Props) => {
   return (
     <div
       className={cn('telia-incrementer', {
-        'telia-incrementer__compact': props.size === 'compact',
+        'telia-incrementer--compact': props.size === 'compact',
+        'telia-incrementer--secondary': props.kind === 'secondary',
       })}
     >
       <Button
-        className="telia-incrementer--decrement"
+        className="telia-incrementer__decrement"
         icon="minus"
         kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={decrement}
@@ -48,7 +49,7 @@ export const Incrementer = (props: Props) => {
         size={props.size === 'compact' ? 'compact' : 'default'}
       />
       <input
-        className="telia-incrementer--value"
+        className="telia-incrementer__value"
         type="number"
         name={props.name}
         min={props.min}
@@ -57,7 +58,7 @@ export const Incrementer = (props: Props) => {
         onChange={handleChange}
       />
       <Button
-        className="telia-incrementer--increment"
+        className="telia-incrementer__increment"
         icon="add"
         kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={increment}
