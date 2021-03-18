@@ -1,0 +1,53 @@
+.shopping-cart-section {
+    & &__quantity-picker {
+        width: 7rem;
+
+        @media screen and (min-width: 26.25em) {
+            width: 8rem;
+        }
+
+        @media screen and (min-width: 45em) {
+            width: 10rem;
+        }
+
+        &__input {
+            display: inline-block;
+            font-size: 1rem;
+            height: 1.5rem;
+            padding: 0;
+            text-align: center;
+            width: 1.7rem;
+            -moz-appearance: textfield;
+
+            &::selection {
+                background-color: var(--core-purple);
+                color: var(--white);
+            }
+
+            @media screen and (min-width: 45em) {
+                height: 2rem;
+                width: 2rem;
+            }
+
+            &::-webkit-inner-spin-button,
+            &::-webkit-outer-spin-button {
+                -webkit-appearance: none;
+                margin: 0;
+            }
+        }
+
+        &__label {
+            margin-right: 0.5rem;
+        }
+
+        &__number {
+            display: inline-block;
+            width: 2rem;
+            text-align: center;
+        }
+
+        &__unit {
+            margin-right: 1rem;
+        }
+    }
+}
