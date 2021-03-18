@@ -1,2 +1,2 @@
-export { Table, TableBodyCell, TableBodyRow, TableHeadCell, TablePagingControls } from './Table';
+export { Table, TableBodyCell, TableBodyRow, TableHeadCell } from './Table';
 export { useTableState } from './useTableState';
