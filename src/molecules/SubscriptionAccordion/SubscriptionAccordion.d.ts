@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { HeadingTag } from '../../index';
 
 export type SubscriptionDataAmount = string | number;
 
@@ -20,6 +21,7 @@ export interface SubscriptionAccordionProps {
   isExpanded?: boolean;
   isInverted?: boolean;
   name?: string;
+  titleTag?: string;
   highlight?: string;
   discountPrice?: SubscriptionPrice;
   price?: SubscriptionPrice;

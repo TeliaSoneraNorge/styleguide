@@ -9,6 +9,7 @@ const SubscriptionAccordion = ({
   isExpanded,
   isInverted,
   name,
+  titleTag = 'h2',
   highlight,
   description,
   discountPrice,
@@ -48,7 +49,7 @@ const SubscriptionAccordion = ({
         })}
         onClick={onOpen}
       >
-        <Heading className="subscription-accordion__heading" tag="h2" size="s">
+        <Heading className="subscription-accordion__heading" tag={titleTag} size="s">
           {name}
           {highlight && <div className="subscription-accordion__heading-highlight">{highlight}</div>}
         </Heading>
@@ -114,6 +115,7 @@ SubscriptionAccordion.propTypes = {
   isExpanded: PropTypes.bool,
   isInverted: PropTypes.bool,
   name: PropTypes.string,
+  titleTag: PropTypes.string,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   priceInfo: PropTypes.arrayOf(PropTypes.string),
   discount: PropTypes.shape({
