@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { HeadingTag } from '../../index';
 
 export type SubscriptionDataAmount = string | number;
 
