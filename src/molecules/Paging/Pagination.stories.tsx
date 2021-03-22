@@ -1,12 +1,12 @@
 import React from 'react';
-import { Paging } from '.';
+import { TablePagination, Pagination } from '.';
 
 export default {
-  component: Paging,
+  component: TablePagination,
   title: 'Component library/Molecules/Paging',
 };
 
-export const Default = ({}) => {
+export const Table_Pagination = ({}) => {
   const [page, setPage] = React.useState(1);
   const [perPage, setPerPage] = React.useState(10);
   const dataLength = 100;
@@ -23,7 +23,7 @@ export const Default = ({}) => {
     <>
       <div style={{ display: 'flex', width: '100%' }}>
         <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
-          <Paging
+          <TablePagination
             from={from}
             to={to}
             perPage={perPage}
@@ -32,6 +32,26 @@ export const Default = ({}) => {
             dataLength={dataLength}
           />
         </div>
+      </div>
+    </>
+  );
+};
+
+export const Default = () => {
+  const [page, setPage] = React.useState(7);
+  const [page2, setPage2] = React.useState(1);
+  const dataLength = 80;
+  const perPage = 10;
+
+  return (
+    <>
+      <div style={{ display: 'flex', width: '100%' }}>
+        <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+          <Pagination currentPage={page} perPage={perPage} setPage={setPage} dataLength={dataLength} />
+        </div>
+      </div>
+      <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+        <Pagination currentPage={page2} perPage={perPage} setPage={setPage2} dataLength={50} />
       </div>
     </>
   );

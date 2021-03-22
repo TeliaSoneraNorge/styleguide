@@ -140,7 +140,7 @@ export { ShoppingCart } from './molecules/ShoppingCart';
 export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 export { QuickSearch } from './molecules/QuickSearch';
 export { PhoneNumberField } from './molecules/PhoneNumberField';
-export { Paging } from './molecules/Paging';
+export { TablePagination, Pagination } from './molecules/Paging';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';

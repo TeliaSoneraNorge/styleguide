@@ -18,11 +18,11 @@ export interface Props {
   selectOptions?: Array<number>;
 }
 
-export const Paging: React.FC<Props> = (props) => {
+export const TablePagination: React.FC<Props> = (props) => {
   return (
-    <div className="telia-paging">
+    <div className="telia-table-pagination">
       {props.numberOfSelectedRows ? (
-        <span className="telia-paging__text">
+        <span className="telia-table-pagination__text">
           {`${props.numberOfSelectedRows} ${
             props.selectedRowsLabel || `${props.numberOfSelectedRows > 1 ? 'rader' : 'rad'} er valgt`
           }`}
@@ -45,10 +45,10 @@ export const Paging: React.FC<Props> = (props) => {
         </Dropdown>
       </div>
 
-      <span className="telia-paging__text">
+      <span className="telia-table-pagination__text">
         {props.fromToLabel || `${props.from}-${props.to} av ${props.dataLength}`}
       </span>
-      <div className="telia-paging__navigation">
+      <div className="telia-table-pagination__navigation">
         <Button
           size="compact"
           kind="secondary-text"
