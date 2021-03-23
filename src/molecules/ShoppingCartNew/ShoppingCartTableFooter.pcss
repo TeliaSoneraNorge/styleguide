@@ -1,24 +1,22 @@
 .shopping-cart-section {
   &__table__foot {
     &__header {
-      width: 480px;
-      text-align: right;
       display: flex;
+      font-weight: 1000;
+      margin-left: 1rem;
       align-items: center;
-      justify-content: flex-end;
-      padding-right: 1rem;
-    }
-
-    &__cell {
-      text-align: right;
     }
 
     &__row {
       background-color: var(--white);
       color: var(--black);
-      height: 3rem;
+
+      @media screen and (min-width: 45rem) {
+        display: flex;
+        justify-content: flex-end;
+      }
+      
       .shopping-cart-section__table__header {
-        text-align: right;
         padding: 0.5rem 0 0.5rem 1rem;
       }
 
@@ -26,6 +24,7 @@
         background-color: var(--green-600);
         color: var(--white);
         font-family: 'pebble';
+        max-height: 5rem;
 
         .shopping-cart-section__item__label {
           text-transform: uppercase;

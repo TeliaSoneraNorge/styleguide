@@ -1,8 +1,7 @@
 .shopping-cart-section {
   & &__item {
     background-color: var(--white);
-    height: 4.3rem;
-    margin: 10px;
+    max-height: 8rem;
 
     &__dashed {
       background-color: inherit;
@@ -41,7 +40,7 @@
         margin-right: 1rem;
         flex-shrink: 0;
 
-        @media screen and (min-width: 23rem) {
+        @media screen and (min-width: 26rem) {
           display: block;
         }
       }
@@ -70,6 +69,26 @@
     }
 
     &__name {
+
+      @media screen and (max-width: 375px) {
+        max-width: 125px;
+      }
+
+      &__container {
+        display:flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        @media screen and (min-width: 45rem) {
+          flex-direction: row;
+        }
+
+        @media screen and (min-width: 27rem) {
+          flex-direction: row;
+        }
+      }
+
       @media screen and (min-width: 45rem) {
         width: 30rem;
       }
@@ -77,6 +96,7 @@
       &__text {
         &__container {
           display: flex;
+          font-weight: medium;
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
@@ -103,7 +123,11 @@
       }
 
       &--subitem {
-        padding-left: 3.5rem;
+        padding-left: 3.9rem;
+
+        @media screen and (max-width: 375px) {
+          padding-left: 3.0rem;
+        }
 
         @media screen and (min-width: 25em) {
           padding-left: 3.8rem;
@@ -116,10 +140,24 @@
     }
 
     &__quantity {
-      width: 30vw;
+      position: relative;
+      right: 28px;
+      top: 10px;
+      left: 0px;
+      width: 9rem;
 
-      @media screen and (min-width: 30em) {
-        width: 9rem;
+      @media screen and (min-width: 375px) {
+        left: 5px;
+      }
+
+      @media screen and (min-width: 414px) {
+        left: -15px;
+      }
+
+      @media screen and (min-width: 70em) {
+        top: 0px;
+        right: 0px;
+        left: 50px;
       }
     }
 
@@ -128,7 +166,6 @@
       align-items: center;
       justify-content: flex-end;
       text-align: right;
-      width: 30vw;
       color: var(--shopping-cart-font-color);
       padding-right: 0rem;
 
@@ -136,9 +173,9 @@
         display: flex;
       }
 
-      @media screen and (min-width: 30vw) {
+      /* @media screen and (min-width: 30vw) {
         width: 9rem;
-      }
+      } */
 
       &-per {
         color: var(--shopping-cart-font-color-medium);
@@ -182,8 +219,7 @@
 
       &__header {
         margin-left: 0.8rem;
-        text-align: left;
-        width: 25rem;
+        font-weight: bold;
       }
     }
 

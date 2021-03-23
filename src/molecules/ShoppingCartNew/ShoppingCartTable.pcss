@@ -1,21 +1,31 @@
 .shopping-cart-section {
+    width:100%;
     &__table {
-        border-collapse: separate;
-        border-spacing: 0 0.5rem;
         font-size: 0.85rem;
         margin-bottom: -0.5rem; /* Negate outer border-spacing */
         margin-top: -1rem; /* Negate outer border-spacing */
-        width: 100%;
+
+        &__foot {
+
+            &__cell {
+                display: flex;
+                align-items: center;
+            }
+
+            &__header {
+                text-align: left;
+            }
+        }
 
         &__row {
             display: flex;
-            margin: 10px;
+            margin: 10px 0px 10px 0;
             border-radius: 5px;
             justify-content: space-between;
             align-items: center;
         }
 
-        @media screen and (min-width: 25em) {
+        @media screen and (min-width: 35em) {
             font-size: 1rem;
         }
 

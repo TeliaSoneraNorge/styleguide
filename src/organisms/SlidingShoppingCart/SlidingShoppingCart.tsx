@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
+import ShoppingCart from '../../molecules/ShoppingCartNew/ShoppingCart';
 import Button from '../../atoms/Button/Button';
 import cn from 'classnames';
 import { useClickOutsideListener } from './useClickOutsideListener';

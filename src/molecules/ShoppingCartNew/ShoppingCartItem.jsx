@@ -87,7 +87,6 @@ const ShoppingCartItem = ({
         <ShoppingCartColumnHeading
           className="shopping-cart-section__table__cell shopping-cart-section__item__name"
           colSpan={!isQuantityModifiable || hasPaid ? 2 : undefined}
-          scope="row"
         >
           <div
             className={cn('shopping-cart-section__item__name__container', {
@@ -120,18 +119,18 @@ const ShoppingCartItem = ({
                 <span className="shopping-cart-section__item__price-per">{`${quantity} stk`}</span>
               )}
             </div>
+            {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
+              <ShoppingCartCell className="shopping-cart-section__item__quantity">
+                <ShoppingCartItemQuantityPicker
+                  cartItem={cartItem}
+                  name={name}
+                  quantity={quantity}
+                  onChangeQuantity={onChangeQuantity}
+                />
+              </ShoppingCartCell>
+            )}
           </div>
         </ShoppingCartColumnHeading>
-        {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
-          <ShoppingCartCell className="shopping-cart-section__item__quantity">
-            <ShoppingCartItemQuantityPicker
-              cartItem={cartItem}
-              name={name}
-              quantity={quantity}
-              onChangeQuantity={onChangeQuantity}
-            />
-          </ShoppingCartCell>
-        )}
         <div className="shopping-cart-section__item__price__wrapper">
           <ShoppingCartCell
             className={cn('shopping-cart-section__item__price', {
@@ -175,7 +174,7 @@ const ShoppingCartItem = ({
       </ShoppingCartRow>
       {_.get(discount, 'leaseDiscount') && (
         <ShoppingCartRow className="shopping-cart-section__item__lease-discount">
-          <ShoppingCartColumnHeading className="shopping-cart-section__table__cell" colSpan={2} scope="row">
+          <ShoppingCartColumnHeading className="shopping-cart-section__table__cell">
             <div className="shopping-cart-section__item__name--subitem shopping-cart-section__item__lease-discount__header">
               {discount.leaseDiscount.name}
             </div>
