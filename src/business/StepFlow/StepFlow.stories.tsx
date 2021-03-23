@@ -184,3 +184,24 @@ export const SingleStep = () => {
     </div>
   );
 };
+
+export const SingleStepWithoutSubmitButton = () => {
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
+
+  return (
+    <div>
+      <StepFlow title="Step flow" description="Commonly used for large forms and orders" onCancel={action('Cancel')}>
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
+        </StepFlowStep>
+      </StepFlow>
+    </div>
+  );
+};

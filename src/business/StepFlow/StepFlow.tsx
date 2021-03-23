@@ -15,7 +15,7 @@ type Props = {
    * Description for the form
    */
   description: string;
-  onSubmit: () => void;
+  onSubmit?: () => void;
   onCancel: () => void;
   /**
    * Pass inn custom labels for the different actions/buttons in the step flow.
@@ -85,7 +85,7 @@ export const StepFlow = (props: Props) => {
           <StepFlowFooter
             isLastStep={isLastStep}
             labels={props.labels}
-            nextStep={isLastStep ? props.onSubmit : () => setStep(step + 1)}
+            nextStep={props.onSubmit ? (isLastStep ? props.onSubmit : () => setStep(step + 1)) : undefined}
             nextDisabled={!isValid}
             singleStep={singleStep}
             {...(!singleStep

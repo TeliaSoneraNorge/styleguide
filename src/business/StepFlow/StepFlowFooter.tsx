@@ -5,7 +5,7 @@ import { FooterLabels } from './types';
 type Props = {
   isLastStep: boolean;
   nextDisabled: boolean;
-  nextStep: () => void;
+  nextStep?: () => void;
   singleStep: boolean;
   previousDisabled?: boolean;
   previousStep?: () => void;
@@ -25,17 +25,19 @@ export const StepFlowFooter = (props: Props) => {
           size="compact"
         />
       )}
-      <div style={props.singleStep ? { marginLeft: 'auto' } : {}}>
-        <Button
-          kind="primary"
-          label={props.isLastStep ? props.labels?.submitText ?? 'Send' : props.labels?.next ?? 'Neste'}
-          icon={props.isLastStep ? 'check-mark' : 'arrow-large-right'}
-          iconRight
-          onClick={props.nextStep}
-          disabled={props.nextDisabled}
-          size="compact"
-        />
-      </div>
+      {props.nextStep && (
+        <div style={props.singleStep ? { marginLeft: 'auto' } : {}}>
+          <Button
+            kind="primary"
+            label={props.isLastStep ? props.labels?.submitText ?? 'Send' : props.labels?.next ?? 'Neste'}
+            icon={props.isLastStep ? 'check-mark' : 'arrow-large-right'}
+            iconRight
+            onClick={props.nextStep}
+            disabled={props.nextDisabled}
+            size="compact"
+          />
+        </div>
+      )}
     </div>
   );
 };
