@@ -1,7 +1,7 @@
 .shopping-cart-section {
   & &__item {
     background-color: var(--white);
-    max-height: 8rem;
+    max-height: 10rem;
 
     &__dashed {
       background-color: inherit;
@@ -81,10 +81,6 @@
         justify-content: flex-start;
 
         @media screen and (min-width: 45rem) {
-          flex-direction: row;
-        }
-
-        @media screen and (min-width: 27rem) {
           flex-direction: row;
         }
       }
@@ -171,6 +167,7 @@
 
       &__wrapper {
         display: flex;
+        align-items: center;
       }
 
       /* @media screen and (min-width: 30vw) {
@@ -186,7 +183,6 @@
 
         @media screen and (min-width: 45rem) {
           display: inline;
-          margin-left: 2rem;
           margin-top: 0;
         }
       }
@@ -217,9 +213,18 @@
       background-color: var(--blue-400);
       color: white;
 
+      &__footer {
+        width: 40px;
+        height: 40px;
+      }
+
       &__header {
-        margin-left: 0.8rem;
         font-weight: bold;
+        text-align: left;
+
+        @media screen and (min-width: 45rem) {
+          margin-left: 0.8rem;
+        }
       }
     }
 

@@ -179,12 +179,12 @@ const ShoppingCartItem = ({
               {discount.leaseDiscount.name}
             </div>
           </ShoppingCartColumnHeading>
-          <ShoppingCartCell className="shopping-cart-section__table__foot__cell">
+          <div className="shopping-cart-section__item__price__wrapper">
             <div className="shopping-cart-section__item__price__container">
               <span>{`${discount.leaseDiscount.value},-`}</span>
             </div>
-          </ShoppingCartCell>
-          <ShoppingCartCell></ShoppingCartCell>
+            <ShoppingCartCell className="shopping-cart-section__item__lease-discount__footer"></ShoppingCartCell>
+          </div>
         </ShoppingCartRow>
       )}
     </>
