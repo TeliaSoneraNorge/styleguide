@@ -7,7 +7,7 @@ import { useEscapeListener } from './useEscapeListener';
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'fullscreen';
 }
 export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();

@@ -76,6 +76,27 @@
   text-align: end;
 }
 
+.telia-modal__container--fullscreen {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  align-items: center;
+  .telia-modal__header {
+    width: 100%;
+    padding: 1.5rem 10%;
+    margin-bottom: 2.5rem;
+  }
+  .telia-modal__body,
+  .telia-modal__footer {
+    width: 60%;
+  }
+}
+
 @media (max-width: 600px) {
   .telia-modal__container:not(.telia-modal__container--small) {
     left: 0;

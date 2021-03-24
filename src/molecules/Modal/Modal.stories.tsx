@@ -138,6 +138,28 @@ storiesOf('Component library/Molecules/Modal', module)
       </Modal>
     </div>
   ))
+  .add('Fullscreen', () => (
+    <div style={{ height: '300px' }}>
+      <Modal open={true} setOpen={() => {}} size="fullscreen">
+        <ModalHeader border={true}>
+          <h2>Hello</h2>
+          <div>desvription</div>
+        </ModalHeader>
+        <ModalBody>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis facilis. Provident veniam
+          voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate commodi ducimus, deleniti
+          cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione.
+        </ModalBody>
+        <ModalFooter>
+          <Button text="Close" size="small" />
+        </ModalFooter>
+      </Modal>
+    </div>
+  ))
   .add('Trigger modal', () => {
     const [open, setOpen] = useState(false);
     return (
