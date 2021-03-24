@@ -20,6 +20,10 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 var(--black-12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
     border: solid 1px #ebebeb;
     min-height: 160px;
+
+    max-height: 80%;
+    overflow: auto;
+
     &--small {
       width: 30%;
     }
@@ -86,6 +90,7 @@
   border: none;
   border-radius: 0;
   align-items: center;
+  max-height: none;
   .telia-modal__header {
     width: 100%;
     padding: 1.5rem 10%;

@@ -152,6 +152,69 @@ storiesOf('Component library/Molecules/Modal', module)
           <ModalDivider fullWidth={true} />
           Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
           sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione.
+        </ModalBody>
+        <ModalFooter>
+          <Button text="Close" size="small" />
+        </ModalFooter>
+      </Modal>
+    </div>
+  ))
+  .add('Overflown Modal with scroll', () => (
+    <div style={{ height: '300px' }}>
+      <Modal open={true} setOpen={() => {}} size="large">
+        <ModalHeader>
+          <h2>A large modal</h2>
+        </ModalHeader>
+        <ModalBody>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis facilis. Provident veniam
+          voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate commodi ducimus, deleniti
+          cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
+          perspiciatis eius! Ratione. Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis
+          facilis. Provident veniam voluptas suscipit odit, debitis vero neque voluptatibus consequuntur voluptate
+          commodi ducimus, deleniti cumque, vitae maiores.
+          <ModalDivider fullWidth={true} />
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatibus velit corrupti sint, praesentium
+          sapiente atque ipsum odit, quae ex expedita, assumenda beatae culpa blanditiis eum perferendis nobis
           perspiciatis eius! Ratione.
         </ModalBody>
         <ModalFooter>
