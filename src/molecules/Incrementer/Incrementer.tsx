@@ -1,11 +1,10 @@
 import React from 'react';
-import { Icon } from '../../atoms/Icon';
 import cn from 'classnames';
 import { Button } from '../../business';
 
 type Props = {
   value: number;
-  setValue: (num?: number) => void;
+  setValue: (num: number) => void;
   size?: 'compact' | 'default';
   kind?: 'primary' | 'secondary';
   max?: number;
@@ -29,7 +28,7 @@ export const Incrementer = (props: Props) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checkValidity()) {
-      props.setValue(e.target.value ? parseInt(e.target.value) : undefined);
+      props.setValue(e.target.value ? parseInt(e.target.value) : 0);
     }
   };
 
