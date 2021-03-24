@@ -4,8 +4,8 @@ import cn from 'classnames';
 interface Props {
   border?: boolean;
 }
-export const ModalHeader: React.FC<Props> = props => {
+export const ModalHeader: React.FC<Props> = (props) => {
   return (
-    <div className={cn('telia-modal-header', { 'telia-modal-header__border': props.border })}>{props.children}</div>
+    <div className={cn('telia-modal__header', { 'telia-modal__header--border': props.border })}>{props.children}</div>
   );
 };
