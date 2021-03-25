@@ -4,7 +4,8 @@ import { StepFlowMenu } from './StepFlowMenu';
 import { StepFlowFooter } from './StepFlowFooter';
 import { Labels } from './types';
 import { useBreakpoint } from '../../utils/useBreakpoint';
-import { useFocusTrap } from '../../utils/useFocusTrap';
+import { Modal } from '../../molecules/Modal';
+
 type Props = {
   initialStep?: number;
   /**
@@ -42,8 +43,6 @@ type Props = {
 };
 
 export const StepFlow = (props: Props) => {
-  const { container } = useFocusTrap();
-
   const [step, setStep] = useState(props.initialStep ?? 0);
   const menuBreakpoint = useBreakpoint('lg');
   const additionalContentBreakpoint = useBreakpoint('xxl');
@@ -67,7 +66,7 @@ export const StepFlow = (props: Props) => {
   }, [step, props.children]);
 
   return (
-    <div className="telia-step-flow" ref={container}>
+    <Modal className="telia-step-flow" open={true} setOpen={props.onCancel} size="fullscreen">
       <StepFlowHeader
         labels={props.labels}
         title={props.title}
@@ -98,6 +97,6 @@ export const StepFlow = (props: Props) => {
         </div>
         {renderAdditionalContentRight ? <div className="telia-step-flow--right">{props.additionalContent}</div> : null}
       </div>
-    </div>
+    </Modal>
   );
 };
