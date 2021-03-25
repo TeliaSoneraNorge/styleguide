@@ -616,7 +616,10 @@ const Wrapper = ({
         totalPriceUpfront={priceUpfront}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
+        onGoToCart={() => {}}
         formatPrice={(price) => `${price},-`}
+        buttonText="Gå til bestilling"
+        buttonInfo="Neste: Velg Abonnement"
         disclaimers={<Paragraph kind="fineprint">Minste totalpris 12 md. XXX</Paragraph>}
       />
     </ShoppingCartAccordion>
