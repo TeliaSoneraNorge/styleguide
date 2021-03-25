@@ -13,7 +13,7 @@
     }
   }
 }
-.telia-date-picker--input-wrapper {
+.telia-date-picker__time {
   .telia-dropdown-content {
     max-height: 132px;
     width: 100px;
@@ -24,15 +24,15 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-}
-.telia-date-picker--input {
-  width: 200px;
-  &__time {
+  .telia-date-picker__input {
     width: 108px;
   }
 }
+.telia-date-picker__input {
+  width: 200px;
+}
 .telia-date-picker__period {
-  .telia-date-picker--inputs {
+  .telia-date-picker__inputs {
     display: flex;
     width: fit-content;
     align-items: flex-end;
@@ -49,7 +49,7 @@
       border: none;
       height: 38px;
     }
-    .telia-date-picker--input {
+    .telia-date-picker__input {
       .telia-textfield__input {
         border-radius: 0px;
         border-left-color: transparent;
@@ -95,7 +95,7 @@
         border-left-color: transparent;
         border-right-color: transparent;
       }
-      .telia-date-picker--input::after,
+      .telia-date-picker__input::after,
       &::after {
         content: none;
       }
@@ -126,7 +126,7 @@
       margin: 0;
     }
   }
-  .telia-date-picker--input.telia-textfield__focus {
+  .telia-date-picker__input.telia-textfield__focus {
     .telia-textfield__input {
       border-color: var(--core-purple-500);
     }
@@ -138,7 +138,7 @@
   }
 }
 
-.telia-date-picker--menu {
+.telia-date-picker__menu {
   position: absolute;
   background-color: white;
   box-shadow: 0px 8px 32px rgba(58, 58, 58, 0.18);
@@ -151,13 +151,13 @@
   }
 }
 
-.telia-date-picker--header {
+.telia-date-picker__header {
   padding: 1rem 1.5rem;
   padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &--labels {
+  &__labels {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -166,11 +166,11 @@
     }
   }
 }
-.telia-date-picker--months {
+.telia-date-picker__months {
   display: flex;
 }
 
-.telia-date-picker--month {
+.telia-date-picker__month {
   display: grid;
   grid-template-columns: 45px 45px 45px 45px 45px 45px 45px;
   grid-template-rows: 45px 45px 45px 45px 45px 45px;
@@ -179,7 +179,7 @@
   margin: 0 1.5rem;
   margin-bottom: 1.5rem;
 }
-.telia-date-picker--day {
+.telia-date-picker__day {
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
@@ -195,16 +195,16 @@
     background-color: var(--grey-200);
   }
   &:active,
-  &__active {
+  &--active {
     color: var(--white);
     background-color: var(--core-purple-500);
   }
-  &__inPeriod {
+  &--inPeriod {
     color: var(--core-purple);
     background-color: var(--core-purple-100);
   }
 
-  &__disabled {
+  &--disabled {
     color: var(--grey-300);
     pointer-events: none;
   }

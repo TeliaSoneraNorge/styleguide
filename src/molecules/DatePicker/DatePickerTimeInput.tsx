@@ -61,10 +61,10 @@ export const DatePickerTimeInput = (props: Props) => {
   };
 
   return (
-    <div className="telia-date-picker--input-wrapper">
+    <div className="telia-date-picker__time">
       <Dropdown open={open} setOpen={setOpen}>
         <DropdownSearchToggle
-          className="telia-date-picker--input telia-date-picker--input__time"
+          className="telia-date-picker__input telia-date-picker__time__input"
           type="text"
           label={!props.inputValue && !open ? '--:--' : undefined}
           value={props.inputValue ?? '00:00'}

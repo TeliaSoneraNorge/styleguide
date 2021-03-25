@@ -18,7 +18,7 @@ export const PeriodPicker = (props: PeriodPickerProps) => {
       <DatePickerContext.Consumer>
         {({ setCalendarOpen, calendarOpen, datePickerRef, periodStart, periodEnd }) => (
           <div className="telia-date-picker telia-date-picker__period" ref={datePickerRef}>
-            <div className="telia-date-picker--inputs">
+            <div className="telia-date-picker__inputs">
               <DatePickerInput
                 {...periodStart}
                 size={props.size}
