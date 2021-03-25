@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Heading from '../../atoms/Heading/Heading';
 import ShoppingCartTable from './ShoppingCartTable';
 import { Icon } from '../../atoms/Icon';
+import Button from '../../atoms/Button/Button';
 
 /**
  * Status: *in progress*.
@@ -16,6 +17,8 @@ const ShoppingCart = ({
   isAnyCartItemsQuantityModifiable,
   onChangeQuantity,
   onGoToCart,
+  buttonText = 'Gå til bestilling',
+  buttonInfo = '',
   onRemoveItem,
   totalPriceFirstInvoice,
   totalPriceMonthly,
@@ -48,9 +51,19 @@ const ShoppingCart = ({
       />
       {disclaimers}
       {onGoToCart && (
-        <button className="button accordion__button inverted button--primary" onClick={onGoToCart} type="button">
-          Gå til kassen
-        </button>
+        <div className="shopping-cart__checkout-button-container">
+          <div className="shopping-cart__checkout-button-wrapper">
+            <Button
+              icon="shoppingcart"
+              kind="primary"
+              className="shopping-cart__checkout-button"
+              size="small"
+              text={buttonText}
+              onClick={onGoToCart}
+            />
+            {buttonInfo && <span className="shopping-cart__checkout-button-info">{buttonInfo}</span>}
+          </div>
+        </div>
       )}
     </div>
   );
@@ -62,6 +75,7 @@ ShoppingCart.propTypes = {
   onChangeQuantity: PropTypes.func,
   onRemoveItem: PropTypes.func,
   onGoToCart: PropTypes.func,
+  goToCartText: PropTypes.string,
   totalPriceFirstInvoice: PropTypes.number,
   totalPriceMonthly: PropTypes.number,
   totalPriceUpfront: PropTypes.number,
