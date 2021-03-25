@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Table, TableBodyRow, TableBodyCell, TablePagingControls } from './Table';
+import { Table, TableBodyRow, TableBodyCell } from './Table';
+import { TablePagination } from '../..';
 import _ from 'lodash';
 import map from 'lodash/fp/map';
 import pick from 'lodash/fp/pick';
@@ -96,7 +97,7 @@ export const WithPaging = () => {
       <Table
         headings={headings}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -138,7 +139,7 @@ export const WithClickableRows = () => {
       <Table
         headings={headings}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -180,7 +181,7 @@ export const WithClickableRowsAndCells = () => {
       <Table
         headings={headings}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -234,7 +235,7 @@ export const Selectable = () => {
         allSelected={state.allSelected}
         selected={state.selectedRows}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -290,7 +291,7 @@ export const Sortable = () => {
         sortedColumnDirection={state.sortDirection}
         onClickColumnHeader={(sortId) => setSorting(sortId)}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -345,7 +346,7 @@ export const SortableAndSelectable = () => {
         sortedColumnDirection={state.sortDirection}
         onClickColumnHeader={(sortId) => setSorting(sortId)}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -436,7 +437,7 @@ export const SortableSelectableClickableRows = () => {
         sortedColumnDirection={state.sortDirection}
         onClickColumnHeader={(sortId) => setSorting(sortId)}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -517,7 +518,7 @@ export const WithBorders = () => {
         headings={headings}
         bordered={true}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -560,7 +561,7 @@ export const Compact = () => {
         headings={headings}
         compact={true}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
@@ -604,7 +605,7 @@ export const CompactBordered = () => {
         bordered={true}
         compact={true}
         paging={
-          <TablePagingControls
+          <TablePagination
             from={state.from + 1}
             to={state.to}
             dataLength={subscribers.length}
