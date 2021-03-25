@@ -22,7 +22,7 @@ export const Table_Pagination = ({}) => {
   return (
     <>
       <div style={{ display: 'flex', width: '100%' }}>
-        <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+        <div style={{ width: '70%', paddingRight: '1rem', paddingBottom: '1rem' }}>
           <TablePagination
             from={from}
             to={to}
@@ -46,11 +46,11 @@ export const Default = () => {
   return (
     <>
       <div style={{ display: 'flex', width: '100%' }}>
-        <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+        <div style={{ width: '100%', paddingRight: '1rem', paddingBottom: '1rem' }}>
           <Pagination currentPage={page} perPage={perPage} setPage={setPage} dataLength={dataLength} />
         </div>
       </div>
-      <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+      <div style={{ width: '100%', paddingRight: '1rem', paddingBottom: '1rem' }}>
         <Pagination currentPage={page2} perPage={perPage} setPage={setPage2} dataLength={50} />
       </div>
     </>

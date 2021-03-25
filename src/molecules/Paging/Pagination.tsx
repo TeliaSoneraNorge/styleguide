@@ -22,7 +22,13 @@ export const Pagination: React.FC<Props> = (props) => {
 
   const [midRangeStart, setMidRangeStart] = React.useState(getMidRangeStart(props.currentPage));
   const moreButton = (
-    <Button size="compact" disabled kind="secondary-text" label={'...'} className="telia-pagination__dottes" />
+    <Button
+      size="compact"
+      disabled
+      kind="secondary-text"
+      label={'...'}
+      className="telia-pagination__dottes telia-button--ball"
+    />
   );
 
   const pageButtons: Array<React.ReactElement> = pages.map((e, i) => (
@@ -30,6 +36,7 @@ export const Pagination: React.FC<Props> = (props) => {
       key={i}
       size="compact"
       kind="secondary-text"
+      className="telia-button--ball"
       active={i + 1 === props.currentPage}
       label={(i + 1).toString()}
       onClick={(e) => setPage(i + 1)}
@@ -49,6 +56,7 @@ export const Pagination: React.FC<Props> = (props) => {
       <Button
         size="compact"
         kind="secondary-text"
+        className="telia-button--ball"
         icon="arrow-left"
         aria-label="Forrige side"
         onClick={() => setPage(props.currentPage - 1)}
@@ -71,6 +79,7 @@ export const Pagination: React.FC<Props> = (props) => {
       <Button
         size="compact"
         kind="secondary-text"
+        className="telia-button--ball"
         icon="arrow-right"
         aria-label="Neste side"
         onClick={() => setPage(props.currentPage + 1)}
