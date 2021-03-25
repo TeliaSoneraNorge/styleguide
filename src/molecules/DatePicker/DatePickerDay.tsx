@@ -52,10 +52,10 @@ export const DatePickerDay = (props: Props) => {
 
   return (
     <button
-      className={cn('telia-date-picker--day', {
-        'telia-date-picker--day__active': isSelected,
-        'telia-date-picker--day__inPeriod': isBetween,
-        'telia-date-picker--day__disabled': disabled,
+      className={cn('telia-date-picker__day', {
+        'telia-date-picker__day--active': isSelected,
+        'telia-date-picker__day--inPeriod': isBetween,
+        'telia-date-picker__day--disabled': disabled,
       })}
       onClick={selectDate}
       disabled={disabled}
@@ -66,5 +66,5 @@ export const DatePickerDay = (props: Props) => {
 };
 
 export const DatePickerDayPlaceholder = () => {
-  return <div className="telia-date-picker--day__placeholder" />;
+  return <div className="telia-date-picker__day__placeholder" />;
 };

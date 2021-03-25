@@ -14,10 +14,10 @@ export const DatePickerHeader = () => {
   const disablePrev = minDate && periodStart.year == minDate?.getFullYear() && periodStart.month == minDate.getMonth();
 
   return (
-    <div className="telia-date-picker--header">
+    <div className="telia-date-picker__header">
       <Button onClick={prev} disabled={disablePrev} icon="arrow-left" kind="secondary-text" size="compact" />
       {periodEnd ? (
-        <div className="telia-date-picker--header--labels">
+        <div className="telia-date-picker__header__labels">
           <div>
             {monthLabels[periodStart.month]} {periodStart.year}
           </div>
