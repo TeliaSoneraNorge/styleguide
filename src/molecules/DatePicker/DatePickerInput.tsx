@@ -57,7 +57,7 @@ export const DatePickerInput = (props: Props) => {
   };
   return (
     <TextField
-      className="telia-date-picker--input"
+      className="telia-date-picker__input"
       placeholder="dd.mm.åååå"
       type="text"
       value={input}

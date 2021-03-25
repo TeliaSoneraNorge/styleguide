@@ -13,7 +13,7 @@
     }
   }
 }
-.telia-date-picker--input-wrapper {
+.telia-date-picker__time {
   .telia-dropdown-content {
     max-height: 132px;
     width: 100px;
@@ -24,19 +24,20 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
-}
-.telia-date-picker--input {
-  width: 200px;
-  &__time {
+  .telia-date-picker__input {
     width: 108px;
   }
 }
+.telia-date-picker__input {
+  width: 200px;
+}
 .telia-date-picker__period {
-  .telia-date-picker--inputs {
+  .telia-date-picker__inputs {
     display: flex;
     width: fit-content;
+    align-items: flex-end;
 
-    .telia-textfield-input {
+    .telia-textfield__input {
       transition: border 200ms;
 
       border: 1px solid var(--grey-400);
@@ -44,11 +45,12 @@
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
     }
-    .telia-textfield-content {
+    .telia-textfield__content {
       border: none;
+      height: 38px;
     }
-    .telia-date-picker--input {
-      .telia-textfield-input {
+    .telia-date-picker__input {
+      .telia-textfield__input {
         border-radius: 0px;
         border-left-color: transparent;
         border-right-color: transparent;
@@ -59,18 +61,18 @@
         transition: border 200ms;
         position: absolute;
         width: 1px;
-        height: 100%;
+        height: 38px;
         border-top: 1px solid var(--grey-400);
         border-bottom: 1px solid var(--grey-400);
       }
       &::after {
         right: 0;
-        top: 0;
+        bottom: 0;
       }
     }
 
     > *:first-child {
-      .telia-textfield-input {
+      .telia-textfield__input {
         border-top-left-radius: 4px;
         border-bottom-left-radius: 4px;
         border-color: var(--grey-400);
@@ -82,32 +84,32 @@
     }
 
     > *:last-child {
-      .telia-textfield-rightContent {
+      .telia-textfield__rightContent {
         border-right: 1px solid var(--grey-400);
         border-top-right-radius: 4px;
         border-bottom-right-radius: 4px;
       }
 
-      .telia-textfield-input {
+      .telia-textfield__input {
         border: 1px solid var(--grey-400);
         border-left-color: transparent;
         border-right-color: transparent;
       }
-      .telia-date-picker--input::after,
+      .telia-date-picker__input::after,
       &::after {
         content: none;
       }
     }
   }
 
-  .telia-textfield-rightContent {
+  .telia-textfield__rightContent {
     transition: border 200ms;
     border-top: 1px solid var(--grey-400);
     border-bottom: 1px solid var(--grey-400);
     border-radius: 0;
     margin-left: -1px;
   }
-  .telia-textfield-input {
+  .telia-textfield__input {
     transition: border 200ms;
 
     border: 1px solid var(--grey-400);
@@ -117,15 +119,15 @@
   }
 
   .telia-textfield__focus {
-    .telia-textfield-input {
+    .telia-textfield__input {
       border-color: var(--core-purple-500);
     }
-    .telia-textfield-rightContent {
+    .telia-textfield__rightContent {
       margin: 0;
     }
   }
-  .telia-date-picker--input.telia-textfield__focus {
-    .telia-textfield-input {
+  .telia-date-picker__input.telia-textfield__focus {
+    .telia-textfield__input {
       border-color: var(--core-purple-500);
     }
 
@@ -136,7 +138,7 @@
   }
 }
 
-.telia-date-picker--menu {
+.telia-date-picker__menu {
   position: absolute;
   background-color: white;
   box-shadow: 0px 8px 32px rgba(58, 58, 58, 0.18);
@@ -149,13 +151,13 @@
   }
 }
 
-.telia-date-picker--header {
+.telia-date-picker__header {
   padding: 1rem 1.5rem;
   padding-bottom: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  &--labels {
+  &__labels {
     display: flex;
     width: 100%;
     justify-content: space-around;
@@ -164,11 +166,11 @@
     }
   }
 }
-.telia-date-picker--months {
+.telia-date-picker__months {
   display: flex;
 }
 
-.telia-date-picker--month {
+.telia-date-picker__month {
   display: grid;
   grid-template-columns: 45px 45px 45px 45px 45px 45px 45px;
   grid-template-rows: 45px 45px 45px 45px 45px 45px;
@@ -177,7 +179,7 @@
   margin: 0 1.5rem;
   margin-bottom: 1.5rem;
 }
-.telia-date-picker--day {
+.telia-date-picker__day {
   border-radius: 50%;
   height: 2rem;
   width: 2rem;
@@ -193,16 +195,16 @@
     background-color: var(--grey-200);
   }
   &:active,
-  &__active {
+  &--active {
     color: var(--white);
     background-color: var(--core-purple-500);
   }
-  &__inPeriod {
+  &--inPeriod {
     color: var(--core-purple);
     background-color: var(--core-purple-100);
   }
 
-  &__disabled {
+  &--disabled {
     color: var(--grey-300);
     pointer-events: none;
   }
