@@ -228,6 +228,26 @@ const subscriptionContent = [
     subtitle: 'Nummer: 413 20 271',
   },
   {
+    type: 'SUBSCRIPTION_DRAFT',
+    id: 'SMART_20GB.REGULAR',
+    bundleId: '62dc0e',
+    items: [],
+    name: 'SMART 20 GB',
+    quantity: {
+      modifiable: false,
+      removable: true,
+      value: 1,
+    },
+    price: {
+      monthly: 529,
+    },
+    image: {
+      amount: 20,
+      unit: 'GB',
+    },
+    subtitle: '--- -- ---',
+  },
+  {
     type: 'DELIVERY',
     id: 'HH_express',
     image: {
