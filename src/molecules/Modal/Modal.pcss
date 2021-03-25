@@ -6,7 +6,7 @@
   right: 0;
   background: rgba(0, 0, 0, 0.2);
 
-  &-container {
+  &__container {
     background: white;
     position: fixed;
     width: 50%;
@@ -20,19 +20,23 @@
     box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 1px 10px 0 var(--black-12), 0 4px 5px 0 rgba(0, 0, 0, 0.14);
     border: solid 1px #ebebeb;
     min-height: 160px;
-    &__small {
+
+    max-height: 80%;
+    overflow: auto;
+
+    &--small {
       width: 30%;
     }
-    &__large {
+    &--large {
       width: 80%;
     }
   }
 
-  &__invisible {
+  &--invisible {
     visibility: hidden;
   }
 }
-.telia-modal-header {
+.telia-modal__header {
   padding: 1.5rem;
   padding-bottom: 1rem;
   h1,
@@ -44,13 +48,13 @@
     font-size: 20px;
     margin: 0;
   }
-  &__border {
+  &--border {
     border-bottom: 1px solid var(--light-grey);
     margin-bottom: 1rem;
   }
 }
 
-.telia-modal-body {
+.telia-modal__body {
   padding: 0 1.5rem;
   padding-bottom: 1rem;
   font-size: 14px;
@@ -60,24 +64,47 @@
   }
 }
 
-.telia-modal-divider {
+.telia-modal__divider {
   height: 1px;
   width: 100%;
   margin: 0.5rem 0;
   background-color: var(--light-grey);
-  &__fullWidth {
+  &--fullWidth {
     width: calc(100% + 3rem);
     margin-left: -1.5rem;
   }
 }
 
-.telia-modal-footer {
+.telia-modal__footer {
   padding: 1rem 1.5rem;
   text-align: end;
 }
 
+.telia-modal__container--fullscreen {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: none;
+  width: 100%;
+  border: none;
+  border-radius: 0;
+  align-items: center;
+  max-height: none;
+  .telia-modal__header {
+    width: 100%;
+    padding: 1.5rem 10%;
+    margin-bottom: 2.5rem;
+  }
+  .telia-modal__body,
+  .telia-modal__footer {
+    width: 60%;
+  }
+}
+
 @media (max-width: 600px) {
-  .telia-modal-container:not(.telia-modal-container__small) {
+  .telia-modal__container--medium,
+  .telia-modal__container--large {
     left: 0;
     right: 0;
     bottom: 0;
@@ -86,11 +113,12 @@
     transform: none;
     overflow-y: auto;
     height: 98%;
+    max-height: 98%;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
   }
 
-  .telia-modal-container__small {
+  .telia-modal__container--small {
     left: 1.25rem;
     right: 1.25rem;
     top: 1.5rem;
@@ -98,5 +126,15 @@
     transform: none;
 
     overflow-y: auto;
+  }
+
+  .telia-modal__container--fullscreen {
+    .telia-modal__header,
+    .telia-modal__body,
+    .telia-modal__footer {
+      width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
   }
 }
