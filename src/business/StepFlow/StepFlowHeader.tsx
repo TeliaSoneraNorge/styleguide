@@ -7,8 +7,8 @@ import throttle from 'lodash/throttle';
 import { ModalHeader } from '../../molecules/Modal';
 
 type Props = {
-  title: string;
-  description: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
   onCancel: () => void;
   rightContent?: (stuck: boolean) => React.ReactNode;
 
