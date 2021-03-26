@@ -11,11 +11,11 @@ type Props = {
   /**
    * Main title of the form
    */
-  title: string;
+  title: React.ReactNode;
   /**
    * Description for the form
    */
-  description: string;
+  description: React.ReactNode;
   onSubmit: () => void;
   onCancel: () => void;
   /**
