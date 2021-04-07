@@ -112,7 +112,6 @@ export const TextField = (props: TextFieldProps) => {
   const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useFocus(props);
   const inputLabelId = props.label && props.id ? `${props.id}-label` : undefined;
   const statusIcon = props.success ? <Icon icon="check-mark-circle" /> : props.error ? <Icon icon="alert" /> : null;
-  const placeholder = props.size === 'compact' ? undefined : props.placeholder;
   const inputHasValue = (props.value && props.value.length) || (inputRef.current && inputRef.current.value.length);
 
   /**
@@ -174,7 +173,7 @@ export const TextField = (props: TextFieldProps) => {
             name={props.name}
             ref={inputRef}
             type={props.type || 'text'}
-            placeholder={placeholder}
+            placeholder={props.placeholder}
             disabled={props.disabled}
             value={props.value}
             aria-label={props['aria-label']}
