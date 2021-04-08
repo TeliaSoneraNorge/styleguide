@@ -80,6 +80,25 @@
     background-color: var(--core-purple-100);
   }
 
+  /* On active effect, adding a gray shadow */
+  &:active > input ~ .radiobutton__svg-container {
+    background-color: var(--grey-300);
+  }
+
+  /* On active effect, adding a purple shadow when checked */
+  &:active > input:checked ~ .radiobutton__svg-container {
+    background-color: var(--core-purple-200);
+  }
+
+  /* On active effect, if the input is checked, make color of radio button darker purple */
+  &:active > input:checked ~ .radiobutton__svg-container .radiobutton__circle {
+    fill: var(--core-purple-700);
+  }
+
+  &:active > input:checked ~ .radiobutton__svg-container .radiobutton__border {
+    stroke: var(--core-purple-700);
+  }
+
   /* On focus effect, adding a blue border */
   & > input:focus + .radiobutton__svg-container {
     box-shadow: 0 0 0 2px transparent, 0 0 0 2px var(--blue-300);
