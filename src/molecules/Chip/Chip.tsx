@@ -45,11 +45,11 @@ export const Chip = ({ label, icon, active, disabled, color, kind, mode = 'choic
       type={Tag === 'button' ? 'button' : undefined}
       className={cs(
         'telia-chip',
-        `telia-chip__${mode}`,
+        `telia-chip--${mode}`,
         {
-          'telia-chip__disabled': disabled,
-          'telia-chip__active': active || mode === 'input',
-          'telia-chip__grey': color === 'grey',
+          'telia-chip--disabled': disabled,
+          'telia-chip--active': active || mode === 'input',
+          'telia-chip--grey': color === 'grey',
           'telia-chip--square': kind === 'square',
           'telia-chip--hasIcon': icon,
         },
@@ -64,15 +64,15 @@ export const Chip = ({ label, icon, active, disabled, color, kind, mode = 'choic
       }}
       tabIndex={disabled || mode === 'input' ? -1 : 0}
     >
-      {icon && <Icon className="telia-chip--icon" icon={icon} />}
-      <div className="telia-chip--label">{label}</div>
+      {icon && <Icon className="telia-chip__icon" icon={icon} />}
+      <div className="telia-chip__label">{label}</div>
       {mode === 'input' && (
         <Button
           kind="secondary-text"
           icon="close"
           onClick={onClick}
           disabled={disabled}
-          className="telia-chip--close"
+          className="telia-chip__closeBtn"
         />
       )}
     </Tag>
