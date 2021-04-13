@@ -30,6 +30,20 @@
   &__label {
     text-align: left;
   }
+
+  button {
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0.75rem;
+  }
+  button.telia-side-menu-item__tablet {
+    padding: 0.75rem 0;
+  }
+  button.telia-avatar {
+    padding: 0;
+  }
 }
 
 .telia-side-menu-item__desktop,
@@ -37,7 +51,7 @@
   text-decoration: none;
   transition-duration: 200ms;
   color: var(--black);
-  transition-property: color, background-color;
+  transition-property: color;
   border-top-left-radius: 100px;
   border-bottom-left-radius: 100px;
   &:hover {
@@ -47,17 +61,6 @@
   &:focus {
     outline: none;
     box-shadow: 0 0 0 2px var(--blue-500);
-  }
-}
-.telia-side-menu-item--rounded {
-  .telia-side-menu-item__desktop {
-    border-radius: 100px;
-  }
-  .telia-side-menu-item__tablet {
-    width: 48px;
-    height: 48px;
-    border-radius: 100%;
-    justify-content: start;
   }
 }
 
@@ -135,19 +138,15 @@
   }
 }
 
-.telia-side-menu-item {
-  button {
-    border: none;
-    background-color: inherit;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 0.75rem;
+.telia-side-menu-item--rounded {
+  .telia-side-menu-item__desktop {
+    border-radius: 100px;
   }
-  button.telia-side-menu-item__tablet {
-    padding: 0.75rem 0;
-  }
-  button.telia-avatar {
-    padding: 0;
+  .telia-side-menu-item__tablet {
+    width: 48px;
+    height: 48px;
+    border-radius: 100%;
+    justify-content: start;
   }
 }
 
@@ -176,6 +175,31 @@ body.telia-hide-focus {
     .telia-side-menu-item__desktop:focus,
     .telia-side-menu-item__tablet:focus {
       box-shadow: 2px 0 0 0 var(--white) !important;
+    }
+  }
+
+  .telia-side-menu--grey100 {
+    .telia-side-menu-item--active {
+      .telia-side-menu-item__desktop:focus,
+      .telia-side-menu-item__tablet:focus {
+        box-shadow: 2px 0 0 0 var(--grey-100) !important;
+      }
+    }
+  }
+}
+
+.telia-side-menu--grey100 {
+  .telia-side-menu-item--active {
+    .telia-side-menu-item__desktop,
+    .telia-side-menu-item__tablet {
+      background-color: var(--grey-100);
+      box-shadow: 2px 0 0 0 var(--grey-100);
+    }
+
+    &.telia-side-menu-item--grey {
+      .telia-side-menu-item__desktop {
+        background-color: var(--grey-100);
+      }
     }
   }
 }
