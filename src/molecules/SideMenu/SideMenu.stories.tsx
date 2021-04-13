@@ -3,21 +3,29 @@ import { SideMenu, SideMenuBottom, SideMenuTop, SideMenuItem } from './index';
 import { action } from '@storybook/addon-actions';
 import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import b from './business.svg';
+
 export default {
   component: SideMenu,
   title: 'Component library/Molecules/SideMenu',
 };
 
-export const Default = ({}) => {
+export const Default = () => {
   const [active, setActive] = useState(0);
   enableTabKeyDetection();
+
   return (
     <>
       <div style={{ display: 'flex', height: '90vh' }}>
         <div style={{ marginRight: '1rem', height: '100%' }}>
           <SideMenu aria-labelledby="main_menu">
             <SideMenuTop>
-              <SideMenuItem label="Helene Grini" avatar={{ img: b }} onClick={action('user')} color="grey" />
+              <SideMenuItem
+                label="Rounded item"
+                avatar={{ img: b }}
+                onClick={action('user')}
+                color="grey"
+                kind="rounded"
+              />
               <SideMenuItem label="Hjem" icon="home" onClick={() => setActive(0)} active={active === 0} href="/" />
 
               <SideMenuItem
@@ -51,7 +59,13 @@ export const Default = ({}) => {
                 active={active === 4}
                 color="grey"
               />
-              <SideMenuItem label="Helene Grini" avatar={{ text: 'HG' }} onClick={action('user')} color="grey" />
+              <SideMenuItem
+                kind="rounded"
+                label="Helene Grini"
+                avatar={{ text: 'HG' }}
+                onClick={action('user')}
+                color="grey"
+              />
             </SideMenuBottom>
           </SideMenu>
         </div>
