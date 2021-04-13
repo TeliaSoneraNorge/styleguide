@@ -9,7 +9,7 @@ export default {
   title: 'Component library/Molecules/SideMenu',
 };
 
-export const Default = () => {
+export const White = () => {
   const [active, setActive] = useState(0);
   enableTabKeyDetection();
 
@@ -111,7 +111,7 @@ export const Grey = () => {
 
   return (
     <>
-      <div style={{ display: 'flex', height: '90vh' }}>
+      <div style={{ display: 'flex', height: '90vh', backgroundColor: '#fbfbfb' }}>
         <div style={{ marginRight: '1rem', height: '100%' }}>
           <SideMenu aria-labelledby="main_menu" backgroundColor="grey100">
             <SideMenuTop>

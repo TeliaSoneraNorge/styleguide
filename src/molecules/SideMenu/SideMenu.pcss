@@ -125,7 +125,6 @@
     background-color: var(--white);
     box-shadow: 2px 0 0 0 var(--white);
     &:focus {
-      transition-property: none;
       box-shadow: 0 0 0 2px var(--blue-500);
     }
   }
@@ -146,7 +145,8 @@
     width: 48px;
     height: 48px;
     border-radius: 100%;
-    justify-content: start;
+    justify-content: center;
+    margin-left: -4px;
   }
 }
 
@@ -194,6 +194,9 @@ body.telia-hide-focus {
     .telia-side-menu-item__tablet {
       background-color: var(--grey-100);
       box-shadow: 2px 0 0 0 var(--grey-100);
+      &:focus {
+        box-shadow: 0 0 0 2px var(--blue-500);
+      }
     }
 
     &.telia-side-menu-item--grey {
