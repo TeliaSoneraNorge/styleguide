@@ -12,7 +12,7 @@ type Props = {
    * Props to render an avatar in the item.
    * See Avatar.tsx
    */
-  avatar?: AvatarProps;
+  avatar?: Omit<AvatarProps, 'onClick' | 'href' | 'tabIndex'>;
 
   /**
    * Icon to display in front of item
@@ -20,7 +20,7 @@ type Props = {
   icon?: IconDefinition;
   /**
    * Whether the item is currently active.
-   * Eg. we are on a page corresponding to an entry from the meny
+   * Eg. we are on a page corresponding to an entry from the menu
    */
   active?: boolean;
   /**
@@ -34,7 +34,7 @@ type Props = {
   onClick: () => void;
 
   /**
-   * Wheter to render the iten as an li or div.
+   * Whether to render the item as an li or div.
    * The outermost tag should always be an <li>.
    *
    * If you need custom logic and markup causing the SideMenuItem
@@ -92,12 +92,14 @@ export const SideMenuItem: React.FC<Props> = (props) => {
         <Tag className={cn('telia-side-menu-item__desktop')} onClick={handleClick} href={props.href} tabIndex={1}>
           {props.avatar && (
             <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
+              <Avatar size="compact" {...props.avatar} />
             </div>
           )}
           {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
-          <div className="telia-side-menu-item-label">{props.label}</div>
-          {props.hasNotification && <Badge size="compact" status="warning" kind="active" />}
+          <div className="telia-side-menu-item__label">{props.label}</div>
+          {props.hasNotification && (
+            <Badge className="telia-side-menu-item__badge" size="compact" status="warning" kind="active" />
+          )}
           {props.children}
         </Tag>
       ) : (
@@ -105,7 +107,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
           <NotificationWrapper>
             <>
               {props.avatar ? (
-                <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
+                <Avatar size="compact" {...props.avatar} />
               ) : (
                 <Icon className="telia-side-menu-item__icon" icon={props.icon} />
               )}

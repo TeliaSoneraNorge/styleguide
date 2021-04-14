@@ -40,12 +40,7 @@ export const White = () => {
               />
               <SideMenuItem
                 hasNotification={true}
-                label={
-                  <div style={{ display: 'flex', alignItems: 'center' }}>
-                    <div style={{ paddingRight: '0.5rem' }}>Økonomi</div>
-                    {/* <Badge size="compact" status="warning" kind="active" /> */}
-                  </div>
-                }
+                label={<div style={{ fontWeight: 'bold' }}>Økonomi</div>}
                 icon="money"
                 onClick={() => setActive(2)}
                 active={active === 2}
