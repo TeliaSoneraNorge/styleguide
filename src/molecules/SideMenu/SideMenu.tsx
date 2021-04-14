@@ -6,7 +6,7 @@ type Props = {
   'aria-labelledby'?: string;
   /**
    * Used to set the background color for active elements.
-   * Should match the background color of you application
+   * Should match the background color of your application
    * @default 'white'
    */
   backgroundColor?: keyof Pick<typeof colors, 'white' | 'grey100'>;
