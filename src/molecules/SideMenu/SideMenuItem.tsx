@@ -47,6 +47,9 @@ type Props = {
 
   color?: 'purple' | 'grey';
 
+  /**
+   * @default 'squared'
+   */
   kind?: 'rounded' | 'squared';
 };
 

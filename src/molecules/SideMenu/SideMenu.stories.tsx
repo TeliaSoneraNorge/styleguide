@@ -3,10 +3,12 @@ import { SideMenu, SideMenuBottom, SideMenuTop, SideMenuItem } from './index';
 import { action } from '@storybook/addon-actions';
 import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import b from './business.svg';
+import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: SideMenu,
   title: 'Component library/Molecules/SideMenu',
+  decorators: [withDesign],
 };
 
 export const White = () => {
@@ -199,4 +201,17 @@ export const Grey = () => {
       <h4>Try to change the viewport size in the storybook toolbar </h4>
     </>
   );
+};
+White.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/JtdMO7wBbu3MnDdHv2LLTa/01.-📐Specs?node-id=3983%3A6222',
+  },
+};
+
+Grey.parameters = {
+  design: {
+    type: 'figma',
+    url: 'https://www.figma.com/file/JtdMO7wBbu3MnDdHv2LLTa/01.-📐Specs?node-id=3983%3A6222',
+  },
 };
