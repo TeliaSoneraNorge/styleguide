@@ -4,6 +4,7 @@ import cn from 'classnames';
 import { Avatar } from '../../index';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 import { AvatarProps } from '../Avatar/Avatar';
+import { Badge } from '../../atoms/Badge';
 
 type Props = {
   label?: React.ReactNode;
@@ -50,6 +51,8 @@ type Props = {
    * @default 'squared'
    */
   kind?: 'rounded' | 'squared';
+
+  hasNotification?: boolean;
 };
 
 export const SideMenuItem: React.FC<Props> = (props) => {
@@ -63,6 +66,15 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     }
     props.onClick();
   };
+
+  const NotificationWrapper: React.FC = ({ children }) =>
+    props.hasNotification ? (
+      <Badge size="compact" status="warning" kind="active">
+        {children}
+      </Badge>
+    ) : (
+      <>{children} </>
+    );
 
   return (
     <WrapperTag
@@ -85,15 +97,20 @@ export const SideMenuItem: React.FC<Props> = (props) => {
           )}
           {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
           <div className="telia-side-menu-item-label">{props.label}</div>
+          {props.hasNotification && <Badge size="compact" status="warning" kind="active" />}
           {props.children}
         </Tag>
       ) : (
         <Tag className="telia-side-menu-item__tablet" onClick={props.onClick} href={props.href}>
-          {props.avatar ? (
-            <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
-          ) : (
-            <Icon className="telia-side-menu-item__icon" icon={props.icon} />
-          )}
+          <NotificationWrapper>
+            <>
+              {props.avatar ? (
+                <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
+              ) : (
+                <Icon className="telia-side-menu-item__icon" icon={props.icon} />
+              )}
+            </>
+          </NotificationWrapper>
         </Tag>
       )}
     </WrapperTag>

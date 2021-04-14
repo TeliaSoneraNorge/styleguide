@@ -39,10 +39,11 @@ export const White = () => {
                 href="/abonnenter"
               />
               <SideMenuItem
+                hasNotification={true}
                 label={
                   <div style={{ display: 'flex', alignItems: 'center' }}>
                     <div style={{ paddingRight: '0.5rem' }}>Økonomi</div>
-                    <Badge size="compact" status="warning" kind="active" />
+                    {/* <Badge size="compact" status="warning" kind="active" /> */}
                   </div>
                 }
                 icon="money"
