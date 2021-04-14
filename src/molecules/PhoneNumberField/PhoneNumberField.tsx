@@ -21,6 +21,7 @@ export type PhoneNumberFieldProps = {
   placeholder?: string;
   label?: string;
   disabled?: boolean;
+  size?: 'default' | 'compact';
   /**
    * Event handler to allow handling validations after on blur
    */
@@ -35,11 +36,12 @@ export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
     <div>
       <div
         className={cn('telia-phonenumber', {
-          'telia-phonenumber__error': props.error,
-          'telia-phonenumber-countryCode__active': open,
+          'telia-phonenumber--compact': props.size === 'compact',
+          'telia-phonenumber--error': props.error,
+          'telia-phonenumber__countryCode--active': open,
         })}
       >
-        {props.label && <label className={cn('telia-phonenumber-label')}>{props.label}</label>}
+        {props.label && <label className={cn('telia-phonenumber__label')}>{props.label}</label>}
         <Dropdown open={open} setOpen={setOpen}>
           <DropdownToggle label={countryCode} color="white" disabled={props.disabled} />
           <DropdownMenu>
@@ -56,9 +58,10 @@ export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
           disabled={props.disabled}
           maxlength={props.maxlength}
           onBlur={props.onBlur}
+          size={props.size === 'compact' ? 'compact' : 'default'}
         />
       </div>
-      <small className={cn('telia-phonenumber-helptext', { 'telia-phonenumber-helptext--error': props.error })}>
+      <small className={cn('telia-phonenumber__helptext', { 'telia-phonenumber__helptext--error': props.error })}>
         {props.helpText}
       </small>
     </div>

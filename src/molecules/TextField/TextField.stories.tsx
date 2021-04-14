@@ -30,7 +30,7 @@ export const Default = () => {
             helpText={state === 'error' ? state : ''}
           />
           <TextField label="Field label" helpText="Help or instrictions" />
-          <TextField label="Field label" helpText={<div style={{ textAlign: 'start' }}>Help on left side</div>} />
+          <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
         </div>
@@ -41,7 +41,7 @@ export const Default = () => {
             helpText="Help or instrictions"
             rightContent={<Button size="compact" kind="secondary-text" icon="close" onClick={action('button')} />}
           />
-          <TextField label="Field label" helpText={<div style={{ textAlign: 'start' }}>Help on left side</div>} />
+          <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
         </div>

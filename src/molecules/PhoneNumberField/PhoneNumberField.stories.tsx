@@ -108,6 +108,19 @@ export const Default = () => {
             onChangeCountryCode={setCountryCode}
             disabled
           />
+          <br />
+          <br />
+          With <code>{'size="compact"'}</code>
+          <PhoneNumberField
+            countryCodes={countryCodes}
+            number={number}
+            countryCode={countryCode}
+            onChangeNumber={setNumber}
+            onChangeCountryCode={setCountryCode}
+            size="compact"
+          />
+          <br />
+          <br />
         </div>
       </div>
     </>

@@ -52,41 +52,48 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
         }}
         tabIndex={props.tabIndex ?? 0}
       />
-      <div
-        className={cs({
-          'telia-checkbox__icon-container': true,
-          'telia-checkbox__icon-container--checked':
-            ('partial' in props && props.partial) || ('checked' in props && props.checked),
-          'telia-checkbox__icon-container--disabled': props.disabled,
-          'telia-checkbox__icon-container--disabled-and-checked':
-            props.disabled && (('checked' in props && props.checked) || ('partial' in props && props.partial)),
-          [props.className]: props.className,
-        })}
-      >
-        <Icon
-          icon="check-mark"
-          className={cs('telia-checkbox__icon', {
-            'telia-checkbox__icon--visible': 'checked' in props && props.checked,
+      <div className="telia-checkbox__container">
+        <div
+          className={cs('telia-checkbox__checkbox-container', {
+            'telia-checkbox__checkbox-container--checked': 'checked' in props && props.checked,
           })}
-          style={{ width: '1rem', height: '1rem' }}
-        />
-        <Icon
-          icon="minus"
-          className={cs('telia-checkbox__icon', {
-            'telia-checkbox__icon--visible':
-              'checked' in props && !props.checked && 'partial' in props && props.partial,
+        >
+          <div
+            className={cs({
+              'telia-checkbox__icon-container': true,
+              'telia-checkbox__icon-container--checked':
+                ('partial' in props && props.partial) || ('checked' in props && props.checked),
+              'telia-checkbox__icon-container--disabled': props.disabled,
+              'telia-checkbox__icon-container--disabled-and-checked':
+                props.disabled && (('checked' in props && props.checked) || ('partial' in props && props.partial)),
+              [props.className]: props.className,
+            })}
+          >
+            <Icon
+              icon="check-mark"
+              className={cs('telia-checkbox__icon', {
+                'telia-checkbox__icon--visible': 'checked' in props && props.checked,
+              })}
+              style={{ width: '1rem', height: '1rem' }}
+            />
+            <Icon
+              icon="minus"
+              className={cs('telia-checkbox__icon', {
+                'telia-checkbox__icon--visible':
+                  'checked' in props && !props.checked && 'partial' in props && props.partial,
+              })}
+              style={{ width: '1rem', height: '1rem' }}
+            />
+          </div>{' '}
+        </div>
+        <span
+          className={cs('telia-checkbox__label', {
+            'telia-checkbox__label--hidden': props.hiddenLabel,
           })}
-          style={{ width: '1rem', height: '1rem' }}
-        />
+        >
+          {props.label}
+        </span>
       </div>
-      <span
-        className={cs({
-          checkbox__label: true,
-          'telia-checkbox__label--hidden': props.hiddenLabel,
-        })}
-      >
-        {props.label}
-      </span>
     </label>
   );
 };

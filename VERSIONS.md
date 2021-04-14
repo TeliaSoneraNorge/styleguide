@@ -15,20 +15,28 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.41.0
+
+- Updated Chip component
+  - New size (32px for all), size prop is removed
+  - Square chip is added
+  - Kind prop is renamed to color
+  - Change classnames to fit BEM pattern
+- Updated TextField
+  - Help text is left by default
+- Updated PhoneNumberField
+  - Change classnames to fit BEM battern
+  - Added size prop
+
 ## 1.40.0
-- Refactored StepByStep component
-    - Written in typescript
-    - `Step`, `Content` and `Descriptions` were perviously properties of the `StepByStep` class. These are now exported as components from
-index.ts and accessed from @telia/styleguide as `Step`, `StepContent` and `StepDescription`.
-    - Enable customizing of icon, header and content in StepDescription
-    - Add different sizes for a StepByStep component
-    - Support dashed borders
-    - Disable animations for non-interactive StepByStep components
-    
+
+- Refactored StepByStep component - Written in typescript - `Step`, `Content` and `Descriptions` were perviously properties of the `StepByStep` class. These are now exported as components from
+  index.ts and accessed from @telia/styleguide as `Step`, `StepContent` and `StepDescription`. - Enable customizing of icon, header and content in StepDescription - Add different sizes for a StepByStep component - Support dashed borders - Disable animations for non-interactive StepByStep components
 
 ## 1.39.7
+
 - Added more colors to the [Color Palette](https://styleguide.channelapi.telia.no/?path=/docs/introduction-styleguide--color-palette)
-    - [Commit 385fc2c](https://github.com/TeliaSoneraNorge/styleguide/pull/931/commits/385fc2c34d4660a96d1b9c83318283847a2cfb2e)
+  - [Commit 385fc2c](https://github.com/TeliaSoneraNorge/styleguide/pull/931/commits/385fc2c34d4660a96d1b9c83318283847a2cfb2e)
 
 ## 1.39.0
 
