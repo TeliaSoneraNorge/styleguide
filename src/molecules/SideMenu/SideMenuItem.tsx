@@ -3,17 +3,16 @@ import { Icon, IconDefinition } from '../../index';
 import cn from 'classnames';
 import { Avatar } from '../../index';
 import { useBreakpoint } from '../../utils/useBreakpoint';
+import { AvatarProps } from '../Avatar/Avatar';
 
 type Props = {
-  label?: string;
+  label?: React.ReactNode;
   /**
    * Props to render an avatar in the item.
    * See Avatar.tsx
    */
-  avatar?: {
-    text?: string;
-    img?: string;
-  };
+  avatar?: AvatarProps;
+
   /**
    * Icon to display in front of item
    */
