@@ -1,12 +1,14 @@
 import React from 'react';
 import { Icon, IconDefinition } from '../../index';
 import cn from 'classnames';
+import { Badge } from '../../atoms/Badge';
 interface Props {
   onClick: () => void;
   icon: IconDefinition;
   label?: string;
   href?: string;
   active?: boolean;
+  hasNotification?: boolean;
 }
 export const MobileNavBarItem = (props: Props) => {
   const Tag = props.href ? 'a' : 'button';
@@ -17,6 +19,16 @@ export const MobileNavBarItem = (props: Props) => {
     }
     props.onClick();
   };
+
+  const NotificationWrapper: React.FC = ({ children }) =>
+    props.hasNotification ? (
+      <Badge size="compact" status="warning" kind="active">
+        {children}
+      </Badge>
+    ) : (
+      <>{children}</>
+    );
+
   return (
     <li>
       <Tag
@@ -28,8 +40,12 @@ export const MobileNavBarItem = (props: Props) => {
         data-title={props.label}
         href={props.href}
       >
-        <Icon icon={props.icon} />
-        {props.label ? <div className="telia-mobile-nav-bar-item-label">{props.label}</div> : null}
+        <NotificationWrapper>
+          <div>
+            <Icon icon={props.icon} />
+            {props.label ? <div className="telia-mobile-nav-bar-item-label">{props.label}</div> : null}
+          </div>
+        </NotificationWrapper>
       </Tag>
     </li>
   );
