@@ -52,7 +52,14 @@ export const MobileNavBarMoreMenu = (props: Props) => {
             <button className="telia-mobile-nav-bar__more-menu__content__button" ref={index === 0 ? first : undefined}>
               <Icon className="telia-mobile-nav-bar__more-menu__content__button__icon" icon={item.icon} />
               {item.label}
-              {item.hasNotification && <Badge size="compact" status="warning" kind="active" />}
+              {item.hasNotification && (
+                <Badge
+                  className="telia-mobile-nav-bar__more-menu__content__button__badge"
+                  size="compact"
+                  status="warning"
+                  kind="active"
+                />
+              )}
             </button>
           )
         )}

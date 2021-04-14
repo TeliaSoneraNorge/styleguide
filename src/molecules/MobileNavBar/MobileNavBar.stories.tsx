@@ -78,7 +78,7 @@ export const WithMoreOptionsScroll = () => {
         <MobileNavBarMore
           items={[
             { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { onClick: () => setActive(3), icon: 'abroad', label: 'Label', hasNotification: true },
             { divider: true },
             { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
             { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
