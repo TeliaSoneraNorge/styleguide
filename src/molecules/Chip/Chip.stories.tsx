@@ -28,7 +28,7 @@ export const ChoiceChips = () => (
     <br />
     <h3>Choice Chip - Grey</h3>
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '25% 25% 25% 25%' }}>
-      <Chip label="Chippy" color="grey" />
+      <Chip label="Chippy Chippy" color="grey" />
 
       <Chip label="Chippy" active color="grey" />
 
@@ -73,7 +73,7 @@ export const InputChips = () => (
     <h3>Input Chip - Grey</h3>
     <br />
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
-      <Chip label="Chippy" mode="input" color="grey" />
+      <Chip label="Chippy Chippy" mode="input" color="grey" />
       <Chip label="Chippy" mode="input" color="grey" disabled />
       <Chip label="Chippy" mode="input" color="grey" icon="check-mark" />
     </div>
