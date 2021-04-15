@@ -3,24 +3,24 @@ import { Icon, IconDefinition } from '../../index';
 import cn from 'classnames';
 import { Avatar } from '../../index';
 import { useBreakpoint } from '../../utils/useBreakpoint';
+import { AvatarProps } from '../Avatar/Avatar';
+import { Badge } from '../../atoms/Badge';
 
 type Props = {
-  label?: string;
+  label?: React.ReactNode;
   /**
    * Props to render an avatar in the item.
    * See Avatar.tsx
    */
-  avatar?: {
-    text?: string;
-    img?: string;
-  };
+  avatar?: Omit<AvatarProps, 'onClick' | 'href' | 'tabIndex'>;
+
   /**
    * Icon to display in front of item
    */
   icon?: IconDefinition;
   /**
    * Whether the item is currently active.
-   * Eg. we are on a page corresponding to an entry from the meny
+   * Eg. we are on a page corresponding to an entry from the menu
    */
   active?: boolean;
   /**
@@ -34,7 +34,7 @@ type Props = {
   onClick: () => void;
 
   /**
-   * Wheter to render the iten as an li or div.
+   * Whether to render the item as an li or div.
    * The outermost tag should always be an <li>.
    *
    * If you need custom logic and markup causing the SideMenuItem
@@ -51,6 +51,8 @@ type Props = {
    * @default 'squared'
    */
   kind?: 'rounded' | 'squared';
+
+  hasNotification?: boolean;
 };
 
 export const SideMenuItem: React.FC<Props> = (props) => {
@@ -64,6 +66,15 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     }
     props.onClick();
   };
+
+  const NotificationWrapper: React.FC = ({ children }) =>
+    props.hasNotification ? (
+      <Badge size="compact" status="warning" kind="active">
+        {children}
+      </Badge>
+    ) : (
+      <>{children} </>
+    );
 
   return (
     <WrapperTag
@@ -81,20 +92,27 @@ export const SideMenuItem: React.FC<Props> = (props) => {
         <Tag className={cn('telia-side-menu-item__desktop')} onClick={handleClick} href={props.href} tabIndex={1}>
           {props.avatar && (
             <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
+              <Avatar size="compact" {...props.avatar} />
             </div>
           )}
           {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
-          <div className="telia-side-menu-item-label">{props.label}</div>
+          <div className="telia-side-menu-item__label">{props.label}</div>
+          {props.hasNotification && (
+            <Badge className="telia-side-menu-item__badge" size="compact" status="warning" kind="active" />
+          )}
           {props.children}
         </Tag>
       ) : (
         <Tag className="telia-side-menu-item__tablet" onClick={props.onClick} href={props.href}>
-          {props.avatar ? (
-            <Avatar size="compact" text={props.avatar.text} img={props.avatar.img} />
-          ) : (
-            <Icon className="telia-side-menu-item__icon" icon={props.icon} />
-          )}
+          <NotificationWrapper>
+            <>
+              {props.avatar ? (
+                <Avatar size="compact" {...props.avatar} />
+              ) : (
+                <Icon className="telia-side-menu-item__icon" icon={props.icon} />
+              )}
+            </>
+          </NotificationWrapper>
         </Tag>
       )}
     </WrapperTag>

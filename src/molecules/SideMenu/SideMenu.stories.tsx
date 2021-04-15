@@ -4,6 +4,7 @@ import { action } from '@storybook/addon-actions';
 import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import b from './business.svg';
 import { withDesign } from 'storybook-addon-designs';
+import { Badge } from '../../atoms/Badge';
 
 export default {
   component: SideMenu,
@@ -38,7 +39,8 @@ export const White = () => {
                 href="/abonnenter"
               />
               <SideMenuItem
-                label="Økonomi"
+                hasNotification={true}
+                label={<div style={{ fontWeight: 'bold' }}>Økonomi</div>}
                 icon="money"
                 onClick={() => setActive(2)}
                 active={active === 2}
