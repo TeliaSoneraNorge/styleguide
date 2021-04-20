@@ -134,6 +134,10 @@
     margin-left: 0.5rem;
   }
 
+  &__vertical-line-container {
+    margin: 0 1rem;
+  }
+
   &__vertical-line {
     position: absolute;
     border-left: 1px solid var(--grey-darker);
@@ -247,7 +251,7 @@
 
   &__description {
     text-align: left;
-    padding-left: 0.5rem;
+    padding-left: 2.5rem;
   }
 
   &__description2 {
@@ -368,6 +372,14 @@
 
     @media all and (min-width: 41em) {
       display: none;
+    }
+  }
+
+  &__flex {
+    display: flex;
+
+    &--grow {
+      flex: 1 1 auto;
     }
   }
 }

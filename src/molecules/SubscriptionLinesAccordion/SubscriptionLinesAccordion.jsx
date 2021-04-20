@@ -92,56 +92,49 @@ const SubscriptionLinesAccordion = ({
           })}
         >
           <div className="subscription-lines-accordion__header-first-row">
-            {dataAmountIcon ? (
-              <div className="subscription-lines-accordion__heading-container">
-                <div className="subscription-lines-accordion__desktop-only">
-                  <div className="subscription-lines-accordion__heading-icon">
-                    {dataAmountIcon}
-                    <Heading className="subscription-lines-accordion__heading-unit" tag="h2" size="s" text={dataUnit} />
+            <div className="subscription-lines-accordion__flex subscription-lines-accordion__flex--grow">
+              {dataAmountIcon ? (
+                <div className="subscription-lines-accordion__heading-container">
+                  <div className="subscription-lines-accordion__desktop-only">
+                    <div className="subscription-lines-accordion__heading-icon">
+                      {dataAmountIcon}
+                      <Heading
+                        className="subscription-lines-accordion__heading-unit"
+                        tag="h2"
+                        size="s"
+                        text={dataUnit}
+                      />
+                    </div>
+                  </div>
+                  <div className="subscription-lines-accordion__heading-icon-container subscription-lines-accordion__mobile-only">
+                    <div className="subscription-lines-accordion__heading-icon">{dataAmountIcon}</div>
+                    <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s" text={dataUnit} />
                   </div>
                 </div>
-                <div className="subscription-lines-accordion__heading-icon-container subscription-lines-accordion__mobile-only">
-                  <div className="subscription-lines-accordion__heading-icon">{dataAmountIcon}</div>
-                  <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s" text={dataUnit} />
-                </div>
-              </div>
-            ) : (
-              <div className="subscription-lines-accordion__heading-container">
-                <div className="subscription-lines-accordion__mobile-only">
-                  <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s">
-                    {dataAmount} {dataUnit}
+              ) : (
+                <div className="subscription-lines-accordion__heading-container">
+                  <div className="subscription-lines-accordion__mobile-only">
+                    <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s">
+                      {dataAmount} {dataUnit}
+                      {extraDataString && (
+                        <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
+                      )}
+                    </Heading>
+                  </div>
+                  <div className="subscription-lines-accordion__desktop-only">
+                    <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s" text={dataAmount}>
+                      <div className="subscription-lines-accordion__heading-unit">{dataUnit}</div>
+                    </Heading>
                     {extraDataString && (
-                      <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
+                      <div className="subscription-lines-accordion__heading-extra">{extraDataString}</div>
                     )}
-                  </Heading>
+                  </div>
                 </div>
-                <div className="subscription-lines-accordion__desktop-only">
-                  <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s" text={dataAmount}>
-                    <div className="subscription-lines-accordion__heading-unit">{dataUnit}</div>
-                  </Heading>
-                  {extraDataString && (
-                    <div className="subscription-lines-accordion__heading-extra">{extraDataString}</div>
-                  )}
+              )}
+              <div className="subscription-lines-accordion__description">
+                <div className="subscription-lines-accordion__description2 subscription-lines-accordion__desktop-only">
+                  {description1}
                 </div>
-              </div>
-            )}
-            <div className="subscription-lines-accordion__description">
-              <div className="subscription-lines-accordion__description2 subscription-lines-accordion__desktop-only">
-                {description1}
-              </div>
-              <div
-                className={cn('subscription-lines-accordion__description1 subscription-lines-accordion__desktop-only', {
-                  'subscription-lines-accordion__description1--inverted': isInverted,
-                })}
-              >
-                {description2}
-              </div>
-            </div>
-            <div>
-              <div className="subscription-lines-accordion__vertical-line"></div>
-            </div>
-            <div className="subscription-lines-accordion__aside">
-              <div className="subscription-lines-accordion__price-container">
                 <div
                   className={cn(
                     'subscription-lines-accordion__description1 subscription-lines-accordion__desktop-only',
@@ -150,27 +143,49 @@ const SubscriptionLinesAccordion = ({
                     }
                   )}
                 >
-                  Totalt for{' '}
-                  <span className="subscription-lines-accordion__description1--bold">{numberOfSubscriptions} stk</span>.
-                </div>
-                <div className="subscription-lines-accordion__desktop-only">
-                  <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
-                  {priceInfo &&
-                    priceInfo.map((info) => (
-                      <span key={info} className="subscription-lines-accordion__price-info">
-                        {info}
-                      </span>
-                    ))}
+                  {description2}
                 </div>
               </div>
             </div>
-            <div className="subscription-lines-accordion__icon-container">
-              <Icon
-                icon="arrow-down"
-                className={cn('subscription-lines-accordion__icon-arrow', {
-                  'subscription-lines-accordion__icon-arrow--isExpanded': isExpanded,
-                })}
-              />
+            <div className="subscription-lines-accordion__vertical-line-container">
+              <div className="subscription-lines-accordion__vertical-line"></div>
+            </div>
+            <div className="subscription-lines-accordion__flex">
+              <div className="subscription-lines-accordion__aside">
+                <div className="subscription-lines-accordion__price-container">
+                  <div
+                    className={cn(
+                      'subscription-lines-accordion__description1 subscription-lines-accordion__desktop-only',
+                      {
+                        'subscription-lines-accordion__description1--inverted': isInverted,
+                      }
+                    )}
+                  >
+                    Totalt for{' '}
+                    <span className="subscription-lines-accordion__description1--bold">
+                      {numberOfSubscriptions} stk
+                    </span>
+                    .
+                  </div>
+                  <div className="subscription-lines-accordion__desktop-only">
+                    <span className="subscription-lines-accordion__price">{formatPrice(price)}</span>
+                    {priceInfo &&
+                      priceInfo.map((info) => (
+                        <span key={info} className="subscription-lines-accordion__price-info">
+                          {info}
+                        </span>
+                      ))}
+                  </div>
+                </div>
+              </div>
+              <div className="subscription-lines-accordion__icon-container">
+                <Icon
+                  icon="arrow-down"
+                  className={cn('subscription-lines-accordion__icon-arrow', {
+                    'subscription-lines-accordion__icon-arrow--isExpanded': isExpanded,
+                  })}
+                />
+              </div>
             </div>
           </div>
         </div>
