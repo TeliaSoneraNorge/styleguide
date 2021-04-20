@@ -65,10 +65,23 @@ const SUBSCRIPTIONS = [
     description1: 'Du sparer 300,- pr md.',
     description2: 'Normalpris 1247,- pr md.',
     isInverted: false,
-    feature: {
-      iconName: 'infinite',
-      name: 'Ubegrenset data',
-    },
+  },
+  {
+    dataAmount: 5,
+    dataUnit: 'GB',
+    id: 'smart5',
+    price: 120,
+    priceInfo: ['pr. md'],
+    description1: 'Du sparer 150,- pr md.',
+    isInverted: false,
+  },
+  {
+    dataAmount: 3,
+    dataUnit: 'GB',
+    id: 'smart3',
+    price: 120,
+    priceInfo: ['pr. md'],
+    isInverted: false,
   },
 ];
 
