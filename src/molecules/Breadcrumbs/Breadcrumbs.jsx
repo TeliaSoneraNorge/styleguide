@@ -5,7 +5,6 @@ import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
   const crumbs = props.crumbs;
-  const dotted = '...';
   let crumb;
 
   crumb = crumbs.map((crumb) => {
@@ -15,6 +14,19 @@ const Breadcrumbs = (props) => {
           <span className="breadcrumb__box">{crumb.name}</span>
         </li>
       );
+    } else if (crumb.id > 0 && crumb.id + 2 < crumbs.length) {
+      if (crumb.id > 1 && crumb.id + 2 < crumbs.length) {
+        // do nothing
+      } else {
+        return (
+          <li key={crumb.id.toString()} className="breadcrumb__element">
+            <span className="breadcrumb__box">{'...'}</span>
+            <span>
+              <ArrowLeftIcon title={'Arrow'} className="breadcrumb__icon" />
+            </span>
+          </li>
+        );
+      }
     } else {
       return (
         <li key={crumb.id.toString()} className="breadcrumb__element">
