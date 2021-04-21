@@ -7,14 +7,14 @@ export default {
 };
 
 const storybook = {
-  home: [
+  homePage: [
     {
       id: 0,
       name: 'Hjem',
       link: './',
     },
   ],
-  mobilsubscription: [
+  mobilsubscriptionPage: [
     {
       id: 0,
       name: 'Hjem',
@@ -26,7 +26,7 @@ const storybook = {
       link: './hjem/mobilabonnement',
     },
   ],
-  familysubscription: [
+  familysubscriptionPage: [
     {
       id: 0,
       name: 'Hjem',
@@ -43,7 +43,7 @@ const storybook = {
       link: './hjem/mobilabonnement/familie',
     },
   ],
-  dotted: [
+  setupPage: [
     {
       id: 0,
       name: 'Hjem',
@@ -62,10 +62,10 @@ const storybook = {
     {
       id: 3,
       name: 'Oppset',
-      link: './hjem/mobilabonnement/familie',
+      link: './hjem/mobilabonnement/familie/oppsett',
     },
   ],
-  multi: [
+  telephonePage: [
     {
       id: 0,
       name: 'Hjem',
@@ -84,22 +84,22 @@ const storybook = {
     {
       id: 3,
       name: 'Konfugurering',
-      link: './hjem/mobilabonnement/familie',
+      link: './hjem/mobilabonnement/familie/konfiguration',
     },
     {
       id: 4,
-      name: 'Telefonkonfigurering',
-      link: './hjem/mobilabonnement/familie',
+      name: 'Telefon',
+      link: './hjem/mobilabonnement/familie/konfiguration/telefon',
     },
   ],
 };
 
-export const Default = () => <Breadcrumbs crumbs={storybook.home} />;
+export const Default = () => <Breadcrumbs crumbs={storybook.homePage} />;
 
-export const MobileSubscription = () => <Breadcrumbs crumbs={storybook.mobilsubscription} />;
+export const MobileSubscription = () => <Breadcrumbs crumbs={storybook.mobilsubscriptionPage} />;
 
-export const Family = () => <Breadcrumbs crumbs={storybook.familysubscription} />;
+export const Family = () => <Breadcrumbs crumbs={storybook.familysubscriptionPage} />;
 
-export const Setup = () => <Breadcrumbs crumbs={storybook.dotted} />;
+export const Setup = () => <Breadcrumbs crumbs={storybook.setupPage} />;
 
-export const Multi = () => <Breadcrumbs crumbs={storybook.multi} />;
+export const Multi = () => <Breadcrumbs crumbs={storybook.telephonePage} />;
