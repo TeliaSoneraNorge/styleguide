@@ -1,12 +1,11 @@
 .breadcrumb {
     &__list {
         line-style-type: none;
-        vertical-align: middle;        
+        vertical-align: middle; 
     }
     
     &__element {
         display: inline-block;
-        vertical-align: middle;  
     }
 
     &__icon {
@@ -14,16 +13,22 @@
         vertical-align: middle;        
         width: 1.1rem;
         color: #a0a0a0;
+        vertical-align: middle; 
     }
 
     &__call-to-action {
         text-decoration: none;
-        vertical-align: middle;        
+        vertical-align: middle; 
+        
+        &:hover, &:visited, &:active, &:link {
+            color: inherit;
+            text-decoration: none;
+        }
     }
 
     &__box {
         vertical-align: middle;
-        padding-right: 0.4rem; 
-        padding-left: 0.4rem;        
+        padding-right: 0.5rem; 
+        padding-left: 0.5rem;   
     }
 }

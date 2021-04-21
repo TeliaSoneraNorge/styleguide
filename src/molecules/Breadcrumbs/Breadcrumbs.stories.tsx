@@ -14,7 +14,7 @@ const storybook = {
       link: './',
     },
   ],
-  mobilsubscriptionPage: [
+  step1Page: [
     {
       id: 0,
       name: 'Hjem',
@@ -22,11 +22,11 @@ const storybook = {
     },
     {
       id: 1,
-      name: 'Mobilabonnement',
-      link: './hjem/mobilabonnement',
+      name: 'Current page',
+      link: './hjem/currentpage',
     },
   ],
-  familysubscriptionPage: [
+  step2Page: [
     {
       id: 0,
       name: 'Hjem',
@@ -34,16 +34,16 @@ const storybook = {
     },
     {
       id: 1,
-      name: 'Mobilabonnement',
-      link: './hjem/mobilabonnement',
+      name: 'Step1',
+      link: './hjem/step1',
     },
     {
       id: 2,
-      name: 'Famile',
-      link: './hjem/mobilabonnement/familie',
+      name: 'Current page',
+      link: './hjem/step1/currentpage',
     },
   ],
-  setupPage: [
+  step3Page: [
     {
       id: 0,
       name: 'Hjem',
@@ -51,21 +51,21 @@ const storybook = {
     },
     {
       id: 1,
-      name: 'Mobilabonnement',
-      link: './hjem/mobilabonnement',
+      name: 'Step1',
+      link: './hjem/currentpage',
     },
     {
       id: 2,
-      name: 'Famile',
-      link: './hjem/mobilabonnement/familie',
+      name: 'Step2',
+      link: './hjem/step1/step2',
     },
     {
       id: 3,
-      name: 'Oppset',
-      link: './hjem/mobilabonnement/familie/oppsett',
+      name: 'Current page',
+      link: './hjem/step1/step2/currentpage',
     },
   ],
-  telephonePage: [
+  step4Page: [
     {
       id: 0,
       name: 'Hjem',
@@ -73,33 +73,33 @@ const storybook = {
     },
     {
       id: 1,
-      name: 'Mobilabonnement',
-      link: './hjem/mobilabonnement',
+      name: 'Step1',
+      link: './hjem/step1',
     },
     {
       id: 2,
-      name: 'Famile',
-      link: './hjem/mobilabonnement/familie',
+      name: 'Step2',
+      link: './hjem/step1/step2',
     },
     {
       id: 3,
-      name: 'Konfugurering',
-      link: './hjem/mobilabonnement/familie/konfiguration',
+      name: 'Step3',
+      link: './hjem/step1/step2/step3',
     },
     {
       id: 4,
-      name: 'Telefon',
-      link: './hjem/mobilabonnement/familie/konfiguration/telefon',
+      name: 'Current page',
+      link: './hjem/step1/step2/step3/currentpage',
     },
   ],
 };
 
 export const Default = () => <Breadcrumbs crumbs={storybook.homePage} />;
 
-export const MobileSubscription = () => <Breadcrumbs crumbs={storybook.mobilsubscriptionPage} />;
+export const Step1 = () => <Breadcrumbs crumbs={storybook.step1Page} />;
 
-export const Family = () => <Breadcrumbs crumbs={storybook.familysubscriptionPage} />;
+export const Step2 = () => <Breadcrumbs crumbs={storybook.step2Page} />;
 
-export const Setup = () => <Breadcrumbs crumbs={storybook.setupPage} />;
+export const Step3 = () => <Breadcrumbs crumbs={storybook.step3Page} />;
 
-export const Multi = () => <Breadcrumbs crumbs={storybook.telephonePage} />;
+export const Step4 = () => <Breadcrumbs crumbs={storybook.step4Page} />;
