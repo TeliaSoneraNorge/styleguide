@@ -1,14 +1,76 @@
 import React from 'react';
-import { Breadcrumbs, Container } from '../../index';
-import img from '../../stories/sampleImages';
+import { Breadcrumbs } from '../../index';
 
 export default {
   title: 'Component library/Molecules/Breadcrumbs',
   component: Breadcrumbs,
 };
 
-export const Default = () => (
-  <Container size="large" className="banner--background-grey">
-    <Breadcrumbs></Breadcrumbs>
-  </Container>
-);
+const storybook = {
+  home: [
+    {
+      id: 0,
+      name: 'Hjem',
+      link: './',
+    },
+  ],
+  mobilsubscription: [
+    {
+      id: 0,
+      name: 'Hjem',
+      link: './',
+    },
+    {
+      id: 1,
+      name: 'Mobilabonnement',
+      link: './hjem/mobilabonnement',
+    },
+  ],
+  familysubscription: [
+    {
+      id: 0,
+      name: 'Hjem',
+      link: './',
+    },
+    {
+      id: 1,
+      name: 'Mobilabonnement',
+      link: './hjem/mobilabonnement',
+    },
+    {
+      id: 2,
+      name: 'Famile',
+      link: './hjem/mobilabonnement/familie',
+    },
+  ],
+  dotted: [
+    {
+      id: 0,
+      name: 'Hjem',
+      link: './',
+    },
+    {
+      id: 1,
+      name: 'Mobilabonnement',
+      link: './hjem/mobilabonnement',
+    },
+    {
+      id: 2,
+      name: 'Famile',
+      link: './hjem/mobilabonnement/familie',
+    },
+    {
+      id: 3,
+      name: 'Oppset',
+      link: './hjem/mobilabonnement/familie',
+    },
+  ],
+};
+
+export const Default = () => <Breadcrumbs crumbs={storybook.home} />;
+
+export const MobileSubscription = () => <Breadcrumbs crumbs={storybook.mobilsubscription} />;
+
+export const Family = () => <Breadcrumbs crumbs={storybook.familysubscription} />;
+
+export const Setup = () => <Breadcrumbs crumbs={storybook.dotted} />;
