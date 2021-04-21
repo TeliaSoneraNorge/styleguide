@@ -1,33 +1,39 @@
 import React from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
-import { Icon } from '../../atoms/Icon';
+import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 
-/**
- * Status: *finished*.
- * Category: Boxes
- *
- * Should be placed in a medium or large container. Never small.
- * Should always use white breadcrumbs on grey background and grey breadcrumbs on white background.
- **/
-export default class Breadcrumbs extends React.Component {
-  static propTypes = {};
+const Breadcrumbs = (props) => {
+  const crumbs = props.crumbs;
+  const dotted = '...';
+  let crumb;
 
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className="">
-        <ul className="">
-          Hjem
-          <span className="">
-            <Icon Icon="arrow-down" />
+  crumb = crumbs.map((crumb) => {
+    if (crumb.id + 1 === crumbs.length) {
+      return (
+        <li key={crumb.id.toString()} className="breadcrumb__element">
+          <span className="breadcrumb__box">{crumb.name}</span>
+        </li>
+      );
+    } else {
+      return (
+        <li key={crumb.id.toString()} className="breadcrumb__element">
+          <a href={crumb.link} className="breadcrumb__call-to-action">
+            <span className="breadcrumb__box">{crumb.name}</span>
+          </a>
+          <span>
+            <ArrowLeftIcon title={'Arrow'} className="breadcrumb__icon" />
           </span>
-          Sub page
-        </ul>
-      </div>
-    );
-  }
-}
+        </li>
+      );
+    }
+  });
+
+  return (
+    <div className="breadcrumb">
+      <ul className="breadcrumb__list">{crumb}</ul>
+    </div>
+  );
+};
+
+export default Breadcrumbs;
