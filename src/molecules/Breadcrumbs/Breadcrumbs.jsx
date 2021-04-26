@@ -3,21 +3,21 @@ import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
-  // init
+  // init start values and assign props
   const initCrumbSize = 4;
   const initNumberOfCrumbsAfterMinimization = 2;
   const crumbs = props.crumbs;
 
-  // react hooks
+  // init react hooks
   const [numberOfCrumbsAfterMinimization, setNumberOfCrumbsAfterMinimization] = useState(
     initNumberOfCrumbsAfterMinimization
   );
   const [crumbSize, setCrumbSize] = useState(initCrumbSize);
 
-  // build new crumb based on init values
+  // filter crumb based on init values
   let crumb = crumbs.filter((crumb) => crumb.id === 1 || crumb.id >= crumbs.length - numberOfCrumbsAfterMinimization);
 
-  // add minimaziation item - just for render more icon
+  // add minimaziation item - only used for render minimaziation icon
   if (crumb.length < crumbs.length && crumbs.length > crumbSize) {
     crumb.splice(1, 0, { id: -1, name: 'minimaziation item', link: 'no link' });
   }
@@ -31,7 +31,7 @@ const Breadcrumbs = (props) => {
     }
   };
 
-  // add minimaziation element to breadcrumbs
+  // add minimaziation element to breadcrumb
   const addMinimaziation = (crumb) => {
     return (
       <li key={crumb.id} className="breadcrumb__element">
@@ -70,7 +70,7 @@ const Breadcrumbs = (props) => {
   let counter = 0;
   const length = crumb.length;
 
-  // build breadcrumbs from array
+  // build breadcrumbs from filtered array
   const breadcrumbs = crumb.map((crumb) => {
     counter++;
     if (crumb.id === 0) {

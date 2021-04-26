@@ -6,6 +6,13 @@ export default {
   component: Breadcrumbs,
 };
 
+export const Default = () => <Breadcrumbs crumbs={storybook.homePage} />;
+export const Step1 = () => <Breadcrumbs crumbs={storybook.step1Page} />;
+export const Step2 = () => <Breadcrumbs crumbs={storybook.step2Page} />;
+export const Step3 = () => <Breadcrumbs crumbs={storybook.step3Page} />;
+export const Step4 = () => <Breadcrumbs crumbs={storybook.step4Page} />;
+export const Step5 = () => <Breadcrumbs crumbs={storybook.step5Page} />;
+
 const storybook = {
   homePage: [
     {
@@ -125,15 +132,3 @@ const storybook = {
     },
   ],
 };
-
-export const Default = () => <Breadcrumbs crumbs={storybook.homePage} />;
-
-export const Step1 = () => <Breadcrumbs crumbs={storybook.step1Page} />;
-
-export const Step2 = () => <Breadcrumbs crumbs={storybook.step2Page} />;
-
-export const Step3 = () => <Breadcrumbs crumbs={storybook.step3Page} />;
-
-export const Step4 = () => <Breadcrumbs crumbs={storybook.step4Page} />;
-
-export const Step5 = () => <Breadcrumbs crumbs={storybook.step5Page} />;
