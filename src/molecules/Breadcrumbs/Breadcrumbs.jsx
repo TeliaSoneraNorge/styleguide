@@ -31,7 +31,7 @@ const Breadcrumbs = (props) => {
     }
   };
 
-  // add minimaziation to breadcrumbs
+  // add minimaziation element to breadcrumbs
   const addMinimaziation = (crumb) => {
     return (
       <li key={crumb.id} className="breadcrumb__element">
@@ -43,7 +43,7 @@ const Breadcrumbs = (props) => {
     );
   };
 
-  // add link to page
+  // add link element to breadcrumb
   const addActionLink = (crumb) => {
     return (
       <li key={crumb.id} className="breadcrumb__element">
@@ -55,7 +55,7 @@ const Breadcrumbs = (props) => {
     );
   };
 
-  // add current page - only text in bold
+  // add current page element to breadcrumb
   const addCurrentPage = (crumb) => {
     return (
       <li key={crumb.id} className="breadcrumb__element">
