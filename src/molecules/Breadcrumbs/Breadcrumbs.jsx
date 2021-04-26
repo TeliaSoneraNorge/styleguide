@@ -1,51 +1,93 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ArrowLeftIcon } from '../../atoms/Icon/icons';
+import { MoreIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
+  // init
+  const initCrumbSize = 4;
+  const initNumberOfCrumbsAfterMinimization = 2;
   const crumbs = props.crumbs;
-  let crumb;
 
-  crumb = crumbs.map((crumb) => {
-    if (crumbs.length === 1) {
-      return (
-        <li key={crumb.id.toString()} className="breadcrumb__element">
-          <span className="breadcrumb__box">{crumb.name}</span>
-        </li>
-      );
-    } else if (crumb.id + 1 === crumbs.length) {
-      return (
-        <li key={crumb.id.toString()} className="breadcrumb__element">
-          <span className="breadcrumb__box">
-            <b>{crumb.name}</b>
-          </span>
-        </li>
-      );
-    } else if (crumb.id > 0 && crumb.id + 2 < crumbs.length) {
-      if (crumb.id > 1 && crumb.id + 2 < crumbs.length) {
-        // do nothing...
-      } else {
-        return (
-          <li key={crumb.id.toString()} className="breadcrumb__element">
-            <span className="breadcrumb__box">{'...'}</span>
-            <ArrowLeftIcon title={'Arrow'} className="breadcrumb__icon" />
-          </li>
-        );
-      }
+  // react hooks
+  const [numberOfCrumbsAfterMinimization, setNumberOfCrumbsAfterMinimization] = useState(
+    initNumberOfCrumbsAfterMinimization
+  );
+  const [crumbSize, setCrumbSize] = useState(initCrumbSize);
+
+  // build new crumb based on init values
+  let crumb = crumbs.filter((crumb) => crumb.id === 1 || crumb.id >= crumbs.length - numberOfCrumbsAfterMinimization);
+
+  // add minimaziation item - just for render more icon
+  if (crumb.length < crumbs.length && crumbs.length > crumbSize) {
+    crumb.splice(1, 0, { id: -1, name: 'minimaziation item', link: 'no link' });
+  }
+
+  // button click event
+  const handleClick = () => {
+    setNumberOfCrumbsAfterMinimization(numberOfCrumbsAfterMinimization + 1);
+    setCrumbSize(crumbSize + 1);
+    if (crumb.length >= crumbSize) {
+      crumb.splice(1, 1);
+    }
+  };
+
+  // add minimaziation to breadcrumbs
+  const addMinimaziation = (crumb) => {
+    return (
+      <li key={crumb.id} className="breadcrumb__element">
+        <button type="button" className="breadcrumb__button" onClick={handleClick}>
+          <MoreIcon className="breadcrumb__more-icon" />
+        </button>
+        <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />
+      </li>
+    );
+  };
+
+  // add link to page
+  const addActionLink = (crumb) => {
+    return (
+      <li key={crumb.id} className="breadcrumb__element">
+        <a className="breadcrumb__link" href={crumb.link}>
+          {crumb.name}
+        </a>
+        <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />
+      </li>
+    );
+  };
+
+  // add current page - only text in bold
+  const addCurrentPage = (crumb) => {
+    return (
+      <li key={crumb.id} className="breadcrumb__element">
+        <span className="breadcrumb__current-page">
+          <b>{crumb.name}</b>
+        </span>
+      </li>
+    );
+  };
+
+  // init counter and length
+  let counter = 0;
+  const length = crumb.length;
+
+  // build breadcrumbs from array
+  const breadcrumbs = crumb.map((crumb) => {
+    counter++;
+    if (crumb.id === 0) {
+      // do nothing - landing page => Telia logo will refresh page
+    } else if (crumb.id === -1) {
+      return addMinimaziation(crumb);
+    } else if (length === counter) {
+      return addCurrentPage(crumb);
     } else {
-      return (
-        <li key={crumb.id.toString()} className="breadcrumb__element">
-          <a href={crumb.link} className="breadcrumb__call-to-action">
-            <span className="breadcrumb__box">{crumb.name}</span>
-          </a>
-          <ArrowLeftIcon title={'Arrow'} className="breadcrumb__icon" />
-        </li>
-      );
+      return addActionLink(crumb);
     }
   });
 
+  // render breadcrumbs
   return (
     <div className="breadcrumb">
-      <ul className="breadcrumb__list">{crumb}</ul>
+      <ul className="breadcrumb__list">{breadcrumbs}</ul>
     </div>
   );
 };
