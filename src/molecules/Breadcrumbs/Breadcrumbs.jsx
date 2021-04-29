@@ -3,10 +3,11 @@ import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
-  const initfirstPos = props.crumbs.length - 2;
-  const initlastPos = props.crumbs.length - 1;
-  const [first, setFirstPosition] = useState(initfirstPos);
-  const [last, setLastPosition] = useState(initlastPos);
+  const firstElementCrumb = 0;
+  const lastElementCrumb = props.crumbs.length - 1;
+  const initFirst = props.crumbs.length - 2;
+  const [first, setFirst] = useState(initFirst);
+  const [last, setLast] = useState(lastElementCrumb);
 
   let key = 0;
   const crumbs = props.crumbs.map((crumb) => {
@@ -14,16 +15,16 @@ const Breadcrumbs = (props) => {
   });
 
   const handleScrollLeft = () => {
-    if (first > 0) {
-      setFirstPosition(first - 1);
-      setLastPosition(last - 1);
+    if (first > firstElementCrumb) {
+      setFirst(first - 1);
+      setLast(last - 1);
     }
   };
 
   const handleScrollRight = () => {
-    if (last < crumbs.length - 1) {
-      setFirstPosition(first + 1);
-      setLastPosition(last + 1);
+    if (last < lastElementCrumb) {
+      setFirst(first + 1);
+      setLast(last + 1);
     }
   };
 
@@ -68,10 +69,10 @@ const Breadcrumbs = (props) => {
       if (crumb.key === first) {
         return renderLink(crumb);
       }
-      if (crumb.key === last && last === crumbs.length - 1) {
+      if (crumb.key === last && last === lastElementCrumb) {
         return renderCurrentPage(crumb);
       }
-      if (crumb.key === last && last < crumbs.length - 1) {
+      if (crumb.key === last && last < lastElementCrumb) {
         return renderLink(crumb);
       }
       if (crumb.key === 1) {
@@ -84,7 +85,7 @@ const Breadcrumbs = (props) => {
     breadcrumbs.splice(2, 0, renderMinification(-1, true, handleScrollLeft));
   }
 
-  if (last < crumbs.length - 1) {
+  if (last < lastElementCrumb) {
     breadcrumbs.splice(last + 2, 0, renderMinification(-10, false, handleScrollRight));
   }
 
