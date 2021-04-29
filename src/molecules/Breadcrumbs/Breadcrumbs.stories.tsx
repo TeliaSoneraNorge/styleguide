@@ -12,6 +12,7 @@ export const Step2 = () => <Breadcrumbs crumbs={storybook.step2Page} />;
 export const Step3 = () => <Breadcrumbs crumbs={storybook.step3Page} />;
 export const Step4 = () => <Breadcrumbs crumbs={storybook.step4Page} />;
 export const Step5 = () => <Breadcrumbs crumbs={storybook.step5Page} />;
+export const Step6 = () => <Breadcrumbs crumbs={storybook.step6Page} />;
 
 const storybook = {
   homePage: [
@@ -27,7 +28,7 @@ const storybook = {
     },
     {
       name: 'Current page',
-      link: './hjem/currentpage',
+      link: './',
     },
   ],
   step2Page: [
@@ -37,11 +38,11 @@ const storybook = {
     },
     {
       name: 'Step1',
-      link: './hjem/step1',
+      link: './',
     },
     {
       name: 'Current page',
-      link: './hjem/step1/currentpage',
+      link: './',
     },
   ],
   step3Page: [
@@ -51,15 +52,15 @@ const storybook = {
     },
     {
       name: 'Step1',
-      link: 'http://localhost:6006/?path=/story/component-library-molecules-breadcrumbs--step-3',
+      link: './',
     },
     {
       name: 'Step2',
-      link: 'http://localhost:6006/?path=/story/component-library-molecules-breadcrumbs--step-3',
+      link: './',
     },
     {
       name: 'Current page',
-      link: './hjem/step1/step2/currentpage',
+      link: './',
     },
   ],
   step4Page: [
@@ -69,19 +70,19 @@ const storybook = {
     },
     {
       name: 'Step1',
-      link: './hjem/step1',
+      link: './',
     },
     {
       name: 'Step2',
-      link: './hjem/step1/step2',
+      link: './',
     },
     {
       name: 'Step3',
-      link: './hjem/step1/step2/step3',
+      link: './',
     },
     {
       name: 'Current page',
-      link: './hjem/step1/step2/step3/currentpage',
+      link: './',
     },
   ],
   step5Page: [
@@ -91,23 +92,69 @@ const storybook = {
     },
     {
       name: 'Step1',
-      link: './hjem/step1',
+      link: './',
     },
     {
       name: 'Step2',
-      link: './hjem/step1/step2',
+      link: './',
     },
     {
       name: 'Step3',
-      link: './hjem/step1/step2/step3',
+      link: './',
     },
     {
       name: 'Step4',
-      link: './hjem/step1/step2/step3/step4',
+      link: './',
     },
     {
       name: 'Current page',
-      link: './hjem/step1/step2/step3/curentpage',
+      link: './',
+    },
+  ],
+  step6Page: [
+    {
+      name: 'Hjem',
+      link: './',
+    },
+    {
+      name: 'Step1',
+      link: './',
+    },
+    {
+      name: 'Step2',
+      link: './',
+    },
+    {
+      name: 'Step3',
+      link: './',
+    },
+    {
+      name: 'Step4',
+      link: './',
+    },
+    {
+      name: 'Step5',
+      link: './',
+    },
+    {
+      name: 'Step6',
+      link: './',
+    },
+    {
+      name: 'Step7',
+      link: './',
+    },
+    {
+      name: 'Step8',
+      link: './',
+    },
+    {
+      name: 'Step9',
+      link: './',
+    },
+    {
+      name: 'Current page',
+      link: './',
     },
   ],
 };

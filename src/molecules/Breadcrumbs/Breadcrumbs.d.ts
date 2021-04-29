@@ -1,7 +1,12 @@
 import * as React from 'react';
 
+interface Crumbs {
+  name: string;
+  link: string;
+}
+
 export interface BreadcrumbsProps {
-  crumbs: Object;
+  crumbs: Crumbs[];
 }
 
 export default class Breadcrumbs extends React.Component<BreadcrumbsProps, any> {
