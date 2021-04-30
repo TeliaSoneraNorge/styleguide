@@ -5,6 +5,7 @@ import { StepFlowFooter } from './StepFlowFooter';
 import { Labels } from './types';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 import { Modal } from '../../molecules/Modal';
+import cn from 'classnames';
 
 type Props = {
   initialStep?: number;
@@ -40,6 +41,11 @@ type Props = {
    * and at the bottom of each step on small screens.
    */
   additionalContent?: React.ReactNode;
+
+  /**
+   * @default 'grey'
+   */
+  color?: 'white' | 'grey';
 };
 
 export const StepFlow = (props: Props) => {
@@ -66,7 +72,12 @@ export const StepFlow = (props: Props) => {
   }, [step, props.children]);
 
   return (
-    <Modal className="telia-step-flow" open={true} setOpen={props.onCancel} size="fullscreen">
+    <Modal
+      className={cn('telia-step-flow', { 'telia-step-flow--white': props.color === 'white' })}
+      open={true}
+      setOpen={props.onCancel}
+      size="fullscreen"
+    >
       <StepFlowHeader
         labels={props.labels}
         title={props.title}
