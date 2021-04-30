@@ -19,7 +19,6 @@ function convertToRgb(hex: string) {
 
 function textColor(hex: string) {
   const rgb = hexToRgb(hex);
-  console.log('rgb: ', rgb);
   // https://stackoverflow.com/questions/3942878/how-to-decide-font-color-in-white-or-black-depending-on-background-color
   // org: rgb.r * 0.299 + rgb.g * 0.587 + rgb.b * 0.114 > 186
 
@@ -33,15 +32,15 @@ function textColor(hex: string) {
   return '#ffffff';
 }
 
-export default Object.keys(colorDefinitions).map(key => {
+export default Object.keys(colorDefinitions).map((key) => {
   // We know that `key` is only ever one of the valid keys.
   const definition = colorDefinitions[key as keyof typeof colorDefinitions];
   return {
     // Convert from 'corePurple500' to 'Core Purple 500'
     name: key
-      .replace(/[A-Z0-9]+/g, m => ` ${m}`)
-      .replace(/\s./g, match => match.toUpperCase())
-      .replace(/^./, m => m.toUpperCase())
+      .replace(/[A-Z0-9]+/g, (m) => ` ${m}`)
+      .replace(/\s./g, (match) => match.toUpperCase())
+      .replace(/^./, (m) => m.toUpperCase())
       .trim(),
 
     // Hex representation: '#ff0000'
@@ -55,7 +54,7 @@ export default Object.keys(colorDefinitions).map(key => {
 
     // Any aliases for this color
     alias: Object.keys(colorAliases)
-      .filter(a => colorAliases[a as keyof typeof colorAliases] === definition)
+      .filter((a) => colorAliases[a as keyof typeof colorAliases] === definition)
       .join(', '),
   };
 });

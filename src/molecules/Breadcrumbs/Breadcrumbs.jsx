@@ -3,95 +3,95 @@ import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
-  const firstElementCrumb = 0;
-  const lastElementCrumb = props.crumbs.length - 1;
-  const initFirst = props.crumbs.length - 2;
-  const [first, setFirst] = useState(initFirst);
-  const [last, setLast] = useState(lastElementCrumb);
+  const alwaysDisplayRootCrumb = true;
+  const pagingSize = 1;
+  const pageSize = 3;
 
-  let key = 0;
-  const crumbs = props.crumbs.map((crumb) => {
-    return { key: key++, name: crumb.name, link: crumb.link };
+  const lastCrumbIndex = props.crumbs.length - 1;
+
+  const [lastVisibleIndex, setLastVisibleIndex] = useState(lastCrumbIndex);
+  const firstVisibleIndex = lastVisibleIndex - pageSize + 1 + (alwaysDisplayRootCrumb ? 1 : 0);
+
+  const onPagingLeft = () => {
+    setLastVisibleIndex(Math.max(lastVisibleIndex - pagingSize, pageSize - 1));
+  };
+
+  const onPagingRight = () => {
+    setLastVisibleIndex(Math.min(lastVisibleIndex + pagingSize, lastCrumbIndex));
+  };
+
+  const crumbs = props.crumbs.map((crumb, i) => {
+    return { key: i, name: crumb.name, link: crumb.link, left: false, right: false };
   });
 
-  const handleScrollLeft = () => {
-    if (first > firstElementCrumb) {
-      setFirst(first - 1);
-      setLast(last - 1);
-    }
-  };
+  const visibleCrumbs = crumbs.filter((c) => {
+    let i = c.key;
 
-  const handleScrollRight = () => {
-    if (last < lastElementCrumb) {
-      setFirst(first + 1);
-      setLast(last + 1);
+    if (i === 0 && alwaysDisplayRootCrumb) {
+      return true;
     }
-  };
 
-  const renderMinification = (key, showArrow, scrollDirection) => {
+    if (i === firstVisibleIndex - 1) {
+      c.left = true;
+      return true;
+    }
+
+    if (i === lastVisibleIndex + 1 && lastVisibleIndex < lastCrumbIndex) {
+      c.right = true;
+      return true;
+    }
+
+    if (firstVisibleIndex <= i && i <= lastVisibleIndex) {
+      return true;
+    }
+
+    return false;
+  });
+
+  const CurrentCrumb = ({ crumb }) => {
     return (
-      <li key={key} className="breadcrumb__element">
-        <button type="button" className="breadcrumb__button" onClick={scrollDirection}>
-          <MoreIcon className="breadcrumb__more-icon" />
-        </button>
-        {showArrow && <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />}
-      </li>
+      <span className="breadcrumb__current-page">
+        <b>{crumb.name}</b>
+      </span>
     );
   };
 
-  const renderLink = (crumb) => {
+  const CrumbPaging = ({ onPagingEvent }) => {
     return (
-      <li key={crumb.key} className="breadcrumb__element">
+      <button type="button" className="breadcrumb__button" onClick={onPagingEvent}>
+        <MoreIcon className="breadcrumb__more-icon" />
+      </button>
+    );
+  };
+
+  const CrumbLink = ({ crumb }) => {
+    return (
+      <>
         <a className="breadcrumb__link" href={crumb.link}>
           {crumb.name}
         </a>
         <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />
-      </li>
+      </>
     );
   };
-
-  const renderCurrentPage = (crumb) => {
-    return (
-      <li key={crumb.key} className="breadcrumb__element">
-        <span className="breadcrumb__current-page">
-          <b>{crumb.name}</b>
-        </span>
-      </li>
-    );
-  };
-
-  let breadcrumbs = crumbs.map((crumb) => {
-    if (crumb.key === 0) {
-      // do nothing
-    } else if (crumbs.length === 2 && crumb.key === 1) {
-      return renderCurrentPage(crumb);
-    } else {
-      if (crumb.key === first) {
-        return renderLink(crumb);
-      }
-      if (crumb.key === last && last === lastElementCrumb) {
-        return renderCurrentPage(crumb);
-      }
-      if (crumb.key === last && last < lastElementCrumb) {
-        return renderLink(crumb);
-      }
-      if (crumb.key === 1) {
-        return renderLink(crumb);
-      }
-    }
-  });
-
-  if (first > 2) {
-    breadcrumbs.splice(2, 0, renderMinification(-1, true, handleScrollLeft));
-  }
-
-  if (last < lastElementCrumb) {
-    breadcrumbs.splice(last + 2, 0, renderMinification(-10, false, handleScrollRight));
-  }
 
   return (
     <div className="breadcrumb">
-      <ul className="breadcrumb__list">{breadcrumbs}</ul>
+      <ul className="breadcrumb__list">
+        {visibleCrumbs.map((crumb) => {
+          return (
+            <li key={crumb.key} className="breadcrumb__element">
+              {crumb.key === lastCrumbIndex && !crumb.right && <CurrentCrumb crumb={crumb} />}
+
+              {crumb.left && <CrumbPaging onPagingEvent={onPagingLeft} />}
+
+              {crumb.right && <CrumbPaging onPagingEvent={onPagingRight} />}
+
+              {crumb.key !== lastCrumbIndex && !crumb.left && !crumb.right && <CrumbLink crumb={crumb} />}
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };

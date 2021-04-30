@@ -13,6 +13,7 @@ export const Step3 = () => <Breadcrumbs crumbs={storybook.step3Page} />;
 export const Step4 = () => <Breadcrumbs crumbs={storybook.step4Page} />;
 export const Step5 = () => <Breadcrumbs crumbs={storybook.step5Page} />;
 export const Step6 = () => <Breadcrumbs crumbs={storybook.step6Page} />;
+export const Step7 = () => <Breadcrumbs crumbs={storybook.step7Page} />;
 
 const storybook = {
   homePage: [
@@ -157,4 +158,5 @@ const storybook = {
       link: './',
     },
   ],
+  step7Page: [],
 };
