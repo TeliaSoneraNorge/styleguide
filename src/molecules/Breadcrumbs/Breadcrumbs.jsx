@@ -7,7 +7,9 @@ const Breadcrumbs = (props) => {
   const pageSize = props.pageSize ?? 3;
   const pagingSize = props.pagingSize ?? 1;
 
-  const lastCrumbIndex = props.crumbs.length - 1;
+  const maxCrumbIndex = props.crumbs.length - 1;
+  const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
+  const minIndex = maxIndex - pageSize + 1 + (alwaysShowRootCrumb ? 1 : 0);
 
   const crumbs = props.crumbs.map((crumb, i) => {
     return {
@@ -21,41 +23,45 @@ const Breadcrumbs = (props) => {
     };
   });
 
-  const [lastVisibleIndex, setLastVisibleIndex] = useState(lastCrumbIndex);
-  let firstVisibleIndex = lastVisibleIndex - pageSize + 1 + (alwaysShowRootCrumb ? 1 : 0);
+  const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
 
   const getVisibleCrumbs = () => {
     return crumbs.filter((c) => {
       let i = c.key;
-
-      if (i === 0 && alwaysShowRootCrumb) {
-        return true;
-      }
-
-      if (i === firstVisibleIndex - 1) {
-        c.left = true;
-        return true;
-      }
-
-      if (i === lastVisibleIndex + 1 && lastVisibleIndex < lastCrumbIndex) {
-        c.right = true;
-        return true;
-      }
-
-      if (firstVisibleIndex <= i && i <= lastVisibleIndex) {
-        return true;
-      }
-
-      return false;
+      return i >= minIndex && i <= maxIndex;
     });
   };
 
+  const addPagingCrumbs = (visibleCrumbs) => {
+    if (minIndex > showLeftPagingTreshold && maxCrumbIndex >= pageSize) {
+      let crumbButton = crumbs[minIndex - 1];
+      crumbButton.left = true;
+      visibleCrumbs.splice(0, 0, crumbButton);
+    }
+
+    if (maxIndex < maxCrumbIndex && maxCrumbIndex >= pageSize) {
+      let crumbButton = crumbs[maxIndex + 1];
+      crumbButton.right = true;
+      visibleCrumbs.splice(visibleCrumbs.length, 0, crumbButton);
+    }
+
+    return visibleCrumbs;
+  };
+
+  const addRootCrumb = (visibleCrumbs) => {
+    if (minIndex > 0 && alwaysShowRootCrumb) {
+      visibleCrumbs.splice(0, 0, crumbs[0]);
+    }
+
+    return visibleCrumbs;
+  };
+
   const onPagingLeft = () => {
-    setLastVisibleIndex(Math.max(lastVisibleIndex - pagingSize, pageSize - 1));
+    setMaxIndex(Math.max(maxIndex - pagingSize, pageSize - 1));
   };
 
   const onPagingRight = () => {
-    setLastVisibleIndex(Math.min(lastVisibleIndex + pagingSize, lastCrumbIndex));
+    setMaxIndex(Math.min(maxIndex + pagingSize, maxCrumbIndex));
   };
 
   const CrumbLabel = ({ crumb }) => {
@@ -88,21 +94,25 @@ const Breadcrumbs = (props) => {
   const CrumbRender = ({ crumb }) => {
     return (
       <li key={crumb.key} className="breadcrumb__element">
-        {crumb.key === lastCrumbIndex && !crumb.right && <CrumbLabel crumb={crumb} />}
-
         {crumb.left && <CrumbPaging onPagingEvent={onPagingLeft} />}
 
+        {crumb.key === maxCrumbIndex && !crumb.right && <CrumbLabel crumb={crumb} />}
+
         {crumb.right && <CrumbPaging onPagingEvent={onPagingRight} />}
-        {crumb.key !== lastCrumbIndex && !crumb.left && !crumb.right && <CrumbLink crumb={crumb} />}
+
+        {crumb.key !== maxCrumbIndex && !crumb.left && !crumb.right && <CrumbLink crumb={crumb} />}
       </li>
     );
   };
 
-  let list = getVisibleCrumbs();
+  let displayCrumbs = getVisibleCrumbs();
+  displayCrumbs = addPagingCrumbs(displayCrumbs);
+  displayCrumbs = addRootCrumb(displayCrumbs);
+
   return (
     <div className="breadcrumb">
       <ul className="breadcrumb__list">
-        {list.map((crumb) => (
+        {displayCrumbs.map((crumb) => (
           <CrumbRender crumb={crumb} key={crumb.key} />
         ))}
       </ul>

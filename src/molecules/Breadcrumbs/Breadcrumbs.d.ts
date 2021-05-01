@@ -14,17 +14,8 @@ export interface BreadCrumbsProps {
   pagingSize: ?number = 1;
 }
 
-const defaultProps: BreadCrumbsProps = {
-  crumbs: [],
-  alwaysShowRootCrumb: true,
-  pageSize: 3,
-  pagingSize: 1,
-};
-
 class Breadcrumbs extends React.Component<BreadCrumbsProps, any> {
   render(): JSX.Element;
 }
-
-Breadcrumbs.defaultProps = defaultProps;
 
 export default Breadcrumbsz;
