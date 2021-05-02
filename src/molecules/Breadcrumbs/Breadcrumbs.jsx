@@ -4,8 +4,13 @@ import { MoreIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
   const alwaysShowRootCrumb = props.alwaysShowRootCrumb ?? true;
-  const pageSize = props.pageSize ?? 3;
   const pagingSize = props.pagingSize ?? 1;
+
+  let pageSize = props.pageSize ?? 3;
+
+  if (alwaysShowRootCrumb && pageSize < 2) {
+    pageSize = 2;
+  }
 
   const maxCrumbIndex = props.crumbs.length - 1;
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
@@ -95,6 +100,7 @@ const Breadcrumbs = (props) => {
     return (
       <li key={crumb.key} className="breadcrumb__element">
         {crumb.left && <CrumbPaging onPagingEvent={onPagingLeft} />}
+        {crumb.left && <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />}
 
         {crumb.key === maxCrumbIndex && !crumb.right && <CrumbLabel crumb={crumb} />}
 
