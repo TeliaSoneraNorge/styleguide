@@ -23,8 +23,8 @@ const Breadcrumbs = (props) => {
       link: crumb.link,
       title: crumb.title,
       target: crumb.target,
-      left: false,
-      right: false,
+      isPagingLeft: false,
+      isPagingRight: false,
     };
   });
 
@@ -40,13 +40,13 @@ const Breadcrumbs = (props) => {
   const addPagingCrumbs = (visibleCrumbs) => {
     if (minIndex > showLeftPagingTreshold && maxCrumbIndex >= pageSize) {
       let crumbButton = crumbs[minIndex - 1];
-      crumbButton.left = true;
+      crumbButton.isPagingLeft = true;
       visibleCrumbs.splice(0, 0, crumbButton);
     }
 
     if (maxIndex < maxCrumbIndex && maxCrumbIndex >= pageSize) {
       let crumbButton = crumbs[maxIndex + 1];
-      crumbButton.right = true;
+      crumbButton.isPagingRight = true;
       visibleCrumbs.splice(visibleCrumbs.length, 0, crumbButton);
     }
 
@@ -99,14 +99,18 @@ const Breadcrumbs = (props) => {
   const CrumbRender = ({ crumb }) => {
     return (
       <li key={crumb.key} className="breadcrumb__element">
-        {crumb.left && <CrumbPaging onPagingEvent={onPagingLeft} />}
-        {crumb.left && <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />}
+        {crumb.isPagingLeft && (
+          <>
+            <CrumbPaging onPagingEvent={onPagingLeft} />
+            <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />
+          </>
+        )}
 
-        {crumb.key === maxCrumbIndex && !crumb.right && <CrumbLabel crumb={crumb} />}
+        {crumb.key === maxCrumbIndex && !crumb.isPagingRight && <CrumbLabel crumb={crumb} />}
 
-        {crumb.right && <CrumbPaging onPagingEvent={onPagingRight} />}
+        {crumb.isPagingRight && <CrumbPaging onPagingEvent={onPagingRight} />}
 
-        {crumb.key !== maxCrumbIndex && !crumb.left && !crumb.right && <CrumbLink crumb={crumb} />}
+        {crumb.key !== maxCrumbIndex && !crumb.isPagingLeft && !crumb.isPagingRight && <CrumbLink crumb={crumb} />}
       </li>
     );
   };
