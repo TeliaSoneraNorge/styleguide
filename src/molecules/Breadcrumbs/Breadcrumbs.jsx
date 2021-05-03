@@ -9,18 +9,13 @@ const Breadcrumbs = (props) => {
 
   const alwaysShowRootCrumb = props.alwaysShowRootCrumb ?? true;
   const pagingSize = props.pagingSize ?? 1;
-
-  let pageSize = props.pageSize ?? 3;
-
-  if (alwaysShowRootCrumb && pageSize < 2) {
-    pageSize = 2;
-  }
-
-  const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
-
   const maxCrumbIndex = props.crumbs.length - 1;
+  const pageSize = alwaysShowRootCrumb && props.pageSize < 2 ? 2 : props.pageSize ?? 3;
+
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
   const minIndex = maxIndex - pageSize + 1 + (alwaysShowRootCrumb ? 1 : 0);
+
+  const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
 
   const crumbs = props.crumbs.map((crumb, i) => {
     return {
