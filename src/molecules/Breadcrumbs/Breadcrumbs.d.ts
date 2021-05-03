@@ -1,14 +1,21 @@
 import * as React from 'react';
 
-interface Crumbs {
+interface Crumb {
   name: string;
   link: string;
+  target: ?string;
+  title: ?string;
 }
 
-export interface BreadcrumbsProps {
-  crumbs: Crumbs[];
+export interface BreadCrumbsProps {
+  crumbs: Crumb[];
+  alwaysShowRootCrumb: ?boolean = true;
+  pageSize: ?number = 1;
+  pagingSize: ?number = 1;
 }
 
-export default class Breadcrumbs extends React.Component<BreadcrumbsProps, any> {
+class Breadcrumbs extends React.Component<BreadCrumbsProps, any> {
   render(): JSX.Element;
 }
+
+export default Breadcrumbsz;
