@@ -87,7 +87,7 @@ const BreadCrumbs = (props) => {
 
   const CrumbLabel = ({ crumb }) => {
     return (
-      <span className="telia-breadcrumbs__current-page">
+      <span className="telia-breadcrumbs__crumb-label">
         <b>{crumb.name}</b>
       </span>
     );
@@ -96,7 +96,7 @@ const BreadCrumbs = (props) => {
   const CrumbPaging = ({ onPagingEvent, showArrowLeftIcon }) => {
     return (
       <>
-        <button type="button" className="telia-breadcrumbs__button" onClick={onPagingEvent}>
+        <button type="button" className="telia-breadcrumbs__paging-button" onClick={onPagingEvent}>
           <MoreIcon className="telia-breadcrumbs__more-icon" />
         </button>
         {showArrowLeftIcon && <ArrowLeftIcon className="telia-breadcrumbs__arrow-left-icon" />}
@@ -117,7 +117,7 @@ const BreadCrumbs = (props) => {
 
   const CrumbRender = ({ crumb }) => {
     return (
-      <li key={crumb.key} className="telia-breadcrumbs__element">
+      <li key={crumb.key} className="telia-breadcrumbs__crumb">
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowLeftIcon={true} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
