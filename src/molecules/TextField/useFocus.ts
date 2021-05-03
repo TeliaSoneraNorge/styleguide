@@ -6,7 +6,8 @@ import { TextFieldProps } from './TextField';
  * Add focus handling to the event handlers
  */
 export const useFocus = (props: TextFieldProps) => {
-  const inputRef = useRef<HTMLInputElement>(null);
+  const localRef = useRef<HTMLInputElement>(null);
+  const inputRef = props.inputRef || localRef;
   const [focus, setFocus] = useState(false);
 
   useEffect(() => {

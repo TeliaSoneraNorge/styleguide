@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TextField } from './index';
 import { Icon } from '../../index';
 import { Button } from '../../business/Button';
@@ -137,12 +137,20 @@ export const Compact = () => {
 };
 
 export const focusOnMount = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
   return (
     <>
       <h1>Focus onMount</h1>
       <div style={{ display: 'flex' }}>
         <div style={{ width: '30%', marginRight: '1rem' }}>
-          <TextField size="default" label="Focus onMount label" placeholder="Placeholder text" focusOnMount={true} />
+          <TextField size="default" label="Focus onMount label" placeholder="Placeholder text" inputRef={inputRef} />
         </div>
       </div>
     </>
