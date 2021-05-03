@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
 
-const Breadcrumbs = (props) => {
+const BreadCrumbs = (props) => {
   if (!props.crumbs) {
     return <></>;
   }
@@ -129,4 +129,4 @@ const Breadcrumbs = (props) => {
   );
 };
 
-export default Breadcrumbs;
+export default BreadCrumbs;
