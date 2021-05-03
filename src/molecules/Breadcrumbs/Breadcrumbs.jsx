@@ -9,7 +9,7 @@ const BreadCrumbs = (props) => {
 
   const alwaysShowRootCrumb = props.alwaysShowRootCrumb ?? true;
   const pagingSize = props.pagingSize ?? 1;
-  const pageSize = alwaysShowRootCrumb && props.pageSize < 2 ? 2 : props.pageSize ?? 3;
+  const pageSize = props.alwaysShowRootCrumb === true && props.pageSize < 2 ? 2 : props.pageSize ?? 3;
 
   const maxCrumbIndex = props.crumbs.length - 1;
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
