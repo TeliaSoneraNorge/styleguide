@@ -87,7 +87,7 @@ const BreadCrumbs = (props) => {
 
   const CrumbLabel = ({ crumb }) => {
     return (
-      <span className="breadcrumb__current-page">
+      <span className="telia-breadcrumbs__current-page">
         <b>{crumb.name}</b>
       </span>
     );
@@ -96,10 +96,10 @@ const BreadCrumbs = (props) => {
   const CrumbPaging = ({ onPagingEvent, showArrowLeftIcon }) => {
     return (
       <>
-        <button type="button" className="breadcrumb__button" onClick={onPagingEvent}>
-          <MoreIcon className="breadcrumb__more-icon" />
+        <button type="button" className="telia-breadcrumbs__button" onClick={onPagingEvent}>
+          <MoreIcon className="telia-breadcrumbs__more-icon" />
         </button>
-        {showArrowLeftIcon && <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />}
+        {showArrowLeftIcon && <ArrowLeftIcon className="telia-breadcrumbs__arrow-left-icon" />}
       </>
     );
   };
@@ -107,17 +107,17 @@ const BreadCrumbs = (props) => {
   const CrumbLink = ({ crumb }) => {
     return (
       <>
-        <a className="breadcrumb__link" href={crumb.link} target={crumb.target ?? ''} title={crumb.title ?? ''}>
+        <a className="telia-breadcrumbs__link" href={crumb.link} target={crumb.target ?? ''} title={crumb.title ?? ''}>
           {crumb.name}
         </a>
-        <ArrowLeftIcon className="breadcrumb__arrow-left-icon" />
+        <ArrowLeftIcon className="telia-breadcrumbs__arrow-left-icon" />
       </>
     );
   };
 
   const CrumbRender = ({ crumb }) => {
     return (
-      <li key={crumb.key} className="breadcrumb__element">
+      <li key={crumb.key} className="telia-breadcrumbs__element">
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowLeftIcon={true} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
@@ -135,8 +135,8 @@ const BreadCrumbs = (props) => {
   setLabelCrumb(displayCrumbs);
 
   return (
-    <div className="breadcrumb">
-      <ul className="breadcrumb__list">
+    <div className="telia-breadcrumbs">
+      <ul className="telia-breadcrumbs__list">
         {displayCrumbs.map((crumb) => (
           <CrumbRender crumb={crumb} key={crumb.key} />
         ))}
