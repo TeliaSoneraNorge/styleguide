@@ -26,6 +26,7 @@ export const Default = () => {
     <div>
       <Button label="Hello?" />
       <StepFlow
+        color="white"
         title="Step flow"
         description="Commonly used for large forms and orders"
         onSubmit={action('Submit')}

@@ -106,6 +106,8 @@ export interface TextFieldProps {
    * To show field instructions for the text field
    */
   fieldInstructionsProps?: FieldInstructionsProps;
+
+  focusOnMount?: boolean;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -125,6 +127,13 @@ export const TextField = (props: TextFieldProps) => {
   useEffect(() => setCompactLabelLeftOffset(leftContentRef.current ? leftContentRef.current.clientWidth : undefined), [
     leftContentRef.current,
   ]);
+  useEffect(() => {
+    if (props.focusOnMount) {
+      if (inputRef.current) {
+        inputRef.current.focus();
+      }
+    }
+  }, []);
   const labelStyle =
     props.size === 'compact' && !(focus || inputHasValue) && compactLabelLeftOffset
       ? { left: `calc(${compactLabelLeftOffset}px + 0.75rem)` }
