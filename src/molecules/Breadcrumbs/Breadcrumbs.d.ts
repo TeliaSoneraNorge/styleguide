@@ -9,9 +9,9 @@ interface Crumb {
 
 export interface BreadCrumbsProps {
   crumbs: Crumb[];
-  alwaysShowRootCrumb: ?boolean = true;
-  pageSize: ?number = 3;
-  pagingSize: ?number = 1;
+  alwaysShowRootCrumb: ?boolean;
+  pageSize: ?number;
+  pagingSize: ?number;
 }
 
 class BreadCrumbs extends React.Component<BreadCrumbsProps, any> {
