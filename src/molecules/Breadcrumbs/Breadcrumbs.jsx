@@ -3,6 +3,10 @@ import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
 
 const Breadcrumbs = (props) => {
+  if (!props.crumbs) {
+    return <></>;
+  }
+
   const alwaysShowRootCrumb = props.alwaysShowRootCrumb ?? true;
   const pagingSize = props.pagingSize ?? 1;
 
@@ -11,6 +15,8 @@ const Breadcrumbs = (props) => {
   if (alwaysShowRootCrumb && pageSize < 2) {
     pageSize = 2;
   }
+
+  const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
 
   const maxCrumbIndex = props.crumbs.length - 1;
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
@@ -27,8 +33,6 @@ const Breadcrumbs = (props) => {
       isPagingRight: false,
     };
   });
-
-  const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
 
   const getVisibleCrumbs = () => {
     return crumbs.filter((c) => {

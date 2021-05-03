@@ -20,6 +20,8 @@ export const TenBreadCrumbsHideRoot = () => <Breadcrumbs crumbs={breadCrumbsData
 export const TenBreadCrumbsPageSizeLargeAndHideRoot = () => (
   <Breadcrumbs crumbs={breadCrumbsData} pageSize={4} alwaysShowRootCrumb={false} />
 );
+export const Null = () => <Breadcrumbs crumbs={null} />;
+export const Empty = () => <Breadcrumbs crumbs={[]} />;
 
 const breadCrumbsData = [
   {
