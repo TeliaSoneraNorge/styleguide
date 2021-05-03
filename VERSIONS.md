@@ -14,7 +14,7 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy changes.
-## 1.42.0
+## 1.41.9
 
 - Added Breadcrumbs component to Molecules
 
