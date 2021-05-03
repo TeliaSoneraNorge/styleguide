@@ -14,7 +14,7 @@ export const FiveBreadCrumbs = () => <BreadCrumbs crumbs={breadCrumbsData.filter
 export const SixBreadCrumbs = () => <BreadCrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />;
 export const TenBreadCrumbs = () => <BreadCrumbs crumbs={breadCrumbsData} />;
 export const TenBreadCrumbsPagingSize = () => <BreadCrumbs crumbs={breadCrumbsData} pagingSize={2} />;
-export const TenBreadCrumbsPageSizeLarge = () => <BreadCrumbs crumbs={breadCrumbsData} pageSize={0} />;
+export const TenBreadCrumbsPageSizeLarge = () => <BreadCrumbs crumbs={breadCrumbsData} pageSize={4} />;
 export const TenBreadCrumbsPageSizeSmall = () => <BreadCrumbs crumbs={breadCrumbsData} pageSize={1} />;
 export const TenBreadCrumbsHideRoot = () => <BreadCrumbs crumbs={breadCrumbsData} alwaysShowRootCrumb={false} />;
 export const TenBreadCrumbsPageSizeLargeAndHideRoot = () => (
