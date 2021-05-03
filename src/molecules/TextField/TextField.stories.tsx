@@ -136,6 +136,19 @@ export const Compact = () => {
   );
 };
 
+export const focusOnMount = () => {
+  return (
+    <>
+      <h1>Focus onMount</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '30%', marginRight: '1rem' }}>
+          <TextField size="default" label="Focus onMount label" placeholder="Placeholder text" focusOnMount={true} />
+        </div>
+      </div>
+    </>
+  );
+};
+
 Default.parameters = {
   design: {
     type: 'figma',
