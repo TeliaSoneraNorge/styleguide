@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, Ref, RefObject, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useFocus } from './useFocus';
 import { Icon } from '../../index';
@@ -107,7 +107,7 @@ export interface TextFieldProps {
    */
   fieldInstructionsProps?: FieldInstructionsProps;
 
-  focusOnMount?: boolean;
+  inputRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement>;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -127,13 +127,7 @@ export const TextField = (props: TextFieldProps) => {
   useEffect(() => setCompactLabelLeftOffset(leftContentRef.current ? leftContentRef.current.clientWidth : undefined), [
     leftContentRef.current,
   ]);
-  useEffect(() => {
-    if (props.focusOnMount) {
-      if (inputRef.current) {
-        inputRef.current.focus();
-      }
-    }
-  }, []);
+
   const labelStyle =
     props.size === 'compact' && !(focus || inputHasValue) && compactLabelLeftOffset
       ? { left: `calc(${compactLabelLeftOffset}px + 0.75rem)` }
