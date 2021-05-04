@@ -3,10 +3,12 @@ import cn from 'classnames';
 import { Button } from '../Button';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 import { HeaderLabels } from './types';
+import throttle from 'lodash/throttle';
+import { ModalHeader } from '../../molecules/Modal';
 
 type Props = {
-  title: string;
-  description: string;
+  title: React.ReactNode;
+  description: React.ReactNode;
   onCancel: () => void;
   rightContent?: (stuck: boolean) => React.ReactNode;
 
@@ -15,26 +17,30 @@ type Props = {
 
 export const StepFlowHeader = (props: Props) => {
   const headerRef = useRef<HTMLDivElement | null>(null);
-  const [stickyHeader, setStickyHeader] = useState<boolean>(false);
   const breakpointSm = useBreakpoint('sm');
+  const [stickyHeader, setStickyHeader] = useState<boolean>(false);
+  const [modal, setModal] = useState(document.querySelector<HTMLDivElement>('.telia-modal__container'));
 
   useEffect(() => {
-    const checkPosition = () => {
-      if (window.pageYOffset > (headerRef.current?.offsetHeight ?? 380)) {
-        setStickyHeader(true);
-      } else {
-        setStickyHeader(false);
-      }
-    };
+    if (!modal) {
+      setModal(document.querySelector<HTMLDivElement>('.telia-modal__container'));
+    }
+  }, []);
 
-    window.addEventListener('scroll', checkPosition);
+  useEffect(() => {
+    const checkPosition = throttle(() => {
+      const shouldStick = (modal?.scrollTop ?? 0) > (headerRef.current?.offsetHeight ?? 380);
+      setStickyHeader(shouldStick);
+    }, 100);
+
+    modal?.addEventListener('scroll', checkPosition);
     return () => {
-      window.removeEventListener('scroll', checkPosition);
+      modal?.removeEventListener('scroll', checkPosition);
     };
-  });
+  }, [modal]);
 
   return (
-    <div className="telia-step-flow__header">
+    <ModalHeader>
       <div className={cn('telia-step-flow__header__top', { 'telia-step-flow__header__top--stuck': stickyHeader })}>
         <Button
           kind="secondary-text"
@@ -56,6 +62,6 @@ export const StepFlowHeader = (props: Props) => {
         </div>
         {props.rightContent?.(stickyHeader)}
       </div>
-    </div>
+    </ModalHeader>
   );
 };

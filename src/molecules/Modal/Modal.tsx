@@ -7,7 +7,8 @@ import { useEscapeListener } from './useEscapeListener';
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
-  size?: 'small' | 'medium' | 'large';
+  size?: 'small' | 'medium' | 'large' | 'fullscreen';
+  className?: string;
 }
 export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();
@@ -17,8 +18,8 @@ export const Modal: React.FC<Props> = (props) => {
   const size = props.size || 'medium';
 
   return createPortal(
-    <div ref={container} className={cn('telia-modal', { 'telia-modal__invisible': !props.open })}>
-      <div className={cn('telia-modal-container', `telia-modal-container__${size}`, props.open ? '' : '')}>
+    <div ref={container} className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}>
+      <div className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}>
         {props.children}
       </div>
     </div>,

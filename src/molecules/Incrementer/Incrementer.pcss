@@ -1,50 +1,41 @@
 .telia-incrementer {
   display: flex;
-  button {
-    background: var(--white);
-    border: 1px solid var(--grey-200);
-    cursor: pointer;
+  justify-content: space-between;
+  width: 7.74rem;
+  height: 2.75rem;
+  position: relative;
+  border: 1px solid var(--core-purple-100);
+  border-radius: 100px;
+  background-color: var(--white);
+  .telia-button {
+    top: -1px;
     height: 2.75rem;
     width: 2.75rem;
+    z-index: 2;
     .Icon {
-      height: 1rem;
-      width: 1rem;
-      display: inline;
-    }
-    &[disabled] {
-      background-color: var(--grey-100);
-      cursor: auto;
-      .Icon {
-        color: var(--grey-300);
-      }
+      height: 20px;
+      width: 20px;
     }
   }
-
-  button:active {
-    background-color: var(--grey-200);
+  .telia-button:hover,
+  .telia-button:focus {
+    transition: 0;
   }
 
-  button:focus,
+  input {
+    position: absolute;
+    height: 2.6rem;
+    width: 40px;
+    margin-left: 2.5rem;
+    font-size: 16px;
+    text-align: center;
+    border: none;
+  }
   input:focus {
     z-index: 1;
     outline: none;
     box-shadow: 0 0 0 2px var(--blue-300);
     transition: all 200ms ease-in-out;
-  }
-
-  &--value {
-    border: none;
-    border-top: 1px solid var(--grey-200);
-    border-bottom: 1px solid var(--grey-200);
-    width: 52px;
-    text-align: center;
-  }
-  &--decrement {
-    border-radius: 100px 0px 0px 100px;
-  }
-
-  &--increment {
-    border-radius: 0px 100px 100px 0px;
   }
 
   /* Chrome, Safari, Edge, Opera */
@@ -60,13 +51,25 @@
   }
 }
 
-.telia-incrementer__compact {
-  button {
+.telia-incrementer--compact {
+  height: 2.25rem;
+  width: 104px;
+  .telia-button {
     height: 2.25rem;
     width: 2.25rem;
     .Icon {
-      height: 0.75rem;
-      width: 0.75rem;
+      height: 16px;
+      width: 16px;
     }
   }
+  input {
+    height: 2.1rem;
+    width: 34px;
+    font-size: 14px;
+    margin-left: 2.1rem;
+  }
+}
+
+.telia-incrementer--secondary {
+  border-color: var(--grey-200);
 }

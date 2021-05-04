@@ -1,20 +1,36 @@
 :root {
-    --shopping-cart-font-color: #222;
-    --shopping-cart-font-color-medium: #737373;
-    --shopping-cart-font-color-disabled: #757575;
+  --shopping-cart-font-color: #222;
+  --shopping-cart-font-color-medium: #737373;
+  --shopping-cart-font-color-disabled: #757575;
 }
 
 .shopping-cart {
-    &__heading {
-        display: flex;
-        justify-content: center;
-        text-transform: uppercase;
-        height: 3.8rem;
-    }
+  &__heading {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    height: 3.8rem;
+  }
 
-    &__icon {
-        color: black;
-        height: 1.3rem;
-        width: 1.3rem;
-    }
+  &__icon {
+    color: black;
+    height: 1.3rem;
+    width: 1.3rem;
+  }
+  &__checkout-button-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+  &__checkout-button-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__checkout-button {
+    margin: 1rem 0 0 !important;
+  }
+  &__checkout-button-info {
+    color: var(--grey-500);
+  }
 }

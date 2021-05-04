@@ -4,12 +4,25 @@
   position: relative;
 
   .telia-dropdown {
-    button {
-      height: 100%;
+    button.telia-dropdown-toggle {
+      height: 44px;
+      width: 84px;
+      padding: 12px;
+      justify-content: flex-end;
+
+      .Icon {
+        height: 15px;
+        width: 15px;
+      }
     }
   }
 
+  .telia-dropdown-content {
+    width: fit-content;
+  }
+
   .telia-dropdown-toggle__outline {
+    border-color: var(--accent-250);
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
     border-right: 0;
@@ -20,41 +33,79 @@
     width: 100%;
   }
 
-  .telia-textfield-content {
-    border-top-left-radius: 0;
-    border-bottom-left-radius: 0;
+  .telia-textfield__input {
+    color: var(--grey-900);
   }
 
-  &__error {
+  .telia-textfield__content {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    height: 44px;
+  }
+
+  .telia-textfield--withValue .telia-textfield__content {
+    border-color: var(--accent-250);
+  }
+
+  &--compact {
+    .telia-dropdown {
+      button.telia-dropdown-toggle {
+        padding: 8px;
+        height: 36px;
+        width: 68px;
+        font-size: 14px;
+
+        .Icon {
+          height: 12px;
+          width: 12px;
+        }
+      }
+    }
+
+    .telia-textfield__content {
+      height: 36px;
+      font-size: 14px;
+    }
+
+    .telia-textfield--compact {
+      margin-top: 0;
+    }
+  }
+
+  &--error {
     .telia-dropdown-toggle__outline {
+      border-color: var(--red-600);
+    }
+
+    .telia-textfield--withValue .telia-textfield__content {
       border-color: var(--red-600);
     }
   }
 }
 
-.telia-phonenumber-countryCode__active {
+.telia-phonenumber__countryCode--active {
   .telia-dropdown-toggle__outline {
     border-color: var(--core-purple-500);
   }
 
-  .telia-textfield-content {
-    border-left-color: var(--core-purple-500);
+  .telia-textfield__content {
+    border-left-color: var(--core-purple-500) !important;
   }
 }
 
-.telia-phonenumber-helptext {
+.telia-phonenumber__helptext {
   color: var(--grey-600);
   display: block;
   float: right;
 }
 
-.telia-phonenumber-helptext--error {
+.telia-phonenumber__helptext--error {
   color: var(--red-600);
   display: block;
   float: left;
 }
 
-.telia-phonenumber-label {
+.telia-phonenumber__label {
   position: absolute;
   top: -20px;
   font-size: 14px;

@@ -20,6 +20,7 @@ export interface SubscriptionAccordionProps {
   isExpanded?: boolean;
   isInverted?: boolean;
   name?: string;
+  titleTag?: string;
   highlight?: string;
   discountPrice?: SubscriptionPrice;
   price?: SubscriptionPrice;

@@ -21,14 +21,13 @@ type Props = {
    */
   mode?: 'choice' | 'input';
   /**
-   * Styling of chip. Default is white.
+   * Color of chip. Default is white.
    */
-  kind?: 'white' | 'grey';
+  color?: 'white' | 'grey';
   /**
-   * Styling of chip. Default is white.
+   * Styling of chip. Default is rounded.
    */
-  size?: 'compact' | 'default';
-
+  kind?: 'rounded' | 'square';
   /**
    * The click event for the whole chip (in filter mode) or for the remove button (in select mode).
    */
@@ -37,17 +36,7 @@ type Props = {
   className?: string;
 };
 
-export const Chip = ({
-  label,
-  icon,
-  active,
-  disabled,
-  kind,
-  mode = 'choice',
-  size = 'default',
-  onClick,
-  className,
-}: Props) => {
+export const Chip = ({ label, icon, active, disabled, color, kind, mode = 'choice', onClick, className }: Props) => {
   const Tag = mode === 'input' ? 'div' : 'button';
   const role = Tag === 'div' && !(mode === 'input') ? 'button' : undefined;
   return (
@@ -56,12 +45,13 @@ export const Chip = ({
       type={Tag === 'button' ? 'button' : undefined}
       className={cs(
         'telia-chip',
-        `telia-chip__${mode}`,
+        `telia-chip--${mode}`,
         {
-          'telia-chip__compact': size === 'compact',
-          'telia-chip__disabled': disabled,
-          'telia-chip__active': active || mode === 'input',
-          'telia-chip__grey': kind === 'grey',
+          'telia-chip--disabled': disabled,
+          'telia-chip--active': active || mode === 'input',
+          'telia-chip--grey': color === 'grey',
+          'telia-chip--square': kind === 'square',
+          'telia-chip--hasIcon': icon,
         },
         className
       )}
@@ -74,15 +64,15 @@ export const Chip = ({
       }}
       tabIndex={disabled || mode === 'input' ? -1 : 0}
     >
-      {icon && <Icon className="telia-chip--icon" icon={icon} />}
-      <div className="telia-chip--label">{label}</div>
+      {icon && <Icon className="telia-chip__icon" icon={icon} />}
+      <div className="telia-chip__label">{label}</div>
       {mode === 'input' && (
         <Button
           kind="secondary-text"
           icon="close"
           onClick={onClick}
           disabled={disabled}
-          className="telia-chip--close"
+          className="telia-chip__closeBtn"
         />
       )}
     </Tag>

@@ -45,7 +45,7 @@ const ShoppingCartAccordion = ({
       buttonType: 'primary',
       text: `Betales nå: ${formatPrice(totalPriceUpfront)}. Pris pr. måned: ${formatPrice(totalPriceMonthly)}`,
       ...(shouldShowButton && {
-        button: 'Gå til kassen',
+        button: 'Gå til bestilling',
         onButtonClick: onGoToCart,
       }),
     },
@@ -54,7 +54,7 @@ const ShoppingCartAccordion = ({
   return (
     <div
       className={classnames({ 'shopping-cart__sticky': shouldBeSticky })}
-      onKeyUp={event => {
+      onKeyUp={(event) => {
         if (event.key === 'Escape' && isExpanded) {
           toggleCart();
         }

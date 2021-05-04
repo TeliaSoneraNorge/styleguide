@@ -106,9 +106,10 @@ export { default as RelatedArticles } from './molecules/RelatedArticles';
 export { RatingStars, RatingWithNumbers } from './molecules/Rating';
 export { Review, ReviewBody, ReviewHeader } from './molecules/Review';
 export { default as RichText } from './molecules/RichText';
-export { default as StepByStep } from './molecules/StepByStep';
+export * from './molecules/StepByStep';
 export { default as Subscription } from './molecules/Subscription';
 export { default as SubscriptionAccordion } from './molecules/SubscriptionAccordion';
+export { default as SubscriptionAccordionSimple } from './molecules/SubscriptionAccordion/SubscriptionAccordionSimple';
 export { default as SubscriptionLinesAccordion } from './molecules/SubscriptionLinesAccordion';
 export { default as ChartLegend } from './molecules/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel';
@@ -131,6 +132,7 @@ export { default as InfoBox } from './molecules/InfoBox';
 export { default as InfoCard } from './molecules/InfoCard';
 export { default as DisplayFunctionality } from './molecules/DisplayFunctionality';
 export { default as Banner } from './molecules/Banner';
+export { default as BreadCrumbs } from './molecules/BreadCrumbs';
 export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
 export { default as Menu } from './molecules/Menu';
 export { MenuSearch } from './molecules/Menu';
@@ -141,6 +143,7 @@ export { ShoppingCartNew } from './molecules/ShoppingCartNew';
 export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 export { QuickSearch } from './molecules/QuickSearch';
 export { PhoneNumberField } from './molecules/PhoneNumberField';
+export { TablePagination, Pagination } from './molecules/Paging';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';

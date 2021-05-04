@@ -26,6 +26,7 @@ export const Default = () => {
     <div>
       <Button label="Hello?" />
       <StepFlow
+        color="white"
         title="Step flow"
         description="Commonly used for large forms and orders"
         onSubmit={action('Submit')}
@@ -120,6 +121,69 @@ export const WithTrigger = () => {
   );
 };
 
+export const WithCustomDescription = () => {
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
+
+  return (
+    <div>
+      <StepFlow
+        title="Step flow"
+        description={
+          <div>
+            Commonly used for large forms and orders
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Icon style={{ marginRight: '1rem', height: '1rem', width: '1rem' }} icon="email" /> Some info about the
+              content
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Icon style={{ marginRight: '1rem', height: '1rem', width: '1rem' }} icon="email" /> Some info about the
+              content
+            </div>
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+              <Icon style={{ marginRight: '1rem', height: '1rem', width: '1rem' }} icon="email" /> Some info about the
+              content
+            </div>
+          </div>
+        }
+        onSubmit={action('Submit')}
+        onCancel={action('Cancel')}
+        headerContent={(stuck) =>
+          stuck ? (
+            <div style={{ marginLeft: 'auto' }}>custom content</div>
+          ) : (
+            <div
+              style={{
+                margin: 'auto 0',
+                height: 'fit-content',
+                border: '1px solid grey',
+                padding: '1rem',
+                marginLeft: 'auto',
+              }}
+            >
+              Custom header content
+              <Icon icon="phone" />
+            </div>
+          )
+        }
+      >
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
+        </StepFlowStep>
+        <StepFlowStep title="Step 2" isValid={true} disabled={false}>
+          <TextField />
+        </StepFlowStep>
+      </StepFlow>
+    </div>
+  );
+};
+
 export const WithCustomHeaderContent = () => {
   const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
   const setKey = (key: string, value: string) => {
@@ -137,7 +201,15 @@ export const WithCustomHeaderContent = () => {
           stuck ? (
             <div style={{ marginLeft: 'auto' }}>custom content</div>
           ) : (
-            <div style={{ border: '1px solid grey', padding: '1rem', marginLeft: 'auto' }}>
+            <div
+              style={{
+                margin: 'auto 0',
+                height: 'fit-content',
+                border: '1px solid grey',
+                padding: '1rem',
+                marginLeft: 'auto',
+              }}
+            >
               Custom header content
               <Icon icon="phone" />
             </div>

@@ -1,11 +1,12 @@
 import React from 'react';
-import { Icon } from '../../atoms/Icon';
 import cn from 'classnames';
+import { Button } from '../../business';
 
 type Props = {
   value: number;
-  setValue: (num?: number) => void;
+  setValue: (num: number) => void;
   size?: 'compact' | 'default';
+  kind?: 'primary' | 'secondary';
   max?: number;
   min?: number;
   /**
@@ -27,21 +28,27 @@ export const Incrementer = (props: Props) => {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.checkValidity()) {
-      props.setValue(e.target.value ? parseInt(e.target.value) : undefined);
+      props.setValue(e.target.value ? parseInt(e.target.value) : 0);
     }
   };
 
   return (
-    <div className={cn('telia-incrementer', { 'telia-incrementer__compact': props.size === 'compact' })}>
-      <button
-        className="telia-incrementer--decrement"
+    <div
+      className={cn('telia-incrementer', {
+        'telia-incrementer--compact': props.size === 'compact',
+        'telia-incrementer--secondary': props.kind === 'secondary',
+      })}
+    >
+      <Button
+        className="telia-incrementer__decrement"
+        icon="minus"
+        kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={decrement}
         disabled={Boolean(props.min !== undefined && props.value <= props.min)}
-      >
-        <Icon icon="minus" />
-      </button>
+        size={props.size === 'compact' ? 'compact' : 'default'}
+      />
       <input
-        className="telia-incrementer--value"
+        className="telia-incrementer__value"
         type="number"
         name={props.name}
         min={props.min}
@@ -49,13 +56,13 @@ export const Incrementer = (props: Props) => {
         value={props.value}
         onChange={handleChange}
       />
-      <button
-        className="telia-incrementer--increment"
+      <Button
+        className="telia-incrementer__increment"
+        icon="add"
+        kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={increment}
         disabled={Boolean(props.max && props.value >= props.max)}
-      >
-        <Icon icon="add" />
-      </button>
+      />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TextField } from './index';
 import { Icon } from '../../index';
 import { Button } from '../../business/Button';
@@ -30,7 +30,7 @@ export const Default = () => {
             helpText={state === 'error' ? state : ''}
           />
           <TextField label="Field label" helpText="Help or instrictions" />
-          <TextField label="Field label" helpText={<div style={{ textAlign: 'start' }}>Help on left side</div>} />
+          <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
         </div>
@@ -41,7 +41,7 @@ export const Default = () => {
             helpText="Help or instrictions"
             rightContent={<Button size="compact" kind="secondary-text" icon="close" onClick={action('button')} />}
           />
-          <TextField label="Field label" helpText={<div style={{ textAlign: 'start' }}>Help on left side</div>} />
+          <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
         </div>
@@ -130,6 +130,27 @@ export const Compact = () => {
             helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>}
             disabled={true}
           />
+        </div>
+      </div>
+    </>
+  );
+};
+
+export const focusOnMount = () => {
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  useEffect(() => {
+    if (inputRef.current) {
+      inputRef.current.focus();
+    }
+  }, []);
+
+  return (
+    <>
+      <h1>Focus onMount</h1>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '30%', marginRight: '1rem' }}>
+          <TextField size="default" label="Focus onMount label" placeholder="Placeholder text" inputRef={inputRef} />
         </div>
       </div>
     </>

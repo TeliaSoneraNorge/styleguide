@@ -4,17 +4,19 @@ import { StepFlowMenu } from './StepFlowMenu';
 import { StepFlowFooter } from './StepFlowFooter';
 import { Labels } from './types';
 import { useBreakpoint } from '../../utils/useBreakpoint';
-import { useFocusTrap } from '../../utils/useFocusTrap';
+import { Modal } from '../../molecules/Modal';
+import cn from 'classnames';
+
 type Props = {
   initialStep?: number;
   /**
    * Main title of the form
    */
-  title: string;
+  title: React.ReactNode;
   /**
    * Description for the form
    */
-  description: string;
+  description: React.ReactNode;
   onSubmit: () => void;
   onCancel: () => void;
   /**
@@ -39,11 +41,14 @@ type Props = {
    * and at the bottom of each step on small screens.
    */
   additionalContent?: React.ReactNode;
+
+  /**
+   * @default 'grey'
+   */
+  color?: 'white' | 'grey';
 };
 
 export const StepFlow = (props: Props) => {
-  const { container } = useFocusTrap();
-
   const [step, setStep] = useState(props.initialStep ?? 0);
   const menuBreakpoint = useBreakpoint('lg');
   const additionalContentBreakpoint = useBreakpoint('xxl');
@@ -67,7 +72,12 @@ export const StepFlow = (props: Props) => {
   }, [step, props.children]);
 
   return (
-    <div className="telia-step-flow" ref={container}>
+    <Modal
+      className={cn('telia-step-flow', { 'telia-step-flow--white': props.color === 'white' })}
+      open={true}
+      setOpen={props.onCancel}
+      size="fullscreen"
+    >
       <StepFlowHeader
         labels={props.labels}
         title={props.title}
@@ -98,6 +108,6 @@ export const StepFlow = (props: Props) => {
         </div>
         {renderAdditionalContentRight ? <div className="telia-step-flow--right">{props.additionalContent}</div> : null}
       </div>
-    </div>
+    </Modal>
   );
 };

@@ -7,19 +7,33 @@ export default {
 };
 
 export const Default = () => {
-
   const wrapperStyle = {
     width: '700px',
     display: 'flex',
     justifyContent: 'flexStart',
   };
-  
+
   return (
     <>
-
       <div style={wrapperStyle}>
         <StepIndicator
           index={0}
+          numberOfSteps={3}
+          labels={['Nummer', 'Se over', 'Ferdig']}
+          links={['#StepIndicatorTest', '#StepIndicatorTest1', '#StepIndicatorTest2']}
+        />
+      </div>
+      <div style={wrapperStyle}>
+        <StepIndicator
+          index={2}
+          numberOfSteps={3}
+          labels={['Nummer', 'Se over', 'Ferdig']}
+          links={['#StepIndicatorTest', '#StepIndicatorTest1', '#StepIndicatorTest2']}
+        />
+      </div>
+      <div style={wrapperStyle}>
+        <StepIndicator
+          index={3}
           numberOfSteps={3}
           labels={['Nummer', 'Se over', 'Ferdig']}
           links={['#StepIndicatorTest', '#StepIndicatorTest1', '#StepIndicatorTest2']}
@@ -39,7 +53,6 @@ export const Default = () => {
           ]}
         />
       </div>
-
     </>
-  )
+  );
 };

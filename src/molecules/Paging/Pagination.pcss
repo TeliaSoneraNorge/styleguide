@@ -1,0 +1,41 @@
+.telia-pagination {
+  display: flex;
+
+  &__dottes {
+    pointer-events: none;
+  }
+
+  .telia-button--ball {
+    align-items: center;
+  }
+
+  .telia-button--active {
+    background-color: inherit !important;
+    font-weight: bolder;
+    color: var(--core-purple-500);
+  }
+}
+
+.telia-table-pagination {
+  padding-top: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  &__text {
+    margin: 0 1rem;
+  }
+
+  &__per-page {
+    border: none;
+    text-align: right;
+  }
+
+  &__navigation {
+    display: inline;
+    margin: 0 1rem;
+    button:first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}

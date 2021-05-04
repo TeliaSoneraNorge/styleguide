@@ -55,7 +55,7 @@ export const DatePickerMenu: React.FC = ({ children }) => {
 
   const renderMonth = (month: Month) => {
     return (
-      <div className="telia-date-picker--month">
+      <div className="telia-date-picker__month">
         {renderDays()}
         {renderEmptySlots(month.dayOfStart)}
         {renderDates(month)}
@@ -64,17 +64,17 @@ export const DatePickerMenu: React.FC = ({ children }) => {
   };
 
   return (
-    <div ref={container} className="telia-date-picker--menu">
+    <div ref={container} className="telia-date-picker__menu">
       <DatePickerHeader />
       {periodEnd ? (
-        <div className="telia-date-picker--months">
+        <div className="telia-date-picker__months">
           {renderMonth(periodStart)}
           {renderMonth(periodEnd)}
         </div>
       ) : (
         renderMonth(periodStart)
       )}
-      <div className="telia-date-picker--menu--options">{children}</div>
+      <div className="telia-date-picker__menu__options">{children}</div>
     </div>
   );
 };

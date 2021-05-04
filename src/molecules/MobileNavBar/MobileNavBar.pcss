@@ -1,6 +1,7 @@
 .telia-mobile-nav-bar {
   background-color: var(--white);
   border-top: 1px solid var(--grey-200);
+  position: relative;
   ul {
     list-style: none;
     padding: 0;
@@ -13,7 +14,7 @@
     justify-content: space-around;
   }
 }
-.telia-mobile-nav-bar-item {
+.telia-mobile-nav-bar__item {
   border: none;
   width: 4rem;
   height: 4rem;
@@ -40,7 +41,14 @@
     width: 1.5rem;
     height: 1.5rem;
   }
-  &-label {
+  &__content {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  &__label {
     max-width: 100%;
     white-space: nowrap;
     overflow: hidden;
@@ -48,18 +56,82 @@
   }
 }
 
-.telia-mobile-nav-bar-item--active {
+.telia-mobile-nav-bar__item--active {
   color: var(--core-purple-500);
   &:hover {
     background-color: var(--core-purple-100);
   }
 }
 
-.telia-mobile-nav-bar-item--compact {
+.telia-mobile-nav-bar__item--compact {
   width: 2rem;
   height: 2rem;
   .Icon {
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+
+.telia-mobile-nav-bar__more-menu {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.4);
+  left: 0;
+  right: 0;
+  transform: translateY(-100%);
+  height: 100vh;
+  transition-duration: 200ms;
+  transition-property: all;
+  &__content {
+    height: auto;
+    max-height: 80%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid var(--grey-200);
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+    padding-bottom: 1rem;
+    overflow-y: scroll;
+
+    &__divider   {
+      width: 100%;
+      height: 1px;
+      background-color: var(--grey-200);
+    }
+  }
+}
+
+.telia-mobile-nav-bar__more-menu__content__button {
+  display: flex;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  align-items: center;
+  font-size: 16px;
+  color: var(--grey-700);
+  width: 100%;
+  cursor: pointer;
+
+  &__icon {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  &__badge {
+    margin-left: 0.5rem;
+  }
+}
+
+.telia-mobile-nav-bar__more-menu__content__header {
+  padding: 1rem;
+  .telia-mobile-nav-bar__more-menu__content__close {
+    /* NB:  not supported in IE.
+     * Buttin will align left.
+     */
+    width: fit-content;
+    margin-left: auto;
   }
 }

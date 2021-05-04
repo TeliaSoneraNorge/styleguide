@@ -1,13 +1,23 @@
 import React from 'react';
 import cn from 'classnames';
+import { colors } from '../../utils/colors';
 
 type Props = {
   'aria-labelledby'?: string;
+  /**
+   * Used to set the background color for active elements.
+   * Should match the background color of your application
+   * @default 'white'
+   */
+  backgroundColor?: keyof Pick<typeof colors, 'white' | 'grey100'>;
   className?: string;
 };
 export const SideMenu: React.FC<Props> = (props) => {
   return (
-    <nav className={cn('telia-side-menu', props.className)} ariaaria-label={props['aria-labelledby']}>
+    <nav
+      className={cn('telia-side-menu', `telia-side-menu--${props.backgroundColor ?? 'white'}`, props.className)}
+      aria-label={props['aria-labelledby']}
+    >
       <ul>{props.children}</ul>
     </nav>
   );

@@ -3,24 +3,24 @@
     background-color: var(--white);
     height: 4.3rem;
 
-    &__dashed {
+    &__solid {
       background-color: inherit;
 
       /* Due to table having border-collapse: separate we can't */
       /* use border directly on the <tr>. Hence, need to hack around with the children of <tr> */
       > :first-child {
-        border: 2px dashed var(--dark-grey);
+        border: 2px solid var(--dark-grey);
         border-right: none;
       }
 
       > :not(:first-child):not(:last-child) {
-        border: 2px dashed var(--dark-grey);
+        border: 2px solid var(--dark-grey);
         border-left: none;
         border-right: none;
       }
 
       > :last-child {
-        border: 2px dashed var(--dark-grey);
+        border: 2px solid var(--dark-grey);
         border-left: none;
       }
     }
@@ -148,8 +148,7 @@
 
       &__container {
         display: grid;
-        grid-template-columns: auto 2rem;
-        width: 100px;
+        grid-template-columns: 4rem 2rem;
       }
 
       &__number {

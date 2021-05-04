@@ -1,31 +1,18 @@
 .telia-step-flow {
-  background-color: var(--grey-100);
-  position: absolute;
-  display: block;
-  top: 0;
-  left: 0;
-  right: 0;
-  min-height: 100vh;
-  z-index: 10;
+  .telia-modal__container {
+    background-color: var(--grey-100);
+  }
+}
 
+.telia-step-flow {
   &__header {
-    border-bottom: 1px solid var(--grey-200);
-    width: 100%;
-    position: relative;
-    padding-bottom: 2rem;
-
-    h1 {
-      margin: 0.25rem 0;
-      font-size: 2rem;
-      font-weight: 500;
-    }
-
     &__top {
       position: fixed;
       display: flex;
       align-items: center;
       height: 60px;
       left: 0;
+      top: 0;
       right: 0;
       z-index: 10;
 
@@ -42,11 +29,16 @@
       }
     }
     &__content {
-      width: 80%;
       margin: 0 auto;
-      padding-top: 80px;
+      padding-top: 56px;
       display: flex;
       flex-wrap: wrap;
+
+      h1 {
+        margin: 0.25rem 0;
+        font-size: 2rem;
+        font-weight: 500;
+      }
       &__description {
         color: var(--grey-700);
       }
@@ -136,5 +128,14 @@
 
   .telia-step-flow__main {
     width: 100%;
+  }
+}
+
+.telia-step-flow--white {
+  .telia-modal__container {
+    background-color: var(--white);
+  }
+  .telia-step-flow__header__top {
+    background-color: var(--white);
   }
 }
