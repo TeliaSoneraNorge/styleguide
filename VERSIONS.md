@@ -14,7 +14,7 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 # Version History
 
 Only noteworthy changes.
-## 1.41.9
+## 1.41.10
 - Added Breadcrumbs component
 - Added inputRef to TextField component
 
