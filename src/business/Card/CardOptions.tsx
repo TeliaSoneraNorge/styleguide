@@ -12,7 +12,7 @@ export const CardOptions: React.FC<Props> = (props) => {
   const oneCol = !breakpointSm || props.columns === 1;
 
   const getWidthAndBorders = (index: number) => {
-    if ((props.columns === 1 && count === 1) || (count % 2 !== 0 && count === index + 1))
+    if ((props.columns === 1 && count === index + 1) || (count % 2 !== 0 && count === index + 1))
       return 'telia-card__option--spanCol telia-card__option--roundedB';
     if (props.columns !== 1 && count % 2 === 0) {
       if (index === count - 1) return 'telia-card__option--roundedBR';
