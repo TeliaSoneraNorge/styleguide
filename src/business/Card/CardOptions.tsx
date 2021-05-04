@@ -11,10 +11,15 @@ export const CardOptions: React.FC<Props> = (props) => {
   const breakpointSm = useBreakpoint('sm');
   const oneCol = !breakpointSm || props.columns === 1;
 
-  const spanCol = (index: number) =>
-    (props.columns === 1 && count === 1) || (count % 2 !== 0 && count === index + 1)
-      ? 'telia-card__option--spanCol'
-      : '';
+  const getWidthAndBorders = (index: number) => {
+    if ((props.columns === 1 && count === 1) || (count % 2 !== 0 && count === index + 1))
+      return 'telia-card__option--spanCol telia-card__option--roundedB';
+    if (props.columns !== 1 && count % 2 === 0) {
+      if (index === count - 1) return 'telia-card__option--roundedBR';
+      if (index === count - 2) return 'telia-card__option--roundedBL';
+    }
+    return '';
+  };
 
   return (
     <div className={cn('telia-card__options', { 'telia-card__options--oneCol': oneCol })}>
@@ -22,7 +27,7 @@ export const CardOptions: React.FC<Props> = (props) => {
         React.isValidElement<CardOptionProps>(child)
           ? React.cloneElement(child, {
               ...child.props,
-              className: (child.props.className ?? '') + spanCol(i),
+              className: (child.props.className ?? '') + getWidthAndBorders(i),
             })
           : null
       )}

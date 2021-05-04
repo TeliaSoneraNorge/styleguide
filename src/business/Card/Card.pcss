@@ -76,9 +76,18 @@
       border: none;
     }
 
+    > .telia-card__option:nth-last-child(-n + 2) {
+      border: none;
+    }
+
     > .telia-card__option:nth-child(n + 2) {
       border: none;
       border-top: 1px solid var(--grey-200);
+    }
+
+    > .telia-card__option:last-child {
+      border-bottom-right-radius: 0.75rem;
+      border-bottom-left-radius: 0.75rem;
     }
   }
 }
@@ -104,5 +113,18 @@
 
   &--spanCol {
     grid-column: 1 / -1;
+  }
+
+  &--roundedB {
+    border-bottom-right-radius: 0.75rem;
+    border-bottom-left-radius: 0.75rem;
+  }
+
+  &--roundedBR {
+    border-bottom-right-radius: 0.75rem;
+  }
+
+  &--roundedBL {
+    border-bottom-left-radius: 0.75rem;
   }
 }
