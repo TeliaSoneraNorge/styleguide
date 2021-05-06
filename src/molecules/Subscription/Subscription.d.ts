@@ -47,6 +47,7 @@ declare interface SubscriptionProps {
   id?: string;
   name?: string;
   dataAmount?: SubscriptionDataAmount;
+  doubleDataAmount?: SubscriptionDataAmount;
   extraDataAmount?: SubscriptionDataAmount;
   dataUnit?: string;
   extraDataUnit?: string;

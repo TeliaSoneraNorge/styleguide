@@ -152,6 +152,33 @@ export const ExtraData = () => {
   );
 };
 
+export const DoubleData = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionLinesAccordion
+      dataAmount={20}
+      dataUnit="GB"
+      doubleDataAmount={5}
+      id="smart20"
+      price={529}
+      priceInfo={['pr. md']}
+      description1="Du sparer 400,- pr md."
+      numberOfSubscriptions={3}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'product-music-freedom',
+        name: 'Music Freedom',
+      }}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionLinesAccordion>
+  );
+};
+
 export const Inverted = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 

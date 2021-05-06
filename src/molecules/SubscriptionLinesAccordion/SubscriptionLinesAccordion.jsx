@@ -10,6 +10,7 @@ const SubscriptionLinesAccordion = ({
   dataAmount,
   dataAmountIcon,
   dataUnit,
+  doubleDataAmount,
   extraDataAmount,
   extraDataUnit,
   price,
@@ -75,6 +76,7 @@ const SubscriptionLinesAccordion = ({
   );
 
   const extraDataString = extraDataAmount && extraDataUnit ? `+ ${extraDataAmount}${extraDataUnit}` : '';
+  const doubleDataString = doubleDataAmount && dataUnit ? `+ ${doubleDataAmount}${dataUnit}` : '';
 
   return (
     <section
@@ -118,6 +120,9 @@ const SubscriptionLinesAccordion = ({
                       {dataAmount} {dataUnit}
                       {extraDataString && (
                         <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
+                      )}
+                      {doubleDataString && (
+                        <div className="subscription-lines-accordion__heading-extra-same-line">{doubleDataString}</div>
                       )}
                     </Heading>
                   </div>
