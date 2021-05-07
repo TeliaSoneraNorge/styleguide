@@ -60,13 +60,12 @@ const ShoppingCartItem = ({
   cartItem,
   isSubItem = false,
   onChangeQuantity,
-  lineThrough,
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
   formatPrice,
 }) => {
-  const { id, leaseMonths, name, subtitle, price, discount, type, indent } = cartItem;
+  const { id, leaseMonths, name, lineThrough, subtitle, price, discount, type, indent } = cartItem;
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
   const isRemovable = _.get(cartItem, 'quantity.removable');
@@ -96,28 +95,26 @@ const ShoppingCartItem = ({
             })}
           >
             <CartItemImage image={cartItem.image} isDraft={isDraft} />
-            <div
-              className={cn('shopping-cart__item__name__text__container', {
-                'shopping-cart__item__name__text__container--line-through': lineThrough,
-              })}
-            >
+            <div className="shopping-cart__item__name__text__container">
               {lineThrough ? (
-                <>
+                <div
+                  className={cn('shopping-cart__item__name__text__container', {
+                    'shopping-cart__item__name__text__container--line-through': lineThrough,
+                  })}
+                >
                   <span className="shopping-cart__item__name__text__container line-through">{lineThrough}</span>
                   <span className="shopping-cart__item__name__text__container">{name}</span>
-                </>
+                </div>
               ) : (
-                <>
-                  {name}
-                  {subtitle && (
-                    <span
-                      className="shopping-cart__item__name__text__subtitle"
-                      data-hj-suppress={type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
-                    >
-                      {subtitle}
-                    </span>
-                  )}
-                </>
+                <>{name}</>
+              )}
+              {subtitle && (
+                <span
+                  className="shopping-cart__item__name__text__subtitle"
+                  data-hj-suppress={type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
+                >
+                  {subtitle}
+                </span>
               )}
               {!!leaseMonths && leaseMonths !== 'now' && price.upfront && (
                 <span className="shopping-cart__item__name__text__subtitle">
