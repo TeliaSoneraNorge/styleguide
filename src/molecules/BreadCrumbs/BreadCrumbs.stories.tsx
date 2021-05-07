@@ -1,12 +1,16 @@
+import { boolean } from '@storybook/addon-knobs';
 import React from 'react';
 import { BreadCrumbs } from '../../index';
+import { BreadCrumbsProps } from './BreadCrumbs';
 
 export default {
   title: 'Component library/Molecules/BreadCrumbs',
   component: BreadCrumbs,
 };
 
-export const Default = () => <BreadCrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 0)} />;
+export const Default = () => (
+  <BreadCrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 0)} alwaysShowRootCrumb={true} />
+);
 export const TwoBreadCrumbs = () => <BreadCrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 1)} />;
 export const ThreeBreadCrumbs = () => <BreadCrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 2)} />;
 export const FourBreadCrumbs = () => <BreadCrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 3)} />;
@@ -20,6 +24,8 @@ export const TenBreadCrumbsHideRoot = () => <BreadCrumbs crumbs={breadCrumbsData
 export const TenBreadCrumbsPageSizeLargeAndHideRoot = () => (
   <BreadCrumbs crumbs={breadCrumbsData} pageSize={4} alwaysShowRootCrumb={false} />
 );
+export const EmptyBreadCrumbsArray = () => <BreadCrumbs crumbs={[]} />;
+export const BreadCrumbsUndefined = () => <BreadCrumbs />;
 
 const breadCrumbsData = [
   {

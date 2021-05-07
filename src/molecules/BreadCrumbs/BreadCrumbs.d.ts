@@ -8,7 +8,7 @@ interface Crumb {
 }
 
 export interface BreadCrumbsProps {
-  crumbs: Crumb[];
+  crumbs?: Crumb[];
   alwaysShowRootCrumb?: boolean;
   pageSize?: number;
   pagingSize?: number;
