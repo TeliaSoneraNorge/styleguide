@@ -92,6 +92,33 @@ export const WithHighlight = () => {
   );
 };
 
+export const WithDoubleData = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionAccordion
+      name="20 GB"
+      highlight="+ 5GB"
+      id="smart20"
+      price={529}
+      priceInfo={['pr. md']}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'product-music-freedom',
+        name: 'Music Freedom',
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => setIsExpanded(!isExpanded)}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+  );
+};
+
 export const WithoutFeature = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
