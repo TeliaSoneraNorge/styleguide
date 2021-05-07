@@ -133,19 +133,19 @@ const ShoppingCartItem = ({
               {quantity > 1 && !shouldShowPricePerUnit && (
                 <span className="shopping-cart__item__price-per">{`${quantity} stk`}</span>
               )}
-              {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
-                <ShoppingCartCell className="shopping-cart__item__quantity">
-                  <ShoppingCartItemQuantityPicker
-                    cartItem={cartItem}
-                    name={name}
-                    quantity={quantity}
-                    onChangeQuantity={onChangeQuantity}
-                  />
-                </ShoppingCartCell>
-              )}
             </div>
           </div>
         </ShoppingCartColumnHeading>
+        {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
+          <ShoppingCartCell className="shopping-cart__item__quantity">
+            <ShoppingCartItemQuantityPicker
+              cartItem={cartItem}
+              name={name}
+              quantity={quantity}
+              onChangeQuantity={onChangeQuantity}
+            />
+          </ShoppingCartCell>
+        )}
         <ShoppingCartCell
           className={cn('shopping-cart__item__price', {
             'shopping-cart__item__price--monthly': price.monthly,
