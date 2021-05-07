@@ -239,7 +239,7 @@ const SubscriptionLinesAccordion = ({
             </div>
           </div>
         </div>
-        <div className="subscription-lines-accordion__description2 subscription-lines-accordion__mobile-only double-data">
+        <div className="subscription-lines-accordion__description2 subscription-lines-accordion__mobile-only subscription-lines-accordion__double-data">
           {description1}
         </div>
       </button>
