@@ -78,6 +78,21 @@
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
+
+          &--line-through {
+            display: flex;
+            flex-direction: row;
+          }
+
+          .line-through {
+            text-decoration: line-through;
+            color: var(--grey-500);
+            text-decoration-thickness: 2px;
+            margin-right: 0.75rem;
+            @media all and (min-width: 41em) {
+              text-decoration-thickness: 2px;
+            }
+          }
         }
 
         &__subtitle {

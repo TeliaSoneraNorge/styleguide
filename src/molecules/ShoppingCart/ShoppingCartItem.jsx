@@ -60,6 +60,7 @@ const ShoppingCartItem = ({
   cartItem,
   isSubItem = false,
   onChangeQuantity,
+  lineThrough,
   onRemoveItem,
   shouldShowQuantity,
   hasPaid,
@@ -95,15 +96,28 @@ const ShoppingCartItem = ({
             })}
           >
             <CartItemImage image={cartItem.image} isDraft={isDraft} />
-            <div className="shopping-cart__item__name__text__container">
-              {name}
-              {subtitle && (
-                <span
-                  className="shopping-cart__item__name__text__subtitle"
-                  data-hj-suppress={type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
-                >
-                  {subtitle}
-                </span>
+            <div
+              className={cn('shopping-cart__item__name__text__container', {
+                'shopping-cart__item__name__text__container--line-through': lineThrough,
+              })}
+            >
+              {lineThrough ? (
+                <>
+                  <span className="shopping-cart__item__name__text__container line-through">{lineThrough}</span>
+                  <span className="shopping-cart__item__name__text__container">{name}</span>
+                </>
+              ) : (
+                <>
+                  {name}
+                  {subtitle && (
+                    <span
+                      className="shopping-cart__item__name__text__subtitle"
+                      data-hj-suppress={type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
+                    >
+                      {subtitle}
+                    </span>
+                  )}
+                </>
               )}
               {!!leaseMonths && leaseMonths !== 'now' && price.upfront && (
                 <span className="shopping-cart__item__name__text__subtitle">
@@ -119,19 +133,19 @@ const ShoppingCartItem = ({
               {quantity > 1 && !shouldShowPricePerUnit && (
                 <span className="shopping-cart__item__price-per">{`${quantity} stk`}</span>
               )}
+              {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
+                <ShoppingCartCell className="shopping-cart__item__quantity">
+                  <ShoppingCartItemQuantityPicker
+                    cartItem={cartItem}
+                    name={name}
+                    quantity={quantity}
+                    onChangeQuantity={onChangeQuantity}
+                  />
+                </ShoppingCartCell>
+              )}
             </div>
           </div>
         </ShoppingCartColumnHeading>
-        {shouldShowQuantity && isQuantityModifiable && !hasPaid && (
-          <ShoppingCartCell className="shopping-cart__item__quantity">
-            <ShoppingCartItemQuantityPicker
-              cartItem={cartItem}
-              name={name}
-              quantity={quantity}
-              onChangeQuantity={onChangeQuantity}
-            />
-          </ShoppingCartCell>
-        )}
         <ShoppingCartCell
           className={cn('shopping-cart__item__price', {
             'shopping-cart__item__price--monthly': price.monthly,
