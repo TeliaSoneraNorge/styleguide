@@ -1,7 +1,6 @@
 import { boolean } from '@storybook/addon-knobs';
 import React from 'react';
 import { BreadCrumbs } from '../../index';
-import { BreadCrumbsProps } from './BreadCrumbs';
 
 export default {
   title: 'Component library/Molecules/BreadCrumbs',
