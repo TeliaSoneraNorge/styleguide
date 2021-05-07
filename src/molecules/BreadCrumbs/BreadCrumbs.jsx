@@ -14,6 +14,10 @@ const BreadCrumbs = (props) => {
     return <></>;
   }
 
+  if (props.crumbs.length === 0) {
+    return <></>;
+  }
+
   const alwaysShowRootCrumb = props.alwaysShowRootCrumb ?? true;
   const pagingSize = props.pagingSize ?? 1;
   const maxCrumbIndex = props.crumbs.length - 1;
@@ -66,7 +70,6 @@ const BreadCrumbs = (props) => {
     if (minIndex > 0 && alwaysShowRootCrumb) {
       visibleCrumbs.splice(0, 0, crumbs[0]);
     }
-
     return visibleCrumbs;
   };
 
@@ -143,6 +146,10 @@ const BreadCrumbs = (props) => {
       </ul>
     </div>
   );
+};
+
+BreadCrumbs.defaultProps = {
+  crumbs: [],
 };
 
 export default BreadCrumbs;
