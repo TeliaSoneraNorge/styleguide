@@ -159,7 +159,7 @@ export const DoubleData = () => {
     <SubscriptionLinesAccordion
       dataAmount={20}
       dataUnit="GB"
-      doubleDataAmount={5}
+      doubleDataAmount={40}
       id="smart20"
       price={529}
       priceInfo={['pr. md']}
