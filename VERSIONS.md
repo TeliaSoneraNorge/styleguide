@@ -17,7 +17,6 @@ Only noteworthy changes.
 ## 1.41.10
 - Added Breadcrumbs component
 - Added inputRef to TextField component
-- Change crumbs[] to nullable
 
 ## 1.41.0
 
