@@ -50,10 +50,23 @@ const SubscriptionAccordion = ({
         })}
         onClick={onOpen}
       >
-        <Heading className="subscription-accordion__heading" tag={titleTag} size="s">
-          {name}
-          {highlight && <div className="subscription-accordion__heading-highlight">{highlight}</div>}
-        </Heading>
+        <div className="subscription-accordion__heading-wrapper">
+          {lineThrough ? (
+            <>
+              <Heading className="subscription-accordion__heading line-through" tag={titleTag} size="s">
+                {lineThrough}
+              </Heading>
+              <Heading className="subscription-accordion__heading" tag={titleTag} size="s">
+                {name}
+              </Heading>
+            </>
+          ) : (
+            <Heading className="subscription-accordion__heading" tag={titleTag} size="s">
+              {name}
+              {highlight && <div className="subscription-accordion__heading-highlight">{highlight}</div>}
+            </Heading>
+          )}
+        </div>
         {discount ? (
           <div
             className={`subscription-accordion__discount subscription-accordion__discount__${discount.color || 'blue'}`}
