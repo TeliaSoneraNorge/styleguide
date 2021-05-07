@@ -46,6 +46,9 @@
       }
     }
   }
+  &__heading-wrapper {
+    display: flex;
+  }
 
   &__heading {
     display: flex;
@@ -54,6 +57,15 @@
     font-family: 'pebble';
     text-transform: uppercase;
     margin: 0;
+  }
+  &__heading.line-through {
+    text-decoration: line-through;
+    color: var(--grey-500);
+    text-decoration-thickness: 2px;
+    margin-right: 0.75rem;
+    @media all and (min-width: 41em) {
+      text-decoration-thickness: 2px;
+    }
   }
 
   &__heading-highlight {

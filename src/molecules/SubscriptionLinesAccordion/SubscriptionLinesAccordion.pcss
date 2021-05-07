@@ -90,6 +90,16 @@
       line-height: 3.75rem;
     }
   }
+  &__heading-name-double-data {
+    color: var(--grey-500);
+    text-decoration-line: line-through;
+    text-decoration-thickness: 1px;
+    text-align: left;
+    @media all and (min-width: 41em) {
+      text-align: center;
+      text-decoration-thickness: 2px;
+    }
+  }
   &__heading-icon {
     position: relative;
     display: inline;
@@ -265,6 +275,9 @@
       margin: 0 0 0.2rem 0;
     }
   }
+  &__double-data {
+    margin: 0rem 0 1rem 0.75rem;
+  }
 
   &__description1 {
     font-size: 1rem;
@@ -323,7 +336,7 @@
   }
 
   &__footer {
-    padding: 0.2rem 0rem 0.2rem 0.7rem;
+    padding: 0.2rem 0rem 0.2rem 1rem;
     align-self: flex-start;
 
     @media all and (min-width: 41em) {

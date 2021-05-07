@@ -16,6 +16,7 @@ export interface SubscriptionLinesAccordionProps {
   dataAmount?: SubscriptionDataAmount;
   dataAmountIcon?: any;
   dataUnit: SubscriptionDataUnit;
+  doubleDataAmount?: SubscriptionDataAmount;
   extraDataAmount?: SubscriptionDataAmount;
   extraDataUnit?: SubscriptionDataUnit;
   price?: SubscriptionPrice;

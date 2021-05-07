@@ -10,6 +10,7 @@ const SubscriptionLinesAccordion = ({
   dataAmount,
   dataAmountIcon,
   dataUnit,
+  doubleDataAmount,
   extraDataAmount,
   extraDataUnit,
   price,
@@ -114,19 +115,68 @@ const SubscriptionLinesAccordion = ({
               ) : (
                 <div className="subscription-lines-accordion__heading-container">
                   <div className="subscription-lines-accordion__mobile-only">
-                    <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s">
-                      {dataAmount} {dataUnit}
-                      {extraDataString && (
-                        <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
-                      )}
-                    </Heading>
+                    {doubleDataAmount ? (
+                      <>
+                        <Heading
+                          className="subscription-lines-accordion__heading-name"
+                          tag="h2"
+                          size="s"
+                          text={`${doubleDataAmount} ${dataUnit}`}
+                        ></Heading>
+                        <Heading
+                          className="subscription-lines-accordion__heading-name-double-data"
+                          tag="h2"
+                          size="xs"
+                          text={dataAmount}
+                        >
+                          {' '}
+                          {dataUnit}
+                        </Heading>
+                      </>
+                    ) : (
+                      <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s">
+                        {dataAmount} {dataUnit}
+                        {extraDataString && (
+                          <div className="subscription-lines-accordion__heading-extra-same-line">{extraDataString}</div>
+                        )}
+                      </Heading>
+                    )}
                   </div>
                   <div className="subscription-lines-accordion__desktop-only">
-                    <Heading className="subscription-lines-accordion__heading-name" tag="h2" size="s" text={dataAmount}>
-                      <div className="subscription-lines-accordion__heading-unit">{dataUnit}</div>
-                    </Heading>
-                    {extraDataString && (
-                      <div className="subscription-lines-accordion__heading-extra">{extraDataString}</div>
+                    {doubleDataAmount ? (
+                      <>
+                        <Heading
+                          className="subscription-lines-accordion__heading-name"
+                          tag="h2"
+                          size="s"
+                          text={doubleDataAmount}
+                        >
+                          <div className="subscription-lines-accordion__heading-unit">{dataUnit}</div>
+                        </Heading>
+                        <Heading
+                          className="subscription-lines-accordion__heading-name-double-data"
+                          tag="h2"
+                          size="xs"
+                          text={dataAmount}
+                        >
+                          {' '}
+                          {dataUnit}
+                        </Heading>
+                      </>
+                    ) : (
+                      <>
+                        <Heading
+                          className="subscription-lines-accordion__heading-name"
+                          tag="h2"
+                          size="s"
+                          text={dataAmount}
+                        >
+                          <div className="subscription-lines-accordion__heading-unit">{dataUnit}</div>
+                        </Heading>
+                        {extraDataString && (
+                          <div className="subscription-lines-accordion__heading-extra">{extraDataString}</div>
+                        )}
+                      </>
                     )}
                   </div>
                 </div>
@@ -189,7 +239,7 @@ const SubscriptionLinesAccordion = ({
             </div>
           </div>
         </div>
-        <div className="subscription-lines-accordion__description2 subscription-lines-accordion__mobile-only">
+        <div className="subscription-lines-accordion__description2 subscription-lines-accordion__mobile-only subscription-lines-accordion__double-data">
           {description1}
         </div>
       </button>

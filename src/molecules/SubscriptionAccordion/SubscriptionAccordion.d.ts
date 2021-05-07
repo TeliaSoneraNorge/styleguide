@@ -22,6 +22,7 @@ export interface SubscriptionAccordionProps {
   name?: string;
   titleTag?: string;
   highlight?: string;
+  lineThrough?: string;
   discountPrice?: SubscriptionPrice;
   price?: SubscriptionPrice;
   priceInfo?: string[];
