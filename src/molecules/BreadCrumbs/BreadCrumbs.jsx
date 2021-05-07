@@ -148,4 +148,8 @@ const BreadCrumbs = (props) => {
   );
 };
 
+BreadCrumbs.defaultProps = {
+  crumbs: [],
+};
+
 export default BreadCrumbs;
