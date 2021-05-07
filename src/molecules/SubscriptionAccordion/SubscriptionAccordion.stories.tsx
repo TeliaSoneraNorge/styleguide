@@ -92,14 +92,14 @@ export const WithHighlight = () => {
   );
 };
 
-export const WithDoubleData = () => {
+export const WithLineThrough = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
     <SubscriptionAccordion
-      name="20 GB"
-      highlight="+ 5GB"
+      name="40 GB"
       id="smart20"
+      lineThrough="20 GB"
       price={529}
       priceInfo={['pr. md']}
       isExpanded={isExpanded}

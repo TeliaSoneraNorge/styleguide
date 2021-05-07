@@ -11,6 +11,7 @@ const SubscriptionAccordion = ({
   name,
   titleTag = 'h2',
   highlight,
+  lineThrough,
   description,
   discountPrice,
   price,
