@@ -279,7 +279,7 @@ export const DiscountPriceSubscriptionAccordion = () => {
         iconName: 'infinite',
         name: 'Ubegrenset data',
       }}
-      description="Lorem ipsum dolar sit subscription"
+      description={<span style={{ display: 'flex', alignItems: 'center' }}>Lorem ipsum dolar sit subscription</span>}
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}
     >
