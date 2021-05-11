@@ -7,15 +7,15 @@ interface Crumb {
   title?: string;
 }
 
-export interface BreadCrumbsProps {
+export interface BreadcrumbsProps {
   crumbs?: Crumb[];
   alwaysShowRootCrumb?: boolean;
   pageSize?: number;
   pagingSize?: number;
 }
 
-class BreadCrumbs extends React.Component<BreadCrumbsProps, any> {
+class Breadcrumbs extends React.Component<BreadcrumbsProps, any> {
   render(): JSX.Element;
 }
 
-export default BreadCrumbs;
+export default Breadcrumbs;
