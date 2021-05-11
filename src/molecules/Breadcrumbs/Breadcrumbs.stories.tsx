@@ -10,6 +10,7 @@ export default {
 export const Default = () => (
   <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 0)} alwaysShowRootCrumb={true} />
 );
+
 export const TwoBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 1)} />;
 export const ThreeBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 2)} />;
 export const FourBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 3)} />;
