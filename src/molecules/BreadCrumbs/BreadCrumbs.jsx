@@ -9,7 +9,7 @@ const crumbType = {
   LABEL: 'label',
 };
 
-const BreadCrumbs = (props) => {
+const Breadcrumbs = (props) => {
   if (!props.crumbs) {
     return <></>;
   }
@@ -19,14 +19,20 @@ const BreadCrumbs = (props) => {
   }
 
   const alwaysShowRootCrumb = props.alwaysShowRootCrumb ?? true;
-  const pagingSize = props.pagingSize ?? 1;
   const maxCrumbIndex = props.crumbs.length - 1;
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
   const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
 
+  let pagingSize = props.pagingSize ?? 1;
   let pageSize = props.pageSize ?? 3;
+  if (pagingSize <= 0) {
+    pagingSize = 1;
+  }
+  if (pageSize <= 0) {
+    pageSize = 1;
+  }
   if (alwaysShowRootCrumb && pageSize < 2) {
-    console.warn('Telia-BreadCrumbs: show root crumb is true, so page size cannot be below 2');
+    console.warn('Telia-Breadcrumbs: show root crumb is true, so page size cannot be below 2');
     pageSize = 2;
   }
   const minIndex = maxIndex - pageSize + 1 + (alwaysShowRootCrumb ? 1 : 0);
@@ -148,8 +154,8 @@ const BreadCrumbs = (props) => {
   );
 };
 
-BreadCrumbs.defaultProps = {
+Breadcrumbs.defaultProps = {
   crumbs: [],
 };
 
-export default BreadCrumbs;
+export default Breadcrumbs;
