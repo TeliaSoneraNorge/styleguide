@@ -62,9 +62,7 @@ We also use the [BEM-pattern](http://getbem.com/naming/): `block__elements--modi
 
 2. Build the library: `npm run icons`. Note that the original icons are _optimized and moved_ from the _drop here_ folder. The files that cannot be processed successfully remain in the _drop folder_
 
-3. Check that the new optimized version of the icons look as expected in _styleguide-web_.
-
-4. Run `npm run build`, `npm run storybook` and check [http://localhost:3000/#/image-assets](http://localhost:3000/#/image-assets) )
+3. Run `npm run build`, `npm run storybook` and check if your icon appears here: [http://localhost:6006/?path=/docs/component-library-atoms-icon--default](http://localhost:6006/?path=/docs/component-library-atoms-icon--default)
 
 ## Consuming the local, development styleguide in other local web apps
 
