@@ -37,6 +37,7 @@ import zensCharger from './assets/zens-charger.png';
 import icoInfo from './assets/ico_info.svg';
 import icoShare from './assets/ico_share.svg';
 import logo from './assets/logo/logo.svg';
+import fiveG from './assets/logo/five-g.svg';
 import logoInverted from './assets/logo/logo-inverted.svg';
 
 export default {
@@ -46,8 +47,9 @@ export default {
   businessDevelopmentPebble,
   boyIpad,
   forAlle,
+  fiveG,
   googlePlayBadge,
-  hero, 
+  hero,
   hero1Mobil,
   hero1,
   hero2Mobil,

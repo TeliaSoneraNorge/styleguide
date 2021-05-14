@@ -67,6 +67,7 @@ export { default as FocusHeader } from './molecules/FocusHeader';
 export { default as FocusSpinner } from './molecules/FocusSpinner';
 export { default as FullWidthImage } from './molecules/FullWidthImage';
 export { default as HardwareProduct } from './molecules/HardwareProduct';
+export { default as HardwareProductBox } from './molecules/HardwareProductBox';
 export { default as Hero } from './molecules/Hero';
 export { PageMenu, MenuTopPanel } from './molecules/PageMenu';
 export { default as Header } from './molecules/Header';
