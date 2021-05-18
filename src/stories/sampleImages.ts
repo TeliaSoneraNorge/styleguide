@@ -47,7 +47,7 @@ export default {
   boyIpad,
   forAlle,
   googlePlayBadge,
-  hero, 
+  hero,
   hero1Mobil,
   hero1,
   hero2Mobil,

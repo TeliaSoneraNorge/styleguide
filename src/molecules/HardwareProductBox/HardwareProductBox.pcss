@@ -1,0 +1,144 @@
+.hardware-product-box {
+  display: flex;
+  flex-direction: column;
+  width: 275px;
+  position: relative;
+  height: 426px;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--black);
+  text-align: center;
+
+  &__five-g-container {
+    position: absolute;
+    right: 30px;
+  }
+
+  &__highlight-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    height: 82px;
+    width: 82px;
+    right: 20px;
+    border-radius: 41px;
+    color: white;
+
+    &--wrapper {
+      display: flex;
+      margin-top: 15%;
+      flex-direction: column;
+      align-items: center;
+      justify-self: center;
+      line-height: 15px;
+    }
+
+    &--heading {
+      font-size: 13px;
+    }
+
+    &--text {
+      font-size: 11px;
+    }
+
+    &--icon {
+      height: 22px;
+      width: 22px;
+    }
+  }
+
+  .horizontal-rule {
+    &--short {
+      border-bottom: 1px solid var(--core-purple);
+      width: 50px;
+    }
+  }
+
+  &:hover {
+    background-color: white;
+    transform: scale(1.015);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.25);
+
+    .horizontal-rule--short {
+      transition: width 0.3s ease-in !important;
+      width: 70% !important;
+    }
+  }
+
+  &:focus {
+    background: #990ae3 !important;
+    color: #fff !important;
+    outline: none !important;
+
+    .horizontal-rule--short {
+      border-color: #fff !important;
+    }
+  }
+
+  &__upper-container {
+    min-height: 14rem;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: flex-start;
+    margin-bottom: 0.5rem;
+
+    &__fiveg {
+      position: absolute;
+      left: 100px;
+    }
+  }
+  &__lower-container {
+    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__product-image {
+    margin-top: 20px;
+  }
+  &__product-campaign {
+    display: flex;
+    align-items: center;
+    height: 22px;
+    position: absolute;
+    padding: 5px;
+    font-size: 14px;
+    text-transform: uppercase;
+    top: -12px;
+  }
+  &__product-brand {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 1px;
+  }
+  &__product-name {
+    font-family: pebble;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 0.3px;
+    margin: 0.2rem 0 0.5rem 0;
+  }
+  &__product-price {
+    display: grid;
+    grid-template-columns: 9rem 3rem;
+    align-items: center;
+    text-align: right;
+    font-family: 'pebble';
+    font-size: 32px;
+    margin: 0;
+    margin-bottom: 0.5rem;
+
+    span {
+      font-size: 14px;
+    }
+  }
+  &__product-price-disclaimer {
+    font-size: 10px;
+    line-height: 12px;
+  }
+}
