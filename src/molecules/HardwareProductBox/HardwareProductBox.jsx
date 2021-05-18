@@ -18,7 +18,6 @@ const HardwareProductBox = ({
   is5G,
   highlight,
   onClick,
-  status,
   children,
   image,
   name,
@@ -65,16 +64,18 @@ const HardwareProductBox = ({
 
 HardwareProductBox.propTypes = {
   campaign: PropTypes.shape({
-    backgroundColor: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string,
+    color: PropTypes.string,
+    text: PropTypes.string,
   }),
   highlight: PropTypes.shape({
-    heading: PropTypes.string.isRequired,
-    text: PropTypes.string.isRequired,
-    icon: PropTypes.string.isRequired,
-    color: PropTypes.string.isRequired,
+    heading: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.string,
+    color: PropTypes.string,
   }),
+  brand: PropTypes.string,
+  is5G: PropTypes.bool,
   url: PropTypes.string,
   children: PropTypes.node,
   onClick: PropTypes.func,

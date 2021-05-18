@@ -15,9 +15,7 @@ export interface HardwareProductProps {
   image?: string;
   name?: string;
   priceDescription?: string;
-  price?: HardwareProductPrice;
-  priceDisclaimerLine1?: React.ReactNode;
-  priceDisclaimerLine2?: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export const HardwareProduct: React.FC<HardwareProductProps>;
