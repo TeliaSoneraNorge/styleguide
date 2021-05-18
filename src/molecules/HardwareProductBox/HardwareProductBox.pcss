@@ -1,13 +1,12 @@
-.hardware-product {
+.hardware-product-box {
   display: flex;
   flex-direction: column;
-  max-width: 20rem;
-  min-width: 15rem;
   width: 275px;
   position: relative;
   height: 426px;
-  align-items: stretch;
-  justify-content: flex-start;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
   padding: 0.5rem;
   text-decoration: none;
   color: var(--black);
@@ -98,8 +97,6 @@
     flex-direction: column;
     align-items: center;
   }
-  &__product-image-container {
-  }
   &__product-image {
     margin-top: 20px;
   }
@@ -107,8 +104,8 @@
     display: flex;
     align-items: center;
     height: 22px;
-    left: 38%;
     position: absolute;
+    padding: 5px;
     font-size: 14px;
     text-transform: uppercase;
     top: -12px;
@@ -117,7 +114,6 @@
     font-style: normal;
     font-weight: 500;
     font-size: 14px;
-    line-height: 20px;
     letter-spacing: 1px;
   }
   &__product-name {
@@ -125,10 +121,7 @@
     font-weight: 400;
     font-size: 18px;
     letter-spacing: 0.3px;
-    line-height: 20px;
     margin: 0.2rem 0 0.5rem 0;
-  }
-  &__product-price-decription {
   }
   &__product-price {
     display: grid;
@@ -146,5 +139,6 @@
   }
   &__product-price-disclaimer {
     font-size: 10px;
+    line-height: 12px;
   }
 }
