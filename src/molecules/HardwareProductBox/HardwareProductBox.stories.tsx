@@ -38,11 +38,11 @@ export const Default = () => {
     <div style={{ marginTop: 50 }}>
       <HardwareProductBox {...product}>
         <div>
-          <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
-          <div className="hardware-product-box__product-price">
+          <div className="hardware-product__product-price-decription">{product.priceDescription}</div>
+          <div className="hardware-product__product-price">
             {product.price},- <span>pr md.</span>
           </div>
-          <div className="hardware-product-box__product-price-disclaimer">
+          <div className="hardware-product__product-price-disclaimer">
             {product.priceDisclaimerLine1}
             {product.priceDisclaimerLine2 && (
               <>
@@ -148,11 +148,11 @@ export const DefaultGridView = () => {
         return (
           <HardwareProductBox key={index} {...product}>
             <div>
-              <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
-              <div className="hardware-product-box__product-price">
+              <div className="hardware-product__product-price-decription">{product.priceDescription}</div>
+              <div className="hardware-product__product-price">
                 {product.price},- <span>pr md.</span>
               </div>
-              <div className="hardware-product-box__product-price-disclaimer">
+              <div className="hardware-product__product-price-disclaimer">
                 {product.priceDisclaimerLine1}
                 {product.priceDisclaimerLine2 && (
                   <>

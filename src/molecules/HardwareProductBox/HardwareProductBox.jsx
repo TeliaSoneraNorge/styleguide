@@ -82,4 +82,5 @@ HardwareProductBox.propTypes = {
   image: PropTypes.string,
   name: PropTypes.string,
 };
+
 export default HardwareProductBox;
