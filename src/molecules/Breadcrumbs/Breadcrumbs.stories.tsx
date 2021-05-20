@@ -27,35 +27,11 @@ export const TenBreadcrumbsPageSizeLargeAndHideRoot = () => (
 export const EmptyBreadcrumbsArray = () => <Breadcrumbs crumbs={[]} />;
 export const BreadcrumbsUndefined = () => <Breadcrumbs />;
 export const PurpleBackgroundColor = () => (
-  <Breadcrumbs colors={backgroundPurple} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+  <Breadcrumbs backgroundColor={'core-purple'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
 );
 export const GrayBackgroundColor = () => (
-  <Breadcrumbs colors={backgroundGray} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+  <Breadcrumbs backgroundColor={'gray'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
 );
-export const BlackBackgroundColor = () => (
-  <Breadcrumbs colors={backgroundBlack} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
-);
-
-const backgroundPurple = {
-  backgroundColor: '#990ae3',
-  fontColor: '#ffffff',
-  arrowColor: '#ffffff',
-  moreIconColor: '#ffffff',
-};
-
-const backgroundBlack = {
-  backgroundColor: 'black',
-  fontColor: '#ffffff',
-  arrowColor: '#ffffff',
-  moreIconColor: '#ffffff',
-};
-
-const backgroundGray = {
-  backgroundColor: 'gray',
-  fontColor: '#ffffff',
-  arrowColor: '#ffffff',
-  moreIconColor: '#ffffff',
-};
 
 const breadCrumbsData = [
   {

@@ -1,18 +1,40 @@
 .telia-breadcrumbs {
+    &--purple {
+        background-color: var(--core-purple);
+    }
+    
+    &--gray {
+        background-color: var(--gray-400);
+    }
+
     &__list {
         vertical-align: middle;
+
+        &--white {
+            color: var(--white);
+        }
     }
 
     &__crumb {
         display: inline-block;
         vertical-align: middle;
+
+        @media all and (max-width: 25rem) {
+            &:not(:last-child) {
+                display: none;
+            }
+        }
     }
 
     &__arrow-left-icon {
         height: 1.1rem;
         vertical-align: middle;
         width: 1.1rem;
-        color: #a0a0a0;
+        color: var(--grey-400);
+
+        &--white {
+            color: var(--white);
+        }
     }
 
     &__link {
@@ -38,6 +60,10 @@
         vertical-align: middle;
         height: 1.1rem;
         width: 1.1rem;
+
+        &--white {
+            color: var(--white);
+        }
     }
 
     &__crumb-label {

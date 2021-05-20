@@ -1,6 +1,8 @@
+import classNames from 'classnames';
 import React, { useState } from 'react';
 import { ArrowLeftIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
+import classnames from 'classnames';
 
 const crumbType = {
   LINK: 'link',
@@ -96,7 +98,7 @@ const Breadcrumbs = (props) => {
 
   const CrumbLabel = ({ crumb }) => {
     return (
-      <span className="telia-breadcrumbs__crumb-label">
+      <span className={'telia-breadcrumbs__crumb-label'}>
         <b>{crumb.name}</b>
       </span>
     );
@@ -106,10 +108,18 @@ const Breadcrumbs = (props) => {
     return (
       <>
         <button type="button" className="telia-breadcrumbs__paging-button" onClick={onPagingEvent}>
-          <MoreIcon className="telia-breadcrumbs__more-icon" style={SetMoreIconColor(props.colors)} />
+          <MoreIcon
+            className={classnames('telia-breadcrumbs__more-icon', {
+              'telia-breadcrumbs__more-icon--white': props.backgroundColor === 'core-purple',
+            })}
+          />
         </button>
         {showArrowLeftIcon && (
-          <ArrowLeftIcon className="telia-breadcrumbs__arrow-left-icon" style={SetArrowColor(props.colors)} />
+          <ArrowLeftIcon
+            className={classnames('telia-breadcrumbs__arrow-left-icon', {
+              'telia-breadcrumbs__arrow-left-icon--white': props.backgroundColor === 'core-purple',
+            })}
+          />
         )}
       </>
     );
@@ -118,17 +128,26 @@ const Breadcrumbs = (props) => {
   const CrumbLink = ({ crumb }) => {
     return (
       <>
-        <a className="telia-breadcrumbs__link" href={crumb.link} target={crumb.target ?? ''} title={crumb.title ?? ''}>
+        <a
+          className={'telia-breadcrumbs__link'}
+          href={crumb.link}
+          target={crumb.target ?? ''}
+          title={crumb.title ?? ''}
+        >
           {crumb.name}
         </a>
-        <ArrowLeftIcon className="telia-breadcrumbs__arrow-left-icon" style={SetArrowColor(props.colors)} />
+        <ArrowLeftIcon
+          className={classnames('telia-breadcrumbs__arrow-left-icon', {
+            'telia-breadcrumbs__arrow-left-icon--white': props.backgroundColor === 'core-purple',
+          })}
+        />
       </>
     );
   };
 
   const CrumbRender = ({ crumb }) => {
     return (
-      <li key={crumb.key} className="telia-breadcrumbs__crumb" style={SetFontColor(props.colors)}>
+      <li key={crumb.key} className={'telia-breadcrumbs__crumb'}>
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowLeftIcon={true} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
@@ -140,30 +159,23 @@ const Breadcrumbs = (props) => {
     );
   };
 
-  const SetBackgroundColor = (colors) => {
-    if (colors != null && colors.backgroundColor != null) return { backgroundColor: colors.backgroundColor };
-  };
-
-  const SetFontColor = (colors) => {
-    if (colors != null && colors.fontColor != null) return { color: colors.fontColor };
-  };
-
-  const SetMoreIconColor = (colors) => {
-    if (colors != null && colors.moreIconColor != null) return { color: colors.moreIconColor };
-  };
-
-  const SetArrowColor = (colors) => {
-    if (colors != null && colors.arrowColor != null) return { color: colors.arrowColor };
-  };
-
   let displayCrumbs = getVisibleCrumbs();
   displayCrumbs = addPagingCrumbs(displayCrumbs);
   displayCrumbs = addRootCrumb(displayCrumbs);
   setLabelCrumb(displayCrumbs);
 
   return (
-    <div className="telia-breadcrumbs" style={SetBackgroundColor(props.colors)}>
-      <ul className="telia-breadcrumbs__list">
+    <div
+      className={classNames('telia-breadcrumbs', {
+        'telia-breadcrumbs--purple': props.backgroundColor === 'core-purple',
+        'telia-breadcrumbs--gray': props.backgroundColor === 'gray',
+      })}
+    >
+      <ul
+        className={classNames('telia-breadcrumbs__list', {
+          'telia-breadcrumbs__list--white': props.backgroundColor === 'core-purple',
+        })}
+      >
         {displayCrumbs.map((crumb) => (
           <CrumbRender crumb={crumb} key={crumb.key} />
         ))}
