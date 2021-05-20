@@ -27,10 +27,18 @@ export const TenBreadcrumbsPageSizeLargeAndHideRoot = () => (
 export const EmptyBreadcrumbsArray = () => <Breadcrumbs crumbs={[]} />;
 export const BreadcrumbsUndefined = () => <Breadcrumbs />;
 export const PurpleBackgroundColor = () => (
-  <Breadcrumbs backgroundColor={'core-purple'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+  <Breadcrumbs
+    backgroundColor={'core-purple'}
+    detailColor={'white'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+  />
 );
 export const GrayBackgroundColor = () => (
-  <Breadcrumbs backgroundColor={'gray'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+  <Breadcrumbs backgroundColor={'gray'} detailColor={'white'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+);
+
+export const BlackBackgroundColor = () => (
+  <Breadcrumbs backgroundColor={'black'} detailColor={'white'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
 );
 
 const breadCrumbsData = [

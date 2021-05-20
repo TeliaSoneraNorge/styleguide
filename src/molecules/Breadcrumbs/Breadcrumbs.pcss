@@ -1,10 +1,18 @@
 .telia-breadcrumbs {
-    &--purple {
+    &--core-purple {
         background-color: var(--core-purple);
     }
     
     &--gray {
-        background-color: var(--gray-400);
+        background-color: var(--grey-400);
+    }
+
+    &--white {
+        background-color: var(--white);
+    }
+
+    &--black {
+        background-color: var(--black);
     }
 
     &__list {
@@ -13,14 +21,38 @@
         &--white {
             color: var(--white);
         }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
+
+        @media all and (max-width: 40rem) {
+            padding-inline-start: 10px;
+        }
     }
 
     &__crumb {
         display: inline-block;
         vertical-align: middle;
 
-        @media all and (max-width: 25rem) {
-            &:not(:last-child) {
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
+
+        @media all and (max-width: 40rem) {
+            &:not(:nth-last-child(-n + 2)) {
                 display: none;
             }
         }
@@ -35,12 +67,32 @@
         &--white {
             color: var(--white);
         }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
     }
 
     &__link {
         text-decoration: none;
         vertical-align: middle;
         padding: 0.6rem;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
 
         &:hover, &:visited, &:active, &:link {
             color: inherit;
@@ -54,6 +106,18 @@
         padding-left: 0.6rem;
         padding-right: 0.6rem;
         cursor: pointer;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
     }
 
     &__more-icon {
@@ -64,10 +128,30 @@
         &--white {
             color: var(--white);
         }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
     }
 
     &__crumb-label {
         vertical-align: middle;
         padding: 0.6rem;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-400);
+        }
     }
 }
