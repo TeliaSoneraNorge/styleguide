@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, CSSProperties } from
 import classnames from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
-export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
+export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'secondLink' | 'inverted' | 'negative';
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonMargin = 'top' | 'bottom';
 
@@ -24,7 +24,7 @@ export interface CommonButtonProps {
    * you can define a component tag with one of these below.
    * 'button' are default and is not necessary to define
    */
-  component?: 'button' | 'link' | 'div';
+  component?: 'button' | 'link' | 'secondLink' | 'div';
   /**
    * A button can have a text.
    */
@@ -114,7 +114,7 @@ const Button = (props: ButtonProps) => {
     ...rest
   } = props;
 
-  const Tag: any = component === 'link' ? 'a' : component;
+  const Tag: any = component === ('link' || 'secondLink') ? 'a' : component;
 
   return (
     <Tag
@@ -183,6 +183,7 @@ Button.kinds = {
   primary: 'primary',
   cancel: 'cancel',
   link: 'link',
+  secondLink: 'secondLink',
   inverted: 'inverted',
   negative: 'negative',
 } as ButtonKindDict;

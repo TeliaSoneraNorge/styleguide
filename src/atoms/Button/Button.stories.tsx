@@ -8,7 +8,7 @@ export default {
 
 export const Default = () => (
   <>
-  <Button text="Default button" />
+    <Button text="Default button" />
   </>
 );
 
@@ -17,31 +17,32 @@ export const Normal = () => (
     <Button text="Default button" />
     <Button text="Primary button" kind="primary" />
     <Button text="Disabled button" isDisabled={true} />
-    <br/><br/>
+    <br />
+    <br />
     <Button text="Inverted button" kind="inverted" />
     <Button text="Negative button" kind="negative" />
   </>
 );
-
 
 export const WithIcon = () => (
   <>
     <Button text="Default button" icon="map" />
     <Button text="Primary button" icon="star" kind="primary" />
     <Button text="Disabled button" icon="games" isDisabled={true} />
-    <br/><br/>
+    <br />
+    <br />
     <Button text="Inverted button" kind="inverted" icon="tv" />
     <Button text="Negative button" kind="negative" icon="wrench" />
-    <br/><br/>
+    <br />
+    <br />
     <Button text="Default button" isProcessing={true} icon="alert" processingText="Working" />
     <Button text="Default button" isProcessing={true} icon="cloud" processingText="Working" kind="primary" />
   </>
 );
 
-
 export const AsLink = () => (
   <>
-    <Button component='link' href="#" text="Button with <a> tag" />
+    <Button component="link" href="#" text="Button with <a> tag" />
   </>
 );
 
@@ -74,6 +75,6 @@ export const CancelButton = () => (
   </>
 );
 
-export const LinkButton = () => (
-   <Button text="Link button" kind="link" />
-);
+export const LinkButton = () => <Button text="Link button" kind="link" />;
+
+export const SecondLinkButton = () => <Button text="Second Link button" kind="secondLink" />;
