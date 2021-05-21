@@ -1,5 +1,49 @@
 @import '../../colors.pcss';
 .telia-quick-search {
+  &--animated {
+    width: 3rem;
+    transition: width 0.3s ease-out;
+    .telia-textfield {
+      &__input {
+        width: 0rem !important;
+        height: 0rem !important;
+        padding: 0rem;
+      }
+      &__content {
+        height: 44px;
+        border: none !important;
+      }
+      &__rightContent {
+        width: 3rem;
+        border-top-left-radius: 6rem;
+        border-bottom-left-radius: 6rem;
+        border-top-right-radius: 6rem;
+        border-bottom-right-radius: 6rem;
+      }
+      &--white {
+        border: none !important;
+      }
+    }
+  }
+
+  &--animated:focus-within {
+    width: 18rem;
+    .telia-textfield {
+      &__input {
+        height: 44px !important;
+        width: 200px !important;
+        padding: 0.75rem;
+      }
+
+      &__rightContent {
+        border-top-right-radius: 6rem;
+        border-bottom-right-radius: 6rem;
+        border-top-left-radius: 0rem;
+        border-bottom-left-radius: 0rem;
+      }
+    }
+  }
+
   .telia-textfield {
     input  {
       font-family: 'Helvetica Neue';
@@ -17,7 +61,6 @@
 
   .telia-textfield__content {
     border-radius: 100px;
-
     transition: box-shadow 150ms ease-in-out;
   }
 
