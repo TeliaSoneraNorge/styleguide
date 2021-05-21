@@ -29,9 +29,7 @@ export interface HardwareProductProps {
   brand: string;
   is5G?: boolean;
   campaign?: HardwareProductCampaign | null;
-  url?: string;
   highlight?: Highlight;
-  onClick?: (...args: any[]) => any;
   image?: {
     url: string;
   };
@@ -42,17 +40,15 @@ export interface HardwareProductProps {
 const HardwareProductBox = ({
   className,
   campaign,
-  url,
   brand,
   is5G,
   highlight,
-  onClick,
   children,
   image,
   name,
   ...rest
 }: HardwareProductProps) => (
-  <a className={classNames('hardware-product-box', className)} href={url} onClick={onClick} {...rest}>
+  <div className={classNames('hardware-product-box', className)} {...rest}>
     {campaign ? (
       <div
         style={{ backgroundColor: campaign.backgroundColor, color: campaign.color }}
@@ -88,7 +84,7 @@ const HardwareProductBox = ({
       <hr className={'horizontal-rule horizontal-rule--short'} />
       {children}
     </div>
-  </a>
+  </div>
 );
 
 export default HardwareProductBox;
