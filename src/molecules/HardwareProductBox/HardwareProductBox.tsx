@@ -78,7 +78,7 @@ const HardwareProductBox = ({
       )}
       {image ? (
         <div className="hardware-product-box__product-image-container">
-          <img className="hardware-product-box__product-image" src={`${image.url}?h=220`} />
+          <img className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
         </div>
       ) : null}
     </div>
