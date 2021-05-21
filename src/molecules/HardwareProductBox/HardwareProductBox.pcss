@@ -19,7 +19,19 @@
 
   &__five-g-container {
     position: absolute;
-    right: 1.8rem;
+    right: 0.5rem;
+    background-image: url('{{assetPath}}/pebbles/five-g.svg');
+    background-repeat: no-repeat;
+    background-size: 3.5rem 3.5rem;
+    width: 4rem;
+    height: 4rem;
+
+    @media all and (min-width: 48em) {
+      right: 1.5rem;
+      background-size: 4rem 4rem;
+      width: 4.5rem;
+      height: 4.5rem;
+    }
   }
 
   &__highlight-container {

@@ -1,9 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { Icon } from '../../atoms/Icon/Icon';
-import Image from '../Image/Image';
 import Heading from '../../atoms/Heading/Heading';
-import logo from '../../../assets/pebbles/five-g.svg';
 import { IconDefinition } from '../../atoms/Icon';
 
 /**
@@ -67,14 +65,10 @@ const HardwareProductBox = ({
           </div>
         </div>
       )}
-      {is5G && !highlight && (
-        <div className="hardware-product-box__five-g-container">
-          <Image src={logo}></Image>
-        </div>
-      )}
+      {is5G && !highlight && <div className="hardware-product-box__five-g-container" />}
       {image ? (
         <div className="hardware-product-box__product-image-container">
-          <img className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
+          <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
         </div>
       ) : null}
     </div>
