@@ -68,7 +68,7 @@ const HardwareProductBox = ({
       {is5G && !highlight && <div className="hardware-product-box__five-g-container" />}
       {image ? (
         <div className="hardware-product-box__product-image-container">
-          <img className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
+          <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
         </div>
       ) : null}
     </div>
