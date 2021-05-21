@@ -2,7 +2,7 @@ import React, { ButtonHTMLAttributes, AnchorHTMLAttributes, CSSProperties } from
 import classnames from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 
-export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'inverted' | 'negative';
+export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'secondLink' | 'inverted' | 'negative';
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonMargin = 'top' | 'bottom';
 
@@ -183,6 +183,7 @@ Button.kinds = {
   primary: 'primary',
   cancel: 'cancel',
   link: 'link',
+  secondLink: 'secondLink',
   inverted: 'inverted',
   negative: 'negative',
 } as ButtonKindDict;
