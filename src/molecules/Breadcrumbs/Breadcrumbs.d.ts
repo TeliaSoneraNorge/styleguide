@@ -12,6 +12,8 @@ export interface BreadcrumbsProps {
   alwaysShowRootCrumb?: boolean;
   pageSize?: number;
   pagingSize?: number;
+  backgroundColor?: string;
+  fontAndIconColor?: string;
 }
 
 class Breadcrumbs extends React.Component<BreadcrumbsProps, any> {

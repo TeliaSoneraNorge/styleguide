@@ -1,26 +1,98 @@
 .telia-breadcrumbs {
+    &--core-purple {
+        background-color: var(--core-purple);
+    }
+    
+    &--gray {
+        background-color: var(--grey-200);
+    }
+
+    &--white {
+        background-color: var(--white);
+    }
+
+    &--black {
+        background-color: var(--black);
+    }
 
     &__list {
-        line-style-type: none;
         vertical-align: middle;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
+
+        @media all and (max-width: 40rem) {
+            padding-left: 10px;
+        }
     }
 
     &__crumb {
         display: inline-block;
         vertical-align: middle;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
+
+        @media all and (max-width: 40rem) {
+            &:not(:nth-last-child(-n + 2)) {
+                display: none;
+            }
+        }
     }
 
     &__arrow-left-icon {
         height: 1.1rem;
         vertical-align: middle;
         width: 1.1rem;
-        color: #a0a0a0;
+        color: var(--grey-200);
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
     }
 
     &__link {
         text-decoration: none;
         vertical-align: middle;
         padding: 0.6rem;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
 
         &:hover, &:visited, &:active, &:link {
             color: inherit;
@@ -34,16 +106,52 @@
         padding-left: 0.6rem;
         padding-right: 0.6rem;
         cursor: pointer;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
     }
 
     &__more-icon {
         vertical-align: middle;
         height: 1.1rem;
         width: 1.1rem;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
     }
 
     &__crumb-label {
         vertical-align: middle;
         padding: 0.6rem;
+
+        &--white {
+            color: var(--white);
+        }
+
+        &--black {
+            color: var(--black);
+        }
+
+        &--gray {
+            color: var(--gray-200);
+        }
     }
 }

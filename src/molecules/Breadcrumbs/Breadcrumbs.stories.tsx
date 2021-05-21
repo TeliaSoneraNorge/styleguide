@@ -20,12 +20,35 @@ export const TenBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData} />;
 export const TenBreadcumbsPagingSize = () => <Breadcrumbs crumbs={breadCrumbsData} pagingSize={2} />;
 export const TenBreadcrumbsPageSizeLarge = () => <Breadcrumbs crumbs={breadCrumbsData} pageSize={4} />;
 export const TenBreadcrumbsPageSizeSmall = () => <Breadcrumbs crumbs={breadCrumbsData} pageSize={1} />;
+export const TenBreadcrumbsPageSizeTen = () => <Breadcrumbs crumbs={breadCrumbsData} pageSize={10} />;
 export const TenBreadcrumbsHideRoot = () => <Breadcrumbs crumbs={breadCrumbsData} alwaysShowRootCrumb={false} />;
 export const TenBreadcrumbsPageSizeLargeAndHideRoot = () => (
   <Breadcrumbs crumbs={breadCrumbsData} pageSize={4} alwaysShowRootCrumb={false} />
 );
 export const EmptyBreadcrumbsArray = () => <Breadcrumbs crumbs={[]} />;
 export const BreadcrumbsUndefined = () => <Breadcrumbs />;
+export const PurpleBackgroundColor = () => (
+  <Breadcrumbs
+    backgroundColor={'core-purple'}
+    fontAndIconColor={'white'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+  />
+);
+export const GrayBackgroundColor = () => (
+  <Breadcrumbs
+    backgroundColor={'gray'}
+    fontAndIconColor={'white'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+  />
+);
+
+export const BlackBackgroundColor = () => (
+  <Breadcrumbs
+    backgroundColor={'black'}
+    fontAndIconColor={'white'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+  />
+);
 
 const breadCrumbsData = [
   {
