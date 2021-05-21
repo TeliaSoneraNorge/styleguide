@@ -13,7 +13,6 @@ export const Default = () => {
       backgroundColor: '#007ACC',
       color: '#ffffff',
     },
-    url: '#',
     brand: 'Apple',
     image: {
       title: '',
@@ -65,7 +64,6 @@ export const DefaultGridView = () => {
         backgroundColor: '#990AE3',
         color: '#ffffff',
       },
-      url: '#',
       brand: 'Apple',
       image: {
         title: '',
@@ -111,7 +109,6 @@ export const DefaultGridView = () => {
         color: 'orange',
         icon: 'gift',
       },
-      url: '#',
       brand: 'Apple',
       image: {
         title: '',
@@ -127,7 +124,6 @@ export const DefaultGridView = () => {
     },
     {
       campaign: null,
-      url: '#',
       brand: 'Apple',
       image: {
         title: '',
@@ -143,7 +139,7 @@ export const DefaultGridView = () => {
     },
   ];
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly', marginTop: 50 }}>
+    <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', marginTop: 50 }}>
       {products.map((product, index) => {
         return (
           <HardwareProductBox key={index} {...product}>
