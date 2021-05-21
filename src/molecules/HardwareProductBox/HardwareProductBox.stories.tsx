@@ -115,7 +115,7 @@ export const DefaultGridView = () => {
         url:
           '//images.ctfassets.net/iz15t1lxx44v/5EHb7IK72Vcx3KrI1PsduP/653d5b499c0614928f13f5ccb850a9f1/iPhone-12-Black.png',
       },
-      is5G: true,
+      is5G: false,
       name: 'iPhone 12 Pro Max',
       priceDescription: 'Med SVITSJ',
       price: 489,
