@@ -140,6 +140,24 @@ export const Default = () => {
   );
 };
 
+export const AnimatedSearch = () => {
+  return (
+    <>
+      <h3>Animated QuickSearch</h3>
+      <div style={{ display: 'flex' }}>
+        <div style={{ width: '30%', marginRight: '1rem' }}>
+          <QuickSearch
+            placeholder="Søk på merker og modeller"
+            animated={true}
+            kind="white"
+            rightContent={<Button kind="secondary-text" size="compact" icon="search" onClick={action('search')} />}
+          />
+        </div>
+      </div>
+    </>
+  );
+};
+
 Default.parameters = {
   design: {
     type: 'figma',

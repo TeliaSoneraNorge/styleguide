@@ -108,6 +108,8 @@ export interface TextFieldProps {
   fieldInstructionsProps?: FieldInstructionsProps;
 
   inputRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement>;
+
+  animated?: Boolean;
 }
 
 export const TextField = (props: TextFieldProps) => {
