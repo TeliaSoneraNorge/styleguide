@@ -23,11 +23,6 @@ const Breadcrumbs = (props) => {
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
   const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
 
-  const colors = {
-    backgroundColor: props?.backgroundColor ?? null,
-    detailColor: props?.detailColor ?? null,
-  };
-
   let pagingSize = props.pagingSize ?? 1;
   let pageSize = props.pageSize ?? 3;
   if (pagingSize <= 0) {
@@ -108,7 +103,7 @@ const Breadcrumbs = (props) => {
 
   const CrumbLabel = ({ crumb }) => {
     return (
-      <span className={getStyle('telia-breadcrumbs__crumb-label', colors.detailColor)}>
+      <span className={getStyle('telia-breadcrumbs__crumb-label', props.detailColor)}>
         <b>{crumb.name}</b>
       </span>
     );
@@ -119,13 +114,13 @@ const Breadcrumbs = (props) => {
       <>
         <button
           type="button"
-          className={getStyle('telia-breadcrumbs__paging-button', colors.detailColor)}
+          className={getStyle('telia-breadcrumbs__paging-button', props.detailColor)}
           onClick={onPagingEvent}
         >
-          <MoreIcon className={getStyle('telia-breadcrumbs__more-icon', colors.detailColor)} />
+          <MoreIcon className={getStyle('telia-breadcrumbs__more-icon', props.detailColor)} />
         </button>
         {showArrowLeftIcon && (
-          <ArrowLeftIcon className={getStyle('telia-breadcrumbs__arrow-left-icon', colors.detailColor)} />
+          <ArrowLeftIcon className={getStyle('telia-breadcrumbs__arrow-left-icon', props.detailColor)} />
         )}
       </>
     );
@@ -135,21 +130,21 @@ const Breadcrumbs = (props) => {
     return (
       <>
         <a
-          className={getStyle('telia-breadcrumbs__link', colors.detailColor)}
+          className={getStyle('telia-breadcrumbs__link', props.detailColor)}
           href={crumb.link}
           target={crumb.target ?? ''}
           title={crumb.title ?? ''}
         >
           {crumb.name}
         </a>
-        <ArrowLeftIcon className={getStyle('telia-breadcrumbs__arrow-left-icon', colors.detailColor)} />
+        <ArrowLeftIcon className={getStyle('telia-breadcrumbs__arrow-left-icon', props.detailColor)} />
       </>
     );
   };
 
   const CrumbRender = ({ crumb }) => {
     return (
-      <li key={crumb.key} className={getStyle('telia-breadcrumbs__crumb', colors.detailColor)}>
+      <li key={crumb.key} className={getStyle('telia-breadcrumbs__crumb', props.detailColor)}>
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowLeftIcon={true} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
@@ -167,8 +162,8 @@ const Breadcrumbs = (props) => {
   setLabelCrumb(displayCrumbs);
 
   return (
-    <div className={getStyle('telia-breadcrumbs', colors.backgroundColor)}>
-      <ul className={getStyle('telia-breadcrumbs__list', colors.detailColor)}>
+    <div className={getStyle('telia-breadcrumbs', props.backgroundColor)}>
+      <ul className={getStyle('telia-breadcrumbs__list', props.detailColor)}>
         {displayCrumbs.map((crumb) => (
           <CrumbRender crumb={crumb} key={crumb.key} />
         ))}
