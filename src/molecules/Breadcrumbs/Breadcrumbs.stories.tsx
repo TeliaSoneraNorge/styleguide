@@ -30,16 +30,24 @@ export const BreadcrumbsUndefined = () => <Breadcrumbs />;
 export const PurpleBackgroundColor = () => (
   <Breadcrumbs
     backgroundColor={'core-purple'}
-    detailColor={'white'}
+    fontAndIconColor={'white'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
   />
 );
 export const GrayBackgroundColor = () => (
-  <Breadcrumbs backgroundColor={'gray'} detailColor={'white'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+  <Breadcrumbs
+    backgroundColor={'gray'}
+    fontAndIconColor={'white'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+  />
 );
 
 export const BlackBackgroundColor = () => (
-  <Breadcrumbs backgroundColor={'black'} detailColor={'white'} crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />
+  <Breadcrumbs
+    backgroundColor={'black'}
+    fontAndIconColor={'white'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+  />
 );
 
 const breadCrumbsData = [
