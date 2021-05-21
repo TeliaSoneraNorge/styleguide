@@ -24,7 +24,7 @@ export interface CommonButtonProps {
    * you can define a component tag with one of these below.
    * 'button' are default and is not necessary to define
    */
-  component?: 'button' | 'link' | 'secondLink' | 'div';
+  component?: 'button' | 'link' | 'div';
   /**
    * A button can have a text.
    */
@@ -114,7 +114,7 @@ const Button = (props: ButtonProps) => {
     ...rest
   } = props;
 
-  const Tag: any = component === ('link' || 'secondLink') ? 'a' : component;
+  const Tag: any = component === 'link' ? 'a' : component;
 
   return (
     <Tag
