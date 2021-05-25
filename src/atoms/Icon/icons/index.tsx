@@ -78,6 +78,7 @@ export { InternetIcon } from './InternetIcon';
 export { KontantkortIcon } from './KontantkortIcon';
 export { LaptopIcon } from './LaptopIcon';
 export { LightbulbIcon } from './LightbulbIcon';
+export { LikeFinIcon } from './LikeFinIcon';
 export { LikeIcon } from './LikeIcon';
 export { LinkIcon } from './LinkIcon';
 export { ListViewIcon } from './ListViewIcon';
