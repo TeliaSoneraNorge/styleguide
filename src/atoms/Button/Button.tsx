@@ -5,6 +5,7 @@ import { Icon, IconDefinition } from '../../atoms/Icon/index';
 export type ButtonKind = 'normal' | 'primary' | 'cancel' | 'link' | 'secondLink' | 'inverted' | 'negative';
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonMargin = 'top' | 'bottom';
+export type IconPlacement = 'left' | 'right';
 
 export interface HTMLButtonProps {
   component?: 'button';
@@ -39,6 +40,12 @@ export interface CommonButtonProps {
    * Look at Icon component for aviable icons to choose from
    */
   icon?: IconDefinition;
+
+  /**
+   * On which side of the button the icon shows e.g 'left' or 'right'
+   */
+  iconPlacement?: IconPlacement;
+
   type?: ButtonType;
   /**
    * A button can have different appearances e.g. 'primary', 'cancel'.
@@ -102,6 +109,7 @@ const Button = (props: ButtonProps) => {
     text,
     kind,
     icon,
+    iconPlacement = 'left',
     size,
     onClick,
     className,
@@ -136,7 +144,7 @@ const Button = (props: ButtonProps) => {
       style={style}
       {...rest}
     >
-      {icon && (
+      {icon && iconPlacement === 'left' && (
         <Icon
           icon={icon}
           style={{
@@ -159,6 +167,21 @@ const Button = (props: ButtonProps) => {
           <span className="button__processing-dot">.</span>
           <span className="button__processing-dot">.</span>
         </span>
+      )}
+      {icon && iconPlacement === 'right' && (
+        <Icon
+          icon={icon}
+          style={{
+            fill: 'currentColor',
+            height: '20px',
+            marginBottom: '-8px',
+            marginLeft: '10px',
+            marginRight: '-6px',
+            position: 'relative',
+            top: '-3.5px',
+            width: '20px',
+          }}
+        />
       )}
     </Tag>
   );

@@ -27,6 +27,7 @@ export const Normal = () => (
 export const WithIcon = () => (
   <>
     <Button text="Default button" icon="map" />
+    <Button text="Default button" iconPlacement="right" icon="map" />
     <Button text="Primary button" icon="star" kind="primary" />
     <Button text="Disabled button" icon="games" isDisabled={true} />
     <br />
