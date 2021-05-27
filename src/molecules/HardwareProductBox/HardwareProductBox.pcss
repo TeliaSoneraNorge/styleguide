@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 11rem;
   position: relative;
-  min-height: 24rem;
+  min-height: 26rem;
   align-items: center;
   align-content: center;
   justify-content: flex-start;
@@ -11,7 +11,7 @@
   color: var(--black);
   text-align: center;
   cursor: pointer;
-  transition: box-shadow ease-in 0.3;
+  transition: box-shadow ease-in 0.3s;
 
   @media all and (min-width: 48em) {
     min-height: 27rem;
@@ -143,6 +143,7 @@
   }
   &__product-image-container {
     display: flex;
+    justify-content: center;
     height: 10rem;
     width: 100%;
 
@@ -167,6 +168,9 @@
     @media all and (min-width: 48em) {
       font-size: 0.875rem;
     }
+  }
+  &__name-wrapper {
+    min-height: 6rem;
   }
   &__product-brand {
     font-style: normal;
