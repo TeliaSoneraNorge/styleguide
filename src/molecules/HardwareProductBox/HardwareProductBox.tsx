@@ -73,9 +73,11 @@ const HardwareProductBox = ({
       ) : null}
     </div>
     <div className="hardware-product-box__lower-container">
-      <Heading level={3} text={brand} className="hardware-product-box__product-brand" />
-      <Heading level={3} text={name} className="hardware-product-box__product-name" />
-      <hr className={'horizontal-rule horizontal-rule--short'} />
+      <div className="hardware-product-box__name-wrapper">
+        <Heading level={3} text={brand} className="hardware-product-box__product-brand" />
+        <Heading level={3} text={name} className="hardware-product-box__product-name" />
+        <hr className={'horizontal-rule horizontal-rule--short'} />
+      </div>
       {children}
     </div>
   </div>
