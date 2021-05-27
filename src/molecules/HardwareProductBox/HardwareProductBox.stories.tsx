@@ -37,7 +37,7 @@ export const Default = () => {
     <div style={{ marginTop: 50 }}>
       <HardwareProductBox {...product}>
         <div>
-          <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
+          <div className="hardware-product-box__product-price-description">{product.priceDescription}</div>
           <div className="hardware-product-box__product-price">
             {product.price},- <span>pr md.</span>
           </div>
@@ -144,7 +144,7 @@ export const DefaultGridView = () => {
         return (
           <HardwareProductBox key={index} {...product}>
             <div>
-              <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
+              <div className="hardware-product-box__product-price-description">{product.priceDescription}</div>
               <div className="hardware-product-box__product-price">
                 {product.price},- <span>pr md.</span>
               </div>
