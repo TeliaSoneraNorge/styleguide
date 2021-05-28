@@ -14,7 +14,8 @@ export const CardOption = (props: CardOptionProps) => {
   return (
     <button
       className={cn('telia-card__option', { 'telia-card__option--disabled': props.disabled }, props.className ?? '')}
-      onClick={props.onClick}
+      onClick={!props.disabled ? props.onClick : undefined}
+      disabled={props.disabled}
     >
       <Icon icon={props.icon} className="telia-card__option__icon" />
       <div>{props.label}</div>
