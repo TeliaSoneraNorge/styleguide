@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { colors } from '../../utils/colors';
 
@@ -101,15 +100,6 @@ export const progressBarSize = {
   md: '1rem',
   lg: '1.2rem',
   xl: '1.6rem',
-};
-
-ProgressBar.propTypes = {
-  value: PropTypes.number.isRequired,
-  min: PropTypes.number.isRequired,
-  max: PropTypes.number.isRequired,
-  disabled: PropTypes.bool,
-  color: PropTypes.oneOf(Object.keys(colors)),
-  height: PropTypes.oneOf(Object.keys(progressBarSize)),
 };
 
 export default ProgressBar;
