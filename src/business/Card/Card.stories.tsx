@@ -66,6 +66,12 @@ export const Default = () => {
           </Card>
         </div>
       </div>
+      <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+        <Card>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+      </div>
     </>
   );
 };
@@ -113,6 +119,21 @@ export const CardWithOptions = () => {
               <CardOption icon="info" label="Option 1" onClick={() => {}} />
               <CardOption icon="info" label="Option 2" onClick={() => {}} />
               <CardOption icon="info" label="Option 3" onClick={() => {}} />
+            </CardOptions>
+          </CardFooter>
+        </Card>
+      </div>
+      <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+        <Card>
+          <CardHeader>
+            <h2>Header</h2>
+          </CardHeader>
+          <CardBody>Body</CardBody>
+          <CardFooter padding={false}>
+            <CardOptions>
+              <CardOption icon="info" label="Option 1" onClick={() => {}} disabled />
+              <CardOption icon="info" label="Option 2" onClick={() => {}} disabled />
+              <CardOption icon="info" label="Option 3" onClick={() => {}} disabled />
             </CardOptions>
           </CardFooter>
         </Card>
