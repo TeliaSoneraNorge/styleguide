@@ -6,56 +6,6 @@ export default {
   component: HardwareProductBox,
 };
 
-export const Default = () => {
-  const product = {
-    campaign: {
-      text: 'nyhet',
-      backgroundColor: '#007ACC',
-      color: '#ffffff',
-    },
-    brand: 'Apple',
-    image: {
-      title: '',
-      url:
-        '//images.ctfassets.net/iz15t1lxx44v/5EHb7IK72Vcx3KrI1PsduP/653d5b499c0614928f13f5ccb850a9f1/iPhone-12-Black.png',
-    },
-    is5G: true,
-    highlight: {
-      heading: 'Airbuds Pro',
-      text: 'Verdi 2.500,-',
-      color: 'orange',
-      icon: 'gift',
-    },
-    name: 'iPhone 12 Pro Max',
-    priceDescription: 'Med SVITSJ',
-    price: 489,
-    priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
-    priceDisclaimerLine2: 'Abo u/avtaletid kommer i tillegg',
-  };
-
-  return (
-    <div style={{ marginTop: 50 }}>
-      <HardwareProductBox {...product}>
-        <div>
-          <div className="hardware-product-box__product-price-description">{product.priceDescription}</div>
-          <div className="hardware-product-box__product-price">
-            {product.price},- <span>pr md.</span>
-          </div>
-          <div className="hardware-product-box__product-price-disclaimer">
-            {product.priceDisclaimerLine1}
-            {product.priceDisclaimerLine2 && (
-              <>
-                <br />
-                {product.priceDisclaimerLine2}
-              </>
-            )}
-          </div>
-        </div>
-      </HardwareProductBox>
-    </div>
-  );
-};
-
 export const DefaultGridView = () => {
   const products = [
     {
@@ -71,7 +21,7 @@ export const DefaultGridView = () => {
           '//images.ctfassets.net/iz15t1lxx44v/5EHb7IK72Vcx3KrI1PsduP/653d5b499c0614928f13f5ccb850a9f1/iPhone-12-Black.png',
       },
       is5G: false,
-      name: 'iPhone 12 Pro Max',
+      name: 'iPhone 12 Pro Max With Extra Long Name',
       priceDescription: 'Med SVITSJ',
       price: 489,
       priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
@@ -139,28 +89,89 @@ export const DefaultGridView = () => {
     },
   ];
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-evenly', flexWrap: 'wrap', marginTop: 50 }}>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        flexWrap: 'wrap',
+        marginTop: 50,
+        backgroundColor: '#f2f2f2',
+        paddingTop: '2rem',
+      }}
+    >
       {products.map((product, index) => {
         return (
-          <HardwareProductBox key={index} {...product}>
-            <div>
-              <div className="hardware-product-box__product-price-description">{product.priceDescription}</div>
-              <div className="hardware-product-box__product-price">
-                {product.price},- <span>pr md.</span>
+          <div style={{ marginBottom: '1.5rem', backgroundColor: 'white' }}>
+            <HardwareProductBox key={index} {...product}>
+              <div>
+                <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
+                <div className="hardware-product-box__product-price">
+                  {product.price},- <span>pr md.</span>
+                </div>
+                <div className="hardware-product-box__product-price-disclaimer">
+                  {product.priceDisclaimerLine1}
+                  {product.priceDisclaimerLine2 && (
+                    <>
+                      <br />
+                      {product.priceDisclaimerLine2}
+                    </>
+                  )}
+                </div>
               </div>
-              <div className="hardware-product-box__product-price-disclaimer">
-                {product.priceDisclaimerLine1}
-                {product.priceDisclaimerLine2 && (
-                  <>
-                    <br />
-                    {product.priceDisclaimerLine2}
-                  </>
-                )}
-              </div>
-            </div>
-          </HardwareProductBox>
+            </HardwareProductBox>
+          </div>
         );
       })}
+    </div>
+  );
+};
+
+export const Default = () => {
+  const product = {
+    campaign: {
+      text: 'nyhet',
+      backgroundColor: '#007ACC',
+      color: '#ffffff',
+    },
+    brand: 'Apple',
+    image: {
+      title: '',
+      url:
+        '//images.ctfassets.net/iz15t1lxx44v/5EHb7IK72Vcx3KrI1PsduP/653d5b499c0614928f13f5ccb850a9f1/iPhone-12-Black.png',
+    },
+    is5G: true,
+    highlight: {
+      heading: 'Airbuds Pro',
+      text: 'Verdi 2.500,-',
+      color: 'orange',
+      icon: 'gift',
+    },
+    name: 'iPhone 12 Pro Max',
+    priceDescription: 'Med SVITSJ',
+    price: 489,
+    priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
+    priceDisclaimerLine2: 'Abo u/avtaletid kommer i tillegg',
+  };
+
+  return (
+    <div style={{ marginTop: 50 }}>
+      <HardwareProductBox {...product}>
+        <div>
+          <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
+          <div className="hardware-product-box__product-price">
+            {product.price},- <span>pr md.</span>
+          </div>
+          <div className="hardware-product-box__product-price-disclaimer">
+            {product.priceDisclaimerLine1}
+            {product.priceDisclaimerLine2 && (
+              <>
+                <br />
+                {product.priceDisclaimerLine2}
+              </>
+            )}
+          </div>
+        </div>
+      </HardwareProductBox>
     </div>
   );
 };
