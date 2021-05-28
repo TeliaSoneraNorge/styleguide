@@ -112,11 +112,7 @@ const Breadcrumbs = (props) => {
   const CrumbPaging = ({ onPagingEvent, showArrowLeftIcon }) => {
     return (
       <>
-        <button
-          type="button"
-          className={getStyle('telia-breadcrumbs__paging-button', props.iconColor)}
-          onClick={onPagingEvent}
-        >
+        <button type="button" className={'telia-breadcrumbs__paging-button'} onClick={onPagingEvent}>
           <MoreIcon className={getStyle('telia-breadcrumbs__more-icon', props.iconColor)} />
         </button>
         {showArrowLeftIcon && (
@@ -130,7 +126,7 @@ const Breadcrumbs = (props) => {
     return (
       <>
         <a
-          className={getStyle('telia-breadcrumbs__link', props.iconColor)}
+          className={getStyle('telia-breadcrumbs__link', props.fontColor)}
           href={crumb.link}
           target={crumb.target ?? ''}
           title={crumb.title ?? ''}
@@ -144,7 +140,7 @@ const Breadcrumbs = (props) => {
 
   const CrumbRender = ({ crumb }) => {
     return (
-      <li key={crumb.key} className={getStyle('telia-breadcrumbs__crumb', props.fontColor)}>
+      <li key={crumb.key} className={'telia-breadcrumbs__crumb'}>
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowLeftIcon={true} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
@@ -163,7 +159,7 @@ const Breadcrumbs = (props) => {
 
   return (
     <div className={getStyle('telia-breadcrumbs', props.backgroundColor)}>
-      <ul className={getStyle('telia-breadcrumbs__list', props.fontColor)}>
+      <ul className={'telia-breadcrumbs__list'}>
         {displayCrumbs.map((crumb) => (
           <CrumbRender crumb={crumb} key={crumb.key} />
         ))}
