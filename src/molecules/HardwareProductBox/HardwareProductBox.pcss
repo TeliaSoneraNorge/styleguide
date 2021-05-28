@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 11rem;
   position: relative;
-  min-height: 26rem;
+  min-height: 25rem;
   align-items: center;
   align-content: center;
   justify-content: flex-start;
@@ -14,7 +14,7 @@
   transition: box-shadow ease-in 0.3s;
 
   @media all and (min-width: 48em) {
-    min-height: 27.25rem;
+    min-height: 27rem;
     width: 18rem;
   }
 
@@ -161,6 +161,7 @@
   &__product-image {
     margin-top: 1.25rem;
     object-fit: contain;
+    max-width: 90%;
   }
   &__product-campaign {
     display: flex;
@@ -182,7 +183,11 @@
     }
   }
   &__name-wrapper {
-    min-height: 6rem;
+    min-height: 5rem;
+
+    @media all and (min-width: 48em) {
+      min-height: 3.5rem;
+    }
   }
   &__product-brand {
     font-style: normal;
