@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 11rem;
   position: relative;
-  min-height: 25rem;
+  min-height: 24rem;
   align-items: center;
   align-content: center;
   justify-content: flex-start;
@@ -90,11 +90,15 @@
   }
 
   .horizontal-rule {
+    display: none;
     transition: width 0.3s ease-in !important;
-
     &--short {
       border-bottom: 1px solid var(--core-purple);
       width: 50px;
+    }
+
+    @media all and (min-width: 48em) {
+      display: block;
     }
   }
 
@@ -121,7 +125,7 @@
   }
 
   &__upper-container {
-    min-height: 11rem;
+    min-height: 10.5rem;
     display: flex;
     flex-direction: column;
     align-items: stretch;
@@ -169,11 +173,11 @@
     display: flex;
     flex-direction: row;
     justify-content: center;
-    padding: 4px 8px;
+    padding: 4px 9px;
     height: 22px;
     position: absolute;
     border-radius: 4px;
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     line-height: 0.875rem;
     text-transform: uppercase;
     top: -12px;
@@ -183,7 +187,7 @@
     }
   }
   &__name-wrapper {
-    min-height: 5rem;
+    min-height: 4.5rem;
 
     @media all and (min-width: 48em) {
       min-height: 3.5rem;
