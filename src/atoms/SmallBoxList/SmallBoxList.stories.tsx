@@ -12,6 +12,16 @@ const boxes = [
   { name: '256 GB', id: '256-gb' },
 ];
 
+const brandBoxes = [
+  { name: 'Alle merker', id: 'alle-merker' },
+  { name: 'Apple', id: 'apple' },
+  { name: 'Samsung', id: 'samsung' },
+  { name: 'Oneplus', id: 'oneplus' },
+  { name: 'Sony', id: 'sony' },
+  { name: 'Motorola', id: 'motorola' },
+  { name: 'Doro', id: 'doro' },
+];
+
 const differentLengths = [
   { name: '64 GB lorem ipsum', id: '64-gb' },
   { name: '128 GB', id: '128-gb' },
@@ -21,6 +31,11 @@ const differentLengths = [
 export const Default = () => {
   const [selected, setSelected] = useState<string>();
   return <SmallBoxList selected={selected} onSelect={setSelected} boxes={boxes} />;
+};
+
+export const BrandBoxes = () => {
+  const [selected, setSelected] = useState<string>();
+  return <SmallBoxList selected={selected} onSelect={setSelected} boxes={brandBoxes} />;
 };
 
 export const UnevenTextLengths = () => {
