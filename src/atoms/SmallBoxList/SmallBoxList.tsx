@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
-import { Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from '../../index';
-import { Button } from '../../index';
 
 type SmallBoxId = string;
 
