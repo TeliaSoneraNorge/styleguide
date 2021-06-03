@@ -311,7 +311,9 @@ export const SubscriptionAccordionsWithDescription = () => {
         description={
           <span style={{ display: 'flex', alignItems: 'center' }}>
             <InfiniteIcon style={{ marginRight: '0.4rem' }} />
-            <span style={{ fontFamily: 'Helvetica Neue Medium' }}>med 10mbit/s etter</span>
+            <span style={{ fontFamily: `TeliaSans-Medium, Helvetica Neue Medium, Helvetica, Arial, sans-serif` }}>
+              med 10mbit/s etter
+            </span>
           </span>
         }
         price={529}
@@ -339,7 +341,9 @@ export const SubscriptionAccordionsWithDescription = () => {
         description={
           <span style={{ display: 'flex', alignItems: 'center' }}>
             <InfiniteIcon style={{ marginRight: '0.4rem' }} />
-            <span style={{ fontFamily: 'Helvetica Neue Medium' }}>med 10mbit/s etter</span>
+            <span style={{ fontFamily: `TeliaSans-Medium, Helvetica Neue Medium, Helvetica, Arial, sans-serif` }}>
+              med 10mbit/s etter
+            </span>
           </span>
         }
         price={529}
