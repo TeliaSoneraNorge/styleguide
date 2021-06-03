@@ -1,121 +1,124 @@
 .telia-breadcrumbs {
-    &--core-purple {
-        background-color: var(--core-purple);
+  &--core-purple {
+    background-color: var(--core-purple);
+  }
+
+  &--gray {
+    background-color: var(--grey-200);
+  }
+
+  &--white {
+    background-color: var(--white);
+  }
+
+  &--black {
+    background-color: var(--black);
+  }
+
+  &__list {
+    vertical-align: middle;
+    margin: 0;
+
+    @media all and (max-width: 40rem) {
+      padding-left: 10px;
     }
-    
-    &--gray {
-        background-color: var(--grey-200);
+  }
+
+  &__crumb {
+    display: inline-block;
+    vertical-align: middle;
+
+    @media all and (max-width: 40rem) {
+      &:not(:nth-last-child(-n + 2)) {
+        display: none;
+      }
     }
+  }
+
+  &__arrow-right-icon {
+    height: 1.1rem;
+    vertical-align: middle;
+    width: 1.1rem;
 
     &--white {
-        background-color: var(--white);
+      color: var(--white) !important;
     }
 
     &--black {
-        background-color: var(--black);
+      color: var(--black) !important;
     }
 
-    &__list {
-        vertical-align: middle;
-        margin: 0;
+    &--gray {
+      color: var(--gray-200) !important;
+    }
+  }
 
-        @media all and (max-width: 40rem) {
-            padding-left: 10px;
-        }
+  &__link {
+    text-decoration: none;
+    vertical-align: middle;
+    padding: 0.6rem !important;
+
+    &--white {
+      color: var(--white) !important;
     }
 
-    &__crumb {
-        display: inline-block;
-        vertical-align: middle;
-
-        @media all and (max-width: 40rem) {
-            &:not(:nth-last-child(-n + 2)) {
-                display: none;
-            }
-        }
+    &--black {
+      color: var(--black) !important;
     }
 
-    &__arrow-left-icon {
-        height: 1.1rem;
-        vertical-align: middle;
-        width: 1.1rem;
-
-        &--white {
-            color: var(--white) !important;
-        }
-
-        &--black {
-            color: var(--black) !important;
-        }
-
-        &--gray {
-            color: var(--gray-200) !important;
-        }
+    &--gray {
+      color: var(--gray-200) !important;
     }
 
-    &__link {
-        text-decoration: none;
-        vertical-align: middle;
-        padding: 0.6rem !important;
+    &:hover,
+    &:visited,
+    &:active,
+    &:link {
+      color: inherit;
+      text-decoration: none;
+    }
+  }
 
-        &--white {
-            color: var(--white) !important;
-        }
+  &__paging-button {
+    border: none;
+    background: none;
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+    cursor: pointer;
+  }
 
-        &--black {
-            color: var(--black) !important;
-        }
+  &__more-icon {
+    vertical-align: middle;
+    height: 1.1rem;
+    width: 1.1rem;
 
-        &--gray {
-            color: var(--gray-200) !important;
-        }
-
-        &:hover, &:visited, &:active, &:link {
-            color: inherit;
-            text-decoration: none;
-        }
+    &--white {
+      color: var(--white) !important;
     }
 
-    &__paging-button {
-        border: none;
-        background: none;
-        padding-left: 0.6rem;
-        padding-right: 0.6rem;
-        cursor: pointer;
+    &--black {
+      color: var(--black) !important;
     }
 
-    &__more-icon {
-        vertical-align: middle;
-        height: 1.1rem;
-        width: 1.1rem;
+    &--gray {
+      color: var(--gray-200) !important;
+    }
+  }
 
-        &--white {
-            color: var(--white) !important;
-        }
+  &__crumb-label {
+    vertical-align: middle;
+    padding: 0.6rem;
 
-        &--black {
-            color: var(--black) !important;
-        }
-
-        &--gray {
-            color: var(--gray-200) !important;
-        }
+    &--white {
+      color: var(--white) !important;
     }
 
-    &__crumb-label {
-        vertical-align: middle;
-        padding: 0.6rem;
-
-        &--white {
-            color: var(--white) !important;
-        }
-
-        &--black {
-            color: var(--black) !important;
-        }
-
-        &--gray {
-            color: var(--gray-200) !important;
-        }
+    &--black {
+      color: var(--black) !important;
     }
+
+    &--gray {
+      color: var(--gray-200) !important;
+    }
+  }
 }

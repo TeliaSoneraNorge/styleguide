@@ -1,4 +1,3 @@
-import { boolean } from '@storybook/addon-knobs';
 import React from 'react';
 import { Breadcrumbs } from '../../index';
 

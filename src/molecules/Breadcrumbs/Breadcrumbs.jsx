@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowLeftIcon } from '../../atoms/Icon/icons';
+import { ArrowRightIcon } from '../../atoms/Icon/icons';
 import { MoreIcon } from '../../atoms/Icon/icons';
 
 const crumbType = {
@@ -109,14 +109,14 @@ const Breadcrumbs = (props) => {
     );
   };
 
-  const CrumbPaging = ({ onPagingEvent, showArrowLeftIcon }) => {
+  const CrumbPaging = ({ onPagingEvent, showArrowRightIcon }) => {
     return (
       <>
         <button type="button" className={'telia-breadcrumbs__paging-button'} onClick={onPagingEvent}>
           <MoreIcon className={getStyle('telia-breadcrumbs__more-icon', props.iconColor)} />
         </button>
-        {showArrowLeftIcon && (
-          <ArrowLeftIcon className={getStyle('telia-breadcrumbs__arrow-left-icon', props.iconColor)} />
+        {showArrowRightIcon && (
+          <ArrowRightIcon className={getStyle('telia-breadcrumbs__arrow-right-icon', props.iconColor)} />
         )}
       </>
     );
@@ -133,7 +133,7 @@ const Breadcrumbs = (props) => {
         >
           {crumb.name}
         </a>
-        <ArrowLeftIcon className={getStyle('telia-breadcrumbs__arrow-left-icon', props.iconColor)} />
+        <ArrowRightIcon className={getStyle('telia-breadcrumbs__arrow-right-icon', props.iconColor)} />
       </>
     );
   };
@@ -141,7 +141,7 @@ const Breadcrumbs = (props) => {
   const CrumbRender = ({ crumb }) => {
     return (
       <li key={crumb.key} className={'telia-breadcrumbs__crumb'}>
-        {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowLeftIcon={true} />}
+        {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} showArrowRightIcon={true} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
 
