@@ -144,6 +144,7 @@ export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 export { QuickSearch } from './molecules/QuickSearch';
 export { PhoneNumberField } from './molecules/PhoneNumberField';
 export { TablePagination, Pagination } from './molecules/Paging';
+export { default as Footer } from './molecules/Footer';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';

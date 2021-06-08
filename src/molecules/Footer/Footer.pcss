@@ -1,0 +1,111 @@
+.telia-footer {
+    &__box-top {
+        background-color: var(--core-purple-800);;
+    }
+
+    &__box-bottom {
+        background-color: var(--black);
+    }
+
+    &__container {
+        margin: 0 auto;
+        width: 90%;
+        font-size: 1rem;
+
+        @media screen and (max-width: 40rem) {
+            width: 100%;
+        }
+    }
+
+    &__grid-top-container {
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        color: white; 
+        background-color: var(--core-purple-800);
+
+        @media screen and (max-width: 45rem) {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        @media screen and (max-width: 360px) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &__grid-bottom-container {
+        margin: 0;
+        /* padding-top: 2rem; */
+        padding-bootom: 1rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        justify-items: center;
+        color: var(--white);
+    }
+
+    &__grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &__text-container {
+        margin: 0;
+        padding: 0; 
+        width: 6rem;
+        grid-template-rows: 30vh;
+
+        @media screen and (max-width: 360px) {
+            width: 10rem;
+        }
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__list-item {
+        font-size: 0.7rem;
+        line-height: 1.3rem;
+    }
+
+    &__list-item-link {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    &__logo {
+
+    }
+
+    &__header {
+        margin: 0; 
+    }
+
+    &__address {
+        font-size: 0.7rem;
+    }
+
+    &__inline {
+        display: inline-block;
+        font-size: 0.6rem;
+        width: 5rem;
+        
+    }
+
+    &__inline-address {
+        border: solid 2px green;
+        display: inline-block;
+    }
+
+    &__left {
+        left: 0;
+    }
+
+}
+
+ul {
+    margin: 0; 
+    padding: 0;
+    display: inline-block;
+}
