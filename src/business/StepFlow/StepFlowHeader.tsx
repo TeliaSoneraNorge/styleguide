@@ -4,7 +4,6 @@ import { Button } from '../Button';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 import { HeaderLabels } from './types';
 import throttle from 'lodash/throttle';
-import { ModalHeader } from '../../molecules/Modal';
 
 type Props = {
   title: React.ReactNode;

@@ -4,7 +4,6 @@ import { StepFlowMenu } from './StepFlowMenu';
 import { StepFlowFooter } from './StepFlowFooter';
 import { Labels } from './types';
 import { useBreakpoint } from '../../utils/useBreakpoint';
-import { Modal } from '../../molecules/Modal';
 import cn from 'classnames';
 import { PageLayout } from '../PageLayout';
 
