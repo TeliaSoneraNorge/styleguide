@@ -225,3 +225,45 @@ export const SingleStep = () => {
     </div>
   );
 };
+
+export const Grey = () => {
+  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
+  const setKey = (key: string, value: string) => {
+    setState({ ...state, [key]: value });
+  };
+
+  return (
+    <div>
+      <Button label="Hello?" />
+      <StepFlow
+        title="Step flow"
+        color="grey"
+        description="Commonly used for large forms and orders"
+        onSubmit={action('Submit')}
+        onCancel={action('Cancel')}
+        additionalContent={
+          <Card>
+            <CardHeader> This can be a cart </CardHeader>
+            <CardBody>
+              Its a custom component though. You can place anything you want here
+              <CardDivider />
+              This compoent will render below the step content on small screens. Try adjusting the screensize in the
+              toolbare above
+            </CardBody>
+          </Card>
+        }
+      >
+        <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
+          {Object.entries(state).map(([key, val]) => (
+            <div style={{ paddingBottom: '1rem' }}>
+              <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
+            </div>
+          ))}
+        </StepFlowStep>
+        <StepFlowStep title="Step 2" isValid={true} disabled={false}>
+          <TextField />
+        </StepFlowStep>
+      </StepFlow>
+    </div>
+  );
+};
