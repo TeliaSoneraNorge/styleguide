@@ -54,7 +54,7 @@ export const WithAdditionalContent = () => {
   };
 
   return (
-    <div style={{ backgroundColor: 'red' }}>
+    <div>
       <Button label="Hello?" />
       <StepFlow
         title="Step flow"
