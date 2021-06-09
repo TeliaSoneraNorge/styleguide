@@ -78,3 +78,25 @@ export const SideContent = () => {
     </div>
   );
 };
+
+export const CustomContent = () => {
+  return (
+    <div style={{ height: '90vh' }}>
+      <PageLayout>
+        <div>
+          lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quaerat nisi maiores perspiciatis asperiores,
+          corporis magnam distinctio, blanditiis, suscipit animi fuga obcaecati nostrum doloribus libero praesentium
+          voluptates eligendi eaque expedita.
+          <div style={{ padding: '2rem' }}>
+            lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum quaerat nisi maiores perspiciatis asperiores,
+            corporis magnam distinctio, blanditiis, suscipit animi fuga obcaecati nostrum doloribus libero praesentium
+            voluptates eligendi eaque expedita.
+          </div>
+          <div style={{ textAlign: 'center' }}>
+            <Button label="Click me" />
+          </div>
+        </div>
+      </PageLayout>
+    </div>
+  );
+};
