@@ -43,7 +43,7 @@ type Props = {
   additionalContent?: React.ReactNode;
 
   /**
-   * @default 'white'
+   * @default 'grey'
    */
   color?: 'white' | 'grey';
 };
@@ -74,7 +74,6 @@ export const StepFlow = (props: Props) => {
   return (
     <PageLayout
       className={cn('telia-step-flow', {
-        'telia-step-flow--grey': props.color === 'grey',
         'telia-step-flow--white': props.color === 'white',
       })}
       header={{

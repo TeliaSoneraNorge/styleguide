@@ -26,7 +26,6 @@ export const Default = () => {
     <div>
       <Button label="Hello?" />
       <StepFlow
-        color="white"
         title="Step flow"
         description="Commonly used for large forms and orders"
         onSubmit={action('Submit')}
@@ -226,7 +225,7 @@ export const SingleStep = () => {
   );
 };
 
-export const Grey = () => {
+export const White = () => {
   const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
   const setKey = (key: string, value: string) => {
     setState({ ...state, [key]: value });
@@ -237,7 +236,7 @@ export const Grey = () => {
       <Button label="Hello?" />
       <StepFlow
         title="Step flow"
-        color="grey"
+        color="white"
         description="Commonly used for large forms and orders"
         onSubmit={action('Submit')}
         onCancel={action('Cancel')}
