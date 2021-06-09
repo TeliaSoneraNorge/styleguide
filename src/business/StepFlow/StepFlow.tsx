@@ -6,6 +6,7 @@ import { Labels } from './types';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 import { Modal } from '../../molecules/Modal';
 import cn from 'classnames';
+import { PageLayout } from '../PageLayout';
 
 type Props = {
   initialStep?: number;
@@ -43,7 +44,7 @@ type Props = {
   additionalContent?: React.ReactNode;
 
   /**
-   * @default 'grey'
+   * @default 'white'
    */
   color?: 'white' | 'grey';
 };
@@ -72,26 +73,38 @@ export const StepFlow = (props: Props) => {
   }, [step, props.children]);
 
   return (
-    <Modal
-      className={cn('telia-step-flow', { 'telia-step-flow--white': props.color === 'white' })}
-      open={true}
-      setOpen={props.onCancel}
-      size="fullscreen"
-    >
-      <StepFlowHeader
-        labels={props.labels}
-        title={props.title}
-        description={props.description}
-        onCancel={props.onCancel}
-        rightContent={props.headerContent}
-      />
-
-      <div className="telia-step-flow__main">
-        {menuBreakpoint && !singleStep && <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />}
-        <div className="telia-step-flow__main__form">
-          {form}
-          {renderAdditionalContentInStep ? props.additionalContent : null}
-
+    <PageLayout
+      className={cn('telia-step-flow', {
+        'telia-step-flow--grey': props.color === 'grey',
+        'telia-step-flow--white': props.color === 'white',
+      })}
+      header={{
+        component: (
+          <StepFlowHeader
+            labels={props.labels}
+            title={props.title}
+            description={props.description}
+            onCancel={props.onCancel}
+            rightContent={props.headerContent}
+          />
+        ),
+      }}
+      left={{
+        component: menuBreakpoint && !singleStep && (
+          <StepFlowMenu setStep={setStep} currentStep={step} steps={props.children} />
+        ),
+      }}
+      body={{
+        component: (
+          <>
+            {form}
+            {renderAdditionalContentInStep && props.additionalContent}
+          </>
+        ),
+      }}
+      right={{ component: renderAdditionalContentRight && props.additionalContent }}
+      footer={{
+        component: (
           <StepFlowFooter
             isLastStep={isLastStep}
             labels={props.labels}
@@ -105,9 +118,8 @@ export const StepFlow = (props: Props) => {
                 }
               : {})}
           />
-        </div>
-        {renderAdditionalContentRight ? <div className="telia-step-flow--right">{props.additionalContent}</div> : null}
-      </div>
-    </Modal>
+        ),
+      }}
+    />
   );
 };

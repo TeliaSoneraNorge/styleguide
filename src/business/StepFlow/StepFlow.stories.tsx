@@ -54,7 +54,7 @@ export const WithAdditionalContent = () => {
   };
 
   return (
-    <div>
+    <div style={{ backgroundColor: 'red' }}>
       <Button label="Hello?" />
       <StepFlow
         title="Step flow"
@@ -84,39 +84,6 @@ export const WithAdditionalContent = () => {
           <TextField />
         </StepFlowStep>
       </StepFlow>
-    </div>
-  );
-};
-
-export const WithTrigger = () => {
-  const [open, setOpen] = useState(false);
-  const [state, setState] = useState({ 1: '', 2: '', 3: '', 4: '', 5: '' });
-  const setKey = (key: string, value: string) => {
-    setState({ ...state, [key]: value });
-  };
-
-  return (
-    <div>
-      <Button label="Open step flow" onClick={() => setOpen(true)} />
-      {open ? (
-        <StepFlow
-          title="Step flow"
-          description="Commonly used for large forms and orders"
-          onSubmit={() => setOpen(false)}
-          onCancel={() => setOpen(false)}
-        >
-          <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
-            {Object.entries(state).map(([key, val]) => (
-              <div style={{ paddingBottom: '1rem' }}>
-                <TextField value={val} onChange={(e) => setKey(key, e.target.value)} />
-              </div>
-            ))}
-          </StepFlowStep>
-          <StepFlowStep title="Step 2" isValid={true} disabled={false}>
-            <TextField />
-          </StepFlowStep>
-        </StepFlow>
-      ) : null}
     </div>
   );
 };
@@ -156,11 +123,12 @@ export const WithCustomDescription = () => {
           ) : (
             <div
               style={{
-                margin: 'auto 0',
+                marginTop: 'auto',
+                marginBottom: 'auto',
+                marginLeft: 'auto',
                 height: 'fit-content',
                 border: '1px solid grey',
                 padding: '1rem',
-                marginLeft: 'auto',
               }}
             >
               Custom header content
@@ -203,11 +171,12 @@ export const WithCustomHeaderContent = () => {
           ) : (
             <div
               style={{
-                margin: 'auto 0',
+                marginTop: 'auto',
+                marginBottom: 'auto',
+                marginLeft: 'auto',
                 height: 'fit-content',
                 border: '1px solid grey',
                 padding: '1rem',
-                marginLeft: 'auto',
               }}
             >
               Custom header content

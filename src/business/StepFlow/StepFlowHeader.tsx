@@ -19,28 +19,21 @@ export const StepFlowHeader = (props: Props) => {
   const headerRef = useRef<HTMLDivElement | null>(null);
   const breakpointSm = useBreakpoint('sm');
   const [stickyHeader, setStickyHeader] = useState<boolean>(false);
-  const [modal, setModal] = useState(document.querySelector<HTMLDivElement>('.telia-modal__container'));
-
-  useEffect(() => {
-    if (!modal) {
-      setModal(document.querySelector<HTMLDivElement>('.telia-modal__container'));
-    }
-  }, []);
 
   useEffect(() => {
     const checkPosition = throttle(() => {
-      const shouldStick = (modal?.scrollTop ?? 0) > (headerRef.current?.offsetHeight ?? 380);
+      const shouldStick = (window.scrollY ?? 0) > (headerRef.current?.offsetHeight ?? 380);
       setStickyHeader(shouldStick);
     }, 100);
 
-    modal?.addEventListener('scroll', checkPosition);
+    window?.addEventListener('scroll', checkPosition);
     return () => {
-      modal?.removeEventListener('scroll', checkPosition);
+      window?.removeEventListener('scroll', checkPosition);
     };
-  }, [modal]);
+  }, []);
 
   return (
-    <ModalHeader>
+    <div className="telia-step-flow__header">
       <div className={cn('telia-step-flow__header__top', { 'telia-step-flow__header__top--stuck': stickyHeader })}>
         <Button
           kind="secondary-text"
@@ -62,6 +55,6 @@ export const StepFlowHeader = (props: Props) => {
         </div>
         {props.rightContent?.(stickyHeader)}
       </div>
-    </ModalHeader>
+    </div>
   );
 };
