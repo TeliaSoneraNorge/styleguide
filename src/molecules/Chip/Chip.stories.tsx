@@ -19,6 +19,7 @@ export const ChoiceChips = () => (
       <div>Disabled state:</div>
       <div>Chip with icon:</div>
     </div>
+    <div>White</div>
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '25% 25% 25% 25%' }}>
       <Chip label="Chippy" />
       <Chip label="Chippy" active />
@@ -26,7 +27,7 @@ export const ChoiceChips = () => (
       <Chip label="Chippy" icon="check-mark" />
     </div>
     <br />
-    <h3>Choice Chip - Grey</h3>
+    <div>Grey</div>
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '25% 25% 25% 25%' }}>
       <Chip label="Chippy Chippy" color="grey" />
 
@@ -36,17 +37,21 @@ export const ChoiceChips = () => (
 
       <Chip label="Chippy" icon="check-mark" color="grey" />
     </div>
+    <br />
 
     <h3>Square Chip</h3>
     <div>White</div>
-    <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
+    <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '25% 25% 25% 25%' }}>
       <Chip label="Chippy" mode="choice" kind="square" />
+      <Chip label="Chippy" mode="choice" active kind="square" />
       <Chip label="Chippy" mode="choice" disabled kind="square" />
       <Chip label="Chippy" mode="choice" icon="check-mark" kind="square" />
     </div>
+    <br />
     <div>Grey</div>
-    <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
+    <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '25% 25% 25% 25%' }}>
       <Chip label="Chippy" mode="choice" color="grey" kind="square" />
+      <Chip label="Chippy" mode="choice" color="grey" active kind="square" />
       <Chip label="Chippy" mode="choice" color="grey" disabled kind="square" />
       <Chip label="Chippy" mode="choice" color="grey" icon="check-mark" kind="square" />
     </div>
@@ -64,19 +69,21 @@ export const InputChips = () => (
       <div>Disabled state:</div>
       <div>Chip with icon:</div>
     </div>
+    <div>White</div>
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
       <Chip label="Chippy" mode="input" />
       <Chip label="Chippy" mode="input" disabled />
       <Chip label="Chippy" mode="input" icon="check-mark" />
     </div>
     <br />
-    <h3>Input Chip - Grey</h3>
+    <div>Grey</div>
     <br />
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
       <Chip label="Chippy Chippy" mode="input" color="grey" />
       <Chip label="Chippy" mode="input" color="grey" disabled />
       <Chip label="Chippy" mode="input" color="grey" icon="check-mark" />
     </div>
+    <br />
     <h3>Square Chip</h3>
     <div>White</div>
     <div style={{ paddingBottom: '1rem', display: 'grid', gridTemplateColumns: '33% 33% 33%' }}>
