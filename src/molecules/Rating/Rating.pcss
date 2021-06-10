@@ -1,48 +1,48 @@
 .telia-rating {
-    display:flex;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: fit-content;
+  width: fit-content;
+
+  &__link {
+    color: black;
+    &:hover {
+      background-color: white !important;
+      color: var(--core-purple) !important;
+    }
+
+    &:focus {
+      background-color: white !important;
+      color: black !important;
+    }
+  }
+
+  &__stars {
+    display: flex;
     align-items: center;
-    flex-direction: column;
-    height: fit-content;
-    width: fit-content;
 
-    &__link {
-        color: black;
-        &:hover {
-            background-color: white !important;
-            color: var(--core-purple) !important;
-        }
-
-        &:focus {
-            background-color: white !important;
-            color: black !important;
-        }
+    &--reviews {
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+      height: 20px;
     }
-
-    &__stars {
-        display:flex;
-        align-items:center;
-
-        &--reviews {
-            display:flex;
-            align-items:center;
-            cursor: pointer;
-            height: 20px;
-        }
-    }
+  }
 }
 
 .telia-rating-numbers {
-    margin-left: 10px;
-    display: flex;
-    align-items: center;
-    height: 20px;
+  margin-left: 10px;
+  display: flex;
+  align-items: center;
+  height: 20px;
 
-    p {
-        margin-right: .7rem;
-    }
+  p {
+    margin-right: 0.7rem;
+  }
 
-    .heading {
-        margin: 0px;
-        margin-right: 10px;
-    }
+  .heading {
+    margin: 0px;
+    margin-right: 10px;
+  }
 }

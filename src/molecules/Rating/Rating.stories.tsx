@@ -10,14 +10,14 @@ export default {
 export const Rating = () => <RatingStars rating={3} height={20} width={20} />;
 
 export const RatingNumbers = () => (
-  <RatingStars rating={4} height={20} width={20} reviewComments={0}>
-    <RatingWithNumbers rating={4.6} numberOfRatings={49} />
+  <RatingStars rating={4.5} height={20} width={20} reviewComments={0}>
+    <RatingWithNumbers rating={4.5} numberOfRatings={49} />
   </RatingStars>
 );
 
 export const RatingNumbersWithClick = () => (
-  <RatingStars onClick={Alert} rating={4} height={20} width={20} reviewComments={5}>
-    <RatingWithNumbers rating={4.6} numberOfRatings={49} />
+  <RatingStars onClick={Alert} rating={4.5} height={20} width={20} reviewComments={5}>
+    <RatingWithNumbers rating={4.5} numberOfRatings={49} />
   </RatingStars>
 );
 
