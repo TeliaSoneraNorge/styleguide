@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactStars from 'react-stars';
+import SvgIcon from '../../atoms/SvgIcon/index';
 export interface RatingProps {
   /**
    * Number of stars
@@ -21,14 +21,23 @@ export interface RatingWithNumbersProps {
   numberOfRatings: number;
 }
 
-export const RatingStars = ({ rating, children, onClick, reviewComments }: RatingProps) => {
+export const RatingStars = ({ rating, height, width, children, onClick, reviewComments }: RatingProps) => {
   return (
     <div className="telia-rating">
       <div
         onClick={onClick ? onClick : undefined}
         className={reviewComments ? 'telia-rating__stars--reviews' : 'telia-rating__stars'}
       >
-        <ReactStars count={5} size={24} value={rating} edit={false} half={true} color2="#ffcd64" />
+        {[...Array(5)].map((_star, index) => {
+          return (
+            <SvgIcon
+              style={{ height: height, width: width }}
+              key={index}
+              className={index < rating ? 'svg-icon--yellow' : 'svg-icon--dark-grey'}
+              iconName="star-filled"
+            />
+          );
+        })}
         {children}
       </div>
     </div>
