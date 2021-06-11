@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { FacebookIcon } from '../../atoms/Icon/icons';
 import { TwitterIcon } from '../../atoms/Icon/icons';
 import { VideoIcon } from '../../atoms/Icon/icons';
+import { ArrowDownIcon } from '../../atoms/Icon/icons';
+import { ArrowUpIcon } from '../../atoms/Icon/icons';
 
 const Footer = (props) => {
   const TopRow = (props) => {
     let key = 0;
     return (
-      <div className={'telia-footer__box-top'}>
-        <div className={'telia-footer__container'}>
-          <TopGridContainer data={props.top} />
+      <div className={'telia-footer__wrapper-top'}>
+        <div className={'telia-footer__top'}>
+          <div className={'telia-footer__top-container'}>
+            <TopGridContainer data={props.top} />
+          </div>
         </div>
       </div>
     );
@@ -18,8 +22,10 @@ const Footer = (props) => {
 
   const BottomRow = (props) => {
     return (
-      <div className={'telia-footer__box-bottom'}>
-        <div className={'telia-footer__container'}>{<BottomGridContainer data={props.bottom} />}</div>
+      <div className={'telia-footer__wrapper-bottom'}>
+        <div className={'telia-footer__bottom'}>
+          <BottomGridContainer data={props.bottom} />
+        </div>
       </div>
     );
   };
@@ -27,23 +33,26 @@ const Footer = (props) => {
   const TopGridContainer = (props) => {
     let key = 0;
     return (
-      <div className={'telia-footer__grid-top-container'}>
+      <>
         {props.data.map((child) => {
           return <ServiceLinks key={key++} title={child.title} links={child.links} />;
         })}
-      </div>
+        <AccordionList data={props.data} />
+      </>
     );
   };
 
   const BottomGridContainer = (props) => {
     return (
-      <div className={'telia-footer__grid-bottom-container'}>
+      <div className={'telia-footer__bottom-container'}>
+        {/* <div className={'telia-footer__bottom-logo-container'}> */}
         <Logo logo={props.data.logo} />
-        <div className={'telia-footer__inline'}>
+        {/* </div>     */}
+        <div className={'telia-footer__row'}>
           <Address address={props.data.address} />
           <PrivacyLinks links={props.data.links} />
+          <SosialMediaLinks sosials={props.data.sosials} />
         </div>
-        <SosialMediaLinks sosials={props.data.sosials} />
       </div>
     );
   };
@@ -51,12 +60,10 @@ const Footer = (props) => {
   const PrivacyLinks = (props) => {
     let key = 0;
     return (
-      <div className="telia-footer__inline-address">
-        <ul className={'telia-footer__list'}>
-          {props.links.map((element) => {
-            return <ServiceLink key={key++} name={element.name} url={element.url} color={element.color} />;
-          })}
-        </ul>
+      <div className={'telia-footer__privacy-and-settings'}>
+        {props.links.map((element) => {
+          return <PrivacyAndCookies key={key++} name={element.name} url={element.url} color={element.color} />;
+        })}
       </div>
     );
   };
@@ -64,19 +71,62 @@ const Footer = (props) => {
   const SosialMediaLinks = (props) => {
     let key = 0;
     return (
-      <ul className={'telia-footer__list'}>
+      <div className={'telia-footer__sosial-media'}>
         {props.sosials.map((child) => {
           return <SosialMediaLink key={key++} image={child.image} name={child.name} color={child.color} />;
         })}
-      </ul>
+      </div>
     );
+  };
+
+  const AccordionList = (props) => {
+    let key = 0;
+    console.log(props);
+    return (
+      <div className={'telia-footer__accordion'}>
+        {props.data.map(({ title, links }) => (
+          <AccordionItem key={key++} title={title} links={links} />
+        ))}
+      </div>
+    );
+  };
+
+  const AccordionItem = (props) => {
+    const [isActive, setIsActive] = useState(false);
+    return (
+      <div className="telia-footer__accordion-item">
+        <div className="telia-footer__accordion-title" onClick={() => setIsActive(!isActive)}>
+          <div className={'telia-footer__accordion-header'}>
+            <h3 className={'telia-footer__accordion-arrow'}>{props.title}</h3>
+            <div className={'telia-footer__accordion-arrow'}>
+              {isActive ? <ArrowUpIcon style={{ height: '0.9rem' }} /> : <ArrowDownIcon style={{ height: '0.9rem' }} />}
+            </div>
+          </div>
+        </div>
+        {isActive && (
+          <div className="telia-footer__accordion-content">
+            <Item links={props.links} />
+          </div>
+        )}
+      </div>
+    );
+  };
+
+  const Item = (props) => {
+    let key = 0;
+    return props.links.map(({ name, url }) => (
+      <a key={key++} href={url}>
+        <div>{name}</div>
+      </a>
+    ));
   };
 
   const ServiceLinks = (props) => {
     let key = 0;
     return (
-      <ul className={'telia-footer__text-container telia-footer__list'}>
+      <ul className={'telia-footer__list'}>
         <Title title={props.title} />
+
         {props.links.map((child) => {
           return <ServiceLink key={key++} name={child.name} url={child.url} color={child.color} />;
         })}
@@ -86,25 +136,23 @@ const Footer = (props) => {
 
   const ServiceLink = (props) => {
     return (
-      <li className={'telia-footer__list-item'}>
-        <a className={'telia-footer__list-item-link'} href={props.url}>
-          {props.name}
-        </a>
+      <li>
+        <a href={props.url}>{props.name}</a>
       </li>
     );
   };
 
+  const PrivacyAndCookies = (props) => {
+    return <a href={props.url}>{props.name}</a>;
+  };
+
   const Title = (props) => {
-    return (
-      <li>
-        <h4 className={'telia-footer__header'}>{props.title}</h4>
-      </li>
-    );
+    return <h4>{props.title}</h4>;
   };
 
   const Logo = (props) => {
     return (
-      <div className={'telia-footer__header'}>
+      <div className={'telia-footer__bottom-logo-container'}>
         <a href={props.link}>
           <img src={props.logo} />
         </a>
@@ -114,7 +162,7 @@ const Footer = (props) => {
 
   const Address = (props) => {
     return (
-      <div className={'telia-footer__inline-address'}>
+      <div className={'telia-footer__address'}>
         <div>{props.address.companyName}</div>
         <div>{props.address.office}</div>
         <div>{props.address.street}</div>
@@ -128,15 +176,16 @@ const Footer = (props) => {
 
   const SosialMediaLink = (props) => {
     return (
-      <li className={'telia-footer__inline'}>
-        {props.name === 'Facebook' && <FacebookIcon style={{ height: '0.9rem' }} />}
-        {props.name === 'Twitter' && <TwitterIcon style={{ height: '0.9rem' }} />}
-        {props.name === 'YouTube' && <VideoIcon style={{ height: '0.9rem' }} />}
-        <a href={props.link}>
-          <img src={props.image}></img>
-          <span>{props.name}</span>
-        </a>
-      </li>
+      <div className={'telia-footer__span telia-footer__purple'}>
+        <span>
+          {props.name === 'Facebook' && <FacebookIcon style={{ height: '0.9rem' }} />}
+          {props.name === 'Twitter' && <TwitterIcon style={{ height: '0.9rem' }} />}
+          {props.name === 'YouTube' && <VideoIcon style={{ height: '0.9rem' }} />}
+          <a className={'telia-footer__purple'} href={props.link}>
+            {props.name}
+          </a>
+        </span>
+      </div>
     );
   };
 
