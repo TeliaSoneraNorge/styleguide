@@ -21,23 +21,81 @@ export interface RatingWithNumbersProps {
   numberOfRatings: number;
 }
 
-export const RatingStars = ({ rating, height, width, children, onClick, reviewComments }: RatingProps) => {
+export const RatingStars = ({ rating, height, width, reviewComments, onClick, children }: RatingProps) => {
+  const maxRating = 5;
+  const starRatio = 1;
+
+  const maxStars = () => {
+    return Math.ceil(maxRating / starRatio);
+  };
+
+  const fullStars = () => {
+    return Math.floor(rating / starRatio);
+  };
+
+  const halfStars = () => {
+    const x = rating % starRatio;
+    const i = (1 / 2) * starRatio;
+    return x >= i ? 1 : 0;
+  };
+
+  const emptyStars = () => {
+    return maxStars() - fullStars() - halfStars();
+  };
+
+  const renderFullStars = () => {
+    return fullStars() !== 0
+      ? Array(fullStars())
+          .fill(null)
+          .map((item, i) => {
+            return (
+              <SvgIcon
+                style={{ height: height, width: width }}
+                className="svg-icon--yellow"
+                key={`fs${i}`}
+                iconName="star-filled"
+              />
+            );
+          })
+      : '';
+  };
+
+  const renderHalfStars = () => {
+    return halfStars() !== 0
+      ? Array(halfStars())
+          .fill(null)
+          .map((item, i) => {
+            return <SvgIcon className="svg-icon--yellow half-star" key={`fs${i}`} iconName="star-half" />;
+          })
+      : '';
+  };
+
+  const renderEmptyStars = () => {
+    return emptyStars() !== 0
+      ? Array(emptyStars())
+          .fill(null)
+          .map((item, i) => {
+            return (
+              <SvgIcon
+                style={{ height: height, width: width }}
+                className="svg-icon--yellow"
+                key={`fs${i}`}
+                iconName="star"
+              />
+            );
+          })
+      : '';
+  };
+
   return (
     <div className="telia-rating">
       <div
         onClick={onClick ? onClick : undefined}
         className={reviewComments ? 'telia-rating__stars--reviews' : 'telia-rating__stars'}
       >
-        {[...Array(5)].map((_star, index) => {
-          return (
-            <SvgIcon
-              style={{ height: height, width: width }}
-              key={index}
-              className={index < rating ? 'svg-icon--yellow' : 'svg-icon--dark-grey'}
-              iconName="star-filled"
-            />
-          );
-        })}
+        {renderFullStars()}
+        {renderHalfStars()}
+        {renderEmptyStars()}
         {children}
       </div>
     </div>
