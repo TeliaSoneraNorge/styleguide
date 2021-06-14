@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.42.0 
+- StepFlow: use a fullscreen page layout component rather than a fullscreen modal. 
+
 ## 1.41.21
 
 - Added new component HardwareProductBox
