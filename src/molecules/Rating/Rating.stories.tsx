@@ -9,6 +9,8 @@ export default {
 
 export const Rating = () => <RatingStars height={20} width={20} rating={2.5} />;
 
+export const RatingFullStar = () => <RatingStars height={20} width={20} rating={4} />;
+
 export const RatingNumbers = () => (
   <RatingStars rating={4.5} height={20} width={20} reviewComments={0}>
     <RatingWithNumbers rating={4.5} numberOfRatings={49} />
