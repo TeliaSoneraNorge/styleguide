@@ -7,7 +7,7 @@ export default {
   subcomponents: { RatingWithNumbers },
 };
 
-export const Rating = () => <RatingStars rating={3} height={20} width={20} />;
+export const Rating = () => <RatingStars height={20} width={20} rating={2.5} />;
 
 export const RatingNumbers = () => (
   <RatingStars rating={4.5} height={20} width={20} reviewComments={0}>
@@ -16,7 +16,7 @@ export const RatingNumbers = () => (
 );
 
 export const RatingNumbersWithClick = () => (
-  <RatingStars onClick={Alert} rating={4.5} height={20} width={20} reviewComments={5}>
+  <RatingStars onClick={Alert} height={20} width={20} rating={4.5} reviewComments={5}>
     <RatingWithNumbers rating={4.5} numberOfRatings={49} />
   </RatingStars>
 );

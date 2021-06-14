@@ -67,7 +67,6 @@
 .svg_kontantkort,
 .svg_laptop,
 .svg_lightbulb,
-.svg_like-fin,
 .svg_like,
 .svg_link,
 .svg_list-view,
@@ -671,6 +670,10 @@
 .svg_sorted_desc {
   width: 18px;
   height: 14px;
+}
+.svg_star-half {
+  width: 16px;
+  height: 16px;
 }
 .svg_step-by-step-pebble {
   width: 66px;
