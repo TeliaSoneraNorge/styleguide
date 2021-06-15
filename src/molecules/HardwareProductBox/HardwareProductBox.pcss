@@ -1,6 +1,7 @@
 .hardware-product-box {
   display: flex;
   flex-direction: column;
+  border-radius: 0.5rem;
   width: 11rem;
   position: relative;
   min-height: 24rem;
@@ -11,7 +12,7 @@
   color: var(--black);
   text-align: center;
   cursor: pointer;
-  transition: box-shadow ease-in 0.3s;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
 
   @media all and (min-width: 48em) {
     min-height: 27rem;
@@ -93,7 +94,7 @@
     display: none;
     transition: width 0.3s ease-in !important;
     &--short {
-      border-bottom: 1px solid var(--core-purple);
+      border-bottom: 2px solid var(--core-purple);
       width: 50px;
     }
 
@@ -104,10 +105,6 @@
 
   &:hover {
     background-color: white;
-    transform: scale(1.015);
-    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
-    transition: box-shadow ease-in 0.4s;
-
     .horizontal-rule--short {
       transition: width 0.4s ease-in !important;
       width: 70% !important;
