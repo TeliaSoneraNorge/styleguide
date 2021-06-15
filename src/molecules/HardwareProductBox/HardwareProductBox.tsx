@@ -57,7 +57,7 @@ const HardwareProductBox = ({
       </div>
     ) : null}
     <div className="hardware-product-box__upper-container">
-      {!isEmpty(highlight) && (
+      {highlight && !isEmpty(highlight) && (
         <div style={{ backgroundColor: highlight.color }} className="hardware-product-box__highlight-container">
           <div className="hardware-product-box__highlight-container--wrapper">
             <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
