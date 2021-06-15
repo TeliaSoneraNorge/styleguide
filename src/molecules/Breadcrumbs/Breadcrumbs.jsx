@@ -51,7 +51,6 @@ const Breadcrumbs = (props) => {
       target: crumb.target,
       type: crumbType.LINK,
       arrowRight: arrowRight.NONE,
-      // index: 0
     };
   });
 
@@ -62,12 +61,12 @@ const Breadcrumbs = (props) => {
     return style;
   };
 
-  const range = (start, end) => {
+  const rangeVisibleCrumbs = (start, end) => {
     return Array(end - start + 1)
       .fill()
       .map((_, idx) => start + idx);
   };
-  var result = range(minIndex, maxIndex - 1);
+  var result = rangeVisibleCrumbs(minIndex, maxIndex - 1);
 
   const getVisibleCrumbs = () => {
     return crumbs.filter((c) => {
