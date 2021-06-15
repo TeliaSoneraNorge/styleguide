@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import { Icon } from '../../atoms/Icon/Icon';
 import Heading from '../../atoms/Heading/Heading';
 import { IconDefinition } from '../../atoms/Icon';
+import { isEmpty } from 'lodash';
 
 /**
  * Status: *Finished*.
@@ -56,7 +57,7 @@ const HardwareProductBox = ({
       </div>
     ) : null}
     <div className="hardware-product-box__upper-container">
-      {highlight && (
+      {!isEmpty(highlight) && (
         <div style={{ backgroundColor: highlight.color }} className="hardware-product-box__highlight-container">
           <div className="hardware-product-box__highlight-container--wrapper">
             <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
