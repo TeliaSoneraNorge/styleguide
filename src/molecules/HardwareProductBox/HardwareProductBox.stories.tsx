@@ -94,14 +94,12 @@ export const DefaultGridView = () => {
         display: 'flex',
         justifyContent: 'space-evenly',
         flexWrap: 'wrap',
-        marginTop: 50,
-        backgroundColor: '#f2f2f2',
         paddingTop: '2rem',
       }}
     >
       {products.map((product, index) => {
         return (
-          <div style={{ marginBottom: '1.5rem', backgroundColor: 'white' }}>
+          <div style={{ marginTop: 50 }}>
             <HardwareProductBox key={index} {...product}>
               <div>
                 <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
