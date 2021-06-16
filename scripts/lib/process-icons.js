@@ -105,9 +105,11 @@ async function processIcons() {
   }
 
   if (result.errors.length > 0) {
+    console.log('process-icons script completed. Result:', result);
     process.exit(1);
   }
 
+  console.log('process-icons script completed. Result:', result);
   return icons;
 }
 
