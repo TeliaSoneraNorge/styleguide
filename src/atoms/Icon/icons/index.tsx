@@ -95,6 +95,7 @@ export { MobileIcon } from './MobileIcon';
 export { MoistureIcon } from './MoistureIcon';
 export { MoneyEuroIcon } from './MoneyEuroIcon';
 export { MoneyIcon } from './MoneyIcon';
+export { MoreLowIcon } from './MoreLowIcon';
 export { MoreIcon } from './MoreIcon';
 export { MusicIcon } from './MusicIcon';
 export { OffshoreIcon } from './OffshoreIcon';

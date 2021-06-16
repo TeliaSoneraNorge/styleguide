@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ArrowRightIcon } from '../../atoms/Icon/icons';
-import { MoreIcon } from '../../atoms/Icon/icons';
+import { MoreLowIcon } from '../../atoms/Icon/icons';
 
 const crumbType = {
   LINK: 'link',
@@ -140,9 +140,7 @@ const Breadcrumbs = (props) => {
     return (
       <>
         <button type="button" className={'telia-breadcrumbs__paging-button'} onClick={onPagingEvent}>
-          <MoreIcon
-            className={getStyle('telia-breadcrumbs__more-icon telia-breadcrumbs__more-icon svg', props.iconColor)}
-          />
+          <MoreLowIcon className={getStyle('telia-breadcrumbs__more-icon', props.iconColor)} />
         </button>
       </>
     );

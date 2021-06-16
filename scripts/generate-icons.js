@@ -1,5 +1,4 @@
 /* eslint-disable no-console */
-
 const fs = require('fs');
 const path = require('path');
 const prettier = require('prettier');
@@ -8,7 +7,6 @@ const processIcons = require('./lib/process-icons');
 
 const iconComponentPath = path.join(__dirname, '../src/atoms/Icon/Icon.generated.tsx');
 const singleIconsPath = path.join(__dirname, '../src/atoms/Icon/icons');
-
 /**
 
 /**
@@ -30,8 +28,7 @@ const writeTypeScriptFile = (filename, strings) => {
 
 async function run() {
   const icons = await processIcons();
-
-  const header = extra =>
+  const header = (extra) =>
     [
       `//\n`,
       `// WARNING\n`,
@@ -51,13 +48,13 @@ async function run() {
     ` * A list of all available icons in the icon set.\n`,
     ` */\n`,
     'export type IconDefinition = ',
-    icons.map(i => `'${i.icon}'`).join(' | '),
+    icons.map((i) => `'${i.icon}'`).join(' | '),
     `;\n\n`,
     `export const availableIcons: IconDefinition[] = [`,
-    icons.map(i => `'${i.icon}'`).join(', '),
+    icons.map((i) => `'${i.icon}'`).join(', '),
     `];\n\n`,
     `export const IconSvg = {\n`,
-    icons.map(i => `  '${i.icon}': ${i.innerJsx},\n`).join(''),
+    icons.map((i) => `  '${i.icon}': ${i.innerJsx},\n`).join(''),
     `};\n`,
   ]);
 
@@ -68,8 +65,8 @@ async function run() {
    */
   // First, delete the old icons to make sure no old icons remain
   const existingIcons = await fs.promises.readdir(singleIconsPath);
-  await Promise.all(existingIcons.map(f => fs.promises.unlink(path.join(singleIconsPath, f))));
-  icons.forEach(ico => {
+  await Promise.all(existingIcons.map((f) => fs.promises.unlink(path.join(singleIconsPath, f))));
+  icons.forEach((ico) => {
     writeTypeScriptFile(path.join(singleIconsPath, `${ico.singleComponentName}.tsx`), [
       header(`Generated from: ${ico.filename}`),
       `import React from 'react';\n`,
@@ -87,7 +84,7 @@ async function run() {
 
   writeTypeScriptFile(path.join(singleIconsPath, 'index.tsx'), [
     header(),
-    icons.map(i => `export { ${i.singleComponentName} } from './${i.singleComponentName}';\n`).join(''),
+    icons.map((i) => `export { ${i.singleComponentName} } from './${i.singleComponentName}';\n`).join(''),
     `\n`,
   ]);
 }
