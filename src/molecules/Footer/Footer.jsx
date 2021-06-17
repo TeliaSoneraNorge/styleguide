@@ -8,7 +8,7 @@ import { ArrowUpIcon } from '../../atoms/Icon/icons';
 
 const Footer = (props) => {
   const TopRow = (props) => {
-    let key = 0;
+    // let key = 0;
     return (
       <div className={'telia-footer__wrapper-top'}>
         <div className={'telia-footer__top'}>
@@ -137,24 +137,30 @@ const Footer = (props) => {
   const ServiceLink = (props) => {
     return (
       <li>
-        <a href={props.url}>{props.name}</a>
+        <a className={setColor(props.color)} href={props.url}>
+          {props.name}
+        </a>
       </li>
     );
   };
 
   const PrivacyAndCookies = (props) => {
-    return <a href={props.url}>{props.name}</a>;
+    return (
+      <a className={setColor(props.color)} href={props.url}>
+        {props.name}
+      </a>
+    );
   };
 
   const Title = (props) => {
-    return <h4>{props.title}</h4>;
+    return <h3>{props.title}</h3>;
   };
 
   const Logo = (props) => {
     return (
       <div className={'telia-footer__bottom-logo-container'}>
         <a href={props.link}>
-          <img src={props.logo} />
+          <img className={'telia-footer__img'} src={props.logo} />
         </a>
       </div>
     );
@@ -176,12 +182,12 @@ const Footer = (props) => {
 
   const SosialMediaLink = (props) => {
     return (
-      <div className={'telia-footer__span telia-footer__purple'}>
-        <span>
+      <div className={'telia-footer__span'}>
+        <span className={'telia-footer__span' + setColor(props.color)}>
           {props.name === 'Facebook' && <FacebookIcon style={{ height: '0.9rem' }} />}
           {props.name === 'Twitter' && <TwitterIcon style={{ height: '0.9rem' }} />}
           {props.name === 'YouTube' && <VideoIcon style={{ height: '0.9rem' }} />}
-          <a className={'telia-footer__purple'} href={props.link}>
+          <a className={setColor(props.color)} href={props.link}>
             {props.name}
           </a>
         </span>
@@ -192,7 +198,7 @@ const Footer = (props) => {
   const setColor = (color) => {
     let style = '';
     if (color !== undefined && color !== '') {
-      style = 'telia-footer__purple';
+      style = ' telia-footer__purple';
     }
     return style;
   };
