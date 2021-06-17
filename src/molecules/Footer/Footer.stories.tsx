@@ -186,5 +186,20 @@ const footerData = {
         color: '',
       },
     ],
+    facebook: {
+      name: 'Facebook',
+      url: '',
+      color: '',
+    },
+    twitter: {
+      name: 'Twitter',
+      url: '',
+      color: 'core-purple',
+    },
+    youtube: {
+      name: 'YouTube',
+      url: '',
+      color: '',
+    },
   },
 };

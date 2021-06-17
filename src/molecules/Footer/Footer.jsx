@@ -8,7 +8,6 @@ import { ArrowUpIcon } from '../../atoms/Icon/icons';
 
 const Footer = (props) => {
   const TopRow = (props) => {
-    // let key = 0;
     return (
       <div className={'telia-footer__wrapper-top'}>
         <div className={'telia-footer__top'}>
@@ -45,36 +44,12 @@ const Footer = (props) => {
   const BottomGridContainer = (props) => {
     return (
       <div className={'telia-footer__bottom-container'}>
-        {/* <div className={'telia-footer__bottom-logo-container'}> */}
         <Logo logo={props.data.logo} />
-        {/* </div>     */}
-        <div className={'telia-footer__row'}>
-          <Address address={props.data.address} />
-          <PrivacyLinks links={props.data.links} />
-          <SosialMediaLinks sosials={props.data.sosials} />
-        </div>
-      </div>
-    );
-  };
-
-  const PrivacyLinks = (props) => {
-    let key = 0;
-    return (
-      <div className={'telia-footer__privacy-and-settings'}>
-        {props.links.map((element) => {
-          return <PrivacyAndCookies key={key++} name={element.name} url={element.url} color={element.color} />;
-        })}
-      </div>
-    );
-  };
-
-  const SosialMediaLinks = (props) => {
-    let key = 0;
-    return (
-      <div className={'telia-footer__sosial-media'}>
-        {props.sosials.map((child) => {
-          return <SosialMediaLink key={key++} image={child.image} name={child.name} color={child.color} />;
-        })}
+        <Address address={props.data.address} />
+        <PrivacyLinks links={props.data.links} />
+        <Facebook facebook={props.data.facebook} />
+        <Twitter twitter={props.data.twitter} />
+        <YouTube youtube={props.data.youtube} />
       </div>
     );
   };
@@ -98,8 +73,12 @@ const Footer = (props) => {
         <div className="telia-footer__accordion-title" onClick={() => setIsActive(!isActive)}>
           <div className={'telia-footer__accordion-header'}>
             <h3 className={'telia-footer__accordion-arrow'}>{props.title}</h3>
-            <div className={'telia-footer__accordion-arrow'}>
-              {isActive ? <ArrowUpIcon style={{ height: '0.9rem' }} /> : <ArrowDownIcon style={{ height: '0.9rem' }} />}
+            <div className={'telia-footer__accordion-arrow telia-footer__right'}>
+              {isActive ? (
+                <ArrowUpIcon style={{ height: '0.9rem', color: '#990ae3' }} />
+              ) : (
+                <ArrowDownIcon style={{ height: '0.9rem', color: '#990ae3' }} />
+              )}
             </div>
           </div>
         </div>
@@ -134,6 +113,10 @@ const Footer = (props) => {
     );
   };
 
+  const Title = (props) => {
+    return <h3>{props.title}</h3>;
+  };
+
   const ServiceLink = (props) => {
     return (
       <li>
@@ -144,25 +127,11 @@ const Footer = (props) => {
     );
   };
 
-  const PrivacyAndCookies = (props) => {
-    return (
-      <a className={setColor(props.color)} href={props.url}>
-        {props.name}
-      </a>
-    );
-  };
-
-  const Title = (props) => {
-    return <h3>{props.title}</h3>;
-  };
-
   const Logo = (props) => {
     return (
-      <div className={'telia-footer__bottom-logo-container'}>
-        <a href={props.link}>
-          <img className={'telia-footer__img'} src={props.logo} />
-        </a>
-      </div>
+      <a className={'telia-footer__logo'} href={props.link}>
+        <img className={'telia-footer__img'} src={props.logo} />
+      </a>
     );
   };
 
@@ -180,18 +149,55 @@ const Footer = (props) => {
     );
   };
 
-  const SosialMediaLink = (props) => {
+  const PrivacyLinks = (props) => {
+    let key = 0;
     return (
-      <div className={'telia-footer__span'}>
-        <span className={'telia-footer__span' + setColor(props.color)}>
-          {props.name === 'Facebook' && <FacebookIcon style={{ height: '0.9rem' }} />}
-          {props.name === 'Twitter' && <TwitterIcon style={{ height: '0.9rem' }} />}
-          {props.name === 'YouTube' && <VideoIcon style={{ height: '0.9rem' }} />}
-          <a className={setColor(props.color)} href={props.link}>
-            {props.name}
-          </a>
-        </span>
+      <div className={'telia-footer__privacy-and-settings'}>
+        {props.links.map((element) => {
+          return <PrivacyAndCookies key={key++} name={element.name} url={element.url} color={element.color} />;
+        })}
       </div>
+    );
+  };
+
+  const PrivacyAndCookies = (props) => {
+    return (
+      <a className={setColor(props.color)} href={props.url}>
+        {props.name}
+      </a>
+    );
+  };
+
+  const Facebook = (props) => {
+    return (
+      <a className={'telia-footer__facebook' + setColor(props.facebook.color)} href={props.facebook.url}>
+        <FacebookIcon style={{ height: '0.9rem' }} />
+        <span className={'telia-footer__text'}>{props.facebook.name}</span>
+      </a>
+    );
+  };
+
+  const Twitter = (props) => {
+    return (
+      <a
+        className={'telia-footer__twitter telia-footer__line' + setColor(props.twitter.color)}
+        href={props.twitter.url}
+      >
+        <TwitterIcon style={{ height: '0.9rem' }} />
+        <span className={'telia-footer__text'}>{props.twitter.name}</span>
+      </a>
+    );
+  };
+
+  const YouTube = (props) => {
+    return (
+      <a
+        className={'telia-footer__youtube telia-footer__line' + setColor(props.youtube.color)}
+        href={props.youtube.url}
+      >
+        <VideoIcon style={{ height: '0.9rem' }} />
+        <span className={'telia-footer__text'}>{props.youtube.name}</span>
+      </a>
     );
   };
 
