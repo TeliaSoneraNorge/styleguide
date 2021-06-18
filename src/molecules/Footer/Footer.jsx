@@ -11,9 +11,7 @@ const Footer = (props) => {
     return (
       <div className={'telia-footer__wrapper-top'}>
         <div className={'telia-footer__top'}>
-          <div className={'telia-footer__top-container'}>
-            <TopGridContainer data={props.top} />
-          </div>
+          <TopGridContainer data={props.top} />
         </div>
       </div>
     );
@@ -30,33 +28,11 @@ const Footer = (props) => {
   };
 
   const TopGridContainer = (props) => {
-    let key = 0;
-    return (
-      <>
-        {props.data.map((child) => {
-          return <ServiceLinks key={key++} title={child.title} links={child.links} />;
-        })}
-        <AccordionList data={props.data} />
-      </>
-    );
-  };
-
-  const BottomGridContainer = (props) => {
-    return (
-      <div className={'telia-footer__bottom-container'}>
-        <Logo logo={props.data.logo} />
-        <Address address={props.data.address} />
-        <PrivacyLinks links={props.data.links} />
-        <Facebook facebook={props.data.facebook} />
-        <Twitter twitter={props.data.twitter} />
-        <YouTube youtube={props.data.youtube} />
-      </div>
-    );
+    return <AccordionList data={props.data} />;
   };
 
   const AccordionList = (props) => {
     let key = 0;
-    console.log(props);
     return (
       <div className={'telia-footer__accordion'}>
         {props.data.map(({ title, links }) => (
@@ -83,47 +59,36 @@ const Footer = (props) => {
           </div>
         </div>
         {isActive && (
-          <div className="telia-footer__accordion-content">
+          <div className="telia-footer__accordion-content-mobile">
             <Item links={props.links} />
           </div>
         )}
+        <div className={'telia-footer__accordion-content-desktop'}>
+          <Item links={props.links} />
+        </div>
       </div>
     );
   };
 
   const Item = (props) => {
     let key = 0;
-    return props.links.map(({ name, url }) => (
-      <a key={key++} href={url}>
+    return props.links.map(({ name, url, color }) => (
+      <a className={setColor(color)} key={key++} href={url}>
         <div>{name}</div>
       </a>
     ));
   };
 
-  const ServiceLinks = (props) => {
-    let key = 0;
+  const BottomGridContainer = (props) => {
     return (
-      <ul className={'telia-footer__list'}>
-        <Title title={props.title} />
-
-        {props.links.map((child) => {
-          return <ServiceLink key={key++} name={child.name} url={child.url} color={child.color} />;
-        })}
-      </ul>
-    );
-  };
-
-  const Title = (props) => {
-    return <h3>{props.title}</h3>;
-  };
-
-  const ServiceLink = (props) => {
-    return (
-      <li>
-        <a className={setColor(props.color)} href={props.url}>
-          {props.name}
-        </a>
-      </li>
+      <div className={'telia-footer__bottom-container'}>
+        <Logo logo={props.data.logo} />
+        <Address address={props.data.address} />
+        <PrivacyLinks links={props.data.links} />
+        <Facebook facebook={props.data.facebook} />
+        <Twitter twitter={props.data.twitter} />
+        <YouTube youtube={props.data.youtube} />
+      </div>
     );
   };
 
@@ -210,7 +175,7 @@ const Footer = (props) => {
   };
 
   return (
-    <footer>
+    <footer className={'telia-footer__container'}>
       <TopRow top={props.data.top} />
       <BottomRow bottom={props.data.bottom} />
     </footer>

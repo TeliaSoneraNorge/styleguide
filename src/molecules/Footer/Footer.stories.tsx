@@ -20,37 +20,37 @@ const footerData = {
       links: [
         {
           name: 'Dekningskart',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Driftsmelding',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Last ned apper',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Lade kontantkort',
-          url: '',
+          url: './',
           color: 'core-purple',
         },
         {
           name: 'Se Telia Play',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Valgmenyen',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Logg inn',
-          url: '',
+          url: './',
           color: '',
         },
       ],
@@ -60,27 +60,27 @@ const footerData = {
       links: [
         {
           name: 'Mobilabonnement',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Bredbånd',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'TV-abonnement',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'iPhone 12',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Samsung',
-          url: '',
+          url: './',
           color: '',
         },
       ],
@@ -90,22 +90,22 @@ const footerData = {
       links: [
         {
           name: 'Kundeservice',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Borettslag',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Nybygg',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Finn butikk',
-          url: '',
+          url: './',
           color: '',
         },
       ],
@@ -115,27 +115,27 @@ const footerData = {
       links: [
         {
           name: 'Om Telia Norge',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: '5G',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Press',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Karriere',
-          url: '',
+          url: './',
           color: '',
         },
         {
           name: 'Bærekraft',
-          url: '',
+          url: './',
           color: '',
         },
       ],
@@ -144,7 +144,7 @@ const footerData = {
 
   bottom: {
     logo: img.logo,
-    link: '',
+    link: './',
     address: {
       companyName: 'Telia Norge AS',
       office: 'Hovedkontor',
@@ -155,50 +155,33 @@ const footerData = {
     links: [
       {
         name: 'Telia Personvern',
-        url: '',
+        url: './',
         color: '',
       },
       {
         name: 'Cookieinformasjon',
-        url: '',
+        url: './',
         color: 'core-purple',
       },
       {
         name: 'Cookieinnstillinger',
-        url: '',
-        color: '',
-      },
-    ],
-    sosials: [
-      {
-        icon: '',
-        name: 'Facebook',
-        color: '',
-      },
-      {
-        icon: '',
-        name: 'Twitter',
-        color: 'core-purple',
-      },
-      {
-        icon: '',
-        name: 'YouTube',
+        url: './',
         color: '',
       },
     ],
     facebook: {
       name: 'Facebook',
-      url: '',
+      url: './',
       color: '',
     },
     twitter: {
       name: 'Twitter',
-      url: '',
+      url: './',
       color: 'core-purple',
     },
     youtube: {
       name: 'YouTube',
-      url: '',
+      url: './',
       color: '',
     },
   },
