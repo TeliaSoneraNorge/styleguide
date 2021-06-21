@@ -143,7 +143,7 @@ const footerData = {
     address: {
       companyName: 'Telia Norge AS',
       office: 'Hovedkontor',
-      street: 'Sandagerveien 140',
+      street: 'Sandakerveien 140',
       city: 'Oslo',
       postalCode: '0484',
     },
