@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.43.1 
+- NEW TeliaSans Font
+- Update NPM ClassNames & Babel config
+
 ## 1.42.0 
 - StepFlow: use a fullscreen page layout component rather than a fullscreen modal. 
 
