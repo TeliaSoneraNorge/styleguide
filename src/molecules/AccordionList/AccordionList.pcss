@@ -115,6 +115,35 @@ p + .accordion-list {
     }
   }
 
+  &__header-button {
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
+    font-size: inherit;
+    font-weight: bold;
+    padding: 1rem 2.8rem 1rem 1rem;
+    position: relative;
+    text-align: left;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: flex-start;
+    min-height: 55px;
+
+    &--text-box {
+      padding-left: 1rem;
+
+      &-text {
+        font-size: 16px;
+        color: #3c3c3cb3;
+        font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
+        padding-top: 0.2rem;
+      }
+    }
+  }
+
   &__header-icon {
     fill: var(--core-purple);
 
@@ -192,6 +221,57 @@ p + .accordion-list {
       padding: 0 31px 1rem 1rem;
       opacity: 1;
       visibility: visible;
+
+      &__panel {
+        height: 0;
+        opacity: 0;
+        overflow: hidden;
+        padding: 0 31px 0 1rem;
+        transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out, padding 0.5s ease-in-out,
+          visibility 0.5s ease-in-out;
+        margin-left: 1rem;
+        visibility: hidden;
+        width: 100%;
+      }
+
+      &--open {
+        .accordion__header {
+          &--with-button {
+            border-right: none;
+            width: 74%;
+
+            @media only screen and (max-width: 52.5em) {
+              width: 65%;
+            }
+
+            @media only screen and (max-width: 44.5em) {
+              width: 100%;
+            }
+          }
+        }
+
+        .accordion__header-button {
+          &:focus,
+          &:active {
+            background-color: var(--white);
+            color: var(--core-purple);
+          }
+          &:focus + .accordion__header-icon *,
+          &:active + .accordion__header-icon * {
+            fill: var(--core-purple);
+          }
+        }
+
+        .accordion__header-icon {
+          transform: translateY(-50%) rotate(180deg);
+        }
+        .accordion__panel {
+          height: auto;
+          padding: 0 31px 1rem 1rem;
+          opacity: 1;
+          visibility: visible;
+        }
+      }
     }
   }
 }
