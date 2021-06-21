@@ -10,7 +10,7 @@ type DropdownMenuProps = {
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
   const { menuRef, open, allItems, dropdownRef } = useDropdownContext();
-  const [windowHeight, setWindowHeight] = useState(window.innerHeight);
+  const [windowHeight, setWindowHeight] = useState(0);
   const [menuHeight, setMenuHeight] = useState(0);
   const [visibility, setVisibility] = useState<'hidden' | 'visible'>('hidden');
 
@@ -22,6 +22,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
   const positionTop = windowHeight - (menuHeight + dropdownPosition) < threshold;
 
   useEffect(() => {
+    setWindowHeight(window.innerHeight);
     const resize = () => {
       setWindowHeight(window.innerHeight);
     };
