@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 import { FacebookIcon } from '../../atoms/Icon/icons';
 import { TwitterIcon } from '../../atoms/Icon/icons';
 import { VideoIcon } from '../../atoms/Icon/icons';
@@ -10,7 +9,7 @@ const Footer = (props) => {
   const TopRow = (props) => {
     return (
       <div className={'telia-footer__wrapper-top'}>
-        <div className={'telia-footer__top'}>
+        <div className={'telia-footer__top-container'}>
           <TopGridContainer data={props.top} />
         </div>
       </div>
@@ -50,11 +49,7 @@ const Footer = (props) => {
           <div className={'telia-footer__accordion-header'}>
             <h3 className={'telia-footer__accordion-arrow'}>{props.title}</h3>
             <div className={'telia-footer__accordion-arrow telia-footer__right'}>
-              {isActive ? (
-                <ArrowUpIcon style={{ height: '0.9rem', color: '#990ae3' }} />
-              ) : (
-                <ArrowDownIcon style={{ height: '0.9rem', color: '#990ae3' }} />
-              )}
+              {isActive ? <ArrowUpIcon style={{ height: '0.9rem' }} /> : <ArrowDownIcon style={{ height: '0.9rem' }} />}
             </div>
           </div>
         </div>
@@ -137,7 +132,7 @@ const Footer = (props) => {
     return (
       <a className={'telia-footer__facebook' + setColor(props.facebook.color)} href={props.facebook.url}>
         <FacebookIcon style={{ height: '0.9rem' }} />
-        <span className={'telia-footer__text'}>{props.facebook.name}</span>
+        <span className={'telia-footer__sosial-media-text'}>{props.facebook.name}</span>
       </a>
     );
   };
@@ -149,7 +144,7 @@ const Footer = (props) => {
         href={props.twitter.url}
       >
         <TwitterIcon style={{ height: '0.9rem' }} />
-        <span className={'telia-footer__text'}>{props.twitter.name}</span>
+        <span className={'telia-footer__sosial-media-text'}>{props.twitter.name}</span>
       </a>
     );
   };
@@ -161,7 +156,7 @@ const Footer = (props) => {
         href={props.youtube.url}
       >
         <VideoIcon style={{ height: '0.9rem' }} />
-        <span className={'telia-footer__text'}>{props.youtube.name}</span>
+        <span className={'telia-footer__sosial-media-text'}>{props.youtube.name}</span>
       </a>
     );
   };
@@ -182,6 +177,8 @@ const Footer = (props) => {
   );
 };
 
-Footer.propTypes = {};
+Footer.defaultProps = {
+  data: Object,
+};
 
 export default Footer;

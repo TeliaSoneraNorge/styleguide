@@ -9,10 +9,6 @@ export default {
 
 export const Default = () => <Footer data={footerData} />;
 
-const title = 'Support';
-const content =
-  'Ind stod sjøen med skumhvidt sprøjt der raste på vraget en strid men moderen løftet sin datter højt på armen, af rædsel hvid. Anna, mit barn! hun skreg i sin ve da bævred den gråsprængte mand han fattet om skødet, drev roret i læ, og båden var fast som en fugl at se, slig foer den i brått og brand.';
-
 const footerData = {
   top: [
     {
@@ -141,7 +137,6 @@ const footerData = {
       ],
     },
   ],
-
   bottom: {
     logo: img.logo,
     link: './',

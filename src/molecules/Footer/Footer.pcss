@@ -8,11 +8,10 @@
 
     &__wrapper-top {
         background-color: var(--core-purple-800);
-        padding-top: 0.6rem;
         padding-bottom: 1rem;
     }
 
-    &__top {
+    &__top-container {
         width: 95%;
         margin: 0 auto; 
 
@@ -30,21 +29,11 @@
 
         @media all and (max-width: 35rem) {
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
         }
         
         @media all and (max-width: 25rem) {
             display: block; 
             width: 100%;
-        }
-    }
- 
-    &__accordion-content-mobile {
-        display: none;
-
-        @media all and (max-width: 25rem) {
-            display: block;
-            padding-bottom: 1rem;
         }
     }
 
@@ -54,6 +43,15 @@
         }
     }
 
+    &__accordion-content-mobile {
+        display: none;
+
+        @media all and (max-width: 25rem) {
+            display: block;
+            padding-bottom: 1rem;
+        }
+    }
+    
     &__accordion-content-desktop {
         width: 7rem;
         display: block;
@@ -76,6 +74,7 @@
             float: right;
             padding-top: 1rem;
             margin-right: -0.5rem;
+            color: var(--core-purple);
         }
     }
 
@@ -165,7 +164,6 @@
         padding-top: 1.3rem;
         margin: 0 auto;
         width: 7rem;
-        padding-bottom: 2rem;
 
         @media all and (max-width: 50rem) {
             padding-bottom: 0;
@@ -312,7 +310,7 @@
         max-width: 6rem;
     }
 
-    &__text {
+    &__sosial-media-text {
         @media all and (max-width: 37.5rem) {
             display: none;
         }
