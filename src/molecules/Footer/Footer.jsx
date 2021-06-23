@@ -68,7 +68,7 @@ const Footer = (props) => {
   const Item = (props) => {
     let key = 0;
     return props.links.map(({ name, url, color }) => (
-      <a className={setColor(color)} key={key++} href={url}>
+      <a className={'telia-footer__white' + setColor(color)} key={key++} href={url}>
         <div>{name}</div>
       </a>
     ));
@@ -122,7 +122,7 @@ const Footer = (props) => {
 
   const PrivacyAndCookies = (props) => {
     return (
-      <a className={setColor(props.color)} href={props.url}>
+      <a className={'telia-footer__white' + setColor(props.color)} href={props.url}>
         {props.name}
       </a>
     );
@@ -130,7 +130,10 @@ const Footer = (props) => {
 
   const Facebook = (props) => {
     return (
-      <a className={'telia-footer__facebook' + setColor(props.facebook.color)} href={props.facebook.url}>
+      <a
+        className={'telia-footer__facebook telia-footer__white' + setColor(props.facebook.color)}
+        href={props.facebook.url}
+      >
         <FacebookIcon style={{ height: '0.9rem' }} />
         <span className={'telia-footer__sosial-media-text'}>{props.facebook.name}</span>
       </a>
@@ -140,7 +143,7 @@ const Footer = (props) => {
   const Twitter = (props) => {
     return (
       <a
-        className={'telia-footer__twitter telia-footer__line' + setColor(props.twitter.color)}
+        className={'telia-footer__twitter telia-footer__white telia-footer__line' + setColor(props.twitter.color)}
         href={props.twitter.url}
       >
         <TwitterIcon style={{ height: '0.9rem' }} />
@@ -152,7 +155,7 @@ const Footer = (props) => {
   const YouTube = (props) => {
     return (
       <a
-        className={'telia-footer__youtube telia-footer__line' + setColor(props.youtube.color)}
+        className={'telia-footer__youtube telia-footer__white telia-footer__line' + setColor(props.youtube.color)}
         href={props.youtube.url}
       >
         <VideoIcon style={{ height: '0.9rem' }} />
