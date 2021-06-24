@@ -42,7 +42,7 @@ export type FooterProps = {
   /**
    * Containing data for ...
    */
-  bottom: IFooterBottomDataStruct | any;
+  bottom: IFooterBottomDataStruct;
 };
 
 const Footer = (props: FooterProps) => {
