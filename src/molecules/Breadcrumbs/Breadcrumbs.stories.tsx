@@ -7,15 +7,18 @@ export default {
 };
 
 export const Default = () => (
-  <Breadcrumbs
-    crumbs={breadCrumbsData.filter((item, i) => i <= 0)}
-    alwaysShowRootCrumb={true}
-    pageSize={2}
-    pagingSize={2}
-    fontColor={''}
-    iconColor={''}
-    backgroundColor={''}
-  />
+  <>
+    <p>{'Remember: Mobile view will maximum display two breacrumbs, controlled through CSS'}</p>
+    <Breadcrumbs
+      crumbs={breadCrumbsData.filter((item, i) => i <= 0)}
+      alwaysShowRootCrumb={true}
+      pageSize={2}
+      pagingSize={2}
+      fontColor={''}
+      iconColor={''}
+      backgroundColor={''}
+    />
+  </>
 );
 
 export const TwoBreadcrumbs = () => (
