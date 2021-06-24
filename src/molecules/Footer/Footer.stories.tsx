@@ -1,183 +1,183 @@
 import React from 'react';
 import { Footer } from '../../index';
-import img from '../../stories/sampleImages';
+import { IFooterBottomDataStruct, ILinkList } from './Footer';
 
 export default {
   title: 'Component library/Molecules/Footer',
   component: Footer,
 };
 
-export const Default = () => <Footer data={footerData} />;
+export const Default = () => {
+  return <Footer top={top} bottom={bottom} />;
+};
 
-const footerData = {
-  top: [
-    {
-      title: 'Support',
-      links: [
-        {
-          name: 'Dekningskart',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Driftsmelding',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Last ned apper',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Lade kontantkort',
-          url: './',
-          color: 'core-purple',
-        },
-        {
-          name: 'Se Telia Play',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Valgmenyen',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Logg inn',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-    {
-      title: 'Kjøp',
-      links: [
-        {
-          name: 'Mobilabonnement',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Bredbånd',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'TV-abonnement',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'iPhone 12',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Samsung',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-    {
-      title: 'Kontakt',
-      links: [
-        {
-          name: 'Kundeservice',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Borettslag',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Nybygg',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Finn butikk',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-    {
-      title: 'Om Telia',
-      links: [
-        {
-          name: 'Om Telia Norge',
-          url: './',
-          color: '',
-        },
-        {
-          name: '5G',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Press',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Karriere',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Bærekraft',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-  ],
-  bottom: {
-    logo: img.logo,
-    link: './',
-    address: {
-      companyName: 'Telia Norge AS',
-      office: 'Hovedkontor',
-      street: 'Sandakerveien 140',
-      city: 'Oslo',
-      postalCode: '0484',
-    },
+const top: ILinkList[] = [
+  {
+    title: 'Support',
     links: [
       {
-        name: 'Telia Personvern',
+        name: 'Dekningskart',
         url: './',
-        color: '',
+        color: false,
       },
       {
-        name: 'Cookieinformasjon',
+        name: 'Driftsmelding',
         url: './',
-        color: 'core-purple',
+        color: false,
       },
       {
-        name: 'Cookieinnstillinger',
+        name: 'Last ned apper',
         url: './',
-        color: '',
+        color: false,
+      },
+      {
+        name: 'Lade kontantkort',
+        url: './',
+        color: true,
+      },
+      {
+        name: 'Se Telia Play',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Valgmenyen',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Logg inn',
+        url: './',
+        color: false,
       },
     ],
-    facebook: {
-      name: 'Facebook',
+  },
+  {
+    title: 'Kjøp',
+    links: [
+      {
+        name: 'Mobilabonnement',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Bredbånd',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'TV-abonnement',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'iPhone 12',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Samsung',
+        url: './',
+        color: false,
+      },
+    ],
+  },
+  {
+    title: 'Kontakt',
+    links: [
+      {
+        name: 'Kundeservice',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Borettslag',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Nybygg',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Finn butikk',
+        url: './',
+        color: false,
+      },
+    ],
+  },
+  {
+    title: 'Om Telia',
+    links: [
+      {
+        name: 'Om Telia Norge',
+        url: './',
+        color: false,
+      },
+      {
+        name: '5G',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Press',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Karriere',
+        url: './',
+        color: false,
+      },
+      {
+        name: 'Bærekraft',
+        url: './',
+        color: false,
+      },
+    ],
+  },
+];
+
+const bottom: IFooterBottomDataStruct = {
+  url: './',
+  address: {
+    companyName: 'Telia Norge AS',
+    office: 'Hovedkontor',
+    street: 'Sandakerveien 140',
+    city: 'Oslo',
+    postalCode: '0484',
+  },
+  links: [
+    {
+      name: 'Telia Personvern',
       url: './',
-      color: '',
+      color: false,
     },
-    twitter: {
-      name: 'Twitter',
+    {
+      name: 'Cookieinformasjon',
       url: './',
-      color: 'core-purple',
+      color: true,
     },
-    youtube: {
-      name: 'YouTube',
+    {
+      name: 'Cookieinnstillinger',
       url: './',
-      color: '',
+      color: false,
     },
+  ],
+  facebook: {
+    name: 'Facebook',
+    url: './',
+    color: false,
+  },
+  twitter: {
+    name: 'Twitter',
+    url: './',
+    color: true,
+  },
+  youtube: {
+    name: 'YouTube',
+    url: './',
+    color: false,
   },
 };
