@@ -8,7 +8,7 @@ export default {
 
 export const Default = () => (
   <>
-    <p>{'Remember: Mobile view will maximum display two breacrumbs, controlled through CSS'}</p>
+    <p>{'Remember: Mobile view will maximum display two breadcrumbs, controlled through CSS'}</p>
     <Breadcrumbs
       crumbs={breadCrumbsData.filter((item, i) => i <= 0)}
       alwaysShowRootCrumb={true}
