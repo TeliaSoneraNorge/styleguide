@@ -7,31 +7,182 @@ export default {
 };
 
 export const Default = () => (
-  <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 0)} alwaysShowRootCrumb={true} />
+  <Breadcrumbs
+    crumbs={breadCrumbsData.filter((item, i) => i <= 0)}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={2}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
 );
 
-export const TwoBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 1)} />;
-export const ThreeBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 2)} />;
-export const FourBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 3)} />;
-export const FiveBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 4)} />;
-export const SixBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData.filter((item, i) => i <= 5)} />;
-export const TenBreadcrumbs = () => <Breadcrumbs crumbs={breadCrumbsData} />;
-export const TenBreadcumbsPagingSize = () => <Breadcrumbs crumbs={breadCrumbsData} pagingSize={2} />;
-export const TenBreadcrumbsPageSizeLarge = () => <Breadcrumbs crumbs={breadCrumbsData} pageSize={4} />;
-export const TenBreadcrumbsPageSizeSmall = () => <Breadcrumbs crumbs={breadCrumbsData} pageSize={1} />;
-export const TenBreadcrumbsPageSizeTen = () => <Breadcrumbs crumbs={breadCrumbsData} pageSize={10} />;
-export const TenBreadcrumbsHideRoot = () => <Breadcrumbs crumbs={breadCrumbsData} alwaysShowRootCrumb={false} />;
-export const TenBreadcrumbsPageSizeLargeAndHideRoot = () => (
-  <Breadcrumbs crumbs={breadCrumbsData} pageSize={4} alwaysShowRootCrumb={false} />
+export const TwoBreadcrumbs = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData.filter((item, i) => i <= 1)}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={2}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
 );
-export const EmptyBreadcrumbsArray = () => <Breadcrumbs crumbs={[]} />;
-export const BreadcrumbsUndefined = () => <Breadcrumbs />;
+
+export const ThreeBreadcrumbs = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData.filter((item, i) => i <= 2)}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={2}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const FourBreadcrumbs = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData.filter((item, i) => i <= 3)}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={3}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const FiveBreadcrumbs = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData.filter((item, i) => i <= 4)}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={2}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const SixBreadcrumbs = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    alwaysShowRootCrumb={false}
+    pageSize={3}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcrumbs = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcumbsPagingSize = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    alwaysShowRootCrumb={true}
+    pageSize={2}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcrumbsPageSizeLarge = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    pageSize={4}
+    alwaysShowRootCrumb={true}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcrumbsPageSizeSmall = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    pageSize={1}
+    alwaysShowRootCrumb={true}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcrumbsPageSizeTen = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    pageSize={10}
+    alwaysShowRootCrumb={true}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcrumbsHideRoot = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    alwaysShowRootCrumb={false}
+    pageSize={2}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const TenBreadcrumbsPageSizeLargeAndHideRoot = () => (
+  <Breadcrumbs
+    crumbs={breadCrumbsData}
+    pageSize={4}
+    alwaysShowRootCrumb={false}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
+export const EmptyBreadcrumbsArray = () => (
+  <Breadcrumbs
+    crumbs={[]}
+    pageSize={4}
+    alwaysShowRootCrumb={false}
+    pagingSize={1}
+    fontColor={''}
+    iconColor={''}
+    backgroundColor={''}
+  />
+);
+
 export const PurpleBackgroundColor = () => (
   <Breadcrumbs
     backgroundColor={'core-purple'}
     fontColor={'white'}
     iconColor={'white'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={1}
   />
 );
 export const GrayBackgroundColor = () => (
@@ -40,6 +191,9 @@ export const GrayBackgroundColor = () => (
     fontColor={'white'}
     iconColor={'white'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={1}
   />
 );
 
@@ -49,6 +203,9 @@ export const BlackBackgroundColor = () => (
     fontColor={'white'}
     iconColor={'white'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={1}
   />
 );
 
@@ -58,6 +215,9 @@ export const PurpleBackgroundWhiteTextBlackIconColor = () => (
     fontColor={'white'}
     iconColor={'black'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={2}
   />
 );
 

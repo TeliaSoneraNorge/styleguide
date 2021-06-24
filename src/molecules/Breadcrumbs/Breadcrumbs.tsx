@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { ArrowRightIcon } from '../../atoms/Icon/icons';
 import { MoreLowIcon } from '../../atoms/Icon/icons';
 
-interface Crumb {
+export interface Crumb {
   name: string;
   link: string;
   target?: string;
@@ -18,27 +18,27 @@ export type BreadcrumbsProps = {
   /**
    * Set flag to hide or show root crumb
    */
-  alwaysShowRootCrumb?: boolean;
+  alwaysShowRootCrumb?: boolean | undefined;
   /**
    * Set number of pages to show
    */
-  pageSize?: number;
+  pageSize?: number | undefined;
   /**
    * Set paging size
    */
-  pagingSize?: number;
+  pagingSize?: number | undefined;
   /**
    * Set background color for breadcrumbs
    */
-  backgroundColor?: string;
+  backgroundColor?: string | undefined;
   /**
    * Set font color for breadcrumbs
    */
-  fontColor?: string;
+  fontColor?: string | undefined;
   /**
    * Set icon color for breadcrumbs
    */
-  iconColor?: string;
+  iconColor?: string | undefined;
 };
 const crumbType = {
   LINK: 'link',
