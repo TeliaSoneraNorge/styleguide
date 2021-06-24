@@ -2,6 +2,43 @@ import React, { useState } from 'react';
 import { ArrowRightIcon } from '../../atoms/Icon/icons';
 import { MoreLowIcon } from '../../atoms/Icon/icons';
 
+interface Crumb {
+  name: string;
+  link: string;
+  target?: string;
+  title?: string;
+}
+
+export interface BreadcrumbsProps1 {
+  crumbs?: Crumb[];
+  alwaysShowRootCrumb?: boolean;
+  pageSize?: number;
+  pagingSize?: number;
+  backgroundColor?: string;
+  fontColor?: string;
+  iconColor?: string;
+}
+
+export type BreadcrumbsProps = {
+  /**
+   * Label to be shown
+   */
+  label: string,
+  /**
+   * Text to be shown
+   */
+  description: string,
+  /**
+   * Placement of field instructions are similar to positions of the tooltip
+   * Default is top-end
+   */
+  position?: 'top-start' | 'top' | 'top-end' | 'left' | 'right' | 'bottom-start' | 'bottom' | 'bottom-end',
+  /**
+   * Handle open/close state. Current usage is closing instructions onBlur for TextField.
+   * Want open/close on hovering? See Tooltip component
+   */
+};
+
 const crumbType = {
   LINK: 'link',
   LEFT: 'left',
