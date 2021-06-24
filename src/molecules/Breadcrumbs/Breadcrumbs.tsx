@@ -11,35 +11,15 @@ export interface Crumb {
 }
 
 export type BreadcrumbsProps = {
-  /**
-   * Array of Breadcrumbs to be shown
-   */
   crumbs?: Crumb[];
-  /**
-   * Set flag to hide or show root crumb
-   */
   alwaysShowRootCrumb?: boolean | undefined;
-  /**
-   * Set number of pages to show
-   */
   pageSize?: number | undefined;
-  /**
-   * Set paging size
-   */
   pagingSize?: number | undefined;
-  /**
-   * Set background color for breadcrumbs
-   */
   backgroundColor?: string | undefined;
-  /**
-   * Set font color for breadcrumbs
-   */
   fontColor?: string | undefined;
-  /**
-   * Set icon color for breadcrumbs
-   */
   iconColor?: string | undefined;
 };
+
 const crumbType = {
   LINK: 'link',
   LEFT: 'left',
