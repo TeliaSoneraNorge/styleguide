@@ -185,9 +185,9 @@ export const PurpleBackgroundColor = () => (
     pagingSize={1}
   />
 );
-export const GrayBackgroundColor = () => (
+export const GreyBackgroundColor = () => (
   <Breadcrumbs
-    backgroundColor={'gray'}
+    backgroundColor={'grey'}
     fontColor={'white'}
     iconColor={'white'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
