@@ -188,8 +188,8 @@ export const PurpleBackgroundColor = () => (
 export const GreyBackgroundColor = () => (
   <Breadcrumbs
     backgroundColor={'grey'}
-    fontColor={'white'}
-    iconColor={'white'}
+    fontColor={'black'}
+    iconColor={'purple'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
     pageSize={2}
     alwaysShowRootCrumb={false}
