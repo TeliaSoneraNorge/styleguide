@@ -62,8 +62,8 @@ export const StepFlow = (props: Props) => {
 
   const isLastStep = step === children.length - 1;
 
-  const renderAdditionalContentRight = additionalContentBreakpoint && !isLastStep;
-  const renderAdditionalContentInStep = !additionalContentBreakpoint && !isLastStep;
+  const renderAdditionalContentRight = additionalContentBreakpoint && (singleStep || !isLastStep);
+  const renderAdditionalContentInStep = !additionalContentBreakpoint && (singleStep || !isLastStep);
 
   useEffect(() => {
     const newStep = children[step];
