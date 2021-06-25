@@ -1,6 +1,7 @@
 import React from 'react';
 import { Tooltip } from './Tooltip';
 import { Button } from '../Button/Button';
+import { Icon } from '../../atoms/Icon';
 
 export default {
   component: Tooltip,
@@ -32,6 +33,44 @@ export const TooltipStyles = () => (
     </Tooltip>
     <br />
     <br />
+  </div>
+);
+
+export const TooltipLongText = () => (
+  <div>
+    <h2>Tooltip</h2>
+    <br />
+    <br />
+    <h3>Tooltip with long text</h3>
+    <Tooltip
+      position="right"
+      label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
+    >
+      <Button label="hover me" />
+    </Tooltip>
+    <br />
+    <br />
+
+    <Tooltip label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word">
+      <Button label="hover me" />
+    </Tooltip>
+    <br />
+    <br />
+
+    <Tooltip
+      position="right"
+      label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
+    >
+      <Icon icon="info" style={{ height: '1.5rem' }} />
+    </Tooltip>
+    <div style={{ textAlign: 'center' }}>
+      <Tooltip
+        position="left"
+        label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
+      >
+        <Icon icon="info" className="w-5 text-corePurple500" />
+      </Tooltip>
+    </div>
   </div>
 );
 
