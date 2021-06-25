@@ -63,8 +63,11 @@ export const TooltipLongText = () => (
     >
       <Icon icon="info" style={{ height: '1.5rem' }} />
     </Tooltip>
-    <div>
-      <Tooltip position="right" label="It has roots in a piece of classic">
+    <div style={{ textAlign: 'center' }}>
+      <Tooltip
+        position="left"
+        label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
+      >
         <Icon icon="info" className="w-5 text-corePurple500" />
       </Tooltip>
     </div>
