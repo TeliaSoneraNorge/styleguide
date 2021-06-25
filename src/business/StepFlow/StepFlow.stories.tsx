@@ -212,6 +212,17 @@ export const SingleStep = () => {
         description="Commonly used for large forms and orders"
         onSubmit={action('Submit')}
         onCancel={action('Cancel')}
+        additionalContent={
+          <Card>
+            <CardHeader> This can be a cart </CardHeader>
+            <CardBody>
+              Its a custom component though. You can place anything you want here
+              <CardDivider />
+              This compoent will render below the step content on small screens. Try adjusting the screensize in the
+              toolbare above
+            </CardBody>
+          </Card>
+        }
       >
         <StepFlowStep title="Step 1" description="An explanatory text for the first step" isValid={true}>
           {Object.entries(state).map(([key, val]) => (
