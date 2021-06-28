@@ -18,6 +18,8 @@ type CommonProps = {
    */
   dayLabels?: Array<string>;
 
+  inputPlaceholder?: string;
+
   /**
    * Format "yyyy-mm-dd"
    * @default undefined
