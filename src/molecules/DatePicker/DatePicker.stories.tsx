@@ -83,7 +83,7 @@ export const Period = () => {
           period={period1.period}
           onSelectDateFrom={period1.setDateFrom}
           onSelectDateTo={period1.setDateTo}
-          maxDate="2021-02-05"
+          maxDate="2021-08-08"
           minDate={format.dateToString(new Date())}
         />
       </div>
@@ -100,6 +100,51 @@ export const Period = () => {
               <Button label="Neste 7 dager" kind="ghost" size="compact" onClick={period2.nextDays(6)} />
             </>
           }
+        />
+      </div>
+    </div>
+  );
+};
+
+export const ControlledOpenState = () => {
+  const [open1, setOpen1] = useState(false);
+  const [open2, setOpen2] = useState(false);
+  const period1 = usePeriod();
+  const period2 = usePeriod();
+
+  return (
+    <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
+      <div style={{ marginTop: '2rem ' }}>
+        <div>Close calendar when dateTo is set</div>
+        <PeriodPicker
+          open={open1}
+          setOpen={setOpen1}
+          size="compact"
+          period={period1.period}
+          onSelectDateFrom={period1.setDateFrom}
+          onSelectDateTo={(to) => {
+            period1.setDateTo(to);
+            if (to) {
+              setTimeout(() => setOpen1(false), 200);
+            }
+          }}
+          maxDate="2021-08-08"
+          minDate={format.dateToString(new Date())}
+        />
+      </div>
+
+      <div style={{ marginTop: '2rem ' }}>
+        <div>Calendar with close button</div>
+        <PeriodPicker
+          open={open2}
+          setOpen={setOpen2}
+          size="compact"
+          period={period2.period}
+          onSelectDateFrom={period2.setDateFrom}
+          onSelectDateTo={period2.setDateTo}
+          maxDate="2021-08-08"
+          minDate={format.dateToString(new Date())}
+          options={<Button label="Søk" onClick={() => setOpen2(false)} />}
         />
       </div>
     </div>

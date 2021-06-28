@@ -29,6 +29,12 @@ type CommonProps = {
    * @default undefined
    */
   minDate?: string;
+
+  /**
+   * to control open state of the date picker menu
+   */
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
 };
 
 export type PeriodPickerProps = CommonProps & {
