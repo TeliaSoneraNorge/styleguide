@@ -191,6 +191,7 @@ export const TextField = (props: TextFieldProps) => {
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
+            onKeyUp={props.onKeyUp}
             maxLength={props.maxlength}
           />
           {statusIcon ? <span className="telia-textfield__status">{statusIcon}</span> : null}

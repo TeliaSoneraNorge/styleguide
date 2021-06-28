@@ -22,10 +22,16 @@ export type PhoneNumberFieldProps = {
   label?: string;
   disabled?: boolean;
   size?: 'default' | 'compact';
+  inputRef?: React.RefObject<HTMLInputElement> | React.MutableRefObject<HTMLInputElement>;
+
   /**
    * Event handler to allow handling validations after on blur
    */
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
+
+  onFocus?: (event: React.FocusEvent<HTMLInputElement>) => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
+  onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 } & ({ error: true; helpText: string } | { error?: boolean; helpText?: string });
 
 export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
@@ -58,6 +64,10 @@ export const PhoneNumberField = (props: PhoneNumberFieldProps) => {
           disabled={props.disabled}
           maxlength={props.maxlength}
           onBlur={props.onBlur}
+          onFocus={props.onFocus}
+          onKeyDown={props.onKeyDown}
+          onKeyUp={props.onKeyUp}
+          inputRef={props.inputRef}
           size={props.size === 'compact' ? 'compact' : 'default'}
         />
       </div>
