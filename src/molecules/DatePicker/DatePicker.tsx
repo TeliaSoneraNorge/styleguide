@@ -14,6 +14,7 @@ export const DatePicker = (props: DatePickerProps) => {
           <div className="telia-date-picker" ref={contextValue.datePickerRef}>
             <DatePickerInput
               {...contextValue.periodStart}
+              placeholder={props.inputPlaceholder}
               min={props.minDate}
               max={props.maxDate}
               rightContent={<Calendar onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)} />}

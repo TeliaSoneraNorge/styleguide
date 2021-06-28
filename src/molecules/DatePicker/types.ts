@@ -18,6 +18,8 @@ type CommonProps = {
    */
   dayLabels?: Array<string>;
 
+  inputPlaceholder?: string;
+
   /**
    * Format "yyyy-mm-dd"
    * @default undefined
@@ -29,6 +31,12 @@ type CommonProps = {
    * @default undefined
    */
   minDate?: string;
+
+  /**
+   * to control open state of the date picker menu
+   */
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
 };
 
 export type PeriodPickerProps = CommonProps & {

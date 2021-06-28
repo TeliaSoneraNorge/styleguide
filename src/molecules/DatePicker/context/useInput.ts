@@ -19,15 +19,10 @@ export const useInput = (params: PeriodParameters) => {
   }, [inputValue]);
 
   useEffect(() => {
-    if (!params.calendarOpen) {
-      params.onSelectDate?.(selectedDate ? format.dateToString(selectedDate) : undefined);
-    }
-  }, [params.calendarOpen]);
+    if (!params.calendarOpen) return;
 
-  useEffect(() => {
     if (selectedDate) {
       if (params.dateIsInRange(selectedDate)) {
-        // console.log('set new input value', format.dateToString(selectedDate));
         params.onSelectDate?.(format.dateToString(selectedDate));
         setInputValue(format.dateToString(selectedDate));
       }
