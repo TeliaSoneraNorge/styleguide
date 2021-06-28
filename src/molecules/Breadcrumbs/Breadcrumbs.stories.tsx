@@ -1,5 +1,6 @@
 import React from 'react';
 import { Breadcrumbs } from '../../index';
+import { Crumb } from './Breadcrumbs';
 
 export default {
   title: 'Component library/Molecules/Breadcrumbs',
@@ -192,7 +193,7 @@ export const GreyBackgroundColor = () => (
   <Breadcrumbs
     backgroundColor={'grey'}
     fontColor={'black'}
-    iconColor={'core-purple'}
+    iconColor={'black'}
     crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
     pageSize={2}
     alwaysShowRootCrumb={false}
@@ -224,7 +225,7 @@ export const PurpleBackgroundWhiteTextBlackIconColor = () => (
   />
 );
 
-const breadCrumbsData = [
+const breadCrumbsData: Crumb[] = [
   {
     name: 'Step1',
     link: './',

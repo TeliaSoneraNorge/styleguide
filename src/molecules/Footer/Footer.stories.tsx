@@ -1,6 +1,6 @@
 import React from 'react';
 import { Footer } from '../../index';
-import { IFooterBottomDataStruct, ILinkList } from './Footer';
+import { CompanyInformation, SiteWideLinks } from './Footer';
 
 export default {
   title: 'Component library/Molecules/Footer',
@@ -11,44 +11,44 @@ export const Default = () => {
   return <Footer top={top} bottom={bottom} />;
 };
 
-const top: ILinkList[] = [
+const top: SiteWideLinks[] = [
   {
     title: 'Support',
     links: [
       {
         name: 'Dekningskart',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Driftsmelding',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Last ned apper',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Lade kontantkort',
         url: './',
-        color: true,
+        isPurple: true,
       },
       {
         name: 'Se Telia Play',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Valgmenyen',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Logg inn',
         url: './',
-        color: false,
+        isPurple: false,
       },
     ],
   },
@@ -58,27 +58,27 @@ const top: ILinkList[] = [
       {
         name: 'Mobilabonnement',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Bredbånd',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'TV-abonnement',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'iPhone 12',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Samsung',
         url: './',
-        color: false,
+        isPurple: false,
       },
     ],
   },
@@ -88,22 +88,22 @@ const top: ILinkList[] = [
       {
         name: 'Kundeservice',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Borettslag',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Nybygg',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Finn butikk',
         url: './',
-        color: false,
+        isPurple: false,
       },
     ],
   },
@@ -113,37 +113,37 @@ const top: ILinkList[] = [
       {
         name: 'Om Telia Norge',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: '5G',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Press',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Karriere',
         url: './',
-        color: false,
+        isPurple: false,
       },
       {
         name: 'Bærekraft',
         url: './',
-        color: false,
+        isPurple: false,
       },
     ],
   },
 ];
 
-const bottom: IFooterBottomDataStruct = {
+const bottom: CompanyInformation = {
   url: './',
   address: {
     companyName: 'Telia Norge AS',
-    office: 'Hovedkontor',
+    officeType: 'Hovedkontor',
     street: 'Sandakerveien 140',
     city: 'Oslo',
     postalCode: '0484',
@@ -152,32 +152,32 @@ const bottom: IFooterBottomDataStruct = {
     {
       name: 'Telia Personvern',
       url: './',
-      color: false,
+      isPurple: false,
     },
     {
       name: 'Cookieinformasjon',
       url: './',
-      color: true,
+      isPurple: true,
     },
     {
       name: 'Cookieinnstillinger',
       url: './',
-      color: false,
+      isPurple: false,
     },
   ],
   facebook: {
     name: 'Facebook',
     url: './',
-    color: false,
+    isPurple: false,
   },
   twitter: {
     name: 'Twitter',
     url: './',
-    color: true,
+    isPurple: true,
   },
   youtube: {
     name: 'YouTube',
     url: './',
-    color: false,
+    isPurple: false,
   },
 };
