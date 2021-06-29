@@ -9,6 +9,7 @@ export type Props = {
   inputValue?: string;
   setInputValue: (input?: string) => void;
   rightContent?: React.ReactNode;
+  placeholder?: string;
   max?: string;
   min?: string;
 };
@@ -58,7 +59,7 @@ export const DatePickerInput = (props: Props) => {
   return (
     <TextField
       className="telia-date-picker__input"
-      placeholder="dd.mm.åååå"
+      placeholder={props.placeholder ?? 'dd.mm.åååå'}
       type="text"
       value={input}
       size={props.size}

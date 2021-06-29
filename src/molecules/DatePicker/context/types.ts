@@ -49,4 +49,10 @@ export type ContextProps = {
 
   maxDate?: string;
   minDate?: string;
+
+  /**
+   * to control open state of the date picker menu
+   */
+  open?: boolean;
+  setOpen?: (open: boolean) => void;
 };

@@ -24,6 +24,7 @@ export const PeriodPicker = (props: PeriodPickerProps) => {
                 size={props.size}
                 label={props.label ?? 'Velg periode'}
                 rightContent={!props.time && <Arrow />}
+                placeholder={props.inputPlaceholder}
                 min={props.minDate}
                 max={props.maxDate}
               />
@@ -42,6 +43,7 @@ export const PeriodPicker = (props: PeriodPickerProps) => {
                     size={props.size}
                     label={undefined}
                     rightContent={!props.time && <Calendar onClick={() => setCalendarOpen(!calendarOpen)} />}
+                    placeholder={props.inputPlaceholder}
                     min={props.minDate}
                     max={props.maxDate}
                   />
