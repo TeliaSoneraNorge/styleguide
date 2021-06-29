@@ -1,4 +1,3 @@
-import { extend, template } from 'lodash';
 import React, { useState } from 'react';
 import { ArrowRightIcon } from '../../atoms/Icon/icons';
 import { MoreLowIcon } from '../../atoms/Icon/icons';
@@ -14,6 +13,8 @@ export interface Crumb {
 
 interface CrumbInternal extends Crumb {
   key: number;
+  type: string;
+  arrowRight: string;
 }
 
 export type BreadcrumbsProps = {
@@ -64,16 +65,20 @@ const Breadcrumbs = (props: {
 
   let pagingSize = props.pagingSize ?? 1;
   let pageSize = props.pageSize ?? 3;
+
   if (pagingSize <= 0) {
     pagingSize = 1;
   }
+
   if (pageSize <= 0) {
     pageSize = 1;
   }
+
   if (alwaysShowRootCrumb && pageSize < 2) {
     console.warn('Telia-Breadcrumbs: show root crumb is true, so page size cannot be below 2');
     pageSize = 2;
   }
+
   const minIndex = maxIndex - pageSize + 1 + (alwaysShowRootCrumb ? 1 : 0);
 
   const crumbs: CrumbInternal[] = props.crumbs.map((crumb, i) => {
@@ -89,22 +94,16 @@ const Breadcrumbs = (props: {
   });
 
   const getStyle = (style: string, color: string) => {
-    if (color) {
-      return (style += ' ' + style + '--' + color);
-    } else {
-      if (props.backgroundColor === 'black') {
-        color = 'white';
-      } else {
-        color = 'black';
-      }
-      style += ' ' + style + '--' + color;
+    if (!color) {
+      color = 'black';
+
     }
-    return style;
+    return style + ' ' + style + '--' + color;
   };
 
   const setBackgroundColor = (style: string, color: string) => {
     if (color) {
-      return (style += ' ' + style + '--' + color);
+      return style + ' ' + style + '--' + color;
     }
     return style;
   };

@@ -51,7 +51,7 @@ export const FourBreadcrumbs = () => (
     crumbs={breadCrumbsData.filter((item, i) => i <= 3)}
     alwaysShowRootCrumb={true}
     pageSize={2}
-    pagingSize={3}
+    pagingSize={1}
     fontColor={''}
     iconColor={''}
     backgroundColor={''}
@@ -63,7 +63,7 @@ export const FiveBreadcrumbs = () => (
     crumbs={breadCrumbsData.filter((item, i) => i <= 4)}
     alwaysShowRootCrumb={true}
     pageSize={2}
-    pagingSize={2}
+    pagingSize={1}
     fontColor={''}
     iconColor={''}
     backgroundColor={''}
@@ -178,6 +178,18 @@ export const EmptyBreadcrumbsArray = () => (
   />
 );
 
+export const PurpleIconBlackBackgroundWhiteText = () => (
+  <Breadcrumbs
+    backgroundColor={'black'}
+    fontColor={'white'}
+    iconColor={'core-purple'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={1}
+  />
+);
+
 export const PurpleBackgroundColor = () => (
   <Breadcrumbs
     backgroundColor={'core-purple'}
@@ -189,6 +201,7 @@ export const PurpleBackgroundColor = () => (
     pagingSize={1}
   />
 );
+
 export const GreyBackgroundColor = () => (
   <Breadcrumbs
     backgroundColor={'grey'}
