@@ -30,9 +30,11 @@ export type ContextValue = {
   prev: () => void;
   monthLabels: string[];
   dayLabels: string[];
+  closeLabel: string;
   maxDate?: Date;
   minDate?: Date;
   dateIsInRange: (date: Date) => boolean;
+  isMobile: boolean;
 };
 
 export type ContextProps = {
@@ -46,6 +48,7 @@ export type ContextProps = {
   isPeriodPicker?: boolean;
   monthLabels?: string[];
   dayLabels?: string[];
+  closeLabel?: string;
 
   maxDate?: string;
   minDate?: string;

@@ -100,6 +100,9 @@
         content: none;
       }
     }
+    .telia-date-picker__input--compact {
+      width: 150px;
+    }
   }
 
   .telia-textfield__rightContent {
@@ -149,6 +152,31 @@
     margin: 1rem 1.5rem;
     margin-top: 0rem;
   }
+
+  &__close {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    .telia-button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+}
+.telia-date-picker__menu--compact {
+  min-width: 0;
+
+  .telia-date-picker__month {
+    margin: 0 0.75rem;
+    grid-template-columns: 40px 40px 40px 40px 40px 40px 40px;
+    grid-template-rows: 40px 40px 40px 40px 40px 40px;
+  }
+
+  .telia-date-picker__header {
+    padding: 0.5rem 0.75rem;
+    padding-bottom: 0;
+  }
 }
 
 .telia-date-picker__header {
@@ -168,6 +196,13 @@
 }
 .telia-date-picker__months {
   display: flex;
+  &--stack {
+    flex-direction: column;
+  }
+}
+
+.telia-date-picker__month-label {
+  grid-column: 1/8;
 }
 
 .telia-date-picker__month {

@@ -1,3 +1,4 @@
+import cn from 'classnames';
 import React from 'react';
 import { TextField } from '../TextField';
 import { useDatePicker } from './context';
@@ -14,7 +15,7 @@ export type Props = {
   min?: string;
 };
 export const DatePickerInput = (props: Props) => {
-  const { setCalendarOpen } = useDatePicker();
+  const { setCalendarOpen, isMobile } = useDatePicker();
 
   /**
    * We handle the dates as yyyy-mm-dd, but want to display them as dd.mm.yyyy
@@ -58,7 +59,7 @@ export const DatePickerInput = (props: Props) => {
   };
   return (
     <TextField
-      className="telia-date-picker__input"
+      className={cn('telia-date-picker__input', { 'telia-date-picker__input--compact': isMobile })}
       placeholder={props.placeholder ?? 'dd.mm.åååå'}
       type="text"
       value={input}

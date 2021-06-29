@@ -33,4 +33,6 @@ export const InitialContextValue = {
   monthLabels: defaultMonthLabels,
   dayLabels: defaultDayLabels,
   dateIsInRange: () => true,
+  isMobile: false,
+  closeLabel: 'Lukk',
 };
