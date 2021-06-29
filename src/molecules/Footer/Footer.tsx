@@ -61,10 +61,13 @@ const FooterRowRender = (data: FooterRow) => {
 
 export const Footer = (props: FooterProps) => {
   return (
-    <div className="telia-footer__container">
-      <FooterRowRender {...props.TopRow} />
-      <FooterRowRender {...props.BottomRow} />
-    </div>
+    <>
+      <p>{'Footer called'}</p>
+      <div>
+        <FooterRowRender {...props.TopRow} />
+        <FooterRowRender {...props.BottomRow} />
+      </div>
+    </>
   );
 };
 
