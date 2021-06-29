@@ -28,7 +28,9 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   const dateIsInRange = (date: Date) =>
     !(minDate && date.getTime() < minDate.getTime()) && !(maxDate && date.getTime() > maxDate.getTime());
 
-  const [calendarOpen, setCalendarOpen] = useState(false);
+  const [internalCalendarOpen, setInternalCalendarOpen] = useState(false);
+  const calendarOpen = props.open ?? internalCalendarOpen;
+  const setCalendarOpen = props.setOpen ?? setInternalCalendarOpen;
 
   const periodStart = useFirstPeriod({
     onSelectDate: props.onSelectDateFrom,
