@@ -3,7 +3,7 @@ import { useDatePicker } from './context';
 import { Button } from '../../business/Button';
 
 export const DatePickerHeader = () => {
-  const { prev, next, periodStart, periodEnd, monthLabels, maxDate, minDate } = useDatePicker();
+  const { prev, next, periodStart, periodEnd, monthLabels, maxDate, minDate, isMobile } = useDatePicker();
 
   const disableNext =
     maxDate &&
@@ -16,7 +16,7 @@ export const DatePickerHeader = () => {
   return (
     <div className="telia-date-picker__header">
       <Button onClick={prev} disabled={disablePrev} icon="arrow-left" kind="secondary-text" size="compact" />
-      {periodEnd ? (
+      {periodEnd && !isMobile ? (
         <div className="telia-date-picker__header__labels">
           <div>
             {monthLabels[periodStart.month]} {periodStart.year}
