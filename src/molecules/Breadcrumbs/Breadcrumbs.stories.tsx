@@ -225,6 +225,30 @@ export const PurpleBackgroundWhiteTextBlackIconColor = () => (
   />
 );
 
+export const BlackBackgroundWhiteTextPurpleIconColor = () => (
+  <Breadcrumbs
+    backgroundColor={'black'}
+    fontColor={'white'}
+    iconColor={'core-purple'}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={2}
+  />
+);
+
+export const PurpleBackgroundMissingTextAndIconColor = () => (
+  <Breadcrumbs
+    backgroundColor={'core-purple'}
+    fontColor={''}
+    iconColor={''}
+    crumbs={breadCrumbsData.filter((item, i) => i <= 5)}
+    pageSize={2}
+    alwaysShowRootCrumb={false}
+    pagingSize={2}
+  />
+);
+
 const breadCrumbsData: Crumb[] = [
   {
     name: 'Step1',

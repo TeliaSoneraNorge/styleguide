@@ -92,7 +92,11 @@ const Breadcrumbs = (props: {
     if (color) {
       return (style += ' ' + style + '--' + color);
     } else {
-      color = 'black';
+      if (props.backgroundColor === 'black') {
+        color = 'white';
+      } else {
+        color = 'black';
+      }
       style += ' ' + style + '--' + color;
     }
     return style;
