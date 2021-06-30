@@ -1,8 +1,105 @@
 .telia-footer {
-    &__white {
+    padding-bottom: 2rem;
+
+    a {
+        text-decoration: none;
+        color: var(--white);
+    }
+
+    &__wrapper {
+        padding-left: 5rem;
+        padding-right: 5rem;
+
+        @media all and (max-width: 53rem) {
+            padding-left: 3rem;
+            padding-right: 3rem;
+     }
+    }
+    
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 1rem;
+        padding-bottom: 2rem;
+
+        @media all and (max-width: 53rem) {
+            display: grid;
+        }
+
+    }
+
+    &__black {
+        background-color: var(--black);
+
+        div {
+            p {
+                color: var(--white);
+            }
+        }
+    }
+
+    &__purple {
+        background-color: var(--core-purple-800);
+
+        div {
+            h4 {
+                color: var(--white);
+            }
+        }
+    }
+    
+    &__decoration {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    &__purple-font {
+        color: var(--core-purple-400) !important;
+    }
+
+    &__list-decoration {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+    }
+
+   &__address-to-use {
+       margin: 0;
+       padding-top: 1rem;
+
+       p {
+           margin: 0;
+       }
+   }
+
+   &__sosial {
+       padding-top: 1rem;
+   }
+
+   &__heading {
+       margin: 0;
+       padding-top: 1rem;
+       padding-bottom: 1rem;
+   }
+
+   &__remove-padding {
+       padding-top: 0;
+   }
+
+   &__grid {
+       padding-top: 1rem;
+       /* flex-grow: 1; */
+   }
+
+
+    /* &__white {
         text-decoration: none;
         color: var(--white);  
     }
+
+
+
+
 
     &__container {
         color: white; 
@@ -339,5 +436,5 @@
         @media all and (max-width: 25rem) {
             border-left: 1px solid var(--core-purple);
         }
-    }
+    } */
 }
