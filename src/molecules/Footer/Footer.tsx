@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import images from '../../stories/sampleImages';
 export interface Link {
   name: string;
@@ -35,6 +36,55 @@ export type FooterProps = {
   bottomRow: FooterRow; //while last row in the array, gets that "dark background"... but... What the hell...
 };
 
+const LinkColumnsRender = (data: { linkColumn: LinkColumn[] }) => {
+  let key = 0;
+  return (
+    <div className={'telia-footer__container telia-footer__accordion'}>
+      {data.linkColumn.map((item) => (
+        <AccordionItem key={key++} linkColumn={item} />
+      ))}
+    </div>
+  );
+};
+
+const AccordionItem = (data: { linkColumn: LinkColumn }) => {
+  let key = 0;
+  const [isActive, setIsActive] = useState(false);
+  return (
+    <div className="telia-footer__accordion-item">
+      <div className="telia-footer__accordion-title" onClick={() => setIsActive(!isActive)}>
+        <div className={'telia-footer__accordion-header'}>
+          <h3 className={'telia-footer__accordion-arrow'}>{data.linkColumn.heading}</h3>
+          <div className={'telia-footer__accordion-arrow telia-footer__right'}>
+            {isActive ? <ArrowUpIcon style={{ height: '0.9rem' }} /> : <ArrowDownIcon style={{ height: '0.9rem' }} />}
+          </div>
+        </div>
+      </div>
+      {isActive && (
+        <div className="telia-footer__accordion-content-mobile">
+          {data.linkColumn.links.map((item) => (
+            <Item key={key++} name={item.name} url={item.url} color={item.color} />
+          ))}
+        </div>
+      )}
+      <div className={'telia-footer__accordion-content-desktop'}>
+        {data.linkColumn.links.map((item) => (
+          <Item key={key++} name={item.name} url={item.url} color={item.color} />
+        ))}
+      </div>
+    </div>
+  );
+};
+
+const Item = (link: Link) => {
+  let key = 0;
+  return (
+    <a className={'telia-footer__white' + setColor(link.color)} key={key++} href={link.url}>
+      <div>{link.name}</div>
+    </a>
+  );
+};
+
 const AddressColumnRender = (data: AddressColumn) => {
   return (
     <div className={'telia-footer__address-to-use'}>
@@ -46,19 +96,14 @@ const AddressColumnRender = (data: AddressColumn) => {
   );
 };
 
-const LinkColumnsRender = (data: { linkColumn: LinkColumn[] }) => {
+const LinkColumnsBottomRender = (data: { linkColumn: LinkColumn[] }) => {
   let key = 0;
   return (
-    <>
-      {data.linkColumn.map((item) => {
-        return (
-          <div key={key++}>
-            <h4 className={'telia-footer__heading' + ' ' + isHeading(item.heading)}>{item.heading}</h4>
-            <Column links={item.links} />
-          </div>
-        );
-      })}
-    </>
+    <div>
+      {data.linkColumn.map((item) => (
+        <Column key={key++} links={item.links} />
+      ))}
+    </div>
   );
 };
 
@@ -130,9 +175,9 @@ const setColor = (color: string) => {
   return '';
 };
 
-const isHeading = (heading: string) => {
-  if (!heading) {
-    return 'telia-footer__remove-padding';
+const isBottomRow = (footerRow: FooterRow) => {
+  if (footerRow.addressColumn) {
+    return 'telia-footer__container';
   } else {
     return '';
   }
@@ -141,12 +186,17 @@ const isHeading = (heading: string) => {
 const FooterRowRender = (data: { footerRow: FooterRow }) => {
   return (
     <div className={'telia-footer__wrapper' + ' ' + setBackgroundColor(data.footerRow)}>
-      <div className={'telia-footer__container'}>
+      <div className={isBottomRow(data.footerRow)}>
         {data.footerRow.addressColumn && data.footerRow.linkColumns && data.footerRow.socialLinkColumn && <Logo />}
 
         {data.footerRow.addressColumn && <AddressColumnRender {...data.footerRow.addressColumn} />}
 
-        {data.footerRow.linkColumns && <LinkColumnsRender linkColumn={data.footerRow.linkColumns} />}
+        {data.footerRow.linkColumns &&
+          (isBottomRow(data.footerRow) ? (
+            <LinkColumnsBottomRender linkColumn={data.footerRow.linkColumns} />
+          ) : (
+            <LinkColumnsRender linkColumn={data.footerRow.linkColumns} />
+          ))}
 
         {data.footerRow.socialLinkColumn && <SocialMediaColumnRender sosial={data.footerRow.socialLinkColumn} />}
       </div>
