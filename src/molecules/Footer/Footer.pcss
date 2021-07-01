@@ -133,7 +133,7 @@
         }
     }
 
-    &__right {
+    &__arrow-move-right {
         display: none;
 
         @media all and (max-width: 45rem) {
@@ -151,6 +151,22 @@
         @media all and (max-width: 45rem) {
             width: 100%;
             border-top: solid 1px var(--core-purple);
+        }
+    }
+
+    &__horizontal-seperator-line {
+        display: none;
+        @media all and (max-width: 45rem) {
+            display: inline;
+            border-left: 1px solid var(--core-purple);
+            padding-right: 0.5rem;
+        }
+    }
+
+    &__sosial-media-name {
+        @media all and (max-width: 45rem) {
+            display: inline;
+            padding-right: 0.5rem;
         }
     }
 }

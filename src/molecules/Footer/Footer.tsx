@@ -32,8 +32,8 @@ export interface FooterRow {
 }
 
 export type FooterProps = {
-  topRow: FooterRow; //Could have an array, for all rows, except last, they have "purple background"
-  bottomRow: FooterRow; //while last row in the array, gets that "dark background"... but... What the hell...
+  topRow: FooterRow;
+  bottomRow: FooterRow;
 };
 
 const LinkColumnsRender = (data: { linkColumn: LinkColumn[] }) => {
@@ -41,13 +41,13 @@ const LinkColumnsRender = (data: { linkColumn: LinkColumn[] }) => {
   return (
     <div className={'telia-footer__container telia-footer__accordion'}>
       {data.linkColumn.map((item) => (
-        <AccordionItem key={key++} linkColumn={item} />
+        <ColumnItem key={key++} linkColumn={item} />
       ))}
     </div>
   );
 };
 
-const AccordionItem = (data: { linkColumn: LinkColumn }) => {
+const ColumnItem = (data: { linkColumn: LinkColumn }) => {
   let key = 0;
   const [isActive, setIsActive] = useState(false);
   return (
@@ -55,7 +55,7 @@ const AccordionItem = (data: { linkColumn: LinkColumn }) => {
       <div className="telia-footer__accordion-title" onClick={() => setIsActive(!isActive)}>
         <div className={'telia-footer__accordion-header'}>
           <h3 className={'telia-footer__accordion-arrow'}>{data.linkColumn.heading}</h3>
-          <div className={'telia-footer__accordion-arrow telia-footer__right'}>
+          <div className={'telia-footer__accordion-arrow telia-footer__arrow-move-right'}>
             {isActive ? <ArrowUpIcon style={{ height: '0.9rem' }} /> : <ArrowDownIcon style={{ height: '0.9rem' }} />}
           </div>
         </div>
@@ -136,18 +136,28 @@ const SocialMediaColumnRender = (data: { sosial: SocialLinkColumn }) => {
 
 const SocialMediaLink = (data: { links: Link[] }) => {
   let key = 0;
+  const lenght = data.links.length - 1;
   return (
     <>
       {data.links.map((link) => {
         return (
           <a className={'telia-footer__sosial' + ' ' + setColor(link.color)} key={key++} href={link.url}>
             <img src={link.iconUrl} />
-            {link.name}
+            <span className={'telia-footer__sosial-media-name'}>{link.name}</span>
+            <span className={setHorizontalLine(key, lenght)}></span>
           </a>
         );
       })}
     </>
   );
+};
+
+const setHorizontalLine = (key: number, length: number) => {
+  if (key < length + 1) {
+    return 'telia-footer__horizontal-seperator-line';
+  } else {
+    return '';
+  }
 };
 
 const Logo = () => {

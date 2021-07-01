@@ -7,7 +7,7 @@ export default {
   component: Footer,
 };
 
-export const Default123 = () => {
+export const DefaultFooter = () => {
   return <Footer topRow={topRow} bottomRow={bottomRow} />;
 };
 
