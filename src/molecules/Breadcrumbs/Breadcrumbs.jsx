@@ -129,11 +129,7 @@ const Breadcrumbs = (props) => {
   };
 
   const CrumbLabel = ({ crumb }) => {
-    return (
-      <span className={getStyle('telia-breadcrumbs__crumb-label', props.fontColor)}>
-        <b>{crumb.name}</b>
-      </span>
-    );
+    return <span className={getStyle('telia-breadcrumbs__crumb-label', props.fontColor)}>{crumb.name}</span>;
   };
 
   const CrumbPaging = ({ onPagingEvent }) => {
