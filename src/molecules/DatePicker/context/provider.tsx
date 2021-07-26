@@ -3,6 +3,7 @@ import { ContextValue, ContextProps } from './types';
 import { InitialContextValue, defaultMonthLabels, defaultDayLabels } from './data';
 import { useFirstPeriod } from './useFirstPeriod';
 import { useSecondPeriod } from './useSecondPeriod';
+import { useBreakpoint } from '../../../utils/useBreakpoint';
 
 export const DatePickerContext = React.createContext<ContextValue>(InitialContextValue);
 
@@ -10,6 +11,8 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
   const datePickerRef = useRef<HTMLDivElement>(null);
   const maxDate = props.maxDate ? new Date(props.maxDate) : undefined;
   const minDate = props.minDate ? new Date(props.minDate) : undefined;
+  const sm = useBreakpoint('sm');
+  const isMobile = !sm;
 
   useEffect(() => {
     if (props.dayLabels && props.dayLabels.length !== 7) {
@@ -60,6 +63,7 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
 
   const monthLabels = props.monthLabels ?? defaultMonthLabels;
   const dayLabels = props.dayLabels ?? defaultDayLabels;
+  const closeLabel = props.closeLabel ?? 'Lukk';
 
   if (periodStart) {
     const value = {
@@ -75,6 +79,8 @@ export const DatePickerContextProvider: React.FC<ContextProps> = (props) => {
       maxDate,
       minDate,
       dateIsInRange,
+      isMobile,
+      closeLabel,
     };
     return <DatePickerContext.Provider value={value}>{props.children}</DatePickerContext.Provider>;
   }
