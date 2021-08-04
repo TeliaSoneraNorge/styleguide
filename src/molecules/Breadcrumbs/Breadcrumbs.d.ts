@@ -17,8 +17,6 @@ export interface BreadcrumbsProps {
   iconColor?: string;
 }
 
-class Breadcrumbs extends React.Component<BreadcrumbsProps, any> {
-  render(): JSX.Element;
-}
+export const Breadcrumbs: React.FC<BreadcrumbsProps>;
 
 export default Breadcrumbs;
