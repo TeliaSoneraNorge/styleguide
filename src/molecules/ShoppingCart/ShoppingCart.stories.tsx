@@ -1,5 +1,5 @@
 import React from 'react';
-import { text, number, select, boolean } from '@storybook/addon-knobs';
+import { text, number, select } from '@storybook/addon-knobs';
 import { jsxDecorator } from 'storybook-addon-jsx';
 
 import ShoppingCart from './ShoppingCart';
@@ -225,6 +225,10 @@ const subscriptionContent = [
       amount: 20,
       unit: 'GB',
     },
+    status: {
+      isActive: false,
+      isDraft: false,
+    },
     subtitle: 'Nummer: 413 20 271',
   },
   {
@@ -245,7 +249,35 @@ const subscriptionContent = [
       amount: 20,
       unit: 'GB',
     },
-    subtitle: '--- -- ---',
+    status: {
+      isActive: true,
+      isDraft: true,
+    },
+    subtitle: 'Tildeles nå',
+  },
+  {
+    type: 'SUBSCRIPTION_DRAFT',
+    id: 'SMART_10GB.REGULAR',
+    bundleId: '62dc0e',
+    items: [],
+    name: 'SMART 10 GB',
+    quantity: {
+      modifiable: false,
+      removable: true,
+      value: 1,
+    },
+    price: {
+      monthly: 529,
+    },
+    image: {
+      amount: 20,
+      unit: 'GB',
+    },
+    status: {
+      isActive: false,
+      isDraft: true,
+    },
+    subtitle: 'Fortsett bestillingen for å tildele',
   },
   {
     type: 'DELIVERY',
