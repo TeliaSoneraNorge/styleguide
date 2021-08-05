@@ -4,8 +4,6 @@ export interface FooterProps {
   data?: Object;
 }
 
-class Footer extends React.Component<FooterProps, any> {
-  render(): JSX.Element;
-}
+export const Footer: React.FC<FooterProps>;
 
 export default Footer;
