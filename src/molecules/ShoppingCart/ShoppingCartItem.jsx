@@ -73,13 +73,15 @@ const ShoppingCartItem = ({
   const discountValueUpfront = _.get(discount, 'value.upfront') || 0;
   const discountValueMonthly = _.get(discount, 'value.monthly') || 0;
   const hasGroupDiscount = _.get(discount, 'hasGroupDiscount', false);
-  const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT;
+  const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT || _.get(cartItem, 'status.isDraft');
+  const isActive = _.get(cartItem, 'status.isActive');
 
   return (
     <>
       <ShoppingCartRow
         className={cn('shopping-cart__item', {
-          'shopping-cart__item__solid': isDraft,
+          'shopping-cart__item__solid': isDraft && !isActive,
+          'shopping-cart__item__active': isActive,
           [`shopping-cart__item__id--${id}`]: id,
         })}
         key={id}

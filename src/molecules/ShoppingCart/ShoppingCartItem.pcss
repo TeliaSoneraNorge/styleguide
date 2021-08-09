@@ -25,6 +25,28 @@
       }
     }
 
+    &__active {
+      background-color: inherit;
+
+      /* Due to table having border-collapse: separate we can't */
+      /* use border directly on the <tr>. Hence, need to hack around with the children of <tr> */
+      > :first-child {
+        border: 2px solid var(--core-purple-300);
+        border-right: none;
+      }
+
+      > :not(:first-child):not(:last-child) {
+        border: 2px solid var(--core-purple-300);
+        border-left: none;
+        border-right: none;
+      }
+
+      > :last-child {
+        border: 2px solid var(--core-purple-300);
+        border-left: none;
+      }
+    }
+
     &__image {
       margin-right: 1rem;
       max-height: 2.5rem;
