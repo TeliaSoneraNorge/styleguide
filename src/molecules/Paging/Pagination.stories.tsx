@@ -33,6 +33,11 @@ export const Table_Pagination = ({}) => {
           />
         </div>
       </div>
+      <div style={{ display: 'flex', width: '100%' }}>
+        <div style={{ width: '70%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+          <TablePagination from={from} to={to} perPage={perPage} onPageChange={onPageChange} dataLength={dataLength} />
+        </div>
+      </div>
     </>
   );
 };
