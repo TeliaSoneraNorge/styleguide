@@ -10,7 +10,7 @@ export interface Props {
   numberOfSelectedRows?: number;
   selectedRowsLabel?: string;
 
-  onPerPageChange: (perPage: number, e?: React.MouseEvent) => void;
+  onPerPageChange?: (perPage: number, e?: React.MouseEvent) => void;
   onPageChange: (forward: boolean, e?: React.MouseEvent) => void;
 
   fromToLabel?: string;
@@ -28,22 +28,24 @@ export const TablePagination: React.FC<Props> = (props) => {
           }`}
         </span>
       ) : null}
-      <div>
-        <Dropdown fullWidth={true}>
-          <DropdownToggle
-            outline={false}
-            color="white"
-            label={(props.perPageLabel || 'Rader per side: ') + props.perPage}
-          />
-          <DropdownMenu>
-            {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
-              <DropdownItem key={option} onClick={() => props.onPerPageChange(option)}>
-                {option}
-              </DropdownItem>
-            ))}
-          </DropdownMenu>
-        </Dropdown>
-      </div>
+      {props.onPerPageChange && (
+        <div>
+          <Dropdown fullWidth={true}>
+            <DropdownToggle
+              outline={false}
+              color="white"
+              label={(props.perPageLabel || 'Rader per side: ') + props.perPage}
+            />
+            <DropdownMenu>
+              {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
+                <DropdownItem key={option} onClick={() => props.onPerPageChange!(option)}>
+                  {option}
+                </DropdownItem>
+              ))}
+            </DropdownMenu>
+          </Dropdown>
+        </div>
+      )}
 
       <span className="telia-table-pagination__text">
         {props.fromToLabel || `${props.from}-${props.to} av ${props.dataLength}`}
