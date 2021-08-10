@@ -1,80 +1,154 @@
 .telia-footer {
-    &__white {
+    padding-bottom: 2rem;
+
+    a {
         text-decoration: none;
-        color: var(--white);  
+        color: var(--white);
     }
 
+    &__wrapper {
+        padding-top: 1rem;
+        padding-left: 3rem;
+        padding-right: 3rem;
+
+        @media all and (max-width: 55rem) {
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
+        }
+    }
+    
     &__container {
-        color: white; 
-        font-size: 0.8rem;
-        margin: 0;
-        line-height: 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 2rem;
+
+        @media all and (max-width: 59rem) {
+            display: block;
+        }
     }
 
-    &__wrapper-top {
+    &__black {
+        background-color: var(--black);
+
+        div {
+            p {
+                color: var(--white);
+            }
+        }
+    }
+
+    &__purple {
         background-color: var(--core-purple-800);
+
+        div {
+            h4 {
+                color: var(--white);
+            }
+        }
+    }
+    
+    &__decoration {
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    &__purple-font {
+        color: var(--core-purple-400) !important;
+
+        @media all and (max-width: 59rem) {
+            color: var(--white) !important;
+        }
+    }
+
+    &__list-decoration {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        padding-top: 1rem;
         padding-bottom: 1rem;
     }
 
-    &__top-container {
-        width: 95%;
-        margin: 0 auto; 
+   &__address-to-use {
+       margin: 0;
+       padding-top: 1rem;
 
-        @media all and (max-width: 25rem) {
-            width: 100%; 
-        }
-    }
+       p {
+           margin: 0;
+       }
+   }
 
-    &__accordion {
-        padding: 1rem 1rem 0 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        align-items: start;
-        justify-items: center;
+   &__sosial {
+       padding-top: 1rem;
+   }
 
-        @media all and (max-width: 35rem) {
-            grid-template-columns: 1fr 1fr;
-        }
-        
-        @media all and (max-width: 25rem) {
+   &__heading {
+       margin: 0;
+       padding-top: 1rem;
+       padding-bottom: 1rem;
+   }
+
+   &__remove-padding {
+       padding-top: 0;
+   }
+
+   &__accordion {
+        @media all and (max-width: 59rem) {
             display: block; 
             width: 100%;
         }
     }
 
-    &__accordion-item:last-child {
-        @media all and (max-width: 25rem) {
+    &__accordion-item {
+        
+        @media all and (max-width: 59rem) {
             border-bottom: solid 1px var(--core-purple);
+        }
+    }
+
+    &__set-top-horizontal-line {
+        @media all and (max-width: 59rem) {
+            border-top: solid 1px var(--core-purple);
         }
     }
 
     &__accordion-content-mobile {
         display: none;
 
-        @media all and (max-width: 25rem) {
+        @media all and (max-width: 59rem) {
             display: block;
             padding-bottom: 1rem;
         }
     }
-    
+
     &__accordion-content-desktop {
-        width: 7rem;
+        width: 8rem;
+        padding-top: 1rem;
         display: block;
-        @media all and (max-width: 25rem) {
+
+        @media all and (max-width: 59rem) {
             display: none;
         }
     }
 
+    &__accordion-privacy-and-settings {
+        padding-top: 1rem;
+        display: none;
+
+        @media all and (max-width: 59rem) {
+            display: block;    
+        }
+    }
+
     &__accordion-arrow {
-        @media all and (max-width: 25rem) {
+        @media all and (max-width: 59rem) {
             display: inline-block;
         }
     }
 
-    &__right {
+    &__arrow-move-right {
         display: none;
 
-        @media all and (max-width: 25rem) {
+        @media all and (max-width: 59rem) {
             display: block;
             float: right;
             padding-top: 1rem;
@@ -84,260 +158,31 @@
     }
 
     &__accordion-header {
+        color: var(--white);
 
-        @media all and (max-width: 25rem) {
+        @media all and (max-width: 59rem) {
             width: 100%;
-            border-top: solid 1px var(--core-purple);
         }
     }
 
-    &__wrapper-bottom {
-        background-color: var(--core-purple-900);
-    }
-    
-    &__bottom {
-        width: 95%;
-        margin: 0 auto;
+    &__vertical-seperator-line {
+        display: none;
+        padding-left: 0.5rem;
 
-        @media all and (max-width: 25rem) {
-            width: 100%; 
-        }
-    }
-
-    &__bottom-container {
-        margin: 0;
-        padding: 1rem;
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-        align-items: start;
-
-        @media all and (max-width: 62rem) {
-            grid-template-columns: 1fr 1fr 1fr 7rem 7rem 7rem;
-        }
-
-        @media all and (max-width: 56rem) {
-            grid-template-columns: 1fr 1fr 1fr 6rem 6rem 6rem;
-        }
-
-        @media all and (max-width: 50rem) {
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-        }
-
-        @media all and (max-width: 37.5rem) {
-            grid-template-columns: 1fr 1fr 1fr 4rem;
-        }
-
-        @media all and (max-width: 35rem) {
-            grid-template-columns: 1fr 1fr;
-            grid-template-rows: 1fr 1fr;
-        }
-
-        @media all and (max-width: 25rem) {
-            display: block;
-            padding: 1rem 1rem 1rem 1rem;
-        }
-    }
-
-    &__logo {
-        padding-top: 0.3rem;
-        margin: 0 1rem auto auto;
-     
-        @media all and (max-width: 50rem) {
-            margin: 0 auto;
-            display: block;
-        }
-
-        @media all and (max-width: 35rem) {
-            padding-top: 2.3rem;
-            margin: 0 auto;
-            display: block;
-        }
-
-        @media all and (max-width: 30rem) {
-            padding-top: 2.3rem;
-            margin: 0 auto;
-            display: block;
-        }
-
-        @media all and (max-width: 25rem) {
-            padding-top: 1rem;
-            margin: 0;
-        } 
-    }
-    
-    &__address {
-        padding-top: 1.3rem;
-        margin: 0 auto;
-        width: 7rem;
-
-        div {
-            span {
-                padding-right: 0.4rem;
-            }
-        }
-
-        @media all and (max-width: 50rem) {
-            padding-bottom: 0;
-            margin: auto;
-            grid-column-start: 2;
-        }
-
-        @media all and (max-width: 30rem) {
-            padding-bottom: 0;
-            margin: auto;
-            grid-column-start: 2;
-        }
-
-        @media all and (max-width: 25rem) {
-            margin: 0;
-            padding-top: 1rem;
-        }
-    }
-
-    &__privacy-and-settings {
-        padding-top: 1.3rem;
-        margin: 0 auto;
-
-        @media all and (max-width: 35rem) {
-            padding-top: 0.5rem;
-            grid-column-start: 1;
-            grid-row-start: 2;
-        }
-        
-        @media all and (max-width: 25rem) {
-            padding-top: 1rem;
-            padding-bottom: 1rem;
-        }
-    }
-
-    &__privacy-and-settings a {
-        display: block;
-    }
-
-    &__facebook {
-        padding-top: 1.3rem;
-        margin: 0 auto;
-        width: 8.5rem;
-
-        @media all and (max-width: 50rem) {
-            padding-top: 1.2rem;
-            grid-column-start: 4;
-            grid-row-start: 1;
-            padding-bottom: 1rem;
-            
-        }
-
-        @media all and (max-width: 35rem) {
-            padding-top: 0.5rem;
-            grid-column-start: 2;
-            grid-row-start: 2;
-        }
-
-        @media all and (max-width: 30rem) {
-            margin: 0 auto;
-            padding-top: 0.5rem;
-            grid-column-start: 2;
-            grid-row-start: 2;
-            padding-bottom: 0;
-        }
-
-        @media all and (max-width: 25rem) {
-            margin: 0 auto;
-            padding-top: 0.5rem;
-            padding-bottom: 0;
-        }
-    }
-
-    &__twitter {
-        padding-top: 1.3rem;
-        margin: 0 auto;
-        width: 8.5rem;
-
-        @media all and (max-width: 50rem) {
-            padding-top: 2.8rem;
-            grid-column-start: 4;
-            grid-row-start: 1;
-            padding-bottom: 1rem;
-        }
-
-        @media all and (max-width: 35rem) {
-            padding-top: 2.0rem;
-            grid-column-start: 2;
-            grid-row-start: 2;
-        }
-
-        @media all and (max-width: 30rem) {
-            margin: 0 auto;
-            padding-top: 2.0rem;
-            grid-column-start: 2;
-            grid-row-start: 2;
-        }
-
-        @media all and (max-width: 25rem) {
-            margin: 0 auto;
-            padding-top: 0.5rem;
-            padding-bottom: 0;
-        }
-    }
-
-    &__youtube {
-        padding-top: 1.3rem;
-        margin: 0 auto;
-        width: 8.5rem;
-
-        @media all and (max-width: 50rem) {
-            padding-top: 4.4rem;
-            grid-column-start: 4;
-            grid-row-start: 1;
-            padding-bottom: 1rem;
-        }
-
-        @media all and (max-width: 35rem) {
-            padding-top: 3.5rem;
-            grid-column-start: 2;
-            grid-row-start: 2;
-        }
-
-        @media all and (max-width: 30rem) {
-            margin: 0 auto;
-            padding-top: 3.5rem;
-            grid-column-start: 2;
-            grid-row-start: 2;
-        }
-
-        @media all and (max-width: 25rem) {
-            margin: 0 auto;
-            padding-top: 0.5rem;
-            padding-bottom: 0;
-        }
-    }
-
-    &__purple {
-        color: var(--core-purple);
-    }
-
-    &__img {
-        height: auto;
-        max-width: 6rem;
-    }
-
-    &__sosial-media-text {
-        @media all and (max-width: 37.5rem) {
-            display: none;
-        }
-
-        @media all and (max-width: 35rem) {
-            display: inline-block;
-        }
-
-        @media all and (max-width: 25rem) {
-            display: none;
-        }
-    }
-
-    &__line {
-        @media all and (max-width: 25rem) {
+        @media all and (max-width: 59rem) {
+            display: inline;
             border-left: 1px solid var(--core-purple);
+            margin-left: 1.5rem; 
+            padding-left: 1.5rem;           
+        }
+    }
+
+    &__sosial-media-name {
+        padding-left: 0.5rem;
+
+        @media all and (max-width: 59rem) {
+            display: none;
+            padding-right: 0.5rem;
         }
     }
 }
