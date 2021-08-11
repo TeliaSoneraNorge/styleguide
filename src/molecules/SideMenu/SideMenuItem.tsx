@@ -83,9 +83,6 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       <>{children} </>
     );
 
-  console.log('md', md);
-  console.log('collapse', collapse);
-
   return (
     <WrapperTag
       className={cn(
