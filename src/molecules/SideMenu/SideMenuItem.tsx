@@ -53,11 +53,18 @@ type Props = {
   kind?: 'rounded' | 'squared';
 
   hasNotification?: boolean;
+
+  /**
+   * If the item should collapse to only show icons
+   * @default true
+   */
+  collapse?: boolean;
 };
 
 export const SideMenuItem: React.FC<Props> = (props) => {
   const Tag = props.href ? 'a' : 'button';
   const WrapperTag = props.tag ? props.tag : 'li';
+  const collapse = props.collapse ?? true;
   const md = useBreakpoint('md');
 
   const handleClick = (e: React.SyntheticEvent) => {
@@ -88,7 +95,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
         props.className
       )}
     >
-      {md ? (
+      {md || !collapse ? (
         <Tag className={cn('telia-side-menu-item__desktop')} onClick={handleClick} href={props.href} tabIndex={1}>
           {props.avatar && (
             <div className="telia-side-menu-item__avatar">

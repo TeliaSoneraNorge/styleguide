@@ -40,25 +40,16 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
         props.className
       )}
     >
-      {md ? (
-        <li className={cn('telia-side-menu-item__desktop')} onClick={() => props.setOpen(!props.open)} tabIndex={1}>
-          {props.avatar && (
-            <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" {...props.avatar} />
-            </div>
-          )}
-          {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
-          <div className="telia-side-menu-item__label">{props.label}</div>
-        </li>
-      ) : (
-        <li className="telia-side-menu-item__tablet" onClick={() => props.setOpen(!props.open)}>
-          {props.avatar ? (
+      <li className={cn('telia-side-menu-item__desktop')} onClick={() => props.setOpen(!props.open)} tabIndex={1}>
+        {props.avatar && (
+          <div className="telia-side-menu-item__avatar">
             <Avatar size="compact" {...props.avatar} />
-          ) : (
-            <Icon className="telia-side-menu-item__icon" icon={props.icon} />
-          )}
-        </li>
-      )}
+          </div>
+        )}
+        {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
+        <div className="telia-side-menu-item__label">{props.label}</div>
+      </li>
+
       {props.open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
     </li>
   );

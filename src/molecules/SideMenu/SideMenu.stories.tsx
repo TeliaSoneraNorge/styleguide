@@ -206,6 +206,58 @@ export const Grey = () => {
   );
 };
 
+export const WithoutCollapse = () => {
+  const [active, setActive] = useState(0);
+  enableTabKeyDetection();
+
+  return (
+    <>
+      <div style={{ display: 'flex', height: '90vh', backgroundColor: '#fbfbfb' }}>
+        <div style={{ marginRight: '1rem', height: '100%' }}>
+          <SideMenu aria-labelledby="main_menu" backgroundColor="grey100" collapse={false}>
+            <SideMenuTop>
+              <SideMenuItem
+                label="Rounded item"
+                avatar={{ img: b }}
+                onClick={action('user')}
+                color="grey"
+                kind="rounded"
+                collapse={false}
+              />
+              <SideMenuItem
+                label="Hjem"
+                icon="home"
+                onClick={() => setActive(0)}
+                active={active === 0}
+                href="/"
+                collapse={false}
+              />
+
+              <SideMenuItem
+                label="Abonnenter"
+                icon="user"
+                onClick={() => setActive(1)}
+                active={active === 1}
+                href="/abonnenter"
+                collapse={false}
+              />
+              <SideMenuItem
+                label="Økonomi"
+                icon="money"
+                onClick={() => setActive(2)}
+                active={active === 2}
+                href="/okonomi"
+                collapse={false}
+              />
+            </SideMenuTop>
+          </SideMenu>
+        </div>
+      </div>
+      <h4>Try to change the viewport size in the storybook toolbar </h4>
+    </>
+  );
+};
+
 export const WithItemGroup = () => {
   const [active, setActive] = useState(0);
   const [open, setOpen] = useState(false);
@@ -215,7 +267,7 @@ export const WithItemGroup = () => {
     <>
       <div style={{ display: 'flex', height: '90vh', backgroundColor: '#fbfbfb' }}>
         <div style={{ marginRight: '1rem', height: '100%' }}>
-          <SideMenu aria-labelledby="main_menu" backgroundColor="grey100">
+          <SideMenu aria-labelledby="main_menu" backgroundColor="grey100" collapse={false}>
             <SideMenuTop>
               <SideMenuItem
                 label="Rounded item"
@@ -223,8 +275,16 @@ export const WithItemGroup = () => {
                 onClick={action('user')}
                 color="grey"
                 kind="rounded"
+                collapse={false}
               />
-              <SideMenuItem label="Hjem" icon="home" onClick={() => setActive(0)} active={active === 0} href="/" />
+              <SideMenuItem
+                label="Hjem"
+                icon="home"
+                onClick={() => setActive(0)}
+                active={active === 0}
+                href="/"
+                collapse={false}
+              />
 
               <SideMenuItemGroup label="Meny-gruppe" icon="menu" open={open} setOpen={setOpen}>
                 <SideMenuItem
@@ -232,8 +292,15 @@ export const WithItemGroup = () => {
                   onClick={() => setActive(1)}
                   active={active === 1}
                   href="/abonnenter"
+                  collapse={false}
                 />
-                <SideMenuItem label="Økonomi" onClick={() => setActive(2)} active={active === 2} href="/okonomi" />
+                <SideMenuItem
+                  label="Økonomi"
+                  onClick={() => setActive(2)}
+                  active={active === 2}
+                  href="/okonomi"
+                  collapse={false}
+                />
               </SideMenuItemGroup>
             </SideMenuTop>
 
@@ -244,6 +311,7 @@ export const WithItemGroup = () => {
                 onClick={() => setActive(3)}
                 active={active === 3}
                 color="grey"
+                collapse={false}
               />
               <SideMenuItem
                 label="Log ut"
@@ -251,6 +319,7 @@ export const WithItemGroup = () => {
                 onClick={() => setActive(4)}
                 active={active === 4}
                 color="grey"
+                collapse={false}
               />
               <SideMenuItem
                 kind="rounded"
@@ -258,6 +327,7 @@ export const WithItemGroup = () => {
                 avatar={{ text: 'HG' }}
                 onClick={action('user')}
                 color="grey"
+                collapse={false}
               />
             </SideMenuBottom>
           </SideMenu>
