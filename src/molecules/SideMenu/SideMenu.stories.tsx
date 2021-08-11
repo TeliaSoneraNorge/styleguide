@@ -5,6 +5,7 @@ import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import b from './business.svg';
 import { withDesign } from 'storybook-addon-designs';
 import { Badge } from '../../atoms/Badge';
+import { SideMenuItemGroup } from './SideMenuItemGroup';
 
 export default {
   component: SideMenu,
@@ -204,6 +205,69 @@ export const Grey = () => {
     </>
   );
 };
+
+export const WithItemGroup = () => {
+  const [active, setActive] = useState(0);
+  const [open, setOpen] = useState(false);
+  enableTabKeyDetection();
+
+  return (
+    <>
+      <div style={{ display: 'flex', height: '90vh', backgroundColor: '#fbfbfb' }}>
+        <div style={{ marginRight: '1rem', height: '100%' }}>
+          <SideMenu aria-labelledby="main_menu" backgroundColor="grey100">
+            <SideMenuTop>
+              <SideMenuItem
+                label="Rounded item"
+                avatar={{ img: b }}
+                onClick={action('user')}
+                color="grey"
+                kind="rounded"
+              />
+              <SideMenuItem label="Hjem" icon="home" onClick={() => setActive(0)} active={active === 0} href="/" />
+
+              <SideMenuItemGroup label="Meny-gruppe" icon="menu" open={open} setOpen={setOpen}>
+                <SideMenuItem
+                  label="Abonnenter"
+                  onClick={() => setActive(1)}
+                  active={active === 1}
+                  href="/abonnenter"
+                />
+                <SideMenuItem label="Økonomi" onClick={() => setActive(2)} active={active === 2} href="/okonomi" />
+              </SideMenuItemGroup>
+            </SideMenuTop>
+
+            <SideMenuBottom>
+              <SideMenuItem
+                label="Innstillinger"
+                icon="settings"
+                onClick={() => setActive(3)}
+                active={active === 3}
+                color="grey"
+              />
+              <SideMenuItem
+                label="Log ut"
+                icon="logout"
+                onClick={() => setActive(4)}
+                active={active === 4}
+                color="grey"
+              />
+              <SideMenuItem
+                kind="rounded"
+                label="Helene Grini"
+                avatar={{ text: 'HG' }}
+                onClick={action('user')}
+                color="grey"
+              />
+            </SideMenuBottom>
+          </SideMenu>
+        </div>
+      </div>
+      <h4>Try to change the viewport size in the storybook toolbar </h4>
+    </>
+  );
+};
+
 White.parameters = {
   design: {
     type: 'figma',
