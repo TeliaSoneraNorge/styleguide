@@ -26,12 +26,12 @@
     transition-duration: 300ms;
     transition-property: background-color;
     &:hover {
-      background-color: var(--grey-200);
+      background-color: var(--grey-100);
     }
   }
 
   thead {
-    border-bottom: solid 1px var(--accent-250);
+    border-bottom: solid 1px var(--grey-200);
     tr:hover {
       background-color: transparent;
     }
@@ -108,7 +108,7 @@ tr.data-table__skeleton {
       transform: translateY(-50%);
       max-height: 1.25rem;
 
-      background: linear-gradient(-45deg, var(--grey-100), var(--grey-200));
+      background: linear-gradient(-45deg, var(--grey-100), var(--grey-100));
       background-size: 200% 200%;
       animation: Loading 1.5s ease infinite;
       border-radius: 4rem;
@@ -129,10 +129,10 @@ tr.data-table__skeleton {
 }
 
 .data-table--bordered {
-  border: solid 1px var(--accent-250);
+  border: solid 1px var(--grey-200);
 
   .data-table__row {
-    border-top: solid 1px var(--accent-250);
+    border-top: solid 1px var(--grey-200);
 
     &--header {
       border-top: none;

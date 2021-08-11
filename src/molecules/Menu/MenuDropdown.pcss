@@ -1,18 +1,18 @@
 .menu__dropdown {
-    background: var(--white);
-    position: absolute;
-    top: 100px;
-    right: 0;
-    box-shadow: 0 6px 10px 0 rgba(0,0,0,0.14), 0 1px 18px 0 rgba(0,0,0,0.12), 0 3px 5px -1px rgba(0,0,0,0.20);
-    border-radius: 3px;
-    width: 16rem;
+  background: var(--white);
+  position: absolute;
+  top: 100px;
+  right: 0;
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  width: 16rem;
 }
 
 .menu__dropdown--button {
   text-align: center;
   padding: 1rem 0;
-  border-bottom: 1px solid var(--grey-200);
-  
+  border-bottom: 1px solid var(--grey-100);
+
   button {
     text-decoration: none;
     border-radius: initial;
@@ -23,7 +23,7 @@
   .button--active {
     color: var(--black);
     text-decoration: underline;
-    text-decoration-color: var(--core-purple)
+    text-decoration-color: var(--core-purple);
   }
 }
 
@@ -31,19 +31,18 @@
   padding: 1rem 0;
 
   a {
-    margin-bottom: .7rem;
+    margin-bottom: 0.7rem;
     margin-left: 1.5rem;
   }
 
   a:last-child {
     margin-bottom: 0;
   }
-
 }
 
 .menu__dropdown--logout {
   text-align: center;
-  border-top: 1px solid var(--grey-200);
+  border-top: 1px solid var(--grey-100);
   padding: 1rem 0;
 
   &--not-logged-in {
@@ -56,15 +55,15 @@
 }
 
 @media all and (max-width: rem(1120)) {
-    .menu__dropdown {
-      top: 85px;
-      right: 10px;
+  .menu__dropdown {
+    top: 85px;
+    right: 10px;
   }
 }
 
 @media all and (max-width: rem(600)) {
-    .menu__dropdown {
-      top: 70px;
-      right: 10px;
+  .menu__dropdown {
+    top: 70px;
+    right: 10px;
   }
 }

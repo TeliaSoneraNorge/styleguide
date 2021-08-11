@@ -27,6 +27,9 @@ export const Default = () => {
             <div style={{ paddingBottom: '10px' }}>
               <Lozenge label="Lozenge" status="warning" />
             </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="communication" />
+            </div>
           </div>
         </div>
         <br />
@@ -45,6 +48,9 @@ export const Default = () => {
             </div>
             <div style={{ paddingBottom: '10px' }}>
               <Lozenge label="Lozenge" status="warning" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge label="Lozenge" status="communication" type="square" />
             </div>
           </div>
         </div>
@@ -65,6 +71,9 @@ export const Default = () => {
             <div style={{ paddingBottom: '10px' }}>
               <Lozenge icon="attach" label="Lozenge" status="warning" />
             </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="communication" />
+            </div>
           </div>
         </div>
         <br />
@@ -83,6 +92,9 @@ export const Default = () => {
             </div>
             <div style={{ paddingBottom: '10px' }}>
               <Lozenge icon="attach" label="Lozenge" status="warning" type="square" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="communication" type="square" />
             </div>
           </div>
         </div>
