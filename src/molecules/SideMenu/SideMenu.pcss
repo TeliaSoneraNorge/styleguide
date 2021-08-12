@@ -128,14 +128,25 @@
     }
   }
 }
+.telia-side-menu-item--active > a > .telia-side-menu-item__desktop,
+.telia-side-menu-item--active > a > .telia-side-menu-item__tablet {
+  color: var(--core-purple-500);
+  &:focus {
+    box-shadow: 0 0 0 2px var(--blue-500);
+  }
 
-.telia-side-menu-item--active {
-  .telia-side-menu-item__desktop,
-  .telia-side-menu-item__tablet {
-    color: var(--core-purple-500);
-    &:focus {
-      box-shadow: 0 0 0 2px var(--blue-500);
+  &.telia-side-menu-item--grey {
+    .telia-side-menu-item__desktop {
+      color: var(--core-purple);
     }
+  }
+}
+
+.telia-side-menu-item--active > .telia-side-menu-item__desktop,
+.telia-side-menu-item--active > .telia-side-menu-item__tablet {
+  color: var(--core-purple-500);
+  &:focus {
+    box-shadow: 0 0 0 2px var(--blue-500);
   }
 
   &.telia-side-menu-item--grey {
