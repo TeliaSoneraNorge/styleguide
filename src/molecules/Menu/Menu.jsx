@@ -34,6 +34,7 @@ const Menu = ({
   dropdownMenu,
   onCartClick,
   numberOfItemsInCart,
+  daasLink,
 }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [lastActiveMenuContentElement, setLastActiveMenuContentElement] = useState(undefined);
@@ -63,7 +64,7 @@ const Menu = ({
     return false;
   };
 
-  const onGlobalKeyDown = e => {
+  const onGlobalKeyDown = (e) => {
     const key = e.which || e.keyCode;
 
     if (key === 27 && openedSubmenuIndex !== -1) {
@@ -72,7 +73,7 @@ const Menu = ({
     }
   };
 
-  const onClickaway = e => {
+  const onClickaway = (e) => {
     if (!openedSubmenu) return;
     if (isDescendant(openedSubmenu, e.target)) return;
 
@@ -164,6 +165,7 @@ const Menu = ({
         dropdownMenu={dropdownMenu}
         onCartClick={onCartClick}
         numberOfItemsInCart={numberOfItemsInCart}
+        daasLink={daasLink}
       />
       {!onlyLogo && mobileMenuOpen && renderMobileMenu(FocusTrap, { as: 'div' })}
     </div>

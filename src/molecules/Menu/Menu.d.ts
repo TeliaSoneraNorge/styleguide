@@ -35,7 +35,11 @@ export interface MenuProps {
   onlyLogo?: boolean;
   dropdownMenu?: MenuDropdownProps;
   onCartClick?: (...args: any[]) => any;
-  numberOfItemsInCart?: number;  
+  numberOfItemsInCart?: number;
+  daasLink?: {
+    text: string;
+    url: string;
+  };
 }
 
 export const Menu: React.FC<MenuProps>;
