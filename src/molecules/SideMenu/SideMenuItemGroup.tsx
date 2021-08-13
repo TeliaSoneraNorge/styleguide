@@ -6,7 +6,6 @@ import { AvatarProps } from '../Avatar/Avatar';
 type Props = {
   'aria-labelledby'?: string;
   open: boolean;
-  setOpen: (open: boolean) => void;
   label?: React.ReactNode;
   /**
    * Props to render an avatar in the item.
@@ -32,18 +31,11 @@ type Props = {
   /**
    * Action to execute on click item
    */
-  onClick?: () => void;
+  onClick: () => void;
 };
 
 export const SideMenuItemGroup: React.FC<Props> = (props) => {
   const md = useBreakpoint('md');
-
-  const onClick = () => {
-    if (props.onClick) {
-      props.onClick();
-    }
-    props.setOpen(!props.open);
-  };
 
   return (
     <li
@@ -58,7 +50,7 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
       )}
     >
       <a>
-        <li className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={onClick}>
+        <li className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={props.onClick}>
           {props.avatar && (
             <div className="telia-side-menu-item__avatar">
               <Avatar size="compact" {...props.avatar} />

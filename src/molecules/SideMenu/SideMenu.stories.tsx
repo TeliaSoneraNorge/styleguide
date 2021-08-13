@@ -290,7 +290,7 @@ export const WithItemGroup = () => {
                 label="Tjenester"
                 icon="menu"
                 open={open}
-                setOpen={() => {
+                onClick={() => {
                   setOpen(!open);
                   setActive(1);
                 }}
