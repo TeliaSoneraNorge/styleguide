@@ -37,7 +37,7 @@ export const Default = () => {
       ],
     },
   ];
-  
+
   return (
     <Menu
       loginUrl="#Menu"
@@ -55,7 +55,7 @@ export const Default = () => {
       mobileMenuCloseButtonLabel="Lukk"
       lockBodyOnMenuOpen
     />
-  )
+  );
 };
 
 export const LoadingMenu = () => {
@@ -89,10 +89,8 @@ export const LoadingMenu = () => {
       lockBodyOnMenuOpen
       isLoading={true}
     />
-  )
+  );
 };
-
-
 
 export const LoggedInMenuB2C = () => {
   const menuLinks = [
@@ -124,7 +122,7 @@ export const LoggedInMenuB2C = () => {
       ],
     },
   ];
-  
+
   return (
     <Menu
       loginUrl="#Menu"
@@ -139,7 +137,7 @@ export const LoggedInMenuB2C = () => {
       isLoggedIn={true}
       myPageUrl="#"
     />
-  )
+  );
 };
 
 export const LoggedInDropdownMenuB2C = () => {
@@ -172,7 +170,7 @@ export const LoggedInDropdownMenuB2C = () => {
       ],
     },
   ];
-  
+
   return (
     <Menu
       loginUrl="#Menu"
@@ -187,12 +185,56 @@ export const LoggedInDropdownMenuB2C = () => {
       isLoggedIn={true}
       myPageUrl="#"
       dropdownMenu={{
-        type: 'B2C', 
+        type: 'B2C',
         channel: 'mobil',
-        visible: true
+        visible: true,
       }}
     />
-  )
+  );
+};
+
+export const LoggedInDropdownMenuWithDaas = () => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Nettbutikk',
+          subLinks: [{ text: 'Mobiltelefoner', url: '#' }],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [{ text: 'Tjenester', url: '#' }],
+    },
+  ];
+
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      isLoggedIn={true}
+      myPageUrl="#"
+      dropdownMenu={{
+        type: 'B2B',
+        channel: 'mobil',
+        visible: true,
+      }}
+      daasLink={{
+        text: 'Rett i daas',
+        url: '#daas',
+      }}
+    />
+  );
 };
 
 export const OnlyLogo = () => (
@@ -225,7 +267,7 @@ export const SingleTopLevelMenu = () => {
       ],
     },
   ];
-  
+
   return (
     <Menu
       loginUrl="#Menu"
@@ -240,5 +282,5 @@ export const SingleTopLevelMenu = () => {
       isLoggedIn={true}
       myPageUrl="#"
     />
-  )
+  );
 };

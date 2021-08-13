@@ -21,7 +21,7 @@ const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate
       />
     </span>
     <div className={classnames('menu__submenu-container', { 'menu__submenu-container--open': isOpen })}>
-      {subLinks.map(sublink => (
+      {subLinks.map((sublink) => (
         <LinkTemplate key={sublink.text} className="menu__subitem link" url={sublink.url}>
           <span className="link__content">{sublink.text}</span>
         </LinkTemplate>
@@ -105,6 +105,7 @@ const MenuContent = ({
   dropdownMenu,
   onCartClick,
   numberOfItemsInCart,
+  daasLink,
 }) => {
   const [menuDropdownIsVisible, setMenuDropdownVisibilty] = useState(!!dropdownMenu?.visible);
   const shouldShowCartIcon = !!onCartClick && numberOfItemsInCart > 0;
@@ -132,7 +133,7 @@ const MenuContent = ({
               LinkTemplate={LinkTemplate}
               isSubmenuOpen={openedSubmenuIndex === index}
               isActive={activeIndex === index}
-              onToggleSubmenu={event => onToggleSubmenu(index, event)}
+              onToggleSubmenu={(event) => onToggleSubmenu(index, event)}
               key={link.text}
               link={link}
             />
@@ -159,7 +160,9 @@ const MenuContent = ({
         <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
       </div>
 
-      {menuDropdownIsVisible && <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} />}
+      {menuDropdownIsVisible && (
+        <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} daasLink={daasLink} />
+      )}
     </div>
   );
 };

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Link } from '../../index';
 
-const MenuDropdown = props => {
-  const { dropdownMenu, isLoggedIn } = props;
+const MenuDropdown = (props) => {
+  const { dropdownMenu, isLoggedIn, daasLink } = props;
   if (!dropdownMenu) return null;
 
   const [type, setType] = useState(dropdownMenu.type);
@@ -80,6 +80,17 @@ const MenuDropdown = props => {
           >
             <span style={{ marginLeft: '.5rem' }}>Bedriftsnett</span>
           </Link>
+
+          {daasLink && (
+            <Link
+              type="bubble-link"
+              href={daasLink.url}
+              icon="mobile"
+              inverted={dropdownMenu.channel !== 'min-bedrift'}
+            >
+              <span style={{ marginLeft: '.5rem' }}>{daasLink.text}</span>
+            </Link>
+          )}
 
           <div style={{ marginBottom: '1rem' }}></div>
           <Link
