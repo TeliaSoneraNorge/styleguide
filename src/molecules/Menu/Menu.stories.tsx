@@ -230,7 +230,7 @@ export const LoggedInDropdownMenuWithDaas = () => {
         visible: true,
       }}
       daasLink={{
-        text: 'Rett i daas',
+        text: 'Telia utstyrsavtale',
         url: '#daas',
       }}
     />
