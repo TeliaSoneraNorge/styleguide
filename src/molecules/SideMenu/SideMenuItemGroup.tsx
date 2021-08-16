@@ -36,31 +36,37 @@ type Props = {
 
 export const SideMenuItemGroup: React.FC<Props> = (props) => {
   const md = useBreakpoint('md');
+  const { open, label, avatar, icon, className, color, kind = 'squared', active, onClick } = props;
+
+  const handleClick = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    onClick();
+  };
 
   return (
     <li
       className={cn(
         'telia-side-menu-item',
         {
-          'telia-side-menu-item--active': props.active,
-          'telia-side-menu-item--grey': props.color === 'grey',
+          'telia-side-menu-item--active': active,
+          'telia-side-menu-item--grey': color === 'grey',
         },
-        `telia-side-menu-item--${props.kind ?? 'squared'}`,
-        props.className
+        `telia-side-menu-item--${kind ?? 'squared'}`,
+        className
       )}
     >
       <a>
-        <li className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={props.onClick}>
-          {props.avatar && (
+        <button className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={handleClick}>
+          {avatar && (
             <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" {...props.avatar} />
+              <Avatar size="compact" {...avatar} />
             </div>
           )}
-          {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
-          <div className="telia-side-menu-item__label">{props.label}</div>
-        </li>
+          {icon && <Icon className="telia-side-menu-item__icon" icon={icon} />}
+          <div className="telia-side-menu-item__label">{label}</div>
+        </button>
 
-        {props.open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
+        {open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
       </a>
     </li>
   );
