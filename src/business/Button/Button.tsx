@@ -18,6 +18,10 @@ type ButtonProps = {
    */
   icon?: IconDefinition;
   /**
+   * Accessibility label when no text is displayed in the button.
+   */
+  ariaLabel?: string;
+  /**
    * Action triggered when clicking the button.
    */
   onClick?: (e: React.MouseEvent) => void;
@@ -53,6 +57,7 @@ export const Button = (props: ButtonProps) => {
     href,
     onClick,
     icon,
+    ariaLabel,
     iconRight,
     disabled = false,
     active = false,
@@ -91,6 +96,7 @@ export const Button = (props: ButtonProps) => {
       disabled={disabled}
       type={href ? undefined : type}
       target={href ? target : undefined}
+      aria-label={ariaLabel}
     >
       {icon && <Icon icon={icon} className="telia-button__icon" />}
       {label}
