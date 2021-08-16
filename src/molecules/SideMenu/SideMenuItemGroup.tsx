@@ -4,7 +4,6 @@ import { Avatar, Icon, IconDefinition, useBreakpoint } from '../..';
 import { AvatarProps } from '../Avatar/Avatar';
 
 type Props = {
-  'aria-labelledby'?: string;
   open: boolean;
   label?: React.ReactNode;
   /**
@@ -55,17 +54,27 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
         className
       )}
     >
-      <button className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={handleClick}>
+      <button
+        className={cn('telia-side-menu-item__desktop')}
+        tabIndex={1}
+        onClick={handleClick}
+        aria-labelledBy="side-menu-group-item-label"
+      >
         {avatar && (
           <div className="telia-side-menu-item__avatar">
             <Avatar size="compact" {...avatar} />
           </div>
         )}
         {icon && <Icon className="telia-side-menu-item__icon" icon={icon} />}
-        <div className="telia-side-menu-item__label">{label}</div>
+        <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
+          {label}
+        </div>
       </button>
 
-      <ul className={cn('telia-side-menu__group-items', { 'telia-side-menu__group-items--open': open })}>
+      <ul
+        className={cn('telia-side-menu__group-items', { 'telia-side-menu__group-items--open': open })}
+        aria-hidden={!open}
+      >
         {props.children}
       </ul>
     </li>
