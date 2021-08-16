@@ -13,8 +13,6 @@ export interface Crumb {
 
 interface CrumbInternal extends Crumb {
   key: number;
-  type: string;
-  arrowRight: string;
 }
 
 export type BreadcrumbsProps = {

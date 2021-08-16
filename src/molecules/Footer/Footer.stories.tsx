@@ -9,7 +9,12 @@ export default {
 };
 
 export const DefaultFooter = () => {
-  return <Footer {...footer} />;
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footer} />
+    </>
+  );
 };
 
 const linkColumns: LinkColumn[] = [

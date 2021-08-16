@@ -60,7 +60,6 @@ const LinkColumnsRender = (data: { linkColumns: LinkColumn[]; isBottom: boolean 
 };
 
 const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
-  let key = 0;
   const [isActive, setIsActive] = useState(false);
   return (
     <div>
@@ -81,7 +80,7 @@ const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
           {isActive && (
             <div className="telia-footer__accordion-content-mobile">
               {data.linkColumn.links.map((item) => (
-                <Item key={key++} name={item.name} url={item.url} color={item.color} />
+                <Item key={item.name.toString()} name={item.name} url={item.url} color={item.color} />
               ))}
             </div>
           )}
@@ -89,13 +88,13 @@ const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
       )}
       <div className={'telia-footer__accordion-content-desktop'}>
         {data.linkColumn.links.map((item) => (
-          <Item key={key++} name={item.name} url={item.url} color={item.color} />
+          <Item key={item.name.toString()} name={item.name} url={item.url} color={item.color} />
         ))}
       </div>
       {data.isBottom && !data.linkColumn.heading && (
         <div className={'telia-footer__accordion-privacy-and-settings'}>
           {data.linkColumn.links.map((item) => (
-            <Item key={key++} name={item.name} url={item.url} color={item.color} />
+            <Item key={item.name.toString()} name={item.name} url={item.url} color={item.color} />
           ))}
         </div>
       )}
@@ -104,9 +103,8 @@ const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
 };
 
 const Item = (link: Link) => {
-  let key = 0;
   return (
-    <a className={'telia-footer__white' + ' ' + setColor(link.color)} key={key++} href={link.url}>
+    <a className={'telia-footer__white' + ' ' + getColor(link.color)} key={link.name.toString()} href={link.url}>
       <div>{link.name}</div>
     </a>
   );
@@ -123,22 +121,11 @@ const AddressColumnRender = (data: AddressColumn) => {
   );
 };
 
-const Link = (link: Link) => {
-  return (
-    <li>
-      <a className={'telia-footer__decoration' + ' ' + setColor(link.color)} href={link.url}>
-        {link.name}
-      </a>
-    </li>
-  );
-};
-
 const SocialMediaColumnRender = (sosial: SocialLinkColumn) => {
   return <SocialMediaLink links={sosial.links} />;
 };
 
 const SocialMediaLink = (data: { links: Link[] }) => {
-  let key = 0;
   const lenght = data.links.length - 1;
   return (
     <>
@@ -150,10 +137,10 @@ const SocialMediaLink = (data: { links: Link[] }) => {
         const iconLookup: IconLookup = { prefix: 'fab', iconName: sosialMedia as IconName };
         const iconDefinition: IconDefinition = findIconDefinition(iconLookup);
         return (
-          <a className={'telia-footer__sosial' + ' ' + setColor(link.color)} key={key++} href={link.url}>
+          <a className={'telia-footer__sosial' + ' ' + getColor(link.color)} key={link.name.toString()} href={link.url}>
             <FontAwesomeIcon icon={iconDefinition} size={'lg'} />
             <span className={'telia-footer__sosial-media-name'}>{link.name}</span>
-            <span className={setVerticalLine(key, lenght)}></span>
+            <span className={getVerticalLine(lenght)}></span>
           </a>
         );
       })}
@@ -161,8 +148,8 @@ const SocialMediaLink = (data: { links: Link[] }) => {
   );
 };
 
-const setVerticalLine = (key: number, length: number) => {
-  if (key < length + 1) {
+const getVerticalLine = (length: number) => {
+  if (1 < length + 1) {
     return 'telia-footer__vertical-seperator-line';
   } else {
     return '';
@@ -191,14 +178,14 @@ const setBackgroundColor = (footerRow: FooterRow) => {
   }
 };
 
-const setColor = (color: string) => {
+const getColor = (color: string) => {
   if (color) {
     return 'telia-footer' + '__' + color + '-font';
   }
   return '';
 };
 
-const isBottomRow = (footerRow: FooterRow) => {
+const getBottomRowClass = (footerRow: FooterRow) => {
   if (footerRow.addressColumn) {
     return 'telia-footer__container';
   } else {
@@ -206,7 +193,7 @@ const isBottomRow = (footerRow: FooterRow) => {
   }
 };
 
-const isBottom = (footerRow: FooterRow) => {
+const isBottomRow = (footerRow: FooterRow) => {
   if (footerRow.addressColumn !== null) {
     return true;
   } else {
@@ -217,7 +204,7 @@ const isBottom = (footerRow: FooterRow) => {
 const FooterRowRender = (footerRow: FooterRow) => {
   return (
     <div className={'telia-footer__wrapper' + ' ' + setBackgroundColor(footerRow)}>
-      <div className={isBottomRow(footerRow)}>
+      <div className={getBottomRowClass(footerRow)}>
         {footerRow.addressColumn && footerRow.linkColumns && footerRow.socialLinkColumn && (
           <Logo logoColumn={footerRow.logoColumn} />
         )}
@@ -225,7 +212,7 @@ const FooterRowRender = (footerRow: FooterRow) => {
         {footerRow.addressColumn && <AddressColumnRender {...footerRow.addressColumn} />}
 
         {footerRow.linkColumns && (
-          <LinkColumnsRender linkColumns={footerRow.linkColumns} isBottom={isBottom(footerRow)} />
+          <LinkColumnsRender linkColumns={footerRow.linkColumns} isBottom={isBottomRow(footerRow)} />
         )}
 
         {footerRow.socialLinkColumn && <SocialMediaColumnRender {...footerRow.socialLinkColumn} />}
