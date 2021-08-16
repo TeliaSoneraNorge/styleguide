@@ -96,7 +96,6 @@ const Breadcrumbs = (props: {
   const getStyle = (style: string, color: string) => {
     if (!color) {
       color = 'black';
-
     }
     return style + ' ' + style + '--' + color;
   };
