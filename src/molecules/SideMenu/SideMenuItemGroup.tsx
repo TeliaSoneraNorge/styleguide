@@ -65,7 +65,9 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
         <div className="telia-side-menu-item__label">{label}</div>
       </button>
 
-      {open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
+      <ul className={cn('telia-side-menu__group-items', { 'telia-side-menu__group-items--open': open })}>
+        {props.children}
+      </ul>
     </li>
   );
 };

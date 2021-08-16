@@ -14,6 +14,16 @@
 
   ul.telia-side-menu__group-items {
     margin-left: 1.8rem;
+    transition: all 0.3s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    margin-top: -15px;
+
+    &--open {
+      opacity: 1;
+      margin-top: 0px;
+      visibility: visible;
+    }
   }
 
   &--tablet {
