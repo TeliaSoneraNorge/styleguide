@@ -260,7 +260,7 @@ export const WithoutCollapse = () => {
 
 export const WithItemGroup = () => {
   const [active, setActive] = useState(0);
-  const [open, setOpen] = useState(false);
+  const [openGroup, setOpenGroup] = useState<'Subs' | 'Economy' | ''>('');
   enableTabKeyDetection();
 
   return (
@@ -289,24 +289,31 @@ export const WithItemGroup = () => {
               <SideMenuItemGroup
                 label="Tjenester"
                 icon="menu"
-                open={open}
+                open={openGroup === 'Subs'}
                 onClick={() => {
-                  setOpen(!open);
+                  setOpenGroup(openGroup === 'Subs' ? '' : 'Subs');
                   setActive(1);
                 }}
                 active={active === 1}
               >
-                <SideMenuItem
-                  label="Abonnenter"
-                  onClick={() => setActive(2)}
-                  active={active === 2}
-                  href="/abonnenter"
-                  collapse={false}
-                />
+                <SideMenuItem label="Abonnenter" onClick={() => setActive(2)} active={active === 2} collapse={false} />
+                <SideMenuItem label="Tv" onClick={() => setActive(3)} active={active === 3} collapse={false} />
+              </SideMenuItemGroup>
+              <SideMenuItemGroup
+                label="Økonomi"
+                icon="menu"
+                open={openGroup === 'Economy'}
+                onClick={() => {
+                  setOpenGroup(openGroup === 'Economy' ? '' : 'Economy');
+                  setActive(4);
+                }}
+                active={active === 4}
+              >
+                <SideMenuItem label="Fakturaer" onClick={() => setActive(5)} active={active === 5} collapse={false} />
                 <SideMenuItem
                   label="Økonomi"
-                  onClick={() => setActive(3)}
-                  active={active === 3}
+                  onClick={() => setActive(6)}
+                  active={active === 6}
                   href="/okonomi"
                   collapse={false}
                 />
@@ -317,16 +324,16 @@ export const WithItemGroup = () => {
               <SideMenuItem
                 label="Innstillinger"
                 icon="settings"
-                onClick={() => setActive(4)}
-                active={active === 4}
+                onClick={() => setActive(7)}
+                active={active === 7}
                 color="grey"
                 collapse={false}
               />
               <SideMenuItem
                 label="Log ut"
                 icon="logout"
-                onClick={() => setActive(5)}
-                active={active === 5}
+                onClick={() => setActive(8)}
+                active={active === 8}
                 color="grey"
                 collapse={false}
               />

@@ -14,15 +14,15 @@
 
   ul.telia-side-menu__group-items {
     margin-left: 1.8rem;
-    transition: all 0.3s ease-in-out;
+    will-change: transform;
     opacity: 0;
-    visibility: hidden;
-    margin-top: -15px;
+    transition: all 0.3s;
+    max-height: 0;
 
     &--open {
+      max-height: 200px;
       opacity: 1;
-      margin-top: 0px;
-      visibility: visible;
+      transform: translateY(0);
     }
   }
 
