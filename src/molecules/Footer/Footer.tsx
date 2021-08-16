@@ -2,14 +2,7 @@ import React, { useState } from 'react';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  library,
-  IconLookup,
-  IconDefinition,
-  findIconDefinition,
-  IconName,
-  SizeProp,
-} from '@fortawesome/fontawesome-svg-core';
+import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
 
 library.add(fab);
@@ -150,7 +143,10 @@ const SocialMediaLink = (data: { links: Link[] }) => {
   return (
     <>
       {data.links.map((link) => {
-        const sosialMedia = link.name.toLowerCase() + '';
+        let sosialMedia = link.name.toLowerCase();
+        if (sosialMedia.endsWith('facebook')) {
+          sosialMedia = sosialMedia + '-f';
+        }
         const iconLookup: IconLookup = { prefix: 'fab', iconName: sosialMedia as IconName };
         const iconDefinition: IconDefinition = findIconDefinition(iconLookup);
         return (
