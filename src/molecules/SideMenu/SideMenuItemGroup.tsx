@@ -55,19 +55,17 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
         className
       )}
     >
-      <a>
-        <button className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={handleClick}>
-          {avatar && (
-            <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" {...avatar} />
-            </div>
-          )}
-          {icon && <Icon className="telia-side-menu-item__icon" icon={icon} />}
-          <div className="telia-side-menu-item__label">{label}</div>
-        </button>
+      <button className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={handleClick}>
+        {avatar && (
+          <div className="telia-side-menu-item__avatar">
+            <Avatar size="compact" {...avatar} />
+          </div>
+        )}
+        {icon && <Icon className="telia-side-menu-item__icon" icon={icon} />}
+        <div className="telia-side-menu-item__label">{label}</div>
+      </button>
 
-        {open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
-      </a>
+      {open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
     </li>
   );
 };
