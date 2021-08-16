@@ -25,7 +25,7 @@ export const ButtonPrimary = () => (
     <Button label="Button" icon={'arrow-right'} iconRight={true} />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button icon={'add'} />
+    <Button icon={'add'} ariaLabel="add" />
     <br />
     <h3>Button with action</h3>
     <Button label="Click" onClick={() => alert('Hi')} />
@@ -59,7 +59,7 @@ export const ButtonPrimaryText = () => (
     <Button kind="primary-text" label="Button" icon={'arrow-right'} iconRight={true} />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button kind="primary-text" icon={'add'} />
+    <Button kind="primary-text" icon={'add'} ariaLabel="add" />
     <br />
     <h3>Button with action</h3>
     <Button kind="primary-text" label="Click" onClick={() => alert('Hi')} />
@@ -93,7 +93,7 @@ export const ButtonSecondary = () => (
     <Button kind="secondary" label="Button" icon={'arrow-right'} iconRight={true} />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button kind="secondary" icon={'add'} />
+    <Button kind="secondary" icon={'add'} ariaLabel="add" />
     <br />
     <h3>Button with action</h3>
     <Button kind="secondary" label="Click" onClick={() => alert('Hi')} />
@@ -128,7 +128,7 @@ export const ButtonSecondaryText = () => (
       <Button kind="secondary-text" label="Button" icon={'arrow-right'} iconRight={true} />
       <br />
       <h3>Button ball (with icon and without label)</h3>
-      <Button kind="secondary-text" icon={'add'} />
+      <Button kind="secondary-text" icon={'add'} ariaLabel="add" />
       <br />
       <h3>Button with action</h3>
       <Button kind="secondary-text" label="Click" onClick={() => alert('Hi')} />
@@ -164,7 +164,7 @@ export const ButtonGhost = () => (
       <Button kind="ghost" label="Button" icon={'arrow-right'} iconRight={true} />
       <br />
       <h3>Button ball (with icon and without label)</h3>
-      <Button kind="ghost" icon={'add'} />
+      <Button kind="ghost" icon={'add'} ariaLabel="add" />
       <br />
       <h3>Button with action</h3>
       <Button kind="ghost" label="Click" onClick={() => alert('Hi')} />
@@ -199,7 +199,7 @@ export const ButtonPositive = () => (
     <Button kind="positive" label="Button" icon={'arrow-right'} iconRight={true} />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button kind="positive" icon={'add'} />
+    <Button kind="positive" icon={'add'} ariaLabel="add" />
     <br />
     <h3>Button with action</h3>
     <Button kind="positive" label="Click" onClick={() => alert('Hi')} />
@@ -233,7 +233,7 @@ export const ButtonNegative = () => (
     <Button kind="negative" label="Button" icon={'arrow-right'} iconRight={true} />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button kind="negative" icon={'add'} />
+    <Button kind="negative" icon={'add'} ariaLabel="add" />
     <br />
     <h3>Button with action</h3>
     <Button kind="negative" label="Click" onClick={() => alert('Hi')} />
@@ -267,7 +267,7 @@ export const ButtonCompact = () => (
     <Button size="compact" label="Button" icon={'arrow-right'} iconRight={true} />
     <br />
     <h3>Button ball (with icon and without label)</h3>
-    <Button size="compact" icon={'add'} />
+    <Button size="compact" icon={'add'} ariaLabel="add" />
     <br />
     <h3>Button with action</h3>
     <Button size="compact" label="Click" onClick={() => alert('Hi')} />
