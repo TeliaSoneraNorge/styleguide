@@ -2,6 +2,29 @@ import React, { useState } from 'react';
 import { ArrowRightIcon } from '../../atoms/Icon/icons';
 import { MoreLowIcon } from '../../atoms/Icon/icons';
 
+export interface Crumb {
+  name: string;
+  link: string;
+  target?: string;
+  title?: string;
+  type?: string;
+  arrowRight?: string;
+}
+
+interface CrumbInternal extends Crumb {
+  key: number;
+}
+
+export type BreadcrumbsProps = {
+  crumbs?: Crumb[];
+  alwaysShowRootCrumb?: boolean;
+  pageSize?: number;
+  pagingSize?: number;
+  backgroundColor?: string;
+  fontColor?: string;
+  iconColor?: string;
+};
+
 const crumbType = {
   LINK: 'link',
   LEFT: 'left',
@@ -14,7 +37,15 @@ const arrowRight = {
   NONE: 'none',
 };
 
-const Breadcrumbs = (props) => {
+const Breadcrumbs = (props: {
+  crumbs: Crumb[];
+  alwaysShowRootCrumb: boolean;
+  pagingSize: number;
+  pageSize: number;
+  fontColor: string;
+  iconColor: string;
+  backgroundColor: string;
+}) => {
   if (!props.crumbs) {
     return <></>;
   }
@@ -27,22 +58,28 @@ const Breadcrumbs = (props) => {
   const maxCrumbIndex = props.crumbs.length - 1;
   const [maxIndex, setMaxIndex] = useState(maxCrumbIndex);
   const showLeftPagingTreshold = alwaysShowRootCrumb ? 1 : 0;
+  const fontColor = props.fontColor;
+  const iconColor = props.iconColor;
 
   let pagingSize = props.pagingSize ?? 1;
   let pageSize = props.pageSize ?? 3;
+
   if (pagingSize <= 0) {
     pagingSize = 1;
   }
+
   if (pageSize <= 0) {
     pageSize = 1;
   }
+
   if (alwaysShowRootCrumb && pageSize < 2) {
     console.warn('Telia-Breadcrumbs: show root crumb is true, so page size cannot be below 2');
     pageSize = 2;
   }
+
   const minIndex = maxIndex - pageSize + 1 + (alwaysShowRootCrumb ? 1 : 0);
 
-  const crumbs = props.crumbs.map((crumb, i) => {
+  const crumbs: CrumbInternal[] = props.crumbs.map((crumb, i) => {
     return {
       key: i,
       name: crumb.name,
@@ -54,29 +91,37 @@ const Breadcrumbs = (props) => {
     };
   });
 
-  const getStyle = (style, color) => {
+  const getStyle = (style: string, color: string) => {
+    if (!color) {
+      color = 'black';
+    }
+    return style + ' ' + style + '--' + color;
+  };
+
+  const setBackgroundColor = (style: string, color: string) => {
     if (color) {
-      return (style += ' ' + style + '--' + color);
+      return style + ' ' + style + '--' + color;
     }
     return style;
   };
 
-  const rangeVisibleCrumbs = (start, end) => {
+  const getRangeVisibleCrumbs = (start: number, end: number) => {
     return Array(end - start + 1)
-      .fill()
+      .fill(null)
       .map((_, idx) => start + idx);
   };
-  var result = rangeVisibleCrumbs(minIndex, maxIndex - 1);
+
+  const rangeVisibleCrumbs = getRangeVisibleCrumbs(minIndex, maxIndex - 1);
 
   const getVisibleCrumbs = () => {
     return crumbs.filter((c) => {
-      let i = c.key;
+      const i = c.key;
       return i >= minIndex && i <= maxIndex;
     });
   };
 
-  const addPagingCrumbs = (visibleCrumbs) => {
-    const addPagingCrumb = (index, crumb, type) => {
+  const addPagingCrumbs = (visibleCrumbs: CrumbInternal[]) => {
+    const addPagingCrumb = (index: number, crumb: CrumbInternal, type: string) => {
       crumb.type = type;
       visibleCrumbs.splice(index, 0, crumb);
     };
@@ -92,16 +137,16 @@ const Breadcrumbs = (props) => {
     return visibleCrumbs;
   };
 
-  const addRootCrumb = (visibleCrumbs) => {
+  const addRootCrumb = (visibleCrumbs: CrumbInternal[]) => {
     if (minIndex > 0 && alwaysShowRootCrumb) {
       visibleCrumbs.splice(0, 0, crumbs[0]);
     }
     return visibleCrumbs;
   };
 
-  const addArrowRight = (visibleCrumbs) => {
+  const addArrowRight = (visibleCrumbs: CrumbInternal[]) => {
     visibleCrumbs.forEach((element) => {
-      if (result.includes(element.key)) {
+      if (rangeVisibleCrumbs.includes(element.key)) {
         element.arrowRight = arrowRight.ARROW;
       }
     });
@@ -113,8 +158,8 @@ const Breadcrumbs = (props) => {
     return visibleCrumbs;
   };
 
-  const setLabelCrumb = (displayCrumbs) => {
-    let lastCrumb = displayCrumbs[displayCrumbs.length - 1];
+  const setLabelCrumb = (displayCrumbs: CrumbInternal[]) => {
+    const lastCrumb = displayCrumbs[displayCrumbs.length - 1];
     if (lastCrumb.type === crumbType.LINK) {
       lastCrumb.type = crumbType.LABEL;
     }
@@ -128,25 +173,29 @@ const Breadcrumbs = (props) => {
     setMaxIndex(Math.min(maxIndex + pagingSize, maxCrumbIndex));
   };
 
-  const CrumbLabel = ({ crumb }) => {
-    return <span className={getStyle('telia-breadcrumbs__crumb-label', props.fontColor)}>{crumb.name}</span>;
+  const CrumbLabel = (props: { name: string }) => {
+    return (
+      <span className={getStyle('telia-breadcrumbs__crumb-label', fontColor)}>
+        <b>{props.name}</b>
+      </span>
+    );
   };
 
-  const CrumbPaging = ({ onPagingEvent }) => {
+  const CrumbPaging = (props: { onPagingEvent: React.MouseEventHandler<HTMLButtonElement> }) => {
     return (
       <>
-        <button type="button" className={'telia-breadcrumbs__paging-button'} onClick={onPagingEvent}>
-          <MoreLowIcon className={getStyle('telia-breadcrumbs__more-icon', props.iconColor)} />
+        <button type="button" className={'telia-breadcrumbs__paging-button'} onClick={props.onPagingEvent}>
+          <MoreLowIcon className={getStyle('telia-breadcrumbs__more-icon', iconColor)} />
         </button>
       </>
     );
   };
 
-  const CrumbLink = ({ crumb }) => {
+  const CrumbLink = (crumb: Crumb) => {
     return (
       <>
         <a
-          className={getStyle('telia-breadcrumbs__link', props.fontColor)}
+          className={getStyle('telia-breadcrumbs__link', fontColor)}
           href={crumb.link}
           target={crumb.target ?? ''}
           title={crumb.title ?? ''}
@@ -154,22 +203,31 @@ const Breadcrumbs = (props) => {
           {crumb.name}
         </a>
         {crumb.arrowRight === 'arrow' && (
-          <ArrowRightIcon className={getStyle('telia-breadcrumbs__arrow-right-icon', props.iconColor)} />
+          <ArrowRightIcon className={getStyle('telia-breadcrumbs__arrow-right-icon', iconColor)} />
         )}
       </>
     );
   };
 
-  const CrumbRender = ({ crumb }) => {
+  const CrumbRender = (crumb: Crumb) => {
+    let index = 0;
     return (
-      <li key={crumb.key} className={'telia-breadcrumbs__crumb'}>
+      <li key={index++} className={'telia-breadcrumbs__crumb'}>
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} />}
 
-        {crumb.type === crumbType.LABEL && <CrumbLabel crumb={crumb} />}
+        {crumb.type === crumbType.LABEL && <CrumbLabel name={crumb.name} />}
 
         {crumb.type === crumbType.RIGHT && <CrumbPaging onPagingEvent={onPagingRight} />}
 
-        {crumb.type === crumbType.LINK && <CrumbLink crumb={crumb} />}
+        {crumb.type === crumbType.LINK && (
+          <CrumbLink
+            link={crumb.link}
+            target={crumb.target}
+            title={crumb.title}
+            name={crumb.name}
+            arrowRight={crumb.arrowRight}
+          />
+        )}
       </li>
     );
   };
@@ -181,18 +239,22 @@ const Breadcrumbs = (props) => {
   setLabelCrumb(displayCrumbs);
 
   return (
-    <div className={getStyle('telia-breadcrumbs', props.backgroundColor)}>
+    <div className={setBackgroundColor('telia-breadcrumbs', props.backgroundColor)}>
       <ul className={'telia-breadcrumbs__list'}>
         {displayCrumbs.map((crumb) => (
-          <CrumbRender crumb={crumb} key={crumb.key} />
+          <CrumbRender
+            key={crumb.key}
+            type={crumb.type}
+            name={crumb.name}
+            link={crumb.link}
+            target={crumb.target}
+            title={crumb.title}
+            arrowRight={crumb.arrowRight}
+          />
         ))}
       </ul>
     </div>
   );
-};
-
-Breadcrumbs.defaultProps = {
-  crumbs: [],
 };
 
 export default Breadcrumbs;

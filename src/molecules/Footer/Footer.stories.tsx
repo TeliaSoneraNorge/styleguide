@@ -1,183 +1,245 @@
 import React from 'react';
 import { Footer } from '../../index';
-import img from '../../stories/sampleImages';
+import { FooterRow, AddressColumn, SocialLinkColumn, LinkColumn, FooterProps, LogoColumn } from './Footer';
+import images from '../../stories/sampleImages';
 
 export default {
   title: 'Component library/Molecules/Footer',
   component: Footer,
 };
 
-export const Default = () => <Footer data={footerData} />;
+export const DefaultFooter = () => {
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footer} />
+    </>
+  );
+};
 
-const footerData = {
-  top: [
-    {
-      title: 'Support',
-      links: [
-        {
-          name: 'Dekningskart',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Driftsmelding',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Last ned apper',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Lade kontantkort',
-          url: './',
-          color: 'core-purple',
-        },
-        {
-          name: 'Se Telia Play',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Valgmenyen',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Logg inn',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-    {
-      title: 'Kjøp',
-      links: [
-        {
-          name: 'Mobilabonnement',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Bredbånd',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'TV-abonnement',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'iPhone 12',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Samsung',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-    {
-      title: 'Kontakt',
-      links: [
-        {
-          name: 'Kundeservice',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Borettslag',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Nybygg',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Finn butikk',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-    {
-      title: 'Om Telia',
-      links: [
-        {
-          name: 'Om Telia Norge',
-          url: './',
-          color: '',
-        },
-        {
-          name: '5G',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Press',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Karriere',
-          url: './',
-          color: '',
-        },
-        {
-          name: 'Bærekraft',
-          url: './',
-          color: '',
-        },
-      ],
-    },
-  ],
-  bottom: {
-    logo: img.logo,
-    link: './',
-    address: {
-      companyName: 'Telia Norge AS',
-      office: 'Hovedkontor',
-      street: 'Sandakerveien 140',
-      city: 'Oslo',
-      postalCode: '0484',
-    },
+const linkColumns: LinkColumn[] = [
+  {
+    heading: 'Support',
+    links: [
+      {
+        name: 'Dekningskart',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Driftsmelding',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Last ned apper',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Lade kontantkort',
+        url: './',
+        color: 'purple',
+        iconUrl: '',
+      },
+      {
+        name: 'Se Telia Play',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Valgmenyen',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Logg inn',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+  {
+    heading: 'Kjøp',
+    links: [
+      {
+        name: 'Mobilabonnement',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Bredbånd',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'TV-abonnement',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'iPhone 12',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Samsung',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+  {
+    heading: 'Kontakt',
+    links: [
+      {
+        name: 'Kundeservice',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Borettslag',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Nybygg',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Finn butikk',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+  {
+    heading: 'Om Telia',
+    links: [
+      {
+        name: 'Om Telia Norge',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: '5G',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Press',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Karriere',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Bærekraft',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+];
+
+const addressColumn: AddressColumn = {
+  companyName: 'Telia Norge AS',
+  street: 'Sandakerveien 140',
+  city: 'Oslo',
+  postalCode: '0484',
+  officeType: 'Hovedkontor',
+};
+
+const linksColumnsBot: LinkColumn[] = [
+  {
+    heading: '',
     links: [
       {
         name: 'Telia Personvern',
         url: './',
         color: '',
+        iconUrl: '',
       },
       {
         name: 'Cookieinformasjon',
         url: './',
-        color: 'core-purple',
+        color: 'purple',
+        iconUrl: '',
       },
       {
         name: 'Cookieinnstillinger',
         url: './',
         color: '',
+        iconUrl: '',
       },
     ],
-    facebook: {
-      name: 'Facebook',
-      url: './',
-      color: '',
-    },
-    twitter: {
-      name: 'Twitter',
-      url: './',
-      color: 'core-purple',
-    },
-    youtube: {
-      name: 'YouTube',
-      url: './',
-      color: '',
-    },
   },
+];
+
+const sosialLinkColumn: SocialLinkColumn = {
+  links: [
+    {
+      name: 'Facebook',
+      url: '',
+      color: 'white',
+    },
+    {
+      name: 'Twitter',
+      url: '',
+      color: 'purple',
+    },
+    {
+      name: 'Youtube',
+      url: '',
+      color: 'white',
+    },
+  ],
+};
+
+const logoColumn: LogoColumn = {
+  url: 'https://www.telia.no',
+  imageUrl: images.logo,
+};
+
+const topRow: FooterRow = {
+  logoColumn: null,
+  linkColumns: linkColumns,
+  addressColumn: null,
+  socialLinkColumn: null,
+};
+
+const bottomRow: FooterRow = {
+  logoColumn: logoColumn,
+  linkColumns: linksColumnsBot,
+  addressColumn: addressColumn,
+  socialLinkColumn: sosialLinkColumn,
+};
+
+const footer: FooterProps = {
+  topRow: topRow,
+  bottomRow: bottomRow,
 };

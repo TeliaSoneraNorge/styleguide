@@ -1,10 +1,13 @@
 .telia-breadcrumbs {
+  padding-top: 8px;
+  padding-bottom: 8px;
+
   &--core-purple {
     background-color: var(--core-purple);
   }
 
-  &--gray {
-    background-color: var(--grey-100);
+  &--grey {
+    background-color: var(--grey-200);
   }
 
   &--white {
@@ -26,7 +29,6 @@
 
   &__crumb {
     display: inline-block;
-    /* vertical-align: middle; */
 
     @media all and (max-width: 40rem) {
       &:not(:nth-last-child(-n + 2)) {
@@ -43,15 +45,19 @@
     width: 1.1rem;
 
     &--white {
-      color: var(--white) !important;
+      color: var(--white);
     }
 
     &--black {
-      color: var(--black) !important;
+      color: var(--black);
     }
 
-    &--gray {
-      color: var(--gray-200) !important;
+    &--grey {
+      color: var(--grey-200);
+    }
+
+    &--core-purple {
+      color: var(--core-purple);
     }
   }
 
@@ -61,23 +67,19 @@
     padding: 0.6rem !important;
 
     &--white {
-      color: var(--white) !important;
+      color: var(--white);
     }
 
     &--black {
-      color: var(--black) !important;
+      color: var(--black);
     }
 
-    &--gray {
-      color: var(--gray-200) !important;
+    &--grey {
+      color: var(--grey-200);
     }
 
-    &:hover,
-    &:visited,
-    &:active,
-    &:link {
-      color: inherit;
-      text-decoration: none;
+    &--core-purple {
+      color: var(--core-purple);
     }
   }
 
@@ -95,15 +97,19 @@
     width: 1.5rem;
 
     &--white {
-      color: var(--white) !important;
+      color: var(--white);
     }
 
     &--black {
-      color: var(--black) !important;
+      color: var(--black);
     }
 
-    &--gray {
-      color: var(--gray-200) !important;
+    &--grey {
+      color: var(--grey-200);
+    }
+
+    &--core-purple {
+      color: var(--core-purple);
     }
   }
 
@@ -113,15 +119,15 @@
     padding: 0.6rem;
 
     &--white {
-      color: var(--white) !important;
+      color: var(--white);
     }
 
     &--black {
-      color: var(--black) !important;
+      color: var(--black);
     }
 
-    &--gray {
-      color: var(--gray-200) !important;
+    &--grey {
+      color: var(--grey-200);
     }
   }
 }
