@@ -96,14 +96,22 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       )}
     >
       {md || !collapse ? (
-        <Tag className={cn('telia-side-menu-item__desktop')} onClick={handleClick} href={props.href} tabIndex={1}>
+        <Tag
+          className={cn('telia-side-menu-item__desktop')}
+          onClick={handleClick}
+          href={props.href}
+          tabIndex={1}
+          aria-labelledby="side-menu-group-item-label"
+        >
           {props.avatar && (
             <div className="telia-side-menu-item__avatar">
               <Avatar size="compact" {...props.avatar} />
             </div>
           )}
           {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
-          <div className="telia-side-menu-item__label">{props.label}</div>
+          <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
+            {props.label}
+          </div>
           {props.hasNotification && (
             <Badge className="telia-side-menu-item__badge" size="compact" status="warning" kind="active" />
           )}

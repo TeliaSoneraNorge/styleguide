@@ -4,7 +4,6 @@ import { Avatar, Icon, IconDefinition, useBreakpoint } from '../..';
 import { AvatarProps } from '../Avatar/Avatar';
 
 type Props = {
-  'aria-labelledby'?: string;
   open: boolean;
   label?: React.ReactNode;
   /**
@@ -36,32 +35,48 @@ type Props = {
 
 export const SideMenuItemGroup: React.FC<Props> = (props) => {
   const md = useBreakpoint('md');
+  const { open, label, avatar, icon, className, color, kind = 'squared', active, onClick } = props;
+
+  const handleClick = (e: React.SyntheticEvent) => {
+    e.preventDefault();
+    onClick();
+  };
 
   return (
     <li
       className={cn(
         'telia-side-menu-item',
         {
-          'telia-side-menu-item--active': props.active,
-          'telia-side-menu-item--grey': props.color === 'grey',
+          'telia-side-menu-item--active': active,
+          'telia-side-menu-item--grey': color === 'grey',
         },
-        `telia-side-menu-item--${props.kind ?? 'squared'}`,
-        props.className
+        `telia-side-menu-item--${kind ?? 'squared'}`,
+        className
       )}
     >
-      <a>
-        <li className={cn('telia-side-menu-item__desktop')} tabIndex={1} onClick={props.onClick}>
-          {props.avatar && (
-            <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" {...props.avatar} />
-            </div>
-          )}
-          {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
-          <div className="telia-side-menu-item__label">{props.label}</div>
-        </li>
+      <button
+        className={cn('telia-side-menu-item__desktop')}
+        tabIndex={1}
+        onClick={handleClick}
+        aria-labelledby="side-menu-group-item-label"
+      >
+        {avatar && (
+          <div className="telia-side-menu-item__avatar">
+            <Avatar size="compact" {...avatar} />
+          </div>
+        )}
+        {icon && <Icon className="telia-side-menu-item__icon" icon={icon} />}
+        <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
+          {label}
+        </div>
+      </button>
 
-        {props.open && <ul className="telia-side-menu__group-items">{props.children}</ul>}
-      </a>
+      <ul
+        className={cn('telia-side-menu__group-items', { 'telia-side-menu__group-items--open': open })}
+        aria-hidden={!open}
+      >
+        {props.children}
+      </ul>
     </li>
   );
 };
