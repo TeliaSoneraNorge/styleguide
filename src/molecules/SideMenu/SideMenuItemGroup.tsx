@@ -58,7 +58,7 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
         className={cn('telia-side-menu-item__desktop')}
         tabIndex={1}
         onClick={handleClick}
-        aria-labelledBy="side-menu-group-item-label"
+        aria-labelledby="side-menu-group-item-label"
       >
         {avatar && (
           <div className="telia-side-menu-item__avatar">

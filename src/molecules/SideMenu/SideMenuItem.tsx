@@ -101,7 +101,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
           onClick={handleClick}
           href={props.href}
           tabIndex={1}
-          aria-labelledBy="side-menu-group-item-label"
+          aria-labelledby="side-menu-group-item-label"
         >
           {props.avatar && (
             <div className="telia-side-menu-item__avatar">
