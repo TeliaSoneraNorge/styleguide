@@ -37,6 +37,8 @@ const arrowRight = {
   NONE: 'none',
 };
 
+const colors = ['black', 'white', 'grey', 'core-purple'];
+
 const Breadcrumbs = (props: {
   crumbs: Crumb[];
   alwaysShowRootCrumb: boolean;
@@ -92,7 +94,7 @@ const Breadcrumbs = (props: {
   });
 
   const getStyle = (style: string, color: string) => {
-    if (!color) {
+    if (!colors.includes(color)) {
       color = 'black';
     }
     return style + ' ' + style + '--' + color;
