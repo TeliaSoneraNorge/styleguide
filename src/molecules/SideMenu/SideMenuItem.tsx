@@ -59,6 +59,7 @@ type Props = {
    * @default true
    */
   collapse?: boolean;
+  tabIndex?: number;
 };
 
 export const SideMenuItem: React.FC<Props> = (props) => {
@@ -100,7 +101,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
           className={cn('telia-side-menu-item__desktop')}
           onClick={handleClick}
           href={props.href}
-          tabIndex={1}
+          tabIndex={props.tabIndex ?? 1}
           aria-labelledby="side-menu-group-item-label"
         >
           {props.avatar && (
