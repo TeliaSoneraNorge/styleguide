@@ -296,8 +296,20 @@ export const WithItemGroup = () => {
                 }}
                 active={active === 1}
               >
-                <SideMenuItem label="Abonnenter" onClick={() => setActive(2)} active={active === 2} collapse={false} />
-                <SideMenuItem label="Tv" onClick={() => setActive(3)} active={active === 3} collapse={false} />
+                <SideMenuItem
+                  label="Abonnenter"
+                  onClick={() => setActive(2)}
+                  active={active === 2}
+                  collapse={false}
+                  tabIndex={openGroup === 'Subs' ? 1 : -1}
+                />
+                <SideMenuItem
+                  label="Tv"
+                  onClick={() => setActive(3)}
+                  active={active === 3}
+                  collapse={false}
+                  tabIndex={openGroup === 'Subs' ? 1 : -1}
+                />
               </SideMenuItemGroup>
               <SideMenuItemGroup
                 label="Økonomi"
@@ -309,13 +321,20 @@ export const WithItemGroup = () => {
                 }}
                 active={active === 4}
               >
-                <SideMenuItem label="Fakturaer" onClick={() => setActive(5)} active={active === 5} collapse={false} />
+                <SideMenuItem
+                  label="Fakturaer"
+                  onClick={() => setActive(5)}
+                  active={active === 5}
+                  collapse={false}
+                  tabIndex={openGroup === 'Economy' ? 1 : -1}
+                />
                 <SideMenuItem
                   label="Økonomi"
                   onClick={() => setActive(6)}
                   active={active === 6}
                   href="/okonomi"
                   collapse={false}
+                  tabIndex={openGroup === 'Economy' ? 1 : -1}
                 />
               </SideMenuItemGroup>
             </SideMenuTop>
