@@ -74,6 +74,15 @@ export const Default = ({}) => {
           caption="shadow"
           color={color}
         />
+        <ListCard
+          title="ListCard w/onClick and active"
+          onClick={setNextStyle}
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+          color={color}
+          active
+        />
       </List>
     </div>
   );
@@ -90,7 +99,7 @@ export const Card = ({}) => {
           <ListCard title="Element 2" />
           <ListCard title="Element 3 with onClick" onClick={action('click element 3')} />
           <ListCard title="Element 4" />
-          <ListCard title="Element 5" />
+          <ListCard title="Element 5 active" active />
         </List>
       </div>
       <div style={{ flex: '1 1 0px', minWidth: '15rem', padding: '1rem' }}>
