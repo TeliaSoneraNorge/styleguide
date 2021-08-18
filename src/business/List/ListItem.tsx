@@ -9,6 +9,7 @@ export type ListItemProps = {
   caption?: string | React.ReactChild;
   onClick?: React.MouseEventHandler;
   compact?: boolean;
+  active?: boolean;
   className?: string;
   /**
    * @default li
@@ -45,6 +46,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
           {
             'telia-listItem--compact': compact,
             'telia-listItem--clickable': onClick,
+            'telia-listItem--active': props.active,
           },
           className
         )}
