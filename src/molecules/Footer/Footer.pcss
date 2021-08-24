@@ -7,7 +7,7 @@
     }
 
     &__wrapper {
-        padding-top: 1rem;
+        padding-top: 2rem;
         padding-left: 10%;
         padding-right: 10%;
 
@@ -81,12 +81,6 @@
        padding-top: 1rem;
    }
 
-   &__heading {
-       margin: 0;
-       padding-top: 1rem;
-       padding-bottom: 1rem;
-   }
-
    &__remove-padding {
        padding-top: 0;
    }
@@ -99,9 +93,19 @@
     }
 
     &__accordion-item {
+        display: block;
+        background-color: Transparent;
+        border: none;
+        text-align: left;
+        padding: 0;
+        font-family: inherit;
+        font-size: 1rem;
         
         @media all and (max-width: 59rem) {
+            display: block;
+            width: 100%;
             border-bottom: solid 1px var(--core-purple);
+            line-height: 1.5;
         }
     }
 
@@ -140,7 +144,13 @@
     }
 
     &__accordion-arrow {
+        height: auto;
+        margin: 0;
+
         @media all and (max-width: 59rem) {
+
+            padding-top: 9px;
+            padding-bottom: 9px;
             display: inline-block;
         }
     }
@@ -151,8 +161,9 @@
         @media all and (max-width: 59rem) {
             display: block;
             float: right;
-            padding-top: 1rem;
+            padding-top: 0.8rem;
             margin-right: -0.5rem;
+            margin-bottom: -0.5rem;
             color: var(--core-purple);
         }
     }
