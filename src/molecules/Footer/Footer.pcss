@@ -1,17 +1,15 @@
 .telia-footer {
-    padding-bottom: 2rem;
-
     a {
         text-decoration: none;
         color: var(--white);
     }
 
     &__wrapper {
-        padding-top: 1rem;
+        padding-top: 2rem;
         padding-left: 10%;
         padding-right: 10%;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             padding-left: 1.7rem;
             padding-right: 1.7rem;
         }
@@ -22,7 +20,7 @@
         justify-content: space-between;
         padding-bottom: 2rem;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: block;
         }
     }
@@ -46,16 +44,11 @@
             }
         }
     }
-    
-    &__decoration {
-        color: var(--white);
-        text-decoration: none;
-    }
-
+        
     &__purple-font {
         color: var(--core-purple-400) !important;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             color: var(--white) !important;
         }
     }
@@ -81,32 +74,32 @@
        padding-top: 1rem;
    }
 
-   &__heading {
-       margin: 0;
-       padding-top: 1rem;
-       padding-bottom: 1rem;
-   }
-
-   &__remove-padding {
-       padding-top: 0;
-   }
-
    &__accordion {
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: block; 
             width: 100%;
         }
     }
 
     &__accordion-item {
+        display: block;
+        background-color: Transparent;
+        border: none;
+        text-align: left;
+        padding: 0;
+        font-family: inherit;
+        font-size: 1rem;
         
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
+            display: block;
+            width: 100%;
             border-bottom: solid 1px var(--core-purple);
+            line-height: 1.5;
         }
     }
 
     &__set-top-horizontal-line {
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             border-top: solid 1px var(--core-purple);
         }
     }
@@ -114,7 +107,7 @@
     &__accordion-content-mobile {
         display: none;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: block;
             padding-bottom: 1rem;
         }
@@ -125,7 +118,7 @@
         padding-top: 1rem;
         display: block;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: none;
         }
     }
@@ -134,33 +127,39 @@
         padding-top: 1rem;
         display: none;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: block;    
         }
     }
 
-    &__accordion-arrow {
-        @media all and (max-width: 59rem) {
+    &__accordion-heading {
+        height: auto;
+        margin: 0;
+
+        @media all and (max-width: 59em) {
+            padding-top: 9px;
+            padding-bottom: 9px;
             display: inline-block;
         }
     }
 
-    &__arrow-move-right {
+    &__accordion-chevron {
         display: none;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: block;
             float: right;
-            padding-top: 1rem;
+            padding-top: 0.8rem;
             margin-right: -0.5rem;
+            margin-bottom: -0.5rem;
             color: var(--core-purple);
         }
     }
 
-    &__accordion-header {
+    &__accordion-header-container {
         color: var(--white);
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             width: 100%;
         }
     }
@@ -169,7 +168,7 @@
         display: none;
         padding-left: 0.5rem;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: inline;
             border-left: 1px solid var(--core-purple);
             margin-left: 1.5rem; 
@@ -180,7 +179,7 @@
     &__sosial-media-name {
         padding-left: 0.5rem;
 
-        @media all and (max-width: 59rem) {
+        @media all and (max-width: 59em) {
             display: none;
             padding-right: 0.5rem;
         }

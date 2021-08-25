@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -51,11 +50,11 @@ export type FooterProps = {
 const LinkColumnsRender = (data: { linkColumns: LinkColumn[]; isBottom: boolean }) => {
   let key = 0;
   return (
-    <div className={'telia-footer__container telia-footer__accordion'}>
+    <section className={'telia-footer__container telia-footer__accordion'}>
       {data.linkColumns.map((item) => (
         <ColumnItem key={key++} linkColumn={item} isBottom={data.isBottom} />
       ))}
-    </div>
+    </section>
   );
 };
 
@@ -64,17 +63,11 @@ const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
   return (
     <div>
       {!data.isBottom && (
-        <div className="telia-footer__accordion-item">
-          <div className="telia-footer__accordion-title" onClick={() => setIsActive(!isActive)}>
-            <div className={'telia-footer__accordion-header'}>
-              <h3 className={'telia-footer__accordion-arrow'}>{data.linkColumn.heading}</h3>
-              <div className={'telia-footer__accordion-arrow telia-footer__arrow-move-right'}>
-                {isActive ? (
-                  <ArrowUpIcon style={{ height: '0.9rem' }} />
-                ) : (
-                  <ArrowDownIcon style={{ height: '0.9rem' }} />
-                )}
-              </div>
+        <button className="telia-footer__accordion-item" onClick={() => setIsActive(!isActive)}>
+          <div className={'telia-footer__accordion-header-container'}>
+            <h3 className={'telia-footer__accordion-heading'}>{data.linkColumn.heading}</h3>
+            <div className={'telia-footer__accordion-chevron'}>
+              {isActive ? <ArrowUpIcon style={{ height: '1rem' }} /> : <ArrowDownIcon style={{ height: '1rem' }} />}
             </div>
           </div>
           {isActive && (
@@ -84,7 +77,7 @@ const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
               ))}
             </div>
           )}
-        </div>
+        </button>
       )}
       <div className={'telia-footer__accordion-content-desktop'}>
         {data.linkColumn.links.map((item) => (
@@ -126,7 +119,8 @@ const SocialMediaColumnRender = (sosial: SocialLinkColumn) => {
 };
 
 const SocialMediaLink = (data: { links: Link[] }) => {
-  const lenght = data.links.length - 1;
+  const length = data.links.length - 1;
+  let counter = 0;
   return (
     <>
       {data.links.map((link) => {
@@ -140,7 +134,7 @@ const SocialMediaLink = (data: { links: Link[] }) => {
           <a className={'telia-footer__sosial' + ' ' + getColor(link.color)} key={link.name.toString()} href={link.url}>
             <FontAwesomeIcon icon={iconDefinition} size={'lg'} />
             <span className={'telia-footer__sosial-media-name'}>{link.name}</span>
-            <span className={getVerticalLine(lenght)}></span>
+            <span className={getVerticalLine(counter++, length)}></span>
           </a>
         );
       })}
@@ -148,8 +142,8 @@ const SocialMediaLink = (data: { links: Link[] }) => {
   );
 };
 
-const getVerticalLine = (length: number) => {
-  if (1 < length + 1) {
+const getVerticalLine = (counter: number, length: number) => {
+  if (counter >= 0 && counter < length) {
     return 'telia-footer__vertical-seperator-line';
   } else {
     return '';
@@ -203,7 +197,7 @@ const isBottomRow = (footerRow: FooterRow) => {
 
 const FooterRowRender = (footerRow: FooterRow) => {
   return (
-    <div className={'telia-footer__wrapper' + ' ' + setBackgroundColor(footerRow)}>
+    <section className={'telia-footer__wrapper' + ' ' + setBackgroundColor(footerRow)}>
       <div className={getBottomRowClass(footerRow)}>
         {footerRow.addressColumn && footerRow.linkColumns && footerRow.socialLinkColumn && (
           <Logo logoColumn={footerRow.logoColumn} />
@@ -217,16 +211,16 @@ const FooterRowRender = (footerRow: FooterRow) => {
 
         {footerRow.socialLinkColumn && <SocialMediaColumnRender {...footerRow.socialLinkColumn} />}
       </div>
-    </div>
+    </section>
   );
 };
 
 export const Footer = (props: FooterProps) => {
   return (
-    <div className={'telia-footer'}>
+    <footer className={'telia-footer'}>
       <FooterRowRender {...props.topRow} />
       <FooterRowRender {...props.bottomRow} />
-    </div>
+    </footer>
   );
 };
 
