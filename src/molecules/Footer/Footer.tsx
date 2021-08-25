@@ -119,7 +119,7 @@ const SocialMediaColumnRender = (sosial: SocialLinkColumn) => {
 };
 
 const SocialMediaLink = (data: { links: Link[] }) => {
-  const lenght = data.links.length - 1;
+  const length = data.links.length - 1;
   let counter = 0;
   return (
     <>
@@ -134,7 +134,7 @@ const SocialMediaLink = (data: { links: Link[] }) => {
           <a className={'telia-footer__sosial' + ' ' + getColor(link.color)} key={link.name.toString()} href={link.url}>
             <FontAwesomeIcon icon={iconDefinition} size={'lg'} />
             <span className={'telia-footer__sosial-media-name'}>{link.name}</span>
-            <span className={getVerticalLine(counter++, lenght)}></span>
+            <span className={getVerticalLine(counter++, length)}></span>
           </a>
         );
       })}
