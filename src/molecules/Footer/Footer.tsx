@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -64,13 +63,11 @@ const ColumnItem = (data: { linkColumn: LinkColumn; isBottom: boolean }) => {
   return (
     <div>
       {!data.isBottom && (
-        <button className="telia-footer__accordion-item">
-          <div className="telia-footer__accordion-title" onClick={() => setIsActive(!isActive)}>
-            <div className={'telia-footer__accordion-header'}>
-              <h3 className={'telia-footer__accordion-arrow'}>{data.linkColumn.heading}</h3>
-              <div className={'telia-footer__accordion-arrow telia-footer__arrow-move-right'}>
-                {isActive ? <ArrowUpIcon style={{ height: '1rem' }} /> : <ArrowDownIcon style={{ height: '1rem' }} />}
-              </div>
+        <button className="telia-footer__accordion-item" onClick={() => setIsActive(!isActive)}>
+          <div className={'telia-footer__accordion-header-container'}>
+            <h3 className={'telia-footer__accordion-heading'}>{data.linkColumn.heading}</h3>
+            <div className={'telia-footer__accordion-chevron'}>
+              {isActive ? <ArrowUpIcon style={{ height: '1rem' }} /> : <ArrowDownIcon style={{ height: '1rem' }} />}
             </div>
           </div>
           {isActive && (
