@@ -21,9 +21,9 @@ export interface Link {
 export interface AddressColumn {
   companyName: string | undefined;
   officeType: string | undefined;
-  street: string | undefined;
-  city: string | any;
-  postalCode: string | any;
+  street: string | undefined | null;
+  city: string | undefined | null;
+  postalCode: string | undefined;
 }
 
 export interface SocialLinkColumn {
@@ -104,8 +104,8 @@ const Item = (link: Link) => {
 };
 
 const AddressColumnRender = (data: AddressColumn) => {
-  const postalCode = data.postalCode === null ? '' : data.postalCode;
-  const city = data.city === null ? '' : data.city;
+  const postalCode = data.postalCode === null || data.postalCode === undefined ? '' : data.postalCode;
+  const city = data.city === null || data.city === undefined ? '' : data.city;
   return (
     <div className={'telia-footer__address-to-use'}>
       <p>{data.companyName}</p>

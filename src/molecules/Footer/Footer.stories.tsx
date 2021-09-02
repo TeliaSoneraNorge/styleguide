@@ -17,7 +17,7 @@ export const DefaultFooter = () => {
   );
 };
 
-export const TestFooter = () => {
+export const CityAndPostalCodeEitherNullOrUndefinedFooter = () => {
   return (
     <>
       <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
@@ -405,8 +405,8 @@ const linkColumns1: LinkColumn[] = [
 const addressColumn1: AddressColumn = {
   companyName: 'Telia Norge AS',
   street: 'Sandakerveien 140',
-  city: null,
-  postalCode: null,
+  city: undefined,
+  postalCode: undefined,
   officeType: 'Hovedkontor',
 };
 
