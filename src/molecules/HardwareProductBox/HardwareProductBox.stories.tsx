@@ -11,8 +11,8 @@ export const DefaultGridView = () => {
     {
       campaign: {
         text: 'kampanje',
-        backgroundColor: '#990AE3',
-        color: '#ffffff',
+        backgroundColor: '#F2F2F2',
+        color: '#303030',
       },
       brand: 'Apple',
       image: {
@@ -30,8 +30,8 @@ export const DefaultGridView = () => {
     {
       campaign: {
         text: 'tilbud',
-        backgroundColor: '#FF9B00',
-        color: '#ffffff',
+        backgroundColor: '#EDC8FF',
+        color: '#3F005E',
       },
       url: '#',
       brand: 'Apple',
@@ -50,8 +50,8 @@ export const DefaultGridView = () => {
     {
       campaign: {
         text: 'nyhet',
-        backgroundColor: '#007ACC',
-        color: '#ffffff',
+        backgroundColor: '#FFE39F',
+        color: '#6B4100',
       },
       highlight: {
         heading: 'Airbuds Pro',
@@ -128,8 +128,8 @@ export const Default = () => {
   const product = {
     campaign: {
       text: 'nyhet',
-      backgroundColor: '#007ACC',
-      color: '#ffffff',
+      backgroundColor: '#CBEFFF',
+      color: '#003D65',
     },
     brand: 'Apple',
     image: {
