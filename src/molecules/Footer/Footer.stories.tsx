@@ -44,6 +44,42 @@ export const MissingTopRowFooter = () => {
   );
 };
 
+export const MissingOneColumnTopRowFooter = () => {
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footerMissingOneColumnLinksTopRow} />
+    </>
+  );
+};
+
+export const MissingColumnLinksBottomRowFooter = () => {
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footerMissingColumnLinksBottomRow} />
+    </>
+  );
+};
+
+export const MissingAddressAndColumnLinksBottomRowFooter = () => {
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footerMissingAddressAndColumnLinksBottomRow} />
+    </>
+  );
+};
+
+export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footerMissingAddressColumnLinksAndSocialBottomRow} />
+    </>
+  );
+};
+
 const linkColumns: LinkColumn[] = [
   {
     heading: 'Support',
@@ -69,7 +105,7 @@ const linkColumns: LinkColumn[] = [
       {
         name: 'Lade kontantkort',
         url: './',
-        color: 'purple',
+        color: 'light-purple',
         iconUrl: '',
       },
       {
@@ -193,6 +229,120 @@ const linkColumns: LinkColumn[] = [
   },
 ];
 
+const linkColumnsMissing: LinkColumn[] = [
+  {
+    heading: 'Support',
+    links: [
+      {
+        name: 'Dekningskart',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Driftsmelding',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Last ned apper',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Lade kontantkort',
+        url: './',
+        color: 'light-purple',
+        iconUrl: '',
+      },
+      {
+        name: 'Se Telia Play',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Valgmenyen',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Logg inn',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+  {
+    heading: 'Kontakt',
+    links: [
+      {
+        name: 'Kundeservice',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Borettslag',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Nybygg',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Finn butikk',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+  {
+    heading: 'Om Telia',
+    links: [
+      {
+        name: 'Om Telia Norge',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: '5G',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Press',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Karriere',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+      {
+        name: 'Bærekraft',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+];
+
 const addressColumn: AddressColumn = {
   companyName: 'Telia Norge AS',
   street: 'Sandakerveien 140',
@@ -214,7 +364,7 @@ const linksColumnsBot: LinkColumn[] = [
       {
         name: 'Cookieinformasjon',
         url: './',
-        color: 'purple',
+        color: 'light-purple',
         iconUrl: '',
       },
       {
@@ -232,17 +382,17 @@ const sosialLinkColumn: SocialLinkColumn = {
     {
       name: 'Facebook',
       url: '/',
-      color: 'white',
+      color: '',
     },
     {
       name: 'Twitter',
       url: '/',
-      color: 'purple',
+      color: 'light-purple',
     },
     {
       name: 'Youtube',
       url: '/',
-      color: 'white',
+      color: '',
     },
   ],
 };
@@ -255,6 +405,13 @@ const logoColumn: LogoColumn = {
 const topRow: FooterRow = {
   logoColumn: null,
   linkColumns: linkColumns,
+  addressColumn: null,
+  socialLinkColumn: null,
+};
+
+const topRowMissingOne: FooterRow = {
+  logoColumn: null,
+  linkColumns: linkColumnsMissing,
   addressColumn: null,
   socialLinkColumn: null,
 };
@@ -298,6 +455,27 @@ const footerMissingCityPostalCode: FooterProps = {
   bottomRow: bottomRow1,
 };
 
+const bottomRowMissingColumnLinks: FooterRow = {
+  logoColumn: logoColumn,
+  addressColumn: addressColumn,
+  linkColumns: null,
+  socialLinkColumn: sosialLinkColumn,
+};
+
+const bottomRowMissingAddressAndColumnLinks: FooterRow = {
+  logoColumn: logoColumn,
+  addressColumn: null,
+  linkColumns: null,
+  socialLinkColumn: sosialLinkColumn,
+};
+
+const bottomRowMissingAddressColumnLinksAndSosial: FooterRow = {
+  logoColumn: logoColumn,
+  addressColumn: null,
+  linkColumns: null,
+  socialLinkColumn: null,
+};
+
 const footerMissingBottomRow: FooterProps = {
   topRow: topRow,
   bottomRow: null,
@@ -305,5 +483,25 @@ const footerMissingBottomRow: FooterProps = {
 
 const footerMissingTopRow: FooterProps = {
   topRow: null,
+  bottomRow: bottomRow,
+};
+
+const footerMissingColumnLinksBottomRow: FooterProps = {
+  topRow: topRow,
+  bottomRow: bottomRowMissingColumnLinks,
+};
+
+const footerMissingAddressAndColumnLinksBottomRow: FooterProps = {
+  topRow: topRow,
+  bottomRow: bottomRowMissingAddressAndColumnLinks,
+};
+
+const footerMissingAddressColumnLinksAndSocialBottomRow: FooterProps = {
+  topRow: topRow,
+  bottomRow: bottomRowMissingAddressColumnLinksAndSosial,
+};
+
+const footerMissingOneColumnLinksTopRow: FooterProps = {
+  topRow: topRowMissingOne,
   bottomRow: bottomRow,
 };
