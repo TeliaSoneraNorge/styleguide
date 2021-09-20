@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
@@ -47,27 +47,13 @@ export type FooterProps = {
   bottomRow: FooterRow | null;
 };
 
-const RenderColumns = (model: { links: LinkColumn[] | null; isBottom: boolean }) => {
+const LinkColumnsRender = (model: { links: LinkColumn[] | null; isBottom: boolean }) => {
   return (
     <>
       {model.links?.map((item) => (
-        <RenderColumn key={item.heading} links={item} />
+        <ColumnRender key={item.heading} links={item} />
       ))}
     </>
-  );
-};
-
-const removeLine = (style: string, isBottom: boolean) => {
-  return isBottom ? style + ' telia-footer__remove-line' : style + '';
-};
-
-const buildColumnBottomRow = (links: LinkColumn | null) => {
-  return (
-    <div className={'telia-footer__nav-column-bottom'}>
-      {links?.links?.map((item) => (
-        <Item key={item.name} link={item} isBottom={links.heading ? false : true} />
-      ))}
-    </div>
   );
 };
 
@@ -76,19 +62,21 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
   return (
     <div className={'telia-footer__nav-column-top'}>
       <button className={'telia-footer__accordion'} onClick={() => setIsActive(!isActive)}>
-        <div className={'telia-footer__header'}>
+        <div className={'telia-footer__accordion-heading'}>
           {links?.heading && <Heading heading={links?.heading} />}
-          <div className={'telia-footer__arrow'}>
+          <div className={'telia-footer__accordian-chevron'}>
             {isActive ? <ArrowUpIcon style={{ height: '1em' }} /> : <ArrowDownIcon style={{ height: '1em' }} />}
           </div>
         </div>
-        <div className={'telia-footer__small-screen'}>
+        <div className={'telia-footer__accordion-small-screen'}>
           {isActive &&
-            links?.links?.map((item) => <Item key={item.name} link={item} isBottom={links.heading ? false : true} />)}
+            links?.links?.map((item) => (
+              <LinkItem key={item.name} link={item} isBottom={links.heading ? false : true} />
+            ))}
         </div>
-        <div className={'telia-footer__desktop'}>
+        <div className={'telia-footer__accordion-desktop'}>
           {links?.links?.map((item) => (
-            <Item key={item.name} link={item} isBottom={links.heading ? false : true} />
+            <LinkItem key={item.name} link={item} isBottom={links.heading ? false : true} />
           ))}
         </div>
       </button>
@@ -96,7 +84,17 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
   );
 };
 
-const RenderColumn = (model: { links: LinkColumn | null }) => {
+const buildColumnBottomRow = (links: LinkColumn | null) => {
+  return (
+    <div className={'telia-footer__nav-column-bottom'}>
+      {links?.links?.map((item) => (
+        <LinkItem key={item.name} link={item} isBottom={links.heading ? false : true} />
+      ))}
+    </div>
+  );
+};
+
+const ColumnRender = (model: { links: LinkColumn | null }) => {
   if (!model.links?.heading) {
     return buildColumnBottomRow(model.links);
   }
@@ -104,18 +102,16 @@ const RenderColumn = (model: { links: LinkColumn | null }) => {
 };
 
 const Heading = (data: { heading: string | null }) => {
-  return (
-    <>{data.heading && <h3 className={'telia-footer__white telia-footer__remove-margin-top'}>{data.heading}</h3>}</>
-  );
+  return <>{data.heading && <h3 className={'telia-footer__heading'}>{data.heading}</h3>}</>;
 };
 
-const Item = (data: { link: Link; isBottom: boolean }) => {
+const LinkItem = (data: { link: Link; isBottom: boolean }) => {
   return (
     <>
       {data.link.name && data.link.url && (
         <a
           className={getElementColor(
-            data.isBottom ? 'telia-footer__a-tag-bottom' : 'telia-footer__a-tag',
+            data.isBottom ? 'telia-footer__nav-column-link-bottom' : 'telia-footer__nav-column-link-top',
             data.link.color
           )}
           href={data.link.url}
@@ -127,12 +123,11 @@ const Item = (data: { link: Link; isBottom: boolean }) => {
   );
 };
 
-const Logo = (data: { logo: LogoColumn | null }) => {
+const LogoColumnRender = (data: { logo: LogoColumn | null }) => {
   return (
     <>
-      {' '}
       {data.logo && data.logo.url && data.logo.imageUrl && (
-        <div className={removeLine('telia-footer__nav-column-bottom', data !== null)}>
+        <div className={'telia-footer__nav-column-bottom'}>
           <a href={data.logo.url} className={'telia-footer__logo'}>
             <img src={data.logo.imageUrl} />
           </a>
@@ -144,16 +139,14 @@ const Logo = (data: { logo: LogoColumn | null }) => {
 
 const AddressColumnRender = (data: AddressColumn) => {
   return (
-    <div className={removeLine('telia-footer__nav-column-bottom telia-footer__white', data !== null)}>
-      {data.companyName && <p className={'telia-footer__remove-margin'}>{data.companyName}</p>}
+    <div className={'telia-footer__nav-column-bottom'}>
+      {data.companyName && <p>{data.companyName}</p>}
 
-      {data.officeType && <p className={'telia-footer__remove-margin'}>{data.officeType}</p>}
+      {data.officeType && <p>{data.officeType}</p>}
 
-      {data.street && <p className={'telia-footer__remove-margin'}>{data.street}</p>}
+      {data.street && <p>{data.street}</p>}
 
-      {data.postalCode && data.city && (
-        <p className={'telia-footer__remove-margin'}>{data.postalCode + ' ' + data.city}</p>
-      )}
+      {data.postalCode && data.city && <p>{data.postalCode + ' ' + data.city}</p>}
     </div>
   );
 };
@@ -165,16 +158,16 @@ const SocialMediaColumnRender = (sosial: SocialLinkColumn | null) => {
 
 const SocialMediaLink = (data: { links: Link[] | null }) => {
   return (
-    <ul className={removeLine('telia-footer__nav-column-bottom', data !== null)}>
+    <ul className={'telia-footer__nav-column-bottom'}>
       {data.links?.map((link) => {
         const sosialMedia = link?.name?.toLowerCase();
         const iconLookup: IconLookup = { prefix: 'fab', iconName: sosialMedia as IconName };
         const iconDefinition: IconDefinition = findIconDefinition(iconLookup);
         return (
-          <li className={'telia-footer__sosial-media'} key={link.name}>
+          <li className={'telia-footer__sosial-media-row'} key={link.name}>
             {link.name && link.url && (
               <a className={getElementColor('', link.color)} href={link.url}>
-                <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__grow-icon'} />
+                <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
               </a>
             )}
           </li>
@@ -193,11 +186,14 @@ const FooterRowRender = (footerRow: FooterRow | null) => {
   return (
     <section className={getElementColor('', footerRow?.logoColumn ? 'deep-purple' : 'purple')}>
       <div className={'telia-footer__container'}>
-        {footerRow?.logoColumn && <Logo logo={footerRow?.logoColumn} />}
+        {footerRow?.logoColumn && <LogoColumnRender logo={footerRow?.logoColumn} />}
+
         {footerRow?.addressColumn && <AddressColumnRender {...footerRow?.addressColumn} />}
+
         {footerRow?.linkColumns && (
-          <RenderColumns links={footerRow?.linkColumns} isBottom={footerRow.logoColumn ? true : false} />
+          <LinkColumnsRender links={footerRow?.linkColumns} isBottom={footerRow.logoColumn ? true : false} />
         )}
+
         {footerRow?.socialLinkColumn && <SocialMediaColumnRender {...footerRow.socialLinkColumn} />}
       </div>
     </section>
