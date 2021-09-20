@@ -1,6 +1,6 @@
 {
     "name": "@telia/styleguide",
-    "version": "1.44.14",
+    "version": "1.44.15",
     "private": true,
     "description": "",
     "main": "dist/index.js",
