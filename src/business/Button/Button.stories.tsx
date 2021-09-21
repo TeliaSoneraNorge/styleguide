@@ -20,9 +20,11 @@ export const ButtonPrimary = () => (
     <br />
     <h3>Button with icon</h3>
     <Button label="Button" icon={'add'} />
+    <Button label="Button" icon={'add'} size="compact" />
     <br />
     <h3>Button with icon right</h3>
     <Button label="Button" icon={'arrow-right'} iconRight={true} />
+    <Button label="Button" icon={'arrow-right'} iconRight={true} size="compact" />
     <br />
     <h3>Button ball (with icon and without label)</h3>
     <Button icon={'add'} ariaLabel="add" />

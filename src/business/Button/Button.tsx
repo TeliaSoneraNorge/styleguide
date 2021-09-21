@@ -85,6 +85,7 @@ export const Button = (props: ButtonProps) => {
         `telia-button--${size}`,
         {
           'telia-button--iconRight': iconRight,
+          'telia-button--iconLeft': icon && !iconRight,
           'telia-button--ball': icon && !label,
           'telia-button--disabled': disabled,
           'telia-button--active': active,
