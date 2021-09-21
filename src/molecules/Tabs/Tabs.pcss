@@ -61,15 +61,17 @@
   }
 
   &--full-border {
-    .tabs__button {
-      width: 100%;
-      border-bottom: 2px solid var(--grey-300);
-    }
+    @media all and (min-width: 49.75em) {
+      .tabs__button {
+        width: 100%;
+        border-bottom: 2px solid var(--grey-300);
+      }
 
-    .tabs__list-item--selected .tabs__button,
-    .tabs__button:hover,
-    .tabs__button:focus {
-      border-bottom: solid 2px var(--core-purple);
+      .tabs__list-item--selected .tabs__button,
+      .tabs__button:hover,
+      .tabs__button:focus {
+        border-bottom: solid 2px var(--core-purple);
+      }
     }
   }
 }
