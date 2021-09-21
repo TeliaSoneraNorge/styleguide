@@ -6,11 +6,12 @@ import PropTypes from 'prop-types';
  * Status: *finished*
  * Category: Tabs
  */
-const Tabs = ({ uniqueId, children, selectedIndex, onSelect, skipPanelRendering, noMargin, compact }) => (
+const Tabs = ({ uniqueId, children, selectedIndex, onSelect, skipPanelRendering, noMargin, compact, fullBorder }) => (
   <div
     className={classnames('tabs', {
       'tabs--no-margin': noMargin,
       'tabs--compact': compact,
+      'tabs--full-border': fullBorder,
     })}
   >
     <Tabs.TabList selectedIndex={selectedIndex} uniqueId={uniqueId} onSelect={onSelect}>
@@ -88,6 +89,8 @@ Tabs.propTypes = {
   noMargin: PropTypes.bool,
   /** Styling */
   compact: PropTypes.bool,
+  /** Styling */
+  fullBorder: PropTypes.bool,
 };
 
 Tabs.defaultProps = {
