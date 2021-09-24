@@ -5,6 +5,8 @@ declare interface TabsProps {
   selectedIndex?: number;
   onSelect?: (...args: any[]) => any;
   skipPanelRendering?: boolean;
+  compact?: boolean;
+  fullBorder?: boolean;
 }
 
 declare const Tabs: React.FC<TabsProps> & {
