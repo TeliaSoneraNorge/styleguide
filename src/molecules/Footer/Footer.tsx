@@ -9,7 +9,7 @@ library.add(fab);
 export interface LogoColumn {
   url: string | null;
   imageUrl: string | null;
-  imageAltText: string;
+  imageAltText: string | null;
 }
 
 export interface Link {
@@ -111,8 +111,6 @@ const Heading = (data: { heading: string | null }) => {
 };
 
 const LinkItem = (data: { link: Link; isBottom: boolean }) => {
-  console.log(data.link.color);
-  console.log(data.isBottom);
   return (
     <>
       {data.link.name && data.link.url && (
@@ -136,7 +134,7 @@ const LogoColumnRender = (data: { logo: LogoColumn | null }) => {
       {data.logo && data.logo.url && data.logo.imageUrl && (
         <div className={'telia-footer__nav-column-bottom'}>
           <a href={data.logo.url} className={'telia-footer__logo'}>
-            <img src={data.logo.imageUrl} alt={data.logo.imageAltText} />
+            <img src={data.logo.imageUrl} alt={data.logo.imageAltText ? data.logo.imageAltText : ''} />
           </a>
         </div>
       )}
