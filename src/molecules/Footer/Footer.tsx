@@ -9,6 +9,7 @@ library.add(fab);
 export interface LogoColumn {
   url: string | null;
   imageUrl: string | null;
+  imageAltText: string;
 }
 
 export interface Link {
@@ -61,9 +62,13 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
   const [isActive, setIsActive] = useState(false);
   return (
     <div className={'telia-footer__nav-column-top'}>
-      <button className={'telia-footer__accordion'} onClick={() => setIsActive(!isActive)}>
+      <button
+        className={'telia-footer__accordion'}
+        onClick={() => setIsActive(!isActive)}
+        aria-label={links?.heading ? links.heading : ' '}
+      >
         <div className={'telia-footer__accordion-heading'}>
-          {links?.heading && <Heading heading={links?.heading} />}
+          {links?.heading && <Heading heading={links?.heading} aria-label={links.heading} />}
           <div className={'telia-footer__accordian-chevron'}>
             {isActive ? <ArrowUpIcon style={{ height: '1em' }} /> : <ArrowDownIcon style={{ height: '1em' }} />}
           </div>
@@ -106,6 +111,8 @@ const Heading = (data: { heading: string | null }) => {
 };
 
 const LinkItem = (data: { link: Link; isBottom: boolean }) => {
+  console.log(data.link.color);
+  console.log(data.isBottom);
   return (
     <>
       {data.link.name && data.link.url && (
@@ -129,7 +136,7 @@ const LogoColumnRender = (data: { logo: LogoColumn | null }) => {
       {data.logo && data.logo.url && data.logo.imageUrl && (
         <div className={'telia-footer__nav-column-bottom'}>
           <a href={data.logo.url} className={'telia-footer__logo'}>
-            <img src={data.logo.imageUrl} />
+            <img src={data.logo.imageUrl} alt={data.logo.imageAltText} />
           </a>
         </div>
       )}
@@ -140,7 +147,7 @@ const LogoColumnRender = (data: { logo: LogoColumn | null }) => {
 const AddressColumnRender = (data: AddressColumn) => {
   return (
     <div className={'telia-footer__nav-column-bottom'}>
-      {data.companyName && <p>{data.companyName}</p>}
+      {data.companyName && <p aria-label={data.companyName}>{data.companyName}</p>}
 
       {data.officeType && <p>{data.officeType}</p>}
 
@@ -166,7 +173,7 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
         return (
           <li className={'telia-footer__sosial-media-row'} key={link.name}>
             {link.name && link.url && (
-              <a className={getElementColor('', link.color)} href={link.url}>
+              <a className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
                 <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
               </a>
             )}

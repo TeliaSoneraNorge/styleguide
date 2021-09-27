@@ -80,6 +80,29 @@ export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
   );
 };
 
+export const OneColumnPresentTopRowFooter = () => {
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      <Footer {...footerOneLinkColumn} />
+    </>
+  );
+};
+
+const linkColumnsOne: LinkColumn[] = [
+  {
+    heading: 'Support',
+    links: [
+      {
+        name: 'Dekningskart',
+        url: './',
+        color: '',
+        iconUrl: '',
+      },
+    ],
+  },
+];
+
 const linkColumns: LinkColumn[] = [
   {
     heading: 'Support',
@@ -400,6 +423,7 @@ const sosialLinkColumn: SocialLinkColumn = {
 const logoColumn: LogoColumn = {
   url: 'https://www.telia.no',
   imageUrl: images.logo,
+  imageAltText: 'This is alt text for logo image',
 };
 
 const topRow: FooterRow = {
@@ -504,4 +528,16 @@ const footerMissingAddressColumnLinksAndSocialBottomRow: FooterProps = {
 const footerMissingOneColumnLinksTopRow: FooterProps = {
   topRow: topRowMissingOne,
   bottomRow: bottomRow,
+};
+
+const footerTopRowOne: FooterRow = {
+  logoColumn: null,
+  linkColumns: linkColumnsOne,
+  addressColumn: null,
+  socialLinkColumn: null,
+};
+
+const footerOneLinkColumn: FooterProps = {
+  topRow: footerTopRowOne,
+  bottomRow: null,
 };
