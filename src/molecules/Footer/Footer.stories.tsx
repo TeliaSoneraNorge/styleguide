@@ -80,15 +80,6 @@ export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
   );
 };
 
-export const OneColumnPresentTopRowFooter = () => {
-  return (
-    <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
-      <Footer {...footerOneLinkColumn} />
-    </>
-  );
-};
-
 const linkColumnsOne: LinkColumn[] = [
   {
     heading: 'Support',
