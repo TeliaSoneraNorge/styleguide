@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Footer } from '../../index';
 import { FooterRow, AddressColumn, SocialLinkColumn, LinkColumn, FooterProps, LogoColumn } from './Footer';
 import images from '../../stories/sampleImages';
+import axios from 'axios';
 
 export default {
   title: 'Component library/Molecules/Footer',
@@ -76,6 +77,32 @@ export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
     <>
       <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingAddressColumnLinksAndSocialBottomRow} />
+    </>
+  );
+};
+
+export const GetFooterDataFromApiFooter = () => {
+  const [footerData, setFooter] = useState(null);
+  const url = 'https://stage.telia.no//api/footerapi/getB2c';
+
+  useEffect(() => {
+    axios
+      .get(url, {
+        headers: {
+          'api-token': 'public-d24162be',
+        },
+      })
+      .then((res) => {
+        setFooter(res.data);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
+  return (
+    <>
+      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
+      {footerData && <Footer {...footerData} />}
     </>
   );
 };
