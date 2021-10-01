@@ -51,9 +51,8 @@ export type FooterProps = {
 const LinkColumnsRender = (model: { links: LinkColumn[] | null; isBottom: boolean }) => {
   return (
     <>
-      {model.links?.map((item) => {
-        const key = Math.random().toString(36).substring(2);
-        return <ColumnRender key={key} links={item} />;
+      {model.links?.map((item, index) => {
+        return <ColumnRender key={index} links={item} />;
       })}
     </>
   );
@@ -77,15 +76,13 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
           </div>
           <div className={'telia-footer__accordion-small-screen'}>
             {isActive &&
-              links?.links?.map((item) => {
-                const key = Math.random().toString(36).substring(2);
-                return <LinkItem key={key} link={item} isBottom={links.heading ? false : true} />;
+              links?.links?.map((item, index) => {
+                return <LinkItem key={index} link={item} isBottom={links.heading ? false : true} />;
               })}
           </div>
           <div className={'telia-footer__accordion-desktop'}>
-            {links?.links?.map((item) => {
-              const key = Math.random().toString(36).substring(2);
-              return <LinkItem key={key} link={item} isBottom={links.heading ? false : true} />;
+            {links?.links?.map((item, index) => {
+              return <LinkItem key={index} link={item} isBottom={links.heading ? false : true} />;
             })}
           </div>
         </button>
@@ -97,9 +94,8 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
 const buildColumnBottomRow = (links: LinkColumn | null) => {
   return (
     <div className={'telia-footer__nav-column-bottom'}>
-      {links?.links?.map((item) => {
-        const key = Math.random().toString(36).substring(2);
-        return <LinkItem key={key} link={item} isBottom={links.heading ? false : true} />;
+      {links?.links?.map((item, index) => {
+        return <LinkItem key={index} link={item} isBottom={links.heading ? false : true} />;
       })}
     </div>
   );
@@ -163,8 +159,7 @@ const AddressColumnRender = (data: AddressColumn) => {
 };
 
 const SocialMediaColumnRender = (sosial: SocialLinkColumn | null) => {
-  const key = Math.random().toString(36).substring(2);
-  return <>{sosial?.links && <SocialMediaLink key={key} links={sosial?.links} />}</>;
+  return <>{sosial?.links && <SocialMediaLink links={sosial?.links} />}</>;
 };
 
 const SocialMediaLink = (data: { links: Link[] | null }) => {
@@ -172,17 +167,16 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
     <>
       {data.links && (
         <ul className={'telia-footer__nav-column-bottom'}>
-          {data.links?.map((link) => {
-            const key = Math.random().toString(36).substring(2);
+          {data.links?.map((link, index) => {
             if (link !== null) {
               const sosialMedia = link?.name !== '' ? link?.name?.toLowerCase() : '';
               if (sosialMedia !== '') {
                 const iconLookup: IconLookup = { prefix: 'fab', iconName: sosialMedia as IconName };
                 const iconDefinition: IconDefinition = findIconDefinition(iconLookup);
                 return (
-                  <li className={'telia-footer__sosial-media-row'} key={key}>
+                  <li className={'telia-footer__sosial-media-row'} key={index}>
                     {link.name && link.url && (
-                      <a key={key} className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
+                      <a key={index} className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
                         <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
                       </a>
                     )}
