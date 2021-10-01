@@ -122,6 +122,10 @@ const LinkItem = (data: { link: Link; isBottom: boolean }) => {
             data.link.color
           )}
           href={data.link.url}
+          onClick={(e) => {
+            e.stopPropagation();
+            return true;
+          }}
         >
           {data.link.name}
         </a>
@@ -176,7 +180,7 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
                 return (
                   <li className={'telia-footer__sosial-media-row'} key={index}>
                     {link.name && link.url && (
-                      <a key={index} className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
+                      <a className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
                         <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
                       </a>
                     )}
