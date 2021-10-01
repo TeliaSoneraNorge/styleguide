@@ -85,7 +85,6 @@ export const GetFooterDataFromApiFooter = () => {
         },
       })
       .then((res) => {
-        //console.log(res.data);
         setFooter(res.data);
       })
       .catch((err) => {

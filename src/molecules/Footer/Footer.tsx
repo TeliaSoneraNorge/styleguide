@@ -182,12 +182,7 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
                 return (
                   <li className={'telia-footer__sosial-media-row'} key={key}>
                     {link.name && link.url && (
-                      <a
-                        key={key + 1}
-                        className={getElementColor('', link.color)}
-                        href={link.url}
-                        aria-label={link.name}
-                      >
+                      <a key={key} className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
                         <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
                       </a>
                     )}
