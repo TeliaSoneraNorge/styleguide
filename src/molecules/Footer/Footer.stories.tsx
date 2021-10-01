@@ -75,7 +75,7 @@ export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
 
 export const GetFooterDataFromApiFooter = () => {
   const [footerData, setFooter] = useState(null);
-  const url = 'https://stage.telia.no/api/footerapi/getB2c';
+  const url = 'https://stage.telia.no/api/footerapi/getB2C/';
 
   useEffect(() => {
     axios
