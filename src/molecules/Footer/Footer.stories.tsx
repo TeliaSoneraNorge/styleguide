@@ -85,6 +85,8 @@ export const GetFooterDataFromApiFooter = () => {
         },
       })
       .then((res) => {
+        console.log('Footer data model from telia.no backend');
+        console.log(res.data);
         setFooter(res.data);
       })
       .catch((err) => {
