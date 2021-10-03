@@ -17,12 +17,14 @@ export const Modal: React.FC<Props> = (props) => {
   const modalPortal = getModalRoot();
   const size = props.size || 'medium';
 
-  return createPortal(
-    <div ref={container} className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}>
-      <div className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}>
-        {props.children}
-      </div>
-    </div>,
-    modalPortal
-  );
+  return modalPortal
+    ? createPortal(
+        <div ref={container} className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}>
+          <div className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}>
+            {props.children}
+          </div>
+        </div>,
+        modalPortal
+      )
+    : null;
 };
