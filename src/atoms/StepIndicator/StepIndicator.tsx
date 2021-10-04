@@ -33,6 +33,7 @@ const StepIndicator = (props: Props) => {
       <ol className="step-indicator__list">
         {range(numberOfSteps ?? 0).map((number) => (
           <Step
+            key={number}
             activeStep={index}
             index={number}
             numberOfSteps={numberOfSteps}
