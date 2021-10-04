@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Footer } from '../../index';
 import { FooterRow, AddressColumn, SocialLinkColumn, LinkColumn, FooterProps, LogoColumn } from './Footer';
 import images from '../../stories/sampleImages';
@@ -11,7 +11,6 @@ export default {
 export const DefaultFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footer} />
     </>
   );
@@ -20,7 +19,6 @@ export const DefaultFooter = () => {
 export const CityAndPostalCodeEitherNullOrUndefinedFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingCityPostalCode} />
     </>
   );
@@ -29,7 +27,6 @@ export const CityAndPostalCodeEitherNullOrUndefinedFooter = () => {
 export const MissingBottomRowFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingBottomRow} />
     </>
   );
@@ -38,7 +35,6 @@ export const MissingBottomRowFooter = () => {
 export const MissingTopRowFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingTopRow} />
     </>
   );
@@ -47,7 +43,6 @@ export const MissingTopRowFooter = () => {
 export const MissingOneColumnTopRowFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingOneColumnLinksTopRow} />
     </>
   );
@@ -56,7 +51,6 @@ export const MissingOneColumnTopRowFooter = () => {
 export const MissingColumnLinksBottomRowFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingColumnLinksBottomRow} />
     </>
   );
@@ -65,7 +59,6 @@ export const MissingColumnLinksBottomRowFooter = () => {
 export const MissingAddressAndColumnLinksBottomRowFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingAddressAndColumnLinksBottomRow} />
     </>
   );
@@ -74,10 +67,38 @@ export const MissingAddressAndColumnLinksBottomRowFooter = () => {
 export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
   return (
     <>
-      <p>{'Important! - Backend for enriching model from telia.no is under contruction -'}</p>
       <Footer {...footerMissingAddressColumnLinksAndSocialBottomRow} />
     </>
   );
+};
+
+export const GetFooterDataFromApiFooter = () => {
+  const [footerData, setFooterData] = useState(null);
+  const url = 'https://stage.telia.no/api/footerapi/getB2C/';
+
+  const getData = () => {
+    fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'api-token': 'public-d24162be',
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(myJson);
+        setFooterData(myJson);
+      })
+      .catch(function (error) {
+        console.error(error);
+      });
+  };
+  useEffect(() => {
+    getData();
+  }, []);
+  return <>{footerData && <Footer {...footerData} />}</>;
 };
 
 const linkColumnsOne: LinkColumn[] = [
