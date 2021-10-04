@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Footer } from '../../index';
 import { FooterRow, AddressColumn, SocialLinkColumn, LinkColumn, FooterProps, LogoColumn } from './Footer';
 import images from '../../stories/sampleImages';
-import axios from 'axios';
 
 export default {
   title: 'Component library/Molecules/Footer',
@@ -77,21 +76,25 @@ export const GetFooterDataFromApiFooter = () => {
   const [footerData, setFooter] = useState(null);
   const url = 'https://stage.telia.no/api/footerapi/getB2C/';
 
-  useEffect(() => {
-    axios
-      .get(url, {
-        headers: {
-          'api-token': 'public-d24162be',
-        },
+  const getData = () => {
+    fetch(url, {
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'api-token': 'public-d24162be',
+      },
+    })
+      .then(function (response) {
+        console.log(response);
+        return response.json();
       })
-      .then((res) => {
-        console.log('Footer data model from telia.no backend');
-        console.log(res.data);
-        setFooter(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
+      .then(function (myJson) {
+        console.log(myJson);
+        setFooter(myJson);
       });
+  };
+  useEffect(() => {
+    getData();
   }, []);
   return <>{footerData && <Footer {...footerData} />}</>;
 };
