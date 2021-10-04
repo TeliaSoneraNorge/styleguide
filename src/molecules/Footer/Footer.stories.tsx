@@ -73,7 +73,7 @@ export const MissingAddressAndColumnLinksAndSocialBottomRowFooter = () => {
 };
 
 export const GetFooterDataFromApiFooter = () => {
-  const [footerData, setFooter] = useState(null);
+  const [footerData, setFooterData] = useState(null);
   const url = 'https://stage.telia.no/api/footerapi/getB2C/';
 
   const getData = () => {
@@ -85,12 +85,14 @@ export const GetFooterDataFromApiFooter = () => {
       },
     })
       .then(function (response) {
-        console.log(response);
         return response.json();
       })
       .then(function (myJson) {
         console.log(myJson);
-        setFooter(myJson);
+        setFooterData(myJson);
+      })
+      .catch(function (error) {
+        console.error(error);
       });
   };
   useEffect(() => {
