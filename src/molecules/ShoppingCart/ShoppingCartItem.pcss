@@ -11,6 +11,14 @@
       > :first-child {
         border: 2px solid var(--dark-grey);
         border-right: none;
+        border-left: none;
+        border-radius: 0;
+
+        @media screen and (min-width: 28rem) {
+          border-left: solid var(--dark-grey);
+          border-radius: 0.3rem 0 0 0.3rem;
+        }
+
       }
 
       > :not(:first-child):not(:last-child) {
@@ -22,6 +30,13 @@
       > :last-child {
         border: 2px solid var(--dark-grey);
         border-left: none;
+        border-right: none;
+        border-radius: 0;
+
+         @media screen and (min-width: 28rem) {
+          border-right: solid var(--dark-grey);
+          border-radius: 0 0.3rem 0.3rem 0;
+        }
       }
     }
 
@@ -61,7 +76,7 @@
         margin-right: 1rem;
         flex-shrink: 0;
 
-        @media screen and (min-width: 23rem) {
+        @media screen and (min-width: 28rem) {
           display: block;
         }
       }
