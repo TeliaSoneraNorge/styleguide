@@ -1,62 +1,56 @@
 .shopping-cart {
-    &__table {
-        border-collapse: separate;
-        border-spacing: 0 0.5rem;
-        font-size: 0.85rem;
-        margin-bottom: -0.5rem; /* Negate outer border-spacing */
-        margin-top: -1rem; /* Negate outer border-spacing */
-        width: 100%;
+  &__table {
+    border-collapse: separate;
+    border-spacing: 0 0.5rem;
+    font-size: 0.85rem;
+    margin-bottom: -0.5rem; /* Negate outer border-spacing */
+    margin-top: -1rem; /* Negate outer border-spacing */
+    width: 100%;
 
-        @media screen and (min-width: 25em) {
-            font-size: 1rem;
-        }
-
-        &__cell {
-            margin-bottom: 0.5rem;
-            min-height: 2.5rem;
-            text-align: center;    
-
-            @media screen and (min-width: 37.3125em) {
-                float: initial;
-            }
-
-            @media screen and (min-width: 70rem) {
-                margin-bottom: 1rem;
-                padding: 0.5rem 1rem 0.5rem 0;
-                width: initial;
-            }
-
-            &:first-child {
-                border-radius: 0;
-                 @media screen and (min-width: 28rem) {
-                    border-radius: 0.3rem 0 0 0.3rem;
-                }
-            }
-
-            &:last-child {
-                border-radius: 0;
-                 @media screen and (min-width: 28rem) {
-                    border-radius: 0.3rem 0 0 0.3rem;
-                }
-            }
-        }
-
-        &__cell,
-        &__header {
-            padding-right: 0;
-        }
-
-        + .accordion__button {
-            display: block;
-            float: right;
-            margin: 1rem 0 0;
-        }
-
-        &__separation-line {
-            border: none;
-            margin: 2rem 5rem;
-            height: 0.2rem;
-            background-color: var(--dark-grey);
-        }
+    @media screen and (min-width: 25em) {
+      font-size: 1rem;
     }
+
+    &__cell {
+      margin-bottom: 0.5rem;
+      min-height: 2.5rem;
+      text-align: center;
+
+      @media screen and (min-width: 37.3125em) {
+        float: initial;
+      }
+
+      @media screen and (min-width: 70rem) {
+        margin-bottom: 1rem;
+        padding: 0.5rem 1rem 0.5rem 0;
+        width: initial;
+      }
+
+      &:first-child {
+        border-radius: 0.3rem 0 0 0.3rem;
+      }
+
+      &:last-child {
+        border-radius: 0 0.3rem 0.3rem 0;
+      }
+    }
+
+    &__cell,
+    &__header {
+      padding-right: 0;
+    }
+
+    + .accordion__button {
+      display: block;
+      float: right;
+      margin: 1rem 0 0;
+    }
+
+    &__separation-line {
+      border: none;
+      margin: 2rem 5rem;
+      height: 0.2rem;
+      background-color: var(--dark-grey);
+    }
+  }
 }
