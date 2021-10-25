@@ -11,13 +11,6 @@
       > :first-child {
         border: 2px solid var(--dark-grey);
         border-right: none;
-        border-left: none;
-        border-radius: 0;
-
-        @media screen and (min-width: 28rem) {
-          border-left: solid var(--dark-grey);
-          border-radius: 0.3rem 0 0 0.3rem;
-        }
       }
 
       > :not(:first-child):not(:last-child) {
@@ -29,13 +22,6 @@
       > :last-child {
         border: 2px solid var(--dark-grey);
         border-left: none;
-        border-right: none;
-        border-radius: 0;
-
-         @media screen and (min-width: 28rem) {
-          border-right: solid var(--dark-grey);
-          border-radius: 0 0.3rem 0.3rem 0;
-        }
       }
     }
 
@@ -47,13 +33,6 @@
       > :first-child {
         border: 2px solid var(--core-purple-300);
         border-right: none;
-        border-left: none;
-        border-radius: 0;
-
-        @media screen and (min-width: 28rem) {
-          border-left: solid var(--core-purple-300);
-          border-radius: 0.3rem 0 0 0.3rem;
-        }
       }
 
       > :not(:first-child):not(:last-child) {
@@ -65,13 +44,6 @@
       > :last-child {
         border: 2px solid var(--core-purple-300);
         border-left: none;
-        border-right: none;
-        border-radius: 0;
-
-         @media screen and (min-width: 28rem) {
-          border-right: solid var(--core-purple-300);
-          border-radius: 0 0.3rem 0.3rem 0;
-        }
       }
     }
 
@@ -213,7 +185,11 @@
 
       &__container {
         display: grid;
-        grid-template-columns: 4rem 2rem;
+        grid-template-columns: 3rem 2rem;
+
+        @media screen and (min-width: 23rem) {
+          grid-template-columns: 4rem 2rem;
+        }
       }
 
       &__number {
@@ -263,11 +239,15 @@
       &__container {
         height: 2.5rem;
         border-left: 2px var(--grey) solid;
-        padding: 0.3rem;
+        padding: 0px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+        @media screen and (min-width: 23rem) {
+          padding: 0.3rem;
+        }
       }
 
       &[disabled] {
