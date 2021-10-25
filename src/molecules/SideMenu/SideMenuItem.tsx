@@ -5,6 +5,7 @@ import { Avatar } from '../../index';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 import { AvatarProps } from '../Avatar/Avatar';
 import { Badge } from '../../atoms/Badge';
+import { NotificationWrapper } from './NotificationWrapper';
 
 type Props = {
   label?: React.ReactNode;
@@ -75,15 +76,6 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     props.onClick();
   };
 
-  const NotificationWrapper: React.FC = ({ children }) =>
-    props.hasNotification ? (
-      <Badge size="compact" status="warning" kind="active">
-        {children}
-      </Badge>
-    ) : (
-      <>{children} </>
-    );
-
   return (
     <WrapperTag
       className={cn(
@@ -98,7 +90,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     >
       {md || !collapse ? (
         <Tag
-          className={cn('telia-side-menu-item__desktop')}
+          className="telia-side-menu-item__action-element"
           onClick={handleClick}
           href={props.href}
           tabIndex={props.tabIndex ?? 1}
@@ -109,7 +101,11 @@ export const SideMenuItem: React.FC<Props> = (props) => {
               <Avatar size="compact" {...props.avatar} />
             </div>
           )}
-          {props.icon && <Icon className="telia-side-menu-item__icon" icon={props.icon} />}
+          {props.icon && (
+            <div className="telia-side-menu-item__icon">
+              <Icon icon={props.icon} />
+            </div>
+          )}
           <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
             {props.label}
           </div>
@@ -119,13 +115,23 @@ export const SideMenuItem: React.FC<Props> = (props) => {
           {props.children}
         </Tag>
       ) : (
-        <Tag className="telia-side-menu-item__tablet" onClick={props.onClick} href={props.href}>
-          <NotificationWrapper>
+        <Tag
+          className="telia-side-menu-item__action-element telia-side-menu-item__action-element--collapse"
+          onClick={props.onClick}
+          tabIndex={props.tabIndex ?? 1}
+          href={props.href}
+        >
+          <NotificationWrapper hasNotification={props.hasNotification}>
             <>
-              {props.avatar ? (
-                <Avatar size="compact" {...props.avatar} />
-              ) : (
-                <Icon className="telia-side-menu-item__icon" icon={props.icon} />
+              {props.avatar && (
+                <div className="telia-side-menu-item__avatar">
+                  <Avatar size="compact" {...props.avatar} />
+                </div>
+              )}
+              {props.icon && (
+                <div className="telia-side-menu-item__icon">
+                  <Icon icon={props.icon} />
+                </div>
               )}
             </>
           </NotificationWrapper>

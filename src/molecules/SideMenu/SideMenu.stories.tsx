@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { SideMenu, SideMenuBottom, SideMenuTop, SideMenuItem } from './index';
 import { action } from '@storybook/addon-actions';
 import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
@@ -6,6 +6,7 @@ import b from './business.svg';
 import { withDesign } from 'storybook-addon-designs';
 import { Badge } from '../../atoms/Badge';
 import { SideMenuItemGroup } from './SideMenuItemGroup';
+import { useBreakpoint } from '../..';
 
 export default {
   component: SideMenu,
@@ -290,6 +291,7 @@ export const WithItemGroup = () => {
                 label="Tjenester"
                 icon="menu"
                 open={openGroup === 'Subs'}
+                collapse={false}
                 onClick={() => {
                   setOpenGroup(openGroup === 'Subs' ? '' : 'Subs');
                   setActive(1);
@@ -315,6 +317,7 @@ export const WithItemGroup = () => {
                 label="Økonomi"
                 icon="menu"
                 open={openGroup === 'Economy'}
+                collapse={false}
                 onClick={() => {
                   setOpenGroup(openGroup === 'Economy' ? '' : 'Economy');
                   setActive(4);
@@ -363,6 +366,185 @@ export const WithItemGroup = () => {
                 onClick={action('user')}
                 color="grey"
                 collapse={false}
+              />
+            </SideMenuBottom>
+          </SideMenu>
+        </div>
+      </div>
+      <h4>Try to change the viewport size in the storybook toolbar </h4>
+    </>
+  );
+};
+
+type MenuGroups = 'Invoice' | 'Profile' | '';
+
+export const WithItemGroupCollapse = () => {
+  const [active, setActive] = useState(0);
+  const [isMenuExpanded, setIsMenuExpanded] = useState<boolean | undefined>(undefined);
+  const [isHover, setIsHover] = useState<boolean | undefined>(undefined);
+  const [openMenuGroup, setOpenMenuGroup] = useState<MenuGroups>('');
+  const isHoverSupported = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const isTabletScreenSize = !useBreakpoint('md');
+  enableTabKeyDetection();
+
+  useEffect(() => {
+    if (isHoverSupported) {
+      if (!isHover && isTabletScreenSize) {
+        setIsMenuExpanded(false);
+        setOpenMenuGroup('');
+      }
+      if (isHover) {
+        setIsMenuExpanded(true);
+      }
+    }
+  }, [isHover, isHoverSupported, isTabletScreenSize]);
+
+  const onMenuGroupClick = (menuGroup: MenuGroups) => {
+    const isCurrentOpenMenuGroupClick = menuGroup === openMenuGroup;
+
+    setOpenMenuGroup(isCurrentOpenMenuGroupClick ? '' : menuGroup);
+    if (isTabletScreenSize) {
+      if (!isMenuExpanded) {
+        setIsMenuExpanded(!isMenuExpanded);
+      } else if (isCurrentOpenMenuGroupClick) {
+        setIsMenuExpanded(false);
+        setOpenMenuGroup('');
+      }
+    }
+  };
+
+  const onMenuItemClick = (activeId: number, isMenuGroupItemClick = false) => {
+    setActive(activeId);
+    if (isHoverSupported) {
+      if (isTabletScreenSize) {
+        setIsMenuExpanded(false);
+        setOpenMenuGroup('');
+      } else if (!isMenuGroupItemClick) {
+        setOpenMenuGroup('');
+      }
+    } else {
+      setOpenMenuGroup('');
+      setIsMenuExpanded(false);
+    }
+  };
+
+  return (
+    <>
+      <div style={{ display: 'flex', height: '90vh', backgroundColor: '#fbfbfb' }}>
+        <div
+          onPointerEnter={() => setIsHover(true)}
+          onPointerLeave={() => setIsHover(false)}
+          style={{ marginRight: '1rem', height: '100%' }}
+        >
+          <SideMenu aria-labelledby="main_menu" collapse={!isMenuExpanded}>
+            <SideMenuTop>
+              <SideMenuItem
+                label="Rounded item"
+                avatar={{ img: b }}
+                onClick={() => action('user')}
+                color="grey"
+                kind="rounded"
+                collapse={!isMenuExpanded}
+              />
+              <SideMenuItem
+                label="Hjem"
+                icon="home"
+                kind="rounded"
+                onClick={() => onMenuItemClick(0)}
+                active={active === 0}
+                collapse={!isMenuExpanded}
+              />{' '}
+              <SideMenuItem
+                label="Knapp"
+                icon="home"
+                onClick={() => onMenuItemClick(1)}
+                active={active === 1}
+                collapse={!isMenuExpanded}
+              />
+              <SideMenuItem
+                label="Link"
+                icon="tv"
+                onClick={() => onMenuItemClick(2)}
+                active={active === 2}
+                collapse={!isMenuExpanded}
+                href="#"
+              />
+              <SideMenuItemGroup
+                label="Faktura"
+                icon="document"
+                open={openMenuGroup === 'Invoice'}
+                onClick={() => {
+                  onMenuGroupClick('Invoice');
+                }}
+                active={(active === 3 || active === 4) && openMenuGroup !== 'Invoice'}
+                collapse={!isMenuExpanded}
+              >
+                <SideMenuItem
+                  label="Abonnenter"
+                  onClick={() => onMenuItemClick(3, true)}
+                  active={active === 3}
+                  tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
+                  collapse={!isMenuExpanded}
+                />
+                <SideMenuItem
+                  label="Tv/Internett"
+                  onClick={() => onMenuItemClick(4, true)}
+                  active={active === 4}
+                  tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
+                  collapse={!isMenuExpanded}
+                />
+              </SideMenuItemGroup>
+              <SideMenuItemGroup
+                label="Profil"
+                icon="user"
+                open={openMenuGroup === 'Profile'}
+                onClick={() => {
+                  onMenuGroupClick('Profile');
+                }}
+                active={(active === 5 || active === 6) && openMenuGroup !== 'Profile'}
+                collapse={!isMenuExpanded}
+              >
+                <SideMenuItem
+                  label="Abonnenter"
+                  onClick={() => onMenuItemClick(5, true)}
+                  active={active === 5}
+                  tabIndex={openMenuGroup === 'Profile' ? 1 : -1}
+                  collapse={!isMenuExpanded}
+                />
+                <SideMenuItem
+                  label="Tv/Internett"
+                  onClick={() => onMenuItemClick(6, true)}
+                  active={active === 6}
+                  tabIndex={openMenuGroup === 'Profile' ? 1 : -1}
+                  collapse={!isMenuExpanded}
+                />
+              </SideMenuItemGroup>
+            </SideMenuTop>
+
+            <SideMenuBottom>
+              <SideMenuItem
+                label="Innstillinger"
+                icon="settings"
+                onClick={() => onMenuItemClick(7)}
+                active={active === 7}
+                color="grey"
+                collapse={!isMenuExpanded}
+              />
+              <SideMenuItem
+                label="Log ut"
+                icon="logout"
+                onClick={() => onMenuItemClick(8)}
+                active={active === 8}
+                color="grey"
+                collapse={!isMenuExpanded}
+              />
+              <SideMenuItem
+                kind="rounded"
+                label="Helene Grini"
+                avatar={{ text: 'HG' }}
+                onClick={action('user')}
+                color="grey"
+                collapse={!isMenuExpanded}
               />
             </SideMenuBottom>
           </SideMenu>
