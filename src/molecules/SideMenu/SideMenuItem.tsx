@@ -54,6 +54,7 @@ type Props = {
   kind?: 'rounded' | 'squared';
 
   hasNotification?: boolean;
+  numberOfNotifications?: number;
 
   /**
    * If the item should collapse to only show icons
@@ -64,16 +65,32 @@ type Props = {
 };
 
 export const SideMenuItem: React.FC<Props> = (props) => {
-  const Tag = props.href ? 'a' : 'button';
-  const WrapperTag = props.tag ? props.tag : 'li';
+  const {
+    onClick,
+    active,
+    avatar,
+    className,
+    color,
+    hasNotification,
+    href,
+    icon,
+    kind,
+    label,
+    numberOfNotifications,
+    tabIndex,
+    tag,
+    children,
+  } = props;
+  const Tag = href ? 'a' : 'button';
+  const WrapperTag = tag ? tag : 'li';
   const collapse = props.collapse ?? true;
   const md = useBreakpoint('md');
 
   const handleClick = (e: React.SyntheticEvent) => {
-    if (props.href && props.onClick) {
+    if (href && onClick) {
       e.preventDefault();
     }
-    props.onClick();
+    onClick();
   };
 
   return (
@@ -81,56 +98,59 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       className={cn(
         'telia-side-menu-item',
         {
-          'telia-side-menu-item--active': props.active,
-          'telia-side-menu-item--grey': props.color === 'grey',
+          'telia-side-menu-item--active': active,
+          'telia-side-menu-item--grey': color === 'grey',
         },
-        `telia-side-menu-item--${props.kind ?? 'squared'}`,
-        props.className
+        `telia-side-menu-item--${kind ?? 'squared'}`,
+        className
       )}
     >
       {md || !collapse ? (
         <Tag
           className="telia-side-menu-item__action-element"
           onClick={handleClick}
-          href={props.href}
-          tabIndex={props.tabIndex ?? 1}
+          href={href}
+          tabIndex={tabIndex ?? 1}
           aria-labelledby="side-menu-group-item-label"
         >
-          {props.avatar && (
+          {avatar && (
             <div className="telia-side-menu-item__avatar">
-              <Avatar size="compact" {...props.avatar} />
+              <Avatar size="compact" {...avatar} />
             </div>
           )}
-          {props.icon && (
+          {icon && (
             <div className="telia-side-menu-item__icon">
-              <Icon icon={props.icon} />
+              <Icon icon={icon} />
             </div>
           )}
-          <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
-            {props.label}
-          </div>
-          {props.hasNotification && (
-            <Badge className="telia-side-menu-item__badge" size="compact" status="warning" kind="active" />
-          )}
-          {props.children}
+          <NotificationWrapper hasNotification={hasNotification} numberOfNotifications={numberOfNotifications}>
+            <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
+              {label}
+            </div>
+          </NotificationWrapper>
+          {children}
         </Tag>
       ) : (
         <Tag
           className="telia-side-menu-item__action-element telia-side-menu-item__action-element--collapse"
-          onClick={props.onClick}
-          tabIndex={props.tabIndex ?? 1}
-          href={props.href}
+          onClick={onClick}
+          tabIndex={tabIndex ?? 1}
+          href={href}
         >
-          <NotificationWrapper hasNotification={props.hasNotification}>
+          <NotificationWrapper
+            position="on-top-left"
+            hasNotification={hasNotification}
+            numberOfNotifications={numberOfNotifications}
+          >
             <>
-              {props.avatar && (
+              {avatar && (
                 <div className="telia-side-menu-item__avatar">
-                  <Avatar size="compact" {...props.avatar} />
+                  <Avatar size="compact" {...avatar} />
                 </div>
               )}
-              {props.icon && (
+              {icon && (
                 <div className="telia-side-menu-item__icon">
-                  <Icon icon={props.icon} />
+                  <Icon icon={icon} />
                 </div>
               )}
             </>

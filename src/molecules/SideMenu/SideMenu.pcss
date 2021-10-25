@@ -84,7 +84,14 @@
       color: var(--core-purple);
     }
     &__badge {
-      margin-left: 0.5rem;
+      &--right {
+        top: 50%;
+        right: -0.5rem;
+      }
+      &--on-top-left {
+        top: 5px;
+        right: calc(100% - 5px);
+      }
     }
     &__action-element {
       color: var(--black);
@@ -125,7 +132,7 @@
       }
     }
     &__label {
-      margin-left: 0.5rem;
+      margin: 0 0.5rem;
     }
   }
 

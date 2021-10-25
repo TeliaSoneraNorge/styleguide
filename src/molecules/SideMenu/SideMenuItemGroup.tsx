@@ -24,6 +24,7 @@ type Props = {
    */
   kind?: 'rounded' | 'squared';
   hasNotification?: boolean;
+  numberOfNotifications?: number;
   /**
    * Whether the item is currently active.
    * Eg. we are on a page corresponding to an entry from the menu
@@ -54,6 +55,7 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
     onClick,
     collapse = true,
     hasNotification,
+    numberOfNotifications,
   } = props;
 
   const handleClick = (e: React.SyntheticEvent) => {
@@ -90,9 +92,11 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
               <Icon icon={icon} />
             </div>
           )}
-          <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
-            {label}
-          </div>
+          <NotificationWrapper numberOfNotifications={numberOfNotifications} hasNotification={hasNotification}>
+            <div id="side-menu-group-item-label" className="telia-side-menu-item__label">
+              {label}
+            </div>
+          </NotificationWrapper>
         </button>
       ) : (
         <button
@@ -101,7 +105,11 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
           onClick={handleClick}
           aria-labelledby="side-menu-group-item-label"
         >
-          <NotificationWrapper hasNotification={hasNotification}>
+          <NotificationWrapper
+            position="on-top-left"
+            numberOfNotifications={numberOfNotifications}
+            hasNotification={hasNotification}
+          >
             {avatar && (
               <div className="telia-side-menu-item__avatar">
                 <Avatar size="compact" {...avatar} />

@@ -376,7 +376,7 @@ export const WithItemGroup = () => {
   );
 };
 
-type MenuGroups = 'Invoice' | 'Profile' | '';
+type MenuGroups = 'business' | 'Invoice' | 'Profile' | '';
 
 export const WithItemGroupCollapse = () => {
   const [active, setActive] = useState(0);
@@ -438,14 +438,26 @@ export const WithItemGroupCollapse = () => {
         >
           <SideMenu aria-labelledby="main_menu" collapse={!isMenuExpanded}>
             <SideMenuTop>
-              <SideMenuItem
+              <SideMenuItemGroup
                 label="Rounded item"
                 avatar={{ img: b }}
-                onClick={() => action('user')}
+                open={openMenuGroup === 'business'}
+                onClick={() => {
+                  onMenuGroupClick('business');
+                }}
                 color="grey"
                 kind="rounded"
+                hasNotification
                 collapse={!isMenuExpanded}
-              />
+              >
+                <SideMenuItem
+                  label="Navn"
+                  onClick={() => onMenuItemClick(9, true)}
+                  active={active === 9}
+                  tabIndex={openMenuGroup === 'business' ? 1 : -1}
+                  collapse={!isMenuExpanded}
+                />
+              </SideMenuItemGroup>
               <SideMenuItem
                 label="Hjem"
                 icon="home"
@@ -473,6 +485,7 @@ export const WithItemGroupCollapse = () => {
                 label="Faktura"
                 icon="document"
                 open={openMenuGroup === 'Invoice'}
+                numberOfNotifications={openMenuGroup !== 'Invoice' ? 2 : undefined}
                 onClick={() => {
                   onMenuGroupClick('Invoice');
                 }}
@@ -480,7 +493,8 @@ export const WithItemGroupCollapse = () => {
                 collapse={!isMenuExpanded}
               >
                 <SideMenuItem
-                  label="Abonnenter"
+                  label="Mobil"
+                  numberOfNotifications={1}
                   onClick={() => onMenuItemClick(3, true)}
                   active={active === 3}
                   tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
@@ -488,6 +502,7 @@ export const WithItemGroupCollapse = () => {
                 />
                 <SideMenuItem
                   label="Tv/Internett"
+                  numberOfNotifications={1}
                   onClick={() => onMenuItemClick(4, true)}
                   active={active === 4}
                   tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
