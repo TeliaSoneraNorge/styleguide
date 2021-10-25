@@ -63,7 +63,7 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
   return (
     <div className={'telia-footer__nav-column-top'}>
       {links && (
-        <button
+        <div
           className={'telia-footer__accordion'}
           onClick={() => setIsActive(!isActive)}
           aria-label={links?.heading ? links.heading : ' '}
@@ -85,7 +85,7 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
               return <LinkItem key={index} link={item} isBottom={links.heading ? false : true} />;
             })}
           </div>
-        </button>
+        </div>
       )}
     </div>
   );
