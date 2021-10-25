@@ -107,6 +107,7 @@
         "react": "^16.11.0",
         "react-docgen-typescript-loader": "^3.6.0",
         "react-dom": "^16.11.0",
+        "react-responsive": "^9.0.0-beta.4",
         "rimraf": "^2.6.3",
         "storybook-addon-designs": "^5.4.2",
         "storybook-addon-jsx": "^7.3.4",

@@ -3,6 +3,7 @@ import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { useMediaQuery } from 'react-responsive';
 
 library.add(fab);
 
@@ -60,10 +61,12 @@ const LinkColumnsRender = (model: { links: LinkColumn[] | null; isBottom: boolea
 
 const buildColumnsTopRow = (links: LinkColumn | null) => {
   const [isActive, setIsActive] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 54em)` });
   return (
     <div className={'telia-footer__nav-column-top'}>
       {links && (
         <button
+          disabled={!isMobile}
           className={'telia-footer__accordion'}
           onClick={() => setIsActive(!isActive)}
           aria-label={links?.heading ? links.heading : ' '}
