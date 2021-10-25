@@ -7,7 +7,7 @@ import { useEscapeListener } from './useEscapeListener';
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
-  size?: 'small' | 'medium' | 'large' | 'fullscreen';
+  size?: 'small' | 'medium' | 'large' | 'fullscreen' | 'auto';
   className?: string;
 }
 export const Modal: React.FC<Props> = (props) => {

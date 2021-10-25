@@ -31,6 +31,9 @@
     &--large {
       width: 80%;
     }
+    &--auto {
+      width: auto;
+    }
   }
 
   &--invisible {
@@ -119,14 +122,22 @@
     border-bottom-right-radius: 0;
   }
 
-  .telia-modal__container--small {
+  .telia-modal__container--small,
+  .telia-modal__container--auto {
     left: 1.25rem;
     right: 1.25rem;
     top: 1.5rem;
-    width: calc(100% -2rem);
     transform: none;
 
     overflow-y: auto;
+  }
+
+  .telia-modal__container--small {
+      width: calc(100% -2rem);
+  }
+
+  .telia-modal__container--auto {
+      width: auto;
   }
 
   .telia-modal__container--fullscreen {
