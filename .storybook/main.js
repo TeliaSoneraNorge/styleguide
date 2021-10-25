@@ -1,4 +1,8 @@
 module.exports = {
+  previewHead: (head) => `
+  ${head}
+  <meta name="format-detection" content="telephone=no">
+  `,
   stories: ['../src/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-actions',
