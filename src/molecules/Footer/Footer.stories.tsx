@@ -101,6 +101,14 @@ export const GetFooterDataFromApiFooter = () => {
   return <>{footerData && <Footer {...footerData} />}</>;
 };
 
+export const TurnOffiOSNumberConverterFooter = () => {
+  return (
+    <>
+      <Footer {...footerIphoneNumberNotConvertingToBlue} />
+    </>
+  );
+};
+
 const linkColumnsOne: LinkColumn[] = [
   {
     heading: 'Support',
@@ -386,6 +394,14 @@ const addressColumn: AddressColumn = {
   officeType: 'Hovedkontor',
 };
 
+const addressColumnNineNumbers: AddressColumn = {
+  companyName: 'Telia Norge AS',
+  street: 'Lørenfaret 99 99 99 99',
+  city: 'Oslo',
+  postalCode: '0520',
+  officeType: 'Hovedkontor',
+};
+
 const linksColumnsBot: LinkColumn[] = [
   {
     heading: '',
@@ -436,6 +452,13 @@ const logoColumn: LogoColumn = {
   url: 'https://www.telia.no',
   imageUrl: images.logo,
   imageAltText: 'This is alt text for logo image',
+};
+
+const bottomRowTurnOffiOSNumberConverting: FooterRow = {
+  logoColumn: logoColumn,
+  linkColumns: linksColumnsBot,
+  addressColumn: addressColumnNineNumbers,
+  socialLinkColumn: sosialLinkColumn,
 };
 
 const topRow: FooterRow = {
@@ -552,4 +575,9 @@ const footerTopRowOne: FooterRow = {
 const footerOneLinkColumn: FooterProps = {
   topRow: footerTopRowOne,
   bottomRow: null,
+};
+
+const footerIphoneNumberNotConvertingToBlue: FooterProps = {
+  topRow: topRow,
+  bottomRow: bottomRowTurnOffiOSNumberConverting,
 };
