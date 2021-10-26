@@ -155,7 +155,7 @@ const LogoColumnRender = (data: { logo: LogoColumn | null }) => {
 const AddressColumnRender = (data: AddressColumn) => {
   return (
     <div className={'telia-footer__nav-column-bottom'}>
-      {data.companyName && <p aria-label={data.companyName}>{data.companyName}</p>}
+      {data.companyName && <p>{data.companyName}</p>}
 
       {data.officeType && <p>{data.officeType}</p>}
 
