@@ -13,7 +13,7 @@ export interface LogoColumn {
 }
 
 export interface Link {
-  name?: string | null;
+  name: string | null;
   url: string | null;
   color?: string | null;
   iconUrl?: string | null;
