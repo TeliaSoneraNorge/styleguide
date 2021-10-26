@@ -3,6 +3,7 @@ import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { useMediaQuery } from 'react-responsive';
 
 library.add(fab);
 
@@ -38,7 +39,7 @@ export interface LinkColumn {
 
 export interface FooterRow {
   logoColumn?: LogoColumn | null;
-  linkColumns?: LinkColumn[] | null;
+  linkColumns: LinkColumn[] | null;
   addressColumn?: AddressColumn | null;
   socialLinkColumn?: SocialLinkColumn | null;
 }
@@ -60,11 +61,14 @@ const LinkColumnsRender = (model: { links: LinkColumn[] | null; isBottom: boolea
 
 const buildColumnsTopRow = (links: LinkColumn | null) => {
   const [isActive, setIsActive] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 54em)` });
+
   return (
     <div className={'telia-footer__nav-column-top'}>
       {links && (
-        <div
+        <button
           className={'telia-footer__accordion'}
+          disabled={!isMobile}
           onClick={() => setIsActive(!isActive)}
           aria-label={links?.heading ? links.heading : ' '}
         >
@@ -85,7 +89,7 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
               return <LinkItem key={index} link={item} isBottom={links.heading ? false : true} />;
             })}
           </div>
-        </div>
+        </button>
       )}
     </div>
   );
