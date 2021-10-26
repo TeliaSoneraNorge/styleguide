@@ -3,6 +3,7 @@ import { ArrowDownIcon, ArrowUpIcon } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { useMediaQuery } from 'react-responsive';
 
 library.add(fab);
 
@@ -15,13 +16,13 @@ export interface LogoColumn {
 export interface Link {
   name: string | null;
   url: string | null;
-  color: string | null;
+  color?: string | null;
   iconUrl?: string | null;
 }
 
 export interface AddressColumn {
   companyName: string | null;
-  officeType: string | null;
+  officeType?: string | null;
   street: string | null;
   city: string | null;
   postalCode: string | null;
@@ -32,19 +33,19 @@ export interface SocialLinkColumn {
 }
 
 export interface LinkColumn {
-  heading: string | null;
+  heading?: string | null;
   links: Link[] | null;
 }
 
 export interface FooterRow {
-  logoColumn: LogoColumn | null;
+  logoColumn?: LogoColumn | null;
   linkColumns: LinkColumn[] | null;
-  addressColumn: AddressColumn | null;
-  socialLinkColumn: SocialLinkColumn | null;
+  addressColumn?: AddressColumn | null;
+  socialLinkColumn?: SocialLinkColumn | null;
 }
 
 export type FooterProps = {
-  topRow: FooterRow | null;
+  topRow?: FooterRow | null;
   bottomRow: FooterRow | null;
 };
 
@@ -60,11 +61,14 @@ const LinkColumnsRender = (model: { links: LinkColumn[] | null; isBottom: boolea
 
 const buildColumnsTopRow = (links: LinkColumn | null) => {
   const [isActive, setIsActive] = useState(false);
+  const isMobile = useMediaQuery({ query: `(max-width: 54em)` });
+
   return (
     <div className={'telia-footer__nav-column-top'}>
       {links && (
         <button
           className={'telia-footer__accordion'}
+          disabled={!isMobile}
           onClick={() => setIsActive(!isActive)}
           aria-label={links?.heading ? links.heading : ' '}
         >
@@ -175,12 +179,19 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
             if (link !== null) {
               const sosialMedia = link?.name !== '' ? link?.name?.toLowerCase() : '';
               if (sosialMedia !== '') {
-                const iconLookup: IconLookup = { prefix: 'fab', iconName: sosialMedia as IconName };
+                const iconLookup: IconLookup = {
+                  prefix: 'fab',
+                  iconName: sosialMedia as IconName,
+                };
                 const iconDefinition: IconDefinition = findIconDefinition(iconLookup);
                 return (
                   <li className={'telia-footer__sosial-media-row'} key={index}>
                     {link.name && link.url && (
-                      <a className={getElementColor('', link.color)} href={link.url} aria-label={link.name}>
+                      <a
+                        className={getElementColor('', link?.color && link.color)}
+                        href={link.url}
+                        aria-label={link.name}
+                      >
                         <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
                       </a>
                     )}
@@ -195,7 +206,7 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
   );
 };
 
-const getElementColor = (style: string, color: string | null) => {
+const getElementColor = (style: string, color: string | null | undefined) => {
   const linkColor = 'telia-footer__' + (color ? color : 'white');
   return style ? style + ' ' + linkColor : '' + linkColor;
 };
