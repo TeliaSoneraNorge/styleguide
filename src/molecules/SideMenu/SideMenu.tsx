@@ -26,25 +26,25 @@ export const SideMenu: React.FC<Props> = (props) => {
     <nav
       className={cn(
         'telia-side-menu',
-        `telia-side-menu--${props.backgroundColor ?? 'white'}`,
-        { 'telia-side-menu--tablet': !md && collapse },
+        { 'telia-side-menu--white': props.backgroundColor !== 'grey100' },
+        { 'telia-side-menu--collapsed': !md && collapse },
         props.className
       )}
       aria-label={props['aria-labelledby']}
     >
-      <ul>{props.children}</ul>
+      <ul className="telia-side-menu__list">{props.children}</ul>
     </nav>
   );
 };
 
 export const SideMenuTop: React.FC = (props) => (
   <li className="telia-side-menu-top">
-    <ul>{props.children}</ul>
+    <ul className="telia-side-menu-top__list">{props.children}</ul>
   </li>
 );
 
 export const SideMenuBottom: React.FC = (props) => (
   <li className="telia-side-menu-bottom">
-    <ul>{props.children}</ul>
+    <ul className="telia-side-menu-bottom__list">{props.children}</ul>
   </li>
 );
