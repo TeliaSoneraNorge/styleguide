@@ -81,7 +81,7 @@ export { default as ListWithImage } from './molecules/ListWithImage';
 export { Lozenge } from './molecules/Lozenge';
 export { ModalDialog, ModalDialogProvider } from './molecules/ModalDialog';
 export { ModalDivider, ModalFooter, ModalHeader, Modal, ModalBody } from './molecules/Modal';
-export { MobileNavBarItem, MobileNavBar } from './molecules/MobileNavBar';
+export { MobileNavBarItem, MobileNavBar, MobileNavBarMore } from './molecules/MobileNavBar';
 export {
   Dropdown,
   DropdownItem,

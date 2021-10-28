@@ -59,7 +59,7 @@ export const WithMoreOption = () => {
         <MobileNavBarItem onClick={() => setActive(1)} icon="abroad" active={active === 1} hasNotification />
         <MobileNavBarItem onClick={() => setActive(2)} icon="gift" active={active === 2} />
         <MobileNavBarItem onClick={() => setActive(3)} icon="abroad" active={active === 3} />
-        <MobileNavBarMore items={[{ onClick: () => setActive(3), icon: 'abroad', label: 'Label' }]} />
+        <MobileNavBarMore items={[{ key: 'item', onClick: () => setActive(3), icon: 'abroad', label: 'Label' }]} />
       </MobileNavBar>
     </div>
   );
@@ -77,19 +77,20 @@ export const WithMoreOptionsScroll = () => {
         <MobileNavBarItem onClick={() => setActive(3)} icon="abroad" active={active === 3} />
         <MobileNavBarMore
           items={[
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label', hasNotification: true },
-            { divider: true },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
-            { onClick: () => setActive(3), icon: 'abroad', label: 'Hello?' },
+            { key: 'item_1', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_2', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'divider', divider: true },
+            { key: 'item_3', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_4', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_5', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_6', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_7', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_8', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_9', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_10', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_11', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_12', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
+            { key: 'item_13', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
           ]}
         />
       </MobileNavBar>
