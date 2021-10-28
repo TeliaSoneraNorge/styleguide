@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { IconDefinition } from '../..';
-import { MobileNavBarItem, MobileNavBarItemProps } from './MobileNavBarItem';
-import { MobileNavBarMoreMenu } from './MobileNavBarMoreMenu';
+import { MobileNavBarItem } from './MobileNavBarItem';
+import { Items, MobileNavBarMoreMenu } from './MobileNavBarMoreMenu';
 
 interface Props {
   label?: string;
   icon?: IconDefinition;
-  items: Array<MobileNavBarItemProps | { divider: true }>;
+  items: Items;
 }
 export const MobileNavBarMore = (props: Props) => {
   const [open, setOpen] = useState(false);

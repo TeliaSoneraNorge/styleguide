@@ -6,10 +6,11 @@ import { useFocusTrap } from '../../utils/useFocusTrap';
 import { useEscapeListener } from '../Modal/useEscapeListener';
 import { MobileNavBarItemProps } from './MobileNavBarItem';
 
+export type Items = ((MobileNavBarItemProps | { divider: true }) & { key: string })[];
 interface Props {
   open: boolean;
   close: () => void;
-  items: Array<MobileNavBarItemProps | { divider: true }>;
+  items: Items;
 }
 export const MobileNavBarMoreMenu = (props: Props) => {
   const first = React.useRef<HTMLButtonElement | null>(null);
