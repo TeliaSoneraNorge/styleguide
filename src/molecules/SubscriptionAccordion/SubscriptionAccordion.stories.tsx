@@ -79,7 +79,11 @@ export const WithHighlight = () => {
         iconName: 'product-music-freedom',
         name: 'Music Freedom',
       }}
-      description={<span style={{ display: 'flex', alignItems: 'center' }}>Lorem ipsum dolar sit subscription</span>}
+      description={
+        <span style={{ margin: '0 0.5rem', display: 'flex', alignItems: 'center' }}>
+          Lorem ipsum dolar sit subscription
+        </span>
+      }
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}
     >
@@ -109,6 +113,98 @@ export const WithLineThrough = () => {
       }}
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+  );
+};
+
+export const WithDiscount = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionAccordion
+      name="40 GB"
+      id="smart20"
+      price={529}
+      discountPrice={400}
+      priceInfo={['pr. md']}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'product-music-freedom',
+        name: 'Music Freedom',
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => setIsExpanded(!isExpanded)}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+  );
+};
+
+export const WithLineThroughAndDiscount = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionAccordion
+      name="40 GB"
+      lineThrough="20 GB"
+      id="smart20"
+      price={529}
+      discountPrice={400}
+      priceInfo={['pr. md']}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'product-music-freedom',
+        name: 'Music Freedom',
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => setIsExpanded(!isExpanded)}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </SubscriptionAccordion>
+  );
+};
+
+export const WithLineThroughDiscountAndCustomDivider = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionAccordion
+      name="40 GB"
+      lineThrough="20 GB"
+      id="smart20"
+      price={529}
+      discountPrice={400}
+      priceInfo={['pr. md']}
+      isExpanded={isExpanded}
+      feature={{
+        iconName: 'product-music-freedom',
+        name: 'Music Freedom',
+      }}
+      disclaimers={disclaimers}
+      onOpen={() => setIsExpanded(!isExpanded)}
+      description={
+        <div
+          style={{
+            borderLeft: '2px solid gray',
+            height: '1.5rem',
+            margin: '0 0.5rem',
+          }}
+        />
+      }
     >
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
@@ -279,7 +375,11 @@ export const DiscountPriceSubscriptionAccordion = () => {
         iconName: 'infinite',
         name: 'Ubegrenset data',
       }}
-      description={<span style={{ display: 'flex', alignItems: 'center' }}>Lorem ipsum dolar sit subscription</span>}
+      description={
+        <span style={{ margin: '0 0.5rem', display: 'flex', alignItems: 'center' }}>
+          Lorem ipsum dolar sit subscription
+        </span>
+      }
       disclaimers={disclaimers}
       onOpen={() => setIsExpanded(!isExpanded)}
     >
