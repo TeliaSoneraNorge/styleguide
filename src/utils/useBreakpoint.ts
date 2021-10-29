@@ -12,22 +12,21 @@ const breakpoints: { [key in Breakpoints]: number } = {
 
 export const useBreakpoint = (breakpoint: Breakpoints): boolean => {
   const [width, setWidth] = useState(window.innerWidth);
-  const isCancelled = useRef(false);
 
   const throttledHandleResize = useCallback(
     throttle(() => {
-      !isCancelled.current && setWidth(window.innerWidth);
-    }, 100),
+      setWidth(window.innerWidth);
+    }, 400),
     [setWidth]
   );
 
   useEffect(() => {
     window.addEventListener('resize', throttledHandleResize);
     return () => {
-      isCancelled.current = true;
       window.removeEventListener('resize', throttledHandleResize);
+      throttledHandleResize.cancel();
     };
-  }, [throttledHandleResize, isCancelled]);
+  }, [throttledHandleResize]);
 
   return width > breakpoints[breakpoint];
 };
