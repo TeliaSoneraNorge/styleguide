@@ -1,5 +1,5 @@
-import { throttle } from 'lodash';
-import { useState, useEffect, useCallback } from 'react';
+import { debounce, throttle } from 'lodash';
+import { useState, useEffect, useCallback, useRef } from 'react';
 
 type Breakpoints = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 const breakpoints: { [key in Breakpoints]: number } = {
@@ -12,20 +12,22 @@ const breakpoints: { [key in Breakpoints]: number } = {
 
 export const useBreakpoint = (breakpoint: Breakpoints): boolean => {
   const [width, setWidth] = useState(window.innerWidth);
+  const isCancelled = useRef(false);
 
   const throttledHandleResize = useCallback(
     throttle(() => {
-      setWidth(window.innerWidth);
+      !isCancelled.current && setWidth(window.innerWidth);
     }, 100),
-    [window.innerWidth]
+    [setWidth]
   );
 
   useEffect(() => {
     window.addEventListener('resize', throttledHandleResize);
     return () => {
+      isCancelled.current = true;
       window.removeEventListener('resize', throttledHandleResize);
     };
-  }, [window.innerWidth]);
+  }, [throttledHandleResize, isCancelled]);
 
   return width > breakpoints[breakpoint];
 };
