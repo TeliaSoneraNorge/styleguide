@@ -436,133 +436,135 @@ export const WithItemGroupCollapse = () => {
           onPointerLeave={() => setIsHover(false)}
           style={{ marginRight: '1rem', height: '100%' }}
         >
-          <SideMenu aria-labelledby="main_menu" collapse={!isMenuExpanded}>
-            <SideMenuTop>
-              <SideMenuItemGroup
-                label="Rounded item"
-                avatar={{ img: b }}
-                open={openMenuGroup === 'business'}
-                onClick={() => {
-                  onMenuGroupClick('business');
-                }}
-                color="grey"
-                kind="rounded"
-                hasNotification
-                collapse={!isMenuExpanded}
-              >
-                <SideMenuItem
-                  label="Navn"
-                  onClick={() => onMenuItemClick(9, true)}
-                  active={active === 9}
-                  tabIndex={openMenuGroup === 'business' ? 1 : -1}
+          {!isTabletScreenSize && (
+            <SideMenu aria-labelledby="main_menu" collapse={!isMenuExpanded}>
+              <SideMenuTop>
+                <SideMenuItemGroup
+                  label="Rounded item"
+                  avatar={{ img: b }}
+                  open={openMenuGroup === 'business'}
+                  onClick={() => {
+                    onMenuGroupClick('business');
+                  }}
+                  color="grey"
+                  kind="rounded"
+                  hasNotification
                   collapse={!isMenuExpanded}
-                />
-              </SideMenuItemGroup>
-              <SideMenuItem
-                label="Hjem"
-                icon="home"
-                kind="rounded"
-                onClick={() => onMenuItemClick(0)}
-                active={active === 0}
-                collapse={!isMenuExpanded}
-              />{' '}
-              <SideMenuItem
-                label="Knapp"
-                icon="home"
-                onClick={() => onMenuItemClick(1)}
-                active={active === 1}
-                collapse={!isMenuExpanded}
-              />
-              <SideMenuItem
-                label="Link"
-                icon="tv"
-                onClick={() => onMenuItemClick(2)}
-                active={active === 2}
-                collapse={!isMenuExpanded}
-                href="#"
-              />
-              <SideMenuItemGroup
-                label="Faktura"
-                icon="document"
-                open={openMenuGroup === 'Invoice'}
-                numberOfNotifications={openMenuGroup !== 'Invoice' ? 2 : undefined}
-                onClick={() => {
-                  onMenuGroupClick('Invoice');
-                }}
-                active={(active === 3 || active === 4) && openMenuGroup !== 'Invoice'}
-                collapse={!isMenuExpanded}
-              >
+                >
+                  <SideMenuItem
+                    label="Navn"
+                    onClick={() => onMenuItemClick(9, true)}
+                    active={active === 9}
+                    tabIndex={openMenuGroup === 'business' ? 1 : -1}
+                    collapse={!isMenuExpanded}
+                  />
+                </SideMenuItemGroup>
                 <SideMenuItem
-                  label="Mobil"
-                  numberOfNotifications={1}
-                  onClick={() => onMenuItemClick(3, true)}
-                  active={active === 3}
-                  tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
+                  label="Hjem"
+                  icon="home"
+                  kind="rounded"
+                  onClick={() => onMenuItemClick(0)}
+                  active={active === 0}
+                  collapse={!isMenuExpanded}
+                />{' '}
+                <SideMenuItem
+                  label="Knapp"
+                  icon="home"
+                  onClick={() => onMenuItemClick(1)}
+                  active={active === 1}
                   collapse={!isMenuExpanded}
                 />
                 <SideMenuItem
-                  label="Tv/Internett"
-                  numberOfNotifications={1}
-                  onClick={() => onMenuItemClick(4, true)}
-                  active={active === 4}
-                  tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
+                  label="Link"
+                  icon="tv"
+                  onClick={() => onMenuItemClick(2)}
+                  active={active === 2}
                   collapse={!isMenuExpanded}
+                  href="#"
                 />
-              </SideMenuItemGroup>
-              <SideMenuItemGroup
-                label="Profil"
-                icon="user"
-                open={openMenuGroup === 'Profile'}
-                onClick={() => {
-                  onMenuGroupClick('Profile');
-                }}
-                active={(active === 5 || active === 6) && openMenuGroup !== 'Profile'}
-                collapse={!isMenuExpanded}
-              >
-                <SideMenuItem
-                  label="Abonnenter"
-                  onClick={() => onMenuItemClick(5, true)}
-                  active={active === 5}
-                  tabIndex={openMenuGroup === 'Profile' ? 1 : -1}
+                <SideMenuItemGroup
+                  label="Faktura"
+                  icon="document"
+                  open={openMenuGroup === 'Invoice'}
+                  numberOfNotifications={openMenuGroup !== 'Invoice' ? 2 : undefined}
+                  onClick={() => {
+                    onMenuGroupClick('Invoice');
+                  }}
+                  active={(active === 3 || active === 4) && openMenuGroup !== 'Invoice'}
                   collapse={!isMenuExpanded}
-                />
-                <SideMenuItem
-                  label="Tv/Internett"
-                  onClick={() => onMenuItemClick(6, true)}
-                  active={active === 6}
-                  tabIndex={openMenuGroup === 'Profile' ? 1 : -1}
+                >
+                  <SideMenuItem
+                    label="Mobil"
+                    numberOfNotifications={1}
+                    onClick={() => onMenuItemClick(3, true)}
+                    active={active === 3}
+                    tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
+                    collapse={!isMenuExpanded}
+                  />
+                  <SideMenuItem
+                    label="Tv/Internett"
+                    numberOfNotifications={1}
+                    onClick={() => onMenuItemClick(4, true)}
+                    active={active === 4}
+                    tabIndex={openMenuGroup === 'Invoice' ? 1 : -1}
+                    collapse={!isMenuExpanded}
+                  />
+                </SideMenuItemGroup>
+                <SideMenuItemGroup
+                  label="Profil"
+                  icon="user"
+                  open={openMenuGroup === 'Profile'}
+                  onClick={() => {
+                    onMenuGroupClick('Profile');
+                  }}
+                  active={(active === 5 || active === 6) && openMenuGroup !== 'Profile'}
                   collapse={!isMenuExpanded}
-                />
-              </SideMenuItemGroup>
-            </SideMenuTop>
+                >
+                  <SideMenuItem
+                    label="Abonnenter"
+                    onClick={() => onMenuItemClick(5, true)}
+                    active={active === 5}
+                    tabIndex={openMenuGroup === 'Profile' ? 1 : -1}
+                    collapse={!isMenuExpanded}
+                  />
+                  <SideMenuItem
+                    label="Tv/Internett"
+                    onClick={() => onMenuItemClick(6, true)}
+                    active={active === 6}
+                    tabIndex={openMenuGroup === 'Profile' ? 1 : -1}
+                    collapse={!isMenuExpanded}
+                  />
+                </SideMenuItemGroup>
+              </SideMenuTop>
 
-            <SideMenuBottom>
-              <SideMenuItem
-                label="Innstillinger"
-                icon="settings"
-                onClick={() => onMenuItemClick(7)}
-                active={active === 7}
-                color="grey"
-                collapse={!isMenuExpanded}
-              />
-              <SideMenuItem
-                label="Log ut"
-                icon="logout"
-                onClick={() => onMenuItemClick(8)}
-                active={active === 8}
-                color="grey"
-                collapse={!isMenuExpanded}
-              />
-              <SideMenuItem
-                kind="rounded"
-                label="Helene Grini"
-                avatar={{ text: 'HG' }}
-                onClick={action('user')}
-                color="grey"
-                collapse={!isMenuExpanded}
-              />
-            </SideMenuBottom>
-          </SideMenu>
+              <SideMenuBottom>
+                <SideMenuItem
+                  label="Innstillinger"
+                  icon="settings"
+                  onClick={() => onMenuItemClick(7)}
+                  active={active === 7}
+                  color="grey"
+                  collapse={!isMenuExpanded}
+                />
+                <SideMenuItem
+                  label="Log ut"
+                  icon="logout"
+                  onClick={() => onMenuItemClick(8)}
+                  active={active === 8}
+                  color="grey"
+                  collapse={!isMenuExpanded}
+                />
+                <SideMenuItem
+                  kind="rounded"
+                  label="Helene Grini"
+                  avatar={{ text: 'HG' }}
+                  onClick={action('user')}
+                  color="grey"
+                  collapse={!isMenuExpanded}
+                />
+              </SideMenuBottom>
+            </SideMenu>
+          )}
         </div>
       </div>
       <h4>Try to change the viewport size in the storybook toolbar </h4>
