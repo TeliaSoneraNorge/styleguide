@@ -1,5 +1,5 @@
-import { debounce, throttle } from 'lodash';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { throttle } from 'lodash';
+import { useState, useEffect, useCallback } from 'react';
 
 type Breakpoints = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 const breakpoints: { [key in Breakpoints]: number } = {
@@ -16,7 +16,7 @@ export const useBreakpoint = (breakpoint: Breakpoints): boolean => {
   const throttledHandleResize = useCallback(
     throttle(() => {
       setWidth(window.innerWidth);
-    }, 400),
+    }, 100),
     [setWidth]
   );
 
