@@ -10,7 +10,7 @@ const InfoCard = ({ title, titleTag = 'h3', usps = [] }) => (
     <ul className="info-card__list">
       {usps.map((usp, i) => (
         <li className="info-card__item" key={`info-card__item--${i}`}>
-          <Icon icon="check-mark-circle" className="info-card__icon" />
+          <Icon icon="check-mark" className="info-card__icon" />
           {usp}
         </li>
       ))}
