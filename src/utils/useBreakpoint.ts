@@ -13,20 +13,17 @@ const breakpoints: { [key in Breakpoints]: number } = {
 export const useBreakpoint = (breakpoint: Breakpoints): boolean => {
   const [width, setWidth] = useState(window.innerWidth);
 
-  const throttledHandleResize = useCallback(
-    throttle(() => {
-      setWidth(window.innerWidth);
-    }, 100),
-    [setWidth]
-  );
-
   useEffect(() => {
+    const throttledHandleResize = throttle(() => {
+      setWidth(window.innerWidth);
+    }, 100);
+
     window.addEventListener('resize', throttledHandleResize);
     return () => {
       window.removeEventListener('resize', throttledHandleResize);
       throttledHandleResize.cancel();
     };
-  }, [throttledHandleResize]);
+  }, []);
 
   return width > breakpoints[breakpoint];
 };
