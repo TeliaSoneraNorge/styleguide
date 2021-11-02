@@ -1,5 +1,5 @@
 import { throttle } from 'lodash';
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect } from 'react';
 
 type Breakpoints = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 const breakpoints: { [key in Breakpoints]: number } = {
