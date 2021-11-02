@@ -14,14 +14,14 @@ export const useBreakpoint = (breakpoint: Breakpoints): boolean => {
   const [width, setWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    const handleResize = () => {
+    const throttledHandleResize = throttle(() => {
       setWidth(window.innerWidth);
-    };
+    }, 100);
 
-    const throttledHandleResize = throttle(handleResize, 100);
     window.addEventListener('resize', throttledHandleResize);
     return () => {
       window.removeEventListener('resize', throttledHandleResize);
+      throttledHandleResize.cancel();
     };
   }, []);
 
