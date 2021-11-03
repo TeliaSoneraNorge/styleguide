@@ -50,7 +50,11 @@ export const MobileNavBarMoreMenu = (props: Props) => {
           'divider' in item ? (
             <div className="telia-mobile-nav-bar__more-menu__content__divider" />
           ) : (
-            <button className="telia-mobile-nav-bar__more-menu__content__button" ref={index === 0 ? first : undefined}>
+            <button
+              onClick={item.onClick}
+              className="telia-mobile-nav-bar__more-menu__content__button"
+              ref={index === 0 ? first : undefined}
+            >
               <Icon className="telia-mobile-nav-bar__more-menu__content__button__icon" icon={item.icon} />
               {item.label}
               {item.hasNotification && (
