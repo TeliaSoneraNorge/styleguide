@@ -97,3 +97,22 @@ export const WithMoreOptionsScroll = () => {
     </div>
   );
 };
+
+export const WithMoreOptionActive = () => {
+  const [active, setActive] = useState(0);
+
+  return (
+    <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
+      <MobileNavBar>
+        <MobileNavBarItem onClick={() => setActive(0)} icon="search" active={active === 0} />
+        <MobileNavBarItem onClick={() => setActive(1)} icon="abroad" active={active === 1} hasNotification />
+        <MobileNavBarItem onClick={() => setActive(2)} icon="gift" active={active === 2} />
+        <MobileNavBarItem onClick={() => setActive(3)} icon="abroad" active={active === 3} />
+        <MobileNavBarMore
+          active={true}
+          items={[{ key: 'item', onClick: () => console.log('hei'), icon: 'abroad', label: 'Label', active: true }]}
+        />
+      </MobileNavBar>
+    </div>
+  );
+};

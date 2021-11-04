@@ -1,4 +1,5 @@
 import React from 'react';
+import cn from 'classnames';
 import { Badge } from '../../atoms/Badge';
 import { Icon } from '../../atoms/Icon';
 import { Button } from '../../business';
@@ -52,7 +53,9 @@ export const MobileNavBarMoreMenu = (props: Props) => {
           ) : (
             <button
               onClick={item.onClick}
-              className="telia-mobile-nav-bar__more-menu__content__button"
+              className={cn('telia-mobile-nav-bar__more-menu__content__button', {
+                'telia-mobile-nav-bar__more-menu__content__button--active': item.active,
+              })}
               ref={index === 0 ? first : undefined}
             >
               <Icon className="telia-mobile-nav-bar__more-menu__content__button__icon" icon={item.icon} />
