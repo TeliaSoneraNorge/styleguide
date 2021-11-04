@@ -49,13 +49,14 @@ export const MobileNavBarMoreMenu = (props: Props) => {
         </div>
         {props.items.map((item, index) =>
           'divider' in item ? (
-            <div className="telia-mobile-nav-bar__more-menu__content__divider" />
+            <div key={item.key} className="telia-mobile-nav-bar__more-menu__content__divider" />
           ) : (
             <button
               onClick={item.onClick}
               className={cn('telia-mobile-nav-bar__more-menu__content__button', {
                 'telia-mobile-nav-bar__more-menu__content__button--active': item.active,
               })}
+              key={item.key}
               ref={index === 0 ? first : undefined}
             >
               <Icon className="telia-mobile-nav-bar__more-menu__content__button__icon" icon={item.icon} />

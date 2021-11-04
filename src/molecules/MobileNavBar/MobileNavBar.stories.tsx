@@ -71,10 +71,16 @@ export const WithMoreOptionsScroll = () => {
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
       <MobileNavBar>
-        <MobileNavBarItem onClick={() => setActive(0)} icon="search" active={active === 0} />
-        <MobileNavBarItem onClick={() => setActive(1)} icon="abroad" active={active === 1} hasNotification />
-        <MobileNavBarItem onClick={() => setActive(2)} icon="gift" active={active === 2} />
-        <MobileNavBarItem onClick={() => setActive(3)} icon="abroad" active={active === 3} />
+        <MobileNavBarItem key={'2sldkf'} onClick={() => setActive(0)} icon="search" active={active === 0} />
+        <MobileNavBarItem
+          key={'2.ds'}
+          onClick={() => setActive(1)}
+          icon="abroad"
+          active={active === 1}
+          hasNotification
+        />
+        <MobileNavBarItem key={'2xv,x.v'} onClick={() => setActive(2)} icon="gift" active={active === 2} />
+        <MobileNavBarItem key={'2qow3'} onClick={() => setActive(3)} icon="abroad" active={active === 3} />
         <MobileNavBarMore
           items={[
             { key: 'item_1', onClick: () => setActive(3), icon: 'abroad', label: 'Label' },
@@ -104,13 +110,22 @@ export const WithMoreOptionActive = () => {
   return (
     <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', justifyContent: 'flex-end' }}>
       <MobileNavBar>
-        <MobileNavBarItem onClick={() => setActive(0)} icon="search" active={active === 0} />
-        <MobileNavBarItem onClick={() => setActive(1)} icon="abroad" active={active === 1} hasNotification />
-        <MobileNavBarItem onClick={() => setActive(2)} icon="gift" active={active === 2} />
-        <MobileNavBarItem onClick={() => setActive(3)} icon="abroad" active={active === 3} />
+        <MobileNavBarItem key={'time-0'} onClick={() => setActive(0)} icon="search" active={active === 0} />
+        <MobileNavBarItem
+          key={'item-1'}
+          onClick={() => setActive(1)}
+          icon="abroad"
+          active={active === 1}
+          hasNotification
+        />
+        <MobileNavBarItem key={'item-2'} onClick={() => setActive(2)} icon="gift" active={active === 2} />
+        <MobileNavBarItem key={'item-3'} onClick={() => setActive(3)} icon="abroad" active={active === 3} />
         <MobileNavBarMore
           active={true}
-          items={[{ key: 'item', onClick: () => console.log('hei'), icon: 'abroad', label: 'Label', active: true }]}
+          items={[
+            { key: 'more-1', onClick: () => console.log('hei'), icon: 'abroad', label: 'Label', active: true },
+            { key: 'more-2', onClick: () => console.log('hei'), icon: 'abroad', label: 'Label', active: true },
+          ]}
         />
       </MobileNavBar>
     </div>
