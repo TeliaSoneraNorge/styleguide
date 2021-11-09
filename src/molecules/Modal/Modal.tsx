@@ -4,6 +4,8 @@ import { getModalRoot } from './getModalRoot';
 import cn from 'classnames';
 import { useFocusTrap } from '../../utils/useFocusTrap';
 import { useEscapeListener } from './useEscapeListener';
+import { useClickOutsideListener } from './useClickOutsideListener';
+
 interface Props {
   open: boolean;
   setOpen: (open: boolean) => void;
@@ -14,6 +16,7 @@ export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();
   const closeModal = () => props.setOpen(false);
   useEscapeListener({ onEscape: closeModal });
+  useClickOutsideListener({ open: props.open, setOpen: props.setOpen, ref: container });
   const modalPortal = getModalRoot();
   const size = props.size || 'medium';
 
