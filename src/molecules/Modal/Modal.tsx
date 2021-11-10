@@ -16,7 +16,7 @@ export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();
   const closeModal = () => props.setOpen(false);
   useEscapeListener({ onEscape: closeModal });
-  useClickOutsideListener({ open: props.open, setOpen: props.setOpen, ref: container });
+  useClickOutsideListener({ open: props.open, setOpen: props.setOpen, containerRef: container });
   const modalPortal = getModalRoot();
   const size = props.size || 'medium';
 

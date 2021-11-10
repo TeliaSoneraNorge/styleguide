@@ -67,9 +67,9 @@ export const WithDividers = () => {
           <h2>With Dividers</h2>
         </ModalHeader>
         <ModalBody>
-          Below me is a model divider with padding
+          Below me is a modal divider with padding
           <ModalDivider />
-          Below me is a model divider in full width
+          Below me is a modal divider in full width
           <ModalDivider fullWidth={true} />
         </ModalBody>
         <ModalFooter>
