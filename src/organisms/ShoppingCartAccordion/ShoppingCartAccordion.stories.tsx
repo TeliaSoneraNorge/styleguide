@@ -596,33 +596,35 @@ const Wrapper = ({
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <ShoppingCartAccordion
-      isExpanded={isExpanded}
-      numberOfItemsInCart={numberOfItemsInCart}
-      onGoToCart={() => {}}
-      shouldHideOnDesktop={shouldHideOnDesktop}
-      shouldShowButton={shouldShowGoToCartButton}
-      shouldBeSticky={shouldBeSticky}
-      totalPriceMonthly={pricePerMonth}
-      totalPriceUpfront={priceUpfront}
-      toggleCart={() => setIsExpanded(!isExpanded)}
-      formatPrice={(price) => `${price},-`}
-    >
-      <ShoppingCart
-        cartItems={getCart(itemToDisplay)}
-        isAnyCartItemsQuantityModifiable
-        totalPriceFirstInvoice={priceFirstInvoice}
+    <div style={{ margin: '-1rem' }}>
+      <ShoppingCartAccordion
+        isExpanded={isExpanded}
+        numberOfItemsInCart={numberOfItemsInCart}
+        onGoToCart={() => {}}
+        shouldHideOnDesktop={shouldHideOnDesktop}
+        shouldShowButton={shouldShowGoToCartButton}
+        shouldBeSticky={shouldBeSticky}
         totalPriceMonthly={pricePerMonth}
         totalPriceUpfront={priceUpfront}
-        onChangeQuantity={() => {}}
-        onRemoveItem={() => {}}
-        onGoToCart={() => {}}
+        toggleCart={() => setIsExpanded(!isExpanded)}
         formatPrice={(price) => `${price},-`}
-        buttonText="Gå til bestilling"
-        buttonInfo="Neste: Velg Abonnement"
-        disclaimers={<Paragraph kind="fineprint">Minste totalpris 12 md. XXX</Paragraph>}
-      />
-    </ShoppingCartAccordion>
+      >
+        <ShoppingCart
+          cartItems={getCart(itemToDisplay)}
+          isAnyCartItemsQuantityModifiable
+          totalPriceFirstInvoice={priceFirstInvoice}
+          totalPriceMonthly={pricePerMonth}
+          totalPriceUpfront={priceUpfront}
+          onChangeQuantity={() => {}}
+          onRemoveItem={() => {}}
+          onGoToCart={() => {}}
+          formatPrice={(price) => `${price},-`}
+          buttonText="Gå til bestilling"
+          buttonInfo="Neste: Velg Abonnement"
+          disclaimers={<Paragraph kind="fineprint">Minste totalpris 12 md. XXX</Paragraph>}
+        />
+      </ShoppingCartAccordion>
+    </div>
   );
 };
 
