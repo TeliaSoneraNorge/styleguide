@@ -52,25 +52,28 @@ const ShoppingCartAccordion = ({
   ];
 
   return (
-    <div
-      className={classnames({ 'shopping-cart__sticky': shouldBeSticky })}
-      onKeyUp={(event) => {
-        if (event.key === 'Escape' && isExpanded) {
-          toggleCart();
-        }
-      }}
-    >
-      <AccordionList
-        accordionItems={accordionItems}
-        className={classnames('shopping-cart__accordion', {
-          'shopping-cart__accordion--has-double-digit-count': numberOfItemsInCart > 9,
-          'shopping-cart__accordion--hide-on-desktop': shouldHideOnDesktop,
-        })}
-        isExpandedAccordionIndex={isExpanded ? 0 : -1}
-        toggleIsExpanded={() => toggleCart()}
-        shouldAnimateHeaderButtonTextBox={shouldAnimateNumberOfCartItems}
-      />
-    </div>
+    <>
+      {isExpanded ? <div className="shopping-cart__opacity-layer" onClick={() => toggleCart()}></div> : null}
+      <div
+        className={classnames({ 'shopping-cart__sticky': shouldBeSticky })}
+        onKeyUp={(event) => {
+          if (event.key === 'Escape' && isExpanded) {
+            toggleCart();
+          }
+        }}
+      >
+        <AccordionList
+          accordionItems={accordionItems}
+          className={classnames('shopping-cart__accordion', {
+            'shopping-cart__accordion--has-double-digit-count': numberOfItemsInCart > 9,
+            'shopping-cart__accordion--hide-on-desktop': shouldHideOnDesktop,
+          })}
+          isExpandedAccordionIndex={isExpanded ? 0 : -1}
+          toggleIsExpanded={() => toggleCart()}
+          shouldAnimateHeaderButtonTextBox={shouldAnimateNumberOfCartItems}
+        />
+      </div>
+    </>
   );
 };
 
