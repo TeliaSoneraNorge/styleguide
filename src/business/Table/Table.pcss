@@ -23,8 +23,10 @@
   }
 
   &__row {
-    transition-duration: 300ms;
-    transition-property: background-color;
+    & td {
+      transition-duration: 300ms;
+      transition-property: background-color;
+    }
     &:hover td {
       background-color: var(--grey-100);
     }
