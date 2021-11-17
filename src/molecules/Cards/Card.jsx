@@ -7,9 +7,9 @@ import classnames from 'classnames';
  */
 const Card = ({ title, link, isGrey, isUnderline, img, children }) => (
   <a
-    className={classnames('card', {
+    className={classnames('card link', {
       'card--background-grey': isGrey,
-      link: isUnderline,
+      'link--no-underline': isUnderline,
     })}
     href={link}
   >
