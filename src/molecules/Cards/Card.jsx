@@ -5,11 +5,11 @@ import classnames from 'classnames';
 /**
  * Status: *finished*.
  */
-const Card = ({ title, link, isGrey, isUnderline, img, children }) => (
+const Card = ({ title, link, isGrey, removeUnderline, img, children }) => (
   <a
     className={classnames('card link', {
       'card--background-grey': isGrey,
-      'link--no-underline': isUnderline,
+      'link--no-underline': removeUnderline,
     })}
     href={link}
   >
@@ -26,7 +26,7 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
   isGrey: PropTypes.bool,
-  isUnderline: PropTypes.bool,
+  removeUnderline: PropTypes.bool,
   img: PropTypes.shape({
     src: PropTypes.string.isRequired,
     alt: PropTypes.string.isRequired,

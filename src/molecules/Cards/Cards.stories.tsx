@@ -41,7 +41,7 @@ export const NoUnderlineCards = () => {
   const imgSrc = img.screenshot1;
 
   return (
-    <Cards isGrey={true} isUnderline={true}>
+    <Cards isGrey={true} removeUnderline={true}>
       <Card img={{ src: imgSrc, alt: 'Man and woman looking at an iPad.' }} link="#" title="Dette er cardsblokk 1" />
       <Card img={{ src: imgSrc, alt: 'Man and woman looking at an iPad.' }} link="#" title="Dette er cardsblokk 2" />
       <Card
