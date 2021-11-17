@@ -7,15 +7,15 @@ import PropTypes from 'prop-types';
  *
  * These are 3 cards blocks. Can have 2 or 3 card blocks in width, with white or gray background
  */
-const Cards = ({ children, isGrey, isUnderline }) => (
+const Cards = ({ children, isGrey, removeUnderline }) => (
   <div className="cards">
-    {React.Children.map(children, (child) => React.cloneElement(child, { isGrey, isUnderline }))}
+    {React.Children.map(children, (child) => React.cloneElement(child, { isGrey, removeUnderline }))}
   </div>
 );
 
 Cards.propTypes = {
   isGrey: PropTypes.bool,
-  isUnderline: PropTypes.bool,
+  removeUnderline: PropTypes.bool,
 };
 
 export default Cards;
