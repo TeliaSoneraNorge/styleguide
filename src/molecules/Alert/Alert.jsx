@@ -28,6 +28,7 @@ const Alert = ({
   ...rest
 }) => {
   const alertRef = useRef();
+  const positiveAlert = kind === 'positive';
 
   useEffect(() => {
     if (scrollTo) {
@@ -55,9 +56,9 @@ const Alert = ({
         {!hideIcon && (
           <div className="alert__icon-container">
             <Icon
-              icon="info"
+              icon={positiveAlert ? 'check-mark-circle' : 'info'}
               style={{
-                color: colors.black,
+                color: positiveAlert ? colors.green700 : colors.black,
                 width: '2.5rem',
                 height: '2.5rem',
                 marginRight: '1rem',
