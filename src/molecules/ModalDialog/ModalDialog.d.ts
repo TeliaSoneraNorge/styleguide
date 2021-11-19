@@ -14,6 +14,7 @@ declare interface ModalDialogProps {
   closeText?: string;
   closeKind?: ButtonKind;
   standalone?: boolean;
+  focusChildElement?: boolean;
   renderTo?: any;
   headerElement?: React.ReactElement<any>;
   footerElement?: React.ReactElement<any>;
