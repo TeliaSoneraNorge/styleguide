@@ -9,6 +9,7 @@ export interface CardProps {
   title: string;
   link: string;
   isGrey?: boolean;
+  removeUnderline?: boolean;
   img?: CardImg;
 }
 

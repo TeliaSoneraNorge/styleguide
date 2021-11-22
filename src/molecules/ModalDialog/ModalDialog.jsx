@@ -30,6 +30,7 @@ function ModalDialog({
   closeText,
   closeKind,
   standalone,
+  focusChildElement,
   renderTo,
   headerElement,
   footerElement,
@@ -52,7 +53,7 @@ function ModalDialog({
   };
 
   const setFocusOnDialog = () => {
-    if (!dialogRef.current || standalone) return;
+    if (!dialogRef.current || standalone || focusChildElement) return;
 
     dialogRef.current.focus();
   };
@@ -72,12 +73,12 @@ function ModalDialog({
     };
   };
 
-  const onOverlayClick = event => {
+  const onOverlayClick = (event) => {
     if (event.target !== dialogOverlayRef.current) return;
     if (onClose) onClose();
   };
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (event.keyCode === KEY_ESC && onClose) onClose();
   };
 
