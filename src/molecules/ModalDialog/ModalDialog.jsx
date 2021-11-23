@@ -5,7 +5,6 @@ import classnames from 'classnames';
 import { Context } from './ModalDialogProvider';
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 import Button from '../../atoms/Button/Button';
-import deprecate from 'util-deprecate';
 const KEY_ESC = 27;
 
 /**
@@ -92,12 +91,12 @@ function ModalDialog({
     </h2>
   );
   const defaultFooterElement = (
-    <>
+    <div className="modal-dialog__footer">
+      {closeText && onClose && <Button kind={closeKind} margin="top" onClick={onClose} text={closeText} />}
       {submitText && onSubmit && (
         <Button kind={submitKind} margin="top" onClick={onSubmit} text={submitText} isDisabled={submitDisabled} />
       )}
-      {closeText && onClose && <Button kind={closeKind} margin="top" onClick={onClose} text={closeText} />}
-    </>
+    </div>
   );
 
   const renderDialog = (Component, additionalProps = {}) => (
@@ -174,7 +173,4 @@ ModalDialog.propTypes = {
   size: PropTypes.oneOf(Object.keys(ModalDialog.sizes)),
 };
 
-export default deprecate(
-  ModalDialog,
-  '<ModalDialog/> from Telia Styleguide is a deprecated component. Use <Modal/> instead'
-);
+export default ModalDialog;
