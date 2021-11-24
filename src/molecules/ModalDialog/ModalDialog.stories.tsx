@@ -30,6 +30,31 @@ export const Default = () => {
   );
 };
 
+export const DialogWithLink = () => {
+  const [dialogWithLinkActive, setDialogWithLinkActive] = useState(false);
+
+  const toggleDialogWithLink = () => {
+    setDialogWithLinkActive(!dialogWithLinkActive);
+  };
+
+  return (
+    <ModalDialogProvider>
+      <ModalDialog
+        name="dialog-with-link"
+        heading="Dialog with link test"
+        submitText="Ja TAKK"
+        onSubmit={toggleDialogWithLink}
+        onClose={() => {}}
+        closeKind="cancel"
+        closeText="Cancel"
+        standalone
+      >
+        This dialog can be associated with actions where it&#39;s necessary to give the user more information.
+      </ModalDialog>
+    </ModalDialogProvider>
+  );
+};
+
 export const ConfirmModalDialog = () => {
   const [confirmDialogActive, setConfirmDialogActive] = useState(false);
 
@@ -92,12 +117,18 @@ const LongText = () => (
 
 export const Example = () => {
   const [infoDialogActive, setInfoDialogActive] = useState(false);
+  const [dialogWithLinkActive, setDialogWithLinkActive] = useState(false);
+
   const [confirmDialogActive, setConfirmDialogActive] = useState(false);
   const [nonClosableDialogActive, setNonClosableDialogActive] = useState(false);
   const [longTextDialogActive, setLongTextDialogActive] = useState(false);
 
   const toggleInfoModalDialog = () => {
     setInfoDialogActive(!infoDialogActive);
+  };
+
+  const toggleDialogWithLink = () => {
+    setDialogWithLinkActive(!dialogWithLinkActive);
   };
   const toggleConfirmModalDialog = () => {
     setConfirmDialogActive(!confirmDialogActive);
@@ -121,6 +152,19 @@ export const Example = () => {
               <p>
                 This dialog can be associated with actions where it&#39;s necessary to give the user more information.
               </p>
+            </ModalDialog>
+          )}
+          <button className="button button-default button--margin-top" onClick={toggleDialogWithLink}>
+            Dialog with Link
+          </button>
+          {dialogWithLinkActive && (
+            <ModalDialog
+              name="dialog-with-link"
+              heading="Dialog with Link"
+              onSubmit={toggleDialogWithLink}
+              submitText="Ja TAKK"
+            >
+              Link in Dialog
             </ModalDialog>
           )}
           <button className="button button-default button--margin-top" onClick={toggleConfirmModalDialog}>
