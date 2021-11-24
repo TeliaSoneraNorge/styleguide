@@ -92,9 +92,16 @@ function ModalDialog({
   );
   const defaultFooterElement = (
     <div className="modal-dialog__footer">
-      {closeText && onClose && <Button kind={closeKind} margin="top" onClick={onClose} text={closeText} />}
+      {closeText && onClose && <Button size="small" kind={closeKind} margin="top" onClick={onClose} text={closeText} />}
       {submitText && onSubmit && (
-        <Button kind={submitKind} margin="top" onClick={onSubmit} text={submitText} isDisabled={submitDisabled} />
+        <Button
+          size="small"
+          kind={submitKind}
+          margin="top"
+          onClick={onSubmit}
+          text={submitText}
+          isDisabled={submitDisabled}
+        />
       )}
     </div>
   );
