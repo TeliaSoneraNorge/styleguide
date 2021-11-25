@@ -37,5 +37,7 @@ jobs:
       - name: Publish to npm and bump version
         env:
           UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+        shell: bash
         run: |
-          sh ./ci/tasks/update-and-publish-npm.sh
+          chmod +x ./ci/tasks/update-and-publish-npm.sh
+          ./ci/tasks/update-and-publish-npm.sh
