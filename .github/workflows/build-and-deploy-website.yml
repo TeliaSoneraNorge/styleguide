@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      - feature/github-actions
+      # - feature/github-actions
   workflow_dispatch:
 
 jobs:
