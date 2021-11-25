@@ -68,7 +68,7 @@ jobs:
           git config --global user.email "github-actions-ci@localhost"
           git config --global user.name "github-actions-ci"
           git commit -a -m ":robot: Updating styleguide version type: ${UPDATE_TYPE}"
-          git clone "${PWD}/styleguide" "${PWD}/updated-version"
+          git push
 
 
         
