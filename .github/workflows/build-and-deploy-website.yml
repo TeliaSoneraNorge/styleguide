@@ -1,0 +1,47 @@
+name: Build and deploy website
+on:
+  push:
+    branches:
+      - master
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy-website:
+    name: Build production
+    runs-on: ubuntu-latest
+
+  steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+    - uses: actions/setup-node@v2
+      with:
+        node-version: "12.x"
+        cache: "npm"
+
+    # Runs a set of commands using the runners shell
+    - name: Running versions
+      run: |
+        echo "Node Version: $(node --version)"
+        echo "NPM Version: $(npm --version)"
+        aws --version
+
+    - name: Install
+      run: |
+        pwd
+        npm ci
+    
+    - name: Lint
+      run: |
+        npm run lint
+
+    - name: Build
+      run: |
+        pwd
+        npm run build:css
+        npm run build:icons
+        npm run build-storybook
+        # Important: the icon zip will be placed inside dist-storybook, so it must
+        #            be run _after_ build-storybook.
+        npm run build:icons-zip
+        npm run build:zip
+        mv assets/* dist-storybook
