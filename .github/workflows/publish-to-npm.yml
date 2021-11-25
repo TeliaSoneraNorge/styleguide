@@ -34,8 +34,8 @@ jobs:
               exit 1
           fi
         
-        - name: Publish to npm and bump version
-          env:
-            UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
-          run: |
-            sh ./ci/tasks/update-and-publish-npm.sh
+      - name: Publish to npm and bump version
+        env:
+          UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+        run: |
+          sh ./ci/tasks/update-and-publish-npm.sh
