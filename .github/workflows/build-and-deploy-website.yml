@@ -27,7 +27,6 @@ jobs:
 
       - name: Install
         run: |
-          pwd
           npm ci
       
       - name: Lint
@@ -36,7 +35,6 @@ jobs:
 
       - name: Build
         run: |
-          pwd
           npm run build:css
           npm run build:icons
           npm run build-storybook
