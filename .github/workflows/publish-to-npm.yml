@@ -43,5 +43,5 @@ jobs:
         run: |
           pwd
           ls -al
-          chmod +x ./ci/tasks/update-and-publish-npm.sh
-          ./ci/tasks/update-and-publish-npm.sh
+          chmod +x ./ci/tasks/update-and-publish-npm/task.sh
+          ./ci/tasks/update-and-publish-npm/task.sh
