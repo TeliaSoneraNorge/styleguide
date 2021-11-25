@@ -58,6 +58,14 @@ jobs:
           ls dist
           cat .npmrc
           cat package.json
+          npm publish dist
+
+      - name: Bump version
+        env:
+          UPDATE_TYPE: "patch"
+        shell: bash
+        run: |
+          git commit -a -m ":robot: Updating styleguide version type: ${UPDATE_TYPE}"        
 
 
         
