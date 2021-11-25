@@ -25,6 +25,14 @@ jobs:
           echo "NPM Version: $(npm --version)"
           aws --version
 
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SECRET_KEY }}
+          aws-secret-access-key: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SESSION_TOKEN }}
+          aws-region: eu-west-1
+
       - name: Install
         run: |
           npm ci
@@ -43,13 +51,6 @@ jobs:
           npm run build:icons-zip
           npm run build:zip
           mv assets/* dist-storybook
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SECRET_KEY }}
-          aws-secret-access-key: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_ACCESS_KEY }}
-          aws-region: eu-west-1
 
       - name: Deploy to S3 Bucket
         working-directory: ./dist
