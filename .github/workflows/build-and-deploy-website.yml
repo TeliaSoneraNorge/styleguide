@@ -8,7 +8,7 @@ on:
 
 jobs:
   build-and-deploy-website:
-    name: Build production
+    name: Build and deploy website
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
