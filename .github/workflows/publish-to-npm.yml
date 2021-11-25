@@ -9,7 +9,7 @@ on:
       updateType:
         description: "Update type (patch | minor | major)"
         required: true
-        default: 'staging'
+        default: 'patch'
 jobs:
   publish-to-npm:
     name: Publish to npm
@@ -36,12 +36,27 @@ jobs:
               exit 1
           fi
         
-      - name: Publish to npm and bump version
+      - name: Build for npm
         env:
           UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         shell: bash
         run: |
-          pwd
-          ls -al
-          chmod +x ./ci/tasks/update-and-publish-npm/task.sh
-          ./ci/tasks/update-and-publish-npm/task.sh
+          npm ci
+          npm version ${UPDATE_TYPE} --no-git-tag
+          npm run build:icons
+          npm run build
+
+      - name: Publish to npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        shell: bash
+        run: |
+          touch ~/.profile
+          source ~/.profile
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          ls dist
+          cat package.json
+
+
+        
