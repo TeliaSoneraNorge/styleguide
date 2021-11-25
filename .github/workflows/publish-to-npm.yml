@@ -65,6 +65,8 @@ jobs:
           UPDATE_TYPE: "patch"
         shell: bash
         run: |
+          git config --global user.email "github-actions-ci@localhost"
+          git config --global user.name "github-actions-ci"
           git commit -a -m ":robot: Updating styleguide version type: ${UPDATE_TYPE}"        
 
 
