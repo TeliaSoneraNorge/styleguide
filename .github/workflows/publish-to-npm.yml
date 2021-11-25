@@ -11,10 +11,12 @@ on:
         required: true
         default: 'staging'
 jobs:
-  publish:
+  publish-to-npm:
     name: Publish to npm
     runs-on: ubuntu-latest
     steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
       - name: Validate update type
         env:
           UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}

@@ -16,7 +16,8 @@ git config --global user.name "github-actions-ci"
 
 echo "Update styleguide version:"
 
-cd styleguide
+# cd styleguide
+npm ci
 npm version ${UPDATE_TYPE} --no-git-tag
 npm run build:icons
 npm run build
