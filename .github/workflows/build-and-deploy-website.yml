@@ -3,7 +3,7 @@ on:
   push:
     branches:
       - master
-      # - feature/github-actions
+      - feature/github-actions
   workflow_dispatch:
 
 jobs:
@@ -43,3 +43,16 @@ jobs:
           npm run build:icons-zip
           npm run build:zip
           mv assets/* dist-storybook
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SECRET_KEY }}
+          aws-secret-access-key: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_ACCESS_KEY }}
+          aws-region: eu-west-1
+
+      - name: Deploy to S3 Bucket
+        working-directory: ./dist
+        run: |
+          aws s3 rm s3://styleguide.channelapi.telia.no --recursive
+          aws s3 sync . s3://styleguide.channelapi.telia.no
