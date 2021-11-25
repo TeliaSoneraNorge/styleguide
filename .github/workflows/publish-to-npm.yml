@@ -1,9 +1,5 @@
 name: Publist to npm
 on:
-  push:
-    branches:
-      - master
-      - feature/github-actions
   workflow_dispatch:
     inputs:
       updateType:
@@ -19,7 +15,7 @@ jobs:
       - uses: actions/checkout@v2
       - name: Validate update type
         env:
-          UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+          UPDATE_TYPE: ${{ github.event.inputs.updateType }}
         shell: bash
         run: |
           if [[ "$UPDATE_TYPE" == "patch" ]]
@@ -38,7 +34,7 @@ jobs:
         
       - name: Build for npm
         env:
-          UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+          UPDATE_TYPE: ${{ github.event.inputs.updateType }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         shell: bash
         run: |
@@ -56,8 +52,6 @@ jobs:
           source ~/.profile
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           ls dist
-          cat .npmrc
-          cat package.json
           npm publish dist
 
       - name: Bump version
