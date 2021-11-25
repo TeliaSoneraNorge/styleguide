@@ -1,0 +1,41 @@
+name: Publist to npm
+on:
+  push:
+    branches:
+      - master
+      - feature/github-actions
+  workflow_dispatch:
+    inputs:
+      updateType:
+        description: "Update type (patch | minor | major)"
+        required: true
+        default: 'staging'
+jobs:
+  publish:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate update type
+        env:
+          UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+        shell: bash
+        run: |
+          if [[ "$UPDATE_TYPE" == "patch" ]]
+          then
+              echo "Will be doing a patch release to npm"
+          elif [[ "$UPDATE_TYPE" == "minor" ]]
+          then
+              echo "Will be doing a minor release to npm"
+          elif [[ "$UPDATE_TYPE" == "major" ]]
+          then
+              echo "Will be doing a major release to npm"
+          else
+              echo "Invalid update type input. Should be either patch, minor or major."
+              exit 1
+          fi
+        
+        - name: Publish to npm and bump version
+          env:
+            UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
+          run: |
+            sh ./ci/tasks/update-and-publish-npm.sh
