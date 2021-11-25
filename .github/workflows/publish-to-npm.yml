@@ -39,5 +39,7 @@ jobs:
           UPDATE_TYPE: "patch" #${{ github.event.inputs.updateType }}
         shell: bash
         run: |
+          pwd
+          ls -al
           chmod +x ./ci/tasks/update-and-publish-npm.sh
           ./ci/tasks/update-and-publish-npm.sh
