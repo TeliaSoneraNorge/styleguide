@@ -9,49 +9,77 @@ export default {
 };
 
 export const Default = () => {
-  const [infoDialogActive, setInfoDialogActive] = useState(false)
+  const [infoDialogActive, setInfoDialogActive] = useState(false);
 
   const toggleInfoModalDialog = () => {
     setInfoDialogActive(!infoDialogActive);
-  }
+  };
 
   return (
     <ModalDialogProvider>
-      <ModalDialog 
-        name="info-dialog" 
-        heading="Info dialog" 
-        submitText="Ok" 
+      <ModalDialog
+        name="info-dialog"
+        heading="Info dialog"
+        submitText="Ok"
         onSubmit={toggleInfoModalDialog}
         standalone // <– 'standalone' are only used for example purposes. See example further down ...
       >
-        <p>This dialog can be associated with actions where it&#39;s necessary to give the user more information.</p>
+        This dialog can be associated with actions where it&#39;s necessary to give the user more information.
       </ModalDialog>
     </ModalDialogProvider>
-  )
+  );
 };
 
-export const ConfirmModalDialog = () => {
-  const [confirmDialogActive, setConfirmDialogActive] = useState(false)
+export const DialogWithLinkCancel = () => {
+  const [dialogWithLinkActive, setDialogWithLinkActive] = useState(false);
 
-  const toggleConfirmModalDialog = () => {
-    setConfirmDialogActive(!confirmDialogActive);
-  }
+  const toggleDialogWithLink = () => {
+    setDialogWithLinkActive(!dialogWithLinkActive);
+  };
 
   return (
     <ModalDialogProvider>
-      <ModalDialog 
+      <ModalDialog
+        name="dialog-with-link"
+        heading="Dialog with link test"
+        submitText="Ja TAKK"
+        onSubmit={toggleDialogWithLink}
+        onClose={() => {}}
+        closeKind="cancel"
+        closeText="Cancel"
+        standalone
+      >
+        This dialog can be associated with actions where it&#39;s necessary to give the user more information.
+      </ModalDialog>
+    </ModalDialogProvider>
+  );
+};
+
+export const ConfirmModalDialog = () => {
+  const [confirmDialogActive, setConfirmDialogActive] = useState(false);
+
+  const toggleConfirmModalDialog = () => {
+    setConfirmDialogActive(!confirmDialogActive);
+  };
+
+  return (
+    <ModalDialogProvider>
+      <ModalDialog
         name="confirm-dialog"
         heading="Confirm dialog"
         onSubmit={toggleConfirmModalDialog}
         submitText="Confirm"
+        submitKind="inverted"
         onClose={toggleConfirmModalDialog}
+        closeKind="normal"
         closeText="Cancel"
         standalone // <– 'standalone' are only used for example purposes. See example further down ...
       >
-        This dialog can be associated with actions where it&#39;s necessary to get the user to confirm what&#39;s about to happen.
+        This dialog can be associated with actions where it&#39;s necessary to get the user to confirm what&#39;s about
+        to happen.
       </ModalDialog>
     </ModalDialogProvider>
-  )
+  );
 };
 
 const LongText = () => (
@@ -87,30 +115,34 @@ const LongText = () => (
   </>
 );
 
-
 export const Example = () => {
-  const [infoDialogActive, setInfoDialogActive] = useState(false)
-  const [confirmDialogActive, setConfirmDialogActive] = useState(false)
-  const [nonClosableDialogActive, setNonClosableDialogActive] = useState(false)
-  const [longTextDialogActive, setLongTextDialogActive] = useState(false)
+  const [infoDialogActive, setInfoDialogActive] = useState(false);
+  const [dialogWithLinkActive, setDialogWithLinkActive] = useState(false);
+
+  const [confirmDialogActive, setConfirmDialogActive] = useState(false);
+  const [nonClosableDialogActive, setNonClosableDialogActive] = useState(false);
+  const [longTextDialogActive, setLongTextDialogActive] = useState(false);
 
   const toggleInfoModalDialog = () => {
     setInfoDialogActive(!infoDialogActive);
-  }
+  };
+
+  const toggleDialogWithLink = () => {
+    setDialogWithLinkActive(!dialogWithLinkActive);
+  };
   const toggleConfirmModalDialog = () => {
     setConfirmDialogActive(!confirmDialogActive);
-  }
+  };
   const toggleNonClosableDialog = () => {
     setNonClosableDialogActive(!nonClosableDialogActive);
-  }
+  };
   const toggleLongTextDialogActive = () => {
     setLongTextDialogActive(!longTextDialogActive);
-  }
+  };
 
   return (
     <ModalDialogProvider>
       <article>
-
         <section className="container container--small" style={{ textAlign: 'center' }}>
           <button className="button button-default button--margin-top" onClick={toggleInfoModalDialog}>
             Info modal dialog
@@ -120,6 +152,19 @@ export const Example = () => {
               <p>
                 This dialog can be associated with actions where it&#39;s necessary to give the user more information.
               </p>
+            </ModalDialog>
+          )}
+          <button className="button button-default button--margin-top" onClick={toggleDialogWithLink}>
+            Dialog with Link
+          </button>
+          {dialogWithLinkActive && (
+            <ModalDialog
+              name="dialog-with-link"
+              heading="Dialog with Link"
+              onSubmit={toggleDialogWithLink}
+              submitText="Ja TAKK"
+            >
+              Link in Dialog
             </ModalDialog>
           )}
           <button className="button button-default button--margin-top" onClick={toggleConfirmModalDialog}>
@@ -176,4 +221,4 @@ export const Example = () => {
       </article>
     </ModalDialogProvider>
   );
-}
+};
