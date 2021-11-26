@@ -78,19 +78,17 @@ We also use the [BEM-pattern](http://getbem.com/naming/): `block__elements--modi
 
 ## Deployment
 
-We use Concourse for build and deploy and the pipeline can be found at [https://concourse.common-services.telia.io/teams/channel-api/pipelines/styleguide](https://concourse.common-services.telia.io/teams/channel-api/pipelines/styleguide).
+We use Github Actions for build and deploy and the pipelines can be found at [https://github.com/TeliaSoneraNorge/styleguide/actions](https://github.com/TeliaSoneraNorge/styleguide/actions).
 If you do not have access here and think you should have, post in the `#styleguide` channel on slack.
 
-When a new feature/branch is merged to master, a new build of Storybook is automatically deployed. You can check the Slack channel `#styleguide-deploy` to verify when the deploy has completed.
+When a new feature/branch is merged to master, a new build of Storybook is automatically deployed. 
+TODO: Add step in pipeline to post message to the Slack channel `#styleguide-deploy` to verify when the deploy has completed.
 
 ### React component library package
 
-After the deploy of the website is complete you can in the Concourse pipeline trigger a version
+After the deploy of the website is complete you can in the "Publish to npm" action trigger a version
 update. You can choose between major, minor and patch version update. See `VERSIONS.md` for more
 details on which to choose.
-
-To trigger the version update in concourse, click on the task that matches you version update
-and press the plus sign in the top-right corner.
 
 Remember to write a description in `VERSIONS.md` if it is a noteworthy change.
 
