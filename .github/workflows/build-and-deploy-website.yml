@@ -53,7 +53,7 @@ jobs:
           mv assets/* dist-storybook
 
       - name: Deploy to S3 Bucket
-        working-directory: ./dist
+        working-directory: ./dist-storybook
         run: |
           aws s3 rm s3://styleguide.channelapi.telia.no --recursive
           aws s3 sync . s3://styleguide.channelapi.telia.no
