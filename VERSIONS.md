@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.45.17
+
+- Undeprecated `ModalDialog` and made it look more like `Modal` component. `Modal` component does not work with SSR, so until that is fixed `ModalDialog` will still be in use.
+
 ## 1.45.15
 
 - Released with github actions
