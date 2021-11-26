@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.45.15
+
+- Released with github actions
+
 ## 1.45.0
 
 - Added key as required prop for MobileNavBarMore items
