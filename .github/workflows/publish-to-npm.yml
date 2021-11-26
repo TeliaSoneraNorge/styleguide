@@ -1,0 +1,68 @@
+name: Publist to npm
+on:
+  workflow_dispatch:
+    inputs:
+      updateType:
+        description: "Update type (patch | minor | major)"
+        required: true
+        default: 'patch'
+jobs:
+  publish-to-npm:
+    name: Publish to npm
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - name: Validate update type
+        env:
+          UPDATE_TYPE: ${{ github.event.inputs.updateType }}
+        shell: bash
+        run: |
+          if [[ "$UPDATE_TYPE" == "patch" ]]
+          then
+              echo "Will be doing a patch release to npm"
+          elif [[ "$UPDATE_TYPE" == "minor" ]]
+          then
+              echo "Will be doing a minor release to npm"
+          elif [[ "$UPDATE_TYPE" == "major" ]]
+          then
+              echo "Will be doing a major release to npm"
+          else
+              echo "Invalid update type input. Should be either patch, minor or major."
+              exit 1
+          fi
+        
+      - name: Build for npm
+        env:
+          UPDATE_TYPE: ${{ github.event.inputs.updateType }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        shell: bash
+        run: |
+          npm ci
+          npm version ${UPDATE_TYPE} --no-git-tag
+          npm run build:icons
+          npm run build
+
+      - name: Publish to npm
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        shell: bash
+        run: |
+          touch ~/.profile
+          source ~/.profile
+          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
+          ls dist
+          npm publish dist
+
+      - name: Bump version
+        env:
+          UPDATE_TYPE: "patch"
+        shell: bash
+        run: |
+          git config --global user.email "github-actions-ci@localhost"
+          git config --global user.name "github-actions-ci"
+          git commit -a -m ":robot: Updating styleguide version type: ${UPDATE_TYPE}"
+          git push
+
+
+        

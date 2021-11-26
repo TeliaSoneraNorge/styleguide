@@ -1,0 +1,59 @@
+name: Build and deploy website
+on:
+  push:
+    branches:
+      - master
+      - feature/github-actions
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy-website:
+    name: Build and deploy website
+    runs-on: ubuntu-latest
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: "12.x"
+          cache: "npm"
+
+      # Runs a set of commands using the runners shell
+      - name: Running versions
+        run: |
+          echo "Node Version: $(node --version)"
+          echo "NPM Version: $(npm --version)"
+          aws --version
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SECRET_KEY }}
+          aws-secret-access-key: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_ACCESS_KEY }}
+          aws-session-token: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SESSION_TOKEN }}
+          aws-region: eu-west-1
+
+      - name: Install
+        run: |
+          npm ci
+      
+      - name: Lint
+        run: |
+          npm run lint
+
+      - name: Build
+        run: |
+          npm run build:css
+          npm run build:icons
+          npm run build-storybook
+          # Important: the icon zip will be placed inside dist-storybook, so it must
+          #            be run _after_ build-storybook.
+          npm run build:icons-zip
+          npm run build:zip
+          mv assets/* dist-storybook
+
+      - name: Deploy to S3 Bucket
+        working-directory: ./dist-storybook
+        run: |
+          aws s3 rm s3://styleguide.channelapi.telia.no --recursive
+          aws s3 sync . s3://styleguide.channelapi.telia.no
