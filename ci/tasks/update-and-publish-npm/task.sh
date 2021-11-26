@@ -1,3 +1,9 @@
+#!/bin/sh
+
+set -ueo pipefail
+
+DIR="${PWD}"
+export GREEN='\033[1;32m'
 export NC='\033[0m'
 export CHECK="√"
 
