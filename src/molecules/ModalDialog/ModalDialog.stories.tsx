@@ -30,7 +30,7 @@ export const Default = () => {
   );
 };
 
-export const DialogWithLink = () => {
+export const DialogWithLinkCancel = () => {
   const [dialogWithLinkActive, setDialogWithLinkActive] = useState(false);
 
   const toggleDialogWithLink = () => {
