@@ -123,6 +123,9 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   if (props.divider) {
     return <div className="telia-dropdown-item telia-dropdown-item__divider" />;
   }
+  if (props.header && props.centered) {
+    return <div className="telia-dropdown-item telia-dropdown-item__header--centered">{content}</div>;
+  }
   if (props.header) {
     return <div className="telia-dropdown-item telia-dropdown-item__header">{content}</div>;
   }
