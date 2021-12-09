@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon';
 
-type Status = 'positive' | 'negative' | 'warning' | 'neutral' | 'communication';
+type Status = 'positive' | 'negative' | 'warning' | 'neutral' | 'communication' | 'info';
 type Type = 'round' | 'square';
 
 export interface LozengeProps {
