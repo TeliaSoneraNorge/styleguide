@@ -3,7 +3,7 @@ on:
   workflow_dispatch:
     inputs:
       updateType:
-        description: "Update type (patch | minor | major)"
+        description: 'Update type (patch | minor | major)'
         required: true
         default: 'patch'
 jobs:
@@ -31,7 +31,12 @@ jobs:
               echo "Invalid update type input. Should be either patch, minor or major."
               exit 1
           fi
-        
+
+      - name: Set node version
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.x
+
       - name: Build for npm
         env:
           UPDATE_TYPE: ${{ github.event.inputs.updateType }}
@@ -56,13 +61,10 @@ jobs:
 
       - name: Bump version
         env:
-          UPDATE_TYPE: "patch"
+          UPDATE_TYPE: 'patch'
         shell: bash
         run: |
           git config --global user.email "github-actions-ci@localhost"
           git config --global user.name "github-actions-ci"
           git commit -a -m ":robot: Updating styleguide version type: ${UPDATE_TYPE}"
           git push
-
-
-        
