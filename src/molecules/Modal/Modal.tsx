@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import { getModalRoot } from './getModalRoot';
 import cn from 'classnames';
@@ -19,6 +19,10 @@ export const Modal: React.FC<Props> = (props) => {
   useClickOutsideListener({ open: props.open, setOpen: props.setOpen, containerRef: container });
   const modalPortal = getModalRoot();
   const size = props.size || 'medium';
+
+  useEffect(() => {
+    document.querySelector('html')?.classList.toggle('scroll-lock');
+  }, [props.open]);
 
   return createPortal(
     <div ref={container} className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}>
