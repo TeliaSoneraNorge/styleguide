@@ -21,12 +21,22 @@ export const Modal: React.FC<Props> = (props) => {
   const size = props.size || 'medium';
 
   useEffect(() => {
+    if (props.open) {
+      container.current?.focus();
+    }
     document.querySelector('html')?.classList.toggle('scroll-lock');
   }, [props.open]);
 
   return createPortal(
-    <div ref={container} className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}>
-      <div className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}>
+    <div
+      ref={container}
+      className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}
+      tabIndex={-1}
+    >
+      <div
+        className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}
+        tabIndex={-1}
+      >
         {props.children}
       </div>
     </div>,
