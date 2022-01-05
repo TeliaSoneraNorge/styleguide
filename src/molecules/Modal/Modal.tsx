@@ -7,6 +7,14 @@ import { useEscapeListener } from './useEscapeListener';
 import { useClickOutsideListener } from './useClickOutsideListener';
 
 interface Props {
+  /**
+   * Gives the modal an accessible name by passing the element id that provides the modal title
+   */
+  ariaLabelledBy: string;
+  /**
+   * Gives the modal an accessible description by passing the element id that provides a longer text description
+   */
+  ariaDescribedBy?: string;
   open: boolean;
   setOpen: (open: boolean) => void;
   size?: 'small' | 'medium' | 'large' | 'fullscreen';
@@ -44,6 +52,10 @@ export const Modal: React.FC<Props> = (props) => {
       <div
         className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}
         tabIndex={-1}
+        role="dialog"
+        aria-modal={true}
+        aria-labelledby={props.ariaLabelledBy}
+        aria-describedby={props.ariaDescribedBy ?? undefined}
       >
         {props.children}
       </div>

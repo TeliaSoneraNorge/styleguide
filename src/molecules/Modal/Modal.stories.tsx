@@ -16,9 +16,9 @@ export const Default = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen1(!open1)} text="Open modal" />
-      <Modal open={open1} setOpen={setOpen1}>
+      <Modal open={open1} setOpen={setOpen1} ariaLabelledBy="modal1-label">
         <ModalHeader>
-          <h2>En modal</h2>
+          <h2 id="modal1-label">En modal</h2>
         </ModalHeader>
         <ModalBody>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, porro? Ipsa ab inventore vel praesentium ea,
@@ -39,9 +39,9 @@ export const WithBorderedHeader = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen2(!open2)} text="Open modal" />
-      <Modal open={open2} setOpen={setOpen2}>
+      <Modal open={open2} setOpen={setOpen2} ariaLabelledBy="modal2-label">
         <ModalHeader border={true}>
-          <h2>With Bordered Header</h2>
+          <h2 id="modal2-label">With Bordered Header</h2>
         </ModalHeader>
         <ModalBody>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, porro? Ipsa ab inventore vel praesentium ea,
@@ -62,9 +62,9 @@ export const WithDividers = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen3(!open3)} text="Open modal" />
-      <Modal open={open3} setOpen={() => setOpen3(!open3)}>
+      <Modal open={open3} setOpen={() => setOpen3(!open3)} ariaLabelledBy="modal3-label">
         <ModalHeader>
-          <h2>With Dividers</h2>
+          <h2 id="modal3-label">With Dividers</h2>
         </ModalHeader>
         <ModalBody>
           Below me is a modal divider with padding
@@ -95,9 +95,9 @@ export const WithFocusElements = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen4(!open4)} text="Open modal" />
-      <Modal open={open4} setOpen={() => setOpen4(!open4)}>
+      <Modal open={open4} setOpen={() => setOpen4(!open4)} ariaLabelledBy="modal4-label">
         <ModalHeader>
-          <h2>A modal with lots of focus elements</h2>
+          <h2 id="modal4-label">A modal with lots of focus elements</h2>
         </ModalHeader>
         <ModalBody>
           Tab throught me to test accessibility
@@ -125,9 +125,9 @@ export const Small = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen5(!open5)} text="Open modal" />
-      <Modal open={open5} setOpen={() => setOpen5(!open5)} size="small">
+      <Modal open={open5} setOpen={() => setOpen5(!open5)} size="small" ariaLabelledBy="modal5-label">
         <ModalHeader>
-          <h2>A small modal</h2>
+          <h2 id="modal5-label">A small modal</h2>
         </ModalHeader>
         <ModalBody>Modal body</ModalBody>
         <ModalFooter>
@@ -143,9 +143,9 @@ export const Large = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen6(!open6)} text="Open modal" />
-      <Modal open={open6} setOpen={() => setOpen6(!open6)} size="large">
+      <Modal open={open6} setOpen={() => setOpen6(!open6)} size="large" ariaLabelledBy="modal6-label">
         <ModalHeader>
-          <h2>A large modal</h2>
+          <h2 id="modal6-label">A large modal</h2>
         </ModalHeader>
         <ModalBody>Modal body</ModalBody>
         <ModalFooter>
@@ -161,9 +161,9 @@ export const Fullscreen = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen7(!open7)} text="Open modal" />
-      <Modal open={open7} setOpen={() => setOpen7(!open7)} size="fullscreen">
+      <Modal open={open7} setOpen={() => setOpen7(!open7)} size="fullscreen" ariaLabelledBy="modal7-label">
         <ModalHeader border={true}>
-          <h2>A Fullscreen modal</h2>
+          <h2 id="modal7-label">A Fullscreen modal</h2>
           <div>description</div>
         </ModalHeader>
         <ModalBody>
@@ -194,9 +194,9 @@ export const OverflownWithScroll = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen8(!open8)} text="Open modal" />
-      <Modal open={open8} setOpen={() => setOpen8(!open8)} size="large">
+      <Modal open={open8} setOpen={() => setOpen8(!open8)} size="large" ariaLabelledBy="modal8-label">
         <ModalHeader>
-          <h2>Overflown modal with scrolling</h2>
+          <h2 id="modal8-label">Overflown modal with scrolling</h2>
         </ModalHeader>
         <ModalBody>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. A alias illum officiis facilis. Provident veniam
@@ -256,9 +256,9 @@ export const NoBodyPadding = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen9(!open9)} text="Open modal" />
-      <Modal open={open9} setOpen={() => setOpen9(!open9)} size="large">
+      <Modal open={open9} setOpen={() => setOpen9(!open9)} size="large" ariaLabelledBy="modal9-label">
         <ModalHeader>
-          <h2>En modal</h2>
+          <h2 id="modal9-label">En modal</h2>
         </ModalHeader>
         <ModalBody noPadding={true}>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Fuga, porro? Ipsa ab inventore vel praesentium ea,
