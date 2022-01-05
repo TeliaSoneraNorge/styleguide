@@ -21,10 +21,14 @@ export const Modal: React.FC<Props> = (props) => {
   const size = props.size || 'medium';
 
   useEffect(() => {
+    let prevFocusedEl: Element | null;
     if (props.open) {
+      prevFocusedEl = document.activeElement;
       container.current?.focus();
     }
     document.querySelector('html')?.classList.toggle('scroll-lock');
+
+    return () => (prevFocusedEl as HTMLElement)?.focus();
   }, [props.open]);
 
   return createPortal(
