@@ -11,6 +11,10 @@ interface Props {
   setOpen: (open: boolean) => void;
   size?: 'small' | 'medium' | 'large' | 'fullscreen';
   className?: string;
+  /**
+   * If you want to return focus to a specific html element on closing the modal. Default is the modal trigger element.
+   */
+  returnFocusTo?: HTMLElement | null;
 }
 export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();
@@ -21,14 +25,14 @@ export const Modal: React.FC<Props> = (props) => {
   const size = props.size || 'medium';
 
   useEffect(() => {
-    let prevFocusedEl: Element | null;
+    let returnFocusTo: Element | null;
     if (props.open) {
-      prevFocusedEl = document.activeElement;
+      returnFocusTo = props.returnFocusTo ?? document.activeElement;
       container.current?.focus();
     }
     document.querySelector('html')?.classList.toggle('scroll-lock');
 
-    return () => (prevFocusedEl as HTMLElement)?.focus();
+    return () => (returnFocusTo as HTMLElement)?.focus();
   }, [props.open]);
 
   return createPortal(
