@@ -34,16 +34,10 @@ export const StepFlowHeader = (props: Props) => {
   return (
     <div className="telia-step-flow__header">
       <div className={cn('telia-step-flow__header__top', { 'telia-step-flow__header__top--stuck': stickyHeader })}>
-        <Button
-          kind="secondary-text"
-          icon="close"
-          label={breakpointSm ? props.labels?.cancel ?? 'Avbryt' : ''}
-          onClick={props.onCancel}
-        />
         {stickyHeader && (
           <div className="telia-step-flow__header__top--stuck__content">
             <div className="self-center font-medium">{props.title}</div>
-            {props.rightContent?.(stickyHeader)}
+            <Button kind="secondary-text" icon="close" onClick={props.onCancel} />
           </div>
         )}
       </div>
@@ -53,6 +47,7 @@ export const StepFlowHeader = (props: Props) => {
           <div className="telia-step-flow__header__content__description">{props.description}</div>
         </div>
         {props.rightContent?.(stickyHeader)}
+        <Button kind="secondary" icon="close" onClick={props.onCancel} />
       </div>
     </div>
   );
