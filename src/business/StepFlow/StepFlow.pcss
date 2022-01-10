@@ -26,16 +26,24 @@
       }
     }
     &__content {
-      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
 
       h1 {
         margin: 0.25rem 0;
         font-size: 2rem;
         font-weight: 500;
+      }
+      &__main {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+
+        &__right {
+          display: flex;
+          align-items: center;
+        }
       }
       &__description {
         color: var(--grey-700);

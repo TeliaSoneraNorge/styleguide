@@ -42,12 +42,15 @@ export const StepFlowHeader = (props: Props) => {
         )}
       </div>
       <div className="telia-step-flow__header__content">
-        <div>
+        <div className="telia-step-flow__header__content__main">
           <h1 ref={headerRef}>{props.title}</h1>
-          <div className="telia-step-flow__header__content__description">{props.description}</div>
+          <div className="telia-step-flow__header__content__main__right">
+            {breakpointSm && props.rightContent?.(stickyHeader)}
+            <Button kind="secondary" icon="close" onClick={props.onCancel} />
+          </div>
         </div>
-        {props.rightContent?.(stickyHeader)}
-        <Button kind="secondary" icon="close" onClick={props.onCancel} />
+        <div>{!breakpointSm && props.rightContent?.(stickyHeader)}</div>
+        <div className="telia-step-flow__header__content__description">{props.description}</div>
       </div>
     </div>
   );
