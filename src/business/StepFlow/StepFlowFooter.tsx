@@ -19,7 +19,6 @@ export const StepFlowFooter = (props: Props) => {
         <Button
           kind="secondary"
           label={props.labels?.back ?? 'Tilbake'}
-          icon="arrow-large-left"
           onClick={props.previousStep}
           disabled={props.previousDisabled}
           size="compact"
@@ -29,8 +28,6 @@ export const StepFlowFooter = (props: Props) => {
         <Button
           kind="primary"
           label={props.isLastStep ? props.labels?.submitText ?? 'Send' : props.labels?.next ?? 'Neste'}
-          icon={props.isLastStep ? 'check-mark' : 'arrow-large-right'}
-          iconRight
           onClick={props.nextStep}
           disabled={props.nextDisabled}
           size="compact"
