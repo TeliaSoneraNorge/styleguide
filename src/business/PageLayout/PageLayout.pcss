@@ -1,37 +1,53 @@
 .telia-page-layout {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  background-color: var(--white);
-}
-
-.telia-page-layout__header {
-  width: 640px;
-  padding: 3rem 0;
-  margin: 0 auto;
-}
-
-.telia-page-layout__content {
+  min-height: 100vh;
   width: 100%;
-  margin: 0 auto;
-  flex: 1;
   display: grid;
   grid-template-columns: 1fr 640px 1fr;
+  grid-template-rows: auto 1fr auto;
+  background-color: var(--white);
   gap: 1rem;
 }
 
-.telia-page-layout__content__main {
+.telia-page-layout__header {
+  grid-row-start: 1;
+  grid-column-start: 2;
+  padding: 3rem 0;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.telia-page-layout__content {
+  grid-row-start: 2;
+  grid-column-start: 2;
+  width: 100%;
+}
+
+.telia-page-layout__left {
+  grid-row-start: 2;
+  grid-column-start: 1;
+  width: 100%;
+}
+
+.telia-page-layout__right {
+  grid-row-start: 2;
+  grid-column-start: 3;
+  width: 100%;
+}
+
+.telia-page-layout__body {
   display: flex;
   flex: 1;
   flex-direction: column;
-  grid-column-start: 2;
-}
-.telia-page-layout__body {
-  flex: 1;
+  width: 100%;
 }
 
 .telia-page-layout__nav-bar + .telia-page-layout__header {
   padding-top: 0rem;
+}
+
+.telia-page-layout__footer {
+  grid-row-start: 3;
+  grid-column-start: 2;
 }
 
 .telia-page-layout__footer--sticky {
@@ -40,7 +56,6 @@
   grid-column-end: 4;
   left: 0;
   bottom: 0;
-  width: 100%;
   background-color: var(--white);
   padding-top: 1.25rem;
   padding-bottom: 1.25rem;
@@ -54,12 +69,10 @@
 }
 
 @media (max-width: 840px) {
-  .telia-page-layout__content {
-    grid-template-columns: 1fr;
+  .telia-page-layout {
+    display: flex;
+    flex-direction: column;
     width: 90%;
-    &__main {
-      grid-column-start: 1;
-    }
   }
   .telia-page-layout__header {
     width: 90%;
