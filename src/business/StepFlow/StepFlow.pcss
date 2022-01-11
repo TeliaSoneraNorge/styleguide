@@ -105,14 +105,17 @@
   width: 70%;
   margin: 0;
 }
-@media only screen and (max-width: 600px) {
+
+@media (max-width: 840px) {
   .telia-step-flow__header {
-    &-content {
-      padding-top: 60px;
-      text-align: center;
+    &__top {
+      left: calc(100vw-5rem);
+      width: fit-content;
     }
   }
+}
 
+@media only screen and (max-width: 600px) {
   .telia-step-flow__main {
     width: 100%;
   }
