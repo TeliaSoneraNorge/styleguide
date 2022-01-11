@@ -100,7 +100,7 @@ export const StepFlow = (props: Props) => {
           </>
         ),
       }}
-      right={{ component: renderAdditionalContentRight && props.additionalContent }}
+      right={{ sticky: true, component: renderAdditionalContentRight && props.additionalContent }}
       footer={{
         sticky: true,
         component: (

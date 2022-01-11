@@ -7,7 +7,7 @@ type Props = {
   header?: { className?: string; component: React.ReactNode };
   body?: { className?: string; component: React.ReactNode };
   left?: { className?: string; component: React.ReactNode };
-  right?: { className?: string; component: React.ReactNode };
+  right?: { className?: string; component: React.ReactNode; sticky?: boolean };
   footer?: { className?: string; component: React.ReactNode; sticky?: boolean };
 };
 
@@ -25,7 +25,15 @@ export const PageLayout = (props: Props) => {
         <div className={cn('telia-page-layout__body', props.body?.className)}>{props.body?.component}</div>
       </div>
       {hasSides && (
-        <div className={cn('telia-page-layout__right', props.right?.className)}>{props.right?.component}</div>
+        <div
+          className={cn(
+            'telia-page-layout__right',
+            { 'telia-page-layout__right--sticky': props.right?.sticky },
+            props.right?.className
+          )}
+        >
+          {props.right?.component}
+        </div>
       )}
       {!props.footer?.sticky && (
         <div className={cn('telia-page-layout__footer', props.footer?.className)}>{props.footer?.component}</div>
