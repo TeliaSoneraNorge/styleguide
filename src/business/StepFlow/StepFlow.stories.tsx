@@ -24,7 +24,6 @@ export const Default = () => {
 
   return (
     <div>
-      <Button label="Hello?" />
       <StepFlow
         title="Step flow"
         description="Commonly used for large forms and orders"
@@ -54,7 +53,6 @@ export const WithAdditionalContent = () => {
 
   return (
     <div>
-      <Button label="Hello?" />
       <StepFlow
         title="Step flow"
         description="Commonly used for large forms and orders"
@@ -244,7 +242,6 @@ export const Grey = () => {
 
   return (
     <div>
-      <Button label="Hello?" />
       <StepFlow
         title="Step flow"
         color="grey"
