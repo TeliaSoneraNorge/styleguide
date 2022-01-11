@@ -108,9 +108,19 @@
 
 @media (max-width: 840px) {
   .telia-step-flow__header {
+    margin-top: 4rem;
     &__top {
-      left: calc(100vw-5rem);
-      width: fit-content;
+      background-color: var(--white);
+      position: fixed;
+      width: 100vw;
+      left: 0;
+      padding: 0.625rem 1rem;
+      display: flex;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+      .telia-button {
+        margin-left: auto;
+      }
     }
   }
 }
