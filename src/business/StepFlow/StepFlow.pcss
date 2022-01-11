@@ -2,28 +2,13 @@
   background-color: var(--white);
   &__header {
     &__top {
-      background-color: var(--white);
       position: fixed;
+      left: calc(((100vw - 640px) / 2) + 640px + 1rem);
+      top: 0;
       display: flex;
       align-items: center;
-      height: 60px;
-      left: 0;
-      top: 0;
-      right: 0;
       z-index: 10;
-
-      padding: 0 10%;
-      margin: 0 auto;
-      transition: all 300ms ease;
-      &--stuck {
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        &__content {
-          display: flex;
-          flex: auto;
-          justify-content: space-between;
-          align-items: center;
-        }
-      }
+      padding: 3.5rem 0;
     }
     &__content {
       display: flex;
