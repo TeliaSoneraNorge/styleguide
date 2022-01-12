@@ -26,7 +26,6 @@ addons.setConfig({
     //   inputBorder: 'silver',
     //   inputTextColor: 'black',
     //   inputBorderRadius: 4,
-    isFullscreen: true,
     brandTitle: 'Telia Styleguide',
     brandUrl: 'https://telia.io',
     brandImage: 'https://www.telia.no/globalassets/system/logo-desktop/logo_desktop.svg',
