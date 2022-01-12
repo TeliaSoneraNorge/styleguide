@@ -114,7 +114,7 @@ export const StickyFooter = () => {
           component: <div style={{ border: '1px solid grey', borderRadius: '8px', padding: '1rem' }}>Right</div>,
         }}
         footer={{
-          sticky: true,
+          fixed: true,
           component: (
             <div>
               <Button label="klick" />

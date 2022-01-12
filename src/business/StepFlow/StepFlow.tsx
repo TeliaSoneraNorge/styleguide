@@ -94,9 +94,9 @@ export const StepFlow = (props: Props) => {
           </>
         ),
       }}
-      right={{ sticky: true, component: renderAdditionalContentRight && props.additionalContent }}
+      right={{ fixed: true, component: renderAdditionalContentRight && props.additionalContent }}
       footer={{
-        sticky: true,
+        fixed: true,
         component: (
           <StepFlowFooter
             isLastStep={isLastStep}

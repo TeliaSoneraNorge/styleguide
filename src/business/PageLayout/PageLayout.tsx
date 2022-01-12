@@ -7,8 +7,8 @@ type Props = {
   header?: { className?: string; component: React.ReactNode };
   body?: { className?: string; component: React.ReactNode };
   left?: { className?: string; component: React.ReactNode };
-  right?: { className?: string; component: React.ReactNode; sticky?: boolean };
-  footer?: { className?: string; component: React.ReactNode; sticky?: boolean };
+  right?: { className?: string; component: React.ReactNode; fixed?: boolean };
+  footer?: { className?: string; component: React.ReactNode; fixed?: boolean };
 };
 
 export const PageLayout = (props: Props) => {
@@ -16,7 +16,7 @@ export const PageLayout = (props: Props) => {
 
   return (
     <div
-      className={cn('telia-page-layout', { 'telia-page-layout--sticky-footer': props.footer?.sticky }, props.className)}
+      className={cn('telia-page-layout', { 'telia-page-layout--fixed-footer': props.footer?.fixed }, props.className)}
     >
       {props.navBar && (
         <div className={cn('telia-page-layout__nav-bar', props.navBar.className)}>{props.navBar.component}</div>
@@ -30,7 +30,7 @@ export const PageLayout = (props: Props) => {
 
         <div className={cn('telia-page-layout__body', props.body?.className)}>
           {props.body?.component}
-          {!props.footer?.sticky && (
+          {!props.footer?.fixed && (
             <div className={cn('telia-page-layout__footer', props.footer?.className)}>{props.footer?.component}</div>
           )}
         </div>
@@ -39,7 +39,7 @@ export const PageLayout = (props: Props) => {
           <div
             className={cn(
               'telia-page-layout__right',
-              { 'telia-page-layout__right--sticky': props.right?.sticky },
+              { 'telia-page-layout__right--fixed': props.right?.fixed },
               props.right?.className
             )}
           >
@@ -47,15 +47,15 @@ export const PageLayout = (props: Props) => {
           </div>
         )}
       </div>
-      {props.footer?.sticky && (
+      {props.footer?.fixed && (
         <div
           className={cn(
             'telia-page-layout__footer',
-            { 'telia-page-layout__footer--sticky': props.footer.sticky },
+            { 'telia-page-layout__footer--fixed': props.footer.fixed },
             props.footer?.className
           )}
         >
-          <div className={cn({ 'telia-page-layout__footer__content--sticky': props.footer.sticky })}>
+          <div className={cn({ 'telia-page-layout__footer__content--fixed': props.footer.fixed })}>
             {props.footer?.component}
           </div>
         </div>
