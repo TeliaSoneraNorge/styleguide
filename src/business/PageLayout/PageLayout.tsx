@@ -15,7 +15,9 @@ export const PageLayout = (props: Props) => {
   const hasSides = props.left || props.right;
 
   return (
-    <div className={cn('telia-page-layout', props.className)}>
+    <div
+      className={cn('telia-page-layout', { 'telia-page-layout--sticky-footer': props.footer?.sticky }, props.className)}
+    >
       {props.navBar && (
         <div className={cn('telia-page-layout__nav-bar', props.navBar.className)}>{props.navBar.component}</div>
       )}
@@ -26,7 +28,13 @@ export const PageLayout = (props: Props) => {
           <div className={cn('telia-page-layout__left', props.left?.className)}>{props.left?.component}</div>
         )}
 
-        <div className={cn('telia-page-layout__body', props.body?.className)}>{props.body?.component}</div>
+        <div className={cn('telia-page-layout__body', props.body?.className)}>
+          {props.body?.component}
+          {!props.footer?.sticky && (
+            <div className={cn('telia-page-layout__footer', props.footer?.className)}>{props.footer?.component}</div>
+          )}
+        </div>
+
         {hasSides && (
           <div
             className={cn(
@@ -37,9 +45,6 @@ export const PageLayout = (props: Props) => {
           >
             {props.right?.component}
           </div>
-        )}
-        {!props.footer?.sticky && (
-          <div className={cn('telia-page-layout__footer', props.footer?.className)}>{props.footer?.component}</div>
         )}
       </div>
       {props.footer?.sticky && (

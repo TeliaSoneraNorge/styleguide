@@ -12,6 +12,7 @@ export default {
   component: StepFlow,
   title: 'Business/StepFlow',
   subComponents: { StepFlowStep },
+  parameters: { layout: 'fullscreen' },
 };
 
 export const Default = () => {

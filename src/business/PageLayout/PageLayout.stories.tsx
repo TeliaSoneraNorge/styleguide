@@ -6,6 +6,7 @@ export default {
   component: PageLayout,
   title: 'Business/PageLayout',
   subComponents: { PageLayout },
+  parameters: { layout: 'fullscreen' },
 };
 
 export const Default = () => {
