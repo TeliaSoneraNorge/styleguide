@@ -24,11 +24,6 @@ type Props = {
    * Enables use of different languages
    */
   labels?: Labels;
-  /**
-   * Displayed in the StepFlowHeader.
-   * Should only be  used for a small component or some additional text
-   */
-  headerContent?: (stuck: boolean) => React.ReactNode;
 
   /**
    * Children will be each form step.
@@ -83,7 +78,6 @@ export const StepFlow = (props: Props) => {
             title={props.title}
             description={props.description}
             onCancel={props.onCancel}
-            rightContent={props.headerContent}
           />
         ),
       }}

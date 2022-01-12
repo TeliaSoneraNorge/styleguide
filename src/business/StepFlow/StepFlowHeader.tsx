@@ -9,8 +9,6 @@ type Props = {
   title: React.ReactNode;
   description: React.ReactNode;
   onCancel: () => void;
-  rightContent?: (stuck: boolean) => React.ReactNode;
-
   labels?: HeaderLabels;
 };
 
@@ -40,11 +38,7 @@ export const StepFlowHeader = (props: Props) => {
       <div className="telia-step-flow__header__content">
         <div className="telia-step-flow__header__content__main">
           <h1 ref={headerRef}>{props.title}</h1>
-          <div className="telia-step-flow__header__content__main__right">
-            {breakpointSm && props.rightContent?.(stickyHeader)}
-          </div>
         </div>
-        <div>{!breakpointSm && props.rightContent?.(stickyHeader)}</div>
         <div className="telia-step-flow__header__content__description">{props.description}</div>
       </div>
     </div>
