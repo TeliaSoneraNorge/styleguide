@@ -8,7 +8,7 @@ import throttle from 'lodash/throttle';
 type Props = {
   title: React.ReactNode;
   description: React.ReactNode;
-  onCancel: () => void;
+  onCancel?: () => void;
   labels?: HeaderLabels;
 };
 
@@ -31,10 +31,13 @@ export const StepFlowHeader = (props: Props) => {
 
   return (
     <div className="telia-step-flow__header">
-      <div className={cn('telia-step-flow__header__top')}>
-        {stickyHeader && !breakpointSm && <div className="self-center font-medium">{props.title}</div>}
-        <Button kind="secondary" icon="close" onClick={props.onCancel} size={breakpointSm ? 'default' : 'compact'} />
-      </div>
+      {props.onCancel && (
+        <div className={cn('telia-step-flow__header__top')}>
+          {stickyHeader && !breakpointSm && <div className="self-center font-medium">{props.title}</div>}
+
+          <Button kind="secondary" icon="close" onClick={props.onCancel} size={breakpointSm ? 'default' : 'compact'} />
+        </div>
+      )}
       <div className="telia-step-flow__header__content">
         <div className="telia-step-flow__header__content__main">
           <h1 ref={headerRef}>{props.title}</h1>

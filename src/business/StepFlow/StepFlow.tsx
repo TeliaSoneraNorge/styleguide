@@ -18,7 +18,7 @@ type Props = {
    */
   description: React.ReactNode;
   onSubmit: () => void;
-  onCancel: () => void;
+  onCancel?: () => void;
   /**
    * Pass inn custom labels for the different actions/buttons in the step flow.
    * Enables use of different languages
@@ -36,6 +36,11 @@ type Props = {
    * and at the bottom of each step on small screens.
    */
   additionalContent?: React.ReactNode;
+
+  /**
+   * Displayed on top,
+   */
+  navBar?: React.ReactNode;
 
   /**
    * @default 'white'
@@ -70,7 +75,9 @@ export const StepFlow = (props: Props) => {
     <PageLayout
       className={cn('telia-step-flow', {
         'telia-step-flow--grey': props.color === 'grey',
+        'telia-step-flow--with-navbar': props.navBar,
       })}
+      navBar={{ component: props.navBar }}
       header={{
         component: (
           <StepFlowHeader
