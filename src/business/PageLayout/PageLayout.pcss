@@ -1,52 +1,105 @@
 .telia-page-layout {
-  height: 100%;
   display: flex;
   flex-direction: column;
+  width: 100%;
+  height: 95vh;
   background-color: var(--white);
+  padding: 0 0.5rem;
+
+  &--fixed-footer {
+    height: 100%;
+  }
 }
 
 .telia-page-layout__header {
-  width: 80%;
   padding: 3rem 0;
   margin: 0 auto;
+  width: 640px;
 }
 
 .telia-page-layout__content {
-  width: 80%;
-  margin: 0 auto;
-  flex: 1;
   display: grid;
+  max-width: 1280px;
+  height: 100%;
+  grid-template-columns: 1fr 640px 1fr;
+  gap: 2.5rem;
+  align-self: center;
+  padding-bottom: 5rem;
 }
 
-.telia-page-layout__content--grid {
-  grid-template-columns: 1fr 5fr 1fr;
-  gap: 1rem;
+.telia-page-layout__left {
+  grid-column-start: 1;
+  width: 100%;
 }
 
-.telia-page-layout__content__main {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
+.telia-page-layout__right {
+  grid-column-start: 3;
+  width: 100%;
+
+  &--fixed {
+    position: fixed;
+    width: calc(((1280px - 640px) / 2) - 3rem);
+    left: calc(((100vw - 640px) / 2) + 640px + 1rem);
+    top: 10rem;
+  }
 }
+
 .telia-page-layout__body {
-  flex: 1;
+  grid-column-start: 2;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  justify-content: space-between;
 }
 
 .telia-page-layout__nav-bar + .telia-page-layout__header {
   padding-top: 0rem;
 }
 
+.telia-page-layout__footer {
+  width: 640px;
+
+  &--fixed {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    background-color: var(--white);
+    padding: 1.25rem 0;
+    margin-top: 0.5rem;
+    border-top: 1px solid var(--grey-100);
+  }
+}
+
+.telia-page-layout__footer__content--fixed {
+  width: 650px;
+  margin: auto;
+}
+
 @media (max-width: 840px) {
   .telia-page-layout__content {
-    width: 90%;
-  }
-  .telia-page-layout__header {
-    width: 90%;
-    padding: 1rem 0;
-  }
-
-  .telia-page-layout__content--grid {
     display: flex;
     flex-direction: column;
+    width: 100%;
+    padding: 0 1rem 5rem 1rem;
+    gap: 1rem;
+  }
+  .telia-page-layout__header {
+    width: 100%;
+    padding: 0 1rem 1rem 1rem;
+  }
+
+  .telia-page-layout__footer {
+    width: 100vw;
+    margin-top: 2rem;
+
+    &--fixed {
+      padding: 0.75rem 0;
+    }
+  }
+
+  .telia-page-layout__footer__content--fixed {
+    width: 100vw;
+    padding: 0 1rem;
   }
 }

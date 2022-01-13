@@ -24,11 +24,6 @@ type Props = {
    * Enables use of different languages
    */
   labels?: Labels;
-  /**
-   * Displayed in the StepFlowHeader.
-   * Should only be  used for a small component or some additional text
-   */
-  headerContent?: (stuck: boolean) => React.ReactNode;
 
   /**
    * Children will be each form step.
@@ -43,7 +38,7 @@ type Props = {
   additionalContent?: React.ReactNode;
 
   /**
-   * @default 'grey'
+   * @default 'white'
    */
   color?: 'white' | 'grey';
 };
@@ -74,7 +69,7 @@ export const StepFlow = (props: Props) => {
   return (
     <PageLayout
       className={cn('telia-step-flow', {
-        'telia-step-flow--white': props.color === 'white',
+        'telia-step-flow--grey': props.color === 'grey',
       })}
       header={{
         component: (
@@ -83,7 +78,6 @@ export const StepFlow = (props: Props) => {
             title={props.title}
             description={props.description}
             onCancel={props.onCancel}
-            rightContent={props.headerContent}
           />
         ),
       }}
@@ -100,8 +94,9 @@ export const StepFlow = (props: Props) => {
           </>
         ),
       }}
-      right={{ component: renderAdditionalContentRight && props.additionalContent }}
+      right={{ fixed: true, component: renderAdditionalContentRight && props.additionalContent }}
       footer={{
+        fixed: true,
         component: (
           <StepFlowFooter
             isLastStep={isLastStep}

@@ -1,37 +1,29 @@
 .telia-step-flow {
-  background-color: var(--grey-100);
+  background-color: var(--white);
   &__header {
     &__top {
-      background-color: var(--grey-100);
       position: fixed;
+      left: calc(((100vw - 640px) / 2) + 640px + 1rem);
+      top: 0;
       display: flex;
       align-items: center;
-      height: 60px;
-      left: 0;
-      top: 0;
-      right: 0;
       z-index: 10;
-
-      padding: 0 10%;
-      margin: 0 auto;
-      transition: all 300ms ease;
-      &--stuck {
-        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-        &__content {
-          display: flex;
-          flex: auto;
-        }
-      }
+      padding: 3.5rem 0;
     }
     &__content {
-      margin: 0 auto;
       display: flex;
-      flex-wrap: wrap;
+      flex-direction: column;
 
       h1 {
         margin: 0.25rem 0;
         font-size: 2rem;
         font-weight: 500;
+      }
+      &__main {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
       }
       &__description {
         color: var(--grey-700);
@@ -95,9 +87,6 @@
   &__footer {
     display: flex;
     justify-content: space-between;
-    margin: 0 auto;
-    margin-top: 5rem;
-    margin-bottom: 1.5rem;
   }
 
   &--right {
@@ -110,22 +99,35 @@
   width: 70%;
   margin: 0;
 }
-@media only screen and (max-width: 600px) {
+
+@media (max-width: 840px) {
   .telia-step-flow__header {
-    &-content {
-      padding-top: 60px;
-      text-align: center;
+    margin-top: 4rem;
+    &__top {
+      background-color: var(--white);
+      position: fixed;
+      width: 100vw;
+      left: 0;
+      padding: 0.625rem 1rem;
+      display: flex;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+      .telia-button {
+        margin-left: auto;
+      }
     }
   }
+}
 
+@media only screen and (max-width: 600px) {
   .telia-step-flow__main {
     width: 100%;
   }
 }
 
-.telia-step-flow--white {
-  background-color: var(--white);
+.telia-step-flow--grey {
+  background-color: var(--grey-100);
   .telia-step-flow__header__top {
-    background-color: var(--white);
+    background-color: var(--grey-100);
   }
 }

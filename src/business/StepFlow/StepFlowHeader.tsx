@@ -9,8 +9,6 @@ type Props = {
   title: React.ReactNode;
   description: React.ReactNode;
   onCancel: () => void;
-  rightContent?: (stuck: boolean) => React.ReactNode;
-
   labels?: HeaderLabels;
 };
 
@@ -33,26 +31,15 @@ export const StepFlowHeader = (props: Props) => {
 
   return (
     <div className="telia-step-flow__header">
-      <div className={cn('telia-step-flow__header__top', { 'telia-step-flow__header__top--stuck': stickyHeader })}>
-        <Button
-          kind="secondary-text"
-          icon="close"
-          label={breakpointSm ? props.labels?.cancel ?? 'Avbryt' : ''}
-          onClick={props.onCancel}
-        />
-        {stickyHeader && (
-          <div className="telia-step-flow__header__top--stuck__content">
-            <div className="self-center font-medium">{props.title}</div>
-            {props.rightContent?.(stickyHeader)}
-          </div>
-        )}
+      <div className={cn('telia-step-flow__header__top')}>
+        {stickyHeader && !breakpointSm && <div className="self-center font-medium">{props.title}</div>}
+        <Button kind="secondary" icon="close" onClick={props.onCancel} size={breakpointSm ? 'default' : 'compact'} />
       </div>
       <div className="telia-step-flow__header__content">
-        <div>
+        <div className="telia-step-flow__header__content__main">
           <h1 ref={headerRef}>{props.title}</h1>
-          <div className="telia-step-flow__header__content__description">{props.description}</div>
         </div>
-        {props.rightContent?.(stickyHeader)}
+        <div className="telia-step-flow__header__content__description">{props.description}</div>
       </div>
     </div>
   );
