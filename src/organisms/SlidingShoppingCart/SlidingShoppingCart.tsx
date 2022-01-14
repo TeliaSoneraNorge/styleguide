@@ -14,6 +14,8 @@ export interface SlidingShoppingCartProps {
   totalPriceFirstInvoice: number;
   totalPriceMonthly: number;
   totalPriceUpfront: number;
+  totalMVA: number;
+  totalPriceMVA: number;
   formatPrice: (price: string | number) => string;
   hasPaid?: boolean;
   disclaimers?: any;
@@ -37,6 +39,8 @@ const SlidingShoppingCart = ({
   totalPriceFirstInvoice,
   totalPriceMonthly,
   totalPriceUpfront,
+  totalMVA,
+  totalPriceMVA,
   formatPrice,
   hasPaid,
   disclaimers,
@@ -73,6 +77,8 @@ const SlidingShoppingCart = ({
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceMonthly={totalPriceMonthly}
         totalPriceUpfront={totalPriceUpfront}
+        totalPriceMVA={totalPriceMVA}
+        totalMVA={totalMVA}
         formatPrice={formatPrice}
         hasPaid={hasPaid}
         disclaimers={disclaimers}
