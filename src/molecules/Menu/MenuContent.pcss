@@ -224,6 +224,14 @@
     letter-spacing: 0;
     box-sizing: content-box;
 
+    &__mobile {
+      width: var(--menu-button-width-small);
+
+      @media all and (min-width: rem(600)) {
+        width: var(--menu-button-width);
+      }
+    }
+
     &__desktop {
       display: none;
     }

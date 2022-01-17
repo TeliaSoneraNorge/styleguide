@@ -1,4 +1,5 @@
 import React from 'react';
+import { ShoppingcartIcon } from '../../atoms/Icon';
 import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 
 interface MenuCartProps {
@@ -14,12 +15,11 @@ const MenuCart = ({ onClick = (_event) => undefined, numberOfItemsInCart }: Menu
   return (
     <button className="menu-cart__button" onClick={handleClick} aria-label="Kasse">
       <div className="menu-cart__icon-container">
-        <SvgIcon className="menu-cart__icon" iconName="ico_buy" color="black" />
+        <ShoppingcartIcon />
         <span className="menu-cart__item-count">
           <span className="menu-cart__item-count-text">{numberOfItemsInCart}</span>
         </span>
       </div>
-      <span className="menu-cart__button--label">Kasse</span>
     </button>
   );
 };

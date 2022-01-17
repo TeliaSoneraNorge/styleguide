@@ -6,7 +6,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 import MenuDropdown from './MenuDropdown';
 import MenuCart from './MenuCart';
-import {UserIcon, MenuIcon} from '../../atoms/Icon'
+import { UserIcon, MenuIcon } from '../../atoms/Icon';
 
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
   <button
@@ -51,32 +51,44 @@ const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isAc
   </li>
 );
 
-
-
 const LoginButton = ({ loginUrl, LinkTemplate }) => (
   <>
-  <LinkTemplate className="menu__login-button menu__login-button__mobile" url={loginUrl}>
-    <UserIcon />
-  </LinkTemplate>
-  <LinkTemplate className="menu__login-button menu__login-button__desktop button button--small" url={loginUrl}>
-  <UserIcon style={{height: '1rem'}} />
-  logg inn
-</LinkTemplate>
-</>
+    <LinkTemplate className="menu__login-button menu__login-button__mobile" url={loginUrl}>
+      <UserIcon />
+    </LinkTemplate>
+    <LinkTemplate className="menu__login-button menu__login-button__desktop button button--small" url={loginUrl}>
+      <UserIcon style={{ height: '1rem' }} />
+      logg inn
+    </LinkTemplate>
+  </>
 );
 
 const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
-  <LinkTemplate className="menu__mypage-button button button--small" url={myPageUrl}>
-    <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
-    min side
-  </LinkTemplate>
+  <>
+    <LinkTemplate className="menu__mypage-button menu__mypage-button__mobile" url={myPageUrl}>
+      <UserIcon />
+    </LinkTemplate>
+    <LinkTemplate className="menu__mypage-button menu__mypage-button__desktop button button--small" url={myPageUrl}>
+      <UserIcon style={{ height: '1rem' }} />
+      min side
+    </LinkTemplate>
+  </>
 );
 
 const MyAppsDropdown = ({ onClick }) => (
-  <button className="menu__mypage-button button button--small" onClick={onClick} style={{ marginRight: 0 }}>
-    <SvgIcon className="menu__mypage-button-icon" iconName="ico_login" color="none" />
-    mine sider
-  </button>
+  <>
+    <button className="menu__mypage-button menu__mypage-button__mobile" onClick={onClick} style={{ marginRight: 0 }}>
+      <UserIcon />
+    </button>
+    <button
+      className="menu__mypage-button menu__mypage-button__desktop button button--small"
+      onClick={onClick}
+      style={{ marginRight: 0 }}
+    >
+      <UserIcon style={{ height: '1rem' }} />
+      mine sider
+    </button>
+  </>
 );
 
 const MobileMenuButton = ({ onMenuToggle }) => (
@@ -148,7 +160,6 @@ const MenuContent = ({
         </ul>
       )}
       <div className="menu__content-right">
-        {shouldShowCartIcon ? <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} /> : null}
         {onSearchSubmit && (
           <MenuSearch
             onSubmit={onSearchSubmit}
@@ -164,6 +175,7 @@ const MenuContent = ({
         {myPageUrl && isLoggedIn && dropdownMenu && (
           <MyAppsDropdown LinkTemplate={LinkTemplate} onClick={toggleMenuDropdownVisibilty} />
         )}
+        {shouldShowCartIcon ? <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} /> : null}
         <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
       </div>
 
