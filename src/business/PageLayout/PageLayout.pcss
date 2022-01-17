@@ -2,21 +2,18 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 95vh;
+  min-height: 100vh;
   background-color: var(--white);
-
-  &--fixed-footer {
-    height: 100%;
-  }
 }
 
 .telia-page-layout__header {
   padding: 3rem 0;
-  margin: 0 auto;
+  margin: 3rem auto 0 auto;
   width: 640px;
 }
 
 .telia-page-layout__content {
+  flex: 1;
   display: grid;
   max-width: 1280px;
   height: 100%;
@@ -86,6 +83,7 @@
   .telia-page-layout__header {
     width: 100%;
     padding: 0 1rem 1rem 1rem;
+    margin: 0 auto;
   }
 
   .telia-page-layout__footer {
