@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import TextBoxWithLabel from '../../molecules/TextBoxWithLabel';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import {SearchIcon} from '../../atoms/Icon'
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 
 const KEY_ESC = 27;
@@ -74,9 +74,8 @@ export default function MenuSearch({ onSubmit, searchLabel, searchButtonLabel, s
         onClick={() => setFocused(true)}
         aria-label={searchButtonLabel ? searchButtonLabel : 'Søk'}
       >
-        <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
+        <SearchIcon />
         <div className="menu__search--label" aria-label={searchButtonLabel ? searchButtonLabel : 'Søk'}>
-          {searchButtonLabel ? searchButtonLabel : 'Søk'}
         </div>
       </button>
 

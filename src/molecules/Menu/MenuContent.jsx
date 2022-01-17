@@ -6,6 +6,7 @@ import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
 import MenuSearch from './MenuSearch';
 import MenuDropdown from './MenuDropdown';
 import MenuCart from './MenuCart';
+import {UserIcon, MenuIcon} from '../../atoms/Icon'
 
 const ItemWithSubmenu = ({ onToggleSubmenu, isOpen, text, subLinks, LinkTemplate, isActive }) => (
   <button
@@ -50,11 +51,18 @@ const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isAc
   </li>
 );
 
+
+
 const LoginButton = ({ loginUrl, LinkTemplate }) => (
-  <LinkTemplate className="menu__login-button button button--small" url={loginUrl}>
-    <SvgIcon className="menu__login-button-icon" iconName="ico_login" color="none" />
-    logg inn
+  <>
+  <LinkTemplate className="menu__login-button menu__login-button__mobile" url={loginUrl}>
+    <UserIcon />
   </LinkTemplate>
+  <LinkTemplate className="menu__login-button menu__login-button__desktop button button--small" url={loginUrl}>
+  <UserIcon style={{height: '1rem'}} />
+  logg inn
+</LinkTemplate>
+</>
 );
 
 const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
@@ -73,8 +81,7 @@ const MyAppsDropdown = ({ onClick }) => (
 
 const MobileMenuButton = ({ onMenuToggle }) => (
   <button className="menu__mobile-button" onClick={onMenuToggle} aria-label="Meny">
-    <SvgIcon className="menu__mobile-button-icon" iconName="ico_menu_mobile" color="black" />
-    <span className="menu__mobile-button-text">Meny</span>
+    <MenuIcon />
   </button>
 );
 
