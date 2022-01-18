@@ -36,7 +36,7 @@ const ShoppingCartTableFooterRow = ({ label, price, priceEnding, type, id, class
 
 const ShoppingCartTableFooter = ({
   totalVAT,
-  totalPriceVAT,
+  totalPriceWithoutVAT,
   totalPriceFirstInvoice,
   totalPriceMonthly,
   totalPriceUpfront,
@@ -59,11 +59,11 @@ const ShoppingCartTableFooter = ({
         type="DISCOUNT"
       />
     )}
-    {!!totalPriceVAT && (
+    {!!totalPriceWithoutVAT && (
       <ShoppingCartTableFooterRow
         className="shopping-cart__id--upfront"
         label="Sum"
-        price={formatPrice(totalPriceVAT)}
+        price={formatPrice(totalPriceWithoutVAT)}
       />
     )}
     {!!totalVAT && (
