@@ -168,6 +168,8 @@ const MenuContent = ({
             searchButtonAbortText={searchButtonAbortText}
           />
         )}
+        {shouldShowCartIcon ? <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} /> : null}
+
         {loginUrl && !isLoggedIn && <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />}
         {myPageUrl && isLoggedIn && !dropdownMenu && (
           <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} onClick={toggleMenuDropdownVisibilty} />
@@ -175,7 +177,6 @@ const MenuContent = ({
         {myPageUrl && isLoggedIn && dropdownMenu && (
           <MyAppsDropdown LinkTemplate={LinkTemplate} onClick={toggleMenuDropdownVisibilty} />
         )}
-        {shouldShowCartIcon ? <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} /> : null}
         <MobileMenuButton onMenuToggle={onMobileMenuToggle} />
       </div>
 
