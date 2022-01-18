@@ -23,8 +23,8 @@ const ShoppingCart = ({
   totalPriceFirstInvoice,
   totalPriceMonthly,
   totalPriceUpfront,
-  totalMVA,
-  totalPriceMVA,
+  totalVAT,
+  totalPriceVAT,
   formatPrice,
   hasPaid,
   disclaimers,
@@ -47,8 +47,8 @@ const ShoppingCart = ({
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceUpfront={totalPriceUpfront}
         totalPriceMonthly={totalPriceMonthly}
-        totalPriceMVA={totalPriceMVA}
-        totalMVA={totalMVA}
+        totalPriceVAT={totalPriceVAT}
+        totalVAT={totalVAT}
         formatPrice={formatPrice}
         hasPaid={hasPaid}
         discount={discount}
@@ -83,8 +83,8 @@ ShoppingCart.propTypes = {
   totalPriceFirstInvoice: PropTypes.number,
   totalPriceMonthly: PropTypes.number,
   totalPriceUpfront: PropTypes.number,
-  totalMVA: PropTypes.number,
-  totalPriceMVA: PropTypes.number,
+  totalVAT: PropTypes.number,
+  totalPriceVAT: PropTypes.number,
   formatPrice: PropTypes.func,
   hasPaid: PropTypes.bool,
   disclaimers: PropTypes.node,

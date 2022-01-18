@@ -35,8 +35,8 @@ const ShoppingCartTableFooterRow = ({ label, price, priceEnding, type, id, class
 );
 
 const ShoppingCartTableFooter = ({
-  totalMVA,
-  totalPriceMVA,
+  totalVAT,
+  totalPriceVAT,
   totalPriceFirstInvoice,
   totalPriceMonthly,
   totalPriceUpfront,
@@ -59,15 +59,15 @@ const ShoppingCartTableFooter = ({
         type="DISCOUNT"
       />
     )}
-    {!!totalPriceMVA && (
+    {!!totalPriceVAT && (
       <ShoppingCartTableFooterRow
         className="shopping-cart__id--upfront"
         label="Sum"
-        price={formatPrice(totalPriceMVA)}
+        price={formatPrice(totalPriceVAT)}
       />
     )}
-    {!!totalMVA && (
-      <ShoppingCartTableFooterRow className="shopping-cart__id--upfront" label="MVA" price={formatPrice(totalMVA)} />
+    {!!totalVAT && (
+      <ShoppingCartTableFooterRow className="shopping-cart__id--upfront" label="MVA" price={formatPrice(totalVAT)} />
     )}
     {!!totalPriceMonthly && (
       <ShoppingCartTableFooterRow
