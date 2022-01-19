@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import MenuTop from './MenuTop';
 import MenuContent from './MenuContent';
-import MobileMenu from './MobileMenu';
+import MobileMenu from './MobileMenu/MobileMenu';
 import FocusTrap, { focusableElementsSelector } from '../../atoms/FocusTrap/FocusTrap';
 
 /**
