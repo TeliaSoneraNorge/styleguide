@@ -85,6 +85,18 @@ const MobileMenuItem = ({ link, onItemSelected, LinkTemplate }) => (
     {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
   </React.Fragment>
 );
+const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate }) => {
+  return (
+    <React.Fragment>
+      {link.url && (
+        <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={link.url}>
+          <span className="link__content">{link.text}</span>
+        </LinkTemplate>
+      )}
+      {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
+    </React.Fragment>
+  );
+};
 
 const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
   <section id={`${menuLink.heading && menuLink.heading.text}-mobile-panel`} className="menu__mobile-panel">
@@ -94,17 +106,32 @@ const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
       </LinkTemplate>
     )}
 
-    {menuLink.links.map((link, index) => (
-      <MobileMenuItem
-        index={index}
-        key={link.text}
-        link={link}
-        onItemSelected={onItemSelected}
-        LinkTemplate={LinkTemplate}
-      />
-    ))}
+    {menuLink.links.map((link, index) => {
+      if (link.text === 'Nettbutikk') {
+        return (
+          <MobileMenuItemWithDropdown
+            index={index}
+            key={link.text}
+            link={link}
+            onItemSelected={onItemSelected}
+            LinkTemplate={LinkTemplate}
+          />
+        );
+      } else {
+        return (
+          <MobileMenuItem
+            index={index}
+            key={link.text}
+            link={link}
+            onItemSelected={onItemSelected}
+            LinkTemplate={LinkTemplate}
+          />
+        );
+      }
+    })}
   </section>
 );
+const test = () => {};
 
 const MobileMenu = ({
   isOpen,
@@ -122,7 +149,7 @@ const MobileMenu = ({
     return () => document.removeEventListener('keydown', handleKeyDown);
   });
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (event.keyCode === KEY_ESC) onMobileMenuToggle();
   };
 
@@ -133,7 +160,7 @@ const MobileMenu = ({
         menuLinks={menuLinks}
         LinkTemplate={LinkTemplate}
         selectedIndex={selectedHeaderIndex}
-        onHeaderItemSelected={index => setSelectedHeaderIndex(index)}
+        onHeaderItemSelected={(index) => setSelectedHeaderIndex(index)}
         mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
       />
       {isLoading && <Spinner />}
