@@ -1,18 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
+import { ArrowDownIcon } from '../../../atoms/Icon';
 
 import MobileSubmenu from './MobileSubmenu';
 
-const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate }) => {
+const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate, isExpanded }) => {
   return (
-    <React.Fragment>
-      {link.url && (
-        <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={link.url}>
-          <span className="link__content">{link.text}</span>
-        </LinkTemplate>
+    <div className="menu__mobile-dropdown-menu">
+      {!link.url && (
+        <>
+          <ArrowDownIcon className="menu__mobile-dropdown-menu__arrow-icon" />
+          <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />
+        </>
       )}
-      {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
-    </React.Fragment>
+    </div>
   );
 };
 
