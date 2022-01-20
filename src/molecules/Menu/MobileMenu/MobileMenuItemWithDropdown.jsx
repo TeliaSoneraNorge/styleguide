@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import { ArrowDownIcon } from '../../../atoms/Icon';
+import HorizontalRule from '../../../atoms/HorizontalRule';
 
 import MobileSubmenu from './MobileSubmenu';
 
@@ -10,9 +11,11 @@ const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate, isExpa
       {!link.url && (
         <>
           <ArrowDownIcon className="menu__mobile-dropdown-menu__arrow-icon" />
+          <span className="menu__mobile-dropdown-menu__header">{link.text}</span>
           <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />
         </>
       )}
+      <HorizontalRule />
     </div>
   );
 };
