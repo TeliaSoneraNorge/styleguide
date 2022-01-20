@@ -5,37 +5,40 @@ import Spinner from '../../../atoms/Spinner';
 import MobileMenuItemWithDropdown from './MobileMenuItemWithDropdown';
 import MobileMenuHeader from './MobileMenuHeader';
 import MobileMenuItem from './MobileMenuItem';
+import HorizontalRule from '../../../atoms/HorizontalRule';
 
 const KEY_ESC = 27;
 
 const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
   <section id={`${menuLink.heading && menuLink.heading.text}-mobile-panel`} className="menu__mobile-panel">
     {menuLink.heading && menuLink.heading.url && (
-      <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={menuLink.heading.url}>
-        <span className="link__content">Forside</span>
-      </LinkTemplate>
+      <>
+        <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={menuLink.heading.url}>
+          <span className="link__content">Forside</span>
+        </LinkTemplate>
+        <HorizontalRule />
+      </>
     )}
 
     {menuLink.links.map((link, index) => {
       if (link.text === 'Nettbutikk') {
         return (
-          <MobileMenuItemWithDropdown
-            index={index}
-            key={link.text}
-            link={link}
-            onItemSelected={onItemSelected}
-            LinkTemplate={LinkTemplate}
-          />
+          <React.Fragment key={link.text}>
+            <MobileMenuItemWithDropdown
+              index={index}
+              link={link}
+              onItemSelected={onItemSelected}
+              LinkTemplate={LinkTemplate}
+            />
+            <HorizontalRule />
+          </React.Fragment>
         );
       } else {
         return (
-          <MobileMenuItem
-            index={index}
-            key={link.text}
-            link={link}
-            onItemSelected={onItemSelected}
-            LinkTemplate={LinkTemplate}
-          />
+          <React.Fragment key={link.text}>
+            <MobileMenuItem index={index} link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />
+            <HorizontalRule />
+          </React.Fragment>
         );
       }
     })}

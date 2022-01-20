@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import MobileSubmenu from './MobileSubmenu';
-import HorizontalRule from '../../../atoms/HorizontalRule';
 
 const MobileMenuItem = ({ link, onItemSelected, LinkTemplate }) => (
   <>
@@ -11,7 +10,6 @@ const MobileMenuItem = ({ link, onItemSelected, LinkTemplate }) => (
       </LinkTemplate>
     )}
     {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
-    <HorizontalRule />
   </>
 );
 
