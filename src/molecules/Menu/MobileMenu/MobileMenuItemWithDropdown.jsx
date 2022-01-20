@@ -4,16 +4,18 @@ import { ArrowDownIcon } from '../../../atoms/Icon';
 
 import MobileSubmenu from './MobileSubmenu';
 
-const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate, isExpanded }) => {
+const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
   return (
     <div className="menu__mobile-dropdown-menu">
       {!link.url && (
         <>
-          <button className="menu__mobile-dropdown-menu__arrow-button" onClick={() => console.log('hei')}>
+          <button className="menu__mobile-dropdown-menu__arrow-button" onClick={() => setIsExpanded(!isExpanded)}>
             <ArrowDownIcon className="menu__mobile-dropdown-menu__arrow-icon" />
           </button>
           <span className="menu__mobile-dropdown-menu__header">{link.text}</span>
-          <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />
+          {isExpanded && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
         </>
       )}
     </div>
