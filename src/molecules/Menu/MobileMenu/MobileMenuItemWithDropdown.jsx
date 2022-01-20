@@ -9,7 +9,9 @@ const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate, isExpa
     <div className="menu__mobile-dropdown-menu">
       {!link.url && (
         <>
-          <ArrowDownIcon className="menu__mobile-dropdown-menu__arrow-icon" />
+          <button className="menu__mobile-dropdown-menu__arrow-button" onClick={() => console.log('hei')}>
+            <ArrowDownIcon className="menu__mobile-dropdown-menu__arrow-icon" />
+          </button>
           <span className="menu__mobile-dropdown-menu__header">{link.text}</span>
           <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />
         </>
