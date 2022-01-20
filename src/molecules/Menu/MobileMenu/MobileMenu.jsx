@@ -63,24 +63,27 @@ const MobileMenu = ({
   };
 
   return (
-    <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
-      <MobileMenuHeader
-        onMobileMenuToggle={onMobileMenuToggle}
-        menuLinks={menuLinks}
-        LinkTemplate={LinkTemplate}
-        selectedIndex={selectedHeaderIndex}
-        onHeaderItemSelected={(index) => setSelectedHeaderIndex(index)}
-        mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
-      />
-      {isLoading && <Spinner />}
-      {menuLinks && (
-        <MobileMenuItemSection
-          menuLink={menuLinks[selectedHeaderIndex]}
-          onItemSelected={onMenuItemSelected}
+    <>
+      <div className="menu__overlay" />
+      <div className={classnames('menu__mobile', { 'menu__mobile--open': isOpen })}>
+        <MobileMenuHeader
+          onMobileMenuToggle={onMobileMenuToggle}
+          menuLinks={menuLinks}
           LinkTemplate={LinkTemplate}
+          selectedIndex={selectedHeaderIndex}
+          onHeaderItemSelected={(index) => setSelectedHeaderIndex(index)}
+          mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
         />
-      )}
-    </div>
+        {isLoading && <Spinner />}
+        {menuLinks && (
+          <MobileMenuItemSection
+            menuLink={menuLinks[selectedHeaderIndex]}
+            onItemSelected={onMenuItemSelected}
+            LinkTemplate={LinkTemplate}
+          />
+        )}
+      </div>
+    </>
   );
 };
 
