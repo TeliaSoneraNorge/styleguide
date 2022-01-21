@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import TextBoxWithLabel from '../../molecules/TextBoxWithLabel';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import { SearchIcon } from '../../atoms/Icon';
 import FocusTrap from '../../atoms/FocusTrap/FocusTrap';
 
 const KEY_ESC = 27;
@@ -20,7 +20,7 @@ export default function MenuSearch({ onSubmit, searchLabel, searchButtonLabel, s
     return () => document.removeEventListener('keydown', handleKeyDown);
   });
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (event.keyCode === KEY_ESC && focused) closeSeachBox();
   };
 
@@ -30,7 +30,7 @@ export default function MenuSearch({ onSubmit, searchLabel, searchButtonLabel, s
     if (openSearchButton.current) openSearchButton.current.focus();
   };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     if (onSubmit) onSubmit(e, searchQuery);
     setLoading(true);
@@ -53,7 +53,7 @@ export default function MenuSearch({ onSubmit, searchLabel, searchButtonLabel, s
           hideLabel={true}
           labelText={searchLabel}
           value={searchQuery}
-          onChange={e => setSearchQuery(e.target.value)}
+          onChange={(e) => setSearchQuery(e.target.value)}
         />
       </form>
       <button
@@ -74,10 +74,8 @@ export default function MenuSearch({ onSubmit, searchLabel, searchButtonLabel, s
         onClick={() => setFocused(true)}
         aria-label={searchButtonLabel ? searchButtonLabel : 'Søk'}
       >
-        <SvgIcon className="menu__search--icon" iconName="ico_search-menu" color="none" />
-        <div className="menu__search--label" aria-label={searchButtonLabel ? searchButtonLabel : 'Søk'}>
-          {searchButtonLabel ? searchButtonLabel : 'Søk'}
-        </div>
+        <SearchIcon />
+        <div className="menu__search--label" aria-label={searchButtonLabel ? searchButtonLabel : 'Søk'}></div>
       </button>
 
       {focused && renderSearchField(FocusTrap, { as: 'div' })}
