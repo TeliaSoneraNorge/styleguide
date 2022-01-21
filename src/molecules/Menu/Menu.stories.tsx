@@ -32,6 +32,14 @@ export const Default = () => {
       links: [
         { text: 'Tjenester', url: '#' },
         { text: 'Digitalisering', url: '#' },
+        {
+          text: 'Teknologi og samfunn',
+          subLinks: [
+            { text: 'IoT', url: '#' },
+            { text: '5G', url: '#' },
+            { text: 'StartUp', url: '#' },
+          ],
+        },
         { text: 'Nettbutikk', url: '#' },
         { text: 'Kundeservice', url: '#' },
       ],
@@ -262,6 +270,14 @@ export const SingleTopLevelMenu = () => {
         },
         { text: 'Mobilabonnement', url: '#' },
         { text: 'Mobilt bredbånd', url: '#' },
+        {
+          text: 'Teknologi og samfunn',
+          subLinks: [
+            { text: 'IoT', url: '#' },
+            { text: '5G', url: '#' },
+            { text: 'StartUp', url: '#' },
+          ],
+        },
         { text: 'Dekning', url: '#' },
         { text: 'Hjelp', url: '#' },
       ],
