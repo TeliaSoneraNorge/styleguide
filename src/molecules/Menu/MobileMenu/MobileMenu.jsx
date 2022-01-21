@@ -21,7 +21,7 @@ const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
     )}
 
     {menuLink.links.map((link, index) => {
-      if (link.text === 'Nettbutikk') {
+      if (link.subLinks) {
         return (
           <React.Fragment key={link.text}>
             <MobileMenuItemWithDropdown

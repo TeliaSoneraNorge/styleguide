@@ -1,15 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MobileSubmenu from './MobileSubmenu';
 
 const MobileMenuItem = ({ link, onItemSelected, LinkTemplate }) => (
   <>
-    {link.url && (
-      <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={link.url}>
-        <span className="link__content">{link.text}</span>
-      </LinkTemplate>
-    )}
-    {!link.url && <MobileSubmenu link={link} onItemSelected={onItemSelected} LinkTemplate={LinkTemplate} />}
+    <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={link.url}>
+      <span className="link__content">{link.text}</span>
+    </LinkTemplate>
   </>
 );
 
