@@ -24,7 +24,7 @@
     &-header {
       height: 50px;
       display: flex;
-      text-align: right;
+      align-items: center;
     }
 
     &-heading {
@@ -131,16 +131,12 @@
     }
 
     &-close-button {
+      display: flex;
+      align-items: center;
       border: none;
       background-color: transparent;
       box-shadow: none;
-      margin-bottom: 1rem;
       cursor: pointer;
-      line-height: 30px;
-
-      @media all and (min-width: rem(360)) {
-        margin-bottom: 4.1875rem;
-      }
 
       &:focus {
         outline: none;
@@ -151,8 +147,9 @@
       }
 
       &-icon {
-        width: 1rem;
-        height: 1rem;
+        width: 1.2rem;
+        height: 1.2rem;
+        margin-left: 0.25rem;
       }
     }
 

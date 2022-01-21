@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classnames from 'classnames';
-import SvgIcon from '../../../atoms/SvgIcon/SvgIcon';
+import { CloseIcon } from '../../../atoms/Icon';
 
 const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
   <button
@@ -9,7 +9,8 @@ const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
     onClick={onClick}
     aria-label={mobileMenuCloseButtonLabel ? mobileMenuCloseButtonLabel : 'Lukk'}
   >
-    <SvgIcon iconName="ico_delete" color="black" className="menu__mobile-close-button-icon" />
+    <span>Lukk</span>
+    <CloseIcon className="menu__mobile-close-button-icon" />
   </button>
 );
 
