@@ -6,3 +6,4 @@ export { Tooltip } from './Tooltip';
 export { List, ListItem, ListCard, ListHeading, ListItemSkeleton } from './List';
 export { StepFlow, StepFlowStep } from './StepFlow';
 export * from './Card';
+export { PageLayout } from './PageLayout';
