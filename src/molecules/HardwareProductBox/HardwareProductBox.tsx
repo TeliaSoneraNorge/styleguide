@@ -66,7 +66,7 @@ const HardwareProductBox = ({
           </div>
         </div>
       )}
-      {is5G && !highlight && <div className="hardware-product-box__five-g-container" />}
+      {is5G && !highlight && <Icon className="hardware-product-box__five-g-container" icon="five-g" />}
       {image ? (
         <div className="hardware-product-box__product-image-container">
           <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
