@@ -168,7 +168,7 @@ const MenuContent = ({
             searchButtonAbortText={searchButtonAbortText}
           />
         )}
-        {shouldShowCartIcon && <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} /> }
+        {shouldShowCartIcon && <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} />}
 
         {loginUrl && !isLoggedIn && <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />}
         {myPageUrl && isLoggedIn && !dropdownMenu && (
