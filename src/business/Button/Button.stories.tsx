@@ -39,6 +39,9 @@ export const ButtonPrimary = () => (
     <br />
     <h3>Button with no parameters</h3>
     <Button />
+    <br />
+    <h3>Button with a lot of text should not wrap</h3>
+    <Button label="This is a long button text" />
   </div>
 );
 
