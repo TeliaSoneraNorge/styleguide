@@ -5,6 +5,8 @@ import { jsxDecorator } from 'storybook-addon-jsx';
 import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import ShoppingCartAccordion from './ShoppingCartAccordion';
 import Paragraph from '../../atoms/Paragraph';
+import img from '../../stories/sampleImages';
+import Menu from '../../molecules/Menu';
 
 export default {
   title: 'Component library/Organisms/ShoppingCartAccordion',
@@ -583,11 +585,61 @@ function getCart(item) {
   }
 }
 
+export const MenuWithCart = ({ onCartClick = () => {} }) => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Nettbutikk',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+            { text: 'Nettbrett', url: '#' },
+            { text: 'Tilbehør', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+        { text: 'Dekning', url: '#' },
+        { text: 'Hjelp', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+        { text: 'Nettbutikk', url: '#' },
+        { text: 'Kundeservice', url: '#' },
+      ],
+    },
+  ];
+
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      myPageUrl="#"
+      numberOfItemsInCart={1}
+      onCartClick={onCartClick}
+    />
+  );
+};
+
 const Wrapper = ({
   numberOfItemsInCart,
   shouldHideOnDesktop,
   shouldShowGoToCartButton,
   shouldBeSticky,
+  shouldShowOnlyOnExpanded,
   pricePerMonth,
   priceUpfront,
   priceFirstInvoice,
@@ -597,6 +649,7 @@ const Wrapper = ({
 
   return (
     <div style={{ margin: '-1rem' }}>
+      <MenuWithCart onCartClick={() => setIsExpanded(!isExpanded)} />
       <ShoppingCartAccordion
         isExpanded={isExpanded}
         numberOfItemsInCart={numberOfItemsInCart}
@@ -604,6 +657,7 @@ const Wrapper = ({
         shouldHideOnDesktop={shouldHideOnDesktop}
         shouldShowButton={shouldShowGoToCartButton}
         shouldBeSticky={shouldBeSticky}
+        shouldShowOnlyOnExpanded={shouldShowOnlyOnExpanded}
         totalPriceMonthly={pricePerMonth}
         totalPriceUpfront={priceUpfront}
         toggleCart={() => setIsExpanded(!isExpanded)}
@@ -641,12 +695,14 @@ export const Default = () => {
   const shouldHideOnDesktop = boolean('Should hide on desktop', false);
   const shouldShowGoToCartButton = boolean('Should show go to cart button', true);
   const shouldBeSticky = boolean('Should be sticky', true);
+  const shouldShowOnlyOnExpanded = boolean('Should only show on expanded', false);
   return (
     <Wrapper
       numberOfItemsInCart={numberOfItemsInCart}
       shouldHideOnDesktop={shouldHideOnDesktop}
       shouldShowGoToCartButton={shouldShowGoToCartButton}
       shouldBeSticky={shouldBeSticky}
+      shouldShowOnlyOnExpanded={shouldShowOnlyOnExpanded}
       pricePerMonth={pricePerMonth}
       priceUpfront={priceUpfront}
       priceFirstInvoice={priceFirstInvoice}
