@@ -58,6 +58,7 @@ export { EmailIcon } from './EmailIcon';
 export { EntertainmentIcon } from './EntertainmentIcon';
 export { FacebookIcon } from './FacebookIcon';
 export { FilterIcon } from './FilterIcon';
+export { FiveGIcon } from './FiveGIcon';
 export { FolderNewIcon } from './FolderNewIcon';
 export { FolderIcon } from './FolderIcon';
 export { FoodIcon } from './FoodIcon';
