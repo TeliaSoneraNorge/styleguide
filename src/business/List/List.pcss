@@ -13,7 +13,7 @@
   list-style: none;
   background-color: var(--white);
   .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
-    background-color: var(--grey-100);
+    background-color: rgba(0, 0, 0, 0.02);
   }
 
   &--underlined {
@@ -34,7 +34,7 @@
   }
 
   &--active {
-    background-color: var(--grey-100);
+    background-color: rgba(0, 0, 0, 0.04);
   }
 
   &--card {
@@ -52,11 +52,15 @@
   }
 
   &--dark {
-    background-color: var(--grey-800);
+    background-color: var(--grey-900);
     color: var(--white);
 
     .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
-      background-color: var(--grey-600);
+      background-color: rgba(255, 255, 255, 0.02);
+    }
+
+    .telia-listItem--active {
+      background-color: rgba(255, 255, 255, 0.04);
     }
   }
 
@@ -64,7 +68,11 @@
     background-color: var(--grey-100);
 
     .telia-listItem--clickable.telia-listItem__mainWrapper:hover {
-      background-color: var(--grey-300);
+      background-color: rgba(0, 0, 0, 0.04);
+    }
+
+    .telia-listItem--active {
+      background-color: rgba(0, 0, 0, 0.08);
     }
   }
 
@@ -270,6 +278,6 @@
 
 .telia-listItem--dark.telia-listItem--clickable {
   .telia-listItem__mainWrapper:hover {
-    background-color: var(--grey-600);
+    background-color: rgba(255, 255, 255, 0.02);
   }
 }
