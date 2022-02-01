@@ -20,6 +20,7 @@ const ShoppingCartAccordion = ({
   totalPriceMonthly,
   totalPriceUpfront,
   shouldBeSticky,
+  shouldShowOnlyOnExpanded = false,
   formatPrice,
 }) => {
   const [shouldAnimateNumberOfCartItems, setShouldAnimateNumberOfCartItems] = useState(false);
@@ -55,7 +56,11 @@ const ShoppingCartAccordion = ({
     <>
       {isExpanded ? <div className="shopping-cart__opacity-layer" onClick={() => toggleCart()}></div> : null}
       <div
-        className={classnames({ 'shopping-cart__sticky': shouldBeSticky })}
+        className={classnames({
+          'shopping-cart__sticky': shouldBeSticky,
+          'shopping-cart__show-only-on-expanded': shouldShowOnlyOnExpanded,
+          'shopping-cart__show-only-on-expanded--is-expanded': isExpanded,
+        })}
         onKeyUp={(event) => {
           if (event.key === 'Escape' && isExpanded) {
             toggleCart();
@@ -82,6 +87,7 @@ ShoppingCartAccordion.propTypes = {
   numberOfItemsInCart: PropTypes.number,
   shouldHideOnDesktop: PropTypes.bool,
   shouldBeSticky: PropTypes.bool,
+  shouldShowOnlyOnExpanded: PropTypes.bool,
   shouldShowButton: PropTypes.bool,
   totalPriceMonthly: PropTypes.number,
   totalPriceUpfront: PropTypes.number,
