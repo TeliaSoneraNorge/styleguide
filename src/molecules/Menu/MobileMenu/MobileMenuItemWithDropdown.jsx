@@ -9,7 +9,7 @@ const MobileMenuItemWithDropdown = ({ link, onItemSelected, LinkTemplate }) => {
   const isExpandedClass = isExpanded ? 'expanded' : 'not-expanded';
 
   return (
-    <div className="menu__mobile-dropdown-menu">
+    <div className="menu__mobile-dropdown-menu" onClick={() => setIsExpanded(!isExpanded)}>
       <button className="menu__mobile-dropdown-menu__arrow-button" onClick={() => setIsExpanded(!isExpanded)}>
         <ArrowDownIcon className={`menu__mobile-dropdown-menu__arrow-icon ${isExpandedClass}`} />
       </button>
