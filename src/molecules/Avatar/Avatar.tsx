@@ -37,6 +37,7 @@ export type AvatarProps = {
   onClick?: (e: React.SyntheticEvent) => void;
 
   color?: 'transparent' | keyof typeof colors;
+  bgColor?: string;
 
   style?: React.CSSProperties;
   className?: string;
@@ -72,7 +73,9 @@ export const Avatar = (props: AvatarProps) => {
   };
 
   // Set ransparent bg color. 24 is 14%. https://gist.github.com/lopspower/03fb1cc0ac9f32ef38f4
-  const bgcolor = props.color
+  const bgcolor = props.bgColor
+    ? props.bgColor
+    : props.color
     ? props.color === 'transparent'
       ? 'transparent'
       : colors[props.color] + '24'

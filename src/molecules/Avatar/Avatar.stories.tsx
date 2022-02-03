@@ -225,7 +225,7 @@ export const Colors = () => {
   return (
     <>
       <div>
-        <h3>The avatar supports all Telia colors.</h3>
+        <h3>The avatar supports all Telia colors as text color.</h3>
         <br />
         Providing a color, the color of the Avatar will be set to the color from props, and the background will be set
         to the color from props with a transparency
@@ -244,6 +244,11 @@ export const Colors = () => {
         {Object.keys(colors).map((key, i) => (
           <Avatar key={i} text="HG" color={key as keyof typeof colors} />
         ))}
+      </div>
+      <br />
+      <div>
+        <h3>The avatar supports all colors as background color</h3>
+        <Avatar text="HG" color="white" bgColor="#29003E" />
       </div>
     </>
   );
