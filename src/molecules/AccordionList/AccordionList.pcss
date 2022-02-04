@@ -213,6 +213,8 @@ p + .accordion-list {
       }
       
       &:focus > .accordion__icon *,
+      &:active > .accordion__icon *,
+      &:focus + .accordion__header-icon *,
       &:active + .accordion__header-icon * {
         fill: var(--core-purple);
       }
