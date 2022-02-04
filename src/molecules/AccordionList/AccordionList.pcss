@@ -147,7 +147,7 @@ p + .accordion-list {
   }
 
   &__header-icon {
-    fill: black;
+    fill: var(--black);
 
     height: 1.2rem;
     width: 1.2rem;
@@ -207,11 +207,11 @@ p + .accordion-list {
       &:focus,
       &:active {
         background-color: var(--white);
-        color: black;
+        color: var(--black);
       }
       &:focus + .accordion__header-icon *,
       &:active + .accordion__header-icon * {
-        fill: black;
+        fill: var(--black);
       }
       &:hover {
         color: var(--core-purple);
