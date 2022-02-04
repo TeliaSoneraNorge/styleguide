@@ -142,6 +142,7 @@ p + .accordion-list {
       }
     }
 
+    &:hover > .accordion__icon *,
     &:hover + .accordion__header-icon * {
       fill: var(--core-purple);
     }
@@ -211,11 +212,12 @@ p + .accordion-list {
         color: var(--core-purple);
       }
       
-      &:focus + .accordion__header-icon *,
+      &:focus > .accordion__icon *,
       &:active + .accordion__header-icon * {
         fill: var(--core-purple);
       }
 
+      &:hover > .accordion__icon *,
       &:hover + .accordion__header-icon * {
         fill: var(--core-purple);
       }
