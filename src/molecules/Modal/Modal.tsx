@@ -37,17 +37,25 @@ export const Modal: React.FC<Props> = (props) => {
     if (props.open) {
       returnFocusTo = props.returnFocusTo ?? document.activeElement;
       container.current?.focus();
+      document.querySelector('html')?.classList.add('scroll-lock');
+    } else {
+      document.querySelector('html')?.classList.remove('scroll-lock');
     }
-    document.querySelector('html')?.classList.toggle('scroll-lock');
-
     return () => (returnFocusTo as HTMLElement)?.focus();
   }, [props.open]);
+
+  useEffect(() => {
+    return () => {
+      document.querySelector('html')?.classList.remove('scroll-lock');
+    };
+  }, []);
 
   return createPortal(
     <div
       ref={container}
       className={cn('telia-modal', { 'telia-modal--invisible': !props.open }, props.className)}
       tabIndex={-1}
+      aria-hidden={props.open ? 'true' : 'false'}
     >
       <div
         className={cn('telia-modal__container', `telia-modal__container--${size}`, props.open ? '' : '')}
