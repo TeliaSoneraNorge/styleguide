@@ -121,6 +121,9 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
               </div>
             )}
           </NotificationWrapper>
+          <div id="side-menu-group-item-label" className="telia-side-menu-item__label--visually-hidden">
+            {label}
+          </div>
         </button>
       )}
       <ul
