@@ -88,9 +88,6 @@ p + .accordion-list {
       background-color: hsl(0, 0%, 97%);
       outline: none;
     }
-    &:focus + .accordion__header-icon *,
-    &:active + .accordion__header-icon * {
-    }
   }
 
   &__button {
@@ -144,10 +141,15 @@ p + .accordion-list {
         padding-top: 0.2rem;
       }
     }
+
+    &:hover > .accordion__icon *,
+    &:hover + .accordion__header-icon * {
+      fill: var(--core-purple);
+    }
   }
 
   &__header-icon {
-    fill: var(--core-purple);
+    fill: var(--black);
 
     height: 1.2rem;
     width: 1.2rem;
@@ -160,7 +162,7 @@ p + .accordion-list {
   }
 
   &__icon {
-    fill: var(--core-purple);
+    fill: var(--black);
     height: 2.5rem;
     width: 2.5rem;
   }
@@ -209,8 +211,16 @@ p + .accordion-list {
         background-color: var(--white);
         color: var(--core-purple);
       }
+      
+      &:focus > .accordion__icon *,
+      &:active > .accordion__icon *,
       &:focus + .accordion__header-icon *,
       &:active + .accordion__header-icon * {
+        fill: var(--core-purple);
+      }
+
+      &:hover > .accordion__icon *,
+      &:hover + .accordion__header-icon * {
         fill: var(--core-purple);
       }
     }
