@@ -136,6 +136,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
           onClick={onClick}
           tabIndex={tabIndex ?? 1}
           href={href}
+          aria-labelledby="side-menu-group-item-label"
         >
           <NotificationWrapper
             position="on-top-left"
@@ -155,6 +156,9 @@ export const SideMenuItem: React.FC<Props> = (props) => {
               )}
             </>
           </NotificationWrapper>
+          <div id="side-menu-group-item-label" className="telia-side-menu-item__label--visually-hidden">
+            {label}
+          </div>
         </Tag>
       )}
     </WrapperTag>
