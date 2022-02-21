@@ -17,7 +17,7 @@ interface Props {
   ariaDescribedBy?: string;
   open: boolean;
   setOpen: (open: boolean) => void;
-  size?: 'small' | 'medium' | 'large' | 'fullscreen';
+  size?: 'small' | 'medium' | 'large' | 'fullscreen' | 'auto';
   className?: string;
   /**
    * If you want to return focus to a specific html element on closing the modal. Default is the modal trigger element.
