@@ -5,6 +5,10 @@ import Label from '../Label/Label';
 
 type Props = {
   label?: string;
+  /**
+   * Should be used if no label is present
+   */
+  ariaLabel?: string;
   name?: string;
   value?: any;
   checked?: boolean;
@@ -14,10 +18,18 @@ type Props = {
 };
 
 export const RadioButton: React.FC<Props> = (props) => {
-  const { label, name, value, checked, disabled, onChange, className, children } = props;
+  const { label, name, value, checked, disabled, onChange, className, children, ariaLabel } = props;
   return (
     <Label className={classnames('radiobutton', { 'radiobutton--disabled': disabled })}>
-      <input type="radio" name={name} checked={checked} onChange={onChange} disabled={disabled} value={value} />
+      <input
+        type="radio"
+        name={name}
+        checked={checked}
+        onChange={onChange}
+        disabled={disabled}
+        value={value}
+        aria-label={ariaLabel}
+      />
       <span className="radiobutton__svg-container">
         <svg width="44px" height="44px" viewBox="0 0 44 44">
           <circle className="radiobutton__border" cx="22" cy="22" r="12" />
