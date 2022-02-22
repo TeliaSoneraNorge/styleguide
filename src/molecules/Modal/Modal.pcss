@@ -26,7 +26,9 @@
     overflow: auto;
 
     &--small {
-      width: 35%;
+      @media (min-width: 900px) {
+        width: 35%;
+      }
     }
     &--large {
       width: 80%;
@@ -122,10 +124,9 @@
   .telia-modal__container--small {
     left: 1.25rem;
     right: 1.25rem;
-    top: 1.5rem;
-    width: calc(100% -2rem);
+    top: 30%;
+    width: auto;
     transform: none;
-
     overflow-y: auto;
   }
 
