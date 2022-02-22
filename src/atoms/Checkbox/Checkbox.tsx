@@ -88,7 +88,7 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
         </div>
         <span
           className={cs('telia-checkbox__label', {
-            'telia-checkbox__label--hidden': props.hiddenLabel,
+            'telia-checkbox__label--visually-hidden': props.hiddenLabel,
           })}
         >
           {props.label}

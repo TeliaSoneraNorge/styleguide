@@ -19,6 +19,8 @@ export const Default = () => {
       <RadioButton label="I am checked" checked />
       <RadioButton label="I am disabled" disabled />
       <RadioButton label="I am checked and disabled" checked disabled />
+      <div>(Hidden label)</div>
+      <RadioButton ariaLabel="Hidden label" />
     </>
   );
 };
