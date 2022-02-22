@@ -27,7 +27,12 @@ export const Default = ({}) => {
       <br />
       <br />
       <div>(Hidden label)</div>
-      <Checkbox checked={checked2} onChange={(e) => setChecked2(e?.target.checked ?? false)} ariaLabel="Hidden label" />
+      <Checkbox
+        checked={checked2}
+        label={'Hidden label'}
+        onChange={(e) => setChecked2(e?.target.checked ?? false)}
+        hiddenLabel={true}
+      />
 
       <br />
       <h3>Variants</h3>

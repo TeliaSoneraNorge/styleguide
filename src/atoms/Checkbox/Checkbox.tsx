@@ -4,11 +4,8 @@ import cs from 'classnames';
 import { Icon } from '../Icon';
 
 type CheckboxProps = {
-  label?: string;
-  /**
-   * Should be used if no label is present
-   */
-  ariaLabel?: string;
+  label: string;
+  hiddenLabel?: boolean;
   id?: string;
   name?: string;
   disabled?: boolean;
@@ -54,7 +51,6 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
           }
         }}
         tabIndex={props.tabIndex ?? 0}
-        aria-label={props.ariaLabel}
       />
       <div className="telia-checkbox__container">
         <div
@@ -90,7 +86,13 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
             />
           </div>{' '}
         </div>
-        <span className={cs('telia-checkbox__label')}>{props.label}</span>
+        <span
+          className={cs('telia-checkbox__label', {
+            'telia-checkbox__label--visually-hidden': props.hiddenLabel,
+          })}
+        >
+          {props.label}
+        </span>
       </div>
     </label>
   );
