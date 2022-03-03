@@ -43,6 +43,8 @@ type DropdownToggleProps = {
    */
   tag?: 'div' | 'span';
 
+  type?: 'submit' | 'reset' | 'button';
+
   disabled?: boolean;
 
   className?: string;
@@ -85,6 +87,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = (props) => {
     <button
       ref={toggleRef}
       onClick={toggle}
+      type={props.type}
       className={cn(
         'telia-dropdown-toggle telia-dropdown-toggle__default',
         {
