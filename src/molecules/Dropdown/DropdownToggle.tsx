@@ -85,6 +85,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = (props) => {
     <button
       ref={toggleRef}
       onClick={toggle}
+      type="button"
       className={cn(
         'telia-dropdown-toggle telia-dropdown-toggle__default',
         {
