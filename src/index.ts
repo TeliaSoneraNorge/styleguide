@@ -159,6 +159,7 @@ export { FeatureBox, FeatureBoxes } from './organisms/FeatureBoxes';
 export { SubscriptionPriceBox, SubscriptionPriceBoxes } from './organisms/SubscriptionPriceBoxes';
 export { default as ShoppingCartAccordion } from './organisms/ShoppingCartAccordion';
 export { default as SlidingShoppingCart } from './organisms/SlidingShoppingCart';
+export { default as SlidingShoppingCartUpdated } from './organisms/SlidingShoppingCartUpdated';
 
 // Utils
 export { colors } from './utils/colors';
