@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
+import ShoppingCart from '../../molecules/ShoppingCartUpdated/ShoppingCart';
 import Button from '../../atoms/Button/Button';
 import cn from 'classnames';
 import { useClickOutsideListener } from '../SlidingShoppingCart/useClickOutsideListener';
@@ -68,6 +68,7 @@ const SlidingShoppingCartUpdated = ({
       <button className="sliding-shopping-cart__close-button" onClick={() => setShouldShowCart(false)}>
         X
       </button>
+      <ShoppingCart />
     </aside>
   );
 };
