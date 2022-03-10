@@ -18,6 +18,38 @@
     margin: 1rem 0;
   }
 
+  &__continue-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    @media all and (min-width: 48em) {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  }
+
+  &__button {
+    margin: 0 !important;
+    width: 100%;
+    max-width: 16rem;
+
+    &:not(:first-of-type) {
+      margin-top: 1rem !important;
+    }
+
+    @media all and (min-width: 48em) {
+      &:not(:first-of-type) {
+        margin-top: 0 !important;
+      }
+      &:not(:last-of-type) {
+        margin-right: 1rem !important;
+      }
+    }
+  }
+
   &__delivery-container {
     display: flex;
     justify-content: space-between;
