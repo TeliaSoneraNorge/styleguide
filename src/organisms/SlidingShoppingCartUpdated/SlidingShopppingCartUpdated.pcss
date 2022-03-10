@@ -1,0 +1,50 @@
+.telia-shopping-cart {
+  &__section {
+    &--grey {
+      background-color: var(--grey-100);
+    }
+  }
+
+  &__section-inner {
+    padding: 1rem;
+  }
+
+  &__delivery-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__delivery-left {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem;
+  }
+
+  &__label-medium {
+    color: var(--grey-900);
+    font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
+  }
+
+  &__delivery-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.75rem;
+  }
+
+  &__price-upfront-container {
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 1rem;
+  }
+
+  &__price-upfront-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    > :first-child {
+      margin-right: 0.5rem;
+    }
+  }
+}

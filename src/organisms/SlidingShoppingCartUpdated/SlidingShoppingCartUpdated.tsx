@@ -1,54 +1,47 @@
 import React, { useRef } from 'react';
 import ShoppingCart from '../../molecules/ShoppingCartUpdated/ShoppingCart';
-import Button from '../../atoms/Button/Button';
 import cn from 'classnames';
 import { useClickOutsideListener } from '../SlidingShoppingCart/useClickOutsideListener';
+import { ICartDelivery, ICartItem } from './types';
 
 export interface SlidingShoppingCartUpdatedProps {
-  cartItems?: any;
   heading?: string;
-  isAnyCartItemsQuantityModifiable: boolean;
+  cartItems?: ICartItem[];
+  delivery?: ICartDelivery;
   onChangeQuantity: (item: any, quantity: number) => void;
-  onGoToCart: () => void;
   onRemoveItem: (item: any) => void;
+  setShouldShowCart(shouldShowCart: boolean): void;
+  shouldShowCart: boolean;
   totalPriceFirstInvoice: number;
   totalPriceMonthly: number;
   totalPriceUpfront: number;
-  totalVAT: number;
-  totalPriceWithoutVAT: number;
+  totalVAT?: number;
+  totalPriceWithoutVAT?: number;
+  totalDiscount?: number;
   formatPrice: (price: string | number) => string;
-  hasPaid?: boolean;
   disclaimers?: any;
-  shouldShowCart: boolean;
-  setShouldShowCart(shouldShowCart: boolean): void;
-  discount?: {
-    label: string;
-    price: number;
-  };
-  buttonText?: string;
-  buttonInfo?: string;
+  isAnyCartItemsQuantityModifiable?: boolean;
+  isAllowedToDelete?: boolean;
 }
 
 const SlidingShoppingCartUpdated = ({
-  cartItems,
   heading,
-  isAnyCartItemsQuantityModifiable,
+  cartItems,
+  delivery,
   onChangeQuantity,
-  onGoToCart,
   onRemoveItem,
+  setShouldShowCart,
+  shouldShowCart,
   totalPriceFirstInvoice,
   totalPriceMonthly,
   totalPriceUpfront,
   totalVAT,
   totalPriceWithoutVAT,
+  totalDiscount,
   formatPrice,
-  hasPaid,
   disclaimers,
-  discount,
-  shouldShowCart,
-  setShouldShowCart,
-  buttonText = 'Gå til bestilling',
-  buttonInfo = '',
+  isAnyCartItemsQuantityModifiable,
+  isAllowedToDelete,
 }: SlidingShoppingCartUpdatedProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -61,14 +54,26 @@ const SlidingShoppingCartUpdated = ({
   return (
     <aside
       ref={ref}
-      className={cn('sliding-shopping-cart__container', {
-        'sliding-shopping-cart__container--show': shouldShowCart,
+      className={cn('telia-sliding-shopping-cart__container', {
+        'telia-sliding-shopping-cart__container--show': shouldShowCart,
       })}
     >
-      <button className="sliding-shopping-cart__close-button" onClick={() => setShouldShowCart(false)}>
+      <button className="telia-sliding-shopping-cart__close-button" onClick={() => setShouldShowCart(false)}>
         X
       </button>
-      <ShoppingCart />
+      <ShoppingCart
+        shouldShowCart={shouldShowCart}
+        setShouldShowCart={setShouldShowCart}
+        cartItems={cartItems || []}
+        onChangeQuantity={onChangeQuantity}
+        onRemoveItem={onRemoveItem}
+        totalPriceFirstInvoice={totalPriceFirstInvoice}
+        totalPriceMonthly={totalPriceMonthly}
+        totalPriceUpfront={totalPriceUpfront}
+        totalVAT={totalVAT}
+        totalPriceWithoutVAT={totalPriceWithoutVAT}
+        formatPrice={formatPrice}
+      />
     </aside>
   );
 };

@@ -140,6 +140,7 @@ export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
 export { default as Gallery } from './molecules/Gallery';
 export { ShoppingCart } from './molecules/ShoppingCart';
+export { ShoppingCartUpdated } from './molecules/ShoppingCartUpdated';
 export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 export { QuickSearch } from './molecules/QuickSearch';
 export { PhoneNumberField } from './molecules/PhoneNumberField';

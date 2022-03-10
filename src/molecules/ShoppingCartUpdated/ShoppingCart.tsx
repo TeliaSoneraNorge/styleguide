@@ -1,8 +1,31 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { isEmpty } from 'lodash';
 import Heading from '../../atoms/Heading/Heading';
 import { Icon } from '../../atoms/Icon';
 import ShoppingCartItemsSection from './ShoppingCartItemSection';
+import { ICartDelivery, ICartItem } from './types';
+import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
+
+export interface ShoppingCartProps {
+  heading?: string;
+  cartItems: ICartItem[];
+  delivery?: ICartDelivery;
+  onChangeQuantity: (item: any, quantity: number) => void;
+  onRemoveItem: (item: any) => void;
+  setShouldShowCart(shouldShowCart: boolean): void;
+  shouldShowCart: boolean;
+  totalPriceFirstInvoice: number;
+  totalPriceMonthly: number;
+  totalPriceUpfront: number;
+  totalVAT?: number;
+  totalPriceWithoutVAT?: number;
+  totalDiscount?: number;
+  formatPrice: (price: string | number) => string;
+  disclaimers?: any;
+  isAnyCartItemsQuantityModifiable?: boolean;
+  isAllowedToDelete?: boolean;
+}
 
 /**
  * Status: *in progress*.
@@ -10,26 +33,25 @@ import ShoppingCartItemsSection from './ShoppingCartItemSection';
  *
  * This is a component for showing items currently in the shopping cart.
  */
-
 const ShoppingCart = ({
-  cartItems,
   heading,
-  isAnyCartItemsQuantityModifiable,
+  cartItems,
+  delivery,
   onChangeQuantity,
-  onGoToCart,
-  buttonText = 'Gå til bestilling',
-  buttonInfo = '',
   onRemoveItem,
+  setShouldShowCart,
+  shouldShowCart,
   totalPriceFirstInvoice,
   totalPriceMonthly,
   totalPriceUpfront,
   totalVAT,
   totalPriceWithoutVAT,
+  totalDiscount,
   formatPrice,
-  hasPaid,
   disclaimers,
-  discount,
-}) => {
+  isAnyCartItemsQuantityModifiable,
+  isAllowedToDelete,
+}: ShoppingCartProps) => {
   return (
     <form className="telia-shopping-cart">
       {heading && (
@@ -39,7 +61,21 @@ const ShoppingCart = ({
           </Heading>
         </div>
       )}
-      <ShoppingCartItemsSection cartItems={cartItems} />
+      <ShoppingCartItemsSection
+        cartItems={cartItems}
+        onChangeQuantity={onChangeQuantity}
+        onRemoveItem={onRemoveItem}
+        formatPrice={formatPrice}
+      />
+      <ShoppingCartPaymentSection
+        delivery={delivery}
+        totalPriceFirstInvoice={totalPriceFirstInvoice}
+        totalPriceMonthly={totalPriceMonthly}
+        totalPriceUpfront={totalPriceUpfront}
+        totalPriceWithoutVAT={totalPriceWithoutVAT}
+        totalVAT={totalVAT}
+        formatPrice={formatPrice}
+      />
     </form>
   );
 };
