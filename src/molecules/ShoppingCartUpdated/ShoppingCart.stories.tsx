@@ -65,3 +65,79 @@ export const UpfrontWithoutMVA = () => {
     />
   );
 };
+
+export const WithMonthlyPriceDisclaimer = () => {
+  const delivery = {
+    label: 'Bedriftspakken',
+    price: 0,
+  };
+  const [shouldShowCart, setShouldShowCart] = useState(false);
+  const priceDisclaimer =
+    '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
+
+  return (
+    <ShoppingCartUpdated
+      heading="Handlekurv"
+      cartItems={[]}
+      delivery={delivery}
+      totalPriceMonthly={500}
+      totalPriceUpfront={300}
+      monthlyPriceDisclaimer={priceDisclaimer}
+      onChangeQuantity={() => {}}
+      onRemoveItem={() => {}}
+      formatPrice={(price: any) => `${price},-`}
+      shouldShowCart={shouldShowCart}
+      setShouldShowCart={setShouldShowCart}
+    />
+  );
+};
+
+export const WithMonthlyPriceDetails = () => {
+  const delivery = {
+    label: 'Bedriftspakken',
+    price: 0,
+  };
+  const [shouldShowCart, setShouldShowCart] = useState(false);
+  const priceDisclaimer =
+    '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
+
+  const priceDetails = [
+    { label: 'Delbetaling telefon 12 md.', value: '1583,-/md.' },
+    { label: 'Mobilabonnement 8 GB', value: '329,-/md.' },
+  ];
+
+  return (
+    <ShoppingCartUpdated
+      heading="Handlekurv"
+      cartItems={[]}
+      delivery={delivery}
+      totalPriceMonthly={500}
+      totalPriceUpfront={300}
+      monthlyPriceDetails={priceDetails}
+      monthlyPriceDisclaimer={priceDisclaimer}
+      onChangeQuantity={() => {}}
+      onRemoveItem={() => {}}
+      formatPrice={(price: any) => `${price},-`}
+      shouldShowCart={shouldShowCart}
+      setShouldShowCart={setShouldShowCart}
+    />
+  );
+};
+
+export const WithoutDelivery = () => {
+  const [shouldShowCart, setShouldShowCart] = useState(false);
+
+  return (
+    <ShoppingCartUpdated
+      heading="Handlekurv"
+      cartItems={[]}
+      totalPriceMonthly={500}
+      totalPriceUpfront={300}
+      onChangeQuantity={() => {}}
+      onRemoveItem={() => {}}
+      formatPrice={(price: any) => `${price},-`}
+      shouldShowCart={shouldShowCart}
+      setShouldShowCart={setShouldShowCart}
+    />
+  );
+};
