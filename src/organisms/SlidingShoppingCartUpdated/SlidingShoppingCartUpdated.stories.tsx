@@ -38,14 +38,21 @@ const menuLinks = [
 ];
 
 export const Default = () => {
-  const heading = 'Handlekurv';
-  const pricePerMonth = 500;
-  const priceUpfront = 500;
-  const priceFirstInvoice = 500;
   const delivery = {
     label: 'Fri frakt',
     price: 0,
   };
+  const priceDisclaimer =
+    '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
+
+  const priceDetails = [
+    { label: 'Delbetaling telefon 12 md.', value: '1583,-/md.' },
+    { label: 'Mobilabonnement 8 GB', value: '329,-/md.' },
+  ];
+  const buttons = [
+    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
+    { kind: 'voca-inverted', label: 'Fortsett å handle' },
+  ];
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
   return (
@@ -69,18 +76,20 @@ export const Default = () => {
         numberOfItemsInCart={3}
       />
       <SlidingShoppingCartUpdated
-        heading={heading}
+        heading="Din handlekurv (2)"
         cartItems={[]}
         delivery={delivery}
-        totalPriceFirstInvoice={priceFirstInvoice}
-        totalPriceMonthly={pricePerMonth}
-        totalPriceUpfront={priceUpfront}
+        totalPriceMonthly={500}
+        totalPriceUpfront={300}
+        monthlyPriceDetails={priceDetails}
+        monthlyPriceDisclaimer={priceDisclaimer}
+        totalPriceFirstInvoice={0}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
-        formatPrice={(price) => `${price},-`}
+        formatPrice={(price: any) => `${price},-`}
         shouldShowCart={shouldShowCart}
         setShouldShowCart={setShouldShowCart}
-        isAnyCartItemsQuantityModifiable
+        buttons={buttons}
       />
     </>
   );
