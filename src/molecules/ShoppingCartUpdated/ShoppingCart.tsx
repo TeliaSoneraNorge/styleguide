@@ -15,9 +15,11 @@ export interface ShoppingCartProps {
   onRemoveItem: (item: any) => void;
   setShouldShowCart(shouldShowCart: boolean): void;
   shouldShowCart: boolean;
-  totalPriceFirstInvoice: number;
-  totalPriceMonthly: number;
-  totalPriceUpfront: number;
+  totalPriceFirstInvoice?: number;
+  totalPriceMonthly?: number;
+  monthlyPriceDisclaimer?: string;
+  monthlyPriceDetails?: { label: string; value: string }[];
+  totalPriceUpfront?: number;
   totalVAT?: number;
   totalPriceWithoutVAT?: number;
   totalDiscount?: number;
@@ -43,6 +45,8 @@ const ShoppingCart = ({
   shouldShowCart,
   totalPriceFirstInvoice,
   totalPriceMonthly,
+  monthlyPriceDisclaimer,
+  monthlyPriceDetails,
   totalPriceUpfront,
   totalVAT,
   totalPriceWithoutVAT,
@@ -71,6 +75,8 @@ const ShoppingCart = ({
         delivery={delivery}
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceMonthly={totalPriceMonthly}
+        monthlyPriceDisclaimer={monthlyPriceDisclaimer}
+        monthlyPriceDetails={monthlyPriceDetails}
         totalPriceUpfront={totalPriceUpfront}
         totalPriceWithoutVAT={totalPriceWithoutVAT}
         totalVAT={totalVAT}

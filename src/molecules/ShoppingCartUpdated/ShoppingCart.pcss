@@ -9,6 +9,15 @@
     padding: 1rem;
   }
 
+  &__horizontal-rule {
+    width: 100%;
+    border-bottom: 2px solid #d5d5d5;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin: 1rem 0;
+  }
+
   &__delivery-container {
     display: flex;
     justify-content: space-between;
@@ -38,7 +47,11 @@
     padding: 1rem;
   }
 
-  &__price-upfront-row {
+  &__price-monthly-details-total {
+    margin-top: 1.5rem;
+  }
+
+  &__price-row {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,5 +59,31 @@
     > :first-child {
       margin-right: 0.5rem;
     }
+  }
+
+  &__tooltip-icon-wrapper {
+    margin-left: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__tooltip-icon {
+    cursor: pointer;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--core-purple);
+  }
+
+  &__tooltip {
+    width: 15rem;
+
+    @media all and (min-width: 48em) {
+      width: 22rem;
+    }
+  }
+
+  &__flex-row {
+    display: flex;
+    align-items: center;
   }
 }
