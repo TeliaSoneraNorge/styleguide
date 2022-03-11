@@ -138,6 +138,32 @@
     }
   }
 
+  &--voca-normal {
+    background-color: var(--green-700);
+    border: none;
+    color: var(--white);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--green-800) !important;
+      color: var(--white) !important;
+    }
+  }
+
+  &--voca-inverted {
+    background-color: var(--white);
+    color: var(--green-700);
+    border: 1px solid var(--green-700);
+
+    &:hover,
+    &:focus,
+    &:active {
+      background-color: var(--green-700) !important;
+      color: var(--white) !important;
+    }
+  }
+
   &__processing {
     display: none;
 

@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { isEmpty } from 'lodash';
 import Heading from '../../atoms/Heading/Heading';
-import { Icon } from '../../atoms/Icon';
+import { Icon, IconDefinition } from '../../atoms/Icon';
 import ShoppingCartItemsSection from './ShoppingCartItemSection';
 import { ICartDelivery, ICartItem } from './types';
 import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
+import ShoppingCartContinueSection from './ShoppingCartContinueSection';
+import { ButtonKind } from '../../atoms/Button';
+import { size } from 'lodash';
 
 export interface ShoppingCartProps {
   heading?: string;
@@ -27,6 +29,13 @@ export interface ShoppingCartProps {
   disclaimers?: any;
   isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
+  buttons?: {
+    kind?: ButtonKind;
+    label: string;
+    icon?: IconDefinition;
+    size?: 'small';
+    onClick?: (...args: any[]) => void;
+  }[];
 }
 
 /**
@@ -55,6 +64,7 @@ const ShoppingCart = ({
   disclaimers,
   isAnyCartItemsQuantityModifiable,
   isAllowedToDelete,
+  buttons,
 }: ShoppingCartProps) => {
   return (
     <form className="telia-shopping-cart">
@@ -82,6 +92,7 @@ const ShoppingCart = ({
         totalVAT={totalVAT}
         formatPrice={formatPrice}
       />
+      {buttons && size(buttons) > 0 && <ShoppingCartContinueSection buttons={buttons} />}
     </form>
   );
 };
