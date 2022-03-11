@@ -5,6 +5,9 @@ import img from '../../stories/sampleImages';
 export default {
   title: 'Component library/Organisms/SlidingShoppingCartUpdated',
   component: SlidingShoppingCartUpdated,
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 const menuLinks = [
@@ -95,53 +98,7 @@ export const Default = () => {
   );
 };
 
-export const UpfrontWithoutMVA = () => {
-  const heading = 'Handlekurv';
-  const pricePerMonth = 500;
-  const priceUpfront = 500;
-  const priceFirstInvoice = 500;
-  const delivery = {
-    label: 'Bedriftspakken',
-    price: 0,
-  };
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
-  return (
-    <>
-      <Menu
-        loginUrl="#Menu"
-        logoUrl="#"
-        logoTitle="Telia logo"
-        activeIndex={0}
-        activeLinkIndex={-1}
-        menuLinks={menuLinks}
-        logoImageDesktopPath={img.logo}
-        logoImageInverseDesktopPath={img.logoInverted}
-        onSearchSubmit={() => {}}
-        searchLabel="Fyll inn det du skal søke på"
-        searchButtonLabel="Søk"
-        searchButtonAbortText="Lukk"
-        mobileMenuCloseButtonLabel="Lukk"
-        lockBodyOnMenuOpen
-        onCartClick={() => setShouldShowCart(!shouldShowCart)}
-        numberOfItemsInCart={3}
-      />
-      <SlidingShoppingCartUpdated
-        heading={heading}
-        cartItems={[]}
-        delivery={delivery}
-        totalPriceFirstInvoice={priceFirstInvoice}
-        totalPriceMonthly={pricePerMonth}
-        totalPriceUpfront={priceUpfront}
-        totalVAT={150}
-        totalPriceWithoutVAT={350}
-        onChangeQuantity={() => {}}
-        onRemoveItem={() => {}}
-        formatPrice={(price) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
-        isAnyCartItemsQuantityModifiable
-      />
-    </>
-  );
+export const WithLayout = Default.bind({});
+WithLayout.parameters = {
+  layout: 'centered',
 };
