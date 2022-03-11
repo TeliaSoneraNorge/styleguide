@@ -5,6 +5,8 @@ import { useClickOutsideListener } from '../SlidingShoppingCart/useClickOutsideL
 import { ICartDelivery, ICartItem } from './types';
 import { ButtonKind } from '../../atoms/Button';
 import { IconDefinition } from '../../atoms/Icon';
+import { useFocusTrap } from '../../utils/useFocusTrap';
+import { useEscapeListener } from '../../molecules/Modal/useEscapeListener';
 
 export interface SlidingShoppingCartUpdatedProps {
   heading?: string;
@@ -57,8 +59,10 @@ const SlidingShoppingCartUpdated = ({
   isAllowedToDelete,
   buttons,
 }: SlidingShoppingCartUpdatedProps) => {
+  const { container } = useFocusTrap();
   const ref = useRef<HTMLDivElement>(null);
 
+  useEscapeListener({ onEscape: () => setShouldShowCart(false) });
   useClickOutsideListener({
     open: shouldShowCart,
     close: () => setShouldShowCart(false),
@@ -66,7 +70,7 @@ const SlidingShoppingCartUpdated = ({
   });
 
   return (
-    <>
+    <div ref={container}>
       <div className={cn({ 'telia-sliding-shopping-cart__overlay': shouldShowCart })} />
       <aside
         ref={ref}
@@ -96,7 +100,7 @@ const SlidingShoppingCartUpdated = ({
           buttons={buttons}
         />
       </aside>
-    </>
+    </div>
   );
 };
 
