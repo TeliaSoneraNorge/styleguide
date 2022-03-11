@@ -69,9 +69,9 @@ const ShoppingCart = ({
   return (
     <form className="telia-shopping-cart">
       {heading && (
-        <div className="telia-shopping-cart__heading">
-          <Heading level={2}>
-            <Icon icon="shoppingcart" className="telia-shopping-cart__icon" /> {heading}
+        <div className="telia-shopping-cart__section-inner">
+          <Heading className="telia-shopping-cart__heading" tag="h2" size="s">
+            {heading}
           </Heading>
         </div>
       )}
