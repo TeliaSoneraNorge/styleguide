@@ -16,9 +16,8 @@ export default function ShoppingCartContinueSection({ buttons }: ShoppingCartCon
   return (
     <section className="telia-shopping-cart__section">
       <div className="telia-shopping-cart__section-inner telia-shopping-cart__continue-container">
-        {buttons.map(({ kind, label, icon, size, onClick }, index) => (
+        {buttons.map(({ kind, label, icon, size, onClick }) => (
           <Button
-            key={`telia-shopping-cart-btn-${index}`}
             text={label}
             icon={icon || undefined}
             kind={kind || 'voca-normal'}
