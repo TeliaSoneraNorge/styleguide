@@ -60,12 +60,14 @@ export default function ShoppingCartPaymentSection({
           <div className="telia-shopping-cart__delivery-container">
             <div className="telia-shopping-cart__delivery-left">
               <Icon icon={delivery.icon || 'delivery'} className="telia-shopping-cart__delivery-icon" />
-              Levering
+              {delivery.label || 'Levering'}
             </div>
-            <span className="telia-shopping-cart__label-medium">{delivery.label}</span>
+            <span className="telia-shopping-cart__label-medium">{delivery.value}</span>
           </div>
         )}
-        {delivery && !isEmpty(delivery) && totalPriceMonthly && <hr className="telia-shopping-cart__horizontal-rule" />}
+        {delivery && !isEmpty(delivery) && !!totalPriceMonthly && (
+          <hr className="telia-shopping-cart__horizontal-rule" />
+        )}
         {!!totalPriceMonthly && (
           <div className="telia-shopping-cart__price-monthly-container">
             <div className="telia-shopping-cart__price-row">

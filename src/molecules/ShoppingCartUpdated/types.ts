@@ -178,5 +178,5 @@ export interface ICartItem {
 export interface ICartDelivery {
   icon?: IconDefinition;
   label: string;
-  price: number;
+  value: string | number;
 }

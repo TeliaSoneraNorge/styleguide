@@ -12,8 +12,8 @@ export const Default = () => {
   const priceUpfront = 500;
   const priceFirstInvoice = 500;
   const delivery = {
-    label: 'Fri frakt',
-    price: 0,
+    label: 'Levering',
+    value: 'Fri frakt',
   };
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
@@ -42,7 +42,7 @@ export const UpfrontWithoutMVA = () => {
   const priceFirstInvoice = 500;
   const delivery = {
     label: 'Bedriftspakken',
-    price: 0,
+    value: 'Fri frakt',
   };
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
@@ -69,7 +69,7 @@ export const UpfrontWithoutMVA = () => {
 export const WithMonthlyPriceDisclaimer = () => {
   const delivery = {
     label: 'Bedriftspakken',
-    price: 0,
+    value: 'Fri frakt',
   };
   const [shouldShowCart, setShouldShowCart] = useState(false);
   const priceDisclaimer =
@@ -95,7 +95,7 @@ export const WithMonthlyPriceDisclaimer = () => {
 export const WithMonthlyPriceDetails = () => {
   const delivery = {
     label: 'Bedriftspakken',
-    price: 0,
+    value: 'Fri frakt',
   };
   const [shouldShowCart, setShouldShowCart] = useState(false);
   const priceDisclaimer =
@@ -145,7 +145,7 @@ export const WithoutDelivery = () => {
 export const WithContinueButtons = () => {
   const delivery = {
     label: 'Bedriftspakken',
-    price: 0,
+    value: 'Fri frakt',
   };
   const [shouldShowCart, setShouldShowCart] = useState(false);
   const buttons = [
