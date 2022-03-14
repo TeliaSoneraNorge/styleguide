@@ -66,7 +66,7 @@ export default function ShoppingCartPaymentSection({
           </div>
         )}
         {delivery && !isEmpty(delivery) && totalPriceMonthly && <hr className="telia-shopping-cart__horizontal-rule" />}
-        {totalPriceMonthly && (
+        {!!totalPriceMonthly && (
           <div className="telia-shopping-cart__price-monthly-container">
             <div className="telia-shopping-cart__price-row">
               <div className="telia-shopping-cart__flex-row">
@@ -106,7 +106,7 @@ export default function ShoppingCartPaymentSection({
           </div>
         )}
       </div>
-      {totalPriceUpfront && (
+      {!!totalPriceUpfront && (
         <div className="telia-shopping-cart__price-upfront-container">
           {totalPriceWithoutVAT && (
             <div className="telia-shopping-cart__price-row">
