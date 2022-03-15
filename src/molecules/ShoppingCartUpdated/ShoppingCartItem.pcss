@@ -36,6 +36,16 @@
       margin: 0 auto;
     }
 
+    &__quantity-picker-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .telia-shopping-cart__item__price-per {
+        margin-left: 1rem;
+      }
+    }
+
     &__quantity-picker {
       display: flex;
       width: 5.8rem;
@@ -50,10 +60,20 @@
       }
 
       &__button {
+        &:active,
+        &:hover,
+        &:focus {
+          background-color: var(--core-purple);
+          color: white;
+        }
+
+        display: flex;
+        align-items: center;
         background-color: transparent;
         border: none;
+        height: 1.5rem;
         outline: none;
-        font-size: 1.5rem;
+        font-size: 1.7rem;
         cursor: pointer;
       }
     }
@@ -65,6 +85,8 @@
       }
 
       &__cost {
+        display: flex;
+        flex-direction: column;
         font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
         margin-bottom: 0px;
       }

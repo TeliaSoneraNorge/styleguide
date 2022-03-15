@@ -100,29 +100,37 @@ const ShoppingCartItem = ({
     const minQuantity = 1;
     const maxQuantity = 10;
     return (
-      <div className="telia-shopping-cart__item__quantity-picker">
-        <button
-          className="telia-shopping-cart__item__quantity-picker__button"
-          disabled={quantity <= minQuantity}
-          onClick={() => onChangeQuantity(cartItem, quantity - 1)}
-        >
-          -
-        </button>
-        <Paragraph>{quantity}</Paragraph>
-        <button
-          className="telia-shopping-cart__item__quantity-picker__button"
-          disabled={quantity >= maxQuantity}
-          onClick={() => onChangeQuantity(cartItem, quantity + 1)}
-        >
-          +
-        </button>
+      <div className="telia-shopping-cart__item__quantity-picker-wrapper">
+        <div className="telia-shopping-cart__item__quantity-picker">
+          <button
+            className="telia-shopping-cart__item__quantity-picker__button"
+            disabled={quantity <= minQuantity}
+            onClick={() => onChangeQuantity(cartItem, quantity - 1)}
+          >
+            -
+          </button>
+          <Paragraph>{quantity}</Paragraph>
+          <button
+            className="telia-shopping-cart__item__quantity-picker__button"
+            disabled={quantity >= maxQuantity}
+            onClick={() => onChangeQuantity(cartItem, quantity + 1)}
+          >
+            +
+          </button>
+        </div>
+        {shouldShowPricePerUnit && (
+          <span className="telia-shopping-cart__item__price-per">
+            {quantity > 1 && !isQuantityModifiable && `${quantity} x `}
+            {`${getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, 1)}/stk`}
+          </span>
+        )}
       </div>
     );
   };
 
   const CartItemName = () => (
     <div className="telia-shopping-cart__item__name">
-      <div className="telia-shopping-cart__item__link">{href ? <Link href="#">{name}</Link> : name}</div>
+      <div className="telia-shopping-cart__item__link">{href ? <Link href={href}>{name}</Link> : name}</div>
       {color && (
         <Paragraph>
           {color}
@@ -141,15 +149,17 @@ const ShoppingCartItem = ({
           {isQuantityModifiable && <QuantityPicker />}
         </div>
         <span className="telia-shopping-cart__item__price__cost">
-          <Paragraph className="telia-shopping-cart__item__price__label">
+          <span className="telia-shopping-cart__item__price__label">
             {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
             {price.monthly ? ' /md.' : ''}
-          </Paragraph>
+          </span>
           {formatPrice(discountPrice) !==
             getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity) && (
-            <Paragraph className="telia-shopping-cart__item__price__linethrough">
-              {price.monthly ? formatPrice(discountPrice) + ' /md.' : formatPrice(discountPrice)}
-            </Paragraph>
+            <span className="telia-shopping-cart__item__price__linethrough">
+              {price.monthly
+                ? formatPrice(shouldShowPricePerUnit ? discountPrice * quantity : discountPrice) + ' /md.'
+                : formatPrice(shouldShowPricePerUnit ? discountPrice * quantity : discountPrice)}
+            </span>
           )}
         </span>
       </div>

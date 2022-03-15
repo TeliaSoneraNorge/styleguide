@@ -1,7 +1,6 @@
-import React, { Fragment, ReactElement } from 'react';
+import React, { Fragment } from 'react';
 import _ from 'lodash';
 import ShoppingCartItem from './ShoppingCartItem';
-import { CART_ITEM_TYPE } from './index';
 import { ICartItem } from './types';
 
 export interface ShoppingCartItemSectionProps {
@@ -108,23 +107,5 @@ const ShoppingCartSection = ({
     </section>
   );
 };
-
-// const ShoppingCartItemsSection = ({
-//   cartItems,
-//   onChangeQuantity,
-//   onRemoveItem,
-//   shouldShowQuantity,
-//   isAllowedToDelete,
-//   formatPrice,
-// }: ShoppingCartItemSectionProps) => {
-//   const cartItemsLength = cartItems.length;
-//   return (
-//     <section>
-//       {cartItems.map((cartItem, index) => (
-//         <ShoppingCartItem cartItemsLength={cartItemsLength} index={index} onChangeQuantity={onChangeQuantity} shouldShowQuantity={shouldShowQuantity} onRemoveItem={onRemoveItem} isAllowedToDelete={isAllowedToDelete} cartItem={cartItem} />
-//       ))}
-//     </section>
-//   );
-// };
 
 export default ShoppingCartSection;

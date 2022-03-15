@@ -323,7 +323,7 @@ export const leaseHandset = () => {
       quantity: {
         modifiable: true,
         removable: true,
-        value: 1,
+        value: 3,
       },
       price: {
         upfront: 1999,
