@@ -166,7 +166,7 @@ export interface ICartItem {
   price: ICartItemPrice;
   discount?: ICartItemDiscount;
   image?: ICartItemImage;
-  leaseMonths?: number;
+  leaseMonths: number | string | null;
   isReSwitch?: boolean;
   isWebDeal?: boolean;
   items?: ICartItem[];
