@@ -130,7 +130,10 @@ const ShoppingCartItem = ({
 
   const CartItemName = () => (
     <div className="telia-shopping-cart__item__name">
-      <div className="telia-shopping-cart__item__link">{href ? <Link href={href}>{name}</Link> : name}</div>
+      <div className="telia-shopping-cart__item__link">
+        {lineThrough && <span className="telia-shopping-cart__item__price__linethrough">{lineThrough}</span>}
+        {href ? <Link href={href}>{name}</Link> : name}
+      </div>
       {color && (
         <Paragraph>
           {color}
