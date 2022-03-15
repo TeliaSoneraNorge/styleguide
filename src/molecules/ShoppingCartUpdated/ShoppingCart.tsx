@@ -1,7 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import Heading from '../../atoms/Heading/Heading';
-import { Icon, IconDefinition } from '../../atoms/Icon';
+import { IconDefinition } from '../../atoms/Icon';
 import ShoppingCartItemsSection from './ShoppingCartItemSection';
 import { ICartDelivery, ICartItem } from './types';
 import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
@@ -50,8 +49,6 @@ const ShoppingCart = ({
   delivery,
   onChangeQuantity,
   onRemoveItem,
-  setShouldShowCart,
-  shouldShowCart,
   totalPriceFirstInvoice,
   totalPriceMonthly,
   monthlyPriceDisclaimer,
@@ -60,10 +57,8 @@ const ShoppingCart = ({
   totalVAT,
   totalPriceWithoutVAT,
   totalDiscount,
-  formatPrice,
-  disclaimers,
-  isAnyCartItemsQuantityModifiable,
   isAllowedToDelete,
+  formatPrice,
   buttons,
 }: ShoppingCartProps) => {
   return (
@@ -80,6 +75,7 @@ const ShoppingCart = ({
         onChangeQuantity={onChangeQuantity}
         onRemoveItem={onRemoveItem}
         formatPrice={formatPrice}
+        isAllowedToDelete={isAllowedToDelete}
       />
       <ShoppingCartPaymentSection
         delivery={delivery}
@@ -95,27 +91,6 @@ const ShoppingCart = ({
       {buttons && size(buttons) > 0 && <ShoppingCartContinueSection buttons={buttons} />}
     </form>
   );
-};
-
-ShoppingCart.propTypes = {
-  cartItems: PropTypes.array,
-  isAnyCartItemsQuantityModifiable: PropTypes.bool,
-  onChangeQuantity: PropTypes.func,
-  onRemoveItem: PropTypes.func,
-  onGoToCart: PropTypes.func,
-  goToCartText: PropTypes.string,
-  totalPriceFirstInvoice: PropTypes.number,
-  totalPriceMonthly: PropTypes.number,
-  totalPriceUpfront: PropTypes.number,
-  totalVAT: PropTypes.number,
-  totalPriceWithoutVAT: PropTypes.number,
-  formatPrice: PropTypes.func,
-  hasPaid: PropTypes.bool,
-  disclaimers: PropTypes.node,
-  discount: PropTypes.shape({
-    label: PropTypes.string,
-    price: PropTypes.number,
-  }),
 };
 
 export default ShoppingCart;
