@@ -135,9 +135,15 @@ interface ICartItemDiscountValue {
   monthly: number;
 }
 
+interface ICartItemLeaseDiscount {
+  name: string;
+  value: string;
+}
+
 interface ICartItemDiscount {
   value: ICartItemDiscountValue;
   description: string;
+  leaseDiscount?: ICartItemLeaseDiscount;
 }
 
 export interface ICartItemImage {
