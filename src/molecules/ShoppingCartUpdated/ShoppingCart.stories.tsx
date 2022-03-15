@@ -48,7 +48,7 @@ export const Default = () => {
       code: '',
       color: 'Grå',
       modelSize: '256 GB',
-      lineThrough: '1624,-/md.',
+      lineThrough: '',
       image: {
         url:
           '//images.ctfassets.net/iz15t1lxx44v/6wL89AOWs6Z7dMISvz6Ta1/0eee85d33d7b20632d706ce51df0836e/samsung-galaxy-s20-ultra-5g-cosmic-gray-2.png',
@@ -407,6 +407,32 @@ export const subscriptionsOnly = () => {
       },
     },
     {
+      type: 'SUBSCRIPTION_DRAFT',
+      id: 'TELIA_MOBIL_06GB.REGULAR',
+      bundleId: 'ac9f7a',
+      items: [],
+      name: '16 GB',
+      lineThrough: '8 GB',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        monthly: 329,
+      },
+      image: {
+        icon: 'sim-card',
+      },
+      subtitle: 'Nummer: 413 20 853',
+      indent: true,
+      discount: {
+        value: {
+          monthly: 135,
+        },
+      },
+    },
+    {
       type: 'SIM',
       id: '9054990',
       subtitle: 'Hovedsim',
@@ -484,7 +510,7 @@ export const handsetOnly = () => {
       code: '',
       color: 'Grå',
       modelSize: '256 GB',
-      lineThrough: '1624,-/md.',
+      lineThrough: '',
       image: {
         url:
           '//images.ctfassets.net/iz15t1lxx44v/6wL89AOWs6Z7dMISvz6Ta1/0eee85d33d7b20632d706ce51df0836e/samsung-galaxy-s20-ultra-5g-cosmic-gray-2.png',
