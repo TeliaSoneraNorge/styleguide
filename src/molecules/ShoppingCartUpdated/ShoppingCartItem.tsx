@@ -154,12 +154,12 @@ const ShoppingCartItem = ({
         <span className="telia-shopping-cart__item__price__cost">
           <span className="telia-shopping-cart__item__price__label">
             {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
-            {price.monthly ? ' /md.' : ''}
+            {price.monthly ? '/md.' : ''}
           </span>
           {formatPrice(discountPrice) !==
             getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity) && (
             <span className="telia-shopping-cart__item__price__linethrough">
-              {price.monthly ? formatPrice(discountPrice) + ' /md.' : formatPrice(discountPrice)}
+              {price.monthly ? formatPrice(discountPrice) + '/md.' : formatPrice(discountPrice)}
             </span>
           )}
         </span>
