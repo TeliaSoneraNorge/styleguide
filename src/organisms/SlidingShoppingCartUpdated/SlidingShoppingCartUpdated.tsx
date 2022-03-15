@@ -98,6 +98,8 @@ const SlidingShoppingCartUpdated = ({
           totalPriceWithoutVAT={totalPriceWithoutVAT}
           formatPrice={formatPrice}
           buttons={buttons}
+          isAllowedToDelete={isAllowedToDelete}
+          isAnyCartItemsQuantityModifiable={isAnyCartItemsQuantityModifiable}
         />
       </aside>
     </div>
