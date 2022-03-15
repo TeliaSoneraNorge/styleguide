@@ -194,6 +194,7 @@ export const Default = () => {
         shouldShowCart={shouldShowCart}
         setShouldShowCart={setShouldShowCart}
         isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
         buttons={buttons}
       />
     </Container>
