@@ -59,9 +59,9 @@
       }
 
       &__button {
-        &:active,
-        &:hover,
-        &:focus {
+        &:not(&--disabled):active,
+        &:not(&--disabled):hover,
+        &:not(&--disabled):focus {
           background-color: var(--core-purple);
           color: white;
         }
@@ -73,7 +73,10 @@
         height: 1.5rem;
         outline: none;
         font-size: 1.7rem;
-        cursor: pointer;
+
+        &:not(&--disabled) {
+          cursor: pointer;
+        }
       }
     }
 

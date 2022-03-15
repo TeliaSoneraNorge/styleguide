@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
+import cn from 'classnames';
 import { ICartItem, ICartItemPrice } from './types';
-import { CART_ITEM_TYPE } from './index';
 import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import Link from '../../atoms/Link';
@@ -99,7 +99,9 @@ const ShoppingCartItem = ({
       <div className="telia-shopping-cart__item__quantity-picker-wrapper">
         <div className="telia-shopping-cart__item__quantity-picker">
           <button
-            className="telia-shopping-cart__item__quantity-picker__button"
+            className={cn('telia-shopping-cart__item__quantity-picker__button', {
+              'telia-shopping-cart__item__quantity-picker__button--disabled': quantity <= minQuantity,
+            })}
             disabled={quantity <= minQuantity}
             onClick={() => onChangeQuantity(cartItem, quantity - 1)}
           >
@@ -107,7 +109,9 @@ const ShoppingCartItem = ({
           </button>
           <Paragraph>{quantity}</Paragraph>
           <button
-            className="telia-shopping-cart__item__quantity-picker__button"
+            className={cn('telia-shopping-cart__item__quantity-picker__button', {
+              'telia-shopping-cart__item__quantity-picker__button--disabled': quantity >= maxQuantity,
+            })}
             disabled={quantity >= maxQuantity}
             onClick={() => onChangeQuantity(cartItem, quantity + 1)}
           >
