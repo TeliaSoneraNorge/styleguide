@@ -42,7 +42,7 @@ const ShoppingCartItem = ({
   const isRemovable = _.get(cartItem, 'quantity.removable');
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
   const discountValueUpfront = _.get(discount, 'value.upfront') || 0;
-  const isLease = leaseMonths !== '0' || leaseMonths !== 0 || !!leaseMonths;
+  const isLease = leaseMonths === 0 || !!leaseMonths;
   const hasSubscription = !!_.find(items, (item) => item.type.includes('SUBSCRIPTION'));
   const discountValueMonthly = _.get(discount, 'value.monthly') || 0;
   const isActive = _.get(cartItem, 'status.isActive');
@@ -152,7 +152,7 @@ const ShoppingCartItem = ({
         </div>
         <span className="telia-shopping-cart__item__price__cost">
           <span className="telia-shopping-cart__item__price__label">
-            {isLease && !hasSubscription && 'fra '}{' '}
+            {isLease && !hasSubscription && 'fra '}
             {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
             {price.monthly ? ' /md.' : ''}
           </span>
