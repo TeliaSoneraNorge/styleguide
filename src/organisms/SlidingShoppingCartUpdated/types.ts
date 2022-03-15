@@ -140,15 +140,10 @@ interface ICartItemDiscount {
   description: string;
 }
 
-interface ICartItemImageIcon {
-  icon: string;
+export interface ICartItemImage {
+  url?: string;
+  icon?: IconDefinition;
 }
-
-interface ICartItemImageUrl {
-  url: string;
-}
-
-type ICartItemImage = ICartItemImageIcon | ICartItemImageUrl;
 
 export interface ICartItem {
   type: ICartType;
@@ -158,12 +153,14 @@ export interface ICartItem {
   bundleId?: string;
   isLegal?: boolean;
   name: string;
+  href?: string;
   lineThrough: string;
   subtitle?: string;
   brand?: string;
   brandSlug?: string;
   model?: string;
   modelSlug?: string;
+  modelSize?: string;
   color?: string;
   quantity: ICartItemQuantity;
   price: ICartItemPrice;

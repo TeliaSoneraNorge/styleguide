@@ -1,0 +1,124 @@
+.telia-shopping-cart {
+  &__item {
+    position: relative;
+    background-color: white;
+
+    &__link {
+      .link {
+        &:hover {
+          border-bottom: 1px solid var(--core-purple);
+        }
+
+        border-bottom: 1px solid #222222;
+      }
+
+      border: none;
+      font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+    }
+
+    &__name {
+      width: 100%;
+      padding: 1rem 1rem 0 0;
+      font-size: 1rem;
+
+      &__container {
+        display: flex;
+      }
+    }
+
+    &__subtitle {
+      display: flex;
+      flex-direction: column;
+    }
+
+    hr {
+      width: 90%;
+      margin: 0 auto;
+    }
+
+    &__quantity-picker {
+      display: flex;
+      width: 5.8rem;
+      height: 1.6rem;
+      align-items: center;
+      align-content: center;
+      justify-content: space-around;
+      border: #bdbdbd solid 1px;
+
+      .paragraph {
+        margin: 0px;
+      }
+
+      &__button {
+        background-color: transparent;
+        border: none;
+        outline: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+      }
+    }
+
+    &__price {
+      &__container {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__cost {
+        font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+        margin-bottom: 0px;
+      }
+
+      &__label {
+        margin-bottom: 0px;
+      }
+
+      &__linethrough {
+        font-size: 14px;
+        margin-bottom: 0rem;
+        text-align: right;
+        text-decoration-line: line-through;
+
+        /* Gray / 500 */
+
+        color: #7a7a7a;
+      }
+    }
+
+    &__image,
+    &__no-image {
+      &__container {
+        max-width: 5rem;
+        width: 5rem;
+        padding: 1rem 1rem 0 1rem;
+      }
+    }
+
+    &__delete-button {
+      &__container {
+        &:active,
+        &:hover,
+        &:focus {
+          background-color: var(--core-purple);
+          color: white;
+        }
+
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        outline: none;
+        position: absolute;
+        height: 2rem;
+        width: 3rem;
+        right: 3px;
+        top: 14px;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        .Icon {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+  }
+}

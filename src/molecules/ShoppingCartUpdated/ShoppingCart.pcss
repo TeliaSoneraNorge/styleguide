@@ -1,4 +1,5 @@
 .telia-shopping-cart {
+  width: 30rem;
   &__section {
     &--grey {
       background-color: var(--grey-100);
@@ -9,9 +10,18 @@
     padding: 1rem;
   }
 
+  &__horizontal-rule-wrapper {
+    padding: 1rem 1rem 0 1rem;
+    background-color: white;
+
+    .telia-shopping-cart__horizontal-rule {
+      margin: 0;
+    }
+  }
+
   &__horizontal-rule {
     width: 100%;
-    border-bottom: 2px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
     border-left: none;
     border-right: none;
     border-top: none;
