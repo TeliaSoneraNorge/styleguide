@@ -8,12 +8,17 @@
         &:hover {
           border-bottom: 1px solid var(--core-purple);
         }
-
         border-bottom: 1px solid #222222;
       }
 
+      padding-right: 2rem;
+      margin-bottom: 0.2rem;
       border: none;
       font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+
+      @media all and (min-width: 48em) {
+        padding-right: 0;
+      }
     }
 
     &__name {
@@ -132,8 +137,8 @@
         position: absolute;
         height: 2rem;
         width: 3rem;
-        right: 3px;
-        top: 14px;
+        right: 4px;
+        top: 12px;
         cursor: pointer;
         padding: 0.25rem 0.5rem;
         .Icon {

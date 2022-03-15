@@ -6,6 +6,9 @@ import Container from '../../atoms/Container/Container';
 export default {
   title: 'Component library/Molecules/ShoppingCartUpdated',
   component: ShoppingCartUpdated,
+  parameters: {
+    layout: 'fullscreen',
+  },
 };
 
 const style = {
