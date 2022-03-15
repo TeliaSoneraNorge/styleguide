@@ -152,7 +152,7 @@ const ShoppingCartItem = ({
         </div>
         <span className="telia-shopping-cart__item__price__cost">
           <span className="telia-shopping-cart__item__price__label">
-            {isLease && !hasSubscription && 'fra '}{' '}
+            {isLease && !hasSubscription && 'fra '}
             {getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity)}
             {price.monthly ? ' /md.' : ''}
           </span>
