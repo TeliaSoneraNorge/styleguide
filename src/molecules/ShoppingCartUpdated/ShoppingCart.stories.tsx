@@ -450,7 +450,7 @@ export const subscriptionsOnly = () => {
   );
 };
 
-export const handsetOnly = () => {
+export const handsetBeforeSubscriptionAdded = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;
   const priceUpfront = 500;
@@ -479,7 +479,7 @@ export const handsetOnly = () => {
       brandSlug: 'samsung',
       model: 'Galaxy S20 Ultra 5G 128 GB',
       modelSlug: 'galaxy-s20-ultra',
-      subtitle: 'Telia SVITSJ i 24 md.',
+      subtitle: 'Abonnement velges neste side',
       href: '#',
       code: '',
       color: 'Grå',
@@ -497,7 +497,7 @@ export const handsetOnly = () => {
       },
       price: {
         upfront: 10799,
-        monthly: 0,
+        monthly: 1500,
         originalSalesPrice: 15790,
       },
       discount: {
