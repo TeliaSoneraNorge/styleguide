@@ -135,15 +135,9 @@ interface ICartItemDiscountValue {
   monthly: number;
 }
 
-interface ICartItemLeaseDiscount {
-  name: string;
-  value: string;
-}
-
 interface ICartItemDiscount {
   value: ICartItemDiscountValue;
   description: string;
-  leaseDiscount?: ICartItemLeaseDiscount;
 }
 
 interface ICartItemImage {
@@ -172,7 +166,7 @@ export interface ICartItem {
   price: ICartItemPrice;
   discount?: ICartItemDiscount;
   image?: ICartItemImage;
-  leaseMonths?: number;
+  leaseMonths: number | string | null;
   isReSwitch?: boolean;
   isWebDeal?: boolean;
   items?: ICartItem[];
