@@ -57,6 +57,7 @@ const ShoppingCart = ({
   totalVAT,
   totalPriceWithoutVAT,
   totalDiscount,
+  isAllowedToDelete,
   formatPrice,
   buttons,
 }: ShoppingCartProps) => {
@@ -74,6 +75,7 @@ const ShoppingCart = ({
         onChangeQuantity={onChangeQuantity}
         onRemoveItem={onRemoveItem}
         formatPrice={formatPrice}
+        isAllowedToDelete={isAllowedToDelete}
       />
       <ShoppingCartPaymentSection
         delivery={delivery}
