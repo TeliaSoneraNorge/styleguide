@@ -40,13 +40,9 @@ const ShoppingCartItem = ({
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
   const isRemovable = _.get(cartItem, 'quantity.removable');
-  const hasItemSubscription =
-    _.find(items, { type: CART_ITEM_TYPE.SUBSCRIPTION_DRAFT }) || _.find(items, { type: CART_ITEM_TYPE.SUBSCRIPTION });
   const shouldShowPricePerUnit = (!!price.upfront || !!price.firstInvoice) && quantity > 1;
   const discountValueUpfront = _.get(discount, 'value.upfront') || 0;
   const discountValueMonthly = _.get(discount, 'value.monthly') || 0;
-  const hasGroupDiscount = _.get(discount, 'hasGroupDiscount', false);
-  const isDraft = type === CART_ITEM_TYPE.SUBSCRIPTION_DRAFT || _.get(cartItem, 'status.isDraft');
   const isActive = _.get(cartItem, 'status.isActive');
   let discountPrice: number;
 
@@ -78,7 +74,7 @@ const ShoppingCartItem = ({
     }
 
     if (_.isNumber(price.upfront)) {
-      discountPrice = price.upfront;
+      discountPrice = price.upfront * quantity;
       return formatPrice((price.upfront - discountValueUpfront || 0) * quantity);
     }
     return null;
@@ -156,9 +152,7 @@ const ShoppingCartItem = ({
           {formatPrice(discountPrice) !==
             getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, quantity) && (
             <span className="telia-shopping-cart__item__price__linethrough">
-              {price.monthly
-                ? formatPrice(shouldShowPricePerUnit ? discountPrice * quantity : discountPrice) + ' /md.'
-                : formatPrice(shouldShowPricePerUnit ? discountPrice * quantity : discountPrice)}
+              {price.monthly ? formatPrice(discountPrice) + ' /md.' : formatPrice(discountPrice)}
             </span>
           )}
         </span>

@@ -39,7 +39,6 @@ const sortShoppingCart = (item: ICartItem) => {
     NEW_NUMBER: 90,
     SERVICE: 100,
     ACCESSORY: 110,
-    DELIVERY: 120,
     VOUCHER: 130,
   };
 
