@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ShoppingCartUpdated } from '../../index';
 import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
+import Button from '../../atoms/Button/Button';
 import { ICartItem } from './types';
 
 export default {
@@ -18,6 +19,13 @@ const style = {
   justifyContent: 'center',
 };
 
+const ContinueButtons = (
+  <>
+    <Button kind="voca-normal" text="Velg abonnement" icon="sim-card" />
+    <Button kind="voca-inverted" text="Forsett å handle" />
+  </>
+);
+
 export const Default = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;
@@ -28,15 +36,7 @@ export const Default = () => {
     value: 'Fri frakt',
   };
 
-  const buttons = [
-    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
-    { kind: 'voca-inverted', label: 'Fortsett å handle' },
-  ];
-
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -190,11 +190,9 @@ export const Default = () => {
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
         formatPrice={(price: any) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
         isAnyCartItemsQuantityModifiable
         isAllowedToDelete
-        buttons={buttons}
+        continueSection={ContinueButtons}
       />
     </Container>
   );
@@ -209,7 +207,6 @@ export const UpfrontWithoutMVA = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-  const [shouldShowCart, setShouldShowCart] = useState(false);
 
   return (
     <ShoppingCartUpdated
@@ -224,9 +221,8 @@ export const UpfrontWithoutMVA = () => {
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
-      shouldShowCart={shouldShowCart}
-      setShouldShowCart={setShouldShowCart}
       isAnyCartItemsQuantityModifiable
+      continueSection={ContinueButtons}
     />
   );
 };
@@ -236,7 +232,6 @@ export const WithMonthlyPriceDisclaimer = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-  const [shouldShowCart, setShouldShowCart] = useState(false);
   const priceDisclaimer =
     '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
 
@@ -251,8 +246,6 @@ export const WithMonthlyPriceDisclaimer = () => {
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
-      shouldShowCart={shouldShowCart}
-      setShouldShowCart={setShouldShowCart}
     />
   );
 };
@@ -305,10 +298,6 @@ export const WithContinueButtons = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-  const buttons = [
-    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
-    { kind: 'voca-inverted', label: 'Fortsett å handle' },
-  ];
 
   return (
     <ShoppingCartUpdated
@@ -320,7 +309,7 @@ export const WithContinueButtons = () => {
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
-      buttons={buttons}
+      continueSection={ContinueButtons}
     />
   );
 };
@@ -334,11 +323,6 @@ export const subscriptionsOnly = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-
-  const buttons = [
-    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
-    { kind: 'voca-inverted', label: 'Fortsett å handle' },
-  ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
@@ -450,7 +434,7 @@ export const subscriptionsOnly = () => {
         isAllowedToDelete={true}
         formatPrice={(price: any) => `${price},-`}
         isAnyCartItemsQuantityModifiable
-        buttons={buttons}
+        continueSection={ContinueButtons}
       />
     </Container>
   );
@@ -465,11 +449,6 @@ export const handsetBeforeSubscriptionAdded = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-
-  const buttons = [
-    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
-    { kind: 'voca-inverted', label: 'Fortsett å handle' },
-  ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
@@ -532,7 +511,7 @@ export const handsetBeforeSubscriptionAdded = () => {
         onRemoveItem={() => {}}
         formatPrice={(price: any) => `${price},-`}
         isAnyCartItemsQuantityModifiable
-        buttons={buttons}
+        continueSection={ContinueButtons}
       />
     </Container>
   );
@@ -548,7 +527,7 @@ export const mbbAndHW = () => {
     value: 'Fri frakt',
   };
 
-  const buttons = [
+  const continueSection = [
     { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
     { kind: 'voca-inverted', label: 'Fortsett å handle' },
   ];
@@ -637,7 +616,7 @@ export const mbbAndHW = () => {
         isAllowedToDelete={true}
         formatPrice={(price: any) => `${price},-`}
         isAnyCartItemsQuantityModifiable
-        buttons={buttons}
+        continueSection={ContinueButtons}
       />
     </Container>
   );
@@ -652,11 +631,6 @@ export const accessoryOnly = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-
-  const buttons = [
-    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
-    { kind: 'voca-inverted', label: 'Fortsett å handle' },
-  ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
@@ -783,7 +757,7 @@ export const accessoryOnly = () => {
         isAllowedToDelete={true}
         formatPrice={(price: any) => `${price},-`}
         isAnyCartItemsQuantityModifiable
-        buttons={buttons}
+        continueSection={ContinueButtons}
       />
     </Container>
   );

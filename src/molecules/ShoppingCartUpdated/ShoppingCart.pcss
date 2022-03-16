@@ -43,23 +43,24 @@
       justify-content: flex-end;
       align-items: center;
     }
-  }
 
-  &__button {
-    margin: 0 !important;
-    width: 100%;
-    max-width: 16rem;
+    .button {
+      margin: 0 !important;
+      width: 100%;
+      max-width: 16rem;
 
-    &:not(:first-of-type) {
-      margin-top: 1rem !important;
-    }
-
-    @media all and (min-width: 48em) {
       &:not(:first-of-type) {
-        margin-top: 0 !important;
+        margin-top: 1rem !important;
       }
-      &:not(:last-of-type) {
-        margin-right: 1rem !important;
+
+      @media all and (min-width: 48em) {
+        width: 16rem;
+        &:not(:first-of-type) {
+          margin-top: 0 !important;
+        }
+        &:not(:last-of-type) {
+          margin-right: 1rem !important;
+        }
       }
     }
   }
