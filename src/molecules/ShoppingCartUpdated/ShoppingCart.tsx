@@ -1,12 +1,9 @@
 import React from 'react';
 import Heading from '../../atoms/Heading/Heading';
-import { IconDefinition } from '../../atoms/Icon';
 import ShoppingCartItemsSection from './ShoppingCartItemSection';
 import { ICartDelivery, ICartItem } from './types';
 import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
 import ShoppingCartContinueSection from './ShoppingCartContinueSection';
-import { ButtonKind } from '../../atoms/Button';
-import { size } from 'lodash';
 
 export interface ShoppingCartProps {
   heading?: string;
@@ -14,8 +11,6 @@ export interface ShoppingCartProps {
   delivery?: ICartDelivery;
   onChangeQuantity: (item: any, quantity: number) => void;
   onRemoveItem: (item: any) => void;
-  setShouldShowCart(shouldShowCart: boolean): void;
-  shouldShowCart: boolean;
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
   monthlyPriceDisclaimer?: string;
@@ -23,18 +18,10 @@ export interface ShoppingCartProps {
   totalPriceUpfront?: number;
   totalVAT?: number;
   totalPriceWithoutVAT?: number;
-  totalDiscount?: number;
   formatPrice: (price: string | number) => string;
-  disclaimers?: any;
   isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
-  buttons?: {
-    kind?: ButtonKind;
-    label: string;
-    icon?: IconDefinition;
-    size?: 'small';
-    onClick?: (...args: any[]) => void;
-  }[];
+  continueSection?: React.ReactNode;
 }
 
 /**
@@ -56,10 +43,9 @@ const ShoppingCart = ({
   totalPriceUpfront,
   totalVAT,
   totalPriceWithoutVAT,
-  totalDiscount,
   isAllowedToDelete,
   formatPrice,
-  buttons,
+  continueSection,
 }: ShoppingCartProps) => {
   return (
     <form className="telia-shopping-cart">
@@ -88,7 +74,7 @@ const ShoppingCart = ({
         totalVAT={totalVAT}
         formatPrice={formatPrice}
       />
-      {buttons && size(buttons) > 0 && <ShoppingCartContinueSection buttons={buttons} />}
+      {continueSection && <ShoppingCartContinueSection section={continueSection} />}
     </form>
   );
 };

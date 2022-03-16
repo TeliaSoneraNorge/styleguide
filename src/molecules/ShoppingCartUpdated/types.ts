@@ -125,36 +125,39 @@ interface ICartItemQuantity {
 
 export interface ICartItemPrice {
   upfront?: number;
+  upfrontWithoutVAT?: number;
   monthly?: number;
+  monthlyWithoutVAT?: number;
   firstInvoice?: number;
   originalSalesPrice?: number;
+  originalSalesPriceWithoutVAT?: number;
 }
 
 interface ICartItemDiscountValue {
-  upfront: number;
-  monthly: number;
+  upfront?: number;
+  monthly?: number;
 }
 
 interface ICartItemDiscount {
   value: ICartItemDiscountValue;
-  description: string;
+  description?: string;
 }
 
 export interface ICartItemImage {
-  icon?: IconDefinition;
   url?: string;
+  icon?: IconDefinition;
 }
 
 export interface ICartItem {
   type: ICartType;
-  subtype: string;
+  subtype?: string;
   id: string;
   code?: string;
   bundleId?: string;
   isLegal?: boolean;
   name: string;
   href?: string;
-  lineThrough: string;
+  lineThrough?: string;
   subtitle?: string;
   brand?: string;
   brandSlug?: string;
@@ -166,7 +169,7 @@ export interface ICartItem {
   price: ICartItemPrice;
   discount?: ICartItemDiscount;
   image?: ICartItemImage;
-  leaseMonths: number | string | null;
+  leaseMonths?: number | string | null;
   isReSwitch?: boolean;
   isWebDeal?: boolean;
   items?: ICartItem[];

@@ -1,33 +1,13 @@
 import React from 'react';
-import { IconDefinition } from '../../atoms/Icon';
-import Button, { ButtonKind } from '../../atoms/Button';
 
 interface ShoppingCartContinueSectionProps {
-  buttons: {
-    kind?: ButtonKind;
-    label: string;
-    icon?: IconDefinition;
-    size?: 'small';
-    onClick?: (...args: any[]) => any;
-  }[];
+  section: React.ReactNode;
 }
 
-export default function ShoppingCartContinueSection({ buttons }: ShoppingCartContinueSectionProps) {
+export default function ShoppingCartContinueSection({ section }: ShoppingCartContinueSectionProps) {
   return (
     <section className="telia-shopping-cart__section">
-      <div className="telia-shopping-cart__section-inner telia-shopping-cart__continue-container">
-        {buttons.map(({ kind, label, icon, size, onClick }, index) => (
-          <Button
-            key={`telia-shopping-cart-btn-${index}`}
-            text={label}
-            icon={icon || undefined}
-            kind={kind || 'voca-normal'}
-            size={size || undefined}
-            onClick={onClick}
-            className="telia-shopping-cart__button"
-          />
-        ))}
-      </div>
+      <div className="telia-shopping-cart__section-inner telia-shopping-cart__continue-container">{section}</div>
     </section>
   );
 }
