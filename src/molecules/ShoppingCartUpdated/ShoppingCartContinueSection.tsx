@@ -4,7 +4,7 @@ import Button, { ButtonKind } from '../../atoms/Button';
 
 interface ShoppingCartContinueSectionProps {
   buttons: {
-    kind?: ButtonKind;
+    kind: ButtonKind;
     label: string;
     icon?: IconDefinition;
     size?: 'small';

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ShoppingCartUpdated } from '../../index';
 import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
+import { ICartItem } from './types';
 
 export default {
   title: 'Component library/Molecules/ShoppingCartUpdated',
@@ -36,7 +37,7 @@ export const Default = () => {
 
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
-  const leaseContent = [
+  const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
       subtype: '',
@@ -72,10 +73,6 @@ export const Default = () => {
           upfront: 0,
         },
         description: '',
-        leaseDiscount: {
-          name: 'Telefonrabatt, 12 md. binding og TeliaX',
-          value: 2121,
-        },
       },
       leaseMonths: 0,
       isReSwitch: false,
@@ -103,7 +100,6 @@ export const Default = () => {
                 removable: false,
                 value: 2,
               },
-              indent: true,
             },
             {
               type: 'SERVICE',
@@ -266,7 +262,6 @@ export const WithMonthlyPriceDetails = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-  const [shouldShowCart, setShouldShowCart] = useState(false);
   const priceDisclaimer =
     '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
 
@@ -287,15 +282,11 @@ export const WithMonthlyPriceDetails = () => {
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
-      shouldShowCart={shouldShowCart}
-      setShouldShowCart={setShouldShowCart}
     />
   );
 };
 
 export const WithoutDelivery = () => {
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
   return (
     <ShoppingCartUpdated
       heading="Handlekurv"
@@ -305,8 +296,6 @@ export const WithoutDelivery = () => {
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
-      shouldShowCart={shouldShowCart}
-      setShouldShowCart={setShouldShowCart}
     />
   );
 };
@@ -316,7 +305,6 @@ export const WithContinueButtons = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
-  const [shouldShowCart, setShouldShowCart] = useState(false);
   const buttons = [
     { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
     { kind: 'voca-inverted', label: 'Fortsett å handle' },
@@ -332,8 +320,6 @@ export const WithContinueButtons = () => {
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
-      shouldShowCart={shouldShowCart}
-      setShouldShowCart={setShouldShowCart}
       buttons={buttons}
     />
   );
@@ -355,10 +341,7 @@ export const subscriptionsOnly = () => {
   ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
-  const groupContent = [
+  const groupContent: ICartItem[] = [
     {
       type: 'SUBSCRIPTION',
       id: 'SMART_X.REGULAR',
@@ -377,7 +360,6 @@ export const subscriptionsOnly = () => {
         icon: 'sim-card',
       },
       subtitle: 'Nummer: 413 18 854',
-      indent: true,
       discount: {
         value: {
           monthly: 135,
@@ -402,7 +384,6 @@ export const subscriptionsOnly = () => {
         icon: 'sim-card',
       },
       subtitle: 'Nummer: 413 20 853',
-      indent: true,
       discount: {
         value: {
           monthly: 135,
@@ -428,7 +409,6 @@ export const subscriptionsOnly = () => {
         icon: 'sim-card',
       },
       subtitle: 'Nummer: 413 20 853',
-      indent: true,
       discount: {
         value: {
           monthly: 135,
@@ -451,7 +431,6 @@ export const subscriptionsOnly = () => {
         removable: false,
         value: 2,
       },
-      indent: true,
     },
   ];
 
@@ -470,8 +449,6 @@ export const subscriptionsOnly = () => {
         onRemoveItem={() => {}}
         isAllowedToDelete={true}
         formatPrice={(price: any) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
         isAnyCartItemsQuantityModifiable
         buttons={buttons}
       />
@@ -495,10 +472,7 @@ export const handsetBeforeSubscriptionAdded = () => {
   ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
-  const groupContent = [
+  const groupContent: ICartItem[] = [
     {
       type: 'HANDSET',
       subtype: '',
@@ -534,10 +508,6 @@ export const handsetBeforeSubscriptionAdded = () => {
           upfront: 0,
         },
         description: '',
-        leaseDiscount: {
-          name: 'Telefonrabatt, 12 md. binding og TeliaX',
-          value: 2121,
-        },
       },
       leaseMonths: 0,
       isReSwitch: false,
@@ -561,8 +531,6 @@ export const handsetBeforeSubscriptionAdded = () => {
         isAllowedToDelete={true}
         onRemoveItem={() => {}}
         formatPrice={(price: any) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
         isAnyCartItemsQuantityModifiable
         buttons={buttons}
       />
@@ -586,10 +554,7 @@ export const mbbAndHW = () => {
   ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
-  const groupContent = [
+  const groupContent: ICartItem[] = [
     {
       type: 'MODEM',
       subtype: 'NEW',
@@ -611,7 +576,6 @@ export const mbbAndHW = () => {
         value: 1,
       },
       price: {
-        total: 299,
         upfront: 299,
         originalSalesPrice: 3390,
         originalSalesPriceWithoutVAT: 2712,
@@ -626,7 +590,6 @@ export const mbbAndHW = () => {
       leaseMonths: 0,
       isReSwitch: false,
       isWebDeal: false,
-      hardwareHasEsim: false,
       items: [
         {
           type: 'SUBSCRIPTION_DRAFT',
@@ -649,9 +612,6 @@ export const mbbAndHW = () => {
               monthly: 0,
             },
             description: '',
-          },
-          status: {
-            isActive: true,
           },
           image: {
             icon: 'sim-card',
@@ -676,8 +636,6 @@ export const mbbAndHW = () => {
         onRemoveItem={() => {}}
         isAllowedToDelete={true}
         formatPrice={(price: any) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
         isAnyCartItemsQuantityModifiable
         buttons={buttons}
       />
@@ -701,15 +659,11 @@ export const accessoryOnly = () => {
   ];
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
-  const groupContent = [
+  const groupContent: ICartItem[] = [
     {
       type: 'ACCESSORY',
       subtype: 'COVER',
       id: '9074806',
-      bundleId: null,
       brand: 'Apple',
       brandSlug: 'apple',
       model: 'iPhone 11 Pro Leather Case',
@@ -740,13 +694,11 @@ export const accessoryOnly = () => {
       leaseMonths: null,
       isReSwitch: false,
       isWebDeal: false,
-      hardwareHasEsim: false,
     },
     {
       type: 'ACCESSORY',
       subtype: 'COVER',
       id: '9076624',
-      bundleId: null,
       brand: 'Samsung',
       brandSlug: 'samsung',
       model: 'Smart LED Cover Galaxy S20',
@@ -777,13 +729,11 @@ export const accessoryOnly = () => {
       leaseMonths: null,
       isReSwitch: false,
       isWebDeal: false,
-      hardwareHasEsim: false,
     },
     {
       type: 'ACCESSORY',
       subtype: 'SPEAKER',
       id: '9075536',
-      bundleId: null,
       brand: 'Harman Kardon',
       brandSlug: 'harman-kardon',
       model: 'Onyx Studio 6',
@@ -814,7 +764,6 @@ export const accessoryOnly = () => {
       leaseMonths: null,
       isReSwitch: false,
       isWebDeal: false,
-      hardwareHasEsim: false,
     },
   ];
 
@@ -833,8 +782,6 @@ export const accessoryOnly = () => {
         onRemoveItem={() => {}}
         isAllowedToDelete={true}
         formatPrice={(price: any) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
         isAnyCartItemsQuantityModifiable
         buttons={buttons}
       />

@@ -14,8 +14,6 @@ export interface ShoppingCartProps {
   delivery?: ICartDelivery;
   onChangeQuantity: (item: any, quantity: number) => void;
   onRemoveItem: (item: any) => void;
-  setShouldShowCart(shouldShowCart: boolean): void;
-  shouldShowCart: boolean;
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
   monthlyPriceDisclaimer?: string;
@@ -23,13 +21,11 @@ export interface ShoppingCartProps {
   totalPriceUpfront?: number;
   totalVAT?: number;
   totalPriceWithoutVAT?: number;
-  totalDiscount?: number;
   formatPrice: (price: string | number) => string;
-  disclaimers?: any;
   isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
   buttons?: {
-    kind?: ButtonKind;
+    kind: ButtonKind;
     label: string;
     icon?: IconDefinition;
     size?: 'small';
@@ -56,7 +52,6 @@ const ShoppingCart = ({
   totalPriceUpfront,
   totalVAT,
   totalPriceWithoutVAT,
-  totalDiscount,
   isAllowedToDelete,
   formatPrice,
   buttons,

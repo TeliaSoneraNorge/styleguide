@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { SlidingShoppingCartUpdated, Menu } from '../../index';
+import { SlidingShoppingCartUpdated, ShoppingCartUpdated as ShoppingCart, Menu } from '../../index';
+import { ICartItem } from '../../molecules/ShoppingCartUpdated/types';
 import img from '../../stories/sampleImages';
 
 export default {
@@ -41,10 +42,10 @@ const menuLinks = [
 ];
 
 export const Default = () => {
-  const delivery = {
-    label: 'Fri frakt',
-    price: 0,
-  };
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
   const priceDisclaimer =
     '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
 
@@ -52,72 +53,17 @@ export const Default = () => {
     { label: 'Delbetaling telefon 12 md.', value: '1583,-/md.' },
     { label: 'Mobilabonnement 8 GB', value: '329,-/md.' },
   ];
-  const buttons = [
-    { kind: 'voca-normal', label: 'Velg abonnement', icon: 'sim-card' },
-    { kind: 'voca-inverted', label: 'Fortsett å handle' },
-  ];
-  const [shouldShowCart, setShouldShowCart] = useState(false);
-
-  return (
-    <>
-      <Menu
-        loginUrl="#Menu"
-        logoUrl="#"
-        logoTitle="Telia logo"
-        activeIndex={0}
-        activeLinkIndex={-1}
-        menuLinks={menuLinks}
-        logoImageDesktopPath={img.logo}
-        logoImageInverseDesktopPath={img.logoInverted}
-        onSearchSubmit={() => {}}
-        searchLabel="Fyll inn det du skal søke på"
-        searchButtonLabel="Søk"
-        searchButtonAbortText="Lukk"
-        mobileMenuCloseButtonLabel="Lukk"
-        lockBodyOnMenuOpen
-        onCartClick={() => setShouldShowCart(!shouldShowCart)}
-        numberOfItemsInCart={3}
-      />
-      <SlidingShoppingCartUpdated
-        heading="Din handlekurv (2)"
-        cartItems={[]}
-        delivery={delivery}
-        totalPriceMonthly={500}
-        totalPriceUpfront={300}
-        monthlyPriceDetails={priceDetails}
-        monthlyPriceDisclaimer={priceDisclaimer}
-        totalPriceFirstInvoice={0}
-        onChangeQuantity={() => {}}
-        onRemoveItem={() => {}}
-        formatPrice={(price: any) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
-        buttons={buttons}
-      />
-    </>
-  );
-};
-
-export const WithLayout = Default.bind({});
-WithLayout.parameters = {
-  layout: 'centered',
-};
-
-export const LeaseHandset = () => {
-  const heading = 'Handlekurv';
-  const pricePerMonth = 500;
-  const priceUpfront = 500;
-  const priceFirstInvoice = 500;
   const delivery = {
     label: 'Bedriftspakken',
-    price: 0,
+    value: 'Fri frakt',
   };
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
-  const leaseContent = [
+  const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
       subtype: '',
+      href: '#',
       id: '9076528',
       bundleId: 'e16132',
       brand: 'Samsung',
@@ -141,7 +87,7 @@ export const LeaseHandset = () => {
       },
       price: {
         upfront: 10799,
-        monthly: 0,
+        monthly: 799,
         originalSalesPrice: 15790,
       },
       discount: {
@@ -149,12 +95,8 @@ export const LeaseHandset = () => {
           upfront: 0,
         },
         description: '',
-        leaseDiscount: {
-          name: 'Telefonrabatt, 12 md. binding og TeliaX',
-          value: 2121,
-        },
       },
-      leaseMonths: 0,
+      leaseMonths: '12',
       isReSwitch: false,
       isWebDeal: false,
     },
@@ -180,22 +122,24 @@ export const LeaseHandset = () => {
         onCartClick={() => setShouldShowCart(!shouldShowCart)}
         numberOfItemsInCart={3}
       />
-      <SlidingShoppingCartUpdated
-        heading={heading}
-        cartItems={leaseContent}
-        delivery={delivery}
-        totalPriceFirstInvoice={priceFirstInvoice}
-        totalPriceMonthly={pricePerMonth}
-        totalPriceUpfront={priceUpfront}
-        totalVAT={150}
-        totalPriceWithoutVAT={350}
-        onChangeQuantity={() => {}}
-        onRemoveItem={() => {}}
-        formatPrice={(price) => `${price},-`}
-        shouldShowCart={shouldShowCart}
-        setShouldShowCart={setShouldShowCart}
-        isAnyCartItemsQuantityModifiable
-      />
+      <SlidingShoppingCartUpdated shouldShowCart={shouldShowCart} setShouldShowCart={setShouldShowCart}>
+        <ShoppingCart
+          heading={heading}
+          cartItems={leaseContent}
+          delivery={delivery}
+          totalPriceFirstInvoice={priceFirstInvoice}
+          totalPriceMonthly={pricePerMonth}
+          monthlyPriceDetails={priceDetails}
+          monthlyPriceDisclaimer={priceDisclaimer}
+          totalPriceUpfront={priceUpfront}
+          totalVAT={150}
+          totalPriceWithoutVAT={350}
+          onChangeQuantity={() => {}}
+          onRemoveItem={() => {}}
+          formatPrice={(price) => `${price},-`}
+          isAnyCartItemsQuantityModifiable
+        />
+      </SlidingShoppingCartUpdated>
     </>
   );
 };
