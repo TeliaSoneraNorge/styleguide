@@ -1,13 +1,13 @@
-import React, { useState } from 'react';
-import { ShoppingCartUpdated } from '../../index';
+import React from 'react';
+import { ShoppingCartV2 } from '../../index';
 import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
 import Button from '../../atoms/Button/Button';
 import { ICartItem } from './types';
 
 export default {
-  title: 'Component library/Molecules/ShoppingCartUpdated',
-  component: ShoppingCartUpdated,
+  title: 'Component library/Molecules/ShoppingCartV2',
+  component: ShoppingCartV2,
   parameters: {
     layout: 'fullscreen',
   },
@@ -194,7 +194,7 @@ export const Default = () => {
 
   return (
     <Container style={style} size={containerSize}>
-      <ShoppingCartUpdated
+      <ShoppingCartV2
         heading={heading}
         cartItems={leaseContent}
         delivery={delivery}
@@ -225,7 +225,7 @@ export const UpfrontWithoutMVA = () => {
   };
 
   return (
-    <ShoppingCartUpdated
+    <ShoppingCartV2
       heading={heading}
       cartItems={[]}
       delivery={delivery}
@@ -252,7 +252,7 @@ export const WithMonthlyPriceDisclaimer = () => {
     '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
 
   return (
-    <ShoppingCartUpdated
+    <ShoppingCartV2
       heading="Handlekurv"
       cartItems={[]}
       delivery={delivery}
@@ -280,7 +280,7 @@ export const WithMonthlyPriceDetails = () => {
   ];
 
   return (
-    <ShoppingCartUpdated
+    <ShoppingCartV2
       heading="Handlekurv"
       cartItems={[]}
       delivery={delivery}
@@ -297,7 +297,7 @@ export const WithMonthlyPriceDetails = () => {
 
 export const WithoutDelivery = () => {
   return (
-    <ShoppingCartUpdated
+    <ShoppingCartV2
       heading="Handlekurv"
       cartItems={[]}
       totalPriceMonthly={500}
@@ -316,7 +316,7 @@ export const WithContinueButtons = () => {
   };
 
   return (
-    <ShoppingCartUpdated
+    <ShoppingCartV2
       heading="Handlekurv"
       cartItems={[]}
       delivery={delivery}
@@ -436,7 +436,7 @@ export const subscriptionsOnly = () => {
 
   return (
     <Container style={style} size={containerSize}>
-      <ShoppingCartUpdated
+      <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
         delivery={delivery}
@@ -513,7 +513,7 @@ export const handsetBeforeSubscriptionAdded = () => {
 
   return (
     <Container style={style} size={containerSize}>
-      <ShoppingCartUpdated
+      <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
         delivery={delivery}
@@ -618,7 +618,7 @@ export const mbbAndHW = () => {
 
   return (
     <Container style={style} size={containerSize}>
-      <ShoppingCartUpdated
+      <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
         delivery={delivery}
@@ -759,7 +759,7 @@ export const accessoryOnly = () => {
 
   return (
     <Container style={style} size={containerSize}>
-      <ShoppingCartUpdated
+      <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
         delivery={delivery}

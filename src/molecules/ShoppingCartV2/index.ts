@@ -1,4 +1,4 @@
-export { default as ShoppingCartUpdated } from './ShoppingCart';
+export { default as ShoppingCartV2 } from './ShoppingCartV2';
 
 export const CART_ITEM_TYPE = {
   SUBSCRIPTION: 'SUBSCRIPTION',

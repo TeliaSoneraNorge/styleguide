@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { SlidingShoppingCartUpdated, ShoppingCartUpdated as ShoppingCart, Menu } from '../../index';
-import { ICartItem } from '../../molecules/ShoppingCartUpdated/types';
+import { SlidingShoppingCartV2, ShoppingCartV2 as ShoppingCart, Menu } from '../../index';
+import { ICartItem } from '../../molecules/ShoppingCartV2/types';
 import img from '../../stories/sampleImages';
 
 export default {
-  title: 'Component library/Organisms/SlidingShoppingCartUpdated',
-  component: SlidingShoppingCartUpdated,
+  title: 'Component library/Organisms/SlidingShoppingCartV2',
+  component: SlidingShoppingCartV2,
   parameters: {
     layout: 'fullscreen',
   },
@@ -122,7 +122,7 @@ export const Default = () => {
         onCartClick={() => setShouldShowCart(!shouldShowCart)}
         numberOfItemsInCart={3}
       />
-      <SlidingShoppingCartUpdated shouldShowCart={shouldShowCart} setShouldShowCart={setShouldShowCart}>
+      <SlidingShoppingCartV2 shouldShowCart={shouldShowCart} setShouldShowCart={setShouldShowCart}>
         <ShoppingCart
           heading={heading}
           cartItems={leaseContent}
@@ -136,10 +136,10 @@ export const Default = () => {
           totalPriceWithoutVAT={350}
           onChangeQuantity={() => {}}
           onRemoveItem={() => {}}
-          formatPrice={(price) => `${price},-`}
+          formatPrice={(price: any) => `${price},-`}
           isAnyCartItemsQuantityModifiable
         />
-      </SlidingShoppingCartUpdated>
+      </SlidingShoppingCartV2>
     </>
   );
 };

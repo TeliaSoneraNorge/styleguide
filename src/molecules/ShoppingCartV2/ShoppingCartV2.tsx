@@ -5,7 +5,7 @@ import { ICartDelivery, ICartItem } from './types';
 import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
 import ShoppingCartContinueSection from './ShoppingCartContinueSection';
 
-export interface ShoppingCartProps {
+export interface ShoppingCartV2Props {
   heading?: string;
   cartItems: ICartItem[];
   delivery?: ICartDelivery;
@@ -30,7 +30,7 @@ export interface ShoppingCartProps {
  *
  * This is a component for showing items currently in the shopping cart.
  */
-const ShoppingCart = ({
+const ShoppingCartV2 = ({
   heading,
   cartItems,
   delivery,
@@ -46,7 +46,7 @@ const ShoppingCart = ({
   isAllowedToDelete,
   formatPrice,
   continueSection,
-}: ShoppingCartProps) => {
+}: ShoppingCartV2Props) => {
   return (
     <form className="telia-shopping-cart">
       {heading && (
@@ -79,4 +79,4 @@ const ShoppingCart = ({
   );
 };
 
-export default ShoppingCart;
+export default ShoppingCartV2;

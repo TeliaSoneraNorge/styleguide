@@ -4,17 +4,13 @@ import { useClickOutsideListener } from '../SlidingShoppingCart/useClickOutsideL
 import { useFocusTrap } from '../../utils/useFocusTrap';
 import { useEscapeListener } from '../../molecules/Modal/useEscapeListener';
 
-export interface SlidingShoppingCartUpdatedProps {
+export interface SlidingShoppingCartV2Props {
   shouldShowCart: boolean;
   children: React.ReactNode;
   setShouldShowCart(shouldShowCart: boolean): void;
 }
 
-const SlidingShoppingCartUpdated = ({
-  setShouldShowCart,
-  shouldShowCart,
-  children,
-}: SlidingShoppingCartUpdatedProps) => {
+const SlidingShoppingCartV2 = ({ setShouldShowCart, shouldShowCart, children }: SlidingShoppingCartV2Props) => {
   const { container } = useFocusTrap();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -43,4 +39,4 @@ const SlidingShoppingCartUpdated = ({
   );
 };
 
-export default SlidingShoppingCartUpdated;
+export default SlidingShoppingCartV2;
