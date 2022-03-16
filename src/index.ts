@@ -140,6 +140,7 @@ export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
 export { default as Gallery } from './molecules/Gallery';
 export { ShoppingCart } from './molecules/ShoppingCart';
+export { ShoppingCartV2 } from './molecules/ShoppingCartV2';
 export { default as LinkTable } from './molecules/LinkTable/LinkTable';
 export { QuickSearch } from './molecules/QuickSearch';
 export { PhoneNumberField } from './molecules/PhoneNumberField';
@@ -159,6 +160,7 @@ export { FeatureBox, FeatureBoxes } from './organisms/FeatureBoxes';
 export { SubscriptionPriceBox, SubscriptionPriceBoxes } from './organisms/SubscriptionPriceBoxes';
 export { default as ShoppingCartAccordion } from './organisms/ShoppingCartAccordion';
 export { default as SlidingShoppingCart } from './organisms/SlidingShoppingCart';
+export { default as SlidingShoppingCartV2 } from './organisms/SlidingShoppingCartV2';
 
 // Utils
 export { colors } from './utils/colors';

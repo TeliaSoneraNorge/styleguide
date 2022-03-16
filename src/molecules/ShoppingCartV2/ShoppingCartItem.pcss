@@ -1,0 +1,156 @@
+.telia-shopping-cart {
+  &__item {
+    position: relative;
+    background-color: white;
+
+    &__link {
+      span {
+        margin-right: 0.5rem;
+      }
+
+      .link {
+        &:hover {
+          border-bottom: 1px solid var(--core-purple);
+        }
+        border-bottom: 1px solid #222222;
+      }
+
+      padding-right: 2rem;
+      margin-bottom: 0.2rem;
+      border: none;
+      font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+
+      @media all and (min-width: 48em) {
+        padding-right: 0;
+      }
+    }
+
+    &__name {
+      width: 100%;
+      padding: 1rem 1rem 0 0;
+      font-size: 1rem;
+
+      &__container {
+        display: flex;
+      }
+    }
+
+    &__subtitle {
+      display: flex;
+      flex-direction: column;
+
+      .paragraph {
+        margin: 0px;
+      }
+    }
+
+    &__quantity-picker-wrapper {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .telia-shopping-cart__item__price-per {
+        margin-left: 1rem;
+      }
+    }
+
+    &__quantity-picker {
+      display: flex;
+      width: 5.8rem;
+      height: 1.6rem;
+      align-items: center;
+      align-content: center;
+      justify-content: space-around;
+      border: #bdbdbd solid 1px;
+
+      .paragraph {
+        margin: 0px;
+      }
+
+      &__button {
+        &:not(&--disabled):active,
+        &:not(&--disabled):hover,
+        &:not(&--disabled):focus {
+          background-color: var(--core-purple);
+          color: white;
+        }
+
+        display: flex;
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        height: 1.5rem;
+        outline: none;
+        font-size: 1.7rem;
+
+        &:not(&--disabled) {
+          cursor: pointer;
+        }
+      }
+    }
+
+    &__price {
+      &__container {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 0.5rem;
+      }
+
+      &__cost {
+        display: flex;
+        flex-direction: column;
+        font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+        margin-bottom: 0px;
+      }
+
+      &__label {
+        margin-bottom: 0px;
+      }
+
+      &__linethrough {
+        font-size: 1rem;
+        font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
+        margin-bottom: 0rem;
+        text-align: right;
+        text-decoration-line: line-through;
+        color: var(--grey-500);
+      }
+    }
+
+    &__image,
+    &__no-image {
+      &__container {
+        max-width: 5rem;
+        width: 5rem;
+        padding: 1rem 1rem 0 1rem;
+      }
+    }
+
+    &__delete-button {
+      &__container {
+        &:active,
+        &:hover,
+        &:focus {
+          background-color: var(--core-purple);
+          color: white;
+        }
+
+        background-color: transparent;
+        border: none;
+        border-radius: 1rem;
+        outline: none;
+        position: absolute;
+        height: 1.5rem;
+        width: 3rem;
+        right: 4px;
+        top: 16px;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        .Icon {
+          width: 1rem;
+          height: 1rem;
+        }
+      }
+    }
+  }
+}

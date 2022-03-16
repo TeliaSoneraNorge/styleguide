@@ -21,6 +21,10 @@ export const Normal = () => (
     <br />
     <Button text="Inverted button" kind="inverted" />
     <Button text="Negative button" kind="negative" />
+    <br />
+    <br />
+    <Button text="Voca normal" kind="voca-normal" />
+    <Button text="Voca inverted" kind="voca-inverted" />
   </>
 );
 
