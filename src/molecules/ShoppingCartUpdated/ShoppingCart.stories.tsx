@@ -174,6 +174,22 @@ export const Default = () => {
       isReSwitch: false,
       isWebDeal: true,
     },
+    {
+      type: 'VOUCHER',
+      id: 'VOUCHER',
+      image: {
+        icon: 'info',
+      },
+      name: 'Verdikode/gavekort',
+      quantity: {
+        removable: true,
+        value: 1,
+      },
+      price: {
+        upfront: -500,
+      },
+      leaseMonths: null,
+    },
   ];
 
   return (
