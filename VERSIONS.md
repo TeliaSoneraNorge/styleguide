@@ -15,6 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.46.12
+
+- Added new version of shopping cart: ShoppingCartV2, SlidingShoppingCartV2
+- Added two new kinds to Button: voca-normal, voca-inverted
+- Fixed className prop for Paragraph
+- Fixed active state for cart icon in Menu
+
 ## 1.46.00
 
 - Added aria-labelledby as a required prop in Modal
