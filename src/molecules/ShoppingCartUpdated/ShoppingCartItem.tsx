@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 import cn from 'classnames';
-import { ICartItem, ICartItemPrice } from './types';
+import { ICartItem, ICartItemPrice, ICartItemImage } from './types';
 import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import Link from '../../atoms/Link';
@@ -14,6 +14,89 @@ export interface ShoppingCartItemProps {
   cartItem: ICartItem;
   formatPrice: (price: string | number) => string;
 }
+
+export interface QuantityPickerProps {
+  quantity: number;
+  onChangeQuantity: (cartItem: ICartItem, quantity: number) => void;
+  cartItem: ICartItem;
+  shouldShowPricePerUnit: boolean;
+  isQuantityModifiable: boolean;
+  price: ICartItemPrice;
+  discountValueUpfront: number;
+  discountValueMonthly: number;
+  getPrice: (
+    formatPrice: (price: string | number) => string,
+    price: ICartItemPrice,
+    discountValueUpfront: number,
+    discountValueMonthly: number,
+    quantity: number
+  ) => void;
+}
+
+const formatPrice = (price: string | number) => {
+  if (typeof price === 'number') {
+    return price % 1 === 0 ? price + ',-' : price + ' kr';
+  }
+  return price;
+};
+
+const QuantityPicker = ({
+  quantity,
+  onChangeQuantity,
+  cartItem,
+  shouldShowPricePerUnit,
+  isQuantityModifiable,
+  price,
+  discountValueUpfront,
+  discountValueMonthly,
+  getPrice,
+}: QuantityPickerProps) => {
+  const minQuantity = 1;
+  const maxQuantity = 10;
+  return (
+    <div className="telia-shopping-cart__item__quantity-picker-wrapper">
+      <div className="telia-shopping-cart__item__quantity-picker">
+        <button
+          className={cn('telia-shopping-cart__item__quantity-picker__button', {
+            'telia-shopping-cart__item__quantity-picker__button--disabled': quantity <= minQuantity,
+          })}
+          disabled={quantity <= minQuantity}
+          onClick={() => onChangeQuantity(cartItem, quantity - 1)}
+        >
+          -
+        </button>
+        <Paragraph>{quantity}</Paragraph>
+        <button
+          className={cn('telia-shopping-cart__item__quantity-picker__button', {
+            'telia-shopping-cart__item__quantity-picker__button--disabled': quantity >= maxQuantity,
+          })}
+          disabled={quantity >= maxQuantity}
+          onClick={() => onChangeQuantity(cartItem, quantity + 1)}
+        >
+          +
+        </button>
+      </div>
+      {shouldShowPricePerUnit && (
+        <span className="telia-shopping-cart__item__price-per">
+          {quantity > 1 && !isQuantityModifiable && `${quantity} x `}
+          {`${getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, 1)}/stk`}
+        </span>
+      )}
+    </div>
+  );
+};
+
+const CartItemImage = ({ image }: { image?: ICartItemImage }) => {
+  if (!image) {
+    return <div className="telia-shopping-cart__item__no-image__container"></div>;
+  }
+  return (
+    <div className="telia-shopping-cart__item__image__container">
+      {(image.url && <img className="telia-shopping-cart__item__image" src={`${image.url}?w=44&h=75`} alt="" />) ||
+        (image.icon && <Icon className={'telia-shopping-cart__item__image'} icon={image.icon} title="" />)}
+    </div>
+  );
+};
 
 const ShoppingCartItem = ({
   onChangeQuantity,
@@ -48,13 +131,6 @@ const ShoppingCartItem = ({
   const isActive = _.get(cartItem, 'status.isActive');
   let discountPrice: number;
 
-  const formatPrice = (price: string | number) => {
-    if (typeof price === 'number') {
-      return price % 1 === 0 ? price + ',-' : price + ' kr';
-    }
-    return price;
-  };
-
   const getPrice = (
     formatPrice: (price: string | number) => string,
     price: ICartItemPrice,
@@ -82,54 +158,6 @@ const ShoppingCartItem = ({
     return null;
   };
 
-  const CartItemImage = () => {
-    if (!image) {
-      return <div className="telia-shopping-cart__item__no-image__container"></div>;
-    }
-    return (
-      <div className="telia-shopping-cart__item__image__container">
-        {(image.url && <img className="telia-shopping-cart__item__image" src={`${image.url}?w=44&h=75`} alt="" />) ||
-          (image.icon && <Icon className={'telia-shopping-cart__item__image'} icon={image.icon} title="" />)}
-      </div>
-    );
-  };
-
-  const QuantityPicker = () => {
-    const minQuantity = 1;
-    const maxQuantity = 10;
-    return (
-      <div className="telia-shopping-cart__item__quantity-picker-wrapper">
-        <div className="telia-shopping-cart__item__quantity-picker">
-          <button
-            className={cn('telia-shopping-cart__item__quantity-picker__button', {
-              'telia-shopping-cart__item__quantity-picker__button--disabled': quantity <= minQuantity,
-            })}
-            disabled={quantity <= minQuantity}
-            onClick={() => onChangeQuantity(cartItem, quantity - 1)}
-          >
-            -
-          </button>
-          <Paragraph>{quantity}</Paragraph>
-          <button
-            className={cn('telia-shopping-cart__item__quantity-picker__button', {
-              'telia-shopping-cart__item__quantity-picker__button--disabled': quantity >= maxQuantity,
-            })}
-            disabled={quantity >= maxQuantity}
-            onClick={() => onChangeQuantity(cartItem, quantity + 1)}
-          >
-            +
-          </button>
-        </div>
-        {shouldShowPricePerUnit && (
-          <span className="telia-shopping-cart__item__price-per">
-            {quantity > 1 && !isQuantityModifiable && `${quantity} x `}
-            {`${getPrice(formatPrice, price, discountValueUpfront, discountValueMonthly, 1)}/stk`}
-          </span>
-        )}
-      </div>
-    );
-  };
-
   const CartItemName = () => (
     <div className="telia-shopping-cart__item__name">
       <div className="telia-shopping-cart__item__link">
@@ -151,7 +179,19 @@ const ShoppingCartItem = ({
       <div className="telia-shopping-cart__item__price__container">
         <div className="telia-shopping-cart__item__subtitle">
           {subtitle ? <div className="paragraph" dangerouslySetInnerHTML={{ __html: subtitle }} /> : <span></span>}
-          {isQuantityModifiable && <QuantityPicker />}
+          {isQuantityModifiable && (
+            <QuantityPicker
+              quantity={quantity}
+              onChangeQuantity={onChangeQuantity}
+              cartItem={cartItem}
+              shouldShowPricePerUnit={shouldShowPricePerUnit}
+              isQuantityModifiable={isQuantityModifiable}
+              price={price}
+              discountValueUpfront={discountValueUpfront}
+              discountValueMonthly={discountValueMonthly}
+              getPrice={getPrice}
+            />
+          )}
         </div>
         <span className="telia-shopping-cart__item__price__cost">
           <span className="telia-shopping-cart__item__price__label">
@@ -173,7 +213,7 @@ const ShoppingCartItem = ({
   return (
     <div className="telia-shopping-cart__item">
       <div className="telia-shopping-cart__item__name__container">
-        <CartItemImage />
+        <CartItemImage image={image} />
         <CartItemName />
       </div>
       {isRemovable && isAllowedToDelete && (

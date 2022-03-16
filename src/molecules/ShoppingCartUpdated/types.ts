@@ -140,7 +140,7 @@ interface ICartItemDiscount {
   description: string;
 }
 
-interface ICartItemImage {
+export interface ICartItemImage {
   icon?: IconDefinition;
   url?: string;
 }
