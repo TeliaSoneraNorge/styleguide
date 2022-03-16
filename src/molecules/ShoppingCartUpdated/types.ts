@@ -123,7 +123,7 @@ interface ICartItemQuantity {
   value: number;
 }
 
-interface ICartItemPrice {
+export interface ICartItemPrice {
   upfront?: number;
   upfrontWithoutVAT?: number;
   monthly?: number;
