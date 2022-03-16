@@ -96,6 +96,7 @@ const QuantityPicker = ({
     <div className="telia-shopping-cart__item__quantity-picker-wrapper">
       <div className="telia-shopping-cart__item__quantity-picker">
         <button
+          type="button"
           className={cn('telia-shopping-cart__item__quantity-picker__button', {
             'telia-shopping-cart__item__quantity-picker__button--disabled': quantity <= minQuantity,
           })}
@@ -106,6 +107,7 @@ const QuantityPicker = ({
         </button>
         <Paragraph>{quantity}</Paragraph>
         <button
+          type="button"
           className={cn('telia-shopping-cart__item__quantity-picker__button', {
             'telia-shopping-cart__item__quantity-picker__button--disabled': quantity >= maxQuantity,
           })}
@@ -234,7 +236,11 @@ const ShoppingCartItem = ({ onChangeQuantity, onRemoveItem, isAllowedToDelete, c
         </div>
       </div>
       {isRemovable && isAllowedToDelete && (
-        <button onClick={() => onRemoveItem(cartItem)} className="telia-shopping-cart__item__delete-button__container">
+        <button
+          type="button"
+          onClick={() => onRemoveItem(cartItem)}
+          className="telia-shopping-cart__item__delete-button__container"
+        >
           <Icon icon="trash" />
         </button>
       )}
