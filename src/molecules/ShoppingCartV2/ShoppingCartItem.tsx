@@ -172,6 +172,9 @@ const CartItemPrice = ({ cartItem, onChangeQuantity }: CartItemPriceProps) => {
           ) : (
             <span></span>
           )}
+          {quantity > 1 && !shouldShowPricePerUnit && (
+            <span className="shopping-cart__item__price-per">{`${quantity} stk`}</span>
+          )}
           {isQuantityModifiable && (
             <QuantityPicker
               quantity={quantity}
