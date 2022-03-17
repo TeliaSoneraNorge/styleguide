@@ -47,6 +47,7 @@ export default function ShoppingCartPaymentSection({
   delivery,
   totalPriceUpfront,
   totalPriceMonthly,
+  totalPriceFirstInvoice,
   monthlyPriceDisclaimer,
   monthlyPriceDetails,
   totalVAT,
@@ -108,7 +109,7 @@ export default function ShoppingCartPaymentSection({
           </div>
         )}
       </div>
-      {!!totalPriceUpfront && (
+      {(!!totalPriceUpfront || !!totalPriceFirstInvoice) && (
         <div className="telia-shopping-cart__price-upfront-container">
           {totalPriceWithoutVAT && (
             <div className="telia-shopping-cart__price-row">
@@ -122,10 +123,18 @@ export default function ShoppingCartPaymentSection({
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalVAT)}</span>
             </div>
           )}
-          <div className="telia-shopping-cart__price-row">
-            <span className="telia-shopping-cart__label-medium">Betale nå:</span>
-            <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceUpfront)}</span>
-          </div>
+          {totalPriceUpfront && (
+            <div className="telia-shopping-cart__price-row">
+              <span className="telia-shopping-cart__label-medium">Betale nå:</span>
+              <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceUpfront)}</span>
+            </div>
+          )}
+          {totalPriceFirstInvoice && (
+            <div className="telia-shopping-cart__price-row">
+              <span className="telia-shopping-cart__label-medium">Å betal første faktura:</span>
+              <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceFirstInvoice)}</span>
+            </div>
+          )}
         </div>
       )}
     </section>
