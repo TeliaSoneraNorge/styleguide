@@ -429,7 +429,7 @@ export const subscriptionsOnly = () => {
       quantity: {
         modifiable: false,
         removable: false,
-        value: 2,
+        value: 3,
       },
     },
   ];
