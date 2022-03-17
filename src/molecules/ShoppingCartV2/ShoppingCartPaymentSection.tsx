@@ -36,7 +36,7 @@ export interface ShoppingCartPaymentSectionProps {
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
   monthlyPriceDisclaimer?: string;
-  disclaimer: string;
+  disclaimer?: string;
   monthlyPriceDetails?: { label: string; value: string }[];
   totalPriceUpfront?: number;
   totalVAT?: number;
