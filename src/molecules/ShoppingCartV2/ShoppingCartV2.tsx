@@ -14,6 +14,7 @@ export interface ShoppingCartV2Props {
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
   monthlyPriceDisclaimer?: string;
+  disclaimer?: string;
   monthlyPriceDetails?: { label: string; value: string }[];
   totalPriceUpfront?: number;
   totalVAT?: number;
@@ -39,6 +40,7 @@ const ShoppingCartV2 = ({
   totalPriceFirstInvoice,
   totalPriceMonthly,
   monthlyPriceDisclaimer,
+  disclaimer,
   monthlyPriceDetails,
   totalPriceUpfront,
   totalVAT,
@@ -68,6 +70,7 @@ const ShoppingCartV2 = ({
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceMonthly={totalPriceMonthly}
         monthlyPriceDisclaimer={monthlyPriceDisclaimer}
+        disclaimer={disclaimer}
         monthlyPriceDetails={monthlyPriceDetails}
         totalPriceUpfront={totalPriceUpfront}
         totalPriceWithoutVAT={totalPriceWithoutVAT}

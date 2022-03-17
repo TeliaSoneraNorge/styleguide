@@ -36,6 +36,7 @@ export interface ShoppingCartPaymentSectionProps {
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
   monthlyPriceDisclaimer?: string;
+  disclaimer?: string;
   monthlyPriceDetails?: { label: string; value: string }[];
   totalPriceUpfront?: number;
   totalVAT?: number;
@@ -48,6 +49,7 @@ export default function ShoppingCartPaymentSection({
   totalPriceUpfront,
   totalPriceMonthly,
   monthlyPriceDisclaimer,
+  disclaimer,
   monthlyPriceDetails,
   totalVAT,
   totalPriceWithoutVAT,
@@ -128,6 +130,7 @@ export default function ShoppingCartPaymentSection({
           </div>
         </div>
       )}
+      {disclaimer && <div className="telia-shopping-cart__disclaimer">{disclaimer}</div>}
     </section>
   );
 }
