@@ -131,7 +131,7 @@ export default function ShoppingCartPaymentSection({
           )}
           {totalPriceFirstInvoice && (
             <div className="telia-shopping-cart__price-row">
-              <span className="telia-shopping-cart__label-medium">Å betal første faktura:</span>
+              <span className="telia-shopping-cart__label-medium">Å betale på første faktura:</span>
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceFirstInvoice)}</span>
             </div>
           )}
