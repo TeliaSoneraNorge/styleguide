@@ -36,6 +36,8 @@ export const Default = () => {
     value: 'Fri frakt',
   };
 
+  const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
+
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const leaseContent: ICartItem[] = [
     {
@@ -198,6 +200,7 @@ export const Default = () => {
         heading={heading}
         cartItems={leaseContent}
         delivery={delivery}
+        disclaimer={disclaimer}
         totalPriceFirstInvoice={priceFirstInvoice}
         totalPriceMonthly={pricePerMonth}
         totalPriceUpfront={priceUpfront}
