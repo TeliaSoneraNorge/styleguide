@@ -333,6 +333,27 @@ export const WithContinueButtons = () => {
   );
 };
 
+export const WithFirstInvoice = () => {
+  const delivery = {
+    label: 'Levering',
+    value: 'Fri frakt',
+  };
+
+  return (
+    <ShoppingCartV2
+      heading="Handlekurv"
+      cartItems={[]}
+      delivery={delivery}
+      totalPriceMonthly={500}
+      totalPriceFirstInvoice={300}
+      onChangeQuantity={() => {}}
+      onRemoveItem={() => {}}
+      formatPrice={(price: any) => `${price},-`}
+      continueSection={ContinueButtons}
+    />
+  );
+};
+
 export const subscriptionsOnly = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;
