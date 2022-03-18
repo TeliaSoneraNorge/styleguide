@@ -215,7 +215,13 @@ const CartItemName = ({ cartItem }: CartItemNameProps) => (
       {cartItem.lineThrough && (
         <span className="telia-shopping-cart__item__price__linethrough">{cartItem.lineThrough}</span>
       )}
-      {cartItem.href ? <Link href={cartItem.href}>{cartItem.name}</Link> : cartItem.name}
+      {cartItem.href ? (
+        <Link target="_blank" href={cartItem.href}>
+          {cartItem.name}
+        </Link>
+      ) : (
+        cartItem.name
+      )}
     </div>
     {cartItem.color && (
       <Paragraph>
