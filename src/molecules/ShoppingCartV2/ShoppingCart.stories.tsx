@@ -440,6 +440,45 @@ export const subscriptionsOnly = () => {
       },
     },
     {
+      type: 'SPECIALPRODUCT',
+      id: '39961249',
+      bundleId: 'f108e0',
+      image: {
+        url: 'https://www.telia.no/shop/assets/img-static/other/missing_image.svg',
+      },
+      name: 'Kontant Startpakke',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        upfront: 99,
+        originalSalesPrice: 99,
+        originalSalesPriceWithoutVAT: 79.2,
+      },
+      leaseMonths: null,
+      items: [
+        {
+          type: 'SUBSCRIPTION_DRAFT',
+          id: 'KONTANT_KOMPLETT.REGULAR',
+          bundleId: 'f108e0',
+          items: [],
+          name: 'Kontant Startpakke',
+          quantity: {
+            modifiable: false,
+            removable: false,
+            value: 1,
+          },
+          price: {},
+          image: {
+            icon: 'sim-card',
+          },
+          subtitle: 'Mobilabonnement',
+        },
+      ],
+    },
+    {
       type: 'SIM',
       id: '9054990',
       subtitle: 'Hovedsim',
