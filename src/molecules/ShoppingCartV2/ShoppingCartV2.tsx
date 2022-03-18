@@ -70,13 +70,13 @@ const ShoppingCartV2 = ({
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceMonthly={totalPriceMonthly}
         monthlyPriceDisclaimer={monthlyPriceDisclaimer}
-        disclaimer={disclaimer}
         monthlyPriceDetails={monthlyPriceDetails}
         totalPriceUpfront={totalPriceUpfront}
         totalPriceWithoutVAT={totalPriceWithoutVAT}
         totalVAT={totalVAT}
         formatPrice={formatPrice}
       />
+      {disclaimer && <div className="telia-shopping-cart__disclaimer">{disclaimer}</div>}
       {continueSection && <ShoppingCartContinueSection section={continueSection} />}
     </form>
   );

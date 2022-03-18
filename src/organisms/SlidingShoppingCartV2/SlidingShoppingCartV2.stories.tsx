@@ -131,6 +131,7 @@ export const Default = () => {
           totalPriceMonthly={pricePerMonth}
           monthlyPriceDetails={priceDetails}
           monthlyPriceDisclaimer={priceDisclaimer}
+          disclaimer={'Total telefonpris med SVITSJ i 24 md.: 16 056,-'}
           totalPriceUpfront={priceUpfront}
           totalVAT={150}
           totalPriceWithoutVAT={350}
