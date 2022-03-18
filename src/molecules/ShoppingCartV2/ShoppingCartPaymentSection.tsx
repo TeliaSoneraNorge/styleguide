@@ -113,25 +113,25 @@ export default function ShoppingCartPaymentSection({
       </div>
       {(!!totalPriceUpfront || !!totalPriceFirstInvoice) && (
         <div className="telia-shopping-cart__price-upfront-container">
-          {totalPriceWithoutVAT && (
+          {!!totalPriceWithoutVAT && (
             <div className="telia-shopping-cart__price-row">
               <span className="telia-shopping-cart__label-medium">Sum:</span>
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceWithoutVAT)}</span>
             </div>
           )}
-          {totalVAT && (
+          {!!totalVAT && (
             <div className="telia-shopping-cart__price-row">
               <span className="telia-shopping-cart__label-medium">MVA:</span>
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalVAT)}</span>
             </div>
           )}
-          {totalPriceUpfront && (
+          {!!totalPriceUpfront && (
             <div className="telia-shopping-cart__price-row">
               <span className="telia-shopping-cart__label-medium">Betale nå:</span>
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceUpfront)}</span>
             </div>
           )}
-          {totalPriceFirstInvoice && (
+          {!!totalPriceFirstInvoice && (
             <div className="telia-shopping-cart__price-row">
               <span className="telia-shopping-cart__label-medium">Å betale på første faktura:</span>
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceFirstInvoice)}</span>
