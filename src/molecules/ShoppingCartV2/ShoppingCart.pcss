@@ -1,9 +1,17 @@
 .telia-shopping-cart {
   margin-bottom: 1.5rem;
+  width: 100%;
 
   &__section {
     &--grey {
       background-color: var(--grey-100);
+    }
+
+    &__body {
+      background-color: var(--white);
+      &:last-of-type {
+        padding-bottom: 1rem;
+      }
     }
   }
 
@@ -45,29 +53,13 @@
     align-items: center;
     margin-top: 1.5rem;
 
-    @media all and (min-width: 48em) {
-      flex-direction: row;
-      justify-content: flex-end;
-      align-items: center;
-    }
-
     .button {
       margin: 0 !important;
       width: 100%;
-      max-width: 16rem;
+      max-width: 18rem;
 
       &:not(:first-of-type) {
         margin-top: 1rem !important;
-      }
-
-      @media all and (min-width: 48em) {
-        width: 16rem;
-        &:not(:first-of-type) {
-          margin-top: 0 !important;
-        }
-        &:not(:last-of-type) {
-          margin-right: 1rem !important;
-        }
       }
     }
   }
