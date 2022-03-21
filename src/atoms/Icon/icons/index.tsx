@@ -44,6 +44,7 @@ export { CloudIcon } from './CloudIcon';
 export { CoffeeIcon } from './CoffeeIcon';
 export { CompanyIcon } from './CompanyIcon';
 export { ContactIcon } from './ContactIcon';
+export { DeleteIcon } from './DeleteIcon';
 export { DeliveryIcon } from './DeliveryIcon';
 export { DevicesIcon } from './DevicesIcon';
 export { DocumentDocIcon } from './DocumentDocIcon';

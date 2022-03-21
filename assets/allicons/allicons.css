@@ -335,6 +335,10 @@
   fill: #fff;
   fill-rule: evenodd;
 }
+.svg_delete {
+  width: 48px;
+  height: 54px;
+}
 .svg_facebook_icon {
   width: 37.84px;
   height: 37.84px;

@@ -250,7 +250,7 @@ const ShoppingCartItem = ({ onChangeQuantity, onRemoveItem, isAllowedToDelete, c
           onClick={() => onRemoveItem(cartItem)}
           className="telia-shopping-cart__item__delete-button__container"
         >
-          <Icon icon="trash" />
+          <Icon icon="delete" />
         </button>
       )}
     </div>
