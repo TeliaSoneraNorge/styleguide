@@ -46,8 +46,9 @@
 
     &__quantity-picker-wrapper {
       display: flex;
-      justify-content: center;
+      justify-content: flex-start;
       align-items: center;
+      flex-wrap: wrap;
 
       .telia-shopping-cart__item__price-per {
         margin-left: 1rem;
@@ -120,10 +121,17 @@
     &__image,
     &__no-image {
       &__container {
-        max-width: 5rem;
-        width: 5rem;
-        padding: 1rem 1rem 0 1rem;
+        max-width: 2.5rem;
+        width: 2.5rem;
+        margin: 1rem 1rem 0 1rem;
       }
+    }
+
+    &__image {
+      display: block;
+      height: auto;
+      max-width: 2.5rem;
+      width: 2.5rem;
     }
 
     &__delete-button {
