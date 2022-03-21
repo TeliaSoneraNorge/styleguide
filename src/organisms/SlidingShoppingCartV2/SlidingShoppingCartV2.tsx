@@ -3,6 +3,7 @@ import cn from 'classnames';
 import { useClickOutsideListener } from '../SlidingShoppingCart/useClickOutsideListener';
 import { useFocusTrap } from '../../utils/useFocusTrap';
 import { useEscapeListener } from '../../molecules/Modal/useEscapeListener';
+import { Icon } from '../../atoms/Icon';
 
 export interface SlidingShoppingCartV2Props {
   shouldShowCart: boolean;
@@ -31,7 +32,7 @@ const SlidingShoppingCartV2 = ({ setShouldShowCart, shouldShowCart, children }: 
         })}
       >
         <button className="telia-sliding-shopping-cart__close-button" onClick={() => setShouldShowCart(false)}>
-          X
+          <Icon icon="close" />
         </button>
         {children}
       </aside>
