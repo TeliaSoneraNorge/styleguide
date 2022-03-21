@@ -372,6 +372,7 @@ export const subscriptionsOnly = () => {
       bundleId: '29166a',
       items: [],
       name: 'Telia X',
+      href: '#',
       quantity: {
         modifiable: false,
         removable: false,
