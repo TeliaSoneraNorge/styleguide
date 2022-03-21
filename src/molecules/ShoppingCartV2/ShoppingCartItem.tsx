@@ -137,9 +137,19 @@ const CartItemImage = ({ cartItem }: CartImageProps) => {
   }
   return (
     <div className="telia-shopping-cart__item__image__container">
-      {(cartItem.image.url && (
-        <img className="telia-shopping-cart__item__image" src={`${cartItem.image.url}?w=44&h=75`} alt="" />
+      {(cartItem.href && (
+        <Link target="_blank" href={cartItem.href}>
+          {(cartItem.image.url && (
+            <img className="telia-shopping-cart__item__image" src={`${cartItem.image.url}?w=44&h=75`} alt="" />
+          )) ||
+            (cartItem.image.icon && (
+              <Icon className={'telia-shopping-cart__item__image'} icon={cartItem.image.icon} title="" />
+            ))}
+        </Link>
       )) ||
+        (cartItem.image.url && (
+          <img className="telia-shopping-cart__item__image" src={`${cartItem.image.url}?w=44&h=75`} alt="" />
+        )) ||
         (cartItem.image.icon && (
           <Icon className={'telia-shopping-cart__item__image'} icon={cartItem.image.icon} title="" />
         ))}
