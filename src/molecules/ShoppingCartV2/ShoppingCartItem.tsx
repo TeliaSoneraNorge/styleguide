@@ -103,7 +103,7 @@ const QuantityPicker = ({
           disabled={quantity <= minQuantity}
           onClick={() => onChangeQuantity(cartItem, quantity - 1)}
         >
-          -
+          <Icon icon="minus" />
         </button>
         <Paragraph>{quantity}</Paragraph>
         <button
@@ -114,7 +114,7 @@ const QuantityPicker = ({
           disabled={quantity >= maxQuantity}
           onClick={() => onChangeQuantity(cartItem, quantity + 1)}
         >
-          +
+          <Icon icon="add" />
         </button>
       </div>
       {shouldShowPricePerUnit && (
