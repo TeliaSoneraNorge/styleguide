@@ -138,7 +138,7 @@ const CartItemImage = ({ cartItem }: CartImageProps) => {
   return (
     <div className="telia-shopping-cart__item__image__container">
       {(cartItem.href && (
-        <Link target="_blank" href={cartItem.href}>
+        <Link href={cartItem.href}>
           {(cartItem.image.url && (
             <img className="telia-shopping-cart__item__image" src={`${cartItem.image.url}?w=44&h=75`} alt="" />
           )) ||
@@ -225,13 +225,7 @@ const CartItemName = ({ cartItem }: CartItemNameProps) => (
       {cartItem.lineThrough && (
         <span className="telia-shopping-cart__item__price__linethrough">{cartItem.lineThrough}</span>
       )}
-      {cartItem.href ? (
-        <Link target="_blank" href={cartItem.href}>
-          {cartItem.name}
-        </Link>
-      ) : (
-        cartItem.name
-      )}
+      {cartItem.href ? <Link href={cartItem.href}>{cartItem.name}</Link> : cartItem.name}
     </div>
     {cartItem.color && (
       <Paragraph>
