@@ -24,7 +24,7 @@ const MonthlyPriceDetails = ({ monthlyPriceDetails, totalPriceMonthly, formatPri
         </div>
       ))}
       <div className="telia-shopping-cart__price-row telia-shopping-cart__price-monthly-details-total">
-        <span>Totalt:</span>
+        <span>Totalt pr. md.</span>
         <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceMonthly || 0)}/md.</span>
       </div>
     </div>
