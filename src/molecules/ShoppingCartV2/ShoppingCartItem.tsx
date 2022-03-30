@@ -5,6 +5,7 @@ import { ICartItem, ICartItemPrice } from './types';
 import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import Link from '../../atoms/Link';
+import { CART_ITEM_TYPE } from './index';
 
 const formatPrice = (price: string | number) => {
   if (typeof price === 'number') {
@@ -178,7 +179,11 @@ const CartItemPrice = ({ cartItem, onChangeQuantity }: CartItemPriceProps) => {
       <div className="telia-shopping-cart__item__price__container">
         <div className="telia-shopping-cart__item__subtitle">
           {cartItem.subtitle ? (
-            <div className="paragraph" dangerouslySetInnerHTML={{ __html: cartItem.subtitle }} />
+            <div
+              data-hj-suppress={cartItem.type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
+              className="paragraph"
+              dangerouslySetInnerHTML={{ __html: cartItem.subtitle }}
+            />
           ) : (
             <span></span>
           )}
