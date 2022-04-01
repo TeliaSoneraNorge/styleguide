@@ -251,9 +251,10 @@ export const WithMonthlyPriceDisclaimer = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
+  const paymentTooltip =
+    '<p class="paragraph">Delbetaling 12 md. Telefonrabatten varrierer ut fra hvilket abonnement du velger og vil vises på neste side. </p>';
   const priceDisclaimer =
-    '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
-
+    '<p class="paragraph">Minste totalpris for telefon og abonnement med 12 md. avtaletid: 10 000</p>';
   return (
     <ShoppingCartV2
       heading="Handlekurv"
@@ -262,6 +263,7 @@ export const WithMonthlyPriceDisclaimer = () => {
       totalPriceMonthly={500}
       totalPriceUpfront={300}
       monthlyPriceDisclaimer={priceDisclaimer}
+      paymentTooltip={paymentTooltip}
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
       formatPrice={(price: any) => `${price},-`}
@@ -274,8 +276,10 @@ export const WithMonthlyPriceDetails = () => {
     label: 'Bedriftspakken',
     value: 'Fri frakt',
   };
+  const paymentTooltip =
+    '<p class="paragraph">Delbetaling 12 md. Telefonrabatten varrierer ut fra hvilket abonnement du velger og vil vises på neste side. </p>';
   const priceDisclaimer =
-    '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
+    '<p class="paragraph">Minste totalpris for telefon og abonnement med 12 md. avtaletid: 10 000</p>';
 
   const priceDetails = [
     { label: 'Delbetaling telefon 12 md.', value: '1583,-/md.' },
@@ -290,6 +294,7 @@ export const WithMonthlyPriceDetails = () => {
       totalPriceMonthly={500}
       totalPriceUpfront={300}
       monthlyPriceDetails={priceDetails}
+      paymentTooltip={paymentTooltip}
       monthlyPriceDisclaimer={priceDisclaimer}
       onChangeQuantity={() => {}}
       onRemoveItem={() => {}}
