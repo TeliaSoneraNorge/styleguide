@@ -76,19 +76,23 @@ export default function ShoppingCartPaymentSection({
                 <span className="telia-shopping-cart__label-medium">Betale pr md:</span>
                 {monthlyPriceDisclaimer && (
                   <>
-                    <a data-tip="React-tooltip" className="telia-shopping-cart__tooltip-icon-wrapper">
+                    <a
+                      data-tip
+                      data-for="telia-shopping-cart-tooltip"
+                      className="telia-shopping-cart__tooltip-icon-wrapper"
+                    >
                       <Icon icon="info" className="telia-shopping-cart__tooltip-icon" />
                     </a>
                     <ReactTooltip
                       clickable
                       border={true}
                       borderColor="#990AE3"
-                      event="click"
                       textColor="#000"
                       className="telia-shopping-cart__tooltip"
                       place="bottom"
                       effect="solid"
                       backgroundColor="white"
+                      id="telia-shopping-cart-tooltip"
                     >
                       <div>
                         <div dangerouslySetInnerHTML={{ __html: monthlyPriceDisclaimer }} />
