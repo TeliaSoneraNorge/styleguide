@@ -35,7 +35,6 @@ export interface ShoppingCartPaymentSectionProps {
   delivery?: ICartDelivery;
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
-  monthlyPriceDisclaimer?: string;
   paymentTooltip?: string;
   monthlyPriceDetails?: { label: string; value: string }[];
   totalPriceUpfront?: number;
@@ -49,7 +48,6 @@ export default function ShoppingCartPaymentSection({
   totalPriceUpfront,
   totalPriceMonthly,
   totalPriceFirstInvoice,
-  monthlyPriceDisclaimer,
   paymentTooltip,
   monthlyPriceDetails,
   totalVAT,
@@ -76,7 +74,7 @@ export default function ShoppingCartPaymentSection({
             <div className="telia-shopping-cart__price-row">
               <div className="telia-shopping-cart__flex-row">
                 <span className="telia-shopping-cart__label-medium">Betale pr md:</span>
-                {paymentTooltip && monthlyPriceDisclaimer && (
+                {paymentTooltip && (
                   <>
                     <a
                       data-tip
@@ -98,7 +96,6 @@ export default function ShoppingCartPaymentSection({
                     >
                       <div>
                         <div dangerouslySetInnerHTML={{ __html: paymentTooltip }} />
-                        <div dangerouslySetInnerHTML={{ __html: monthlyPriceDisclaimer }} />
                       </div>
                     </ReactTooltip>
                   </>

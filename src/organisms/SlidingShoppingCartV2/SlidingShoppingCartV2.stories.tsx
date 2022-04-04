@@ -46,8 +46,6 @@ export const Default = () => {
   const pricePerMonth = 500;
   const priceUpfront = 500;
   const priceFirstInvoice = 500;
-  const priceDisclaimer =
-    '<p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>';
 
   const priceDetails = [
     { label: 'Delbetaling telefon 12 md.', value: '1583,-/md.' },
@@ -130,7 +128,6 @@ export const Default = () => {
           totalPriceFirstInvoice={priceFirstInvoice}
           totalPriceMonthly={pricePerMonth}
           monthlyPriceDetails={priceDetails}
-          monthlyPriceDisclaimer={priceDisclaimer}
           disclaimer={'Total telefonpris med SVITSJ i 24 md.: 16 056,-'}
           totalPriceUpfront={priceUpfront}
           totalVAT={150}
