@@ -27,7 +27,7 @@ export const Pagination: React.FC<Props> = (props) => {
       disabled
       kind="secondary-text"
       label={'...'}
-      className="telia-pagination__dottes telia-button--ball"
+      className="telia-pagination__dottes telia-business-button--ball"
     />
   );
 
@@ -36,7 +36,7 @@ export const Pagination: React.FC<Props> = (props) => {
       key={i}
       size="compact"
       kind="secondary-text"
-      className="telia-button--ball"
+      className="telia-business-button--ball"
       active={i + 1 === props.currentPage}
       label={(i + 1).toString()}
       onClick={(e) => setPage(i + 1)}
@@ -56,7 +56,7 @@ export const Pagination: React.FC<Props> = (props) => {
       <Button
         size="compact"
         kind="secondary-text"
-        className="telia-button--ball"
+        className="telia-business-button--ball"
         icon="arrow-left"
         aria-label="Forrige side"
         onClick={() => setPage(props.currentPage - 1)}
@@ -79,7 +79,7 @@ export const Pagination: React.FC<Props> = (props) => {
       <Button
         size="compact"
         kind="secondary-text"
-        className="telia-button--ball"
+        className="telia-business-button--ball"
         icon="arrow-right"
         aria-label="Neste side"
         onClick={() => setPage(props.currentPage + 1)}

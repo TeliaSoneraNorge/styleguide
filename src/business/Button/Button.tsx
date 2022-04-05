@@ -80,15 +80,15 @@ export const Button = (props: ButtonProps) => {
   return (
     <Tag
       className={cs(
-        'telia-button',
-        `telia-button--${kind}`,
-        `telia-button--${size}`,
+        'telia-business-button',
+        `telia-business-button--${kind}`,
+        `telia-business-button--${size}`,
         {
-          'telia-button--iconRight': iconRight,
-          'telia-button--iconLeft': icon && !iconRight,
-          'telia-button--ball': icon && !label,
-          'telia-button--disabled': disabled,
-          'telia-button--active': active,
+          'telia-business-button--iconRight': iconRight,
+          'telia-business-button--iconLeft': icon && !iconRight,
+          'telia-business-button--ball': icon && !label,
+          'telia-business-button--disabled': disabled,
+          'telia-business-button--active': active,
         },
         className
       )}
@@ -99,7 +99,7 @@ export const Button = (props: ButtonProps) => {
       target={href ? target : undefined}
       aria-label={ariaLabel}
     >
-      {icon && <Icon icon={icon} className="telia-button__icon" />}
+      {icon && <Icon icon={icon} className="telia-business-button__icon" />}
       {label}
     </Tag>
   );
