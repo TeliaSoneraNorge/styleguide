@@ -13,7 +13,7 @@ export interface ShoppingCartV2Props {
   onRemoveItem: (item: any) => void;
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
-  monthlyPriceDisclaimer?: string;
+  paymentTooltip?: string;
   disclaimer?: string;
   monthlyPriceDetails?: { label: string; value: string }[];
   totalPriceUpfront?: number;
@@ -39,7 +39,7 @@ const ShoppingCartV2 = ({
   onRemoveItem,
   totalPriceFirstInvoice,
   totalPriceMonthly,
-  monthlyPriceDisclaimer,
+  paymentTooltip,
   disclaimer,
   monthlyPriceDetails,
   totalPriceUpfront,
@@ -69,7 +69,7 @@ const ShoppingCartV2 = ({
         delivery={delivery}
         totalPriceFirstInvoice={totalPriceFirstInvoice}
         totalPriceMonthly={totalPriceMonthly}
-        monthlyPriceDisclaimer={monthlyPriceDisclaimer}
+        paymentTooltip={paymentTooltip}
         monthlyPriceDetails={monthlyPriceDetails}
         totalPriceUpfront={totalPriceUpfront}
         totalPriceWithoutVAT={totalPriceWithoutVAT}
