@@ -7,17 +7,25 @@ export default {
 };
 
 export const Default = () => {
-
   const [quantity, setQuantity] = useState(2);
-
   return (
-    
     <QuantityPicker
       quantity={quantity}
-      onChangeQuantity={quantity => setQuantity(quantity)}
+      onChangeQuantity={(quantity) => setQuantity(quantity)}
       minQuantity={2}
       maxQuantity={8}
     />
-    
+  );
+};
+export const Compact = () => {
+  const [quantity, setQuantity] = useState(2);
+  return (
+    <QuantityPicker
+      quantity={quantity}
+      onChangeQuantity={(quantity) => setQuantity(quantity)}
+      minQuantity={2}
+      maxQuantity={8}
+      isCompact
+    />
   );
 };

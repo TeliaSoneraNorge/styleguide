@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import cn from 'classnames';
 import QuantityButton from './QuantityButton';
 import TextBoxWithLabel from '../../molecules/TextBoxWithLabel/TextBoxWithLabel';
 
@@ -17,13 +18,14 @@ const QuantityPicker = ({
   addText,
   reduceText,
   quantityLabel,
+  isCompact,
 }) => {
   if (isNaN(quantity)) {
     quantity = '';
   }
 
   return (
-    <div className="quantity-picker">
+    <div className={cn('quantity-picker', { 'quantity-picker--compact': isCompact })}>
       <QuantityButton
         icon="minus"
         isDisabled={quantity <= minQuantity || !quantity}
@@ -36,7 +38,7 @@ const QuantityPicker = ({
           className="quantity-picker__input"
           max={maxQuantity}
           min={minQuantity}
-          onChange={event =>
+          onChange={(event) =>
             onChangeQuantity(Math.max(Math.min(parseInt(event.target.value), maxQuantity), minQuantity))
           }
           onBlur={onBlur}
