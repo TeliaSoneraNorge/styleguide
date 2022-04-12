@@ -112,6 +112,7 @@ export { default as Subscription } from './molecules/Subscription';
 export { default as SubscriptionAccordion } from './molecules/SubscriptionAccordion';
 export { default as SubscriptionAccordionSimple } from './molecules/SubscriptionAccordion/SubscriptionAccordionSimple';
 export { default as SubscriptionLinesAccordion } from './molecules/SubscriptionLinesAccordion';
+export { default as SubscriptionCompactAccordion } from './molecules/SubscriptionCompactAccordion';
 export { default as ChartLegend } from './molecules/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel';
 export { TextField } from './molecules/TextField';
