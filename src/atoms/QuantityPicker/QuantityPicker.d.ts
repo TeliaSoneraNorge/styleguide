@@ -8,6 +8,7 @@ export interface QuantityPickerProps {
   addText?: string;
   reduceText?: string;
   quantityLabel?: string;
+  isCompact?: boolean;
 }
 
 export const QuantityPicker: React.FC<QuantityPickerProps>;
