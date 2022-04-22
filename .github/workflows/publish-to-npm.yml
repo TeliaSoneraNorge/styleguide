@@ -33,9 +33,10 @@ jobs:
           fi
 
       - name: Set node version
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v3
         with:
           node-version: 16.x
+          registry-url: 'https://registry.npmjs.org'
 
       - name: Build for npm
         env:
@@ -50,12 +51,9 @@ jobs:
 
       - name: Publish to npm
         env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         shell: bash
         run: |
-          touch ~/.profile
-          source ~/.profile
-          echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
           ls dist
           npm publish dist
 
