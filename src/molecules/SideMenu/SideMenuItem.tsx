@@ -32,7 +32,7 @@ type Props = {
   /**
    * Action to execute on click item
    */
-  onClick: () => void;
+  onClick: (e: React.SyntheticEvent) => void;
 
   /**
    * Whether to render the item as an li or div.
@@ -90,7 +90,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     if (href && onClick) {
       e.preventDefault();
     }
-    onClick();
+    onClick(e);
   };
 
   return (
@@ -133,7 +133,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       ) : (
         <Tag
           className="telia-side-menu-item__action-element telia-side-menu-item__action-element--collapse"
-          onClick={onClick}
+          onClick={handleClick}
           tabIndex={tabIndex ?? 1}
           href={href}
           aria-labelledby="side-menu-group-item-label"
