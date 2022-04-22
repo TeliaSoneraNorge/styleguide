@@ -147,7 +147,6 @@
         "instrument": false
     },
     "engines": {
-        "node": "16.x",
-        "npm": "8.x"
+        "node": ">=8.0.0"
     }
 }
