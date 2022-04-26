@@ -58,6 +58,7 @@
     border-bottom: 0;
     transition: border 150ms ease-out;
     padding: 1rem;
+    margin: 0;
 
     @media all and (min-width: 41em) {
       padding: 1.5rem 2rem;
@@ -87,6 +88,7 @@
   &__main-container {
     display: flex;
     flex-direction: column;
+    color: #222; /* Need to explicit set color due to iOS 15 overriding within button */
   }
 
   &__header-first-row {

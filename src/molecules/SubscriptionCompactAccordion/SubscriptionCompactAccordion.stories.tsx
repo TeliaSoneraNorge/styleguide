@@ -48,7 +48,7 @@ const SUBSCRIPTIONS = [
     price: 499,
     priceInfo: ['/md.'],
     tagLine: 'Hverdagsbruk',
-    tagLineIcon: 'speedometer',
+    tagLineIcon: 'speedometer-normal',
   },
   {
     id: 'rask',
@@ -57,7 +57,7 @@ const SUBSCRIPTIONS = [
     price: 549,
     priceInfo: ['/md.'],
     tagLine: 'Strømmeglede',
-    tagLineIcon: 'speedometer',
+    tagLineIcon: 'speedometer-rask',
     ribbon: {
       text: 'Mest populær',
       backgroundColor: '#EDC8FF',
@@ -71,7 +71,7 @@ const SUBSCRIPTIONS = [
     price: 699,
     priceInfo: ['/md.'],
     tagLine: 'Kvalitetsbevissthet',
-    tagLineIcon: 'speedometer',
+    tagLineIcon: 'speedometer-max',
   },
 ];
 
