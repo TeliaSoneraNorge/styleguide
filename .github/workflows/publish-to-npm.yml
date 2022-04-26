@@ -35,7 +35,7 @@ jobs:
       - name: Set node version
         uses: actions/setup-node@v1
         with:
-          node-version: 12.x
+          node-version: 16.x
 
       - name: Build for npm
         env:
@@ -52,12 +52,13 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         shell: bash
+        working-directory: dist
         run: |
           touch ~/.profile
           source ~/.profile
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-          ls dist
-          npm publish dist
+          ls
+          npm publish
 
       - name: Bump version
         env:
