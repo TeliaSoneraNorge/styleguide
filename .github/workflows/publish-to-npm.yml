@@ -52,12 +52,13 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         shell: bash
+        working-directory: dist
         run: |
           touch ~/.profile
           source ~/.profile
           echo "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" >> .npmrc
-          ls dist
-          npm publish dist
+          ls
+          npm publish
 
       - name: Bump version
         env:
