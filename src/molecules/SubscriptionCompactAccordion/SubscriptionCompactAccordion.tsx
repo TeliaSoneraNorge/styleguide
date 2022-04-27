@@ -107,8 +107,8 @@ const SubscriptionCompactAccordion = ({
               </div>
               {!!tagLine && (
                 <div className="subscription-compact-accordion__tagline-wrapper">
-                  <span className="subscription-compact-accordion__tagline">{tagLine}</span>
                   {tagLineIcon && <Icon className="subscription-compact-accordion__tagline-icon" icon={tagLineIcon} />}
+                  <span className="subscription-compact-accordion__tagline">{tagLine}</span>
                 </div>
               )}
             </div>
