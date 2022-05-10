@@ -36,7 +36,9 @@ export const Default = () => (
 
 export const HeadingWithLevel = () => (
   <div>
-    <p style={{ color: 'red', fontWeight: 800 }}>DEPRECATED! Use <code>size</code> and <code>tag</code> properties.</p>
+    <p style={{ color: 'red', fontWeight: 800 }}>
+      DEPRECATED! Use <code>size</code> and <code>tag</code> properties.
+    </p>
 
     <Heading level={1} text="This is a level 1 heading" />
     <p className="paragraph">
@@ -66,10 +68,10 @@ export const HeadingWithLevel = () => (
 
 export const HeadingWithSizes = () => (
   <>
-    <Heading tag="h1" size="mega" text="Mega heading" style={{ color: '#990AE3' }} />
-    <Heading tag="h1" size="xxl" text="XXL heading" style={{ color: '#990AE3' }} />
-    <Heading tag="h1" size="xl" text="XL heading" style={{ color: '#990AE3' }} />
-    <Heading tag="h1" size="l" text="Large heading" style={{ color: '#990AE3' }} />
+    <Heading tag="h1" size="mega" text="Mega heading" style={{ color: '#222' }} />
+    <Heading tag="h1" size="xxl" text="XXL heading" style={{ color: '#222' }} />
+    <Heading tag="h1" size="xl" text="XL heading" style={{ color: '#222' }} />
+    <Heading tag="h1" size="l" text="Large heading" style={{ color: '#222' }} />
     <Heading tag="h1" size="m" text="Medium heading" style={{ color: '#222' }} />
     <Heading tag="h1" size="s" text="Small heading" style={{ color: '#222' }} />
     <Heading tag="h1" size="xs" text="Xtra Small heading" style={{ color: '#222' }} />
@@ -152,8 +154,8 @@ export const HeadingWithColors = () => (
 
 export const HeadingWithAlignment = () => (
   <>
-    <Heading tag="h1" size="l" text="Aligned Left" style={{ color: '#990AE3', textAlign: 'left' }} />
-    <Heading tag="h1" size="l" text="Aligned Center" style={{ color: '#990AE3', textAlign: 'center' }} />
-    <Heading tag="h1" size="l" text="Aligned Right" style={{ color: '#990AE3', textAlign: 'right' }} />
+    <Heading tag="h1" size="l" text="Aligned Left" style={{ color: '#222', textAlign: 'left' }} />
+    <Heading tag="h1" size="l" text="Aligned Center" style={{ color: '#222', textAlign: 'center' }} />
+    <Heading tag="h1" size="l" text="Aligned Right" style={{ color: '#222', textAlign: 'right' }} />
   </>
 );
