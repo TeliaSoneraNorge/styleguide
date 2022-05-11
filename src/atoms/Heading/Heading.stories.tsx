@@ -68,20 +68,20 @@ export const HeadingWithLevel = () => (
 
 export const HeadingWithSizes = () => (
   <>
-    <Heading tag="h1" size="mega" text="Mega heading" style={{ color: '#222' }} />
-    <Heading tag="h1" size="xxl" text="XXL heading" style={{ color: '#222' }} />
-    <Heading tag="h1" size="xl" text="XL heading" style={{ color: '#222' }} />
-    <Heading tag="h1" size="l" text="Large heading" style={{ color: '#222' }} />
-    <Heading tag="h1" size="m" text="Medium heading" style={{ color: '#222' }} />
-    <Heading tag="h1" size="s" text="Small heading" style={{ color: '#222' }} />
-    <Heading tag="h1" size="xs" text="Xtra Small heading" style={{ color: '#222' }} />
+    <Heading tag="h1" size="mega" text="Mega heading" />
+    <Heading tag="h1" size="xxl" text="XXL heading" />
+    <Heading tag="h1" size="xl" text="XL heading" />
+    <Heading tag="h1" size="l" text="Large heading" />
+    <Heading tag="h1" size="m" text="Medium heading" />
+    <Heading tag="h1" size="s" text="Small heading" />
+    <Heading tag="h1" size="xs" text="Xtra Small heading" />
   </>
 );
 
 export const HeadingWithAlignment = () => (
   <>
-    <Heading tag="h1" size="l" text="Aligned Left" style={{ color: '#222', textAlign: 'left' }} />
-    <Heading tag="h1" size="l" text="Aligned Center" style={{ color: '#222', textAlign: 'center' }} />
-    <Heading tag="h1" size="l" text="Aligned Right" style={{ color: '#222', textAlign: 'right' }} />
+    <Heading tag="h1" size="l" text="Aligned Left" style={{ textAlign: 'left' }} />
+    <Heading tag="h1" size="l" text="Aligned Center" style={{ textAlign: 'center' }} />
+    <Heading tag="h1" size="l" text="Aligned Right" style={{ textAlign: 'right' }} />
   </>
 );
