@@ -68,7 +68,6 @@ export const HeadingWithLevel = () => (
 
 export const HeadingWithSizes = () => (
   <>
-    <Heading tag="h1" size="mega" text="Mega heading" />
     <Heading tag="h1" size="xxl" text="XXL heading" />
     <Heading tag="h1" size="xl" text="XL heading" />
     <Heading tag="h1" size="l" text="Large heading" />
