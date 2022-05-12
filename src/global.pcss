@@ -1,87 +1,96 @@
 html {
-    box-sizing: border-box;
-    color: var(--black);
+  box-sizing: border-box;
+  color: var(--black);
 }
 body {
-    font-family: 'TeliaSans-Regular', Helvetica, Roboto, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    margin: 0;
-    padding: 0;
+  font-family: 'TeliaSans-Regular', Helvetica, Roboto, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 0;
 }
-*, :after, :before {
-    box-sizing: inherit;
-}
-
-@font-face {
-    font-family: 'pebble';
-    src: url('{{assetPath}}/fonts/Pebble_W_Rg.woff') format('woff');
+*,
+:after,
+:before {
+  box-sizing: inherit;
 }
 
 @font-face {
-    font-family: 'TeliaSans-Regular';
-    src: url('{{assetPath}}/fonts/TeliaSans_1_0/TTF/TeliaSans-Regular.ttf') format('truetype');
+  font-family: 'pebble';
+  src: url('{{assetPath}}/fonts/Pebble_W_Rg.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'TeliaSans-Regular';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSans-Regular.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'TeliaSans-RegularItalic';
-    src: url('{{assetPath}}/fonts/TeliaSans_1_0/TTF/TeliaSans-RegularItalic.ttf') format('truetype');
+  font-family: 'TeliaSans-RegularItalic';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSans-RegularItalic.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'TeliaSans-Medium';
-    src: url('{{assetPath}}/fonts/TeliaSans_1_0/TTF/TeliaSans-Medium.ttf') format('truetype');
+  font-family: 'TeliaSans-Medium';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSans-Medium.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'TeliaSans-MediumItalic';
-    src: url('{{assetPath}}/fonts/TeliaSans_1_0/TTF/TeliaSans-MediumItalic.ttf') format('truetype');
+  font-family: 'TeliaSans-MediumItalic';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSans-MediumItalic.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'TeliaSans-Bold';
-    src: url('{{assetPath}}/fonts/TeliaSans_1_0/TTF/TeliaSans-Bold.ttf') format('truetype');
+  font-family: 'TeliaSans-Bold';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSans-Bold.ttf') format('truetype');
 }
 @font-face {
-    font-family: 'TeliaSans-BoldItalic';
-    src: url('{{assetPath}}/fonts/TeliaSans_1_0/TTF/TeliaSans-BoldItalic.ttf') format('truetype');
+  font-family: 'TeliaSans-BoldItalic';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSans-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'TeliaSansHeading-Heading';
+  src: url('{{assetPath}}/fonts/TeliaSansCompleteFamily/TTF/TeliaSansHeading-Heading.ttf') format('truetype');
 }
 
 /* Accessibility */
 /* Visually hidden elements (screen readers only) */
 .sr-only {
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
-    clip: rect(1px, 1px, 1px, 1px);
-    white-space: nowrap; /* added line */
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* added line */
 }
 
 /* Removes button defaults */
 .button--stripped {
-    -webkit-appearance: none;
-    -webkit-writing-mode: inherit;
-    text-rendering: auto;
-    color: #000000;
-    letter-spacing: normal;
-    word-spacing: normal;
-    text-transform: none;
-    text-indent: 0px;
-    text-shadow: none;
-    display: inline-block;
-    text-align: inherit;
-    align-items: flex-start;
-    cursor: default;
-    background-color: transparent;
-    box-sizing: border-box;
-    margin: 0em;
-    font: inherit;
-    padding: inherit;
-    writing-mode: inherit;
-    border-width: inherit;
-    border-style: inherit;
-    border-color: inherit;
-    border-image: initial;
+  -webkit-appearance: none;
+  -webkit-writing-mode: inherit;
+  text-rendering: auto;
+  color: #000000;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: inherit;
+  align-items: flex-start;
+  cursor: default;
+  background-color: transparent;
+  box-sizing: border-box;
+  margin: 0em;
+  font: inherit;
+  padding: inherit;
+  writing-mode: inherit;
+  border-width: inherit;
+  border-style: inherit;
+  border-color: inherit;
+  border-image: initial;
 }
 
-.button--stripped:hover, .button--stripped:focus, .button--stripped:active {
-    outline: none;
+.button--stripped:hover,
+.button--stripped:focus,
+.button--stripped:active {
+  outline: none;
 }
