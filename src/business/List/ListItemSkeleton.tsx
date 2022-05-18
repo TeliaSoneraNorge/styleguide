@@ -45,7 +45,6 @@ export const ListItemSkeleton = (props: ListItemProps) => {
         'telia-listItem--outlined': border === 'outlined',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
-        'telia-listItem--noBG': color !== 'dark' && color !== 'medium',
       })}
     >
       <div className={cn('telia-listItem__mainWrapper', { 'telia-listItem--compact': compact })}>
