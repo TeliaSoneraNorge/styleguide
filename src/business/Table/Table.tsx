@@ -53,6 +53,7 @@ type TableBodyRowProps = {
   onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void;
   className?: string;
   connectedToPrevious?: boolean;
+  ref?: React.RefObject<HTMLTableRowElement>;
 } & (
   | {
       onSelect: (e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -90,6 +91,7 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
         }
       }}
       tabIndex={props.onClickRow ? 0 : undefined}
+      ref={props.ref}
     >
       {'onSelect' in props && (
         <TableBodyCell isCheckbox={true}>
