@@ -33,7 +33,7 @@ const renderIcon = (icon) => {
   return <></>;
 };
 
-const renderHeading = (text, className) => {
+function renderHeading({ text, className }) {
   if (text) {
     if (text.includes('.') || text.includes(',') || isNumber(text)) {
       text = formatPrice(text);
@@ -44,8 +44,8 @@ const renderHeading = (text, className) => {
     }
     return <h2>{text}</h2>;
   }
-  return <></>;
-};
+  return <h1>Hello world</h1>;
+}
 
 const renderArrow = (isExpanded) => {
   return (
@@ -62,7 +62,7 @@ const AccordionFlexible = ({
   titleIcon,
   titleIcon2,
 
-  title,
+  titleLeft,
 
   titleMiddle,
   previousTitleRight,
@@ -99,12 +99,13 @@ const AccordionFlexible = ({
         className={cn('accordion-flexible__header', { 'accordion-flexible__header--expanded': isExpanded })}
       >
         <div>
+          <h4>What223 {titleLeft}</h4>
           <renderBadge badge={badge} />
 
           <renderIcon icon={titleIcon} />
           <renderIcon icon={titleIcon2} />
 
-          <renderHeading text={title} className={'accordion-flexible__heading--left'} />
+          <renderHeading text={titleLeft} className={'accordion-flexible__heading--left'} />
 
           <renderHeading text={titleMiddle} className={'accordion-flexible__heading--middle'} />
 
@@ -129,7 +130,7 @@ AccordionFlexible.propTypes = {
   titleIcon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   titleIcon2: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
-  title: PropTypes.string,
+  titleLeft: PropTypes.string,
 
   titleMiddle: PropTypes.string,
   previousTitleRight: PropTypes.string,

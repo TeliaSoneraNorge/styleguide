@@ -38,25 +38,23 @@ const disclaimers = (
 );
 export const DiscountPriceSubscriptionAccordion = () => {
   return (
-    <></>
-    // <AccordionFlexible
-    //   titleIcon={null}
-    //   titleIcon2={null}
-    //   title="Left"
-    //   titleMiddle={'Right'}
-    //   previousTitleRight={'Prev'}
-    //   titleRight={'Now'}
-    //   badge={null}
-    //   isExpanded={false}
-    //   disclaimers={disclaimers}
-    //   onOpen={() => setIsExpanded(!isExpanded)}
-    // >
-    //   <ul className="list">
-    //     <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
-    //     <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
-    //     <li className="list__item">Roam Like Home</li>
-    //   </ul>
-    //   <SExampleButton />
-    // </AccordionFlexible>
+    <AccordionFlexible
+      titleIcon={null}
+      titleIcon2={null}
+      titleLeft={'Left'}
+      titleMiddle={'Right'}
+      previousTitleRight={'Prev'}
+      titleRight={'Now'}
+      badge={null}
+      isExpanded={false}
+      disclaimers={disclaimers}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
   );
 };

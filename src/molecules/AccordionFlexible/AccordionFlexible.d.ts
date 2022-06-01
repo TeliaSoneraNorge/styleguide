@@ -6,7 +6,7 @@ export interface AccordionFlexibleProps {
   titleIcon?: any;
   titleIcon2?: any;
 
-  title?: string;
+  titleLeft?: string;
 
   titleMiddle?: string;
   previousTitleRight?: string;
