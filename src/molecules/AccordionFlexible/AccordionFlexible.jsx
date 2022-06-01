@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Icon } from '../../atoms/Icon';
 import { isNumber } from 'lodash';
-import { any } from 'core-js/library/es6/promise';
 
 const formatPrice = (price) => {
   if (typeof price === 'number') {
