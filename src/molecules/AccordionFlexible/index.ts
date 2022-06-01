@@ -1,1 +1,1 @@
-export { default } from './SubscriptionAccordion';
+export { default } from './AccordionFlexible';

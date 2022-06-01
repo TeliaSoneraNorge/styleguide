@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
-import AccordionFlexible from './AccordionFlexible';
+import React from 'react';
 import { StatefulAccordionList } from '../AccordionList';
-import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
-import { CheckMarkIcon } from '../../atoms/Icon/icons/CheckMarkIcon';
 import Button from '../../atoms/Button';
 import { Badge } from '../../atoms/Badge';
-
-const SExampleButton = () => <Button kind="primary" text="Velg" size="small" margin="bottom" onClick={() => {}} />;
+import { AccordionFlexible } from '../../index';
 
 export default {
   title: 'Component library/Molecules/AccordionFlexible',
   component: AccordionFlexible,
 };
+
+const SExampleButton = () => <Button kind="primary" text="Velg" size="small" margin="bottom" onClick={() => {}} />;
 
 const disclaimers = (
   <StatefulAccordionList
@@ -39,27 +37,26 @@ const disclaimers = (
   />
 );
 export const DiscountPriceSubscriptionAccordion = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
   return (
-    <AccordionFlexible
-      titleIcon={null}
-      titleIcon2={null}
-      title="Left"
-      titleMiddle={'Right'}
-      previousTitleRight={'Prev'}
-      titleRight={'Now'}
-      badge={null}
-      isExpanded={false}
-      disclaimers={disclaimers}
-      onOpen={() => setIsExpanded(!isExpanded)}
-    >
-      <ul className="list">
-        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
-        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
-        <li className="list__item">Roam Like Home</li>
-      </ul>
-      <SExampleButton />
-    </AccordionFlexible>
+    <></>
+    // <AccordionFlexible
+    //   titleIcon={null}
+    //   titleIcon2={null}
+    //   title="Left"
+    //   titleMiddle={'Right'}
+    //   previousTitleRight={'Prev'}
+    //   titleRight={'Now'}
+    //   badge={null}
+    //   isExpanded={false}
+    //   disclaimers={disclaimers}
+    //   onOpen={() => setIsExpanded(!isExpanded)}
+    // >
+    //   <ul className="list">
+    //     <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+    //     <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+    //     <li className="list__item">Roam Like Home</li>
+    //   </ul>
+    //   <SExampleButton />
+    // </AccordionFlexible>
   );
 };

@@ -47,6 +47,7 @@ export { default as AnimatedProgressBar } from './atoms/AnimatedProgressBar';
 
 // Molecules
 export { default as Accordion } from './molecules/Accordion';
+export { default as AccordionFlexible } from './molecules/AccordionFlexible';
 export { default as AccordionList } from './molecules/AccordionList';
 export { StatefulAccordionList } from './molecules/AccordionList';
 export { default as Alert } from './molecules/Alert';
