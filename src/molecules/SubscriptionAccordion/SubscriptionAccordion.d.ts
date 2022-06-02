@@ -1,4 +1,9 @@
 import * as React from 'react';
+interface Ribbon {
+  backgroundColor: string;
+  color: string;
+  text: string;
+}
 
 export type SubscriptionDataAmount = string | number;
 
@@ -29,6 +34,7 @@ export interface SubscriptionAccordionProps {
   discount?: SubscriptionDiscount;
   feature?: SubscriptionFeature;
   disclaimers?: any;
+  ribbon?: Ribbon | null;
   scrollToOnOpen?: boolean;
   className?: string;
   onOpen?: (...args: any[]) => any;
