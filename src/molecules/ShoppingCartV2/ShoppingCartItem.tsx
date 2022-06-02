@@ -54,23 +54,25 @@ const getPrice = (
   return null;
 };
 export interface ShoppingCartItemProps {
-  onChangeQuantity: (cartItem: ICartItem, quantity: number) => void;
   shouldShowQuantity: boolean;
-  onRemoveItem: (cartItem: ICartItem) => void;
   isAllowedToDelete: boolean;
   cartItem: ICartItem;
+  hasPaid?: boolean;
+  onChangeQuantity: (cartItem: ICartItem, quantity: number) => void;
+  onRemoveItem: (cartItem: ICartItem) => void;
   formatPrice: (price: string | number) => string;
 }
 
 interface QuantityPickerProps {
   quantity: number;
-  onChangeQuantity: (cartItem: ICartItem, quantity: number) => void;
   cartItem: ICartItem;
   shouldShowPricePerUnit: boolean;
   isQuantityModifiable: boolean;
   price: ICartItemPrice;
   discountValueUpfront: number;
   discountValueMonthly: number;
+  hasPaid?: boolean;
+  onChangeQuantity: (cartItem: ICartItem, quantity: number) => void;
   getPrice: (
     formatPrice: (price: string | number) => string,
     price: ICartItemPrice,
@@ -89,35 +91,38 @@ const QuantityPicker = ({
   price,
   discountValueUpfront,
   discountValueMonthly,
+  hasPaid,
   getPrice,
 }: QuantityPickerProps) => {
   const minQuantity = 1;
   const maxQuantity = 10;
   return (
     <div className="telia-shopping-cart__item__quantity-picker-wrapper">
-      <div className="telia-shopping-cart__item__quantity-picker">
-        <button
-          type="button"
-          className={cn('telia-shopping-cart__item__quantity-picker__button', {
-            'telia-shopping-cart__item__quantity-picker__button--disabled': quantity <= minQuantity,
-          })}
-          disabled={quantity <= minQuantity}
-          onClick={() => onChangeQuantity(cartItem, quantity - 1)}
-        >
-          <Icon icon="minus" />
-        </button>
-        <Paragraph>{quantity}</Paragraph>
-        <button
-          type="button"
-          className={cn('telia-shopping-cart__item__quantity-picker__button', {
-            'telia-shopping-cart__item__quantity-picker__button--disabled': quantity >= maxQuantity,
-          })}
-          disabled={quantity >= maxQuantity}
-          onClick={() => onChangeQuantity(cartItem, quantity + 1)}
-        >
-          <Icon icon="add" />
-        </button>
-      </div>
+      {!hasPaid && (
+        <div className="telia-shopping-cart__item__quantity-picker">
+          <button
+            type="button"
+            className={cn('telia-shopping-cart__item__quantity-picker__button', {
+              'telia-shopping-cart__item__quantity-picker__button--disabled': quantity <= minQuantity,
+            })}
+            disabled={quantity <= minQuantity}
+            onClick={() => onChangeQuantity(cartItem, quantity - 1)}
+          >
+            <Icon icon="minus" />
+          </button>
+          <Paragraph>{quantity}</Paragraph>
+          <button
+            type="button"
+            className={cn('telia-shopping-cart__item__quantity-picker__button', {
+              'telia-shopping-cart__item__quantity-picker__button--disabled': quantity >= maxQuantity,
+            })}
+            disabled={quantity >= maxQuantity}
+            onClick={() => onChangeQuantity(cartItem, quantity + 1)}
+          >
+            <Icon icon="add" />
+          </button>
+        </div>
+      )}
       {shouldShowPricePerUnit && (
         <span className="telia-shopping-cart__item__price-per">
           {quantity > 1 && !isQuantityModifiable && `${quantity} x `}
@@ -160,10 +165,11 @@ const CartItemImage = ({ cartItem }: CartImageProps) => {
 
 interface CartItemPriceProps {
   cartItem: ICartItem;
+  hasPaid?: boolean;
   onChangeQuantity: (cartItem: ICartItem, quantity: number) => void;
 }
 
-const CartItemPrice = ({ cartItem, onChangeQuantity }: CartItemPriceProps) => {
+const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPriceProps) => {
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
   const shouldShowPricePerUnit = (!!cartItem.price.upfront || !!cartItem.price.firstInvoice) && quantity > 1;
@@ -200,6 +206,7 @@ const CartItemPrice = ({ cartItem, onChangeQuantity }: CartItemPriceProps) => {
               price={cartItem.price}
               discountValueUpfront={discountValueUpfront}
               discountValueMonthly={discountValueMonthly}
+              hasPaid={hasPaid}
               getPrice={getPrice}
             />
           )}
@@ -241,7 +248,13 @@ const CartItemName = ({ cartItem }: CartItemNameProps) => (
   </>
 );
 
-const ShoppingCartItem = ({ onChangeQuantity, onRemoveItem, isAllowedToDelete, cartItem }: ShoppingCartItemProps) => {
+const ShoppingCartItem = ({
+  onChangeQuantity,
+  onRemoveItem,
+  isAllowedToDelete,
+  cartItem,
+  hasPaid,
+}: ShoppingCartItemProps) => {
   const isRemovable = _.get(cartItem, 'quantity.removable');
 
   return (
@@ -250,7 +263,7 @@ const ShoppingCartItem = ({ onChangeQuantity, onRemoveItem, isAllowedToDelete, c
         <CartItemImage cartItem={cartItem} />
         <div className="telia-shopping-cart__item__name">
           <CartItemName cartItem={cartItem} />
-          <CartItemPrice cartItem={cartItem} onChangeQuantity={onChangeQuantity} />
+          <CartItemPrice cartItem={cartItem} onChangeQuantity={onChangeQuantity} hasPaid={hasPaid} />
         </div>
       </div>
       {isRemovable && isAllowedToDelete && (

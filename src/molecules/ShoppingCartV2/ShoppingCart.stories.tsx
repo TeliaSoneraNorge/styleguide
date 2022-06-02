@@ -331,6 +331,100 @@ export const WithFirstInvoice = () => {
   );
 };
 
+export const WithHasPaid = () => {
+  const delivery = {
+    label: 'Levering',
+    value: 'Fri frakt',
+  };
+
+  const groupContent: ICartItem[] = [
+    {
+      type: 'ACCESSORY',
+      subtype: 'COVER',
+      id: '9076624',
+      brand: 'Samsung',
+      brandSlug: 'samsung',
+      model: 'Smart LED Cover Galaxy S20',
+      modelSlug: 'smart-led-cover',
+      color: 'Grå',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/4pyxsA65uGFwt0NIlj3KmO/c48c5279368525a19e5a5b3b92f35405/ef-kg980c_002_back_black_200123.png',
+      },
+      name: 'Samsung LED Cover Galaxy S20 Grå',
+      quantity: {
+        modifiable: true,
+        removable: true,
+        value: 3,
+      },
+      price: {
+        upfront: 599,
+        originalSalesPrice: 599,
+        originalSalesPriceWithoutVAT: 479.2,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+      },
+      leaseMonths: null,
+      isReSwitch: false,
+      isWebDeal: false,
+    },
+    {
+      type: 'ACCESSORY',
+      subtype: 'SPEAKER',
+      id: '9075536',
+      brand: 'Harman Kardon',
+      brandSlug: 'harman-kardon',
+      model: 'Onyx Studio 6',
+      modelSlug: 'onyx-studio',
+      color: 'Svart',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/6vnEg9rVj4DnaYvZVrIOvl/ddf6d72dbb92c712c06d8b14a3ec1806/OnyxStudio6_Hero_Black_1605X1605.png',
+      },
+      name: 'Harman Kardon Onyx Studio 6 Svart',
+      quantity: {
+        modifiable: true,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        upfront: 3999,
+        originalSalesPrice: 3999,
+        originalSalesPriceWithoutVAT: 3199.2,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+      },
+      leaseMonths: null,
+      isReSwitch: false,
+      isWebDeal: false,
+    },
+  ];
+
+  return (
+    <ShoppingCartV2
+      heading="Handlekurv"
+      cartItems={groupContent}
+      delivery={delivery}
+      totalPriceMonthly={500}
+      totalPriceUpfront={1000}
+      hasPaid={true}
+      onChangeQuantity={() => {}}
+      onRemoveItem={() => {}}
+      formatPrice={(price: any) => `${price},-`}
+    />
+  );
+};
+
 export const subscriptionsOnly = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;

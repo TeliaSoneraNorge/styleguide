@@ -22,6 +22,7 @@ export interface ShoppingCartV2Props {
   formatPrice: (price: string | number) => string;
   isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
+  hasPaid?: boolean;
   continueSection?: React.ReactNode;
 }
 
@@ -46,6 +47,7 @@ const ShoppingCartV2 = ({
   totalVAT,
   totalPriceWithoutVAT,
   isAllowedToDelete,
+  hasPaid,
   formatPrice,
   continueSection,
 }: ShoppingCartV2Props) => {
@@ -64,6 +66,7 @@ const ShoppingCartV2 = ({
         onRemoveItem={onRemoveItem}
         formatPrice={formatPrice}
         isAllowedToDelete={isAllowedToDelete}
+        hasPaid={hasPaid}
       />
       <ShoppingCartPaymentSection
         delivery={delivery}
@@ -75,6 +78,7 @@ const ShoppingCartV2 = ({
         totalPriceWithoutVAT={totalPriceWithoutVAT}
         totalVAT={totalVAT}
         formatPrice={formatPrice}
+        hasPaid={hasPaid}
       />
       {disclaimer && <div className="telia-shopping-cart__disclaimer">{disclaimer}</div>}
       {continueSection && <ShoppingCartContinueSection section={continueSection} />}

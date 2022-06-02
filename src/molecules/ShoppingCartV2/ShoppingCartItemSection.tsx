@@ -6,22 +6,24 @@ import { ICartItem } from './types';
 export interface ShoppingCartItemSectionProps {
   heading?: string;
   cartItems: ICartItem[];
-  onChangeQuantity: (item: any, quantity: number) => void;
-  onRemoveItem: (item: any) => void;
   shouldShowQuantity?: boolean;
-  formatPrice: (price: string | number) => string;
   isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
+  hasPaid?: boolean;
+  onChangeQuantity: (item: any, quantity: number) => void;
+  onRemoveItem: (item: any) => void;
+  formatPrice: (price: string | number) => string;
 }
 
 export interface ShoppingCartItemGroupProps {
   cartItem: ICartItem;
-  onChangeQuantity: (item: any, quantity: number) => void;
-  onRemoveItem: (item: any) => void;
   shouldShowQuantity?: boolean;
-  formatPrice: (price: string | number) => string;
   isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
+  hasPaid?: boolean;
+  onChangeQuantity: (item: any, quantity: number) => void;
+  onRemoveItem: (item: any) => void;
+  formatPrice: (price: string | number) => string;
 }
 
 const sortShoppingCart = (item: ICartItem) => {
@@ -51,10 +53,11 @@ const ShoppingCartSectionBody = ({ children }: { children: React.ReactNode }) =>
 
 const ShoppingCartItemGroup = ({
   cartItem,
-  onChangeQuantity,
-  onRemoveItem,
   shouldShowQuantity,
   isAllowedToDelete,
+  hasPaid,
+  onChangeQuantity,
+  onRemoveItem,
   formatPrice,
 }: ShoppingCartItemGroupProps) => {
   const renderCartItem = (item: ICartItem) => {
@@ -62,10 +65,11 @@ const ShoppingCartItemGroup = ({
       <Fragment key={item.id}>
         <ShoppingCartItem
           cartItem={item}
-          onChangeQuantity={onChangeQuantity}
-          onRemoveItem={onRemoveItem}
           shouldShowQuantity={!!shouldShowQuantity}
           isAllowedToDelete={!!isAllowedToDelete}
+          hasPaid={hasPaid}
+          onChangeQuantity={onChangeQuantity}
+          onRemoveItem={onRemoveItem}
           formatPrice={formatPrice}
         />
         {!_.isEmpty(item.items) && _.sortBy(item.items, [sortShoppingCart]).map((subItem) => renderCartItem(subItem))}
@@ -78,9 +82,10 @@ const ShoppingCartItemGroup = ({
 const ShoppingCartSection = ({
   cartItems,
   isAnyCartItemsQuantityModifiable,
+  isAllowedToDelete,
+  hasPaid,
   onChangeQuantity,
   onRemoveItem,
-  isAllowedToDelete,
   formatPrice,
 }: ShoppingCartItemSectionProps) => {
   return (
@@ -94,6 +99,7 @@ const ShoppingCartSection = ({
             onRemoveItem={onRemoveItem}
             isAllowedToDelete={isAllowedToDelete}
             shouldShowQuantity={isAnyCartItemsQuantityModifiable}
+            hasPaid={hasPaid}
             formatPrice={formatPrice}
           />
           {index < cartItems.length - 1 && (
