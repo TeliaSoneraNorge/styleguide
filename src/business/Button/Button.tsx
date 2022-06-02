@@ -48,11 +48,6 @@ type ButtonProps = {
   target?: string;
   type?: 'button' | 'reset' | 'submit';
   className?: string;
-  ref?:
-    | ((string | ((instance: HTMLButtonElement | null) => void) | React.RefObject<HTMLButtonElement>) &
-        (string | ((instance: HTMLAnchorElement | null) => void)))
-    | null
-    | undefined;
 };
 
 export const Button = (props: ButtonProps) => {
@@ -70,7 +65,6 @@ export const Button = (props: ButtonProps) => {
     target,
     type = 'button',
     className,
-    ref,
   } = props;
   const Tag = href ? 'a' : 'button';
 
@@ -104,7 +98,6 @@ export const Button = (props: ButtonProps) => {
       type={href ? undefined : type}
       target={href ? target : undefined}
       aria-label={ariaLabel}
-      ref={ref}
     >
       {icon && <Icon icon={icon} className="telia-business-button__icon" />}
       {label}
