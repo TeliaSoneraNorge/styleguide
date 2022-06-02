@@ -16,6 +16,7 @@ const SubscriptionAccordion = ({
   discountPrice,
   price,
   priceInfo,
+  ribbon,
   discount,
   feature,
   disclaimers,
@@ -44,6 +45,16 @@ const SubscriptionAccordion = ({
         'subscription-accordion__extra-margin': !!discount,
       })}
     >
+      {ribbon ? (
+        <div className="subscription-accordion__ribbon-container">
+          <div
+            style={{ backgroundColor: ribbon.backgroundColor, color: ribbon.color }}
+            className="subscription-accordion__ribbon"
+          >
+            {ribbon.text}
+          </div>
+        </div>
+      ) : null}
       <button
         className={cn('subscription-accordion__header', {
           'subscription-accordion__header--expanded': isExpanded,
@@ -132,6 +143,11 @@ SubscriptionAccordion.propTypes = {
   titleTag: PropTypes.string,
   price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   priceInfo: PropTypes.arrayOf(PropTypes.string),
+  ribbon: PropTypes.shape({
+    backgroundColor: PropTypes.string,
+    color: PropTypes.string,
+    text: PropTypes.string,
+  }),
   discount: PropTypes.shape({
     price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     description: PropTypes.string,
