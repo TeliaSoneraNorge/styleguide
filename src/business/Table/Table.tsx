@@ -53,6 +53,7 @@ type TableBodyRowProps = {
   onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void;
   className?: string;
   connectedToPrevious?: boolean;
+  children?: React.ReactNode;
 } & (
   | {
       onSelect: (e?: React.ChangeEvent<HTMLInputElement>) => void;
