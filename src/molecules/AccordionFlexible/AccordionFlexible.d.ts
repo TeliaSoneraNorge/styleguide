@@ -24,7 +24,9 @@ export interface AccordionFlexibleProps {
 
   className?: string;
 
-  onOpen?: (...args: any[]) => any;
+  onOpened?: (...args: any[]) => any;
+
+  onClosed?: (...args: any[]) => any;
 }
 
 export const AccordionFlexible: React.FC<AccordionFlexibleProps>;

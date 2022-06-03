@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
 import { Icon } from '../../atoms/Icon';
@@ -12,28 +12,31 @@ const formatPrice = (price) => {
 };
 
 //Supports string or element, pass string to use a default Badge element, or pass in your own Element to be rendered
-const renderBadge = (badge) => {
+const RenderBadge = (badge) => {
   if (badge) {
     if (typeof badge === 'string') {
-      return <></>;
+      return <>{badge}</>;
     }
-    return { badge };
+    return <badge />;
   }
   return <></>;
 };
 
 //Supports string or element, pass string to use the internal Icon element, or pass in your own Element to be rendered
-const renderIcon = (icon) => {
+const RenderIcon = (icon) => {
   if (typeof icon !== 'undefined') {
     if (typeof icon === 'string') {
       return <Icon name={icon} />;
     }
-    return { icon };
+    return <icon />;
   }
   return <></>;
 };
 
-function renderHeading({ text, className }) {
+function RenderHeading({ text, className }) {
+  console.log('render heading: ');
+  console.log(text);
+  console.log(className);
   if (text) {
     if (text.includes('.') || text.includes(',') || isNumber(text)) {
       text = formatPrice(text);
@@ -47,7 +50,7 @@ function renderHeading({ text, className }) {
   return <h1>Hello world</h1>;
 }
 
-const renderArrow = (isExpanded) => {
+const RenderArrow = (isExpanded) => {
   return (
     <Icon
       icon="arrow-down"
@@ -70,7 +73,7 @@ const AccordionFlexible = ({
 
   badge,
 
-  isExpanded,
+  expand,
 
   disclaimers,
 
@@ -79,12 +82,24 @@ const AccordionFlexible = ({
   scrollToOnOpen = false,
 
   className,
-  onOpen = () => {},
+
+  onOpened = () => {},
+  onClosed = () => {},
 }) => {
+  const [isExpanded, setIsExpanded] = useState(expand);
   const ref = useRef();
 
+  const onClick = () => {
+    setIsExpanded(!isExpanded);
+    if (isExpanded) {
+      onOpened();
+    } else {
+      onClosed();
+    }
+  };
+
   useEffect(() => {
-    if (ref.current && isExpanded && scrollToOnOpen) {
+    if (ref.current && expand && scrollToOnOpen) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -95,28 +110,28 @@ const AccordionFlexible = ({
   return (
     <section ref={ref} id={id} className={cn('accordion-flexible', className)}>
       <button
-        onClick={onOpen}
+        onClick={() => onClick()}
         className={cn('accordion-flexible__header', { 'accordion-flexible__header--expanded': isExpanded })}
       >
         <div>
-          <h4>What223 {titleLeft}</h4>
-          <renderBadge badge={badge} />
+          <h4>{titleLeft}</h4>
+          <RenderBadge badge={badge} />
 
-          <renderIcon icon={titleIcon} />
-          <renderIcon icon={titleIcon2} />
+          <RenderIcon icon={titleIcon} />
+          <RenderIcon icon={titleIcon2} />
 
-          <renderHeading text={titleLeft} className={'accordion-flexible__heading--left'} />
+          <RenderHeading text={titleLeft} className={'accordion-flexible__heading--left'} />
 
-          <renderHeading text={titleMiddle} className={'accordion-flexible__heading--middle'} />
+          <RenderHeading text={titleMiddle} className={'accordion-flexible__heading--middle'} />
 
-          <renderHeading text={previousTitleRight} className={'accordion-flexible__heading--right line-through'} />
-          <renderHeading text={titleRight} className={'accordion-flexible__heading--right'} />
+          <RenderHeading text={previousTitleRight} className={'accordion-flexible__heading--right line-through'} />
+          <RenderHeading text={titleRight} className={'accordion-flexible__heading--right'} />
 
-          <renderArrow isExpanded={isExpanded} />
+          <RenderArrow isExpanded={isExpanded} />
         </div>
       </button>
       <section className="accordion-flexible__content">
-        {isExpanded && children && { children }}
+        {isExpanded && children && <>{children}</>}
 
         {isExpanded && disclaimers && <div className="subscription-accordion__disclaimers">{disclaimers}</div>}
       </section>
@@ -148,7 +163,9 @@ AccordionFlexible.propTypes = {
 
   className: PropTypes.string,
 
-  onOpen: PropTypes.func,
+  onOpened: PropTypes.func,
+
+  onClosed: PropTypes.func,
 };
 
 export default AccordionFlexible;
