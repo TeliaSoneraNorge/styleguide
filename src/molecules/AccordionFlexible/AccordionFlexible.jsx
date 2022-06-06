@@ -57,7 +57,7 @@ function RenderIngress({ text, className }) {
   return <></>;
 }
 
-const RenderArrow = (isExpanded) => {
+const RenderArrow = ({ isExpanded }) => {
   return (
     <Icon
       icon="arrow-down"
@@ -98,9 +98,7 @@ const AccordionFlexible = ({
   const ref = useRef();
 
   const onClick = () => {
-    console.log(isExpanded);
     setIsExpanded(!isExpanded);
-    console.log(isExpanded);
     if (isExpanded) {
       onOpened();
     } else {
@@ -117,13 +115,14 @@ const AccordionFlexible = ({
     }
   }, [isExpanded, scrollToOnOpen]);
 
+  console.log('rendering' + isExpanded);
   return (
     <section className={cn('accordion-flexible', className)}>
       <button
         ref={ref}
         id={id}
         onClick={() => onClick()}
-        className={cn('accordion-flexible__header-container', { 'accordion-flexible--expanded': isExpanded })}
+        className={cn('accordion-flexible__header-container', { 'accordion-flexible--expanded': isExpanded === true })}
       >
         <RenderBadge badge={badge} />
         <div className={'accordion-flexible__header'}>
@@ -146,7 +145,7 @@ const AccordionFlexible = ({
             <RenderIngress text={ingressLeft} className={'accordion-flexible__ingress-row-left'} />
             <RenderIngress text={ingressRight} className={'accordion-flexible__ingress-row-right'} />
           </div>
-          <RenderArrow isExpanded={isExpanded} />
+          <RenderArrow isExpanded={isExpanded === true} />
         </div>
       </button>
       <section className="accordion-flexible__content">

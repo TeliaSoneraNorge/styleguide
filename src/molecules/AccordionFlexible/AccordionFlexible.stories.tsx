@@ -48,7 +48,7 @@ export const DiscountPriceSubscriptionAccordion = () => {
       titleRight={'Now'}
       ingressRight={'Ingress Right'}
       badge={null}
-      isExpanded={false}
+      isExpanded={true}
       disclaimers={disclaimers}
     >
       <ul className="list">
