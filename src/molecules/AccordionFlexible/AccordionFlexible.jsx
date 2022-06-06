@@ -17,7 +17,7 @@ const RenderBadge = (badge) => {
     if (typeof badge === 'string') {
       return <>{badge}</>;
     }
-    return <badge />;
+    return <></>;
   }
   return <></>;
 };
@@ -25,18 +25,15 @@ const RenderBadge = (badge) => {
 //Supports string or element, pass string to use the internal Icon element, or pass in your own Element to be rendered
 const RenderIcon = (icon) => {
   if (typeof icon !== 'undefined') {
-    if (typeof icon === 'string') {
-      return <Icon name={icon} />;
+    if (typeof icon.icon !== 'undefined' && typeof icon.icon === 'string') {
+      return <Icon icon={icon.icon} />;
     }
-    return <icon />;
+    return <>{icon.icon}</>;
   }
   return <></>;
 };
 
-function RenderHeading({ text, className }) {
-  console.log('render heading: ');
-  console.log(text);
-  console.log(className);
+function RenderTitle({ text, className }) {
   if (text) {
     if (text.includes('.') || text.includes(',') || isNumber(text)) {
       text = formatPrice(text);
@@ -50,11 +47,21 @@ function RenderHeading({ text, className }) {
   return <h1>Hello world</h1>;
 }
 
+function RenderIngress({ text, className }) {
+  if (text) {
+    if (className) {
+      return <h2 className={className}>{text}</h2>;
+    }
+    return <h2>{text}</h2>;
+  }
+  return <></>;
+}
+
 const RenderArrow = (isExpanded) => {
   return (
     <Icon
       icon="arrow-down"
-      className={cn('accordion-flexible__arrow', { 'flexible__arrow--isExpanded': isExpanded })}
+      className={cn('accordion-flexible__arrow', { 'accordion-flexible__arrow--expanded': isExpanded === true })}
     />
   );
 };
@@ -66,10 +73,11 @@ const AccordionFlexible = ({
   titleIcon2,
 
   titleLeft,
+  ingressLeft,
 
-  titleMiddle,
   previousTitleRight,
   titleRight,
+  ingressRight,
 
   badge,
 
@@ -90,7 +98,9 @@ const AccordionFlexible = ({
   const ref = useRef();
 
   const onClick = () => {
+    console.log(isExpanded);
     setIsExpanded(!isExpanded);
+    console.log(isExpanded);
     if (isExpanded) {
       onOpened();
     } else {
@@ -99,7 +109,7 @@ const AccordionFlexible = ({
   };
 
   useEffect(() => {
-    if (ref.current && expand && scrollToOnOpen) {
+    if (ref.current && isExpanded && scrollToOnOpen) {
       ref.current.scrollIntoView({
         behavior: 'smooth',
         block: 'start',
@@ -108,25 +118,34 @@ const AccordionFlexible = ({
   }, [isExpanded, scrollToOnOpen]);
 
   return (
-    <section ref={ref} id={id} className={cn('accordion-flexible', className)}>
+    <section className={cn('accordion-flexible', className)}>
       <button
+        ref={ref}
+        id={id}
         onClick={() => onClick()}
-        className={cn('accordion-flexible__header', { 'accordion-flexible__header--expanded': isExpanded })}
+        className={cn('accordion-flexible__header-container', { 'accordion-flexible--expanded': isExpanded })}
       >
-        <div>
-          <h4>{titleLeft}</h4>
-          <RenderBadge badge={badge} />
+        <RenderBadge badge={badge} />
+        <div className={'accordion-flexible__header'}>
+          <div className="accordion-flexible__header-row">
+            <RenderIcon icon={titleIcon} />
 
-          <RenderIcon icon={titleIcon} />
-          <RenderIcon icon={titleIcon2} />
+            <RenderIcon icon={titleIcon2} />
 
-          <RenderHeading text={titleLeft} className={'accordion-flexible__heading--left'} />
+            <div className="accordion-flexible__header-content-left">
+              <RenderTitle text={titleLeft} className={'accordion-flexible__heading--left'} />
+            </div>
 
-          <RenderHeading text={titleMiddle} className={'accordion-flexible__heading--middle'} />
+            <div className="accordion-flexible__header-content-right">
+              <RenderTitle text={titleRight} className={'accordion-flexible__heading--right'} />
+              <RenderTitle text={previousTitleRight} className={'accordion-flexible__heading--right line-through'} />
+            </div>
+          </div>
 
-          <RenderHeading text={previousTitleRight} className={'accordion-flexible__heading--right line-through'} />
-          <RenderHeading text={titleRight} className={'accordion-flexible__heading--right'} />
-
+          <div className="accordion-flexible__header-row">
+            <RenderIngress text={ingressLeft} className={'accordion-flexible__ingress-row-left'} />
+            <RenderIngress text={ingressRight} className={'accordion-flexible__ingress-row-right'} />
+          </div>
           <RenderArrow isExpanded={isExpanded} />
         </div>
       </button>
@@ -146,10 +165,11 @@ AccordionFlexible.propTypes = {
   titleIcon2: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
   titleLeft: PropTypes.string,
+  ingressLeft: PropTypes.string,
 
-  titleMiddle: PropTypes.string,
   previousTitleRight: PropTypes.string,
   titleRight: PropTypes.string,
+  ingressRight: PropTypes.string,
 
   badge: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
 
@@ -157,7 +177,7 @@ AccordionFlexible.propTypes = {
 
   disclaimers: PropTypes.element,
 
-  children: PropTypes.element,
+  children: PropTypes.any,
 
   scrollToOnOpen: PropTypes.bool,
 

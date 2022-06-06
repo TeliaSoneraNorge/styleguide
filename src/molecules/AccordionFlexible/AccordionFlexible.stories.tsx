@@ -3,6 +3,7 @@ import { StatefulAccordionList } from '../AccordionList';
 import Button from '../../atoms/Button';
 import { Badge } from '../../atoms/Badge';
 import { AccordionFlexible } from '../../index';
+import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
 
 export default {
   title: 'Component library/Molecules/AccordionFlexible',
@@ -39,12 +40,13 @@ const disclaimers = (
 export const DiscountPriceSubscriptionAccordion = () => {
   return (
     <AccordionFlexible
-      titleIcon={null}
-      titleIcon2={null}
+      titleIcon={<InfiniteIcon />}
+      titleIcon2={'heart'}
       titleLeft={'Left'}
-      titleMiddle={'Right'}
+      ingressLeft={'Ingress left'}
       previousTitleRight={'Prev'}
       titleRight={'Now'}
+      ingressRight={'Ingress Right'}
       badge={null}
       isExpanded={false}
       disclaimers={disclaimers}

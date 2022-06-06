@@ -7,10 +7,11 @@ export interface AccordionFlexibleProps {
   titleIcon2?: any;
 
   titleLeft?: string;
+  ingressLeft?: string;
 
-  titleMiddle?: string;
   previousTitleRight?: string;
   titleRight?: string;
+  ingressRight?: string;
 
   badge?: any;
 
@@ -18,7 +19,7 @@ export interface AccordionFlexibleProps {
 
   disclaimers?: any;
 
-  children?: React.ReactNode;
+  children?: any;
 
   scrollToOnOpen?: bool;
 
