@@ -134,7 +134,9 @@ export const MultipleIconsNoBadge = () => {
       previousTitleSuffixRight={'fra'}
       previousTitleRight={'999'}
       titleRight={'799,- md'}
-      ingressRight={'Ingress Right'}
+      ingressRight={
+        'Rabatten varer ut hele året, fra og med 21. juli, til og med 22. juli neste år. Ingen andre tilbud matcher dette!'
+      }
       badge={null}
       expand={true}
       disclaimers={disclaimers}
@@ -149,19 +151,40 @@ export const MultipleIconsNoBadge = () => {
   );
 };
 
-export const MultipleIconsWithCustomBadgeObject = () => {
+export const MultipleIconsWithCustomBadgeObjectWithScrollTo = () => {
   return (
     <AccordionFlexible
       icons={null}
       titleLeft={'Bredbånd og TV'}
-      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      ingressLeft={
+        'Få rabatt ved å velge både TV og bredbånd fra Telia. Få enda mer rabatt om du bestiller nå i dag, dette er en lang ingress'
+      }
       previousTitleSuffixRight={'fra'}
       previousTitleRight={'999'}
       titleRight={'799,- md'}
-      ingressRight={'Ingress Right'}
+      ingressRight={
+        'Rabatten varer ut hele året, fra og med 21. juli, til og med 22. juli neste år. Ingen andre tilbud matcher dette!'
+      }
       badge={{ status: 'offer', text: 'Pakketilbud!' }}
       expand={true}
+      scrollToOnOpen={true}
       disclaimers={disclaimers}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const TonOfIcons = () => {
+  return (
+    <AccordionFlexible
+      icons={['internet', 'internet', 'heart', 'robot', 'heart', 'robot']}
+      titleLeft={'Bredbånd og TV'}
     >
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>

@@ -157,8 +157,8 @@ const AccordionFlexible = ({
             </div>
 
             <div className="accordion-flexible__header-row">
-              <RenderIngress text={ingressLeft} className={'accordion-flexible__ingress-row-left'} />
-              <RenderIngress text={ingressRight} className={'accordion-flexible__ingress-row-right'} />
+              <RenderIngress text={ingressLeft} className={'accordion-flexible__ingress-row--left'} />
+              <RenderIngress text={ingressRight} className={'accordion-flexible__ingress-row--right'} />
             </div>
           </div>
         </button>
@@ -169,7 +169,7 @@ const AccordionFlexible = ({
       >
         {isExpanded && children && <>{children}</>}
 
-        {isExpanded && disclaimers && <div className="subscription-accordion__disclaimers">{disclaimers}</div>}
+        {isExpanded && disclaimers && <div className="accordion-flexible__disclaimers">{disclaimers}</div>}
       </section>
     </section>
   );
