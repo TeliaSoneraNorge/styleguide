@@ -9,6 +9,7 @@ export interface AccordionFlexibleProps {
   titleLeft?: string;
   ingressLeft?: string;
 
+  previousTitleSuffixRight?: string;
   previousTitleRight?: string;
   titleRight?: string;
   ingressRight?: string;

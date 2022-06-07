@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 interface Common {
-  status?: 'ok' | 'caution' | 'warning' | 'communication';
+  status?: 'ok' | 'caution' | 'warning' | 'communication' | 'offer';
   color?: string;
   borderColor?: string;
   kind?: 'active' | 'outlined' | 'default';

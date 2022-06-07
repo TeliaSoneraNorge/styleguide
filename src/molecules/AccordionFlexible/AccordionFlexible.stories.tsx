@@ -40,14 +40,15 @@ const disclaimers = (
 export const DiscountPriceSubscriptionAccordion = () => {
   return (
     <AccordionFlexible
-      titleIcon={<InfiniteIcon />}
-      titleIcon2={'heart'}
-      titleLeft={'Left'}
-      ingressLeft={'Ingress left'}
-      previousTitleRight={'Prev'}
-      titleRight={'Now'}
+      titleIcon={'internet'}
+      titleIcon2={'tv'}
+      titleLeft={'Bredbånd og TV'}
+      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      previousTitleSuffixRight={'fra'}
+      previousTitleRight={'999'}
+      titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
-      badge={null}
+      badge={{ status: 'offer', text: 'PAKKETILBUD' }}
       isExpanded={true}
       disclaimers={disclaimers}
     >
