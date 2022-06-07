@@ -15,7 +15,7 @@ const formatPrice = (price) => {
 //Supports string or element, pass string to use a default Badge element, or pass in your own Element to be rendered
 const RenderBadge = ({ badge }) => {
   if (badge) {
-    if (typeof badge !== 'undefined' && typeof badge.status === 'string' && typeof badge.text === 'string') {
+    if (typeof badge.status === 'string' && typeof badge.text === 'string') {
       return <Badge text={badge.text} status={badge.status} />;
     }
     return <>{badge}</>;
@@ -24,7 +24,7 @@ const RenderBadge = ({ badge }) => {
 };
 
 const RenderIcon = (icon, i) => {
-  if (typeof icon !== 'undefined') {
+  if (icon) {
     if (typeof icon.icon === 'string') {
       return <Icon icon={icon.icon} key={i} />;
     }
