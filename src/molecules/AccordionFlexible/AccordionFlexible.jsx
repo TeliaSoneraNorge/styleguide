@@ -127,6 +127,8 @@ const AccordionFlexible = ({
         <button
           ref={ref}
           id={id}
+          aria-expanded={isExpanded}
+          aria-controls={id ? `accordion-flexible-${id}` : ''}
           onClick={() => onClick()}
           className={cn('accordion-flexible__header-container', {
             'accordion-flexible--expanded': isExpanded === true,
