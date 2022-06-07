@@ -15,7 +15,7 @@ export interface AccordionFlexibleProps {
 
   badge?: any;
 
-  isExpanded?: bool;
+  expand?: bool;
 
   disclaimers?: any;
 

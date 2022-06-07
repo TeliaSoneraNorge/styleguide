@@ -190,7 +190,7 @@ AccordionFlexible.propTypes = {
 
   badge: PropTypes.oneOfType([PropTypes.object, PropTypes.element]),
 
-  isExpanded: PropTypes.bool,
+  expand: PropTypes.bool,
 
   disclaimers: PropTypes.element,
 

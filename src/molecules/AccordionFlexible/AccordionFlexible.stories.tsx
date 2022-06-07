@@ -38,14 +38,35 @@ const disclaimers = (
   />
 );
 
+export const MinimumLeftHeading = () => {
+  return (
+    <AccordionFlexible titleLeft={'Bredbånd og TV'}>
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const MinimumRightHeading = () => {
+  return (
+    <AccordionFlexible titleRight={'Bredbånd og TV'}>
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
 export const SimpleNoIconNoBadgeNoIngress = () => {
   return (
-    <AccordionFlexible
-      titleLeft={'Bredbånd og TV'}
-      titleRight={'799,- md'}
-      isExpanded={false}
-      disclaimers={disclaimers}
-    >
+    <AccordionFlexible titleLeft={'Bredbånd og TV'} titleRight={'799,- md'} expand={false} disclaimers={disclaimers}>
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
         <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
@@ -67,7 +88,7 @@ export const MultipleIconsWithBadge = () => {
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
       badge={<Badge status="offer" text="Pa kkeTi lbud Her" />}
-      isExpanded={true}
+      expand={true}
       disclaimers={disclaimers}
     >
       <ul className="list">
@@ -91,7 +112,7 @@ export const NoIconWithBadge = () => {
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
       badge={<Badge status="offer" text="Pa kkeTi lbud Her" />}
-      isExpanded={true}
+      expand={true}
       disclaimers={disclaimers}
     >
       <ul className="list">
@@ -115,7 +136,7 @@ export const MultipleIconsNoBadge = () => {
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
       badge={null}
-      isExpanded={true}
+      expand={true}
       disclaimers={disclaimers}
     >
       <ul className="list">
@@ -139,7 +160,7 @@ export const MultipleIconsWithCustomBadgeObject = () => {
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
       badge={{ status: 'offer', text: 'Pakketilbud!' }}
-      isExpanded={true}
+      expand={true}
       disclaimers={disclaimers}
     >
       <ul className="list">
