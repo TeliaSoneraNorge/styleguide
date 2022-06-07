@@ -37,7 +37,26 @@ const disclaimers = (
     isExpandedAccordionIndex={-1}
   />
 );
-export const DiscountPriceSubscriptionAccordion = () => {
+
+export const SimpleNoIconNoBadgeNoIngress = () => {
+  return (
+    <AccordionFlexible
+      titleLeft={'Bredbånd og TV'}
+      titleRight={'799,- md'}
+      isExpanded={false}
+      disclaimers={disclaimers}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const MultipleIconsWithBadge = () => {
   return (
     <AccordionFlexible
       icons={[<InfiniteIcon />, 'internet']}
@@ -47,7 +66,79 @@ export const DiscountPriceSubscriptionAccordion = () => {
       previousTitleRight={'999'}
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
-      badge={{ status: 'offer', text: 'PAKKETILBUD' }}
+      badge={<Badge status="offer" text="Pa kkeTi lbud Her" />}
+      isExpanded={true}
+      disclaimers={disclaimers}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const NoIconWithBadge = () => {
+  return (
+    <AccordionFlexible
+      icons={null}
+      titleLeft={'Bredbånd og TV'}
+      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      previousTitleSuffixRight={'fra'}
+      previousTitleRight={'999'}
+      titleRight={'799,- md'}
+      ingressRight={'Ingress Right'}
+      badge={<Badge status="offer" text="Pa kkeTi lbud Her" />}
+      isExpanded={true}
+      disclaimers={disclaimers}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const MultipleIconsNoBadge = () => {
+  return (
+    <AccordionFlexible
+      icons={null}
+      titleLeft={'Bredbånd og TV'}
+      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      previousTitleSuffixRight={'fra'}
+      previousTitleRight={'999'}
+      titleRight={'799,- md'}
+      ingressRight={'Ingress Right'}
+      badge={null}
+      isExpanded={true}
+      disclaimers={disclaimers}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const MultipleIconsWithCustomBadgeObject = () => {
+  return (
+    <AccordionFlexible
+      icons={null}
+      titleLeft={'Bredbånd og TV'}
+      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      previousTitleSuffixRight={'fra'}
+      previousTitleRight={'999'}
+      titleRight={'799,- md'}
+      ingressRight={'Ingress Right'}
+      badge={{ status: 'offer', text: 'Pakketilbud!' }}
       isExpanded={true}
       disclaimers={disclaimers}
     >
