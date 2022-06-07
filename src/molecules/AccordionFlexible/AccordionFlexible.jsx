@@ -27,13 +27,23 @@ const RenderBadge = (badge) => {
   return <></>;
 };
 
-//Supports string or element, pass string to use the internal Icon element, or pass in your own Element to be rendered
-const RenderIcon = (icon) => {
+const RenderIcon = (icon, i) => {
   if (typeof icon !== 'undefined') {
-    if (typeof icon.icon !== 'undefined' && typeof icon.icon === 'string') {
-      return <Icon icon={icon.icon} />;
+    if (typeof icon.icon === 'string') {
+      return <Icon icon={icon.icon} key={i} />;
     }
     return <>{icon.icon}</>;
+  }
+  return <></>;
+};
+
+const RenderIcons = ({ icons }) => {
+  if (icons) {
+    if (Array.isArray(icons)) {
+      return Object.entries(icons).map(([key, val]) => <RenderIcon icon={val} key={key} />);
+    } else {
+      return <RenderIcon icon={icons} />;
+    }
   }
   return <></>;
 };
@@ -74,8 +84,7 @@ const RenderArrow = ({ isExpanded }) => {
 const AccordionFlexible = ({
   id,
 
-  titleIcon,
-  titleIcon2,
+  icons,
 
   titleLeft,
   ingressLeft,
@@ -137,9 +146,7 @@ const AccordionFlexible = ({
           <RenderBadge badge={badge} />
           <div className={'accordion-flexible__header'}>
             <div className="accordion-flexible__header-row">
-              <RenderIcon icon={titleIcon} />
-
-              <RenderIcon icon={titleIcon2} />
+              <RenderIcons icons={icons} />
 
               <div className="accordion-flexible__header-content-left">
                 <RenderTitle text={titleLeft} className={'accordion-flexible__heading--left'} />
@@ -175,8 +182,7 @@ const AccordionFlexible = ({
 AccordionFlexible.propTypes = {
   id: PropTypes.string,
 
-  titleIcon: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  titleIcon2: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
+  icons: PropTypes.any,
 
   titleLeft: PropTypes.string,
   ingressLeft: PropTypes.string,

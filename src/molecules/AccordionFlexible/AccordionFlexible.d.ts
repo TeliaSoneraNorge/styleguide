@@ -3,8 +3,7 @@ import * as React from 'react';
 export interface AccordionFlexibleProps {
   id?: string;
 
-  titleIcon?: any;
-  titleIcon2?: any;
+  icons?: any;
 
   titleLeft?: string;
   ingressLeft?: string;
