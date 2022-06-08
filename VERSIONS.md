@@ -15,6 +15,9 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+## 1.47.16
+- Added a new accordion that supports multiple icons, and the ingress is hidden if accordion is open/expanded
+
 ## 1.46.12
 
 - Added new version of shopping cart: ShoppingCartV2, SlidingShoppingCartV2
