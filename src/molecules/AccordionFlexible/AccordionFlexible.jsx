@@ -155,13 +155,17 @@ const AccordionFlexible = ({
         </button>
       </h3>
 
-      <section
-        className={cn('accordion-flexible__content', { 'accordion-flexible__content--expanded': isExpanded === true })}
-      >
-        {isExpanded && children && <>{children}</>}
+      {isExpanded && (
+        <section
+          className={cn('accordion-flexible__content', {
+            'accordion-flexible__content--expanded': isExpanded === true,
+          })}
+        >
+          {isExpanded && children && <>{children}</>}
 
-        {isExpanded && disclaimers && <div className="accordion-flexible__disclaimers">{disclaimers}</div>}
-      </section>
+          {isExpanded && disclaimers && <div className="accordion-flexible__disclaimers">{disclaimers}</div>}
+        </section>
+      )}
     </section>
   );
 };

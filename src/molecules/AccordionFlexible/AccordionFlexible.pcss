@@ -31,21 +31,14 @@
     padding-bottom: 1.5rem;
 
     border: 3px solid transparent;
-    border-bottom: 0;
-    transition: border 150ms ease-out;
+    transition: border 0ms ease-out;
     cursor: pointer;
 
     min-height: 100px;
 
     &:hover,
     &:active {
-      & .accordion-flexible__header-row:first-of-type {
-        color: var(--core-purple);
-      }
-
-      & svg.Icon {
-        fill: var(--core-purple);
-      }
+      border: 3px solid var(--core-purple);
     }
 
     & > .telia-badge {
@@ -72,11 +65,26 @@
   &--expanded {
     min-height: unset;
     padding-bottom: 0;
+    border-bottom: 3px solid transparent;
+    border-top: 3px solid var(--core-purple);
+    border-right: 3px solid var(--core-purple);
+    border-left: 3px solid var(--core-purple);
 
     & .accordion-flexible__header-row:last-of-type {
       display: none;
       visibility: hidden;
     }
+
+    &:hover,
+    &:active {
+      border-bottom: 3px solid transparent;
+    }
+  }
+
+  & .accordion-flexible__content--expanded {
+    border-left: 3px solid var(--core-purple);
+    border-right: 3px solid var(--core-purple);
+    border-bottom: 3px solid var(--core-purple);
   }
 
   &__header {
@@ -180,7 +188,7 @@
     font-family: var(--font-family-text);
     font-size: 16px;
     line-height: 1.5;
-    
+
     @media screen and (max-width: 580px) {
       min-width: 140px;
     }
