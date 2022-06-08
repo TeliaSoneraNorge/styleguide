@@ -1,9 +1,10 @@
 import React from 'react';
-import { StatefulAccordionList } from '../AccordionList';
-import Button from '../../atoms/Button';
-import { Badge } from '../../atoms/Badge';
+
 import { AccordionFlexible } from '../../index';
+import { Badge } from '../../atoms/Badge';
+import Button from '../../atoms/Button';
 import { InfiniteIcon } from '../../atoms/Icon/icons/InfiniteIcon';
+import { StatefulAccordionList } from '../AccordionList';
 
 export default {
   title: 'Component library/Molecules/AccordionFlexible',
@@ -40,7 +41,7 @@ const disclaimers = (
 
 export const MinimumLeftHeading = () => {
   return (
-    <AccordionFlexible titleLeft={'Bredbånd og TV'}>
+    <AccordionFlexible title={'Bredbånd og TV'}>
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
         <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
@@ -66,7 +67,7 @@ export const MinimumRightHeading = () => {
 
 export const SimpleNoIconNoBadgeNoIngress = () => {
   return (
-    <AccordionFlexible titleLeft={'Bredbånd og TV'} titleRight={'799,- md'} expand={false} disclaimers={disclaimers}>
+    <AccordionFlexible title={'Bredbånd og TV'} titleRight={'799,- md'} expand={false} disclaimers={disclaimers}>
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
         <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
@@ -80,14 +81,13 @@ export const SimpleNoIconNoBadgeNoIngress = () => {
 export const MultipleIconsWithBadge = () => {
   return (
     <AccordionFlexible
-      icons={[<InfiniteIcon />, 'internet']}
-      titleLeft={'Bredbånd og TV'}
-      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
-      previousTitleSuffixRight={'fra'}
-      previousTitleRight={'999'}
+      icons={[<InfiniteIcon />, 'internet', 'robot']}
+      title={'Bredbånd og TV'}
+      ingress={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      titleRightLineThrough={'999'}
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
-      badge={<Badge status="offer" text="Pa kkeTi lbud Her" />}
+      badge={<Badge status="offer" text="Pakketilbud Her" />}
       expand={true}
       disclaimers={disclaimers}
     >
@@ -105,13 +105,12 @@ export const NoIconWithBadge = () => {
   return (
     <AccordionFlexible
       icons={null}
-      titleLeft={'Bredbånd og TV'}
-      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
-      previousTitleSuffixRight={'fra'}
-      previousTitleRight={'999'}
+      title={'Bredbånd og TV'}
+      ingress={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      titleRightLineThrough={'999'}
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
-      badge={<Badge status="offer" text="Pa kkeTi lbud Her" />}
+      badge={<Badge status="offer" text="Pakketilbud Her" />}
       expand={true}
       disclaimers={disclaimers}
     >
@@ -129,10 +128,9 @@ export const MultipleIconsNoBadge = () => {
   return (
     <AccordionFlexible
       icons={null}
-      titleLeft={'Bredbånd og TV'}
-      ingressLeft={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
-      previousTitleSuffixRight={'fra'}
-      previousTitleRight={'999'}
+      title={'Bredbånd og TV'}
+      ingress={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      titleRightLineThrough={'999'}
       titleRight={'799,- md'}
       ingressRight={
         'Rabatten varer ut hele året, fra og med 21. juli, til og med 22. juli neste år. Ingen andre tilbud matcher dette!'
@@ -155,12 +153,11 @@ export const MultipleIconsWithCustomBadgeObjectWithScrollTo = () => {
   return (
     <AccordionFlexible
       icons={null}
-      titleLeft={'Bredbånd og TV'}
-      ingressLeft={
+      title={'Bredbånd og TV'}
+      ingress={
         'Få rabatt ved å velge både TV og bredbånd fra Telia. Få enda mer rabatt om du bestiller nå i dag, dette er en lang ingress'
       }
-      previousTitleSuffixRight={'fra'}
-      previousTitleRight={'999'}
+      titleRightLineThrough={'999'}
       titleRight={'799,- md'}
       ingressRight={
         'Rabatten varer ut hele året, fra og med 21. juli, til og med 22. juli neste år. Ingen andre tilbud matcher dette!'
@@ -180,11 +177,35 @@ export const MultipleIconsWithCustomBadgeObjectWithScrollTo = () => {
   );
 };
 
-export const TonOfIcons = () => {
+export const TonOfIconsWithOnClickEvents = () => {
   return (
     <AccordionFlexible
       icons={['internet', 'internet', 'heart', 'robot', 'heart', 'robot']}
-      titleLeft={'Bredbånd og TV'}
+      onClosing={() => {
+        alert('Hello on closing');
+      }}
+      onOpening={() => {
+        alert('Hello on opening');
+      }}
+      title={'Bredbånd og TV'}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const AsDesigned = () => {
+  return (
+    <AccordionFlexible
+      icons={['internet', 'robot']}
+      title={'Bredbånd og TV'}
+      ingress={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
+      titleRight={'Fra 298,-/md.'}
     >
       <ul className="list">
         <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>

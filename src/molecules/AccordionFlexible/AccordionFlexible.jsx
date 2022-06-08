@@ -1,18 +1,10 @@
 import React, { useRef, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import cn from 'classnames';
-import { Icon } from '../../atoms/Icon';
-import { isNumber } from 'lodash';
+
 import { Badge } from '../../atoms/Badge';
+import { Icon } from '../../atoms/Icon';
 
-const formatPrice = (price) => {
-  if (typeof price === 'number') {
-    return price % 1 === 0 ? price + ',-' : price + ' kr';
-  }
-  return price;
-};
-
-//Supports string or element, pass string to use a default Badge element, or pass in your own Element to be rendered
 const RenderBadge = ({ badge }) => {
   if (badge) {
     if (typeof badge.status === 'string' && typeof badge.text === 'string') {
@@ -23,12 +15,12 @@ const RenderBadge = ({ badge }) => {
   return <></>;
 };
 
-const RenderIcon = (icon, i) => {
+const RenderIcon = ({ icon }) => {
   if (icon) {
-    if (typeof icon.icon === 'string') {
-      return <Icon icon={icon.icon} key={i} />;
+    if (typeof icon === 'string') {
+      return <Icon icon={icon} />;
     }
-    return <>{icon.icon}</>;
+    return <>{icon}</>;
   }
   return <></>;
 };
@@ -36,7 +28,7 @@ const RenderIcon = (icon, i) => {
 const RenderIcons = ({ icons }) => {
   if (icons) {
     if (Array.isArray(icons)) {
-      return Object.entries(icons).map(([key, val]) => <RenderIcon icon={val} key={key} />);
+      return Object.entries(icons).map(([i, val]) => <RenderIcon icon={val} key={i} />);
     } else {
       return <RenderIcon icon={icons} />;
     }
@@ -44,36 +36,34 @@ const RenderIcons = ({ icons }) => {
   return <></>;
 };
 
-function RenderTitle({ text, className }) {
+const RenderTitle = ({ text, className }) => {
   if (text) {
-    text = formatPrice(text);
-
     if (className) {
       return <span className={className}>{text}</span>;
     }
     return <>{text}</>;
   }
   return <></>;
-}
+};
 
-function RenderIngress({ text, className }) {
+const RenderIngress = ({ text, className }) => {
   if (text) {
-    text = formatPrice(text);
-
     if (className) {
       return <span className={className}>{text}</span>;
     }
     return <>{text}</>;
   }
   return <></>;
-}
+};
 
 const RenderArrow = ({ isExpanded }) => {
   return (
-    <Icon
-      icon="arrow-down"
-      className={cn('accordion-flexible__arrow', { 'accordion-flexible__arrow--expanded': isExpanded === true })}
-    />
+    <div className={'accordion-flexible__arrow-container'}>
+      <Icon
+        icon="arrow-down"
+        className={cn('accordion-flexible__arrow', { 'accordion-flexible__arrow--expanded': isExpanded === true })}
+      />
+    </div>
   );
 };
 
@@ -82,11 +72,10 @@ const AccordionFlexible = ({
 
   icons,
 
-  titleLeft,
-  ingressLeft,
+  title,
+  ingress,
 
-  previousTitleSuffixRight,
-  previousTitleRight,
+  titleRightLineThrough,
   titleRight,
   ingressRight,
 
@@ -102,18 +91,18 @@ const AccordionFlexible = ({
 
   className,
 
-  onOpened = () => {},
-  onClosed = () => {},
+  onOpening = () => {},
+  onClosing = () => {},
 }) => {
   const [isExpanded, setIsExpanded] = useState(expand);
   const ref = useRef();
 
   const onClick = () => {
     setIsExpanded(!isExpanded);
-    if (isExpanded) {
-      onOpened();
+    if (!isExpanded) {
+      onOpening();
     } else {
-      onClosed();
+      onClosing();
     }
   };
 
@@ -136,7 +125,7 @@ const AccordionFlexible = ({
           aria-controls={id ? `accordion-flexible-${id}` : ''}
           onClick={() => onClick()}
           className={cn('accordion-flexible__header-container', {
-            'accordion-flexible--expanded': isExpanded === true,
+            'accordion-flexible--expanded': isExpanded,
           })}
         >
           <RenderBadge badge={badge} />
@@ -145,19 +134,21 @@ const AccordionFlexible = ({
               <RenderIcons icons={icons} />
 
               <div className="accordion-flexible__header-content-left">
-                <RenderTitle text={titleLeft} className={'accordion-flexible__heading--left'} />
+                <RenderTitle text={title} className={'accordion-flexible__heading--left'} />
               </div>
 
               <div className="accordion-flexible__header-content-right">
                 <RenderTitle text={titleRight} className={'accordion-flexible__heading--right'} />
-                <RenderTitle text={previousTitleRight} className={'accordion-flexible__heading--right line-through'} />
-                <RenderTitle text={previousTitleSuffixRight} className={'accordion-flexible__heading--right'} />
+                <RenderTitle
+                  text={titleRightLineThrough}
+                  className={'accordion-flexible__heading--right line-through'}
+                />
               </div>
-              <RenderArrow isExpanded={isExpanded === true} />
+              <RenderArrow isExpanded={isExpanded} />
             </div>
 
             <div className="accordion-flexible__header-row">
-              <RenderIngress text={ingressLeft} className={'accordion-flexible__ingress-row--left'} />
+              <RenderIngress text={ingress} className={'accordion-flexible__ingress-row--left'} />
               <RenderIngress text={ingressRight} className={'accordion-flexible__ingress-row--right'} />
             </div>
           </div>
@@ -180,11 +171,10 @@ AccordionFlexible.propTypes = {
 
   icons: PropTypes.any,
 
-  titleLeft: PropTypes.string,
-  ingressLeft: PropTypes.string,
+  title: PropTypes.string,
+  ingress: PropTypes.string,
 
-  previousTitleSuffixRight: PropTypes.string,
-  previousTitleRight: PropTypes.string,
+  titleRightLineThrough: PropTypes.string,
   titleRight: PropTypes.string,
   ingressRight: PropTypes.string,
 
@@ -200,9 +190,9 @@ AccordionFlexible.propTypes = {
 
   className: PropTypes.string,
 
-  onOpened: PropTypes.func,
+  onOpening: PropTypes.func,
 
-  onClosed: PropTypes.func,
+  onClosing: PropTypes.func,
 };
 
 export default AccordionFlexible;

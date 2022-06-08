@@ -5,11 +5,10 @@ export interface AccordionFlexibleProps {
 
   icons?: any;
 
-  titleLeft?: string;
-  ingressLeft?: string;
+  title?: string;
+  ingress?: string;
 
-  previousTitleSuffixRight?: string;
-  previousTitleRight?: string;
+  titleRightLineThrough?: string;
   titleRight?: string;
   ingressRight?: string;
 
@@ -25,9 +24,9 @@ export interface AccordionFlexibleProps {
 
   className?: string;
 
-  onOpened?: (...args: any[]) => any;
+  onOpening?: (...args: any[]) => any;
 
-  onClosed?: (...args: any[]) => any;
+  onClosing?: (...args: any[]) => any;
 }
 
 export const AccordionFlexible: React.FC<AccordionFlexibleProps>;
