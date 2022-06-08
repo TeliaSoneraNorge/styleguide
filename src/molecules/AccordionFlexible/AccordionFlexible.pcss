@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   max-width: 40rem;
-  border-radius: 3px;
+  border-radius: 2px;
   background-color: var(--white);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
   margin-top: 1rem;
@@ -30,7 +30,12 @@
     padding-right: 1.5rem;
     padding-bottom: 1.5rem;
 
-    border: 3px solid transparent;
+    @media screen and (max-width: 400px) {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+
+    border: 2px solid transparent;
     transition: border 0ms ease-out;
     cursor: pointer;
 
@@ -38,7 +43,7 @@
 
     &:hover,
     &:active {
-      border: 3px solid var(--core-purple);
+      border: 2px solid var(--core-purple);
     }
 
     & > .telia-badge {
@@ -65,10 +70,10 @@
   &--expanded {
     min-height: unset;
     padding-bottom: 0;
-    border-bottom: 3px solid transparent;
-    border-top: 3px solid var(--core-purple);
-    border-right: 3px solid var(--core-purple);
-    border-left: 3px solid var(--core-purple);
+    border-bottom: 2px solid transparent;
+    border-top: 2px solid var(--core-purple);
+    border-right: 2px solid var(--core-purple);
+    border-left: 2px solid var(--core-purple);
 
     & .accordion-flexible__header-row:last-of-type {
       display: none;
@@ -77,18 +82,23 @@
 
     &:hover,
     &:active {
-      border-bottom: 3px solid transparent;
+      border-bottom: 2px solid transparent;
     }
   }
 
   & .accordion-flexible__content--expanded {
-    border-left: 3px solid var(--core-purple);
-    border-right: 3px solid var(--core-purple);
-    border-bottom: 3px solid var(--core-purple);
+    border-left: 2px solid var(--core-purple);
+    border-right: 2px solid var(--core-purple);
+    border-bottom: 2px solid var(--core-purple);
   }
 
   &__header {
     margin-top: 1.5rem;
+
+    @media screen and (max-width: 400px) {
+      margin-top: 1rem;
+    }
+
     height: 100%;
     width: 100%;
 
@@ -106,6 +116,10 @@
       font-family: var(--font-family-heading);
       font-size: 16px;
       line-height: 100%;
+
+      @media screen and (max-width: 400px) {
+        margin-right: 2px;
+      }
     }
 
     & .accordion-flexible__header-row:last-of-type {
@@ -140,6 +154,16 @@
     font-size: 24px;
     line-height: 28px;
     font-family: var(--font-family-heading);
+
+    @media screen and (max-width: 580px) {
+      font-size: 22px;
+      line-height: 24px;
+    }
+
+    @media screen and (max-width: 400px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
   }
 
   &__heading--right {
