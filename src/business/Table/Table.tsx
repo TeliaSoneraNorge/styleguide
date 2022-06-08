@@ -53,6 +53,7 @@ type TableBodyRowProps = {
   onClickRow?: (e?: React.MouseEvent<HTMLTableRowElement>) => void;
   className?: string;
   connectedToPrevious?: boolean;
+  children?: React.ReactNode;
 } & (
   | {
       onSelect: (e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -63,7 +64,7 @@ type TableBodyRowProps = {
   | {}
 );
 
-export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
+export const TableBodyRow = React.forwardRef<HTMLTableRowElement, TableBodyRowProps>((props, ref) => {
   const { uniqueId } = React.useContext(UniqueIdContext);
 
   return (
@@ -90,6 +91,7 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
         }
       }}
       tabIndex={props.onClickRow ? 0 : undefined}
+      ref={ref}
     >
       {'onSelect' in props && (
         <TableBodyCell isCheckbox={true}>
@@ -106,7 +108,9 @@ export const TableBodyRow: React.FC<TableBodyRowProps> = (props) => {
       {props.children}
     </tr>
   );
-};
+});
+
+TableBodyRow.displayName = 'TableBodyRow';
 
 type TableHeadCellProps = {
   rightAligned?: boolean;

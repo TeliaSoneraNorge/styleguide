@@ -40,6 +40,7 @@ export interface ShoppingCartPaymentSectionProps {
   totalPriceUpfront?: number;
   totalVAT?: number;
   totalPriceWithoutVAT?: number;
+  hasPaid?: boolean;
   formatPrice: (price: string | number) => string;
 }
 
@@ -52,6 +53,7 @@ export default function ShoppingCartPaymentSection({
   monthlyPriceDetails,
   totalVAT,
   totalPriceWithoutVAT,
+  hasPaid,
   formatPrice,
 }: ShoppingCartPaymentSectionProps) {
   return (
@@ -127,9 +129,15 @@ export default function ShoppingCartPaymentSection({
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalVAT)}</span>
             </div>
           )}
-          {!!totalPriceUpfront && (
+          {!!totalPriceUpfront && !hasPaid && (
             <div className="telia-shopping-cart__price-row">
               <span className="telia-shopping-cart__label-medium">Betale nå:</span>
+              <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceUpfront)}</span>
+            </div>
+          )}
+          {!!totalPriceUpfront && hasPaid && (
+            <div className="telia-shopping-cart__price-row">
+              <span className="telia-shopping-cart__label-medium">Betalt:</span>
               <span className="telia-shopping-cart__label-medium">{formatPrice(totalPriceUpfront)}</span>
             </div>
           )}

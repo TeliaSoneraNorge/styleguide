@@ -72,11 +72,9 @@
       }
     }
     &--squared {
-      border-top-left-radius: 100px;
-      border-bottom-left-radius: 100px;
+      border-radius: 12px;
       .telia-side-menu-item__action-element {
-        border-top-left-radius: 100px;
-        border-bottom-left-radius: 100px;
+        border-radius: 12px;
       }
     }
     &--active > button,
@@ -156,6 +154,27 @@
     &--open {
       max-height: 200px;
       opacity: 1;
+    }
+  }
+}
+
+.telia-side-menu--white {
+  .telia-side-menu-item {
+    &--rounded {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      .telia-side-menu-item__action-element {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+    }
+    &--squared {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      .telia-side-menu-item__action-element {
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+      }
     }
   }
 }
