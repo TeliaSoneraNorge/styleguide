@@ -15,7 +15,7 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
-## 1.47.17
+## 1.47.18
 
 - Updated react to version 17
 
