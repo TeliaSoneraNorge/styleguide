@@ -87,7 +87,7 @@ export const MultipleIconsWithBadge = () => {
       titleRightLineThrough={'999'}
       titleRight={'799,- md'}
       ingressRight={'Ingress Right'}
-      badge={<Badge status="offer" text="Pakketilbud Her" />}
+      badge={<Badge status="communication-light" text="Pakketilbud Her" />}
       expand={true}
       disclaimers={disclaimers}
     >
