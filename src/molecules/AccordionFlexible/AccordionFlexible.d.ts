@@ -14,13 +14,13 @@ export interface AccordionFlexibleProps {
 
   badge?: any;
 
-  expand?: bool;
+  expand?: boolean;
 
   disclaimers?: any;
 
   children?: any;
 
-  scrollToOnOpen?: bool;
+  scrollToOnOpen?: boolean;
 
   className?: string;
 
