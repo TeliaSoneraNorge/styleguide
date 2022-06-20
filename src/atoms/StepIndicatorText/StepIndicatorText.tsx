@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
-import range from 'lodash/range';
+import classnames from 'classnames';
 import { Step } from './Step';
-import { ArrowRightIcon } from '../../atoms/Icon/icons';
-import { MoreLowIcon } from '../../atoms/Icon/icons';
+import { Icon } from '../../atoms/Icon';
 
 export interface Props {
   activeStep?: number;
@@ -11,7 +10,19 @@ export interface Props {
 
   pagingSize?: number;
   pageSize?: number;
+
+  autoIncompleteGreaterSteps?: boolean; //Else 'complete' state is stored, and wont change if it is first completed
+  //Unless it becomes the active step, but then we only show the label/icon/number, so...once you navigate away again, it will be completed as "complete" is true for that step
+  //If true: clicking on a "lower step" will incomplete higher steps...
 }
+
+const IsArrowStep = (step: Step) => {
+  return step && typeof step.arrowType !== 'undefined' && step.arrowType.length > 0;
+};
+
+const RenderIcon = (iconName: any) => {
+  return <Icon icon={iconName.iconName} />;
+};
 
 const StepIndicatorText = (props: Props) => {
   const { steps } = props;
@@ -60,13 +71,11 @@ const StepIndicatorText = (props: Props) => {
 
   const addPagingArrows = (displaySteps: Step[]) => {
     const addPagingArrow = (index: number, arrowType: string) => {
-      const newStep = {
-        title: '',
-        url: '',
+      const arrow = {
         arrowType: arrowType,
       } as Step;
 
-      displaySteps.splice(index, 0, newStep);
+      displaySteps.splice(index, 0, arrow);
     };
 
     if (minIndex > 0 && maxStepIndex > pageSize) {
@@ -79,63 +88,105 @@ const StepIndicatorText = (props: Props) => {
     return displaySteps;
   };
 
-  const StepArrow = (props: { onPaging: React.MouseEventHandler<HTMLButtonElement> }) => {
+  const StepArrow = (props: any) => {
+    const { onPaging, iconName } = props;
     return (
       <>
-        <button type="button" className={'telia-step-indicator-text__paging-button'} onClick={props.onPaging}>
-          <MoreLowIcon className={'telia-step-indicator-text__paging-icon'} />
+        <button type="button" className={'telia-step-indicator-text__paging-button'} onClick={onPaging}>
+          <RenderIcon iconName={iconName} />
         </button>
       </>
     );
   };
 
   const StepRender = (props: any) => {
-    const { step } = props;
+    const { step, index, onActiveStep } = props;
+
+    console.log('Render ' + index + ', ' + step.isActive + ', ' + step.isComplete);
 
     return (
-      <a className={'telia-step-indicator-text__link'} href={step.url} target={''} title={step.title ?? ''}>
-        {step.title}
-      </a>
+      <>
+        {step.isComplete && !step.isActive && (
+          <button role="button" onClick={onActiveStep}>
+            <div
+              className={classnames(
+                'telia-step-indicator-text__element telia-step-indicator-text__element--clickable',
+                {
+                  'telia-step-indicator-text__element--active': step.isActive,
+                  'telia-step-indicator-text__element--complete': step.isComplete,
+                }
+              )}
+            >
+              ${index + 1}
+            </div>
+            <span
+              className={classnames('telia-step-indicator-text__label', {
+                'step-indicator__label--active': step.isActive,
+              })}
+            >
+              {step.title}
+              {step.isComplete && <span className="sr-only"> - fullført</span>}
+            </span>
+          </button>
+        )}
+
+        {!step.isComplete && !step.isActive && (
+          <div className="telia-step-indicator-text__element">
+            <span>{index + 1}</span>
+          </div>
+        )}
+
+        {step.isActive && (
+          <div className="telia-step-indicator-text__element">
+            <span>{index}</span>
+            <span className="telia-step-indicator-text__element--title">{step.title}</span>
+          </div>
+        )}
+      </>
     );
   };
 
-  const RenderStep = (step: any) => {
-    let index = 0;
-    return (
-      <li key={index++} className={'telia-step-indicator-text__step'}>
-        {typeof step.arrowType !== 'undefined' && step.arrowType === 'LEFT' && <StepArrow onPaging={onPagingLeft} />}
+  const RenderStep = (props: any) => {
+    const { step, index, onActiveStep } = props;
 
-        {(typeof step.arrowType === 'undefined' || !step.arrowType) && <StepRender step={step} />}
-        {typeof step.arrowType !== 'undefined' && step.arrowType === 'RIGHT' && <StepArrow onPaging={onPagingRight} />}
+    return (
+      <li
+        className={classnames('telia-step-indicator-text__step', {
+          'telia-step-indicator-text__step--arrow': IsArrowStep(step),
+        })}
+      >
+        {IsArrowStep(step) && step.arrowType === 'LEFT' && (
+          <StepArrow onPaging={onPagingLeft} iconName={'arrow-right'} />
+        )}
+
+        {!IsArrowStep(step) && <StepRender index={index} step={step} onActiveStep={onActiveStep} />}
+
+        {IsArrowStep(step) && step.arrowType === 'RIGHT' && (
+          <StepArrow onPaging={onPagingRight} iconName={'arrow-left'} />
+        )}
       </li>
     );
   };
 
+  for (let i = 0; i < steps.length; i++) {
+    steps[i].isActive = false;
+    if (i < activeStepIndex) {
+      console.log('Completed ' + i);
+      steps[i].isComplete = true;
+    }
+  }
+  steps[activeStepIndex].isActive = true;
+  console.log('Active ' + activeStepIndex);
+
   let displaySteps = getVisibleSteps();
   displaySteps = addPagingArrows(displaySteps);
-
-  console.log('Min ' + minIndex);
-  console.log('Max ' + maxIndex);
-
-  console.log('Len ' + displaySteps.length);
-
-  console.log(displaySteps);
 
   return (
     <div className="telia-step-indicator-text__container">
       <div className="telia-step-indicator-text">
         <ol>
           {displaySteps.map((step, i) => (
-            <RenderStep
-              key={i}
-              number={i}
-              url={step.url}
-              isActive={activeStepIndex === i}
-              isComplete={activeStepIndex > i}
-              title={step.title}
-              onActivateStep={() => onActivateStep(i)}
-              arrowType={step.arrowType}
-            />
+            <RenderStep key={i} index={i} step={step} onActivateStep={() => onActivateStep(i)} />
           ))}
         </ol>
       </div>

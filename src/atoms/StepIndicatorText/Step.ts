@@ -1,7 +1,8 @@
 export interface Step extends InternalStep {
-  isComplete: boolean;
   title: string;
   url: string;
+  isActive: boolean;
+  isComplete: boolean;
   onActivateStep?: any;
 }
 

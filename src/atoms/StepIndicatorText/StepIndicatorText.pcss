@@ -8,6 +8,7 @@
   }
 
   &__element {
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -15,7 +16,13 @@
     border-style: none;
     background: none;
 
-    &__clickable {
+    &--title {
+      position: absolute;
+      white-space: nowrap;
+      top: 1.5em;
+    }
+
+    &--clickable {
       background: inherit;
       text-decoration: none;
 
@@ -81,7 +88,7 @@
       right: -2rem;
     }
 
-    &--passed {
+    &--complete {
       background-color: var(--core-purple);
     }
   }
@@ -101,6 +108,17 @@
     margin: 0 calc(var(--step-indicator-height) / 2);
     position: relative;
     text-align: center;
+    cursor: pointer;
+
+    &--arrow {
+      border: 0;
+    }
+
+    & > button {
+      background: transparent;
+      border: 0;
+      cursor: pointer;
+    }
 
     @media all and (min-width: 37.5em) {
       font-size: 1rem;
@@ -118,8 +136,9 @@
     &:last-of-type {
       margin-right: 0;
     }
+    
 
-    &--passed {
+    &--complete {
       background-color: var(--white);
       border: 2px solid var(--core-purple);
       color: var(--core-purple);
