@@ -31,7 +31,7 @@ const StepIndicatorText = (props: Props) => {
   };
 
   return (
-    <div className="step-indicator-text--container">
+    <div className="step-indicator-text__container">
       <div className="step-indicator-text">
         <ol>
           {steps.map((step, i) => (
