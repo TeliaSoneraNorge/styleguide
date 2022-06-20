@@ -1,6 +1,10 @@
-export interface Step {
+export interface Step extends InternalStep {
   isComplete: boolean;
   title: string;
   url: string;
-  onActivateStep: any;
+  onActivateStep?: any;
+}
+
+export interface InternalStep {
+  arrowType?: string;
 }
