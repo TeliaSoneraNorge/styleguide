@@ -65,7 +65,7 @@ export const MinimumRightHeading = () => {
   );
 };
 
-export const SimpleNoIconNoBadgeNoIngress = () => {
+export const TitleLeftAndRightOnly = () => {
   return (
     <AccordionFlexible title={'Bredbånd og TV'} titleRight={'799,- md'} expand={false} disclaimers={disclaimers}>
       <ul className="list">
@@ -78,7 +78,7 @@ export const SimpleNoIconNoBadgeNoIngress = () => {
   );
 };
 
-export const MultipleIconsWithBadge = () => {
+export const AllContentFieldsFilledAndDoExpandOnLoad = () => {
   return (
     <AccordionFlexible
       icons={[<InfiniteIcon />, 'internet', 'robot']}
@@ -101,7 +101,7 @@ export const MultipleIconsWithBadge = () => {
   );
 };
 
-export const NoIconWithBadge = () => {
+export const AllTextsAndBadgeAndDoExpandOnLoad = () => {
   return (
     <AccordionFlexible
       icons={null}
@@ -124,7 +124,7 @@ export const NoIconWithBadge = () => {
   );
 };
 
-export const MultipleIconsNoBadge = () => {
+export const AllTextsAndDoExpandOnLoad = () => {
   return (
     <AccordionFlexible
       icons={null}
@@ -149,7 +149,7 @@ export const MultipleIconsNoBadge = () => {
   );
 };
 
-export const MultipleIconsWithCustomBadgeObjectWithScrollTo = () => {
+export const AllTextsWithCustomBadgeAndScrollToOnOpen = () => {
   return (
     <AccordionFlexible
       icons={null}
