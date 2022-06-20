@@ -1,11 +1,12 @@
-export interface Step extends InternalStep {
+export interface Step {
   title: string;
   url: string;
-  isActive: boolean;
-  isComplete: boolean;
   onActivateStep?: any;
+  isActive?: boolean;
+  isComplete?: boolean;
 }
 
-export interface InternalStep {
-  arrowType?: string;
+export interface InternalStep extends Step {
+  arrowType?: string | null;
+  index: number;
 }

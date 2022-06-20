@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import classnames from 'classnames';
-import { Step } from './Step';
+import { Step, InternalStep } from './Step';
 import { Icon } from '../../atoms/Icon';
 
 export interface Props {
@@ -11,13 +11,15 @@ export interface Props {
   pagingSize?: number;
   pageSize?: number;
 
+  onPagingAutoCompleteLesserSteps?: boolean; //Auto-completes previous steps, and activates "next step"
+
   autoIncompleteGreaterSteps?: boolean; //Else 'complete' state is stored, and wont change if it is first completed
   //Unless it becomes the active step, but then we only show the label/icon/number, so...once you navigate away again, it will be completed as "complete" is true for that step
   //If true: clicking on a "lower step" will incomplete higher steps...
 }
 
-const IsArrowStep = (step: Step) => {
-  return step && typeof step.arrowType !== 'undefined' && step.arrowType.length > 0;
+const IsArrowStep = (step: InternalStep) => {
+  return step && typeof step.arrowType !== 'undefined' && step.arrowType && step.arrowType.length > 0;
 };
 
 const RenderIcon = (iconName: any) => {
@@ -29,6 +31,18 @@ const StepIndicatorText = (props: Props) => {
   if (!steps || steps.length === 0) {
     return <></>;
   }
+
+  const internalSteps: InternalStep[] = steps.map((step, i) => {
+    return {
+      index: i,
+      title: step.title,
+      url: step.url,
+      isActive: step.isActive,
+      isComplete: step.isComplete,
+      arrowType: null,
+    };
+  });
+
   const { onStepChange } = props;
 
   let pageSize = props.pageSize ?? 5;
@@ -66,14 +80,14 @@ const StepIndicatorText = (props: Props) => {
   };
 
   const getVisibleSteps = () => {
-    return steps.filter((_, i) => i >= minIndex && i <= maxIndex);
+    return internalSteps.filter((_, i) => i >= minIndex && i <= maxIndex);
   };
 
-  const addPagingArrows = (displaySteps: Step[]) => {
+  const addPagingArrows = (displaySteps: InternalStep[]) => {
     const addPagingArrow = (index: number, arrowType: string) => {
       const arrow = {
         arrowType: arrowType,
-      } as Step;
+      } as InternalStep;
 
       displaySteps.splice(index, 0, arrow);
     };
@@ -83,7 +97,7 @@ const StepIndicatorText = (props: Props) => {
     }
 
     if (maxIndex < maxStepIndex && maxStepIndex > pageSize) {
-      addPagingArrow(displaySteps.length, 'RIGHT');
+      addPagingArrow(displaySteps.length + 1, 'RIGHT');
     }
     return displaySteps;
   };
@@ -101,8 +115,6 @@ const StepIndicatorText = (props: Props) => {
 
   const StepRender = (props: any) => {
     const { step, index, onActiveStep } = props;
-
-    console.log('Render ' + index + ', ' + step.isActive + ', ' + step.isComplete);
 
     return (
       <>
@@ -138,7 +150,7 @@ const StepIndicatorText = (props: Props) => {
 
         {step.isActive && (
           <div className="telia-step-indicator-text__element">
-            <span>{index}</span>
+            <span>{index + 1}</span>
             <span className="telia-step-indicator-text__element--title">{step.title}</span>
           </div>
         )}
@@ -156,27 +168,25 @@ const StepIndicatorText = (props: Props) => {
         })}
       >
         {IsArrowStep(step) && step.arrowType === 'LEFT' && (
-          <StepArrow onPaging={onPagingLeft} iconName={'arrow-right'} />
+          <StepArrow onPaging={onPagingLeft} iconName={'arrow-left'} />
         )}
 
         {!IsArrowStep(step) && <StepRender index={index} step={step} onActiveStep={onActiveStep} />}
 
         {IsArrowStep(step) && step.arrowType === 'RIGHT' && (
-          <StepArrow onPaging={onPagingRight} iconName={'arrow-left'} />
+          <StepArrow onPaging={onPagingRight} iconName={'arrow-right'} />
         )}
       </li>
     );
   };
 
-  for (let i = 0; i < steps.length; i++) {
-    steps[i].isActive = false;
+  for (let i = 0; i < internalSteps.length; i++) {
+    internalSteps[i].isActive = false;
     if (i < activeStepIndex) {
-      console.log('Completed ' + i);
-      steps[i].isComplete = true;
+      internalSteps[i].isComplete = true;
     }
   }
-  steps[activeStepIndex].isActive = true;
-  console.log('Active ' + activeStepIndex);
+  internalSteps[activeStepIndex].isActive = true;
 
   let displaySteps = getVisibleSteps();
   displaySteps = addPagingArrows(displaySteps);
