@@ -17,7 +17,7 @@ export const Default = () => {
   return (
     <>
       <div style={wrapperStyle}>
-        <StepIndicatorText activeStep={0} steps={stepData.filter((_, i) => i <= 5)} />
+        <StepIndicatorText activeStep={0} steps={stepData.filter((_, i) => i < 7)} />
       </div>
     </>
   );

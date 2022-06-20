@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import range from 'lodash/range';
-import { StepRender } from './StepRender';
 import { Step } from './Step';
 import { ArrowRightIcon } from '../../atoms/Icon/icons';
 import { MoreLowIcon } from '../../atoms/Icon/icons';
@@ -21,16 +20,16 @@ const StepIndicatorText = (props: Props) => {
   }
   const { onStepChange } = props;
 
+  let pageSize = props.pageSize ?? 5;
+  let pagingSize = props.pagingSize ?? 1;
+
   const maxStepIndex = steps.length - 1;
-  const [maxIndex, setMaxIndex] = useState(maxStepIndex);
+  const [maxIndex, setMaxIndex] = useState(Math.min(maxStepIndex, pageSize - 1));
   const [activeStepIndex, setActiveStepIndex] = useState(props.activeStep ?? 0);
   const startIndex = 0;
 
-  let pageSize = props.pageSize ?? 1;
-  let pagingSize = props.pagingSize ?? 5;
-
   if (pageSize <= 0) {
-    pageSize = 1;
+    pageSize = 5;
   }
   if (pagingSize <= 0) {
     pagingSize = 1;
@@ -56,77 +55,77 @@ const StepIndicatorText = (props: Props) => {
   };
 
   const getVisibleSteps = () => {
-    return steps.filter((_, i) => {
-      return i >= minIndex && i <= maxIndex;
-    });
+    return steps.filter((_, i) => i >= minIndex && i <= maxIndex);
   };
 
-  const addPagingArrows = (displaySteps: any) => {
-    const addPagingArrow = (step: any, index: number, arrowType: string) => {
-      // step.arrowType = arrowType;
-      console.log(arrowType);
-      displaySteps.splice(index, 0, step);
+  const addPagingArrows = (displaySteps: Step[]) => {
+    const addPagingArrow = (index: number, arrowType: string) => {
+      const newStep = {
+        title: '',
+        url: '',
+        arrowType: arrowType,
+      } as Step;
+
+      displaySteps.splice(index, 0, newStep);
     };
 
-    if (minIndex > startIndex && maxStepIndex >= pageSize) {
-      addPagingArrow(0, displaySteps[minIndex - 1], 'LEFT');
+    if (minIndex > 0 && maxStepIndex > pageSize) {
+      addPagingArrow(0, 'LEFT');
     }
 
-    if (maxIndex < maxStepIndex && maxStepIndex >= pageSize) {
-      addPagingArrow(displaySteps.length, displaySteps[maxIndex + 1], 'RIGHT');
+    if (maxIndex < maxStepIndex && maxStepIndex > pageSize) {
+      addPagingArrow(displaySteps.length, 'RIGHT');
     }
     return displaySteps;
   };
 
-  let displaySteps = getVisibleSteps();
-  displaySteps = addPagingArrows(displaySteps);
-
   const StepArrow = (props: { onPaging: React.MouseEventHandler<HTMLButtonElement> }) => {
     return (
       <>
-        <button type="button" className={'telia-step-indicator-text__paging'} onClick={props.onPaging}>
-          <MoreLowIcon className={'telia-step-indicator-text__icon'} />
+        <button type="button" className={'telia-step-indicator-text__paging-button'} onClick={props.onPaging}>
+          <MoreLowIcon className={'telia-step-indicator-text__paging-icon'} />
         </button>
       </>
     );
   };
 
-  const StepRender = (step: any) => {
+  const StepRender = (props: any) => {
+    const { step } = props;
+
     return (
-      <>
-        <a className={'telia-step-indicator-text__link'} href={step.url} target={''} title={step.title ?? ''}>
-          {step.title}
-        </a>
-      </>
+      <a className={'telia-step-indicator-text__link'} href={step.url} target={''} title={step.title ?? ''}>
+        {step.title}
+      </a>
     );
   };
 
   const RenderStep = (step: any) => {
     let index = 0;
     return (
-      <li key={index++} className={'telia-breadcrumbs__crumb'}>
-        {step.type && step.type === 'LEFT' && <StepArrow onPaging={onPagingLeft} />}
+      <li key={index++} className={'telia-step-indicator-text__step'}>
+        {typeof step.arrowType !== 'undefined' && step.arrowType === 'LEFT' && <StepArrow onPaging={onPagingLeft} />}
 
-        {!step.type && step.title && step.title.length > 0 && (
-          <StepRender
-            title={step.title}
-            url={step.url}
-            isActive={step.isActive}
-            isComplete={step.isComplete}
-            onActivateStep={step.onActivateStep}
-          />
-        )}
-
-        {step.type && step.type === 'RIGHT' && <StepArrow onPaging={onPagingRight} />}
+        {(typeof step.arrowType === 'undefined' || !step.arrowType) && <StepRender step={step} />}
+        {typeof step.arrowType !== 'undefined' && step.arrowType === 'RIGHT' && <StepArrow onPaging={onPagingRight} />}
       </li>
     );
   };
 
+  let displaySteps = getVisibleSteps();
+  displaySteps = addPagingArrows(displaySteps);
+
+  console.log('Min ' + minIndex);
+  console.log('Max ' + maxIndex);
+
+  console.log('Len ' + displaySteps.length);
+
+  console.log(displaySteps);
+
   return (
-    <div className="step-indicator-text__container">
-      <div className="step-indicator-text">
+    <div className="telia-step-indicator-text__container">
+      <div className="telia-step-indicator-text">
         <ol>
-          {steps.map((step, i) => (
+          {displaySteps.map((step, i) => (
             <RenderStep
               key={i}
               number={i}
@@ -135,6 +134,7 @@ const StepIndicatorText = (props: Props) => {
               isComplete={activeStepIndex > i}
               title={step.title}
               onActivateStep={() => onActivateStep(i)}
+              arrowType={step.arrowType}
             />
           ))}
         </ol>
