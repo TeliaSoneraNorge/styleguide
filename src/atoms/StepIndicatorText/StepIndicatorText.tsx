@@ -2,11 +2,14 @@ import React, { useState } from 'react';
 import classnames from 'classnames';
 import { Step, InternalStep } from './Step';
 import { Icon } from '../../atoms/Icon';
+import StepComponent from './StepComponent';
 
 export interface Props {
   activeStep?: number;
   onStepChange?: any;
-  steps?: Step[] | null;
+  steps?: Step[] | null | undefined;
+
+  stepComponents?: typeof StepComponent[] | null | undefined;
 
   pagingSize?: number;
   pageSize?: number;
@@ -38,7 +41,7 @@ const StepIndicatorText = (props: Props) => {
       isActive: step.isActive,
       isComplete: step.isComplete,
       arrowType: null,
-      children: step.children,
+      content: step.content,
     };
   });
 
@@ -169,22 +172,22 @@ const StepIndicatorText = (props: Props) => {
       return <></>;
     }
 
-    if (typeof step.children === 'undefined' || !step.children) {
+    if (typeof step.content === 'undefined' || !step.content) {
       return <></>;
     }
 
-    const children = step.children;
+    const content = step.content;
     return (
       <>
-        {typeof children === 'string' && (
+        {typeof content === 'string' && (
           <section
             className="telia-step-indiciator__current-step__content"
-            dangerouslySetInnerHTML={{ __html: children }}
+            dangerouslySetInnerHTML={{ __html: content }}
           />
         )}
 
-        {typeof children !== 'string' && (
-          <section className="telia-step-indicator__current-step__content">{children}</section>
+        {typeof content !== 'string' && (
+          <section className="telia-step-indicator__current-step__content">{content}</section>
         )}
       </>
     );

@@ -1,57 +1,68 @@
 import React, { useState } from 'react';
 import { Step } from './Step';
 import StepIndicatorText from './StepIndicatorText';
+import StepComponentContainer from './StepComponentContainer';
 
 export default {
   title: 'Component library/Atoms/Step Indicator Text',
   component: StepIndicatorText,
 };
 
-const StepIndicatorPage = (props: any) => {
-  const { stepCount } = props;
-  const [steps, setSteps] = useState(stepData.filter((_, i) => i < stepCount));
-
-  const [currentActiveStep, setCurrentActiveStep] = useState(1);
-
-  const onStepChange = () => {
-    const activeStep = currentActiveStep + 1;
-    alert('hell oworld!');
-
-    setCurrentActiveStep(activeStep);
-
-    const previous = steps[activeStep - 1];
-    const step = steps[activeStep];
-
-    step.isActive = true;
-    previous.isActive = false;
-    previous.isComplete = true;
-
-    setSteps(steps);
-  };
-
-  (window as any).stepInidicatorTextOnStepChange = onStepChange;
-  return (
-    <div className="telia-step-indicator-page-sample">
-      <StepIndicatorText
-        activeStep={currentActiveStep}
-        steps={stepData.filter((_, i) => i < 7)}
-        onStepNavigationCompletesPreviousSteps={true}
-      />
-    </div>
-  );
+const wrapperStyle = {
+  width: '700px',
+  display: 'flex',
+  justifyContent: 'flexStart',
 };
 
 export const Default = () => {
-  const wrapperStyle = {
-    width: '700px',
-    display: 'flex',
-    justifyContent: 'flexStart',
+  const data = stepData.filter((_, i) => i < 7);
+
+  const [currentNumber, setCurrentNumber] = useState(0);
+  const [steps, setSteps] = useState(data);
+
+  const onActiveStepChanged = (number: number) => {
+    setCurrentNumber(number);
+  };
+
+  const completeStep = () => {
+    steps[currentNumber].isActive = false;
+    steps[currentNumber].isComplete = true;
+    if (currentNumber < steps.length - 1) {
+      steps[currentNumber + 1].isActive = true;
+      steps[currentNumber + 1].isComplete = false;
+
+      setCurrentNumber(currentNumber + 1);
+    }
+    setSteps([...steps]);
+  };
+
+  const incompleteStep = () => {
+    steps[currentNumber].isActive = false;
+    steps[currentNumber].isComplete = false;
+    if (currentNumber > 0) {
+      setCurrentNumber(currentNumber - 1);
+      steps[currentNumber - 1].isActive = true;
+      steps[currentNumber - 1].isComplete = false;
+    }
+    setSteps([...steps]);
+  };
+
+  const RenderContent = () => {
+    return (
+      <>
+        <h1>Hello world</h1>
+        <p>Some text... </p>
+        <p>Current step: {currentNumber}</p>
+        <button onClick={() => completeStep()}>Completed step</button>
+        <button onClick={() => incompleteStep()}>Previous</button>
+      </>
+    );
   };
 
   return (
     <>
       <div style={wrapperStyle}>
-        <StepIndicatorPage stepCount={7} />
+        <StepComponentContainer steps={steps} content={<RenderContent />} onActiveStepChanged={onActiveStepChanged} />
       </div>
     </>
   );
@@ -63,14 +74,14 @@ const stepData: Step[] = [
     url: '',
     isComplete: false,
     onActivateStep: null,
-    children: "Hello world <button onclick='stepInidicatorTextOnStepChange();'>Test</button>",
+    content: "Hello world <button onclick='stepInidicatorTextOnStepChange();'>Test</button>",
   },
   {
     title: 'Step 2',
     url: '',
     isComplete: false,
     onActivateStep: null,
-    children: '<h2>Hello world in h2</h2>',
+    content: '<h2>Hello world in h2</h2>',
   },
   {
     title: 'Step 3',
