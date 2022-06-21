@@ -4,6 +4,7 @@ export interface Step {
   onActivateStep?: any;
   isActive?: boolean;
   isComplete?: boolean;
+  children?: any;
 }
 
 export interface InternalStep extends Step {

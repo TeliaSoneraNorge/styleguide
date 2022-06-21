@@ -21,6 +21,13 @@
       white-space: nowrap;
       top: 1.5em;
     }
+    &--active {
+      border: solid 2px orange;
+    }
+
+    &--complete {
+      border: solid 2px green;
+    }
 
     &--clickable {
       background: inherit;
@@ -118,6 +125,8 @@
       background: transparent;
       border: 0;
       cursor: pointer;
+      min-width: 28px;
+      min-height: 28px;
     }
 
     @media all and (min-width: 37.5em) {
@@ -136,7 +145,6 @@
     &:last-of-type {
       margin-right: 0;
     }
-    
 
     &--complete {
       background-color: var(--white);
@@ -161,5 +169,11 @@
     height: 1rem;
     width: 1rem;
     color: var(--core-purple);
+  }
+
+  &-page-sample {
+    border: solid 1px black;
+    width: 100%;
+    min-height: 200px;
   }
 }

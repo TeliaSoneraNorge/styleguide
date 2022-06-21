@@ -1,10 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Step } from './Step';
 import StepIndicatorText from './StepIndicatorText';
 
 export default {
   title: 'Component library/Atoms/Step Indicator Text',
   component: StepIndicatorText,
+};
+
+const StepIndicatorPage = (props: any) => {
+  const { stepCount } = props;
+  const [steps, setSteps] = useState(stepData.filter((_, i) => i < stepCount));
+
+  const [currentActiveStep, setCurrentActiveStep] = useState(1);
+
+  const onStepChange = () => {
+    const activeStep = currentActiveStep + 1;
+    alert('hell oworld!');
+
+    setCurrentActiveStep(activeStep);
+
+    const previous = steps[activeStep - 1];
+    const step = steps[activeStep];
+
+    step.isActive = true;
+    previous.isActive = false;
+    previous.isComplete = true;
+
+    setSteps(steps);
+  };
+
+  (window as any).stepInidicatorTextOnStepChange = onStepChange;
+  return (
+    <div className="telia-step-indicator-page-sample">
+      <StepIndicatorText
+        activeStep={currentActiveStep}
+        steps={stepData.filter((_, i) => i < 7)}
+        onStepNavigationCompletesPreviousSteps={true}
+      />
+    </div>
+  );
 };
 
 export const Default = () => {
@@ -17,7 +51,7 @@ export const Default = () => {
   return (
     <>
       <div style={wrapperStyle}>
-        <StepIndicatorText activeStep={0} steps={stepData.filter((_, i) => i < 7)} />
+        <StepIndicatorPage stepCount={7} />
       </div>
     </>
   );
@@ -29,12 +63,14 @@ const stepData: Step[] = [
     url: '',
     isComplete: false,
     onActivateStep: null,
+    children: "Hello world <button onclick='stepInidicatorTextOnStepChange();'>Test</button>",
   },
   {
     title: 'Step 2',
     url: '',
     isComplete: false,
     onActivateStep: null,
+    children: '<h2>Hello world in h2</h2>',
   },
   {
     title: 'Step 3',

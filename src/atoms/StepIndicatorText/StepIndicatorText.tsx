@@ -11,11 +11,9 @@ export interface Props {
   pagingSize?: number;
   pageSize?: number;
 
-  onPagingAutoCompleteLesserSteps?: boolean; //Auto-completes previous steps, and activates "next step"
+  onStepNavigationCompletesPreviousSteps?: boolean; //Auto-completes current step and all previous ones...and activates "next step". Also if you navigate back, you "incomplete" current step and activate previous one, which is also marked "incomplete"
 
-  autoIncompleteGreaterSteps?: boolean; //Else 'complete' state is stored, and wont change if it is first completed
-  //Unless it becomes the active step, but then we only show the label/icon/number, so...once you navigate away again, it will be completed as "complete" is true for that step
-  //If true: clicking on a "lower step" will incomplete higher steps...
+  onCompleteStep?: any;
 }
 
 const IsArrowStep = (step: InternalStep) => {
@@ -40,10 +38,11 @@ const StepIndicatorText = (props: Props) => {
       isActive: step.isActive,
       isComplete: step.isComplete,
       arrowType: null,
+      children: step.children,
     };
   });
 
-  const { onStepChange } = props;
+  const { onStepChange, onStepNavigationCompletesPreviousSteps } = props;
 
   let pageSize = props.pageSize ?? 5;
   let pagingSize = props.pagingSize ?? 1;
@@ -51,7 +50,6 @@ const StepIndicatorText = (props: Props) => {
   const maxStepIndex = steps.length - 1;
   const [maxIndex, setMaxIndex] = useState(Math.min(maxStepIndex, pageSize - 1));
   const [activeStepIndex, setActiveStepIndex] = useState(props.activeStep ?? 0);
-  const startIndex = 0;
 
   if (pageSize <= 0) {
     pageSize = 5;
@@ -71,12 +69,16 @@ const StepIndicatorText = (props: Props) => {
 
   const onPagingLeft = () => {
     onActivateStep(activeStepIndex - 1);
+
     setMaxIndex(Math.max(maxIndex - pagingSize, pageSize - 1));
   };
 
   const onPagingRight = () => {
     onActivateStep(activeStepIndex + 1);
-    setMaxIndex(Math.min(maxIndex + pagingSize, maxStepIndex));
+
+    if (pageSize - activeStepIndex <= 1) {
+      setMaxIndex(Math.min(maxIndex + pagingSize, maxStepIndex));
+    }
   };
 
   const getVisibleSteps = () => {
@@ -114,52 +116,32 @@ const StepIndicatorText = (props: Props) => {
   };
 
   const StepRender = (props: any) => {
-    const { step, index, onActiveStep } = props;
+    const { step, onActivateStep } = props;
 
     return (
-      <>
-        {step.isComplete && !step.isActive && (
-          <button role="button" onClick={onActiveStep}>
-            <div
-              className={classnames(
-                'telia-step-indicator-text__element telia-step-indicator-text__element--clickable',
-                {
-                  'telia-step-indicator-text__element--active': step.isActive,
-                  'telia-step-indicator-text__element--complete': step.isComplete,
-                }
-              )}
-            >
-              ${index + 1}
+      <button role="button" onClick={onActivateStep}>
+        <div
+          className={classnames('telia-step-indicator-text__element telia-step-indicator-text__element--clickable', {
+            'telia-step-indicator-text__element--active': step.isActive,
+            'telia-step-indicator-text__element--complete': step.isComplete,
+          })}
+        >
+          <span>{step.index + 1}</span>
+
+          {step.isComplete && <span className="sr-only"> fullført</span>}
+
+          {step.isActive && (
+            <div className="telia-step-indicator-text__element">
+              <span className="telia-step-indicator-text__element--title">{step.title}</span>
             </div>
-            <span
-              className={classnames('telia-step-indicator-text__label', {
-                'step-indicator__label--active': step.isActive,
-              })}
-            >
-              {step.title}
-              {step.isComplete && <span className="sr-only"> - fullført</span>}
-            </span>
-          </button>
-        )}
-
-        {!step.isComplete && !step.isActive && (
-          <div className="telia-step-indicator-text__element">
-            <span>{index + 1}</span>
-          </div>
-        )}
-
-        {step.isActive && (
-          <div className="telia-step-indicator-text__element">
-            <span>{index + 1}</span>
-            <span className="telia-step-indicator-text__element--title">{step.title}</span>
-          </div>
-        )}
-      </>
+          )}
+        </div>
+      </button>
     );
   };
 
   const RenderStep = (props: any) => {
-    const { step, index, onActiveStep } = props;
+    const { step, onActivateStep } = props;
 
     return (
       <li
@@ -171,7 +153,7 @@ const StepIndicatorText = (props: Props) => {
           <StepArrow onPaging={onPagingLeft} iconName={'arrow-left'} />
         )}
 
-        {!IsArrowStep(step) && <StepRender index={index} step={step} onActiveStep={onActiveStep} />}
+        {!IsArrowStep(step) && <StepRender step={step} onActivateStep={onActivateStep} />}
 
         {IsArrowStep(step) && step.arrowType === 'RIGHT' && (
           <StepArrow onPaging={onPagingRight} iconName={'arrow-right'} />
@@ -180,26 +162,62 @@ const StepIndicatorText = (props: Props) => {
     );
   };
 
+  const RenderActiveStepContent = (props: any) => {
+    const { step } = props;
+
+    if (!step.isActive) {
+      return <></>;
+    }
+
+    if (typeof step.children === 'undefined' || !step.children) {
+      return <></>;
+    }
+
+    const children = step.children;
+    return (
+      <>
+        {typeof children === 'string' && (
+          <section
+            className="telia-step-indiciator__current-step__content"
+            dangerouslySetInnerHTML={{ __html: children }}
+          />
+        )}
+
+        {typeof children !== 'string' && (
+          <section className="telia-step-indicator__current-step__content">{children}</section>
+        )}
+      </>
+    );
+  };
+
   for (let i = 0; i < internalSteps.length; i++) {
     internalSteps[i].isActive = false;
     if (i < activeStepIndex) {
-      internalSteps[i].isComplete = true;
+      if (onStepNavigationCompletesPreviousSteps === true) {
+        internalSteps[i].isComplete = true;
+      }
     }
   }
+
   internalSteps[activeStepIndex].isActive = true;
 
   let displaySteps = getVisibleSteps();
   displaySteps = addPagingArrows(displaySteps);
 
   return (
-    <div className="telia-step-indicator-text__container">
-      <div className="telia-step-indicator-text">
-        <ol>
-          {displaySteps.map((step, i) => (
-            <RenderStep key={i} index={i} step={step} onActivateStep={() => onActivateStep(i)} />
-          ))}
-        </ol>
+    <div className="telia-step-indicator">
+      <div className="telia-step-indicator-text__container">
+        <div className="telia-step-indicator-text">
+          <ol>
+            {displaySteps.map((step, i) => (
+              <RenderStep key={i} step={step} onActivateStep={() => onActivateStep(step.index)} />
+            ))}
+          </ol>
+        </div>
       </div>
+      {displaySteps.map((step, i) => (
+        <RenderActiveStepContent key={i} step={step} />
+      ))}
     </div>
   );
 };
