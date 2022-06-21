@@ -17,52 +17,64 @@ const wrapperStyle = {
 export const Default = () => {
   const data = stepData.filter((_, i) => i < 7);
 
-  const [currentNumber, setCurrentNumber] = useState(0);
-  const [steps, setSteps] = useState(data);
+  const [state, setState] = useState({ steps: data, currentNumber: 0 });
 
-  const onActiveStepChanged = (number: number) => {
-    setCurrentNumber(number);
+  const updateState = (steps: Step[], number: number) => {
+    const update = {
+      steps: steps,
+      currentNumber: number,
+    };
+
+    console.log('Current step: ' + number);
+
+    setState(update);
+  };
+
+  const onActiveStepChanged = (steps: Step[], number: number) => {
+    updateState(steps, number);
   };
 
   const completeStep = () => {
+    let currentNumber = state.currentNumber;
+    const steps = state.steps;
+
+    console.log('Complete ' + currentNumber);
     steps[currentNumber].isActive = false;
     steps[currentNumber].isComplete = true;
     if (currentNumber < steps.length - 1) {
-      steps[currentNumber + 1].isActive = true;
-      steps[currentNumber + 1].isComplete = false;
-
-      setCurrentNumber(currentNumber + 1);
+      currentNumber++;
+      steps[currentNumber].isActive = true;
+      steps[currentNumber].isComplete = false;
     }
-    setSteps([...steps]);
+
+    updateState(steps, currentNumber);
   };
 
   const incompleteStep = () => {
+    let currentNumber = state.currentNumber;
+    const steps = state.steps;
+
+    console.log('Incomplete ' + currentNumber);
+
     steps[currentNumber].isActive = false;
     steps[currentNumber].isComplete = false;
     if (currentNumber > 0) {
-      setCurrentNumber(currentNumber - 1);
-      steps[currentNumber - 1].isActive = true;
-      steps[currentNumber - 1].isComplete = false;
+      currentNumber--;
+      steps[currentNumber].isActive = true;
+      steps[currentNumber].isComplete = false;
     }
-    setSteps([...steps]);
-  };
-
-  const RenderContent = () => {
-    return (
-      <>
-        <h1>Hello world</h1>
-        <p>Some text... </p>
-        <p>Current step: {currentNumber}</p>
-        <button onClick={() => completeStep()}>Completed step</button>
-        <button onClick={() => incompleteStep()}>Previous</button>
-      </>
-    );
+    updateState(steps, currentNumber);
   };
 
   return (
     <>
       <div style={wrapperStyle}>
-        <StepComponentContainer steps={steps} content={<RenderContent />} onActiveStepChanged={onActiveStepChanged} />
+        <StepComponentContainer
+          steps={state.steps}
+          onCompleteStep={completeStep}
+          onIncompleteStep={incompleteStep}
+          onActiveStepChanged={onActiveStepChanged}
+        />
       </div>
     </>
   );
@@ -74,32 +86,45 @@ const stepData: Step[] = [
     url: '',
     isComplete: false,
     onActivateStep: null,
-    content: "Hello world <button onclick='stepInidicatorTextOnStepChange();'>Test</button>",
+    onCompleteButtonId: 'step0Next',
+    onIncompleteButtonId: 'step0Previous',
+    content: '<h1>Hello1</h1><button id="step0Next">Next</button> <button id="step0Previous">Previous</button>',
   },
   {
     title: 'Step 2',
     url: '',
     isComplete: false,
     onActivateStep: null,
-    content: '<h2>Hello world in h2</h2>',
+    onCompleteButtonId: 'step0Next',
+    onIncompleteButtonId: 'step0Previous',
+    content: '<h1>Hello2 </h1><button id="step0Next">Next</button> <button id="step0Previous">Previous</button>',
   },
   {
     title: 'Step 3',
     url: '',
     isComplete: false,
     onActivateStep: null,
+    onCompleteButtonId: 'step0Next',
+    onIncompleteButtonId: 'step0Previous',
+    content: '<h1>Hello 3</h1><button id="step0Next">Next</button> <button id="step0Previous">Previous</button>',
   },
   {
     title: 'Step 4',
     url: '',
     isComplete: false,
     onActivateStep: null,
+    onCompleteButtonId: 'step0Next',
+    onIncompleteButtonId: 'step0Previous',
+    content: '<h1>Hello4</h1><button id="step0Next">Next</button> <button id="step0Previous">Previous</button>',
   },
   {
     title: 'Step 5',
     url: '',
     isComplete: false,
     onActivateStep: null,
+    onCompleteButtonId: 'step0Next',
+    onIncompleteButtonId: 'step0Previous',
+    content: '<h1>Hello 5</h1><button id="step0Next">Next</button> <button id="step0Previous">Previous</button>',
   },
   {
     title: 'Step 6',
