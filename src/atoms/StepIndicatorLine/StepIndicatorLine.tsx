@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Step, InternalStep } from './Step';
 import StepButton from './StepButton';
+import classnames from 'classnames';
+import { Icon } from '../../atoms/Icon';
 
 export interface Props {
   steps?: Step[] | null | undefined;
@@ -9,16 +11,28 @@ export interface Props {
   onStepNavigationCompletesPreviousSteps?: boolean | undefined;
   completeButtonId?: string | undefined | null;
   incompleteButtonId?: string | undefined | null;
+  pageSize?: number | undefined;
+  pagingSize?: number | undefined;
 }
 
 const StepIndicatorLine = (props: Props) => {
   if (props.steps == null) {
-    console.log('Steps null, doing nada');
     return <></>;
   }
   const { onStepNavigationCompletesPreviousSteps } = props;
 
-  const [state, setState] = useState({ steps: props.steps, currentNumber: props.activeStepNumber ?? 0 });
+  const pageSize = props.pageSize ?? 5;
+  const pagingSize = props.pagingSize ?? 1;
+
+  const maxStepIndex = props.steps.length - 1;
+
+  const [state, setState] = useState({
+    steps: props.steps,
+    currentNumber: props.activeStepNumber ?? 0,
+    maxIndex: Math.min(maxStepIndex, pageSize - 1),
+  });
+
+  const minIndex = state.maxIndex - pageSize + 1;
 
   const internalSteps: InternalStep[] = state.steps.map((step, i) => {
     return {
@@ -30,13 +44,14 @@ const StepIndicatorLine = (props: Props) => {
     };
   });
 
-  const updateState = (steps: Step[], number: number) => {
-    if (state.currentNumber == number) {
+  const updateState = (steps: Step[], number: number, maxIndex: number) => {
+    if (state.currentNumber == number && state.maxIndex == maxIndex) {
       return;
     }
     const update = {
       steps: steps,
       currentNumber: number,
+      maxIndex: maxIndex,
     };
 
     if (props.onActiveStepChangeValidator) {
@@ -72,7 +87,7 @@ const StepIndicatorLine = (props: Props) => {
 
       steps[currentNumber].isComplete = false;
 
-      updateState(steps, currentNumber);
+      updateState(steps, currentNumber, state.maxIndex);
     }
   };
 
@@ -88,7 +103,7 @@ const StepIndicatorLine = (props: Props) => {
 
       steps[currentNumber].isComplete = false;
 
-      updateState(steps, currentNumber);
+      updateState(steps, currentNumber, state.maxIndex);
     }
   };
 
@@ -99,6 +114,42 @@ const StepIndicatorLine = (props: Props) => {
         button.addEventListener('click', onClick);
       }
     }
+  };
+
+  const onPagingLeft = () => {
+    const number = state.currentNumber - 1;
+    const maxIndex = Math.max(state.maxIndex - pagingSize, pageSize - 1);
+
+    updateState(state.steps, number, maxIndex);
+  };
+
+  const onPagingRight = () => {
+    const number = state.currentNumber + 1;
+    let maxIndex = state.maxIndex;
+
+    if (pageSize - state.currentNumber <= 1) {
+      maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
+    }
+    updateState(state.steps, number, maxIndex);
+  };
+
+  const getVisibleSteps = () => {
+    return internalSteps.filter((_, i) => i >= minIndex && i <= state.maxIndex);
+  };
+
+  const addPagingArrows = (displaySteps: InternalStep[]) => {
+    const addPagingArrow = (index: number, arrowType: string) => {
+      displaySteps.splice(index, 0, { arrowType: arrowType } as InternalStep);
+    };
+
+    if (minIndex > 0 && maxStepIndex > pageSize) {
+      addPagingArrow(0, 'LEFT');
+    }
+
+    if (state.maxIndex < maxStepIndex && maxStepIndex > pageSize) {
+      addPagingArrow(displaySteps.length + 1, 'RIGHT');
+    }
+    return displaySteps;
   };
 
   useEffect(() => {
@@ -122,8 +173,7 @@ const StepIndicatorLine = (props: Props) => {
           }
         });
       }
-
-      updateState(steps, number);
+      updateState(steps, number, state.maxIndex);
     }
   };
 
@@ -147,21 +197,63 @@ const StepIndicatorLine = (props: Props) => {
     );
   };
 
+  const IsArrowStep = (step: InternalStep) => {
+    return step && typeof step.arrowType !== 'undefined' && step.arrowType && step.arrowType.length > 0;
+  };
+
+  const RenderIcon = (iconName: any) => {
+    return <Icon icon={iconName.iconName} />;
+  };
+
+  const StepArrow = (props: any) => {
+    const { onPaging, iconName } = props;
+    return (
+      <button type="button" className={'telia-step-indicator-text__paging-button'} onClick={onPaging}>
+        <RenderIcon iconName={iconName} />
+      </button>
+    );
+  };
+
+  const RenderStep = (props: any) => {
+    const step = props.step as InternalStep;
+    return (
+      <li
+        key={step.index}
+        className={classnames('', {
+          'telia-step-indicator-text__step--arrow': IsArrowStep(step),
+        })}
+      >
+        {IsArrowStep(step) && step.arrowType === 'LEFT' && (
+          <StepArrow onPaging={onPagingLeft} iconName={'arrow-left'} />
+        )}
+
+        {!IsArrowStep(step) && (
+          <StepButton
+            number={step.index}
+            title={step.title}
+            url={step.url}
+            isActive={step.index === state.currentNumber}
+            isComplete={step.isComplete}
+            onStepButtonClick={() => onStepButtonClick(step.index)}
+          />
+        )}
+
+        {IsArrowStep(step) && step.arrowType === 'RIGHT' && (
+          <StepArrow onPaging={onPagingRight} iconName={'arrow-right'} />
+        )}
+      </li>
+    );
+  };
+
+  let displaySteps = getVisibleSteps();
+  displaySteps = addPagingArrows(displaySteps);
+
   return (
     <div className="telia-step-indicator-line__container">
       <div className="telia-step-indicator-line">
         <ol>
-          {props.steps.map((step, i) => (
-            <li key={i}>
-              <StepButton
-                number={i}
-                title={step.title}
-                url={step.url}
-                isActive={i === state.currentNumber}
-                isComplete={step.isComplete}
-                onStepButtonClick={() => onStepButtonClick(i)}
-              />
-            </li>
+          {displaySteps.map((step, i) => (
+            <RenderStep step={step} key={i} />
           ))}
         </ol>
       </div>
