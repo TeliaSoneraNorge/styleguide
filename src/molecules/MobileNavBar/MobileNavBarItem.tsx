@@ -20,7 +20,7 @@ export const MobileNavBarItem = (props: MobileNavBarItemProps) => {
     props.onClick();
   };
 
-  const NotificationWrapper: React.FC = ({ children }) =>
+  const NotificationWrapper: React.FC<{ children?: React.ReactNode }> = ({ children }) =>
     props.hasNotification ? (
       <Badge size="compact" status="warning" kind="active">
         {children}

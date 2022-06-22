@@ -10,6 +10,7 @@ type TableBodyCellProps = {
   onClick?: (e?: React.MouseEvent<HTMLTableDataCellElement>) => void;
   isCheckbox?: boolean;
   className?: string;
+  children?: React.ReactNode;
 };
 
 export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
@@ -119,6 +120,7 @@ type TableHeadCellProps = {
    * set fixed columns width
    */
   width?: number;
+  children?: React.ReactNode;
 } & (
   | {
       sortDirection: 'ASC' | 'DESC' | 'NONE';
@@ -208,6 +210,7 @@ type TableProps = {
    * used to render skeleton
    */
   loading?: boolean;
+  children?: React.ReactNode;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {

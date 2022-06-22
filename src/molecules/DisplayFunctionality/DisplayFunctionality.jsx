@@ -83,6 +83,7 @@ DisplayFunctionality.propTypes = {
   reverse: PropTypes.bool,
   device: PropTypes.string,
   deviceImageUrl: PropTypes.string,
+  children: PropTypes.node,
 };
 
 export default DisplayFunctionality;

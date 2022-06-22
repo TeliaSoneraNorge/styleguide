@@ -4,6 +4,7 @@ import cs from 'classnames';
 interface Props {
   className?: string;
   borders?: boolean;
+  children?: React.ReactNode;
 }
 
 export const Card: React.FC<Props> = (props) => (

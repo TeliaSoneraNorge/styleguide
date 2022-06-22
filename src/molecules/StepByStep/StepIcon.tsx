@@ -22,6 +22,7 @@ export interface Props {
    * index of the step
    */
   index?: number;
+  children?: React.ReactNode;
 }
 
 export const StepIcon: React.FC<Props> = (props) => {

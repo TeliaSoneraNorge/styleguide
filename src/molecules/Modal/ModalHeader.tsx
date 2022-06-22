@@ -5,6 +5,7 @@ import Paragraph from '../../atoms/Paragraph';
 
 interface Props {
   border?: boolean;
+  children?: React.ReactNode;
 }
 
 interface InfoModalHeaderProps {

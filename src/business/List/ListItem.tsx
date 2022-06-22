@@ -16,6 +16,7 @@ export type ListItemProps = {
    * @default li
    */
   tag?: 'div' | 'span' | 'li';
+  children?: React.ReactNode;
 } & ({ expandable: true; open: boolean; expandedChildren: React.ReactNode } | { expandable?: false });
 
 export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {

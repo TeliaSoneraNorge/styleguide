@@ -24,6 +24,7 @@ interface Props {
    * If you want to return focus to a specific html element on closing the modal. Default is the modal trigger element.
    */
   returnFocusTo?: HTMLElement | null;
+  children?: React.ReactNode;
 }
 export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();

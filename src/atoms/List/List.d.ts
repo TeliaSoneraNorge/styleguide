@@ -20,6 +20,8 @@ declare interface ListProps {
    * Whenever should children be black.
    */
   black?: boolean;
+
+  children?: React.ReactNode;
 }
 
 export const List: React.FC<ListProps> & {

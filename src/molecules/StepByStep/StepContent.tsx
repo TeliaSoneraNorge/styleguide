@@ -6,6 +6,6 @@ import cn from 'classnames';
  * Content that is hidden/shown based on active step.
  * For static content that should always be shown use StepDescription
  */
-export const StepContent: React.FC<{ className?: string }> = ({ children, className }) => (
+export const StepContent: React.FC<{ className?: string; children?: React.ReactNode }> = ({ children, className }) => (
   <div className={cn('step-by-step__content', className)}>{children}</div>
 );
