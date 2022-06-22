@@ -3,17 +3,21 @@ import { Step, InternalStep } from './Step';
 import StepButton from './StepButton';
 import classnames from 'classnames';
 import { Icon } from '../../atoms/Icon';
+import { Props } from './StepIndicatorLineProps';
 
-export interface Props {
-  steps?: Step[] | null | undefined;
-  activeStepNumber?: number | undefined;
-  onActiveStepChangeValidator?: any;
-  onStepNavigationCompletesPreviousSteps?: boolean | undefined;
-  completeButtonId?: string | undefined | null;
-  incompleteButtonId?: string | undefined | null;
-  pageSize?: number | undefined;
-  pagingSize?: number | undefined;
-}
+const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: number }> = (props) => {
+  const { index, currentStepNumber, maxStepIndex } = props;
+  if (index >= maxStepIndex - 1) {
+    return null;
+  }
+  const isPassed = currentStepNumber > index;
+
+  return (
+    <span
+      className={classnames('telia-step-indicator-line__line', { 'telia-step-indicator-line__line--passed': isPassed })}
+    />
+  );
+};
 
 const StepIndicatorLine = (props: Props) => {
   if (props.steps == null) {
@@ -76,7 +80,7 @@ const StepIndicatorLine = (props: Props) => {
     return null;
   };
 
-  const onCompleteStepClick = () => {
+  const onPagingRight = () => {
     const steps = state.steps;
     let currentNumber = state.currentNumber;
 
@@ -87,7 +91,13 @@ const StepIndicatorLine = (props: Props) => {
 
       steps[currentNumber].isComplete = false;
 
-      updateState(steps, currentNumber, state.maxIndex);
+      let maxIndex = state.maxIndex;
+
+      if (pageSize - state.currentNumber <= 1) {
+        maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
+      }
+
+      updateState(steps, currentNumber, maxIndex);
     }
   };
 
@@ -103,7 +113,13 @@ const StepIndicatorLine = (props: Props) => {
 
       steps[currentNumber].isComplete = false;
 
-      updateState(steps, currentNumber, state.maxIndex);
+      let maxIndex = state.maxIndex;
+
+      if (pageSize - state.currentNumber <= 1) {
+        maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
+      }
+
+      updateState(steps, currentNumber, maxIndex);
     }
   };
 
@@ -114,23 +130,6 @@ const StepIndicatorLine = (props: Props) => {
         button.addEventListener('click', onClick);
       }
     }
-  };
-
-  const onPagingLeft = () => {
-    const number = state.currentNumber - 1;
-    const maxIndex = Math.max(state.maxIndex - pagingSize, pageSize - 1);
-
-    updateState(state.steps, number, maxIndex);
-  };
-
-  const onPagingRight = () => {
-    const number = state.currentNumber + 1;
-    let maxIndex = state.maxIndex;
-
-    if (pageSize - state.currentNumber <= 1) {
-      maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
-    }
-    updateState(state.steps, number, maxIndex);
   };
 
   const getVisibleSteps = () => {
@@ -156,7 +155,7 @@ const StepIndicatorLine = (props: Props) => {
     const children = getActiveStepChildren();
 
     if (children) {
-      addOnClickEvent(props.completeButtonId, onCompleteStepClick);
+      addOnClickEvent(props.completeButtonId, onPagingRight);
       addOnClickEvent(props.incompleteButtonId, onIncompleteStepClick);
     }
   });
