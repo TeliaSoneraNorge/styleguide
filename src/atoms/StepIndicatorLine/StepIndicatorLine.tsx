@@ -80,28 +80,7 @@ const StepIndicatorLine = (props: Props) => {
     return null;
   };
 
-  const onPagingRight = () => {
-    const steps = state.steps;
-    let currentNumber = state.currentNumber;
-
-    if (currentNumber < steps.length - 1) {
-      steps[currentNumber].isComplete = true;
-
-      currentNumber++;
-
-      steps[currentNumber].isComplete = false;
-
-      let maxIndex = state.maxIndex;
-
-      if (pageSize - state.currentNumber <= 1) {
-        maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
-      }
-
-      updateState(steps, currentNumber, maxIndex);
-    }
-  };
-
-  const onIncompleteStepClick = () => {
+  const onPagingLeft = () => {
     let currentNumber = state.currentNumber;
 
     if (currentNumber > 0) {
@@ -110,6 +89,23 @@ const StepIndicatorLine = (props: Props) => {
       steps[currentNumber].isComplete = false;
 
       currentNumber--;
+
+      steps[currentNumber].isComplete = false;
+
+      const maxIndex = Math.max(state.maxIndex - pagingSize, pageSize - 1);
+
+      updateState(steps, currentNumber, maxIndex);
+    }
+  };
+
+  const onPagingRight = () => {
+    const steps = state.steps;
+    let currentNumber = state.currentNumber;
+
+    if (currentNumber < steps.length - 1) {
+      steps[currentNumber].isComplete = true;
+
+      currentNumber++;
 
       steps[currentNumber].isComplete = false;
 
@@ -156,7 +152,7 @@ const StepIndicatorLine = (props: Props) => {
 
     if (children) {
       addOnClickEvent(props.completeButtonId, onPagingRight);
-      addOnClickEvent(props.incompleteButtonId, onIncompleteStepClick);
+      addOnClickEvent(props.incompleteButtonId, onPagingLeft);
     }
   });
 
