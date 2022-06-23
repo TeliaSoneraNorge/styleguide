@@ -14,7 +14,6 @@ const StepButton = (props: any) => {
       console.log('Step is navigating to different site');
       window.location.assign(url);
     } else {
-      console.log('Step is navigating to diff json');
       onStepButtonClick();
     }
   };
