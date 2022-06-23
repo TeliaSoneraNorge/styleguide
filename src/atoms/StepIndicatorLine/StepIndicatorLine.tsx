@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useImperativeHandle } from 'react';
 import { Step, InternalStep } from './Step';
 import StepButton from './StepButton';
 import classnames from 'classnames';
@@ -19,11 +19,64 @@ const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: n
   );
 };
 
-const StepIndicatorLine = (props: Props) => {
+const onPagingLeft = (pagingSize: number, pageSize: number, state: any, updateState: any) => {
+  let currentNumber = state.currentNumber;
+
+  if (currentNumber > 0) {
+    const steps = state.steps;
+    steps[currentNumber].isComplete = false;
+
+    currentNumber--;
+    steps[currentNumber].isComplete = false;
+
+    const maxIndex = Math.max(state.maxIndex - pagingSize, pageSize - 1);
+
+    updateState(steps, currentNumber, maxIndex);
+  }
+};
+
+const onPagingRight = (pagingSize: number, pageSize: number, maxStepIndex: number, state: any, updateState: any) => {
+  const steps = state.steps;
+  let currentNumber = state.currentNumber;
+
+  if (currentNumber < steps.length - 1) {
+    steps[currentNumber].isComplete = true;
+
+    currentNumber++;
+    steps[currentNumber].isComplete = false;
+
+    let maxIndex = state.maxIndex;
+
+    if (pageSize - state.currentNumber <= 1) {
+      maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
+    }
+
+    updateState(steps, currentNumber, maxIndex);
+  }
+};
+
+const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
+  useImperativeHandle(ref, () => ({
+    onStepComplete: (number: number) => {
+      if (props.steps == null) {
+        return <></>;
+      }
+      onPagingRight(pagingSize, pageSize, maxStepIndex, state, updateState);
+    },
+
+    onStepIncomplete: (number: number) => {
+      if (props.steps == null) {
+        return <></>;
+      }
+      onPagingLeft(pagingSize, pageSize, state, updateState);
+    },
+  }));
+
   if (props.steps == null) {
     return <></>;
   }
-  const { onStepNavigationCompletesPreviousSteps } = props;
+
+  const { navigationCompletesPreviousSteps } = props;
 
   const pageSize = props.pageSize ?? 5;
   const pagingSize = props.pagingSize ?? 1;
@@ -32,7 +85,7 @@ const StepIndicatorLine = (props: Props) => {
 
   const [state, setState] = useState({
     steps: props.steps,
-    currentNumber: props.activeStepNumber ?? 0,
+    currentNumber: props.activeStepNumber != null ? props.activeStepNumber - 1 : 0,
     maxIndex: Math.min(maxStepIndex, pageSize - 1),
   });
 
@@ -43,7 +96,7 @@ const StepIndicatorLine = (props: Props) => {
       index: i,
       title: step.title,
       url: step.url,
-      isComplete: step.isComplete,
+      isComplete: step.isComplete || (navigationCompletesPreviousSteps && i < state.currentNumber),
       arrowType: null,
     };
   });
@@ -80,45 +133,6 @@ const StepIndicatorLine = (props: Props) => {
     return null;
   };
 
-  const onPagingLeft = () => {
-    let currentNumber = state.currentNumber;
-
-    if (currentNumber > 0) {
-      const steps = state.steps;
-
-      steps[currentNumber].isComplete = false;
-
-      currentNumber--;
-
-      steps[currentNumber].isComplete = false;
-
-      const maxIndex = Math.max(state.maxIndex - pagingSize, pageSize - 1);
-
-      updateState(steps, currentNumber, maxIndex);
-    }
-  };
-
-  const onPagingRight = () => {
-    const steps = state.steps;
-    let currentNumber = state.currentNumber;
-
-    if (currentNumber < steps.length - 1) {
-      steps[currentNumber].isComplete = true;
-
-      currentNumber++;
-
-      steps[currentNumber].isComplete = false;
-
-      let maxIndex = state.maxIndex;
-
-      if (pageSize - state.currentNumber <= 1) {
-        maxIndex = Math.min(state.maxIndex + pagingSize, maxStepIndex);
-      }
-
-      updateState(steps, currentNumber, maxIndex);
-    }
-  };
-
   const addOnClickEvent = (buttonId: any, onClick: any) => {
     if (buttonId) {
       const button = document.getElementById(buttonId);
@@ -151,15 +165,17 @@ const StepIndicatorLine = (props: Props) => {
     const children = getActiveStepChildren();
 
     if (children) {
-      addOnClickEvent(props.completeButtonId, onPagingRight);
-      addOnClickEvent(props.incompleteButtonId, onPagingLeft);
+      addOnClickEvent(props.completeButtonId, () =>
+        onPagingRight(pagingSize, pageSize, maxStepIndex, state, updateState)
+      );
+      addOnClickEvent(props.incompleteButtonId, () => onPagingLeft(pagingSize, pageSize, state, updateState));
     }
   });
 
   const onStepButtonClick = (number: number) => {
     if (number >= 0) {
       const steps = state.steps;
-      if (onStepNavigationCompletesPreviousSteps === true) {
+      if (navigationCompletesPreviousSteps == true) {
         steps.forEach((step, i) => {
           if (i < number) {
             step.isComplete = true;
@@ -219,7 +235,7 @@ const StepIndicatorLine = (props: Props) => {
         })}
       >
         {IsArrowStep(step) && step.arrowType === 'LEFT' && (
-          <StepArrow onPaging={onPagingLeft} iconName={'arrow-left'} />
+          <StepArrow onPaging={() => onPagingLeft(pagingSize, pageSize, state, updateState)} iconName={'arrow-left'} />
         )}
 
         {!IsArrowStep(step) && (
@@ -227,6 +243,7 @@ const StepIndicatorLine = (props: Props) => {
             number={step.index}
             title={step.title}
             url={step.url}
+            isClickable={props.navigationClickable != false}
             isActive={step.index === state.currentNumber}
             isComplete={step.isComplete}
             onStepButtonClick={() => onStepButtonClick(step.index)}
@@ -234,7 +251,10 @@ const StepIndicatorLine = (props: Props) => {
         )}
 
         {IsArrowStep(step) && step.arrowType === 'RIGHT' && (
-          <StepArrow onPaging={onPagingRight} iconName={'arrow-right'} />
+          <StepArrow
+            onPaging={() => onPagingRight(pagingSize, pageSize, maxStepIndex, state, updateState)}
+            iconName={'arrow-right'}
+          />
         )}
       </li>
     );
@@ -257,6 +277,6 @@ const StepIndicatorLine = (props: Props) => {
       </div>
     </div>
   );
-};
+});
 
 export default StepIndicatorLine;

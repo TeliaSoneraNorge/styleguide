@@ -1,7 +1,6 @@
 export interface Step {
   title: string;
   url?: string | undefined | null;
-  onActivateStep?: any;
   isComplete?: boolean;
   children?: any;
   onCompleteButtonId?: string | undefined;

@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 
 const StepButton = (props: any) => {
-  const { number, title, url, onStepButtonClick, isComplete, isActive, deactivateNextStepsPaging } = props;
+  const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive } = props;
 
   if (title == null || url === undefined) {
     console.warn('Warning: A step-indicator-line button was not created, it was given invalid title/url');
@@ -19,8 +19,6 @@ const StepButton = (props: any) => {
     }
   };
 
-  const buttonIsEnabled = deactivateNextStepsPaging != true;
-
   return (
     <button
       role="button"
@@ -28,7 +26,7 @@ const StepButton = (props: any) => {
       className={classnames('telia-step-indicator-line__step', {
         'telia-step-indicator-line__step--active': isActive,
         'telia-step-indicator-line__step--complete': isComplete && !isActive,
-        'telia-step-indicator-line__step--disabled': !buttonIsEnabled,
+        'telia-step-indicator-line__step--disabled': !isClickable,
       })}
     >
       <div className="telia-step-indicator-line__step__content">
