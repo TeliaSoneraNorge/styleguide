@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Modal, ModalHeader, ModalBody, ModalFooter } from './index';
+import { Modal, InfoModal, ModalHeader, InfoModalHeader, ModalBody, InfoModalBody, ModalFooter } from './index';
 import Button from '../../atoms/Button';
 import TextBox from '../../atoms/TextBox';
 import { Toggle } from '../../atoms/Toggle';
 import { ModalDivider } from './ModalDivider';
+import Paragraph from '../../atoms/Paragraph';
 
 export default {
   component: Modal,
@@ -11,12 +12,12 @@ export default {
 };
 
 export const Default = () => {
-  const [open1, setOpen1] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen1(!open1)} text="Open modal" />
-      <Modal open={open1} setOpen={setOpen1} ariaLabelledBy="modal1-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={setOpen} ariaLabelledBy="modal1-label">
         <ModalHeader>
           <h2 id="modal1-label">En modal</h2>
         </ModalHeader>
@@ -26,7 +27,7 @@ export const Default = () => {
           Repudiandae.
         </ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen1(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -34,12 +35,12 @@ export const Default = () => {
 };
 
 export const WithBorderedHeader = () => {
-  const [open2, setOpen2] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen2(!open2)} text="Open modal" />
-      <Modal open={open2} setOpen={setOpen2} ariaLabelledBy="modal2-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={setOpen} ariaLabelledBy="modal2-label">
         <ModalHeader border={true}>
           <h2 id="modal2-label">With Bordered Header</h2>
         </ModalHeader>
@@ -49,7 +50,7 @@ export const WithBorderedHeader = () => {
           Repudiandae.
         </ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen2(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -57,12 +58,12 @@ export const WithBorderedHeader = () => {
 };
 
 export const WithDividers = () => {
-  const [open3, setOpen3] = useState(false);
+  const [open, setOpen] = useState(false);
 
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen3(!open3)} text="Open modal" />
-      <Modal open={open3} setOpen={() => setOpen3(!open3)} ariaLabelledBy="modal3-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} ariaLabelledBy="modal3-label">
         <ModalHeader>
           <h2 id="modal3-label">With Dividers</h2>
         </ModalHeader>
@@ -73,7 +74,7 @@ export const WithDividers = () => {
           <ModalDivider fullWidth={true} />
         </ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen3(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -81,7 +82,7 @@ export const WithDividers = () => {
 };
 
 export const WithFocusElements = () => {
-  const [open4, setOpen4] = useState(false);
+  const [open, setOpen] = useState(false);
   const [checked, setChecked] = useState(false);
   const [loading, setLoading] = useState(false);
 
@@ -94,8 +95,8 @@ export const WithFocusElements = () => {
 
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen4(!open4)} text="Open modal" />
-      <Modal open={open4} setOpen={() => setOpen4(!open4)} ariaLabelledBy="modal4-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} ariaLabelledBy="modal4-label">
         <ModalHeader>
           <h2 id="modal4-label">A modal with lots of focus elements</h2>
         </ModalHeader>
@@ -113,7 +114,7 @@ export const WithFocusElements = () => {
         </ModalBody>
         <ModalFooter>
           <Button text="Lagre" size="small" kind="primary" onClick={fakeSubmit} isProcessing={loading} />
-          <Button text="Close" size="small" onClick={() => setOpen4(false)} isDisabled={loading} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} isDisabled={loading} />
         </ModalFooter>
       </Modal>
     </div>
@@ -121,17 +122,17 @@ export const WithFocusElements = () => {
 };
 
 export const Small = () => {
-  const [open5, setOpen5] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen5(!open5)} text="Open modal" />
-      <Modal open={open5} setOpen={() => setOpen5(!open5)} size="small" ariaLabelledBy="modal5-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} size="small" ariaLabelledBy="modal5-label">
         <ModalHeader>
           <h2 id="modal5-label">A small modal</h2>
         </ModalHeader>
         <ModalBody>Modal body</ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen5(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -139,17 +140,17 @@ export const Small = () => {
 };
 
 export const Large = () => {
-  const [open6, setOpen6] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen6(!open6)} text="Open modal" />
-      <Modal open={open6} setOpen={() => setOpen6(!open6)} size="large" ariaLabelledBy="modal6-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} size="large" ariaLabelledBy="modal6-label">
         <ModalHeader>
           <h2 id="modal6-label">A large modal</h2>
         </ModalHeader>
         <ModalBody>Modal body</ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen6(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -157,11 +158,11 @@ export const Large = () => {
 };
 
 export const Fullscreen = () => {
-  const [open7, setOpen7] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen7(!open7)} text="Open modal" />
-      <Modal open={open7} setOpen={() => setOpen7(!open7)} size="fullscreen" ariaLabelledBy="modal7-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} size="fullscreen" ariaLabelledBy="modal7-label">
         <ModalHeader border={true}>
           <h2 id="modal7-label">A Fullscreen modal</h2>
           <div>description</div>
@@ -182,7 +183,7 @@ export const Fullscreen = () => {
           perspiciatis eius! Ratione.
         </ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen7(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -190,11 +191,11 @@ export const Fullscreen = () => {
 };
 
 export const OverflownWithScroll = () => {
-  const [open8, setOpen8] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen8(!open8)} text="Open modal" />
-      <Modal open={open8} setOpen={() => setOpen8(!open8)} size="large" ariaLabelledBy="modal8-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} size="large" ariaLabelledBy="modal8-label">
         <ModalHeader>
           <h2 id="modal8-label">Overflown modal with scrolling</h2>
         </ModalHeader>
@@ -244,7 +245,7 @@ export const OverflownWithScroll = () => {
           perspiciatis eius! Ratione.
         </ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen8(false)} />
+          <Button text="Close" size="small" onClick={() => setOpen(false)} />
         </ModalFooter>
       </Modal>
     </div>
@@ -252,11 +253,11 @@ export const OverflownWithScroll = () => {
 };
 
 export const NoBodyPadding = () => {
-  const [open9, setOpen9] = useState(false);
+  const [open, setOpen] = useState(false);
   return (
     <div style={{ height: '100px' }}>
-      <Button onClick={() => setOpen9(!open9)} text="Open modal" />
-      <Modal open={open9} setOpen={() => setOpen9(!open9)} size="large" ariaLabelledBy="modal9-label">
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <Modal open={open} setOpen={() => setOpen(!open)} size="large" ariaLabelledBy="modal9-label">
         <ModalHeader>
           <h2 id="modal9-label">En modal</h2>
         </ModalHeader>
@@ -266,9 +267,32 @@ export const NoBodyPadding = () => {
           Repudiandae.
         </ModalBody>
         <ModalFooter>
-          <Button text="Close" size="small" onClick={() => setOpen9(!open)} />
+          <Button text="Close" size="small" onClick={() => setOpen(!open)} />
         </ModalFooter>
       </Modal>
+    </div>
+  );
+};
+
+export const defaultInfoModal = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ height: '100px' }}>
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <InfoModal open={open} setOpen={() => setOpen(!open)} size="large" ariaLabelledBy="modal9-label">
+        <InfoModalHeader headerText="Lorem ipsum dolor sit amet" ingress="Lorem ipsum dolor sit amet" />
+        <InfoModalBody>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Senectus et netus et malesuada fames ac turpis egestas. Bibendum neque egestas congue
+            quisque. Mi eget mauris pharetra et ultrices neque ornare aenean. Neque gravida in fermentum et. Aliquet
+            nibh praesent tristique magna sit amet. Vel turpis nunc eget lorem dolor sed viverra ipsum nunc. Eget arcu
+            dictum varius duis at consectetur lorem donec. Ornare suspendisse sed nisi lacus sed viverra tellus in.
+            Fermentum posuere urna nec tincidunt praesent semper feugiat. Maecenas accumsan lacus vel facilisis.
+            Lobortis feugiat vivamus at augue eget arcu dictum varius.
+          </Paragraph>
+        </InfoModalBody>
+      </InfoModal>
     </div>
   );
 };
