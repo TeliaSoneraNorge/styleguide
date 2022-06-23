@@ -28,6 +28,10 @@ const onIncompleteStepClick = (number: number) => {
 
 export const Default = () => {
   const onValidateStep = (steps: Step[], number: number) => {
+    console.log('number ' + number);
+    if (number == 4) {
+      return false;
+    }
     return true; //Optional to return anything, must return false to invalidate step navigation
   };
 
@@ -37,7 +41,7 @@ export const Default = () => {
     return (
       <StepIndicatorLine
         steps={props.steps}
-        onActiveStepChangeValidator={onValidateStep}
+        onValidateStep={onValidateStep}
         navigationCompletesPreviousSteps={true}
         ref={stepIndicatorLineRef}
       />
@@ -48,7 +52,7 @@ export const Default = () => {
     <>
       <div style={row}>
         {/* activeStepNumber?: number | undefined;  //Set initial step to show to this number
-         onActiveStepChangeValidator?: any;      //When changing step, call on a validator first and it not "input is email", return false so next step is not shown?
+         onValidateStep?: any;      //When changing step, call on a validator first and it not "input is email", return false so next step is not shown?
          navigationCompletesPreviousSteps?: boolean | undefined; //When navigating steps, mark previous ones as complete?
          completeButtonId?: string | undefined | null; //Does "step children" have a button to complete a step, if so; what is it's id?
          incompleteButtonId?: string | undefined | null; //Does "step children" have a button to incomplete a step, if so: what is it's id?
@@ -56,9 +60,9 @@ export const Default = () => {
          pageSize?: number | undefined;  //Defaults to 5 if undefined
          pagingSize?: number | undefined; //Defaults to 1 if undefined */}
         <StepIndicatorLine
-          activeStepNumber={4}
+          activeStepNumber={0}
           steps={stepData.filter((_, i) => i < 8)}
-          onActiveStepChangeValidator={onValidateStep}
+          onValidateStep={onValidateStep}
           navigationCompletesPreviousSteps={true}
           navigationClickable={true}
           completeButtonId={'buttonComplete'}
@@ -77,7 +81,6 @@ const stepData: Step[] = [
     title: 'Step 1',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 1</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete1</button>',
   },
@@ -85,7 +88,6 @@ const stepData: Step[] = [
     title: 'Step 2',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 2</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete2</button>',
   },
@@ -93,7 +95,6 @@ const stepData: Step[] = [
     title: 'Step 3',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 3</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete3</button>',
   },
@@ -101,7 +102,6 @@ const stepData: Step[] = [
     title: 'Step 4',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 4</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete4</button>',
   },
@@ -109,7 +109,6 @@ const stepData: Step[] = [
     title: 'Step 5',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 5</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete5</button>',
   },
@@ -117,7 +116,6 @@ const stepData: Step[] = [
     title: 'Step 6',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete6</button>',
   },
@@ -125,7 +123,6 @@ const stepData: Step[] = [
     title: 'Step 7',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 7</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete7</button>',
   },
@@ -133,7 +130,6 @@ const stepData: Step[] = [
     title: 'Step 8',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children:
       '<h1>Hello 8</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete8</button>',
   },
@@ -144,7 +140,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 1',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 1...</h2>
@@ -157,7 +152,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 2',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 2...</h2>
@@ -170,7 +164,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 3',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 3...</h2>
@@ -183,7 +176,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 4',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 4...</h2>
@@ -196,7 +188,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 5',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 5...</h2>
@@ -209,7 +200,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 6',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 6...</h2>
@@ -222,7 +212,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 7',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 7...</h2>
@@ -235,7 +224,6 @@ const stepDataWithComponentChildren: Step[] = [
     title: 'Step 8',
     url: '',
     isComplete: false,
-    onActivateStep: null,
     children: (
       <div>
         <h2>Step 8...</h2>

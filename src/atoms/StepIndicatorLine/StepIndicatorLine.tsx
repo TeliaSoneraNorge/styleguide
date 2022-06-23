@@ -85,7 +85,7 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
 
   const [state, setState] = useState({
     steps: props.steps,
-    currentNumber: props.activeStepNumber != null ? props.activeStepNumber - 1 : 0,
+    currentNumber: props.activeStepNumber != null && props.activeStepNumber > 0 ? props.activeStepNumber - 1 : 0,
     maxIndex: Math.min(maxStepIndex, pageSize - 1),
   });
 
@@ -111,8 +111,8 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
       maxIndex: maxIndex,
     };
 
-    if (props.onActiveStepChangeValidator) {
-      const validated = props.onActiveStepChangeValidator(steps, number);
+    if (props.onValidateStep) {
+      const validated = props.onValidateStep(steps, number);
       if (validated == null || validated === true) {
         setState(update);
       }
