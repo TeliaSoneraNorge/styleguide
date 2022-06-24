@@ -32,8 +32,6 @@ const StepButton = (props: any) => {
     </div>
   );
 
-  console.log('BUTTON NUMBER: ' + number + ', ' + isActive + ', ' + isComplete + ', ' + isClickable);
-
   return (
     <>
       {!isClickable && (

@@ -80,6 +80,8 @@
     }
 
     &--arrow {
+      width: 2em !important;
+      border: solid 1px red;
       & > button {
         background: unset;
         cursor: pointer;
@@ -155,9 +157,13 @@
     top: calc(1.5 * var(--telia-step-indicator-line-height) / 2);
     height: 2px;
     right: -1.5rem;
-    background-color: var(--telia-step-indicator-line-border-color);
     content: '';
     border-radius: 10px;
+    border: 2px dashed #606064;
+
+    &--short {
+      width: 2.25rem !important;
+    }
 
     @media all and (min-width: 37.5em) {
       height: 4px;
@@ -168,6 +174,29 @@
 
     &--passed {
       background-color: var(--core-purple);
+    }
+
+    &--fade-right {
+      position: absolute;
+      z-index: 10;
+      content: ' ';
+      left: 0;
+      width: 2.5em;
+      height: 16px;
+      background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
+      top: 0;
+      margin: 0;
+      margin-top: 6px;
+    }
+
+    &--fade-left {
+      z-index: 10;
+      content: ' ';
+      left: 0;
+      width: 1.75em;
+      height: 16px;
+      border: solid 2px red;
+      background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
     }
   }
 }
