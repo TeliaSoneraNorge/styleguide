@@ -9,11 +9,9 @@ export default {
 };
 
 const row = {
-  width: '700px',
-  display: 'flex',
-  justifyContent: 'flexStart',
-  border: 'solid 1px red',
-  margin: '1.5em',
+  display: 'block',
+  'margin-top': '2em',
+  'margin-bottom': '2em',
 };
 
 let stepIndicatorLineRef: any;

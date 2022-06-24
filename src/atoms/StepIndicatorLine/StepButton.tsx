@@ -19,7 +19,7 @@ const StepButton = (props: any) => {
   };
 
   const RenderText = () => (
-    <div className="telia-step-indicator-line__step__content">
+    <div className="telia-step-indicator-line__step__circle-text">
       <span>{number + 1}</span>
 
       {isComplete && <span className="sr-only"> fullført</span>}

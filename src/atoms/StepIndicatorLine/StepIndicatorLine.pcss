@@ -1,8 +1,11 @@
+:root {
+  --telia-step-indicator-line-border-size: 2px;
+  --telia-step-indicator-line-border-color: var(--darker-grey);
+  --telia-step-indicator-line-height: 1rem;
+  --telia-step-indicator-line-size: calc(1.5 * var(--height));
+  --telia-step-indicator-line-text-color: var(--telia-step-indicator-line-text-color);
+}
 .telia-step-indicator-line {
-  display: flex;
-  justify-content: center;
-  border: solid 1px orange;
-
   &__container {
     display: block;
   }
@@ -10,91 +13,61 @@
   & > ol {
     display: flex;
     list-style: none;
-    max-width: 740px;
     margin: 0 0 var(--margin-bottom-large);
     padding: 0;
 
     & > li {
       display: flex;
-      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       width: 5rem;
 
       @media all and (min-width: 37.5em) {
-        width: 8rem;
+        width: 6.75rem;
       }
     }
   }
 
   &__step {
-    border-style: none;
-    background: none;
-    max-width: 32px;
+    position: relative;
+
     outline: 0;
-    background: inherit;
+
+    border-radius: 50%;
+    border: solid var(--telia-step-indicator-line-border-size) var(--telia-step-indicator-line-border-color);
+
+    color: var(--telia-step-indicator-line-text-color);
+    background: unset;
+
+    font-size: 0.75rem;
+    font-weight: bold;
+    line-height: calc(1.5 * var(--telia-step-indicator-line-height) - 4px);
     text-decoration: none;
 
-    &__content {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: flex-start;
-    }
+    height: var(--telia-step-indicator-line-size);
+    width: var(--telia-step-indicator-line-size);
 
-    &:hover {
-      border: 2px solid var(--core-purple);
+    margin: 0 calc(var(--telia-step-indicator-line-height) / 2);
+
+    cursor: pointer;
+
+    &__circle-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
 
     &--active {
-      border: 2px solid var(--core-purple);
+      border-color: var(--core-purple);
 
       &:hover {
-        border: 2px solid var(--core-purple) !important;
+        border-color: var(--core-purple);
       }
     }
-  }
-
-  &__line {
-    width: 3rem;
-    position: absolute;
-    top: calc(1.5 * var(--step-indicator-height) / 2);
-    height: 2px;
-    right: -1.5rem;
-    background-color: var(--dark-grey);
-    content: '';
-    border-radius: 10px;
-
-    @media all and (min-width: 37.5em) {
-      height: 4px;
-      width: 4rem;
-      top: calc(var(--step-indicator-height) - var(--step-indicator-border));
-      right: -2rem;
-    }
-
-    &--complete {
-      background-color: var(--core-purple);
-    }
-  }
-
-  &__step {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: var(--step-indicator-border) solid var(--darkest-grey);
-    border-radius: 50%;
-    color: var(--darkest-grey);
-    font-size: 0.75rem;
-    font-weight: bold;
-    height: calc(1.5 * var(--step-indicator-height));
-    width: calc(1.5 * var(--step-indicator-height));
-    line-height: calc(1.5 * var(--step-indicator-height) - 4px);
-    margin: 0 calc(var(--step-indicator-height) / 2);
-    position: relative;
-    text-align: center;
-    cursor: pointer;
 
     &:hover {
-      border: var(--step-indicator-border) solid var(--core-purple);
+      border-color: var(--core-purple);
     }
 
     &--title {
@@ -106,7 +79,11 @@
     }
 
     &--arrow {
-      border: 0;
+      & > button {
+        background: unset;
+        cursor: pointer;
+        border: 0;
+      }
     }
 
     & > button {
@@ -120,10 +97,10 @@
     @media all and (min-width: 37.5em) {
       font-size: 1rem;
       border-width: 3px;
-      height: calc(2 * var(--step-indicator-height));
-      width: calc(2 * var(--step-indicator-height));
-      margin: 0 var(--step-indicator-height);
-      line-height: calc(2 * var(--step-indicator-height) - 3px);
+      height: calc(2 * var(--telia-step-indicator-line-height));
+      width: calc(2 * var(--telia-step-indicator-line-height));
+      margin: 0 var(--telia-step-indicator-line-height);
+      line-height: calc(2 * var(--telia-step-indicator-line-height) - 3px);
     }
 
     &:first-of-type {
@@ -146,7 +123,7 @@
       color: var(--white);
 
       &:hover {
-        border: var(--step-indicator-border) solid var(--darkest-grey);
+        border: var(--telia-step-indicator-line--border) solid var(--darker-grey);
         cursor: default;
       }
     }
@@ -154,7 +131,7 @@
     &--disabled {
       cursor: default;
       &:hover {
-        border: var(--step-indicator-border) solid var(--darkest-grey);
+        border: var(--telia-step-indicator-line-border) solid var(--darker-grey);
       }
     }
   }
@@ -170,4 +147,26 @@
     width: 1rem;
     color: var(--core-purple);
   }
+
+  /* &__line {
+    width: 3rem;
+    position: absolute;
+    top: calc(1.5 * var(--line-height) / 2);
+    height: 2px;
+    right: -1.5rem;
+    background-color: var(--dark-grey);
+    content: '';
+    border-radius: 10px;
+
+    @media all and (min-width: 37.5em) {
+      height: 4px;
+      width: 4rem;
+      top: calc(var(--line-height) - var(--line-height));
+      right: -2rem;
+    }
+
+    &--complete {
+      background-color: var(--core-purple);
+    }
+  } */
 }

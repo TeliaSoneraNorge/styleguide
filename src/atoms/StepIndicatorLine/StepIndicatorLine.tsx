@@ -262,7 +262,7 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
   const StepArrow = (props: any) => {
     const { onPaging, iconName } = props;
     return (
-      <button type="button" className={'telia-step-indicator-text__paging-button'} onClick={onPaging}>
+      <button type="button" onClick={onPaging}>
         <RenderIcon iconName={iconName} />
       </button>
     );
@@ -275,7 +275,7 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
       <li
         key={step.index}
         className={classnames('', {
-          'telia-step-indicator-text__step--arrow': IsArrowStep(step),
+          'telia-step-indicator-line__step--arrow': IsArrowStep(step),
         })}
       >
         {IsArrowStep(step) && step.arrowType === 'LEFT' && (
