@@ -17,6 +17,7 @@
     padding: 0;
 
     & > li {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -47,7 +48,7 @@
     height: var(--telia-step-indicator-line-size);
     width: var(--telia-step-indicator-line-size);
 
-    margin: 0 calc(var(--telia-step-indicator-line-height) / 2);
+    margin: 0 auto;
 
     cursor: pointer;
 
@@ -104,11 +105,11 @@
     }
 
     &:first-of-type {
-      margin-left: 0;
+      //margin-left: 0;
     }
 
     &:last-of-type {
-      margin-right: 0;
+      //margin-right: 0;
     }
 
     &--complete {
@@ -148,25 +149,25 @@
     color: var(--core-purple);
   }
 
-  /* &__line {
+  &__line {
     width: 3rem;
     position: absolute;
-    top: calc(1.5 * var(--line-height) / 2);
+    top: calc(1.5 * var(--telia-step-indicator-line-height) / 2);
     height: 2px;
     right: -1.5rem;
-    background-color: var(--dark-grey);
+    background-color: var(--telia-step-indicator-line-border-color);
     content: '';
     border-radius: 10px;
 
     @media all and (min-width: 37.5em) {
       height: 4px;
       width: 4rem;
-      top: calc(var(--line-height) - var(--line-height));
+      top: calc(var(--telia-step-indicator-line-height) - var(--telia-step-indicator-line-border-size));
       right: -2rem;
     }
 
-    &--complete {
+    &--passed {
       background-color: var(--core-purple);
     }
-  } */
+  }
 }

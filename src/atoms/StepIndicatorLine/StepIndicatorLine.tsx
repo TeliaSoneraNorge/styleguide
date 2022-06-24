@@ -7,8 +7,8 @@ import { Props } from './StepIndicatorLineProps';
 
 const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: number }> = (props) => {
   const { index, currentStepNumber, maxStepIndex } = props;
-  if (index >= maxStepIndex - 1) {
-    return null;
+  if (index >= maxStepIndex) {
+    return <></>;
   }
   const isPassed = currentStepNumber > index;
 
@@ -295,6 +295,10 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
             isComplete={step.isComplete == true}
             onStepButtonClick={() => onStepButtonClick(step.index)}
           />
+        )}
+
+        {!IsArrowStep(step) && (
+          <Line index={step.index} currentStepNumber={state.currentNumber} maxStepIndex={maxStepIndex} />
         )}
 
         {IsArrowStep(step) && step.arrowType === 'RIGHT' && (
