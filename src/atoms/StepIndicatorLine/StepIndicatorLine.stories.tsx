@@ -26,23 +26,22 @@ const onIncompleteStepClick = (number: number) => {
   (stepIndicatorLineRef.current as any).onStepIncomplete(number);
 };
 
-export const Default = () => {
-  const onValidateStep = (steps: Step[], number: number) => {
-    console.log('number ' + number);
-    if (number == 4) {
-      return false;
-    }
-    return true; //Optional to return anything, must return false to invalidate step navigation
-  };
+const onValidateStep = (steps: Step[], number: number) => {
+  if (number == 3) {
+    return false;
+  }
+  return true; //Optional to return anything, must return false to invalidate step navigation
+};
 
+export const Default = () => {
   stepIndicatorLineRef = useRef();
 
   const StepIndicatorLineRef = (props: any) => {
     return (
       <StepIndicatorLine
         steps={props.steps}
-        onValidateStep={onValidateStep}
         navigationCompletesPreviousSteps={true}
+        displayArrowsOnEdgeSteps={true}
         ref={stepIndicatorLineRef}
       />
     );
@@ -51,20 +50,12 @@ export const Default = () => {
   return (
     <>
       <div style={row}>
-        {/* activeStepNumber?: number | undefined;  //Set initial step to show to this number
-         onValidateStep?: any;      //When changing step, call on a validator first and it not "input is email", return false so next step is not shown?
-         navigationCompletesPreviousSteps?: boolean | undefined; //When navigating steps, mark previous ones as complete?
-         completeButtonId?: string | undefined | null; //Does "step children" have a button to complete a step, if so; what is it's id?
-         incompleteButtonId?: string | undefined | null; //Does "step children" have a button to incomplete a step, if so: what is it's id?
-         navigationClickable?: boolean | undefined;  //default is undefined, which makes it clickable, set to false if disabling clicking the indicator steps
-         pageSize?: number | undefined;  //Defaults to 5 if undefined
-         pagingSize?: number | undefined; //Defaults to 1 if undefined */}
         <StepIndicatorLine
           activeStepNumber={0}
           steps={stepData.filter((_, i) => i < 8)}
-          onValidateStep={onValidateStep}
-          navigationCompletesPreviousSteps={true}
-          navigationClickable={true}
+          navigationCompletesPreviousSteps={false}
+          navigationClickable={false}
+          displayArrowsOnEdgeSteps={true}
           completeButtonId={'buttonComplete'}
           incompleteButtonId={'buttonPrevious'}
         />
@@ -95,6 +86,7 @@ const stepData: Step[] = [
     title: 'Step 3',
     url: '',
     isComplete: false,
+    onValidateStep: onValidateStep,
     children:
       '<h1>Hello 3</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete3</button>',
   },

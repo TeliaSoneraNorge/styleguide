@@ -18,28 +18,49 @@ const StepButton = (props: any) => {
     }
   };
 
+  const RenderText = () => (
+    <div className="telia-step-indicator-line__step__content">
+      <span>{number + 1}</span>
+
+      {isComplete && <span className="sr-only"> fullført</span>}
+
+      {isActive && (
+        <div className="telia-step-indicator-line__step--title">
+          <span>{title}</span>
+        </div>
+      )}
+    </div>
+  );
+
+  console.log('BUTTON NUMBER: ' + number + ', ' + isActive + ', ' + isComplete + ', ' + isClickable);
+
   return (
-    <button
-      role="button"
-      onClick={onStepClick}
-      className={classnames('telia-step-indicator-line__step', {
-        'telia-step-indicator-line__step--active': isActive,
-        'telia-step-indicator-line__step--complete': isComplete && !isActive,
-        'telia-step-indicator-line__step--disabled': !isClickable,
-      })}
-    >
-      <div className="telia-step-indicator-line__step__content">
-        <span>{number + 1}</span>
-
-        {isComplete && <span className="sr-only"> fullført</span>}
-
-        {isActive && (
-          <div className="telia-step-indicator-line__step--title">
-            <span>{title}</span>
-          </div>
-        )}
-      </div>
-    </button>
+    <>
+      {!isClickable && (
+        <span
+          className={classnames('telia-step-indicator-line__step', {
+            'telia-step-indicator-line__step--active': isActive,
+            'telia-step-indicator-line__step--complete': isComplete && !isActive,
+            'telia-step-indicator-line__step--disabled': !isClickable,
+          })}
+        >
+          <RenderText />
+        </span>
+      )}
+      {isClickable && (
+        <button
+          role="button"
+          onClick={onStepClick}
+          className={classnames('telia-step-indicator-line__step', {
+            'telia-step-indicator-line__step--active': isActive,
+            'telia-step-indicator-line__step--complete': isComplete && !isActive,
+            'telia-step-indicator-line__step--disabled': !isClickable,
+          })}
+        >
+          <RenderText />
+        </button>
+      )}
+    </>
   );
 };
 

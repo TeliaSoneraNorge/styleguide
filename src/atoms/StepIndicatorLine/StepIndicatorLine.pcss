@@ -150,6 +150,13 @@
         cursor: default;
       }
     }
+
+    &--disabled {
+      cursor: default;
+      &:hover {
+        border: var(--step-indicator-border) solid var(--darkest-grey);
+      }
+    }
   }
 
   &__icon-wrapper {

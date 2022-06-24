@@ -5,6 +5,7 @@ export interface Step {
   children?: any;
   onCompleteButtonId?: string | undefined;
   onIncompleteButtonId?: string | undefined;
+  onValidateStep?: any; //Occurs right before step is changed to the 'next', to validate/invalidate current step
 }
 
 export interface InternalStep extends Step {
