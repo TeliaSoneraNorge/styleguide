@@ -10,8 +10,8 @@ export default {
 
 const row = {
   display: 'block',
-  'margin-top': '2em',
-  'margin-bottom': '2em',
+  marginTop: '2em',
+  marginBottom: '2em',
 };
 
 let stepIndicatorLineRef: any;
@@ -52,7 +52,7 @@ export const Default = () => {
           activeStepNumber={0}
           steps={stepData.filter((_, i) => i < 8)}
           navigationCompletesPreviousSteps={false}
-          navigationClickable={false}
+          navigationClickable={true}
           displayArrowsOnEdgeSteps={true}
           completeButtonId={'buttonComplete'}
           incompleteButtonId={'buttonPrevious'}
@@ -67,21 +67,21 @@ export const Default = () => {
 
 const stepData: Step[] = [
   {
-    title: 'Step 1',
+    title: 'Step 1 Long title',
     url: '',
     isComplete: false,
     children:
       '<h1>Hello 1</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete1</button>',
   },
   {
-    title: 'Step 2',
+    title: 'Step 2 Long title',
     url: '',
     isComplete: false,
     children:
       '<h1>Hello 2</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete2</button>',
   },
   {
-    title: 'Step 3',
+    title: 'Step 3  Long title',
     url: '',
     isComplete: false,
     onValidateStep: onValidateStep,
@@ -89,35 +89,35 @@ const stepData: Step[] = [
       '<h1>Hello 3</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete3</button>',
   },
   {
-    title: 'Step 4',
+    title: 'Step 4  Long title',
     url: '',
     isComplete: false,
     children:
       '<h1>Hello 4</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete4</button>',
   },
   {
-    title: 'Step 5',
+    title: 'Step 5  Long title',
     url: '',
     isComplete: false,
     children:
       '<h1>Hello 5</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete5</button>',
   },
   {
-    title: 'Step 6',
+    title: 'Step 6 Long title',
     url: '',
     isComplete: false,
     children:
       '<h1>Hello 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete6</button>',
   },
   {
-    title: 'Step 7',
+    title: 'Step 7 Long title',
     url: '',
     isComplete: false,
     children:
       '<h1>Hello 7</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete7</button>',
   },
   {
-    title: 'Step 8',
+    title: 'Step 8  Long title',
     url: '',
     isComplete: false,
     children:

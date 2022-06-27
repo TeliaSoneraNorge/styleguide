@@ -5,24 +5,16 @@ import classnames from 'classnames';
 import { Icon } from '../../atoms/Icon';
 import { Props } from './StepIndicatorLineProps';
 
-const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: number; fade?: string }> = (props) => {
-  const { index, currentStepNumber, maxStepIndex, fade } = props;
+const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: number; isComplete: boolean }> = (
+  props
+) => {
+  const { index, currentStepNumber, maxStepIndex, isComplete } = props;
 
   if (index >= maxStepIndex) {
     return <></>;
   }
-  const isPassed = currentStepNumber > index;
+  const isPassed = currentStepNumber > index && isComplete;
 
-  if (fade != null) {
-    const css =
-      'telia-step-indicator-line__line telia-step-indicator-line__line--short telia-step-indicator-line__line--' + fade;
-    return (
-      <>
-        <span className={css} />
-        <div className={'telia-step-indicator-line__transparent--' + fade}></div>
-      </>
-    );
-  }
   return (
     <span
       className={classnames('telia-step-indicator-line__line', {
@@ -140,9 +132,12 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
 
   const minIndex = state.maxIndex - pageSize + 1;
 
-  const completePreviousSteps =
-    navigationClickable != false || (navigationClickable && navigationCompletesPreviousSteps == false);
+  const completePreviousSteps = navigationCompletesPreviousSteps;
+  //navigationClickable != false || (navigationClickable && navigationCompletesPreviousSteps == false);
 
+  console.log('complete previosu');
+  console.log(navigationCompletesPreviousSteps);
+  console.log(completePreviousSteps);
   const internalSteps: InternalStep[] = state.steps.map((step, i) => {
     return {
       index: i,
@@ -228,7 +223,6 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
 
   const onStepButtonClick = (number: number) => {
     if (number >= 0) {
-      console.log('Update with new ' + number);
       const steps = state.steps;
       if (navigationCompletesPreviousSteps == true) {
         steps.forEach((step, i) => {
@@ -273,23 +267,55 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
     return <Icon icon={iconName.iconName} />;
   };
 
-  const StepArrow = (props: any) => {
-    const { onPaging, iconName } = props;
+  const RenderArrow = (props: any) => {
+    const { onPaging, iconName, isComplete } = props;
+
+    const modifier = iconName.includes('left') ? '--left' : '--right';
+
+    let dotCssClass = 'telia-step-indicator-line__dots';
+    if (isComplete) {
+      dotCssClass += ' telia-step-indicator-line__dots--complete';
+    }
+
     return (
-      <button type="button" onClick={onPaging} className="telia-step-indicator-line__arrow">
-        <RenderIcon iconName={iconName} />
-      </button>
+      <li className={'telia-step-indicator-line__arrow telia-step-indicator-line__arrow' + modifier}>
+        <div className="telia-step-indicator-line__arrow-container">
+          <div className={dotCssClass}></div>
+          <div
+            className={
+              'telia-step-indicator-line__transparent-layer telia-step-indicator-line__transparent-layer' + modifier
+            }
+          ></div>
+          <button
+            type="button"
+            onClick={onPaging}
+            className={'telia-step-indicator-line__arrow-button telia-step-indicator-line__arrow-button' + modifier}
+          >
+            <RenderIcon iconName={iconName} />
+          </button>
+        </div>
+      </li>
     );
   };
 
   const RenderStep = (props: any) => {
     const index = props.index;
     const maxDisplayCount = props.maxDisplayCount;
+    const isLast = props.isLast;
 
     const step = props.step as InternalStep;
 
+    let css = '';
+    if (index === 0) {
+      css = 'telia-step-indicator-line__list-item--first';
+    }
+
+    if (isLast) {
+      css = 'telia-step-indicator-line__list-item--last';
+    }
+
     return (
-      <li key={step.index}>
+      <li key={step.index} className={css}>
         <StepButton
           number={step.index}
           title={step.title}
@@ -301,7 +327,12 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
         />
 
         {index < maxDisplayCount - 1 && (
-          <Line index={step.index} currentStepNumber={state.currentNumber} maxStepIndex={maxStepIndex} />
+          <Line
+            isComplete={step.isComplete}
+            index={step.index}
+            currentStepNumber={state.currentNumber}
+            maxStepIndex={maxStepIndex}
+          />
         )}
       </li>
     );
@@ -313,22 +344,16 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
   const hasLeftArrow = pagingArrows[0]?.arrowType == 'LEFT';
   const hasRightArrow = pagingArrows[0]?.arrowType == 'RIGHT' || pagingArrows[1]?.arrowType == 'RIGHT';
 
-  console.log(pagingArrows);
-  console.log('has left ' + hasLeftArrow);
-  console.log('has right ' + hasRightArrow);
-
   return (
     <div className="telia-step-indicator-line__container">
       <div className="telia-step-indicator-line">
         <ol>
           {hasLeftArrow && (
-            <li className="telia-step-indicator-line__button-left">
-              <StepArrow
-                iconName={'arrow-left'}
-                onPaging={() => onPagingLeft(completePreviousSteps, pagingSize, pageSize, state, updateState)}
-              />
-              <Line index={0} currentStepNumber={state.currentNumber} maxStepIndex={state.maxIndex} fade="fade-left" />
-            </li>
+            <RenderArrow
+              isComplete={state.currentNumber > 0 && state.steps[0].isComplete == true}
+              onPaging={() => onPagingLeft(completePreviousSteps, pagingSize, pageSize, state, updateState)}
+              iconName={'arrow-left'}
+            />
           )}
 
           {displaySteps.map((step, i) => (
@@ -336,28 +361,19 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
               step={step}
               key={i}
               index={i}
+              isLast={i === displaySteps.length - 1}
               navigationClickable={navigationClickable}
               maxDisplayCount={displaySteps.length}
             />
           ))}
 
           {hasRightArrow && (
-            <li className="telia-step-indicator-line__button-right">
-              <>
-                <Line
-                  index={displaySteps.length - 1}
-                  currentStepNumber={state.currentNumber}
-                  maxStepIndex={maxStepIndex}
-                  fade="fade-right"
-                />
-                <StepArrow
-                  iconName={'arrow-right'}
-                  onPaging={() =>
-                    onPagingRight(completePreviousSteps, pagingSize, pageSize, maxStepIndex, state, updateState)
-                  }
-                />
-              </>
-            </li>
+            <RenderArrow
+              onPaging={() =>
+                onPagingRight(completePreviousSteps, pagingSize, pageSize, maxStepIndex, state, updateState)
+              }
+              iconName={'arrow-right'}
+            />
           )}
         </ol>
       </div>
