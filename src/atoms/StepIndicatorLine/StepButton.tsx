@@ -5,11 +5,6 @@ import { CheckMarkIcon } from '../../atoms/Icon';
 const StepButton = (props: any) => {
   const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive } = props;
 
-  if (title == null || url === undefined) {
-    console.warn('Warning: A step-indicator-line button was not created, it was given invalid title/url');
-    return <></>;
-  }
-
   const onStepClick = () => {
     if (url) {
       console.log('Step is navigating to different site');

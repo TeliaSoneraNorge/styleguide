@@ -5,20 +5,16 @@ import classnames from 'classnames';
 import { Icon } from '../../atoms/Icon';
 import { Props } from './StepIndicatorLineProps';
 
-const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: number; isComplete: boolean }> = (
-  props
-) => {
-  const { index, currentStepNumber, maxStepIndex, isComplete } = props;
+const Line: React.FC<{ index: number; maxStepIndex: number; isComplete: boolean }> = (props) => {
+  const { index, maxStepIndex, isComplete } = props;
 
   if (index >= maxStepIndex) {
     return <></>;
   }
-  const isPassed = currentStepNumber > index && isComplete;
-
   return (
     <span
       className={classnames('telia-step-indicator-line__line', {
-        'telia-step-indicator-line__line--passed': isPassed,
+        'telia-step-indicator-line__line--complete': isComplete,
       })}
     />
   );
@@ -37,13 +33,13 @@ const onPagingLeft = (
     const steps = state.steps;
 
     if (completePreviousSteps) {
-      steps[currentNumber].isComplete = false;
+      //steps[currentNumber].isComplete = false;
     }
 
     currentNumber--;
 
     if (completePreviousSteps) {
-      steps[currentNumber].isComplete = false;
+      //steps[currentNumber].isComplete = false;
     }
 
     const maxIndex = Math.max(state.maxIndex - pagingSize, pageSize - 1);
@@ -71,7 +67,7 @@ const onPagingRight = (
     currentNumber++;
 
     if (completePreviousSteps) {
-      steps[currentNumber].isComplete = false;
+      //steps[currentNumber].isComplete = false;
     }
 
     let maxIndex = state.maxIndex;
@@ -132,12 +128,9 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
 
   const minIndex = state.maxIndex - pageSize + 1;
 
-  const completePreviousSteps = navigationCompletesPreviousSteps;
+  const completePreviousSteps = navigationCompletesPreviousSteps != false;
   //navigationClickable != false || (navigationClickable && navigationCompletesPreviousSteps == false);
 
-  console.log('complete previosu');
-  console.log(navigationCompletesPreviousSteps);
-  console.log(completePreviousSteps);
   const internalSteps: InternalStep[] = state.steps.map((step, i) => {
     return {
       index: i,
@@ -229,9 +222,11 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
           if (i < number) {
             step.isComplete = true;
           } else {
-            step.isComplete = false;
+            //step.isComplete = false;
           }
         });
+      } else {
+        //steps[number].isComplete = false;
       }
 
       if (number > 0) {
@@ -272,14 +267,16 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
 
     const modifier = iconName.includes('left') ? '--left' : '--right';
 
-    let dotCssClass = 'telia-step-indicator-line__dots';
+    let dotCssClass = 'telia-step-indicator-line__dots telia-step-indicator-line__dots' + modifier;
     if (isComplete) {
       dotCssClass += ' telia-step-indicator-line__dots--complete';
     }
 
     return (
       <li className={'telia-step-indicator-line__arrow telia-step-indicator-line__arrow' + modifier}>
-        <div className="telia-step-indicator-line__arrow-container">
+        <div
+          className={'telia-step-indicator-line__arrow-container telia-step-indicator-line__arrow-container' + modifier}
+        >
           <div className={dotCssClass}></div>
           <div
             className={
@@ -328,9 +325,10 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
 
         {index < maxDisplayCount - 1 && (
           <Line
-            isComplete={step.isComplete}
+            isComplete={
+              step.isComplete == true || (navigationCompletesPreviousSteps != false && state.currentNumber > index)
+            }
             index={step.index}
-            currentStepNumber={state.currentNumber}
             maxStepIndex={maxStepIndex}
           />
         )}

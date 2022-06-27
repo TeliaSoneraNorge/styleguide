@@ -13,6 +13,8 @@
   );
 }
 .telia-step-indicator-line {
+  position: relative;
+
   &__container {
     display: block;
   }
@@ -66,6 +68,15 @@
     @media screen and (max-width: 37.5em) {
       width: 24px;
       height: 24px;
+    }
+
+    &--title {
+      margin-top: 6px;
+      font-family: 'TeliaSans-Bold';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 16px;
+      line-height: 1;
     }
 
     &__circle-text {
@@ -149,6 +160,13 @@
       &:hover {
         border: 2px solid var(--darker-grey);
       }
+
+      &.telia-step-indicator-line__step--complete,
+      &.telia-step-indicator-line__step--active {
+        &:hover {
+          border: 2px solid var(--core-purple);
+        }
+      }
     }
   }
 
@@ -199,7 +217,7 @@
       top: calc(var(--telia-step-indicator-line-height) - var(--telia-step-indicator-line-border-size));
     }
 
-    &--passed {
+    &--complete {
       background-color: var(--core-purple);
       border: 0 !important;
       width: 78px;
@@ -269,7 +287,7 @@
 }
 
 .telia-step-indicator-line__arrow--right {
-  margin-left: -36px;
+  margin-left: calc(-1 * calc(var(--telia-step-indicator-line-paging-width) - 4px));
 }
 
 .telia-step-indicator-line__arrow--left {
@@ -280,6 +298,23 @@
   position: relative;
   width: var(--telia-step-indicator-line-paging-width);
   height: 32px;
+
+  @media screen and (max-width: 37.5em) {
+    height: 24px;
+  }
+}
+
+.telia-step-indicator-line__arrow-container--left {
+  margin-left: 12px;
+  @media screen and (max-width: 37.5em) {
+    margin-left: 4px;
+  }
+}
+.telia-step-indicator-line__arrow-container--right {
+  margin-left: -12px;
+  @media screen and (max-width: 37.5em) {
+    margin-left: -4px;
+  }
 }
 
 .telia-step-indicator-line__dots {
@@ -296,16 +331,19 @@
     width: 50%;
     left: 25%;
   }
+
+  &--left {
+  }
 }
 
 .telia-step-indicator-line__dots--complete {
-  border-bottom: 4px solid var(--core-purple);
+  border-bottom: 4px solid var(--core-purple) !important;
 }
 
 .telia-step-indicator-line__transparent-layer {
   position: absolute;
   cursor: default;
-  width: 100%;
+  width: 125%;
   height: 100%;
   z-index: 2;
 }
@@ -317,28 +355,32 @@
 
 .telia-step-indicator-line__transparent-layer--right {
   background: var(--telia-step-indicator-line-transparent-gradient);
+  margin-left: -10%;
 }
 
 .telia-step-indicator-line__arrow-button {
   position: absolute;
   width: 18px;
   border: 0;
-  background: white;
+  background: transparent;
   height: 100%;
   z-index: 3;
   cursor: pointer;
 
   & > svg {
     width: 24px;
+    @media screen and (max-width: 37.5em) {
+      height: 24px;
+    }
   }
 }
 
 .telia-step-indicator-line__arrow-button--right {
-  margin-left: calc(var(--telia-step-indicator-line-paging-width) - 20px);
+  margin-left: 20px;
 }
 
 .telia-step-indicator-line__arrow-button--left {
-  margin-left: calc(-1 * calc(var(--telia-step-indicator-line-paging-width) / 4));
+  margin-left: -20px;
 }
 
 .telia-step-indicator-line__list-item {

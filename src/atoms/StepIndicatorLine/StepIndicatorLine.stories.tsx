@@ -25,9 +25,6 @@ const onIncompleteStepClick = (number: number) => {
 };
 
 const onValidateStep = (steps: Step[], number: number) => {
-  if (number == 3) {
-    return false;
-  }
   return true; //Optional to return anything, must return false to invalidate step navigation
 };
 
@@ -52,7 +49,7 @@ export const Default = () => {
           activeStepNumber={0}
           steps={stepData.filter((_, i) => i < 8)}
           navigationCompletesPreviousSteps={false}
-          navigationClickable={true}
+          navigationClickable={false}
           displayArrowsOnEdgeSteps={true}
           completeButtonId={'buttonComplete'}
           incompleteButtonId={'buttonPrevious'}
@@ -71,14 +68,14 @@ const stepData: Step[] = [
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 1</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete1</button>',
+      '<h1>Hello 1</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete1</button>',
   },
   {
     title: 'Step 2 Long title',
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 2</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete2</button>',
+      '<h1>Hello 2</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete2</button>',
   },
   {
     title: 'Step 3  Long title',
@@ -86,42 +83,42 @@ const stepData: Step[] = [
     isComplete: false,
     onValidateStep: onValidateStep,
     children:
-      '<h1>Hello 3</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete3</button>',
+      '<h1>Hello 3</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete3</button>',
   },
   {
     title: 'Step 4  Long title',
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 4</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete4</button>',
+      '<h1>Hello 4</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete4</button>',
   },
   {
     title: 'Step 5  Long title',
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 5</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete5</button>',
+      '<h1>Hello 5</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete5</button>',
   },
   {
     title: 'Step 6 Long title',
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete6</button>',
+      '<h1>Hello 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete6</button>',
   },
   {
     title: 'Step 7 Long title',
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 7</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete7</button>',
+      '<h1>Hello 7</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete7</button>',
   },
   {
     title: 'Step 8  Long title',
     url: '',
     isComplete: false,
     children:
-      '<h1>Hello 8</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Next/Complete8</button>',
+      '<h1>Hello 8</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete8</button>',
   },
 ];
 
