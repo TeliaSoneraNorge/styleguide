@@ -14,6 +14,7 @@
 }
 .telia-step-indicator-line {
   position: relative;
+  padding-bottom: 10px;
 
   &__container {
     display: block;
@@ -38,6 +39,10 @@
 
       @media all and (min-width: 37.5em) {
         width: 6.75rem;
+      }
+
+      @media screen and (min-width: 60em) {
+        width: 142px;
       }
     }
   }
@@ -72,11 +77,28 @@
 
     &--title {
       margin-top: 6px;
-      font-family: 'TeliaSans-Bold';
+      font-family: 'TeliaSans-Regular';
       font-style: normal;
       font-weight: 500;
-      font-size: 16px;
+      font-size: 14px;
       line-height: 1;
+      display: none;
+      visibility: none;
+      min-width: 75px;
+
+      &--active {
+        display: block;
+        visibility: visible;
+        font-family: 'TeliaSans-Medium';
+        font-style: normal;
+        font-weight: 500;
+      }
+
+      @media screen and (min-width: 60em) {
+        font-size: 16px;
+        display: block;
+        visibility: visible;
+      }
     }
 
     &__circle-text {
@@ -114,7 +136,7 @@
 
     &--title {
       position: absolute;
-      white-space: nowrap;
+      white-space: pre-wrap;
       top: 1.75em;
       color: var(--black);
       font-weight: 100;
@@ -217,6 +239,11 @@
       top: calc(var(--telia-step-indicator-line-height) - var(--telia-step-indicator-line-border-size));
     }
 
+    @media screen and (min-width: 60em) {
+      width: 110px;
+      right: -55px;
+    }
+
     &--complete {
       background-color: var(--core-purple);
       border: 0 !important;
@@ -226,6 +253,11 @@
       @media screen and (max-width: 37.5em) {
         width: 79%;
         right: -50%;
+      }
+
+      @media screen and (min-width: 60em) {
+        width: 110px;
+        right: -55px;
       }
     }
   }
@@ -288,6 +320,9 @@
 
 .telia-step-indicator-line__arrow--right {
   margin-left: calc(-1 * calc(var(--telia-step-indicator-line-paging-width) - 4px));
+  @media screen and (min-width: 60em) {
+    margin-left: -60px;
+  }
 }
 
 .telia-step-indicator-line__arrow--left {
@@ -346,6 +381,10 @@
   width: 125%;
   height: 100%;
   z-index: 2;
+
+  @media screen and (min-width: 60em){
+    width: 150%;
+  }
 }
 
 .telia-step-indicator-line__transparent-layer--left {
@@ -372,15 +411,25 @@
     @media screen and (max-width: 37.5em) {
       height: 24px;
     }
+
+    @media screen and (min-width: 60em){
+      width: 26px;
+    }
   }
 }
 
 .telia-step-indicator-line__arrow-button--right {
   margin-left: 20px;
+  @media screen and (min-width: 60em) {
+    margin-left: 32px;
+  }
 }
 
 .telia-step-indicator-line__arrow-button--left {
   margin-left: -20px;
+  @media screen and (min-width: 60em) {
+    margin-left: -32px;
+  }
 }
 
 .telia-step-indicator-line__list-item {

@@ -24,11 +24,13 @@ const StepButton = (props: any) => {
 
       {isComplete && !isActive && <span className="sr-only"> fullført</span>}
 
-      {isActive && (
-        <div className="telia-step-indicator-line__step--title">
-          <span>{title}</span>
-        </div>
-      )}
+      <div
+        className={classnames('telia-step-indicator-line__step--title', {
+          'telia-step-indicator-line__step--title--active': isActive,
+        })}
+      >
+        <span>{title}</span>
+      </div>
     </div>
   );
 
