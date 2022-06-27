@@ -1,0 +1,93 @@
+.telia-step-indicator-paging {
+  display: block;
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 20px;
+    width: min-content;
+    border: solid 1px orange;
+    position: relative;
+    margin-left: 1.5em;
+    margin-right: 1.5em;
+  }
+
+  &__list-item {
+    width: 140px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: solid 1px red;
+
+    &--no-arrows {
+      padding: 0;
+    }
+  }
+
+  &__button {
+    color: var(--black);
+    border: 0;
+    outline: 0;
+    background: unset;
+
+    &__text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      border: 2px solid var(--core-purple);
+      border-radius: 50%;
+
+      height: 28px;
+      width: 28px;
+
+      & svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &__title {
+      position: absolute;
+      left: 0;
+      margin: 0;
+      top: 40px;
+      width: 140px;
+    }
+  }
+
+  &__arrow {
+    border: solid 1px black;
+    position: absolute;
+    width: auto;
+    border: 0;
+
+    &--container {
+      line-height: 0;
+    }
+  }
+
+  &__arrow--left {
+    margin-left: -28px;
+    background: red;
+  }
+
+  &__arrow--right {
+    left: 100%;
+    background: blue;
+  }
+
+  &__arrow-button {
+    border: 0;
+    padding: 0;
+    background: transparent;
+
+    & > svg {
+      width: 28px;
+      height: 28px;
+    }
+  }
+}
