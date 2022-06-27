@@ -13,12 +13,19 @@ const Line: React.FC<{ index: number; currentStepNumber: number; maxStepIndex: n
   }
   const isPassed = currentStepNumber > index;
 
-  const modifier =
-    fade != null ? 'telia-step-indicator-line__line--short telia-step-indicator-line__line--' + fade : '';
-
+  if (fade != null) {
+    const css =
+      'telia-step-indicator-line__line telia-step-indicator-line__line--short telia-step-indicator-line__line--' + fade;
+    return (
+      <>
+        <span className={css} />
+        <div className={'telia-step-indicator-line__transparent--' + fade}></div>
+      </>
+    );
+  }
   return (
     <span
-      className={classnames('telia-step-indicator-line__line ' + modifier, {
+      className={classnames('telia-step-indicator-line__line', {
         'telia-step-indicator-line__line--passed': isPassed,
       })}
     />
@@ -269,7 +276,7 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
   const StepArrow = (props: any) => {
     const { onPaging, iconName } = props;
     return (
-      <button type="button" onClick={onPaging}>
+      <button type="button" onClick={onPaging} className="telia-step-indicator-line__arrow">
         <RenderIcon iconName={iconName} />
       </button>
     );
@@ -315,7 +322,7 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
       <div className="telia-step-indicator-line">
         <ol>
           {hasLeftArrow && (
-            <li className="">
+            <li className="telia-step-indicator-line__button-left">
               <StepArrow
                 iconName={'arrow-left'}
                 onPaging={() => onPagingLeft(completePreviousSteps, pagingSize, pageSize, state, updateState)}
@@ -335,19 +342,19 @@ const StepIndicatorLine = React.forwardRef((props: Props, ref) => {
           ))}
 
           {hasRightArrow && (
-            <li className="">
+            <li className="telia-step-indicator-line__button-right">
               <>
-                <StepArrow
-                  iconName={'arrow-right'}
-                  onPaging={() =>
-                    onPagingRight(completePreviousSteps, pagingSize, pageSize, maxStepIndex, state, updateState)
-                  }
-                />
                 <Line
                   index={displaySteps.length - 1}
                   currentStepNumber={state.currentNumber}
                   maxStepIndex={maxStepIndex}
                   fade="fade-right"
+                />
+                <StepArrow
+                  iconName={'arrow-right'}
+                  onPaging={() =>
+                    onPagingRight(completePreviousSteps, pagingSize, pageSize, maxStepIndex, state, updateState)
+                  }
                 />
               </>
             </li>
