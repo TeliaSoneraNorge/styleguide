@@ -23,7 +23,7 @@ export const InfoModalHeader: React.FC<InfoModalHeaderProps> = (props) => {
   return (
     <div style={{ backgroundColor: props.backgroundColor || '#30004B' }} className="telia-info-modal__header">
       <Heading>{props.headerText}</Heading>
-      {props.ingress && <Paragraph>{props.ingress}</Paragraph>}
+      {props.ingress && <Paragraph kind="fineprint">{props.ingress}</Paragraph>}
     </div>
   );
 };
