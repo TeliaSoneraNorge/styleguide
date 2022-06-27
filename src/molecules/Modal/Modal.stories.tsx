@@ -279,7 +279,30 @@ export const defaultInfoModal = () => {
   return (
     <div style={{ height: '100px' }}>
       <Button onClick={() => setOpen(!open)} text="Open modal" />
-      <InfoModal open={open} setOpen={() => setOpen(!open)} size="large" ariaLabelledBy="modal9-label">
+      <InfoModal open={open} setOpen={() => setOpen(!open)} size="large" ariaLabelledBy="modal10-label">
+        <InfoModalHeader headerText="Lorem ipsum dolor sit amet" ingress="Lorem ipsum dolor sit amet" />
+        <InfoModalBody>
+          <Paragraph>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+            dolore magna aliqua. Senectus et netus et malesuada fames ac turpis egestas. Bibendum neque egestas congue
+            quisque. Mi eget mauris pharetra et ultrices neque ornare aenean. Neque gravida in fermentum et. Aliquet
+            nibh praesent tristique magna sit amet. Vel turpis nunc eget lorem dolor sed viverra ipsum nunc. Eget arcu
+            dictum varius duis at consectetur lorem donec. Ornare suspendisse sed nisi lacus sed viverra tellus in.
+            Fermentum posuere urna nec tincidunt praesent semper feugiat. Maecenas accumsan lacus vel facilisis.
+            Lobortis feugiat vivamus at augue eget arcu dictum varius.
+          </Paragraph>
+        </InfoModalBody>
+      </InfoModal>
+    </div>
+  );
+};
+
+export const FullscreenInfoModal = () => {
+  const [open, setOpen] = useState(false);
+  return (
+    <div style={{ height: '100px' }}>
+      <Button onClick={() => setOpen(!open)} text="Open modal" />
+      <InfoModal open={open} setOpen={() => setOpen(!open)} size="fullscreen" ariaLabelledBy="modal11-label">
         <InfoModalHeader headerText="Lorem ipsum dolor sit amet" ingress="Lorem ipsum dolor sit amet" />
         <InfoModalBody>
           <Paragraph>

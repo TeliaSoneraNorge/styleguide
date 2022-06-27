@@ -3,8 +3,8 @@ import { createPortal } from 'react-dom';
 import { getModalRoot } from './getModalRoot';
 import cn from 'classnames';
 import { useFocusTrap } from '../../utils/useFocusTrap';
-import { useEscapeListener } from '../Modal/useEscapeListener';
-import { useClickOutsideListener } from '../Modal/useClickOutsideListener';
+import { useEscapeListener } from './useEscapeListener';
+import { useClickOutsideListener } from './useClickOutsideListener';
 import Button from '../../atoms/Button';
 
 interface Props {
