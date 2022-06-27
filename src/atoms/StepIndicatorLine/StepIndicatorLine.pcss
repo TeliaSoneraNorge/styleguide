@@ -58,6 +58,12 @@
       align-items: center;
       height: 100%;
       user-select: none;
+      & svg {
+        width: 22px;
+        height: 22px;
+        min-width: 22px;
+        min-height: 22px;
+      }
     }
 
     &--active {
@@ -89,29 +95,13 @@
       }
     }
 
-    & > button {
-      background: transparent;
-      border: 0;
-      cursor: pointer;
-      min-width: 28px;
-      min-height: 28px;
-    }
-
     @media all and (min-width: 37.5em) {
       font-size: 1rem;
-      border-width: 3px;
+      border-width: 2px;
       height: calc(2 * var(--telia-step-indicator-line-height));
       width: calc(2 * var(--telia-step-indicator-line-height));
       margin: 0 var(--telia-step-indicator-line-height);
       line-height: calc(2 * var(--telia-step-indicator-line-height) - 3px);
-    }
-
-    &:first-of-type {
-      //margin-left: 0;
-    }
-
-    &:last-of-type {
-      //margin-right: 0;
     }
 
     &--complete {
@@ -134,7 +124,7 @@
     &--disabled {
       cursor: default;
       &:hover {
-        border: var(--telia-step-indicator-line-border) solid var(--darker-grey);
+        border: 2px solid var(--darker-grey);
       }
     }
   }

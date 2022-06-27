@@ -1,5 +1,6 @@
 import classnames from 'classnames';
 import React from 'react';
+import { CheckMarkIcon } from '../../atoms/Icon';
 
 const StepButton = (props: any) => {
   const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive } = props;
@@ -20,9 +21,13 @@ const StepButton = (props: any) => {
 
   const RenderText = () => (
     <div className="telia-step-indicator-line__step__circle-text">
-      <span>{number + 1}</span>
+      {isComplete && !isActive && <CheckMarkIcon />}
 
-      {isComplete && <span className="sr-only"> fullført</span>}
+      {isActive && <span>{number + 1}</span>}
+
+      {!isActive && !isComplete && <span>{number + 1}</span>}
+
+      {isComplete && !isActive && <span className="sr-only"> fullført</span>}
 
       {isActive && (
         <div className="telia-step-indicator-line__step--title">
