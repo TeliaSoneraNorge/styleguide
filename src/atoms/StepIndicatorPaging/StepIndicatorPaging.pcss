@@ -8,9 +8,11 @@
     padding-bottom: 40px;
     width: min-content;
     position: relative;
-    margin-left: 0.75em;
-    margin-right: 0.75em;
     margin: 0 auto;
+
+    @media screen and (max-width: 48em) {
+      padding-bottom: 25px;
+    }
   }
 
   &__list-item {
@@ -19,6 +21,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    @media screen and (max-width: 48em) {
+      width: 90px;
+    }
+
+    @media screen and (max-width: 37.5em) {
+      width: 60px;
+    }
 
     &--no-arrows {
       padding: 0;
@@ -53,10 +63,23 @@
       height: 28px;
       width: 28px;
 
+      @media screen and (max-width: 48em) {
+        height: 24px;
+        width: 24px;
+      }
+
       &--active {
         border-color: var(--core-purple);
         background-color: var(--core-purple);
         color: var(--white);
+        height: 32px;
+        width: 32px;
+        font-size: 18px;
+
+        @media screen and (max-width: 48em) {
+          height: 26px;
+          width: 26px;
+        }
 
         &:hover {
           cursor: default;
@@ -80,6 +103,11 @@
       font-family: 'TeliaSans-Regular';
       color: var(--black);
 
+      @media screen and (max-width: 48em) {
+        display: none;
+        visibility: hidden;
+      }
+
       & > span {
         display: inline-block;
         text-align: center;
@@ -87,6 +115,12 @@
 
       &--active {
         font-family: 'TeliaSans-Medium';
+
+        @media screen and (max-width: 48em) {
+          margin-left: calc(-75%);
+          display: block;
+          visibility: visible;
+        }
       }
     }
   }
@@ -105,6 +139,16 @@
       display: inline-block;
       width: 60px;
       margin-left: -60px;
+
+      @media screen and (max-width: 48em) {
+        width: 40px;
+        margin-left: -40px;
+      }
+
+      @media screen and (max-width: 37.5em) {
+        width: 20px;
+        margin-left: -20px;
+      }
     }
 
     &__button {
@@ -118,16 +162,29 @@
       & > svg {
         width: 28px;
         height: 28px;
+
+        @media screen and (max-width: 48em) {
+          width: 20px;
+          height: 20px;
+          margin-top: 4px;
+        }
       }
 
       &--right {
         left: 12px;
         float: right;
+        @media screen and (max-width: 48em) {
+          left: 20px;
+        }
       }
 
       &--left {
         left: -12px;
         float: left;
+
+        @media screen and (max-width: 48em) {
+          left: -20px;
+        }
       }
     }
   }
@@ -142,16 +199,28 @@
     width: calc(100% - 26px);
     margin-left: 14px;
 
+    @media screen and (max-width: 48em) {
+      width: calc(100% - 20px);
+      margin-left: 10px;
+    }
+
     &--right {
       width: 60px;
       left: 0;
       margin: 0;
+      @media screen and (max-width: 48em) {
+        width: 40px;
+      }
     }
 
     &--left {
       width: 60px;
       left: 2px;
       margin: 0;
+      @media screen and (max-width: 48em) {
+        width: 40px;
+        left: -20px;
+      }
     }
 
     &--complete {
@@ -167,9 +236,16 @@
     height: 100%;
     z-index: 2;
 
+    @media screen and (max-width: 48em) {
+      width: 40px;
+    }
+
     &--left {
       background: var(--telia-step-indicator-line-transparent-gradient);
       transform: rotate(-180deg);
+      @media screen and (max-width: 48em) {
+        margin-left: -20px;
+      }
     }
 
     &--right {

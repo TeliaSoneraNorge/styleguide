@@ -51,7 +51,7 @@ export const Default = () => {
           steps={stepData.filter((_, i) => i < 8)}
           navigationCompletesPreviousSteps={true}
           navigationClickable={true}
-          pageSize={3}
+          pageSize={4}
           completeButtonId={'buttonComplete'}
           previousButtonId={'buttonPrevious'}
           contentContainerCssClass={'container container--small'}
