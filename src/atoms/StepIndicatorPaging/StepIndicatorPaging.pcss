@@ -9,8 +9,8 @@
     width: min-content;
     border: solid 1px orange;
     position: relative;
-    margin-left: 1.5em;
-    margin-right: 1.5em;
+    margin-left: 0.75em;
+    margin-right: 0.75em;
   }
 
   &__list-item {
@@ -31,7 +31,12 @@
     border: 0;
     outline: 0;
     background: unset;
+    cursor: pointer;
     z-index: 3;
+
+    &--complete {
+      color: #990ae3;
+    }
 
     &__text {
       display: flex;
@@ -43,6 +48,16 @@
 
       height: 28px;
       width: 28px;
+
+      &--active {
+        border-color: var(--core-purple);
+        background-color: var(--core-purple);
+        color: var(--white);
+  
+        &:hover {
+          cursor: default;
+        }
+      }
 
       & svg {
         width: 18px;
@@ -58,7 +73,12 @@
       width: 150px;
       font-size: 16px;
       line-height: 1;
-      font-family: 'TeliaSans-Medium';
+      font-family: 'TeliaSans-Regular';
+      color: var(--black);
+
+      &--active {
+        font-family: 'TeliaSans-Medium';
+      }
     }
   }
 
@@ -80,9 +100,10 @@
 
     &__button {
       position: relative;
+      cursor: pointer;
+      background: transparent;
       border: 0;
       padding: 0;
-      background: transparent;
       z-index: 3;
 
       & > svg {

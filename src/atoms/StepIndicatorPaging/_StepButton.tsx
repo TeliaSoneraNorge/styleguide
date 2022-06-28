@@ -14,8 +14,13 @@ const StepButton = (props: any) => {
     }
   };
 
+  let css = 'telia-step-indicator-paging__button__text';
+  if (isActive) {
+    css += ' telia-step-indicator-paging__button__text--active';
+  }
+
   const RenderText = () => (
-    <div className="telia-step-indicator-paging__button__text">
+    <div className={css}>
       {isComplete && !isActive && <CheckMarkIcon />}
 
       {isActive && <span>{number + 1}</span>}
