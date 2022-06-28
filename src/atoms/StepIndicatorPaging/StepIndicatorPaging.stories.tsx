@@ -36,8 +36,9 @@ export const Default = () => {
       <StepIndicatorPaging
         steps={props.steps}
         navigationCompletesPreviousSteps={true}
-        displayArrowsOnEdgeSteps={true}
+        enablePagingOnlyOnEdgeSteps={true}
         ref={stepIndicatorLineRef}
+        contentContainerCssClass={'container container--small'}
       />
     );
   };
@@ -50,9 +51,12 @@ export const Default = () => {
           steps={stepData.filter((_, i) => i < 8)}
           navigationCompletesPreviousSteps={true}
           navigationClickable={true}
-          displayArrowsOnEdgeSteps={true}
+          pageSize={3}
+          pagingSize={2}
           completeButtonId={'buttonComplete'}
           previousButtonId={'buttonPrevious'}
+          contentContainerCssClass={'container container--small'}
+          disablePagingChangesActiveStep={true}
         />
       </div>
       {/* <div style={row}>

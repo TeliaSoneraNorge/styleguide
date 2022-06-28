@@ -36,7 +36,7 @@ export const Default = () => {
       <StepIndicatorLine
         steps={props.steps}
         navigationCompletesPreviousSteps={true}
-        displayArrowsOnEdgeSteps={true}
+        displayArrowsOnEdgeSteps={false}
         ref={stepIndicatorLineRef}
       />
     );
@@ -50,7 +50,7 @@ export const Default = () => {
           steps={stepData.filter((_, i) => i < 8)}
           navigationCompletesPreviousSteps={false}
           navigationClickable={false}
-          displayArrowsOnEdgeSteps={true}
+          displayArrowsOnEdgeSteps={false}
           completeButtonId={'buttonComplete'}
           incompleteButtonId={'buttonPrevious'}
         />

@@ -24,6 +24,12 @@ export interface Props {
   //Amount of steps to skip per "next" or "previous", defaults to 1 if undefined
   pagingSize?: number | undefined;
 
-  // to false, so left arrow appear as soon as you are not on the first step, assuming you have more steps than "pageSize", else arrows never shows anyways
-  displayArrowsOnEdgeSteps?: boolean | undefined;
+  //Set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow buttons are displayed
+  enablePagingOnlyOnEdgeSteps?: boolean | undefined;
+
+  //Add a container-size to the children rendered if needed or additional css class you want to wrap the 'step content' inside of
+  contentContainerCssClass?: string | null | undefined;
+
+  //Set to true to disable changing the step when using the 'arrows', it then just simply navigates through the step numbers
+  disablePagingChangesActiveStep?: boolean | undefined;
 }
