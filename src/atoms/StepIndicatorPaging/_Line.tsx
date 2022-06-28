@@ -1,13 +1,16 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export const Line: React.FC<{ isComplete: boolean }> = (props) => {
-  const { isComplete } = props;
+export const Line: React.FC<{ isComplete: boolean; className?: string }> = (props) => {
+  const { isComplete, className } = props;
+  const css = className != null ? ' ' + className : '';
   return (
-    <span
-      className={classnames('telia-step-indicator-paging__line', {
-        'telia-step-indicator-paging__line--complete': isComplete,
-      })}
+    <div
+      className={
+        classnames('telia-step-indicator-paging__line', {
+          'telia-step-indicator-paging__line--complete': isComplete,
+        }) + css
+      }
     />
   );
 };

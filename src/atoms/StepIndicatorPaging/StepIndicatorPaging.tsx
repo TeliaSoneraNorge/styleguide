@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useImperativeHandle } from 'react';
 import { Step } from './_Step';
 import { InternalStep } from './_InternalStep';
-import classnames from 'classnames';
 import { Icon } from '../../atoms/Icon';
 import { Props } from './_Props';
 import { Line } from './_Line';
 import StepButton from './_StepButton';
+import TransportLayer from './_TransparentLayer';
 
 const onPagingLeft = (
   completePreviousSteps: boolean,
@@ -231,26 +231,23 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const RenderArrow = (props: any) => {
     const { onPaging, iconName, isComplete } = props;
 
-    const modifier = iconName.includes('left') ? '--left' : '--right';
-
-    const dotsCssClass = classnames(
-      'telia-step-indicator-paging__dots ' + 'telia-step-indicator-paging__dots--' + modifier,
-      { 'telia-step-indicator-paging__dots--complete': isComplete }
-    );
+    const modifier = iconName.includes('left') ? 'left' : 'right';
 
     return (
-      <li className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow' + modifier}>
-        <div className={'telia-step-indicator-paging__arrow-container'}>
-          {/* <div className={dotsCssClass}></div> */}
-          <div
-            className={
-              'telia-step-indicator-paging__transparent-layer telia-step-indicator-paging__transparent-layer' + modifier
-            }
-          ></div>
-          <button type="button" onClick={onPaging} className={'telia-step-indicator-paging__arrow-button'}>
-            <RenderIcon iconName={iconName} />
-          </button>
-        </div>
+      <li className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
+        <Line isComplete={isComplete} className={'telia-step-indicator-paging__line--' + modifier} />
+
+        <TransportLayer modifier={modifier} />
+
+        <button
+          type="button"
+          onClick={onPaging}
+          className={
+            'telia-step-indicator-paging__arrow__button telia-step-indicator-paging__arrow__button--' + modifier
+          }
+        >
+          <RenderIcon iconName={iconName} />
+        </button>
       </li>
     );
   };
@@ -268,6 +265,8 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     if (isArrow) {
       css += ' telia-step-indicator-paging__list-item--arrow';
     }
+
+    //const isLineComplete = step.isComplete == true || (navigationCompletesPreviousSteps != false && state.currentNumber < step.number);
 
     return (
       <li key={step.number} className={css}>

@@ -5,7 +5,7 @@
     display: flex;
     list-style: none;
     padding: 0;
-    padding-bottom: 20px;
+    padding-bottom: 22px;
     width: min-content;
     border: solid 1px orange;
     position: relative;
@@ -14,12 +14,11 @@
   }
 
   &__list-item {
-    width: 140px;
+    width: 150px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
     border: solid 1px red;
 
     &--no-arrows {
@@ -32,6 +31,7 @@
     border: 0;
     outline: 0;
     background: unset;
+    z-index: 3;
 
     &__text {
       display: flex;
@@ -54,40 +54,95 @@
       position: absolute;
       left: 0;
       margin: 0;
-      top: 40px;
-      width: 140px;
+      top: 36px;
+      width: 150px;
+      font-size: 16px;
+      line-height: 1;
+      font-family: 'TeliaSans-Medium';
     }
   }
 
   &__arrow {
-    border: solid 1px black;
     position: absolute;
     width: auto;
     border: 0;
+    line-height: 0;
 
-    &--container {
-      line-height: 0;
+    &--left {
+    }
+
+    &--right {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      margin-left: -60px;
+    }
+
+    &__button {
+      position: relative;
+      border: 0;
+      padding: 0;
+      background: transparent;
+      z-index: 3;
+
+      & > svg {
+        width: 28px;
+        height: 28px;
+      }
+
+      &--right {
+        left: 12px;
+        float: right;
+      }
+
+      &--left {
+        left: -12px;
+        float: left;
+      }
     }
   }
 
-  &__arrow--left {
-    margin-left: -28px;
-    background: red;
+  &__line {
+    position: absolute;
+    cursor: default;
+    border-bottom: 4px dotted #606064 !important;
+    z-index: 1;
+    top: calc(50% - 2px);
+    left: 50%;
+    width: calc(100% - 26px);
+    margin-left: 14px;
+
+    &--right {
+      width: 60px;
+      left: 0;
+      margin: 0;
+    }
+
+    &--left {
+      width: 60px;
+      left: 2px;
+      margin: 0;
+    }
+
+    &--complete {
+      border-bottom: 4px solid var(--core-purple) !important;
+    }
   }
 
-  &__arrow--right {
-    left: 100%;
-    background: blue;
-  }
+  &__transparent-layer {
+    position: absolute;
+    cursor: default;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
 
-  &__arrow-button {
-    border: 0;
-    padding: 0;
-    background: transparent;
+    &--left {
+      background: var(--telia-step-indicator-line-transparent-gradient);
+      transform: rotate(-180deg);
+    }
 
-    & > svg {
-      width: 28px;
-      height: 28px;
+    &--right {
+      background: var(--telia-step-indicator-line-transparent-gradient);
     }
   }
 }
