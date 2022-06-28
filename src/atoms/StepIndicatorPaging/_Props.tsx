@@ -4,7 +4,7 @@ export interface Props {
   steps?: Step[] | null | undefined;
 
   //Defaults to 1 if undefined, 1 equals step[0]
-  activeStepNumber?: number | undefined;
+  initialStepNumber?: number | undefined;
 
   //Clicking a step in the navigation completes previous step, set to false to avoid it
   navigationCompletesPreviousSteps?: boolean | undefined;
@@ -20,9 +20,6 @@ export interface Props {
 
   //Amount of steps to display before 'paging' gets activated, defaults to 5 if undefind
   pageSize?: number | undefined;
-
-  //Amount of steps to skip per "next" or "previous", defaults to 1 if undefined
-  pagingSize?: number | undefined;
 
   //Set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow buttons are displayed
   enablePagingOnlyOnEdgeSteps?: boolean | undefined;

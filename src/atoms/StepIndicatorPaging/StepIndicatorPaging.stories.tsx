@@ -47,16 +47,15 @@ export const Default = () => {
     <>
       <div style={row}>
         <StepIndicatorPaging
-          activeStepNumber={0}
+          initialStepNumber={0}
           steps={stepData.filter((_, i) => i < 8)}
           navigationCompletesPreviousSteps={true}
           navigationClickable={true}
           pageSize={3}
-          pagingSize={2}
           completeButtonId={'buttonComplete'}
           previousButtonId={'buttonPrevious'}
           contentContainerCssClass={'container container--small'}
-          disablePagingChangesActiveStep={true}
+          disablePagingChangesActiveStep={false}
         />
       </div>
       {/* <div style={row}>
