@@ -19,6 +19,7 @@ export interface Props {
   navigationClickable?: boolean | undefined;
 
   //Amount of steps to display before 'paging' gets activated, defaults to 5 if undefind
+  //NOTE: Only up to 5 is supported on smallest mobile view (320px width)
   pageSize?: number | undefined;
 
   //Set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow buttons are displayed

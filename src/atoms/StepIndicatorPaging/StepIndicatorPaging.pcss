@@ -29,6 +29,9 @@
     @media screen and (max-width: 37.5em) {
       width: 60px;
     }
+    @media screen and (max-width: 23em) {
+      width: 56px;
+    }
 
     &--no-arrows {
       padding: 0;
@@ -98,7 +101,7 @@
       position: absolute;
       left: 0;
       margin: 0;
-      top: 36px;
+      top: 40px;
       width: 150px;
       font-size: 16px;
       line-height: 1;
@@ -122,6 +125,12 @@
           margin-left: calc(-75%);
           display: block;
           visibility: visible;
+        }
+
+        @media screen and (max-width: 24em) {
+          margin-left: calc(-25%);
+          font-size: 14px;
+          max-width: 80px;
         }
       }
     }
@@ -178,6 +187,9 @@
         @media screen and (max-width: 48em) {
           left: 20px;
         }
+        @media screen and (max-width: 24em) {
+          left: 8px;
+        }
       }
 
       &--left {
@@ -186,6 +198,10 @@
 
         @media screen and (max-width: 48em) {
           left: -20px;
+        }
+
+        @media screen and (max-width: 24em) {
+          left: -8px;
         }
       }
     }
@@ -214,6 +230,9 @@
         width: 30px;
         left: 4px;
       }
+      @media screen and (max-width: 24em) {
+        visibility: hidden;
+      }
     }
 
     &--left {
@@ -223,6 +242,9 @@
       @media screen and (max-width: 48em) {
         width: 40px;
         left: -20px;
+      }
+      @media screen and (max-width: 24em) {
+        visibility: hidden;
       }
     }
 
@@ -244,15 +266,23 @@
     }
 
     &--left {
-      background: var(--telia-step-indicator-line-transparent-gradient);
+      background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
       transform: rotate(-180deg);
+
       @media screen and (max-width: 48em) {
         margin-left: -20px;
+      }
+      @media screen and (max-width: 24em) {
+        visibility: hidden;
       }
     }
 
     &--right {
-      background: var(--telia-step-indicator-line-transparent-gradient);
+      background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
+
+      @media screen and (max-width: 24em) {
+        visibility: hidden;
+      }
     }
   }
 
