@@ -43,6 +43,7 @@
     cursor: pointer;
     z-index: 3;
     font-size: 14px;
+    user-select: none;
 
     &--complete {
       color: #990ae3;
@@ -93,6 +94,7 @@
     }
 
     &__title {
+      user-select: none;
       position: absolute;
       left: 0;
       margin: 0;
@@ -209,7 +211,8 @@
       left: 0;
       margin: 0;
       @media screen and (max-width: 48em) {
-        width: 40px;
+        width: 30px;
+        left: 4px;
       }
     }
 
