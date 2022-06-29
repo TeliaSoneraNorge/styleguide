@@ -13,6 +13,14 @@
     @media screen and (max-width: 48em) {
       padding-bottom: 25px;
     }
+
+    &--left-mask {
+      -webkit-mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0) 0,
+        black calc(5.9rem * var(--voca-rem-multiplier))
+      );
+    }
   }
 
   &__list-item {
@@ -50,6 +58,9 @@
 
     &--complete {
       color: #990ae3;
+      & > div {
+        border-color: var(--core-purple) !important;
+      }
     }
 
     &--disabled {
@@ -61,7 +72,7 @@
       justify-content: center;
       align-items: center;
 
-      border: 2px solid var(--core-purple);
+      border: 2px solid #606064;
       border-radius: 50%;
 
       height: 28px;
@@ -168,7 +179,8 @@
       background: transparent;
       border: 0;
       padding: 0;
-      z-index: 3;
+      z-index: 5;
+      top: 2px;
 
       & > svg {
         width: 28px;
@@ -182,7 +194,7 @@
       }
 
       &--right {
-        left: 12px;
+        left: 6px;
         float: right;
         @media screen and (max-width: 48em) {
           left: 20px;
@@ -193,7 +205,7 @@
       }
 
       &--left {
-        left: -12px;
+        left: -6px;
         float: left;
 
         @media screen and (max-width: 48em) {
@@ -223,12 +235,11 @@
     }
 
     &--right {
-      width: 60px;
+      width: 30px;
       left: 0;
       margin: 0;
       @media screen and (max-width: 48em) {
-        width: 30px;
-        left: 4px;
+        width: 20px;
       }
       @media screen and (max-width: 24em) {
         visibility: hidden;
@@ -236,12 +247,11 @@
     }
 
     &--left {
-      width: 60px;
-      left: 2px;
+      width: 30px;
+      left: 32px;
       margin: 0;
       @media screen and (max-width: 48em) {
-        width: 40px;
-        left: -20px;
+        width: 20px;
       }
       @media screen and (max-width: 24em) {
         visibility: hidden;
@@ -257,24 +267,16 @@
   &__transparent-layer {
     position: absolute;
     cursor: default;
-    width: 60px;
+    width: 65px;
     height: 100%;
-    z-index: 2;
-
-    @media screen and (max-width: 48em) {
-      width: 40px;
-    }
+    z-index: 4;
+    width: 65px;
 
     &--left {
+      margin-left: 6px;
+
       background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
       transform: rotate(-180deg);
-
-      @media screen and (max-width: 48em) {
-        margin-left: -20px;
-      }
-      @media screen and (max-width: 24em) {
-        visibility: hidden;
-      }
     }
 
     &--right {
