@@ -50,6 +50,7 @@ export const Default = () => {
           navigationCompletesPreviousSteps={false}
           navigationClickable={true}
           pageSize={5}
+          hideStepNumbers={false}
           completeButtonId={'buttonComplete'}
           previousButtonId={'buttonPrevious'}
           contentContainerCssClass={'container container--small'}

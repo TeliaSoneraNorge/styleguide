@@ -28,12 +28,17 @@ const onPagingLeft = (
 
   const maxStepNumber = maxStepCount - pageSize + 1;
 
-  if (number != null) {
+  const isStepButtonClicked = number != null;
+  const isArrowClicked = !isStepButtonClicked;
+
+  if (isStepButtonClicked) {
     if (number > 0) {
       activeStepNumber = number - 1;
     }
 
-    minStepNumber = number - 1;
+    if (minStepNumber < activeStepNumber - pageSize || minStepNumber > activeStepNumber) {
+      minStepNumber = number - 1;
+    }
 
     if (minStepNumber < 0) {
       minStepNumber = 0;
@@ -41,16 +46,21 @@ const onPagingLeft = (
     if (minStepNumber > maxStepNumber) {
       minStepNumber = maxStepNumber;
     }
-  } else if (minStepNumber > 0) {
-    if (changeActiveStep) {
-      if (activeStepNumber > 0) {
-        activeStepNumber -= 1;
-      }
-    }
-    minStepNumber -= 1;
-  } else if (activeStepNumber > 0) {
-    activeStepNumber -= 1;
   }
+
+  if (isArrowClicked) {
+    if (minStepNumber > 0) {
+      if (changeActiveStep) {
+        if (activeStepNumber > 0) {
+          activeStepNumber -= 1;
+        }
+      }
+      minStepNumber -= 1;
+    } else if (activeStepNumber > 0) {
+      activeStepNumber -= 1;
+    }
+  }
+
   updateState(state.steps, activeStepNumber, minStepNumber);
 };
 
@@ -71,7 +81,10 @@ const onPagingRight = (
 
   const maxStepNumber = maxStepCount - pageSize + 1;
 
-  if (number != null) {
+  const isStepButtonClicked = number != null;
+  const isArrowClicked = !isStepButtonClicked;
+
+  if (isStepButtonClicked) {
     if (number < maxStepCount) {
       if (completePreviousSteps) {
         steps[number].isComplete = true;
@@ -85,20 +98,24 @@ const onPagingRight = (
     } else if (minStepNumber > maxStepNumber) {
       minStepNumber = maxStepNumber;
     }
-  } else if (changeActiveStep) {
-    if (activeStepNumber < maxStepCount) {
-      if (completePreviousSteps) {
-        steps[activeStepNumber].isComplete = true;
+  }
+
+  if (isArrowClicked) {
+    if (changeActiveStep) {
+      if (activeStepNumber < maxStepCount) {
+        if (completePreviousSteps) {
+          steps[activeStepNumber].isComplete = true;
+        }
+        activeStepNumber += 1;
       }
-      activeStepNumber += 1;
-    }
-    if (minStepNumber <= maxStepNumber) {
-      if (activeStepNumber > pageSize - 1) {
-        minStepNumber += 1;
+      if (minStepNumber <= maxStepNumber) {
+        if (activeStepNumber > pageSize - 1) {
+          minStepNumber += 1;
+        }
       }
+    } else if (minStepNumber <= maxStepNumber) {
+      minStepNumber += 1;
     }
-  } else if (minStepNumber <= maxStepNumber) {
-    minStepNumber += 1;
   }
   updateState(steps, activeStepNumber, minStepNumber);
 };
@@ -129,6 +146,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     navigationClickable,
     enablePagingOnlyOnEdgeSteps,
     contentContainerCssClass,
+    hideStepNumbers,
   } = props;
 
   const completePreviousSteps = navigationCompletesPreviousSteps != false;
@@ -318,6 +336,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           isClickable={props.navigationClickable != false}
           isActive={step.number === state.currentActiveStepNumber}
           isComplete={step.isComplete == true}
+          hideStepNumber={hideStepNumbers == true}
           onStepButtonClick={() => onStepButtonClick(step.number)}
         />
 

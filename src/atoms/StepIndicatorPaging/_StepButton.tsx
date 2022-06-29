@@ -3,7 +3,7 @@ import React from 'react';
 import { CheckMarkIcon } from '../../atoms/Icon';
 
 const StepButton = (props: any) => {
-  const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive } = props;
+  const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive, hideStepNumber } = props;
 
   const onStepClick = () => {
     if (url) {
@@ -23,9 +23,9 @@ const StepButton = (props: any) => {
     <div className={css}>
       {isComplete && !isActive && <CheckMarkIcon />}
 
-      {isActive && <span>{number + 1}</span>}
+      {hideStepNumber != true && isActive && <span>{number + 1}</span>}
 
-      {!isActive && !isComplete && <span>{number + 1}</span>}
+      {hideStepNumber != true && !isActive && !isComplete && <span>{number + 1}</span>}
 
       {isComplete && !isActive && <span className="sr-only"> fullført</span>}
 
