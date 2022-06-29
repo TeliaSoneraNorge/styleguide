@@ -82,7 +82,7 @@ const onPagingRight = (
   const maxStepNumber = maxStepCount - pageSize + 1;
 
   const isStepButtonClicked = number != null;
-  const isArrowClicked = !isStepButtonClicked;
+  const isArrowClicked = isStepButtonClicked == false;
 
   if (isStepButtonClicked) {
     if (number < maxStepCount) {
@@ -123,15 +123,15 @@ const onPagingRight = (
 const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   useImperativeHandle(ref, () => ({
     onStepComplete: (number: number) => {
-      if (props.steps == null) {
-        return <></>;
+      if (props.steps == null || number < 0) {
+        return;
       }
       onPagingRight(true, pageSize, maxStepCount, state, updateState, true, number);
     },
 
-    onStepIncomplete: (number: number) => {
-      if (props.steps == null) {
-        return <></>;
+    onPreviousStepClick: (number: number) => {
+      if (props.steps == null || number < 0) {
+        return;
       }
       onPagingLeft(maxStepCount, pageSize, state, updateState, true, number);
     },
@@ -144,9 +144,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const {
     navigationCompletesPreviousSteps,
     navigationClickable,
-    enablePagingOnlyOnEdgeSteps,
+    enableArrowsOnlyOnEdgeSteps,
     contentContainerCssClass,
-    hideStepNumbers,
+    //hideStepNumbers,
   } = props;
 
   const completePreviousSteps = navigationCompletesPreviousSteps != false;
@@ -220,18 +220,25 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   };
 
   const getPagingArrows = () => {
-    const arrowSteps = [];
+    const arrowSteps: any[] = [];
 
-    if (!enablePagingOnlyOnEdgeSteps && state.minStepNumber > 0 && maxStepCount > pageSize) {
+    if (maxStepCount <= pageSize) {
+      return arrowSteps;
+    }
+
+    if (enableArrowsOnlyOnEdgeSteps == true && state.minStepNumber >= pageSize) {
+      arrowSteps.push({ arrowType: 'LEFT' });
+    } else if (state.minStepNumber > 0) {
       arrowSteps.push({ arrowType: 'LEFT' });
     }
 
     if (
-      (state.minStepNumber < state.steps.length - pageSize &&
-        maxStepCount > pageSize &&
-        !enablePagingOnlyOnEdgeSteps) ||
-      (enablePagingOnlyOnEdgeSteps && state.minStepNumber >= pageSize - 1)
+      enableArrowsOnlyOnEdgeSteps == true &&
+      state.minStepNumber >= pageSize &&
+      state.minStepNumber < state.steps.length - pageSize
     ) {
+      arrowSteps.push({ arrowType: 'RIGHT' });
+    } else if (state.minStepNumber < state.steps.length - pageSize) {
       arrowSteps.push({ arrowType: 'RIGHT' });
     }
     return arrowSteps;
@@ -336,7 +343,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           isClickable={props.navigationClickable != false}
           isActive={step.number === state.currentActiveStepNumber}
           isComplete={step.isComplete == true}
-          hideStepNumber={hideStepNumbers == true}
+          // hideStepNumber={hideStepNumbers == true}
           onStepButtonClick={() => onStepButtonClick(step.number)}
         />
 

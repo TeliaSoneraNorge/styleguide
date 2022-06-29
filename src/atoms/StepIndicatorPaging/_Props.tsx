@@ -23,11 +23,12 @@ export interface Props {
   pageSize?: number | undefined;
 
   //Set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow buttons are displayed
-  enablePagingOnlyOnEdgeSteps?: boolean | undefined;
+  enableArrowsOnlyOnEdgeSteps?: boolean | undefined;
 
   //Add a container-snavigationClickableize to the children rendered if needed or additional css class you want to wrap the 'step content' inside of
   contentContainerCssClass?: string | null | undefined;
 
   //Hide step numbers if ordering them 'does not make sense', might consider different component like Tabs? Radio?
-  hideStepNumbers?: boolean | undefined;
+  //hideStepNumbers?: boolean | undefined;
+  //Note: Not allowed "per design" so commented out
 }

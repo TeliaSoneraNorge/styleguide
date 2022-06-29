@@ -10,69 +10,60 @@ export default {
   component: StepIndicatorPaging,
 };
 
-const row = {
-  display: 'block',
-  marginTop: '2em',
-  marginBottom: '2em',
-};
-
-let stepIndicatorLineRef: any;
+let stepIndicatorPagingRef: any;
 
 const onCompleteStepClick = (number: number) => {
-  (stepIndicatorLineRef.current as any).onStepComplete(number);
+  console.log('Step movement click next');
+  (stepIndicatorPagingRef.current as any).onStepComplete(number);
 };
 
-const onIncompleteStepClick = (number: number) => {
-  (stepIndicatorLineRef.current as any).onStepIncomplete(number);
+const onPreviousStepClick = (number: number) => {
+  (stepIndicatorPagingRef.current as any).onPreviousStepClick(number);
 };
 
-export const Default = () => {
-  stepIndicatorLineRef = useRef();
+// export const AsDesigned = () => {
+//   return (
+//     <StepIndicatorPaging
+//       initialStepNumber={0}
+//       steps={StepData.filter((_, i) => i < 5)}
+//       navigationCompletesPreviousSteps={false}
+//       navigationClickable={true}
+//       pageSize={5}
+//       hideStepNumbers={false}
+//       completeButtonId={'buttonComplete'}
+//       previousButtonId={'buttonPrevious'}
+//       contentContainerCssClass={'container container--small'}
+//     />
+//   );
+// };
 
-  const StepIndicatorLineRef = (props: any) => {
-    return (
-      <StepIndicatorPaging
-        steps={props.steps}
-        navigationCompletesPreviousSteps={true}
-        enablePagingOnlyOnEdgeSteps={true}
-        ref={stepIndicatorLineRef}
-        contentContainerCssClass={'container container--small'}
-      />
-    );
-  };
+export const WithChildrenAsComponentsNoPaging = () => {
+  stepIndicatorPagingRef = useRef();
 
   return (
-    <>
-      <div style={row}>
-        <StepIndicatorPaging
-          initialStepNumber={0}
-          steps={StepData.filter((_, i) => i < 8)}
-          navigationCompletesPreviousSteps={false}
-          navigationClickable={true}
-          pageSize={5}
-          hideStepNumbers={false}
-          completeButtonId={'buttonComplete'}
-          previousButtonId={'buttonPrevious'}
-          contentContainerCssClass={'container container--small'}
-        />
-      </div>
-      {/* <div style={row}>
-        <StepIndicatorLineRef steps={stepDataWithComponentChildren.filter((_, i) => i < 8)} />
-      </div> */}
-    </>
+    <StepIndicatorPaging
+      steps={stepDataWithComponentChildren.filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      enableArrowsOnlyOnEdgeSteps={true}
+      pageSize={5}
+      //hideStepNumbers={false}
+      ref={stepIndicatorPagingRef}
+      contentContainerCssClass={'container container--small'}
+    />
   );
 };
 
-export const stepDataWithComponentChildren: Step[] = [
+const stepDataWithComponentChildren: Step[] = [
   {
     title: 'Step 1',
     url: '',
-    isComplete: false,
+    isComplete: true,
     children: (
       <div>
         <h2>Step 1...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(1)} />
-        <Button text={'Next/Complete1'} onClick={() => onCompleteStepClick(1)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(0)} />
+        <Button text={'Next/Complete1'} onClick={() => onCompleteStepClick(0)} />{' '}
       </div>
     ),
   },
@@ -83,8 +74,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 2...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(2)} />
-        <Button text={'Next/Complete2'} onClick={() => onCompleteStepClick(2)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(1)} />
+        <Button text={'Next/Complete2'} onClick={() => onCompleteStepClick(1)} />{' '}
       </div>
     ),
   },
@@ -95,8 +86,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 3...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(3)} />
-        <Button text={'Next/Complete3'} onClick={() => onCompleteStepClick(3)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(2)} />
+        <Button text={'Next/Complete3'} onClick={() => onCompleteStepClick(2)} />{' '}
       </div>
     ),
   },
@@ -107,8 +98,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 4...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(4)} />
-        <Button text={'Next/Complete4'} onClick={() => onCompleteStepClick(4)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(3)} />
+        <Button text={'Next/Complete4'} onClick={() => onCompleteStepClick(3)} />{' '}
       </div>
     ),
   },
@@ -119,8 +110,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 5...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(5)} />
-        <Button text={'Next/Complete5'} onClick={() => onCompleteStepClick(5)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(4)} />
+        <Button text={'Next/Complete5'} onClick={() => onCompleteStepClick(4)} />{' '}
       </div>
     ),
   },
@@ -131,8 +122,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 6...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(6)} />
-        <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(6)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(5)} />
+        <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(5)} />{' '}
       </div>
     ),
   },
@@ -143,8 +134,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 7...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(7)} />
-        <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(7)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(6)} />
+        <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(6)} />{' '}
       </div>
     ),
   },
@@ -155,8 +146,8 @@ export const stepDataWithComponentChildren: Step[] = [
     children: (
       <div>
         <h2>Step 8...</h2>
-        <Button text={'Prev'} onClick={() => onIncompleteStepClick(8)} />
-        <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(8)} />{' '}
+        <Button text={'Prev'} onClick={() => onPreviousStepClick(7)} />
+        <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(7)} />{' '}
       </div>
     ),
   },
