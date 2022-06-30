@@ -130,22 +130,6 @@ export const WithChildrenAsComponentsSmallPageSize = () => {
   );
 };
 
-export const WithChildrenAsComponentsSmallPageSize = () => {
-  stepIndicatorPagingRef = useRef();
-  return (
-    <StepIndicatorPaging
-      steps={stepDataWithComponentChildren.filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      enableArrowsOnlyOnEdgeSteps={true}
-      pageSize={3}
-      //hideStepNumbers={false}
-      ref={stepIndicatorPagingRef}
-      contentContainerCssClass={'container container--small'}
-    />
-  );
-};
-
 const stepDataWithComponentChildren: Step[] = [
   {
     title: 'Step 1',
