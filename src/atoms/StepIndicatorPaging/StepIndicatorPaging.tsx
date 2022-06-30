@@ -4,14 +4,41 @@ import { InternalStep } from './_InternalStep';
 import { Icon } from '../../atoms/Icon';
 import { Props } from './_Props';
 import { Line } from './_Line';
-import StepButton from './_StepButton';
-import TransportLayer from './_TransparentLayer';
+import { TransportLayer } from './_TransparentLayer';
+import { StepButton } from './_StepButton';
 
-const getMinStepNumber = (pageSize: number, currentActiveStepNumber: number) => {
-  if (currentActiveStepNumber > pageSize) {
-    return currentActiveStepNumber - pageSize;
+const getMinStepNumber = (number: number, pageSize: number, maxStepCount: number, forward: boolean) => {
+  if (number <= 0) {
+    return 0;
   }
-  return 0;
+
+  if (forward) {
+    number = number - pageSize + 2;
+    if (number < 0) {
+      number = 0;
+    } else if (number + pageSize > maxStepCount) {
+      number = maxStepCount - pageSize + 1;
+    }
+  }
+
+  if (!forward) {
+    if (number > maxStepCount - pageSize + 1) {
+      number = maxStepCount - pageSize + 1;
+    } else {
+      number = number - 1;
+    }
+  }
+  return number;
+
+  // NOTE: If you want to have the highest number active to be the "last" on right side, or smallest on left side...
+  // so next and previous step buttons are not shown, need to click arrows for that
+  // let minStepNumber = number - pageSize + 2;
+  // if (minStepNumber < 0) {
+  //   minStepNumber = 0;
+  // } else if (minStepNumber > maxStepNumber) {
+  //   minStepNumber = maxStepNumber;
+  // }
+  // return minStepNumber
 };
 
 const onPagingLeft = (
@@ -22,11 +49,7 @@ const onPagingLeft = (
   changeActiveStep: boolean,
   number?: number | undefined
 ) => {
-  let minStepNumber = state.minStepNumber;
-
   let activeStepNumber = state.currentActiveStepNumber;
-
-  const maxStepNumber = maxStepCount - pageSize + 1;
 
   const isStepButtonClicked = number != null;
   const isArrowClicked = !isStepButtonClicked;
@@ -35,33 +58,30 @@ const onPagingLeft = (
     if (number > 0) {
       activeStepNumber = number - 1;
     }
-
-    if (minStepNumber < activeStepNumber - pageSize || minStepNumber > activeStepNumber) {
-      minStepNumber = number - 1;
-    }
-
-    if (minStepNumber < 0) {
-      minStepNumber = 0;
-    }
-    if (minStepNumber > maxStepNumber) {
-      minStepNumber = maxStepNumber;
-    }
   }
 
   if (isArrowClicked) {
-    if (minStepNumber > 0) {
-      if (changeActiveStep) {
-        if (activeStepNumber > 0) {
-          activeStepNumber -= 1;
-        }
+    if (changeActiveStep) {
+      if (activeStepNumber > 0) {
+        activeStepNumber -= 1;
       }
-      minStepNumber -= 1;
     } else if (activeStepNumber > 0) {
       activeStepNumber -= 1;
     }
   }
 
-  updateState(state.steps, activeStepNumber, minStepNumber);
+  const difference = Math.abs(state.currentActiveStepNumber - activeStepNumber);
+  const minDifference = Math.abs(state.minStepNumber - activeStepNumber);
+  const maxDifference = Math.abs(state.minStepNumber + pageSize - activeStepNumber);
+
+  const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
+
+  if (insideCurrentRange) {
+    updateState(state.steps, activeStepNumber, state.minStepNumber);
+  } else {
+    const minStepNumber = getMinStepNumber(activeStepNumber, pageSize, maxStepCount, false);
+    updateState(state.steps, activeStepNumber, minStepNumber);
+  }
 };
 
 const onPagingRight = (
@@ -75,11 +95,7 @@ const onPagingRight = (
 ) => {
   const steps = state.steps;
 
-  let minStepNumber = state.minStepNumber;
-
   let activeStepNumber = state.currentActiveStepNumber;
-
-  const maxStepNumber = maxStepCount - pageSize + 1;
 
   const isCompleteButtonClicked = number != null;
   const isArrowClicked = isCompleteButtonClicked == false;
@@ -93,13 +109,6 @@ const onPagingRight = (
         activeStepNumber = number + 1;
       }
     }
-
-    minStepNumber = number - pageSize + 2;
-    if (minStepNumber < 0) {
-      minStepNumber = 0;
-    } else if (minStepNumber > maxStepNumber) {
-      minStepNumber = maxStepNumber;
-    }
   }
 
   if (isArrowClicked) {
@@ -110,20 +119,28 @@ const onPagingRight = (
         }
         activeStepNumber += 1;
       }
-      if (minStepNumber <= maxStepNumber) {
-        if (activeStepNumber > pageSize - 1) {
-          minStepNumber += 1;
-        }
-      }
-    } else if (minStepNumber <= maxStepNumber) {
-      minStepNumber += 1;
     }
   }
-  updateState(steps, activeStepNumber, minStepNumber);
+
+  const difference = Math.abs(state.currentActiveStepNumber - activeStepNumber);
+  const minDifference = Math.abs(state.minStepNumber - activeStepNumber);
+  const maxDifference = Math.abs(state.minStepNumber + pageSize - activeStepNumber);
+
+  const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
+
+  if (insideCurrentRange) {
+    updateState(steps, activeStepNumber, state.minStepNumber);
+  } else {
+    const minStepNumber = getMinStepNumber(activeStepNumber, pageSize, maxStepCount, true);
+    updateState(steps, activeStepNumber, minStepNumber);
+  }
 };
 
+// eslint-disable-next-line react/display-name
 const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
+  // eslint-disable-next-line react/display-name
   useImperativeHandle(ref, () => ({
+    displayName: '1',
     onStepComplete: (number: number) => {
       if (props.steps == null || number < 0) {
         return;
@@ -157,9 +174,13 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const initialStepNumber =
     props.initialStepNumber != null && props.initialStepNumber > 0 ? props.initialStepNumber - 1 : 0;
 
+  if (pageSize < 2) {
+    console.error('StepIndicatorPaging: PageSize lower than 2 currently not implemented');
+  }
+
   const [state, setState] = useState({
     steps: props.steps,
-    minStepNumber: initialStepNumber, //controls 'current navigation step numbers', min to 'pageSize' is shown, and its arrows
+    minStepNumber: getMinStepNumber(initialStepNumber, pageSize, maxStepCount, true), //controls 'current navigation step numbers', min to 'pageSize' is shown, and its arrows
     currentActiveStepNumber: initialStepNumber, //controls which chilren/content is shown for current step, and in navigation: which step is the active one
   });
 
@@ -216,9 +237,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   };
 
   const getVisibleSteps = () => {
-    const minIndex = state.minStepNumber;
-    const maxIndex = minIndex + pageSize;
-    return internalSteps.filter((_, i) => i >= minIndex && i < maxIndex);
+    const minStepNumber = state.minStepNumber;
+    const maxIndex = minStepNumber + pageSize;
+    return internalSteps.filter((_, i) => i >= minStepNumber && i < maxIndex);
   };
 
   const getPagingArrows = () => {
@@ -273,9 +294,19 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       });
     }
 
-    const minIndex = getMinStepNumber(pageSize, number + 1);
+    const forward = state.currentActiveStepNumber < number;
 
-    updateState(steps, number, minIndex);
+    const difference = Math.abs(state.currentActiveStepNumber - number);
+    const minDifference = Math.abs(state.minStepNumber - number);
+    const maxDifference = Math.abs(state.minStepNumber + pageSize - number);
+
+    const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
+    if (insideCurrentRange) {
+      updateState(steps, number, state.minStepNumber);
+    } else {
+      const minStepNumber = getMinStepNumber(number, pageSize, maxStepCount, forward);
+      updateState(steps, number, minStepNumber);
+    }
   };
 
   const RenderChildren = () => {

@@ -38,8 +38,8 @@ export const AsDesigned = () => {
 export const InitialStep3 = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={3}
-      steps={StepData().filter((_, i) => i < 5)}
+      initialStepNumber={6}
+      steps={StepData().filter((_, i) => i < 8)}
       navigationCompletesPreviousSteps={true}
       navigationClickable={true}
       pageSize={5}

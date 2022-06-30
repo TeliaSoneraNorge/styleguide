@@ -2,7 +2,7 @@ import classnames from 'classnames';
 import React from 'react';
 import { CheckMarkIcon } from '../../atoms/Icon';
 
-const StepButton = (props: any) => {
+export const StepButton = (props: any) => {
   const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive, hideStepNumber } = props;
 
   const onStepClick = () => {
@@ -68,5 +68,3 @@ const StepButton = (props: any) => {
     </>
   );
 };
-
-export default StepButton;

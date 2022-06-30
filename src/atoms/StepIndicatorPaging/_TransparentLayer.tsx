@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TransportLayer = (props: any) => {
+export const TransportLayer = (props: any) => {
   const { modifier } = props;
   return (
     <div
@@ -10,5 +10,3 @@ const TransportLayer = (props: any) => {
     ></div>
   );
 };
-
-export default TransportLayer;
