@@ -75,6 +75,14 @@ export const Default = ({}) => {
           color={color}
         />
         <ListCard
+          title="ListCard w/href"
+          href="/?path=/story/business-list--card"
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          caption="shadow"
+          color={color}
+        />
+        <ListCard
           title="ListCard w/onClick and active"
           onClick={setNextStyle}
           decorator={<Avatar text="CLC" />}
