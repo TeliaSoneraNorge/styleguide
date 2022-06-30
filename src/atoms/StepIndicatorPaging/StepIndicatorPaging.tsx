@@ -29,16 +29,6 @@ const getMinStepNumber = (number: number, pageSize: number, maxStepCount: number
     }
   }
   return number;
-
-  // NOTE: If you want to have the highest number active to be the "last" on right side, or smallest on left side...
-  // so next and previous step buttons are not shown, need to click arrows for that
-  // let minStepNumber = number - pageSize + 2;
-  // if (minStepNumber < 0) {
-  //   minStepNumber = 0;
-  // } else if (minStepNumber > maxStepNumber) {
-  //   minStepNumber = maxStepNumber;
-  // }
-  // return minStepNumber
 };
 
 const onPagingLeft = (
