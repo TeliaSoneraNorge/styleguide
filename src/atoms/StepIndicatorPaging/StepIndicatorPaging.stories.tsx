@@ -35,6 +35,21 @@ export const AsDesigned = () => {
   );
 };
 
+export const InitialStep3 = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={3}
+      steps={StepData().filter((_, i) => i < 5)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
 export const WithPaging = () => {
   return (
     <StepIndicatorPaging

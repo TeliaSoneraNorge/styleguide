@@ -28,7 +28,7 @@ export interface Props {
   //Add a container-snavigationClickableize to the children rendered if needed or additional css class you want to wrap the 'step content' inside of
   contentContainerCssClass?: string | null | undefined;
 
-  //Hide step numbers if ordering them 'does not make sense', might consider different component like Tabs? Radio?
+  //Hide step numbers if numbering them 'does not make sense', might consider different component like Tabs? Radio? But they look and feel different
   //hideStepNumbers?: boolean | undefined;
   //Note: Not allowed "per design" so commented out
 }

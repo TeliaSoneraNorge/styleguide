@@ -72,7 +72,7 @@
       justify-content: center;
       align-items: center;
 
-      border: 2px solid #606064;
+      border: 2px solid var(--darker-grey);
       border-radius: 50%;
 
       height: 28px;
@@ -141,6 +141,8 @@
         @media screen and (max-width: 24em) {
           font-size: 14px;
           max-width: 80px;
+          min-width: 80px;
+          margin-left: -20px;
         }
       }
     }
@@ -230,7 +232,7 @@
   &__line {
     position: absolute;
     cursor: default;
-    border-bottom: 2px dotted #606064;
+    border-bottom: 2px dotted var(--darker-grey);
     z-index: -1;
     top: calc(50% - 1px);
     left: 50%;
