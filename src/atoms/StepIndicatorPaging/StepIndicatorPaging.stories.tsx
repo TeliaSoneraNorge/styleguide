@@ -20,23 +20,84 @@ const onPreviousStepClick = (number: number) => {
   (stepIndicatorPagingRef.current as any).onPreviousStepClick(number);
 };
 
-// export const AsDesigned = () => {
-//   return (
-//     <StepIndicatorPaging
-//       initialStepNumber={0}
-//       steps={StepData.filter((_, i) => i < 5)}
-//       navigationCompletesPreviousSteps={false}
-//       navigationClickable={true}
-//       pageSize={5}
-//       hideStepNumbers={false}
-//       completeButtonId={'buttonComplete'}
-//       previousButtonId={'buttonPrevious'}
-//       contentContainerCssClass={'container container--small'}
-//     />
-//   );
-// };
+export const AsDesigned = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepData().filter((_, i) => i < 5)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const WithPaging = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepData().filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const NavigationClicksDoesNotCompleteStepsWithPaging = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepData().filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={false}
+      navigationClickable={true}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const DisabledNavigationClicksWithPaging = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepData().filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={false}
+      navigationClickable={false}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
 
 export const WithChildrenAsComponentsNoPaging = () => {
+  stepIndicatorPagingRef = useRef();
+
+  return (
+    <StepIndicatorPaging
+      steps={stepDataWithComponentChildren.filter((_, i) => i < 4)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      enableArrowsOnlyOnEdgeSteps={true}
+      pageSize={5}
+      //hideStepNumbers={false}
+      ref={stepIndicatorPagingRef}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const WithChildrenAsComponentsWithPaging = () => {
   stepIndicatorPagingRef = useRef();
 
   return (
@@ -46,6 +107,38 @@ export const WithChildrenAsComponentsNoPaging = () => {
       navigationClickable={true}
       enableArrowsOnlyOnEdgeSteps={true}
       pageSize={5}
+      //hideStepNumbers={false}
+      ref={stepIndicatorPagingRef}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const WithChildrenAsComponentsSmallPageSize = () => {
+  stepIndicatorPagingRef = useRef();
+  return (
+    <StepIndicatorPaging
+      steps={stepDataWithComponentChildren.filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      enableArrowsOnlyOnEdgeSteps={true}
+      pageSize={3}
+      //hideStepNumbers={false}
+      ref={stepIndicatorPagingRef}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const WithChildrenAsComponentsSmallPageSize = () => {
+  stepIndicatorPagingRef = useRef();
+  return (
+    <StepIndicatorPaging
+      steps={stepDataWithComponentChildren.filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      enableArrowsOnlyOnEdgeSteps={true}
+      pageSize={3}
       //hideStepNumbers={false}
       ref={stepIndicatorPagingRef}
       contentContainerCssClass={'container container--small'}

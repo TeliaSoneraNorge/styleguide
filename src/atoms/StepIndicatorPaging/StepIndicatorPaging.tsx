@@ -81,15 +81,17 @@ const onPagingRight = (
 
   const maxStepNumber = maxStepCount - pageSize + 1;
 
-  const isStepButtonClicked = number != null;
-  const isArrowClicked = isStepButtonClicked == false;
+  const isCompleteButtonClicked = number != null;
+  const isArrowClicked = isCompleteButtonClicked == false;
 
-  if (isStepButtonClicked) {
-    if (number < maxStepCount) {
+  if (isCompleteButtonClicked) {
+    if (number <= maxStepCount) {
       if (completePreviousSteps) {
         steps[number].isComplete = true;
       }
-      activeStepNumber = number + 1;
+      if (number < maxStepCount) {
+        activeStepNumber = number + 1;
+      }
     }
 
     minStepNumber = number - pageSize + 2;
