@@ -28,7 +28,28 @@ const getMinStepNumber = (number: number, pageSize: number, maxStepCount: number
       number = number - 1;
     }
   }
+
   return number;
+};
+
+const getMinStepNumberInRange = (
+  currentStepNumber: number,
+  currentMinStepNumber: number,
+  number: number,
+  pageSize: number,
+  maxStepCount: number,
+  forward: boolean
+) => {
+  const difference = Math.abs(currentStepNumber - number);
+  const minDifference = Math.abs(currentMinStepNumber - number);
+  const maxDifference = Math.abs(currentMinStepNumber + pageSize - number);
+
+  const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
+
+  if (insideCurrentRange) {
+    return currentMinStepNumber;
+  }
+  return getMinStepNumber(number, pageSize, maxStepCount, forward);
 };
 
 const onPagingLeft = (
@@ -60,18 +81,15 @@ const onPagingLeft = (
     }
   }
 
-  const difference = Math.abs(state.currentActiveStepNumber - activeStepNumber);
-  const minDifference = Math.abs(state.minStepNumber - activeStepNumber);
-  const maxDifference = Math.abs(state.minStepNumber + pageSize - activeStepNumber);
-
-  const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
-
-  if (insideCurrentRange) {
-    updateState(state.steps, activeStepNumber, state.minStepNumber);
-  } else {
-    const minStepNumber = getMinStepNumber(activeStepNumber, pageSize, maxStepCount, false);
-    updateState(state.steps, activeStepNumber, minStepNumber);
-  }
+  const minStepNumber = getMinStepNumberInRange(
+    state.currentActiveStepNumber,
+    state.minStepNumber,
+    activeStepNumber,
+    pageSize,
+    maxStepCount,
+    false
+  );
+  updateState(state.steps, activeStepNumber, minStepNumber);
 };
 
 const onPagingRight = (
@@ -112,18 +130,15 @@ const onPagingRight = (
     }
   }
 
-  const difference = Math.abs(state.currentActiveStepNumber - activeStepNumber);
-  const minDifference = Math.abs(state.minStepNumber - activeStepNumber);
-  const maxDifference = Math.abs(state.minStepNumber + pageSize - activeStepNumber);
-
-  const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
-
-  if (insideCurrentRange) {
-    updateState(steps, activeStepNumber, state.minStepNumber);
-  } else {
-    const minStepNumber = getMinStepNumber(activeStepNumber, pageSize, maxStepCount, true);
-    updateState(steps, activeStepNumber, minStepNumber);
-  }
+  const minStepNumber = getMinStepNumberInRange(
+    state.currentActiveStepNumber,
+    state.minStepNumber,
+    activeStepNumber,
+    pageSize,
+    maxStepCount,
+    true
+  );
+  updateState(steps, activeStepNumber, minStepNumber);
 };
 
 // eslint-disable-next-line react/display-name
@@ -286,17 +301,15 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const forward = state.currentActiveStepNumber < number;
 
-    const difference = Math.abs(state.currentActiveStepNumber - number);
-    const minDifference = Math.abs(state.minStepNumber - number);
-    const maxDifference = Math.abs(state.minStepNumber + pageSize - number);
-
-    const insideCurrentRange = maxDifference != 1 && difference < Math.floor(pageSize / 2) && minDifference > 0;
-    if (insideCurrentRange) {
-      updateState(steps, number, state.minStepNumber);
-    } else {
-      const minStepNumber = getMinStepNumber(number, pageSize, maxStepCount, forward);
-      updateState(steps, number, minStepNumber);
-    }
+    const minStepNumber = getMinStepNumberInRange(
+      state.currentActiveStepNumber,
+      state.minStepNumber,
+      number,
+      pageSize,
+      maxStepCount,
+      forward
+    );
+    updateState(state.steps, number, minStepNumber);
   };
 
   const RenderChildren = () => {
