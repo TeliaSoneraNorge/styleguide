@@ -1,4 +1,4 @@
-import { Step } from './Models/Step';
+import { Step } from './Step';
 
 export interface Props {
   steps?: Step[] | null | undefined;

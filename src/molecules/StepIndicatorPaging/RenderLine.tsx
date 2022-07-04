@@ -1,7 +1,7 @@
 import React from 'react';
 import classnames from 'classnames';
 
-export const Line: React.FC<{ isComplete: boolean; className?: string }> = (props) => {
+export const RenderLine: React.FC<{ isComplete: boolean; className?: string }> = (props) => {
   const { isComplete, className } = props;
   const css = className != null ? ' ' + className : '';
   return (

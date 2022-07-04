@@ -1,7 +1,7 @@
 import React from 'react';
-import { Line } from './_Line';
+import { RenderLine } from './RenderLine';
 import { RenderTransparentLayer } from './RenderTransparentLayer';
-import { RenderIcon } from './RenderIcon';
+import { Icon } from '../../atoms/Icon';
 
 export const RenderArrow = (props: any) => {
   const { onPaging, iconName, isComplete } = props;
@@ -10,7 +10,7 @@ export const RenderArrow = (props: any) => {
 
   return (
     <li className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
-      <Line isComplete={isComplete} className={'telia-step-indicator-paging__line--' + modifier} />
+      <RenderLine isComplete={isComplete} className={'telia-step-indicator-paging__line--' + modifier} />
 
       <RenderTransparentLayer modifier={modifier} />
 
@@ -19,7 +19,7 @@ export const RenderArrow = (props: any) => {
         onClick={onPaging}
         className={'telia-step-indicator-paging__arrow__button telia-step-indicator-paging__arrow__button--' + modifier}
       >
-        <RenderIcon iconName={iconName} />
+        <Icon icon={iconName} />
       </button>
     </li>
   );

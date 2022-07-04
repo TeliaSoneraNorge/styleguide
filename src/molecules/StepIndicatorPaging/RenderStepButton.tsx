@@ -4,7 +4,7 @@ import { CheckMarkIcon } from '../../atoms/Icon';
 import { navigateToStepUrl } from './Functions/navigateToStepUrl';
 
 export const RenderStepButton = (props: any) => {
-  const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive, hideStepNumber } = props;
+  const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive } = props;
 
   const onStepClick = () => {
     if (!navigateToStepUrl(url)) {
@@ -18,11 +18,9 @@ export const RenderStepButton = (props: any) => {
         'telia-step-indicator-paging__button__text--active': isActive,
       })}
     >
-      {isComplete && !isActive && <CheckMarkIcon />}
+      {isComplete && <CheckMarkIcon className={'telia-step-indicator-paging__button__icon--' + isActive} />}
 
-      {hideStepNumber != true && isActive && <span>{number + 1}</span>}
-
-      {hideStepNumber != true && !isActive && !isComplete && <span>{number + 1}</span>}
+      {<span>{number + 1}</span>}
 
       {isComplete && !isActive && <span className="sr-only"> fullført</span>}
 
@@ -60,6 +58,7 @@ export const RenderStepButton = (props: any) => {
           })}
         >
           <RenderText />
+          <div className="telia-step-indicator-paging__button__clickable-field"></div>
         </button>
       )}
     </>

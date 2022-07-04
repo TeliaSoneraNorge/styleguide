@@ -52,10 +52,45 @@
     font-size: 14px;
     user-select: none;
 
+    &:hover {
+      color: var(--core-purple);
+      border-color: var(--core-purple);
+    }
+
     &--complete {
-      color: #990ae3;
+      color: var(--core-purple);
+
+      & > div > span {
+        display: none;
+      }
+
       & > div {
-        border-color: var(--core-purple) !important;
+        border-color: var(--core-purple);
+      }
+
+      &:hover {
+        & > div {
+          & > svg {
+            display: none;
+          }
+          & > span {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &--active,
+    &--active:hover {
+      cursor: default;
+
+      & > div {
+        & > svg {
+          display: none;
+        }
+        & > span {
+          display: block;
+        }
       }
     }
 
@@ -63,12 +98,20 @@
       cursor: default;
     }
 
+    &__clickable-field {
+      left: 10%;
+      top: 0;
+      width: 80%;
+      height: 120%;
+      position: absolute;
+    }
+
     &__text {
       display: flex;
       justify-content: center;
       align-items: center;
 
-      border: 2px solid var(--darker-grey);
+      border: 2px solid;
       border-radius: 50%;
 
       height: 28px;
@@ -92,10 +135,6 @@
           width: 26px;
           font-size: 15px;
         }
-
-        &:hover {
-          cursor: default;
-        }
       }
 
       & svg {
@@ -111,6 +150,7 @@
       margin: 0;
       top: 40px;
       width: 100%;
+      max-width: 136px;
       font-size: 16px;
       line-height: 1;
       font-family: 'TeliaSans-Regular';
@@ -136,9 +176,8 @@
 
         @media screen and (max-width: 24em) {
           font-size: 14px;
-          max-width: 80px;
-          min-width: 80px;
-          margin-left: -20px;
+          width: 130%;
+          margin-left: -15%;
         }
       }
     }
@@ -149,6 +188,12 @@
     width: auto;
     border: 0;
     line-height: 0;
+
+    &:hover {
+      & svg {
+        fill: var(--core-purple);
+      }
+    }
 
     &--left {
     }
@@ -332,7 +377,6 @@
 
   &__content {
     width: 100%;
-    max-weight: 1044px;
     margin: 0 auto;
   }
 }

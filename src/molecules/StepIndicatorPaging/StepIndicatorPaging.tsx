@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useImperativeHandle } from 'react';
 import { Step } from './Models/Step';
 import { InternalStep } from './Models/InternalStep';
-import { Props } from './_Props';
-import { Line } from './_Line';
+import { Props } from './Models/Props';
+import { RenderLine } from './RenderLine';
 import { RenderStepButton } from './RenderStepButton';
 import { navigateToStepUrl } from './Functions/navigateToStepUrl';
 import { getMinStepNumber } from './Functions/getMinStepNumber';
@@ -113,6 +113,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const forward = currentActiveStepNumber > 0 && activeStepNumber > currentActiveStepNumber;
 
+    //TODO: Move this away, and when "PagingRight" is triggered set to result of validateStep ?? true...?
     const validated = validateStep(forward, currentActiveStepNumber, isNavigationClicked == true, steps);
 
     if (validated == true) {
@@ -255,7 +256,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           onStepButtonClick={() => onStepButtonClick(step.number)}
         />
 
-        {index < maxDisplayCount - 1 && <Line isComplete={step.isComplete == true} />}
+        {index < maxDisplayCount - 1 && <RenderLine isComplete={step.isComplete == true} />}
       </li>
     );
   };

@@ -30,6 +30,7 @@ export const onPagingRight = (
       }
     }
   }
+
   if (isArrowClicked) {
     if (changeActiveStep) {
       if (activeStepNumber < maxStepCount) {
