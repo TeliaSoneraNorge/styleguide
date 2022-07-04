@@ -83,7 +83,7 @@ export const StepDataWithComponents = (onPreviousStepClick: any, onCompleteStepC
         <div>
           <h2>Step 7...</h2>
           <Button text={'Prev'} onClick={() => onPreviousStepClick(6)} />
-          <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(6)} />
+          <Button text={'Next/Complete7'} onClick={() => onCompleteStepClick(6)} />
         </div>
       ),
     },
@@ -95,7 +95,7 @@ export const StepDataWithComponents = (onPreviousStepClick: any, onCompleteStepC
         <div>
           <h2>Step 8...</h2>
           <Button text={'Prev'} onClick={() => onPreviousStepClick(7)} />
-          <Button text={'Next/Complete6'} onClick={() => onCompleteStepClick(7)} />
+          <Button text={'Next/Complete8'} onClick={() => onCompleteStepClick(7)} />
         </div>
       ),
     },
