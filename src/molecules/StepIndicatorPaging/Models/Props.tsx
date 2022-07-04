@@ -6,23 +6,23 @@ export interface Props {
   //Defaults to 1 if undefined, 1 equals step[0]
   initialStepNumber?: number | undefined;
 
-  //Clicking a step in the navigation completes previous step, set to false to avoid it
+  //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
   navigationCompletesPreviousSteps?: boolean | undefined;
 
-  //If 'children' in any (or all) steps contains a button, that marks that step as complete? Pass in the buttonId, so when it is clicked it will auto-complete the step and move to next step
+  //Defaults to null, set buttonId of the button that 'completes' a step that is rendered inside of your 'children/content' so when clicked it marks current step as complete and navigates forward
   completeButtonId?: string | undefined | null;
 
-  //If 'children' in any (or all) steps contains a button, that navigates back to previous step? Pass in the buttonId, so when it is clicked it will auto-complete the step and move to previous step
+  //Defaults to null, set buttonId of the button that 'navigates back' that is rendered inside of your 'children/content' so when clicked it marks navigates back
   previousButtonId?: string | undefined | null;
 
-  //Set to false to disable clickable navigation steps, this also hides arrows, else arrows shows if more steps and steps are clickable
+  //Defaults to true, set to false if you want to disable clicking steps in the navigation
   navigationClickable?: boolean | undefined;
 
-  //Amount of steps to display before 'paging' gets activated, defaults to 5 if undefind
-  //NOTE: Only up to 5 is supported on smallest mobile view (320px width)
+  //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown
+  //NOTE: Supports only 3-5 before it looks bad on small mobile phones (320px width)
   pageSize?: number | undefined;
 
-  //Set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow buttons are displayed
+  //Defaults to false, set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow button is displayed
   enableArrowsOnlyOnEdgeSteps?: boolean | undefined;
 
   //Add a container css-class to the children rendered if needed or any css class you want
