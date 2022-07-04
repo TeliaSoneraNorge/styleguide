@@ -101,11 +101,11 @@ export const WithChildrenAsComponentsAndStep1IsCompleted = () => {
 
   return (
     <StepIndicatorPaging
-      steps={StepDataWithComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 4)}
+      steps={StepDataWithComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 8)}
       initialStepNumber={2}
       navigationCompletesPreviousSteps={true}
       navigationClickable={true}
-      enableArrowsOnlyOnEdgeSteps={true}
+      showArrowsTillEdgeSteps={true}
       pageSize={5}
       ref={stepIndicatorPagingRef}
       contentContainerCssClass={'container container--small'}
@@ -121,7 +121,7 @@ export const WithChildrenAsComponentsSmallPageSize = () => {
       initialStepNumber={2}
       navigationCompletesPreviousSteps={true}
       navigationClickable={true}
-      enableArrowsOnlyOnEdgeSteps={true}
+      showArrowsTillEdgeSteps={false}
       pageSize={3}
       ref={stepIndicatorPagingRef}
       contentContainerCssClass={'container container--small'}

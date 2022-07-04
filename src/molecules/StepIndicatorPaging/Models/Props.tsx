@@ -22,8 +22,8 @@ export interface Props {
   //NOTE: Supports only 3-5 before it looks bad on small mobile phones (320px width)
   pageSize?: number | undefined;
 
-  //Defaults to false, set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow button is displayed
-  enableArrowsOnlyOnEdgeSteps?: boolean | undefined;
+  //Defaults to false, set to true to show arrows when you are on the "next last" step in either direction
+  showArrowsTillEdgeSteps?: boolean | undefined;
 
   //Add a container css-class to the children rendered if needed or any css class you want
   contentContainerCssClass?: string | null | undefined;

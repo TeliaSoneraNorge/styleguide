@@ -38,7 +38,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const {
     navigationCompletesPreviousSteps,
     navigationClickable,
-    enableArrowsOnlyOnEdgeSteps,
+    showArrowsTillEdgeSteps,
     contentContainerCssClass,
   } = props;
 
@@ -183,18 +183,18 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       return arrowSteps;
     }
 
-    if (enableArrowsOnlyOnEdgeSteps == true && state.minStepNumber >= pageSize) {
-      arrowSteps.push({ arrowType: 'LEFT' });
-    } else if (state.minStepNumber > 0) {
+    if (showArrowsTillEdgeSteps == true) {
+      if (state.currentActiveStepNumber > 0) {
+        arrowSteps.push({ arrowType: 'LEFT' });
+      }
+    } else if (state.minStepNumber >= 1) {
       arrowSteps.push({ arrowType: 'LEFT' });
     }
 
-    if (
-      enableArrowsOnlyOnEdgeSteps == true &&
-      state.minStepNumber >= pageSize &&
-      state.minStepNumber < state.steps.length - pageSize
-    ) {
-      arrowSteps.push({ arrowType: 'RIGHT' });
+    if (showArrowsTillEdgeSteps == true) {
+      if (state.currentActiveStepNumber > 0 && state.currentActiveStepNumber < maxStepCount) {
+        arrowSteps.push({ arrowType: 'RIGHT' });
+      }
     } else if (state.minStepNumber < state.steps.length - pageSize) {
       arrowSteps.push({ arrowType: 'RIGHT' });
     }
