@@ -1,5 +1,6 @@
 import { navigateToStepUrl } from './navigateToStepUrl';
 import { getMinStepNumberInRange } from './getMinStepNumberInRange';
+import { setStepsComplete } from './setStepsComplete';
 
 export const onPagingRight = (
   completePreviousSteps: boolean,
@@ -19,9 +20,8 @@ export const onPagingRight = (
 
   if (isCompleteButtonClicked) {
     if (number <= maxStepCount) {
-      if (completePreviousSteps && !steps[number].onValidateStep) {
-        steps[number].isComplete = true;
-      }
+      setStepsComplete(steps, number, completePreviousSteps);
+
       if (number < maxStepCount) {
         activeStepNumber = number + 1;
       }
@@ -34,9 +34,8 @@ export const onPagingRight = (
   if (isArrowClicked) {
     if (changeActiveStep) {
       if (activeStepNumber < maxStepCount) {
-        if (completePreviousSteps && !steps[activeStepNumber].onValidateStep) {
-          steps[activeStepNumber].isComplete = true;
-        }
+        setStepsComplete(steps, activeStepNumber, completePreviousSteps);
+
         activeStepNumber += 1;
       }
     }

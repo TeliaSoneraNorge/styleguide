@@ -9,6 +9,7 @@ import { getMinStepNumber } from './Functions/getMinStepNumber';
 import { getMinStepNumberInRange } from './Functions/getMinStepNumberInRange';
 import { onPagingLeft } from './Functions/onPagingLeft';
 import { onPagingRight } from './Functions/onPagingRight';
+import { setStepsComplete } from './Functions/setStepsComplete';
 import { RenderArrow } from './RenderArrow';
 import classNames from 'classnames';
 
@@ -52,18 +53,8 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     console.error('StepIndicatorPaging: PageSize is outside of tested range');
   }
 
-  const setStepsToComplete = (steps: Step[], number: number) => {
-    if (navigationCompletesPreviousSteps == true) {
-      steps.forEach((step, i) => {
-        if (i < number) {
-          step.isComplete = true;
-        }
-      });
-    }
-  };
-
   if (initialStepNumber > 0) {
-    setStepsToComplete(props.steps, initialStepNumber);
+    setStepsComplete(props.steps, initialStepNumber - 1, completePreviousSteps);
   }
 
   const [state, setState] = useState({
@@ -82,29 +73,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     };
   });
 
-  const validateStep = (
-    forward: boolean,
-    currentActiveStepNumber: number,
-    isNavigationClicked: boolean,
-    steps: Step[]
-  ) => {
-    const validateCurrentActiveStep =
-      ((!isNavigationClicked && !navigationCompletesPreviousSteps) || navigationCompletesPreviousSteps) &&
-      forward &&
-      steps[currentActiveStepNumber].onValidateStep;
-
-    return (
-      !validateCurrentActiveStep ||
-      steps[currentActiveStepNumber].onValidateStep(steps, currentActiveStepNumber) != false
-    );
-  };
-
-  const updateState = (
-    steps: Step[],
-    activeStepNumber: number,
-    minStepNumber: number,
-    isNavigationClicked?: boolean | undefined
-  ) => {
+  const updateState = (steps: Step[], activeStepNumber: number, minStepNumber: number) => {
     const currentActiveStepNumber = state.currentActiveStepNumber;
 
     if (currentActiveStepNumber == activeStepNumber && state.minStepNumber == minStepNumber) {
@@ -113,16 +82,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const forward = currentActiveStepNumber > 0 && activeStepNumber > currentActiveStepNumber;
 
-    //TODO: Move this away, and when "PagingRight" is triggered set to result of validateStep ?? true...?
-    const validated = validateStep(forward, currentActiveStepNumber, isNavigationClicked == true, steps);
-
-    if (validated == true) {
-      if (isNavigationClicked != true && !navigationCompletesPreviousSteps && forward) {
-        steps[currentActiveStepNumber].isComplete = true;
-      } else {
-        setStepsToComplete(steps, activeStepNumber);
-      }
-
+    if (!forward || steps[currentActiveStepNumber].isComplete) {
       const update = {
         steps: steps,
         minStepNumber: minStepNumber,
@@ -153,8 +113,12 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const steps = state.steps;
 
+    if (forward) {
+      setStepsComplete(steps, number - 1, completePreviousSteps);
+    }
+
     if (!navigateToStepUrl(state.steps[number]?.url)) {
-      updateState(steps, number, minStepNumber, true);
+      updateState(steps, number, minStepNumber);
     }
   };
 
