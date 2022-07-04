@@ -1,13 +1,24 @@
 import { Step } from '../Models/Step';
 
-export const setStepsComplete = (steps: Step[], number: number, completePreviousSteps: boolean) => {
+export const setStepsComplete = (
+  steps: Step[],
+  currentActiveNumber: number,
+  activeNumber: number,
+  completePreviousSteps: boolean
+) => {
+  steps[currentActiveNumber].isComplete = !steps[currentActiveNumber].onValidateStep
+    ? true
+    : steps[currentActiveNumber].onValidateStep(steps, currentActiveNumber) == true;
+  if (!steps[currentActiveNumber].isComplete) {
+    return false;
+  }
+
   if (completePreviousSteps == true) {
     steps.forEach((step, i) => {
-      if (i < number) {
+      if (i < activeNumber) {
         step.isComplete = true;
       }
     });
   }
-
-  steps[number].isComplete = !steps[number].onValidateStep ? true : steps[number].onValidateStep(steps, number) == true;
+  return true;
 };

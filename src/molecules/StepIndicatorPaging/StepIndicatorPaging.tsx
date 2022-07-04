@@ -54,7 +54,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   }
 
   if (initialStepNumber > 0) {
-    setStepsComplete(props.steps, initialStepNumber - 1, completePreviousSteps);
+    setStepsComplete(props.steps, initialStepNumber - 1, initialStepNumber - 1, completePreviousSteps);
   }
 
   const [state, setState] = useState({
@@ -73,24 +73,23 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     };
   });
 
+  const isForward = (number: number) => {
+    return state.currentActiveStepNumber >= 0 && number > state.currentActiveStepNumber;
+  };
+
   const updateState = (steps: Step[], activeStepNumber: number, minStepNumber: number) => {
     const currentActiveStepNumber = state.currentActiveStepNumber;
-
     if (currentActiveStepNumber == activeStepNumber && state.minStepNumber == minStepNumber) {
       return;
     }
 
-    const forward = currentActiveStepNumber > 0 && activeStepNumber > currentActiveStepNumber;
+    const update = {
+      steps: steps,
+      minStepNumber: minStepNumber,
+      currentActiveStepNumber: activeStepNumber,
+    };
 
-    if (!forward || steps[currentActiveStepNumber].isComplete) {
-      const update = {
-        steps: steps,
-        minStepNumber: minStepNumber,
-        currentActiveStepNumber: activeStepNumber,
-      };
-
-      setState(update);
-    }
+    setState(update);
   };
 
   const addOnClickEvent = (buttonId: any, onClick: any) => {
@@ -107,14 +106,18 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       return;
     }
 
-    const forward = state.currentActiveStepNumber < number;
+    const forward = isForward(number);
 
     const minStepNumber = getMinStepNumberInRange(state.minStepNumber, number, pageSize, maxStepCount, forward);
 
     const steps = state.steps;
 
     if (forward) {
-      setStepsComplete(steps, number - 1, completePreviousSteps);
+      if (completePreviousSteps) {
+        if (!setStepsComplete(steps, state.currentActiveStepNumber, number, completePreviousSteps)) {
+          return;
+        }
+      }
     }
 
     if (!navigateToStepUrl(state.steps[number]?.url)) {
@@ -170,7 +173,15 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     if (children) {
       addOnClickEvent(props.completeButtonId, () =>
-        onPagingRight(true, pageSize, maxStepCount, state, updateState, true, state.currentActiveStepNumber)
+        onPagingRight(
+          completePreviousSteps,
+          pageSize,
+          maxStepCount,
+          state,
+          updateState,
+          true,
+          state.currentActiveStepNumber
+        )
       );
       addOnClickEvent(props.previousButtonId, () =>
         onPagingLeft(maxStepCount, pageSize, state, updateState, true, state.currentActiveStepNumber)
