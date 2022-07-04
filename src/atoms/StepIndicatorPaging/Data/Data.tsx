@@ -1,5 +1,6 @@
 import { Step } from '../_Step';
 
+
 const onValidateStep = (steps: Step[], number: number) => {
   return true; //Optional to return anything, must return false to invalidate step navigation
 };
