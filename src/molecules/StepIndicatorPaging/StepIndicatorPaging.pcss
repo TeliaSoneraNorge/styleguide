@@ -80,6 +80,12 @@
       }
     }
 
+    &--disabled {
+      color: var(--darker-grey) !important;
+      border-color: var(--darker-grey) !important;
+      cursor: default !important;
+    }
+
     &--active,
     &--active:hover {
       cursor: default;
@@ -92,10 +98,6 @@
           display: block;
         }
       }
-    }
-
-    &--disabled {
-      cursor: default;
     }
 
     &__clickable-field {
@@ -365,7 +367,7 @@
 
       @media screen and (max-width: 37.5em) {
         width: 30px;
-        left: 0px;
+        left: 2px;
       }
 
       @media screen and (max-width: 24em) {
