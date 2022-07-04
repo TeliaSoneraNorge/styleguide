@@ -25,7 +25,7 @@ export interface Props {
   //Set to true to only show arrows when you are on the "last" step, and if there are more steps, then arrow buttons are displayed
   enableArrowsOnlyOnEdgeSteps?: boolean | undefined;
 
-  //Add a container-snavigationClickableize to the children rendered if needed or additional css class you want to wrap the 'step content' inside of
+  //Add a container css-class to the children rendered if needed or any css class you want
   contentContainerCssClass?: string | null | undefined;
 
   //Hide step numbers if numbering them 'does not make sense', might consider different component like Tabs? Radio? But they look and feel different
