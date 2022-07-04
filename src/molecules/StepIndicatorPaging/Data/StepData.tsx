@@ -1,8 +1,11 @@
-import { Step } from '../_Step';
-
+import { Step } from '../Models/Step';
 
 const onValidateStep = (steps: Step[], number: number) => {
-  return true; //Optional to return anything, must return false to invalidate step navigation
+  //Step already completed? Just continue? Or revalidate if input has changed?
+  if (steps[number].isComplete == true) {
+    return true;
+  }
+  return confirm("Complete this step, I mean, you've validated it?") == true;
 };
 
 export const StepData = () => {
@@ -47,6 +50,7 @@ export const StepData = () => {
       title: 'Step 6 Longer title with text',
       url: '',
       isComplete: false,
+
       children:
         '<h1>Hello 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete6</button>',
     },

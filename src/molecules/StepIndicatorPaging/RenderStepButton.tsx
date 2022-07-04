@@ -1,26 +1,23 @@
 import classnames from 'classnames';
 import React from 'react';
 import { CheckMarkIcon } from '../../atoms/Icon';
+import { navigateToStepUrl } from './Functions/navigateToStepUrl';
 
-export const StepButton = (props: any) => {
+export const RenderStepButton = (props: any) => {
   const { number, title, url, onStepButtonClick, isClickable, isComplete, isActive, hideStepNumber } = props;
 
   const onStepClick = () => {
-    if (url) {
-      console.log('Step is navigating to different site');
-      window.location.assign(url);
-    } else {
+    if (!navigateToStepUrl(url)) {
       onStepButtonClick();
     }
   };
 
-  let css = 'telia-step-indicator-paging__button__text';
-  if (isActive) {
-    css += ' telia-step-indicator-paging__button__text--active';
-  }
-
   const RenderText = () => (
-    <div className={css}>
+    <div
+      className={classnames('telia-step-indicator-paging__button__text', {
+        'telia-step-indicator-paging__button__text--active': isActive,
+      })}
+    >
       {isComplete && !isActive && <CheckMarkIcon />}
 
       {hideStepNumber != true && isActive && <span>{number + 1}</span>}

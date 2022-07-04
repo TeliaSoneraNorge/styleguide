@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const TransportLayer = (props: any) => {
+export const RenderTransparentLayer = (props: any) => {
   const { modifier } = props;
   return (
     <div
