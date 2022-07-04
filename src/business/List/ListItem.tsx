@@ -11,6 +11,7 @@ export type ListItemProps = {
   compact?: boolean;
   active?: boolean;
   className?: string;
+  href?: string;
   /**
    * @default li
    */
@@ -25,7 +26,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
   const Tag = props.tag ? props.tag : 'li';
-  const InnerTag = onClick ? 'button' : 'div';
+  const InnerTag = props.href ? 'a' : onClick ? 'button' : 'div';
 
   const hasProps = title || decorator || description || caption;
 
@@ -45,12 +46,13 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
           'telia-listItem__mainWrapper',
           {
             'telia-listItem--compact': compact,
-            'telia-listItem--clickable': onClick,
+            'telia-listItem--clickable': onClick || props.href,
             'telia-listItem--active': props.active,
           },
           className
         )}
         onClick={onClick}
+        href={props.href}
         role={onClick && 'button'}
       >
         {hasProps && (
