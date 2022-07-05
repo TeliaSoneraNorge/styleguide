@@ -16,7 +16,7 @@ export const onPagingRight = (
   let activeStepNumber = state.currentActiveStepNumber;
 
   const isCompleteButtonClicked = number != null;
-  const isArrowClicked = isCompleteButtonClicked == false;
+  const isArrowClicked = number == null;
 
   if (isCompleteButtonClicked) {
     if (number <= maxStepCount) {
@@ -37,14 +37,7 @@ export const onPagingRight = (
     if (changeActiveStep) {
       if (activeStepNumber < maxStepCount) {
         if (completePreviousSteps) {
-          if (
-            !setStepsComplete(
-              steps,
-              activeStepNumber,
-              number != null ? number : activeStepNumber,
-              completePreviousSteps
-            )
-          ) {
+          if (!setStepsComplete(steps, activeStepNumber, activeStepNumber, completePreviousSteps)) {
             return;
           }
         }

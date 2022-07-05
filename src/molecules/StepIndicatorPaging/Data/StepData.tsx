@@ -25,7 +25,7 @@ export const StepData = () => {
         '<h1>Hello 2</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete2</button>',
     },
     {
-      title: 'Step 3 Long title text here',
+      title: 'Step 3 Has validation on its step',
       url: '',
       isComplete: false,
       onValidateStep: onValidateStep,

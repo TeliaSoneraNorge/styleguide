@@ -96,7 +96,7 @@ export const WithNavigationDisabled = () => {
   );
 };
 
-export const WithChildrenAsComponentsAndStep1IsCompleted = () => {
+export const WithComponentsAndStep1IsCompleteAndArrowsOnEdge = () => {
   stepIndicatorPagingRef = useRef();
 
   return (
