@@ -92,11 +92,11 @@ const SubscriptionCompactAccordion = ({
               <div className="subscription-compact-accordion__heading-container">
                 {strikethrough ? (
                   <>
-                    <Heading className="subscription-compact-accordion__heading-name" tag="h2" size="s">
-                      {title}
-                    </Heading>
                     <Heading className="subscription-compact-accordion__heading-striketrough" tag="h2" size="xs">
                       {strikethrough}
+                    </Heading>
+                    <Heading className="subscription-compact-accordion__heading-name" tag="h2" size="s">
+                      {title}
                     </Heading>
                   </>
                 ) : (
