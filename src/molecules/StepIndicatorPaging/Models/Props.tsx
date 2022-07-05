@@ -3,16 +3,16 @@ import { Step } from './Step';
 export interface Props {
   steps?: Step[] | null | undefined;
 
-  //Defaults to 1 if undefined, 1 equals step[0]
+  //Defaults to 1 if undefined, 1 equals steps[0]
   initialStepNumber?: number | undefined;
 
   //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
   navigationCompletesPreviousSteps?: boolean | undefined;
 
-  //Defaults to null, set buttonId of the button that 'completes' a step that is rendered inside of your 'children/content' so when clicked it marks current step as complete and navigates forward
+  //Defaults to null, set buttonId of the button that 'completes' a step that is rendered inside of your 'children/content' so when clicked, it marks current step as complete and navigates forward
   completeButtonId?: string | undefined | null;
 
-  //Defaults to null, set buttonId of the button that 'navigates back' that is rendered inside of your 'children/content' so when clicked it marks navigates back
+  //Defaults to null, set buttonId of the button that 'navigates back' that is rendered inside of your 'children/content' so when clicked, it navigates back
   previousButtonId?: string | undefined | null;
 
   //Defaults to true, set to false if you want to disable clicking steps in the navigation
