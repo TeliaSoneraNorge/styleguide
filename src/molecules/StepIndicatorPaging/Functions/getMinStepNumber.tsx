@@ -6,7 +6,7 @@ export const getMinStepNumber = (number: number, pageSize: number, maxStepCount:
   const max = maxStepCount - pageSize + 1;
 
   if (forward) {
-    number = number - pageSize + 2; //Remember: 1 is [0], so + 2
+    number = number - pageSize + 2;
     if (number < 0) {
       number = 0;
     } else if (number + pageSize > maxStepCount) {
