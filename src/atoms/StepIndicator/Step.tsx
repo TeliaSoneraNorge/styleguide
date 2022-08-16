@@ -43,11 +43,11 @@ export const Step = (props: Props) => {
   );
 };
 
-const StepElement: React.FC<{ isPassed: boolean; onClick: (event: React.MouseEvent) => void }> = ({
-  children,
-  isPassed,
-  onClick,
-}) => {
+const StepElement: React.FC<{
+  isPassed: boolean;
+  onClick: (event: React.MouseEvent) => void;
+  children?: React.ReactNode;
+}> = ({ children, isPassed, onClick }) => {
   if (isPassed) {
     return (
       <a role="button" className="step-indicator__element step-indicator__element__clickable" onClick={onClick}>

@@ -15,7 +15,7 @@ type Month = {
   numberOfDays: number;
 };
 
-export const DatePickerMenu: React.FC = ({ children }) => {
+export const DatePickerMenu: React.FC<{ children?: React.ReactNode }> = ({ children }) => {
   const {
     setCalendarOpen,
     calendarOpen,

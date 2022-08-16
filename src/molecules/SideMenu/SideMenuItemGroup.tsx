@@ -39,6 +39,7 @@ type Props = {
    * @default true
    */
   collapse?: boolean;
+  children?: React.ReactNode;
 };
 
 export const SideMenuItemGroup: React.FC<Props> = (props) => {

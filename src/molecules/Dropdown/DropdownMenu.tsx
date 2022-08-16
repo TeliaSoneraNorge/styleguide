@@ -6,6 +6,7 @@ type DropdownMenuProps = {
   position?: 'right' | 'left' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   wrapContent?: boolean;
   className?: string;
+  children?: React.ReactNode;
 };
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {

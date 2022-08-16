@@ -15,6 +15,7 @@ type Props = {
   itemToggle?: boolean;
   fullWidth?: boolean;
   className?: string;
+  children?: React.ReactNode;
 };
 
 export const Dropdown: React.FC<Props> = (props) => {
@@ -53,7 +54,7 @@ export const Dropdown: React.FC<Props> = (props) => {
   );
 };
 
-const InnerDropdown: React.FC<{ fullWidth?: boolean; className?: string }> = (props) => {
+const InnerDropdown: React.FC<{ fullWidth?: boolean; className?: string; children?: React.ReactNode }> = (props) => {
   const { dropdownRef } = useDropdownContext();
   useAccessibleDropdown();
   return (

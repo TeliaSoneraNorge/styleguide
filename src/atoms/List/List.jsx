@@ -31,9 +31,11 @@ export const Link = ({ className, text, children, href, icon, iconPosition, targ
 const List = ({ children, className, wrapByThree, wrapByFour, black, ...rest }) => {
   // Determine css classes to use based on the children.
   const childrenArray = React.Children.toArray(children);
-  const hasBubbleLinks = childrenArray.find(it => it.type === List.Item && it.props.children.type === List.BubbleLink);
+  const hasBubbleLinks = childrenArray.find(
+    (it) => it.type === List.Item && it.props.children.type === List.BubbleLink
+  );
   const hasLinks =
-    !hasBubbleLinks && childrenArray.find(it => it.type === List.Item && it.props.children.type === List.Link);
+    !hasBubbleLinks && childrenArray.find((it) => it.type === List.Item && it.props.children.type === List.Link);
   return (
     <ul
       className={classnames('list', {
@@ -60,6 +62,8 @@ List.propTypes = {
   wrapByFour: PropTypes.bool,
   /** Whenever should children be black. */
   black: PropTypes.bool,
+
+  children: PropTypes.node,
 };
 
 const Item = ({ children, ...rest }) => (

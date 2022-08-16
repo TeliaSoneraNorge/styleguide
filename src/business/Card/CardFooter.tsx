@@ -4,6 +4,7 @@ import cs from 'classnames';
 type Props = {
   className?: string;
   padding?: boolean;
+  children?: React.ReactNode;
 };
 
 export const CardFooter: React.FC<Props> = (props) => {

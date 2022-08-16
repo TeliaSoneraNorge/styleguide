@@ -5,6 +5,7 @@ export interface BannerProps {
   img?: string;
   imgAlt?: string;
   grey?: boolean;
+  children?: React.ReactNode;
 }
 
 export default class Banner extends React.Component<BannerProps, any> {

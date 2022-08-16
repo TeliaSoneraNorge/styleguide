@@ -5,6 +5,7 @@ import { useBreakpoint } from '../../utils/useBreakpoint';
 
 interface Props {
   columns?: 1 | 2;
+  children?: React.ReactNode;
 }
 export const CardOptions: React.FC<Props> = (props) => {
   const count = React.Children.count(props.children);

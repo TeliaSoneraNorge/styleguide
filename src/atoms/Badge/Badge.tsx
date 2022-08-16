@@ -16,6 +16,7 @@ interface Common {
    * See story for example
    */
   style?: React.CSSProperties;
+  children?: React.ReactNode;
 }
 
 interface Compact extends Common {

@@ -10,6 +10,7 @@ type Props = {
   currentValue?: string;
   color?: 'purple' | 'black';
   compact?: boolean;
+  children?: React.ReactNode;
 } & ({ outlined: true; narrow?: false } | { outlined?: false; narrow?: boolean });
 
 export const Tabs: React.FC<Props> = (props) => {
