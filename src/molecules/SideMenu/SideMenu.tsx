@@ -17,6 +17,7 @@ type Props = {
    * @default true
    */
   collapse?: boolean;
+  children?: React.ReactNode;
 };
 export const SideMenu: React.FC<Props> = (props) => {
   const md = useBreakpoint('md');
@@ -37,13 +38,13 @@ export const SideMenu: React.FC<Props> = (props) => {
   );
 };
 
-export const SideMenuTop: React.FC = (props) => (
+export const SideMenuTop: React.FC<{ children?: React.ReactNode }> = (props) => (
   <li className="telia-side-menu-top">
     <ul className="telia-side-menu-top__list">{props.children}</ul>
   </li>
 );
 
-export const SideMenuBottom: React.FC = (props) => (
+export const SideMenuBottom: React.FC<{ children?: React.ReactNode }> = (props) => (
   <li className="telia-side-menu-bottom">
     <ul className="telia-side-menu-bottom__list">{props.children}</ul>
   </li>

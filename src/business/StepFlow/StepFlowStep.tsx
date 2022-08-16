@@ -11,6 +11,7 @@ type Props = {
    * Disable the step in the StepFlowMenu (used by StepFlow)
    */
   disabled?: boolean;
+  children?: React.ReactNode;
 };
 
 export const StepFlowStep: React.FC<Props> = (props) => {

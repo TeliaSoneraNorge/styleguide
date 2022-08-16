@@ -4,6 +4,7 @@ import cs from 'classnames';
 type Props = {
   padding?: boolean;
   className?: string;
+  children?: React.ReactNode;
 };
 export const CardBody: React.FC<Props> = (props) => {
   return (

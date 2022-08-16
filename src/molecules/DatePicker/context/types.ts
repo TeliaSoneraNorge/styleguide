@@ -58,4 +58,5 @@ export type ContextProps = {
    */
   open?: boolean;
   setOpen?: (open: boolean) => void;
+  children?: React.ReactNode;
 };

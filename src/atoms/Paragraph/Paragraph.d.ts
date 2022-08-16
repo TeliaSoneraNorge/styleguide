@@ -8,6 +8,7 @@ export interface ParagraphProps {
    */
   kind?: ParagraphKind;
   className?: string;
+  children?: React.ReactNode;
 }
 
 export const Paragraph: React.FC<ParagraphProps>;

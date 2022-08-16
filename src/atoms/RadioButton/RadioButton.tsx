@@ -15,6 +15,7 @@ type Props = {
   disabled?: boolean;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
+  children?: React.ReactNode;
 };
 
 export const RadioButton: React.FC<Props> = (props) => {

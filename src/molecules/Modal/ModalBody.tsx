@@ -2,6 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 interface Props {
   noPadding?: boolean;
+  children?: React.ReactNode;
 }
 export const ModalBody: React.FC<Props> = (props) => {
   return (

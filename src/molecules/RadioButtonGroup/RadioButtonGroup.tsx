@@ -24,6 +24,7 @@ type Props = {
   onChange?: (e: React.BaseSyntheticEvent) => void;
   selectedValue?: any;
   list?: ListProps[];
+  children?: React.ReactNode;
 } & ({ type: 'vertical' | undefined; border?: boolean } | { type?: Type });
 
 const RadioButtonGroup: React.FC<Props> = (props) => {

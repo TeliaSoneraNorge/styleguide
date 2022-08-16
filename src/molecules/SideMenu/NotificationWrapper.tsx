@@ -6,6 +6,7 @@ type Props = {
   hasNotification?: boolean;
   numberOfNotifications?: number;
   position?: 'right' | 'on-top-left';
+  children?: React.ReactNode;
 };
 
 export const NotificationWrapper: React.FC<Props> = ({

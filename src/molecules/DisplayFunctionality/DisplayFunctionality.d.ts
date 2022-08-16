@@ -10,6 +10,7 @@ export interface DisplayFunctionalityProps {
   reverse?: boolean;
   device?: string;
   deviceImageUrl?: string;
+  children?: React.ReactNode;
 }
 
 export default class DisplayFunctionality extends React.Component<DisplayFunctionalityProps, any> {

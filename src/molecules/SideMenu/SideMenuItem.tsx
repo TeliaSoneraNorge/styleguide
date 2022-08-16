@@ -62,6 +62,7 @@ type Props = {
    */
   collapse?: boolean;
   tabIndex?: number;
+  children?: React.ReactNode;
 };
 
 export const SideMenuItem: React.FC<Props> = (props) => {
