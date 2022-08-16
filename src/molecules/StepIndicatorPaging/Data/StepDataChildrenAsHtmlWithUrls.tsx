@@ -1,6 +1,6 @@
 import { Step } from '../Models/Step';
 
-export const StepDataWithUrls = () => {
+export const StepDataChildrenAsHtmlWithUrls = () => {
   return [
     {
       title: 'Step Url 1 Long title text here',

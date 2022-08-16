@@ -8,7 +8,7 @@ const onValidateStep = (steps: Step[], number: number) => {
   return confirm("Complete this step, I mean, you've validated it?") == true;
 };
 
-export const StepData = () => {
+export const StepDataChildrenAsHtml = () => {
   return [
     {
       title: 'Step 1 Long title text here',

@@ -1,6 +1,6 @@
 import { Step } from '../Models/Step';
 
-export const StepDataNoChildrenWithUrls = () => {
+export const StepDataChildrenEmptyWithUrls = () => {
   return [
     {
       title: 'Step 1 Long title text here',

@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../../../atoms/Button';
 
-export const StepDataWithComponents = (onPreviousStepClick: any, onCompleteStepClick: any) => {
+export const StepDataChildrenAsComponents = (onPreviousStepClick: any, onCompleteStepClick: any) => {
   return [
     {
       title: 'Step 1',
