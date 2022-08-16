@@ -25,12 +25,14 @@
 
   &__list-item {
     width: 150px;
+    height: 32px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
     @media screen and (max-width: 48em) {
+      height: unset;
       width: 90px;
     }
 
@@ -189,9 +191,13 @@
 
   &__arrow {
     position: absolute;
-    width: auto;
+    width: 60px;
     border: 0;
     line-height: 0;
+
+    @media screen and (max-width: 48em) {
+      width: 55px;
+    }
 
     &:hover {
       & svg {
@@ -200,22 +206,27 @@
     }
 
     &--left {
+      @media screen and (max-width: 48em) {
+        margin-left: -14px;
+        width: 48px;
+      }
+      @media screen and (max-width: 37.5em) {
+        width: 38px;
+      }
     }
 
     &--right {
       position: relative;
       display: inline-block;
-      width: 60px;
       margin-left: -60px;
 
       @media screen and (max-width: 48em) {
-        width: 40px;
-        margin-left: -40px;
+        width: 48px;
+        margin-left: -34px;
       }
-
       @media screen and (max-width: 37.5em) {
-        width: 20px;
-        margin-left: -20px;
+        width: 38px;
+        margin-left: -22px;
       }
     }
 
@@ -248,27 +259,27 @@
       }
 
       &--right {
-        left: 6px;
+        left: 0px;
         float: right;
 
         @media screen and (max-width: 48em) {
-          left: 20px;
+          left: 0px;
         }
         @media screen and (max-width: 24em) {
-          left: 16px;
+          left: 0px;
         }
       }
 
       &--left {
-        left: -6px;
+        left: 0px;
         float: left;
 
         @media screen and (max-width: 48em) {
-          left: -20px;
+          left: 0px;
         }
 
         @media screen and (max-width: 24em) {
-          left: -16px;
+          left: 0px;
         }
       }
     }
@@ -291,18 +302,8 @@
 
     &--right {
       width: 30px;
-      left: 0;
       margin: 0;
-
-      @media screen and (max-width: 48em) {
-        width: 20px;
-        left: 8px;
-      }
-
-      @media screen and (max-width: 37.5em) {
-        width: 20px;
-        left: 2px;
-      }
+      left: 0;
 
       @media screen and (max-width: 24em) {
         display: none;
@@ -312,18 +313,10 @@
 
     &--left {
       width: 30px;
-      left: 32px;
       margin: 0;
-      margin-top: 1px;
+      left: auto;
+      right: 0;
 
-      @media screen and (max-width: 48em) {
-        width: 20px;
-        left: 14px;
-        margin-top: 1px;
-      }
-      @media screen and (max-width: 37.5em) {
-        left: 0px;
-      }
       @media screen and (max-width: 24em) {
         display: none;
         visibility: hidden;
@@ -344,18 +337,10 @@
     width: 45px;
 
     &--left {
-      margin-left: 22px;
       background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
       transform: rotate(-180deg);
 
-      @media screen and (max-width: 48em) {
-        margin-left: -21px;
-      }
-
-      @media screen and (max-width: 37.5em) {
-        width: 30px;
-        margin-left: -10px;
-      }
+      right: 0px;
 
       @media screen and (max-width: 24em) {
         display: none;

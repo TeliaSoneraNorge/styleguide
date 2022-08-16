@@ -244,7 +244,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
   return (
     <div className="telia-step-indicator-paging">
-      <ol className="telia-step-indicator-paging__list">
+      <ol className={'telia-step-indicator-paging__list telia-step-indicator-paging__list--page-size-' + pageSize}>
         {hasLeftArrow && (
           <RenderArrow
             iconName={'arrow-left'}
