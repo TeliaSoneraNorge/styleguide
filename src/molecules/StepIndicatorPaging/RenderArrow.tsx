@@ -4,7 +4,7 @@ import { RenderTransparentLayer } from './RenderTransparentLayer';
 import { Icon } from '../../atoms/Icon';
 
 export const RenderArrow = (props: any) => {
-  const { onPaging, iconName, isComplete } = props;
+  const { onPaging, iconName, isComplete, url } = props;
 
   const modifier = iconName.includes('left') ? 'left' : 'right';
 
@@ -14,13 +14,28 @@ export const RenderArrow = (props: any) => {
 
       <RenderTransparentLayer modifier={modifier} />
 
-      <button
-        type="button"
-        onClick={onPaging}
-        className={'telia-step-indicator-paging__arrow__button telia-step-indicator-paging__arrow__button--' + modifier}
-      >
-        <Icon icon={iconName} />
-      </button>
+      {url && url.length > 0 && (
+        <a
+          href={url}
+          className={
+            'telia-step-indicator-paging__arrow__button telia-step-indicator-paging__arrow__button--' + modifier
+          }
+        >
+          <Icon icon={iconName} />
+        </a>
+      )}
+
+      {!url && (
+        <button
+          type="button"
+          onClick={onPaging}
+          className={
+            'telia-step-indicator-paging__arrow__button telia-step-indicator-paging__arrow__button--' + modifier
+          }
+        >
+          <Icon icon={iconName} />
+        </button>
+      )}
     </li>
   );
 };
