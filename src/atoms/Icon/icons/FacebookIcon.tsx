@@ -28,7 +28,8 @@ export function FacebookIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M37.268 60h-11.47V32H20.07v-9.654h5.73v-5.79C25.798 8.681 29.03 4 38.222 4h7.662v9.654h-4.786c-3.578 0-3.82 1.356-3.82 3.864l-.01 4.828h8.673L44.93 32h-7.65v28h-.012z"
+        d="M36.2 60H24.73V32H19v-9.654h5.73v-5.79C24.73 8.681 27.961 4 37.153 4h7.662v9.654H40.03c-3.578 0-3.82 1.356-3.82 3.864l-.01 4.828h8.673L43.861 32h-7.65v28h-.012z"
+        clipRule="evenodd"
       />
     </svg>
   );

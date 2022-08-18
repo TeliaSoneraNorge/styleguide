@@ -28,7 +28,8 @@ export function MinusIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M17.333 35h29.334c.736 0 1.333-.895 1.333-2s-.597-2-1.333-2H17.333c-.736 0-1.333.895-1.333 2s.597 2 1.333 2z"
+        d="M51.5 30h-39a2.167 2.167 0 100 4.333h39a2.167 2.167 0 100-4.333z"
+        clipRule="evenodd"
       />
     </svg>
   );
