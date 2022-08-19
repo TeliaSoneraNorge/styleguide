@@ -1,10 +1,10 @@
 @import '../../colors.pcss';
 
 .telia-business-button {
-  background-color: var(--core-purple);
+  background-color: var(--core-purple-850);
   border: none;
   border-radius: 2rem;
-  color: var(--white);
+  color: var(--core-purple-100);
   cursor: pointer;
   display: inline-flex;
   font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
@@ -59,14 +59,14 @@
 
   &--primary {
     &:hover {
-      background-color: var(--core-purple-600);
+      background-color: rgba(var(--core-purple-850), 0.88);
     }
 
     &:active,
     &.telia-business-button--active {
       outline: none;
       box-shadow: none;
-      background-color: var(--core-purple-700);
+      background-color: rgba(var(--core-purple-850), 0.84);
     }
   }
 
@@ -76,113 +76,170 @@
     color: var(--core-purple);
 
     &:hover {
-      background-color: var(--core-purple-100);
+      background-color: rgba(var(--core-purple-100), 0.88);
     }
 
     &:focus {
-      background-color: var(--core-purple-100);
+      background-color: rgba(var(--core-purple-100), 0.84);
     }
 
     &:active,
     &.telia-business-button--active {
       outline: none;
       box-shadow: none;
-      background-color: var(--core-purple-200);
+      background-color: rgba(var(--core-purple-100), 0.84);
+    }
+  }
+
+  &--expressive-purple {
+    background-color: var(--core-purple);
+    border-radius: 2rem;
+    color: var(--white);
+
+    &:hover {
+      background-color: rgba(var(--core-purple), 0.88);
+    }
+
+    &:active,
+    &.telia-business-button--active {
+      outline: none;
+      box-shadow: none;
+      background-color: rgba(var(--core-purple), 0.84);
     }
   }
 
   &--secondary {
-    background-color: var(--grey-100);
+    background-color: var(--grey-50);
     border-radius: 2rem;
-    color: var(--black);
+    color: var(--core-purple-850);
 
     &:hover {
-      background-color: var(--grey-300);
+      background-color: rgba(var(--grey-50), 0.88);
     }
 
     &:active,
     &.telia-business-button--active {
       outline: none;
       box-shadow: none;
-      background-color: var(--grey-400);
+      background-color: rgba(var(--grey-50), 0.84);
     }
   }
 
   &--secondary-text {
     background-color: transparent;
     border-radius: 2rem;
-    color: var(--black);
+    color: var(--core-purple-850);
 
     &:hover {
-      background-color: var(--grey-100);
+      background-color: rgba(var(--white), 0.12);
     }
 
     &:focus {
-      background-color: var(--grey-100);
+      background-color: rgba(var(--white), 0.16);
     }
 
     &:active,
     &.telia-business-button--active {
-      background-color: var(--grey-300);
+      background-color: rgba(var(--white), 0.16);
       outline: none;
       box-shadow: none;
     }
   }
 
   &--ghost {
-    background-color: var(--white);
+    background-color: transparent;
     border: 1px solid var(--core-purple);
     border-radius: 2rem;
     color: var(--core-purple);
 
     &:hover {
-      background-color: var(--core-purple-500);
-      color: var(--white);
+      background-color: rgba(var(--white), 0.12);
     }
 
     &:focus {
-      background-color: var(--core-purple-500);
-      color: var(--white);
+      background-color: rgba(var(--white), 0.16);
     }
 
     &:active,
     &.telia-business-button--active {
-      background-color: var(--core-purple-600);
+      background-color: rgba(var(--white), 0.16);
       outline: none;
       box-shadow: none;
-      color: var(--white);
     }
   }
 
-  &--positive {
-    background-color: var(--green-500);
+  &--outlined {
+    background-color: transparent;
+    border: 1px solid var(--core-purple-850);
     border-radius: 2rem;
-    color: var(--black);
+    color: var(--core-purple-850);
 
     &:hover {
-      background-color: var(--green-400);
+      background-color: rgba(var(--white), 0.12);
+    }
+
+    &:focus {
+      background-color: rgba(var(--white), 0.16);
     }
 
     &:active,
     &.telia-business-button--active {
-      background-color: var(--green-300);
+      background-color: rgba(var(--white), 0.16);
       outline: none;
       box-shadow: none;
     }
   }
 
-  &--negative {
+  &--white {
+    background-color: var(--white);
+    border-radius: 2rem;
+    color: var(--core-purple-850);
+
+    &:hover {
+      background-color: rgba(var(--grey-50), 0.88);
+    }
+
+    &:focus {
+      background-color: rgba(var(--grey-50), 0.84);
+    }
+
+    &:active,
+    &.telia-business-button--active {
+      background-color: rgba(var(--grey-50), 0.84);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &--green {
+    background-color: var(--green-600);
+    border-radius: 2rem;
+    color: var(--white);
+
+    &:hover {
+      background-color: rgba(var(--green-600), 0.88);
+    }
+
+    &:active,
+    &.telia-business-button--active {
+      background-color: rgba(var(--green-600), 0.84);
+      outline: none;
+      box-shadow: none;
+    }
+  }
+
+  &--red {
     background-color: var(--red-500);
     color: var(--white);
     border-radius: 2rem;
 
     &:hover {
-      background-color: var(--red-400);
+      background-color: rgba(var(--red-500), 0.88);
     }
 
     &:active,
     &.telia-business-button--active {
-      background-color: var(--red-300);
+      background-color: rgba(var(--red-500), 0.84);
       outline: none;
       box-shadow: none;
     }
@@ -190,8 +247,7 @@
 }
 
 .telia-business-button--primary.telia-business-button--disabled {
-  background-color: var(--grey-100);
-  color: var(--grey-300);
+  background-color: rgba(var(--core-purple-850), 0.16);
   cursor: default;
   disabled: true;
   pointer-events: none;
@@ -199,6 +255,13 @@
 
 .telia-business-button--primary-text.telia-business-button--disabled {
   color: var(--grey-300);
+  cursor: default;
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-business-button--expressive-purple.telia-business-button--disabled {
+  background-color: rgba(var(--core-purple), 0.16);
   cursor: default;
   disabled: true;
   pointer-events: none;
@@ -213,6 +276,7 @@
 }
 
 .telia-business-button--secondary-text.telia-business-button--disabled {
+  background-color: rgba(var(--grey-100), 0.12);
   color: var(--grey-300);
   cursor: default;
   disabled: true;
@@ -220,24 +284,37 @@
 }
 
 .telia-business-button--ghost.telia-business-button--disabled {
-  background-color: var(--white);
-  border-color: var(--grey-100);
+  background-color: transparent;
+  border-color: rgba(var(--core-purple), 0.16);
+  color: rgba(var(--core-purple), 0.16);
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-business-button--outlined.telia-business-button--disabled {
+  background-color: transparent;
+  border-color: rgba(var(--core-purple-850), 0.16);
+  color: rgba(var(--core-purple-850), 0.16);
+  disabled: true;
+  pointer-events: none;
+}
+
+.telia-business-button--white.telia-business-button--disabled {
+  background-color: var(--grey-100);
   color: var(--grey-300);
   disabled: true;
   pointer-events: none;
 }
 
-.telia-business-button--positive.telia-business-button--disabled {
-  background-color: var(--grey-100);
-  color: var(--grey-300);
+.telia-business-button--green.telia-business-button--disabled {
+  background-color: rgba(var(--green-600), 0.16);
   cursor: default;
   disabled: true;
   pointer-events: none;
 }
 
-.telia-business-button--negative.telia-business-button--disabled {
-  background-color: var(--grey-100);
-  color: var(--grey-300);
+.telia-business-button--red.telia-business-button--disabled {
+  background-color: rgba(var(--red-500), 0.16);
   cursor: default;
   disabled: true;
   pointer-events: none;
