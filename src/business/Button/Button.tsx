@@ -2,7 +2,17 @@ import React from 'react';
 import cs from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon';
 
-type ButtonKind = 'primary' | 'primary-text' | 'secondary' | 'secondary-text' | 'ghost' | 'positive' | 'negative';
+type ButtonKind =
+  | 'primary'
+  | 'primary-text'
+  | 'expressive-purple'
+  | 'secondary'
+  | 'secondary-text'
+  | 'ghost'
+  | 'outlined'
+  | 'white'
+  | 'green'
+  | 'red';
 
 type ButtonProps = {
   /**

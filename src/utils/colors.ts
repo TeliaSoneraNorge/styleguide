@@ -6,7 +6,7 @@ export const colorDefinitions = {
   accent250: '#ebebeb',
 
   // Purple
-  corePurple100: '#fbf4ff',
+  corePurple100: '#fbf0ff',
   corePurple200: '#edc8ff',
   corePurple300: '#de99ff',
   corePurple400: '#c158f8',
@@ -14,9 +14,11 @@ export const colorDefinitions = {
   corePurple600: '#7d00bd',
   corePurple700: '#5f008f',
   corePurple800: '#3f005e',
+  corePurple850: '#29003e',
   corePurple900: '#1f002e',
 
   // Grey
+  grey50: '#f4f4f9',
   grey100: '#f2f2f2',
   grey200: '#dbdbdb',
   grey300: '#bdbdbd',

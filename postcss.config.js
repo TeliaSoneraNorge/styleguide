@@ -2,7 +2,7 @@ const fs = require('fs');
 const crypto = require('crypto');
 const path = require('path');
 
-const calculateHash = url => {
+const calculateHash = (url) => {
   const filePath = path.resolve(__dirname, './dist', url);
 
   if (fs.existsSync(filePath)) {
@@ -23,7 +23,7 @@ module.exports = {
     'postcss-functions': {
       functions: {
         // Pixels to rem
-        rem: px => `${px / 16}rem`,
+        rem: (px) => `${px / 16}rem`,
         // Pixels to em
         em: (px, base = 16) => `${px / base}em`,
       },
@@ -42,7 +42,8 @@ module.exports = {
     },
     'postcss-url': {
       filter: '**',
-      url: asset => `${asset.url}?${calculateHash(asset.url)}`,
+      url: (asset) => `${asset.url}?${calculateHash(asset.url)}`,
     },
+    'postcss-hexrgba': {},
   },
 };
