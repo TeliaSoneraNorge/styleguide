@@ -231,7 +231,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           onStepButtonClick={() => onStepButtonClick(step.number)}
         />
 
-        {index < maxDisplayCount - 1 && <RenderLine isComplete={step.isComplete == true} />}
+        {index < maxDisplayCount - 1 && (
+          <RenderLine isComplete={step.isComplete == true} isActive={step.number === state.currentActiveStepNumber} />
+        )}
       </li>
     );
   };

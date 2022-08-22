@@ -24,23 +24,19 @@
   }
 
   &__list-item {
-    width: 150px;
-    height: 32px;
+    width: 58px;
+    min-height: 32px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: 48em) {
-      height: unset;
-      width: 90px;
+    @media screen and (min-width: 22.5em) {
+      width: 65px;
     }
 
-    @media screen and (max-width: 37.5em) {
-      width: 70px;
-    }
-    @media screen and (max-width: 23em) {
-      width: 54px;
+    @media screen and (min-width: 48em) {
+      width: 150px;
     }
   }
 
@@ -189,138 +185,25 @@
     }
   }
 
-  &__arrow {
-    position: absolute;
-    width: 60px;
-    border: 0;
-    line-height: 0;
-
-    @media screen and (max-width: 48em) {
-      width: 55px;
-    }
-
-    &:hover {
-      & svg {
-        fill: var(--core-purple);
-      }
-    }
-
-    &--left {
-      @media screen and (max-width: 48em) {
-        margin-left: -14px;
-        width: 48px;
-      }
-      @media screen and (max-width: 37.5em) {
-        width: 38px;
-      }
-    }
-
-    &--right {
-      position: relative;
-      display: inline-block;
-      margin-left: -60px;
-
-      @media screen and (max-width: 48em) {
-        width: 48px;
-        margin-left: -34px;
-      }
-      @media screen and (max-width: 37.5em) {
-        width: 38px;
-        margin-left: -22px;
-      }
-    }
-
-    &__button {
-      position: relative;
-      cursor: pointer;
-      background: transparent;
-      border: 0;
-      padding: 0;
-      z-index: 5;
-      top: 2px;
-
-      @media screen and (max-width: 48em) {
-        top: 2px;
-      }
-
-      & > svg {
-        width: 28px;
-        height: 28px;
-
-        @media screen and (max-width: 48em) {
-          width: 20px;
-          height: 20px;
-          margin-top: 2px;
-        }
-
-        @media screen and (max-width: 37.5em) {
-          margin-top: 3px;
-        }
-      }
-
-      &--right {
-        left: 0px;
-        float: right;
-
-        @media screen and (max-width: 48em) {
-          left: 0px;
-        }
-        @media screen and (max-width: 24em) {
-          left: 0px;
-        }
-      }
-
-      &--left {
-        left: 0px;
-        float: left;
-
-        @media screen and (max-width: 48em) {
-          left: 0px;
-        }
-
-        @media screen and (max-width: 24em) {
-          left: 0px;
-        }
-      }
-    }
-  }
-
   &__line {
     position: absolute;
     cursor: default;
-    border-bottom: 2px dotted var(--darker-grey);
+    border-bottom: 3px dotted var(--darker-grey);
     z-index: -1;
-    top: calc(50% - 1px);
+    top: calc(50% - 2px);
     left: 50%;
     width: calc(100% - 26px);
     margin-left: 14px;
 
+    &--dashed {
+      width: calc(100% - 32px);
+      margin-left: 16px;
+    }
+
     @media screen and (max-width: 48em) {
+      border-bottom: 2px dotted var(--darker-grey);
       width: calc(100% - 20px);
       margin-left: 10px;
-    }
-
-    &--right {
-      width: 30px;
-      margin: 0;
-      left: 0;
-
-      @media screen and (max-width: 24em) {
-        display: none;
-        visibility: hidden;
-      }
-    }
-
-    &--left {
-      width: 30px;
-      margin: 0;
-      left: auto;
-      right: -1px;
-
-      @media screen and (max-width: 24em) {
-        display: none;
-        visibility: hidden;
-      }
     }
 
     &--complete {
@@ -329,37 +212,111 @@
     }
   }
 
-  &__transparent-layer {
+  &__arrow-container {
     position: absolute;
-    cursor: default;
-    height: 100%;
-    z-index: 4;
-    width: 38px;
+    /* li width (58) / 2 */
+    width: 29px;
 
     &--left {
-      background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
-      transform: rotate(-180deg);
+      margin-left: -8px;
+      left: 0;
 
-      right: 0px;
-
-      @media screen and (max-width: 24em) {
-        display: none;
-        visibility: hidden;
+      @media screen and (min-width: 22.5em) {
+        margin-left: -16px;
+      }
+      @media screen and (min-width: 48em) {
+        margin-left: 0;
       }
     }
 
     &--right {
-      background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
-      left: 0px;
+      margin-right: -8px;
+      right: 0;
 
-      @media screen and (max-width: 37.5em) {
-        width: 30px;
-        left: 2px;
+      @media screen and (min-width: 22.5em) {
+        margin-right: -16px;
+      }
+      @media screen and (min-width: 48em) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: 48em) {
+      width: calc(75px - 22px + 4px);
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    z-index: 5;
+
+    display: flex;
+    justify-items: center;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    & > button {
+      cursor: pointer;
+      background-color: transparent;
+      outline: unset;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 20px;
+      border: 0;
+
+      &:hover {
+        color: var(--core-purple);
+      }
+    }
+    & > button > svg {
+      width: 20px;
+    }
+
+    &__line {
+      width: 100%;
+      border-bottom: 3px dotted var(--darker-grey);
+      position: absolute;
+      z-index: 3;
+      display: none;
+      visibility: hidden;
+
+      @media screen and (min-width: 48em) {
+        display: block;
+        visibility: visible;
+      }
+    }
+
+    &__layer {
+      width: 75%;
+      height: 100%;
+      position: absolute;
+      z-index: 4;
+
+      &-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: white;
+        z-index: 2;
       }
 
-      @media screen and (max-width: 24em) {
-        display: none;
-        visibility: hidden;
+      &--left {
+        background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
+        transform: rotate(-180deg);
+        right: 4%;
+      }
+
+      &--right {
+        background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
       }
     }
   }

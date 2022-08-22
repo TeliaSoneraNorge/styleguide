@@ -8,26 +8,52 @@ export const RenderArrow = (props: any) => {
 
   const modifier = iconName.includes('left') ? 'left' : 'right';
 
-  const buttonClassName =
-    'telia-step-indicator-paging__arrow__button telia-step-indicator-paging__arrow__button--' + modifier;
+  const buttonClassName = '';
 
   return (
-    <li className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
-      <RenderLine isComplete={isComplete} className={'telia-step-indicator-paging__line--' + modifier} />
-
-      <RenderTransparentLayer modifier={modifier} />
-
-      {url && url.length > 0 && (
-        <a href={url} className={buttonClassName}>
-          <Icon icon={iconName} />
-        </a>
-      )}
-
-      {!url && (
-        <button type="button" onClick={onPaging} className={buttonClassName}>
-          <Icon icon={iconName} />
-        </button>
-      )}
+    <li
+      className={
+        'telia-step-indicator-paging__list-item telia-step-indicator-paging__arrow-container telia-step-indicator-paging__arrow-container--' +
+        modifier
+      }
+    >
+      <div className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
+        {url && url.length > 0 && (
+          <a href={url} className={buttonClassName}>
+            <Icon icon={iconName} />
+          </a>
+        )}
+        {!url && (
+          <button type="button" onClick={onPaging} className={buttonClassName}>
+            <Icon icon={iconName} />
+          </button>
+        )}
+      </div>
+      <div className="telia-step-indicator-paging__arrow__layer-background"></div>
+      <div
+        className={'telia-step-indicator-paging__arrow__layer telia-step-indicator-paging__arrow__layer--' + modifier}
+      ></div>
+      <div className="telia-step-indicator-paging__arrow__line"></div>
     </li>
   );
+
+  // return (
+  //   <li className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
+  //     <RenderLine isComplete={isComplete} className={'telia-step-indicator-paging__line--' + modifier} isActive={false} />
+
+  //     <RenderTransparentLayer modifier={modifier} />
+
+  //     {url && url.length > 0 && (
+  //       <a href={url} className={buttonClassName}>
+  //         <Icon icon={iconName} />
+  //       </a>
+  //     )}
+
+  //     {!url && (
+  //       <button type="button" onClick={onPaging} className={buttonClassName}>
+  //         <Icon icon={iconName} />
+  //       </button>
+  //     )}
+  //   </li>
+  // );
 };
