@@ -28,7 +28,8 @@ export function TabletIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M44 4a8 8 0 018 8v40a8 8 0 01-8 8H20a8 8 0 01-8-8V12a8 8 0 018-8zm4 44H16v4a4 4 0 004 4h24a4 4 0 004-4v-4zm-16 2a2 2 0 110 4 2 2 0 010-4zM44 8H20a4 4 0 00-4 4v32h32V12a4 4 0 00-4-4z"
+        d="M44 4H20a8.01 8.01 0 00-8 8v40a8.01 8.01 0 008 8h24a8.01 8.01 0 008-8V12a8.01 8.01 0 00-8-8zm-28 8a4.004 4.004 0 014-4h24a4.004 4.004 0 014 4v32H16V12zm32 40a4.004 4.004 0 01-4 4H20a4.004 4.004 0 01-4-4v-4h32v4zm-18 0a2 2 0 114 0 2 2 0 01-4 0z"
+        clipRule="evenodd"
       />
     </svg>
   );
