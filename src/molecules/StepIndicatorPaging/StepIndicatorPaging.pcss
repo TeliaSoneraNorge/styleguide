@@ -13,6 +13,24 @@
     @media screen and (min-width: 48em) {
       padding-bottom: 40px;
     }
+
+    &--page-size-5 > li {
+      @media screen and (min-width: 22.5em) {
+        width: 65px;
+      }
+
+      @media screen and (min-width: 25em) {
+        width: 72px;
+      }
+
+      @media screen and (min-width: 27.5em) {
+        width: 78px;
+      }
+
+      @media screen and (min-width: 48em) {
+        width: 150px;
+      }
+    }
   }
 
   &__list-item {
@@ -151,7 +169,7 @@
       @media screen and (max-width: 48em) {
         display: none;
         visibility: hidden;
-        top: 30px;
+        top: 38px;
       }
 
       & > span {
@@ -207,7 +225,7 @@
 
   &__arrow-container {
     position: absolute;
-    width: 29px;
+    width: 60px !important;
 
     &--left {
       margin-left: -8px;
@@ -277,8 +295,15 @@
       }
     }
 
+    & > a > svg {
+      width: 20px;
+      @media screen and (min-width: 48em) {
+        width: 24px;
+      }
+    }
+
     &__line {
-      width: 100%;
+      width: 58px;
       position: absolute;
       z-index: 3;
       display: none;
@@ -304,6 +329,13 @@
       height: 100%;
       position: absolute;
       z-index: 4;
+      visibility: hidden;
+      display: none;
+
+      @media screen and (min-width: 27.5em) {
+        visibility: visible;
+        display: block;
+      }
 
       &-background {
         width: 100%;
@@ -311,6 +343,13 @@
         position: absolute;
         background-color: white;
         z-index: 2;
+        visibility: hidden;
+        display: none;
+
+        @media screen and (min-width: 27.5em) {
+          visibility: visibility;
+          display: block;
+        }
       }
 
       &--left {
