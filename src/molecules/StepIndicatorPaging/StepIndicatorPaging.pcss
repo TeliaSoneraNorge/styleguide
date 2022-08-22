@@ -277,17 +277,29 @@
         color: var(--core-purple);
       }
     }
+
     & > button > svg {
       width: 20px;
+      @media screen and (min-width: 48em) {
+        width: 24px;
+      }
     }
 
     &__line {
       width: 100%;
-      border-bottom: 3px dotted var(--darker-grey);
       position: absolute;
       z-index: 3;
       display: none;
       visibility: hidden;
+
+      &--solid {
+        border-bottom: 3px solid var(--core-purple);
+        margin-left: 8px;
+      }
+
+      &--dashed {
+        border-bottom: 3px dotted var(--darker-grey);
+      }
 
       @media screen and (min-width: 48em) {
         display: block;

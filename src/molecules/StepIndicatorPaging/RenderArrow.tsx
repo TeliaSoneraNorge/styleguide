@@ -33,7 +33,12 @@ export const RenderArrow = (props: any) => {
       <div
         className={'telia-step-indicator-paging__arrow__layer telia-step-indicator-paging__arrow__layer--' + modifier}
       ></div>
-      <div className="telia-step-indicator-paging__arrow__line"></div>
+      {isComplete && (
+        <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--solid"></div>
+      )}
+      {!isComplete && (
+        <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--dashed"></div>
+      )}
     </li>
   );
 
