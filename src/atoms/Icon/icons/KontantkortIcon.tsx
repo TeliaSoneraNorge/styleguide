@@ -33,9 +33,9 @@ export function KontantkortIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M10 12h44a6 6 0 016 6v28a6 6 0 01-6 6H10a6 6 0 01-6-6V18a6 6 0 016-6zm46 6a2 2 0 00-2-2H10a2 2 0 00-2 2v28a2 2 0 002 2h44a2 2 0 002-2V18z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

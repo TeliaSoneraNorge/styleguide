@@ -32,9 +32,9 @@ export function PlusIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M51.5 30h-39a2.167 2.167 0 000 4.333h39a2.167 2.167 0 100-4.333z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

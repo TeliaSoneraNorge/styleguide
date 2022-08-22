@@ -33,9 +33,9 @@ export function DaasDeviceIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M48.367 20.572a2 2 0 01.173 2.823L36.279 37.258a2 2 0 01-2.936.065l-6.641-6.866a2 2 0 112.875-2.78l5.138 5.311 10.828-12.243a2 2 0 012.824-.173z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

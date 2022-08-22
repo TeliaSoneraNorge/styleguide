@@ -31,12 +31,12 @@ export function SecureDeviceIcon(props: Props) {
         d="M28 16.341V13.6C28 8.741 32.142 5 37 5s9 3.741 9 8.6v2.741c2.33.824 4 3.047 4 5.659v9a6 6 0 01-6 6H30a6 6 0 01-6-6v-9a6.003 6.003 0 014-5.659zm4-2.741c0-2.431 2.126-4.6 5-4.6s5 2.169 5 4.6V16H32v-2.4zM28 22a2 2 0 012-2h14a2 2 0 012 2v9a2 2 0 01-2 2H30a2 2 0 01-2-2v-9z"
         clipRule="evenodd"
       />
-      <path fillRule="evenodd" d="M37 24a2 2 0 012 2v2a2 2 0 11-4 0v-2a2 2 0 012-2z" clipRule="evenodd" />
+      <path fill-rule="evenodd" d="M37 24a2 2 0 012 2v2a2 2 0 11-4 0v-2a2 2 0 012-2z" clip-rule="evenodd" />
       <path d="M31 52a2 2 0 11-4 0 2 2 0 014 0z" />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M21 4a8 8 0 00-8 8v40a8 8 0 008 8h16a8 8 0 008-8V41a2 2 0 10-4 0v3H17V12a4 4 0 014-4h4.5a2 2 0 100-4H21zm-4 44v4a4 4 0 004 4h16a4 4 0 004-4v-4H17z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

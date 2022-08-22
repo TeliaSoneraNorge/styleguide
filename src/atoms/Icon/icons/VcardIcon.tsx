@@ -33,9 +33,9 @@ export function VcardIcon(props: Props) {
       />
       <path d="M39 21h11a2 2 0 110 4H39a2 2 0 110-4zm11 7H39a2 2 0 100 4h11a2 2 0 100-4z" />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M10 12h44a6 6 0 016 6v28a6 6 0 01-6 6H10a6 6 0 01-6-6V18a6 6 0 016-6zm0 4h44a2 2 0 012 2v28a2 2 0 01-2 2H10a2 2 0 01-2-2V18a2 2 0 012-2z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

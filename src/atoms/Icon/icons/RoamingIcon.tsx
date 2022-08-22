@@ -33,9 +33,9 @@ export function RoamingIcon(props: Props) {
       />
       <path d="M29 52a2 2 0 11-4 0 2 2 0 014 0z" />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M19 4a8 8 0 00-8 8v40a8 8 0 008 8h16a8 8 0 008-8V42a2 2 0 10-4 0v2H15V12a4 4 0 014-4h2.5a2 2 0 100-4H19zm-4 44v4a4 4 0 004 4h16a4 4 0 004-4v-4H15z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

@@ -32,9 +32,9 @@ export function RackIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M20 4a8 8 0 00-8 8v40a8 8 0 008 8h24a8 8 0 008-8V12a8 8 0 00-8-8H20zm28 42V36H16v10h32zm-32 4v2a4 4 0 004 4h24a4 4 0 004-4v-2H16zm32-28v10H16V22h32zM16 12a4 4 0 014-4h24a4 4 0 014 4v6H16v-6z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
       <path d="M38 13a2 2 0 11-4 0 2 2 0 014 0zm0 14a2 2 0 11-4 0 2 2 0 014 0zm0 14a2 2 0 11-4 0 2 2 0 014 0zm6-28a2 2 0 11-4 0 2 2 0 014 0zm0 14a2 2 0 11-4 0 2 2 0 014 0zm0 14a2 2 0 11-4 0 2 2 0 014 0z" />
     </svg>

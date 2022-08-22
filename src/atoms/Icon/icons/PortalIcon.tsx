@@ -33,9 +33,9 @@ export function PortalIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M32 26a7 7 0 00-6.386 9.872A6.998 6.998 0 0022 42v1a4 4 0 004 4h12a4 4 0 004-4v-1a6.998 6.998 0 00-3.614-6.128A7 7 0 0032 26zm-3 7a3 3 0 116 0 3 3 0 01-6 0zm6.53 6.047A6.968 6.968 0 0132 40a6.968 6.968 0 01-3.53-.953A3 3 0 0026 42v1h12v-1a3 3 0 00-2.47-2.953z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );

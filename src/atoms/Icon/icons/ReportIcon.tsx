@@ -33,9 +33,9 @@ export function ReportIcon(props: Props) {
       />
       <path d="M24 28a2 2 0 10-4 0v20a2 2 0 002 2h20a2 2 0 100-4H24V28z" />
       <path
-        fillRule="evenodd"
+        fill-rule="evenodd"
         d="M43.087 28.82a2 2 0 01.592 2.767l-5.5 8.5a2 2 0 01-2.996.418l-2.444-2.139-3.191 3.9a2 2 0 11-3.096-2.532l4.5-5.5a2 2 0 012.865-.24l2.26 1.978 4.244-6.559a2 2 0 012.766-.592z"
-        clipRule="evenodd"
+        clip-rule="evenodd"
       />
     </svg>
   );
