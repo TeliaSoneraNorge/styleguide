@@ -14,6 +14,40 @@
       padding-bottom: 40px;
     }
 
+    &--page-size-3 > li {
+      @media screen and (min-width: 22.5em) {
+        width: 65px;
+      }
+
+      @media screen and (min-width: 25em) {
+        width: 72px;
+      }
+
+      @media screen and (min-width: 27.5em) {
+        width: 78px;
+      }
+      @media screen and (min-width: 32em) {
+        width: 92px;
+      }
+    }
+
+    &--page-size-4 > li {
+      @media screen and (min-width: 22.5em) {
+        width: 72px;
+      }
+
+      @media screen and (min-width: 25em) {
+        width: 78px;
+      }
+
+      @media screen and (min-width: 27.5em) {
+        width: 92px;
+      }
+      @media screen and (min-width: 32em) {
+        width: 110px;
+      }
+    }
+
     &--page-size-5 > li {
       @media screen and (min-width: 22.5em) {
         width: 65px;
@@ -26,7 +60,12 @@
       @media screen and (min-width: 27.5em) {
         width: 78px;
       }
+      @media screen and (min-width: 32em) {
+        width: 92px;
+      }
+    }
 
+    & > li.telia-step-indicator-paging__list-item {
       @media screen and (min-width: 48em) {
         width: 150px;
       }
@@ -34,20 +73,12 @@
   }
 
   &__list-item {
-    width: 58px;
+    min-width: 58px;
     min-height: 32px;
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    @media screen and (min-width: 22.5em) {
-      width: 65px;
-    }
-
-    @media screen and (min-width: 48em) {
-      width: 150px;
-    }
   }
 
   &__button {
@@ -207,8 +238,8 @@
     margin-left: 14px;
 
     &--dashed {
-      width: calc(100% - 32px);
-      margin-left: 16px;
+      width: calc(100% - 33px);
+      margin-left: 17px;
     }
 
     @media screen and (max-width: 48em) {
@@ -225,34 +256,37 @@
 
   &__arrow-container {
     position: absolute;
-    width: 60px !important;
 
     &--left {
-      margin-left: -8px;
       left: 0;
-
-      @media screen and (min-width: 22.5em) {
-        margin-left: -16px;
-      }
-      @media screen and (min-width: 48em) {
-        margin-left: 0;
-      }
     }
 
     &--right {
-      margin-right: -8px;
       right: 0;
+    }
+  }
 
-      @media screen and (min-width: 22.5em) {
-        margin-right: -16px;
-      }
+  &__arrow-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &--left {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      left: 0;
+      margin-left: -12px;
       @media screen and (min-width: 48em) {
-        margin-right: 0;
+        margin-left: -5px;
       }
     }
-
-    @media screen and (min-width: 48em) {
-      width: calc(75px - 22px + 4px);
+    &--right {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      left: calc(50% + 12px); /* width + 'button circle size' */
     }
   }
 
@@ -318,7 +352,7 @@
         border-bottom: 3px dotted var(--darker-grey);
       }
 
-      @media screen and (min-width: 48em) {
+      @media screen and (min-width: 40em) {
         display: block;
         visibility: visible;
       }
@@ -332,7 +366,7 @@
       visibility: hidden;
       display: none;
 
-      @media screen and (min-width: 27.5em) {
+      @media screen and (min-width: 40em) {
         visibility: visible;
         display: block;
       }
@@ -346,7 +380,7 @@
         visibility: hidden;
         display: none;
 
-        @media screen and (min-width: 27.5em) {
+        @media screen and (min-width: 40em) {
           visibility: visibility;
           display: block;
         }

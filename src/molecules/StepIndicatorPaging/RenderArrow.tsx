@@ -16,28 +16,30 @@ export const RenderArrow = (props: any) => {
         modifier
       }
     >
-      <div className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
-        {url && url.length > 0 && (
-          <a href={url} className={buttonClassName}>
-            <Icon icon={iconName} />
-          </a>
+      <div className={'telia-step-indicator-paging__arrow-item telia-step-indicator-paging__arrow-item--' + modifier}>
+        <div className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
+          {url && url.length > 0 && (
+            <a href={url} className={buttonClassName}>
+              <Icon icon={iconName} />
+            </a>
+          )}
+          {!url && (
+            <button type="button" onClick={onPaging} className={buttonClassName}>
+              <Icon icon={iconName} />
+            </button>
+          )}
+        </div>
+        <div className="telia-step-indicator-paging__arrow__layer-background"></div>
+        <div
+          className={'telia-step-indicator-paging__arrow__layer telia-step-indicator-paging__arrow__layer--' + modifier}
+        ></div>
+        {isComplete && (
+          <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--solid"></div>
         )}
-        {!url && (
-          <button type="button" onClick={onPaging} className={buttonClassName}>
-            <Icon icon={iconName} />
-          </button>
+        {!isComplete && (
+          <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--dashed"></div>
         )}
       </div>
-      <div className="telia-step-indicator-paging__arrow__layer-background"></div>
-      <div
-        className={'telia-step-indicator-paging__arrow__layer telia-step-indicator-paging__arrow__layer--' + modifier}
-      ></div>
-      {isComplete && (
-        <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--solid"></div>
-      )}
-      {!isComplete && (
-        <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--dashed"></div>
-      )}
     </li>
   );
 };
