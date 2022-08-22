@@ -5,21 +5,13 @@
     display: flex;
     list-style: none;
     padding: 0;
-    padding-bottom: 40px;
+    padding-bottom: 24px;
     width: min-content;
     position: relative;
     margin: 0 auto;
 
-    @media screen and (max-width: 48em) {
-      padding-bottom: 25px;
-    }
-
-    &--left-mask {
-      -webkit-mask-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0) 0,
-        black calc(5.9rem * var(--voca-rem-multiplier))
-      );
+    @media screen and (min-width: 48em) {
+      padding-bottom: 40px;
     }
   }
 
@@ -178,6 +170,7 @@
 
         @media screen and (max-width: 24em) {
           font-size: 14px;
+          /* max possible without going over the other nearby step-buttons*/
           width: 136%;
           margin-left: -13%;
         }
@@ -214,7 +207,6 @@
 
   &__arrow-container {
     position: absolute;
-    /* li width (58) / 2 */
     width: 29px;
 
     &--left {
