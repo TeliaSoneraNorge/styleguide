@@ -32,9 +32,9 @@ export function AddressBookIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M13 8a4 4 0 014-4h29a8 8 0 018 8v40a8 8 0 01-8 8H17a4 4 0 01-4-4v-7h-1a2 2 0 110-4h1v-6h-1a2 2 0 110-4h1v-6h-1a2 2 0 110-4h1v-6h-1a2 2 0 110-4h1V8zm4 41h1a2 2 0 100-4h-1v-6h1a2 2 0 100-4h-1v-6h1a2 2 0 100-4h-1v-6h1a2 2 0 100-4h-1V8h29a4 4 0 014 4v40a4 4 0 01-4 4H17v-7z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

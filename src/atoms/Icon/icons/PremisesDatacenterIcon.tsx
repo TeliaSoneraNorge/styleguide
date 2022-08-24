@@ -32,9 +32,9 @@ export function PremisesDatacenterIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M20 23a2 2 0 012-2h20a2 2 0 110 4H22a2 2 0 01-2-2zm0 9a2 2 0 012-2h20a2 2 0 110 4H22a2 2 0 01-2-2z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

@@ -34,9 +34,9 @@ export function RadioIcon(props: Props) {
       />
       <path d="M40 32a2 2 0 012-2h8a2 2 0 110 4h-8a2 2 0 01-2-2zm2 6a2 2 0 100 4h8a2 2 0 100-4h-8zm-2-14a2 2 0 012-2h8a2 2 0 110 4h-8a2 2 0 01-2-2z" />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M34 10a2 2 0 10-4 0v2h-4v-2a2 2 0 10-4 0v2h-4v-2a2 2 0 10-4 0v2h-2a8 8 0 00-8 8v24a8 8 0 008 8h40a8 8 0 008-8V20a8 8 0 00-8-8H34v-2zm-22 6a4 4 0 00-4 4v24a4 4 0 004 4h40a4 4 0 004-4V20a4 4 0 00-4-4H12z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

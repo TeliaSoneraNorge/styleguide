@@ -32,9 +32,9 @@ export function BusinessIntelligenceIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M34.553 4c-12.404-.007-22.58 9.823-23 22.22l-4.54 5.12a4 4 0 003 6.66h1.54v8a4 4 0 004 4h6a4 4 0 014 4v2a4 4 0 004 4h16a4 4 0 004-4V44.91a24.08 24.08 0 008-17.91c0-12.703-10.298-23-23-23zm12.4 37.9a4 4 0 00-1.4 3V56h-16v-2a8 8 0 00-8-8h-6V34h-5.55l5.55-6.24V27c0-10.493 8.506-19 19-19 10.493 0 19 8.507 19 19a20.27 20.27 0 01-6.6 14.9z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

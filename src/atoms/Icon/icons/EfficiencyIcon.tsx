@@ -32,14 +32,14 @@ export function EfficiencyIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M30 35a4 4 0 100 8 4 4 0 000-8zm-8 4a8 8 0 1116 0 8 8 0 01-16 0zM42.5 8a9.5 9.5 0 100 19 9.5 9.5 0 000-19zM29 17.5C29 10.044 35.045 4 42.5 4 49.956 4 56 10.044 56 17.5S49.956 31 42.5 31C35.045 31 29 24.956 29 17.5z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M43 10a2 2 0 012 2v6.828l-3.585 3.586a2 2 0 11-2.829-2.828L41 17.172V12a2 2 0 012-2z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

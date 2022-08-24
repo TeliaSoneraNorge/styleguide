@@ -31,7 +31,7 @@ export function CreditCardIcon(props: Props) {
         d="M12 12.19a8 8 0 00-8 8v22a8 8 0 008 8h40a8 8 0 008-8v-22a8 8 0 00-8-8H12zm-4 8a4 4 0 014-4h40a4 4 0 014 4v2H8v-2zm0 6v16a4 4 0 004 4h40a4 4 0 004-4v-16H8z"
         clipRule="evenodd"
       />
-      <path fill-rule="evenodd" d="M12 33.19a2 2 0 012-2h18a2 2 0 110 4H14a2 2 0 01-2-2z" clip-rule="evenodd" />
+      <path fillRule="evenodd" d="M12 33.19a2 2 0 012-2h18a2 2 0 110 4H14a2 2 0 01-2-2z" clipRule="evenodd" />
     </svg>
   );
 }
