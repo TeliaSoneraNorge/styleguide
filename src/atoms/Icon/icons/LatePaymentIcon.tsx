@@ -32,14 +32,14 @@ export function LatePaymentIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M43.167 30.726c-6.352 0-11.5 5.149-11.5 11.5s5.148 11.5 11.5 11.5c6.35 0 11.5-5.149 11.5-11.5s-5.15-11.5-11.5-11.5zm-15.5 11.5c0-8.56 6.94-15.5 15.5-15.5 8.56 0 15.5 6.94 15.5 15.5 0 8.56-6.94 15.5-15.5 15.5-8.56 0-15.5-6.94-15.5-15.5z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M43.167 34.44a2 2 0 012 2v7.175a2 2 0 01-.471 1.29l-2.893 3.431a2 2 0 11-3.058-2.578l2.422-2.873V36.44a2 2 0 012-2z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

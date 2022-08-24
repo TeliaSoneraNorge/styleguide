@@ -32,20 +32,20 @@ export function ChatRobotIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M28 32.83a3.001 3.001 0 10-2 0V34H16v-1.17a3.001 3.001 0 10-2 0v1.232A8.001 8.001 0 007 42v1a3 3 0 100 6v3a8 8 0 008 8h12a8 8 0 008-8v-3a3 3 0 100-6v-1a8.001 8.001 0 00-7-7.938v-1.233zM15 38a4 4 0 00-4 4v10a4 4 0 004 4h12a4 4 0 004-4V42a4 4 0 00-4-4H15z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M16 49a1 1 0 00-1 1.019c.003.056.009.174.015.233a4.452 4.452 0 00.796 2.08C16.656 53.513 18.237 54.5 21 54.5s4.344-.986 5.189-2.169a4.452 4.452 0 00.796-2.08A5.519 5.519 0 0027 50a1 1 0 00-1-1H16zm1.12 2.112s-.084-.075-.12-.112h8a1.836 1.836 0 01-.12.112l-.084.073c-.48.42-1.502 1.315-3.796 1.315-2.294 0-3.317-.895-3.796-1.315l-.084-.073z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path d="M39 16a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0zm7 0a2 2 0 11-4 0 2 2 0 014 0z" />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M35 4a8 8 0 00-8 8v7a8 8 0 008 8h1v4a2 2 0 003.302 1.519L45.74 27H52a8 8 0 008-8v-7a8 8 0 00-8-8H35zm17 19h-6c-1 0-2 0-3 1l-3 2.5V25a2 2 0 00-2-2h-3a4 4 0 01-4-4v-7a4 4 0 014-4h17a4 4 0 014 4v7a4 4 0 01-4 4z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );

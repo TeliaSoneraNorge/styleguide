@@ -32,14 +32,14 @@ export function DocumentEditIcon(props: Props) {
         clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M8 12a8 8 0 018-8h28a4 4 0 014 4v15a2 2 0 11-4 0V8H16a4 4 0 00-4 4v44h27.801a4 4 0 003.406-1.903l.09-.146a2 2 0 113.406 2.098l-.09.146A8 8 0 0139.801 60H12a4 4 0 01-4-4V12z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
       <path
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M16 20a2 2 0 012-2h20a2 2 0 110 4H18a2 2 0 01-2-2zm0 8a2 2 0 012-2h20a2 2 0 110 4H18a2 2 0 01-2-2zm0 8a2 2 0 012-2h12a2 2 0 110 4H18a2 2 0 01-2-2z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       />
     </svg>
   );
