@@ -19,6 +19,7 @@ export interface AlertProps {
   scrollTo?: boolean;
   minimizedText?: string;
   links?: AlertLinks[];
+  children?: React.ReactNode;
 }
 
 export const Alert: React.FC<AlertProps>;
