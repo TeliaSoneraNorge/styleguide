@@ -1,14 +1,15 @@
-name: Build and deploy website
+name: Build on PR
 on:
-  push:
+  pull_request:
     branches:
-      - master
-      - feature/github-actions
+      - 'master'
+      - '!dependabot/**'
+    types: [opened, synchronize]
   workflow_dispatch:
 
 jobs:
   build-and-deploy-website:
-    name: Build and deploy website
+    name: Build check
     runs-on: ubuntu-latest
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -24,14 +25,6 @@ jobs:
           echo "Node Version: $(node --version)"
           echo "NPM Version: $(npm --version)"
           aws --version
-
-      - name: Configure AWS credentials
-        uses: aws-actions/configure-aws-credentials@v1
-        with:
-          aws-access-key-id: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_ACCESS_KEY }}
-          aws-secret-access-key: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SECRET_KEY }}
-          aws-session-token: ${{ secrets.CHANNEL_API_SIDECRED_MACHINE_USER_PRODUCTION_SESSION_TOKEN }}
-          aws-region: eu-west-1
 
       - name: Install
         run: |
@@ -51,9 +44,3 @@ jobs:
       - name: Lint
         run: |
           npm run lint
-
-      - name: Deploy to S3 Bucket
-        working-directory: ./dist-storybook
-        run: |
-          aws s3 rm s3://styleguide.channelapi.telia.no --recursive
-          aws s3 sync . s3://styleguide.channelapi.telia.no
