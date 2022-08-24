@@ -90,8 +90,8 @@ async function processIcons() {
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '<>')
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64">', '<>')
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 65">', '<>')
-          .replace('fill-rule', 'fillRule')
-          .replace('clip-rule', 'clipRule')
+          .replaceAll('fill-rule', 'fillRule')
+          .replaceAll('clip-rule', 'clipRule')
           .replace('</svg>', '</>'),
         outerJsxWithClassNameAndStyle: svg.data
           .replace(
@@ -99,8 +99,8 @@ async function processIcons() {
             `<svg className={cs('Icon', 'Icon--${iconName}', props.className)} style={props.style} aria-hidden={props.title ? undefined : true} `
           )
           .replace('>', '>{props.title && <title>{props.title}</title>}')
-          .replace('fill-rule', 'fillRule')
-          .replace('clip-rule', 'clipRule'),
+          .replaceAll('fill-rule', 'fillRule')
+          .replaceAll('clip-rule', 'clipRule'),
       });
       result.processed.push(iconFileName);
     } catch (error) {
