@@ -14,19 +14,19 @@ export const RenderStepButton = (props: any) => {
 
   const RenberButtonText = () => (
     <div
-      className={classnames('telia-step-indicator-paging__button__text', {
-        'telia-step-indicator-paging__button__text--active': isActive,
+      className={classnames('telia-step-indicator-paging__button-text', {
+        'telia-step-indicator-paging__button-text--active': isActive,
       })}
     >
-      {isComplete && <CheckMarkIcon className={'telia-step-indicator-paging__button__icon--' + isActive} />}
+      {isComplete && <CheckMarkIcon className={'telia-step-indicator-paging__button-icon--' + isActive} />}
 
       {<span>{number + 1}</span>}
 
       {isComplete && !isActive && <span className="sr-only"> fullført</span>}
 
       <div
-        className={classnames('telia-step-indicator-paging__button__title-container', {
-          'telia-step-indicator-paging__button__title-container--active': isActive,
+        className={classnames('telia-step-indicator-paging__button-title-container', {
+          'telia-step-indicator-paging__button-title-container--active': isActive,
         })}
       >
         <span>{title}</span>
@@ -50,7 +50,7 @@ export const RenderStepButton = (props: any) => {
       {isClickable && (
         <button role="button" onClick={onStepClick} className={buttonClassNames}>
           <RenberButtonText />
-          <div className="telia-step-indicator-paging__button__clickable-field"></div>
+          <div className="telia-step-indicator-paging__button-clickable-field"></div>
         </button>
       )}
     </>
