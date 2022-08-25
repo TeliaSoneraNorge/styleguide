@@ -10,6 +10,7 @@ import { colors } from '../../utils/colors';
  * Status: *finished*.
  * Category: Notifications
  */
+
 const Alert = ({
   kind = 'positive',
   minimizable,
@@ -119,6 +120,7 @@ Alert.propTypes = {
     })
   ),
   hideIcon: PropTypes.bool,
+  children: React.ReactNode,
 };
 
 export default Alert;

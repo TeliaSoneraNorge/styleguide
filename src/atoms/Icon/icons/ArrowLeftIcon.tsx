@@ -26,10 +26,7 @@ export function ArrowLeftIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       {props.title && <title>{props.title}</title>}
-      <path
-        fillRule="evenodd"
-        d="M19.097 31.147L43.26 11.553a2 2 0 00-2.52-3.106l-26 21.083a2 2 0 00-.063 3.054l26 22.916a2 2 0 102.645-3L19.097 31.147z"
-      />
+      <path d="M56 32a2 2 0 01-2 2H14.828l12.586 12.586a2 2 0 11-2.828 2.828l-16-16a2 2 0 010-2.828l16-16a2 2 0 112.828 2.828L14.828 30H54a2 2 0 012 2z" />
     </svg>
   );
 }
