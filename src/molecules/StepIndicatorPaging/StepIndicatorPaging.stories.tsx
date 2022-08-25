@@ -36,6 +36,36 @@ export const DefaultAsDesigned = () => {
   );
 };
 
+export const WithInitialStep5ButOnly3Items = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 3)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const WithInitialStep5ButOnly2Items = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 2)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      pageSize={5}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
 export const WithInitialStep3AndValidatorOnStep3 = () => {
   return (
     <StepIndicatorPaging
@@ -143,6 +173,21 @@ export const WithStepsAsUrls = () => {
       pageSize={5}
       completeButtonId={'buttonComplete'}
       previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const WithStepsAsUrlsWithoutCompleteButtons = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={3}
+      steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={false}
+      pageSize={5}
+      completeButtonId={null}
+      previousButtonId={null}
       contentContainerCssClass={'container container--small'}
     />
   );
