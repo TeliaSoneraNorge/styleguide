@@ -97,6 +97,7 @@
     font-size: 14px;
     user-select: none;
 
+    &:focus,
     &:hover {
       color: var(--core-purple);
       border-color: var(--core-purple);
@@ -113,6 +114,7 @@
         border-color: var(--core-purple);
       }
 
+      &:focus,
       &:hover {
         & > div {
           & > svg {
@@ -132,6 +134,8 @@
     }
 
     &--active,
+
+    &--active:focus,
     &--active:hover {
       cursor: default;
 
@@ -323,6 +327,7 @@
       width: 20px;
       border: 0;
 
+      &:focus,
       &:hover {
         color: var(--core-purple);
       }

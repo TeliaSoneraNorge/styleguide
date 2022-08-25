@@ -48,7 +48,7 @@ export const RenderStepButton = (props: any) => {
         </span>
       )}
       {isClickable && (
-        <button role="button" onClick={onStepClick} className={buttonClassNames}>
+        <button role="button" onClick={onStepClick} className={buttonClassNames} tabIndex={!isActive ? number + 1 : -1}>
           <RenberButtonText />
           <div className="telia-step-indicator-paging__button-clickable-field" onClick={onStepClick}></div>
         </button>
