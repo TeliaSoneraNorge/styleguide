@@ -29,15 +29,15 @@ export const RenderArrow = (props: any) => {
             </button>
           )}
         </div>
-        <div className="telia-step-indicator-paging__arrow__layer-background"></div>
+        <div className="telia-step-indicator-paging__arrow-layer-background"></div>
         <div
-          className={'telia-step-indicator-paging__arrow__layer telia-step-indicator-paging__arrow__layer--' + modifier}
+          className={'telia-step-indicator-paging__arrow-layer telia-step-indicator-paging__arrow-layer--' + modifier}
         ></div>
         {isComplete && (
-          <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--solid"></div>
+          <div className="telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--solid"></div>
         )}
         {!isComplete && (
-          <div className="telia-step-indicator-paging__arrow__line telia-step-indicator-paging__arrow__line--dashed"></div>
+          <div className="telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed"></div>
         )}
       </div>
     </li>
