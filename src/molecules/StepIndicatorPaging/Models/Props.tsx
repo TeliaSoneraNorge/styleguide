@@ -3,7 +3,7 @@ import { Step } from './Step';
 export interface Props {
   steps?: Step[] | null | undefined;
 
-  //Defaults to 1 if undefined, 1 equals steps[0]
+  //Defaults to 1 if undefined, 1 equals Step[0]
   initialStepNumber?: number | undefined;
 
   //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
