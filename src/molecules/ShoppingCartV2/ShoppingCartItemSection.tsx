@@ -91,10 +91,9 @@ const ShoppingCartSection = ({
   return (
     <section className="telia-shopping-cart__section">
       {_.sortBy(cartItems, [sortShoppingCart]).map((item, index) => (
-        <>
+        <span key={`${item.id}-${item.bundleId}`}>
           <ShoppingCartItemGroup
             cartItem={item}
-            key={`${item.id}-${item.bundleId}`}
             onChangeQuantity={onChangeQuantity}
             onRemoveItem={onRemoveItem}
             isAllowedToDelete={isAllowedToDelete}
@@ -107,7 +106,7 @@ const ShoppingCartSection = ({
               <hr className="telia-shopping-cart__horizontal-rule" />
             </div>
           )}
-        </>
+        </span>
       ))}
     </section>
   );
