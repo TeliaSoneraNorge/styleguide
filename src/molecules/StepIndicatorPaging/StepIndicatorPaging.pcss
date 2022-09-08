@@ -234,6 +234,12 @@
           width: 136%;
           margin-left: -13%;
         }
+
+        @media screen and (max-width: 32em) {
+          width: 100px;
+          /* size/2, minus 'center of the list item' */
+          margin-left: calc(calc(-100/2) - calc(-72/2))px;
+        }
       }
     }
   }

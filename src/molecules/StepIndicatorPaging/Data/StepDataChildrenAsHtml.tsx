@@ -18,7 +18,7 @@ export const StepDataChildrenAsHtml = () => {
         '<h1>Hello 1</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete1</button>',
     },
     {
-      title: 'Step 2 Long title text here',
+      title: 'Step 2 Long title text here!',
       url: '',
       isComplete: false,
       children:
