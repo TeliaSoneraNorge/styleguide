@@ -104,12 +104,12 @@
     }
 
     &--complete {
-      color: #29003E;
+      color: #29003e;
 
       & > div > span {
         display: none;
       }
-      
+
       & > div svg {
         color: var(--core-purple);
         stroke: var(--core-purple);
@@ -218,9 +218,8 @@
       }
 
       &--active {
-        color: #29003E;
+        color: #29003e;
         font-family: 'TeliaSans-Medium';
-        
 
         @media screen and (max-width: 48em) {
           display: block;
@@ -238,7 +237,7 @@
         @media screen and (max-width: 32em) {
           width: 100px;
           /* size/2, minus 'center of the list item' */
-          margin-left: calc(calc(-100/2) - calc(-72/2))px;
+          margin-left: calc(calc(-100 / 2) - calc(-72 / 2)) px;
         }
       }
     }
@@ -247,12 +246,19 @@
   &__line {
     position: absolute;
     cursor: default;
-    border-bottom: 2px dotted #606064;
-    z-index: -1;
+    /* border-bottom: 2px dotted #606064; */
+    z-index: -10;
     top: calc(50% - 2px);
     left: 50%;
     width: calc(100% - 26px);
     margin-left: 14px;
+    min-height: 4px;
+
+    background: radial-gradient(#606064 50%, transparent 0%, #FFF 100%);
+    background-size: 4px 4px;
+    background-repeat: repeat-x;
+
+    width: 100%;
 
     &--dashed {
       width: calc(100% - 32px);
@@ -260,7 +266,6 @@
     }
 
     @media screen and (max-width: 48em) {
-      border-bottom: 2px dotted #606064;
       width: calc(100% - 20px);
       margin-left: 10px;
     }
