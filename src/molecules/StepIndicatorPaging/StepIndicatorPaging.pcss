@@ -131,10 +131,13 @@
       color: var(--darker-grey) !important;
       border-color: var(--darker-grey) !important;
       cursor: default !important;
+
+      &.telia-step-indicator-paging__button--complete {
+        color: var(--core-purple) !important;
+      }
     }
 
     &--active,
-
     &--active:focus,
     &--active:hover {
       cursor: default;
@@ -177,15 +180,6 @@
         border-color: var(--core-purple);
         background-color: var(--core-purple);
         color: var(--white);
-        height: 32px;
-        width: 32px;
-        font-size: 18px;
-
-        @media screen and (max-width: 48em) {
-          height: 26px;
-          width: 26px;
-          font-size: 15px;
-        }
       }
 
       & svg {
@@ -363,6 +357,10 @@
         border-bottom: 3px dotted var(--darker-grey);
       }
 
+      &--dashed.left {
+        right: 11px;
+      }
+
       @media screen and (min-width: 40em) {
         display: block;
         visibility: visible;
@@ -400,7 +398,7 @@
       &--left {
         background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
         transform: rotate(-180deg);
-        right: 4%;
+        right: 6px;
       }
 
       &--right {
