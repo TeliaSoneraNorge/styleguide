@@ -88,7 +88,6 @@
   }
 
   &__button {
-    color: var(--black);
     border: 0;
     outline: 0;
     background: unset;
@@ -109,6 +108,12 @@
 
       & > div > span {
         display: none;
+      }
+      
+      & > div svg {
+        color: var(--core-purple);
+        stroke: var(--core-purple);
+        stroke-width: 2;
       }
 
       & > div {
@@ -236,7 +241,7 @@
   &__line {
     position: absolute;
     cursor: default;
-    border-bottom: 3px dotted var(--darker-grey);
+    border-bottom: 2px dotted #606064;
     z-index: -1;
     top: calc(50% - 2px);
     left: 50%;
@@ -249,7 +254,7 @@
     }
 
     @media screen and (max-width: 48em) {
-      border-bottom: 2px dotted var(--darker-grey);
+      border-bottom: 2px dotted #606064;
       width: calc(100% - 20px);
       margin-left: 10px;
     }
@@ -351,12 +356,12 @@
       visibility: hidden;
 
       &--solid {
-        border-bottom: 3px solid var(--core-purple);
+        border-bottom: 2px solid var(--core-purple);
         margin-left: 8px;
       }
 
       &--dashed {
-        border-bottom: 3px dotted var(--darker-grey);
+        border-bottom: 2px dotted #606064;
       }
 
       &--dashed.left {
