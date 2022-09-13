@@ -23,6 +23,7 @@ export interface SubscriptionCompactAccordionProps {
   discountLine?: string;
   price: SubscriptionPrice;
   priceStriketrough?: SubscriptionPrice;
+  priceStriketroughInfo?: string;
   priceInfo?: string[];
   ribbon?: Ribbon | null;
   scrollToOnOpen?: boolean;
@@ -44,6 +45,7 @@ const SubscriptionCompactAccordion = ({
   discountLine,
   price,
   priceStriketrough,
+  priceStriketroughInfo,
   priceInfo,
   ribbon,
   scrollToOnOpen = false,
@@ -116,9 +118,14 @@ const SubscriptionCompactAccordion = ({
               <div className="subscription-compact-accordion__aside">
                 <div className="subscription-compact-accordion__price-container">
                   {!!priceStriketrough && (
-                    <span className="subscription-compact-accordion__price-striketrough">
-                      {formatPrice(priceStriketrough)}/md.
-                    </span>
+                    <div>
+                      <span className="subscription-compact-accordion__price-striketrough">
+                        {formatPrice(priceStriketrough)}
+                      </span>
+                      <span className="subscription-compact-accordion__price-striketrough-info">
+                        {priceStriketroughInfo}
+                      </span>
+                    </div>
                   )}
                   <div>
                     <span className="subscription-compact-accordion__price">{formatPrice(price)}</span>
