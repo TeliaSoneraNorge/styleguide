@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRightIcon } from '../../atoms/Icon/icons';
+import { ChevronRightIcon } from '../../atoms/Icon/icons';
 import { MoreLowIcon } from '../../atoms/Icon/icons';
 
 export interface Crumb {
@@ -203,7 +203,7 @@ const Breadcrumbs = (props: {
           {crumb.name}
         </a>
         {crumb.arrowRight === 'arrow' && (
-          <ArrowRightIcon className={getStyle('telia-breadcrumbs__arrow-right-icon', iconColor)} />
+          <ChevronRightIcon className={getStyle('telia-breadcrumbs__arrow-right-icon', iconColor)} />
         )}
       </>
     );
