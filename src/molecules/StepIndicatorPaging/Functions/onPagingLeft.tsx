@@ -7,7 +7,7 @@ export const onPagingLeft = (
   state: any,
   updateState: any,
   changeActiveStep: boolean,
-  number?: number | undefined
+  number?: any
 ) => {
   let activeStepNumber = state.currentActiveStepNumber;
   const isStepButtonClicked = number != null;

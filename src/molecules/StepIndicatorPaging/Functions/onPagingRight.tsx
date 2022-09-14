@@ -9,7 +9,7 @@ export const onPagingRight = (
   state: any,
   updateState: any,
   changeActiveStep: boolean,
-  number?: number | undefined
+  number?: any
 ) => {
   const steps = state.steps;
 
