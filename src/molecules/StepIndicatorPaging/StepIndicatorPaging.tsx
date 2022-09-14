@@ -221,7 +221,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
             height="4"
             patternUnits="userSpaceOnUse"
           >
-            <circle cx="2" cy="2" r="2" className="telia-step-indicator-paging__circle"></circle>
+            <circle cx="1" cy="1" r="1" className="telia-step-indicator-paging__circle"></circle>
           </pattern>
         </defs>
       </svg>
