@@ -1,6 +1,24 @@
 .telia-step-indicator-paging {
   display: block;
 
+  &__circle {
+    &-container {
+      width: 150px;
+      height: 4px;
+      background: orange;
+    }
+
+    fill: #606064;
+
+    &-svg {
+      position: absolute;
+      left: -4000px;
+      z-index: -1;
+      width: 1px;
+      height: 1px;
+    }
+  }
+
   &__list {
     display: flex;
     list-style: none;
@@ -13,8 +31,8 @@
     @media screen and (min-width: 48em) {
       padding-bottom: 40px;
     }
-    /*TODO/Optional: Update to display flex - grow, with 'min and max value per list item....' ? */
 
+    /*TODO/Optional: Update to display flex - grow, with 'min and max value per list item....' ? */
     &--page-size-3 > li {
       width: 96px;
       @media screen and (min-width: 22.5em) {
@@ -252,7 +270,7 @@
     left: 50%;
     width: calc(100% - 26px);
     margin-left: 14px;
-/* 
+    /* 
     background: radial-gradient(#606064 50%, transparent 0%, #FFF 100%);
     background-size: 4px 4px;
     background-repeat: repeat-x; */

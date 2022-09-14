@@ -209,6 +209,25 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     );
   };
 
+  const RenderSvgLinePattern = () => {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" className="telia-step-indicator-paging__circle-svg">
+        <defs>
+          <pattern
+            id="telia-step-indicator-paging__circle--id"
+            x="0"
+            y="0"
+            width="8"
+            height="4"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="2" cy="2" r="2" className="telia-step-indicator-paging__circle"></circle>
+          </pattern>
+        </defs>
+      </svg>
+    );
+  };
+
   const RenderStep = (props: any) => {
     const { index, maxDisplayCount, isArrow } = props;
 
@@ -246,6 +265,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
   return (
     <div className="telia-step-indicator-paging">
+      <RenderSvgLinePattern />
       <ol className={'telia-step-indicator-paging__list telia-step-indicator-paging__list--page-size-' + pageSize}>
         {hasLeftArrow && (
           <RenderArrow
