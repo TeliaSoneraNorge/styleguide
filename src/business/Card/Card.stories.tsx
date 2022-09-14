@@ -72,6 +72,15 @@ export const Default = () => {
           <CardFooter>Footer</CardFooter>
         </Card>
       </div>
+      <div style={{ width: '50%', paddingRight: '1rem', paddingBottom: '1rem' }}>
+        <Card borders>
+          <CardHeader>
+            <h2>Card with border</h2>
+          </CardHeader>
+          <CardBody>Body</CardBody>
+          <CardFooter>Footer</CardFooter>
+        </Card>
+      </div>
     </>
   );
 };
