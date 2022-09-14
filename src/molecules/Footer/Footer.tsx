@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowDownIcon, ArrowUpIcon } from '../..';
+import { ChevronDownIcon, ChevronUpIcon } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
@@ -75,7 +75,7 @@ const buildColumnsTopRow = (links: LinkColumn | null) => {
           <div className={'telia-footer__accordion-heading'}>
             {links?.heading && <Heading heading={links?.heading} aria-label={links.heading} />}
             <div className={'telia-footer__accordian-chevron'}>
-              {isActive ? <ArrowUpIcon style={{ height: '1em' }} /> : <ArrowDownIcon style={{ height: '1em' }} />}
+              {isActive ? <ChevronUpIcon style={{ height: '1em' }} /> : <ChevronDownIcon style={{ height: '1em' }} />}
             </div>
           </div>
           <div className={'telia-footer__accordion-small-screen'}>
