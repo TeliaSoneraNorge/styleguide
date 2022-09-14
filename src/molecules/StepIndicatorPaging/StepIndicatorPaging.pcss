@@ -259,7 +259,7 @@
     position: absolute;
     cursor: default;
     z-index: -10;
-    
+
     top: calc(50% - 2px);
     left: 50%;
     margin-left: 14px;
@@ -343,6 +343,7 @@
     }
 
     & > button {
+      color: red;
       cursor: pointer;
       background-color: transparent;
       outline: unset;
@@ -351,6 +352,11 @@
       height: 100%;
       width: 20px;
       border: 0;
+
+      &:active,
+      &:visited {
+        color: orange;
+      }
 
       &:focus,
       &:hover {
