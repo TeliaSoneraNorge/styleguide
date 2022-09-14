@@ -14,9 +14,11 @@ export const RenderLine: React.FC<{ isComplete: boolean; isActive: boolean; clas
         }) + css
       }
     >
-      <svg>
-        <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
-      </svg>
+      {!isComplete && (
+        <svg>
+          <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
+        </svg>
+      )}
     </div>
   );
 };
