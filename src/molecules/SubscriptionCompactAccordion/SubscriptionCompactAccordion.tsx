@@ -118,7 +118,7 @@ const SubscriptionCompactAccordion = ({
               <div className="subscription-compact-accordion__aside">
                 <div className="subscription-compact-accordion__price-container">
                   {!!priceStriketrough && (
-                    <div>
+                    <div className="subscription-compact-accordion__price-striketrough-wrapper">
                       <span className="subscription-compact-accordion__price-striketrough">
                         {formatPrice(priceStriketrough)}
                       </span>
