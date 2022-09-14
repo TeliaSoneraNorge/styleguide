@@ -136,7 +136,7 @@ const SubscriptionCompactAccordion = ({
               </div>
               <div className="subscription-compact-accordion__icon-container">
                 <Icon
-                  icon="arrow-down"
+                  icon="chevron-down"
                   className={cn('subscription-compact-accordion__icon-arrow', {
                     'subscription-compact-accordion__icon-arrow--isExpanded': isExpanded,
                   })}

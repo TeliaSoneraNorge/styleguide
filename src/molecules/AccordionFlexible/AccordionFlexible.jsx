@@ -60,7 +60,7 @@ const RenderArrow = ({ isExpanded }) => {
   return (
     <div className={'accordion-flexible__arrow-container'}>
       <Icon
-        icon="arrow-down"
+        icon="chevron-down"
         className={cn('accordion-flexible__arrow', { 'accordion-flexible__arrow--expanded': isExpanded === true })}
       />
     </div>

@@ -57,7 +57,7 @@ const Accordion = ({
             {text && <div className="accordion__header-button--text-box-text">{text}</div>}
           </div>
         </button>
-        <Icon icon="arrow-down" className="accordion__header-icon" />
+        <Icon icon="chevron-down" className="accordion__header-icon" />
       </h3>
       {button && (
         <Button
