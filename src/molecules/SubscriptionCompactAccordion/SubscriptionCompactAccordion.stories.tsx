@@ -162,6 +162,7 @@ export const WithAll = () => {
       discountLine="Spar 350,-"
       price={1297}
       priceStriketrough={1647}
+      priceStriketroughInfo="/md."
       priceInfo={['/md.']}
       ribbon={{
         text: 'Mest populær',
