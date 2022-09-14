@@ -13,6 +13,10 @@ export const RenderLine: React.FC<{ isComplete: boolean; isActive: boolean; clas
           'telia-step-indicator-paging__line--active': isActive,
         }) + css
       }
-    />
+    >
+      <svg>
+        <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
+      </svg>
+    </div>
   );
 };

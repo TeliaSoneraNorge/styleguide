@@ -2,12 +2,6 @@
   display: block;
 
   &__circle {
-    &-container {
-      width: 150px;
-      height: 4px;
-      background: orange;
-    }
-
     fill: #606064;
 
     &-svg {
@@ -264,21 +258,17 @@
   &__line {
     position: absolute;
     cursor: default;
-    /* border-bottom: 2px dotted #606064; */
     z-index: -10;
     top: calc(50% - 2px);
     left: 50%;
     width: calc(100% - 26px);
     margin-left: 14px;
-    /* 
-    background: radial-gradient(#606064 50%, transparent 0%, #FFF 100%);
-    background-size: 4px 4px;
-    background-repeat: repeat-x; */
-
     height: 4px;
-    background-image: url("data:image/svg+xml,%3csvg width='100%25' height='100%25' xmlns='http://www.w3.org/2000/svg'%3e%3crect width='100%25' height='100%25' fill='none' stroke='black' stroke-width='2' stroke-dasharray='2%2c 6' stroke-dashoffset='16' stroke-linecap='round'/%3e%3c/svg%3e");
-
     width: 100%;
+
+    & > svg {
+      width: 100%;
+    }
 
     &--dashed {
       width: calc(100% - 32px);
