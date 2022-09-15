@@ -38,13 +38,15 @@ export const RenderArrow = (props: any) => {
         )}
 
         {!isComplete && (
-          <div
-            className={
-              'telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed ' + modifier
-            }
-          ></div>
+          <div className={'telia-step-indicator-paging__arrow-line telia-step-indicator-paging__line ' + modifier}>
+            <svg>
+              <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
+            </svg>
+          </div>
         )}
       </div>
+
+      {/* 'telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed ' + modifier */}
     </li>
   );
 };
