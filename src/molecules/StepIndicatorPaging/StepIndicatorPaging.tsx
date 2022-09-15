@@ -209,6 +209,25 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     );
   };
 
+  const RenderSvgLinePattern = () => {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" className="telia-step-indicator-paging__circle-svg">
+        <defs>
+          <pattern
+            id="telia-step-indicator-paging__circle--id"
+            x="0"
+            y="0"
+            width="8"
+            height="4"
+            patternUnits="userSpaceOnUse"
+          >
+            <circle cx="1" cy="1" r="1" className="telia-step-indicator-paging__circle"></circle>
+          </pattern>
+        </defs>
+      </svg>
+    );
+  };
+
   const RenderStep = (props: any) => {
     const { index, maxDisplayCount, isArrow } = props;
 
@@ -246,10 +265,11 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
   return (
     <div className="telia-step-indicator-paging">
+      <RenderSvgLinePattern />
       <ol className={'telia-step-indicator-paging__list telia-step-indicator-paging__list--page-size-' + pageSize}>
         {hasLeftArrow && (
           <RenderArrow
-            iconName={'arrow-left'}
+            iconName={'chevron-left'}
             onPaging={() => onPagingLeft(maxStepCount, pageSize, state, updateState, navigationClickable != false)}
             url={state.currentActiveStepNumber > 0 ? state.steps[state.currentActiveStepNumber - 1].url : null}
             isComplete={state.currentActiveStepNumber > 0 && state.steps[0].isComplete == true}
@@ -269,7 +289,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
         {hasRightArrow && (
           <RenderArrow
-            iconName={'arrow-right'}
+            iconName={'chevron-right'}
             url={
               state.currentActiveStepNumber + 1 < state.steps.length
                 ? state.steps[state.currentActiveStepNumber + 1].url

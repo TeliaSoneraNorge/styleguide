@@ -1,6 +1,18 @@
 .telia-step-indicator-paging {
   display: block;
 
+  &__circle {
+    fill: #606064;
+
+    &-svg {
+      position: absolute;
+      left: -4000px;
+      z-index: -1;
+      width: 1px;
+      height: 1px;
+    }
+  }
+
   &__list {
     display: flex;
     list-style: none;
@@ -13,8 +25,8 @@
     @media screen and (min-width: 48em) {
       padding-bottom: 40px;
     }
-    /*TODO/Optional: Update to display flex - grow, with 'min and max value per list item....' ? */
 
+    /*TODO/Optional: Update to display flex - grow, with 'min and max value per list item....' ? */
     &--page-size-3 > li {
       width: 96px;
       @media screen and (min-width: 22.5em) {
@@ -88,7 +100,6 @@
   }
 
   &__button {
-    color: var(--black);
     border: 0;
     outline: 0;
     background: unset;
@@ -96,6 +107,7 @@
     z-index: 3;
     font-size: 14px;
     user-select: none;
+    color: #606064;
 
     &:focus,
     &:hover {
@@ -104,10 +116,16 @@
     }
 
     &--complete {
-      color: var(--core-purple);
+      color: #29003e;
 
       & > div > span {
         display: none;
+      }
+
+      & > div svg {
+        color: var(--core-purple);
+        stroke: var(--core-purple);
+        stroke-width: 2;
       }
 
       & > div {
@@ -131,10 +149,13 @@
       color: var(--darker-grey) !important;
       border-color: var(--darker-grey) !important;
       cursor: default !important;
+
+      &.telia-step-indicator-paging__button--complete {
+        color: var(--core-purple) !important;
+      }
     }
 
     &--active,
-
     &--active:focus,
     &--active:hover {
       cursor: default;
@@ -153,7 +174,7 @@
       left: 10%;
       top: 0;
       width: 70%;
-      height: 115%;
+      height: 120%;
       position: absolute;
     }
 
@@ -177,15 +198,6 @@
         border-color: var(--core-purple);
         background-color: var(--core-purple);
         color: var(--white);
-        height: 32px;
-        width: 32px;
-        font-size: 18px;
-
-        @media screen and (max-width: 48em) {
-          height: 26px;
-          width: 26px;
-          font-size: 15px;
-        }
       }
 
       & svg {
@@ -205,7 +217,6 @@
       font-size: 16px;
       line-height: 1;
       font-family: 'TeliaSans-Regular';
-      color: var(--black);
 
       @media screen and (max-width: 48em) {
         display: none;
@@ -214,11 +225,13 @@
       }
 
       & > span {
+        color: #29003e;
         display: inline-block;
         text-align: center;
       }
 
       &--active {
+        color: #29003e;
         font-family: 'TeliaSans-Medium';
 
         @media screen and (max-width: 48em) {
@@ -233,6 +246,12 @@
           width: 136%;
           margin-left: -13%;
         }
+
+        @media screen and (max-width: 32em) {
+          width: 100px;
+          /* size/2, minus 'center of the list item' */
+          margin-left: calc(calc(-100 / 2) - calc(-72 / 2)) px;
+        }
       }
     }
   }
@@ -240,20 +259,26 @@
   &__line {
     position: absolute;
     cursor: default;
-    border-bottom: 3px dotted var(--darker-grey);
-    z-index: -1;
+    z-index: -10;
+
     top: calc(50% - 2px);
     left: 50%;
-    width: calc(100% - 26px);
     margin-left: 14px;
 
+    width: calc(100% - 26px);
+    height: 3px;
+
+    & > svg {
+      margin-top: 1px;
+      width: 100%;
+    }
+
     &--dashed {
-      width: calc(100% - 33px);
-      margin-left: 17px;
+      width: calc(100% - 32px);
+      margin-left: 16px;
     }
 
     @media screen and (max-width: 48em) {
-      border-bottom: 2px dotted var(--darker-grey);
       width: calc(100% - 20px);
       margin-left: 10px;
     }
@@ -261,6 +286,7 @@
     &--complete {
       border-bottom-style: solid;
       border-bottom-color: var(--core-purple);
+      border-width: 2px;
     }
   }
 
@@ -305,6 +331,7 @@
     background-color: white;
     height: 100%;
     z-index: 5;
+    color: #606064;
 
     display: flex;
     justify-items: center;
@@ -318,6 +345,7 @@
     }
 
     & > button {
+      color: #606064;
       cursor: pointer;
       background-color: transparent;
       outline: unset;
@@ -327,23 +355,39 @@
       width: 20px;
       border: 0;
 
+      /* Chrome/Firefox on Mac, does not inherit the color from button */
+      &:active,
       &:focus,
+      &:visited {
+        color: #606064;
+      }
+
       &:hover {
         color: var(--core-purple);
       }
     }
 
     & > button > svg {
+      /* Chrome/Firefox on Mac, does not inherit the color from button */
+      color: #606064;
       width: 20px;
       @media screen and (min-width: 48em) {
         width: 24px;
       }
+      &:hover {
+        color: var(--core-purple);
+      }
     }
 
     & > a > svg {
+      /* Chrome/Firefox on Mac, does not inherit the color from button */
+      color: #606064;
       width: 20px;
       @media screen and (min-width: 48em) {
         width: 24px;
+      }
+      &:hover {
+        color: var(--core-purple);
       }
     }
 
@@ -355,12 +399,16 @@
       visibility: hidden;
 
       &--solid {
-        border-bottom: 3px solid var(--core-purple);
+        border-bottom: 2px solid var(--core-purple);
         margin-left: 8px;
       }
 
       &--dashed {
-        border-bottom: 3px dotted var(--darker-grey);
+        border-bottom: 2px dotted #606064;
+      }
+
+      &--dashed.left {
+        right: 11px;
       }
 
       @media screen and (min-width: 40em) {
@@ -400,7 +448,7 @@
       &--left {
         background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
         transform: rotate(-180deg);
-        right: 4%;
+        right: 6px;
       }
 
       &--right {
