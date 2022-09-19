@@ -27,6 +27,7 @@ export const RenderStepButton = (props: any) => {
       <div
         className={classnames('telia-step-indicator-paging__button-title-container', {
           'telia-step-indicator-paging__button-title-container--active': isActive,
+          'telia-step-indicator-paging__button-title-container--complete': isComplete,
         })}
       >
         <span>{title}</span>
