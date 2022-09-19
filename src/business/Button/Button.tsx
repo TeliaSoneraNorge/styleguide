@@ -1,6 +1,7 @@
 import React from 'react';
 import cs from 'classnames';
 import { Icon, IconDefinition } from '../../atoms/Icon';
+import Spinner from '../../atoms/Spinner';
 
 type ButtonKind =
   | 'primary'
@@ -58,6 +59,7 @@ type ButtonProps = {
   target?: string;
   type?: 'button' | 'reset' | 'submit';
   className?: string;
+  loading?: boolean;
 };
 
 export const Button = (props: ButtonProps) => {
@@ -75,6 +77,7 @@ export const Button = (props: ButtonProps) => {
     target,
     type = 'button',
     className,
+    loading = false,
   } = props;
   const Tag = href ? 'a' : 'button';
 
@@ -97,7 +100,7 @@ export const Button = (props: ButtonProps) => {
           'telia-business-button--iconRight': iconRight,
           'telia-business-button--iconLeft': icon && !iconRight,
           'telia-business-button--ball': icon && !label,
-          'telia-business-button--disabled': disabled,
+          'telia-business-button--disabled': disabled || loading,
           'telia-business-button--active': active,
         },
         className
@@ -108,9 +111,13 @@ export const Button = (props: ButtonProps) => {
       type={href ? undefined : type}
       target={href ? target : undefined}
       aria-label={ariaLabel}
+      aria-busy={loading}
     >
+      <div className={cs('telia-business-button__spinner', { 'telia-business-button__spinner--loading': loading })}>
+        <Spinner type="sm" />
+      </div>
       {icon && <Icon icon={icon} className="telia-business-button__icon" />}
-      {label}
+      {<div className={loading ? 'telia-business-button__label--loading' : ''}>{label}</div>}
     </Tag>
   );
 };

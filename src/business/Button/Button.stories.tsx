@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import { Button } from './Button';
 
 export default {
@@ -6,46 +7,59 @@ export default {
   component: Button,
 };
 
-export const ButtonPrimary = () => (
-  <div>
-    <h2>Button Primary</h2>
-    Default button kind is Button primary
-    <br />
-    <h3>Normal state</h3>
-    <Button label="Button" /> <Button label="Button" size="compact" />
-    <br />
-    <h3>Disabled state</h3>
-    <Button label="Button" disabled={true} />
-    <h3>Active state</h3>
-    <Button label="Button" active={true} />
-    <br />
-    <h3>Button with icon</h3>
-    <Button label="Button" icon={'add'} />
-    <Button label="Button" icon={'add'} size="compact" />
-    <br />
-    <h3>Button with icon right</h3>
-    <Button label="Button" icon={'arrow-right'} iconRight={true} />
-    <Button label="Button" icon={'arrow-right'} iconRight={true} size="compact" />
-    <br />
-    <h3>Button ball (with icon and without label)</h3>
-    <Button icon={'add'} ariaLabel="add" />
-    <br />
-    <h3>Button with action</h3>
-    <Button label="Click" onClick={() => alert('Hi')} />
-    <br />
-    <h3>Button with link </h3>
-    <Button label="Button" href="https://en.wikipedia.org/wiki/Success" />
-    <h3>Button with link and target props</h3>
-    <Button label="Button" href="https://en.wikipedia.org/wiki/Success" target="_blank" />
-    <br />
-    <h3>Button with no parameters</h3>
-    <Button />
-    <br />
-    <h3>Button with a lot of text should not wrap</h3>
-    <Button label="This is a long button text" />
-    <br />
-  </div>
-);
+export const ButtonPrimary = () => {
+  enableTabKeyDetection();
+  const [loading, setLoading] = useState(false);
+  const load = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 3500);
+  };
+
+  return (
+    <div>
+      <h2>Button Primary</h2>
+      Default button kind is Button primary
+      <br />
+      <h3>Normal state</h3>
+      <Button label="Button" /> <Button label="Button" size="compact" />
+      <br />
+      <h3>Disabled state</h3>
+      <Button label="Button" disabled={true} />
+      <h3>Active state</h3>
+      <Button label="Button" active={true} />
+      <br />
+      <h3>Button with icon</h3>
+      <Button label="Button" icon={'add'} />
+      <Button label="Button" icon={'add'} size="compact" />
+      <br />
+      <h3>Button with icon right</h3>
+      <Button label="Button" icon={'arrow-right'} iconRight={true} />
+      <Button label="Button" icon={'arrow-right'} iconRight={true} size="compact" />
+      <br />
+      <h3>Button ball (with icon and without label)</h3>
+      <Button icon={'add'} ariaLabel="add" />
+      <br />
+      <h3>Button with action</h3>
+      <Button label="Click" onClick={() => alert('Hi')} />
+      <br />
+      <h3>Button with link </h3>
+      <Button label="Button" href="https://en.wikipedia.org/wiki/Success" />
+      <h3>Button with link and target props</h3>
+      <Button label="Button" href="https://en.wikipedia.org/wiki/Success" target="_blank" />
+      <br />
+      <h3>Button with no parameters</h3>
+      <Button />
+      <br />
+      <h3>Button with a lot of text should not wrap</h3>
+      <Button label="This is a long button text" />
+      <br />
+      <br /> <h3>Loading button</h3>
+      <Button label="Loading" onClick={load} loading={loading} />
+    </div>
+  );
+};
 
 export const ButtonPrimaryText = () => (
   <div>
