@@ -25,6 +25,11 @@
 
   &--disabled {
     pointer-events: none;
+    color: var(--grey-600);
+
+    & .radiobutton__border {
+      fill: var(--grey-200);
+    }
   }
 
   /* If the input is checked, display the inner circle with purple color */
@@ -36,6 +41,7 @@
   /* If the input is checked, add purple border */
   & > input:checked ~ .radiobutton__svg-container .radiobutton__border {
     stroke: var(--core-purple);
+    fill: none;
   }
 
   /* Style default checkmark container */
