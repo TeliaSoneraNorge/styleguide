@@ -2,7 +2,7 @@
   display: block;
 
   &__circle {
-    fill: #606064;
+    fill: var(--darker-grey);
 
     &-svg {
       position: absolute;
@@ -107,7 +107,7 @@
     z-index: 3;
     font-size: 14px;
     user-select: none;
-    color: #606064;
+    color: var(--darker-grey);
 
     &:focus,
     &:hover {
@@ -116,7 +116,7 @@
     }
 
     &--complete {
-      color: #29003e;
+      color: var(--core-purple-850);
 
       & > div > span {
         display: none;
@@ -225,14 +225,23 @@
       }
 
       & > span {
-        color: #29003e;
+        color: var(--darker-grey);
+        display: inline-block;
+        text-align: center;
+      }
+
+      &--complete > span {
+        color: var(--core-purple-850);
         display: inline-block;
         text-align: center;
       }
 
       &--active {
-        color: #29003e;
         font-family: 'TeliaSans-Medium';
+
+        & > span {
+          color: var(--core-purple-850);
+        }
 
         @media screen and (max-width: 48em) {
           display: block;
@@ -267,6 +276,11 @@
 
     width: calc(100% - 26px);
     height: 3px;
+
+    &.right {
+      left: 0;
+      margin-left: -2px;
+    }
 
     & > svg {
       margin-top: 1px;
@@ -331,7 +345,7 @@
     background-color: white;
     height: 100%;
     z-index: 5;
-    color: #606064;
+    color: var(--darker-grey);
 
     display: flex;
     justify-items: center;
@@ -345,7 +359,7 @@
     }
 
     & > button {
-      color: #606064;
+      color: var(--darker-grey);
       cursor: pointer;
       background-color: transparent;
       outline: unset;
@@ -359,7 +373,7 @@
       &:active,
       &:focus,
       &:visited {
-        color: #606064;
+        color: var(--darker-grey);
       }
 
       &:hover {
@@ -369,7 +383,7 @@
 
     & > button > svg {
       /* Chrome/Firefox on Mac, does not inherit the color from button */
-      color: #606064;
+      color: var(--darker-grey);
       width: 20px;
       @media screen and (min-width: 48em) {
         width: 24px;
@@ -381,7 +395,7 @@
 
     & > a > svg {
       /* Chrome/Firefox on Mac, does not inherit the color from button */
-      color: #606064;
+      color: var(--darker-grey);
       width: 20px;
       @media screen and (min-width: 48em) {
         width: 24px;
@@ -404,7 +418,7 @@
       }
 
       &--dashed {
-        border-bottom: 2px dotted #606064;
+        border-bottom: 2px dotted var(--darker-grey);;
       }
 
       &--dashed.left {

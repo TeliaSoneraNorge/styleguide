@@ -217,7 +217,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
             id="telia-step-indicator-paging__circle--id"
             x="0"
             y="0"
-            width="8"
+            width="7"
             height="4"
             patternUnits="userSpaceOnUse"
           >
