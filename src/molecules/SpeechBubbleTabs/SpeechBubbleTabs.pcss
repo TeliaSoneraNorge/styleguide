@@ -1,0 +1,57 @@
+.telia-speech-bubble-tabs {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: initial;
+
+    @media all and (min-width: 48em) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: initial;
+    }
+
+    &__tab {
+        background-color: inherit;
+        position: relative;
+        text-decoration: none;
+        cursor: pointer;
+        border: 1px solid #7a7a7a;
+        border-radius: 0.5rem;
+        padding: 0.5rem 1rem;
+        color: #222222;
+
+        &:not(:last-of-type) {
+            margin-right: 0.5rem;
+        }
+
+        &:active,
+        &:focus,
+        &:hover,
+        &--selected {
+            background-color: #30004B;
+            border: 1px solid #30004B;
+            color: #fff;
+        }
+
+        &--selected {
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: -5px;
+                left: 1rem;
+                margin: auto;
+                height: 1rem;
+                width: 1rem;
+                border: 1px solid #30004B;
+                transform: rotate(45deg);
+                background-color: #30004B;
+                border-bottom: 1px solid #30004B;
+                border-right: 1px solid #30004B;
+                z-index: -1;
+            }
+        }
+    }
+}

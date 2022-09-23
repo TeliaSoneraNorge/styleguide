@@ -137,6 +137,7 @@ export { default as ProductList } from './molecules/ProductList';
 export { default as References } from './molecules/References';
 export { default as Tabs } from './molecules/Tabs';
 export { default as FunkyTabs } from './molecules/FunkyTabs';
+export { SpeechBubbleTabs } from './molecules/SpeechBubbleTabs';
 export { default as Video } from './molecules/Video';
 export { default as ArticleList } from './molecules/ArticleList';
 export { default as LightAlert } from './molecules/LightAlert';
