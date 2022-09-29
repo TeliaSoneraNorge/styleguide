@@ -39,6 +39,8 @@
         }
 
         &--selected {
+            cursor: default;
+
             &::before {
                 content: "";
                 position: absolute;
@@ -52,7 +54,10 @@
                 background-color: #30004B;
                 border-bottom: 1px solid #30004B;
                 border-right: 1px solid #30004B;
-                z-index: -1;
+            }
+
+            span {
+                position: relative;
             }
         }
     }

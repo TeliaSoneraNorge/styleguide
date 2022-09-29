@@ -23,7 +23,7 @@ export const SpeechBubbleTabs: React.FC<Props> = ({ tabs, selectedTabId, onClick
           key={id}
           onClick={() => onClick(id)}
         >
-          {name}
+          <span>{name}</span>
         </button>
       ))}
     </div>
