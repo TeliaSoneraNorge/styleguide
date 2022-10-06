@@ -113,9 +113,11 @@ export const Button = (props: ButtonProps) => {
       aria-label={ariaLabel}
       aria-busy={loading}
     >
-      <div className={cs('telia-business-button__spinner', { 'telia-business-button__spinner--loading': loading })}>
-        <Spinner type="sm" />
-      </div>
+      {loading && (
+        <div className={cs('telia-business-button__spinner', { 'telia-business-button__spinner--loading': loading })}>
+          <Spinner type="sm" />
+        </div>
+      )}
       {icon && <Icon icon={icon} className="telia-business-button__icon" />}
       {<div className={loading ? 'telia-business-button__label--loading' : ''}>{label}</div>}
     </Tag>
