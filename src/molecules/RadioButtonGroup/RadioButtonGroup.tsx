@@ -2,6 +2,7 @@ import React from 'react';
 import classnames from 'classnames';
 
 import { RadioButton } from '../../atoms/RadioButton';
+import { string } from 'prop-types';
 
 const getClassName = (type: Type, children: React.ReactNode, border?: boolean) =>
   classnames('radiobutton-group', {
@@ -25,13 +26,14 @@ type Props = {
   selectedValue?: any;
   list?: ListProps[];
   children?: React.ReactNode;
+  dataTestId?: string;
 } & ({ type: 'vertical' | undefined; border?: boolean } | { type?: Type });
 
 const RadioButtonGroup: React.FC<Props> = (props) => {
-  const { name, type = 'vertical', onChange, selectedValue, list } = props;
+  const { name, type = 'vertical', onChange, selectedValue, list, dataTestId } = props;
   const border = 'border' in props ? props.border : false;
   return (
-    <div className={getClassName(type, props.children, border)}>
+    <div className={getClassName(type, props.children, border)} data-testid={dataTestId}>
       {!!props.children === true
         ? props.children
         : list
