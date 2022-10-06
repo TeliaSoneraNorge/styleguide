@@ -31,7 +31,7 @@ export const RadioButton: React.FC<Props> = (props) => {
         disabled={disabled}
         value={value}
         aria-label={ariaLabel}
-        data-testId={dataTestId}
+        data-testid={dataTestId}
       />
       <span className="radiobutton__svg-container">
         <svg width="44px" height="44px" viewBox="0 0 44 44">
