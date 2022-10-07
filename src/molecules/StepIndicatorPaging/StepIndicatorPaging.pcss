@@ -153,6 +153,27 @@
       &.telia-step-indicator-paging__button--complete {
         color: var(--core-purple) !important;
       }
+
+      &:hover {
+        & > div {
+          & > svg {
+            display: none;
+          }
+          & > span {
+            display: block;
+          }
+        }
+      }
+      &.telia-step-indicator-paging__button--complete:hover {
+        & > div {
+          & > svg {
+            display: block;
+          }
+          & > span {
+            display: none;
+          }
+        }
+      }
     }
 
     &--active,
@@ -418,7 +439,7 @@
       }
 
       &--dashed {
-        border-bottom: 2px dotted var(--darker-grey);;
+        border-bottom: 2px dotted var(--darker-grey);
       }
 
       &--dashed.left {

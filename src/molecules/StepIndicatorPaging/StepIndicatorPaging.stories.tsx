@@ -126,6 +126,19 @@ export const WithNavigationDisabled = () => {
   );
 };
 
+export const WithNavigationDisabledWithInitialStep = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={6}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={false}
+      pageSize={5}
+      contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
 export const WithComponentsAndStep1IsCompleteAndArrowsOnEdge = () => {
   stepIndicatorPagingRef = useRef();
 
