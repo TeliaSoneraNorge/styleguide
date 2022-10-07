@@ -1,1 +1,1 @@
-export { default } from './StepIndicatorPaging';
+export { default as StepIndicatorPaging } from './StepIndicatorPaging';
