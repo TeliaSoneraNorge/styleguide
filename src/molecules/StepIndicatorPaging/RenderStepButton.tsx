@@ -48,6 +48,7 @@ export const RenderStepButton = (props: any) => {
           <RenberButtonText />
         </span>
       )}
+
       {isClickable && (
         <button role="button" onClick={onStepClick} className={buttonClassNames} tabIndex={!isActive ? number + 1 : -1}>
           <RenberButtonText />

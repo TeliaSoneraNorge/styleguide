@@ -147,6 +147,7 @@ export { default as DisplayFunctionality } from './molecules/DisplayFunctionalit
 export { default as Banner } from './molecules/Banner';
 export { default as Breadcrumbs } from './molecules/Breadcrumbs';
 export { StatsDisplayItem, StatsDisplay } from './molecules/StatsDisplay';
+export { default as StepIndicatorPaging } from './molecules/StepIndicatorPaging';
 export { default as Menu } from './molecules/Menu';
 export { MenuSearch } from './molecules/Menu';
 export { Card, Cards } from './molecules/Cards';
