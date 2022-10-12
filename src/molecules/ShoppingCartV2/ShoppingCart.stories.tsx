@@ -913,3 +913,112 @@ export const accessoryOnly = () => {
     </Container>
   );
 };
+
+export const withSpeechBubble = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
+
+  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
+  const leaseContent: ICartItem[] = [
+    {
+      type: 'HANDSET',
+      subtype: 'NEW',
+      id: '9107585',
+      bundleId: '8c28cd',
+      href: 'https://www.telia.no/mobiltelefoner/apple/iphone-se-3rd/64-gb-product-red/',
+      brand: 'Apple',
+      brandSlug: 'apple',
+      model: 'iPhone SE (3rd) 64GB',
+      modelSlug: 'iphone-se-3rd',
+      modelSize: '64 GB',
+      color: 'Product Red',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/7jPSwGjrmJegMNTioqDF3Q/dae6444656444adf58e9fffa2cb7279a/iPhone_SE3_ProductRED_PDP_Image_Position-1A__WWEN.png',
+      },
+      name: 'Apple iPhone SE 5G',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        monthly: 221,
+        originalSalesPrice: 5290,
+        originalSalesPriceWithoutVAT: 4232,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 52,
+        },
+        description: '',
+        handsetDiscountText: "Telefonrabatt med <br /> Telia X Rask: <span style='color:#008641;'>-1250,-</span>",
+      },
+      leaseMonths: '24',
+      isReSwitch: false,
+      isWebDeal: false,
+      subtitle: '24 md. rentefri delbetaling',
+      items: [
+        {
+          type: 'SUBSCRIPTION_DRAFT',
+          id: 'TELIA_MOBIL_X_RASK.TLF12PLEAS',
+          bundleId: '8c28cd',
+          href: '/mobilabonnement/ubegrenset-data',
+          items: [],
+          name: 'Telia X Rask',
+          lineThrough: '',
+          quantity: {
+            modifiable: false,
+            removable: false,
+            value: 1,
+          },
+          price: {
+            monthly: 549,
+          },
+          discount: {
+            value: {
+              upfront: 0,
+              monthly: 0,
+            },
+            description: '',
+          },
+          image: {
+            icon: 'sim-card',
+          },
+          subtitle: 'Mobilabonnement',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Container style={style} size={containerSize}>
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={leaseContent}
+        delivery={delivery}
+        disclaimer={disclaimer}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+        continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};

@@ -6,6 +6,7 @@ import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import Link from '../../atoms/Link';
 import { CART_ITEM_TYPE } from './index';
+import { SpeechBubble } from '../SpeechBubble';
 
 const formatPrice = (price: string | number) => {
   if (typeof price === 'number') {
@@ -211,18 +212,21 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
             />
           )}
         </div>
-        <span className="telia-shopping-cart__item__price__cost">
-          <span className="telia-shopping-cart__item__price__label">
-            {isLease && !hasSubscription && 'fra '}
-            {price}
-            {cartItem.price.monthly ? '/md.' : ''}
-          </span>
-          {formatPrice(discountPrice) !== price && (
-            <span className="telia-shopping-cart__item__price__linethrough">
-              {cartItem.price.monthly ? formatPrice(discountPrice) + '/md.' : formatPrice(discountPrice)}
+        <div style={{ position: 'relative' }}>
+          {cartItem?.discount?.handsetDiscountText && <SpeechBubble text={cartItem.discount.handsetDiscountText} />}
+          <span className="telia-shopping-cart__item__price__cost">
+            <span className="telia-shopping-cart__item__price__label">
+              {isLease && !hasSubscription && 'fra '}
+              {price}
+              {cartItem.price.monthly ? '/md.' : ''}
             </span>
-          )}
-        </span>
+            {formatPrice(discountPrice) !== price && (
+              <span className="telia-shopping-cart__item__price__linethrough">
+                {cartItem.price.monthly ? formatPrice(discountPrice) + '/md.' : formatPrice(discountPrice)}
+              </span>
+            )}
+          </span>
+        </div>
       </div>
     </div>
   );
