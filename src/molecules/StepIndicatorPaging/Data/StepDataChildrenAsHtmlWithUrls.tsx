@@ -3,14 +3,14 @@ import { Step } from '../Models/Step';
 export const StepDataChildrenAsHtmlWithUrls = () => {
   return [
     {
-      title: 'Step Url 1 Long title text here',
+      title: 'Step1short',
       url: '#Step1',
       isComplete: false,
       children:
         '<h1>Hello Url 1</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete1</button>',
     },
     {
-      title: 'Step Url 2 Long title text here',
+      title: 'Step 2 Short',
       url: '#Step2',
       isComplete: false,
       children:

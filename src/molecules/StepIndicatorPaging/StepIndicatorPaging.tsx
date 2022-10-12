@@ -41,6 +41,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     navigationClickable,
     showArrowsTillEdgeSteps,
     contentContainerCssClass,
+    disableIncompleteStepClick,
   } = props;
 
   const completePreviousSteps = navigationCompletesPreviousSteps != false;
@@ -233,6 +234,12 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const step = props.step as InternalStep;
 
+    console.log(disableIncompleteStepClick);
+
+    const isClickable =
+      props.navigationClickable != false &&
+      (disableIncompleteStepClick != true || (disableIncompleteStepClick == true && step.isComplete == true));
+
     return (
       <li
         key={step.number}
@@ -244,7 +251,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           number={step.number}
           title={step.title}
           url={step.url}
-          isClickable={props.navigationClickable != false}
+          isClickable={isClickable}
           isActive={step.number === state.currentActiveStepNumber}
           isComplete={step.isComplete == true}
           onStepButtonClick={() => onStepButtonClick(step.number)}

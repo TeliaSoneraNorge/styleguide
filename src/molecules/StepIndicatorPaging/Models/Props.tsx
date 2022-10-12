@@ -28,6 +28,9 @@ export interface Props {
   //Add a container css-class to the children rendered if needed or any css class you want
   contentContainerCssClass?: string | null | undefined;
 
+  //Disable clicking on "future" steps from the 'navigation menu', can only move backwards, on steps that are already completed
+  disableIncompleteStepClick?: boolean | undefined;
+
   //Hide step numbers if numbering them 'does not make sense', might consider different component like Tabs? Radio? But they look and feel different
   //hideStepNumbers?: boolean | undefined;
   //Note: Not allowed "per design" so commented out

@@ -96,6 +96,22 @@ export const WithPageSizeMedium = () => {
   );
 };
 
+export const WithPageSizeMediumAndDisabledNavigationOnIncompleteSteps = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={0}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      navigationCompletesPreviousSteps={true}
+      navigationClickable={true}
+      pageSize={4}
+      completeButtonId={'buttonComplete'}
+      previousButtonId={'buttonPrevious'}
+      contentContainerCssClass={'container container--small'}
+      disableIncompleteStepClick={true}
+    />
+  );
+};
+
 export const WithNavigationDoesNotCompleteSteps = () => {
   return (
     <StepIndicatorPaging
