@@ -234,8 +234,6 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const step = props.step as InternalStep;
 
-    console.log(disableIncompleteStepClick);
-
     const isClickable =
       props.navigationClickable != false &&
       (disableIncompleteStepClick != true || (disableIncompleteStepClick == true && step.isComplete == true));
