@@ -158,6 +158,7 @@ export { QuickSearch } from './molecules/QuickSearch';
 export { PhoneNumberField } from './molecules/PhoneNumberField';
 export { TablePagination, Pagination } from './molecules/Paging';
 export { default as Footer } from './molecules/Footer';
+export { SpeechBubble } from './molecules/SpeechBubble';
 
 // Organisms
 export { default as ContentRating } from './organisms/ContentRating';
