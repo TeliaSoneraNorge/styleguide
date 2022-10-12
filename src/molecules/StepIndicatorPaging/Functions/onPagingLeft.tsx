@@ -34,5 +34,8 @@ export const onPagingLeft = (
         : getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
 
     updateState(state.steps, activeStepNumber, minStepNumber);
+  } else if (!changeActiveStep) {
+    const minStepNumber = state.minStepNumber - 1;
+    updateState(state.steps, activeStepNumber, minStepNumber);
   }
 };

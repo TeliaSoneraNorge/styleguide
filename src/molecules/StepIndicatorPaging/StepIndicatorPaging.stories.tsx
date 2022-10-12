@@ -36,10 +36,10 @@ export const DefaultAsDesigned = () => {
   );
 };
 
-export const WithInitialStep5ButOnly3Items = () => {
+export const InitialStep5With3StepsTotalAndPageSize5 = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={0}
+      initialStepNumber={5}
       steps={StepDataChildrenAsHtml().filter((_, i) => i < 3)}
       navigationCompletesPreviousSteps={true}
       navigationClickable={true}
@@ -51,22 +51,7 @@ export const WithInitialStep5ButOnly3Items = () => {
   );
 };
 
-export const WithInitialStep5ButOnly2Items = () => {
-  return (
-    <StepIndicatorPaging
-      initialStepNumber={0}
-      steps={StepDataChildrenAsHtml().filter((_, i) => i < 2)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
-    />
-  );
-};
-
-export const WithInitialStep3AndValidatorOnStep3 = () => {
+export const InitialStep3AndValidatorOnStep3 = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={3}
@@ -81,7 +66,7 @@ export const WithInitialStep3AndValidatorOnStep3 = () => {
   );
 };
 
-export const WithPageSizeMedium = () => {
+export const PageSize4 = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={0}
@@ -96,7 +81,7 @@ export const WithPageSizeMedium = () => {
   );
 };
 
-export const WithPageSizeMediumAndDisabledNavigationOnIncompleteSteps = () => {
+export const PageSize4DisableIncompleteStepClicks = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={0}
@@ -112,7 +97,7 @@ export const WithPageSizeMediumAndDisabledNavigationOnIncompleteSteps = () => {
   );
 };
 
-export const WithNavigationDoesNotCompleteSteps = () => {
+export const NavigationDoesNotCompletePreviousSteps = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={0}
@@ -127,7 +112,7 @@ export const WithNavigationDoesNotCompleteSteps = () => {
   );
 };
 
-export const WithNavigationDisabled = () => {
+export const NavigationUnclickableAndNavigatingDoesNotSetPreviousStepsToComplete = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={0}
@@ -142,7 +127,7 @@ export const WithNavigationDisabled = () => {
   );
 };
 
-export const WithNavigationDisabledWithInitialStep = () => {
+export const NavigationDisabledWithInitialStep = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={6}
@@ -155,7 +140,7 @@ export const WithNavigationDisabledWithInitialStep = () => {
   );
 };
 
-export const WithComponentsAndStep1IsCompleteAndArrowsOnEdge = () => {
+export const ChildrenAreComponentsAndStep1IsCompleteAndArrowsOnEdge = () => {
   stepIndicatorPagingRef = useRef();
 
   return (
@@ -172,7 +157,7 @@ export const WithComponentsAndStep1IsCompleteAndArrowsOnEdge = () => {
   );
 };
 
-export const WithChildrenAsComponentsSmallPageSize = () => {
+export const ChildrenAreComponentsSmallPageSize = () => {
   stepIndicatorPagingRef = useRef();
   return (
     <StepIndicatorPaging
@@ -188,11 +173,11 @@ export const WithChildrenAsComponentsSmallPageSize = () => {
   );
 };
 
-export const WithMinimumOptionsSet = () => {
-  return <StepIndicatorPaging steps={StepDataChildrenEmptyWithUrls().filter((_, i) => i < 8)} initialStepNumber={4} />;
+export const MinimumOptionsUsingOnlyTitleAndUrlPerStep = () => {
+  return <StepIndicatorPaging steps={StepDataChildrenEmptyWithUrls().filter((_, i) => i < 8)} />;
 };
 
-export const WithStepsAsUrls = () => {
+export const StepsAsUrlsAndInitialStepIs3 = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={3}
@@ -207,7 +192,7 @@ export const WithStepsAsUrls = () => {
   );
 };
 
-export const WithStepsAsUrlsWithoutCompleteButtons = () => {
+export const StepsAsUrlsWithoutCompleteButtons = () => {
   return (
     <StepIndicatorPaging
       initialStepNumber={3}
@@ -218,6 +203,18 @@ export const WithStepsAsUrlsWithoutCompleteButtons = () => {
       completeButtonId={null}
       previousButtonId={null}
       contentContainerCssClass={'container container--small'}
+    />
+  );
+};
+
+export const StepsAsUrlsDisabledClickingStepsButArrowsAreClickable = () => {
+  return (
+    <StepIndicatorPaging
+      initialStepNumber={1}
+      steps={StepDataChildrenEmptyWithUrls().filter((_, i) => i < 8)}
+      disableIncompleteStepClick={true}
+      navigationClickable={false}
+      pageSize={4}
     />
   );
 };

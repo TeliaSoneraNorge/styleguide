@@ -7,7 +7,7 @@ export const StepDataChildrenEmptyWithUrls = () => {
       url: '#GoTo2',
     },
     {
-      title: 'Step 2 Long title text here!',
+      title: 'Short step2',
       url: '#GoTo3',
     },
     {

@@ -15,7 +15,7 @@ export interface Props {
   //Defaults to null, set buttonId of the button that 'navigates back' that is rendered inside of your 'children/content' so when clicked, it navigates back
   previousButtonId?: string | undefined | null;
 
-  //Defaults to true, set to false if you want to disable clicking steps in the navigation
+  //Defaults to true, set to false if you want to disable clicking steps in the navigation, does not disable arrows
   navigationClickable?: boolean | undefined;
 
   //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown
@@ -28,10 +28,6 @@ export interface Props {
   //Add a container css-class to the children rendered if needed or any css class you want
   contentContainerCssClass?: string | null | undefined;
 
-  //Disable clicking on "future" steps from the 'navigation menu', can only move backwards, on steps that are already completed
+  //Defaults to false, set to true if you want to disable clicking on 'grey steps' (incomplete steps)
   disableIncompleteStepClick?: boolean | undefined;
-
-  //Hide step numbers if numbering them 'does not make sense', might consider different component like Tabs? Radio? But they look and feel different
-  //hideStepNumbers?: boolean | undefined;
-  //Note: Not allowed "per design" so commented out
 }

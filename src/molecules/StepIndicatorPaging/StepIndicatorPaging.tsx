@@ -47,11 +47,16 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const completePreviousSteps = navigationCompletesPreviousSteps != false;
   const pageSize = props.pageSize ?? 5;
   const maxStepCount = props.steps.length - 1;
-  const initialStepNumber =
+  let initialStepNumber =
     props.initialStepNumber != null && props.initialStepNumber > 0 ? props.initialStepNumber - 1 : 0;
 
   if (pageSize < 3 || pageSize > 5) {
     console.error('StepIndicatorPaging: PageSize is outside of tested range');
+  }
+
+  if (initialStepNumber > props.steps.length) {
+    console.error('InitialStepNumber is too large, setting it to the end of the steps');
+    initialStepNumber = props.steps.length - 1;
   }
 
   if (initialStepNumber > 0) {
@@ -268,6 +273,14 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const hasLeftArrow = pagingArrows[0]?.arrowType == 'LEFT';
   const hasRightArrow = pagingArrows[0]?.arrowType == 'RIGHT' || pagingArrows[1]?.arrowType == 'RIGHT';
 
+  let arrowUrlBackwards = state.currentActiveStepNumber > 0 ? state.steps[state.currentActiveStepNumber - 1].url : null;
+  let arrowUrlForwards =
+    state.currentActiveStepNumber + 1 < state.steps.length ? state.steps[state.currentActiveStepNumber + 1].url : null;
+  if (disableIncompleteStepClick == true) {
+    arrowUrlBackwards = null;
+    arrowUrlForwards = null;
+  }
+
   return (
     <div className="telia-step-indicator-paging">
       <RenderSvgLinePattern />
@@ -276,7 +289,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           <RenderArrow
             iconName={'chevron-left'}
             onPaging={() => onPagingLeft(maxStepCount, pageSize, state, updateState, navigationClickable != false)}
-            url={state.currentActiveStepNumber > 0 ? state.steps[state.currentActiveStepNumber - 1].url : null}
+            url={arrowUrlBackwards}
             isComplete={state.currentActiveStepNumber > 0 && state.steps[0].isComplete == true}
           />
         )}
@@ -295,11 +308,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
         {hasRightArrow && (
           <RenderArrow
             iconName={'chevron-right'}
-            url={
-              state.currentActiveStepNumber + 1 < state.steps.length
-                ? state.steps[state.currentActiveStepNumber + 1].url
-                : null
-            }
+            url={arrowUrlForwards}
             onPaging={() =>
               onPagingRight(
                 completePreviousSteps,
