@@ -39,9 +39,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const {
     navigationCompletesPreviousSteps,
     navigationClickable,
-    showArrowsTillEdgeSteps,
     contentContainerCssClass,
     disableIncompleteStepClick,
+    arrowsAsCarousel,
   } = props;
 
   const completePreviousSteps = navigationCompletesPreviousSteps != false;
@@ -156,20 +156,32 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       return arrowSteps;
     }
 
-    if (showArrowsTillEdgeSteps == true) {
-      if (state.currentActiveStepNumber > 0) {
-        arrowSteps.push({ arrowType: 'LEFT' });
-      }
-    } else if (state.minStepNumber >= 1) {
+    if (state.currentActiveStepNumber > 0 && state.minStepNumber >= 1) {
       arrowSteps.push({ arrowType: 'LEFT' });
     }
 
-    if (showArrowsTillEdgeSteps == true) {
-      if (state.currentActiveStepNumber > 0 && state.currentActiveStepNumber < maxStepCount) {
-        arrowSteps.push({ arrowType: 'RIGHT' });
+    console.log(navigationClickable + ' OR ' + navigationCompletesPreviousSteps);
+    console.log(
+      state.minStepNumber +
+        ' - ' +
+        state.currentActiveStepNumber +
+        ' VS ' +
+        pageSize +
+        ' VS' +
+        state.steps.length +
+        ' MAX ' +
+        maxStepCount
+    );
+    if (state.minStepNumber + pageSize <= state.steps.length) {
+      if (state.currentActiveStepNumber < state.steps.length - 1) {
+        if (state.steps.length - pageSize > state.minStepNumber) {
+          arrowSteps.push({ arrowType: 'RIGHT' });
+        } else {
+          if (state.currentActiveStepNumber < maxStepCount && state.currentActiveStepNumber > state.minStepNumber) {
+            arrowSteps.push({ arrowType: 'RIGHT' });
+          }
+        }
       }
-    } else if (state.minStepNumber < state.steps.length - pageSize) {
-      arrowSteps.push({ arrowType: 'RIGHT' });
     }
     return arrowSteps;
   };
@@ -273,13 +285,10 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const hasLeftArrow = pagingArrows[0]?.arrowType == 'LEFT';
   const hasRightArrow = pagingArrows[0]?.arrowType == 'RIGHT' || pagingArrows[1]?.arrowType == 'RIGHT';
 
-  let arrowUrlBackwards = state.currentActiveStepNumber > 0 ? state.steps[state.currentActiveStepNumber - 1].url : null;
-  let arrowUrlForwards =
+  const arrowUrlBackwards =
+    state.currentActiveStepNumber > 0 ? state.steps[state.currentActiveStepNumber - 1].url : null;
+  const arrowUrlForwards =
     state.currentActiveStepNumber + 1 < state.steps.length ? state.steps[state.currentActiveStepNumber + 1].url : null;
-  if (disableIncompleteStepClick == true) {
-    arrowUrlBackwards = null;
-    arrowUrlForwards = null;
-  }
 
   return (
     <div className="telia-step-indicator-paging">
@@ -288,9 +297,18 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
         {hasLeftArrow && (
           <RenderArrow
             iconName={'chevron-left'}
-            onPaging={() => onPagingLeft(maxStepCount, pageSize, state, updateState, navigationClickable != false)}
+            onPaging={() =>
+              onPagingLeft(
+                maxStepCount,
+                pageSize,
+                state,
+                updateState,
+                arrowsAsCarousel != true && navigationClickable != false
+              )
+            }
             url={arrowUrlBackwards}
             isComplete={state.currentActiveStepNumber > 0 && state.steps[0].isComplete == true}
+            arrowsAsCarousel={arrowsAsCarousel == true}
           />
         )}
 
@@ -316,9 +334,10 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
                 maxStepCount,
                 state,
                 updateState,
-                navigationClickable != false
+                arrowsAsCarousel != true && navigationClickable != false
               )
             }
+            arrowsAsCarousel={arrowsAsCarousel == true}
           />
         )}
       </ol>

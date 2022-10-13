@@ -18,16 +18,15 @@ export interface Props {
   //Defaults to true, set to false if you want to disable clicking steps in the navigation, does not disable arrows
   navigationClickable?: boolean | undefined;
 
-  //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown
-  //NOTE: Supports only 3-5 before it looks bad on small mobile phones (320px width)
+  //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown, supports only 3-5 by design
   pageSize?: number | undefined;
-
-  //Defaults to false, set to true to show arrows when you are on the "next last" step in either direction
-  showArrowsTillEdgeSteps?: boolean | undefined;
 
   //Add a container css-class to the children rendered if needed or any css class you want
   contentContainerCssClass?: string | null | undefined;
 
   //Defaults to false, set to true if you want to disable clicking on 'grey steps' (incomplete steps)
   disableIncompleteStepClick?: boolean | undefined;
+
+  //Defaults to false, set to true so clicking arrow only moves the 'step list' instaed of also visiting the step
+  arrowsAsCarousel?: boolean | undefined;
 }

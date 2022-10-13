@@ -27,15 +27,12 @@ export const onPagingLeft = (
     }
   }
 
-  if (!navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
+  if ((isArrowClicked && !changeActiveStep) || !navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
     const minStepNumber =
       isArrowClicked && !changeActiveStep
         ? state.minStepNumber - 1
         : getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
 
-    updateState(state.steps, activeStepNumber, minStepNumber);
-  } else if (!changeActiveStep) {
-    const minStepNumber = state.minStepNumber - 1;
     updateState(state.steps, activeStepNumber, minStepNumber);
   }
 };

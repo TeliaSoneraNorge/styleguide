@@ -46,15 +46,12 @@ export const onPagingRight = (
     }
   }
 
-  if (!navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
+  if ((isArrowClicked && !changeActiveStep) || !navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
     const minStepNumber =
       isArrowClicked && !changeActiveStep
         ? state.minStepNumber + 1
         : getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, true);
 
-    updateState(steps, activeStepNumber, minStepNumber, isArrowClicked);
-  } else if (!changeActiveStep) {
-    const minStepNumber = state.minStepNumber + 1;
     updateState(steps, activeStepNumber, minStepNumber, isArrowClicked);
   }
 };
