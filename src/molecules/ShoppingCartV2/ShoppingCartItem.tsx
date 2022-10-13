@@ -180,6 +180,7 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
   const discountValueMonthly = _.get(cartItem.discount, 'value.monthly') || 0;
   const discountPrice = getDiscountPrice(cartItem.price, quantity) || '';
   const price = getPrice(formatPrice, cartItem.price, discountValueUpfront, discountValueMonthly, quantity);
+  const discountPriceText = _.get(cartItem, 'discount.handsetDiscountText', '');
 
   return (
     <div className="telia-shopping-cart__item__price">
@@ -213,7 +214,7 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
           )}
         </div>
         <div style={{ position: 'relative' }}>
-          {cartItem?.discount?.handsetDiscountText && <SpeechBubble text={cartItem.discount.handsetDiscountText} />}
+          {!_.isEmpty(discountPriceText) && <SpeechBubble text={discountPriceText} />}
           <span className="telia-shopping-cart__item__price__cost">
             <span className="telia-shopping-cart__item__price__label">
               {isLease && !hasSubscription && 'fra '}
