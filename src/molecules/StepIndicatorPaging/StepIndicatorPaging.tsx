@@ -156,22 +156,10 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       return arrowSteps;
     }
 
-    if (state.currentActiveStepNumber > 0 && state.minStepNumber >= 1) {
+    if (state.currentActiveStepNumber > 0 || state.minStepNumber >= 1) {
       arrowSteps.push({ arrowType: 'LEFT' });
     }
 
-    console.log(navigationClickable + ' OR ' + navigationCompletesPreviousSteps);
-    console.log(
-      state.minStepNumber +
-        ' - ' +
-        state.currentActiveStepNumber +
-        ' VS ' +
-        pageSize +
-        ' VS' +
-        state.steps.length +
-        ' MAX ' +
-        maxStepCount
-    );
     if (state.minStepNumber + pageSize <= state.steps.length) {
       if (state.currentActiveStepNumber < state.steps.length - 1) {
         if (state.steps.length - pageSize > state.minStepNumber) {
