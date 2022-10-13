@@ -141,6 +141,7 @@ interface ICartItemDiscountValue {
 interface ICartItemDiscount {
   value: ICartItemDiscountValue;
   description?: string;
+  handsetDiscountText?: string;
 }
 
 export interface ICartItemImage {
