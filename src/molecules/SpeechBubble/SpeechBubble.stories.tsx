@@ -11,3 +11,9 @@ export const Default = () => (
     <SpeechBubble text="Hi, I'm a speech bubble" />
   </div>
 );
+
+export const Top = () => (
+  <div style={{ position: 'relative', margin: '6rem 3rem' }}>
+    <SpeechBubble orientation="top" text="Hi, I'm a top speech bubble" />
+  </div>
+);

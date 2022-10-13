@@ -20,21 +20,35 @@
   animation-delay: 0.5s;
   border-radius: 5px;
   filter: drop-shadow(0px 2px 8px #dcdce1);
-}
 
-/* Speech bubble tail */
-.speech-bubble::before {
-  content: '';
-  display: block;
-  width: 0;
-  position: absolute;
-  bottom: -20px;
-  left: 50px;
-  border-style: solid;
-  border-width: 12px;
-  border-color: #fff;
-  box-shadow: transparent 2px 2px #dcdce1;
-  clip-path: polygon(50% 100%, 0% 0, 100% 0);
+  &__tip-bottom::before {
+    content: '';
+    display: block;
+    width: 0;
+    position: absolute;
+    bottom: -1.25rem;
+    left: 3rem;
+    border-style: solid;
+    border-width: 0.75rem;
+    border-color: #fff;
+    box-shadow: transparent 2px 2px #dcdce1;
+    clip-path: polygon(50% 100%, 0% 0, 100% 0);
+
+  }
+
+  &__tip-top::before {
+    content: '';
+    display: block;
+    width: 0;
+    position: absolute;
+    top: -1.25rem;
+    left: 9.4rem;
+    border-style: solid;
+    border-width: 0.75rem;
+    border-color: #fff;
+    box-shadow: transparent 2px 2px #dcdce1;
+    clip-path: polygon(50% 0, 0 100%, 100% 100%);
+  }
 }
 
 @keyframes expand {
