@@ -9,33 +9,38 @@ export const onPagingLeft = (
   arrowAsCarousel: boolean,
   number?: any
 ) => {
+  const steps = state.steps;
+
   let activeStepNumber = state.currentActiveStepNumber;
   const isStepButtonClicked = number != null;
   const isArrowClicked = !isStepButtonClicked;
 
+  let minStepNumber = state.minStepNumber;
+
+  //A step button is directly clicked, simply change active step number and calculate new "minStepNumber"
   if (isStepButtonClicked) {
     if (number > 0) {
       activeStepNumber = number - 1;
+      minStepNumber = getMinStepNumberInRange(minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
     }
   }
 
+  //Left arrow is clicked, either change active step number or change minStepNumber ("Carousel navigation")
   if (isArrowClicked) {
-    if (arrowAsCarousel) {
+    if (!arrowAsCarousel) {
       if (activeStepNumber > 0) {
         activeStepNumber -= 1;
+      }
+      minStepNumber = getMinStepNumberInRange(minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
+    } else {
+      if (minStepNumber > 0) {
+        minStepNumber = minStepNumber - 1;
       }
     }
   }
 
-  if (isArrowClicked && !arrowAsCarousel) {
-    let minStepNumber = state.minStepNumber - 1;
-    if (minStepNumber < 0) {
-      minStepNumber = 0;
-    }
-    updateState(state.steps, activeStepNumber, minStepNumber);
-  }
-  if (!navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
-    const minStepNumber = getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
-    updateState(state.steps, activeStepNumber, minStepNumber);
+  //If we do not navigate to the url directly, simply update state with new values
+  if (!navigateToStepUrl(steps[activeStepNumber]?.url)) {
+    updateState(steps, activeStepNumber, minStepNumber);
   }
 };

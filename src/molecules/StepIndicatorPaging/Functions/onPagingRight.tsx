@@ -3,54 +3,59 @@ import { getMinStepNumberInRange } from './getMinStepNumberInRange';
 import { setStepsComplete } from './setStepsComplete';
 
 export const onPagingRight = (
-  completePreviousSteps: boolean,
+  autocompletePreviousSteps: boolean,
   pageSize: number,
   maxStepCount: number,
   state: any,
   updateState: any,
-  changeActiveStep: boolean,
+  arrowAsCarousel: boolean,
   number?: any
 ) => {
   const steps = state.steps;
 
   let activeStepNumber = state.currentActiveStepNumber;
+  const isStepButtonClicked = number != null;
+  const isArrowClicked = !isStepButtonClicked;
 
-  const isCompleteButtonClicked = number != null;
-  const isArrowClicked = number == null;
+  let minStepNumber = state.minStepNumber;
 
-  if (isCompleteButtonClicked) {
+  //A step button is directly clicked, simply change active step number and calculate new "minStepNumber"
+  if (isStepButtonClicked) {
     if (number <= maxStepCount) {
-      if (!setStepsComplete(steps, activeStepNumber, number, completePreviousSteps)) {
+      if (!setStepsComplete(steps, activeStepNumber, number, autocompletePreviousSteps)) {
         return;
       }
-
       if (number < maxStepCount) {
         activeStepNumber = number + 1;
       }
-      if (changeActiveStep && activeStepNumber <= state.minStepNumber) {
-        state.minStepNumber = activeStepNumber - 1;
+      if (!arrowAsCarousel && activeStepNumber <= minStepNumber) {
+        minStepNumber = activeStepNumber - 1;
       }
+      minStepNumber = getMinStepNumberInRange(minStepNumber, activeStepNumber, pageSize, maxStepCount, true);
     }
   }
 
+  //Right arrow is clicked, either change active step number (includes setting previous steps complete...) or change minStepNumber ("Carousel navigation")
   if (isArrowClicked) {
-    if (changeActiveStep) {
+    if (!arrowAsCarousel) {
       if (activeStepNumber < maxStepCount) {
-        if (completePreviousSteps) {
-          if (!setStepsComplete(steps, activeStepNumber, activeStepNumber, completePreviousSteps)) {
+        if (autocompletePreviousSteps) {
+          if (!setStepsComplete(steps, activeStepNumber, activeStepNumber, autocompletePreviousSteps)) {
             return;
           }
         }
         activeStepNumber += 1;
       }
+      minStepNumber = getMinStepNumberInRange(minStepNumber, activeStepNumber, pageSize, maxStepCount, true);
+    } else {
+      if (minStepNumber + pageSize <= maxStepCount) {
+        minStepNumber = minStepNumber + 1;
+      }
     }
   }
 
-  if (isArrowClicked && !changeActiveStep) {
-    const minStepNumber = state.minStepNumber + 1;
-    updateState(steps, activeStepNumber, minStepNumber, isArrowClicked);
-  } else if (!navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
-    const minStepNumber = getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, true);
-    updateState(steps, activeStepNumber, minStepNumber, isArrowClicked);
+  //If we do not navigate to the url directly, simply update state with new values
+  if (!navigateToStepUrl(steps[activeStepNumber]?.url)) {
+    updateState(steps, activeStepNumber, minStepNumber);
   }
 };

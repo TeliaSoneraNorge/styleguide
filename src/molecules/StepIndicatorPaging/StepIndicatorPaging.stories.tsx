@@ -88,3 +88,131 @@ export const InitialStep1PageSize4ArrowsAsCarousel = () => {
     />
   );
 };
+
+export const LargeStepCountDefaultValue = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+    />
+  );
+};
+
+export const LargeStepCountInitialStepLast = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={7}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsDefault = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsInitialStep5AndArrowsAsCarousel = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={true}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsIncompleteStepsDisabled = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsDisableNavigationArrowsAsCarousel = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const MiniStepsWithTitleAndUrlOnlyInitialStep1 = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenEmptyWithUrls().filter((_, i) => i < 8)}
+      initialStepNumber={1}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+    />
+  );
+};
+
+export const ChildrenAreComponentsPageSize3WithContentClass = () => {
+  stepIndicatorPagingRef = useRef();
+  return (
+    <StepIndicatorPaging
+      ref={stepIndicatorPagingRef}
+      steps={StepDataChildrenAsComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 8)}
+      initialStepNumber={1}
+      pageSize={3}
+      autocompletePreviousSteps={true}
+      contentCssClass={'container container--small'}
+    />
+  );
+};
+
+export const ChildrenAreComponentsNavigationDisabledOnlyWithinComponentsStepIsMovedArrowsAreCarousel = () => {
+  stepIndicatorPagingRef = useRef();
+  return (
+    <StepIndicatorPaging
+      ref={stepIndicatorPagingRef}
+      steps={StepDataChildrenAsComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 8)}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const StepsAsUrlsAndInitialStepIs3 = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
+      initialStepNumber={4}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+    />
+  );
+};

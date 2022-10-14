@@ -21,14 +21,14 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       if (props.steps == null || number < 0 || number > props.steps.length) {
         return;
       }
-      onPagingRight(true, pageSize, maxStepCount, state, updateState, true, number);
+      onPagingRight(autocompletePreviousSteps, pageSize, maxStepCount, state, updateState, arrowsAsCarousel, number);
     },
 
     onPreviousStepClick: (number: number) => {
       if (props.steps == null || number < 0) {
         return;
       }
-      onPagingLeft(maxStepCount, pageSize, state, updateState, true, number);
+      onPagingLeft(maxStepCount, pageSize, state, updateState, arrowsAsCarousel, number);
     },
   }));
 
@@ -155,13 +155,28 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       return arrowSteps;
     }
 
-    if (state.minStepNumber > 0 || state.currentActiveStepNumber > 0) {
-      arrowSteps.push({ arrowType: 'LEFT' });
+    if (arrowsAsCarousel) {
+      //minStepNumber is larger than 0, we are in a "carousel" [arrows clicked without steps moving], we show arrow
+      if (state.minStepNumber > 0) {
+        arrowSteps.push({ arrowType: 'LEFT' });
+      }
+    } else {
+      //else if currentActiveStep is larger than 0, we show arrow, as one can navigate 'back'
+      if (state.currentActiveStepNumber > 0) {
+        arrowSteps.push({ arrowType: 'LEFT' });
+      }
     }
 
-    const maxIndex = state.minStepNumber + pageSize;
+    const maxStepNumber = state.minStepNumber + pageSize;
 
-    if (maxIndex < steps.length) {
+    if (arrowsAsCarousel) {
+      //maxStepNumber is less than total steps, we are in a "carousel" [arrows clicked without steps moving], we show arrow
+      if (maxStepNumber < steps.length) {
+        arrowSteps.push({ arrowType: 'RIGHT' });
+      }
+    }
+    //else if currentActiveStep is less than last step, as one can navigate 'forward'
+    else if (state.currentActiveStepNumber < maxStepNumber - 1) {
       arrowSteps.push({ arrowType: 'RIGHT' });
     }
 
@@ -172,19 +187,19 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     const children = getActiveStepChildren();
 
     if (children) {
-      addOnClickEvent(props.completeStepButtonId, () =>
+      addOnClickEvent(completeStepButtonId, () =>
         onPagingRight(
           autocompletePreviousSteps,
           pageSize,
           maxStepCount,
           state,
           updateState,
-          true,
+          arrowsAsCarousel,
           state.currentActiveStepNumber
         )
       );
-      addOnClickEvent(props.previousStepButtonId, () =>
-        onPagingLeft(maxStepCount, pageSize, state, updateState, true, state.currentActiveStepNumber)
+      addOnClickEvent(previousStepButtonId, () =>
+        onPagingLeft(maxStepCount, pageSize, state, updateState, arrowsAsCarousel, state.currentActiveStepNumber)
       );
     }
   });
@@ -233,16 +248,15 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     const step = props.step as InternalStep;
 
+    const stepNumber = index + state.minStepNumber;
+
     const isClickable =
-      (index >= state.currentActiveStepNumber && incompleteStepsClickable) ||
-      (index <= state.currentActiveStepNumber && completeStepsClickable);
+      (stepNumber > state.currentActiveStepNumber && incompleteStepsClickable) ||
+      (stepNumber < state.currentActiveStepNumber && completeStepsClickable) ||
+      (step.isComplete == true && completeStepsClickable);
 
     const isComplete = step.isComplete == true;
     const isActive = step.number == state.currentActiveStepNumber;
-
-    // console.log("Step " + index + " is clickable " + isClickable + " max " + maxDisplayCount);
-    // console.log("is comp " + isComplete);
-    // console.log("is act " + isActive);
 
     return (
       <li
@@ -308,9 +322,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           <RenderArrow
             iconName={'chevron-right'}
             url={arrowUrlForwards}
-            onPaging={() =>
-              onPagingRight(autocompletePreviousSteps, pageSize, maxStepCount, state, updateState, arrowsAsCarousel)
-            }
+            onPaging={() => {
+              onPagingRight(autocompletePreviousSteps, pageSize, maxStepCount, state, updateState, arrowsAsCarousel);
+            }}
             arrowsAsCarousel={arrowsAsCarousel}
           />
         )}
