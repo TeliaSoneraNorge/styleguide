@@ -14,9 +14,9 @@ type Props = {
   onClick: (id: string) => void;
 };
 
-export const SpeechBubbleTabs: React.FC<Props> = ({ position, tabs, selectedTabId, onClick }) => {
+export const SpeechBubbleTabs: React.FC<Props> = ({ onClick, position = 'center', selectedTabId, tabs }) => {
   const containerClassName = cn('telia-speech-bubble-tabs', {
-    'telia-speech-bubble-tabs--center': !position || position === 'center',
+    'telia-speech-bubble-tabs--center': position === 'center',
     'telia-speech-bubble-tabs--left': position === 'left',
   });
 
