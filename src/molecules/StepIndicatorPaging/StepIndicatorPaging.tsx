@@ -47,6 +47,12 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const arrowsAsCarousel = props.arrowsAsCarousel ?? false;
   const contentCssClass = props.contentCssClass ?? null;
 
+  if (!completeStepsClickable && !incompleteStepsClickable && !arrowsAsCarousel) {
+    console.error(
+      'StepIndicatorPaging: not supported options to disable navigation completely when arrows do navigate'
+    );
+  }
+
   const maxStepCount = steps.length - 1;
 
   if (pageSize < 3 || pageSize > 5) {

@@ -216,3 +216,16 @@ export const StepsAsUrlsAndInitialStepIs3 = () => {
     />
   );
 };
+
+export const StepsAsUrlInitialStep5DisablingNavigationWorksAsTheOldStepIndicator = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
+    />
+  );
+};
