@@ -20,8 +20,6 @@ export const SpeechBubbleTabs: React.FC<Props> = ({ position, tabs, selectedTabI
     'telia-speech-bubble-tabs--left': position === 'left',
   });
 
-  console.log({ containerClassName });
-
   return (
     <div className={containerClassName}>
       {tabs?.map(({ id, name }) => (
