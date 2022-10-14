@@ -8,14 +8,21 @@ type Tab = {
 };
 
 type Props = {
+  position?: string;
   tabs?: Tab[];
   selectedTabId?: string;
   onClick: (id: string) => void;
 };
-export const SpeechBubbleTabs: React.FC<Props> = ({ tabs, selectedTabId, onClick }) => {
+
+export const SpeechBubbleTabs: React.FC<Props> = ({ onClick, position = 'center', selectedTabId, tabs }) => {
+  const containerClassName = cn('telia-speech-bubble-tabs', {
+    'telia-speech-bubble-tabs--center': position === 'center',
+    'telia-speech-bubble-tabs--left': position === 'left',
+  });
+
   return (
-    <div className="telia-speech-bubble-tabs">
-      {(tabs || []).map(({ id, name }) => (
+    <div className={containerClassName}>
+      {tabs?.map(({ id, name }) => (
         <button
           className={cn('telia-speech-bubble-tabs__tab', {
             'telia-speech-bubble-tabs__tab--selected': selectedTabId === id,

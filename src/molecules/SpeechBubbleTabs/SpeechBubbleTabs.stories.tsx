@@ -30,3 +30,13 @@ export const SpeechBubbleTabsWithoutDefaultTab = () => {
 
   return <SpeechBubbleTabs tabs={TABS} selectedTabId={selectedTabId} onClick={handleChangeTab} />;
 };
+
+export const SpeechBubbleTabsOnLeft = () => {
+  const [selectedTabId, setSelectedTabId] = useState('FWA');
+
+  const handleChangeTab = (id: string) => {
+    setSelectedTabId(id);
+  };
+
+  return <SpeechBubbleTabs position="left" tabs={TABS} selectedTabId={selectedTabId} onClick={handleChangeTab} />;
+};
