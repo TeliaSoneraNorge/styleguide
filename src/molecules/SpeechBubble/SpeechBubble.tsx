@@ -11,6 +11,7 @@ export const SpeechBubble: React.FC<Props> = ({ text, orientation = 'bottom' }) 
     <div
       className={classnames('speech-bubble', `speech-bubble__tip-${orientation}`)}
       dangerouslySetInnerHTML={{ __html: text }}
+      key={text}
     ></div>
   );
 };
