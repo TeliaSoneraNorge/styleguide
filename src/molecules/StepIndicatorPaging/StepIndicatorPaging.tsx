@@ -59,7 +59,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   }
 
   if (initialStepNumber > 0) {
-    setStepsComplete(props.steps, initialStepNumber, initialStepNumber, autocompletePreviousSteps);
+    setStepsComplete(props.steps, initialStepNumber - 1, initialStepNumber, autocompletePreviousSteps);
   }
 
   const [state, setState] = useState({
@@ -73,7 +73,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       number: i,
       title: step.title,
       url: step.url,
-      isComplete: step.isComplete || (autocompletePreviousSteps && i < state.currentActiveStepNumber),
+      isComplete: step.isComplete || (autocompletePreviousSteps && i < state.currentActiveStepNumber - 1),
       arrowType: null,
     };
   });
@@ -151,7 +151,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const getPagingArrows = () => {
     const arrowSteps: any[] = [];
 
-    if (maxStepCount <= pageSize) {
+    if (maxStepCount < pageSize) {
       return arrowSteps;
     }
 
@@ -234,8 +234,15 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     const step = props.step as InternalStep;
 
     const isClickable =
-      (index > state.currentActiveStepNumber && incompleteStepsClickable) ||
-      (index < state.currentActiveStepNumber && completeStepsClickable);
+      (index >= state.currentActiveStepNumber && incompleteStepsClickable) ||
+      (index <= state.currentActiveStepNumber && completeStepsClickable);
+
+    const isComplete = step.isComplete == true;
+    const isActive = step.number == state.currentActiveStepNumber;
+
+    // console.log("Step " + index + " is clickable " + isClickable + " max " + maxDisplayCount);
+    // console.log("is comp " + isComplete);
+    // console.log("is act " + isActive);
 
     return (
       <li
@@ -249,14 +256,12 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           title={step.title}
           url={step.url}
           isClickable={isClickable}
-          isActive={step.number === state.currentActiveStepNumber}
-          isComplete={step.isComplete == true}
+          isActive={isActive}
+          isComplete={isComplete}
           onStepButtonClick={() => onStepButtonClick(step.number)}
         />
 
-        {index < maxDisplayCount - 1 && (
-          <RenderLine isComplete={step.isComplete == true} isActive={step.number === state.currentActiveStepNumber} />
-        )}
+        {index < maxDisplayCount - 1 && <RenderLine isComplete={isComplete} isActive={isActive} />}
       </li>
     );
   };
@@ -272,16 +277,19 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const arrowUrlForwards =
     state.currentActiveStepNumber + 1 < state.steps.length ? state.steps[state.currentActiveStepNumber + 1].url : null;
 
+  const firstStepCompleted = state.currentActiveStepNumber > 0 && state.steps[0].isComplete == true;
+
   return (
     <div className="telia-step-indicator-paging">
       <RenderSvgLinePattern />
+
       <ol className={'telia-step-indicator-paging__list telia-step-indicator-paging__list--page-size-' + pageSize}>
         {hasLeftArrow && (
           <RenderArrow
             iconName={'chevron-left'}
             onPaging={() => onPagingLeft(maxStepCount, pageSize, state, updateState, arrowsAsCarousel)}
             url={arrowUrlBackwards}
-            isComplete={state.currentActiveStepNumber > 0 && state.steps[0].isComplete == true}
+            isComplete={firstStepCompleted}
             arrowsAsCarousel={arrowsAsCarousel}
           />
         )}

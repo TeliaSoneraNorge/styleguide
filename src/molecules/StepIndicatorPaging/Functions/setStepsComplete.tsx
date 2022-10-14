@@ -4,20 +4,24 @@ export const setStepsComplete = (
   steps: Step[],
   currentActiveNumber: number,
   clickedNumber: number,
-  completePreviousSteps: boolean
+  autocompletePreviousSteps: boolean
 ) => {
   const validateStep = steps[currentActiveNumber].onValidateStep;
 
-  const isComplete = !validateStep ? true : validateStep(steps, currentActiveNumber);
+  const isStepValid = !validateStep ? true : validateStep(steps, currentActiveNumber);
 
-  steps[currentActiveNumber].isComplete = isComplete;
+  if (!isStepValid) {
+    return false;
+  }
 
-  if (completePreviousSteps == true) {
+  steps[currentActiveNumber].isComplete = isStepValid;
+
+  if (autocompletePreviousSteps) {
     steps.forEach((step, i) => {
       if (i < clickedNumber) {
         step.isComplete = true;
       }
     });
   }
-  return isComplete;
+  return true;
 };

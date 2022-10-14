@@ -1,7 +1,7 @@
 import { Step } from '../Models/Step';
 
 const onValidateStep = (steps: Step[], number: number) => {
-  //Step already completed? Just continue? Or revalidate if input has changed?
+  //Step already completed? Just continue? Or revalidate if input has changed? Or loop over all steps and validate previous ones...
   if (steps[number].isComplete == true) {
     return true;
   }

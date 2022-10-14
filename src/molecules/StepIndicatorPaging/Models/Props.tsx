@@ -27,6 +27,6 @@ export interface Props {
   //Defaults to false, set to true so clicking arrow only moves the 'step list' instaed of also visiting the step
   arrowsAsCarousel?: boolean;
 
-  //Add css-class to the children rendered wrapped in a div
+  //Add css-class to the children rendered wrapped in a section
   contentCssClass?: string | null;
 }
