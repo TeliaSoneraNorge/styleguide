@@ -3,30 +3,30 @@ import { Step } from './Step';
 export interface Props {
   steps?: Step[] | null | undefined;
 
-  //Defaults to 1 if undefined, 1 equals Step[0]
-  initialStepNumber?: number | undefined;
-
-  //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
-  navigationCompletesPreviousSteps?: boolean | undefined;
-
-  //Defaults to null, set buttonId of the button that 'completes' a step that is rendered inside of your 'children/content' so when clicked, it marks current step as complete and navigates forward
-  completeButtonId?: string | undefined | null;
-
-  //Defaults to null, set buttonId of the button that 'navigates back' that is rendered inside of your 'children/content' so when clicked, it navigates back
-  previousButtonId?: string | undefined | null;
-
-  //Defaults to true, set to false if you want to disable clicking steps in the navigation, does not disable arrows
-  navigationClickable?: boolean | undefined;
+  //Defaults to 0 if undefined  equals Step[0]
+  initialStepNumber?: number;
 
   //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown, supports only 3-5 by design
-  pageSize?: number | undefined;
+  pageSize?: number;
 
-  //Add a container css-class to the children rendered if needed or any css class you want
-  contentContainerCssClass?: string | null | undefined;
+  //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
+  autocompletePreviousSteps?: boolean;
+
+  //Defaults to null, set buttonId of the button that 'completes' a step that is rendered inside of your 'children/content' so when clicked, it marks current step as complete and navigates forward
+  completeStepButtonId?: string | null;
+
+  //Defaults to null, set buttonId of the button that 'navigates back' that is rendered inside of your 'children/content' so when clicked, it navigates back
+  previousStepButtonId?: string | null;
+
+  //Defaults to true, set to false if you want to disable clicking steps that are "previous"
+  completeStepsClickable?: boolean;
 
   //Defaults to false, set to true if you want to disable clicking on 'grey steps' (incomplete steps)
-  disableIncompleteStepClick?: boolean | undefined;
+  incompleteStepsClickable?: boolean;
 
   //Defaults to false, set to true so clicking arrow only moves the 'step list' instaed of also visiting the step
-  arrowsAsCarousel?: boolean | undefined;
+  arrowsAsCarousel?: boolean;
+
+  //Add css-class to the children rendered wrapped in a div
+  contentCssClass?: string | null;
 }

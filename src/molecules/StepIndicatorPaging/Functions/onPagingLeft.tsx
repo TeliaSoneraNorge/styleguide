@@ -6,7 +6,7 @@ export const onPagingLeft = (
   pageSize: number,
   state: any,
   updateState: any,
-  changeActiveStep: boolean,
+  arrowAsCarousel: boolean,
   number?: any
 ) => {
   let activeStepNumber = state.currentActiveStepNumber;
@@ -20,19 +20,22 @@ export const onPagingLeft = (
   }
 
   if (isArrowClicked) {
-    if (changeActiveStep) {
+    if (arrowAsCarousel) {
       if (activeStepNumber > 0) {
         activeStepNumber -= 1;
       }
     }
   }
 
-  if ((isArrowClicked && !changeActiveStep) || !navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
-    const minStepNumber =
-      isArrowClicked && !changeActiveStep
-        ? state.minStepNumber - 1
-        : getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
-
+  if (isArrowClicked && !arrowAsCarousel) {
+    let minStepNumber = state.minStepNumber - 1;
+    if (minStepNumber < 0) {
+      minStepNumber = 0;
+    }
+    updateState(state.steps, activeStepNumber, minStepNumber);
+  }
+  if (!navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
+    const minStepNumber = getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, false);
     updateState(state.steps, activeStepNumber, minStepNumber);
   }
 };

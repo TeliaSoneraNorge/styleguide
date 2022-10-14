@@ -46,12 +46,11 @@ export const onPagingRight = (
     }
   }
 
-  if ((isArrowClicked && !changeActiveStep) || !navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
-    const minStepNumber =
-      isArrowClicked && !changeActiveStep
-        ? state.minStepNumber + 1
-        : getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, true);
-
+  if (isArrowClicked && !changeActiveStep) {
+    const minStepNumber = state.minStepNumber + 1;
+    updateState(steps, activeStepNumber, minStepNumber, isArrowClicked);
+  } else if (!navigateToStepUrl(state.steps[activeStepNumber]?.url)) {
+    const minStepNumber = getMinStepNumberInRange(state.minStepNumber, activeStepNumber, pageSize, maxStepCount, true);
     updateState(steps, activeStepNumber, minStepNumber, isArrowClicked);
   }
 };

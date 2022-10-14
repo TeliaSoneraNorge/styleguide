@@ -21,6 +21,5 @@ export const getMinStepNumber = (number: number, pageSize: number, maxStepCount:
       number = number - 1;
     }
   }
-
   return number;
 };
