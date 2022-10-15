@@ -273,19 +273,12 @@
         }
 
         @media screen and (max-width: 32em) {
-          width: 100px;
-          /* size/2, minus 'center of the list item' */
-          margin-left: calc(calc(-100px / 2) - calc(-72px / 2));
+          width: 125%;
+          margin-left: -12.5%;
         }
 
-        @media screen and (max-width: 25.5em) {
+        @media screen and (max-width: 27.5em) {
           font-size: 14px;
-        }
-
-        @media screen and (max-width: 24em) {
-          /* max possible without going over the other nearby step-buttons*/
-          width: 136%;
-          margin-left: -13%;
         }
 
         @media screen and (max-width: 22em) {
@@ -517,3 +510,10 @@
     margin: 0 auto;
   }
 }
+/* 
+.telia-step-indicator-paging__list--page-size-5 .telia-step-indicator-paging__button-title-container--active {
+  @media screen and (max-width: 32em) {
+    width: 90px;
+    margin-left: calc(calc(-90px / 2) - calc(-58px / 2)) !important;
+  }
+} */
