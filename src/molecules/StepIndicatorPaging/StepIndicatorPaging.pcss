@@ -240,11 +240,13 @@
       font-size: 16px;
       line-height: 1;
       font-family: 'TeliaSans-Regular';
+      max-width: 97%; /* so swapping font does not "jump" text */
 
       @media screen and (max-width: 48em) {
         display: none;
         visibility: hidden;
         top: 38px;
+        max-width: 125%;
       }
 
       & > span {
@@ -510,10 +512,3 @@
     margin: 0 auto;
   }
 }
-/* 
-.telia-step-indicator-paging__list--page-size-5 .telia-step-indicator-paging__button-title-container--active {
-  @media screen and (max-width: 32em) {
-    width: 90px;
-    margin-left: calc(calc(-90px / 2) - calc(-58px / 2)) !important;
-  }
-} */
