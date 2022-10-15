@@ -275,11 +275,14 @@
         @media screen and (max-width: 32em) {
           width: 100px;
           /* size/2, minus 'center of the list item' */
-          margin-left: calc(calc(-100 / 2) - calc(-72 / 2))px;
+          margin-left: calc(calc(-100px / 2) - calc(-72px / 2));
+        }
+
+        @media screen and (max-width: 25.5em) {
+          font-size: 14px;
         }
 
         @media screen and (max-width: 24em) {
-          font-size: 14px;
           /* max possible without going over the other nearby step-buttons*/
           width: 136%;
           margin-left: -13%;
@@ -307,6 +310,10 @@
     &.right {
       left: 0;
       margin-left: -2px;
+
+      @media screen and (max-width: 28em) {
+        margin-left: 3px;
+      }
     }
 
     &.left {
@@ -449,7 +456,10 @@
       }
 
       &--dashed {
-        border-bottom: 2px dotted var(--darker-grey);
+        /* uses svg to draw the dashes */
+        left: 0;
+        margin-left: -2px;
+        height: 3px;
       }
 
       &--dashed.left {

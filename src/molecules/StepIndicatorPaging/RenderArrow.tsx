@@ -40,7 +40,7 @@ export const RenderArrow = (props: any) => {
         )}
 
         {!isComplete && (
-          <div className={'telia-step-indicator-paging__line ' + modifier}>
+          <div className="telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed">
             <svg>
               <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
             </svg>
