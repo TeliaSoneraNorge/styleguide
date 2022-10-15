@@ -44,13 +44,14 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const autocompletePreviousSteps = props.autocompletePreviousSteps ?? true;
   const completeStepsClickable = props.completeStepsClickable ?? true;
   const incompleteStepsClickable = props.incompleteStepsClickable ?? true;
-  const arrowsAsCarousel = props.arrowsAsCarousel ?? false;
+  let arrowsAsCarousel = props.arrowsAsCarousel ?? false;
   const contentCssClass = props.contentCssClass ?? null;
 
   if (!completeStepsClickable && !incompleteStepsClickable && !arrowsAsCarousel) {
-    console.error(
-      'StepIndicatorPaging: not supported options to disable navigation completely when arrows do navigate'
+    console.warn(
+      'StepIndicatorPaging: unsupported to disable navigation, without using arrows as a carousel, forcing carousel for arrows'
     );
+    arrowsAsCarousel = true;
   }
 
   const maxStepCount = steps.length - 1;

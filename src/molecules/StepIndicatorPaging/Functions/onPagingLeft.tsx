@@ -40,7 +40,7 @@ export const onPagingLeft = (
   }
 
   //If we do not navigate to the url directly, simply update state with new values
-  if (!navigateToStepUrl(steps[activeStepNumber]?.url)) {
+  if ((isArrowClicked && arrowAsCarousel) || !navigateToStepUrl(steps[activeStepNumber]?.url)) {
     updateState(steps, activeStepNumber, minStepNumber);
   }
 };

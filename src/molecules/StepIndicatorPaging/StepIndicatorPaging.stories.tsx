@@ -225,7 +225,7 @@ export const StepsAsUrlInitialStep5DisablingNavigationWorksAsTheOldStepIndicator
       autocompletePreviousSteps={true}
       completeStepsClickable={false}
       incompleteStepsClickable={false}
-      arrowsAsCarousel={true}
+      arrowsAsCarousel={false}
     />
   );
 };
