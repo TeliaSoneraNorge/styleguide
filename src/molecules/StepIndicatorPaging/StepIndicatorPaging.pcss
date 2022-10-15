@@ -272,6 +272,12 @@
           font-size: 15px;
         }
 
+        @media screen and (max-width: 32em) {
+          width: 100px;
+          /* size/2, minus 'center of the list item' */
+          margin-left: calc(calc(-100 / 2) - calc(-72 / 2))px;
+        }
+
         @media screen and (max-width: 24em) {
           font-size: 14px;
           /* max possible without going over the other nearby step-buttons*/
@@ -279,10 +285,8 @@
           margin-left: -13%;
         }
 
-        @media screen and (max-width: 32em) {
-          width: 100px;
-          /* size/2, minus 'center of the list item' */
-          margin-left: calc(calc(-100 / 2) - calc(-72 / 2)) px;
+        @media screen and (max-width: 22em) {
+          font-size: 12px;
         }
       }
     }
