@@ -1,7 +1,7 @@
 import { Step } from '../Models/Step';
 
 const onValidateStep = (steps: Step[], number: number) => {
-  //Step already completed? Just continue? Or revalidate if input has changed?
+  //Step already completed? Just continue? Or revalidate if input has changed? Or loop over all steps and validate previous ones...
   if (steps[number].isComplete == true) {
     return true;
   }
@@ -50,14 +50,12 @@ export const StepDataChildrenAsHtml = () => {
       title: 'Step 6 Long title text here',
       url: '',
       isComplete: false,
-
       children:
         '<h1>Hello 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete6</button>',
     },
     {
-      title: 'Step 7 Long title text here',
+      title: 'Step 7 Long title text her!!',
       url: '',
-      isComplete: false,
       children:
         '<h1>Hello 7</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete7</button>',
     },

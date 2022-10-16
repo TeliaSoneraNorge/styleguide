@@ -203,6 +203,7 @@
       display: flex;
       justify-content: center;
       align-items: center;
+      background-color: white;
 
       border: 2px solid;
       border-radius: 50%;
@@ -234,15 +235,18 @@
       margin: 0;
       top: 40px;
       width: 100%;
-      max-width: 136px;
+      max-width: 150px;
+      text-align: center;
       font-size: 16px;
       line-height: 1;
       font-family: 'TeliaSans-Regular';
+      max-width: 97%; /* so swapping font does not "jump" text */
 
       @media screen and (max-width: 48em) {
         display: none;
         visibility: hidden;
         top: 38px;
+        max-width: 125%;
       }
 
       & > span {
@@ -270,17 +274,17 @@
           font-size: 15px;
         }
 
-        @media screen and (max-width: 24em) {
-          font-size: 14px;
-          /* max possible without going over the other nearby step-buttons*/
-          width: 136%;
-          margin-left: -13%;
+        @media screen and (max-width: 32em) {
+          width: 125%;
+          margin-left: -12.5%;
         }
 
-        @media screen and (max-width: 32em) {
-          width: 100px;
-          /* size/2, minus 'center of the list item' */
-          margin-left: calc(calc(-100 / 2) - calc(-72 / 2)) px;
+        @media screen and (max-width: 27.5em) {
+          font-size: 14px;
+        }
+
+        @media screen and (max-width: 22em) {
+          font-size: 12px;
         }
       }
     }
@@ -301,6 +305,14 @@
     &.right {
       left: 0;
       margin-left: -2px;
+
+      @media screen and (max-width: 28em) {
+        margin-left: 3px;
+      }
+    }
+
+    &.left {
+      margin-left: 0;
     }
 
     & > svg {
@@ -435,11 +447,14 @@
 
       &--solid {
         border-bottom: 2px solid var(--core-purple);
-        margin-left: 8px;
+        margin-left: 2px;
       }
 
       &--dashed {
-        border-bottom: 2px dotted var(--darker-grey);
+        /* uses svg to draw the dashes */
+        left: 0;
+        margin-left: -2px;
+        height: 3px;
       }
 
       &--dashed.left {

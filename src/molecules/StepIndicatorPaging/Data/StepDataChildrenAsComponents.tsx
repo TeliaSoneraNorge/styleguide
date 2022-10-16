@@ -6,7 +6,7 @@ export const StepDataChildrenAsComponents = (onPreviousStepClick: any, onComplet
     {
       title: 'Step 1',
       url: '',
-      isComplete: true,
+      isComplete: false,
       children: (
         <div>
           <h2>Step 1...</h2>

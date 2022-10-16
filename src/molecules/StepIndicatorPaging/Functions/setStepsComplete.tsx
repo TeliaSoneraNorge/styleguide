@@ -3,19 +3,22 @@ import { Step } from '../Models/Step';
 export const setStepsComplete = (
   steps: Step[],
   currentActiveNumber: number,
-  activeNumber: number,
-  completePreviousSteps: boolean
+  clickedNumber: number,
+  autocompletePreviousSteps: boolean
 ) => {
-  steps[currentActiveNumber].isComplete = !steps[currentActiveNumber].onValidateStep
-    ? true
-    : steps[currentActiveNumber].onValidateStep(steps, currentActiveNumber) == true;
-  if (!steps[currentActiveNumber].isComplete) {
+  const validateStep = steps[currentActiveNumber].onValidateStep;
+
+  const isStepValid = !validateStep ? true : validateStep(steps, currentActiveNumber);
+
+  if (!isStepValid) {
     return false;
   }
 
-  if (completePreviousSteps == true) {
+  steps[currentActiveNumber].isComplete = isStepValid;
+
+  if (autocompletePreviousSteps) {
     steps.forEach((step, i) => {
-      if (i < activeNumber) {
+      if (i < clickedNumber) {
         step.isComplete = true;
       }
     });

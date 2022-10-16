@@ -2,11 +2,13 @@ import React from 'react';
 import { Icon } from '../../atoms/Icon';
 
 export const RenderArrow = (props: any) => {
-  const { onPaging, iconName, isComplete, url } = props;
+  const { onPaging, iconName, isComplete, url, arrowsAsCarousel } = props;
 
   const modifier = iconName.includes('left') ? 'left' : 'right';
 
   const buttonClassName = '';
+
+  const useATag = arrowsAsCarousel == false && url && url.length > 0;
 
   return (
     <li
@@ -17,12 +19,12 @@ export const RenderArrow = (props: any) => {
     >
       <div className={'telia-step-indicator-paging__arrow-item telia-step-indicator-paging__arrow-item--' + modifier}>
         <div className={'telia-step-indicator-paging__arrow telia-step-indicator-paging__arrow--' + modifier}>
-          {url && url.length > 0 && (
+          {useATag && (
             <a href={url} className={buttonClassName}>
               <Icon icon={iconName} />
             </a>
           )}
-          {!url && (
+          {!useATag && (
             <button type="button" onClick={onPaging} className={buttonClassName}>
               <Icon icon={iconName} />
             </button>
@@ -38,7 +40,7 @@ export const RenderArrow = (props: any) => {
         )}
 
         {!isComplete && (
-          <div className={'telia-step-indicator-paging__line ' + modifier}>
+          <div className="telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed">
             <svg>
               <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
             </svg>

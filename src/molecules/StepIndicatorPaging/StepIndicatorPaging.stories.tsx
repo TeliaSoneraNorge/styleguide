@@ -21,187 +21,212 @@ const onPreviousStepClick = (number: number) => {
   (stepIndicatorPagingRef.current as any).onPreviousStepClick(number);
 };
 
-export const DefaultAsDesigned = () => {
+export const AsDesigned = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={0}
       steps={StepDataChildrenAsHtml().filter((_, i) => i < 5)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
-    />
-  );
-};
-
-export const WithInitialStep5ButOnly3Items = () => {
-  return (
-    <StepIndicatorPaging
       initialStepNumber={0}
-      steps={StepDataChildrenAsHtml().filter((_, i) => i < 3)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
       pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={true}
+      arrowsAsCarousel={false}
     />
   );
 };
 
-export const WithInitialStep5ButOnly2Items = () => {
+export const Minimum = () => {
+  return <StepIndicatorPaging steps={StepDataChildrenAsHtml().filter((_, i) => i < 5)} />;
+};
+
+export const InitialStepTooLarge = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={0}
-      steps={StepDataChildrenAsHtml().filter((_, i) => i < 2)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 5)}
+      initialStepNumber={5}
       pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={true}
+      arrowsAsCarousel={false}
     />
   );
 };
 
-export const WithInitialStep3AndValidatorOnStep3 = () => {
+export const InitialStep1PageSize4 = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={3}
-      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
-    />
-  );
-};
-
-export const WithPageSizeMedium = () => {
-  return (
-    <StepIndicatorPaging
-      initialStepNumber={0}
-      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 5)}
+      initialStepNumber={1}
       pageSize={4}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={true}
+      arrowsAsCarousel={false}
     />
   );
 };
 
-export const WithNavigationDoesNotCompleteSteps = () => {
+export const InitialStep1PageSize4ArrowsAsCarousel = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={0}
-      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={false}
-      navigationClickable={true}
-      pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 5)}
+      initialStepNumber={1}
+      pageSize={4}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={true}
+      arrowsAsCarousel={true}
     />
   );
 };
 
-export const WithNavigationDisabled = () => {
+export const LargeStepCountDefaultValue = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={0}
       steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={false}
-      navigationClickable={false}
-      pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
     />
   );
 };
 
-export const WithNavigationDisabledWithInitialStep = () => {
+export const LargeStepCountInitialStepLast = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={6}
       steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={false}
-      pageSize={5}
-      contentContainerCssClass={'container container--small'}
+      initialStepNumber={7}
+      autocompletePreviousSteps={false}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
     />
   );
 };
 
-export const WithComponentsAndStep1IsCompleteAndArrowsOnEdge = () => {
+export const ChildrenAreHtmlStringsDefault = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsInitialStep5AndArrowsAsCarousel = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={true}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsIncompleteStepsDisabled = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={true}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const ChildrenAreHtmlStringsDisableNavigationArrowsAsCarousel = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
+      initialStepNumber={5}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
+    />
+  );
+};
+
+export const MiniStepsWithTitleAndUrlOnlyInitialStep1 = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenEmptyWithUrls().filter((_, i) => i < 8)}
+      initialStepNumber={1}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
+    />
+  );
+};
+
+export const ChildrenAreComponentsPageSize3WithContentClass = () => {
   stepIndicatorPagingRef = useRef();
-
   return (
     <StepIndicatorPaging
-      steps={StepDataChildrenAsComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 8)}
-      initialStepNumber={2}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      showArrowsTillEdgeSteps={true}
-      pageSize={5}
       ref={stepIndicatorPagingRef}
-      contentContainerCssClass={'container container--small'}
-    />
-  );
-};
-
-export const WithChildrenAsComponentsSmallPageSize = () => {
-  stepIndicatorPagingRef = useRef();
-  return (
-    <StepIndicatorPaging
       steps={StepDataChildrenAsComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 8)}
-      initialStepNumber={2}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      showArrowsTillEdgeSteps={false}
+      initialStepNumber={1}
       pageSize={3}
+      autocompletePreviousSteps={true}
+      contentCssClass={'container container--small'}
+    />
+  );
+};
+
+export const ChildrenAreComponentsNavigationDisabledOnlyWithinComponentsStepIsMovedArrowsAreCarousel = () => {
+  stepIndicatorPagingRef = useRef();
+  return (
+    <StepIndicatorPaging
       ref={stepIndicatorPagingRef}
-      contentContainerCssClass={'container container--small'}
+      steps={StepDataChildrenAsComponents(onPreviousStepClick, onCompleteStepClick).filter((_, i) => i < 8)}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={true}
     />
   );
 };
 
-export const WithMinimumOptionsSet = () => {
-  return <StepIndicatorPaging steps={StepDataChildrenEmptyWithUrls().filter((_, i) => i < 8)} initialStepNumber={4} />;
-};
-
-export const WithStepsAsUrls = () => {
+export const StepsAsUrlsAndInitialStepIs3 = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={3}
       steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={true}
-      pageSize={5}
-      completeButtonId={'buttonComplete'}
-      previousButtonId={'buttonPrevious'}
-      contentContainerCssClass={'container container--small'}
+      initialStepNumber={4}
+      completeStepButtonId={'buttonComplete'}
+      previousStepButtonId={'buttonPrevious'}
+      autocompletePreviousSteps={true}
     />
   );
 };
 
-export const WithStepsAsUrlsWithoutCompleteButtons = () => {
+export const StepsAsUrlInitialStep5DisablingNavigationWorksAsTheOldStepIndicator = () => {
   return (
     <StepIndicatorPaging
-      initialStepNumber={3}
       steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
-      navigationCompletesPreviousSteps={true}
-      navigationClickable={false}
-      pageSize={5}
-      completeButtonId={null}
-      previousButtonId={null}
-      contentContainerCssClass={'container container--small'}
+      initialStepNumber={5}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={false}
     />
   );
 };

@@ -28,6 +28,6 @@ addons.setConfig({
     //   inputBorderRadius: 4,
     brandTitle: 'Telia Styleguide',
     brandUrl: 'https://telia.io',
-    brandImage: 'https://www.telia.no/globalassets/system/logo-desktop/logo_desktop.svg',
+    brandImage: 'https://www.telia.no/globalassets/system/logo/logo_mobile.svg',
   }),
 });
