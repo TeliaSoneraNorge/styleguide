@@ -298,7 +298,8 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const arrowUrlForwards =
     state.currentActiveStepNumber + 1 < state.steps.length ? state.steps[state.currentActiveStepNumber + 1].url : null;
 
-  const firstStepCompleted = state.currentActiveStepNumber > 0 && state.steps[0].isComplete == true;
+  const firstStepCompleted = displaySteps[0].isComplete == true;
+  const lastStepCompleted = displaySteps[displaySteps.length - 1].isComplete == true;
 
   return (
     <div className="telia-step-indicator-paging">
@@ -329,6 +330,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           <RenderArrow
             iconName={'chevron-right'}
             url={arrowUrlForwards}
+            isComplete={lastStepCompleted}
             onPaging={() => {
               onPagingRight(autocompletePreviousSteps, pageSize, maxStepCount, state, updateState, arrowsAsCarousel);
             }}
