@@ -36,11 +36,19 @@ export const RenderArrow = (props: any) => {
         ></div>
 
         {isComplete && (
-          <div className="telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--solid"></div>
+          <div
+            className={
+              'telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--solid ' + modifier
+            }
+          ></div>
         )}
 
         {!isComplete && (
-          <div className="telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed">
+          <div
+            className={
+              'telia-step-indicator-paging__arrow-line telia-step-indicator-paging__arrow-line--dashed ' + modifier
+            }
+          >
             <svg>
               <rect width="100%" height="4px" fill="url(#telia-step-indicator-paging__circle--id)"></rect>
             </svg>
