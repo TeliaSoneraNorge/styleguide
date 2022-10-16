@@ -4,10 +4,10 @@ export interface Props {
   steps?: Step[] | null | undefined;
 
   //Defaults to 0 if undefined  equals Step[0]
-  initialStepNumber?: number;
+  initialStepNumber?: number | undefined;
 
   //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown, supports only 3-5 by design
-  pageSize?: number;
+  pageSize?: number | undefined;
 
   //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
   autocompletePreviousSteps?: boolean;

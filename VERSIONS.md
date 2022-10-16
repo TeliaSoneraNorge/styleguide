@@ -16,7 +16,7 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 Only noteworthy changes.
 
 ## 1.48.0
-- Step Indicator Paging with breaking changes, renamed props
+- Step Indicator Paging with breaking changes, renamed props 'changeActiveStep' to 'arrowsAsCarousel', 'completePreviousSteps' to 'autocompletePreviousSteps'
 
 ## 1.47.18
 
