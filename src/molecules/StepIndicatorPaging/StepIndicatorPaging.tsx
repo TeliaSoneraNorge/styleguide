@@ -65,7 +65,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
     initialStepNumber = steps.length - 1;
   }
 
-  if (initialStepNumber > 0) {
+  if (initialStepNumber > 0 && autocompletePreviousSteps) {
     setStepsComplete(props.steps, initialStepNumber - 1, initialStepNumber, autocompletePreviousSteps);
   }
 

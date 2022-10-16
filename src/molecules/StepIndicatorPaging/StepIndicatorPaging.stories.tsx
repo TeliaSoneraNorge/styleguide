@@ -104,6 +104,7 @@ export const LargeStepCountInitialStepLast = () => {
     <StepIndicatorPaging
       steps={StepDataChildrenAsHtml().filter((_, i) => i < 8)}
       initialStepNumber={7}
+      autocompletePreviousSteps={false}
       completeStepButtonId={'buttonComplete'}
       previousStepButtonId={'buttonPrevious'}
     />
