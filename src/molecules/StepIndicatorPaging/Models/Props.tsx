@@ -1,13 +1,13 @@
 import { Step } from './Step';
 
 export interface Props {
-  steps?: Step[] | null | undefined;
+  steps?: Step[] | null;
 
   //Defaults to 0 if undefined  equals Step[0]
-  initialStepNumber?: number | undefined;
+  initialStepNumber?: number;
 
   //Defaults to 5 if unset, amount of steps required before 'paging arrows' are shown, supports only 3-5 by design
-  pageSize?: number | undefined;
+  pageSize?: number;
 
   //Defaults to true, set to false to avoid that clicking in the 'navigation' marks previous steps as completed
   autocompletePreviousSteps?: boolean;
@@ -29,4 +29,7 @@ export interface Props {
 
   //Add css-class to the children rendered wrapped in a section
   contentCssClass?: string | null;
+
+  //Auto set initial step number based on relative path of a step
+  autoSetStepNumberFromUrlPath?: boolean;
 }
