@@ -110,6 +110,8 @@ export interface TextFieldProps {
   inputRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement>;
 
   animated?: Boolean;
+
+  dataTestId?: string;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -120,7 +122,7 @@ export const TextField = (props: TextFieldProps) => {
 
   /**
    * To support the compact TextField we need to position the label within the input,
-   * and move to the borde when input is active.
+   * and move to the border when input is active.
    * To position it correctly we need to find the width of the items in front of the input
    * an apply the appropriate offset.
    */
@@ -193,6 +195,7 @@ export const TextField = (props: TextFieldProps) => {
             onKeyDown={onKeyDown}
             onKeyUp={props.onKeyUp}
             maxLength={props.maxlength}
+            data-testid={props.dataTestId}
           />
           {statusIcon ? <span className="telia-textfield__status">{statusIcon}</span> : null}
           {props.rightContent ? (

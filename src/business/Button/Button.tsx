@@ -60,6 +60,7 @@ type ButtonProps = {
   type?: 'button' | 'reset' | 'submit';
   className?: string;
   loading?: boolean;
+  dataTestId?: string;
 };
 
 export const Button = (props: ButtonProps) => {
@@ -78,6 +79,7 @@ export const Button = (props: ButtonProps) => {
     type = 'button',
     className,
     loading = false,
+    dataTestId,
   } = props;
   const Tag = href ? 'a' : 'button';
 
@@ -112,6 +114,7 @@ export const Button = (props: ButtonProps) => {
       target={href ? target : undefined}
       aria-label={ariaLabel}
       aria-busy={loading}
+      data-testid={dataTestId}
     >
       {loading && (
         <div className={cs('telia-business-button__spinner', { 'telia-business-button__spinner--loading': loading })}>

@@ -16,10 +16,11 @@ type Props = {
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
   className?: string;
   children?: React.ReactNode;
+  dataTestId?: string;
 };
 
 export const RadioButton: React.FC<Props> = (props) => {
-  const { label, name, value, checked, disabled, onChange, className, children, ariaLabel } = props;
+  const { label, name, value, checked, disabled, onChange, className, children, ariaLabel, dataTestId } = props;
   return (
     <Label className={classnames('radiobutton', { 'radiobutton--disabled': disabled })}>
       <input
@@ -30,6 +31,7 @@ export const RadioButton: React.FC<Props> = (props) => {
         disabled={disabled}
         value={value}
         aria-label={ariaLabel}
+        data-testid={dataTestId}
       />
       <span className="radiobutton__svg-container">
         <svg width="44px" height="44px" viewBox="0 0 44 44">
