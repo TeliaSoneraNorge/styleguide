@@ -137,6 +137,14 @@ const MenuContent = ({
     return (
       <div className="menu__content">
         <MenuLogo LinkTemplate={LinkTemplate} logo={logo} onlyLogo={onlyLogo} />
+        {shouldShowCartIcon && (
+          <>
+            <div className="menu__content-panel" />
+            <div className="menu__content-right">
+              <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} />
+            </div>
+          </>
+        )}
       </div>
     );
   }
