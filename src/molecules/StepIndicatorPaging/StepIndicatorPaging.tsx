@@ -72,8 +72,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
       let currentPath = window.location.pathname;
       if (currentPath) {
         currentPath = currentPath.toLowerCase();
-        for (let i = 0; i < steps.length; i++) {
-          let url = steps[i].url;
+
+        steps.forEach((step, i) => {
+          let url = step.url;
           if (url && url.length > 0) {
             const queryIndex = url.indexOf('?');
             if (queryIndex > 0) {
@@ -82,10 +83,9 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
             url = url.toLowerCase();
             if (url.includes(currentPath)) {
               initialStepNumber = i;
-              break;
             }
           }
-        }
+        });
       }
     }
   }
