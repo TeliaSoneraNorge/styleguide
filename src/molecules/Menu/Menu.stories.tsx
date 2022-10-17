@@ -308,6 +308,24 @@ export const OnlyLogo = () => (
   />
 );
 
+export const OnlyLogoAndCart = () => {
+  const [count, setCount] = useState(1);
+
+  return (
+    <Menu
+      logoUrl="#"
+      logoTitle="Telia logo"
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      numberOfItemsInCart={count}
+      onCartClick={() => {
+        setCount((count) => count + 1);
+      }}
+      onlyLogo
+    />
+  );
+};
+
 export const SingleTopLevelMenu = () => {
   const menuLinks = [
     {
