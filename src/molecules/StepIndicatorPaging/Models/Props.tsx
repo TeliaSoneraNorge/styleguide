@@ -30,6 +30,6 @@ export interface Props {
   //Add css-class to the children rendered wrapped in a section
   contentCssClass?: string | null;
 
-  //Auto set initial step number based on relative path of a step
+  //Auto set initial step number based on relative path of a step, ignores query string params
   autoSetStepNumberFromUrlPath?: boolean;
 }
