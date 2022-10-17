@@ -68,7 +68,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
   if (initialStepNumber == 0 && autoSetStepNumberFromUrlPath) {
     //Server side rendering
-    if (window && window.location) {
+    if (typeof window !== 'undefined' && window && window.location) {
       let currentPath = window.location.pathname;
       if (currentPath) {
         currentPath = currentPath.toLowerCase();
