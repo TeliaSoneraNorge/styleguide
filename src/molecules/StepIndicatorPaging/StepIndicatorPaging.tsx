@@ -46,6 +46,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   const incompleteStepsClickable = props.incompleteStepsClickable ?? true;
   let arrowsAsCarousel = props.arrowsAsCarousel ?? false;
   const contentCssClass = props.contentCssClass ?? null;
+  const autoSetStepNumberFromUrlPath = props.autoSetStepNumberFromUrlPath ?? false;
 
   if (!completeStepsClickable && !incompleteStepsClickable && !arrowsAsCarousel) {
     console.warn(
@@ -63,6 +64,30 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
   if (initialStepNumber >= steps.length) {
     console.error('StepIndicatorPaging:  initialStepNumber too large, defaults to last step');
     initialStepNumber = steps.length - 1;
+  }
+
+  if (initialStepNumber == 0 && autoSetStepNumberFromUrlPath) {
+    //Server side rendering
+    if (window && window.location) {
+      let currentPath = window.location.pathname;
+      if (currentPath) {
+        currentPath = currentPath.toLowerCase();
+
+        steps.forEach((step, i) => {
+          let url = step.url;
+          if (url && url.length > 0) {
+            const queryIndex = url.indexOf('?');
+            if (queryIndex > 0) {
+              url = url.substring(0, queryIndex);
+            }
+            url = url.toLowerCase();
+            if (url.includes(currentPath)) {
+              initialStepNumber = i;
+            }
+          }
+        });
+      }
+    }
   }
 
   if (initialStepNumber > 0 && autocompletePreviousSteps) {

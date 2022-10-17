@@ -40,7 +40,7 @@ export const StepDataChildrenAsHtmlWithUrls = () => {
     },
     {
       title: 'Step Url 6 Long title text here',
-      url: '#Step6',
+      url: '/iframe.HtmL?q=1000',
       isComplete: false,
       children:
         '<h1>Hello Url 6</h1><button id="buttonPrevious">Prev</button> <button id="buttonComplete">Complete6</button>',

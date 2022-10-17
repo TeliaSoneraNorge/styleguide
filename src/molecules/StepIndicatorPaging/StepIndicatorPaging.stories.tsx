@@ -206,7 +206,7 @@ export const ChildrenAreComponentsNavigationDisabledOnlyWithinComponentsStepIsMo
   );
 };
 
-export const StepsAsUrlsAndInitialStepIs3 = () => {
+export const StepsAsUrlsAndInitialStepIs4 = () => {
   return (
     <StepIndicatorPaging
       steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
@@ -218,11 +218,24 @@ export const StepsAsUrlsAndInitialStepIs3 = () => {
   );
 };
 
-export const StepsAsUrlInitialStep5DisablingNavigationWorksAsTheOldStepIndicator = () => {
+export const StepsAsUrlInitialStep7DisablingNavigationWorksAsTheOldStepIndicator = () => {
   return (
     <StepIndicatorPaging
       steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
-      initialStepNumber={5}
+      initialStepNumber={7}
+      autocompletePreviousSteps={true}
+      completeStepsClickable={false}
+      incompleteStepsClickable={false}
+      arrowsAsCarousel={false}
+    />
+  );
+};
+
+export const StepsAsUrlInitialStepEqualsAStepPath = () => {
+  return (
+    <StepIndicatorPaging
+      steps={StepDataChildrenAsHtmlWithUrls().filter((_, i) => i < 8)}
+      autoSetStepNumberFromUrlPath={true}
       autocompletePreviousSteps={true}
       completeStepsClickable={false}
       incompleteStepsClickable={false}
