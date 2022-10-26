@@ -32,6 +32,7 @@ export interface HardwareProductProps {
   image?: {
     url: string;
   };
+  imageComponent?: React.ReactNode;
   name?: string;
   children?: React.ReactNode;
 }
@@ -44,6 +45,7 @@ const HardwareProductBox = ({
   highlight,
   children,
   image,
+  imageComponent,
   name,
   ...rest
 }: HardwareProductProps) => (
@@ -67,11 +69,12 @@ const HardwareProductBox = ({
         </div>
       )}
       {is5G && !highlight && <Icon className="hardware-product-box__five-g-container" icon="five-g" />}
-      {image ? (
+      {imageComponent}
+      {image && (
         <div className="hardware-product-box__product-image-container">
           <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
         </div>
-      ) : null}
+      )}
     </div>
     <div className="hardware-product-box__lower-container">
       <div className="hardware-product-box__name-wrapper">
