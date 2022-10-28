@@ -211,6 +211,7 @@ type TableProps = {
    */
   loading?: boolean;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {
@@ -247,6 +248,7 @@ export const Table: React.FC<TableProps> = (props) => {
           },
           props.className
         )}
+        style={props.style}
       >
         <table className="data-table__table">
           <thead>
