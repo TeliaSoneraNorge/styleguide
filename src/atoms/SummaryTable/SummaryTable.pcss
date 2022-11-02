@@ -2,16 +2,67 @@
   display: flex;
   flex-direction: column;
   margin: 0.25rem 0;
-  overflow: hidden;
   max-width: 40rem;
   width: 100%;
 
-  &__row {
+  &--background-grey {
+    background-color: var(--grey-50);
+    padding: 16px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+
+    @media screen and (max-width: 768px) {
+      padding: 10px;
+      padding-top: 16px;
+      padding-bottom: 16px;
+    }
+    @media screen and (max-width: 375px) {
+      padding: 8px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+  }
+
+  &__badge-container {
+    width: 100%;
+    position: relative;
     display: flex;
+    justify-content: flex-end;
+
+    & .telia-badge {
+      position: absolute;
+      padding: 0px 4px;
+      border-radius: 2px;
+      gap: 4px;
+      margin-top: -34px;
+      margin-right: 65px;
+      @media screen and (max-width: 768px) {
+        margin-top: -22px;
+        margin-right: 10%;
+      }
+    }
+
+    & .telia-badge--text {
+      font-size: 14px;
+    }
+  }
+
+  & > h3 {
+    margin: 0;
+  }
+
+  &__row {
     min-height: 50px;
+    margin: 0;
+
+    &-container {
+      min-height: 50px;
+      width: 100%;
+      display: flex;
+    }
 
     &:not(:last-of-type) {
-      border-bottom: 2px solid #737373;
+      border-bottom: 1px solid #b0b0b5;
     }
 
     &--green {
@@ -26,6 +77,10 @@
       .summary-table__value {
         text-decoration: line-through;
       }
+    }
+
+    &--first {
+      margin-top: -1em;
     }
   }
 
@@ -47,6 +102,17 @@
     width: 50%;
   }
 
+  &__description {
+    float: right;
+    margin-top: -8px;
+    margin-right: 5px;
+    margin-bottom: 4px;
+    margin-inline-start: 0;
+    font-size: 14px;
+    color: var(--black);
+    font-family: 'TeliaSans-regular', Helvetica, Arial, sans-serif;
+  }
+
   &--compact {
     .summary-table__row {
       min-height: 2rem;
@@ -56,7 +122,7 @@
       }
 
       &:nth-last-child(2) {
-        border-bottom: 2px solid #737373;
+        border-bottom: 1px solid #b0b0b5;
       }
 
       &--indent {
