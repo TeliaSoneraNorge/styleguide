@@ -44,7 +44,7 @@ export const Badge: React.FC<Compact | Default> = (props) => {
       )}
       style={{
         backgroundColor: props.kind === 'outlined' ? 'white' : props.color,
-        color: props.kind === 'outlined' ? props.borderColor : props.textColor,
+        color: props.textColor ? props.textColor : props.kind === 'outlined' ? props.borderColor : undefined,
         borderColor: props.borderColor,
         ...props.style,
       }}
