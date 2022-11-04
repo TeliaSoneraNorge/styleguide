@@ -58,7 +58,6 @@ export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
       title="Oppsummering"
       background={'grey-50'}
       useIndent={false}
-      badgeStatus="ok"
       badgeText="Du sparer 2000,-"
     />
   );

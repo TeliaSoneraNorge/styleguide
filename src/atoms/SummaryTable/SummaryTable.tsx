@@ -20,7 +20,6 @@ export interface SummaryTableProps {
   items: SummaryTableItem[];
   kind?: 'normal' | 'compact';
   badgeText?: string;
-  badgeStatus?: 'ok' | 'caution' | 'warning' | 'communication' | 'offer' | 'communication-light';
   background?: null | 'grey-50';
   useIndent?: boolean;
   onlyResultLine?: boolean;
@@ -32,7 +31,6 @@ const SummaryTable = ({
   background = null,
   useIndent = kind == 'normal' ? false : true,
   badgeText = '',
-  badgeStatus = 'ok',
   title = '',
   onlyResultLine = kind == 'normal' ? false : true,
 }: SummaryTableProps) => (
