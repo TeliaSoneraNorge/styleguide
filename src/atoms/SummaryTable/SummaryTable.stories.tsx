@@ -7,79 +7,83 @@ export default {
 };
 
 const items = [
-  { label: '6 GB', price: 399, value: '399,-' },
-  { label: '6 GB m/rabatt', price: 249, value: '249,-' },
-  { label: '6 GB  m/rabatt', price: 249, value: '249,-' },
+  {
+    title: 'Betale pr md',
+    isBold: true,
+    label: 'Trådbløst bredbånd 100 og TV',
+    price: 399,
+    value: '399,-',
+    description: '(49,-/md. etter 12 md.)',
+    valueStriketrough: '9999,-',
+  },
+  { label: 'Trådbløst 100 bredbånd', price: 249, value: '249,-', description: '(49,-/md. etter 12 md.)' },
+  {
+    label: 'Trådbløst bredbånd 100 og TV',
+    price: 249,
+    value: '249,-',
+    description: '(49,-/md. etter 12 md.)',
+    valueStriketrough: '49,-/md.',
+  },
+  {
+    title: 'In middle',
+    label: 'Rabatt',
+    value: `-XXX,-`,
+    isBold: true,
+    description: '(49,-/md. etter 12 md.)',
+    isSucces: true,
+    isStrikeThrough: true,
+    valueStrikethrough: '999,-',
+  },
   { isBold: true, isSuccess: true, label: 'Rabatt', value: `-XXX,-` },
-  { isBold: true, isStriketrough: true, label: 'Ordinærpris', value: '1395,-' },
-  { isBold: true, label: 'Din månedspris', value: '1395,-' },
-];
-
-const itemsWithDescriptions = [
-  { label: '6 GB', price: 399, value: '399,-', description: 'Hello world 1' },
-  { label: '6 GB m/rabatt', price: 249, value: '249,-' },
-  { label: '6 GB  m/rabatt', price: 249, value: '249,-', description: 'Hello world 2' },
-  { isBold: true, isSuccess: true, label: 'Rabatt', value: `-XXX,-`, description: 'Hello world 3' },
-  { isBold: true, isStriketrough: true, label: 'Ordinærpris', value: '1395,-', description: 'Hello world 4' },
-  { isBold: true, label: 'Din månedspris', value: '1395,-', description: 'Hello world 5' },
-];
-
-const itemsCompact = [
-  { label: '6 GB', price: 399, value: '399,-' },
-  { label: '6 GB m/rabatt', price: 249, value: '249,-' },
-  { label: '6 GB  m/rabatt', price: 249, value: '249,-' },
-  { isBold: true, label: 'Totalt pr.md. med familierabatt og årsavtale', valueStriketrough: '1500,-', value: '1395,-' },
-];
-
-const itemsCompactWithDescriptions = [
-  { label: '6 GB', price: 399, value: '399,-', description: 'text below 399' },
-  { label: '6 GB m/rabatt', price: 249, value: '249,-' },
-  { label: '6 GB  m/rabatt', price: 249, value: '249,-', description: 'text below 399' },
-  { isBold: true, label: 'Totalt pr.md. med familierabatt og årsavtale', valueStriketrough: '1500,-', value: '1395,-' },
+  { isBold: true, isStriketrough: true, label: 'Ordinærpris', value: '1395,-', valueStriketrough: '9999,-' },
+  { isBold: true, label: 'Din månedspris', value: '1395,-', valueStriketrough: '11111' },
 ];
 
 export const Default = () => {
   return <SummaryTable items={items} />;
 };
 
-export const Compact = () => {
-  return <SummaryTable kind="compact" items={itemsCompact} />;
+export const NormalGreyWithDescriptions = () => {
+  return <SummaryTable items={items} background={'grey'} />;
 };
 
-export const CompactGrey = () => {
-  return <SummaryTable kind="compact" items={itemsCompact} useGreyBackground={true} />;
+export const NormalGreyWithDescriptionsWithIndentAndTitleAndBadge = () => {
+  return <SummaryTable items={items} kind="normal" background={'grey'} badgeText="Spar 2000kr" />;
 };
 
-export const CompactGreyNoIndentWithBadge = () => {
-  return <SummaryTable kind="compact" items={itemsCompact} useGreyBackground={true} useIndent={false} badgeText="Ok" />;
-};
-
-export const CompactGreyWithAdditionalValues = () => {
-  return <SummaryTable kind="compact" items={itemsCompactWithDescriptions} useGreyBackground={true} />;
-};
-
-export const CompactGreyWithAdditionalValuesNoIndent = () => {
-  return (
-    <SummaryTable kind="compact" items={itemsCompactWithDescriptions} useGreyBackground={true} useIndent={false} />
-  );
-};
-
-export const NormalGreyWithDescriptionsWithIndent = () => {
-  return <SummaryTable items={itemsWithDescriptions} useGreyBackground={true} useIndent={true} />;
-};
-
-export const NormalGreyWithDescriptionsWithIndentAndTitle = () => {
-  return <SummaryTable items={itemsWithDescriptions} useGreyBackground={true} useIndent={true} title="Hello world" />;
-};
-
-export const NormalGreyWithDescriptionsWithIndentAndBadge = () => {
+export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
   return (
     <SummaryTable
-      items={itemsWithDescriptions}
-      useGreyBackground={true}
-      useIndent={true}
+      items={items}
+      title="Oppsummering"
+      background={'grey'}
+      useIndent={false}
       badgeStatus="ok"
       badgeText="Du sparer 2000,-"
     />
   );
+};
+
+export const NormalGreyWithTitleAndResultLine = () => {
+  return <SummaryTable items={items} background={'grey'} title="Oppsummering" onlyResultLine={true} />;
+};
+
+export const Compact = () => {
+  return <SummaryTable kind="compact" items={items} />;
+};
+
+export const CompactGrey = () => {
+  return <SummaryTable kind="compact" items={items} background={'grey'} />;
+};
+
+export const CompactGreyNoIndentWithBadge = () => {
+  return <SummaryTable kind="compact" items={items} background={'grey'} useIndent={false} badgeText="Ok" />;
+};
+
+export const CompactGreyWithTitleAndAdditionalValues = () => {
+  return <SummaryTable kind="compact" title="Oppsummering" items={items} />;
+};
+
+export const CompactGreyWithAdditionalValuesNoIndent = () => {
+  return <SummaryTable kind="compact" title="Oppsummering" items={items} useIndent={false} background={'grey'} />;
 };

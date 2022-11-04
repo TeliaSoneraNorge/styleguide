@@ -4,6 +4,7 @@ import _ from 'lodash';
 import { Badge } from '../Badge';
 
 export interface SummaryTableItem {
+  title?: string;
   label: string;
   value: string;
   description?: string;
@@ -15,28 +16,31 @@ export interface SummaryTableItem {
 }
 
 export interface SummaryTableProps {
+  title?: string;
   items: SummaryTableItem[];
   kind?: 'normal' | 'compact';
-  title?: string;
   badgeText?: string;
   badgeStatus?: 'ok' | 'caution' | 'warning' | 'communication' | 'offer' | 'communication-light';
-  useGreyBackground?: boolean;
+  background?: null | 'grey';
   useIndent?: boolean;
+  onlyResultLine?: boolean;
 }
 
 const SummaryTable = ({
   items,
   kind = 'normal',
-  title = '',
-  useGreyBackground = false,
-  useIndent = true,
+  background = null,
+  useIndent = kind == 'normal' ? false : true,
   badgeText = '',
   badgeStatus = 'ok',
+  title = '',
+  onlyResultLine = kind == 'normal' ? false : true,
 }: SummaryTableProps) => (
   <dl
     className={cn('summary-table', {
       [`summary-table--${kind}`]: true,
-      'summary-table--background-grey': useGreyBackground,
+      'summary-table--only-result-line': onlyResultLine,
+      'summary-table--background-grey': background == 'grey',
     })}
   >
     {badgeText && (
@@ -59,6 +63,8 @@ const SummaryTable = ({
             'summary-table__row--first': index == 0 && !title,
           })}
         >
+          {item.title && <h4>{item.title}</h4>}
+
           <div className="summary-table__row-container">
             <dt className="summary-table__label">{item.label}</dt>
             <dd className="summary-table__value">
