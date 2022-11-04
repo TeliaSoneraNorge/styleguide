@@ -58,7 +58,6 @@ const SummaryTable = ({
             'summary-table__row--green': item.isSuccess,
             'summary-table__row--st': item.isStriketrough,
             'summary-table__row--indent': useIndent && index > 0 && index < _.size(items) - 1,
-            'summary-table__row--first': index == 0 && !title,
           })}
         >
           {item.title && <h4>{item.title}</h4>}
