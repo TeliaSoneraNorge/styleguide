@@ -20,7 +20,7 @@ export interface SummaryTableProps {
   items: SummaryTableItem[];
   kind?: 'normal' | 'compact';
   badgeText?: string;
-  background?: null | 'grey-50';
+  background?: 'grey-50';
   useIndent?: boolean;
   onlyResultLine?: boolean;
 }
@@ -28,17 +28,17 @@ export interface SummaryTableProps {
 const SummaryTable = ({
   items,
   kind = 'normal',
-  background = null,
-  useIndent = kind == 'compact' ? true : false,
+  background = undefined,
+  useIndent = kind === 'compact',
   badgeText = '',
   title = '',
-  onlyResultLine = kind == 'compact' ? true : false,
+  onlyResultLine = kind === 'compact',
 }: SummaryTableProps) => (
   <dl
     className={cn('summary-table', {
       [`summary-table--${kind}`]: true,
       'summary-table--only-result-line': onlyResultLine,
-      'summary-table--background-grey-50': background == 'grey-50',
+      'summary-table--background-grey-50': background === 'grey-50',
     })}
   >
     {badgeText && (
