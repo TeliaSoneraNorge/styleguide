@@ -45,7 +45,7 @@ const SummaryTable = ({
   >
     {badgeText && (
       <div className="summary-table__badge-container">
-        <Badge status={badgeStatus} text={badgeText} />
+        <Badge text={badgeText} color="#CCEFDD" textColor="#222" />
       </div>
     )}
 

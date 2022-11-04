@@ -48,7 +48,7 @@ export const NormalGreyWithDescriptions = () => {
 };
 
 export const NormalGreyWithDescriptionsWithIndentAndTitleAndBadge = () => {
-  return <SummaryTable items={items} kind="normal" background={'grey'} badgeText="Spar 2000kr" />;
+  return <SummaryTable items={items} kind="normal" background={'grey'} badgeText="Du sparer 2000kr" />;
 };
 
 export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
@@ -77,7 +77,9 @@ export const CompactGrey = () => {
 };
 
 export const CompactGreyNoIndentWithBadge = () => {
-  return <SummaryTable kind="compact" items={items} background={'grey'} useIndent={false} badgeText="Ok" />;
+  return (
+    <SummaryTable kind="compact" items={items} background={'grey'} useIndent={false} badgeText="Du sparer 2000kr" />
+  );
 };
 
 export const CompactGreyWithTitleAndAdditionalValues = () => {

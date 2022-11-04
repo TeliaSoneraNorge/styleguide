@@ -4,6 +4,7 @@ import cn from 'classnames';
 interface Common {
   status?: 'ok' | 'caution' | 'warning' | 'communication' | 'offer' | 'communication-light';
   color?: string;
+  textColor?: string;
   borderColor?: string;
   kind?: 'active' | 'outlined' | 'default';
   className?: string;
@@ -43,7 +44,7 @@ export const Badge: React.FC<Compact | Default> = (props) => {
       )}
       style={{
         backgroundColor: props.kind === 'outlined' ? 'white' : props.color,
-        color: props.kind === 'outlined' ? props.borderColor : undefined,
+        color: props.kind === 'outlined' ? props.borderColor : props.textColor,
         borderColor: props.borderColor,
         ...props.style,
       }}
