@@ -69,7 +69,7 @@ const HardwareProductBox = ({
       {is5G && !highlight && <Icon className="hardware-product-box__five-g-container" icon="five-g" />}
       {image ? (
         <div className="hardware-product-box__product-image-container">
-          <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
+          <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} alt="" />
         </div>
       ) : null}
     </div>
