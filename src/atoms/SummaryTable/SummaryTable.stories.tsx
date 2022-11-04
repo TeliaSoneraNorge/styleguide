@@ -44,11 +44,11 @@ export const Default = () => {
 };
 
 export const NormalGreyWithDescriptions = () => {
-  return <SummaryTable items={items} background={'grey'} />;
+  return <SummaryTable items={items} background={'grey-50'} />;
 };
 
 export const NormalGreyWithDescriptionsWithIndentAndTitleAndBadge = () => {
-  return <SummaryTable items={items} kind="normal" background={'grey'} badgeText="Du sparer 2000kr" />;
+  return <SummaryTable items={items} kind="normal" background={'grey-50'} badgeText="Du sparer 2000kr" />;
 };
 
 export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
@@ -56,7 +56,7 @@ export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
     <SummaryTable
       items={items}
       title="Oppsummering"
-      background={'grey'}
+      background={'grey-50'}
       useIndent={false}
       badgeStatus="ok"
       badgeText="Du sparer 2000,-"
@@ -65,7 +65,7 @@ export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
 };
 
 export const NormalGreyWithTitleAndResultLine = () => {
-  return <SummaryTable items={items} background={'grey'} title="Oppsummering" onlyResultLine={true} />;
+  return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" onlyResultLine={true} />;
 };
 
 export const Compact = () => {
@@ -73,12 +73,12 @@ export const Compact = () => {
 };
 
 export const CompactGrey = () => {
-  return <SummaryTable kind="compact" items={items} background={'grey'} />;
+  return <SummaryTable kind="compact" items={items} background={'grey-50'} />;
 };
 
 export const CompactGreyNoIndentWithBadge = () => {
   return (
-    <SummaryTable kind="compact" items={items} background={'grey'} useIndent={false} badgeText="Du sparer 2000kr" />
+    <SummaryTable kind="compact" items={items} background={'grey-50'} useIndent={false} badgeText="Du sparer 2000kr" />
   );
 };
 
@@ -87,5 +87,5 @@ export const CompactGreyWithTitleAndAdditionalValues = () => {
 };
 
 export const CompactGreyWithAdditionalValuesNoIndent = () => {
-  return <SummaryTable kind="compact" title="Oppsummering" items={items} useIndent={false} background={'grey'} />;
+  return <SummaryTable kind="compact" title="Oppsummering" items={items} useIndent={false} background={'grey-50'} />;
 };

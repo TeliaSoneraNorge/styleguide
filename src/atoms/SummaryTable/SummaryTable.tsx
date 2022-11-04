@@ -21,7 +21,7 @@ export interface SummaryTableProps {
   kind?: 'normal' | 'compact';
   badgeText?: string;
   badgeStatus?: 'ok' | 'caution' | 'warning' | 'communication' | 'offer' | 'communication-light';
-  background?: null | 'grey';
+  background?: null | 'grey-50';
   useIndent?: boolean;
   onlyResultLine?: boolean;
 }
@@ -40,7 +40,7 @@ const SummaryTable = ({
     className={cn('summary-table', {
       [`summary-table--${kind}`]: true,
       'summary-table--only-result-line': onlyResultLine,
-      'summary-table--background-grey': background == 'grey',
+      'summary-table--background-grey-50': background == 'grey-50',
     })}
   >
     {badgeText && (
