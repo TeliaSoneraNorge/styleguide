@@ -29,10 +29,10 @@ const SummaryTable = ({
   items,
   kind = 'normal',
   background = null,
-  useIndent = kind == 'normal' ? false : true,
+  useIndent = kind == 'compact' ? true : false,
   badgeText = '',
   title = '',
-  onlyResultLine = kind == 'normal' ? false : true,
+  onlyResultLine = kind == 'compact' ? true : false,
 }: SummaryTableProps) => (
   <dl
     className={cn('summary-table', {
