@@ -212,7 +212,7 @@ const Breadcrumbs = (props: {
   const CrumbRender = (crumb: Crumb) => {
     let index = 0;
     return (
-      <li key={index++} className={'telia-breadcrumbs__crumb'}>
+      <li key={'breadcrumb-list-item' + index++} className={'telia-breadcrumbs__crumb'}>
         {crumb.type === crumbType.LEFT && <CrumbPaging onPagingEvent={onPagingLeft} />}
 
         {crumb.type === crumbType.LABEL && <CrumbLabel name={crumb.name} />}
@@ -243,7 +243,7 @@ const Breadcrumbs = (props: {
       <ul className={'telia-breadcrumbs__list'}>
         {displayCrumbs.map((crumb) => (
           <CrumbRender
-            key={crumb.key}
+            key={'breadcrumb-crumb' + crumb.key}
             type={crumb.type}
             name={crumb.name}
             link={crumb.link}

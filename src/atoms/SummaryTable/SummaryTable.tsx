@@ -5,11 +5,10 @@ import { Badge } from '../Badge';
 
 export interface SummaryTableItem {
   title?: string;
-  label: string;
-  value: string;
+  label?: string;
+  value?: string;
   description?: string;
   valueStriketrough?: string;
-  price?: number;
   isSuccess?: boolean;
   isStriketrough?: boolean;
   isBold?: boolean;
@@ -50,35 +49,33 @@ const SummaryTable = ({
     {title && <h3>{title}</h3>}
 
     {items.map((item, index) => (
-      <>
-        <div
-          key={`${item.label}-${index}`}
-          className={cn('summary-table__row', {
-            'summary-table__row--bold': item.isBold,
-            'summary-table__row--green': item.isSuccess,
-            'summary-table__row--st': item.isStriketrough,
-            'summary-table__row--indent': useIndent && index > 0 && index < _.size(items) - 1,
-          })}
-        >
-          {item.title && <h4>{item.title}</h4>}
+      <div
+        key={`summary-table-data-${title}${item.label}${item.value}-${index}`}
+        className={cn('summary-table__row', {
+          'summary-table__row--bold': item.isBold,
+          'summary-table__row--green': item.isSuccess,
+          'summary-table__row--st': item.isStriketrough,
+          'summary-table__row--indent': useIndent && index > 0 && index < _.size(items) - 1,
+        })}
+      >
+        {item.title && <h4>{item.title}</h4>}
 
-          <div className="summary-table__row-container">
-            <dt className="summary-table__label">{item.label}</dt>
-            <dd className="summary-table__value">
-              {item.valueStriketrough && (
-                <span className="summary-table__value--striketrough">{item.valueStriketrough}</span>
-              )}
-              {item.value}
-            </dd>
-          </div>
-
-          {item.description && (
-            <div className="summary-table__row-description">
-              <span className="summary-table__description">{item.description}</span>
-            </div>
-          )}
+        <div className="summary-table__row-container">
+          <dt className="summary-table__label">{item.label}</dt>
+          <dd className="summary-table__value">
+            {item.valueStriketrough && (
+              <span className="summary-table__value--striketrough">{item.valueStriketrough}</span>
+            )}
+            {item.value}
+          </dd>
         </div>
-      </>
+
+        {item.description && (
+          <div className="summary-table__row-description">
+            <span className="summary-table__description">{item.description}</span>
+          </div>
+        )}
+      </div>
     ))}
   </dl>
 );
