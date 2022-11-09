@@ -74,7 +74,7 @@ const SummaryTable = ({
 
     {title && <h3>{title}</h3>}
 
-    {sort(items.map((a) => a)).map((item, index) => (
+    {sort(items).map((item, index) => (
       <div
         key={`summary-table-data-${title}${item.label}${item.value}-${index}`}
         className={cn('summary-table__row', {
