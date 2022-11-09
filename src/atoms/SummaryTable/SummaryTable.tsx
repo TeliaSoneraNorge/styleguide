@@ -2,6 +2,7 @@ import cn from 'classnames';
 import React from 'react';
 import _ from 'lodash';
 import { Badge } from '../Badge';
+import { Icon } from '../../atoms/Icon';
 
 export interface SummaryTableItem {
   title?: string;
@@ -20,6 +21,7 @@ export interface SummaryTableProps {
   items: SummaryTableItem[];
   kind?: 'normal' | 'compact';
   badgeText?: string;
+  badgeIcon?: any;
   background?: 'grey-50';
   useIndent?: boolean;
   useResultLine?: boolean;
@@ -43,6 +45,7 @@ const SummaryTable = ({
   background = undefined,
   useIndent = kind === 'compact',
   badgeText = '',
+  badgeIcon = '',
   useResultLine = kind === 'compact',
   title = '',
 }: SummaryTableProps) => (
@@ -56,7 +59,17 @@ const SummaryTable = ({
   >
     {badgeText && (
       <div className="summary-table__badge-container">
-        <Badge text={badgeText} color="#CCEFDD" textColor="#222" />
+        {badgeIcon && (
+          <Badge text={badgeText} color="#CCEFDD" textColor="#222">
+            <Icon icon={badgeIcon} />
+          </Badge>
+        )}
+
+        {!badgeIcon && (
+          <Badge text={badgeText} color="#CCEFDD" textColor="#222">
+            <Icon icon={null as any} />
+          </Badge>
+        )}
       </div>
     )}
 
@@ -74,7 +87,6 @@ const SummaryTable = ({
         })}
       >
         {item.title && <h4>{item.title}</h4>}
-
         <div className="summary-table__row-container">
           <dt className="summary-table__label">{item.label}</dt>
           <dd className="summary-table__value">

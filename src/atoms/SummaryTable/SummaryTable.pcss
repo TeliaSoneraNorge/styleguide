@@ -1,4 +1,5 @@
 .summary-table {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 0;
@@ -27,43 +28,54 @@
   }
 
   &__badge-container {
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: flex-end;
+    position: absolute;
+    top: -10px;
+    right: 0;
+    margin-right: 10%;
 
-    & .telia-badge {
-      position: absolute;
-      padding: 0px 4px;
+    & .telia-badge--root {
+      height: 24px;
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+
+      top: -2px;
+      background-color: #ccefdd;
+      padding: 0 4px;
       border-radius: 2px;
-      margin-top: -34px;
-      margin-right: 65px;
-      & > div {
-        z-index: 2;
+
+      & > svg {
+        height: 22px;
+        width: 22px;
+        position: relative;
+        top: 1px;
+        margin-left: 5px;
       }
 
-      @media screen and (max-width: 768px) {
-        margin-top: -28px;
-        margin-right: 10%;
-      }
-      @media screen and (max-width: 360px) {
-        margin-top: -24px;
-        margin-right: 9%;
-      }
+      & > .telia-badge.telia-badge__top-right {
+        position: relative;
+        transform: none;
+        height: 24px;
 
-      &::before {
-        content: '';
-        position: absolute;
-        bottom: -5px;
-        height: 17px;
-        width: 17px;
-        transform: rotate(45deg);
-        background-color: var(--green-100);
-        z-index: 1;
+        & > div {
+          z-index: 2;
+        }
+        /* 
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -7px;
+          height: 17px;
+          width: 17px;
+          transform: rotate(45deg);
+          background-color: var(--green-100);
+          z-index: 1;
+        } */
       }
     }
 
     & .telia-badge--text {
+      line-height: 22px;
       font-size: 14px;
     }
   }

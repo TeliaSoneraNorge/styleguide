@@ -50,15 +50,17 @@ const items = [
 ];
 
 export const Default = () => {
-  return <SummaryTable items={items} />;
+  return <SummaryTable items={items} badgeIcon="internet" />;
 };
 
 export const NormalGreyWithDescriptions = () => {
-  return <SummaryTable items={items} background={'grey-50'} />;
+  return <SummaryTable items={items} background={'grey-50'} badgeIcon="robot" />;
 };
 
-export const NormalGreyWithDescriptionsWithIndentAndTitleAndBadge = () => {
-  return <SummaryTable items={items} kind="normal" background={'grey-50'} badgeText="Du sparer 2000kr" />;
+export const NormalGreyWithDescriptionsWithIndentAndTitleAndBadgeAndIcon = () => {
+  return (
+    <SummaryTable items={items} kind="normal" background={'grey-50'} badgeText="Du sparer 20020kr" badgeIcon="robot" />
+  );
 };
 
 export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
