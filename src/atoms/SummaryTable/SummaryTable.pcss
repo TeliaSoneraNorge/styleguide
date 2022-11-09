@@ -120,6 +120,26 @@
         font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
       }
     }
+
+    &--below-line {
+      & > h4 {
+        padding-top: 8px;
+        padding-bottom: 6px;
+      }
+
+      margin-top: 16px;
+      border-top: 1px solid #b0b0b5;
+      padding-top: 0px;
+
+      .summary-table__row-container {
+        min-height: 30px;
+      }
+
+      & ~ .summary-table__row--below-line {
+        border: 0;
+        margin-top: 0;
+      }
+    }
   }
 
   &__row-container {
@@ -197,9 +217,9 @@
     }
 
     h4 {
-      margin-top: 2px;
+      margin-top: 8px;
       & + div {
-        margin-top: -2px;
+        margin-top: -4px;
       }
     }
     .summary-table__row-container {
@@ -211,7 +231,13 @@
     }
   }
 
-  &--only-result-line {
+  &--result-line-off {
+    .summary-table__row {
+      border-bottom: none;
+    }
+  }
+
+  &--result-line {
     .summary-table__row {
       &:not(:last-of-type) {
         border-bottom: none;

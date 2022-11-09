@@ -11,6 +11,7 @@ export interface SummaryTableItem {
   valueStriketrough?: string;
   isSuccess?: boolean;
   isStriketrough?: boolean;
+  isBelowLine?: boolean;
   isBold?: boolean;
 }
 
@@ -21,7 +22,19 @@ export interface SummaryTableProps {
   badgeText?: string;
   background?: 'grey-50';
   useIndent?: boolean;
-  onlyResultLine?: boolean;
+  resultLine?: boolean;
+}
+
+function sort(list: SummaryTableItem[]) {
+  return list.sort(function (x, y) {
+    if (!!x?.isBelowLine === true && !!y?.isBelowLine === false) {
+      return 1;
+    }
+    if (!!x?.isBelowLine === false && !!y?.isBelowLine === true) {
+      return -1;
+    }
+    return 0;
+  });
 }
 
 const SummaryTable = ({
@@ -30,13 +43,14 @@ const SummaryTable = ({
   background = undefined,
   useIndent = kind === 'compact',
   badgeText = '',
+  resultLine = kind === 'compact',
   title = '',
-  onlyResultLine = kind === 'compact',
 }: SummaryTableProps) => (
   <dl
     className={cn('summary-table', {
       [`summary-table--${kind}`]: true,
-      'summary-table--only-result-line': onlyResultLine,
+      'summary-table--result-line': resultLine === true,
+      'summary-table--result-line-off': resultLine === false,
       'summary-table--background-grey-50': background === 'grey-50',
     })}
   >
@@ -48,13 +62,14 @@ const SummaryTable = ({
 
     {title && <h3>{title}</h3>}
 
-    {items.map((item, index) => (
+    {sort(items.map((a) => a)).map((item, index) => (
       <div
         key={`summary-table-data-${title}${item.label}${item.value}-${index}`}
         className={cn('summary-table__row', {
           'summary-table__row--bold': item.isBold,
           'summary-table__row--green': item.isSuccess,
           'summary-table__row--st': item.isStriketrough,
+          'summary-table__row--below-line': item.isBelowLine,
           'summary-table__row--indent': useIndent && index > 0 && index < _.size(items) - 1,
         })}
       >
