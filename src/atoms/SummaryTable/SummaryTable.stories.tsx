@@ -48,10 +48,10 @@ const items = [
 ];
 
 export const Default = () => {
-  return <SummaryTable items={items} badgeIcon="internet" />;
+  return <SummaryTable items={items} />;
 };
 
-export const NormalGreyWithDescriptions = () => {
+export const NormalGreyWithDescriptionsAndBadgeIconDoesNotShowBadge = () => {
   return <SummaryTable items={items} background={'grey-50'} badgeIcon="robot" />;
 };
 
