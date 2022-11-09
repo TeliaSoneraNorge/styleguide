@@ -8,10 +8,9 @@ export default {
 
 const items = [
   {
-    title: '1Betale pr md',
+    title: '0 Betale pr md',
     isBold: true,
     label: '1 Trådbløst bredbånd 100 og TV',
-    price: 399,
     value: '399,-',
     description: '(49,-/md. etter 12 md.)',
     valueStriketrough: '9999,-',
@@ -19,7 +18,6 @@ const items = [
   { label: '2 Trådbløst 100 bredbånd', price: 249, value: '249,-', description: '(49,-/md. etter 12 md.)' },
   {
     label: '3 Trådbløst bredbånd 100 og TV',
-    price: 249,
     value: '249,-',
     description: '(49,-/md. etter 12 md.)',
     valueStriketrough: '49,-/md.',
@@ -46,7 +44,7 @@ const items = [
   { isBold: true, isSuccess: true, label: '6 Rabatt', value: `-XXX,-` },
   { isBold: true, label: '7 in månedspris', value: '1395,-', valueStriketrough: '11111', isBelowLine: true },
   { isBold: true, label: '8 in månedspris', value: '445,-', valueStriketrough: '2232', isBelowLine: true },
-  { isBold: true, label: '9 in is', value: '2395,-', valueStriketrough: '414', isBelowLine: true },
+  { isBold: true, label: '9 in månedspris', value: '2395,-', valueStriketrough: '414', isBelowLine: true },
 ];
 
 export const Default = () => {

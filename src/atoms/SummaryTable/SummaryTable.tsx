@@ -52,15 +52,14 @@ const SummaryTable = ({
   <dl
     className={cn('summary-table', {
       [`summary-table--${kind}`]: true,
-      'summary-table--result-line': useResultLine === true,
-      'summary-table--result-line-off': useResultLine === false,
+      'summary-table--result-line': useResultLine === true && items.filter((x) => x.isBelowLine).length == 0,
       'summary-table--background-grey-50': background === 'grey-50',
     })}
   >
     {badgeText && (
       <div className="summary-table__badge-container">
         {badgeIcon && (
-          <Badge text={badgeText} color="#CCEFDD" textColor="#222">
+          <Badge text={badgeText} color="#CCEFDD" textColor="#222" className="telia-badge--with-icon">
             <Icon icon={badgeIcon} />
           </Badge>
         )}

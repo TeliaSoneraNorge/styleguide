@@ -49,9 +49,12 @@
         width: 22px;
         position: relative;
         top: 1px;
-        margin-left: 5px;
+        margin-left: 1px;
       }
 
+      & > .telia-badge--with-icon::before {
+        margin-left: -11px;
+      }
       & > .telia-badge.telia-badge__top-right {
         position: relative;
         transform: none;
@@ -60,7 +63,7 @@
         & > div {
           z-index: 2;
         }
-        /* 
+
         &::before {
           content: '';
           position: absolute;
@@ -70,7 +73,7 @@
           transform: rotate(45deg);
           background-color: var(--green-100);
           z-index: 1;
-        } */
+        }
       }
     }
 
@@ -100,14 +103,6 @@
   &__row {
     margin: 0;
 
-    &:not(:last-of-type) {
-      border-bottom: 1px solid #b0b0b5;
-    }
-
-    &--border-none {
-      border-bottom: 0;
-    }
-
     &--green {
       color: #00cc66;
     }
@@ -123,6 +118,13 @@
     }
 
     &--indent {
+      @media screen and (max-width: 400px) {
+        padding-left: 1.35rem;
+      }
+      @media screen and (max-width: 500px) {
+        padding-left: 1.7rem;
+      }
+
       padding-left: 2rem;
     }
 
@@ -135,7 +137,7 @@
 
     &--below-line {
       & > h4 {
-        padding-top: 8px;
+        padding-top: 0px;
         padding-bottom: 6px;
       }
 
@@ -155,7 +157,7 @@
   }
 
   &__row-container {
-    min-height: 44px;
+    min-height: 40px;
     width: 100%;
     display: flex;
   }
@@ -204,17 +206,7 @@
     padding: 22px;
     padding-top: 16px;
     padding-bottom: 20px;
-
-    & .telia-badge {
-      margin-top: -26px;
-
-      @media screen and (max-width: 768px) {
-        margin-top: -20px;
-      }
-      @media screen and (max-width: 360px) {
-        margin-top: -16px;
-      }
-    }
+    min-height: 34px;
 
     @media screen and (max-width: 768px) {
       padding: 16px;
@@ -234,8 +226,9 @@
         margin-top: -4px;
       }
     }
+
     .summary-table__row-container {
-      min-height: 2rem;
+      min-height: 32px;
     }
 
     .summary-table__description {
