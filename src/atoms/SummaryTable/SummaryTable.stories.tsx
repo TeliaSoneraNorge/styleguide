@@ -77,10 +77,6 @@ export const NormalGreyWithTitleAndResultLine = () => {
   return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" useResultLine={true} />;
 };
 
-export const NormalGreyWithTitleAndNoResultLine = () => {
-  return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" useResultLine={false} />;
-};
-
 export const Compact = () => {
   return <SummaryTable kind="compact" items={items} />;
 };
@@ -96,22 +92,9 @@ export const CompactGreyNoIndentWithBadge = () => {
 };
 
 export const CompactGreyWithTitleAndAdditionalValues = () => {
-  return <SummaryTable kind="compact" title="Oppsummering" items={items} />;
+  return <SummaryTable kind="compact" title="Oppsummering" items={items} background={'grey-50'} />;
 };
 
 export const CompactGreyWithAdditionalValuesNoIndent = () => {
   return <SummaryTable kind="compact" title="Oppsummering" items={items} useIndent={false} background={'grey-50'} />;
-};
-
-export const CompactGreyWithAdditionalValuesNoIndentNoResultLine = () => {
-  return (
-    <SummaryTable
-      kind="compact"
-      title="Oppsummering"
-      items={items}
-      useIndent={false}
-      background={'grey-50'}
-      useResultLine={false}
-    />
-  );
 };
