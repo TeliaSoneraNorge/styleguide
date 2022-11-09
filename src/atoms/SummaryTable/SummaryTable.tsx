@@ -22,7 +22,7 @@ export interface SummaryTableProps {
   badgeText?: string;
   background?: 'grey-50';
   useIndent?: boolean;
-  resultLine?: boolean;
+  useResultLine?: boolean;
 }
 
 function sort(list: SummaryTableItem[]) {
@@ -43,14 +43,14 @@ const SummaryTable = ({
   background = undefined,
   useIndent = kind === 'compact',
   badgeText = '',
-  resultLine = kind === 'compact',
+  useResultLine = kind === 'compact',
   title = '',
 }: SummaryTableProps) => (
   <dl
     className={cn('summary-table', {
       [`summary-table--${kind}`]: true,
-      'summary-table--result-line': resultLine === true,
-      'summary-table--result-line-off': resultLine === false,
+      'summary-table--result-line': useResultLine === true,
+      'summary-table--result-line-off': useResultLine === false,
       'summary-table--background-grey-50': background === 'grey-50',
     })}
   >

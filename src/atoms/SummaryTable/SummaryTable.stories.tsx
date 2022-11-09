@@ -74,11 +74,11 @@ export const NormalGreyWithTitleAndDescriptionsWithNoIndentAndBadge = () => {
 };
 
 export const NormalGreyWithTitleAndResultLine = () => {
-  return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" resultLine={true} />;
+  return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" useResultLine={true} />;
 };
 
 export const NormalGreyWithTitleAndNoResultLine = () => {
-  return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" resultLine={false} />;
+  return <SummaryTable items={items} background={'grey-50'} title="Oppsummering" useResultLine={false} />;
 };
 
 export const Compact = () => {
@@ -111,7 +111,7 @@ export const CompactGreyWithAdditionalValuesNoIndentNoResultLine = () => {
       items={items}
       useIndent={false}
       background={'grey-50'}
-      resultLine={false}
+      useResultLine={false}
     />
   );
 };
