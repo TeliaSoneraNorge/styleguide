@@ -292,7 +292,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
 
     return (
       <li
-        key={step.number}
+        key={'telia-step-indicator-paging__list-item' + step.number}
         className={classNames('telia-step-indicator-paging__list-item', {
           'telia-step-indicator-paging__list-item--arrow': isArrow,
         })}
@@ -345,7 +345,7 @@ const StepIndicatorPaging = React.forwardRef((props: Props, ref) => {
           <RenderStep
             step={step}
             isArrow={step.arrowType == 'LEFT' || step.arrowType == 'RIGHT'}
-            key={i}
+            key={'telia-step-indicator-paging__list' + i}
             index={i}
             maxDisplayCount={displaySteps.length}
           />

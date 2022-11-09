@@ -28,7 +28,9 @@ const RenderIcon = ({ icon }) => {
 const RenderIcons = ({ icons }) => {
   if (icons) {
     if (Array.isArray(icons)) {
-      return Object.entries(icons).map(([i, val]) => <RenderIcon icon={val} key={i} />);
+      return Object.entries(icons).map(([i, val]) => (
+        <RenderIcon icon={val} key={'accordion-flexible-rendericons' + i} />
+      ));
     } else {
       return <RenderIcon icon={icons} />;
     }
