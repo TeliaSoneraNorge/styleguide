@@ -83,7 +83,7 @@ export const InformationArticleSample2 = () => (
             </a>
           </li>
         </ul>
-        {accordionListProps.map(props => (
+        {accordionListProps.map((props) => (
           <AccordionList key={props.key} {...props} />
         ))}
         <h3 className="heading heading--level-3">Heading</h3>

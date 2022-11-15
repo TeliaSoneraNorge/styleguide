@@ -61,21 +61,13 @@ export const InlineRight = () => (
 
 export const SmallImageInline = () => (
   <div>
-    <Image
-      src={img.businessDevelopmentPebble}
-      alt="Woman looking at tablet"
-      inline="left"
-    />
+    <Image src={img.businessDevelopmentPebble} alt="Woman looking at tablet" inline="left" />
     <p>
       Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Quisque velit nisi, pretium ut lacinia in,
       elementum id enim. Nulla quis lorem ut libero malesuada feugiat. Mauris blandit aliquet elit, eget tincidunt nibh
       pulvinar a. Donec sollicitudin molestie malesuada.
     </p>
-    <Image
-      src={img.businessDevelopmentPebble}
-      alt="Woman looking at mobile"
-      inline="right"
-    />
+    <Image src={img.businessDevelopmentPebble} alt="Woman looking at mobile" inline="right" />
     <p>
       Quisque velit nisi, pretium ut lacinia in, elementum id enim. Quisque velit nisi, pretium ut lacinia in, elementum
       id enim. Donec sollicitudin molestie malesuada. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet

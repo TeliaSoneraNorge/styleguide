@@ -70,10 +70,7 @@ export const RichContentRadioButtonList = () => {
           </Paragraph>
           <Paragraph kind="fineprint">A fineprint text here</Paragraph>
         </div>
-        <img
-          style={{ display: 'inline-block', float: 'right', width: '20%' }}
-          src={img.zensCharger}
-        />
+        <img style={{ display: 'inline-block', float: 'right', width: '20%' }} src={img.zensCharger} />
       </RadioButtonWithLabel>
 
       <RadioButtonWithLabel checked={value == 1} hasRichContent value="1" name="radiobutton-test-3" onChange={onClick}>

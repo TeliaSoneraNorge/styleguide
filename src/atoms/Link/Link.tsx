@@ -105,9 +105,7 @@ export const Link = (props: LinkProps) => {
         <div className="bubble-link--flex-container">
           <span
             className={`bubble-link--icon-circle
-              bubble-link--circle-background--${iconColor}${
-              inverted ? '-inverted' : ''
-            }`}
+              bubble-link--circle-background--${iconColor}${inverted ? '-inverted' : ''}`}
           >
             <Icon
               icon={icon}
@@ -128,7 +126,7 @@ export const Link = (props: LinkProps) => {
         icon && iconColor === 'white' ? 'link--negative--icon' : '',
         className ? className : undefined
       )}
-      style={!icon ? {padding: 0}: {}}
+      style={!icon ? { padding: 0 } : {}}
       href={href}
       target={target}
       {...rest}

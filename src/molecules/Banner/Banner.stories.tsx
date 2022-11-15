@@ -24,11 +24,7 @@ export const Default = () => (
 
 export const BannerReversed = () => (
   <Container size="large" className="banner--background-grey">
-    <Banner
-      img={img.screenshot1}
-      imgAlt="Man and woman looking at tablet"
-      reverse={true}
-    >
+    <Banner img={img.screenshot1} imgAlt="Man and woman looking at tablet" reverse={true}>
       <h2 className="heading-2">– Vi står ikke bare og prater om digitalisering</h2>
       <p className="paragraph">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore

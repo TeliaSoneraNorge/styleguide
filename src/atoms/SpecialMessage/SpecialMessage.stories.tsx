@@ -7,9 +7,7 @@ export default {
 };
 
 export const Default = () => (
-
   <SpecialMessage>
     This is a small block of text that should be used to highlight some important content on the page.
   </SpecialMessage>
-  
 );

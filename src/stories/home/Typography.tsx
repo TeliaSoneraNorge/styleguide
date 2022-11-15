@@ -23,7 +23,7 @@ export const Typography = () => (
       </ul>
 
       <p className="paragraph">These are the heading levels defined in this styleguide:</p>
-      {_.map([1, 2, 3, 4], level => (
+      {_.map([1, 2, 3, 4], (level) => (
         <Heading key={level} level={level as 1 | 2 | 3 | 4} text={`h${level}. Heading level ${level}`} />
       ))}
     </div>

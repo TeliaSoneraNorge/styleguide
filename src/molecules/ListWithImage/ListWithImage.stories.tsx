@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { ListWithImage } from '../../index';
-import img from '../../stories/sampleImages'
+import img from '../../stories/sampleImages';
 
 export default {
   title: 'Component library/Molecules/ListWithImage',
@@ -19,11 +19,7 @@ export const Default = () => (
 );
 
 export const ImageTop = () => (
-  <ListWithImage
-    src={img.kidsIpad}
-    alt="Two kids playing with a tablet"
-    imagePosition="top"
-  >
+  <ListWithImage src={img.kidsIpad} alt="Two kids playing with a tablet" imagePosition="top">
     <Item>
       This is the <code>imagePosition=&#34;top&#34;</code> variant.
     </Item>
@@ -33,11 +29,7 @@ export const ImageTop = () => (
 );
 
 export const ListRight = () => (
-  <ListWithImage
-    src={img.boyIpad}
-    alt="Boy playing with a tablet in a bed"
-    listPosition="right"
-  >
+  <ListWithImage src={img.boyIpad} alt="Boy playing with a tablet in a bed" listPosition="right">
     <Item>
       The <code>listPosition=&#34;right&#34;</code> variant shows the list on the right (large screens).
     </Item>
@@ -46,12 +38,7 @@ export const ListRight = () => (
 );
 
 export const ListRightImageTop = () => (
-  <ListWithImage
-    src={img.boyIpad}
-    alt="Boy playing with a tablet in a bed"
-    listPosition="right"
-    imagePosition="top"
-  >
+  <ListWithImage src={img.boyIpad} alt="Boy playing with a tablet in a bed" listPosition="right" imagePosition="top">
     <Item>
       The <code>listPosition=&#34;right&#34;</code> variant shows the list on the right (large screens).
     </Item>
@@ -62,11 +49,7 @@ export const ListRightImageTop = () => (
 );
 
 export const MobileHiddenImage = () => (
-  <ListWithImage
-    src={img.boyIpad}
-    alt="Boy playing with a tablet in a bed"
-    hideImageForMobile
-  >
+  <ListWithImage src={img.boyIpad} alt="Boy playing with a tablet in a bed" hideImageForMobile>
     <Item>
       The <code>hideImageForMobile</code> variant hides the image on smaller screens.
     </Item>
@@ -75,11 +58,7 @@ export const MobileHiddenImage = () => (
 );
 
 export const ListWithImageAndHeading = () => (
-  <ListWithImage
-    src={img.womanMobile}
-    alt="Woman in a car looking at her phone."
-    heading="This is a level 3 heading"
-  >
+  <ListWithImage src={img.womanMobile} alt="Woman in a car looking at her phone." heading="This is a level 3 heading">
     <Item>This is a list and image component.</Item>
     <Item>This is the default look of it.</Item>
     <Item>On smaller devices the image wraps under the list.</Item>

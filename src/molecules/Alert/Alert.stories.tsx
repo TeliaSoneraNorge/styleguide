@@ -8,9 +8,7 @@ export default {
 
 export const Default = () => (
   <Alert kind="info">
-    <p>
-      This is a info alert. Lorem ipsum dolor sit amet consectetur.
-    </p>
+    <p>This is a info alert. Lorem ipsum dolor sit amet consectetur.</p>
   </Alert>
 );
 
@@ -69,16 +67,19 @@ export const Warning = () => (
 );
 
 export const WithLinks = () => {
-  const links = [{ text: 'This link might be of interest', url: '#' }, { text: 'And this one too', url: '#' }];
-  
+  const links = [
+    { text: 'This link might be of interest', url: '#' },
+    { text: 'And this one too', url: '#' },
+  ];
+
   return (
     <Alert kind="positive" links={links}>
       <p>
-        With links. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-        dolore magna aliqua.
+        With links. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore
+        et dolore magna aliqua.
       </p>
     </Alert>
-  )
+  );
 };
 
 export const WithScrollTo = () => {
@@ -86,8 +87,8 @@ export const WithScrollTo = () => {
 
   if (shouldScroll) {
     setTimeout(() => {
-      setShouldScroll(false)
-    }, 1000)
+      setShouldScroll(false);
+    }, 1000);
   }
 
   return (
@@ -95,12 +96,12 @@ export const WithScrollTo = () => {
       <Container size="medium">
         <Button onClick={() => setShouldScroll(true)} text="Click me" />
       </Container>
-      
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
+
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
 
       <Alert kind="positive" scrollTo={shouldScroll}>
         <p>

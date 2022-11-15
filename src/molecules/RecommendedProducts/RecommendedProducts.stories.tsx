@@ -32,7 +32,7 @@ export const Default = () => (
   <RecommendedProducts
     mainHeading="Recommended products"
     products={products}
-    image=''
+    image=""
     heading="See something you like?"
     text="We have a lot more electric products that you might find interesting."
     buttonText="More products"

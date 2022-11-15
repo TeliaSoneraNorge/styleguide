@@ -7,13 +7,12 @@ export default {
   component: Form,
 };
 
-
 export const defautl = () => {
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
   const handleSubmit = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    setShowSuccessMessage(true)
+    setShowSuccessMessage(true);
   };
 
   return (
@@ -42,7 +41,7 @@ export const defautl = () => {
       {showSuccessMessage && <Form.FormSuccessMessage>All done!</Form.FormSuccessMessage>}
     </div>
   );
-}
+};
 
 // export default class SimpleLogin extends React.Component {
 //   state = {

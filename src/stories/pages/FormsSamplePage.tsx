@@ -70,7 +70,7 @@ export const FormsSamplePage = () => (
       <h3 className="heading heading--level-3">Example login form with js</h3>
       <br />
       <Form
-        onSubmit={function(e: any) {
+        onSubmit={function (e: any) {
           e.preventDefault();
         }}
       >

@@ -6,18 +6,15 @@ export default {
   component: PageHeader,
 };
 
-
 export const Default = () => {
-
   return (
     <PageHeader
-      menuId='string'
+      menuId="string"
       cartItemCount={2}
-      logoUrl='string'
-      logoTitle='string'
-      logoImageDesktopPath='string'
-      logoImageDesktopPathInverted='string'
+      logoUrl="string"
+      logoTitle="string"
+      logoImageDesktopPath="string"
+      logoImageDesktopPathInverted="string"
     />
-  )
-}
-
+  );
+};

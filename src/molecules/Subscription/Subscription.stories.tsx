@@ -410,7 +410,10 @@ export const BroadbandExpanded = () => {
 
   const features = {
     totalCalculation: { title: 'Minste totalpris', price: '8887,-', subtitles: ['med 12 mnd avtale'] },
-    productList: [{ title: 'Abonnement', price: '699,-', subtitles: ['Per mnd'] }, { title: 'Ruter', price: '499,-' }],
+    productList: [
+      { title: 'Abonnement', price: '699,-', subtitles: ['Per mnd'] },
+      { title: 'Ruter', price: '499,-' },
+    ],
     button: <Button text="Gå videre" kind="primary" onClick={() => {}} />,
   };
 
@@ -697,13 +700,13 @@ export const subscriptionWithSelect = () => {
 
   const [selectedSubscription, setSelectedSubscription] = useState('SMART_X.REGULAR');
 
-  const onSubscriptionSelect = subscriptionId => {
+  const onSubscriptionSelect = (subscriptionId) => {
     setSelectedSubscription(subscriptionId);
   };
 
   return (
     <Container size="medium">
-      {transferSubscriptions.map(sub => (
+      {transferSubscriptions.map((sub) => (
         <div key={sub.id} className="tlo-summary__subscriptions__subscription-item">
           <Subscription
             {...sub}

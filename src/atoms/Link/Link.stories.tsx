@@ -8,9 +8,7 @@ export default {
 
 export const Default = () => (
   <>
-    <Link href="#">
-      Standard text link
-    </Link>
+    <Link href="#">Standard text link</Link>
     <br />
     <br />
     <div style={{ background: colors.deepPurple }}>
@@ -63,32 +61,36 @@ export const LinkWithIconOnNegative = () => (
 
 export const BubbleLink = () => (
   <>
-    <Link type="bubble-link" href="#" icon="play" >
+    <Link type="bubble-link" href="#" icon="play">
       Core-Purple BubbleLink
     </Link>
-    <br /><br />
+    <br />
+    <br />
 
-    <Link type="bubble-link" href="#" icon="play" inverted={true} >
+    <Link type="bubble-link" href="#" icon="play" inverted={true}>
       Core-Purple BubbleLink Inverted
     </Link>
-    <br /><br />
+    <br />
+    <br />
 
     <Link type="bubble-link" href="#" icon="settings" iconColor="black">
       Black BubbleLink
     </Link>
-    <br /><br />
-    
+    <br />
+    <br />
+
     <Link type="bubble-link" href="#" icon="settings" iconColor="black" inverted={true}>
       Black BubbleLink Inverted
     </Link>
-    <br /><br />
+    <br />
+    <br />
 
     <div style={{ background: colors.deepPurple, padding: '1rem' }}>
       <Link type="bubble-link" href="#" icon="product-svitsj" iconColor="white">
         BubbleLink on dark background
       </Link>
     </div>
-    
+
     <br />
   </>
 );

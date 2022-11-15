@@ -14,7 +14,7 @@ export interface SvgIconProps {
    */
   className?: string;
   title?: string;
-  style?: { [key: string]: string | number | boolean }
+  style?: { [key: string]: string | number | boolean };
 }
 
 export const SvgIcon: React.FC<SvgIconProps>;

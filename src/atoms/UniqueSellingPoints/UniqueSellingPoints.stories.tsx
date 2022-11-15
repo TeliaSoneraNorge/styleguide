@@ -7,27 +7,19 @@ export default {
 };
 
 export const Default = () => {
-
   const { Item } = UniqueSellingPoints;
-  
+
   return (
-
     <UniqueSellingPoints>
-      <Item iconName="ico_buy">
-        You can use this to point out key values of a product
-      </Item>
+      <Item iconName="ico_buy">You can use this to point out key values of a product</Item>
     </UniqueSellingPoints>
-
-  )
-
+  );
 };
 
 export const Color = () => {
-
   const { Item } = UniqueSellingPoints;
-  
-  return (
 
+  return (
     <UniqueSellingPoints>
       <Item iconName="ico_buy" iconColor="core-purple">
         You can use this to point out key values of a product
@@ -36,17 +28,13 @@ export const Color = () => {
         You can use this to point out key values of a product
       </Item>
     </UniqueSellingPoints>
-
-  )
-
+  );
 };
 
 export const VerticalListing = () => {
-
   const { Item } = UniqueSellingPoints;
-  
-  return (
 
+  return (
     <UniqueSellingPoints className="unique-selling-points__vertical-list">
       <Item iconName="ico_check_sharp" iconColor="purple">
         You can use this functionality
@@ -58,17 +46,13 @@ export const VerticalListing = () => {
         And even with different icons
       </Item>
     </UniqueSellingPoints>
-
-  )
-
+  );
 };
 
 export const PointsWithChecks = () => {
-
   const { Item } = UniqueSellingPoints;
-  
-  return (
 
+  return (
     <UniqueSellingPoints>
       <Item iconName="ico_check" iconColor="purple">
         Unique selling point
@@ -80,7 +64,5 @@ export const PointsWithChecks = () => {
         Use 2-3 points
       </Item>
     </UniqueSellingPoints>
-
-  )
-
+  );
 };

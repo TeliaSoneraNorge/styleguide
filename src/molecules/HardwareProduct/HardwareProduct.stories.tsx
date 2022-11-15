@@ -23,7 +23,5 @@ export const Default = () => {
     priceDisclaimerLine2: 'Abo u/binding kommer i tillegg',
   };
 
-  return (
-    <HardwareProduct {...product} />
-  )
+  return <HardwareProduct {...product} />;
 };

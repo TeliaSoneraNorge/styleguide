@@ -26,6 +26,6 @@ const LoadingPebble = (props: Props) => {
       />
     </svg>
   );
-}
+};
 
 export default LoadingPebble;

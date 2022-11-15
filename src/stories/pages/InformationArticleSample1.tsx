@@ -66,7 +66,7 @@ export const InformationArticleSample1 = () => (
         </div>
       </div>
       <div className="rich-text container container--small">
-        {accordionListProps.map(props => (
+        {accordionListProps.map((props) => (
           <AccordionList key={props.key} {...props} />
         ))}
       </div>

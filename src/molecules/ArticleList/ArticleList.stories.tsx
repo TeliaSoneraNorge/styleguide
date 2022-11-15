@@ -37,10 +37,6 @@ export const Default = () => {
         'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse velit velit, egestas eget suscipit a, porta sed orci. Cras ac convallis nisl. In fringilla aliquam magna nec iaculis. Donec non dolor ipsum. Praesent auctor leo ex.',
     },
   ];
-  
-  return (
-    <ArticleList articles={articles} />
-  )
+
+  return <ArticleList articles={articles} />;
 };
-
-

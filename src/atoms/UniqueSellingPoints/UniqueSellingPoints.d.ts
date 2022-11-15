@@ -17,7 +17,7 @@ export interface ItemProps {
 }
 
 export const UniqueSellingPoints: React.FC<UniqueSellingPointsProps> & {
-      Item: React.FC<ItemProps>;
+  Item: React.FC<ItemProps>;
 };
 
 export default UniqueSellingPoints;

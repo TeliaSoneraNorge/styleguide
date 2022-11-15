@@ -24,7 +24,7 @@ export const ColorPalette = () => {
 
   return (
     <>
-      {colorsJSON.map(color => (
+      {colorsJSON.map((color) => (
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <div
             style={{
