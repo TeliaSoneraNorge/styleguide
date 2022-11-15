@@ -30,8 +30,6 @@ export const AsALink = () => {
 
 export const Loading = () => <DonutChart loading />;
 
-
-
 export const WithLineCaps = () => {
   const segments = [
     { color: 'purple', percent: 0.3 },
@@ -39,9 +37,7 @@ export const WithLineCaps = () => {
     { color: 'green', percent: 0.1 },
   ];
 
-  return (
-    <DonutChart value="21,6GB" totalFormatted="25GB" segments={segments} showLineCaps />
-  )
+  return <DonutChart value="21,6GB" totalFormatted="25GB" segments={segments} showLineCaps />;
 };
 
 export const WithLineCapsAndSegmentSeparators = () => {
@@ -51,9 +47,9 @@ export const WithLineCapsAndSegmentSeparators = () => {
     { color: 'green', percent: 0.1 },
   ];
 
-  return (
-    <DonutChart value="21,6GB" totalFormatted="25GB" segments={segments} showLineCaps showSegmentSeparators />
-  )
+  return <DonutChart value="21,6GB" totalFormatted="25GB" segments={segments} showLineCaps showSegmentSeparators />;
 };
 
-export const WithNoSegments = () => <DonutChart value="21,6GB" totalFormatted="25GB" showLineCaps showSegmentSeparators />;
+export const WithNoSegments = () => (
+  <DonutChart value="21,6GB" totalFormatted="25GB" showLineCaps showSegmentSeparators />
+);

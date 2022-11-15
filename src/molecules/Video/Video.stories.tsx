@@ -14,12 +14,11 @@ export const Default = () => (
   ></Video>
 );
 
-
 export const VideoWithCustomThumbnail = () => {
   const [autoplay, setAutoplay] = useState(false);
 
-  const handleClick = () => setAutoplay(true)
-  
+  const handleClick = () => setAutoplay(true);
+
   return (
     <Video
       autoplay={autoplay}
@@ -30,4 +29,4 @@ export const VideoWithCustomThumbnail = () => {
       onClick={handleClick}
     ></Video>
   );
-}
+};

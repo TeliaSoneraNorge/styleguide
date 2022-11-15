@@ -1,6 +1,6 @@
 import React from 'react';
 import { DisplayFunctionality } from '../../index';
-import img from '../../stories/sampleImages'
+import img from '../../stories/sampleImages';
 
 export default {
   title: 'Component library/Molecules/DisplayFunctionality',
@@ -18,7 +18,7 @@ export const Default = () => {
       imgAlt: 'People talking',
     },
   ];
-  
+
   return (
     <DisplayFunctionality reverse={true} imgs={imgs} deviceImageUrl={img.laptop}>
       <h3 className="heading heading--level-2">Bedrifter med behov for dokumentasjon</h3>
@@ -32,10 +32,8 @@ export const Default = () => {
       <br />
       <a className="button">Bestill nå</a>
     </DisplayFunctionality>
-  )
+  );
 };
-
-
 
 export const DisplayFunctionalityTablet = () => {
   const imgs = [
@@ -50,12 +48,7 @@ export const DisplayFunctionalityTablet = () => {
   ];
 
   return (
-    <DisplayFunctionality
-      reverse={true}
-      imgs={imgs}
-      device="tablet"
-      deviceImageUrl={img.tablet}
-    >
+    <DisplayFunctionality reverse={true} imgs={imgs} device="tablet" deviceImageUrl={img.tablet}>
       <h3 className="heading heading--level-2">Bedrifter med behov for dokumentasjon</h3>
       <p className="paragraph">Mobilt Opptak fra Telia sørger for opptak og trygg lagring av samtaler og meldinger.</p>
       <p className="paragraph">
@@ -67,10 +60,8 @@ export const DisplayFunctionalityTablet = () => {
       <br />
       <a className="button">Bestill nå</a>
     </DisplayFunctionality>
-  )
+  );
 };
-
-
 
 export const DisplayFunctionalityPhone = () => {
   const imgs = [
@@ -83,14 +74,9 @@ export const DisplayFunctionalityPhone = () => {
       imgAlt: 'People talking',
     },
   ];
-  
-  return(
-    <DisplayFunctionality
-      reverse={true}
-      imgs={imgs}
-      device="phone"
-      deviceImageUrl={img.phone}
-    >
+
+  return (
+    <DisplayFunctionality reverse={true} imgs={imgs} device="phone" deviceImageUrl={img.phone}>
       <h3 className="heading heading--level-2">Bedrifter med behov for dokumentasjon</h3>
       <p className="paragraph">Mobilt Opptak fra Telia sørger for opptak og trygg lagring av samtaler og meldinger.</p>
       <p className="paragraph">
@@ -102,10 +88,8 @@ export const DisplayFunctionalityPhone = () => {
       <br />
       <a className="button">Bestill nå</a>
     </DisplayFunctionality>
-  )
+  );
 };
-
-
 
 export const DisplayFunctionalityTv = () => {
   const imgs = [
@@ -118,7 +102,7 @@ export const DisplayFunctionalityTv = () => {
       imgAlt: 'People talking',
     },
   ];
-  
+
   return (
     <DisplayFunctionality reverse={true} imgs={imgs} device="tv" deviceImageUrl={img.tv}>
       <h3 className="heading heading--level-2">Bedrifter med behov for dokumentasjon</h3>
@@ -132,5 +116,5 @@ export const DisplayFunctionalityTv = () => {
       <br />
       <a className="button">Bestill nå</a>
     </DisplayFunctionality>
-  )
+  );
 };

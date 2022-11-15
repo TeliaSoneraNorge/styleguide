@@ -9,7 +9,6 @@ export default {
 export const Default = () => <Quote source="Yoda">Do. Or do not. There is no try.</Quote>;
 
 export const InlineRightQuote = () => (
-
   <section className="container container--small">
     <p>
       Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Pellentesque in ipsum id orci porta dapibus.
@@ -30,5 +29,4 @@ export const InlineRightQuote = () => (
       ut lacinia in, elementum id enim.
     </p>
   </section>
-  
 );

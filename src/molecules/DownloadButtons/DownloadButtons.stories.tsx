@@ -9,7 +9,7 @@ export default {
 
 export const Default = () => {
   const { Button } = DownloadButtons;
-  
+
   return (
     <DownloadButtons>
       <Button
@@ -34,5 +34,5 @@ export const Default = () => {
         aria-label="Windows Phone"
       />
     </DownloadButtons>
-  )
+  );
 };

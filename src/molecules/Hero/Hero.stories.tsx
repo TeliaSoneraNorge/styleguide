@@ -12,7 +12,7 @@ export const Default = () => {
     { type: 'mobile', srcSet: img.hero },
     { type: 'desktop', srcSet: img.hero },
   ];
-  
+
   return (
     <Hero
       href="#Hero"
@@ -22,7 +22,7 @@ export const Default = () => {
       align="top"
       sources={sources}
     />
-  )
+  );
 };
 
 export const HeroAlignBoxRight = () => {
@@ -30,7 +30,7 @@ export const HeroAlignBoxRight = () => {
     { type: 'mobile', srcSet: img.hero },
     { type: 'desktop', srcSet: img.hero },
   ];
-  
+
   return (
     <Hero
       href="#Hero"
@@ -41,7 +41,7 @@ export const HeroAlignBoxRight = () => {
       alignBox="right"
       sources={sources}
     />
-  )
+  );
 };
 
 export const HeroWithLogo = () => {
@@ -49,7 +49,7 @@ export const HeroWithLogo = () => {
     { type: 'mobile', srcSet: img.hero1Mobil },
     { type: 'desktop', srcSet: img.hero1 },
   ];
-  
+
   const logoSources = [
     { type: 'mobile', srcSet: img.businessDevelopmentPebble },
     { type: 'desktop', srcSet: img.businessDevelopmentPebble },
@@ -65,7 +65,7 @@ export const HeroWithLogo = () => {
       logoSources={logoSources}
       logoAlign="top-right"
     />
-  )
+  );
 };
 
 export const WithPebbles = () => {
@@ -83,7 +83,7 @@ export const WithPebbles = () => {
       sources={sources}
       pebbles="variant-3"
     />
-  )
+  );
 };
 
 export const WithPebblesOnlyOnDesktop = () => {
@@ -102,7 +102,7 @@ export const WithPebblesOnlyOnDesktop = () => {
       pebbles="variant-3"
       mode="desktop"
     />
-  )
+  );
 };
 
 export const WithPebblesOnlyOnMobile = () => {
@@ -121,5 +121,5 @@ export const WithPebblesOnlyOnMobile = () => {
       pebbles="variant-3"
       mode="mobile"
     />
-  )
+  );
 };

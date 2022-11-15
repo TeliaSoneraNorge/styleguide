@@ -124,7 +124,10 @@ describe('useThSortable', () => {
       });
     });
     describe('with two fields sorted', () => {
-      const currentSorting = [{ field: 'foo', inverted: false }, { field: 'bar', inverted: false }];
+      const currentSorting = [
+        { field: 'foo', inverted: false },
+        { field: 'bar', inverted: false },
+      ];
       test('should invert first sorting', () => {
         expect(updateSorting(currentSorting, 'foo')).toEqual([
           { field: 'foo', inverted: true },
@@ -209,9 +212,9 @@ describe('useThSortable', () => {
         ensureIsDumbComparator(createComparator({ field: 'not existing' }));
       });
 
-      const expectCorrectOrder = compareResult => expect(compareResult).toBeLessThan(0);
-      const expectIndifferentOrder = compareResult => expect(compareResult).toBe(0);
-      const expectWrongOrder = compareResult => expect(compareResult).toBeGreaterThan(0);
+      const expectCorrectOrder = (compareResult) => expect(compareResult).toBeLessThan(0);
+      const expectIndifferentOrder = (compareResult) => expect(compareResult).toBe(0);
+      const expectWrongOrder = (compareResult) => expect(compareResult).toBeGreaterThan(0);
 
       it('precedence for empty values', () => {
         const stat = { foo: 0 };

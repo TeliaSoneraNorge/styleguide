@@ -7,7 +7,6 @@ export default {
 };
 
 export const DefaultPageFooter = () => {
-  
   const links = [
     { text: 'Om Telia', url: '#' },
     { text: 'Telia butikker', url: '#' },
@@ -17,7 +16,5 @@ export const DefaultPageFooter = () => {
 
   const specialLink = { text: 'Personvern og Cookies', url: '#' };
 
-  return (
-    <PageFooter links={links} specialLink={specialLink} />
-  );
+  return <PageFooter links={links} specialLink={specialLink} />;
 };

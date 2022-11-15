@@ -7,7 +7,6 @@ export default {
 };
 
 export const Default = () => (
-
   <Caption>
     This is a caption component that is meant to be used with the{' '}
     <a className="link" href="#Image">
@@ -19,5 +18,4 @@ export const Default = () => (
     </a>{' '}
     components.
   </Caption>
-  
 );

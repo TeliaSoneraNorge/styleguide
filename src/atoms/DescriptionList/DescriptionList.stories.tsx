@@ -7,28 +7,22 @@ export default {
 };
 
 export const Default = () => {
-
   const { Dt, Dd } = DescriptionList;
 
   return (
-
     <DescriptionList>
       <Dt>First term:</Dt>
       <Dd>First description</Dd>
       <Dt>Second term:</Dt>
       <Dd>Second description</Dd>
     </DescriptionList>
-
-  )
-
+  );
 };
 
 export const WrapByTwo = () => {
-  
   const { Dt, Dd } = DescriptionList;
-  
-  return (
 
+  return (
     <DescriptionList wrapByTwo>
       <Dt>First term:</Dt>
       <Dd>First description</Dd>
@@ -39,6 +33,5 @@ export const WrapByTwo = () => {
       <Dt>Fourth term:</Dt>
       <Dd>Fourth description</Dd>
     </DescriptionList>
-
-  )
+  );
 };

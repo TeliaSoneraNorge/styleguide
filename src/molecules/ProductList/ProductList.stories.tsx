@@ -7,7 +7,6 @@ export default {
 };
 
 export const Default = () => {
-
   const items = [
     {
       iconName: 'ico_databoost',
@@ -35,13 +34,10 @@ export const Default = () => {
     },
   ];
 
-  return (
-    <ProductList items={items} />
-  )
+  return <ProductList items={items} />;
 };
 
 export const PromotionProductList = () => {
-
   const items = [
     {
       iconName: 'ico_subscription',
@@ -51,7 +47,5 @@ export const PromotionProductList = () => {
     },
   ];
 
-  return (
-    <ProductList items={items} />
-  )
+  return <ProductList items={items} />;
 };

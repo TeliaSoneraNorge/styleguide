@@ -6,7 +6,9 @@ export default {
   component: TextAreaWithLabel,
 };
 
-export const Default = () => <TextAreaWithLabel labelText="Label for text area" placeholder="Placeholder text here..." />;
+export const Default = () => (
+  <TextAreaWithLabel labelText="Label for text area" placeholder="Placeholder text here..." />
+);
 
 export const TextAreaWithError = () => (
   <TextAreaWithLabel
@@ -16,7 +18,6 @@ export const TextAreaWithError = () => (
   />
 );
 
-
 export const DisabledTextArea = () => (
   <TextAreaWithLabel labelText="Label for text area" placeholder="Placeholder text here..." disabled />
-); 
+);

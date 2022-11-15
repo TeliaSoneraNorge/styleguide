@@ -25,4 +25,4 @@ export const ControlledByParent = () => {
       />
     </React.Fragment>
   );
-}
+};

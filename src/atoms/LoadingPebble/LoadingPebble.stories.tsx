@@ -8,8 +8,8 @@ export default {
 
 export const Default = () => {
   return (
-    <div style={{ display: 'flex', justifyContent: 'center', height: '50vh'}}>
+    <div style={{ display: 'flex', justifyContent: 'center', height: '50vh' }}>
       <LoadingPebble />
     </div>
-  )
+  );
 };

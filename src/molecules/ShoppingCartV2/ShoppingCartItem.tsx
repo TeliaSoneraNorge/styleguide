@@ -54,6 +54,7 @@ const getPrice = (
   }
   return null;
 };
+
 export interface ShoppingCartItemProps {
   shouldShowQuantity: boolean;
   isAllowedToDelete: boolean;
@@ -232,6 +233,7 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
     </div>
   );
 };
+
 interface CartItemNameProps {
   cartItem: ICartItem;
 }

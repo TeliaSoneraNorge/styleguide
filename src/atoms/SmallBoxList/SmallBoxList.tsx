@@ -16,7 +16,7 @@ export interface SmallBoxListProps {
 
 const SmallBoxList = ({ selected, boxes = [], onSelect = () => undefined }: SmallBoxListProps) => (
   <div className="small-box-list">
-    {boxes.map(box => (
+    {boxes.map((box) => (
       <button
         className={cn('small-box-list__button', {
           'small-box-list__button--selected': selected === box.id,

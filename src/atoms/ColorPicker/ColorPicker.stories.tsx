@@ -15,6 +15,6 @@ const colors = [
 export const Default = () => {
   const [selected, setSelected] = useState<Color>();
   return (
-    <ColorPicker selected={selected} onSelect={id => setSelected(colors.find(c => c.id === id))} colors={colors} />
+    <ColorPicker selected={selected} onSelect={(id) => setSelected(colors.find((c) => c.id === id))} colors={colors} />
   );
 };

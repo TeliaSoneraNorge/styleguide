@@ -6,7 +6,9 @@ export default {
   component: TextBoxWithLabel,
 };
 
-export const Default = () => <TextBoxWithLabel labelText="Label for text box" type="text" placeholder="Write here..." />;
+export const Default = () => (
+  <TextBoxWithLabel labelText="Label for text box" type="text" placeholder="Write here..." />
+);
 
 export const ErrorTextBox = () => (
   <TextBoxWithLabel
@@ -37,7 +39,7 @@ export const TypeDynamicallyTogglingIcon = () => {
   const [value, setValue] = useState('');
 
   const handleOnChange = (e: React.BaseSyntheticEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     setShowIcon(e.target.value === '42');
     setValue(e.target.value);
@@ -56,15 +58,15 @@ export const TypeDynamicallyTogglingIcon = () => {
       />
     </React.Fragment>
   );
-}
+};
 
 export const TypeWithRef = () => {
   const [value, setValue] = useState('');
   const inputRef = useRef(null);
 
   const handleOnChange = (e: React.BaseSyntheticEvent) => {
-    setValue(e.target.value)
-    inputRef.current = e.target.value
+    setValue(e.target.value);
+    inputRef.current = e.target.value;
   };
 
   return (
@@ -79,5 +81,4 @@ export const TypeWithRef = () => {
       />
     </React.Fragment>
   );
-}
-
+};

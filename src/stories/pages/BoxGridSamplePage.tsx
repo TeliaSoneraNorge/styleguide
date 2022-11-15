@@ -70,7 +70,7 @@ export function BoxGridSamplePage() {
         <p>On this page you can have a look at a page with Box Grid layout and how it can be used.</p>
       </Header>
       <section className="box-grid container container--medium container--extra-margin-bottom">
-        {personBoxesProps.map(personProps => (
+        {personBoxesProps.map((personProps) => (
           <PersonBox key={personProps.id} {...personProps} />
         ))}
       </section>

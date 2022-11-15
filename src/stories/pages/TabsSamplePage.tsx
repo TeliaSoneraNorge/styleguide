@@ -80,7 +80,7 @@ export function TabsSamplePage() {
       <section className="container container--small">
         <Tabs
           uniqueId="regular-tabs"
-          onSelect={index => setOtherTabSelectedIndex(index)}
+          onSelect={(index) => setOtherTabSelectedIndex(index)}
           selectedIndex={otherTabSelectedIndex}
         >
           <Tabs.TabPanel>
@@ -117,7 +117,7 @@ export function TabsSamplePage() {
       <section className="container container--small">
         <Tabs
           uniqueId="prices-tabs"
-          onSelect={index => setPricesTabSelectedIndex(index)}
+          onSelect={(index) => setPricesTabSelectedIndex(index)}
           selectedIndex={pricesTabSelectedIndex}
         >
           <Tabs.TabPanel>
@@ -140,7 +140,7 @@ export function TabsSamplePage() {
       <section className="container container--small">
         <Tabs
           uniqueId="separated-tabs"
-          onSelect={index => setSeparatedTabSelectedIndex(index)}
+          onSelect={(index) => setSeparatedTabSelectedIndex(index)}
           selectedIndex={separatedTabSelectedIndex}
           skipPanelRendering={true}
         >

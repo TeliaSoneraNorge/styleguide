@@ -16,7 +16,7 @@ export interface ButtonProps {
 }
 
 export const DownloadButtons: React.FC<DownloadButtonsProps> & {
-  Button: React.FC<ButtonProps>
+  Button: React.FC<ButtonProps>;
 };
 
 export default DownloadButtons;

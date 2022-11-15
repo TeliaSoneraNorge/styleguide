@@ -1,1 +1,1 @@
-export { default } from './TableWithDropDown'
+export { default } from './TableWithDropDown';

@@ -12,8 +12,6 @@ export const Default = () => {
     { title: 'Inkludert data', color: 'orange', value: 20, total: 100 },
     { title: 'Extra datapack', color: 'green', value: 40, total: 100 },
   ];
-  
-  return (
-    <ChartLegend series={series} />
-  )
+
+  return <ChartLegend series={series} />;
 };
