@@ -217,16 +217,16 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
         <div style={{ position: 'relative' }}>
           {!_.isEmpty(discountPriceText) && <SpeechBubble text={discountPriceText} />}
           <span className="telia-shopping-cart__item__price__cost">
-            <span className="telia-shopping-cart__item__price__label">
-              {isLease && !hasSubscription && 'fra '}
-              {price}
-              {cartItem.price.monthly ? '/md.' : ''}
-            </span>
             {formatPrice(discountPrice) !== price && (
               <span className="telia-shopping-cart__item__price__linethrough">
                 {cartItem.price.monthly ? formatPrice(discountPrice) + '/md.' : formatPrice(discountPrice)}
               </span>
             )}
+            <span className="telia-shopping-cart__item__price__label">
+              {isLease && !hasSubscription && 'fra '}
+              {price}
+              {cartItem.price.monthly ? '/md.' : ''}
+            </span>
           </span>
         </div>
       </div>
