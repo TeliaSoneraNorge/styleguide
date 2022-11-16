@@ -1,12 +1,13 @@
 import React from 'react';
 import _ from 'lodash';
 import cn from 'classnames';
-import { ICartItem, ICartItemPrice } from './types';
+import { ICartDiscountType, ICartItem, ICartItemPrice } from './types';
 import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import Link from '../../atoms/Link';
 import { CART_ITEM_TYPE } from './index';
 import { SpeechBubble } from '../SpeechBubble';
+import { Lozenge } from '../Lozenge';
 
 const formatPrice = (price: string | number) => {
   if (typeof price === 'number') {
@@ -238,13 +239,33 @@ interface CartItemNameProps {
   cartItem: ICartItem;
 }
 
+const CartItemDiscount = ({ cartItem }: CartItemNameProps) => {
+  const discountType: ICartDiscountType | undefined = _.get(cartItem, 'discount.types[0]');
+
+  return (
+    <>
+      {discountType && (
+        <Lozenge
+          className="telia-shopping-cart__item__discount-description"
+          type="square"
+          label={discountType.text}
+          status="positive"
+        />
+      )}
+    </>
+  );
+};
+
 const CartItemName = ({ cartItem }: CartItemNameProps) => (
   <>
-    <div className="telia-shopping-cart__item__link">
-      {cartItem.lineThrough && (
-        <span className="telia-shopping-cart__item__price__linethrough">{cartItem.lineThrough}</span>
-      )}
-      {cartItem.href ? <Link href={cartItem.href}>{cartItem.name}</Link> : cartItem.name}
+    <div className="telia-shopping-cart__item__name-wrapper">
+      <div className="telia-shopping-cart__item__link">
+        {cartItem.lineThrough && (
+          <span className="telia-shopping-cart__item__price__linethrough">{cartItem.lineThrough}</span>
+        )}
+        {cartItem.href ? <Link href={cartItem.href}>{cartItem.name}</Link> : cartItem.name}
+      </div>
+      <CartItemDiscount cartItem={cartItem} />
     </div>
     {cartItem.color && (
       <Paragraph>

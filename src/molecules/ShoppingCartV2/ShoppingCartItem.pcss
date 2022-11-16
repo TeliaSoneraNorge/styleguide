@@ -3,6 +3,15 @@
     position: relative;
     background-color: white;
 
+    &__name-wrapper {
+      display: flex;
+      align-items: flex-start;
+
+      @media all and (max-width: 48em) {
+        flex-direction: column;
+      }
+    }
+
     &__link {
       span {
         margin-right: 0.5rem;
@@ -22,6 +31,14 @@
 
       @media all and (min-width: 48em) {
         padding-right: 0;
+      }
+    }
+
+    &__discount-description {
+      margin-right: 3.25rem;
+
+      @media all and (min-width: 48em) {
+        margin-left: 1rem;
       }
     }
 
@@ -168,6 +185,7 @@
         top: 16px;
         cursor: pointer;
         padding: 0.25rem 0.5rem;
+
         .Icon {
           width: 1.06rem;
           height: 1.1rem;

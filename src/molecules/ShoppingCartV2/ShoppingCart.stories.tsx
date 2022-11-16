@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import { ShoppingCartV2 } from '../../index';
 import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
@@ -425,6 +426,138 @@ export const WithHasPaid = () => {
   );
 };
 
+const subscriptionOnlyGroupContent: ICartItem[] = [
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '29166a',
+    items: [],
+    name: 'Telia X',
+    href: '#',
+    quantity: {
+      modifiable: false,
+      removable: true,
+      value: 1,
+    },
+    price: {
+      monthly: 579,
+    },
+    image: {
+      icon: 'sim-card',
+    },
+    subtitle: 'Nummer: 413 18 854',
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '2b629a',
+    items: [],
+    name: 'Telia X',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      monthly: 579,
+    },
+    image: {
+      icon: 'sim-card',
+    },
+    subtitle: 'Nummer: 413 20 853',
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SUBSCRIPTION_DRAFT',
+    id: 'TELIA_MOBIL_06GB.REGULAR',
+    bundleId: 'ac9f7a',
+    items: [],
+    name: '16 GB',
+    lineThrough: '8 GB',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      monthly: 329,
+    },
+    image: {
+      icon: 'sim-card',
+    },
+    subtitle: 'Nummer: 413 20 853',
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SPECIALPRODUCT',
+    id: '39961249',
+    bundleId: 'f108e0',
+    image: {
+      url: 'https://www.telia.no/shop/assets/img-static/other/missing_image.svg',
+    },
+    name: 'Kontant Startpakke',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      upfront: 99,
+      originalSalesPrice: 99,
+      originalSalesPriceWithoutVAT: 79.2,
+    },
+    leaseMonths: null,
+    items: [
+      {
+        type: 'SUBSCRIPTION_DRAFT',
+        id: 'KONTANT_KOMPLETT.REGULAR',
+        bundleId: 'f108e0',
+        items: [],
+        name: 'Kontant Startpakke',
+        quantity: {
+          modifiable: false,
+          removable: false,
+          value: 1,
+        },
+        price: {},
+        image: {
+          icon: 'sim-card',
+        },
+        subtitle: 'Mobilabonnement',
+      },
+    ],
+  },
+  {
+    type: 'SIM',
+    id: '9054990',
+    subtitle: 'Hovedsim',
+    image: {
+      icon: 'sim-card',
+    },
+    name: 'SIM-kort',
+    price: {
+      upfront: 0,
+    },
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 3,
+    },
+  },
+];
 export const subscriptionsOnly = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;
@@ -436,138 +569,43 @@ export const subscriptionsOnly = () => {
   };
 
   const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-  const groupContent: ICartItem[] = [
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '29166a',
-      items: [],
-      name: 'Telia X',
-      href: '#',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        monthly: 579,
-      },
-      image: {
-        icon: 'sim-card',
-      },
-      subtitle: 'Nummer: 413 18 854',
-      discount: {
-        value: {
-          monthly: 135,
-        },
-      },
-    },
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '2b629a',
-      items: [],
-      name: 'Telia X',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        monthly: 579,
-      },
-      image: {
-        icon: 'sim-card',
-      },
-      subtitle: 'Nummer: 413 20 853',
-      discount: {
-        value: {
-          monthly: 135,
-        },
-      },
-    },
-    {
-      type: 'SUBSCRIPTION_DRAFT',
-      id: 'TELIA_MOBIL_06GB.REGULAR',
-      bundleId: 'ac9f7a',
-      items: [],
-      name: '16 GB',
-      lineThrough: '8 GB',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        monthly: 329,
-      },
-      image: {
-        icon: 'sim-card',
-      },
-      subtitle: 'Nummer: 413 20 853',
-      discount: {
-        value: {
-          monthly: 135,
-        },
-      },
-    },
-    {
-      type: 'SPECIALPRODUCT',
-      id: '39961249',
-      bundleId: 'f108e0',
-      image: {
-        url: 'https://www.telia.no/shop/assets/img-static/other/missing_image.svg',
-      },
-      name: 'Kontant Startpakke',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        upfront: 99,
-        originalSalesPrice: 99,
-        originalSalesPriceWithoutVAT: 79.2,
-      },
-      leaseMonths: null,
-      items: [
-        {
-          type: 'SUBSCRIPTION_DRAFT',
-          id: 'KONTANT_KOMPLETT.REGULAR',
-          bundleId: 'f108e0',
-          items: [],
-          name: 'Kontant Startpakke',
-          quantity: {
-            modifiable: false,
-            removable: false,
-            value: 1,
-          },
-          price: {},
-          image: {
-            icon: 'sim-card',
-          },
-          subtitle: 'Mobilabonnement',
-        },
-      ],
-    },
-    {
-      type: 'SIM',
-      id: '9054990',
-      subtitle: 'Hovedsim',
-      image: {
-        icon: 'sim-card',
-      },
-      name: 'SIM-kort',
-      price: {
-        upfront: 0,
-      },
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 3,
-      },
-    },
-  ];
+
+  return (
+    <Container style={style} size={containerSize}>
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={subscriptionOnlyGroupContent}
+        delivery={delivery}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        isAllowedToDelete={true}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};
+
+export const subscriptionsWithDiscount = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
+  const groupContent: ICartItem[] = _.set(_.cloneDeep(subscriptionOnlyGroupContent), '[0].discount.types', [
+    { id: 'commitment', value: 150, text: 'Med rabatt' },
+  ]);
 
   return (
     <Container style={style} size={containerSize}>
