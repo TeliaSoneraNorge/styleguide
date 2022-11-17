@@ -138,10 +138,17 @@ interface ICartItemDiscountValue {
   monthly?: number;
 }
 
+export interface ICartDiscountType {
+  id: 'commitment' | 'sameBucket';
+  value: number;
+  text: string;
+}
+
 interface ICartItemDiscount {
   value: ICartItemDiscountValue;
   description?: string;
   handsetDiscountText?: string;
+  types?: ICartDiscountType[];
 }
 
 export interface ICartItemImage {
