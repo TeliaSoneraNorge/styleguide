@@ -1,0 +1,73 @@
+.bundleDealBox {
+  display: flex;
+  width: 21rem;
+  height: 28.5rem;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 2px 8px #dcdce1;
+
+  &__flashText-container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    text-transform: uppercase;
+  }
+
+  &__flashText {
+    padding: 4px 8px;
+    font-size: 14px;
+    position: absolute;
+    right: 1rem;
+    top: -15px;
+    border-radius: 2px;
+  }
+
+  &__image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__product-image {
+    margin-top: 1.25rem;
+    object-fit: contain;
+    max-width: 8rem;
+    max-height: 7rem;
+  }
+
+  &__upper-container {
+    display: flex;
+    padding: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+
+    .heading {
+      margin: 0 0 0.5rem;
+    }
+  }
+
+  &__price-container {
+    display: flex;
+    margin: 0.5rem 0 0.5rem 0;
+    align-items: center;
+    width: 100%;
+
+    &--strikethrough {
+      text-decoration: line-through;
+      margin-right: 1rem;
+      text-decoration-color: #990ae3;
+    }
+
+    &--salesPrice {
+      color: #990ae3;
+      font-size: 1.5rem;
+    }
+  }
+
+  &__link {
+    width: 90%;
+    align-self: center;
+    text-transform: lowercase;
+    margin-top: 1rem;
+  }
+}
