@@ -1,5 +1,9 @@
 import * as React from 'react';
 
-export const ModalDialogProvider: React.FC;
+declare interface ModalDialogProviderProps {
+  children?: React.ReactNode;
+}
+
+export const ModalDialogProvider: React.FC<ModalDialogProviderProps>;
 
 export default ModalDialogProvider;
