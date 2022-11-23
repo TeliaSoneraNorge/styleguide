@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Heading from '../../atoms/Heading/Heading';
-import SvgIcon from '../../atoms/SvgIcon/SvgIcon';
+import { Icon } from '../../atoms/Icon/index';
 
 /**
  * Status: *finished*.
@@ -39,7 +39,7 @@ const Header = ({
       </div>
     ) : null}
     <div className="header__container container container--medium container--no-padding container--no-margin">
-      {iconName && <SvgIcon className="header__icon" iconName={iconName} role="presentation" />}
+      {iconName && <Icon className="header__icon" icon={iconName} role="presentation" />}
       {runningTitle && <span className="header__subtitle ">{runningTitle}</span>}
       <Heading level={1} text={pageTitle} />
       <section className="header__preamble">{children}</section>
