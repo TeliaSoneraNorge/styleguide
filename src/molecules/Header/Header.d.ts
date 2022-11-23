@@ -1,11 +1,12 @@
 import * as React from 'react';
+import { IconDefinition } from '../../atoms/Icon/index';
 
 export type HeaderBackgroundColor = 'white';
 
 export interface HeaderProps {
   videoSrc?: string;
   videoTitle?: string;
-  iconName?: string;
+  iconName?: IconDefinition;
   hideIconOnDesktop?: boolean;
   runningTitle?: string;
   pageTitle: string;
