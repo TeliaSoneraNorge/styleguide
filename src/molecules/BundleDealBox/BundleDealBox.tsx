@@ -17,7 +17,7 @@ type BundleDealBoxProps = {
   description?: string;
   discountPrice: string;
   salesPrice: string;
-  disclaimer?: string;
+  disclaimer: string;
   buttonText?: string;
   url: string;
 };
@@ -34,31 +34,34 @@ const BundleDealBox: React.FC<BundleDealBoxProps> = ({
   url,
 }) => {
   return (
-    <div className="bundleDealBox">
-      <div className="bundleDealBox__flashText-container">
+    <div className="telia-bundle-deal-box">
+      <div className="telia-bundle-deal-box__flashText-container">
         {flashText && (
           <div
-            className="bundleDealBox__flashText"
+            className="telia-bundle-deal-box__flashText"
             style={{ color: flashText.textColor, backgroundColor: flashText.color }}
           >
             {flashText.text}
           </div>
         )}
       </div>
-      <div className="bundleDealBox__image-container">
-        <img loading="lazy" className="bundleDealBox__product-image" src={`${image.url}?w=180`} alt="" />
+      <div className="telia-bundle-deal-box__image-container">
+        <img loading="lazy" className="telia-bundle-deal-box__product-image" src={`${image.url}?w=180`} alt="" />
       </div>
-      <div className="bundleDealBox__upper-container">
+      <div className="telia-bundle-deal-box__upper-container">
         <Heading tag="h2" size="s" text={productName} />
         {description && (
-          <div className="bundleDealBox__description paragraph" dangerouslySetInnerHTML={{ __html: description }} />
+          <div
+            className="telia-bundle-deal-box__description paragraph"
+            dangerouslySetInnerHTML={{ __html: description }}
+          />
         )}
-        <div className="bundleDealBox__price-container">
-          <span className="bundleDealBox__price-container--strikethrough">{discountPrice}</span>
-          <span className="bundleDealBox__price-container--salesPrice">{salesPrice}</span>
+        <div className="telia-bundle-deal-box__price-container">
+          <span className="telia-bundle-deal-box__price-container--strikethrough">{discountPrice}</span>
+          <span className="telia-bundle-deal-box__price-container--salesPrice">{salesPrice}</span>
         </div>
-        <div>{disclaimer}</div>
-        <Button className="bundleDealBox__link" component="link" href={url} text={buttonText} />
+        <div className="telia-bundle-deal-box__disclaimer">{disclaimer}</div>
+        {buttonText && <Button className="telia-bundle-deal-box__link" component="link" href={url} text={buttonText} />}
       </div>
     </div>
   );
