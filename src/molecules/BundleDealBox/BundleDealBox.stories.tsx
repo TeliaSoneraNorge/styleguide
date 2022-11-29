@@ -115,7 +115,6 @@ export const ListView = () => {
       {bundles.map((bundle) => (
         <BundleDealBox {...bundle} />
       ))}
-      ;
     </div>
   );
 };
