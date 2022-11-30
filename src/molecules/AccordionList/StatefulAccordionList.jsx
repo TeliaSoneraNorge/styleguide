@@ -15,13 +15,14 @@ export default class StatefulAccordionList extends React.Component {
     isExpandedAccordionIndex: PropTypes.number.isRequired,
     className: PropTypes.string,
     noBorder: PropTypes.bool,
+    transparent: PropTypes.bool,
   };
   state = {
     isExpandedAccordionIndex: this.props.isExpandedAccordionIndex,
   };
   accordions = {};
 
-  toggleIsExpanded = newIndex => {
+  toggleIsExpanded = (newIndex) => {
     if (newIndex === this.state.isExpandedAccordionIndex) {
       this.setState({ isExpandedAccordionIndex: -1 });
     } else {
@@ -42,6 +43,7 @@ export default class StatefulAccordionList extends React.Component {
         setItemRef={this.setAccordionRef}
         isExpandedAccordionIndex={this.state.isExpandedAccordionIndex}
         toggleIsExpanded={this.toggleIsExpanded}
+        transparent={this.props.transparent}
       />
     );
   }
