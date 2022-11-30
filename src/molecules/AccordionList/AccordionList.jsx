@@ -35,11 +35,12 @@ const AccordionList = ({
   noBorder,
   className,
   shouldAnimateHeaderButtonTextBox,
+  transparent,
 }) => (
   <div className={cn('accordion-list', { 'accordion-list__no-border': noBorder, [className]: className })}>
     {accordionItems.map((accordionItem, i) => (
       <Accordion
-        accordionRef={element => {
+        accordionRef={(element) => {
           (setItemRef || noop)(element, i);
         }}
         key={accordionItem.id}
@@ -47,6 +48,7 @@ const AccordionList = ({
         isExpanded={i === isExpandedAccordionIndex}
         toggleIsExpanded={() => (toggleIsExpanded || noop)(i)}
         shouldAnimateHeaderButtonTextBox={shouldAnimateHeaderButtonTextBox}
+        transparent={transparent}
       />
     ))}
   </div>
@@ -65,6 +67,7 @@ AccordionList.propTypes = {
   isExpandedAccordionIndex: PropTypes.number.isRequired,
   noBorder: PropTypes.bool,
   shouldAnimateHeaderButtonTextBox: PropTypes.bool,
+  transparent: PropTypes.bool,
 };
 
 export default AccordionList;

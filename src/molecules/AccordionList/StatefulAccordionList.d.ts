@@ -16,6 +16,7 @@ export interface StatefulAccordionListProps {
   isExpandedAccordionIndex: number;
   className?: string;
   noBorder?: boolean;
+  transparent?: boolean;
 }
 
 export default class StatefulAccordionList extends React.Component<StatefulAccordionListProps, any> {

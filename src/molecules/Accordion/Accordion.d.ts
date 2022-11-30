@@ -15,6 +15,7 @@ export interface AccordionProps {
   onButtonClick?: (...args: any[]) => any;
   toggleIsExpanded?: (...args: any[]) => any;
   footer?: React.ReactNode;
+  transparent?: boolean;
 }
 
 export const Accordion: React.FC<AccordionProps>;
