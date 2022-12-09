@@ -40,11 +40,25 @@ export const ListView = () => {
       },
       image: {
         url:
-          'https://images.ctfassets.net/iz15t1lxx44v/4qB2ZgAwKLLlo0MYg7Ubo3/19cc027bcd9cafac47750d6795b20177/Harman-Kardon-Studio-Onyx-8-Black-1.png?',
+          'https://images.ctfassets.net/iz15t1lxx44v/4LWCUN0hs1hE2H9gUAyBvZ/a182310605cc822c6117c98bd97b045e/HomePod_mini_Space_Gray_Pure_Front_Siri_Screen__USEN.png?',
       },
-      productName: 'Onyx Studio 7',
+      productName: 'Apple HomePod mini',
       description:
-        'Bestill Onyx Studio 7 sammen med et Telia X Rask-abonnement med 12 md. avtaletid og betal kun 1,- for høyttaleren',
+        'Nyhet! HomePod mini er en stemmestyrt høyttaler som gir overraskende stor lyd av denne størrelsen.Gjelder når du oppretter nytt abonnement med 12 md. avtaletid.',
+      discountPrice: '3999,-',
+      salesPrice: '1,-',
+      disclaimer: 'Totalpris 6 589,- inkl. Onyx Studio 7 og Telia X Rask i 12 md. ',
+      buttonText: 'Les mer',
+      url: '',
+    },
+    {
+      image: {
+        url:
+          'https://images.ctfassets.net/iz15t1lxx44v/4QlZKGKNLKmXgjJaXPtr3d/c95bd57d7a3fc65075c3921d95c057f5/HK_Citation_200_Product_Image_Hero_2_Black.png',
+      },
+      productName: 'Citation 200',
+      description:
+        'Harman Kardon Citation 200 gir deg fyldig lyd i HD-kvalitet du kan strømme innendørs med Wi-Fi eller utendørs med Bluetooth og 8 timers batteritid. Gjelder når du oppretter nytt abonnement med 12 md. avtaletid.',
       discountPrice: '3999,-',
       salesPrice: '1,-',
       disclaimer: 'Totalpris 6 589,- inkl. Onyx Studio 7 og Telia X Rask i 12 md. ',
@@ -63,29 +77,10 @@ export const ListView = () => {
       },
       productName: 'AirPods Pro',
       description:
-        'Bestiller du AirPods sammen med et Telia X Rask-abonnement med 12 md. avtaletid betaler du kun 1749,- for øreproppene.',
+        'Harman Kardon Citation 200 gir deg fyldig lyd i HD-kvalitet du kan strømme innendørs med Wi-Fi eller utendørs med Bluetooth og 8 timers batteritid. Gjelder når du oppretter nytt abonnement med 12 md. avtaletid.',
       discountPrice: '2490,-',
       salesPrice: '1,-',
       disclaimer: 'Totalpris 6 589,- inkl. AirPods Pro og Telia X Rask i 12 md. ',
-      buttonText: 'Les mer',
-      url: '',
-    },
-    {
-      flashText: {
-        text: 'Spar 2500 ,-',
-        textColor: '#663E00',
-        color: '#FFDCA6',
-      },
-      image: {
-        url:
-          'https://images.ctfassets.net/iz15t1lxx44v/4qB2ZgAwKLLlo0MYg7Ubo3/19cc027bcd9cafac47750d6795b20177/Harman-Kardon-Studio-Onyx-8-Black-1.png?',
-      },
-      productName: 'Onyx Studio 7',
-      description:
-        'Bestill Onyx Studio 7 sammen med et Telia X Rask-abonnement med 12 md. avtaletid og betal kun 1,- for høyttaleren',
-      discountPrice: '3999,-',
-      salesPrice: '1,-',
-      disclaimer: 'Totalpris 6 589,- inkl. Onyx Studio 7 og Telia X Rask i 12 md. ',
       buttonText: 'Les mer',
       url: '',
     },
