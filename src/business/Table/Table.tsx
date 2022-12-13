@@ -213,8 +213,6 @@ type TableProps = {
   loading?: boolean;
   children?: React.ReactNode;
   style?: React.CSSProperties;
-  tableIsEmpty?: boolean;
-  emptyTableLabel?: string;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {
@@ -233,6 +231,13 @@ type TableProps = {
         sortedColumnDirection: 'ASC' | 'DESC' | 'NONE';
       }
     | {}
+  ) &
+  (
+    | {
+        tableIsEmpty: boolean;
+        emptyTableLabel: string;
+      }
+    | {}
   );
 
 const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: 'styleguide-table' });
@@ -241,7 +246,7 @@ export const Table: React.FC<TableProps> = (props) => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
     <>
-      {props.tableIsEmpty && !props.loading ? (
+      {'tableIsEmpty' in props && props.tableIsEmpty && !props.loading ? (
         <div className="data-table__empty-state">
           <img src={EmptySvg} alt="empty-table" />
           <div>{props.emptyTableLabel}</div>
