@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const emptyTableSvg = (
+export const emptySvg = (
   <svg width="316" height="217" viewBox="0 0 316 217" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path
       opacity="0.3"

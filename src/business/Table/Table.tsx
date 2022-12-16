@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 import { Icon } from '../../atoms/Icon';
 import { Checkbox } from '../../atoms/Checkbox';
-import { emptyTableSvg } from './emptyTableSvg';
+import { emptySvg } from '../assets/emptySvg';
 
 type TableBodyCellProps = {
   rightAligned?: boolean;
@@ -248,7 +248,7 @@ export const Table: React.FC<TableProps> = (props) => {
     <>
       {'tableIsEmpty' in props && props.tableIsEmpty && !props.loading ? (
         <div className="data-table__empty-state">
-          {emptyTableSvg}
+          {emptySvg}
           <div>{props.emptyTableLabel}</div>
         </div>
       ) : (
