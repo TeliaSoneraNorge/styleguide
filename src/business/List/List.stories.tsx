@@ -95,6 +95,15 @@ export const Default = ({}) => {
     </div>
   );
 };
+
+export const EmptyState = ({}) => {
+  return (
+    <div>
+      <List listIsEmpty={![].length} emptyListLabel="There is nothing here yet."></List>
+    </div>
+  );
+};
+
 export const Card = ({}) => {
   const [checked, setChecked] = useState(false);
 
