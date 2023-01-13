@@ -66,6 +66,13 @@ type TableBodyRowProps = {
   className?: string;
   connectedToPrevious?: boolean;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 } & (
   | {
       onSelect: (e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -104,6 +111,9 @@ export const TableBodyRow = React.forwardRef<HTMLTableRowElement, TableBodyRowPr
       }}
       tabIndex={props.onClickRow ? 0 : undefined}
       ref={ref}
+      aria-label={props['aria-label']}
+      aria-hidden={props['aria-hidden']}
+      style={props.style}
     >
       {'onSelect' in props && (
         <TableBodyCell isCheckbox={true}>
@@ -232,6 +242,12 @@ type TableProps = {
   loading?: boolean;
   children?: React.ReactNode;
   style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {
@@ -284,7 +300,7 @@ export const Table: React.FC<TableProps> = (props) => {
             )}
             style={props.style}
           >
-            <table className="data-table__table">
+            <table className="data-table__table" aria-label={props['aria-label']} aria-hidden={props['aria-hidden']}>
               <thead>
                 {'headings' in props ? (
                   <tr className="data-table__row data-table__row__header">
