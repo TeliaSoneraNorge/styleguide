@@ -12,6 +12,13 @@ type TableBodyCellProps = {
   isCheckbox?: boolean;
   className?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 };
 
 export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
@@ -45,6 +52,9 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
         },
         props.className
       )}
+      aria-label={props['aria-label']}
+      aria-hidden={props['aria-hidden']}
+      style={props.style}
     >
       {children}
     </td>
@@ -122,6 +132,13 @@ type TableHeadCellProps = {
    */
   width?: number;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 } & (
   | {
       sortDirection: 'ASC' | 'DESC' | 'NONE';
@@ -165,7 +182,9 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
       }
       role={'onClick' in props ? 'button' : undefined}
       tabIndex={'onClick' in props ? 0 : undefined}
-      style={props.width ? { width: props.width } : undefined}
+      style={props.width ? { ...props.style, width: props.width } : undefined}
+      aria-label={props['aria-label']}
+      aria-hidden={props['aria-hidden']}
     >
       {children}
       {'onClick' in props && props.sortDirection && props.sortDirection !== 'NONE' && ' '}
