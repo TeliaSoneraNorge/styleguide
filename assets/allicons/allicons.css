@@ -415,6 +415,7 @@
 }
 .svg_ico_code-2,
 .svg_ico_group,
+.svg_ico_in-the-box,
 .svg_ico_klikk-og-hent,
 .svg_ico_kr {
   width: 512px;
@@ -516,6 +517,9 @@
 .svg_ico_image_placeholder_white {
   width: 670.83px;
   height: 495.83px;
+}
+.svg_ico_in-the-box {
+  fill: #222;
 }
 .svg_ico_infinity {
   width: 88px;
