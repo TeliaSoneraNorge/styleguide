@@ -145,6 +145,7 @@ export { HomeCareIcon } from './HomeCareIcon';
 export { HomeInstallationIcon } from './HomeInstallationIcon';
 export { HomeIcon } from './HomeIcon';
 export { HospitalIcon } from './HospitalIcon';
+export { InTheBoxIcon } from './InTheBoxIcon';
 export { ImageIcon } from './ImageIcon';
 export { IndustrialIotIcon } from './IndustrialIotIcon';
 export { IndustryIcon } from './IndustryIcon';

@@ -83,16 +83,15 @@ async function processIcons() {
         icon: iconName,
         filename: iconFileName,
         singleComponentName:
-          iconFileName.replace(/(^([a-z])|-([a-z]))/g, (a, b, g2, g3) => (g2 || g3).toUpperCase()).slice(0, -4) +
-          'Icon',
+          iconFileName
+            .replace(/^ico_/, '')
+            .replace(/(^([a-z])|-([0-9|a-z])|_([a-z]))/g, (a, b, g2, g3, g4) => (g2 || g3 || g4).toUpperCase())
+            .slice(0, -4) + 'Icon',
         svg: svg.data.replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">'),
         innerJsx: svg.data
-          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '<>')
-          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64">', '<>')
-          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 65">', '<>')
+          .replace(/<svg([^>]*)>(.*?)<\/svg>/, (a, b, c) => `<>${c}</>`)
           .replaceAll('fill-rule', 'fillRule')
-          .replaceAll('clip-rule', 'clipRule')
-          .replace('</svg>', '</>'),
+          .replaceAll('clip-rule', 'clipRule'),
         outerJsxWithClassNameAndStyle: svg.data
           .replace(
             '<svg ',
