@@ -28,7 +28,7 @@ export const ContentBlock: React.FC<ContentBlockProps> = ({
   block,
   search,
   whiteBackground = false,
-}: ContentBlockProps) => (
+}) => (
   <Banner
     className={cn('contentBlock', {
       className: className,
