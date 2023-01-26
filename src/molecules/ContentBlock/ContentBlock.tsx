@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 import { Banner, Heading, Button } from '../../index';
 
-export interface Block {
+interface Block {
   title: string;
   text: string;
   image: {
@@ -20,26 +20,32 @@ export interface ContentBlockProps extends Block {
   whiteBackground?: boolean;
 }
 
-export const ContentBlock: React.FC<ContentBlockProps> = ({ className, block, search, whiteBackground = false }) => (
+export const ContentBlock: React.FC<ContentBlockProps> = ({
+  className,
+  image,
+  orientation,
+  buttonText,
+  buttonLink,
+  title,
+  text,
+  search,
+  whiteBackground = false,
+}) => (
   <Banner
     className={cn('contentBlock', {
       className: className,
       'contentBlock--white': whiteBackground,
     })}
-    img={block.image.url}
-    imgAlt={block.image.title}
-    reverse={block.orientation}
+    img={image.url}
+    imgAlt={image.title}
+    reverse={orientation}
   >
     <Heading tag="h2" size="l">
-      {block.title}
+      {title}
     </Heading>
-    <div dangerouslySetInnerHTML={{ __html: block.text }} />
-    {block.buttonLink && block.buttonText && (
-      <Button
-        kind="normal"
-        onClick={(): void => window.location.assign(`${block.buttonLink}${search}`)}
-        text={block.buttonText}
-      />
+    <div dangerouslySetInnerHTML={{ __html: text }} />
+    {buttonLink && buttonText && (
+      <Button kind="normal" onClick={(): void => window.location.assign(`${buttonLink}${search}`)} text={buttonText} />
     )}
   </Banner>
 );
