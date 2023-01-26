@@ -20,28 +20,28 @@ export interface ContentBlockProps {
   block: Block;
   className?: string;
   search?: string;
-  isGrey?: boolean;
+  whiteBackground?: boolean;
 }
 
 export const ContentBlock: React.FC<ContentBlockProps> = ({
   className,
   block,
   search,
-  isGrey = true,
+  whiteBackground = false,
 }: ContentBlockProps) => (
   <Banner
     className={cn('contentBlock', {
       className: className,
+      'contentBlock--white': whiteBackground,
     })}
     img={block.image.url}
     imgAlt={block.image.title}
-    grey={isGrey}
     reverse={block.orientation}
   >
     <Heading tag="h2" size="l">
       {block.title}
     </Heading>
-    <div dangerouslySetInnerHTML={{ __html: block.text }} data-cy="content-block-text" />
+    <div dangerouslySetInnerHTML={{ __html: block.text }} />
     {block.buttonLink && block.buttonText && (
       <Button
         kind="normal"

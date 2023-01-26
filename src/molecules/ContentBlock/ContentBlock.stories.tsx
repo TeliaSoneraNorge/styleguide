@@ -21,7 +21,9 @@ const props = {
       '<p class="paragraph">Det lønner seg å legge til flere. Betal full pris for kun ett abonnement, resten får samme hastighet til <span style="font-family: TeliaSans-medium, Helvetica, Arial, sans-serif;">kun 399,-</span></p>',
     title: 'Spar penger med familie',
   },
-  isGrey: false,
+  whiteBackground: false,
 };
 
 export const DefaultContentBlock = () => <ContentBlock {...props} />;
+
+export const ContentBlockWhiteBg = () => <ContentBlock {...props} whiteBackground={true} />;
