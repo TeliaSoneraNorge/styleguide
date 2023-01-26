@@ -20,32 +20,26 @@ export interface ContentBlockProps extends Block {
   whiteBackground?: boolean;
 }
 
-export const ContentBlock: React.FC<ContentBlockProps> = ({
-  className,
-  image,
-  orientation,
-  buttonText,
-  buttonLink,
-  title,
-  text,
-  search,
-  whiteBackground = false,
-}) => (
+export const ContentBlock: React.FC<ContentBlockProps> = ({ className, search, whiteBackground = false, ...block }) => (
   <Banner
     className={cn('contentBlock', {
       className: className,
       'contentBlock--white': whiteBackground,
     })}
-    img={image.url}
-    imgAlt={image.title}
-    reverse={orientation}
+    img={block.image.url}
+    imgAlt={block.image.title}
+    reverse={block.orientation}
   >
     <Heading tag="h2" size="l">
-      {title}
+      {block.title}
     </Heading>
-    <div dangerouslySetInnerHTML={{ __html: text }} />
-    {buttonLink && buttonText && (
-      <Button kind="normal" onClick={(): void => window.location.assign(`${buttonLink}${search}`)} text={buttonText} />
+    <div dangerouslySetInnerHTML={{ __html: block.text }} />
+    {block.buttonLink && block.buttonText && (
+      <Button
+        kind="normal"
+        onClick={(): void => window.location.assign(`${block.buttonLink}${search}`)}
+        text={block.buttonText}
+      />
     )}
   </Banner>
 );
