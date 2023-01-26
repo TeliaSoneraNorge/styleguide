@@ -3,8 +3,6 @@ import cn from 'classnames';
 import { Banner, Heading, Button } from '../../index';
 
 export interface Block {
-  type?: 'ContentBlock';
-  __type?: 'ContentBlock';
   title: string;
   text: string;
   image: {
@@ -16,19 +14,13 @@ export interface Block {
   buttonText?: string;
 }
 
-export interface ContentBlockProps {
-  block: Block;
+export interface ContentBlockProps extends Block {
   className?: string;
   search?: string;
   whiteBackground?: boolean;
 }
 
-export const ContentBlock: React.FC<ContentBlockProps> = ({
-  className,
-  block,
-  search,
-  whiteBackground = false,
-}: ContentBlockProps) => (
+export const ContentBlock: React.FC<ContentBlockProps> = ({ className, block, search, whiteBackground = false }) => (
   <Banner
     className={cn('contentBlock', {
       className: className,
