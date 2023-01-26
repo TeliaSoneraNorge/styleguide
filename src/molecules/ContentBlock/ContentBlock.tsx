@@ -3,8 +3,6 @@ import cn from 'classnames';
 import { Banner, Heading, Button } from '../../index';
 
 export interface Block {
-  type?: 'ContentBlock';
-  __type?: 'ContentBlock';
   title: string;
   text: string;
   image: {
