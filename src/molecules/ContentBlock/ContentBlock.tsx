@@ -16,8 +16,7 @@ export interface Block {
   buttonText?: string;
 }
 
-export interface ContentBlockProps {
-  block: Block;
+export interface ContentBlockProps extends Block {
   className?: string;
   search?: string;
   whiteBackground?: boolean;
