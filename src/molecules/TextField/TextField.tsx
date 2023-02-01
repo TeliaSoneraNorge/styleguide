@@ -93,7 +93,7 @@ export interface TextFieldProps {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-
+  onPaste?: (event: React.ClipboardEvent<HTMLInputElement>) => void;
   /**
    * For compact TextFields vi use the label as a placeholder
    */
@@ -193,6 +193,7 @@ export const TextField = (props: TextFieldProps) => {
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
+            onPaste={props.onPaste}
             onKeyUp={props.onKeyUp}
             maxLength={props.maxlength}
             data-testid={props.dataTestId}
