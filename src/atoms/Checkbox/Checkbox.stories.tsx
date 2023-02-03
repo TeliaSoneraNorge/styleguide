@@ -47,6 +47,16 @@ export const Default = ({}) => {
       <br />
       <Checkbox checked={true} disabled={true} label={'Disabled checked'} onChange={() => undefined} />
       <br />
+
+      <Checkbox
+        className="my-class"
+        name="my-checkbox"
+        label="Label left positioned"
+        checked={checked}
+        onChange={(e) => setChecked(e?.target.checked ?? false)}
+        controls="aria-controls"
+        labelLeft
+      />
     </div>
   );
 };

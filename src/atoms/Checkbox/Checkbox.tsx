@@ -15,6 +15,11 @@ type CheckboxProps = {
    */
   tabIndex?: number;
   className?: string | any;
+  classNameForLabel?: string;
+  /**
+   * Left position the label
+   */
+  labelLeft?: boolean;
 } & (
   | {
       checked: boolean;
@@ -52,7 +57,7 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
         }}
         tabIndex={props.tabIndex ?? 0}
       />
-      <div className="telia-checkbox__container">
+      <div className={cs('telia-checkbox__container', { 'telia-checkbox__container--labelLeft': props.labelLeft })}>
         <div
           className={cs('telia-checkbox__checkbox-container', {
             'telia-checkbox__checkbox-container--checked': 'checked' in props && props.checked,
@@ -87,9 +92,13 @@ export const Checkbox: React.FC<CheckboxProps> = (props) => {
           </div>{' '}
         </div>
         <span
-          className={cs('telia-checkbox__label', {
-            'telia-checkbox__label--visually-hidden': props.hiddenLabel,
-          })}
+          className={cs(
+            'telia-checkbox__label',
+            {
+              'telia-checkbox__label--visually-hidden': props.hiddenLabel,
+            },
+            props.classNameForLabel
+          )}
         >
           {props.label}
         </span>
