@@ -11,6 +11,7 @@ export interface AlertLinks {
 
 export interface AlertProps {
   closeButtonText?: string;
+  className?: string;
   kind?: AlertKind;
   size?: AlertSize;
   onOpen?: (...args: any[]) => any;

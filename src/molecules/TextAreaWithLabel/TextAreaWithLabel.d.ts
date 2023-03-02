@@ -4,6 +4,7 @@ declare interface TextAreaWithLabelProps {
   labelText: string;
   hideLabel?: boolean;
   placeholder?: string;
+  value?: string;
   error?: string;
   disabled?: boolean;
 }
