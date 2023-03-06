@@ -4,17 +4,15 @@
 }
 
 .telia-tooltip {
-  visibility: hidden;
-  position: absolute;
+  position: fixed;
   padding: 0.25rem 0.5rem;
   width: max-content;
   text-align: center;
   border: none;
   border-radius: 0.25rem;
-  z-index: 1;
-  top: 120%;
   font-size: 14px;
   max-width: 200px;
+  margin-top: 0.5rem;
 
   &--dark {
     background-color: var(--grey-900);
@@ -34,38 +32,6 @@
     color: var(--core-purple-500);
   }
 
-  &--top,
-  &--top-start,
-  &--top-end {
-    top: auto;
-    bottom: 120%;
-  }
-
-  &--top-start {
-    right: 60%;
-  }
-
-  &--top-end {
-    left: 60%;
-  }
-
-  &--right {
-    left: 110%;
-    top: 20%;
-  }
-
-  &--bottom-start {
-    right: 60%;
-  }
-
-  &--bottom-end {
-    left: 60%;
-  }
-
-  &--left {
-    right: 110%;
-    top: 20%;
-  }
 }
 
 .telia-tooltip__arrow {
@@ -79,10 +45,6 @@
   border-right-color: transparent;
   border-bottom-color: transparent;
   border-top-color: transparent;
-}
-
-.telia-tooltip__container:hover .telia-tooltip {
-  visibility: visible;
 }
 
 .telia-tooltip--top > .telia-tooltip__arrow {
