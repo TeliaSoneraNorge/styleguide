@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-declare interface TextAreaWithLabelProps {
+declare interface TextAreaWithLabelProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   labelText: string;
   hideLabel?: boolean;
   placeholder?: string;
