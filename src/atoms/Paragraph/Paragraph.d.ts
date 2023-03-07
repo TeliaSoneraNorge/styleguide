@@ -2,7 +2,7 @@ import * as React from 'react';
 
 export type ParagraphKind = 'fineprint' | 'preamble';
 
-export interface ParagraphProps {
+export interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElement> {
   /**
    * One of 'fineprint' or 'preamble'.
    */
