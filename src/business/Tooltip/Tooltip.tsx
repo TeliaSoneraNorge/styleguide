@@ -1,5 +1,7 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
+import { createPortal } from 'react-dom';
 import cs from 'classnames';
+import { getTooltipRoot } from './getTooltipRoot';
 
 type color = 'dark' | 'grey' | 'purple';
 
@@ -23,16 +25,81 @@ type TooltipProps = {
   children?: React.ReactElement;
 };
 
-export const Tooltip: React.FC<TooltipProps> = (props: TooltipProps) => {
-  const { label, color = 'dark', position = 'bottom', children } = props;
+export const Tooltip: React.FC<TooltipProps> = ({
+  label,
+  color = 'dark',
+  position = 'bottom',
+  children,
+}: TooltipProps) => {
+  const [coords, setCoords] = useState({ left: 0, top: 0 });
+  const [showTooltip, setShowTooltip] = useState(false);
+  const tooltipPortalContainer = getTooltipRoot();
+
+  const getLeftCoordinate = (rect: DOMRect) => {
+    switch (position) {
+      case 'top-start':
+      case 'bottom-start':
+        return rect.left - rect.width / 2;
+      case 'top':
+      case 'bottom':
+        return rect.left;
+      case 'top-end':
+      case 'bottom-end':
+        return rect.left + rect.width / 2;
+      case 'left':
+        return rect.left - rect.width;
+      case 'right':
+        return rect.right + 10;
+      default:
+        return rect.left;
+    }
+  };
+
+  const getTopCoordinate = (rect: DOMRect) => {
+    switch (position) {
+      case 'top':
+      case 'top-start':
+      case 'top-end':
+        return rect.top - 50;
+      case 'bottom':
+      case 'bottom-start':
+      case 'bottom-end':
+        return rect.top + rect.height + 2;
+      case 'left':
+      case 'right':
+        return rect.top;
+      default:
+        return rect.top + rect.height;
+    }
+  };
+
+  const mouseEnter = (event: React.BaseSyntheticEvent) => {
+    const rect = event.target.getBoundingClientRect();
+    setCoords({
+      left: getLeftCoordinate(rect),
+      top: getTopCoordinate(rect),
+    });
+    setShowTooltip(true);
+  };
+
+  const mouseLeave = () => {
+    setShowTooltip(false);
+  };
 
   return (
-    <div className="telia-tooltip__container">
+    <div className="telia-tooltip__container" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
       {children}
-      <div className={cs('telia-tooltip', `telia-tooltip--${color}`, `telia-tooltip--${position}`)}>
-        <div className="telia-tooltip__arrow"></div>
-        <div>{label}</div>
-      </div>
+      {showTooltip &&
+        createPortal(
+          <div
+            className={cs('telia-tooltip', `telia-tooltip--${color}`, `telia-tooltip--${position}`)}
+            style={{ left: coords.left, top: coords.top }}
+          >
+            <div className="telia-tooltip__arrow"></div>
+            <div>{label}</div>
+          </div>,
+          tooltipPortalContainer
+        )}
     </div>
   );
 };
