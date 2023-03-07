@@ -1,8 +1,7 @@
-import React, { ReactNode, useState } from 'react';
+import React, { useState } from 'react';
 import { createPortal } from 'react-dom';
 import cs from 'classnames';
 import { getTooltipRoot } from './getTooltipRoot';
-import { Left } from '../../atoms/HorizontalRule/HorizontalRule.stories';
 
 type color = 'dark' | 'grey' | 'purple';
 
@@ -74,9 +73,8 @@ export const Tooltip: React.FC<TooltipProps> = ({
     }
   };
 
-  const mouseEnter = (event: React.MouseEvent) => {
-    const element = event.target as Element;
-    const rect = element.getBoundingClientRect();
+  const mouseEnter = (event: React.BaseSyntheticEvent) => {
+    const rect = event.target.getBoundingClientRect();
     setCoords({
       left: getLeftCoordinate(rect),
       top: getTopCoordinate(rect),
