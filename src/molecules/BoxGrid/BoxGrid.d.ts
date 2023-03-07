@@ -1,5 +1,9 @@
 import * as React from 'react';
 
-export const BoxGrid: React.FC;
+export interface BoxGrid {
+  className?: string;
+}
+
+export const BoxGrid: React.FC<BoxGrid>;
 
 export default BoxGrid;
