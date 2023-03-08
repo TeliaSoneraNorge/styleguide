@@ -57,7 +57,6 @@ const getPrice = (
 };
 
 export interface ShoppingCartItemProps {
-  shouldShowQuantity: boolean;
   isAllowedToDelete: boolean;
   cartItem: ICartItem;
   hasPaid?: boolean;
