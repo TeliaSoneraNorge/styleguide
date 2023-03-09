@@ -69,6 +69,17 @@ export const TooltipLongText = () => (
     >
       <Icon icon="info" className="text-corePurple500" />
     </Tooltip>
+
+    <Tooltip
+      label={
+        <div style={{ display: 'flex', flexDirection: 'column' }}>
+          <div>Klikk for søk i Min Bedrift</div>
+          <div># + K</div>
+        </div>
+      }
+    >
+      <Button kind="secondary-text" label="Søk i Min Bedrift" />
+    </Tooltip>
   </div>
 );
 
