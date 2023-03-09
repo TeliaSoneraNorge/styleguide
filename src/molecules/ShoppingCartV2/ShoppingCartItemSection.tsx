@@ -17,8 +17,6 @@ export interface ShoppingCartItemSectionProps {
 
 export interface ShoppingCartItemGroupProps {
   cartItem: ICartItem;
-  shouldShowQuantity?: boolean;
-  isAnyCartItemsQuantityModifiable?: boolean;
   isAllowedToDelete?: boolean;
   hasPaid?: boolean;
   onChangeQuantity: (item: any, quantity: number) => void;
@@ -53,7 +51,6 @@ const ShoppingCartSectionBody = ({ children }: { children: React.ReactNode }) =>
 
 const ShoppingCartItemGroup = ({
   cartItem,
-  shouldShowQuantity,
   isAllowedToDelete,
   hasPaid,
   onChangeQuantity,
@@ -65,7 +62,6 @@ const ShoppingCartItemGroup = ({
       <Fragment key={item.id}>
         <ShoppingCartItem
           cartItem={item}
-          shouldShowQuantity={!!shouldShowQuantity}
           isAllowedToDelete={!!isAllowedToDelete}
           hasPaid={hasPaid}
           onChangeQuantity={onChangeQuantity}
@@ -81,7 +77,6 @@ const ShoppingCartItemGroup = ({
 
 const ShoppingCartSection = ({
   cartItems,
-  isAnyCartItemsQuantityModifiable,
   isAllowedToDelete,
   hasPaid,
   onChangeQuantity,
@@ -97,7 +92,6 @@ const ShoppingCartSection = ({
             onChangeQuantity={onChangeQuantity}
             onRemoveItem={onRemoveItem}
             isAllowedToDelete={isAllowedToDelete}
-            shouldShowQuantity={isAnyCartItemsQuantityModifiable}
             hasPaid={hasPaid}
             formatPrice={formatPrice}
           />
