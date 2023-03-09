@@ -9,7 +9,7 @@ type TooltipProps = {
   /**
    * Text to be shown in tooltip
    */
-  label: string;
+  label: string | React.ReactNode;
   /**
    * Text to be shown in tooltip
    */
