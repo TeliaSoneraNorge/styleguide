@@ -146,6 +146,9 @@
     "sourceMap": false,
     "instrument": false
   },
+  "resolutions": {
+    "webpack": "5.66.0"
+  },
   "engines": {
     "node": "16.x",
     "npm": "8.x"
