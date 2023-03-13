@@ -1,6 +1,4 @@
 import React from 'react';
-import { color, select } from '@storybook/addon-knobs';
-
 import { Icon } from './Icon';
 import { HeartIcon, CheckMarkIcon } from './icons';
 import { IconDefinition, availableIcons } from './Icon.generated';
@@ -39,10 +37,10 @@ export const Default = () => (
     <div
       style={{
         transition: 'color 0.15s ease-in-out',
-        color: color('Color', '#222'),
+        color: '#222',
       }}
     >
-      <Icon icon={select('Sample icon', availableIcons, 'robot') as IconDefinition} />
+      <Icon icon="robot" />
     </div>
 
     <h2>All icons</h2>
@@ -54,7 +52,7 @@ export const Default = () => (
           style={{
             padding: '8px',
             display: 'inline-block',
-            color: color('Color for all icons', '#222'),
+            color: '#222',
           }}
           title={key}
         >

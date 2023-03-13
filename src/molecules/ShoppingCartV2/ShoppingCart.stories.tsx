@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 import { ShoppingCartV2 } from '../../index';
-import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
 import Button from '../../atoms/Button/Button';
 import { ICartItem } from './types';
@@ -39,7 +38,7 @@ export const Default = () => {
 
   const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
+  const containerSize = 'medium';
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
