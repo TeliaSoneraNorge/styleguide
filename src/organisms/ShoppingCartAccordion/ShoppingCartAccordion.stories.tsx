@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { number, select, boolean } from '@storybook/addon-knobs';
-import { jsxDecorator } from 'storybook-addon-jsx';
-
 import ShoppingCart from '../../molecules/ShoppingCart/ShoppingCart';
 import ShoppingCartAccordion from './ShoppingCartAccordion';
 import Paragraph from '../../atoms/Paragraph';
@@ -10,7 +7,6 @@ import Menu from '../../molecules/Menu';
 
 export default {
   title: 'Component library/Organisms/ShoppingCartAccordion',
-  decorators: [jsxDecorator],
 };
 
 const switchContent = [
@@ -564,7 +560,7 @@ const groupContent = [
   },
 ];
 
-function getCart(item) {
+function getCart(item: string) {
   switch (item) {
     case 'switch':
       return switchContent;
