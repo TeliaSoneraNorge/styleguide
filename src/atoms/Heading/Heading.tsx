@@ -44,6 +44,7 @@ export interface HeadingProps {
    * Additional custom CSS classes to provide to the component.
    */
   className?: string;
+  id?: string;
 
   /**
    * Custom styling set on the Heading component.
