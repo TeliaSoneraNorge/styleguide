@@ -10,7 +10,7 @@ export const DefaultGridView = () => {
   const products = [
     {
       campaign: {
-        text: 'kampanje',
+        text: 'Kampanje',
         backgroundColor: '#F2F2F2',
         color: '#303030',
       },
@@ -29,7 +29,7 @@ export const DefaultGridView = () => {
     },
     {
       campaign: {
-        text: 'tilbud',
+        text: 'Tilbud',
         backgroundColor: '#EDC8FF',
         color: '#3F005E',
       },
@@ -49,7 +49,7 @@ export const DefaultGridView = () => {
     },
     {
       campaign: {
-        text: 'nyhet',
+        text: 'Nyhet',
         backgroundColor: '#FFE39F',
         color: '#6B4100',
       },
