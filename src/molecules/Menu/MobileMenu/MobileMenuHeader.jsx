@@ -14,7 +14,7 @@ const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
   </button>
 );
 
-const MobileMenuHeaderItem = ({ index, onHeaderItemSelected, menuLink, isActive }) => (
+const MobileMenuHeaderItem = ({ index, onHeaderItemSelected, menuLink, isActive, LinkTemplate }) => (
   <li>
     <div
       onClick={() => onHeaderItemSelected(index)}
@@ -23,7 +23,9 @@ const MobileMenuHeaderItem = ({ index, onHeaderItemSelected, menuLink, isActive 
         'menu__mobile-heading-item--active': isActive,
       })}
     >
-      <span className="menu__mobile-heading-item-text">{menuLink.heading && menuLink.heading.text}</span>
+      <LinkTemplate className={classnames('menu__mobile-heading-item-link')} url={menuLink.heading.url}>
+        <span className="menu__mobile-heading-item-text">{menuLink.heading && menuLink.heading.text}</span>
+      </LinkTemplate>
     </div>
   </li>
 );
