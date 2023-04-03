@@ -3,13 +3,13 @@ import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import { CloseIcon } from '../../../atoms/Icon';
 
-const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel }) => (
+const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel, value = 'Lukk' }) => (
   <button
     className="menu__mobile-close-button"
     onClick={onClick}
     aria-label={mobileMenuCloseButtonLabel ? mobileMenuCloseButtonLabel : 'Lukk'}
   >
-    <span>Lukk</span>
+    <span>{value}</span>
     <CloseIcon className="menu__mobile-close-button-icon" />
   </button>
 );
@@ -35,6 +35,7 @@ const MobileMenuHeader = ({
   selectedIndex,
   onHeaderItemSelected,
   mobileMenuCloseButtonLabel,
+  closeButtonValue,
 }) => (
   <div className="menu__mobile-header">
     {menuLinks && (
@@ -51,7 +52,11 @@ const MobileMenuHeader = ({
         ))}
       </ul>
     )}
-    <MobileMenuCloseButton onClick={onMobileMenuToggle} mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel} />
+    <MobileMenuCloseButton
+      onClick={onMobileMenuToggle}
+      mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
+      value={closeButtonValue}
+    />
   </div>
 );
 
