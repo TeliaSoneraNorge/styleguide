@@ -1,7 +1,7 @@
 import React, { ReactNode } from 'react';
 
 type Props = {
-  children: ReactNode | ReactNode[];
+  children?: ReactNode | ReactNode[];
   className?: string;
 };
 export const ShadowBox: React.FC<Props>;
