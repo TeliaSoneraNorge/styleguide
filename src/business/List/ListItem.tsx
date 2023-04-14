@@ -26,6 +26,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
 
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
+
   const Tag = props.tag ? props.tag : 'li';
   const InnerTag = props.href ? 'a' : onClick ? 'button' : 'div';
 
