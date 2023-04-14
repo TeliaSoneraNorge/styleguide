@@ -6,7 +6,7 @@ import { preventDefault } from '../../utils';
 import MenuOverlay from './MenuOverlay';
 import MenuTopPanel from './MenuTopPanel';
 import MenuBar from './MenuBar';
-import Tabs from '../../molecules/Tabs/Tabs';
+import { Tab, TabPanel, Tabs } from '../Tabs';
 
 /**
  * Status: *Deprecated*
@@ -43,26 +43,21 @@ const PageMenu = ({
             noMargin={true}
             compact={true}
           >
-            {menuLinks.map(menuLink => (
-              <Tabs.Tab key={menuLink.heading} heading={menuLink.heading} />
+            {menuLinks.map((menuLink) => (
+              <Tab key={menuLink.heading} heading={menuLink.heading} />
             ))}
           </Tabs>
         </div>
 
         {menuLinks.map((menuLink, i) => (
-          <Tabs.TabPanel
-            key={menuLink.heading}
-            index={i}
-            uniqueId="separated-tabs"
-            isSelected={menuSelectedTabIndex === i}
-          >
+          <TabPanel key={menuLink.heading} index={i} uniqueId="separated-tabs" isSelected={menuSelectedTabIndex === i}>
             <div
               className={classNames('page-menu__content', { 'page-menu__content--empty': !menuLink.contentAboveItems })}
               dangerouslySetInnerHTML={{ __html: menuLink.contentAboveItems }}
             />
             <MenuBar ariaLabel="innlogget brukermeny" items={menuLink.loggedInLinks} isEmphasised />
             <MenuBar items={menuLink.loggedOutLinks} />
-          </Tabs.TabPanel>
+          </TabPanel>
         ))}
 
         {isLoggedIn && (

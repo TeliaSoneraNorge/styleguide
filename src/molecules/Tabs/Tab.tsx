@@ -6,7 +6,7 @@ type Props = {
   uniqueId?: string;
   selectedIndex?: number;
   heading?: string;
-  onSelect: (...args: any[]) => any;
+  onSelect?: (...args: any[]) => any;
 };
 export const Tab: React.FC<Props> = ({ index, uniqueId, selectedIndex, heading, onSelect }) => (
   <li
@@ -16,7 +16,12 @@ export const Tab: React.FC<Props> = ({ index, uniqueId, selectedIndex, heading, 
     aria-controls={`${uniqueId}-panel-${index}`}
     aria-selected={selectedIndex === index}
   >
-    <button onClick={() => onSelect(index)} className="link tabs__button">
+    <button
+      onClick={() => {
+        if (onSelect) onSelect(index);
+      }}
+      className="link tabs__button"
+    >
       {heading}
     </button>
   </li>

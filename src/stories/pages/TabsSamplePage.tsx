@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Heading, FunkyTabs, Tabs } from '../../index';
+import { Heading, FunkyTabs, Tabs, TabPanel, Tab } from '../../index';
 
 import img from '../sampleImages';
 
@@ -83,34 +83,34 @@ export function TabsSamplePage() {
           onSelect={(index) => setOtherTabSelectedIndex(index)}
           selectedIndex={otherTabSelectedIndex}
         >
-          <Tabs.TabPanel>
+          <TabPanel>
             <Heading level={3} text="Regular tab 1" />
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-          </Tabs.TabPanel>
-          <Tabs.TabPanel>
+          </TabPanel>
+          <TabPanel>
             <Heading level={3} text="Regular tab 2" />
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-          </Tabs.TabPanel>
-          <Tabs.TabPanel>
+          </TabPanel>
+          <TabPanel>
             <Heading level={3} text="Regular tab 3" />
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-          </Tabs.TabPanel>
-          <Tabs.TabPanel>
+          </TabPanel>
+          <TabPanel>
             <Heading level={3} text="Regular tab 4" />
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-          </Tabs.TabPanel>
+          </TabPanel>
         </Tabs>
       </section>
 
@@ -120,20 +120,20 @@ export function TabsSamplePage() {
           onSelect={(index) => setPricesTabSelectedIndex(index)}
           selectedIndex={pricesTabSelectedIndex}
         >
-          <Tabs.TabPanel>
+          <TabPanel>
             <Heading level={3} text="Priser i Bosnia-Hercegovina" />
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-          </Tabs.TabPanel>
-          <Tabs.TabPanel>
+          </TabPanel>
+          <TabPanel>
             <Heading level={3} text="Regular tab 2" />
             <p className="paragraph">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
               dolore magna aliqua.
             </p>
-          </Tabs.TabPanel>
+          </TabPanel>
         </Tabs>
       </section>
 
@@ -144,26 +144,26 @@ export function TabsSamplePage() {
           selectedIndex={separatedTabSelectedIndex}
           skipPanelRendering={true}
         >
-          <Tabs.Tab heading="Foo" />
-          <Tabs.Tab heading="Bar" />
+          <Tab heading="Foo" />
+          <Tab heading="Bar" />
         </Tabs>
 
         <p>Some other stuff here</p>
 
-        <Tabs.TabPanel index={0} uniqueId="separated-tabs" isSelected={separatedTabSelectedIndex === 0}>
+        <TabPanel index={0} uniqueId="separated-tabs" isSelected={separatedTabSelectedIndex === 0}>
           <Heading level={3} text="Foo" />
           <p className="paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
           </p>
-        </Tabs.TabPanel>
-        <Tabs.TabPanel index={1} uniqueId="separated-tabs" isSelected={separatedTabSelectedIndex === 1}>
+        </TabPanel>
+        <TabPanel index={1} uniqueId="separated-tabs" isSelected={separatedTabSelectedIndex === 1}>
           <Heading level={3} text="Bar" />
           <p className="paragraph">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua.
           </p>
-        </Tabs.TabPanel>
+        </TabPanel>
       </section>
     </div>
   );
