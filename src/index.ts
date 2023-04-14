@@ -136,7 +136,7 @@ export { default as DataBoostChart } from './molecules/DataBoostChart';
 export { default as PopUpLine } from './molecules/PopUpLine';
 export { default as ProductList } from './molecules/ProductList';
 export { default as References } from './molecules/References';
-export { default as Tabs } from './molecules/Tabs';
+export * from './molecules/Tabs';
 export { default as FunkyTabs } from './molecules/FunkyTabs';
 export { SpeechBubbleTabs } from './molecules/SpeechBubbleTabs';
 export { default as Video } from './molecules/Video';

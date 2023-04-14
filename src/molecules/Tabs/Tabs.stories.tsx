@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Tabs, Heading } from '../../index';
-import { TabPanel } from './TabPanel';
+import { Tabs, Heading, TabPanel } from '../../index';
 
 export default {
   title: 'Component library/Molecules/Tabs',
