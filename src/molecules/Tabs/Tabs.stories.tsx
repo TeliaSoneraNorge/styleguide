@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Tabs, Heading } from '../../index';
+import { TabPanel } from './TabPanel';
 
 export default {
   title: 'Component library/Molecules/Tabs',
@@ -18,22 +19,22 @@ export const Default = () => {
 
   return (
     <Tabs uniqueId="default-tabs" onSelect={onSelect} selectedIndex={selectedIndex}>
-      <Tabs.TabPanel heading="Test 1">
+      <TabPanel heading="Test 1">
         <Heading level={2} text="Tab 1" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Test 2">
+      </TabPanel>
+      <TabPanel heading="Test 2">
         <Heading level={2} text="Tab 2" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Test 3">
+      </TabPanel>
+      <TabPanel heading="Test 3">
         <Heading level={2} text="Tab 3" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Test 4">
+      </TabPanel>
+      <TabPanel heading="Test 4">
         <Heading level={2} text="Tab 4" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
+      </TabPanel>
     </Tabs>
   );
 };
@@ -47,22 +48,22 @@ export const FullBorder = () => {
 
   return (
     <Tabs fullBorder={true} uniqueId="default-tabs" onSelect={onSelect} selectedIndex={selectedIndex}>
-      <Tabs.TabPanel heading="Some title 1">
+      <TabPanel heading="Some title 1">
         <Heading level={2} text="Tab 1" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Another title 2">
+      </TabPanel>
+      <TabPanel heading="Another title 2">
         <Heading level={2} text="Tab 2" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Testing 3">
+      </TabPanel>
+      <TabPanel heading="Testing 3">
         <Heading level={2} text="Tab 3" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Last tab 4">
+      </TabPanel>
+      <TabPanel heading="Last tab 4">
         <Heading level={2} text="Tab 4" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
+      </TabPanel>
     </Tabs>
   );
 };
@@ -76,22 +77,22 @@ export const Compact = () => {
 
   return (
     <Tabs compact={true} uniqueId="default-tabs" onSelect={onSelect} selectedIndex={selectedIndex}>
-      <Tabs.TabPanel heading="Some title 1">
+      <TabPanel heading="Some title 1">
         <Heading level={2} text="Tab 1" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Another title 2">
+      </TabPanel>
+      <TabPanel heading="Another title 2">
         <Heading level={2} text="Tab 2" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Testing 3">
+      </TabPanel>
+      <TabPanel heading="Testing 3">
         <Heading level={2} text="Tab 3" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
-      <Tabs.TabPanel heading="Last tab 4">
+      </TabPanel>
+      <TabPanel heading="Last tab 4">
         <Heading level={2} text="Tab 4" />
         <p className="paragraph">{loremIpsum}</p>
-      </Tabs.TabPanel>
+      </TabPanel>
     </Tabs>
   );
 };
