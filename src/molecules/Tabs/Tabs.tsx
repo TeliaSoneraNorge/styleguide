@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { ReactElement } from 'react';
 import classnames from 'classnames';
 import PropTypes from 'prop-types';
 import { TabList } from './TabList';
 import { Tab } from './Tab';
 import { TabPanel } from './TabPanel';
 import { TabPanels } from './TabPanels';
+import { TabsChild } from './TabsChild';
 
 type Props = {
   uniqueId?: string;
@@ -14,6 +15,7 @@ type Props = {
   noMargin?: boolean;
   compact?: boolean;
   fullBorder?: boolean;
+  children: TabsChild;
 };
 
 export const Tabs: React.FC<Props> = ({
@@ -44,5 +46,3 @@ export const Tabs: React.FC<Props> = ({
     )}
   </div>
 );
-
-export default Tabs;
