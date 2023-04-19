@@ -102,8 +102,6 @@ export const InfoModal: React.FC<Props> = (props) => {
     };
   }, []);
 
-  console.log(props.closeButtonColor);
-
   return createPortal(
     <div
       ref={container}
