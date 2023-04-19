@@ -36,20 +36,11 @@ const MenuDropdown = (props) => {
         <div className="menu__dropdown--links">
           <Link
             type="bubble-link"
-            href={stageEnv ? `${stageEnv}/min-side/` : 'https://www.telia.no/min-side/'}
-            icon="mobile"
+            href={stageEnv ? `${stageEnv}/min-side/` : 'https://www.telia.no/minside/hjem'}
+            icon="home"
             inverted={dropdownMenu.channel !== 'mobil'}
           >
-            <span style={{ marginLeft: '.5rem' }}>Mobil</span>
-          </Link>
-
-          <Link
-            type="bubble-link"
-            href={stageEnv ? `${stageEnv}/minside/` : 'https://www.telia.no/minside/'}
-            icon="wireless"
-            inverted={dropdownMenu.channel !== 'tv-internet'}
-          >
-            <span style={{ marginLeft: '.5rem' }}>TV og internett</span>
+            <span style={{ marginLeft: '.5rem' }}>Hjem</span>
           </Link>
         </div>
       )}
