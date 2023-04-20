@@ -119,11 +119,11 @@ export const InfoModal: React.FC<Props> = (props) => {
       >
         <div className="telia-info-modal__close-button" onClick={() => props.setOpen(!open)}>
           <Button
-            style={{ color: props.closeButtonColor ? props.closeButtonColor : 'white' }}
+            style={{ color: props.closeButtonColor || 'white' }}
             iconPlacement="right"
             icon="close-circle"
             kind="link"
-            text={props.closeButtonText || ''}
+            text={props.closeButtonText || 'Lukk'}
           />
         </div>
         {props.children}
