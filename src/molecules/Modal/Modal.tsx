@@ -17,6 +17,8 @@ interface Props {
    */
   ariaDescribedBy?: string;
   open: boolean;
+  closeButtonColor?: string;
+  closeButtonText?: string;
   setOpen: (open: boolean) => void;
   size?: 'small' | 'medium' | 'large' | 'fullscreen';
   className?: string;
@@ -116,7 +118,13 @@ export const InfoModal: React.FC<Props> = (props) => {
         aria-describedby={props.ariaDescribedBy ?? undefined}
       >
         <div className="telia-info-modal__close-button" onClick={() => props.setOpen(!open)}>
-          <Button iconPlacement="right" icon="close-circle" kind="link" text="Lukk" />
+          <Button
+            style={{ color: props.closeButtonColor || 'white' }}
+            iconPlacement="right"
+            icon="close-circle"
+            kind="link"
+            text={props.closeButtonText || 'Lukk'}
+          />
         </div>
         {props.children}
       </div>
