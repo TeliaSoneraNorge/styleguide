@@ -15,6 +15,7 @@ const Alert = ({
   kind = 'positive',
   minimizable,
   size,
+  iconSize = 'small',
   bodyHtml,
   closeButtonText = 'LUKK',
   links = [],
@@ -60,9 +61,9 @@ const Alert = ({
               icon={positiveAlert ? 'check-mark-circle' : 'info'}
               style={{
                 color: positiveAlert ? colors.green700 : colors.black,
-                width: '2.5rem',
-                height: '2.5rem',
-                marginRight: '1rem',
+                width: iconSize === 'small' ? '1.5rem' : '2.5rem',
+                height: iconSize === 'small' ? '1.5rem' : '2.5rem',
+                marginRight: iconSize === 'small' ? '0.5rem' : '1rem',
               }}
             />
           </div>

@@ -66,6 +66,21 @@ export const Warning = () => (
   </Alert>
 );
 
+export const WithSmallIcon = () => (
+  <Alert kind="info" iconSize="small">
+    <p>This is a info alert. Lorem ipsum dolor sit amet consectetur.</p>
+  </Alert>
+);
+
+export const WithSmallIconAndLongText = () => (
+  <Alert kind="info" iconSize="small">
+    <p>
+      This is a info alert. Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet consectetur, Lorem ipsum
+      dolor sit amet consectetur, Lorem ipsum dolor sit amet consectetur
+    </p>
+  </Alert>
+);
+
 export const WithLinks = () => {
   const links = [
     { text: 'This link might be of interest', url: '#' },
