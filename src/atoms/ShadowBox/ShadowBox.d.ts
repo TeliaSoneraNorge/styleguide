@@ -1,5 +1,9 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 
-export const ShadowBox: React.FC;
+type Props = {
+  children?: ReactNode | ReactNode[];
+  className?: string;
+};
+export const ShadowBox: React.FC<Props>;
 
 export default ShadowBox;

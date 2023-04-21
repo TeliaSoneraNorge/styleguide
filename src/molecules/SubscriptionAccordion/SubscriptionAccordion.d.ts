@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 interface Ribbon {
   backgroundColor: string;
   color: string;
@@ -39,6 +39,7 @@ export interface SubscriptionAccordionProps {
   className?: string;
   onOpen?: (...args: any[]) => any;
   description?: any;
+  children?: ReactNode | ReactNode[];
 }
 
 declare const SubscriptionAccordion: React.FC<SubscriptionAccordionProps>;
