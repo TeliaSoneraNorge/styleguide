@@ -12,6 +12,7 @@ import FocusTrap, { focusableElementsSelector } from '../../atoms/FocusTrap/Focu
  **/
 const Menu = ({
   menuLinks,
+  buttonValues,
   className,
   logoImageDesktopPath,
   logoImageInverseDesktopPath,
@@ -130,6 +131,7 @@ const Menu = ({
         onMenuItemSelected={toggleMobileMenu}
         isLoading={isLoading}
         mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
+        buttonValues={{ frontPage: buttonValues?.frontPage, closeButton: buttonValues?.closeButton }}
       />
     </Component>
   );
@@ -166,6 +168,7 @@ const Menu = ({
         onCartClick={onCartClick}
         numberOfItemsInCart={numberOfItemsInCart}
         daasLink={daasLink}
+        buttonValues={{ login: buttonValues?.login, myPage: buttonValues?.myPage }}
       />
       {!onlyLogo && mobileMenuOpen && renderMobileMenu(FocusTrap, { as: 'div' })}
     </div>
@@ -187,6 +190,12 @@ Menu.propTypes = {
       ),
     })
   ),
+  buttonValues: PropTypes.shape({
+    login: PropTypes.string,
+    myPage: PropTypes.string,
+    frontPage: PropTypes.string,
+    closeButton: PropTypes.string,
+  }),
   logoImageDesktopPath: PropTypes.string,
   logoImageInverseDesktopPath: PropTypes.string,
   logoTitle: PropTypes.string,

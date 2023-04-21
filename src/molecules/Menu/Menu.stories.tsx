@@ -371,3 +371,30 @@ export const SingleTopLevelMenu = () => {
     />
   );
 };
+
+export const LoginButtonText = () => {
+  const menuLinks = [
+    {
+      heading: { text: '', url: '#' },
+      links: [],
+    },
+  ];
+
+  const buttonValues = {
+    login: 'Login button text',
+    myPage: 'My page button text',
+    frontPage: 'Front page button text',
+    closeButton: 'Close button text',
+  };
+
+  return (
+    <Menu
+      loginUrl="#Menu"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      buttonValues={buttonValues}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+    />
+  );
+};

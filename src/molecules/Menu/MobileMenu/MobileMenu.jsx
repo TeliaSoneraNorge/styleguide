@@ -9,12 +9,12 @@ import HorizontalRule from '../../../atoms/HorizontalRule';
 
 const KEY_ESC = 27;
 
-const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate }) => (
+const MobileMenuItemSection = ({ menuLink, onItemSelected, LinkTemplate, value = 'Forside' }) => (
   <section id={`${menuLink.heading && menuLink.heading.text}-mobile-panel`} className="menu__mobile-panel">
     {menuLink.heading && menuLink.heading.url && (
       <>
         <LinkTemplate onClick={onItemSelected} className="menu__mobile-item link" url={menuLink.heading.url}>
-          <span className="link__content">Forside</span>
+          <span className="link__content">{value}</span>
         </LinkTemplate>
         <HorizontalRule />
       </>
@@ -53,6 +53,7 @@ const MobileMenu = ({
   onMenuItemSelected,
   isLoading,
   mobileMenuCloseButtonLabel,
+  buttonValues,
 }) => {
   const [selectedHeaderIndex, setSelectedHeaderIndex] = useState(0);
 
@@ -76,12 +77,14 @@ const MobileMenu = ({
           selectedIndex={selectedHeaderIndex}
           onHeaderItemSelected={(index) => setSelectedHeaderIndex(index)}
           mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
+          closeButtonValue={buttonValues?.closeButton}
         />
         {isLoading && <Spinner />}
         {menuLinks && (
           <MobileMenuItemSection
             menuLink={menuLinks[selectedHeaderIndex]}
             onItemSelected={onMenuItemSelected}
+            value={buttonValues?.frontPage}
             LinkTemplate={LinkTemplate}
           />
         )}
@@ -108,6 +111,10 @@ MobileMenu.propTypes = {
       ),
     })
   ),
+  buttonValues: PropTypes.shape({
+    frontPage: PropTypes.string,
+    closeButton: PropTypes.string,
+  }),
   onMenuItemSelected: PropTypes.func,
   isLoading: PropTypes.bool,
   mobileMenuCloseButtonLabel: PropTypes.string,
