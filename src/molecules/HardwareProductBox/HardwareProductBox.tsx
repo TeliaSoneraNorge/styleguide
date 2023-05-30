@@ -21,6 +21,7 @@ interface Highlight {
   text?: string;
   icon?: IconDefinition;
   color?: string;
+  textColor?: string;
 }
 
 export interface HardwareProductProps {
@@ -58,7 +59,10 @@ const HardwareProductBox = ({
     ) : null}
     <div className="hardware-product-box__upper-container">
       {highlight && !isEmpty(highlight) && (
-        <div style={{ backgroundColor: highlight.color }} className="hardware-product-box__highlight-container">
+        <div
+          style={{ backgroundColor: highlight.color, color: highlight.textColor }}
+          className="hardware-product-box__highlight-container"
+        >
           <div className="hardware-product-box__highlight-container--wrapper">
             {highlight.icon && (
               <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
