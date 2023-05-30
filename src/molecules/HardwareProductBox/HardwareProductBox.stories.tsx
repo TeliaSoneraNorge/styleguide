@@ -179,17 +179,20 @@ const highlights = [
     heading: 'Airbuds Pro',
     color: 'orange',
     icon: 'gift',
+    textColor: 'red',
   },
   {
     heading: 'Airbuds Pro',
     text: 'Verdi 2.500,-',
     color: 'orange',
+    textColor: 'black',
   },
   {
     heading: 'Airbuds Pro',
     text: 'Verdi 2.500,-',
     color: 'orange',
     icon: 'gift',
+    textColor: 'black',
   },
 ];
 
