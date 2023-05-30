@@ -17,10 +17,10 @@ interface HardwareProductCampaign {
 }
 
 interface Highlight {
-  heading: string;
-  text: string;
-  icon: IconDefinition;
-  color: string;
+  heading?: string;
+  text?: string;
+  icon?: IconDefinition;
+  color?: string;
 }
 
 export interface HardwareProductProps {
@@ -60,9 +60,15 @@ const HardwareProductBox = ({
       {highlight && !isEmpty(highlight) && (
         <div style={{ backgroundColor: highlight.color }} className="hardware-product-box__highlight-container">
           <div className="hardware-product-box__highlight-container--wrapper">
-            <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
-            <span className="hardware-product-box__highlight-container--heading">{highlight.heading}</span>
-            <span className="hardware-product-box__highlight-container--text">{highlight.text}</span>
+            {highlight.icon && (
+              <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
+            )}
+            {highlight.heading && (
+              <span className="hardware-product-box__highlight-container--heading">{highlight.heading}</span>
+            )}
+            {highlight.text && (
+              <span className="hardware-product-box__highlight-container--text">{highlight.text}</span>
+            )}
           </div>
         </div>
       )}
