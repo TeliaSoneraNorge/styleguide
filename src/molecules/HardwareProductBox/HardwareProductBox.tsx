@@ -60,7 +60,7 @@ const HardwareProductBox = ({
     <div className="hardware-product-box__upper-container">
       {highlight && !isEmpty(highlight) && (
         <div
-          style={{ backgroundColor: highlight.color, color: highlight.textColor || '#fffff' }}
+          style={{ backgroundColor: highlight.color, color: highlight.textColor || '#fff' }}
           className="hardware-product-box__highlight-container"
         >
           <div className="hardware-product-box__highlight-container--wrapper">
