@@ -17,7 +17,12 @@ const MobileMenuCloseButton = ({ onClick, mobileMenuCloseButtonLabel, value = 'L
 const MobileMenuHeaderItem = ({ index, onHeaderItemSelected, menuLink, isActive, LinkTemplate }) => (
   <li>
     <div
-      onClick={() => onHeaderItemSelected(index)}
+      onClick={(e) => {
+        if (!isActive) {
+          e.preventDefault();
+        }
+        onHeaderItemSelected(index);
+      }}
       tabIndex="0"
       className={classnames('menu__mobile-heading-item', {
         'menu__mobile-heading-item--active': isActive,
