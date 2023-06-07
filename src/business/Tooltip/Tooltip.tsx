@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
 import cs from 'classnames';
 import { getTooltipRoot } from './getTooltipRoot';
@@ -32,52 +32,66 @@ export const Tooltip: React.FC<TooltipProps> = ({
   children,
 }: TooltipProps) => {
   const [coords, setCoords] = useState({ left: 0, top: 0 });
+  const [transformOrigin, setTransformOrigin] = useState('top left');
+  const [translate, setTranslate] = useState({ x: 0, y: 0 });
   const [showTooltip, setShowTooltip] = useState(false);
   const tooltipPortalContainer = getTooltipRoot();
 
-  const getLeftCoordinate = (rect: DOMRect) => {
+  const getTransformOrigin = () => {
     switch (position) {
       case 'top-start':
       case 'bottom-start':
-        return rect.left - rect.width / 2;
-      case 'top':
-      case 'bottom':
-        return rect.left;
+        return 'top right';
       case 'top-end':
-      case 'bottom-end':
-        return rect.left + rect.width / 2;
-      case 'left':
-        return rect.left - rect.width;
-      case 'right':
-        return rect.right + 10;
+        return 'bottom left';
       default:
-        return rect.left;
+        return 'top left';
     }
   };
 
-  const getTopCoordinate = (rect: DOMRect) => {
+  const getTranslateX = (rect: DOMRect) => {
     switch (position) {
+      case 'right':
+        return rect.width + 10;
+      case 'bottom-start':
+      case 'left':
+        return -rect.width;
+      case 'top-end':
+      case 'bottom-end':
+        return rect.width / 2;
+      case 'top-start':
+        return -(rect.width / 2);
+      default:
+        return 0;
+    }
+  };
+
+  const getTranslateY = (rect: DOMRect) => {
+    switch (position) {
+      case 'bottom':
+      case 'bottom-end':
+      case 'bottom-start':
+        return rect.height + 2;
+      case 'top-end':
+        return -rect.height;
       case 'top':
       case 'top-start':
-      case 'top-end':
-        return rect.top - 50;
-      case 'bottom':
-      case 'bottom-start':
-      case 'bottom-end':
-        return rect.top + rect.height + 2;
-      case 'left':
-      case 'right':
-        return rect.top;
+        return -(rect.height + 2);
       default:
-        return rect.top + rect.height;
+        return 0;
     }
   };
 
   const mouseEnter = (event: React.BaseSyntheticEvent) => {
     const rect = event.target.getBoundingClientRect();
     setCoords({
-      left: getLeftCoordinate(rect),
-      top: getTopCoordinate(rect),
+      left: rect.left,
+      top: rect.top,
+    });
+    setTransformOrigin(getTransformOrigin());
+    setTranslate({
+      x: getTranslateX(rect),
+      y: getTranslateY(rect),
     });
     setShowTooltip(true);
   };
@@ -93,7 +107,12 @@ export const Tooltip: React.FC<TooltipProps> = ({
         createPortal(
           <div
             className={cs('telia-tooltip', `telia-tooltip--${color}`, `telia-tooltip--${position}`)}
-            style={{ left: coords.left, top: coords.top }}
+            style={{
+              left: coords.left,
+              top: coords.top,
+              transformOrigin: transformOrigin,
+              transform: `translate(${translate.x}px, ${translate.y}px)`,
+            }}
           >
             <div className="telia-tooltip__arrow"></div>
             <div>{label}</div>

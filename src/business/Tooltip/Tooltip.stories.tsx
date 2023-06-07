@@ -100,7 +100,7 @@ export const TooltipPositions = () => (
     <br />
     <h4>Bottom-start tooltip</h4>
     <span style={{ paddingLeft: '150px' }}></span>
-    <Tooltip label="This is a tooltip" position="bottom-start">
+    <Tooltip label="This is a tooltip with super very long text because that may be a use case" position="bottom-start">
       <Button label="hover me" />
     </Tooltip>
     <h4>Bottom-end tooltip</h4>
@@ -129,7 +129,7 @@ export const TooltipPositions = () => (
     </Tooltip>
     <br />
     <h4>Top-end tooltip</h4>
-    <Tooltip label="This is a tooltip" position="top-end">
+    <Tooltip label="This is a tooltip with super very long text because that may be a use case" position="top-end">
       <Button label="hover me" />
     </Tooltip>
     <br />
