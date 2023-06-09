@@ -27,6 +27,7 @@ interface Props {
    */
   returnFocusTo?: HTMLElement | null;
   children?: React.ReactNode;
+  modalPortal?: HTMLDivElement;
 }
 export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();
@@ -129,6 +130,6 @@ export const InfoModal: React.FC<Props> = (props) => {
         {props.children}
       </div>
     </div>,
-    modalPortal
+    props.modalPortal ? props.modalPortal : modalPortal
   );
 };
