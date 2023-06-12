@@ -3,6 +3,7 @@
   width: max-content;
 
   .telia-tooltip {
+    z-index: 1;
     position: absolute;
     padding: 0.25rem 0.5rem;
     width: max-content;
@@ -54,9 +55,10 @@
 
     &--top {
       bottom: 120%;
-      left: 0;
       right: 0;
       margin: 0 auto;
+      left: 50%;
+      transform: translate(-50%, 0%);
       .telia-tooltip__arrow {
         left: 50%;
         top: 100%;
@@ -82,8 +84,11 @@
       height: max-content;
       .telia-tooltip__arrow {
         border-left-color: inherit;
-        top: 6px;
         right: -16px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        height: max-content;
       }
     }
 
@@ -95,8 +100,11 @@
       height: max-content;
       .telia-tooltip__arrow {
         border-right-color: inherit;
-        top: 6px;
         right: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        height: max-content;
       }
     }
 
@@ -112,9 +120,10 @@
 
     &--bottom {
       top: 120%;
-      left: 0;
       right: 0;
+      left: 50%;
       margin: 0 auto;
+      transform: translate(-50%, 0%);
       .telia-tooltip__arrow {
         left: 50%;
         bottom: 100%;
