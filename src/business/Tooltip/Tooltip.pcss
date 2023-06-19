@@ -3,6 +3,7 @@
   width: max-content;
 
   .telia-tooltip {
+    visibility: hidden;
     z-index: 1;
     position: absolute;
     padding: 0.25rem 0.5rem;
@@ -141,4 +142,8 @@
       }
     }
   }
+}
+
+.telia-tooltip__container:hover .telia-tooltip {
+  visibility: visible;
 }

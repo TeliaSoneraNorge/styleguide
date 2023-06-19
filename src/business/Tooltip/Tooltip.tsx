@@ -44,25 +44,12 @@ export const Tooltip: React.FC<TooltipProps> = ({
   position = TooltipPosition.Bottom,
   children,
 }: TooltipProps) => {
-  const [showTooltip, setShowTooltip] = useState(false);
-
-  const mouseEnter = () => {
-    setShowTooltip(true);
-  };
-
-  const mouseLeave = () => {
-    setShowTooltip(false);
-  };
-
   return (
-    <div className="telia-tooltip__container" onMouseEnter={mouseEnter} onMouseLeave={mouseLeave}>
-      {showTooltip && (
-        <div className={cs('telia-tooltip', `telia-tooltip--${color}`, `telia-tooltip--${position}`)}>
-          <div className="telia-tooltip__arrow"></div>
-          <div>{label}</div>
-        </div>
-      )}
-
+    <div className="telia-tooltip__container">
+      <div className={cs('telia-tooltip', `telia-tooltip--${color}`, `telia-tooltip--${position}`)}>
+        <div className="telia-tooltip__arrow"></div>
+        <div>{label}</div>
+      </div>
       {children}
     </div>
   );
