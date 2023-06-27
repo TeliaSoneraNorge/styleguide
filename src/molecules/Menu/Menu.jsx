@@ -29,6 +29,7 @@ const Menu = ({
   lockBodyOnMenuOpen,
   isLoggedIn,
   loginUrl,
+  logoutUrl,
   myPageUrl,
   isLoading,
   onlyLogo,
@@ -155,6 +156,7 @@ const Menu = ({
         openedSubmenuIndex={openedSubmenuIndex}
         activeIndex={activeLinkIndex}
         loginUrl={loginUrl}
+        logoutUrl={logoutUrl}
         onMobileMenuToggle={toggleMobileMenu}
         onSearchSubmit={onSearchSubmit}
         searchLabel={searchLabel}

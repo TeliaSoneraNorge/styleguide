@@ -118,6 +118,7 @@ const MenuContent = ({
   searchButtonLabel,
   searchButtonAbortText,
   isLoggedIn,
+  logoutUrl,
   loginUrl,
   myPageUrl,
   isLoading,
@@ -197,7 +198,7 @@ const MenuContent = ({
       </div>
 
       {menuDropdownIsVisible && (
-        <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} daasLink={daasLink} />
+        <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} daasLink={daasLink} logoutUrl={logoutUrl} />
       )}
     </div>
   );
