@@ -398,3 +398,51 @@ export const LoginButtonText = () => {
     />
   );
 };
+
+export const LoggedInWithLogoutUrl = () => {
+  const menuLinks = [
+    {
+      heading: { text: 'Privat', url: '#' },
+      links: [
+        {
+          text: 'Nettbutikk',
+          subLinks: [
+            { text: 'Mobiltelefoner', url: '#' },
+            { text: 'Smartklokker', url: '#' },
+          ],
+        },
+        { text: 'Mobilabonnement', url: '#' },
+        { text: 'Mobilt bredbånd', url: '#' },
+      ],
+    },
+    {
+      heading: { text: 'Bedrift', url: '#' },
+      links: [
+        { text: 'Tjenester', url: '#' },
+        { text: 'Digitalisering', url: '#' },
+      ],
+    },
+  ];
+
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoutUrl="https://stage.telia.no/test/logout/?q=1"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      activeIndex={0}
+      menuLinks={menuLinks}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      isLoggedIn={true}
+      myPageUrl="#"
+      dropdownMenu={{
+        type: 'B2C',
+        channel: 'mobil',
+        visible: true,
+      }}
+    />
+  );
+};
