@@ -4,7 +4,7 @@ import cs from 'classnames';
 import { Icon } from '../Icon';
 
 type CheckboxProps = {
-  label: string;
+  label: string | React.ReactNode;
   hiddenLabel?: boolean;
   id?: string;
   name?: string;
