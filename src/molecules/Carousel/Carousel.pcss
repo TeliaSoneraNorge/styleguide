@@ -1,0 +1,104 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0 auto;
+
+    .main-section {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        margin: 1rem;
+
+        .slides {
+            overflow: hidden;
+            display: flex;
+            transition: transform 0.5s ease;
+
+            .slide {
+                opacity: 0;
+                min-width: 100%;
+                display: flex;
+                justify-content: center;
+
+                .slide-items {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-around;
+                    min-width: 100%;
+                    max-width: 1244px;
+                    margin: 1rem;
+
+                    &--center {
+                        justify-content: space-evenly;
+                    }
+
+                }
+                
+                &--active {
+                    opacity: 1;
+                    transform: translateX(0); /* Move the active slide to the center */
+                }
+
+                &:last-child {
+                    .slide {
+                        margin: 1rem;
+                    }
+                }
+            }
+        }
+
+        .arrow-container {
+            width: 40px;
+            height: 40px;
+            color: #fff;
+            background-color: #DEDBDB;
+            border-radius: 50%;
+            margin: auto 12px;
+
+            .Icon {
+                width: 40px;
+                height: 40px;
+                padding: 4px;
+
+                &:focus, &:hover, &:active {
+                    cursor: pointer;
+                    background-color: #6E6E6E;
+                    border-radius: 50%;
+                    opacity: 50%;
+                }
+            }
+        }
+    }
+
+    .pages-indicator {
+        display: flex;
+        flex-direction: row;
+        margin: 0 auto;
+
+        .page-bubble {
+            display: inline-block;
+            height: 14px;
+            width: 14px;
+            margin: 11px;
+            background-color: #DEDBDB;
+            border-radius: 50%;
+            opacity: 50%;
+
+            &:focus, &:hover, &:active {
+                cursor: pointer;
+                opacity: 85%;
+            }
+
+            &--current {
+                background-color: #6E6E6E;
+                
+                &:focus, &:hover, &:active {
+                    cursor: default;
+                    opacity: 50%;
+                }
+            }
+
+        }
+    }
+}
