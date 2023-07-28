@@ -102,7 +102,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     );
   };
 
-  if (!carousel) return;
+  if (!carousel) return null;
 
   return (
     <section className="carousel">
