@@ -12,10 +12,14 @@ interface CarouselProps {
 
 export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   type CarouselType = { [key in number]: HardwareProductProps[] } | null;
+  const MIN_SWIPE_THRESHOLD = 100;
+
   const [carousel, setCarousel] = useState<CarouselType>(null);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
   const [itemsPerPage, setItemsPerPage] = useState(1);
+  const [touchStartX, setTouchStartX] = useState(0);
+  const [touchMoveX, setTouchMoveX] = useState(0);
 
   const resolveCarouselSize = useCallback(() => {
     const width = window.innerWidth;
@@ -63,14 +67,30 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     };
   }, [updateCarouselSize]);
 
-  const handleArrowClick = (left: boolean) => {
-    const nextPage = left ? currentPage - 1 : currentPage + 1;
-    if (nextPage === 0) {
-      setCurrentPage(totalPages);
-    } else if (nextPage > totalPages) {
-      setCurrentPage(1);
-    } else {
-      setCurrentPage(nextPage);
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    setTouchMoveX(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    const touchDistance = touchMoveX - touchStartX;
+    if (Math.abs(touchDistance) < MIN_SWIPE_THRESHOLD) {
+      return;
+    } else if (touchDistance < MIN_SWIPE_THRESHOLD) {
+      handlePageChange(false);
+    } else if (touchDistance > MIN_SWIPE_THRESHOLD) {
+      handlePageChange(true);
+    }
+    setTouchStartX(0);
+    setTouchMoveX(0);
+  };
+
+  const handlePageChange = (left: boolean) => {
+    if (!(left && currentPage === 1) && !(!left && currentPage === totalPages)) {
+      setCurrentPage(left ? currentPage - 1 : currentPage + 1);
     }
   };
 
@@ -90,6 +110,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
       <div className="pages-indicator">
         {pagesArray.map((pageNumber) => (
           <span
+            key={pageNumber}
             className={cn('page-bubble', {
               'page-bubble--current': pageNumber === currentPage,
             })}
@@ -105,26 +126,31 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   if (!carousel) return null;
 
   return (
-    <section className="carousel">
+    <section className="telia-carousel">
       <div className="main-section">
-        {totalPages > 1 && (
+        {currentPage > 1 && (
           <div
             className="arrow-container"
             onClick={() => {
-              handleArrowClick(true);
+              handlePageChange(true);
             }}
           >
             <Icon icon="arrow-small-left" />
           </div>
         )}
-        <div className="slides">
+        <div
+          className="slides"
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+        >
           {Object.values(carousel)?.map((currentCarouselPage, index) => (
             <div
               key={index}
               className={cn('slide', { 'slide--active': index + 1 === currentPage })}
               style={{
                 opacity: index + 1 === currentPage ? 1 : 0,
-                transform: `translateX(-${(currentPage - 1) * 100}%)`,
+                transform: `translateX(calc(-${(currentPage - 1) * 100}% + ${touchMoveX}px))`,
                 transition: 'opacity 0.5s ease-in-out, transform 0.5s ease-in-out',
               }}
             >
@@ -140,11 +166,11 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
             </div>
           ))}
         </div>
-        {totalPages > 1 && (
+        {currentPage < totalPages && (
           <div
             className="arrow-container"
             onClick={() => {
-              handleArrowClick(false);
+              handlePageChange(false);
             }}
           >
             <Icon icon="arrow-small-right" />

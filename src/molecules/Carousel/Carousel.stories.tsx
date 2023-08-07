@@ -6,7 +6,8 @@ export default {
   component: Carousel,
 };
 
-const imageUrl = 'https://media.wired.com/photos/598e35994ab8482c0d6946e0/master/w_2560%2Cc_limit/phonepicutres-TA.jpg';
+const imageUrl =
+  'https://images.ctfassets.net/iz15t1lxx44v/2bAmprX6JHTyR8nWQol8ld/b603e6091b1ec808428bdb79a8c3cc02/iPhone_13_Blue_Pure_Back_iPhone_13_Blue_Pure_Front_2-up_Screen__USEN.png';
 
 const carouselItems = [
   {
