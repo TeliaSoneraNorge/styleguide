@@ -128,16 +128,14 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   return (
     <section className="telia-carousel">
       <div className="main-section">
-        {currentPage > 1 && (
-          <div
-            className="arrow-container"
-            onClick={() => {
-              handlePageChange(true);
-            }}
-          >
-            <Icon icon="arrow-small-left" />
-          </div>
-        )}
+        <div
+          className={cn('arrow-container', { 'arrow-container--hidden': currentPage === 1 })}
+          onClick={() => {
+            handlePageChange(true);
+          }}
+        >
+          <Icon icon="arrow-small-left" />
+        </div>
         <div
           className="slides"
           onTouchStart={handleTouchStart}
@@ -166,16 +164,14 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
             </div>
           ))}
         </div>
-        {currentPage < totalPages && (
-          <div
-            className="arrow-container"
-            onClick={() => {
-              handlePageChange(false);
-            }}
-          >
-            <Icon icon="arrow-small-right" />
-          </div>
-        )}
+        <div
+          className={cn('arrow-container', { 'arrow-container--hidden': currentPage === totalPages })}
+          onClick={() => {
+            handlePageChange(false);
+          }}
+        >
+          <Icon icon="arrow-small-right" />
+        </div>
       </div>
       {renderPagesIndicator()}
     </section>
