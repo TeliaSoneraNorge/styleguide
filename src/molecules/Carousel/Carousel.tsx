@@ -6,12 +6,19 @@ import HardwareProductBox from '../HardwareProductBox';
 import { Icon } from '../../atoms/Icon';
 import { HardwareProductProps } from '../HardwareProductBox/HardwareProductBox';
 
+type CarouselItem = HardwareProductProps & {
+  price?: number;
+  priceDescription?: string;
+  priceDisclaimerLine1?: string;
+  priceDisclaimerLine2?: string;
+};
+
 interface CarouselProps {
-  items: HardwareProductProps[];
+  items: CarouselItem[];
 }
 
 export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
-  type CarouselType = { [key in number]: HardwareProductProps[] } | null;
+  type CarouselType = { [key in number]: CarouselItem[] } | null;
   const MIN_SWIPE_THRESHOLD = 100;
 
   const [carousel, setCarousel] = useState<CarouselType>(null);
@@ -158,7 +165,29 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
                 })}
               >
                 {currentCarouselPage.map((item, index) => (
-                  <HardwareProductBox key={item.name + item.brand + index} {...item} />
+                  <HardwareProductBox key={item.name + item.brand + index} {...item}>
+                    <div>
+                      {item.priceDescription && (
+                        <div className="hardware-product-box__product-price-decription">{item.priceDescription}</div>
+                      )}
+                      {item.price && (
+                        <div className="hardware-product-box__product-price">
+                          {item.price},- <span>pr md.</span>
+                        </div>
+                      )}
+                      {item.priceDisclaimerLine1 && (
+                        <div className="hardware-product-box__product-price-disclaimer">
+                          {item.priceDisclaimerLine1}
+                          {item.priceDisclaimerLine2 && (
+                            <>
+                              <br />
+                              {item.priceDisclaimerLine2}
+                            </>
+                          )}
+                        </div>
+                      )}
+                    </div>
+                  </HardwareProductBox>
                 ))}
               </div>
             </div>

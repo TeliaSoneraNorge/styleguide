@@ -15,6 +15,10 @@ const carouselItems = [
     name: 'Phone',
     image: { url: imageUrl },
     is5G: false,
+    priceDescription: 'Med SVITSJ',
+    price: 489,
+    priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
+    priceDisclaimerLine2: 'Abo u/avtaletid kommer i tillegg',
   },
   {
     brand: 'Samsung',
@@ -27,12 +31,20 @@ const carouselItems = [
     name: 'Phone 3',
     image: { url: imageUrl },
     is5G: false,
+    priceDescription: 'Med SVITSJ',
+    price: 489,
+    priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
+    priceDisclaimerLine2: 'Abo u/avtaletid kommer i tillegg',
   },
   {
     brand: 'Logitech',
     name: 'Phone 4',
     image: { url: imageUrl },
     is5G: true,
+    priceDescription: 'Med SVITSJ',
+    price: 489,
+    priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
+    priceDisclaimerLine2: 'Abo u/avtaletid kommer i tillegg',
   },
   {
     brand: 'Apple',
@@ -45,6 +57,10 @@ const carouselItems = [
     name: 'Phone 6',
     image: { url: imageUrl },
     is5G: true,
+    priceDescription: 'Med SVITSJ',
+    price: 489,
+    priceDisclaimerLine1: 'Totalt etter 24 md. 16 056,-',
+    priceDisclaimerLine2: 'Abo u/avtaletid kommer i tillegg',
   },
 ];
 
