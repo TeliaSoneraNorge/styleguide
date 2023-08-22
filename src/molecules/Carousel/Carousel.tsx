@@ -8,6 +8,7 @@ import { HardwareProductProps } from '../HardwareProductBox/HardwareProductBox';
 
 type CarouselItem = HardwareProductProps & {
   price?: number;
+  priceSuffix?: string;
   priceDescription?: string;
   priceDisclaimerLine1?: string;
   priceDisclaimerLine2?: string;
@@ -172,7 +173,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
                       )}
                       {item.price && (
                         <div className="hardware-product-box__product-price">
-                          {item.price},- <span>pr md.</span>
+                          {item.price},- {item.priceSuffix && <span>{item.priceSuffix}</span>}
                         </div>
                       )}
                       {item.priceDisclaimerLine1 && (
