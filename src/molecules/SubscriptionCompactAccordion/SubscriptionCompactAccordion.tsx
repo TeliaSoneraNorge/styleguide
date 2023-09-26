@@ -30,6 +30,7 @@ export interface SubscriptionCompactAccordionProps {
   className?: string;
   onOpen?: (...args: any[]) => any;
   style?: React.CSSProperties;
+  footer?: React.ReactNode;
   children?: React.ReactNode;
 }
 
@@ -49,6 +50,7 @@ const SubscriptionCompactAccordion = ({
   priceInfo,
   ribbon,
   scrollToOnOpen = false,
+  footer,
   children,
   className,
   onOpen = () => {},
@@ -152,6 +154,12 @@ const SubscriptionCompactAccordion = ({
             </div>
           </div>
         </div>
+        {footer && !isExpanded && (
+          <div className="subscription-compact-accordion__footer-container">
+            <hr />
+            {footer}
+          </div>
+        )}
       </button>
       {isExpanded && children && (
         <section
