@@ -128,7 +128,7 @@ export const withFooter = () => {
       title="20 Mbit/s"
       id="smart20"
       price={499}
-      compactFooterChildren={FOOTERCHILDREN}
+      footer={FOOTERCHILDREN}
       priceInfo={['/md.']}
       isExpanded={isExpanded}
       onOpen={() => {
@@ -194,7 +194,7 @@ export const WithAll = () => {
       tagLine="Hverdagsbruk"
       tagLineIcon="speedometer"
       discountLine="Spar 350,-"
-      compactFooterChildren={FOOTERCHILDREN}
+      footer={FOOTERCHILDREN}
       price={1297}
       priceStriketrough={1647}
       priceStriketroughInfo="/md."
