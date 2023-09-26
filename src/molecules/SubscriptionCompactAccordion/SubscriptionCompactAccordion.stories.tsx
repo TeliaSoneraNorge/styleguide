@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SubscriptionCompactAccordion from './SubscriptionCompactAccordion';
 import { StatefulAccordionList } from '../AccordionList';
 import Button from '../../atoms/Button';
+import { Icon } from '../../atoms/Icon';
+import Paragraph from '../../atoms/Paragraph';
 
 export default {
   title: 'Component library/Molecules/SubscriptionCompactAccordion',
@@ -86,6 +88,17 @@ const CHILDREN = (
   </>
 );
 
+const FOOTERCHILDREN = (
+  <>
+    <Paragraph>50,- i rabatt de første 12 md. uten binding. </Paragraph>
+    <div>
+      <Icon icon="cloud-connect" />
+      <Icon icon="broken-phone" />
+      <Icon icon="sms" />
+    </div>
+  </>
+);
+
 export const Normal = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -95,6 +108,27 @@ export const Normal = () => {
       title="20 Mbit/s"
       id="smart20"
       price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const withFooter = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      compactFooterChildren={FOOTERCHILDREN}
       priceInfo={['/md.']}
       isExpanded={isExpanded}
       onOpen={() => {
@@ -160,6 +194,7 @@ export const WithAll = () => {
       tagLine="Hverdagsbruk"
       tagLineIcon="speedometer"
       discountLine="Spar 350,-"
+      compactFooterChildren={FOOTERCHILDREN}
       price={1297}
       priceStriketrough={1647}
       priceStriketroughInfo="/md."
