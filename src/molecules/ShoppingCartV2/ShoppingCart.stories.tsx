@@ -38,7 +38,6 @@ export const Default = () => {
 
   const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
 
-  const containerSize = 'medium';
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -195,7 +194,7 @@ export const Default = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={leaseContent}
@@ -567,10 +566,8 @@ export const subscriptionsOnly = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={subscriptionOnlyGroupContent}
@@ -601,13 +598,12 @@ export const subscriptionsWithDiscount = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = _.set(_.cloneDeep(subscriptionOnlyGroupContent), '[0].discount.types', [
     { id: 'commitment', value: 150, text: 'Med rabatt' },
   ]);
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -638,7 +634,6 @@ export const handsetBeforeSubscriptionAdded = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -684,7 +679,7 @@ export const handsetBeforeSubscriptionAdded = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -720,7 +715,6 @@ export const mbbAndHW = () => {
     { kind: 'voca-inverted', label: 'Fortsett å handle' },
   ];
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'MODEM',
@@ -789,7 +783,7 @@ export const mbbAndHW = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -820,7 +814,6 @@ export const accessoryOnly = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'ACCESSORY',
@@ -930,7 +923,7 @@ export const accessoryOnly = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -963,7 +956,6 @@ export const withSpeechBubble = () => {
 
   const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -1038,7 +1030,7 @@ export const withSpeechBubble = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={leaseContent}
