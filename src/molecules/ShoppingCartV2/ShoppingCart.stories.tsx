@@ -599,7 +599,7 @@ export const subscriptionsWithDiscount = () => {
   };
 
   const groupContent: ICartItem[] = _.set(_.cloneDeep(subscriptionOnlyGroupContent), '[0].discount.types', [
-    { id: 'commitment', value: 150, text: 'Med rabatt' },
+    { id: 'commitment', value: 150, text: 'Familierabatt' },
   ]);
 
   return (
