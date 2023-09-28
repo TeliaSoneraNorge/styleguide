@@ -1051,3 +1051,71 @@ export const withSpeechBubble = () => {
     </Container>
   );
 };
+
+export const withFamilyDiscountInfo = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
+
+  const simOnlyContent: ICartItem[] = [
+    {
+      type: 'SUBSCRIPTION_DRAFT',
+      id: 'TELIA_MOBIL_X_UNG.REGULAR',
+      bundleId: 'a2c1d8',
+      href: '/mobilabonnement/ubegrenset-data-ung',
+      items: [],
+      name: 'Telia X Ung',
+      lineThrough: '',
+      quantity: {
+        modifiable: false,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        monthly: 399,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+        types: [],
+      },
+      image: {
+        icon: 'sim-card',
+      },
+      subtitle: 'Mobilabonnement',
+    },
+  ];
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={simOnlyContent}
+        delivery={delivery}
+        disclaimer={disclaimer}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+        continueSection={ContinueButtons}
+        showFamilyDiscountInfo={true}
+      />
+    </Container>
+  );
+};
