@@ -4,6 +4,7 @@ import ShoppingCartItemsSection from './ShoppingCartItemSection';
 import { ICartDelivery, ICartItem } from './types';
 import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
 import ShoppingCartContinueSection from './ShoppingCartContinueSection';
+import ShoppingCartFamilyDiscountInfo from './ShoppingCartFamilyDiscountInfo';
 
 export interface ShoppingCartV2Props {
   heading?: string;
@@ -24,6 +25,7 @@ export interface ShoppingCartV2Props {
   isAllowedToDelete?: boolean;
   hasPaid?: boolean;
   continueSection?: React.ReactNode;
+  showFamilyDiscountInfo?: boolean;
 }
 
 /**
@@ -50,6 +52,7 @@ const ShoppingCartV2 = ({
   hasPaid,
   formatPrice,
   continueSection,
+  showFamilyDiscountInfo,
 }: ShoppingCartV2Props) => {
   return (
     <form className="telia-shopping-cart">
@@ -81,6 +84,7 @@ const ShoppingCartV2 = ({
         hasPaid={hasPaid}
       />
       {disclaimer && <div className="telia-shopping-cart__disclaimer">{disclaimer}</div>}
+      {showFamilyDiscountInfo && <ShoppingCartFamilyDiscountInfo />}
       {continueSection && <ShoppingCartContinueSection section={continueSection} />}
     </form>
   );
