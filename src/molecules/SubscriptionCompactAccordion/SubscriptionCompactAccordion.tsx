@@ -76,7 +76,12 @@ const SubscriptionCompactAccordion = ({
         'subscription-compact-accordion--inverted': isInverted,
       })}
     >
-      <button className="subscription-compact-accordion__container-button" onClick={onOpen}>
+      <button
+        className={cn('subscription-compact-accordion__container-button', {
+          'subscription-compact-accordion__container-button--footer': footer,
+        })}
+        onClick={onOpen}
+      >
         <div
           className={cn('subscription-compact-accordion__main-container', {
             'subscription-compact-accordion__main-container--expanded': isExpanded,
