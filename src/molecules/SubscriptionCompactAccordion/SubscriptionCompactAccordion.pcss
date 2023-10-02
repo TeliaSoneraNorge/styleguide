@@ -45,6 +45,7 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    text-align: left;
     margin-top: 1rem;
     hr {
       margin-bottom: 1rem;
@@ -75,6 +76,10 @@
 
     @media all and (min-width: 41em) {
       padding: 1.5rem 2rem;
+    }
+
+    &--footer {
+      padding: 1.5rem 2rem 0rem;
     }
 
     &:hover,
@@ -188,8 +193,8 @@
   }
 
   &__icon-arrow {
-    width: 1rem !important;
-    height: 1rem !important;
+    width: 1.5rem !important;
+    height: 1.5rem !important;
     margin: 0;
 
     &--isExpanded {
