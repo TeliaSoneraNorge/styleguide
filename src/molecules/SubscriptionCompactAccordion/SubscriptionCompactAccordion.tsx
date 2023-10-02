@@ -154,10 +154,10 @@ const SubscriptionCompactAccordion = ({
             </div>
           </div>
         </div>
-        {footer && !isExpanded && (
+        {footer && (
           <div className="subscription-compact-accordion__footer-container">
             <hr />
-            {footer}
+            {!isExpanded && footer}
           </div>
         )}
       </button>
