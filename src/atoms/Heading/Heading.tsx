@@ -60,6 +60,11 @@ export interface HeadingProps {
    * The contents of the heading tag. `children` and `text` can be used interchangeably.
    */
   children?: React.ReactNode;
+
+  /**
+   * If the Heading is used with a ref, for example to capture focus for accessibility, this should be set to -1
+   */
+  tabIndex?: number;
 }
 
 const defaultSizeByTag: { [key: string]: HeadingSize } = {
