@@ -71,7 +71,7 @@ const defaultSizeByTag: { [key: string]: HeadingSize } = {
   h6: 'xs',
 };
 
-const Heading: React.FC<HeadingProps> = (props) => {
+const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
   const { level, tag, tagName, text, children, className, size, ...rest } = props;
 
   let Tag: HeadingTag = tag || 'h1';
@@ -95,12 +95,15 @@ const Heading: React.FC<HeadingProps> = (props) => {
         props.level ? `heading--level-${props.level}` : undefined
       )}
       style={props.style}
+      ref={ref}
       {...rest}
     >
       {text}
       {children}
     </Tag>
   );
-};
+});
+
+Heading.displayName = 'Heading';
 
 export default Heading;
