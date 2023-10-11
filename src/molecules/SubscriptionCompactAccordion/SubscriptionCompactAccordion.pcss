@@ -1,4 +1,6 @@
 .subscription-compact-accordion {
+  --expanded-info-padding: 1rem;
+
   position: relative;
   width: 100%;
   max-width: 38rem;
@@ -222,6 +224,21 @@
     margin-bottom: 1rem;
   }
 
+  &__family-discount {
+    display: flex;
+    align-items: center;
+    background: #e4b6fb;
+    padding: 0.2rem 1rem;
+    margin-bottom: 1rem;
+    width: calc(100% + 2 * var(--expanded-info-padding));
+  }
+
+  &__family-discount-icon {
+    margin-right: 0.5rem;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
   &__expanded-info {
     display: flex;
     flex-direction: column;
@@ -229,7 +246,7 @@
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 150ms ease-out;
-    padding: 0rem 1rem 1rem 1rem;
+    padding: 0rem var(--expanded-info-padding) 1rem var(--expanded-info-padding);
 
     &--black {
       border-left: 3px solid var(--black);

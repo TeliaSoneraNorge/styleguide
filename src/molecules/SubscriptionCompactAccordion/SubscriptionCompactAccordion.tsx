@@ -32,6 +32,7 @@ export interface SubscriptionCompactAccordionProps {
   footer?: React.ReactNode;
   children?: React.ReactNode;
   variant?: 'black' | 'purple';
+  familyDiscountInfo: string;
 }
 
 const SubscriptionCompactAccordion = ({
@@ -55,6 +56,7 @@ const SubscriptionCompactAccordion = ({
   onOpen = () => {},
   style,
   variant,
+  familyDiscountInfo,
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -181,6 +183,12 @@ const SubscriptionCompactAccordion = ({
             'subscription-compact-accordion__expanded-info--purple': variant === 'purple',
           })}
         >
+          {familyDiscountInfo && (
+            <div className="subscription-compact-accordion__family-discount">
+              <Icon className="subscription-compact-accordion__family-discount-icon" icon="group" />
+              <span>{familyDiscountInfo}</span>
+            </div>
+          )}
           {children}
         </section>
       )}
