@@ -32,7 +32,7 @@ export interface SubscriptionCompactAccordionProps {
   footer?: React.ReactNode;
   children?: React.ReactNode;
   variant?: 'black' | 'purple';
-  familyDiscountInfo: string;
+  familyDiscountInfo?: string;
 }
 
 const SubscriptionCompactAccordion = ({
