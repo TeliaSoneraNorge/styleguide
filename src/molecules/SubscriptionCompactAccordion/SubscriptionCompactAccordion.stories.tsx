@@ -279,3 +279,24 @@ export const Purple = () => {
     </SubscriptionCompactAccordion>
   );
 };
+
+export const WithFamilyDiscount = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      familyDiscountInfo="100,- i rabatt for hvert ekstra abonnement"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
