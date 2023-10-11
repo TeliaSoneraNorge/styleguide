@@ -31,7 +31,7 @@ export interface SubscriptionCompactAccordionProps {
   style?: React.CSSProperties;
   footer?: React.ReactNode;
   children?: React.ReactNode;
-  variant?: 'black' | 'purple';
+  variant?: 'normal' | 'black' | 'purple';
   familyDiscountInfo?: string;
 }
 
