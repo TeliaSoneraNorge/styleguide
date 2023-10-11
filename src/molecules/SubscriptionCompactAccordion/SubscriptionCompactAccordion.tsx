@@ -185,7 +185,7 @@ const SubscriptionCompactAccordion = ({
         >
           {familyDiscountInfo && (
             <div className="subscription-compact-accordion__family-discount">
-              <Icon className="subscription-compact-accordion__family-discount-icon" icon="user" />
+              <Icon className="subscription-compact-accordion__family-discount-icon" icon="group" />
               <span>{familyDiscountInfo}</span>
             </div>
           )}
