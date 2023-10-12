@@ -1,5 +1,6 @@
 .subscription-compact-accordion {
-  --expanded-info-padding: 1rem;
+  --expanded-info-padding: 2rem;
+  --expanded-info-padding-mobile: 1.5rem;
 
   position: relative;
   width: 100%;
@@ -78,15 +79,19 @@
     border: 3px solid transparent;
     border-bottom: 0;
     transition: border 150ms ease-out;
-    padding: 1rem;
+    padding: 1rem var(--expanded-info-padding-mobile);
     margin: 0;
 
     @media all and (min-width: 41em) {
-      padding: 1.5rem 2rem;
+      padding: 1.5rem var(--expanded-info-padding);
     }
 
     &--footer {
-      padding: 1.5rem 2rem 0rem;
+      padding: 1rem var(--expanded-info-padding-mobile) 0rem;
+
+      @media all and (min-width: 41em) {
+        padding: 1.5rem var(--expanded-info-padding) 0rem;
+      }
     }
 
     &:hover,
@@ -132,6 +137,7 @@
   }
 
   &__heading-name {
+    font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
     font-size: 1.5rem;
     line-height: 1.5rem;
     color: var(--black);
@@ -230,7 +236,11 @@
     background: #e4b6fb;
     padding: 0.2rem 1rem;
     margin-bottom: 1rem;
-    width: calc(100% + 2 * var(--expanded-info-padding));
+    width: calc(100% + 2 * var(--expanded-info-padding-mobile));
+
+    @media all and (min-width: 41em) {
+      width: calc(100% + 2 * var(--expanded-info-padding));
+    }
   }
 
   &__family-discount-icon {
@@ -246,7 +256,11 @@
     border-left: 3px solid transparent;
     border-right: 3px solid transparent;
     transition: border 150ms ease-out;
-    padding: 0rem var(--expanded-info-padding) 1rem var(--expanded-info-padding);
+    padding: 0rem var(--expanded-info-padding-mobile) 1rem var(--expanded-info-padding-mobile);
+
+    @media all and (min-width: 41em) {
+      padding: 0rem var(--expanded-info-padding) 1rem var(--expanded-info-padding);
+    }
 
     &--black {
       border-left: 3px solid var(--black);
