@@ -269,7 +269,6 @@ export const Purple = () => {
       id="smart20"
       price={499}
       footer={FOOTERCHILDREN}
-      strikethrough="10 Mbit/s"
       priceInfo={['/md.']}
       isExpanded={isExpanded}
       onOpen={() => {

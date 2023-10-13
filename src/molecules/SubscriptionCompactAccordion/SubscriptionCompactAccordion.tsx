@@ -128,7 +128,14 @@ const SubscriptionCompactAccordion = ({
                     </Heading>
                   </>
                 ) : (
-                  <Heading className="subscription-compact-accordion__heading-name" tag="h2" size="s">
+                  <Heading
+                    className={cn('subscription-compact-accordion__heading-name', {
+                      'subscription-compact-accordion__heading-name--purple': variant === 'purple',
+                      'subscription-compact-accordion__heading-name--black': variant === 'black',
+                    })}
+                    tag="h2"
+                    size="s"
+                  >
                     {title}
                   </Heading>
                 )}
