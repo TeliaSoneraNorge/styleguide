@@ -247,6 +247,7 @@ export const Black = () => {
       title="40 Mbit/s"
       strikethrough="20 Mbit/s"
       price={499}
+      footer={FOOTERCHILDREN}
       priceInfo={['/md.']}
       isExpanded={isExpanded}
       scrollToOnOpen={true}
@@ -267,6 +268,7 @@ export const Purple = () => {
       title="20 Mbit/s"
       id="smart20"
       price={499}
+      footer={FOOTERCHILDREN}
       strikethrough="10 Mbit/s"
       priceInfo={['/md.']}
       isExpanded={isExpanded}

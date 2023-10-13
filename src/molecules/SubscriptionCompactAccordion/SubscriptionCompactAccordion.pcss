@@ -6,7 +6,7 @@
   width: 100%;
   max-width: 38rem;
   box-sizing: border-box;
-  border-radius: 3px;
+  border-radius: 8px;
   background-color: var(--white);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
   border: 1px solid rgba(229, 229, 235, 1);
@@ -94,7 +94,41 @@
       }
     }
 
-    &:hover,
+    &:hover {
+      ~ .subscription-compact-accordion__footer-border {
+        background-color: #f5e0ff;
+      }
+
+      .subscription-compact-accordion {
+        &__name,
+        &__heading-name,
+        &__price {
+          &--purple,
+          &--black {
+            color: white;
+          }
+          color: #29003e;
+        }
+      }
+
+      .subscription-compact-accordion__footer-container {
+        &--purple,
+        &--black {
+          hr {
+            border-color: #d6d6dd !important;
+          }
+          color: white;
+        }
+
+        color: #29003e;
+        hr {
+          border-color: #29003e;
+        }
+      }
+
+      background-color: #f5e0ff;
+    }
+
     &:focus {
       outline: none;
       cursor: pointer;
