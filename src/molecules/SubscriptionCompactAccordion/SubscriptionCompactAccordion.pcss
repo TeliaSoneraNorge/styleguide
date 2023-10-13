@@ -92,6 +92,21 @@
         background-color: #f5e0ff;
       }
 
+      .subscription-compact-accordion {
+        &__name,
+        &__heading-name,
+        &__price {
+          color: #29003e;
+        }
+      }
+
+      .subscription-compact-accordion__footer-container {
+        color: #29003e;
+        hr {
+          border-color: #29003e;
+        }
+      }
+
       background-color: #f5e0ff;
     }
 
@@ -410,6 +425,19 @@
         background-color: transparent;
       }
       background-color: transparent;
+      .subscription-compact-accordion {
+        &__name,
+        &__heading-name,
+        &__price {
+          color: initial;
+        }
+
+        &__footer-container {
+          hr {
+            border-color: #d6d6dd;
+          }
+        }
+      }
     }
   }
 }
