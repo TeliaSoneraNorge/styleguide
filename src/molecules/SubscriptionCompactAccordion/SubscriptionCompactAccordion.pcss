@@ -96,11 +96,23 @@
         &__name,
         &__heading-name,
         &__price {
+          &--purple,
+          &--black {
+            color: white;
+          }
           color: #29003e;
         }
       }
 
       .subscription-compact-accordion__footer-container {
+        &--purple,
+        &--black {
+          hr {
+            border-color: #d6d6dd !important;
+          }
+          color: white;
+        }
+
         color: #29003e;
         hr {
           border-color: #29003e;
@@ -111,10 +123,6 @@
     }
 
     &:focus {
-      &:hover {
-        background-color: transparent;
-      }
-
       outline: none;
       cursor: pointer;
       border-top: 3px solid var(--core-purple);
@@ -414,30 +422,6 @@
 
     &--grow {
       flex: 1 1 auto;
-    }
-  }
-}
-
-.subscription-compact-accordion-expanded {
-  &__container-button {
-    &:hover {
-      ~ .subscription-compact-accordion__footer-border {
-        background-color: transparent;
-      }
-      background-color: transparent;
-      .subscription-compact-accordion {
-        &__name,
-        &__heading-name,
-        &__price {
-          color: initial;
-        }
-
-        &__footer-container {
-          hr {
-            border-color: #d6d6dd;
-          }
-        }
-      }
     }
   }
 }

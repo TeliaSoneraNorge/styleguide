@@ -114,7 +114,14 @@ const SubscriptionCompactAccordion = ({
                     <Heading className="subscription-compact-accordion__heading-striketrough" tag="h2" size="xs">
                       {strikethrough}
                     </Heading>
-                    <Heading className="subscription-compact-accordion__heading-name" tag="h2" size="s">
+                    <Heading
+                      className={cn('subscription-compact-accordion__heading-name', {
+                        'subscription-compact-accordion__heading-name--purple': variant === 'purple',
+                        'subscription-compact-accordion__heading-name--black': variant === 'black',
+                      })}
+                      tag="h2"
+                      size="s"
+                    >
                       {title}
                     </Heading>
                   </>
@@ -145,7 +152,14 @@ const SubscriptionCompactAccordion = ({
                     </div>
                   )}
                   <div>
-                    <span className="subscription-compact-accordion__price">{formatPrice(price)}</span>
+                    <span
+                      className={cn('subscription-compact-accordion__price', {
+                        'subscription-compact-accordion__price--purple': variant === 'purple',
+                        'subscription-compact-accordion__price--black': variant === 'black',
+                      })}
+                    >
+                      {formatPrice(price)}
+                    </span>
                     {priceInfo &&
                       priceInfo.map((info) => (
                         <span key={info} className="subscription-compact-accordion__price-info">
@@ -170,7 +184,12 @@ const SubscriptionCompactAccordion = ({
           </div>
         </div>
         {footer && (
-          <div className="subscription-compact-accordion__footer-container">
+          <div
+            className={cn('subscription-compact-accordion__footer-container', {
+              'subscription-compact-accordion__footer-container--purple': variant === 'purple',
+              'subscription-compact-accordion__footer-container--black': variant === 'black',
+            })}
+          >
             <hr />
             {!isExpanded && footer}
           </div>
