@@ -75,11 +75,13 @@ const SubscriptionCompactAccordion = ({
       className={cn('subscription-compact-accordion', className, {
         'subscription-compact-accordion--black': variant === 'black',
         'subscription-compact-accordion--purple': variant === 'purple',
+        'subscription-compact-accordion-expanded': isExpanded,
       })}
     >
       <button
         className={cn('subscription-compact-accordion__container-button', {
           'subscription-compact-accordion__container-button--footer': footer,
+          'subscription-compact-accordion-expanded__container-button': isExpanded,
         })}
         onClick={onOpen}
       >
