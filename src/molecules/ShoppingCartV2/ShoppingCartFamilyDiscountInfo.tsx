@@ -10,9 +10,9 @@ const ShoppingCartFamilyDiscountInfo = () => (
         Du kan få rabatt
       </Heading>
     </div>
-    <div>
-      Hvis du legger til flere abonnement hos oss får du rabatt. En fast rabatt (30,-/md. for fast datamengde og
-      100,-/md. for ubegrenset)
+    <div className="shopping-cart-family-discount-info__content">
+      Legg til flere mobilabonnement og få rabatt hver måned. Betal fullpris kun for det dyreste abonnementet. Få
+      30,-/md. for fast datamengde og 100,-/md. for ubegrenset data.
     </div>
   </div>
 );
