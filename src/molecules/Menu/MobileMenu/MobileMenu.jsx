@@ -52,10 +52,11 @@ const MobileMenu = ({
   menuLinks,
   onMenuItemSelected,
   isLoading,
+  activeIndex,
   mobileMenuCloseButtonLabel,
   buttonValues,
 }) => {
-  const [selectedHeaderIndex, setSelectedHeaderIndex] = useState(0);
+  const [selectedHeaderIndex, setSelectedHeaderIndex] = useState(activeIndex ?? 0);
 
   useEffect(() => {
     document.addEventListener('keydown', handleKeyDown);
