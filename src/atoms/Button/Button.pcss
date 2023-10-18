@@ -26,8 +26,15 @@
   margin: 0 1rem 0 0;
   padding: 1rem 1.8rem;
   text-decoration: none;
-  text-transform: uppercase;
+  text-transform: lowercase;
   transition: background-color 0.15s, color 0.15s;
+
+  &__buttonText {
+    display: inline-block;
+    &::first-letter {
+      text-transform: capitalize;
+    }
+  }
 
   &:last-of-type {
     margin-right: 0;
@@ -168,12 +175,7 @@
     background-color: var(--core-purple-850);
     color: var(--white);
     border: none;
-    text-transform: lowercase;
     font-size: 1rem;
-
-    &::first-letter {
-      text-transform: capitalize;
-    }
 
     &:hover,
     &:focus {
@@ -203,7 +205,7 @@
 
   &--processing {
     cursor: default;
-
+    text-transform: capitalize;
     > .button__processing {
       display: inline;
     }
