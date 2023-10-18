@@ -26,15 +26,7 @@
   margin: 0 1rem 0 0;
   padding: 1rem 1.8rem;
   text-decoration: none;
-  text-transform: lowercase;
   transition: background-color 0.15s, color 0.15s;
-
-  &__buttonText {
-    display: inline-block;
-    &::first-letter {
-      text-transform: capitalize;
-    }
-  }
 
   &:last-of-type {
     margin-right: 0;
@@ -97,7 +89,6 @@
     font-size: 1rem;
     font-weight: normal;
     padding: 0.25rem 0.1rem;
-    text-transform: none;
 
     &:not(.button--processing):hover,
     &:not(.button--processing):active {
@@ -114,7 +105,6 @@
     border: none;
     color: var(--black);
     font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
-    text-transform: none;
     padding: 0;
 
     &:not(&--processing):not(&--disabled):hover,
@@ -132,7 +122,6 @@
     background-color: transparent;
     color: var(--black);
     font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
-    text-transform: none;
     padding: 0;
     padding-bottom: 5px;
 
@@ -205,7 +194,6 @@
 
   &--processing {
     cursor: default;
-    text-transform: capitalize;
     > .button__processing {
       display: inline;
     }
