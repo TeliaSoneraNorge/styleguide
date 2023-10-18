@@ -25,6 +25,7 @@ export const Normal = () => (
     <br />
     <Button text="Voca normal" kind="voca-normal" />
     <Button text="Voca inverted" kind="voca-inverted" />
+    <Button text="Voca purple" kind="voca-purple" />
   </>
 );
 

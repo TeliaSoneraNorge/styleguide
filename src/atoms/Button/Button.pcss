@@ -164,6 +164,26 @@
     }
   }
 
+  &--voca-purple {
+    background-color: var(--core-purple-850);
+    color: var(--white);
+    border: none;
+    text-transform: lowercase;
+    font-size: 1rem;
+
+    &::first-letter {
+      text-transform: capitalize;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var(--core-purple-750) !important;
+    }
+    &:active {
+      background-color: var(--core-purple-650) !important;
+    }
+  }
+
   &__processing {
     display: none;
 
