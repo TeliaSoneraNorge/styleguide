@@ -100,7 +100,7 @@ const Menu = ({
     const focusableElements = mobileMenuRef.current.querySelectorAll(focusableElementsSelector);
     if (!focusableElements.length) return;
 
-    if (activeIndex === 0) {
+    if (!activeIndex || activeIndex === 0) {
       focusableElements[0].focus();
     }
   };
