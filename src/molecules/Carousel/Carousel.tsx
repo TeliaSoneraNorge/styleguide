@@ -7,6 +7,7 @@ import { Icon } from '../../atoms/Icon';
 import { HardwareProductProps } from '../HardwareProductBox/HardwareProductBox';
 
 type CarouselItem = HardwareProductProps & {
+  redirectUrl?: string;
   price?: number;
   priceSuffix?: string;
   priceDescription?: string;
@@ -166,29 +167,31 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
                 })}
               >
                 {currentCarouselPage.map((item, index) => (
-                  <HardwareProductBox key={item.name + item.brand + index} {...item}>
-                    <div>
-                      {item.priceDescription && (
-                        <div className="hardware-product-box__product-price-decription">{item.priceDescription}</div>
-                      )}
-                      {item.price && (
-                        <div className="hardware-product-box__product-price">
-                          {item.price},- {item.priceSuffix && <span>{item.priceSuffix}</span>}
-                        </div>
-                      )}
-                      {item.priceDisclaimerLine1 && (
-                        <div className="hardware-product-box__product-price-disclaimer">
-                          {item.priceDisclaimerLine1}
-                          {item.priceDisclaimerLine2 && (
-                            <>
-                              <br />
-                              {item.priceDisclaimerLine2}
-                            </>
-                          )}
-                        </div>
-                      )}
-                    </div>
-                  </HardwareProductBox>
+                  <a href={item?.redirectUrl}>
+                    <HardwareProductBox key={item.name + item.brand + index} {...item}>
+                      <div>
+                        {item.priceDescription && (
+                          <div className="hardware-product-box__product-price-decription">{item.priceDescription}</div>
+                        )}
+                        {item.price && (
+                          <div className="hardware-product-box__product-price">
+                            {item.price},- {item.priceSuffix && <span>{item.priceSuffix}</span>}
+                          </div>
+                        )}
+                        {item.priceDisclaimerLine1 && (
+                          <div className="hardware-product-box__product-price-disclaimer">
+                            {item.priceDisclaimerLine1}
+                            {item.priceDisclaimerLine2 && (
+                              <>
+                                <br />
+                                {item.priceDisclaimerLine2}
+                              </>
+                            )}
+                          </div>
+                        )}
+                      </div>
+                    </HardwareProductBox>
+                  </a>
                 ))}
               </div>
             </div>
