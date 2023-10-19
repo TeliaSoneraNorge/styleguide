@@ -214,27 +214,6 @@ export const WithAll = () => {
   );
 };
 
-export const Inverted = () => {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  return (
-    <SubscriptionCompactAccordion
-      id="smart20"
-      name="Telia X - Normal"
-      title="40 Mbit/s"
-      strikethrough="20 Mbit/s"
-      price={499}
-      priceInfo={['/md.']}
-      isInverted={true}
-      isExpanded={isExpanded}
-      scrollToOnOpen={true}
-      onOpen={() => setIsExpanded(!isExpanded)}
-    >
-      {CHILDREN}
-    </SubscriptionCompactAccordion>
-  );
-};
-
 export const Multiple = () => {
   const [expandedSubscriptionIndex, setExpandedSubscriptionIndex] = useState(-1);
 
@@ -255,5 +234,70 @@ export const Multiple = () => {
         </SubscriptionCompactAccordion>
       ))}
     </>
+  );
+};
+
+export const Black = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      id="smart20"
+      name="Telia X - Normal"
+      title="40 Mbit/s"
+      strikethrough="20 Mbit/s"
+      price={499}
+      footer={FOOTERCHILDREN}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      scrollToOnOpen={true}
+      onOpen={() => setIsExpanded(!isExpanded)}
+      variant="black"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const Purple = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      footer={FOOTERCHILDREN}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      variant="purple"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const WithFamilyDiscount = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      familyDiscountInfo="100,- i rabatt for hvert ekstra abonnement"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
   );
 };

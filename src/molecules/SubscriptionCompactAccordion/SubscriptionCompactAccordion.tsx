@@ -14,7 +14,6 @@ interface Ribbon {
 export interface SubscriptionCompactAccordionProps {
   id?: string;
   isExpanded?: boolean;
-  isInverted?: boolean;
   name: string;
   title: string;
   strikethrough?: string;
@@ -32,12 +31,13 @@ export interface SubscriptionCompactAccordionProps {
   style?: React.CSSProperties;
   footer?: React.ReactNode;
   children?: React.ReactNode;
+  variant?: 'normal' | 'black' | 'purple';
+  familyDiscountInfo?: string;
 }
 
 const SubscriptionCompactAccordion = ({
   id,
   isExpanded,
-  isInverted,
   name,
   title,
   strikethrough,
@@ -55,6 +55,8 @@ const SubscriptionCompactAccordion = ({
   className,
   onOpen = () => {},
   style,
+  variant,
+  familyDiscountInfo,
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -73,10 +75,18 @@ const SubscriptionCompactAccordion = ({
       ref={ref}
       id={id}
       className={cn('subscription-compact-accordion', className, {
-        'subscription-compact-accordion--inverted': isInverted,
+        'subscription-compact-accordion--black': variant === 'black',
+        'subscription-compact-accordion--purple': variant === 'purple',
+        'subscription-compact-accordion-expanded': isExpanded,
       })}
     >
-      <button className="subscription-compact-accordion__container-button" onClick={onOpen}>
+      <button
+        className={cn('subscription-compact-accordion__container-button', {
+          'subscription-compact-accordion__container-button--footer': footer,
+          'subscription-compact-accordion-expanded__container-button': isExpanded,
+        })}
+        onClick={onOpen}
+      >
         <div
           className={cn('subscription-compact-accordion__main-container', {
             'subscription-compact-accordion__main-container--expanded': isExpanded,
@@ -90,7 +100,14 @@ const SubscriptionCompactAccordion = ({
               {ribbon.text}
             </div>
           ) : null}
-          <div className="subscription-compact-accordion__name">{name}</div>
+          <div
+            className={cn('subscription-compact-accordion__name', {
+              'subscription-compact-accordion__name--black': variant === 'black',
+              'subscription-compact-accordion__name--purple': variant === 'purple',
+            })}
+          >
+            {name}
+          </div>
           <div className="subscription-compact-accordion__header-first-row">
             <div className="subscription-compact-accordion__left-side subscription-compact-accordion__flex--grow">
               <div className="subscription-compact-accordion__heading-container">
@@ -99,12 +116,26 @@ const SubscriptionCompactAccordion = ({
                     <Heading className="subscription-compact-accordion__heading-striketrough" tag="h2" size="xs">
                       {strikethrough}
                     </Heading>
-                    <Heading className="subscription-compact-accordion__heading-name" tag="h2" size="s">
+                    <Heading
+                      className={cn('subscription-compact-accordion__heading-name', {
+                        'subscription-compact-accordion__heading-name--purple': variant === 'purple',
+                        'subscription-compact-accordion__heading-name--black': variant === 'black',
+                      })}
+                      tag="h2"
+                      size="s"
+                    >
                       {title}
                     </Heading>
                   </>
                 ) : (
-                  <Heading className="subscription-compact-accordion__heading-name" tag="h2" size="s">
+                  <Heading
+                    className={cn('subscription-compact-accordion__heading-name', {
+                      'subscription-compact-accordion__heading-name--purple': variant === 'purple',
+                      'subscription-compact-accordion__heading-name--black': variant === 'black',
+                    })}
+                    tag="h2"
+                    size="s"
+                  >
                     {title}
                   </Heading>
                 )}
@@ -130,7 +161,14 @@ const SubscriptionCompactAccordion = ({
                     </div>
                   )}
                   <div>
-                    <span className="subscription-compact-accordion__price">{formatPrice(price)}</span>
+                    <span
+                      className={cn('subscription-compact-accordion__price', {
+                        'subscription-compact-accordion__price--purple': variant === 'purple',
+                        'subscription-compact-accordion__price--black': variant === 'black',
+                      })}
+                    >
+                      {formatPrice(price)}
+                    </span>
                     {priceInfo &&
                       priceInfo.map((info) => (
                         <span key={info} className="subscription-compact-accordion__price-info">
@@ -154,25 +192,38 @@ const SubscriptionCompactAccordion = ({
             </div>
           </div>
         </div>
-        {footer && !isExpanded && (
-          <div className="subscription-compact-accordion__footer-container">
+        {footer && (
+          <div
+            className={cn('subscription-compact-accordion__footer-container', {
+              'subscription-compact-accordion__footer-container--purple': variant === 'purple',
+              'subscription-compact-accordion__footer-container--black': variant === 'black',
+            })}
+          >
             <hr />
-            {footer}
+            {!isExpanded && footer}
           </div>
         )}
       </button>
       {isExpanded && children && (
         <section
           className={cn('subscription-compact-accordion__expanded-info', {
-            'subscription-compact-accordion__expanded-info--inverted': isInverted,
+            'subscription-compact-accordion__expanded-info--black': variant === 'black',
+            'subscription-compact-accordion__expanded-info--purple': variant === 'purple',
           })}
         >
+          {familyDiscountInfo && (
+            <div className="subscription-compact-accordion__family-discount">
+              <Icon className="subscription-compact-accordion__family-discount-icon" icon="group" />
+              <span>{familyDiscountInfo}</span>
+            </div>
+          )}
           {children}
         </section>
       )}
       <div
         className={cn('subscription-compact-accordion__footer-border', {
-          'subscription-compact-accordion__footer-border--inverted': isInverted,
+          'subscription-compact-accordion__footer-border--black': variant === 'black',
+          'subscription-compact-accordion__footer-border--purple': variant === 'purple',
         })}
       />
     </section>
