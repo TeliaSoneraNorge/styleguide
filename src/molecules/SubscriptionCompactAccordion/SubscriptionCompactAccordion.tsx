@@ -33,6 +33,7 @@ export interface SubscriptionCompactAccordionProps {
   children?: React.ReactNode;
   variant?: 'normal' | 'black' | 'purple';
   familyDiscountInfo?: string;
+  familyDiscountInfoIcon?: IconDefinition;
 }
 
 const SubscriptionCompactAccordion = ({
@@ -57,6 +58,7 @@ const SubscriptionCompactAccordion = ({
   style,
   variant,
   familyDiscountInfo,
+  familyDiscountInfoIcon = 'group',
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -213,7 +215,7 @@ const SubscriptionCompactAccordion = ({
         >
           {familyDiscountInfo && (
             <div className="subscription-compact-accordion__family-discount">
-              <Icon className="subscription-compact-accordion__family-discount-icon" icon="group" />
+              <Icon className="subscription-compact-accordion__family-discount-icon" icon={familyDiscountInfoIcon} />
               <span>{familyDiscountInfo}</span>
             </div>
           )}

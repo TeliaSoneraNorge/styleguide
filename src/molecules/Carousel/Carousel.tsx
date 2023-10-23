@@ -115,6 +115,10 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
       pagesArray.push(i);
     }
 
+    if (pagesArray.length === 1) {
+      return <></>;
+    }
+
     return (
       <div className="pages-indicator">
         {pagesArray.map((pageNumber) => (
