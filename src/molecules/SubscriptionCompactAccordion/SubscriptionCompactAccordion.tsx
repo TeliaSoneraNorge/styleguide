@@ -78,6 +78,8 @@ const SubscriptionCompactAccordion = ({
         'subscription-compact-accordion--black': variant === 'black',
         'subscription-compact-accordion--purple': variant === 'purple',
         'subscription-compact-accordion-expanded': isExpanded,
+        'subscription-compact-accordion-expanded--black': isExpanded && variant === 'black',
+        'subscription-compact-accordion-expanded--purple': isExpanded && variant === 'purple',
       })}
     >
       <button
@@ -220,12 +222,6 @@ const SubscriptionCompactAccordion = ({
           {children}
         </section>
       )}
-      <div
-        className={cn('subscription-compact-accordion__footer-border', {
-          'subscription-compact-accordion__footer-border--black': variant === 'black',
-          'subscription-compact-accordion__footer-border--purple': variant === 'purple',
-        })}
-      />
     </section>
   );
 };
