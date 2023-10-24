@@ -12,7 +12,8 @@ export type ButtonKind =
   | 'negative'
   | 'voca-normal'
   | 'voca-inverted'
-  | 'voca-purple';
+  | 'voca-purple'
+  | 'voca-purple-inverted';
 export type ButtonType = 'button' | 'reset' | 'submit';
 export type ButtonMargin = 'top' | 'bottom';
 export type IconPlacement = 'left' | 'right';
