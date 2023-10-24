@@ -140,7 +140,7 @@ interface ICartItemDiscountValue {
 }
 
 export interface ICartDiscountType {
-  id: 'commitment' | 'sameBucket' | 'sameGroup';
+  id: 'commitment' | 'sameGroup' | 'hardcoded';
   value: number;
   text: string;
 }

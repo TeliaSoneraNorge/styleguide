@@ -26,6 +26,7 @@ export interface SubscriptionCompactAccordionProps {
   priceInfo?: string[];
   ribbon?: Ribbon | null;
   scrollToOnOpen?: boolean;
+  showChevron?: boolean;
   className?: string;
   onOpen?: (...args: any[]) => any;
   style?: React.CSSProperties;
@@ -59,6 +60,7 @@ const SubscriptionCompactAccordion = ({
   variant,
   familyDiscountInfo,
   familyDiscountInfoIcon = 'group',
+  showChevron = true,
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -183,14 +185,16 @@ const SubscriptionCompactAccordion = ({
                   <span className="subscription-compact-accordion__discount-line">{discountLine}</span>
                 )}
               </div>
-              <div className="subscription-compact-accordion__icon-container">
-                <Icon
-                  icon="chevron-down"
-                  className={cn('subscription-compact-accordion__icon-arrow', {
-                    'subscription-compact-accordion__icon-arrow--isExpanded': isExpanded,
-                  })}
-                />
-              </div>
+              {showChevron && (
+                <div className="subscription-compact-accordion__icon-container">
+                  <Icon
+                    icon="chevron-down"
+                    className={cn('subscription-compact-accordion__icon-arrow', {
+                      'subscription-compact-accordion__icon-arrow--isExpanded': isExpanded,
+                    })}
+                  />
+                </div>
+              )}
             </div>
           </div>
         </div>
