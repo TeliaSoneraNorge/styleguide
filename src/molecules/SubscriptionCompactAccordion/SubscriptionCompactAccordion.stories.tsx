@@ -83,7 +83,7 @@ const CHILDREN = (
       <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
       <li className="list__item">Roam Like Home</li>
     </ul>
-    <Button style={{ margin: '1.5rem 0' }} kind="primary" text="Velg og fortsett"></Button>
+    <Button style={{ margin: '1.5rem 0' }} kind="voca-purple" text="Velg og fortsett"></Button>
     {ACCORDIONS}
   </>
 );
@@ -195,6 +195,39 @@ export const WithAll = () => {
       tagLineIcon="speedometer"
       discountLine="Spar 350,-"
       footer={FOOTERCHILDREN}
+      price={1297}
+      priceStriketrough={1647}
+      priceStriketroughInfo="/md."
+      priceInfo={['/md.']}
+      ribbon={{
+        text: 'Mest populær',
+        backgroundColor: '#EDC8FF',
+        color: '#3F005E',
+      }}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const SelectedWithAll = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      id="smart20"
+      name="Telia X - Normal"
+      title="40 Mbit/s"
+      strikethrough="20 Mbit/s"
+      tagLine="Hverdagsbruk"
+      tagLineIcon="speedometer"
+      discountLine="Spar 350,-"
+      footer={FOOTERCHILDREN}
+      selected={true}
       price={1297}
       priceStriketrough={1647}
       priceStriketroughInfo="/md."
