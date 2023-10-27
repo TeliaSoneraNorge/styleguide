@@ -11,7 +11,7 @@ jobs:
   build-and-deploy-website:
     strategy:
       matrix:
-        node-version: ['16.x', '18.x', '20.x']
+        node-version: ['16.x', '18.x']
     name: Build check
     runs-on: ubuntu-latest
     steps:
