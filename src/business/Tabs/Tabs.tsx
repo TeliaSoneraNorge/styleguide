@@ -24,6 +24,7 @@ export const Tabs: React.FC<Props> = (props) => {
           'telia-tabs--narrow': props.narrow,
           'telia-tabs--centered': props.centered,
           'telia-tabs--black': props.color === 'black',
+          'telia-tabs--dotted': props.color === 'black' && !props.outlined,
           'telia-tabs--compact': props.compact,
         },
         props.className
