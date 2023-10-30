@@ -254,6 +254,118 @@ export const LoggedInDropdownMenuB2C = () => {
   );
 };
 
+export const LoggedInDropdownSelectedSecondMenuLink = () => {
+  const menuLinks = [
+    {
+      heading: {
+        text: 'Privat',
+        url: '/',
+      },
+      links: [
+        {
+          text: 'Nettbutikk',
+          subLinks: [
+            {
+              text: 'Mobiltelefoner',
+              url: '/mobiltelefoner/',
+            },
+            {
+              text: 'Smartklokker',
+              url: '/smartklokker/',
+            },
+            {
+              text: 'Nettbrett',
+              url: '/nettbrett/',
+            },
+          ],
+        },
+        {
+          text: 'Mobilabonnement',
+          url: '/mobilabonnement/',
+        },
+        {
+          text: 'Internett',
+          url: '/internett/',
+        },
+      ],
+    },
+    {
+      heading: {
+        text: 'Bedrift',
+        url: '/bedrift/',
+      },
+      links: [
+        {
+          text: 'Produkter og tjenester',
+          url: '/bedrift/produkter-og-tjenester/',
+        },
+        {
+          text: 'Teknologi og samfunn',
+          subLinks: [
+            {
+              text: 'IoT',
+              url: '/bedrift/digitalisering/iot/',
+            },
+            {
+              text: '5G',
+              url: '/bedrift/5g-bedrift/',
+            },
+            {
+              text: 'Crowd Insights',
+              url: '/bedrift/digitalisering/crowd-insights/',
+            },
+            {
+              text: 'Startup',
+              url: '/bedrift/startup/',
+            },
+            {
+              text: 'Aktuelt',
+              url: '/bedrift/digitalisering/aktuelt/',
+            },
+          ],
+        },
+        {
+          text: 'Nettbutikk',
+          subLinks: [
+            {
+              text: 'Mobiltelefoner',
+              url: 'https://www.telia.no/bedrift/mobiltelefoner/',
+            },
+            {
+              text: 'Mobilabonnement',
+              url: '/bedrift/mobilabonnement/',
+            },
+            {
+              text: 'Mobilt Bredbånd',
+              url: 'https://www.telia.no/bedrift/mobilt-bredband/',
+            },
+          ],
+        },
+        {
+          text: 'Kundeservice',
+          url: '/bedrift/kundeservice/',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Menu
+      loginUrl="#Menu"
+      logoUrl="#"
+      logoTitle="Telia logo"
+      menuLinks={menuLinks}
+      activeIndex={1}
+      logoImageDesktopPath={img.logo}
+      logoImageInverseDesktopPath={img.logoInverted}
+      onSearchSubmit={() => {}}
+      lockBodyOnMenuOpen={true}
+      isLoggedIn={false}
+      myPageUrl="#"
+    />
+  );
+};
+
 export const LoggedInDropdownMenuWithDaas = () => {
   const menuLinks = [
     {

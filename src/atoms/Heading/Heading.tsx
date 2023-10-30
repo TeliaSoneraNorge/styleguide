@@ -60,6 +60,11 @@ export interface HeadingProps {
    * The contents of the heading tag. `children` and `text` can be used interchangeably.
    */
   children?: React.ReactNode;
+
+  /**
+   * If the Heading is used with a ref, for example to capture focus for accessibility, this should be set to -1
+   */
+  tabIndex?: number;
 }
 
 const defaultSizeByTag: { [key: string]: HeadingSize } = {
@@ -71,7 +76,7 @@ const defaultSizeByTag: { [key: string]: HeadingSize } = {
   h6: 'xs',
 };
 
-const Heading: React.FC<HeadingProps> = (props) => {
+const Heading = React.forwardRef<HTMLHeadingElement, HeadingProps>((props, ref) => {
   const { level, tag, tagName, text, children, className, size, ...rest } = props;
 
   let Tag: HeadingTag = tag || 'h1';
@@ -95,12 +100,15 @@ const Heading: React.FC<HeadingProps> = (props) => {
         props.level ? `heading--level-${props.level}` : undefined
       )}
       style={props.style}
+      ref={ref}
       {...rest}
     >
       {text}
       {children}
     </Tag>
   );
-};
+});
+
+Heading.displayName = 'Heading';
 
 export default Heading;
