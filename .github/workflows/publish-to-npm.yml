@@ -8,6 +8,7 @@ on:
         default: 'patch'
 jobs:
   publish-to-npm:
+    environment: production
     name: Publish to npm
     runs-on: ubuntu-latest
     steps:
