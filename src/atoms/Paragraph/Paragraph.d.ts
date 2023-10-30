@@ -9,6 +9,7 @@ export interface ParagraphProps extends React.HTMLAttributes<HTMLParagraphElemen
   kind?: ParagraphKind;
   className?: string;
   children?: React.ReactNode;
+  id?: string;
 }
 
 export const Paragraph: React.FC<ParagraphProps>;

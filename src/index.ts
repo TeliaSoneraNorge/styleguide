@@ -56,6 +56,7 @@ export { Avatar } from './molecules/Avatar';
 export { default as BoxGrid } from './molecules/BoxGrid';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign';
+export { Carousel } from './molecules/Carousel';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel';
 export { Chip } from './molecules/Chip';
 export { default as DownloadButtons } from './molecules/DownloadButtons';
@@ -126,7 +127,7 @@ export { default as SubscriptionLinesAccordion } from './molecules/SubscriptionL
 export { default as SubscriptionCompactAccordion } from './molecules/SubscriptionCompactAccordion';
 export { default as ChartLegend } from './molecules/ChartLegend';
 export { default as TextAreaWithLabel } from './molecules/TextAreaWithLabel';
-export { TextField } from './molecules/TextField';
+export * from './molecules/TextField';
 export { default as TextBoxWithIcon } from './molecules/TextBoxWithIcon';
 export { default as TextBoxWithLabel } from './molecules/TextBoxWithLabel';
 export { default as TextBoxWithCharCount } from './molecules/TextBoxWithCharCount';

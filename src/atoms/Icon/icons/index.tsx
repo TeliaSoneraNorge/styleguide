@@ -313,6 +313,7 @@ export { SmsIcon } from './SmsIcon';
 export { SnapchatIcon } from './SnapchatIcon';
 export { SnowflakeIcon } from './SnowflakeIcon';
 export { SorterIcon } from './SorterIcon';
+export { SpeedometerDotsIcon } from './SpeedometerDotsIcon';
 export { SpeedometerMaxIcon } from './SpeedometerMaxIcon';
 export { SpeedometerNormalIcon } from './SpeedometerNormalIcon';
 export { SpeedometerRaskIcon } from './SpeedometerRaskIcon';

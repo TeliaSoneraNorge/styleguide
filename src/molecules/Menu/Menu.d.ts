@@ -12,8 +12,16 @@ export interface MenuMenuLinks {
   }[];
 }
 
+export interface MenuButtonValues {
+  login?: string;
+  myPage?: string;
+  frontPage?: string;
+  closeButton?: string;
+}
+
 export interface MenuProps {
   menuLinks?: MenuMenuLinks[];
+  buttonValues?: MenuButtonValues;
   logoImageDesktopPath?: string;
   logoImageInverseDesktopPath?: string;
   logoTitle?: string;
@@ -29,6 +37,7 @@ export interface MenuProps {
   lockBodyOnMenuOpen?: boolean;
   isLoggedIn?: boolean;
   loginUrl?: string;
+  logoutUrl?: string;
   myPageUrl?: string;
   cartUrl?: string;
   isLoading?: boolean;
