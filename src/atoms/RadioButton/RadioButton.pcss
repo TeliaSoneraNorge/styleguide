@@ -35,12 +35,12 @@
   /* If the input is checked, display the inner circle with purple color */
   & > input:checked ~ .radiobutton__svg-container .radiobutton__circle {
     display: block;
-    fill: var(--core-purple);
+    fill: var(--black-purple);
   }
 
   /* If the input is checked, add purple border */
   & > input:checked ~ .radiobutton__svg-container .radiobutton__border {
-    stroke: var(--core-purple);
+    stroke: var(--black-purple);
     fill: none;
   }
 
@@ -72,37 +72,20 @@
     /* Default we do not show the checked cicle */
     & .radiobutton__circle {
       display: none;
-      fill: var(--core-purple);
+      fill: var(--black-purple);
     }
   }
 
-  /* On hover effect, adding a gray shadow */
-  &:hover > input ~ .radiobutton__svg-container {
-    background-color: var(--grey-100);
+  /* On hover effect on enabled radio button, add a thicker purple border */
+  &:hover > input ~ .radiobutton__svg-container .radiobutton__border {
+    stroke: var(--black-purple);
+    stroke-width: 2px;
+    fill: none;
   }
 
-  /* On hover effect, adding a purple shadow when checked */
-  &:hover > input:checked ~ .radiobutton__svg-container {
-    background-color: var(--core-purple-100);
-  }
-
-  /* On active effect, adding a gray shadow */
-  &:active > input ~ .radiobutton__svg-container {
-    background-color: var(--grey-300);
-  }
-
-  /* On active effect, adding a purple shadow when checked */
-  &:active > input:checked ~ .radiobutton__svg-container {
-    background-color: var(--core-purple-200);
-  }
-
-  /* On active effect, if the input is checked, make color of radio button darker purple */
-  &:active > input:checked ~ .radiobutton__svg-container .radiobutton__circle {
-    fill: var(--core-purple-700);
-  }
-
-  &:active > input:checked ~ .radiobutton__svg-container .radiobutton__border {
-    stroke: var(--core-purple-700);
+  /* On hover effect on checked radio button, remove thicker purple border */
+  &:hover > input:checked ~ .radiobutton__svg-container .radiobutton__border {
+    stroke-width: 1px;
   }
 
   /* On focus effect, adding a blue border */
