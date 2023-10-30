@@ -21,6 +21,7 @@ const Header = ({
   withBorderBottom,
   backgroundColor,
   children,
+  dataTrackingId,
 }) => (
   <header
     className={classNames('header', {
@@ -30,6 +31,7 @@ const Header = ({
       'header--with-border-bottom': withBorderBottom,
       [`header--${backgroundColor}`]: !!backgroundColor,
     })}
+    data-tracking-id={dataTrackingId}
   >
     {videoSrc ? (
       <div className="video container container--large container--no-padding container--no-margin">

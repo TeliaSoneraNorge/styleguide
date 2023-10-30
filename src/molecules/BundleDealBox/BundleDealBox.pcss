@@ -1,55 +1,72 @@
 .telia-bundle-deal-box {
   display: flex;
-  width: 21rem;
-  min-height: 27rem;
-  display: flex;
   flex-direction: column;
-  box-shadow: 0px 2px 8px #dcdce1;
+  border-radius: 0.5rem;
+  width: 21rem;
+  position: relative;
   margin-top: 2rem;
+  min-height: 24rem;
+  padding: 1rem;
+  box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.15);
 
   &__flashText-container {
-    display: flex;
     width: 100%;
     position: relative;
-    text-transform: uppercase;
   }
 
   &__flashText {
     padding: 4px 8px;
     font-size: 14px;
     position: absolute;
-    right: 1rem;
-    top: -15px;
+    font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
+    top: -2rem;
     border-radius: 2px;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    left: 0;
+    right: 0;
   }
 
   &__image-container {
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
 
   &__product-image {
-    margin-top: 1.25rem;
+    margin-top: 2.2rem;
     object-fit: contain;
     max-width: 8rem;
     max-height: 7rem;
   }
 
-  &__description {
-    max-height: 5rem;
-  }
-
   &__upper-container {
+    height: 23rem;
     display: flex;
-    padding: 1rem;
-    min-height: 3rem;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
 
     .heading {
-      margin: 0 0 0.5rem;
+      text-align: left;
+      width: 100%;
     }
+
+    @media all and (min-width: 48em) {
+      min-height: 15rem;
+    }
+  }
+
+  &__description {
+    text-align: left;
+  }
+
+  &__lower-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 1rem;
   }
 
   &__price-container {
@@ -66,6 +83,7 @@
 
     &--salesPrice {
       color: #990ae3;
+      font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
       font-size: 1.5rem;
     }
   }
@@ -74,7 +92,7 @@
     width: 80%;
     align-self: center;
     text-align: center;
-    text-transform: lowercase;
+    text-transform: none;
     margin: 1.5rem 0 0 0;
   }
 }

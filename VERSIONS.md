@@ -15,8 +15,13 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+# 1.50.0
+
+- Updated React to version 18
+
 ## 1.48.0
-- Step Indicator Paging with breaking changes, renamed props 'changeActiveStep' to 'arrowsAsCarousel', 'navigationCompletesPreviousSteps' to 'autocompletePreviousSteps', 'completeButtonId' to 'completeStepButtonId',  'previousButtonId' to 'previousStepButtonId', 'navigationClickable' to 'completeStepsClickable'
+
+- Step Indicator Paging with breaking changes, renamed props 'changeActiveStep' to 'arrowsAsCarousel', 'navigationCompletesPreviousSteps' to 'autocompletePreviousSteps', 'completeButtonId' to 'completeStepButtonId', 'previousButtonId' to 'previousStepButtonId', 'navigationClickable' to 'completeStepsClickable'
 
 ## 1.47.18
 

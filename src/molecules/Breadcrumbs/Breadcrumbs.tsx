@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { ChevronRightIcon } from '../../atoms/Icon/icons';
-import { MoreLowIcon } from '../../atoms/Icon/icons';
+import { ChevronRightIcon } from '../../atoms/Icon';
+import { MoreLowIcon } from '../../atoms/Icon';
 
 export interface Crumb {
   name: string;
@@ -37,15 +37,7 @@ const arrowRight = {
   NONE: 'none',
 };
 
-const Breadcrumbs = (props: {
-  crumbs: Crumb[];
-  alwaysShowRootCrumb: boolean;
-  pagingSize: number;
-  pageSize: number;
-  fontColor: string;
-  iconColor: string;
-  backgroundColor: string;
-}) => {
+const Breadcrumbs = (props: BreadcrumbsProps) => {
   if (!props.crumbs) {
     return <></>;
   }
@@ -91,14 +83,9 @@ const Breadcrumbs = (props: {
     };
   });
 
-  const getStyle = (style: string, color: string) => {
-    if (!color) {
-      color = 'black';
-    }
-    return style + ' ' + style + '--' + color;
-  };
+  const getStyle = (style: string, color?: string) => style + ' ' + style + '--' + (color ? color : 'black');
 
-  const setBackgroundColor = (style: string, color: string) => {
+  const setBackgroundColor = (style: string, color?: string) => {
     if (color) {
       return style + ' ' + style + '--' + color;
     }

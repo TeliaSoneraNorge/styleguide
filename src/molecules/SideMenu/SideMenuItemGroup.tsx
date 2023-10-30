@@ -40,6 +40,7 @@ type Props = {
    */
   collapse?: boolean;
   children?: React.ReactNode;
+  dataTrackingId?: string;
 };
 
 export const SideMenuItemGroup: React.FC<Props> = (props) => {
@@ -57,6 +58,7 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
     collapse = true,
     hasNotification,
     numberOfNotifications,
+    dataTrackingId,
   } = props;
 
   const handleClick = (e: React.SyntheticEvent) => {
@@ -75,6 +77,7 @@ export const SideMenuItemGroup: React.FC<Props> = (props) => {
         `telia-side-menu-item--${kind ?? 'squared'}`,
         className
       )}
+      data-tracking-id={dataTrackingId}
     >
       {md || !collapse ? (
         <button

@@ -12,6 +12,7 @@ import PropTypes from 'prop-types';
 export default class Banner extends React.Component {
   static propTypes = {
     reverse: PropTypes.bool,
+    className: PropTypes.string,
     img: PropTypes.string,
     imgAlt: PropTypes.string,
     grey: PropTypes.bool,

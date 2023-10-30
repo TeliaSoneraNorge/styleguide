@@ -1,0 +1,24 @@
+.contentBlock {
+  border-radius: 12px;
+  background-color: var(--grey-50);
+
+  &--white {
+    background-color: var(--white);
+  }
+
+  .button {
+    font-family: 'TeliaSans-Medium', Helvetica, Arial, 'Lucida Grande', sans-serif;
+    border: calc(0.2rem * 0.625) solid #990ae3;
+    font-size: calc(1.6rem * 0.625);
+  }
+
+  .banner {
+    &__image {
+      border-radius: 12px 12px 0 0;
+
+      @media all and (min-width: 60.5em) {
+        border-radius: 12px 0 0 12px;
+      }
+    }
+  }
+}

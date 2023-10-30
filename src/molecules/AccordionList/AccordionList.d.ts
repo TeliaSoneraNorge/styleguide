@@ -14,6 +14,7 @@ export interface AccordionListProps {
   toggleIsExpanded?: (...args: any[]) => any;
   isExpandedAccordionIndex: number;
   noBorder?: boolean;
+  transparent?: boolean;
 }
 
 export const AccordionList: React.FC<AccordionListProps>;
