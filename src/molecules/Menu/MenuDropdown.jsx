@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from '../../index';
 
 const MenuDropdown = (props) => {
-  const { dropdownMenu, isLoggedIn, daasLink } = props;
+  const { dropdownMenu, isLoggedIn, daasLink, logoutUrl } = props;
   if (!dropdownMenu) return null;
 
   const [type, setType] = useState(dropdownMenu.type);
@@ -98,7 +98,7 @@ const MenuDropdown = (props) => {
 
       <div className="menu__dropdown--logout">
         {!isLoggedIn && <p className="menu__dropdown--logout--not-logged-in">Logg ut</p>}
-        {isLoggedIn && <Link href="http://www.telia.no/logout">Logg ut</Link>}
+        {isLoggedIn && <Link href={logoutUrl ?? 'https://www.telia.no/logout/'}>Logg ut</Link>}
       </div>
     </div>
   );

@@ -37,6 +37,7 @@ export interface MenuProps {
   lockBodyOnMenuOpen?: boolean;
   isLoggedIn?: boolean;
   loginUrl?: string;
+  logoutUrl?: string;
   myPageUrl?: string;
   cartUrl?: string;
   isLoading?: boolean;

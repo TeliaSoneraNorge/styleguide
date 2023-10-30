@@ -29,6 +29,7 @@ const Menu = ({
   lockBodyOnMenuOpen,
   isLoggedIn,
   loginUrl,
+  logoutUrl,
   myPageUrl,
   isLoading,
   onlyLogo,
@@ -99,7 +100,9 @@ const Menu = ({
     const focusableElements = mobileMenuRef.current.querySelectorAll(focusableElementsSelector);
     if (!focusableElements.length) return;
 
-    focusableElements[0].focus();
+    if (!activeIndex || activeIndex === 0) {
+      focusableElements[0].focus();
+    }
   };
 
   useEffect(setFocusOnFirstFocusableElement);
@@ -127,7 +130,7 @@ const Menu = ({
         LinkTemplate={LinkTemplate}
         onMobileMenuToggle={toggleMobileMenu}
         menuLinks={menuLinks}
-        selectedHeaderIndex={activeIndex}
+        activeIndex={activeIndex}
         onMenuItemSelected={toggleMobileMenu}
         isLoading={isLoading}
         mobileMenuCloseButtonLabel={mobileMenuCloseButtonLabel}
@@ -155,6 +158,7 @@ const Menu = ({
         openedSubmenuIndex={openedSubmenuIndex}
         activeIndex={activeLinkIndex}
         loginUrl={loginUrl}
+        logoutUrl={logoutUrl}
         onMobileMenuToggle={toggleMobileMenu}
         onSearchSubmit={onSearchSubmit}
         searchLabel={searchLabel}

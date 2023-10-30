@@ -22,7 +22,7 @@
     & > a,
     & > button {
       text-decoration: none;
-      color: var(--grey-500);
+      color: var(--grey-700);
       font-size: 16px;
       line-height: 20px;
       font-weight: 500;
@@ -162,6 +162,24 @@
     & > a:hover,
     & > button:hover:before {
       color: var(--black);
+    }
+  }
+}
+
+.telia-tabs--dotted {
+  & > ul > li {
+    /* needed to avoid a solid bottom border glitch when hovering different li's */
+    border-bottom: 2px dotted transparent;
+    &:hover {
+      border-bottom: 2px dotted black;
+    }
+
+    &.active {
+      border-bottom-style: solid;
+    }
+
+    &.active:hover {
+      border-bottom: 2px solid var(--black);
     }
   }
 }

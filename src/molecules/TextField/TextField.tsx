@@ -114,6 +114,8 @@ export interface TextFieldProps {
   dataTestId?: string;
 
   autoFocus?: boolean;
+
+  dataTrackingId?: string;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -200,6 +202,7 @@ export const TextField = (props: TextFieldProps) => {
             maxLength={props.maxlength}
             data-testid={props.dataTestId}
             autoFocus={props.autoFocus}
+            data-tracking-id={props.dataTrackingId}
           />
           {statusIcon ? <span className="telia-textfield__status">{statusIcon}</span> : null}
           {props.rightContent ? (
