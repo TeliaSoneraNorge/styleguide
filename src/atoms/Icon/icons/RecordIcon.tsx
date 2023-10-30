@@ -26,9 +26,11 @@ export function RecordIcon(props: Props) {
       viewBox="0 0 64 64"
     >
       {props.title && <title>{props.title}</title>}
+      <path d="M37 32a5 5 0 11-10 0 5 5 0 0110 0z" />
       <path
-        fillRule="nonzero"
-        d="M35.53 28.52a5 5 0 11-7 0 5 5 0 017 0zM58 32c0 14.36-11.64 26-26 26S6 46.36 6 32 17.64 6 32 6a26 26 0 0126 26zm-4 0c0-12.15-9.85-22-22-22s-22 9.85-22 22 9.85 22 22 22 22-9.85 22-22z"
+        fillRule="evenodd"
+        d="M16.444 55.281A28 28 0 1047.556 8.717a28 28 0 00-31.112 46.564zm2.222-43.236a24 24 0 1126.668 39.911 24 24 0 01-26.668-39.911z"
+        clipRule="evenodd"
       />
     </svg>
   );

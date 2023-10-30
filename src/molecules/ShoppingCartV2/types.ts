@@ -13,6 +13,7 @@ export type ICartType =
   | 'DELIVERY'
   | 'WEBDEAL'
   | 'SIM'
+  | 'ESIM'
   | 'NEW_NUMBER'
   | 'BREAKAGE_FEE'
   | 'SWITCH_BREAKAGE_FEE'
@@ -138,9 +139,17 @@ interface ICartItemDiscountValue {
   monthly?: number;
 }
 
+export interface ICartDiscountType {
+  id: 'commitment' | 'sameGroup' | 'hardcoded';
+  value: number;
+  text: string;
+}
+
 interface ICartItemDiscount {
   value: ICartItemDiscountValue;
   description?: string;
+  handsetDiscountText?: string;
+  types?: ICartDiscountType[];
 }
 
 export interface ICartItemImage {

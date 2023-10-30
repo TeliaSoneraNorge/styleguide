@@ -12,7 +12,7 @@ export default function CodeSnippet(props: Props) {
 
   function toggleHtmlClick(event: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
     event.preventDefault();
-    setOpen(b => !b);
+    setOpen((b) => !b);
   }
 
   const showCodeSnippet = !props.toggle || isOpen;

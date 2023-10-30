@@ -17,10 +17,11 @@ interface HardwareProductCampaign {
 }
 
 interface Highlight {
-  heading: string;
-  text: string;
-  icon: IconDefinition;
-  color: string;
+  heading?: string;
+  text?: string;
+  icon?: IconDefinition;
+  color?: string;
+  textColor?: string;
 }
 
 export interface HardwareProductProps {
@@ -58,18 +59,27 @@ const HardwareProductBox = ({
     ) : null}
     <div className="hardware-product-box__upper-container">
       {highlight && !isEmpty(highlight) && (
-        <div style={{ backgroundColor: highlight.color }} className="hardware-product-box__highlight-container">
+        <div
+          style={{ backgroundColor: highlight.color, color: highlight.textColor || '#fff' }}
+          className="hardware-product-box__highlight-container"
+        >
           <div className="hardware-product-box__highlight-container--wrapper">
-            <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
-            <span className="hardware-product-box__highlight-container--heading">{highlight.heading}</span>
-            <span className="hardware-product-box__highlight-container--text">{highlight.text}</span>
+            {highlight.icon && (
+              <Icon className="hardware-product-box__highlight-container--icon" icon={highlight.icon} />
+            )}
+            {highlight.heading && (
+              <span className="hardware-product-box__highlight-container--heading">{highlight.heading}</span>
+            )}
+            {highlight.text && (
+              <span className="hardware-product-box__highlight-container--text">{highlight.text}</span>
+            )}
           </div>
         </div>
       )}
       {is5G && !highlight && <Icon className="hardware-product-box__five-g-container" icon="five-g" />}
       {image ? (
         <div className="hardware-product-box__product-image-container">
-          <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} />
+          <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} alt="" />
         </div>
       ) : null}
     </div>

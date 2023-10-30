@@ -38,7 +38,7 @@ const updateSorting = <T>([...sortingArray]: Sorting<T>[], field: keyof T, maxSo
     ? [...sortingArray]
     : [
         { field, inverted: !sortingArray[0] || sortingArray[0].field !== field ? false : !sortingArray[0].inverted },
-        ...sortingArray.filter(s => s.field !== field),
+        ...sortingArray.filter((s) => s.field !== field),
       ].slice(0, maxSortingFields);
 };
 
@@ -62,7 +62,7 @@ const createThSortablePropsGetter: <T>(
   sortingArray: Sorting<T>[],
   setSortingArray: Dispatch<SetStateAction<Sorting<T>[]>>,
   maxSortingFields: number
-) => ThSortablePropsGetter<T> = (sortingArray, setSortingArray, maxSortingFields) => field => {
+) => ThSortablePropsGetter<T> = (sortingArray, setSortingArray, maxSortingFields) => (field) => {
   const fieldSorting = findFieldSorting(field, sortingArray);
   return {
     onSort: () => {
@@ -119,14 +119,14 @@ const parseInitialSorting = <T>(initialSorting: InitialSorting<T>[]) => {
   }
   return (Array.isArray(initialSorting) ? initialSorting : [initialSorting])
     .map(
-      initialSorting =>
+      (initialSorting) =>
         (typeof initialSorting === 'string'
           ? initialSorting.startsWith('!')
             ? { field: initialSorting.substring(1), inverted: true }
             : { field: initialSorting }
           : initialSorting) as Sorting<T>
     )
-    .filter(sorting => sorting.field);
+    .filter((sorting) => sorting.field);
 };
 
 export type UseThSortable = <T>(

@@ -208,7 +208,7 @@ export function SubscriptionSamplePage() {
       >
         <FunkyTabs.TabPanel heading="Under 15 år" imagePath={img.under15} url="/tabs/under-15">
           <section className="box-grid container container--medium container--no-padding">
-            {underFemtenSubscriptionProps.map(subscriptionProps => (
+            {underFemtenSubscriptionProps.map((subscriptionProps) => (
               <Subscription
                 key={subscriptionProps.id}
                 {...subscriptionProps}
@@ -222,7 +222,7 @@ export function SubscriptionSamplePage() {
         </FunkyTabs.TabPanel>
         <FunkyTabs.TabPanel heading="Under 28 år" imagePath={img.under28} url="/tabs/under-28">
           <section className="box-grid container container--medium container--no-padding">
-            {underTjueAatteSubscriptionProps.map(subscriptionProps => (
+            {underTjueAatteSubscriptionProps.map((subscriptionProps) => (
               <Subscription
                 key={subscriptionProps.id}
                 {...subscriptionProps}
@@ -236,7 +236,7 @@ export function SubscriptionSamplePage() {
         </FunkyTabs.TabPanel>
         <FunkyTabs.TabPanel heading="For alle" imagePath={img.forAlle} url="/tabs/for-alle">
           <section className="box-grid container container--medium container--no-padding">
-            {forAlleSubscriptionProps.map(subscriptionProps => (
+            {forAlleSubscriptionProps.map((subscriptionProps) => (
               <Subscription
                 key={subscriptionProps.id}
                 {...subscriptionProps}
@@ -250,7 +250,7 @@ export function SubscriptionSamplePage() {
         </FunkyTabs.TabPanel>
         <FunkyTabs.TabPanel heading="Kontantkort" imagePath={img.kontantkort} url="/tabs/kontantkort">
           <section className="box-grid container container--medium container--no-padding">
-            {kontantkortSubscriptionProps.map(subscriptionProps => (
+            {kontantkortSubscriptionProps.map((subscriptionProps) => (
               <Subscription
                 key={subscriptionProps.id}
                 {...subscriptionProps}

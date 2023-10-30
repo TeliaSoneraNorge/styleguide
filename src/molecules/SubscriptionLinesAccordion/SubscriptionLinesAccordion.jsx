@@ -230,7 +230,7 @@ const SubscriptionLinesAccordion = ({
               </div>
               <div className="subscription-lines-accordion__icon-container">
                 <Icon
-                  icon="arrow-down"
+                  icon="chevron-down"
                   className={cn('subscription-lines-accordion__icon-arrow', {
                     'subscription-lines-accordion__icon-arrow--isExpanded': isExpanded,
                   })}

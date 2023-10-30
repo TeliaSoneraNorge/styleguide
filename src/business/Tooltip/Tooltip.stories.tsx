@@ -1,5 +1,5 @@
 import React from 'react';
-import { Tooltip } from './Tooltip';
+import { Tooltip, TooltipColor, TooltipPosition } from './Tooltip';
 import { Button } from '../Button/Button';
 import { Icon } from '../../atoms/Icon';
 
@@ -22,13 +22,13 @@ export const TooltipStyles = () => (
     <br />
     <br />
     <h4>Grey tooltip</h4>
-    <Tooltip label="This is a tooltip" color="grey">
+    <Tooltip label="This is a tooltip" color={TooltipColor.Grey}>
       <Button label="hover me" />
     </Tooltip>
     <br />
     <br />
     <h4>Purple tooltip</h4>
-    <Tooltip label="This is a tooltip" color="purple">
+    <Tooltip label="This is a tooltip" color={TooltipColor.Purple}>
       <Button label="hover me" />
     </Tooltip>
     <br />
@@ -39,37 +39,51 @@ export const TooltipStyles = () => (
 export const TooltipLongText = () => (
   <div>
     <h2>Tooltip</h2>
-    <br />
-    <br />
-    <h3>Tooltip with long text</h3>
-    <Tooltip
-      position="right"
-      label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
-    >
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <br />
-
-    <Tooltip label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <br />
-
-    <Tooltip
-      position="right"
-      label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
-    >
-      <Icon icon="info" style={{ height: '1.5rem' }} />
-    </Tooltip>
-    <div style={{ textAlign: 'center' }}>
+    <div style={{ paddingLeft: '200px' }}>
+      <h3>Tooltip with long text</h3>
       <Tooltip
-        position="left"
+        position={TooltipPosition.Right}
         label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
       >
-        <Icon icon="info" className="w-5 text-corePurple500" />
+        <Button label="hover me" />
       </Tooltip>
+      <br />
+      <br />
+
+      <Tooltip label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word">
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <br />
+
+      <Tooltip
+        position={TooltipPosition.Right}
+        label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
+      >
+        <Icon icon="info" style={{ height: '1.5rem' }} />
+      </Tooltip>
+      <br />
+      <Tooltip
+        position={TooltipPosition.Left}
+        label="It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word"
+      >
+        <Icon icon="info" className="text-corePurple500" />
+      </Tooltip>
+
+      <Tooltip
+        label={
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <div>Klikk for søk i Min Bedrift</div>
+            <div># + K</div>
+          </div>
+        }
+      >
+        <Button kind="secondary-text" label="Søk i Min Bedrift" />
+      </Tooltip>
+      <br />
+      <br />
+      <br />
+      <br />
     </div>
   </div>
 );
@@ -78,52 +92,48 @@ export const TooltipPositions = () => (
   <div>
     {' '}
     <h2>Tooltip positions</h2>
-    <h4>Right tooltip</h4>
-    <Tooltip label="This is a tooltip" position="right">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <br />
-    <h4>Bottom tooltip</h4>
-    <Tooltip label="This is a tooltip" position="bottom">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <h4>Bottom-start tooltip</h4>
-    <span style={{ paddingLeft: '150px' }}></span>
-    <Tooltip label="This is a tooltip" position="bottom-start">
-      <Button label="hover me" />
-    </Tooltip>
-    <h4>Bottom-end tooltip</h4>
-    <Tooltip label="This is a tooltip" position="bottom-end">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <br />
-    <br />
-    <h4>Left tooltip</h4>
-    <span style={{ paddingLeft: '150px' }}></span>
-    <Tooltip label="This is a tooltip" position="left">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <br />
-    <h4>Top tooltip</h4>
-    <Tooltip label="This is a tooltip" position="top">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <h4>Top-start tooltip</h4>
-    <span style={{ paddingLeft: '150px' }}></span>
-    <Tooltip label="This is a tooltip" position="top-start">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <h4>Top-end tooltip</h4>
-    <Tooltip label="This is a tooltip" position="top-end">
-      <Button label="hover me" />
-    </Tooltip>
-    <br />
-    <br />
+    <div style={{ paddingLeft: '150px' }}>
+      <h4>Right tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.Right}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Bottom tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.Bottom}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Bottom-start tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.BottomStart}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Bottom-end tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.BottomEnd}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Left tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.Left}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Top tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.Top}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Top-start tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.TopStart}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <h4>Top-end tooltip</h4>
+      <Tooltip label="This is a tooltip" position={TooltipPosition.TopEnd}>
+        <Button label="hover me" />
+      </Tooltip>
+      <br />
+      <br />
+    </div>
   </div>
 );

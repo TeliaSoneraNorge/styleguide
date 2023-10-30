@@ -8,11 +8,11 @@ export default {
 
 export const Default = () => (
   <PopUpLine
-  description="Lagre endringer?"
-  confirmButtonText="Lagre"
-  cancelButtonText="Nei, forresten"
-  isConfirmationLine
+    description="Lagre endringer?"
+    confirmButtonText="Lagre"
+    cancelButtonText="Nei, forresten"
+    isConfirmationLine
   />
-  );
-  
+);
+
 export const ConfirmationLine = () => <PopUpLine description="Endringene ble lagret!" />;

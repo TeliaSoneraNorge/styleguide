@@ -65,7 +65,7 @@ export const MinimumRightHeading = () => {
   );
 };
 
-export const SimpleNoIconNoBadgeNoIngress = () => {
+export const TitleLeftAndRightOnly = () => {
   return (
     <AccordionFlexible title={'Bredbånd og TV'} titleRight={'799,- md'} expand={false} disclaimers={disclaimers}>
       <ul className="list">
@@ -78,7 +78,7 @@ export const SimpleNoIconNoBadgeNoIngress = () => {
   );
 };
 
-export const MultipleIconsWithBadge = () => {
+export const AllContentFieldsFilledAndDoExpandOnLoad = () => {
   return (
     <AccordionFlexible
       icons={[<InfiniteIcon />, 'internet', 'robot']}
@@ -101,7 +101,7 @@ export const MultipleIconsWithBadge = () => {
   );
 };
 
-export const NoIconWithBadge = () => {
+export const AllTextsAndBadgeAndDoExpandOnLoad = () => {
   return (
     <AccordionFlexible
       icons={null}
@@ -124,10 +124,23 @@ export const NoIconWithBadge = () => {
   );
 };
 
-export const MultipleIconsNoBadge = () => {
+export const TitleLeftAndLineThroughRight = () => {
+  return (
+    <AccordionFlexible title={'Bredbånd og TV'} titleRightLineThrough={'Not anymore'}>
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
+
+export const AllTextsIconAsStringAndDoExpandOnLoad = () => {
   return (
     <AccordionFlexible
-      icons={null}
+      icons={'robot'}
       title={'Bredbånd og TV'}
       ingress={'Få rabatt ved å velge både TV og bredbånd fra Telia'}
       titleRightLineThrough={'999'}
@@ -149,7 +162,7 @@ export const MultipleIconsNoBadge = () => {
   );
 };
 
-export const MultipleIconsWithCustomBadgeObjectWithScrollTo = () => {
+export const AllTextsWithCustomBadgeAndScrollToOnOpen = () => {
   return (
     <AccordionFlexible
       icons={null}

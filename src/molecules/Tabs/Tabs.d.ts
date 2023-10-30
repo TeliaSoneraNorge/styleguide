@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 
 declare interface TabsProps {
   uniqueId?: string;
@@ -7,6 +7,7 @@ declare interface TabsProps {
   skipPanelRendering?: boolean;
   compact?: boolean;
   fullBorder?: boolean;
+  children?: ReactNode | ReactNode[];
 }
 
 declare const Tabs: React.FC<TabsProps> & {
@@ -16,6 +17,7 @@ declare const Tabs: React.FC<TabsProps> & {
     selectedIndex?: number;
     heading?: string;
     onSelect?: (...args: any[]) => any;
+    children?: ReactNode | ReactNode[];
   }>;
 
   TabPanel: React.FC<{
@@ -23,9 +25,12 @@ declare const Tabs: React.FC<TabsProps> & {
     uniqueId?: string;
     isSelected?: boolean;
     heading?: string;
+    children?: ReactNode | ReactNode[];
   }>;
 
-  TabList: React.FC;
+  TabList: React.FC<{
+    children?: ReactNode | ReactNode[];
+  }>;
 };
 
 export default Tabs;

@@ -107,7 +107,7 @@ export const InformationArticleSample5 = () => (
           <li className="list__item">Second link in list</li>
           <li className="list__item">Third link in list</li>
         </ul>
-        {accordionListProps.map(props => (
+        {accordionListProps.map((props) => (
           <AccordionList key={props.key} {...props} />
         ))}
         <table className="full-width-table">
@@ -155,7 +155,7 @@ export const InformationArticleSample5 = () => (
           nisi, pretium ut lacinia in, elementum id enim. Vivamus suscipit tortor eget felis porttitor volutpat.
         </p>
         <h2 className="heading heading--level-2">Heading 2 for accordions</h2>
-        {accordionListProps.map(props => (
+        {accordionListProps.map((props) => (
           <AccordionList key={props.key} {...props} />
         ))}
         <h3 className="heading heading--level-3">Heading 3</h3>

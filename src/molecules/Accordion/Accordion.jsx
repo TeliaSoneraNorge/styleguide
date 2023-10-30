@@ -27,6 +27,7 @@ const Accordion = ({
   toggleIsExpanded,
   footer,
   shouldAnimateHeaderButtonTextBox,
+  transparent,
 }) => {
   function accordionHeaderClicked() {
     toggleIsExpanded();
@@ -36,7 +37,7 @@ const Accordion = ({
     <section id={`accordion-${id}`} className={`accordion${isExpanded ? ' accordion--open' : ''}`} ref={accordionRef}>
       <h3 className={`accordion__header${button ? ' accordion__header--with-button' : ''} heading heading--level-3`}>
         <button
-          className="accordion__header-button"
+          className={classnames('accordion__header-button', { 'accordion__header-button--transparent': transparent })}
           aria-expanded={isExpanded}
           aria-controls={`panel-${id}`}
           onClick={accordionHeaderClicked}
@@ -57,7 +58,7 @@ const Accordion = ({
             {text && <div className="accordion__header-button--text-box-text">{text}</div>}
           </div>
         </button>
-        <Icon icon="arrow-down" className="accordion__header-icon" />
+        <Icon icon="chevron-down" className="accordion__header-icon" />
       </h3>
       {button && (
         <Button

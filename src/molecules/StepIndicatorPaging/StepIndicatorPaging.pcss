@@ -1,0 +1,522 @@
+.telia-step-indicator-paging {
+  display: block;
+
+  &__circle {
+    fill: var(--darker-grey);
+
+    &-svg {
+      position: absolute;
+      left: -4000px;
+      z-index: -1;
+      width: 1px;
+      height: 1px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    padding-bottom: 24px;
+    width: min-content;
+    position: relative;
+    margin: 0 auto;
+
+    @media screen and (min-width: 48em) {
+      padding-bottom: 40px;
+    }
+
+    /*TODO/Optional: Update to display flex - grow, with 'min and max value per list item....' ? */
+    &--page-size-3 > li {
+      width: 96px;
+      @media screen and (min-width: 22.5em) {
+        width: 110px;
+      }
+
+      @media screen and (min-width: 25em) {
+        width: 120px;
+      }
+
+      @media screen and (min-width: 27.5em) {
+        width: 130px;
+      }
+      @media screen and (min-width: 32em) {
+        width: 150px;
+      }
+    }
+
+    &--page-size-4 > li {
+      width: 72px;
+      @media screen and (min-width: 22.5em) {
+        width: 78px;
+      }
+
+      @media screen and (min-width: 25em) {
+        width: 90px;
+      }
+
+      @media screen and (min-width: 27.5em) {
+        width: 102px;
+      }
+      @media screen and (min-width: 32em) {
+        width: 120px;
+      }
+    }
+
+    &--page-size-5 > li {
+      @media screen and (min-width: 22.5em) {
+        width: 65px;
+      }
+
+      @media screen and (min-width: 25em) {
+        width: 72px;
+      }
+
+      @media screen and (min-width: 27.5em) {
+        width: 78px;
+      }
+      @media screen and (min-width: 32em) {
+        width: 92px;
+      }
+    }
+
+    & > li.telia-step-indicator-paging__list-item {
+      @media screen and (min-width: 48em) {
+        width: 130px;
+      }
+      @media screen and (min-width: 52em) {
+        width: 150px;
+      }
+    }
+  }
+
+  &__list-item {
+    min-width: 58px;
+    min-height: 32px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__button {
+    border: 0;
+    outline: 0;
+    background: unset;
+    cursor: pointer;
+    z-index: 3;
+    font-size: 14px;
+    user-select: none;
+    color: var(--darker-grey);
+
+    &:focus,
+    &:hover {
+      color: var(--core-purple);
+      border-color: var(--core-purple);
+    }
+
+    &--complete {
+      color: var(--core-purple-850);
+
+      & > div > span {
+        display: none;
+      }
+
+      & > div svg {
+        color: var(--core-purple);
+        stroke: var(--core-purple);
+        stroke-width: 2;
+      }
+
+      & > div {
+        border-color: var(--core-purple);
+      }
+
+      &:focus,
+      &:hover {
+        & > div {
+          & > svg {
+            display: none;
+          }
+          & > span {
+            display: block;
+          }
+        }
+      }
+    }
+
+    &--disabled {
+      color: var(--darker-grey) !important;
+      border-color: var(--darker-grey) !important;
+      cursor: default !important;
+
+      &.telia-step-indicator-paging__button--complete {
+        color: var(--core-purple) !important;
+      }
+
+      &:hover {
+        & > div {
+          & > svg {
+            display: none;
+          }
+          & > span {
+            display: block;
+          }
+        }
+      }
+      &.telia-step-indicator-paging__button--complete:hover {
+        & > div {
+          & > svg {
+            display: block;
+          }
+          & > span {
+            display: none;
+          }
+        }
+      }
+    }
+
+    &--active,
+    &--active:focus,
+    &--active:hover {
+      cursor: default;
+
+      & > div {
+        & > svg {
+          display: none;
+        }
+        & > span {
+          display: block;
+        }
+      }
+    }
+
+    &-clickable-field {
+      left: 10%;
+      top: 0;
+      width: 70%;
+      height: 120%;
+      position: absolute;
+    }
+
+    &-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+
+      border: 2px solid;
+      border-radius: 50%;
+
+      height: 28px;
+      width: 28px;
+
+      @media screen and (max-width: 48em) {
+        height: 24px;
+        width: 24px;
+      }
+
+      &--active {
+        border-color: var(--core-purple);
+        background-color: var(--core-purple);
+        color: var(--white);
+      }
+
+      & svg {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    &-title-container {
+      user-select: none;
+      position: absolute;
+      left: 0;
+      margin: 0;
+      top: 40px;
+      width: 100%;
+      max-width: 150px;
+      text-align: center;
+      font-size: 16px;
+      line-height: 1;
+      font-family: 'TeliaSans-Regular';
+      max-width: 97%; /* so swapping font does not "jump" text */
+
+      @media screen and (max-width: 48em) {
+        display: none;
+        visibility: hidden;
+        top: 38px;
+        max-width: 125%;
+      }
+
+      & > span {
+        color: var(--darker-grey);
+        display: inline-block;
+        text-align: center;
+      }
+
+      &--complete > span {
+        color: var(--core-purple-850);
+        display: inline-block;
+        text-align: center;
+      }
+
+      &--active {
+        font-family: 'TeliaSans-Medium';
+
+        & > span {
+          color: var(--core-purple-850);
+        }
+
+        @media screen and (max-width: 48em) {
+          display: block;
+          visibility: visible;
+          font-size: 15px;
+        }
+
+        @media screen and (max-width: 32em) {
+          width: 125%;
+          margin-left: -12.5%;
+        }
+
+        @media screen and (max-width: 27.5em) {
+          font-size: 14px;
+        }
+
+        @media screen and (max-width: 22em) {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  &__line {
+    position: absolute;
+    cursor: default;
+    z-index: -10;
+
+    top: calc(50% - 2px);
+    left: 50%;
+    margin-left: 14px;
+
+    width: calc(100% - 26px);
+    height: 3px;
+
+    &.right {
+      left: 0;
+      margin-left: -2px;
+
+      @media screen and (max-width: 28em) {
+        margin-left: 3px;
+      }
+    }
+
+    &.left {
+      margin-left: 0;
+    }
+
+    & > svg {
+      margin-top: 1px;
+      width: 100%;
+    }
+
+    &--dashed {
+      width: calc(100% - 32px);
+      margin-left: 16px;
+    }
+
+    @media screen and (max-width: 48em) {
+      width: calc(100% - 20px);
+      margin-left: 10px;
+    }
+
+    &--complete {
+      border-bottom-style: solid;
+      border-bottom-color: var(--core-purple);
+      border-width: 2px;
+    }
+  }
+
+  &__arrow-container {
+    position: absolute;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+  }
+
+  &__arrow-item {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+
+    &--left {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      left: 0;
+      margin-left: -12px;
+      @media screen and (min-width: 48em) {
+        margin-left: -5px;
+      }
+    }
+    &--right {
+      position: absolute;
+      width: 50%;
+      height: 100%;
+      left: calc(50% + 12px); /* width + 'button circle size' */
+    }
+  }
+
+  &__arrow {
+    position: absolute;
+    background-color: white;
+    height: 100%;
+    z-index: 5;
+    color: var(--darker-grey);
+
+    display: flex;
+    justify-items: center;
+
+    &--left {
+      left: 0;
+    }
+
+    &--right {
+      right: 0;
+    }
+
+    & > button {
+      color: var(--darker-grey);
+      cursor: pointer;
+      background-color: transparent;
+      outline: unset;
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 20px;
+      border: 0;
+
+      /* Chrome/Firefox on Mac, does not inherit the color from button */
+      &:active,
+      &:focus,
+      &:visited {
+        color: var(--darker-grey);
+      }
+
+      &:hover {
+        color: var(--core-purple);
+      }
+    }
+
+    & > button > svg {
+      /* Chrome/Firefox on Mac, does not inherit the color from button */
+      color: var(--darker-grey);
+      width: 20px;
+      @media screen and (min-width: 48em) {
+        width: 24px;
+      }
+      &:hover {
+        color: var(--core-purple);
+      }
+    }
+
+    & > a > svg {
+      /* Chrome/Firefox on Mac, does not inherit the color from button */
+      color: var(--darker-grey);
+      width: 20px;
+      @media screen and (min-width: 48em) {
+        width: 24px;
+      }
+      &:hover {
+        color: var(--core-purple);
+      }
+    }
+
+    &-line {
+      width: 58px;
+      position: absolute;
+      z-index: 3;
+      display: none;
+      visibility: hidden;
+
+      &--solid {
+        border-bottom: 2px solid var(--core-purple);
+        margin-left: 8px;
+
+        &.left {
+          margin-left: 8px;
+        }
+
+        &.right {
+          margin-left: 0px;
+        }
+      }
+
+      &--dashed {
+        /* uses svg to draw the dashes */
+        left: 0;
+        margin-left: -2px;
+        height: 3px;
+      }
+
+      &--dashed.left {
+        right: 11px;
+      }
+
+      @media screen and (min-width: 40em) {
+        display: block;
+        visibility: visible;
+      }
+    }
+
+    &-layer {
+      width: 75%;
+      height: 100%;
+      position: absolute;
+      z-index: 4;
+      visibility: hidden;
+      display: none;
+
+      @media screen and (min-width: 40em) {
+        visibility: visible;
+        display: block;
+      }
+
+      &-background {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background-color: white;
+        z-index: 2;
+        visibility: hidden;
+        display: none;
+
+        @media screen and (min-width: 40em) {
+          visibility: visibility;
+          display: block;
+        }
+      }
+
+      &--left {
+        background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
+        transform: rotate(-180deg);
+        right: 6px;
+      }
+
+      &--right {
+        background: linear-gradient(268.73deg, #ffffff 38.45%, rgba(255, 255, 255, 0) 108.13%);
+      }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    margin: 0 auto;
+  }
+}

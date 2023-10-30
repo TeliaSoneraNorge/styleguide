@@ -1,20 +1,23 @@
 import React from 'react';
 import List from './List';
-import { Link as TeliaLink } from '../../index'
+import { Link as TeliaLink } from '../../index';
 
 export default {
   title: 'Component library/Atoms/List',
   component: List,
 };
 
-
 export const Warning = () => {
   return (
-    <h4 style={{ color: 'red'}}>
-      List component are not deprecated yet, but we advice not to use them!<br/>
-      For list accessibility use this refrence: <a href="https://www.w3.org/WAI/tutorials/page-structure/content/#lists" target="_blank">W3 List Structure</a>
+    <h4 style={{ color: 'red' }}>
+      List component are not deprecated yet, but we advice not to use them!
+      <br />
+      For list accessibility use this refrence:{' '}
+      <a href="https://www.w3.org/WAI/tutorials/page-structure/content/#lists" target="_blank">
+        W3 List Structure
+      </a>
     </h4>
-  )
+  );
 };
 
 export const Default = () => {
@@ -26,11 +29,11 @@ export const Default = () => {
       <Item>Second item in list</Item>
       <Item>Third item in list</Item>
     </List>
-  )
+  );
 };
 
 export const WrapByFour = () => {
-  const { Item } = List; 
+  const { Item } = List;
 
   return (
     <List wrapByFour>
@@ -43,7 +46,7 @@ export const WrapByFour = () => {
       <Item>Seventh item in list</Item>
       <Item>Eighth item in list</Item>
     </List>
-  )
+  );
 };
 
 export const WrapByThree = () => {
@@ -57,7 +60,7 @@ export const WrapByThree = () => {
       <Item>Fourth item in list</Item>
       <Item>Fifth item in list</Item>
     </List>
-  )
+  );
 };
 
 export const WithLinks = () => {
@@ -75,7 +78,7 @@ export const WithLinks = () => {
         <Link href="#">Third link in list</Link>
       </Item>
     </List>
-  )
+  );
 };
 
 export const ListLinksAndNormalLinks = () => {
@@ -84,30 +87,30 @@ export const ListLinksAndNormalLinks = () => {
 
   return (
     <>
-    <TeliaLink href="#" icon="security" iconPosition="before">
-      Normal Link with icon before
-    </TeliaLink>
-    <br/>
-    <br/>
+      <TeliaLink href="#" icon="security" iconPosition="before">
+        Normal Link with icon before
+      </TeliaLink>
+      <br />
+      <br />
 
-    <List>
-      <Item>
-        <Link href="#">List Link First link in list</Link>
-      </Item>
-      <Item>
-        <Link href="#">List Link Second link in list</Link>
-      </Item>
-      <Item>
-        <Link href="#">List Link Third link in list</Link>
-      </Item>
-    </List>
+      <List>
+        <Item>
+          <Link href="#">List Link First link in list</Link>
+        </Item>
+        <Item>
+          <Link href="#">List Link Second link in list</Link>
+        </Item>
+        <Item>
+          <Link href="#">List Link Third link in list</Link>
+        </Item>
+      </List>
     </>
-  )
+  );
 };
 
 export const WithBubbleLinks = () => {
   const { Item, BubbleLink } = List;
-  
+
   return (
     <List>
       <Item>
@@ -121,12 +124,12 @@ export const WithBubbleLinks = () => {
         </BubbleLink>
       </Item>
     </List>
-  )
+  );
 };
 
 export const WithBlackLinks = () => {
   const { Item, Link } = List;
-  
+
   return (
     <List black>
       <Item>
@@ -139,5 +142,5 @@ export const WithBlackLinks = () => {
         <Link href="#">Third link in list</Link>
       </Item>
     </List>
-  )
+  );
 };

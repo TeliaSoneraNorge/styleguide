@@ -5,6 +5,7 @@ declare interface HorizontalRuleProps {
    * Whenever this should be short or not.
    */
   short?: any;
+  className?: string;
   /**
    * Whenever this should be left aligned.
    */

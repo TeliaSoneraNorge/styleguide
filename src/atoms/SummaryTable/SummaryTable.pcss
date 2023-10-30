@@ -1,18 +1,107 @@
 .summary-table {
+  position: relative;
   display: flex;
   flex-direction: column;
-  margin: 0.25rem 0;
-  overflow: hidden;
+  margin: 0;
   max-width: 40rem;
   width: 100%;
+  border-radius: 8px;
+
+  padding: 22px;
+  padding-top: 24px;
+  padding-bottom: 30px;
+
+  @media screen and (max-width: 768px) {
+    padding: 16px;
+    padding-top: 18px;
+    padding-bottom: 24px;
+  }
+
+  @media screen and (max-width: 375px) {
+    padding: 12px;
+    padding-top: 14px;
+    padding-bottom: 20px;
+  }
+
+  &--background-grey-50 {
+    background-color: var(--grey-50);
+  }
+
+  &__badge-container {
+    position: absolute;
+    top: -10px;
+    right: 0;
+    margin-right: 10%;
+
+    & .telia-badge--root {
+      height: 24px;
+      position: relative;
+      display: inline-flex;
+      justify-content: center;
+
+      top: -2px;
+      background-color: #ccefdd;
+      padding: 0 4px;
+      border-radius: 2px;
+
+      & > svg {
+        height: 19px;
+        width: 19px;
+        position: relative;
+        top: 2px;
+        margin-left: 2px;
+      }
+
+      & > .telia-badge--with-icon::before {
+        margin-left: -11px;
+      }
+      & > .telia-badge.telia-badge__top-right {
+        position: relative;
+        transform: none;
+        height: 24px;
+
+        & > div {
+          z-index: 2;
+        }
+
+        &::before {
+          content: '';
+          position: absolute;
+          bottom: -7px;
+          height: 17px;
+          width: 17px;
+          transform: rotate(45deg);
+          background-color: var(--green-100);
+          z-index: 1;
+        }
+      }
+    }
+
+    & .telia-badge--text {
+      line-height: 22px;
+      font-size: 14px;
+    }
+  }
+
+  & > h3 {
+    margin: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  & h4 {
+    margin: 0;
+    margin-top: 14px;
+    font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    line-height: 100%;
+
+    & + div {
+      margin-top: -0.4em;
+    }
+  }
 
   &__row {
-    display: flex;
-    min-height: 50px;
-
-    &:not(:last-of-type) {
-      border-bottom: 2px solid #737373;
-    }
+    margin: 0;
 
     &--green {
       color: #00cc66;
@@ -27,6 +116,50 @@
         text-decoration: line-through;
       }
     }
+
+    &--indent {
+      @media screen and (max-width: 400px) {
+        padding-left: 1.35rem;
+      }
+      @media screen and (max-width: 500px) {
+        padding-left: 1.7rem;
+      }
+
+      padding-left: 2rem;
+    }
+
+    &--bold {
+      font-family: 'TeliaSans-regular', Helvetica, Arial, sans-serif;
+      .summary-table__value {
+        font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
+      }
+    }
+
+    &--below-line {
+      & > h4 {
+        padding-top: 0px;
+        padding-bottom: 6px;
+      }
+
+      margin-top: 16px;
+      border-top: 1px solid #b0b0b5;
+      padding-top: 0px;
+
+      .summary-table__row-container {
+        min-height: 30px;
+      }
+
+      & ~ .summary-table__row--below-line {
+        border: 0;
+        margin-top: 0;
+      }
+    }
+  }
+
+  &__row-container {
+    min-height: 40px;
+    width: 100%;
+    display: flex;
   }
 
   &__label {
@@ -41,45 +174,84 @@
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin: 0;
     margin-top: 0.5rem;
-    margin-right: 5px;
-    margin-inline-start: 0;
     width: 50%;
+
+    &--striketrough {
+      font-family: 'TeliaSans-regular', Helvetica, Arial, sans-serif;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 150%;
+      text-decoration-line: line-through;
+      text-decoration-thickness: 1px;
+      text-align: left;
+      text-decoration-color: var(--core-purple);
+      margin-right: 0.5rem;
+      margin-top: 3px;
+    }
+  }
+
+  &__description {
+    float: right;
+    margin: 0;
+    margin-top: -8px;
+    margin-bottom: 4px;
+    font-size: 14px;
+    color: var(--black);
+    font-family: 'TeliaSans-regular', Helvetica, Arial, sans-serif;
   }
 
   &--compact {
-    .summary-table__row {
-      min-height: 2rem;
+    padding: 22px;
+    padding-top: 16px;
+    padding-bottom: 20px;
+    min-height: 34px;
 
+    @media screen and (max-width: 768px) {
+      padding: 16px;
+      padding-top: 12px;
+      padding-bottom: 16px;
+    }
+
+    @media screen and (max-width: 375px) {
+      padding: 12px;
+      padding-top: 10px;
+      padding-bottom: 14px;
+    }
+
+    h4 {
+      margin-top: 8px;
+      & + div {
+        margin-top: -4px;
+      }
+    }
+
+    .summary-table__row-container {
+      min-height: 32px;
+    }
+
+    .summary-table__description {
+      margin-top: -2px;
+    }
+  }
+
+  &--result-line-off {
+    .summary-table__row {
+      border-bottom: none;
+    }
+  }
+
+  &--result-line {
+    .summary-table__row {
       &:not(:last-of-type) {
         border-bottom: none;
       }
 
-      &:nth-last-child(2) {
-        border-bottom: 2px solid #737373;
-      }
-
-      &--indent {
-        padding-left: 2rem;
-      }
-
-      &--bold {
-        font-family: 'TeliaSans-regular', Helvetica, Arial, sans-serif;
-        .summary-table__value {
-          font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
-        }
-      }
-    }
-
-    .summary-table__value {
-      &--striketrough {
-        font-family: 'TeliaSans-regular', Helvetica, Arial, sans-serif;
-        font-size: 0.85rem;
-        text-decoration-line: line-through;
-        text-decoration-thickness: 1px;
-        text-align: left;
-        text-decoration-color: var(--core-purple);
-        margin-right: 0.5rem;
+      &:nth-last-child(1) {
+        margin-top: 16px;
+        border-top: 1px solid #b0b0b5;
+        padding-top: 8px;
       }
     }
   }

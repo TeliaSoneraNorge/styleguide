@@ -28,7 +28,8 @@ export function MenuIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M50 44a2 2 0 110 4H14a2 2 0 110-4zm0-14a2 2 0 110 4H14a2 2 0 110-4zm0-14a2 2 0 110 4H14a2 2 0 110-4z"
+        d="M10.333 16.833c0-1.196.97-2.166 2.167-2.166h39a2.167 2.167 0 110 4.333h-39a2.167 2.167 0 01-2.167-2.167zM51.5 45h-39a2.167 2.167 0 100 4.333h39a2.167 2.167 0 100-4.333zm0-15.167h-39a2.167 2.167 0 000 4.334h39a2.167 2.167 0 000-4.334z"
+        clipRule="evenodd"
       />
     </svg>
   );

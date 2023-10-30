@@ -10,7 +10,7 @@ interface Props {
 export const Card: React.FC<Props> = (props) => (
   <div
     className={cs('telia-card', props.className, {
-      'telia-card--bordered': props.borders !== false,
+      'telia-card--bordered': props.borders,
     })}
   >
     {props.children}

@@ -7,31 +7,25 @@ export default {
 };
 
 export const Default = () => {
-
   const { Tag } = Tags;
-  
-  return (
 
+  return (
     <Tags>
       <Tag>Technology</Tag>
       <Tag>Music</Tag>
       <Tag>Streaming</Tag>
     </Tags>
-
-  )
+  );
 };
 
 export const Color = () => {
-
   const { Tag } = Tags;
-  
-  return (
 
+  return (
     <Tags color="dark-grey">
       <Tag>Technology</Tag>
       <Tag>Music</Tag>
       <Tag>Streaming</Tag>
     </Tags>
-
-  )
+  );
 };

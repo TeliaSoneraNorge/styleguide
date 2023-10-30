@@ -93,7 +93,7 @@ export interface TextFieldProps {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-
+  onPaste?: (event: React.ClipboardEvent<HTMLInputElement>) => void;
   /**
    * For compact TextFields vi use the label as a placeholder
    */
@@ -110,6 +110,12 @@ export interface TextFieldProps {
   inputRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement>;
 
   animated?: Boolean;
+
+  dataTestId?: string;
+
+  autoFocus?: boolean;
+
+  dataTrackingId?: string;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -120,7 +126,7 @@ export const TextField = (props: TextFieldProps) => {
 
   /**
    * To support the compact TextField we need to position the label within the input,
-   * and move to the borde when input is active.
+   * and move to the border when input is active.
    * To position it correctly we need to find the width of the items in front of the input
    * an apply the appropriate offset.
    */
@@ -191,8 +197,12 @@ export const TextField = (props: TextFieldProps) => {
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
+            onPaste={props.onPaste}
             onKeyUp={props.onKeyUp}
             maxLength={props.maxlength}
+            data-testid={props.dataTestId}
+            autoFocus={props.autoFocus}
+            data-tracking-id={props.dataTrackingId}
           />
           {statusIcon ? <span className="telia-textfield__status">{statusIcon}</span> : null}
           {props.rightContent ? (

@@ -14,7 +14,6 @@ export const Default = () => (
   </FullWidthImage>
 );
 
-
 export const WithContentOverlap = () => (
   <div>
     <FullWidthImage src="https://placekitten.com/1440/440" alt="Kitten" withContentOverlap />
@@ -48,8 +47,6 @@ export const WithContentOverlap = () => (
   </div>
 );
 
-
-
 export const FullWidthImageWithLogo = () => {
   const logoSources = [
     { type: 'mobile', srcSet: img.businessDevelopmentPebble },
@@ -57,8 +54,15 @@ export const FullWidthImageWithLogo = () => {
   ];
 
   return (
-    <FullWidthImage logoSources={logoSources} logoAlign="top-right" src="https://placekitten.com/1440/440" alt="Kitten" />
-  )
+    <FullWidthImage
+      logoSources={logoSources}
+      logoAlign="top-right"
+      src="https://placekitten.com/1440/440"
+      alt="Kitten"
+    />
+  );
 };
 
-export const DefaultFullWidthImage = () => <FullWidthImage src="https://placekitten.com/1440/440" alt="Kitten" withMask />;
+export const DefaultFullWidthImage = () => (
+  <FullWidthImage src="https://placekitten.com/1440/440" alt="Kitten" withMask />
+);

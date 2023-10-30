@@ -7,7 +7,6 @@ export default {
 };
 
 export const Default = () => (
-
   <IconAnimated
     style={{
       height: 10,
@@ -15,7 +14,6 @@ export const Default = () => (
     }}
     json={require('./music_freedom.json')}
   />
-
 );
 
-declare function require(jsonString:string): any;
+declare function require(jsonString: string): any;

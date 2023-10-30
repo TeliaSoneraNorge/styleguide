@@ -91,10 +91,28 @@ export const Default = ({}) => {
           color={color}
           active
         />
+
+        <ListCard
+          title="ListCard w/onClick and selected"
+          onClick={setNextStyle}
+          selected
+          decorator={<Avatar text="CLC" />}
+          description="<li> element of card type"
+          color={color}
+        />
       </List>
     </div>
   );
 };
+
+export const EmptyState = ({}) => {
+  return (
+    <div>
+      <List listIsEmpty={![].length} emptyListLabel="There is nothing here yet."></List>
+    </div>
+  );
+};
+
 export const Card = ({}) => {
   const [checked, setChecked] = useState(false);
 

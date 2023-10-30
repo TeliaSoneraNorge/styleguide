@@ -138,7 +138,7 @@ export const BlogSamplePage2 = () => (
         isShowingFeatures={true}
       ></ProductPromoBox>
     </section>
-    {RelatedArticlesProps.map(props => (
+    {RelatedArticlesProps.map((props) => (
       <RelatedArticles id="blog2" key={props.heading} {...props} />
     ))}
   </div>

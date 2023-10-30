@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import SubscriptionCompactAccordion from './SubscriptionCompactAccordion';
 import { StatefulAccordionList } from '../AccordionList';
 import Button from '../../atoms/Button';
+import { Icon } from '../../atoms/Icon';
+import Paragraph from '../../atoms/Paragraph';
 
 export default {
   title: 'Component library/Molecules/SubscriptionCompactAccordion',
@@ -81,8 +83,19 @@ const CHILDREN = (
       <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
       <li className="list__item">Roam Like Home</li>
     </ul>
-    <Button style={{ margin: '1.5rem 0' }} kind="primary" text="Velg og fortsett"></Button>
+    <Button style={{ margin: '1.5rem 0' }} kind="voca-purple" text="Velg og fortsett"></Button>
     {ACCORDIONS}
+  </>
+);
+
+const FOOTERCHILDREN = (
+  <>
+    <Paragraph>50,- i rabatt de første 12 md. uten binding. </Paragraph>
+    <div>
+      <Icon icon="cloud-connect" />
+      <Icon icon="broken-phone" />
+      <Icon icon="sms" />
+    </div>
   </>
 );
 
@@ -95,6 +108,27 @@ export const Normal = () => {
       title="20 Mbit/s"
       id="smart20"
       price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const withFooter = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      footer={FOOTERCHILDREN}
       priceInfo={['/md.']}
       isExpanded={isExpanded}
       onOpen={() => {
@@ -160,8 +194,10 @@ export const WithAll = () => {
       tagLine="Hverdagsbruk"
       tagLineIcon="speedometer"
       discountLine="Spar 350,-"
+      footer={FOOTERCHILDREN}
       price={1297}
       priceStriketrough={1647}
+      priceStriketroughInfo="/md."
       priceInfo={['/md.']}
       ribbon={{
         text: 'Mest populær',
@@ -178,7 +214,7 @@ export const WithAll = () => {
   );
 };
 
-export const Inverted = () => {
+export const SelectedWithAll = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
@@ -187,12 +223,24 @@ export const Inverted = () => {
       name="Telia X - Normal"
       title="40 Mbit/s"
       strikethrough="20 Mbit/s"
-      price={499}
+      tagLine="Hverdagsbruk"
+      tagLineIcon="speedometer"
+      discountLine="Spar 350,-"
+      footer={FOOTERCHILDREN}
+      selected={true}
+      price={1297}
+      priceStriketrough={1647}
+      priceStriketroughInfo="/md."
       priceInfo={['/md.']}
-      isInverted={true}
+      ribbon={{
+        text: 'Mest populær',
+        backgroundColor: '#EDC8FF',
+        color: '#3F005E',
+      }}
       isExpanded={isExpanded}
-      scrollToOnOpen={true}
-      onOpen={() => setIsExpanded(!isExpanded)}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
     >
       {CHILDREN}
     </SubscriptionCompactAccordion>
@@ -219,5 +267,70 @@ export const Multiple = () => {
         </SubscriptionCompactAccordion>
       ))}
     </>
+  );
+};
+
+export const Black = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      id="smart20"
+      name="Telia X - Normal"
+      title="40 Mbit/s"
+      strikethrough="20 Mbit/s"
+      price={499}
+      footer={FOOTERCHILDREN}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      scrollToOnOpen={true}
+      onOpen={() => setIsExpanded(!isExpanded)}
+      variant="black"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const Purple = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      footer={FOOTERCHILDREN}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      variant="purple"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const WithFamilyDiscount = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      familyDiscountInfo="100,- i rabatt for hvert ekstra abonnement"
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
   );
 };

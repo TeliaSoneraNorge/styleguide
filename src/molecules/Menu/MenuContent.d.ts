@@ -22,7 +22,7 @@ export interface MenuContentProps {
   searchButtonAbortText?: string;
   onlyLogo?: boolean;
   onCartClick?: (...args: any[]) => any;
-  numberOfItemsInCart?: number;  
+  numberOfItemsInCart?: number;
 }
 
 export const MenuContent: React.FC<MenuContentProps>;

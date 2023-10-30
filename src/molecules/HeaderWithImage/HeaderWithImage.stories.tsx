@@ -1,5 +1,5 @@
 import React from 'react';
-import { HeaderWithImage} from '../../index';
+import { HeaderWithImage } from '../../index';
 import img from '../../stories/sampleImages';
 
 export default {
@@ -8,13 +8,7 @@ export default {
 };
 
 export const BlackGradient = () => (
-  <HeaderWithImage
-    imgSrcMobile={img.hero}
-    imgSrcDesktop={img.hero}
-    whiteText
-    withGradient
-    pageTitle="Page Title"
-  >
+  <HeaderWithImage imgSrcMobile={img.hero} imgSrcDesktop={img.hero} whiteText withGradient pageTitle="Page Title">
     Preamble; an introductory and expressionary statement in a document that explains the document&#39;s purpose and
     underlying philosophy.
   </HeaderWithImage>

@@ -31,7 +31,7 @@ const ShoppingCartItemQuantityPicker = ({ cartItem, name, onChangeQuantity, quan
         className="textbox shopping-cart__quantity-picker__input"
         max={maxQuantity}
         min={minQuantity}
-        onChange={event =>
+        onChange={(event) =>
           onChangeQuantity(cartItem, Math.max(Math.min(parseInt(event.target.value), maxQuantity), minQuantity))
         }
         type="number"
@@ -39,7 +39,7 @@ const ShoppingCartItemQuantityPicker = ({ cartItem, name, onChangeQuantity, quan
       />
     </label>
     <ShoppingCartItemQuantityButton
-      icon="add"
+      icon="plus"
       isDisabled={quantity >= maxQuantity}
       onClick={() => onChangeQuantity(cartItem, Math.min(quantity + 1, maxQuantity))}
       text={`Legg til en ${name}`}

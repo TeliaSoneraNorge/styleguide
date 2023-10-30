@@ -58,7 +58,7 @@ export const Incrementer = (props: Props) => {
       />
       <Button
         className="telia-incrementer__increment"
-        icon="add"
+        icon="plus"
         kind={props.kind === 'secondary' ? 'secondary-text' : 'primary-text'}
         onClick={increment}
         disabled={Boolean(props.max && props.value >= props.max)}

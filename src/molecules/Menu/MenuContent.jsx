@@ -51,26 +51,26 @@ const MenuLinkItem = ({ link, LinkTemplate, onToggleSubmenu, isSubmenuOpen, isAc
   </li>
 );
 
-const LoginButton = ({ loginUrl, LinkTemplate }) => (
+const LoginButton = ({ loginUrl, LinkTemplate, value = 'logg inn' }) => (
   <>
     <LinkTemplate className="menu__login-button menu__login-button__mobile" url={loginUrl}>
       <UserIcon />
     </LinkTemplate>
     <LinkTemplate className="menu__login-button menu__login-button__desktop button button--small" url={loginUrl}>
       <UserIcon style={{ height: '1rem' }} />
-      logg inn
+      {value}
     </LinkTemplate>
   </>
 );
 
-const MyPageButton = ({ myPageUrl, LinkTemplate }) => (
+const MyPageButton = ({ myPageUrl, LinkTemplate, value = 'min side' }) => (
   <>
     <LinkTemplate className="menu__mypage-button menu__mypage-button__mobile" url={myPageUrl}>
       <UserIcon />
     </LinkTemplate>
     <LinkTemplate className="menu__mypage-button menu__mypage-button__desktop button button--small" url={myPageUrl}>
       <UserIcon style={{ height: '1rem' }} />
-      min side
+      {value}
     </LinkTemplate>
   </>
 );
@@ -106,6 +106,7 @@ const MenuLogo = ({ logo: { url, image, imageInverted, title }, LinkTemplate, on
 
 const MenuContent = ({
   menuLink,
+  buttonValues,
   openedSubmenuIndex,
   activeIndex,
   onToggleSubmenu,
@@ -117,6 +118,7 @@ const MenuContent = ({
   searchButtonLabel,
   searchButtonAbortText,
   isLoggedIn,
+  logoutUrl,
   loginUrl,
   myPageUrl,
   isLoading,
@@ -137,6 +139,14 @@ const MenuContent = ({
     return (
       <div className="menu__content">
         <MenuLogo LinkTemplate={LinkTemplate} logo={logo} onlyLogo={onlyLogo} />
+        {shouldShowCartIcon && (
+          <>
+            <div className="menu__content-panel" />
+            <div className="menu__content-right">
+              <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} />
+            </div>
+          </>
+        )}
       </div>
     );
   }
@@ -170,9 +180,16 @@ const MenuContent = ({
         )}
         {shouldShowCartIcon && <MenuCart onClick={onCartClick} numberOfItemsInCart={numberOfItemsInCart} />}
 
-        {loginUrl && !isLoggedIn && <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} />}
+        {loginUrl && !isLoggedIn && (
+          <LoginButton LinkTemplate={LinkTemplate} loginUrl={loginUrl} value={buttonValues?.login} />
+        )}
         {myPageUrl && isLoggedIn && !dropdownMenu && (
-          <MyPageButton LinkTemplate={LinkTemplate} myPageUrl={myPageUrl} onClick={toggleMenuDropdownVisibilty} />
+          <MyPageButton
+            LinkTemplate={LinkTemplate}
+            myPageUrl={myPageUrl}
+            onClick={toggleMenuDropdownVisibilty}
+            value={buttonValues?.myPage}
+          />
         )}
         {myPageUrl && isLoggedIn && dropdownMenu && (
           <MyAppsDropdown LinkTemplate={LinkTemplate} onClick={toggleMenuDropdownVisibilty} />
@@ -181,7 +198,7 @@ const MenuContent = ({
       </div>
 
       {menuDropdownIsVisible && (
-        <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} daasLink={daasLink} />
+        <MenuDropdown dropdownMenu={dropdownMenu} isLoggedIn={isLoggedIn} daasLink={daasLink} logoutUrl={logoutUrl} />
       )}
     </div>
   );
@@ -193,6 +210,10 @@ MenuContent.propTypes = {
     heading: PropTypes.shape({
       text: PropTypes.string,
     }),
+  }),
+  buttonValues: PropTypes.shape({
+    login: PropTypes.string,
+    myPage: PropTypes.string,
   }),
   logo: PropTypes.shape({
     url: PropTypes.string,

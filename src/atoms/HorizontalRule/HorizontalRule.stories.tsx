@@ -1,7 +1,6 @@
 import React from 'react';
 import HorizontalRule from './HorizontalRule';
 
-
 export default {
   title: 'Component library/Atoms/Horizontal Rule',
   component: HorizontalRule,

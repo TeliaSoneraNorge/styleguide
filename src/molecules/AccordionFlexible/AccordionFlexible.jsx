@@ -28,7 +28,9 @@ const RenderIcon = ({ icon }) => {
 const RenderIcons = ({ icons }) => {
   if (icons) {
     if (Array.isArray(icons)) {
-      return Object.entries(icons).map(([i, val]) => <RenderIcon icon={val} key={i} />);
+      return Object.entries(icons).map(([i, val]) => (
+        <RenderIcon icon={val} key={'accordion-flexible-rendericons' + i} />
+      ));
     } else {
       return <RenderIcon icon={icons} />;
     }
@@ -60,7 +62,7 @@ const RenderArrow = ({ isExpanded }) => {
   return (
     <div className={'accordion-flexible__arrow-container'}>
       <Icon
-        icon="arrow-down"
+        icon="chevron-down"
         className={cn('accordion-flexible__arrow', { 'accordion-flexible__arrow--expanded': isExpanded === true })}
       />
     </div>

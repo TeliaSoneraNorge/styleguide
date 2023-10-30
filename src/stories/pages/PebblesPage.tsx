@@ -28,7 +28,7 @@ export function PebblesPage() {
       <div className="container container--small container--extra-padding-top container--extra-margin-bottom">
         <label>Select your variant: </label>
         <select className="dropdown-list" onChange={dropdownChange}>
-          {_.map(PebbleVariant, v => (
+          {_.map(PebbleVariant, (v) => (
             <option key={v.description} className="dropdown-list__option" value={v.value}>
               {v.description}
             </option>

@@ -28,7 +28,8 @@ export function CardViewIcon(props: Props) {
       {props.title && <title>{props.title}</title>}
       <path
         fillRule="evenodd"
-        d="M52 34a4 4 0 014 4v14a4 4 0 01-4 4H12a4 4 0 01-4-4V38a4 4 0 014-4h40zm-30 4H12v14h10V38zm30 0H26v14h26V38zm0-30a4 4 0 014 4v14a4 4 0 01-4 4H12a4 4 0 01-4-4V12a4 4 0 014-4h40zm-30 4H12v14h10V12zm30 0H26v14h26V12z"
+        d="M12 8h40a4 4 0 014 4v14a4 4 0 01-4 4H12a4 4 0 01-4-4V12a4 4 0 014-4zm14 18h26V12H26v14zm-4 0V12H12v14h10zm-10 8h40a4 4 0 014 4v14a4 4 0 01-4 4H12a4 4 0 01-4-4V38a4 4 0 014-4zm0 4h10v14H12V38zm40 14H26V38h26v14z"
+        clipRule="evenodd"
       />
     </svg>
   );

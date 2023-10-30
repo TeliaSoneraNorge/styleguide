@@ -1,131 +1,149 @@
 .telia-tooltip__container {
   position: relative;
-  display: inline-block;
-}
-
-.telia-tooltip {
-  visibility: hidden;
-  position: absolute;
-  padding: 0.25rem 0.5rem;
   width: max-content;
-  text-align: center;
-  border: none;
-  border-radius: 0.25rem;
-  z-index: 1;
-  top: 120%;
-  font-size: 14px;
-  max-width: 200px;
 
-  &--dark {
-    background-color: var(--grey-900);
-    border-color: var(--grey-900);
-    color: white;
+  .telia-tooltip {
+    visibility: hidden;
+    z-index: 1;
+    position: absolute;
+    padding: 0.25rem 0.5rem;
+    width: max-content;
+    text-align: center;
+    border: none;
+    border-radius: 0.25rem;
+    font-size: 14px;
+    max-width: 200px;
+
+    &--dark {
+      background-color: var(--grey-900);
+      border-color: var(--grey-900);
+      color: white;
+    }
+
+    &--grey {
+      background-color: var(--grey-100);
+      border-color: var(--grey-100);
+      color: var(--grey-900);
+    }
+
+    &--purple {
+      background-color: var(--core-purple-100);
+      border-color: var(--core-purple-100);
+      color: var(--core-purple-500);
+    }
+
+    &__arrow {
+      position: absolute;
+      content: ' ';
+      margin-left: -8px;
+      border-width: 8px;
+      border-style: solid;
+      border-left-color: transparent;
+      border-right-color: transparent;
+      border-bottom-color: transparent;
+      border-top-color: transparent;
+    }
+
+    &--top-start {
+      bottom: 120%;
+      right: 60%;
+      .telia-tooltip__arrow {
+        right: 10%;
+        top: 100%;
+        border-top-color: inherit;
+      }
+    }
+
+    &--top {
+      bottom: 120%;
+      right: 0;
+      margin: 0 auto;
+      left: 50%;
+      transform: translate(-50%, 0%);
+      .telia-tooltip__arrow {
+        left: 50%;
+        top: 100%;
+        border-top-color: inherit;
+      }
+    }
+
+    &--top-end {
+      bottom: 120%;
+      left: 60%;
+      .telia-tooltip__arrow {
+        left: 15%;
+        top: 100%;
+        border-top-color: inherit;
+      }
+    }
+
+    &--left {
+      right: 110%;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: max-content;
+      .telia-tooltip__arrow {
+        border-left-color: inherit;
+        right: -16px;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        height: max-content;
+      }
+    }
+
+    &--right {
+      left: 110%;
+      top: 0;
+      bottom: 0;
+      margin: auto 0;
+      height: max-content;
+      .telia-tooltip__arrow {
+        border-right-color: inherit;
+        right: 100%;
+        top: 0;
+        bottom: 0;
+        margin: auto 0;
+        height: max-content;
+      }
+    }
+
+    &--bottom-start {
+      top: 120%;
+      right: 60%;
+      .telia-tooltip__arrow {
+        right: 10%;
+        bottom: 100%;
+        border-bottom-color: inherit;
+      }
+    }
+
+    &--bottom {
+      top: 120%;
+      right: 0;
+      left: 50%;
+      margin: 0 auto;
+      transform: translate(-50%, 0%);
+      .telia-tooltip__arrow {
+        left: 50%;
+        bottom: 100%;
+        border-bottom-color: inherit;
+      }
+    }
+
+    &--bottom-end {
+      top: 120%;
+      left: 60%;
+      .telia-tooltip__arrow {
+        left: 15%;
+        bottom: 100%;
+        border-bottom-color: inherit;
+      }
+    }
   }
-
-  &--grey {
-    background-color: var(--grey-100);
-    border-color: var(--grey-100);
-    color: var(--grey-900);
-  }
-
-  &--purple {
-    background-color: var(--core-purple-100);
-    border-color: var(--core-purple-100);
-    color: var(--core-purple-500);
-  }
-
-  &--top,
-  &--top-start,
-  &--top-end {
-    top: auto;
-    bottom: 120%;
-  }
-
-  &--top-start {
-    right: 60%;
-  }
-
-  &--top-end {
-    left: 60%;
-  }
-
-  &--right {
-    left: 110%;
-    top: 20%;
-  }
-
-  &--bottom-start {
-    right: 60%;
-  }
-
-  &--bottom-end {
-    left: 60%;
-  }
-
-  &--left {
-    right: 110%;
-    top: 20%;
-  }
-}
-
-.telia-tooltip__arrow {
-  content: ' ';
-  position: absolute;
-  bottom: 100%; /* At the top of the tooltip */
-  margin-left: -8px;
-  border-width: 8px;
-  border-style: solid;
-  border-left-color: transparent;
-  border-right-color: transparent;
-  border-bottom-color: transparent;
-  border-top-color: transparent;
 }
 
 .telia-tooltip__container:hover .telia-tooltip {
   visibility: visible;
-}
-
-.telia-tooltip--top > .telia-tooltip__arrow {
-  left: 50%;
-  top: 100%;
-  border-top-color: inherit;
-}
-
-.telia-tooltip--top-start > .telia-tooltip__arrow {
-  left: 80%;
-  top: 100%;
-  border-top-color: inherit;
-}
-
-.telia-tooltip--top-end > .telia-tooltip__arrow {
-  left: 20%;
-  top: 100%;
-  border-top-color: inherit;
-}
-
-.telia-tooltip--right > .telia-tooltip__arrow {
-  border-right-color: inherit;
-  top: 6px;
-  right: 100%;
-}
-
-.telia-tooltip--bottom > .telia-tooltip__arrow {
-  left: 50%;
-  border-bottom-color: inherit;
-}
-
-.telia-tooltip--bottom-start > .telia-tooltip__arrow {
-  left: 80%;
-  border-bottom-color: inherit;
-}
-
-.telia-tooltip--bottom-end > .telia-tooltip__arrow {
-  left: 20%;
-  border-bottom-color: inherit;
-}
-
-.telia-tooltip--left > .telia-tooltip__arrow {
-  border-left-color: inherit;
-  top: 6px;
-  left: calc(100% + 8px);
 }

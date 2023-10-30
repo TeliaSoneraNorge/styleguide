@@ -6,7 +6,7 @@ export default {
   component: BoxGrid,
 };
 
-export const Default= () => (
+export const Default = () => (
   <Container size="medium" noMargin>
     <BoxGrid>
       <Box color="teal" id="box-1" canExpand isExpanded>

@@ -1,6 +1,6 @@
 import React from 'react';
+import _ from 'lodash';
 import { ShoppingCartV2 } from '../../index';
-import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
 import Button from '../../atoms/Button/Button';
 import { ICartItem } from './types';
@@ -38,7 +38,6 @@ export const Default = () => {
 
   const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -195,7 +194,7 @@ export const Default = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={leaseContent}
@@ -425,6 +424,138 @@ export const WithHasPaid = () => {
   );
 };
 
+const subscriptionOnlyGroupContent: ICartItem[] = [
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '29166a',
+    items: [],
+    name: 'Telia X',
+    href: '#',
+    quantity: {
+      modifiable: false,
+      removable: true,
+      value: 1,
+    },
+    price: {
+      monthly: 579,
+    },
+    image: {
+      icon: 'sim-card',
+    },
+    subtitle: 'Nummer: 413 18 854',
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SUBSCRIPTION',
+    id: 'SMART_X.REGULAR',
+    bundleId: '2b629a',
+    items: [],
+    name: 'Telia X',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      monthly: 579,
+    },
+    image: {
+      icon: 'sim-card',
+    },
+    subtitle: 'Nummer: 413 20 853',
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SUBSCRIPTION_DRAFT',
+    id: 'TELIA_MOBIL_06GB.REGULAR',
+    bundleId: 'ac9f7a',
+    items: [],
+    name: '16 GB',
+    lineThrough: '8 GB',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      monthly: 329,
+    },
+    image: {
+      icon: 'sim-card',
+    },
+    subtitle: 'Nummer: 413 20 853',
+    discount: {
+      value: {
+        monthly: 135,
+      },
+    },
+  },
+  {
+    type: 'SPECIALPRODUCT',
+    id: '39961249',
+    bundleId: 'f108e0',
+    image: {
+      url: 'https://www.telia.no/shop/assets/img-static/other/missing_image.svg',
+    },
+    name: 'Kontant Startpakke',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      upfront: 99,
+      originalSalesPrice: 99,
+      originalSalesPriceWithoutVAT: 79.2,
+    },
+    leaseMonths: null,
+    items: [
+      {
+        type: 'SUBSCRIPTION_DRAFT',
+        id: 'KONTANT_KOMPLETT.REGULAR',
+        bundleId: 'f108e0',
+        items: [],
+        name: 'Kontant Startpakke',
+        quantity: {
+          modifiable: false,
+          removable: false,
+          value: 1,
+        },
+        price: {},
+        image: {
+          icon: 'sim-card',
+        },
+        subtitle: 'Mobilabonnement',
+      },
+    ],
+  },
+  {
+    type: 'SIM',
+    id: '9054990',
+    subtitle: 'Hovedsim',
+    image: {
+      icon: 'sim-card',
+    },
+    name: 'SIM-kort',
+    price: {
+      upfront: 0,
+    },
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 3,
+    },
+  },
+];
 export const subscriptionsOnly = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;
@@ -435,142 +566,44 @@ export const subscriptionsOnly = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-  const groupContent: ICartItem[] = [
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '29166a',
-      items: [],
-      name: 'Telia X',
-      href: '#',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        monthly: 579,
-      },
-      image: {
-        icon: 'sim-card',
-      },
-      subtitle: 'Nummer: 413 18 854',
-      discount: {
-        value: {
-          monthly: 135,
-        },
-      },
-    },
-    {
-      type: 'SUBSCRIPTION',
-      id: 'SMART_X.REGULAR',
-      bundleId: '2b629a',
-      items: [],
-      name: 'Telia X',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        monthly: 579,
-      },
-      image: {
-        icon: 'sim-card',
-      },
-      subtitle: 'Nummer: 413 20 853',
-      discount: {
-        value: {
-          monthly: 135,
-        },
-      },
-    },
-    {
-      type: 'SUBSCRIPTION_DRAFT',
-      id: 'TELIA_MOBIL_06GB.REGULAR',
-      bundleId: 'ac9f7a',
-      items: [],
-      name: '16 GB',
-      lineThrough: '8 GB',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        monthly: 329,
-      },
-      image: {
-        icon: 'sim-card',
-      },
-      subtitle: 'Nummer: 413 20 853',
-      discount: {
-        value: {
-          monthly: 135,
-        },
-      },
-    },
-    {
-      type: 'SPECIALPRODUCT',
-      id: '39961249',
-      bundleId: 'f108e0',
-      image: {
-        url: 'https://www.telia.no/shop/assets/img-static/other/missing_image.svg',
-      },
-      name: 'Kontant Startpakke',
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 1,
-      },
-      price: {
-        upfront: 99,
-        originalSalesPrice: 99,
-        originalSalesPriceWithoutVAT: 79.2,
-      },
-      leaseMonths: null,
-      items: [
-        {
-          type: 'SUBSCRIPTION_DRAFT',
-          id: 'KONTANT_KOMPLETT.REGULAR',
-          bundleId: 'f108e0',
-          items: [],
-          name: 'Kontant Startpakke',
-          quantity: {
-            modifiable: false,
-            removable: false,
-            value: 1,
-          },
-          price: {},
-          image: {
-            icon: 'sim-card',
-          },
-          subtitle: 'Mobilabonnement',
-        },
-      ],
-    },
-    {
-      type: 'SIM',
-      id: '9054990',
-      subtitle: 'Hovedsim',
-      image: {
-        icon: 'sim-card',
-      },
-      name: 'SIM-kort',
-      price: {
-        upfront: 0,
-      },
-      quantity: {
-        modifiable: false,
-        removable: false,
-        value: 3,
-      },
-    },
-  ];
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={subscriptionOnlyGroupContent}
+        delivery={delivery}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        isAllowedToDelete={true}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};
+
+export const subscriptionsWithDiscount = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const groupContent: ICartItem[] = _.set(_.cloneDeep(subscriptionOnlyGroupContent), '[0].discount.types', [
+    { id: 'commitment', value: 150, text: 'Familierabatt' },
+  ]);
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -601,7 +634,6 @@ export const handsetBeforeSubscriptionAdded = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -647,7 +679,7 @@ export const handsetBeforeSubscriptionAdded = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -683,7 +715,6 @@ export const mbbAndHW = () => {
     { kind: 'voca-inverted', label: 'Fortsett å handle' },
   ];
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'MODEM',
@@ -752,7 +783,7 @@ export const mbbAndHW = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -783,7 +814,6 @@ export const accessoryOnly = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'ACCESSORY',
@@ -893,7 +923,7 @@ export const accessoryOnly = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -909,6 +939,182 @@ export const accessoryOnly = () => {
         formatPrice={(price: any) => `${price},-`}
         isAnyCartItemsQuantityModifiable
         continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};
+
+export const withSpeechBubble = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
+
+  const leaseContent: ICartItem[] = [
+    {
+      type: 'HANDSET',
+      subtype: 'NEW',
+      id: '9107585',
+      bundleId: '8c28cd',
+      href: 'https://www.telia.no/mobiltelefoner/apple/iphone-se-3rd/64-gb-product-red/',
+      brand: 'Apple',
+      brandSlug: 'apple',
+      model: 'iPhone SE (3rd) 64GB',
+      modelSlug: 'iphone-se-3rd',
+      modelSize: '64 GB',
+      color: 'Product Red',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/7jPSwGjrmJegMNTioqDF3Q/dae6444656444adf58e9fffa2cb7279a/iPhone_SE3_ProductRED_PDP_Image_Position-1A__WWEN.png',
+      },
+      name: 'Apple iPhone SE 5G',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        monthly: 221,
+        originalSalesPrice: 5290,
+        originalSalesPriceWithoutVAT: 4232,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 52,
+        },
+        description: '',
+        handsetDiscountText: "Telefonrabatt med <br /> Telia X Rask: <span style='color:#008641;'>-1250,-</span>",
+      },
+      leaseMonths: '24',
+      isReSwitch: false,
+      isWebDeal: false,
+      subtitle: '24 md. rentefri delbetaling',
+      items: [
+        {
+          type: 'SUBSCRIPTION_DRAFT',
+          id: 'TELIA_MOBIL_X_RASK.TLF12PLEAS',
+          bundleId: '8c28cd',
+          href: '/mobilabonnement/ubegrenset-data',
+          items: [],
+          name: 'Telia X Rask',
+          lineThrough: '',
+          quantity: {
+            modifiable: false,
+            removable: false,
+            value: 1,
+          },
+          price: {
+            monthly: 549,
+          },
+          discount: {
+            value: {
+              upfront: 0,
+              monthly: 0,
+            },
+            description: '',
+          },
+          image: {
+            icon: 'sim-card',
+          },
+          subtitle: 'Mobilabonnement',
+        },
+      ],
+    },
+  ];
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={leaseContent}
+        delivery={delivery}
+        disclaimer={disclaimer}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+        continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};
+
+export const withFamilyDiscountInfo = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
+
+  const simOnlyContent: ICartItem[] = [
+    {
+      type: 'SUBSCRIPTION_DRAFT',
+      id: 'TELIA_MOBIL_X_UNG.REGULAR',
+      bundleId: 'a2c1d8',
+      href: '/mobilabonnement/ubegrenset-data-ung',
+      items: [],
+      name: 'Telia X Ung',
+      lineThrough: '',
+      quantity: {
+        modifiable: false,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        monthly: 399,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+        types: [],
+      },
+      image: {
+        icon: 'sim-card',
+      },
+      subtitle: 'Mobilabonnement',
+    },
+  ];
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={simOnlyContent}
+        delivery={delivery}
+        disclaimer={disclaimer}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+        continueSection={ContinueButtons}
+        showFamilyDiscountInfo={true}
       />
     </Container>
   );

@@ -7,16 +7,14 @@ export default {
 };
 
 export const Default = () => {
-
   const exampleStyles = {
     backgroundColor: 'rgb(153, 10, 227)',
     color: 'rgb(255, 255, 255)',
     paddingTop: '1rem',
   };
-  
+
   return (
     <>
-
       <Container size="small" style={exampleStyles}>
         This is some content inside a small block.
       </Container>
@@ -26,7 +24,6 @@ export const Default = () => {
       <Container size="large" style={exampleStyles}>
         This is some content inside a large block.
       </Container>
-
     </>
-  )
+  );
 };

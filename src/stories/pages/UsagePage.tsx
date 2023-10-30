@@ -60,7 +60,7 @@ export function UsagePage() {
   useEffect(() => {
     refreshData();
     const interval = setInterval(() => {
-      setShowRemainingTime(p => !p);
+      setShowRemainingTime((p) => !p);
     }, 1500);
     return () => {
       clearInterval(interval);

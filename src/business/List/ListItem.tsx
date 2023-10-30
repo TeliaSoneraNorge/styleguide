@@ -1,6 +1,7 @@
 import React from 'react';
 import cn from 'classnames';
 import { ListStyleContext, ListStyle } from './utils';
+import { Icon } from '../../atoms/Icon';
 
 export type ListItemProps = {
   title?: React.ReactNode;
@@ -10,6 +11,7 @@ export type ListItemProps = {
   onClick?: React.MouseEventHandler;
   compact?: boolean;
   active?: boolean;
+  selected?: boolean;
   className?: string;
   href?: string;
   /**
@@ -23,9 +25,10 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
   const listStyle = React.useContext(ListStyleContext);
   const { decorator, title, description, caption, onClick, compact, className, expandable, ...listItemStyle } = props;
   const open = 'open' in props ? props.open : false;
-
+  const selected = props.selected;
   // Inherit List style from context, override with individual style from props.
   const { border, color, type } = { ...listStyle, ...listItemStyle };
+
   const Tag = props.tag ? props.tag : 'li';
   const InnerTag = props.href ? 'a' : onClick ? 'button' : 'div';
 
@@ -36,6 +39,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
       className={cn('telia-listItem', {
         'telia-listItem--underlined': border === 'underlined',
         'telia-listItem--outlined': border === 'outlined',
+        'telia-listItem--selected': border === 'selected',
         'telia-listItem--card': type === 'card',
         'telia-listItem--dark': color === 'dark',
         'telia-listItem--medium': color === 'medium',
@@ -79,7 +83,7 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
                 </div>
               )}
             </div>
-            {caption && (
+            {caption ? (
               <div
                 className={cn('telia-listItem__caption', {
                   'telia-listItem__caption__text': typeof caption === 'string',
@@ -88,7 +92,9 @@ export const ListItem: React.FC<ListItemProps & ListStyle> = (props) => {
               >
                 {caption}
               </div>
-            )}
+            ) : selected ? (
+              <Icon icon="check-circle-filled" style={{ color: 'green' }} />
+            ) : null}
           </div>
         )}
         {props.children}

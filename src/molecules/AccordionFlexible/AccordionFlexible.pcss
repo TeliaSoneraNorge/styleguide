@@ -4,6 +4,7 @@
   margin: 0 auto;
   box-sizing: border-box;
   position: relative;
+  color: var(--black);
   width: 100%;
   max-width: 40rem;
   border-radius: 2px;
@@ -18,7 +19,7 @@
 
   &__header-container {
     display: flex;
-    align-items: start;
+    align-items: flex-start;
     position: relative;
     background-color: var(--white);
     width: 100%;
@@ -43,6 +44,7 @@
 
     &:hover,
     &:active {
+      color: var(--black);
       border: 2px solid var(--core-purple);
     }
 
@@ -82,6 +84,7 @@
 
     &:hover,
     &:active {
+      color: var(--black);
       border-bottom: 2px solid transparent;
     }
   }
@@ -109,7 +112,7 @@
     &-content-right {
       display: flex;
       flex-direction: row-reverse;
-      align-items: end;
+      align-items: flex-end;
       min-height: 22px;
       margin-right: 0.5em;
 
@@ -125,7 +128,7 @@
     & .accordion-flexible__header-row:last-of-type {
       position: relative;
       top: 0.66rem;
-      align-items: start;
+      align-items: flex-start;
     }
   }
 
@@ -139,9 +142,11 @@
       flex-basis: auto;
       flex-shrink: 1;
       flex-grow: 1;
+      align-items: flex-start;
     }
 
     & svg {
+      color: var(--black);
       margin: 0;
       max-width: 26px;
       max-height: 26px;
@@ -150,6 +155,7 @@
   }
 
   &__heading--left {
+    color: var(--black);
     font-weight: 700;
     font-size: 24px;
     line-height: 28px;
@@ -167,6 +173,7 @@
   }
 
   &__heading--right {
+    color: var(--black);
     display: block;
     text-align: right;
     line-height: 20px;
@@ -204,6 +211,7 @@
   }
 
   &__ingress-row--left {
+    color: var(--black);
     display: block;
     text-align: left;
     min-width: 150px;
@@ -228,6 +236,7 @@
   }
 
   &__ingress-row--right {
+    color: var(--black);
     display: block;
     text-align: right;
     min-width: 150px;
@@ -251,6 +260,7 @@
   }
 
   &__content {
+    color: var(--black);
     padding-left: 1.5rem;
     padding-right: 1.5rem;
     padding-top: 20px;

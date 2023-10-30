@@ -4,6 +4,7 @@ import _ from 'lodash';
 
 import { Icon } from '../../atoms/Icon';
 import { Checkbox } from '../../atoms/Checkbox';
+import { emptySvg } from '../assets/emptySvg';
 
 type TableBodyCellProps = {
   rightAligned?: boolean;
@@ -11,6 +12,13 @@ type TableBodyCellProps = {
   isCheckbox?: boolean;
   className?: string;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 };
 
 export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
@@ -44,6 +52,9 @@ export const TableBodyCell: React.FC<TableBodyCellProps> = (props) => {
         },
         props.className
       )}
+      aria-label={props['aria-label']}
+      aria-hidden={props['aria-hidden']}
+      style={props.style}
     >
       {children}
     </td>
@@ -55,6 +66,13 @@ type TableBodyRowProps = {
   className?: string;
   connectedToPrevious?: boolean;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 } & (
   | {
       onSelect: (e?: React.ChangeEvent<HTMLInputElement>) => void;
@@ -93,6 +111,9 @@ export const TableBodyRow = React.forwardRef<HTMLTableRowElement, TableBodyRowPr
       }}
       tabIndex={props.onClickRow ? 0 : undefined}
       ref={ref}
+      aria-label={props['aria-label']}
+      aria-hidden={props['aria-hidden']}
+      style={props.style}
     >
       {'onSelect' in props && (
         <TableBodyCell isCheckbox={true}>
@@ -121,6 +142,13 @@ type TableHeadCellProps = {
    */
   width?: number;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 } & (
   | {
       sortDirection: 'ASC' | 'DESC' | 'NONE';
@@ -164,7 +192,9 @@ export const TableHeadCell: React.FC<TableHeadCellProps> = (props) => {
       }
       role={'onClick' in props ? 'button' : undefined}
       tabIndex={'onClick' in props ? 0 : undefined}
-      style={props.width ? { width: props.width } : undefined}
+      style={props.width ? { ...props.style, width: props.width } : undefined}
+      aria-label={props['aria-label']}
+      aria-hidden={props['aria-hidden']}
     >
       {children}
       {'onClick' in props && props.sortDirection && props.sortDirection !== 'NONE' && ' '}
@@ -211,6 +241,13 @@ type TableProps = {
    */
   loading?: boolean;
   children?: React.ReactNode;
+  style?: React.CSSProperties;
+
+  /**
+   * Accessibility props
+   */
+  'aria-label'?: string;
+  'aria-hidden'?: boolean;
 } & ({ headerCells: React.ReactNode } | { headings: Array<TableHeading> }) &
   (
     | {
@@ -229,6 +266,13 @@ type TableProps = {
         sortedColumnDirection: 'ASC' | 'DESC' | 'NONE';
       }
     | {}
+  ) &
+  (
+    | {
+        tableIsEmpty: boolean;
+        emptyTableLabel: string;
+      }
+    | {}
   );
 
 const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: 'styleguide-table' });
@@ -236,73 +280,83 @@ const UniqueIdContext = React.createContext<{ uniqueId: string }>({ uniqueId: 's
 export const Table: React.FC<TableProps> = (props) => {
   const uniqueId = `table-${Math.round(Math.random() * 10000)}`;
   return (
-    <UniqueIdContext.Provider value={{ uniqueId }}>
-      <span
-        className={cs(
-          'data-table',
-          {
-            'data-table--fullWidth': props.fullWidth,
-            'data-table--bordered': props.bordered,
-            'data-table--compact': props.compact,
-          },
-          props.className
-        )}
-      >
-        <table className="data-table__table">
-          <thead>
-            {'headings' in props ? (
-              <tr className="data-table__row data-table__row__header">
-                {'selected' in props && (
-                  <TableHeadCell>
-                    <Checkbox
-                      className="data-table__checkbox"
-                      label={
-                        props.allSelected
-                          ? props.uncheckAllLabel || 'Fjern alle rader'
-                          : props.checkAllLabel || 'Velg alle rader'
-                      }
-                      hiddenLabel={true}
-                      checked={props.allSelected ? true : false}
-                      partial={props.selected && props.selected.length > 0 && !props.allSelected}
-                      controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(' ')}
-                      onChange={props.onSelectAll}
-                    />
-                  </TableHeadCell>
-                )}
-                {_.map(props.headings, (heading) =>
-                  'onClickColumnHeader' in props ? (
-                    <TableHeadCell
-                      key={heading.id}
-                      rightAligned={heading.rightAligned}
-                      width={heading.width}
-                      sortDirection={props.sortedColumnId === heading.id ? props.sortedColumnDirection : 'NONE'}
-                      onClick={(e) => props.onClickColumnHeader(heading.id, e)}
-                    >
-                      {heading.label}
-                    </TableHeadCell>
-                  ) : (
-                    <TableHeadCell {...heading}>{heading.label}</TableHeadCell>
-                  )
-                )}
-              </tr>
-            ) : (
-              props.headerCells
+    <>
+      {'tableIsEmpty' in props && props.tableIsEmpty && !props.loading ? (
+        <div className="data-table__empty-state">
+          {emptySvg}
+          <div>{props.emptyTableLabel}</div>
+        </div>
+      ) : (
+        <UniqueIdContext.Provider value={{ uniqueId }}>
+          <span
+            className={cs(
+              'data-table',
+              {
+                'data-table--fullWidth': props.fullWidth,
+                'data-table--bordered': props.bordered,
+                'data-table--compact': props.compact,
+              },
+              props.className
             )}
-          </thead>
-          {props.loading ? (
-            <tbody>
-              <TableSkeletonLoading
-                rowsCount={props.dimension?.rows ?? 20}
-                columnCount={'headings' in props ? props.headings.length : props.dimension?.columns ?? 5}
-              />
-            </tbody>
-          ) : (
-            <tbody>{props.children}</tbody>
-          )}
-        </table>
-        {props.paging && <div className="data-table__paging">{props.paging}</div>}
-      </span>
-    </UniqueIdContext.Provider>
+            style={props.style}
+          >
+            <table className="data-table__table" aria-label={props['aria-label']} aria-hidden={props['aria-hidden']}>
+              <thead>
+                {'headings' in props ? (
+                  <tr className="data-table__row data-table__row__header">
+                    {'selected' in props && (
+                      <TableHeadCell>
+                        <Checkbox
+                          className="data-table__checkbox"
+                          label={
+                            props.allSelected
+                              ? props.uncheckAllLabel || 'Fjern alle rader'
+                              : props.checkAllLabel || 'Velg alle rader'
+                          }
+                          hiddenLabel={true}
+                          checked={props.allSelected ? true : false}
+                          partial={props.selected && props.selected.length > 0 && !props.allSelected}
+                          controls={props.selected && props.selected.map((id) => `${uniqueId}-${id}`).join(' ')}
+                          onChange={props.onSelectAll}
+                        />
+                      </TableHeadCell>
+                    )}
+                    {_.map(props.headings, (heading) =>
+                      'onClickColumnHeader' in props ? (
+                        <TableHeadCell
+                          key={heading.id}
+                          rightAligned={heading.rightAligned}
+                          width={heading.width}
+                          sortDirection={props.sortedColumnId === heading.id ? props.sortedColumnDirection : 'NONE'}
+                          onClick={(e) => props.onClickColumnHeader(heading.id, e)}
+                        >
+                          {heading.label}
+                        </TableHeadCell>
+                      ) : (
+                        <TableHeadCell {...heading}>{heading.label}</TableHeadCell>
+                      )
+                    )}
+                  </tr>
+                ) : (
+                  props.headerCells
+                )}
+              </thead>
+              {props.loading ? (
+                <tbody>
+                  <TableSkeletonLoading
+                    rowsCount={props.dimension?.rows ?? 20}
+                    columnCount={'headings' in props ? props.headings.length : props.dimension?.columns ?? 5}
+                  />
+                </tbody>
+              ) : (
+                <tbody>{props.children}</tbody>
+              )}
+            </table>
+            {props.paging && <div className="data-table__paging">{props.paging}</div>}
+          </span>
+        </UniqueIdContext.Provider>
+      )}
+    </>
   );
 };
 
