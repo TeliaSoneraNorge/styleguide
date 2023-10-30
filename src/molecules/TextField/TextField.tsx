@@ -93,7 +93,7 @@ export interface TextFieldProps {
   onBlur?: (event: React.FocusEvent<HTMLInputElement>) => void;
   onKeyDown?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
   onKeyUp?: (event: React.KeyboardEvent<HTMLInputElement>) => void;
-
+  onPaste?: (event: React.ClipboardEvent<HTMLInputElement>) => void;
   /**
    * For compact TextFields vi use the label as a placeholder
    */
@@ -112,6 +112,10 @@ export interface TextFieldProps {
   animated?: Boolean;
 
   dataTestId?: string;
+
+  autoFocus?: boolean;
+
+  dataTrackingId?: string;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -193,9 +197,12 @@ export const TextField = (props: TextFieldProps) => {
             onFocus={onFocus}
             onBlur={onBlur}
             onKeyDown={onKeyDown}
+            onPaste={props.onPaste}
             onKeyUp={props.onKeyUp}
             maxLength={props.maxlength}
             data-testid={props.dataTestId}
+            autoFocus={props.autoFocus}
+            data-tracking-id={props.dataTrackingId}
           />
           {statusIcon ? <span className="telia-textfield__status">{statusIcon}</span> : null}
           {props.rightContent ? (

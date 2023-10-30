@@ -1,14 +1,11 @@
 import React from 'react';
 import { addDecorator, addParameters } from '@storybook/react';
-import { withKnobs } from '@storybook/addon-knobs';
 import AllIcons from '../assets/allicons/AllIcons';
 
 import '../src/index.pcss';
 import '../src/business.pcss';
 
-addDecorator(withKnobs);
-
-addDecorator(s => (
+addDecorator((s) => (
   <>
     <AllIcons />
     {s()}

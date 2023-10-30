@@ -13,6 +13,7 @@ export type ICartType =
   | 'DELIVERY'
   | 'WEBDEAL'
   | 'SIM'
+  | 'ESIM'
   | 'NEW_NUMBER'
   | 'BREAKAGE_FEE'
   | 'SWITCH_BREAKAGE_FEE'
@@ -139,7 +140,7 @@ interface ICartItemDiscountValue {
 }
 
 export interface ICartDiscountType {
-  id: 'commitment' | 'sameBucket';
+  id: 'commitment' | 'sameGroup' | 'hardcoded';
   value: number;
   text: string;
 }

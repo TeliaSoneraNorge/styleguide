@@ -60,6 +60,7 @@ declare interface SubscriptionProps {
   scrollToOnOpen?: boolean;
   onSelect?: (...args: any[]) => any;
   onClose?: (...args: any[]) => any;
+  isSelected: boolean;
 }
 
 declare const Subscription: React.FC<SubscriptionProps>;

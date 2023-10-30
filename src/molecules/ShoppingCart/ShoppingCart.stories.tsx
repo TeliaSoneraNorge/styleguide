@@ -1,13 +1,9 @@
 import React from 'react';
-import { text, number, select } from '@storybook/addon-knobs';
-import { jsxDecorator } from 'storybook-addon-jsx';
-
 import ShoppingCart from './ShoppingCart';
 import Container from '../../atoms/Container/Container';
 
 export default {
   title: 'Component library/Molecules/ShoppingCart',
-  decorators: [jsxDecorator],
 };
 
 const switchContent = [
@@ -684,7 +680,7 @@ const groupContent = [
   },
 ];
 
-function getCart(item) {
+function getCart(item: string) {
   switch (item) {
     case 'switch':
       return switchContent;
@@ -714,16 +710,12 @@ const style = {
 };
 
 export const Default = () => {
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-  const heading = text('Heading', 'Handlekurv');
-  const pricePerMonth = number('Price per month', 500);
-  const priceUpfront = number('Price upfront', 500);
-  const priceFirstInvoice = number('Price first invoice', 500);
-  const itemToDisplay = select(
-    'Item',
-    ['switch', 'lease', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'],
-    'switch'
-  );
+  const containerSize = 'medium';
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const itemToDisplay = 'switch';
 
   return (
     <Container style={style} size={containerSize}>
@@ -736,7 +728,7 @@ export const Default = () => {
         totalPriceUpfront={priceUpfront}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
-        formatPrice={(price) => `${price},-`}
+        formatPrice={(price: string) => `${price},-`}
         discount={{
           price: -350,
           label: '30% ekstra rabatt første 3 md.',
