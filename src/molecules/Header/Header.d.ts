@@ -15,6 +15,7 @@ export interface HeaderProps {
   withBorderBottom?: boolean;
   backgroundColor?: HeaderBackgroundColor;
   children?: React.ReactNode;
+  dataTrackingId?: string;
 }
 
 export const Header: React.FC<HeaderProps>;

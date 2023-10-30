@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Checkbox } from './Checkbox';
 
-import { text, boolean } from '@storybook/addon-knobs';
-
 export default {
   component: Checkbox,
   title: 'Component library/Atoms/Checkbox',

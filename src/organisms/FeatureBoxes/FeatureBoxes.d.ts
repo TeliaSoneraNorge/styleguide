@@ -1,5 +1,11 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 
-declare const FeatureBoxes: React.FC;
+type Props = {
+  children?: ReactNode | ReactNode[];
+  hasBorder?: boolean;
+  size?: number;
+};
+
+declare const FeatureBoxes: React.FC<Props>;
 
 export default FeatureBoxes;

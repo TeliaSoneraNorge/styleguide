@@ -1,7 +1,6 @@
 import React from 'react';
 import _ from 'lodash';
 import { ShoppingCartV2 } from '../../index';
-import { select } from '@storybook/addon-knobs';
 import Container from '../../atoms/Container/Container';
 import Button from '../../atoms/Button/Button';
 import { ICartItem } from './types';
@@ -39,7 +38,6 @@ export const Default = () => {
 
   const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -196,7 +194,7 @@ export const Default = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={leaseContent}
@@ -568,10 +566,8 @@ export const subscriptionsOnly = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
-
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={subscriptionOnlyGroupContent}
@@ -602,13 +598,12 @@ export const subscriptionsWithDiscount = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = _.set(_.cloneDeep(subscriptionOnlyGroupContent), '[0].discount.types', [
-    { id: 'commitment', value: 150, text: 'Med rabatt' },
+    { id: 'commitment', value: 150, text: 'Familierabatt' },
   ]);
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -639,7 +634,6 @@ export const handsetBeforeSubscriptionAdded = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -685,7 +679,7 @@ export const handsetBeforeSubscriptionAdded = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -721,7 +715,6 @@ export const mbbAndHW = () => {
     { kind: 'voca-inverted', label: 'Fortsett å handle' },
   ];
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'MODEM',
@@ -790,7 +783,7 @@ export const mbbAndHW = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -821,7 +814,6 @@ export const accessoryOnly = () => {
     value: 'Fri frakt',
   };
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const groupContent: ICartItem[] = [
     {
       type: 'ACCESSORY',
@@ -931,7 +923,7 @@ export const accessoryOnly = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={groupContent}
@@ -964,7 +956,6 @@ export const withSpeechBubble = () => {
 
   const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
 
-  const containerSize = select('Size of container', ['small', 'medium', 'large'], 'medium');
   const leaseContent: ICartItem[] = [
     {
       type: 'HANDSET',
@@ -1039,7 +1030,7 @@ export const withSpeechBubble = () => {
   ];
 
   return (
-    <Container style={style} size={containerSize}>
+    <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
         cartItems={leaseContent}
@@ -1056,6 +1047,74 @@ export const withSpeechBubble = () => {
         isAnyCartItemsQuantityModifiable
         isAllowedToDelete
         continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};
+
+export const withFamilyDiscountInfo = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const disclaimer = 'Total telefonpris med SVITSJ i 24 md.: 16 056,-';
+
+  const simOnlyContent: ICartItem[] = [
+    {
+      type: 'SUBSCRIPTION_DRAFT',
+      id: 'TELIA_MOBIL_X_UNG.REGULAR',
+      bundleId: 'a2c1d8',
+      href: '/mobilabonnement/ubegrenset-data-ung',
+      items: [],
+      name: 'Telia X Ung',
+      lineThrough: '',
+      quantity: {
+        modifiable: false,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        monthly: 399,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+        types: [],
+      },
+      image: {
+        icon: 'sim-card',
+      },
+      subtitle: 'Mobilabonnement',
+    },
+  ];
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={simOnlyContent}
+        delivery={delivery}
+        disclaimer={disclaimer}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+        continueSection={ContinueButtons}
+        showFamilyDiscountInfo={true}
       />
     </Container>
   );

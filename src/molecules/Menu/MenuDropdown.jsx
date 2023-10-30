@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from '../../index';
 
 const MenuDropdown = (props) => {
-  const { dropdownMenu, isLoggedIn, daasLink } = props;
+  const { dropdownMenu, isLoggedIn, daasLink, logoutUrl } = props;
   if (!dropdownMenu) return null;
 
   const [type, setType] = useState(dropdownMenu.type);
@@ -36,20 +36,11 @@ const MenuDropdown = (props) => {
         <div className="menu__dropdown--links">
           <Link
             type="bubble-link"
-            href={stageEnv ? `${stageEnv}/min-side/` : 'https://www.telia.no/min-side/'}
-            icon="mobile"
+            href={stageEnv ? `${stageEnv}/min-side/` : 'https://www.telia.no/minside/hjem'}
+            icon="home"
             inverted={dropdownMenu.channel !== 'mobil'}
           >
-            <span style={{ marginLeft: '.5rem' }}>Mobil</span>
-          </Link>
-
-          <Link
-            type="bubble-link"
-            href={stageEnv ? `${stageEnv}/minside/` : 'https://www.telia.no/minside/'}
-            icon="wireless"
-            inverted={dropdownMenu.channel !== 'tv-internet'}
-          >
-            <span style={{ marginLeft: '.5rem' }}>TV og internett</span>
+            <span style={{ marginLeft: '.5rem' }}>Hjem</span>
           </Link>
         </div>
       )}
@@ -107,7 +98,7 @@ const MenuDropdown = (props) => {
 
       <div className="menu__dropdown--logout">
         {!isLoggedIn && <p className="menu__dropdown--logout--not-logged-in">Logg ut</p>}
-        {isLoggedIn && <Link href="http://www.telia.no/logout">Logg ut</Link>}
+        {isLoggedIn && <Link href={logoutUrl ?? 'https://www.telia.no/logout/'}>Logg ut</Link>}
       </div>
     </div>
   );

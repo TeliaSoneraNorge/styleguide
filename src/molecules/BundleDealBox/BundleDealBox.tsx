@@ -35,20 +35,22 @@ const BundleDealBox: React.FC<BundleDealBoxProps> = ({
 }) => {
   return (
     <div className="telia-bundle-deal-box">
-      <div className="telia-bundle-deal-box__flashText-container">
-        {flashText && (
+      {flashText && (
+        <div className="telia-bundle-deal-box__flashText-container">
           <div
             className="telia-bundle-deal-box__flashText"
             style={{ color: flashText.textColor, backgroundColor: flashText.color }}
           >
             {flashText.text}
           </div>
-        )}
-      </div>
-      <div className="telia-bundle-deal-box__image-container">
-        <img loading="lazy" className="telia-bundle-deal-box__product-image" src={`${image.url}?w=180`} alt="" />
-      </div>
+        </div>
+      )}
       <div className="telia-bundle-deal-box__upper-container">
+        {image ? (
+          <div className="telia-bundle-deal-box__product-image-container">
+            <img loading="lazy" className="telia-bundle-deal-box__product-image" src={`${image.url}?w=180`} alt="" />
+          </div>
+        ) : null}
         <Heading tag="h2" size="s" text={productName} />
         {description && (
           <div
@@ -56,6 +58,8 @@ const BundleDealBox: React.FC<BundleDealBoxProps> = ({
             dangerouslySetInnerHTML={{ __html: description }}
           />
         )}
+      </div>
+      <div className="telia-bundle-deal-box__lower-container">
         <div className="telia-bundle-deal-box__price-container">
           <span className="telia-bundle-deal-box__price-container--strikethrough">{discountPrice}</span>
           <span className="telia-bundle-deal-box__price-container--salesPrice">{salesPrice}</span>

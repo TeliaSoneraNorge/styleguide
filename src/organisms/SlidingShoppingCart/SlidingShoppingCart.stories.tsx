@@ -1,7 +1,4 @@
 import React, { useState } from 'react';
-import { text, number, select, boolean } from '@storybook/addon-knobs';
-import { jsxDecorator } from 'storybook-addon-jsx';
-
 import SlidingShoppingCart from './SlidingShoppingCart';
 import Menu from '../../molecules/Menu/Menu';
 import img from '../../stories/sampleImages';
@@ -559,7 +556,7 @@ const groupContent = [
   },
 ];
 
-function getCart(item) {
+function getCart(item: string) {
   switch (item) {
     case 'switch':
       return switchContent;
@@ -582,19 +579,14 @@ function getCart(item) {
 
 export default {
   title: 'Component library/Organisms/SlidingShoppingCart',
-  decorators: [jsxDecorator],
 };
 
 export const Default = () => {
-  const heading = text('Heading', 'Handlekurv');
-  const pricePerMonth = number('Price per month', 500);
-  const priceUpfront = number('Price upfront', 500);
-  const priceFirstInvoice = number('Price first invoice', 500);
-  const itemToDisplay = select(
-    'Item',
-    ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'],
-    'switch'
-  );
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const itemToDisplay = 'switch';
 
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
@@ -661,21 +653,19 @@ export const Default = () => {
         shouldShowCart={shouldShowCart}
         setShouldShowCart={setShouldShowCart}
         onGoToCart={() => alert('Go to cart')}
+        totalVAT={0}
+        totalPriceWithoutVAT={0}
       />
     </>
   );
 };
 
 export const WithDiscount = () => {
-  const heading = text('Heading', 'Handlekurv');
-  const pricePerMonth = number('Price per month', 500);
-  const priceUpfront = number('Price upfront', 500);
-  const priceFirstInvoice = number('Price first invoice', 500);
-  const itemToDisplay = select(
-    'Item',
-    ['switch', 'subscription', 'accessories', 'tablet', 'mbb', 'webdeal', 'group'],
-    'switch'
-  );
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const itemToDisplay = 'switch';
 
   const [shouldShowCart, setShouldShowCart] = useState(false);
 
@@ -746,6 +736,8 @@ export const WithDiscount = () => {
           label: '30% extra rabatt første 3 md.',
           price: -404,
         }}
+        totalVAT={0}
+        totalPriceWithoutVAT={0}
       />
     </>
   );

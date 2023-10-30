@@ -57,7 +57,6 @@ const getPrice = (
 };
 
 export interface ShoppingCartItemProps {
-  shouldShowQuantity: boolean;
   isAllowedToDelete: boolean;
   cartItem: ICartItem;
   hasPaid?: boolean;
@@ -249,7 +248,7 @@ const CartItemDiscount = ({ cartItem }: CartItemNameProps) => {
           className="telia-shopping-cart__item__discount-description"
           type="square"
           label={discountType.text}
-          status="positive"
+          status="communication"
         />
       )}
     </>
