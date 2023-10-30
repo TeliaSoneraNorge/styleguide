@@ -171,7 +171,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
                 })}
               >
                 {currentCarouselPage.map((item, index) => (
-                  <a href={item?.redirectUrl}>
+                  <a className="product-link" href={item?.redirectUrl}>
                     <HardwareProductBox key={item.name + item.brand + index} {...item}>
                       <div>
                         {item.priceDescription && (

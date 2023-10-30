@@ -9,7 +9,7 @@
   border-radius: 8px;
   background-color: var(--white);
   box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.12);
-  border: 1px solid rgba(229, 229, 235, 1);
+
   margin: 1rem 0;
 
   &__ribbon {
@@ -76,7 +76,6 @@
     border: none;
     cursor: pointer;
     width: 100%;
-    border: 3px solid transparent;
     border-bottom: 0;
     transition: border 150ms ease-out;
     padding: 1rem var(--expanded-info-padding-mobile);
@@ -95,6 +94,7 @@
     }
 
     &:hover {
+      border-radius: 0.5rem;
       ~ .subscription-compact-accordion__footer-border {
         background-color: #f5e0ff;
       }
@@ -132,20 +132,6 @@
     &:focus {
       outline: none;
       cursor: pointer;
-      border-top: 3px solid var(--core-purple);
-      border-left: 3px solid var(--core-purple);
-      border-right: 3px solid var(--core-purple);
-
-      ~ .subscription-compact-accordion__expanded-info {
-        border-left: 3px solid var(--core-purple);
-        border-right: 3px solid var(--core-purple);
-      }
-
-      ~ .subscription-compact-accordion__footer-border {
-        border-left: 3px solid var(--core-purple);
-        border-right: 3px solid var(--core-purple);
-        border-bottom: 3px solid var(--core-purple);
-      }
     }
   }
 
@@ -287,29 +273,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
     transition: border 150ms ease-out;
     padding: 0rem var(--expanded-info-padding-mobile) 1rem var(--expanded-info-padding-mobile);
 
     @media all and (min-width: 41em) {
       padding: 0rem var(--expanded-info-padding) 1rem var(--expanded-info-padding);
     }
-
-    &--black {
-      border-left: 3px solid var(--black);
-      border-right: 3px solid var(--black);
-    }
-
-    &--purple {
-      border-left: 3px solid #4e0174;
-      border-right: 3px solid #4e0174;
-    }
   }
 
   &--black {
     .subscription-compact-accordion__header-first-row,
     .subscription-compact-accordion__container-button {
+      border-radius: 0.5rem;
       background-color: var(--black);
       color: var(--white);
       position: relative;
@@ -331,6 +306,7 @@
   &--purple {
     .subscription-compact-accordion__header-first-row,
     .subscription-compact-accordion__container-button {
+      border-radius: 0.5rem;
       background-color: #4e0174;
       color: var(--white);
       position: relative;
@@ -390,27 +366,6 @@
     flex-wrap: wrap-reverse;
   }
 
-  &__footer-border {
-    border-bottom: 3px solid transparent;
-    border-left: 3px solid transparent;
-    border-right: 3px solid transparent;
-    transition: border 150ms ease-out;
-
-    &--black {
-      background-color: var(--black);
-      border-left: 3px solid var(--black);
-      border-right: 3px solid var(--black);
-      border-bottom: 3px solid var(--black);
-    }
-
-    &--purple {
-      background-color: #4e0174;
-      border-left: 3px solid #4e0174;
-      border-right: 3px solid #4e0174;
-      border-bottom: 3px solid #4e0174;
-    }
-  }
-
   &__heading-icon-container {
     display: flex;
     align-items: center;
@@ -455,4 +410,40 @@
       flex: 1 1 auto;
     }
   }
+
+  &__check-icon {
+    display: none;
+    &--selected {
+      display: block;
+      fill: var(--green-700) !important;
+      margin-left: 0;
+      height: 34px !important;
+      width: 34px !important;
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      border-radius: 50%;
+      background-color: #fff;
+
+      svg {
+        fill: var(--green-700) !important;
+      }
+    }
+  }
+}
+
+.subscription-compact-accordion-expanded {
+  outline: 3px solid #4e0174;
+
+  &__container-button {
+    border-radius: 0.3rem 0.3rem 0 0 !important;
+  }
+}
+
+.subscription-compact-accordion-expanded-black {
+  outline: 3px solid var(--black);
+}
+
+.subscription-compact-accordion-expanded-purple {
+  outline: 3px solid #4e0174;
 }
