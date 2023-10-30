@@ -17,6 +17,8 @@ interface Props {
    */
   ariaDescribedBy?: string;
   open: boolean;
+  closeButtonColor?: string;
+  closeButtonText?: string;
   setOpen: (open: boolean) => void;
   size?: 'small' | 'medium' | 'large' | 'fullscreen';
   className?: string;
@@ -25,12 +27,14 @@ interface Props {
    */
   returnFocusTo?: HTMLElement | null;
   children?: React.ReactNode;
+  modalPortal?: HTMLDivElement;
 }
 export const Modal: React.FC<Props> = (props) => {
   const { container } = useFocusTrap();
   const closeModal = () => props.setOpen(false);
   useEscapeListener({ onEscape: closeModal });
-  useClickOutsideListener({ open: props.open, setOpen: props.setOpen, containerRef: container });
+  if (props.size !== 'fullscreen')
+    useClickOutsideListener({ open: props.open, setOpen: props.setOpen, containerRef: container });
   const modalPortal = getModalRoot();
   const size = props.size || 'medium';
 
@@ -116,11 +120,17 @@ export const InfoModal: React.FC<Props> = (props) => {
         aria-describedby={props.ariaDescribedBy ?? undefined}
       >
         <div className="telia-info-modal__close-button" onClick={() => props.setOpen(!open)}>
-          <Button iconPlacement="right" icon="close-circle" kind="link" text="Lukk" />
+          <Button
+            style={{ color: props.closeButtonColor || 'white' }}
+            iconPlacement="right"
+            icon="close-circle"
+            kind="link"
+            text={props.closeButtonText || 'Lukk'}
+          />
         </div>
         {props.children}
       </div>
     </div>,
-    modalPortal
+    props.modalPortal ? props.modalPortal : modalPortal
   );
 };

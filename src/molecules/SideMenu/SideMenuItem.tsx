@@ -62,6 +62,7 @@ type Props = {
    */
   collapse?: boolean;
   tabIndex?: number;
+  dataTrackingId?: string;
   children?: React.ReactNode;
 };
 
@@ -80,6 +81,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     numberOfNotifications,
     tabIndex,
     tag,
+    dataTrackingId,
     children,
   } = props;
   const Tag = href ? 'a' : 'button';
@@ -105,6 +107,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
         `telia-side-menu-item--${kind ?? 'squared'}`,
         className
       )}
+      data-tracking-id={dataTrackingId}
     >
       {md || !collapse ? (
         <Tag

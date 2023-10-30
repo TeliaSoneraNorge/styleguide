@@ -1,5 +1,10 @@
-import * as React from 'react';
+import React, { ReactNode } from 'react';
 
-export const FocusBox: React.FC;
+type Props = {
+  children?: ReactNode | ReactNode[];
+  className?: string;
+};
+
+export const FocusBox: React.FC<Props>;
 
 export default FocusBox;

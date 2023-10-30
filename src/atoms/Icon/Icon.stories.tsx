@@ -71,6 +71,28 @@ export const Default = () => (
     <pre>{`import { HeartIcon } from '@telia/styleguide';\n\n<HeartIcon\n  style={{ width: '100px', height: '100px' }}\n/>`}</pre>
 
     <HeartIcon style={{ width: '100px', height: '100px' }} />
+
+    <h2>All icons with name</h2>
+    <ul style={{ listStyleType: 'none', margin: '0', padding: '0', display: 'flex', flexDirection: 'column' }}>
+      {availableIcons.map((key: IconDefinition) => (
+        <li
+          key={key}
+          style={{
+            padding: '8px',
+            display: 'inline-block',
+            color: '#222',
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+          }}
+          title={key}
+        >
+          <Icon style={{ width: '32px', height: '32px' }} icon={key} />
+          <span style={{ marginLeft: '0.5rem' }}>{key}</span>
+        </li>
+      ))}
+    </ul>
   </div>
 );
 

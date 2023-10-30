@@ -133,6 +133,7 @@ type DropdownSearchToggleProps = TextFieldProps & {
    * Icon to diplay in front of search input
    */
   icon?: IconDefinition;
+  dataTrackingId?: string;
 };
 
 export const DropdownSearchToggle = (props: DropdownSearchToggleProps) => {
