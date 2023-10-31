@@ -10,6 +10,9 @@ updates:
     schedule:
       interval: "daily"
     groups:
+      babel:
+        patterns:
+          - "*babel*"
       storybook:
         patterns:
           - "*storybook*"
