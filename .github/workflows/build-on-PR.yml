@@ -9,8 +9,6 @@ on:
 
 jobs:
   build-and-deploy-website:
-    env:
-      NODE_OPTIONS: "--max_old_space_size=4096 --openssl-legacy-provider"
     strategy:
       matrix:
         node-version: ['16.x', '18.x']
