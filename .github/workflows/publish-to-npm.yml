@@ -14,6 +14,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GIT_PUSH_TOKEN }}
       - name: Validate update type
         env:
           UPDATE_TYPE: ${{ github.event.inputs.updateType }}
