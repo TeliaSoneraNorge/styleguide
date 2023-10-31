@@ -1,11 +1,9 @@
 import React from 'react';
 import { Lozenge } from './index';
-import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: Lozenge,
   title: 'Component library/Molecules/Lozenge',
-  decorators: [withDesign],
 };
 
 export const Default = () => {

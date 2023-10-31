@@ -3,15 +3,12 @@ import { SideMenu, SideMenuBottom, SideMenuTop, SideMenuItem } from './index';
 import { action } from '@storybook/addon-actions';
 import { enableTabKeyDetection } from '../../utils/enableTabKeyDetection';
 import b from './business.svg';
-import { withDesign } from 'storybook-addon-designs';
-import { Badge } from '../../atoms/Badge';
 import { SideMenuItemGroup } from './SideMenuItemGroup';
 import { useBreakpoint } from '../..';
 
 export default {
   component: SideMenu,
   title: 'Component library/Molecules/SideMenu',
-  decorators: [withDesign],
 };
 
 export const White = () => {

@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 import { FieldInstructions } from './index';
-import { withDesign } from 'storybook-addon-designs';
 import { TextField } from '../TextField';
-import { set } from 'lodash/fp';
 
 export default {
   component: FieldInstructions,
   title: 'Component library/Molecules/Field Instructions',
-  decorators: [withDesign],
 };
 
 export const Default = () => {
