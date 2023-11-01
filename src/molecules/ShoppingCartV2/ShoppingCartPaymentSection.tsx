@@ -1,6 +1,6 @@
 import React from 'react';
 import { isEmpty, size } from 'lodash';
-import ReactTooltip from 'react-tooltip';
+import { Tooltip as ReactTooltip } from 'react-tooltip';
 import { ICartDelivery } from './types';
 import { Icon } from '../../atoms/Icon';
 
@@ -87,13 +87,10 @@ export default function ShoppingCartPaymentSection({
                     </a>
                     <ReactTooltip
                       clickable
-                      border={true}
-                      borderColor="#990AE3"
-                      textColor="#000"
+                      border={'#990AE3'}
+                      style={{ color: '#000', backgroundColor: 'white' }}
                       className="telia-shopping-cart__tooltip"
                       place="bottom"
-                      effect="solid"
-                      backgroundColor="white"
                       id="telia-shopping-cart-tooltip"
                     >
                       <div>

@@ -128,7 +128,7 @@
     "lodash": "^4.17.21",
     "lottie-web": "^5.5.5",
     "react-responsive": "^9.0.0-beta.4",
-    "react-tooltip": "^4.2.21"
+    "react-tooltip": "^5.21.6"
   },
   "sideEffects": false,
   "peerDependencies": {
