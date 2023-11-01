@@ -12,16 +12,7 @@ module.exports = {
     ['@babel/preset-react'],
     ['@babel/preset-typescript'],
   ],
-  plugins: [
-    ['@babel/plugin-proposal-private-methods', { loose: true }],
-    ['@babel/plugin-proposal-private-property-in-object', { loose: true }],
-    ['@babel/plugin-proposal-class-properties', { loose: true }],
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-transform-object-assign',
-    '@babel/plugin-proposal-optional-chaining',
-    '@babel/plugin-proposal-nullish-coalescing-operator',
-    'lodash',
-  ],
+  plugins: [],
   ignore: [
     // Avoid bringing story files into the dist output,
     // but we need to process them when running storybook.
