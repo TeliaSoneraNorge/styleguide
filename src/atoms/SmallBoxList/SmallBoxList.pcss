@@ -1,4 +1,4 @@
-.small-box-list {
+.telia-small-box-list {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,7 +16,6 @@
     color: var(--black);
     font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
     font-size: 1rem;
-    font-weight: bold;
 
     &:focus,
     &:active,
@@ -37,12 +36,38 @@
         background-color: var(--white);
       }
     }
-
     margin: 0.5rem 0.75rem;
   }
+}
 
-  &__selected {
+.telia-small-box-list--purple {
+  .telia-small-box-list__button {
+    border-radius: 8px;
     background-color: var(--white);
-    box-shadow: 0 0 0 2px var(--core-purple);
+    box-shadow: 0 0 0 1px var(--core-purple-850);
+    color: var(--core-purple-850);
+    padding: 0.5rem 1rem;
+    line-height: 1.5rem;
+    height: initial;
+
+    &:focus,
+    &:active,
+    &:hover {
+      background-color: var(--core-purple-850);
+      box-shadow: 0 0 0 1px var(--core-purple-850);
+      color: var(--white);
+    }
+
+    &--selected {
+      color: var(--white);
+      background-color: var(--core-purple-850);
+      box-shadow: 0 0 0 1px var(--core-purple-850);
+
+      &:focus,
+      &:active,
+      &:hover {
+        background-color: var(--core-purple-850);
+      }
+    }
   }
 }
