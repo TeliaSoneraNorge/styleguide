@@ -174,12 +174,14 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
                   <a className="product-link" href={item?.redirectUrl}>
                     <HardwareProductBox key={item.name + item.brand + index} {...item}>
                       <div>
-                        {item.priceDescription && (
-                          <div className="hardware-product-box__product-price-decription">{item.priceDescription}</div>
-                        )}
+                        {item.priceDescription && <div>{item.priceDescription}</div>}
                         {item.price && (
-                          <div className="hardware-product-box__product-price">
-                            {item.price},- {item.priceSuffix && <span>{item.priceSuffix}</span>}
+                          <div className="product-price">
+                            <div className="price-text">{item.price}</div>
+                            <div className="additional-info">
+                              <span>,-&nbsp;</span>
+                              {item.priceSuffix && <div className="suffix">{item.priceSuffix}</div>}
+                            </div>
                           </div>
                         )}
                         {item.priceDisclaimerLine1 && (
