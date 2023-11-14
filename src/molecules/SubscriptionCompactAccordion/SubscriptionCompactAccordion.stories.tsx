@@ -348,7 +348,7 @@ export const MultipleAccordions = () => {
         priceInfo={['/md.']}
         isExpanded={expandedIndex === 0}
         onOpen={() => {
-          setExpandedIndex(expandedIndex === 1 ? undefined : 1);
+          setExpandedIndex(expandedIndex === 0 ? undefined : 0);
         }}
       >
         {CHILDREN}
@@ -361,7 +361,7 @@ export const MultipleAccordions = () => {
         priceInfo={['/md.']}
         isExpanded={expandedIndex === 1}
         onOpen={() => {
-          setExpandedIndex(expandedIndex === 2 ? undefined : 2);
+          setExpandedIndex(expandedIndex === 1 ? undefined : 1);
         }}
       >
         {CHILDREN}
