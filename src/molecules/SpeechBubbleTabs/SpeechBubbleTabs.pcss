@@ -30,7 +30,7 @@
         cursor: pointer;
         border: 1px solid #7a7a7a;
         border-radius: 0.5rem;
-        padding: 0.5rem 1rem;
+        padding: 0.64rem 1rem;
         color: #222222;
 
         &:not(:last-of-type) {
@@ -49,19 +49,21 @@
         &--selected {
             cursor: default;
 
-            &::before {
-                content: "";
-                position: absolute;
-                bottom: -5px;
-                left: 1rem;
-                margin: auto;
-                height: 1rem;
-                width: 1rem;
-                border: 1px solid #30004B;
-                transform: rotate(45deg);
-                background-color: #30004B;
-                border-bottom: 1px solid #30004B;
-                border-right: 1px solid #30004B;
+            &&--triangle {
+              &::before {
+                  content: "";
+                  position: absolute;
+                  bottom: -5px;
+                  left: 1rem;
+                  margin: auto;
+                  height: 1rem;
+                  width: 1rem;
+                  border: 1px solid #30004B;
+                  transform: rotate(45deg);
+                  background-color: #30004B;
+                  border-bottom: 1px solid #30004B;
+                  border-right: 1px solid #30004B;
+              }
             }
 
             span {
