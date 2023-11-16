@@ -1,11 +1,15 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { MainMenu } from './MainMenu';
 import { MainMenuItem } from './MainMenuItem';
 import { Icon } from '../../atoms/Icon';
 
-storiesOf('Business/MainMenu', module).add('default', () => {
+export default {
+  title: 'Business/MainMenu',
+  component: MainMenu,
+};
+
+export const Default = () => {
   function onClickItem() {
     console.log('onClickItem');
   }
@@ -61,4 +65,4 @@ storiesOf('Business/MainMenu', module).add('default', () => {
       </div>
     </>
   );
-});
+};
