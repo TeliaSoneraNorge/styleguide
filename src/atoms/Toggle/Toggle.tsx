@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react';
 import cs from 'classnames';
 
-interface Props {
+export interface Props {
   checked: boolean;
   disabled?: boolean;
   'aria-labelledby'?: string;
