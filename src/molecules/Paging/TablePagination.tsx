@@ -38,7 +38,12 @@ export const TablePagination: React.FC<Props> = (props) => {
             />
             <DropdownMenu>
               {(props.selectOptions || [10, 25, 50, 100, 1000]).map((option: number, key: number) => (
-                <DropdownItem key={option} onClick={() => props.onPerPageChange!(option)}>
+                <DropdownItem
+                  key={option}
+                  onClick={() => {
+                    if (props.onPerPageChange) props.onPerPageChange(option);
+                  }}
+                >
                   {option}
                 </DropdownItem>
               ))}

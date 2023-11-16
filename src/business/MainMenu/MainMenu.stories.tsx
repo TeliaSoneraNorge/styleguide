@@ -1,9 +1,13 @@
 import React from 'react';
-import { storiesOf } from '@storybook/react';
 
 import { MainMenu } from './MainMenu';
 import { MainMenuItem } from './MainMenuItem';
 import { Icon } from '../../atoms/Icon';
+
+export default {
+  title: 'Business/MainMenu',
+  component: MainMenu,
+};
 
 export const Default = () => {
   function onClickItem() {
@@ -61,9 +65,4 @@ export const Default = () => {
       </div>
     </>
   );
-};
-
-export default {
-  title: 'Business/MainMenu',
-  component: MainMenu,
 };

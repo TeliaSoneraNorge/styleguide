@@ -36,4 +36,7 @@ module.exports = {
 
     return config;
   },
+  features: {
+    buildStoriesJson: true,
+  },
 };

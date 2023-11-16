@@ -38,6 +38,29 @@
                         text-decoration: none;
                     }
 
+                    .product-price {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        font-family: 'TeliaSans-Bold';
+                        font-size: 2rem;
+                        margin: 0;
+                        margin-bottom: 0.5rem;
+
+                        .price-text {
+                            grid-column: 2;
+                        }
+
+                        .additional-info {
+                            display: flex;
+                            grid-column: 3;                           
+                            justify-self: left;
+                        }
+
+                        .suffix {
+                            font-size: 0.875rem;
+                            align-self: center;
+                        }
+                    }
                 }
                 
                 &--active {

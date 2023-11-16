@@ -11,15 +11,16 @@ export interface SmallBox {
 export interface SmallBoxListProps {
   selected?: SmallBoxId;
   boxes: SmallBox[];
+  type?: 'normal' | 'purple';
   onSelect?: (id: SmallBoxId) => void;
 }
 
-const SmallBoxList = ({ selected, boxes = [], onSelect = () => undefined }: SmallBoxListProps) => (
-  <div className="small-box-list">
+const SmallBoxList = ({ selected, boxes = [], type, onSelect = () => undefined }: SmallBoxListProps) => (
+  <div className={cn('telia-small-box-list', { 'telia-small-box-list--purple': type === 'purple' })}>
     {boxes.map((box) => (
       <button
-        className={cn('small-box-list__button', {
-          'small-box-list__button--selected': selected === box.id,
+        className={cn('telia-small-box-list__button', {
+          'telia-small-box-list__button--selected': selected === box.id,
         })}
         key={box.id}
         onClick={() => onSelect(box.id)}
