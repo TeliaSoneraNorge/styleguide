@@ -3,6 +3,7 @@ import * as React from 'react';
 export interface BigImageDialogProps {
   name: string;
   heading: string;
+  topHeading: string;
   description?: string;
   src: string;
   children: React.ReactNode;

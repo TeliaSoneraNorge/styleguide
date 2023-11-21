@@ -105,7 +105,10 @@
     }
 
     @media all and (min-width: rem(960)) {
-      min-width: rem(440);
+      min-width: rem(370);
+      margin: 2.6rem 2rem;
+      border-radius: 8.365px;
+      border: 1px solid var(--gray-150, #d6d6dd);
     }
   }
 
@@ -116,12 +119,15 @@
     line-height: rem(21);
     margin: 0 0 1rem;
     text-transform: uppercase;
-    text-align: center;
 
     @media all and (min-width: em(480)) {
       font-size: rem(24);
       line-height: rem(32);
     }
+  }
+
+  &__top-heading {
+    align-self: start;
   }
 
   &__content {
