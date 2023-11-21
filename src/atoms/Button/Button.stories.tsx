@@ -63,7 +63,7 @@ export const Small = () => (
 
 export const ExtraSmall = () => (
   <>
-    <Button text="Legg til" size="xs" icon="cart" />
+    <Button text="Legg til" kind="voca-purple" size="xs" icon="cart" />
     <Button text="Legg til" kind="primary" size="xs" icon="cart" />
     <Button text="Legg til" isDisabled={true} size="xs" icon="cart" />
   </>
