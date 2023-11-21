@@ -61,6 +61,14 @@ export const Small = () => (
   </>
 );
 
+export const ExtraSmall = () => (
+  <>
+    <Button text="Legg til" size="xs" icon="cart" />
+    <Button text="Legg til" kind="primary" size="xs" icon="cart" />
+    <Button text="Legg til" isDisabled={true} size="xs" icon="cart" />
+  </>
+);
+
 export const Loading = () => (
   <>
     <Button text="Default button" isProcessing={true} processingText="Working" />
