@@ -69,7 +69,7 @@ export interface CommonButtonProps {
   /**
    * A button can have different sizes e.g. 'small'.
    */
-  size?: 'small';
+  size?: 'small' | 'xs';
   onClick?: React.MouseEventHandler;
   /**
    * Additional classes.
@@ -160,7 +160,7 @@ const Button = (props: ButtonProps) => {
           icon={icon}
           style={{
             fill: 'currentColor',
-            height: '20px',
+            height: size === 'xs' ? '16px' : '20px',
             marginBottom: '-8px',
             marginLeft: '-6px',
             marginRight: '10px',
