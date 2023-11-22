@@ -90,7 +90,7 @@ const BigImageDialog = ({
           <img alt="" src={src} />
         </div>
         <div className="big-image-dialog__content">
-          <div className="big-image-dialog__top-heading">{topHeading}</div>
+          <div>{topHeading}</div>
           <h2 id={`${name}-heading`} className="big-image-dialog__heading">
             {heading}
           </h2>
