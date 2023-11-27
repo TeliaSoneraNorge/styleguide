@@ -9,7 +9,18 @@ import Paragraph from '../../atoms/Paragraph';
 
 const KEY_ESC = 27;
 
-const BigImageDialog = ({ name, heading, description, src, children, onClose, standalone, renderTo, ...rest }) => {
+const BigImageDialog = ({
+  name,
+  topHeading,
+  heading,
+  description,
+  src,
+  children,
+  onClose,
+  standalone,
+  renderTo,
+  ...rest
+}) => {
   const modalNode = renderTo || useContext(Context);
   const dialogRef = useRef();
   const dialogOverlayRef = useRef();
@@ -44,12 +55,12 @@ const BigImageDialog = ({ name, heading, description, src, children, onClose, st
     };
   };
 
-  const onOverlayClick = event => {
+  const onOverlayClick = (event) => {
     if (event.target !== dialogOverlayRef.current) return;
     if (onClose) onClose();
   };
 
-  const handleKeyDown = event => {
+  const handleKeyDown = (event) => {
     if (event.keyCode === KEY_ESC && onClose) onClose();
   };
 
@@ -73,13 +84,13 @@ const BigImageDialog = ({ name, heading, description, src, children, onClose, st
     >
       <section className="big-image-dialog__container">
         <button className="big-image-dialog__close-container" onClick={onClose}>
-          <span className="big-image-dialog__close-text">LUKK</span>
           <Icon className="big-image-dialog__close-icon" icon="close" color="black" />
         </button>
         <div className="big-image-dialog__image-container">
           <img alt="" src={src} />
         </div>
         <div className="big-image-dialog__content">
+          <div>{topHeading}</div>
           <h2 id={`${name}-heading`} className="big-image-dialog__heading">
             {heading}
           </h2>
@@ -115,6 +126,7 @@ const BigImageDialog = ({ name, heading, description, src, children, onClose, st
 BigImageDialog.propTypes = {
   name: PropTypes.string.isRequired,
   heading: PropTypes.string,
+  topHeading: PropTypes.string,
   description: PropTypes.string,
   children: PropTypes.node,
   onClose: PropTypes.func,

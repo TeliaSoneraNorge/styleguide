@@ -8,7 +8,9 @@ updates:
   - package-ecosystem: "npm"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      time: "12:00"
+      timezone: "Europe/Berlin"
     groups:
       babel:
         patterns:
@@ -28,4 +30,6 @@ updates:
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+      time: "12:00"
+      timezone: "Europe/Berlin"

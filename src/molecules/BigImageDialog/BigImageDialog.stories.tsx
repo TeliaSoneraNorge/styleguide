@@ -67,6 +67,7 @@ export const Default = () => {
     <ModalDialogProvider>
       <BigImageDialog
         name="big-image-dialog"
+        topHeading="Apple"
         heading="Apple iPhone 11 Pro Silicone Case"
         description="Disse Apple-designede silikondekslene sitter perfekt rundt volumknappene og Dvale/vekke-knappen, og følger formene til din iPhone uten å gjøre den mye større. Det myke foret på innsiden av etuiet beskytter din iPhone. Utsiden, som er i silkemyk silikon, gjør det ekstra behagelig å holde iPhone i hånden. Velg mellom rosa eller svart silikondeksel."
         src={selected.src}

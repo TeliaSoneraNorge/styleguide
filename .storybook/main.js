@@ -7,4 +7,7 @@ module.exports = {
     '@storybook/addon-viewport',
     'storybook-addon-designs',
   ],
+  features: {
+    buildStoriesJson: true,
+  },
 };
