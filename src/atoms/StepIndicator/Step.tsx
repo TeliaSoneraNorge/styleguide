@@ -8,17 +8,16 @@ interface Props {
   numberOfSteps: number;
   label: string | React.ReactNode;
   link: string;
+  onClick?: (index: number) => void;
 }
 
-export const Step = (props: Props) => {
-  const { index, activeStep, numberOfSteps, label, link } = props;
-
+export const Step = ({ index, activeStep, numberOfSteps, label, link, onClick }: Props) => {
   const isActive = index === activeStep;
   const isPassed = activeStep > index;
 
   return (
     <li className="step-indicator__wrapper" key={`step-indicator-step-${activeStep}`}>
-      <StepElement isPassed={isPassed} onClick={() => window.location.assign(link)}>
+      <StepElement isPassed={isPassed} onClick={onClick} link={link} index={index}>
         <div
           className={classnames('step-indicator__step', {
             'step-indicator__step--active': isActive,
@@ -45,14 +44,28 @@ export const Step = (props: Props) => {
 
 const StepElement: React.FC<{
   isPassed: boolean;
-  onClick: (event: React.MouseEvent) => void;
+  index: number;
+  link: string;
+  onClick?: (index: number) => void;
   children?: React.ReactNode;
-}> = ({ children, isPassed, onClick }) => {
+}> = ({ children, isPassed, onClick, link, index }) => {
   if (isPassed) {
+    if (!onClick) {
+      return (
+        <a className="step-indicator__element step-indicator__element__clickable" href={link}>
+          {children}
+        </a>
+      );
+    }
+
     return (
-      <a role="button" className="step-indicator__element step-indicator__element__clickable" onClick={onClick}>
+      <button
+        role="button"
+        className="step-indicator__element step-indicator__element__clickable"
+        onClick={() => onClick(index)}
+      >
         {children}
-      </a>
+      </button>
     );
   } else {
     return <div className="step-indicator__element">{children}</div>;
