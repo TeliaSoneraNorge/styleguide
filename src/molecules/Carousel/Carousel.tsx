@@ -21,7 +21,7 @@ interface CarouselProps {
 
 export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   type CarouselType = { [key in number]: CarouselItem[] } | null;
-  const MIN_SWIPE_THRESHOLD = 100;
+  const MIN_SWIPE_THRESHOLD = 50;
 
   const [carousel, setCarousel] = useState<CarouselType>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -86,9 +86,10 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
 
   const handleTouchEnd = () => {
     const touchDistance = touchMoveX - touchStartX;
-    if (Math.abs(touchDistance) < MIN_SWIPE_THRESHOLD) {
+    if (touchMoveX === 0) {
       return;
-    } else if (touchDistance < MIN_SWIPE_THRESHOLD) {
+    }
+    if (touchDistance < MIN_SWIPE_THRESHOLD) {
       handlePageChange(false);
     } else if (touchDistance > MIN_SWIPE_THRESHOLD) {
       handlePageChange(true);
