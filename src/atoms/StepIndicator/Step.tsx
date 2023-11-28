@@ -8,20 +8,22 @@ interface Props {
   numberOfSteps: number;
   label: string | React.ReactNode;
   link: string;
+  isDisabled?: boolean;
   onClick?: (index: number) => void;
 }
 
-export const Step = ({ index, activeStep, numberOfSteps, label, link, onClick }: Props) => {
+export const Step = ({ index, activeStep, numberOfSteps, label, link, isDisabled, onClick }: Props) => {
   const isActive = index === activeStep;
   const isPassed = activeStep > index;
 
   return (
     <li className="step-indicator__wrapper" key={`step-indicator-step-${activeStep}`}>
-      <StepElement isPassed={isPassed} onClick={onClick} link={link} index={index}>
+      <StepElement isPassed={isPassed} isDisabled={isDisabled} onClick={onClick} link={link} index={index}>
         <div
           className={classnames('step-indicator__step', {
             'step-indicator__step--active': isActive,
             'step-indicator__step--passed': isPassed,
+            'step-indicator__step--disabled': isDisabled,
           })}
         >
           {isPassed ? (
@@ -32,7 +34,12 @@ export const Step = ({ index, activeStep, numberOfSteps, label, link, onClick }:
             index + 1
           )}
         </div>
-        <span className={classnames('step-indicator__label', { 'step-indicator__label--active': isActive })}>
+        <span
+          className={classnames('step-indicator__label', {
+            'step-indicator__label--active': isActive,
+            'step-indicator__label--disabled': isDisabled,
+          })}
+        >
           {label}
           {isPassed && <span className="sr-only">- fullført</span>}
         </span>
@@ -44,12 +51,13 @@ export const Step = ({ index, activeStep, numberOfSteps, label, link, onClick }:
 
 const StepElement: React.FC<{
   isPassed: boolean;
+  isDisabled?: boolean;
   index: number;
   link: string;
   onClick?: (index: number) => void;
   children?: React.ReactNode;
-}> = ({ children, isPassed, onClick, link, index }) => {
-  if (isPassed) {
+}> = ({ children, isPassed, isDisabled, onClick, link, index }) => {
+  if (isPassed && !isDisabled) {
     if (!onClick) {
       return (
         <a className="step-indicator__element step-indicator__element__clickable" href={link}>
@@ -59,11 +67,7 @@ const StepElement: React.FC<{
     }
 
     return (
-      <button
-        role="button"
-        className="step-indicator__element step-indicator__element__clickable"
-        onClick={() => onClick(index)}
-      >
+      <button className="step-indicator__element step-indicator__element__clickable" onClick={() => onClick(index)}>
         {children}
       </button>
     );

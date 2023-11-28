@@ -145,9 +145,22 @@
   }
 
   &__purple {
+    .step-indicator__element {
+      &__clickable {
+        &:focus,
+        &:focus-visible,
+        &:hover,
+        &:active {
+          outline: 5px solid var(--dark-purple);
+          background: var(--dark-purple);
+        }
+      }
+    }
     .step-indicator__step {
       font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
       font-weight: normal;
+      border: 2px solid #d6d6dd;
+      color: var(--dark-purple);
 
       &--passed {
         border: 2px solid var(--dark-purple);
@@ -160,6 +173,19 @@
         background-color: var(--white);
         color: var(--dark-purple);
       }
+
+      &--disabled {
+        border: 2px solid #d6d6dd;
+        background-color: var(--white);
+        color: #d6d6dd;
+      }
+
+      @media all and (min-width: 37.5em) {
+        &--passed,
+        &--active {
+          border-width: 3px;
+        }
+      }
     }
 
     .step-indicator__icon {
@@ -168,6 +194,10 @@
 
     .step-indicator__label {
       color: var(--dark-purple);
+
+      &--disabled {
+        color: #d6d6dd;
+      }
     }
 
     .step-indicator__line {

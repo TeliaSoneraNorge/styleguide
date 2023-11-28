@@ -65,6 +65,16 @@ export const Default = () => {
       </div>
       <div style={wrapperStyle}>
         <StepIndicator
+          index={0}
+          numberOfSteps={3}
+          labels={['Finansiering', 'Abonnement', 'Tilbehør']}
+          links={['#StepIndicatorTest', '#StepIndicatorTest1', '#StepIndicatorTest2']}
+          disabled={[false, true, false]}
+          kind="purple"
+        />
+      </div>
+      <div style={wrapperStyle}>
+        <StepIndicator
           index={4}
           numberOfSteps={5}
           labels={labels}
@@ -75,6 +85,7 @@ export const Default = () => {
             '#StepIndicatorTest3',
             '#StepIndicatorTest4',
           ]}
+          disabled={[false, true, true, false, false]}
           kind="purple"
           onClick={(index) => alert(`Selected: ${labels[index]}`)}
         />
