@@ -1,5 +1,6 @@
-import React, { ReactText } from 'react';
+import React from 'react';
 import range from 'lodash/range';
+import cn from 'classnames';
 import { Step } from './Step';
 
 export interface Props {
@@ -19,31 +20,39 @@ export interface Props {
    * Links for steps
    */
   links?: string[];
+  /**
+   * List of indexes that should be disabled
+   */
+  disabled?: boolean[];
+  kind?: 'purple';
+  onClick?: (index: number) => void;
 }
 
 /**
  * Status: *In progress*.
  * Category: Wizard
  */
-const StepIndicator = (props: Props) => {
-  const { index = 0, numberOfSteps = 0, labels, links } = props;
-
-  return (
-    <div className="step-indicator">
-      <ol className="step-indicator__list">
-        {range(numberOfSteps ?? 0).map((number) => (
-          <Step
-            key={index + 'step-indicator__list' + number}
-            activeStep={index}
-            index={number}
-            numberOfSteps={numberOfSteps}
-            label={labels?.[number] ?? ''}
-            link={links?.[number] ?? ''}
-          />
-        ))}
-      </ol>
-    </div>
-  );
-};
+const StepIndicator = ({ index = 0, numberOfSteps = 0, labels, links, disabled, kind, onClick }: Props) => (
+  <div
+    className={cn('step-indicator', {
+      'step-indicator__purple': kind === 'purple',
+    })}
+  >
+    <ol className="step-indicator__list">
+      {range(numberOfSteps ?? 0).map((number) => (
+        <Step
+          key={index + 'step-indicator__list' + number}
+          activeStep={index}
+          index={number}
+          numberOfSteps={numberOfSteps}
+          label={labels?.[number] ?? ''}
+          link={links?.[number] ?? ''}
+          isDisabled={disabled?.[number] ?? false}
+          onClick={onClick}
+        />
+      ))}
+    </ol>
+  </div>
+);
 
 export default StepIndicator;
