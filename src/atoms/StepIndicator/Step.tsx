@@ -67,9 +67,13 @@ const StepElement: React.FC<{
     }
 
     return (
-      <button className="step-indicator__element step-indicator__element__clickable" onClick={() => onClick(index)}>
+      <div
+        role="button"
+        className="step-indicator__element step-indicator__element__clickable"
+        onClick={() => onClick(index)}
+      >
         {children}
-      </button>
+      </div>
     );
   } else {
     return <div className="step-indicator__element">{children}</div>;
