@@ -4,14 +4,27 @@ import { useClickOutsideListener } from '../SlidingShoppingCart/useClickOutsideL
 import { useFocusTrap } from '../../utils/useFocusTrap';
 import { useEscapeListener } from '../../molecules/Modal/useEscapeListener';
 import { Icon } from '../../atoms/Icon';
+import { Badge } from '../../atoms/Badge';
+import Heading from '../../atoms/Heading';
+import Button from '../../atoms/Button';
 
 export interface SlidingShoppingCartV2Props {
   shouldShowCart: boolean;
   children: React.ReactNode;
   setShouldShowCart(shouldShowCart: boolean): void;
+  numberOfItemsInCart: number;
+  pricePerMonth?: number;
+  priceUpfront?: number;
 }
 
-const SlidingShoppingCartV2 = ({ setShouldShowCart, shouldShowCart, children }: SlidingShoppingCartV2Props) => {
+const SlidingShoppingCartV2 = ({
+  setShouldShowCart,
+  shouldShowCart,
+  children,
+  numberOfItemsInCart,
+  pricePerMonth,
+  priceUpfront,
+}: SlidingShoppingCartV2Props) => {
   const { container } = useFocusTrap();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -23,10 +36,34 @@ const SlidingShoppingCartV2 = ({ setShouldShowCart, shouldShowCart, children }: 
   });
 
   return (
-    <div ref={container}>
-      <div className={cn({ 'telia-sliding-shopping-cart__overlay': shouldShowCart })} />
+    <div ref={ref}>
+      {/* <div className={cn({ 'telia-sliding-shopping-cart__overlay': shouldShowCart })} /> */}
+      <div className="telia-sliding-shopping-cart-mobile">
+        <div
+          className={cn('telia-sliding-shopping-cart-mobile__wrapper', {
+            'telia-sliding-shopping-cart-mobile__wrapper--open': shouldShowCart,
+          })}
+        >
+          {!shouldShowCart && (
+            <div className="telia-sliding-shopping-cart-mobile__wrapper--cart">
+              <Badge text={`${numberOfItemsInCart}`}>
+                <Icon icon="shoppingcart" />
+              </Badge>
+              <Heading tag="h2" size="s">
+                {priceUpfront ? `${priceUpfront},-` : `${pricePerMonth},-/md.`}
+              </Heading>
+            </div>
+          )}
+          <Button
+            className="telia-sliding-shopping-cart-mobile__wrapper--button"
+            icon={shouldShowCart ? 'chevron-down' : 'chevron-up'}
+            onClick={() => setShouldShowCart(!shouldShowCart)}
+            kind="link"
+          />
+        </div>
+        {shouldShowCart && children}
+      </div>
       <aside
-        ref={ref}
         className={cn('telia-sliding-shopping-cart__container', {
           'telia-sliding-shopping-cart__container--show': shouldShowCart,
         })}

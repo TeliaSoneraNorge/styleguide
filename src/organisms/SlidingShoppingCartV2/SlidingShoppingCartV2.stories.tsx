@@ -120,7 +120,12 @@ export const Default = () => {
         onCartClick={() => setShouldShowCart(!shouldShowCart)}
         numberOfItemsInCart={3}
       />
-      <SlidingShoppingCartV2 shouldShowCart={shouldShowCart} setShouldShowCart={setShouldShowCart}>
+      <SlidingShoppingCartV2
+        numberOfItemsInCart={3}
+        pricePerMonth={pricePerMonth}
+        shouldShowCart={shouldShowCart}
+        setShouldShowCart={setShouldShowCart}
+      >
         <ShoppingCart
           heading={heading}
           cartItems={leaseContent}
