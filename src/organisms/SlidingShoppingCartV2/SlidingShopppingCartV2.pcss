@@ -12,12 +12,6 @@
     transition: 0.2s;
     overflow-y: auto;
     visibility: hidden;
-    display: none;
-
-    
-    @media screen and (min-width: 39em) {
-      display: block;
-    }
 
     &--show {
       visibility: visible;
@@ -64,30 +58,21 @@
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-
-    @media screen and (min-width: 45em) {
-      display: none;
-    }
   }
 }
 
 .telia-sliding-shopping-cart-mobile {
   background-color: #EDE1D8;
-  display: none;
   position: fixed;
-  bottom: 5rem;
+  bottom: 0;
   z-index: 10;
   overflow: scroll;
   max-height: 40rem;
   border-radius: .5rem;
   left: 0;
   right: 0;
-  margin: 1rem;
+  margin: 1.5rem;
   padding: 1rem;
-
-  @media screen and (max-width: 39rem) {
-    display: block;
-  }
 
   &__wrapper {
       display: flex;
