@@ -81,18 +81,15 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchMoveX(e.touches[0].clientX);
+    setTouchMoveX(touchStartX - e.touches[0].clientX);
   };
 
-  const handleTouchEnd = () => {
-    const touchDistance = touchMoveX - touchStartX;
-    if (touchMoveX === 0) {
-      return;
-    }
-    if (touchDistance < MIN_SWIPE_THRESHOLD) {
-      handlePageChange(false);
-    } else if (touchDistance > MIN_SWIPE_THRESHOLD) {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const finishingTouch = e.changedTouches[0].clientX;
+    if (touchStartX < finishingTouch - MIN_SWIPE_THRESHOLD) {
       handlePageChange(true);
+    } else if (touchStartX > finishingTouch + MIN_SWIPE_THRESHOLD) {
+      handlePageChange(false);
     }
     setTouchStartX(0);
     setTouchMoveX(0);
