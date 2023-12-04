@@ -81,6 +81,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    e.preventDefault();
     setTouchMoveX(touchStartX - e.touches[0].clientX);
   };
 
