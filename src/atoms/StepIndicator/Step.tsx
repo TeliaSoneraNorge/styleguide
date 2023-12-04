@@ -70,7 +70,11 @@ const StepElement: React.FC<{
       <div
         role="button"
         className="step-indicator__element step-indicator__element__clickable"
-        onClick={() => onClick(index)}
+        onClick={(e: React.MouseEvent) => {
+          e.stopPropagation();
+          e.preventDefault();
+          onClick(index);
+        }}
       >
         {children}
       </div>
