@@ -11,10 +11,10 @@ import { useBreakpoint } from '../../utils/useBreakpoint';
 
 export interface SlidingShoppingCartV2Props {
   shouldShowCart: boolean;
-  showMobileCart: boolean;
+  showMobileCart?: boolean;
   children: React.ReactNode;
   setShouldShowCart(shouldShowCart: boolean): void;
-  numberOfItemsInCart: number;
+  numberOfItemsInCart?: number;
   pricePerMonth?: number;
   priceUpfront?: number;
 }
@@ -54,9 +54,11 @@ const SlidingShoppingCartV2 = ({
             >
               {!shouldShowCart && (
                 <div className="telia-sliding-shopping-cart-mobile__wrapper--cart">
-                  <Badge text={`${numberOfItemsInCart}`}>
-                    <Icon icon="shoppingcart" />
-                  </Badge>
+                  {numberOfItemsInCart && (
+                    <Badge text={`${numberOfItemsInCart}`}>
+                      <Icon icon="shoppingcart" />
+                    </Badge>
+                  )}
                   <Heading tag="h2" size="s">
                     {priceUpfront ? `${priceUpfront},-` : `${pricePerMonth},-/md.`}
                   </Heading>
