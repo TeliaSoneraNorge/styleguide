@@ -11,6 +11,7 @@ import { useBreakpoint } from '../../utils/useBreakpoint';
 
 export interface SlidingShoppingCartV2Props {
   shouldShowCart: boolean;
+  showMobileCart: boolean;
   children: React.ReactNode;
   setShouldShowCart(shouldShowCart: boolean): void;
   numberOfItemsInCart: number;
@@ -21,6 +22,7 @@ export interface SlidingShoppingCartV2Props {
 const SlidingShoppingCartV2 = ({
   setShouldShowCart,
   shouldShowCart,
+  showMobileCart = false,
   children,
   numberOfItemsInCart,
   pricePerMonth,
@@ -39,7 +41,7 @@ const SlidingShoppingCartV2 = ({
   const xs = useBreakpoint('xs');
   const isMobile = !xs;
 
-  return (
+  return showMobileCart ? (
     <div ref={container}>
       {isMobile && (
         <>
@@ -84,6 +86,20 @@ const SlidingShoppingCartV2 = ({
           {children}
         </aside>
       )}
+    </div>
+  ) : (
+    <div ref={container}>
+      <aside
+        ref={ref}
+        className={cn('telia-sliding-shopping-cart__container', {
+          'telia-sliding-shopping-cart__container--show': shouldShowCart,
+        })}
+      >
+        <button className="telia-sliding-shopping-cart__close-button" onClick={() => setShouldShowCart(false)}>
+          <Icon icon="close" />
+        </button>
+        {children}
+      </aside>
     </div>
   );
 };
