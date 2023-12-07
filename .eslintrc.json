@@ -13,7 +13,8 @@
         "plugin:@typescript-eslint/recommended",
         "plugin:prettier/recommended",
         "prettier",
-        "prettier/react"
+        "prettier/react",
+        "plugin:storybook/recommended"
     ],
     "globals": {
         "React": "readonly"

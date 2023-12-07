@@ -1,5 +1,5 @@
 import React from 'react';
-import AlertText from './AlertText';
+import { AlertText } from '../../index';
 
 export default {
   title: 'Component library/Atoms/Alert Text',
