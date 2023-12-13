@@ -1,11 +1,9 @@
 import React from 'react';
 import { Chip } from './index';
-import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: Chip,
   title: 'Component library/Molecules/Chip',
-  decorators: [withDesign],
 };
 
 export const ChoiceChips = () => (

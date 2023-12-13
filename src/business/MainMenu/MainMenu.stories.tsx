@@ -5,7 +5,7 @@ import { MainMenu } from './MainMenu';
 import { MainMenuItem } from './MainMenuItem';
 import { Icon } from '../../atoms/Icon';
 
-storiesOf('Business/MainMenu', module).add('default', () => {
+export const Default = () => {
   function onClickItem() {
     console.log('onClickItem');
   }
@@ -61,4 +61,9 @@ storiesOf('Business/MainMenu', module).add('default', () => {
       </div>
     </>
   );
-});
+};
+
+export default {
+  title: 'Business/MainMenu',
+  component: MainMenu,
+};

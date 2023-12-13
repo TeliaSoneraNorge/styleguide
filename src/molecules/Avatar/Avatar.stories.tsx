@@ -3,13 +3,11 @@ import { Avatar } from './Avatar';
 import { AvatarCluster } from './AvatarCluster';
 import images from '../../stories/sampleImages';
 import { action } from '@storybook/addon-actions';
-import { withDesign } from 'storybook-addon-designs';
 import { colors } from '../../index';
 
 export default {
   component: Avatar,
   title: 'Component library/Molecules/Avatar',
-  decorations: [withDesign],
 };
 
 export const Default = ({}) => {

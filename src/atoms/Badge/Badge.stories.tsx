@@ -1,14 +1,12 @@
 import React from 'react';
 import { Badge } from './Badge';
 import { colors } from '../../utils/colors';
-import { withDesign } from 'storybook-addon-designs';
 import { Icon } from '../Icon';
 import { Button } from '../../business';
 
 export default {
   title: 'Component library/Atoms/Badge',
   component: Badge,
-  decorators: [withDesign],
 };
 
 export const Default = () => {

@@ -20,11 +20,11 @@ interface Common {
   children?: React.ReactNode;
 }
 
-interface Compact extends Common {
+export interface Compact extends Common {
   size: 'compact';
 }
 
-interface Default extends Common {
+export interface Default extends Common {
   size?: 'default';
   text?: string;
 }

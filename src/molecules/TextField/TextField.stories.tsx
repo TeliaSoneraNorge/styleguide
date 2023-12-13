@@ -3,12 +3,10 @@ import { TextField } from './index';
 import { Icon } from '../../index';
 import { Button } from '../../business/Button';
 import { action } from '@storybook/addon-actions';
-import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: TextField,
   title: 'Component library/Molecules/TextField',
-  decorators: [withDesign],
 };
 
 export const Default = () => {
