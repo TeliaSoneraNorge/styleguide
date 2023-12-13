@@ -11,12 +11,14 @@ module.exports = {
     getAbsolutePath('@storybook/addon-viewport'),
     getAbsolutePath('@storybook/addon-designs'),
   ],
-
   framework: {
     name: getAbsolutePath('@storybook/react-webpack5'),
     options: {},
   },
   docs: {
     autodocs: true,
+  },
+  features: {
+    buildStoriesJson: true,
   },
 };

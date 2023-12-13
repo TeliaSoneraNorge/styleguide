@@ -1,8 +1,9 @@
 import { throttle } from 'lodash';
 import { useState, useEffect } from 'react';
 
-type Breakpoints = 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+type Breakpoints = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
 const breakpoints: { [key in Breakpoints]: number } = {
+  xs: 624,
   sm: 640,
   md: 840,
   lg: 1024,
