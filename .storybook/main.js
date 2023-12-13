@@ -9,6 +9,7 @@ module.exports = {
     getAbsolutePath('@storybook/addon-links'),
     getAbsolutePath('@storybook/addon-docs'),
     getAbsolutePath('@storybook/addon-viewport'),
+    getAbsolutePath('@storybook/addon-designs'),
   ],
 
   framework: {
