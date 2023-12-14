@@ -34,7 +34,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     const width = window.innerWidth;
     if (width > 1600) return 4;
     if (width > 1300) return 3;
-    if (width > 770) return 2;
+    if (width > 424) return 2;
     return 1;
   }, []);
 
@@ -141,7 +141,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     <section className="telia-carousel">
       <div className="main-section">
         <div
-          className={cn('arrow-container', { 'arrow-container--hidden': currentPage === 1 })}
+          className={cn('arrow-container arrow-container--left', { 'arrow-container--hidden': currentPage === 1 })}
           onClick={() => {
             handlePageChange(true);
           }}
@@ -203,7 +203,9 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
           ))}
         </div>
         <div
-          className={cn('arrow-container', { 'arrow-container--hidden': currentPage === totalPages })}
+          className={cn('arrow-container arrow-container--right', {
+            'arrow-container--hidden': currentPage === totalPages,
+          })}
           onClick={() => {
             handlePageChange(false);
           }}
