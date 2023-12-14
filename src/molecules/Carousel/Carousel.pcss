@@ -3,6 +3,7 @@
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 
     .main-section {
         display: flex;
@@ -84,16 +85,16 @@
             border-radius: 50%;
             margin: auto 12px;
 
-            @media (max-width: 560px) {
+            @media (max-width: 560px) and (min-width: 410px) {
                 position: absolute;
-                top: 220px;
+                top: 12.75rem;
                 margin: 0;
                 &--right {
-                    right: 7px;
+                    right: -10px;
                 } 
                 &--left {
                     z-index: 1;
-                    left: 7px;
+                    left: -10px;
                 }
             }
 
@@ -110,7 +111,7 @@
                 }
             }
 
-            @media (max-width: 320px) {
+            @media (max-width: 410px) {
                 margin: auto;
             }
 
