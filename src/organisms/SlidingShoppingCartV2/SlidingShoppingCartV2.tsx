@@ -46,7 +46,12 @@ const SlidingShoppingCartV2 = ({
       {isMobile && (
         <>
           <div className={cn({ 'telia-sliding-shopping-cart__overlay': shouldShowCart })} />
-          <div className="telia-sliding-shopping-cart-mobile" ref={ref}>
+          <div
+            className={cn('telia-sliding-shopping-cart-mobile', {
+              'telia-sliding-shopping-cart-mobile--expanded': shouldShowCart,
+            })}
+            ref={ref}
+          >
             <div
               className={cn('telia-sliding-shopping-cart-mobile__wrapper', {
                 'telia-sliding-shopping-cart-mobile__wrapper--open': shouldShowCart,
