@@ -4,14 +4,15 @@ export const useClickOutsideListener = (params: {
   open: boolean;
   close: () => void;
   ref: RefObject<HTMLDivElement> | null;
+  buttonRef?: RefObject<HTMLButtonElement> | null;
 }) => {
-  const { open, close, ref } = params;
+  const { open, close, ref, buttonRef } = params;
 
   useEffect(() => {
     const handleClose = (e: MouseEvent) => {
+      const mobileOutside = e.target && buttonRef?.current && !buttonRef.current.contains((e.target as any) as Node);
       const targetIsOutside = e.target && ref?.current && !ref.current.contains((e.target as any) as Node);
-
-      if (open && targetIsOutside) {
+      if ((open && targetIsOutside) || (open && mobileOutside)) {
         close();
       }
     };
@@ -20,5 +21,5 @@ export const useClickOutsideListener = (params: {
     return () => {
       window.removeEventListener('click', handleClose);
     };
-  }, [open, ref]);
+  }, [open, ref, buttonRef]);
 };

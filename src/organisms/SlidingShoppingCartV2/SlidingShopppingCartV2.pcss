@@ -73,6 +73,13 @@
   right: 0;
   margin: 0.5rem;
   padding: 1rem;
+  font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
+  font-size: 1rem;
+  border: 1px solid gray;
+
+  &__content {
+    text-align: left;
+  }
 
   &--expanded {
     background-color: white;
@@ -82,7 +89,8 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-
+      z-index: -10;
+      position: relative;
       .telia-badge {
           &--root {
               margin-right: 2rem;
@@ -91,6 +99,7 @@
       }
 
       &--open {
+          z-index: 10;
           justify-content: flex-end;
       }
 
