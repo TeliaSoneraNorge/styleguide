@@ -12,7 +12,7 @@ export const useClickOutsideListener = (params: {
     const handleClose = (e: MouseEvent) => {
       const mobileOutside = e.target && buttonRef?.current && !buttonRef.current.contains((e.target as any) as Node);
       const targetIsOutside = e.target && ref?.current && !ref.current.contains((e.target as any) as Node);
-      if ((open && targetIsOutside) || (open && mobileOutside)) {
+      if (open && (targetIsOutside || mobileOutside)) {
         close();
       }
     };
