@@ -30,12 +30,14 @@ const SlidingShoppingCartV2 = ({
 }: SlidingShoppingCartV2Props) => {
   const { container } = useFocusTrap();
   const ref = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   useEscapeListener({ onEscape: () => setShouldShowCart(false) });
   useClickOutsideListener({
     open: shouldShowCart,
     close: () => setShouldShowCart(false),
     ref,
+    buttonRef,
   });
 
   const xs = useBreakpoint('xs');
@@ -46,11 +48,12 @@ const SlidingShoppingCartV2 = ({
       {isMobile && (
         <>
           <div className={cn({ 'telia-sliding-shopping-cart__overlay': shouldShowCart })} />
-          <div
+          <button
             className={cn('telia-sliding-shopping-cart-mobile', {
               'telia-sliding-shopping-cart-mobile--expanded': shouldShowCart,
             })}
-            ref={ref}
+            onClick={() => (shouldShowCart ? null : setShouldShowCart(!shouldShowCart))}
+            ref={buttonRef}
           >
             <div
               className={cn('telia-sliding-shopping-cart-mobile__wrapper', {
@@ -72,12 +75,12 @@ const SlidingShoppingCartV2 = ({
               <Button
                 className="telia-sliding-shopping-cart-mobile__wrapper--button"
                 icon={shouldShowCart ? 'chevron-down' : 'chevron-up'}
-                onClick={() => setShouldShowCart(!shouldShowCart)}
                 kind="link"
+                onClick={() => (shouldShowCart ? setShouldShowCart(!shouldShowCart) : null)}
               />
             </div>
-            {shouldShowCart && children}
-          </div>
+            {shouldShowCart && <div className="telia-sliding-shopping-cart-mobile__content">{children}</div>}
+          </button>
         </>
       )}
       {!isMobile && (
