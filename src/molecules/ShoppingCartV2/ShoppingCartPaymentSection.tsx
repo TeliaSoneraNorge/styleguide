@@ -3,6 +3,7 @@ import { isEmpty, size } from 'lodash';
 import ReactTooltip from 'react-tooltip';
 import { ICartDelivery } from './types';
 import { Icon } from '../../atoms/Icon';
+import ProgressBar from '../../atoms/ProgressBar';
 
 export interface MonthlyPriceDetailsProps {
   totalPriceMonthly?: number;
@@ -66,6 +67,26 @@ export default function ShoppingCartPaymentSection({
               {delivery.label || 'Levering'}
             </div>
             <span className="telia-shopping-cart__label-medium">{delivery.value}</span>
+          </div>
+        )}
+        {delivery && delivery.progressBar && (
+          <div className="telia-shopping-cart__delivery-progressbar">
+            {delivery.progressBar.text || (
+              <div className="telia-shopping-cart__delivery-progressbar-text">
+                Du har{' '}
+                <span className="telia-sans-medium">
+                  {Math.ceil(delivery.progressBar.max - delivery.progressBar.progress)},-
+                </span>{' '}
+                igjen til <span className="telia-sans-medium">fri frakt</span>
+              </div>
+            )}
+            <ProgressBar
+              min={delivery.progressBar.min}
+              max={delivery.progressBar.max}
+              value={delivery.progressBar.progress}
+              color={delivery.progressBar.color || 'corePurple700'}
+              purple
+            />
           </div>
         )}
         {delivery && !isEmpty(delivery) && !!totalPriceMonthly && (

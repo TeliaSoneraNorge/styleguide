@@ -33,6 +33,7 @@ export type ProgressBarProps = {
    * @default false
    */
   transparent?: boolean;
+  purple?: boolean;
 
   className?: string;
 } & (
@@ -53,7 +54,7 @@ export type ProgressBarProps = {
  * Category: Graphs
  */
 export const ProgressBar = (props: ProgressBarProps) => {
-  const { value, min, max, disabled, direction = 'right', transparent = false } = props;
+  const { value, min, max, disabled, direction = 'right', transparent = false, purple = false } = props;
   let color = '';
 
   if ('color' in props) {
@@ -67,6 +68,7 @@ export const ProgressBar = (props: ProgressBarProps) => {
     <div
       className={classNames('progress', 'height' in props ? `progress--${props.height}` : '', props.className, {
         'progress--transparent': transparent,
+        'progress--purple': purple,
       })}
     >
       <div
