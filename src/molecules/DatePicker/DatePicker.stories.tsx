@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { DatePicker } from './DatePicker';
 import { DatePickerMenu } from './DatePickerMenu';
 import { PeriodPicker } from './PeriodPicker';
-import { withDesign } from 'storybook-addon-designs';
 import format from './format';
 import { Button } from '../../business';
 import { usePeriod } from './utils/usePeriod';
@@ -11,7 +10,6 @@ export default {
   component: DatePicker,
   title: 'Component library/Molecules/DatePicker',
   subComponents: { DatePickerMenu, PeriodPicker },
-  decorators: [withDesign],
 };
 
 export const Default = () => {

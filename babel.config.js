@@ -20,7 +20,6 @@ module.exports = {
     '@babel/plugin-transform-object-assign',
     '@babel/plugin-proposal-optional-chaining',
     '@babel/plugin-proposal-nullish-coalescing-operator',
-    'lodash',
   ],
   ignore: [
     // Avoid bringing story files into the dist output,

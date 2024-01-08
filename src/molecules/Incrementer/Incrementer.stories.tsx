@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Incrementer } from './Incrementer';
-import { withDesign } from 'storybook-addon-designs';
 
 export default {
   component: Incrementer,
   title: 'Component library/Molecules/Incrementer',
-  decorators: [withDesign],
 };
 
 export const Default = () => {

@@ -1,4 +1,3 @@
-import { storiesOf } from '@storybook/react';
 import React, { useState, useEffect } from 'react';
 import {
   Dropdown,
@@ -11,7 +10,6 @@ import {
 } from './index';
 import { Button } from '../../business';
 import { action } from '@storybook/addon-actions';
-import { withDesign } from 'storybook-addon-designs';
 import { Checkbox } from '../../atoms/Checkbox';
 import { Icon } from '../../atoms/Icon';
 
@@ -78,7 +76,6 @@ export default {
   component: Dropdown,
   title: 'Component library/Molecules/Dropdown',
   subComponents: { DropdownItem, DropdownMenu, DropdownSearchItem, DropdownSearchToggle },
-  decorators: [withDesign],
 };
 
 export const Default = () => {

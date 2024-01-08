@@ -10,9 +10,6 @@ module.exports = ({ config, mode }) => {
       {
         loader: require.resolve('babel-loader'),
       },
-      {
-        loader: require.resolve('react-docgen-typescript-loader'),
-      },
     ],
   });
 
@@ -30,7 +27,7 @@ module.exports = ({ config, mode }) => {
   config.module.rules.push({
     test: /\.pcss$/,
     sideEffects: true,
-    loaders: ['style-loader', 'postcss-loader'],
+    use: ['style-loader', 'postcss-loader'],
   });
 
   config.module.rules.push({

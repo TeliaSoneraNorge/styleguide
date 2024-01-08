@@ -1,12 +1,10 @@
 import React from 'react';
 import { PhoneNumberField } from './index';
-import { withDesign } from 'storybook-addon-designs';
 import { CountryCode } from './PhoneNumberField';
 
 export default {
   component: PhoneNumberField,
   title: 'Component library/Molecules/Phone Number Field',
-  decorators: [withDesign],
 };
 
 const countryCodes: CountryCode[] = [
