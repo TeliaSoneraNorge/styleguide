@@ -21,7 +21,7 @@ interface CarouselProps {
 
 export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   type CarouselType = { [key in number]: CarouselItem[] } | null;
-  const MIN_SWIPE_THRESHOLD = 100;
+  const MIN_SWIPE_THRESHOLD = 50;
 
   const [carousel, setCarousel] = useState<CarouselType>(null);
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,7 +34,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     const width = window.innerWidth;
     if (width > 1600) return 4;
     if (width > 1300) return 3;
-    if (width > 770) return 2;
+    if (width >= 370) return 2;
     return 1;
   }, []);
 
@@ -81,17 +81,16 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
   };
 
   const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    setTouchMoveX(e.touches[0].clientX);
+    e.preventDefault();
+    setTouchMoveX(touchStartX - e.touches[0].clientX);
   };
 
-  const handleTouchEnd = () => {
-    const touchDistance = touchMoveX - touchStartX;
-    if (Math.abs(touchDistance) < MIN_SWIPE_THRESHOLD) {
-      return;
-    } else if (touchDistance < MIN_SWIPE_THRESHOLD) {
-      handlePageChange(false);
-    } else if (touchDistance > MIN_SWIPE_THRESHOLD) {
+  const handleTouchEnd = (e: React.TouchEvent<HTMLDivElement>) => {
+    const finishingTouch = e.changedTouches[0].clientX;
+    if (touchStartX < finishingTouch - MIN_SWIPE_THRESHOLD) {
       handlePageChange(true);
+    } else if (touchStartX > finishingTouch + MIN_SWIPE_THRESHOLD) {
+      handlePageChange(false);
     }
     setTouchStartX(0);
     setTouchMoveX(0);
@@ -142,7 +141,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     <section className="telia-carousel">
       <div className="main-section">
         <div
-          className={cn('arrow-container', { 'arrow-container--hidden': currentPage === 1 })}
+          className={cn('arrow-container arrow-container--left', { 'arrow-container--hidden': currentPage === 1 })}
           onClick={() => {
             handlePageChange(true);
           }}
@@ -174,12 +173,14 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
                   <a className="product-link" href={item?.redirectUrl}>
                     <HardwareProductBox key={item.name + item.brand + index} {...item}>
                       <div>
-                        {item.priceDescription && (
-                          <div className="hardware-product-box__product-price-decription">{item.priceDescription}</div>
-                        )}
+                        {item.priceDescription && <div>{item.priceDescription}</div>}
                         {item.price && (
-                          <div className="hardware-product-box__product-price">
-                            {item.price},- {item.priceSuffix && <span>{item.priceSuffix}</span>}
+                          <div className="product-price">
+                            <div className="price-text">{item.price}</div>
+                            <div className="additional-info">
+                              <span>,-&nbsp;</span>
+                              {item.priceSuffix && <div className="suffix">{item.priceSuffix}</div>}
+                            </div>
                           </div>
                         )}
                         {item.priceDisclaimerLine1 && (
@@ -202,7 +203,9 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
           ))}
         </div>
         <div
-          className={cn('arrow-container', { 'arrow-container--hidden': currentPage === totalPages })}
+          className={cn('arrow-container arrow-container--right', {
+            'arrow-container--hidden': currentPage === totalPages,
+          })}
           onClick={() => {
             handlePageChange(false);
           }}

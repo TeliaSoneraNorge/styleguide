@@ -3,12 +3,17 @@
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 
     .main-section {
         display: flex;
         flex-direction: row;
         justify-content: center;
-        margin: 1rem;
+        margin: 1rem 0.5rem;
+
+        @media (max-width: 410px) {
+            margin: 1rem 0;
+        }
 
         .slides {
             overflow: hidden;
@@ -30,6 +35,10 @@
                     min-width: 100%;
                     margin: 1rem;
 
+                    @media (max-width: 410px) {
+                        margin: 1rem 0;
+                    }
+
                     &--center {
                         justify-content: space-evenly;
                     }
@@ -38,6 +47,29 @@
                         text-decoration: none;
                     }
 
+                    .product-price {
+                        display: grid;
+                        grid-template-columns: 1fr 1fr 1fr;
+                        font-family: 'TeliaSans-Bold';
+                        font-size: 2rem;
+                        margin: 0;
+                        margin-bottom: 0.5rem;
+
+                        .price-text {
+                            grid-column: 2;
+                        }
+
+                        .additional-info {
+                            display: flex;
+                            grid-column: 3;                           
+                            justify-self: left;
+                        }
+
+                        .suffix {
+                            font-size: 0.875rem;
+                            align-self: center;
+                        }
+                    }
                 }
                 
                 &--active {
@@ -61,6 +93,19 @@
             border-radius: 50%;
             margin: auto 12px;
 
+            @media (max-width: 560px) and (min-width: 370px) {
+                position: absolute;
+                top: 12.75rem;
+                margin: 0;
+                &--right {
+                    right: -5px;
+                } 
+                &--left {
+                    z-index: 1;
+                    left: -5px;
+                }
+            }
+
             .Icon {
                 width: 40px;
                 height: 40px;
@@ -74,7 +119,7 @@
                 }
             }
 
-            @media (max-width: 320px) {
+            @media (max-width: 370px) {
                 margin: auto;
             }
 

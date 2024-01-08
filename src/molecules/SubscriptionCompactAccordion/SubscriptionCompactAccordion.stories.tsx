@@ -334,3 +334,38 @@ export const WithFamilyDiscount = () => {
     </SubscriptionCompactAccordion>
   );
 };
+
+export const MultipleAccordions = () => {
+  const [expandedIndex, setExpandedIndex] = useState<number>();
+
+  return (
+    <div>
+      <SubscriptionCompactAccordion
+        name="Telia X - Normal"
+        title="20 Mbit/s"
+        id="smart20"
+        price={499}
+        priceInfo={['/md.']}
+        isExpanded={expandedIndex === 0}
+        onOpen={() => {
+          setExpandedIndex(expandedIndex === 0 ? undefined : 0);
+        }}
+      >
+        {CHILDREN}
+      </SubscriptionCompactAccordion>
+      <SubscriptionCompactAccordion
+        name="Telia X - Normal"
+        title="20 Mbit/s"
+        id="smart20"
+        price={499}
+        priceInfo={['/md.']}
+        isExpanded={expandedIndex === 1}
+        onOpen={() => {
+          setExpandedIndex(expandedIndex === 1 ? undefined : 1);
+        }}
+      >
+        {CHILDREN}
+      </SubscriptionCompactAccordion>
+    </div>
+  );
+};

@@ -3,7 +3,7 @@ import cs from 'classnames';
 
 import { MainMenuItemProps } from './MainMenuItem';
 
-interface Props {
+export interface Props {
   className?: string;
   children?: Array<React.ReactElement<MainMenuItemProps>>;
 }
