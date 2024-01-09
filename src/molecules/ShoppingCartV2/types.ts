@@ -1,4 +1,5 @@
 import { IconDefinition } from '../../atoms/Icon/index';
+import { colors } from '../../utils/colors';
 
 export type ICartType =
   | 'SUBSCRIPTION'
@@ -184,8 +185,17 @@ export interface ICartItem {
   items?: ICartItem[];
 }
 
+export interface ICartDeliveryProgressBar {
+  min: number;
+  max: number;
+  progress: number;
+  text?: string;
+  color?: keyof typeof colors;
+}
+
 export interface ICartDelivery {
   icon?: IconDefinition;
   label: string;
   value: string | number;
+  progressBar?: ICartDeliveryProgressBar;
 }

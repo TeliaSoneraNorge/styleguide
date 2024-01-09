@@ -804,6 +804,114 @@ export const mbbAndHW = () => {
   );
 };
 
+const accessoryGroupContent: ICartItem[] = [
+  {
+    type: 'ACCESSORY',
+    subtype: 'COVER',
+    id: '9074806',
+    brand: 'Apple',
+    brandSlug: 'apple',
+    model: 'iPhone 11 Pro Leather Case',
+    modelSlug: 'iphone-leather-case',
+    color: 'Svart',
+    image: {
+      url:
+        '//images.ctfassets.net/iz15t1lxx44v/vP0E8oTgNofTzGZewDG3J/a0f66d1ec96c561372ac86561a0c53a7/Apple-iPhone-11-Pro-Silver-Leather-Case-Black-Pure-Back-.png',
+    },
+    name: 'Apple iPhone 11 Pro Leather Case Svart',
+    quantity: {
+      modifiable: true,
+      removable: true,
+      value: 1,
+    },
+    price: {
+      upfront: 499,
+      originalSalesPrice: 499,
+      originalSalesPriceWithoutVAT: 399.2,
+    },
+    discount: {
+      value: {
+        upfront: 0,
+        monthly: 0,
+      },
+      description: '',
+    },
+    leaseMonths: null,
+    isReSwitch: false,
+    isWebDeal: false,
+  },
+  {
+    type: 'ACCESSORY',
+    subtype: 'COVER',
+    id: '9076624',
+    brand: 'Samsung',
+    brandSlug: 'samsung',
+    model: 'Smart LED Cover Galaxy S20',
+    modelSlug: 'smart-led-cover',
+    color: 'Grå',
+    image: {
+      url:
+        '//images.ctfassets.net/iz15t1lxx44v/4pyxsA65uGFwt0NIlj3KmO/c48c5279368525a19e5a5b3b92f35405/ef-kg980c_002_back_black_200123.png',
+    },
+    name: 'Samsung LED Cover Galaxy S20 Grå',
+    quantity: {
+      modifiable: true,
+      removable: true,
+      value: 3,
+    },
+    price: {
+      upfront: 599,
+      originalSalesPrice: 599,
+      originalSalesPriceWithoutVAT: 479.2,
+    },
+    discount: {
+      value: {
+        upfront: 0,
+        monthly: 0,
+      },
+      description: '',
+    },
+    leaseMonths: null,
+    isReSwitch: false,
+    isWebDeal: false,
+  },
+  {
+    type: 'ACCESSORY',
+    subtype: 'SPEAKER',
+    id: '9075536',
+    brand: 'Harman Kardon',
+    brandSlug: 'harman-kardon',
+    model: 'Onyx Studio 6',
+    modelSlug: 'onyx-studio',
+    color: 'Svart',
+    image: {
+      url:
+        '//images.ctfassets.net/iz15t1lxx44v/6vnEg9rVj4DnaYvZVrIOvl/ddf6d72dbb92c712c06d8b14a3ec1806/OnyxStudio6_Hero_Black_1605X1605.png',
+    },
+    name: 'Harman Kardon Onyx Studio 6 Svart',
+    quantity: {
+      modifiable: true,
+      removable: true,
+      value: 1,
+    },
+    price: {
+      upfront: 3999,
+      originalSalesPrice: 3999,
+      originalSalesPriceWithoutVAT: 3199.2,
+    },
+    discount: {
+      value: {
+        upfront: 0,
+        monthly: 0,
+      },
+      description: '',
+    },
+    leaseMonths: null,
+    isReSwitch: false,
+    isWebDeal: false,
+  },
+];
+
 export const accessoryOnly = () => {
   const heading = 'Handlekurv';
   const pricePerMonth = 500;
@@ -814,125 +922,50 @@ export const accessoryOnly = () => {
     value: 'Fri frakt',
   };
 
-  const groupContent: ICartItem[] = [
-    {
-      type: 'ACCESSORY',
-      subtype: 'COVER',
-      id: '9074806',
-      brand: 'Apple',
-      brandSlug: 'apple',
-      model: 'iPhone 11 Pro Leather Case',
-      modelSlug: 'iphone-leather-case',
-      color: 'Svart',
-      image: {
-        url:
-          '//images.ctfassets.net/iz15t1lxx44v/vP0E8oTgNofTzGZewDG3J/a0f66d1ec96c561372ac86561a0c53a7/Apple-iPhone-11-Pro-Silver-Leather-Case-Black-Pure-Back-.png',
-      },
-      name: 'Apple iPhone 11 Pro Leather Case Svart',
-      quantity: {
-        modifiable: true,
-        removable: true,
-        value: 1,
-      },
-      price: {
-        upfront: 499,
-        originalSalesPrice: 499,
-        originalSalesPriceWithoutVAT: 399.2,
-      },
-      discount: {
-        value: {
-          upfront: 0,
-          monthly: 0,
-        },
-        description: '',
-      },
-      leaseMonths: null,
-      isReSwitch: false,
-      isWebDeal: false,
-    },
-    {
-      type: 'ACCESSORY',
-      subtype: 'COVER',
-      id: '9076624',
-      brand: 'Samsung',
-      brandSlug: 'samsung',
-      model: 'Smart LED Cover Galaxy S20',
-      modelSlug: 'smart-led-cover',
-      color: 'Grå',
-      image: {
-        url:
-          '//images.ctfassets.net/iz15t1lxx44v/4pyxsA65uGFwt0NIlj3KmO/c48c5279368525a19e5a5b3b92f35405/ef-kg980c_002_back_black_200123.png',
-      },
-      name: 'Samsung LED Cover Galaxy S20 Grå',
-      quantity: {
-        modifiable: true,
-        removable: true,
-        value: 3,
-      },
-      price: {
-        upfront: 599,
-        originalSalesPrice: 599,
-        originalSalesPriceWithoutVAT: 479.2,
-      },
-      discount: {
-        value: {
-          upfront: 0,
-          monthly: 0,
-        },
-        description: '',
-      },
-      leaseMonths: null,
-      isReSwitch: false,
-      isWebDeal: false,
-    },
-    {
-      type: 'ACCESSORY',
-      subtype: 'SPEAKER',
-      id: '9075536',
-      brand: 'Harman Kardon',
-      brandSlug: 'harman-kardon',
-      model: 'Onyx Studio 6',
-      modelSlug: 'onyx-studio',
-      color: 'Svart',
-      image: {
-        url:
-          '//images.ctfassets.net/iz15t1lxx44v/6vnEg9rVj4DnaYvZVrIOvl/ddf6d72dbb92c712c06d8b14a3ec1806/OnyxStudio6_Hero_Black_1605X1605.png',
-      },
-      name: 'Harman Kardon Onyx Studio 6 Svart',
-      quantity: {
-        modifiable: true,
-        removable: true,
-        value: 1,
-      },
-      price: {
-        upfront: 3999,
-        originalSalesPrice: 3999,
-        originalSalesPriceWithoutVAT: 3199.2,
-      },
-      discount: {
-        value: {
-          upfront: 0,
-          monthly: 0,
-        },
-        description: '',
-      },
-      leaseMonths: null,
-      isReSwitch: false,
-      isWebDeal: false,
-    },
-  ];
-
   return (
     <Container style={style} size="medium">
       <ShoppingCartV2
         heading={heading}
-        cartItems={groupContent}
+        cartItems={accessoryGroupContent}
         delivery={delivery}
         totalPriceFirstInvoice={priceFirstInvoice}
         totalPriceMonthly={pricePerMonth}
         totalPriceUpfront={priceUpfront}
         totalVAT={150}
         totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        isAllowedToDelete={true}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        continueSection={ContinueButtons}
+      />
+    </Container>
+  );
+};
+
+export const accessoryOnlyWithProgressBar = () => {
+  const heading = 'Handlekurv';
+  const priceUpfront = 200;
+  const priceFirstInvoice = 0;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+    progressBar: {
+      min: 0,
+      max: 350,
+      progress: 200,
+    },
+  };
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={accessoryGroupContent}
+        delivery={delivery}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceUpfront={priceUpfront}
         onChangeQuantity={() => {}}
         onRemoveItem={() => {}}
         isAllowedToDelete={true}
