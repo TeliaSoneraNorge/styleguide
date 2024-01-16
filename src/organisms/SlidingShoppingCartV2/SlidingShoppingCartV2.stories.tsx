@@ -13,7 +13,7 @@ export default {
 
 const heading = 'Handlekurv';
 const pricePerMonth = 500;
-const priceUpfront = 500;
+const priceUpfront = 5000;
 const priceFirstInvoice = 500;
 
 const priceDetails = [
@@ -174,6 +174,7 @@ export const SlidingShoppingCartV2WithMobileCart = () => {
         numberOfItemsInCart={3}
         showMobileCart={true}
         pricePerMonth={pricePerMonth}
+        priceUpfront={priceUpfront}
         shouldShowCart={shouldShowCart}
         setShouldShowCart={setShouldShowCart}
       >
