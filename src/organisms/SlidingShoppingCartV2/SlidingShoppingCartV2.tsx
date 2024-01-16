@@ -67,9 +67,20 @@ const SlidingShoppingCartV2 = ({
                       <Icon icon="shoppingcart" />
                     </Badge>
                   )}
-                  <Heading tag="h2" size="s">
-                    {priceUpfront ? `${priceUpfront},-` : `${pricePerMonth},-/md.`}
-                  </Heading>
+                  <div className="telia-sliding-shopping-cart-mobile__price-wrapper">
+                    <div className="telia-sliding-shopping-cart-mobile__price-header">
+                      <span>Betale pr md: </span>
+                      <span>Å betale nå:</span>
+                    </div>
+                    <div className="telia-sliding-shopping-cart-mobile__price">
+                      <Heading tag="h2" size="xs">
+                        {pricePerMonth || 0},-/md.
+                      </Heading>
+                      <Heading tag="h2" size="xs">
+                        {priceUpfront || 0},-
+                      </Heading>
+                    </div>
+                  </div>
                 </div>
               )}
               <Button

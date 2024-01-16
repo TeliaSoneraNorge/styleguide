@@ -75,7 +75,39 @@
   padding: 1rem;
   font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  border: 1px solid gray;
+  border: 1px solid #D6D6DD;
+
+  &__price-wrapper {
+    display: flex;
+    text-align: start;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 12.5rem;
+    .heading {
+      margin: 0;
+    }
+  }
+
+  &__price-header {
+    display: flex; 
+    flex-direction: column;
+    :nth-child(1) {
+      margin-bottom: .5rem;
+    }
+  }
+
+  &__price {
+    display: flex;
+    flex-direction: column;
+    :nth-child(1) {
+      margin-bottom: .5rem;
+    }
+
+    .heading {
+       font-size: 1rem !important;
+       color: var(--core-purple-850) !important;
+    }
+  }
 
   &__content {
     text-align: left;
@@ -110,6 +142,7 @@
 
       &--button {
           display: flex;
+          color: #4F4741;
           &:hover {
               background-color: transparent !important;
               color: black !important;
