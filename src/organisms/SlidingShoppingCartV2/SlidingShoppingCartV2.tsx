@@ -72,11 +72,11 @@ const SlidingShoppingCartV2 = ({
                       <span>Betale pr md: </span>
                       <span>Å betale nå:</span>
                     </div>
-                    <div className="telia-sliding-shopping-cart-mobile__price">
-                      <Heading tag="h2" size="xs">
+                    <div className="telia-sliding-shopping-cart-mobile__price-container">
+                      <Heading className="telia-sliding-shopping-cart-mobile__price" tag="h2" size="xs">
                         {pricePerMonth || 0},-/md.
                       </Heading>
-                      <Heading tag="h2" size="xs">
+                      <Heading className="telia-sliding-shopping-cart-mobile__price" tag="h2" size="xs">
                         {priceUpfront || 0},-
                       </Heading>
                     </div>
