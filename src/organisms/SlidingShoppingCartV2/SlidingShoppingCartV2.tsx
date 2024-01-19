@@ -70,7 +70,7 @@ const SlidingShoppingCartV2 = ({
                   <div className="telia-sliding-shopping-cart-mobile__price-wrapper">
                     <div className="telia-sliding-shopping-cart-mobile__price-header">
                       <span>Betale pr md: </span>
-                      <span>Å betale nå:</span>
+                      <span>Betal nå:</span>
                     </div>
                     <div className="telia-sliding-shopping-cart-mobile__price-container">
                       <Heading className="telia-sliding-shopping-cart-mobile__price" tag="h2" size="xs">
