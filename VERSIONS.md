@@ -15,6 +15,10 @@ For Major and Minor changes in version you must notify everyone in the #stylegui
 
 Only noteworthy changes.
 
+# 1.56.0
+
+- Enabled CSS variables
+
 # 1.50.0
 
 - Updated React to version 18
