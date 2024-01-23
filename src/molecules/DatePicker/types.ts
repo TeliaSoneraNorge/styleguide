@@ -1,3 +1,5 @@
+import { MutableRefObject, RefObject } from 'react';
+
 type CommonProps = {
   size?: 'compact' | 'default';
 
@@ -8,13 +10,13 @@ type CommonProps = {
 
   /**
    * ordered array of label for months, from january-december
-   * @default "Norwegain full name. ['Januar','Februar','Mars','April','Mai','Juni','Juli','August','September','Oktober','November','Desember'];"
+   * @default "Norwegian full name. ['Januar','Februar','Mars','April','Mai','Juni','Juli','August','September','Oktober','November','Desember'];"
    */
   monthLabels?: Array<string>;
 
   /**
    * ordered array of label for months, from january-december
-   * @default "Norwgian short name. ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sø']"
+   * @default "Norwegian short name. ['Ma', 'Ti', 'On', 'To', 'Fr', 'Lø', 'Sø']"
    */
   dayLabels?: Array<string>;
 
@@ -37,6 +39,22 @@ type CommonProps = {
    */
   open?: boolean;
   setOpen?: (open: boolean) => void;
+  /**
+   * If `true`, the outline and helptext will be displayed in an error state.
+   * @default false
+   */
+  error?: boolean;
+  /**
+   * The help text content displayed under the input
+   */
+  helpText?: React.ReactNode;
+  /**
+   * Expand the datepicker input field to fit the parent container
+   */
+  name?: string;
+  fullWidth?: boolean;
+  required?: boolean;
+  disabled?: boolean;
 };
 
 export type PeriodPickerProps = CommonProps & {
@@ -90,4 +108,5 @@ export type DatePickerProps = CommonProps & {
    * @default today
    */
   value?: string;
+  inputRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement>;
 };

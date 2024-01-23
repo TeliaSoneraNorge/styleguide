@@ -29,7 +29,7 @@ export const Default = () => {
             success={state === 'success'}
             helpText={state === 'error' ? state : ''}
           />
-          <TextField label="Field label" helpText="Help or instrictions" />
+          <TextField label="Field label" helpText="Help or instructions" />
           <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
@@ -38,7 +38,7 @@ export const Default = () => {
           <TextField label="Field label" leftContent={<Icon icon="search" />} />
           <TextField
             label="Field label"
-            helpText="Help or instrictions"
+            helpText="Help or instructions"
             rightContent={<Button size="compact" kind="secondary-text" icon="close" onClick={action('button')} />}
           />
           <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
@@ -49,7 +49,7 @@ export const Default = () => {
           <TextField label="Field label" leftContent={<Icon icon="search" />} disabled={true} />
           <TextField
             label="Field label"
-            helpText="Help or instrictions"
+            helpText="Help or instructions"
             rightContent={
               <Button size="compact" kind="secondary-text" icon="close" onClick={action('button')} disabled={true} />
             }
@@ -57,7 +57,7 @@ export const Default = () => {
           />
           <TextField
             label="Field label"
-            helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>}
+            helpText={<div style={{ textAlign: 'end' }}>Help or instructions</div>}
             disabled={true}
           />
         </div>
@@ -88,11 +88,11 @@ export const Compact = () => {
       <div style={{ display: 'flex' }}>
         <div style={{ width: '30%', marginRight: '1rem' }}>
           <TextField size="compact" label="Field label" placeholder="Placeholder text" />
-          <TextField size="compact" label="Field label" helpText="Help or instrictions" />
+          <TextField size="compact" label="Field label" helpText="Help or instructions" />
           <TextField
             size="compact"
             label="Field label"
-            helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>}
+            helpText={<div style={{ textAlign: 'end' }}>Help or instructions</div>}
           />
           <TextField size="compact" label="Field label" error={true} helpText="Error message" />
           <TextField size="compact" label="Field label" success={true} helpText="Success message" />
@@ -102,13 +102,13 @@ export const Compact = () => {
           <TextField
             size="compact"
             label="Field label"
-            helpText="Help or instrictions"
+            helpText="Help or instructions"
             rightContent={<Button size="compact" kind="secondary-text" icon="close" onClick={action('button')} />}
           />
           <TextField
             size="compact"
             label="Field label"
-            helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>}
+            helpText={<div style={{ textAlign: 'end' }}>Help or instructions</div>}
           />
           <TextField size="compact" label="Field label" error={true} helpText="Error message" />
           <TextField size="compact" label="Field label" success={true} helpText="Success message" />
@@ -118,7 +118,7 @@ export const Compact = () => {
           <TextField
             size="compact"
             label="Field label"
-            helpText="Help or instrictions"
+            helpText="Help or instructions"
             rightContent={
               <Button size="compact" kind="secondary-text" icon="close" onClick={action('button')} disabled={true} />
             }
@@ -127,7 +127,7 @@ export const Compact = () => {
           <TextField
             size="compact"
             label="Field label"
-            helpText={<div style={{ textAlign: 'end' }}>Help or instrictions</div>}
+            helpText={<div style={{ textAlign: 'end' }}>Help or instructions</div>}
             disabled={true}
           />
         </div>

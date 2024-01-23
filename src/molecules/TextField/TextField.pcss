@@ -1,21 +1,53 @@
 .telia-textfield {
+  --text-input-default-background-color: var(--white);
+  --text-input-default-border-color: var(--grey-300);
+  --text-input-default-padding: 0.75rem;
+  --text-input-default-text-color: var(--grey-900);
+  --text-input-default-text-size: 16px;
+  --text-input-default-placeholder-color: var(--grey-400);
+  --text-input-default-label-color: var(--grey-900);
+  --text-input-default-label-font-size: 14px;
+  --text-input-default-label-font-weight: inherit;
+  --text-input-default-label-margin-bottom: 0;
+  --text-input-default-help-text-color: var(--grey-700);
+  --text-input-default-help-text-font-size: inherit;
+  --text-input-default-help-text-margin-top: 0;
+  --text-input-empty-border-color: var(--grey-200);
+  --text-input-empty-text-color: var(--grey-500);
+  --text-input-hover-border-color: var(--grey-300);
+  --text-input-focus-border-color: var(--core-purple-500);
+  --text-input-success-border-color: var(--green-600);
+  --text-input-success-label-color: var(--green-600);
+  --text-input-success-help-text-color: var(--green-600);
+  --text-input-success-status-color: var(--green-600);
+  --text-input-error-border-color: var(--red-600);
+  --text-input-error-label-color: var(--red-600);
+  --text-input-error-help-text-color: var(--red-600);
+  --text-input-error-status-color: var(--red-600);
+  --text-input-disabled-background-color: var(--grey-100);
+  --text-input-disabled-border-color: var(--grey-200);
+  --text-input-disabled-text-color: var(--grey-300);
+  --text-input-disabled-label-color: var(--grey-400);
+  --text-input-compact-text-size: 14px;
+  --text-input-border-radius: 4px;
+
   position: relative;
   input {
     flex-grow: 1;
-    padding: 0.75rem;
-    font-size: 16px;
+    padding: var(--text-input-default-padding);
+    font-size: var(--text-input-default-text-size);
     line-height: 20px;
     border: none;
-    border-radius: 4px;
+    border-radius: var(--text-input-border-radius);
     margin: 0;
     min-width: 0;
-    color: var(--grey-500);
-    background-color: var(--white);
+    color: var(--text-input-empty-text-color);
+    background-color: var(--text-input-default-background-color);
     &:focus {
       outline: none;
     }
     &::placeholder {
-      color: var(--grey-400);
+      color: var(--text-input-default-placeholder-color);
     }
   }
 
@@ -35,26 +67,29 @@
 }
 
 .telia-textfield__label {
-  font-size: 14px;
-  color: var(--grey-900);
+  font-size: var(--text-input-default-label-font-size);
+  font-weight: var(--text-input-default-label-font-weight);
+  color: var(--text-input-default-label-color);
+  margin-bottom: var(--text-input-default-label-margin-bottom);
+  display: inline-block;
 }
 
 .telia-textfield__content {
   display: flex;
-  background-color: var(--white);
-  border: 1px solid var(--grey-200);
-  border-radius: 4px;
+  background-color: var(--text-input-default-background-color);
+  border: 1px solid var(--text-input-empty-border-color);
+  border-radius: var(--text-input-border-radius);
   transition-duration: 300ms;
   transition-property: border;
 
   &:hover {
-    border-color: var(--grey-300);
+    border-color: var(--text-input-hover-border-color);
   }
 }
 
 .telia-textfield--withValue .telia-textfield__content {
-  border-color: var(--grey-300);
-  color: var(--grey-900);
+  border-color: var(--text-input-default-border-color);
+  color: var(--text-input-default-text-color);
 }
 
 .telia-textfield__status {
@@ -64,7 +99,7 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: var(--white);
+  background-color: var(--text-input-default-background-color);
   .Icon {
     width: 20px;
     height: 20px;
@@ -78,16 +113,16 @@
   justify-content: center;
   min-width: 40px;
   flex-shrink: 0;
-  background-color: var(--white);
+  background-color: var(--text-input-default-background-color);
 }
 .telia-textfield__leftContent {
-  border-top-left-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-top-left-radius: var(--text-input-border-radius);
+  border-bottom-left-radius: var(--text-input-border-radius);
 }
 .telia-textfield__status,
 .telia-textfield__rightContent {
-  border-top-right-radius: 4px;
-  border-bottom-right-radius: 4px;
+  border-top-right-radius: var(--text-input-border-radius);
+  border-bottom-right-radius: var(--text-input-border-radius);
 }
 
 .telia-textfield__leftContent > .Icon,
@@ -97,56 +132,58 @@
 }
 
 .telia-textfield__helptext {
-  color: var(--grey-700);
+  color: var(--text-input-default-help-text-color);
+  font-size: var(--text-input-default-help-text-font-size);
   display: block;
+  margin-top: var(--text-input-default-help-text-margin-top);
 }
 
 .telia-textfield--focus {
   .telia-textfield__content {
-    border-color: var(--core-purple-500);
+    border-color: var(--text-input-focus-border-color);
     transition: all 150ms ease-in-out;
   }
 }
 
 .telia-textfield--error {
   .telia-textfield__content {
-    border-color: var(--red-600);
+    border-color: var(--text-input-error-border-color);
   }
   .telia-textfield__status {
-    color: var(--red-600);
+    color: var(--text-input-error-status-color);
   }
   .telia-textfield__helptext {
-    color: var(--red-600);
+    color: var(--text-input-error-help-text-color);
   }
 }
 .telia-textfield--success {
   .telia-textfield__content {
-    border-color: var(--green-600);
+    border-color: var(--text-input-success-border-color);
   }
   .telia-textfield__status {
-    color: var(--green-600);
+    color: var(--text-input-success-status-color);
   }
   .telia-textfield__helptext {
-    color: var(--green-600);
+    color: var(--text-input-success-help-text-color);
   }
 }
 
 .telia-textfield--disabled {
   .telia-textfield__label,
   .telia-textfield__helptext {
-    color: var(--grey-400);
+    color: var(--text-input-disabled-label-color);
   }
   .telia-textfield__content {
-    background-color: var(--grey-100);
-    border: 1px solid var(--grey-200);
+    background-color: var(--text-input-disabled-background-color);
+    border: 1px solid var(--text-input-disabled-border-color);
     input:disabled {
-      color: var(--grey-300);
-      background-color: var(--grey-100);
+      color: var(--text-input-disabled-text-color);
+      background-color: var(--text-input-disabled-background-color);
     }
   }
   .telia-textfield__leftContent,
   .telia-textfield__rightContent {
-    background-color: var(--grey-100);
+    background-color: var(--text-input-disabled-background-color);
   }
   .Icon {
     fill: var(--grey-300);
@@ -155,23 +192,10 @@
 
 .telia-textfield--compact {
   margin-top: 8px;
-  font-size: 14px;
+  font-size: var(--text-input-compact-text-size);
 
   .telia-textfield__label {
-    font-size: 14px;
-    /*
-    Don't need the commented-out code after a design update on the compact label.
-    In case of changing back, keep this a couple of months
-    position: absolute;
-    left: 0.75rem;
-    cursor: text;
-    line-height: 20px;
-    top: 10px;
-    color: var(--grey-400);
-    transition-property: font-size, top, left, color;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-    */
+    font-size: var(--text-input-default-label-font-size);
   }
 
   input {
@@ -193,44 +217,17 @@
   }
 }
 
-/*
-Don't need this after a design update on the compact label.
-In case of changing back, keep this a couple of months
-.telia-textfield--compact.telia-textfield--focus,
-.telia-textfield--compact.telia-textfield--withValue {
-  .telia-textfield__label {
-    background: white;
-    top: -6px;
-    left: 7px;
-    line-height: 12px;
-    font-size: 12px;
-    padding: 0px 3px;
-    color: var(--core-purple-500);
-
-    transition-property: font-size, top, left, color;
-    transition-duration: 200ms;
-    transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
-  }
-}
-
-.telia-textfield--compact.telia-textfield--withValue:not(.telia-textfield--focus) {
-  .telia-textfield__label {
-    color: var(--grey-400);
-  }
-}
-*/
-
 .telia-textfield--compact.telia-textfield--focus.telia-textfield--success,
 .telia-textfield--compact.telia-textfield--withValue.telia-textfield--success {
   .telia-textfield__label {
-    color: var(--green-600);
+    color: var(--text-input-success-label-color);
   }
 }
 
 .telia-textfield--compact.telia-textfield--focus.telia-textfield--error,
 .telia-textfield--compact.telia-textfield--withValue.telia-textfield--error {
   .telia-textfield__label {
-    color: var(--red-600);
+    color: var(--text-input-error-label-color);
   }
 }
 
@@ -251,13 +248,13 @@ In case of changing back, keep this a couple of months
 .telia-textfield--grey {
   .telia-textfield__content {
     border: none;
-    background-color: var(--grey-100);
+    background-color: var(--text-input-disabled-background-color);
     input {
-      background-color: var(--grey-100);
+      background-color: var(--text-input-disabled-background-color);
     }
   }
   .telia-textfield__leftContent,
   .telia-textfield__rightContent {
-    background-color: var(--grey-100);
+    background-color: var(--text-input-disabled-background-color);
   }
 }

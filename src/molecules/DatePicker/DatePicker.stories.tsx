@@ -22,6 +22,7 @@ export const Default = () => {
   const [date4, setDate4] = useState<string | undefined>('2020-05-01');
   const [date5, setDate5] = useState<string | undefined>(undefined);
   const [date6, setDate6] = useState<string | undefined>(undefined);
+  const [date7, setDate7] = useState<string | undefined>(undefined);
 
   return (
     <div style={{ width: '30%', margin: '2rem', display: 'flex', flexDirection: 'column' }}>
@@ -55,6 +56,11 @@ export const Default = () => {
       <div style={{ marginTop: '2rem ' }}>
         <div>Custom day labels</div>
         <DatePicker value={date6} onSelectDate={setDate6} dayLabels={['M', 'T', 'W', 'T', 'F', 'S', 'S']} />
+      </div>
+
+      <div style={{ marginTop: '2rem ' }}>
+        <div>Full width</div>
+        <DatePicker value={date7} onSelectDate={setDate7} fullWidth />
       </div>
     </div>
   );

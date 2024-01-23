@@ -1,4 +1,9 @@
 .telia-date-picker {
+  --date-picker-period-input-border-radius: 4px;
+  --date-picker-period-input-border-color: var(--grey-400);
+  --date-picker-period-input-border-color-focused: var(--core-purple-500);
+  --date-picker-menu-border-radius: 4px;
+
   position: relative;
   input[type='text'],
   input[type='time'] {
@@ -30,6 +35,10 @@
 }
 .telia-date-picker__input {
   width: 200px;
+
+  &.telia-date-picker__input--full-width {
+    width: 100%;
+  }
 }
 .telia-date-picker__period {
   .telia-date-picker__inputs {
@@ -40,7 +49,7 @@
     .telia-textfield__input {
       transition: border 200ms;
 
-      border: 1px solid var(--grey-400);
+      border: 1px solid var(--date-picker-period-input-border-color);
       border-right-color: transparent;
       border-top-right-radius: 0px;
       border-bottom-right-radius: 0px;
@@ -62,8 +71,8 @@
         position: absolute;
         width: 1px;
         height: 38px;
-        border-top: 1px solid var(--grey-400);
-        border-bottom: 1px solid var(--grey-400);
+        border-top: 1px solid var(--date-picker-period-input-border-color);
+        border-bottom: 1px solid var(--date-picker-period-input-border-color);
       }
       &::after {
         right: 0;
@@ -73,9 +82,9 @@
 
     > *:first-child {
       .telia-textfield__input {
-        border-top-left-radius: 4px;
-        border-bottom-left-radius: 4px;
-        border-color: var(--grey-400);
+        border-top-left-radius: var(--date-picker-period-input-border-radius);
+        border-bottom-left-radius: var(--date-picker-period-input-border-radius);
+        border-color: var(--date-picker-period-input-border-color);
         border-right-color: transparent;
       }
       &::before {
@@ -85,13 +94,13 @@
 
     > *:last-child {
       .telia-textfield__rightContent {
-        border-right: 1px solid var(--grey-400);
-        border-top-right-radius: 4px;
-        border-bottom-right-radius: 4px;
+        border-right: 1px solid var(--date-picker-period-input-border-color);
+        border-top-right-radius: var(--date-picker-period-input-border-radius);
+        border-bottom-right-radius: var(--date-picker-period-input-border-radius);
       }
 
       .telia-textfield__input {
-        border: 1px solid var(--grey-400);
+        border: 1px solid var(--date-picker-period-input-border-color);
         border-left-color: transparent;
         border-right-color: transparent;
       }
@@ -107,15 +116,15 @@
 
   .telia-textfield__rightContent {
     transition: border 200ms;
-    border-top: 1px solid var(--grey-400);
-    border-bottom: 1px solid var(--grey-400);
+    border-top: 1px solid var(--date-picker-period-input-border-color);
+    border-bottom: 1px solid var(--date-picker-period-input-border-color);
     border-radius: 0;
     margin-left: -1px;
   }
   .telia-textfield__input {
     transition: border 200ms;
 
-    border: 1px solid var(--grey-400);
+    border: 1px solid var(--date-picker-period-input-border-color);
     border-right-color: transparent;
     border-top-right-radius: 0px;
     border-bottom-right-radius: 0px;
@@ -123,7 +132,7 @@
 
   .telia-textfield__focus {
     .telia-textfield__input {
-      border-color: var(--core-purple-500);
+      border-color: var(--date-picker-period-input-border-color-focused);
     }
     .telia-textfield__rightContent {
       margin: 0;
@@ -131,12 +140,12 @@
   }
   .telia-date-picker__input.telia-textfield__focus {
     .telia-textfield__input {
-      border-color: var(--core-purple-500);
+      border-color: var(--date-picker-period-input-border-color-focused);
     }
 
     &::before,
     &::after {
-      border-color: var(--core-purple-500);
+      border-color: var(--date-picker-period-input-border-color-focused);
     }
   }
 }
@@ -145,7 +154,7 @@
   position: absolute;
   background-color: white;
   box-shadow: 0px 8px 32px rgba(58, 58, 58, 0.18);
-  border-radius: 4px;
+  border-radius: var(--menu-border-radius);
   z-index: 10;
   min-width: 350px;
   &--options {

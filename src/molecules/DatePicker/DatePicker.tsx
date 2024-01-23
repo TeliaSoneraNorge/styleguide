@@ -17,8 +17,15 @@ export const DatePicker = (props: DatePickerProps) => {
               placeholder={props.inputPlaceholder}
               min={props.minDate}
               max={props.maxDate}
+              fullWidth={props.fullWidth}
               rightContent={<Calendar onClick={() => contextValue.setCalendarOpen(!contextValue.calendarOpen)} />}
               label={props.label ?? 'Velg dato'}
+              error={props.error}
+              helpText={props.helpText}
+              required={props.required}
+              disabled={props.disabled}
+              name={props.name}
+              inputRef={props.inputRef}
             />
 
             <DatePickerMenu />
