@@ -1,4 +1,4 @@
-import React, { MutableRefObject, Ref, RefObject, useEffect, useRef, useState } from 'react';
+import React, { MutableRefObject, RefObject, useEffect, useRef, useState } from 'react';
 import cn from 'classnames';
 import { useFocus } from './useFocus';
 import { Icon } from '../../index';
@@ -116,6 +116,8 @@ export interface TextFieldProps {
   autoFocus?: boolean;
 
   dataTrackingId?: string;
+
+  required?: boolean;
 }
 
 export const TextField = (props: TextFieldProps) => {
@@ -186,6 +188,7 @@ export const TextField = (props: TextFieldProps) => {
             type={props.type || 'text'}
             placeholder={props.placeholder}
             disabled={props.disabled}
+            required={props.required}
             value={props.value}
             aria-label={props['aria-label']}
             aria-labelledby={inputLabelId}

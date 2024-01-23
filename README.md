@@ -66,11 +66,32 @@ We also use the [BEM-pattern](http://getbem.com/naming/): `block__elements--modi
 
 ## Consuming the local, development styleguide in other local web apps
 
-`NOTE: This section was written for the old styleguide and needs revision. Maybe something about npm link?`
+Use `npm link` to test a modified Telia Norge Styleguide component locally in telia-no-min-side project.
 
-1. Install `http-server` globally with npm (https://www.npmjs.com/package/http-server)
-2. Go to you local styleguide folder in your terminal and type `http-server ./ --cors`
-3. Include stylesheet in your project `<link rel="stylesheet" href="http://local-styleguide:8080/css/bundle.components.css">`
+```bash
+#  in Telia Norge Styleguide directory
+npm run build:icons
+npm run build
+cd dist
+npm link
+
+# in your project directory
+npm link @telia/styleguide
+npm start
+```
+
+Now whenever you change anything in Telia Norge Styleguide, rerun `npm run build` and your project should pick up the changes.
+
+When you're finished, unlink the Telia Norge Styleguide:
+
+```bash
+# in your project directory
+npm unlink --no-save @telia/styleguide
+npm install
+
+# in Telia Norge Styleguide directory
+npm unlink -g
+```
 
 #### To publish locally
 

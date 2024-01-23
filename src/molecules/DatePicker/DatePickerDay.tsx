@@ -59,6 +59,7 @@ export const DatePickerDay = (props: Props) => {
       })}
       onClick={selectDate}
       disabled={disabled}
+      type="button"
     >
       {props.day}
     </button>

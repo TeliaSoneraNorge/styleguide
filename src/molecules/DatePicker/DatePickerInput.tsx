@@ -1,5 +1,5 @@
 import cn from 'classnames';
-import React from 'react';
+import React, { MutableRefObject, RefObject } from 'react';
 import { TextField } from '../TextField';
 import { useDatePicker } from './context';
 
@@ -13,6 +13,13 @@ export type Props = {
   placeholder?: string;
   max?: string;
   min?: string;
+  fullWidth?: boolean;
+  error?: boolean;
+  helpText?: React.ReactNode;
+  name?: string;
+  required?: boolean;
+  disabled?: boolean;
+  inputRef?: RefObject<HTMLInputElement> | MutableRefObject<HTMLInputElement>;
 };
 export const DatePickerInput = (props: Props) => {
   const { setCalendarOpen, isMobile } = useDatePicker();
@@ -59,7 +66,10 @@ export const DatePickerInput = (props: Props) => {
   };
   return (
     <TextField
-      className={cn('telia-date-picker__input', { 'telia-date-picker__input--compact': isMobile })}
+      className={cn('telia-date-picker__input', {
+        'telia-date-picker__input--compact': isMobile,
+        'telia-date-picker__input--full-width': props.fullWidth,
+      })}
       placeholder={props.placeholder ?? 'dd.mm.åååå'}
       type="text"
       value={input}
@@ -69,6 +79,12 @@ export const DatePickerInput = (props: Props) => {
       rightContent={props.rightContent}
       label={props.label}
       onFocus={() => setCalendarOpen(true)}
+      error={props.error}
+      helpText={props.helpText}
+      name={props.name}
+      required={props.required}
+      disabled={props.disabled}
+      inputRef={props.inputRef}
     />
   );
 };
