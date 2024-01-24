@@ -1,6 +1,6 @@
 import React from 'react';
-import { Lozenge } from './index';
 import { withDesign } from 'storybook-addon-designs';
+import { Lozenge } from './index';
 
 export default {
   component: Lozenge,
@@ -66,6 +66,9 @@ export const Default = () => {
         <div style={{ display: 'flex' }}>
           <div style={{ width: '30%', marginRight: '1rem' }}>
             <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="attention" />
+            </div>
+            <div style={{ paddingBottom: '10px' }}>
               <Lozenge icon="attach" label="Lozenge" />
             </div>
             <div style={{ paddingBottom: '10px' }}>
@@ -90,6 +93,9 @@ export const Default = () => {
         <h3>Square Lozenge</h3>
         <div style={{ display: 'flex' }}>
           <div style={{ width: '30%', marginRight: '1rem' }}>
+            <div style={{ paddingBottom: '10px' }}>
+              <Lozenge icon="attach" label="Lozenge" status="attention" type="square" />
+            </div>
             <div style={{ paddingBottom: '10px' }}>
               <Lozenge icon="attach" label="Lozenge" type="square" />
             </div>
