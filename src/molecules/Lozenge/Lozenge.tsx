@@ -1,8 +1,8 @@
-import React from 'react';
 import cn from 'classnames';
+import React from 'react';
 import { Icon, IconDefinition } from '../../atoms/Icon';
 
-type Status = 'positive' | 'negative' | 'warning' | 'neutral' | 'communication' | 'info';
+type Status = 'positive' | 'negative' | 'warning' | 'neutral' | 'communication' | 'info' | 'attention';
 type Type = 'round' | 'square';
 
 export interface LozengeProps {
