@@ -182,17 +182,24 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
   const discountPrice = getDiscountPrice(cartItem.price, quantity) || '';
   const price = getPrice(formatPrice, cartItem.price, discountValueUpfront, discountValueMonthly, quantity);
   const discountPriceText = _.get(cartItem, 'discount.handsetDiscountText', '');
+  const subtitles = _.compact(Array.isArray(cartItem.subtitle) ? cartItem.subtitle : [cartItem.subtitle]);
+  const supressSubtitles = cartItem.type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined;
 
   return (
     <div className="telia-shopping-cart__item__price">
       <div className="telia-shopping-cart__item__price__container">
         <div className="telia-shopping-cart__item__subtitle">
-          {cartItem.subtitle ? (
-            <div
-              data-hj-suppress={cartItem.type === CART_ITEM_TYPE.SUBSCRIPTION ? true : undefined}
-              className="paragraph"
-              dangerouslySetInnerHTML={{ __html: cartItem.subtitle }}
-            />
+          {subtitles.length > 0 ? (
+            subtitles.map((subtitle) => {
+              return (
+                <div
+                  key={`${cartItem.bundleId}-${cartItem.id}-${subtitle}`}
+                  data-hj-suppress={supressSubtitles}
+                  className="paragraph"
+                  dangerouslySetInnerHTML={{ __html: subtitle }}
+                />
+              );
+            })
           ) : (
             <span></span>
           )}

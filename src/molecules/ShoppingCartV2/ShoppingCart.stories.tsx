@@ -443,7 +443,7 @@ const subscriptionOnlyGroupContent: ICartItem[] = [
     image: {
       icon: 'sim-card',
     },
-    subtitle: 'Nummer: 413 18 854',
+    subtitle: ['Uten bindingstid', 'Nummer: 413 18 854'],
     discount: {
       value: {
         monthly: 135,
@@ -467,7 +467,7 @@ const subscriptionOnlyGroupContent: ICartItem[] = [
     image: {
       icon: 'sim-card',
     },
-    subtitle: 'Nummer: 413 20 853',
+    subtitle: ['Uten bindingstid', 'Nummer: 413 20 853'],
     discount: {
       value: {
         monthly: 135,
@@ -492,7 +492,7 @@ const subscriptionOnlyGroupContent: ICartItem[] = [
     image: {
       icon: 'sim-card',
     },
-    subtitle: 'Nummer: 413 20 853',
+    subtitle: ['Uten bindingstid', 'Nummer: 413 20 853'],
     discount: {
       value: {
         monthly: 135,
