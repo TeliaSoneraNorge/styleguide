@@ -168,7 +168,7 @@ export interface ICartItem {
   name: string;
   href?: string;
   lineThrough?: string;
-  subtitle?: string;
+  subtitle?: string | string[];
   brand?: string;
   brandSlug?: string;
   model?: string;
