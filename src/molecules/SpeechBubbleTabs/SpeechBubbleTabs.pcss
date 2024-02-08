@@ -22,16 +22,16 @@
     }
 
     &__tab {
-        background-color: inherit;
+        background-color: var(--white);
         position: relative;
         font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
         font-size: 16px;
         text-decoration: none;
         cursor: pointer;
-        border: 1px solid #7a7a7a;
+        border: 1px solid var(--core-purple-850);
         border-radius: 0.5rem;
         padding: 0.64rem 1rem;
-        color: #222222;
+        color: var(--core-purple-850);
 
         &:not(:last-of-type) {
             margin-right: 0.5rem;
@@ -41,9 +41,9 @@
         &:focus,
         &:hover,
         &--selected {
-            background-color: #30004B;
-            border: 1px solid #30004B;
-            color: #fff;
+            background-color: var(--core-purple-850);
+            border: 1px solid var(--core-purple-850);
+            color: var(--white);
         }
 
         &--selected {
@@ -58,11 +58,9 @@
                   margin: auto;
                   height: 1rem;
                   width: 1rem;
-                  border: 1px solid #30004B;
+                  border: 1px solid var(--core-purple-850);
                   transform: rotate(45deg);
-                  background-color: #30004B;
-                  border-bottom: 1px solid #30004B;
-                  border-right: 1px solid #30004B;
+                  background-color: var(--core-purple-850);
               }
             }
 

@@ -33,6 +33,7 @@ export const Default = () => {
           <TextField label="Field label" helpText={<div style={{ textAlign: 'end' }}>Help on right side</div>} />
           <TextField label="Field label" error={true} helpText="Error message" />
           <TextField label="Field label" success={true} helpText="Success message" />
+          <TextField label="Field label" kind="purpur" success={true} helpText="Help or instructions" />
         </div>
         <div style={{ width: '30%', marginRight: '1rem' }}>
           <TextField label="Field label" leftContent={<Icon icon="search" />} />

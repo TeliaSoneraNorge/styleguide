@@ -4,7 +4,7 @@ import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
 import { TextField, TextFieldProps } from '../TextField/TextField';
 
-export type Color = 'purple' | 'default' | 'white';
+export type Color = 'purple' | 'default' | 'white' | 'purpur';
 type DropdownToggleProps = {
   /**
    * Text to display in the toggle button
@@ -14,6 +14,10 @@ type DropdownToggleProps = {
    * icon to display before the label
    */
   icon?: IconDefinition;
+  /**
+   * icon to display in the toggle
+   */
+  toggleIcon?: IconDefinition;
   /**
    * Whether to hide the label.
    * Intended to be used with an icon for icon-toggles
@@ -94,6 +98,7 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = (props) => {
           'telia-dropdown-toggle__hideLabel': props.hideLabel,
           'telia-dropdown-toggle__purple': props.color === 'purple',
           'telia-dropdown-toggle__white': props.color === 'white',
+          'telia-dropdown-toggle__purpur': props.color === 'purpur',
           'telia-dropdown-toggle__outline': props.outline !== false,
           'telia-dropdown-toggle__disabled': props.disabled,
         },
@@ -103,7 +108,11 @@ export const DropdownToggle: React.FC<DropdownToggleProps> = (props) => {
     >
       {props.icon ? <Icon className="telia-dropdown-toggle-icon" icon={props.icon} /> : null}
       <span className="telia-dropdown-toggle-label">{props.label}</span>
-      <Icon className="telia-dropdown-toggle-caret" icon="arrow-small-down" />
+      {props.toggleIcon ? (
+        <Icon className="telia-dropdown-toggle-caret" icon={props.toggleIcon} />
+      ) : (
+        <Icon className="telia-dropdown-toggle-caret" icon="arrow-small-down" />
+      )}
     </button>
   );
 };

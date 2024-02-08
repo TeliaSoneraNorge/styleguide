@@ -219,11 +219,11 @@ export const Default = () => {
       </div>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <Dropdown>
-          <DropdownToggle label="left" icon="user" />
-          <DropdownMenu position="left">
-            <DropdownItem label="Option Option Option  1" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option Option Option  2" onClick={action('DropdownItem clicked')} />
-            <DropdownItem label="Option Option Option  3" onClick={action('DropdownItem clicked')} />
+          <DropdownToggle color="purpur" label="left" icon="user" toggleIcon="chevron-down" />
+          <DropdownMenu color="purpur" position="left">
+            <DropdownItem color="purpur" label="Option Option Option  1" onClick={action('DropdownItem clicked')} />
+            <DropdownItem color="purpur" label="Option Option Option  2" onClick={action('DropdownItem clicked')} />
+            <DropdownItem color="purpur" label="Option Option Option  3" onClick={action('DropdownItem clicked')} />
           </DropdownMenu>
         </Dropdown>
         <Dropdown>

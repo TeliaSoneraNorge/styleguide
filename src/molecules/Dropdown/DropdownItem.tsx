@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useState } from 'react';
 import cs from 'classnames';
 import { useDropdownContext } from './context';
 import { Icon, IconDefinition } from '../../atoms/Icon/index';
+import { Color } from './DropdownToggle';
 
 export type DropdownItemProps = {
   /**
@@ -63,6 +64,7 @@ export type DropdownItemProps = {
    */
   children?: React.ReactNode;
   className?: string;
+  color?: Color;
 };
 export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
   const { open, toggle, itemToggle, highlightIndex, menuRef } = useDropdownContext();
@@ -142,6 +144,7 @@ export const DropdownItem: React.FC<DropdownItemProps> = (props) => {
           'telia-dropdown-item__centered': props.centered,
           'telia-dropdown-item__active': open && isClickable && props.index === highlightIndex,
           'telia-dropdown-item__clickable': isClickable,
+          'telia-dropdown-item__purpur': isClickable && props.color === 'purpur',
         },
         props.className
       )}

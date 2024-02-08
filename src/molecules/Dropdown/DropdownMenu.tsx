@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useDropdownContext } from './context';
 import cs from 'classnames';
+import { Color } from './DropdownToggle';
 
 type DropdownMenuProps = {
   position?: 'right' | 'left' | 'top-left' | 'top-right' | 'bottom-left' | 'bottom-right';
   wrapContent?: boolean;
   className?: string;
   children?: React.ReactNode;
+  color?: Color;
 };
 
 export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
@@ -55,6 +57,7 @@ export const DropdownMenu: React.FC<DropdownMenuProps> = (props) => {
         'telia-dropdown-content',
         {
           'telia-dropdown-content__nowrap': !props.wrapContent,
+          'telia-dropdown-content__purpur': props.color === 'purpur',
           open: open,
           right: ['right', 'top-right', 'bottom-right'].includes(props.position ?? ''),
         },

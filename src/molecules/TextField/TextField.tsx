@@ -64,7 +64,7 @@ export interface TextFieldProps {
    * Grey: grey background with no border
    * Defaukt: white background with purple border when active
    */
-  kind?: 'white' | 'grey' | 'default';
+  kind?: 'white' | 'grey' | 'default' | 'purpur';
 
   /**
    * Type of the `input` element. It should be [a valid HTML5 input type](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#Form_%3Cinput%3E_types).
@@ -123,7 +123,8 @@ export interface TextFieldProps {
 export const TextField = (props: TextFieldProps) => {
   const { onChange, onBlur, onFocus, onKeyDown, focus, setFocus, inputRef } = useFocus(props);
   const inputLabelId = props.label && props.id ? `${props.id}-label` : undefined;
-  const statusIcon = props.success ? <Icon icon="check-mark-circle" /> : props.error ? <Icon icon="alert" /> : null;
+  const successIcon = props.kind === 'purpur' ? <Icon icon="check-circle-filled" /> : <Icon icon="check-mark-circle" />;
+  const statusIcon = props.success ? successIcon : props.error ? <Icon icon="alert" /> : null;
   const inputHasValue = (props.value && props.value.length) || (inputRef.current && inputRef.current.value.length);
 
   /**
@@ -156,6 +157,7 @@ export const TextField = (props: TextFieldProps) => {
           'telia-textfield--withValue': inputHasValue,
           'telia-textfield--white': props.kind === 'white',
           'telia-textfield--grey': props.kind === 'grey',
+          'telia-textfield--purpur': props.kind === 'purpur',
           'telia-textfield--prepended': !!props.leftContent,
           'telia-textfield--appended': !!props.rightContent || props.success || props.error,
         },
