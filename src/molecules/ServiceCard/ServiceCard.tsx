@@ -6,7 +6,7 @@ import { Checkbox } from '../../atoms/Checkbox';
 export type ServiceCardProps = {
   icon?: IconDefinition;
   heading: string;
-  description: string;
+  description?: string;
   price: string;
   strikethrough?: string;
   onAdd: (args?: any) => void;
@@ -34,9 +34,11 @@ export const ServiceCard: FC<ServiceCardProps> = ({
           <Heading tag="h2" size="xs">
             {heading}
           </Heading>
-          <Heading className="telia-servicecard__description" tag="h2" size="xs">
-            {description}
-          </Heading>
+          {description && (
+            <Heading className="telia-servicecard__description" tag="h2" size="xs">
+              {description}
+            </Heading>
+          )}
         </div>
         <div className="telia-servicecard__priceContainer">
           <Checkbox checked={checked} onChange={onAdd} label="Legg til" />
