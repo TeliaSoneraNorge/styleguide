@@ -8,10 +8,31 @@
 
     @media all and (max-width: 34rem) {
         flex-direction: column;
+        padding: 1.5rem;
     }
 
     .telia-checkbox__checkbox {
         position: absolute;
+    }
+
+    &__icon-mobile {
+        margin-left: 0.5rem;
+        .Icon {
+            margin-right: .5rem;
+        }
+        display: none;
+        @media all and (max-width: 34rem) {
+            display: block;
+        }
+    }
+
+    &__iconWrapper-mobile {
+        display: flex;
+        align-items: center;
+
+        .heading {
+            font-family: 'TeliaSans-Regular', Helvetica, Roboto, Arial, sans-serif;
+        }
     }
 
     &__icon {
@@ -22,6 +43,10 @@
         padding: 1.9rem;
         background: #F9F1EC;
         margin-right: .5rem;
+
+        @media all and (max-width: 34rem) {
+            display: none;
+        }
     }
 
     &__content {
@@ -35,11 +60,6 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-
-        @media all and (max-width: 34rem) {
-            align-items: flex-start;
-            flex-direction: column;
-        }
     }
 
     &__price {
@@ -63,7 +83,7 @@
         }
 
         @media all and (max-width: 34rem) {
-            margin-top: 1rem;
+            display: none;
         }
     }
 
@@ -71,5 +91,10 @@
         font-size: .9rem !important;
         font-weight: 500;
         font-family: 'TeliaSans-Medium', Helvetica, Roboto, Arial, sans-serif !important;
+    }
+
+    &__description-mobile {
+        font-size: 1rem;
+        margin: 0;
     }
 }

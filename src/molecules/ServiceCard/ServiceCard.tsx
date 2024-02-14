@@ -29,6 +29,18 @@ export const ServiceCard: FC<ServiceCardProps> = ({
           <Icon icon={icon} />
         </div>
       )}
+      <div className="telia-servicecard__icon-mobile">
+        <div className="telia-servicecard__iconWrapper-mobile">
+          <Icon icon={icon} />
+          <Heading tag="h2" size="xs">
+            {heading}
+          </Heading>
+        </div>
+        <Heading className="telia-servicecard__description-mobile" tag="h2" size="xs">
+          {description}
+        </Heading>
+      </div>
+
       <div className="telia-servicecard__content">
         <div className="telia-servicecard__headingContainer">
           <Heading tag="h2" size="xs">
