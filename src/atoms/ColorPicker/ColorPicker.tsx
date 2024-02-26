@@ -14,11 +14,22 @@ export interface ColorPickerProps {
   selected?: Color;
   showSelected?: boolean;
   colors: Color[];
+  size?: 's' | 'm' | 'l';
   onSelect?: (id: ColorId) => void;
 }
 
-const ColorPicker = ({ selected, showSelected = true, colors = [], onSelect = () => undefined }: ColorPickerProps) => (
-  <div className="color-picker">
+const ColorPicker = ({
+  selected,
+  showSelected = true,
+  colors = [],
+  size = 'l',
+  onSelect = () => undefined,
+}: ColorPickerProps) => (
+  <div
+    className={cn('color-picker', {
+      [`color-picker-size-${size}`]: true,
+    })}
+  >
     <div className="color-picker__colors">
       {colors.map((color) => (
         <button
