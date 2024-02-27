@@ -2,6 +2,14 @@
   --color-picker-size: 45px;
 }
 
+.color-picker-size-s {
+  --color-picker-size: 30px;
+}
+
+.color-picker-size-m {
+  --color-picker-size: 38px;
+}
+
 .color-picker {
   display: flex;
   flex-direction: column;
@@ -54,8 +62,8 @@
       position: absolute;
       top: -2px;
       left: -2px;
-      height: 49px;
-      width: 49px;
+      height: calc(var(--color-picker-size) + 4px);
+      width: calc(var(--color-picker-size) + 4px);
       border-radius: 50%;
       background-color: transparent;
       box-shadow: 0 0 0 2px var(--core-purple);

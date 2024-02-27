@@ -18,3 +18,42 @@ export const Default = () => {
     <ColorPicker selected={selected} onSelect={(id) => setSelected(colors.find((c) => c.id === id))} colors={colors} />
   );
 };
+
+export const Medium = () => {
+  const [selected, setSelected] = useState<Color>();
+  return (
+    <ColorPicker
+      size="m"
+      showSelected={false}
+      selected={selected}
+      onSelect={(id) => setSelected(colors.find((c) => c.id === id))}
+      colors={colors}
+    />
+  );
+};
+
+export const Small = () => {
+  const [selected, setSelected] = useState<Color>();
+  return (
+    <ColorPicker
+      size="s"
+      selected={selected}
+      showSelected={false}
+      onSelect={(id) => setSelected(colors.find((c) => c.id === id))}
+      colors={colors}
+    />
+  );
+};
+
+export const SmallWithLabel = () => {
+  const [selected, setSelected] = useState<Color>();
+  return (
+    <ColorPicker
+      size="s"
+      showSelected
+      selected={selected}
+      onSelect={(id) => setSelected(colors.find((c) => c.id === id))}
+      colors={colors}
+    />
+  );
+};
