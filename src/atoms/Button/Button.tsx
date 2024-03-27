@@ -170,7 +170,7 @@ const Button = (props: ButtonProps) => {
           }}
         />
       )}
-      {!isProcessing && text}
+      {!isProcessing && <span>{text}</span>}
       {isProcessing && (
         <span className="button__processing">
           {processingText}
