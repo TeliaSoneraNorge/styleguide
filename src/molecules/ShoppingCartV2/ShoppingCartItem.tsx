@@ -230,9 +230,9 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
               </span>
             )}
             <span className="telia-shopping-cart__item__price__label">
-              {isLease && !hasSubscription && 'fra '}
-              {price}
-              {cartItem.price.monthly ? '/md.' : ''}
+              <span>{isLease && !hasSubscription && 'fra '}</span>
+              <span>{price}</span>
+              <span>{cartItem.price.monthly ? '/md.' : ''}</span>
             </span>
           </span>
         </div>
