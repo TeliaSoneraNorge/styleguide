@@ -57,6 +57,7 @@ export { default as BoxGrid } from './molecules/BoxGrid';
 export { default as ArticleMetaData } from './molecules/ArticleMetaData';
 export { default as Campaign } from './molecules/Campaign';
 export { Carousel } from './molecules/Carousel';
+export { default as ExpandableTextContainer } from './molecules/ExpandableTextContainer';
 export { default as CheckBoxWithLabel } from './molecules/CheckBoxWithLabel';
 export { Chip } from './molecules/Chip';
 export { default as DownloadButtons } from './molecules/DownloadButtons';
