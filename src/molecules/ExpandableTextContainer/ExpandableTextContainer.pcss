@@ -1,0 +1,42 @@
+.telia-expandableTextContainer {
+    height: 140px;
+    overflow: hidden;
+
+    &--expanded {
+        height: auto;
+    }
+
+    .gradient {
+        top: 3.5rem;
+        position: absolute;
+        height: 140px;
+        background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgb(255, 255, 255) 100%);
+    }
+
+    .button-container {
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: 100%;
+    }
+
+    &__button {
+        text-decoration: none;
+        color: var(--core-purple-750);
+        font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
+        font-size: 1rem;
+
+        &:hover, &:active, &:focus {
+            color: var(--core-purple-750) !important;
+            background-color: transparent !important;
+        }
+
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    &__textblock {
+        margin-bottom: 3rem;
+    }
+}
