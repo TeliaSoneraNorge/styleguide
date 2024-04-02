@@ -25,7 +25,7 @@ const ExpandableTextContainer = ({ textBlocks }: { textBlocks: textBlock[] }) =>
     >
       {textBlocks.map((block) => (
         <div className="telia-expandableTextContainer__textblock">
-          <Heading tag="h1" size="xs">
+          <Heading tag="h2" size="xs">
             {block.heading}
           </Heading>
           <Paragraph>{block.content}</Paragraph>
