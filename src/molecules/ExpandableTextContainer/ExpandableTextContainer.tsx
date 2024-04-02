@@ -4,7 +4,6 @@ import Heading from '../../atoms/Heading';
 import cn from 'classnames';
 import Paragraph from '../../atoms/Paragraph';
 import Button from '../../atoms/Button';
-import './ExpandableTextContainer.pcss';
 
 type textBlock = {
   heading: string;
