@@ -21,11 +21,7 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
   }
 
   return (
-    <div
-      className={cn('telia-expandableTextContainer', {
-        ['telia-expandableTextContainer--expanded']: expanded,
-      })}
-    >
+    <div className="telia-expandableTextContainer">
       <div
         className={cn('telia-expandableTextContainer__textblock-container', {
           ['telia-expandableTextContainer__textblock-container--expanded']: expanded,
