@@ -1,53 +1,50 @@
 .telia-expandableTextContainer {
-    height: 140px;
-    overflow: hidden;
-    position: relative;
-    &--expanded {
-        height: auto;
-    }
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__textblock {
         padding: 1.5rem 1.5rem;
     }
 
-    .gradient {
-        top: 0rem;
-        position: absolute;
+    &__textblock-container {
+        position: relative;
+        overflow: hidden;
         height: 140px;
-        background: linear-gradient(rgba(242, 242, 242, 0.3) 0%, rgba(242, 242, 242, .9) 100%);
 
-        &--white {
-            background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, .9) 100%);
+        .gradient {
+            position: absolute;
+            background: linear-gradient(rgba(242, 242, 242, 0.3) 0%, rgba(242, 242, 242, .9) 100%);
+            top: 0;
+            width: 100%;
+            height: 140px;
+        
+            &--white {
+                background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgba(255, 255, 255, .9) 100%);
+            }
+        }
+
+        &--expanded {
+            height: auto;
         }
     }
 
-    .button-container {
-        position: absolute;
-        display: flex;
-        align-items: flex-end;
-        justify-content: center;
-        width: 100%;
-    }
 
-    &__button {
-        position: absolute;
-        bottom: .3rem;
-        text-decoration: none;
-        color: var(--core-purple-750);
-        font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
-        font-size: 1rem;
-
-        &:hover, &:active, &:focus {
-            color: var(--core-purple-750) !important;
-            background-color: transparent !important;
+    &__button-container {
+        .button {
+            text-decoration: none;
+            color: var(--core-purple-750);
+            font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
+            font-size: 1rem;
+            margin-top: 1rem;
+    
+            &:hover, &:active, &:focus {
+                color: var(--core-purple-750) !important;
+                background-color: transparent !important;
+            }
+    
+            &:focus {
+                text-decoration: underline;
+            }
         }
-
-        &:focus {
-            text-decoration: underline;
-        }
-    }
-
-    &__textblock {
-        margin-bottom: 1rem;
     }
 }

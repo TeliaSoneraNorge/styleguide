@@ -26,24 +26,30 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
         ['telia-expandableTextContainer--expanded']: expanded,
       })}
     >
-      {textBlocks.map((block) => (
-        <div key={`${block.id}-${block.heading}`} className="telia-expandableTextContainer__textblock">
-          <Heading tag="h2" size="xs">
-            {block.heading}
-          </Heading>
-          <Paragraph>{block.content}</Paragraph>
-        </div>
-      ))}
-      <span className={cn('button-container', { ['gradient']: !expanded, ['gradient--white']: !expanded && whiteBg })}>
+      <div
+        className={cn('telia-expandableTextContainer__textblock-container', {
+          ['telia-expandableTextContainer__textblock-container--expanded']: expanded,
+        })}
+      >
+        {textBlocks.map((block) => (
+          <div key={`${block.id}-${block.heading}`} className="telia-expandableTextContainer__textblock">
+            <Heading tag="h2" size="xs">
+              {block.heading}
+            </Heading>
+            <Paragraph>{block.content}</Paragraph>
+          </div>
+        ))}
+        <span className={cn({ ['gradient']: !expanded, ['gradient--white']: !expanded && whiteBg })}></span>
+      </div>
+      <div className="telia-expandableTextContainer__button-container">
         <Button
-          className="telia-expandableTextContainer__button"
           kind="link"
           iconPlacement="right"
           icon={expanded ? 'chevron-up' : 'chevron-down'}
           text="Les mer"
           onClick={() => setExpanded(!expanded)}
         />
-      </span>
+      </div>
     </div>
   );
 };
