@@ -1,19 +1,28 @@
 .telia-expandableTextContainer {
     height: 140px;
     overflow: hidden;
-
+    position: relative;
     &--expanded {
         height: auto;
     }
 
+    &__textblock {
+        padding: 1.5rem 1.5rem;
+    }
+
     .gradient {
-        top: 3.5rem;
+        top: 0rem;
         position: absolute;
         height: 140px;
-        background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgb(255, 255, 255) 100%);
+        background: linear-gradient(rgba(242, 242, 242, 0.3) 0%, rgb(255, 255, 255) 100%);
+
+        &--white {
+            background: linear-gradient(rgba(255, 255, 255, 0.3) 0%, rgb(255, 255, 255) 100%);
+        }
     }
 
     .button-container {
+        position: absolute;
         display: flex;
         align-items: flex-end;
         justify-content: center;
@@ -21,6 +30,8 @@
     }
 
     &__button {
+        position: absolute;
+        bottom: .5rem;
         text-decoration: none;
         color: var(--core-purple-750);
         font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
@@ -37,6 +48,6 @@
     }
 
     &__textblock {
-        margin-bottom: 3rem;
+        margin-bottom: 1rem;
     }
 }
