@@ -21,7 +21,7 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
   }
 
   return (
-    <Container
+    <div
       className={cn('telia-expandableTextContainer', {
         ['telia-expandableTextContainer--expanded']: expanded,
       })}
@@ -44,7 +44,7 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
           onClick={() => setExpanded(!expanded)}
         />
       </span>
-    </Container>
+    </div>
   );
 };
 
