@@ -32,7 +32,7 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
             <Heading tag="h2" size="xs">
               {block.heading}
             </Heading>
-            <Paragraph dangerouslySetInnerHTML={{ __html: block.content }} />
+            {block.content && <Paragraph dangerouslySetInnerHTML={{ __html: block.content }} />}
           </div>
         ))}
         <span className={cn({ ['gradient']: !expanded, ['gradient--white']: !expanded && whiteBg })}></span>
