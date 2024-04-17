@@ -27,7 +27,7 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
         })}
       >
         {textBlocks.map((block) => (
-          <div key={`${block.id || block.type}-${block.heading}`} className="telia-expandableTextContainer__textblock">
+          <div key={`${block.id || block.type}`} className="telia-expandableTextContainer__textblock">
             {block.heading && (
               <Heading tag="h2" size="xs">
                 {block.heading}
