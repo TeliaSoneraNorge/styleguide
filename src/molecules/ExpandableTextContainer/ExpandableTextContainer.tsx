@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import Container from '../../atoms/Container';
 import Heading from '../../atoms/Heading';
 import cn from 'classnames';
-import Paragraph from '../../atoms/Paragraph';
 import Button from '../../atoms/Button';
 
 type Props = {
   textBlocks: {
-    id: string;
-    heading: string;
+    type?: string;
+    id?: string;
+    heading?: string;
     content: string;
   }[];
   whiteBg?: boolean;
@@ -28,10 +27,12 @@ const ExpandableTextContainer: React.FC<Props> = ({ textBlocks, whiteBg = false 
         })}
       >
         {textBlocks.map((block) => (
-          <div key={`${block.id}-${block.heading}`} className="telia-expandableTextContainer__textblock">
-            <Heading tag="h2" size="xs">
-              {block.heading}
-            </Heading>
+          <div key={`${block.id || block.type}-${block.heading}`} className="telia-expandableTextContainer__textblock">
+            {block.heading && (
+              <Heading tag="h2" size="xs">
+                {block.heading}
+              </Heading>
+            )}
             {block.content && <div className="paragraph" dangerouslySetInnerHTML={{ __html: block.content }} />}
           </div>
         ))}
