@@ -34,7 +34,7 @@ export const Carousel: React.FC<CarouselProps> = ({ items }: CarouselProps) => {
     const width = window.innerWidth;
     if (width > 1600) return 4;
     if (width > 1300) return 3;
-    if (width >= 370) return 2;
+    if (width > 390) return 2;
     return 1;
   }, []);
 
