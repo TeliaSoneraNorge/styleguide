@@ -169,13 +169,12 @@
   }
 
   &__heading-striketrough {
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
     color: var(--black);
     text-decoration-line: line-through;
     text-decoration-thickness: 1px;
     text-align: left;
-    text-decoration-color: var(--core-purple);
     margin: 0 0.5rem 0 0;
     @media all and (min-width: 41em) {
       text-align: center;
@@ -193,40 +192,29 @@
   &__aside {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: flex-end;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-wrap: nowrap;
+    margin-top: 1rem;
   }
 
   &__price {
     font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
-    font-size: 1.125rem;
-    margin-right: 0.25rem;
-    margin-left: 0.5rem;
-
-    @media all and (min-width: 41em) {
-      margin-left: 0rem;
-    }
+    font-size: 1rem;
   }
 
   &__price-striketrough-wrapper {
     text-decoration-line: line-through;
     text-decoration-thickness: 1px;
-    text-decoration-color: var(--core-purple);
   }
 
   &__price-striketrough {
     font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
-    font-size: 0.875rem;
   }
 
   &__price-striketrough-info {
     font-size: 0.875rem;
     margin-right: 0.25rem;
-  }
-
-  &__price-info {
-    font-size: 0.875rem;
   }
 
   &__icon-arrow {
@@ -237,21 +225,6 @@
     &--isExpanded {
       transform: rotate(180deg);
     }
-  }
-
-  &__separation-line {
-    border: none;
-    margin: 1rem auto;
-    height: 1px;
-    max-width: 14rem;
-    width: 100%;
-    background-color: var(--darkest-grey);
-  }
-
-  &__button-choose {
-    width: 100%;
-    max-width: 14rem;
-    margin-bottom: 1rem;
   }
 
   &__family-discount {
@@ -333,50 +306,12 @@
     text-align: left;
   }
 
-  &__description2 {
-    font-weight: bold;
-    font-size: 1rem;
-    color: var(--dark-green);
-    margin: 0rem 0 1rem 1.2rem;
-    text-align: left;
-
-    @media all and (min-width: 41em) {
-      margin: 0 0 0.2rem 0;
-    }
-  }
-  &__double-data {
-    margin: 0rem 0 1rem 0.75rem;
-  }
-
-  &__description1 {
-    font-size: 1rem;
-    font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
-    color: var(--darkest-grey);
-
-    &--bold {
-      font-family: 'TeliaSans-Bold', Helvetica, Arial, sans-serif;
-      font-weight: bold;
-    }
-
-    &--black {
-      color: var(--grey);
-    }
-  }
-
   &__price-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-wrap: wrap-reverse;
-  }
-
-  &__heading-icon-container {
-    display: flex;
-    align-items: center;
-
-    @media all and (min-width: 41em) {
-      display: none;
-    }
+    font-size: 1rem;
   }
 
   &__tagline-wrapper {
@@ -412,26 +347,6 @@
 
     &--grow {
       flex: 1 1 auto;
-    }
-  }
-
-  &__check-icon {
-    display: none;
-    &--selected {
-      display: block;
-      fill: var(--green-700) !important;
-      margin-left: 0;
-      height: 34px !important;
-      width: 34px !important;
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      border-radius: 50%;
-      background-color: #fff;
-
-      svg {
-        fill: var(--green-700) !important;
-      }
     }
   }
 }

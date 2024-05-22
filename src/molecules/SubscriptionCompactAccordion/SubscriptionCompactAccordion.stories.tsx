@@ -45,34 +45,29 @@ const ACCORDIONS = (
 const SUBSCRIPTIONS = [
   {
     id: 'normal',
-    name: 'Telia X - Normal',
-    title: '20 Mbit/s',
+    name: '20 Mbps – Telia X Start',
+    title: 'Ubegrenset data',
     price: 499,
     priceInfo: ['/md.'],
-    tagLine: 'Hverdagsbruk',
-    tagLineIcon: 'speedometer-normal',
   },
   {
     id: 'rask',
-    name: 'Telia X - Rask',
-    title: '200 Mbit/s',
+    name: '440 Mbps – Telia X Basis',
+    title: 'Ubegrenset data',
     price: 549,
     priceInfo: ['/md.'],
-    tagLine: 'Strømmeglede',
-    tagLineIcon: 'speedometer-rask',
     ribbon: {
       text: 'Mest populær',
-      backgroundColor: '#EDC8FF',
-      color: '#3F005E',
+      backgroundColor: '#55168c',
+      color: '#fff',
     },
   },
   {
     id: 'max',
-    name: 'Telia X - Max',
-    title: '1000 Mbit/s',
+    name: '1000 Mbps – Telia X Max',
+    title: 'Ubegrenset data',
     price: 699,
     priceInfo: ['/md.'],
-    tagLine: 'Kvalitetsbevissthet',
     tagLineIcon: 'speedometer-max',
   },
 ];
@@ -197,7 +192,6 @@ export const WithAll = () => {
       footer={FOOTERCHILDREN}
       price={1297}
       priceStriketrough={1647}
-      priceStriketroughInfo="/md."
       priceInfo={['/md.']}
       ribbon={{
         text: 'Mest populær',
@@ -227,10 +221,8 @@ export const SelectedWithAll = () => {
       tagLineIcon="speedometer"
       discountLine="Spar 350,-"
       footer={FOOTERCHILDREN}
-      selected={true}
       price={1297}
       priceStriketrough={1647}
-      priceStriketroughInfo="/md."
       priceInfo={['/md.']}
       ribbon={{
         text: 'Mest populær',
