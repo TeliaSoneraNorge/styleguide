@@ -152,8 +152,6 @@ const SubscriptionCompactAccordion = ({
                   <span className="subscription-compact-accordion__tagline">{tagLine}</span>
                 </div>
               )}
-            </div>
-            <div className="subscription-compact-accordion__flex">
               <div className="subscription-compact-accordion__aside">
                 <div className="subscription-compact-accordion__price-container">
                   {!!priceStriketrough && (
@@ -187,6 +185,8 @@ const SubscriptionCompactAccordion = ({
                   <span className="subscription-compact-accordion__discount-line">{discountLine}</span>
                 )}
               </div>
+            </div>
+            <div className="subscription-compact-accordion__flex">
               {showChevron && (
                 <div className="subscription-compact-accordion__icon-container">
                   <Icon
