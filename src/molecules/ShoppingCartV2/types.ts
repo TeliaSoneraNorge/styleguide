@@ -146,7 +146,7 @@ export interface ICartDiscountType {
   id: 'commitment' | 'sameGroup' | 'hardcoded';
   value: number;
   text: string;
-  lozengeStatus: LozengeStatus;
+  lozengeStatus?: LozengeStatus;
 }
 
 interface ICartItemDiscount {
