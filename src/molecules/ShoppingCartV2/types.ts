@@ -1,5 +1,6 @@
 import { IconDefinition } from '../../atoms/Icon/index';
 import { colors } from '../../utils/colors';
+import { LozengeStatus } from '../Lozenge/Lozenge';
 
 export type ICartType =
   | 'SUBSCRIPTION'
@@ -145,6 +146,7 @@ export interface ICartDiscountType {
   id: 'commitment' | 'sameGroup' | 'hardcoded';
   value: number;
   text: string;
+  lozengeStatus: LozengeStatus;
 }
 
 interface ICartItemDiscount {

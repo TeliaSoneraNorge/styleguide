@@ -246,18 +246,18 @@ interface CartItemNameProps {
 }
 
 const CartItemDiscount = ({ cartItem }: CartItemNameProps) => {
-  const discountType: ICartDiscountType | undefined = _.get(cartItem, 'discount.types[0]');
+  const discounts = cartItem.discount?.types || [];
 
   return (
     <>
-      {discountType && (
+      {discounts.map((discount) => (
         <Lozenge
           className="telia-shopping-cart__item__discount-description"
           type="square"
-          label={discountType.text}
-          status="communication"
+          label={discount.text}
+          status={discount.lozengeStatus || 'communication'}
         />
-      )}
+      ))}
     </>
   );
 };
