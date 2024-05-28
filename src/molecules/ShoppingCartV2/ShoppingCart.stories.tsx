@@ -599,7 +599,8 @@ export const subscriptionsWithDiscount = () => {
   };
 
   const groupContent: ICartItem[] = _.set(_.cloneDeep(subscriptionOnlyGroupContent), '[0].discount.types', [
-    { id: 'commitment', value: 150, text: 'Familierabatt' },
+    { id: 'commitment', value: 0, text: 'Dobbel data t.o.m 20.09.24', lozengeStatus: 'warning' },
+    { id: 'commitment', value: 150, text: 'Familierabatt', lozengeStatus: 'communication' },
   ]);
 
   return (
