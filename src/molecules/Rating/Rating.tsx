@@ -10,7 +10,6 @@ export interface RatingProps {
   height: number;
   width: number;
   children?: React.ReactNode;
-  onClick?: React.MouseEventHandler;
   /**
    * Number of comments.
    * This shows the component to be clickable if there are comments
@@ -22,9 +21,10 @@ export interface RatingWithNumbersProps {
   rating: number;
   numberOfRatings: number;
   numberOfReviews?: number;
+  onClick?: React.MouseEventHandler;
 }
 
-export const RatingStars = ({ rating, height, width, reviewComments, onClick, children }: RatingProps) => {
+export const RatingStars = ({ rating, height, width, reviewComments, children }: RatingProps) => {
   const maxRating = 5;
   const starRatio = 1;
 
@@ -92,10 +92,7 @@ export const RatingStars = ({ rating, height, width, reviewComments, onClick, ch
 
   return (
     <div className="telia-rating">
-      <div
-        onClick={onClick ? onClick : undefined}
-        className={reviewComments ? 'telia-rating__stars--reviews' : 'telia-rating__stars'}
-      >
+      <div className={reviewComments ? 'telia-rating__stars--reviews' : 'telia-rating__stars'}>
         {renderFullStars()}
         {renderHalfStars()}
         {renderEmptyStars()}
@@ -105,12 +102,17 @@ export const RatingStars = ({ rating, height, width, reviewComments, onClick, ch
   );
 };
 
-export const RatingWithNumbers = ({ rating, numberOfRatings, numberOfReviews }: RatingWithNumbersProps) => (
+export const RatingWithNumbers = ({ rating, numberOfRatings, numberOfReviews, onClick }: RatingWithNumbersProps) => (
   <div className="telia-rating-numbers">
     <p className="telia-rating-numbers__rating">{rating}</p>
     <p className="telia-rating-numbers__ratingNumber">{`(${numberOfRatings})`}</p>
     {numberOfReviews && (
-      <Button className="telia-rating-numbers__reviewNumber" kind="link" text={`Omtaler (${numberOfReviews})`} />
+      <Button
+        onClick={onClick ? onClick : undefined}
+        className="telia-rating-numbers__reviewNumber"
+        kind="link"
+        text={`Omtaler (${numberOfReviews})`}
+      />
     )}
   </div>
 );
