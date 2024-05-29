@@ -1,5 +1,7 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/index';
+import Button from '../../atoms/Button';
+import _ from 'lodash';
 export interface RatingProps {
   /**
    * Number of stars
@@ -19,6 +21,7 @@ export interface RatingProps {
 export interface RatingWithNumbersProps {
   rating: number;
   numberOfRatings: number;
+  numberOfReviews?: number;
 }
 
 export const RatingStars = ({ rating, height, width, reviewComments, onClick, children }: RatingProps) => {
@@ -102,8 +105,12 @@ export const RatingStars = ({ rating, height, width, reviewComments, onClick, ch
   );
 };
 
-export const RatingWithNumbers = ({ rating, numberOfRatings }: RatingWithNumbersProps) => (
+export const RatingWithNumbers = ({ rating, numberOfRatings, numberOfReviews }: RatingWithNumbersProps) => (
   <div className="telia-rating-numbers">
-    <p>{rating}</p> {`(${numberOfRatings})`}
+    <p className="telia-rating-numbers__rating">{rating}</p>
+    <p className="telia-rating-numbers__ratingNumber">{`(${numberOfRatings})`}</p>
+    {numberOfReviews && (
+      <Button className="telia-rating-numbers__reviewNumber" kind="link" text={`Omtaler (${numberOfReviews})`} />
+    )}
   </div>
 );

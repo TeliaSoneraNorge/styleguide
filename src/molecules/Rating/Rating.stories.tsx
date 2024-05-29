@@ -23,6 +23,12 @@ export const RatingNumbersWithClick = () => (
   </RatingStars>
 );
 
+export const RatingNumbersWithReviewNumbers = () => (
+  <RatingStars onClick={Alert} height={20} width={20} rating={4.5} reviewComments={5}>
+    <RatingWithNumbers rating={4.5} numberOfRatings={49} numberOfReviews={12} />
+  </RatingStars>
+);
+
 const Alert = () => {
   alert('Clicked');
 };
