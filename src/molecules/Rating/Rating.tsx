@@ -1,7 +1,7 @@
 import React from 'react';
 import SvgIcon from '../../atoms/SvgIcon/index';
 import Button from '../../atoms/Button';
-import _ from 'lodash';
+
 export interface RatingProps {
   /**
    * Number of stars
