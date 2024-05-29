@@ -18,14 +18,14 @@ export const RatingNumbers = () => (
 );
 
 export const RatingNumbersWithClick = () => (
-  <RatingStars onClick={Alert} height={20} width={20} rating={4.5} reviewComments={5}>
-    <RatingWithNumbers rating={4.5} numberOfRatings={49} />
+  <RatingStars height={20} width={20} rating={4.5} reviewComments={5}>
+    <RatingWithNumbers onClick={Alert} rating={4.5} numberOfRatings={49} />
   </RatingStars>
 );
 
 export const RatingNumbersWithReviewNumbers = () => (
-  <RatingStars onClick={Alert} height={20} width={20} rating={4.5} reviewComments={5}>
-    <RatingWithNumbers rating={4.5} numberOfRatings={49} numberOfReviews={12} />
+  <RatingStars height={20} width={20} rating={4.5} reviewComments={5}>
+    <RatingWithNumbers onClick={Alert} rating={4.5} numberOfRatings={49} numberOfReviews={12} />
   </RatingStars>
 );
 
