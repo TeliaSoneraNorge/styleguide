@@ -26,6 +26,7 @@ export type ICartType =
   | 'VOUCHER'
   | 'RESWITCH_PLACEHOLDER'
   | 'RESWITCH_EXISTING_HARDWARE'
+  | 'PREPAID_REFILL'
   | 'TRANSFER';
 
 interface ICartSize {
