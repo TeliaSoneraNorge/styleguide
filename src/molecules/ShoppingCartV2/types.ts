@@ -203,3 +203,13 @@ export interface ICartDelivery {
   value: string | number;
   progressBar?: ICartDeliveryProgressBar;
 }
+
+export interface DisclaimerItem {
+  name: string;
+  financing: DisclaimerItemFinancing;
+  monthlyPrice: number;
+  total: number;
+  leaseMonths?: number | string;
+}
+
+type DisclaimerItemFinancing = 'lease' | 'simonly' | 'upfront' | 'commitment' | 'switch' | 'reswitch';

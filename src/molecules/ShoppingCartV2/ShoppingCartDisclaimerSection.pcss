@@ -1,0 +1,45 @@
+.telia-shopping-cart-single-disclaimer {
+  font-size: 14px;
+  padding: 0.5rem 1rem;
+}
+
+.telia-shopping-cart-disclaimer {
+  padding: 1.5rem 1rem 1.5rem 0;
+  cursor: pointer;
+  font-size: 14px;
+
+  &__header {
+    display: flex;
+    align-items: center;
+
+    & > * {
+      margin-right: 0.5rem;
+    }
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 0.75rem;
+    margin-left: 0.5rem;
+  }
+
+  &__item-total {
+    text-align: right;
+  }
+
+  &__item-subtitle {
+    color: rgba(0, 0, 0, 0.62);
+  }
+
+  &__total {
+    margin-top: 18px;
+    font-family: 'TeliaSans-Medium', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
+  }
+}
