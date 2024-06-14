@@ -3,7 +3,7 @@ import _ from 'lodash';
 import { ShoppingCartV2 } from '../../index';
 import Container from '../../atoms/Container/Container';
 import Button from '../../atoms/Button/Button';
-import { ICartItem } from './types';
+import { DisclaimerItem, ICartItem } from './types';
 
 export default {
   title: 'Component library/Molecules/ShoppingCartV2',
@@ -1149,6 +1149,400 @@ export const withFamilyDiscountInfo = () => {
         isAllowedToDelete
         continueSection={ContinueButtons}
         showFamilyDiscountInfo={true}
+      />
+    </Container>
+  );
+};
+
+export const withMultipleDisclaimers = () => {
+  const heading = 'Handlekurv';
+  const pricePerMonth = 500;
+  const priceUpfront = 500;
+  const priceFirstInvoice = 500;
+  const delivery = {
+    label: 'Bedriftspakken',
+    value: 'Fri frakt',
+  };
+
+  const content: ICartItem[] = [
+    {
+      type: 'SUBSCRIPTION_DRAFT',
+      id: 'TELIA_MOBIL_10GB_02.REGULAR',
+      bundleId: '16ea2c',
+      href: '/kasse/abonnement',
+      items: [],
+      name: '20 GB',
+      lineThrough: '10 GB',
+      quantity: {
+        modifiable: false,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        monthly: 349,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 30,
+        },
+        description: '',
+        types: [
+          {
+            id: 'sameGroup',
+            value: 30,
+            text: 'Familierabatt',
+          },
+          {
+            id: 'hardcoded',
+            value: 0,
+            text: 'Dobbel data t.o.m 20.09.24',
+            lozengeStatus: 'warning',
+          },
+        ],
+      },
+      image: {
+        icon: 'bar-chart',
+      },
+      subtitle: ['Uten bindingstid'],
+    },
+    {
+      type: 'HANDSET',
+      subtype: 'NEW',
+      id: '9120766',
+      bundleId: '53d5a1',
+      href: 'https://stage.telia.no/mobiltelefoner/google/pixel-8a/128-gb-bay/',
+      brand: 'Google',
+      brandSlug: 'google',
+      model: 'Pixel 8a 128 GB',
+      modelSlug: 'pixel-8a',
+      modelSize: '128 GB',
+      color: 'Bay',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/5eM35dNEcpA9pSugQ7zZWY/6416031b2a4178f7065642053f594ce3/Google_Pixel_8a_Bay_1.png',
+      },
+      name: 'Google Pixel 8a',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        monthly: 279,
+        originalSalesPrice: 6690,
+        originalSalesPriceWithoutVAT: 5352,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 104,
+        },
+        description: '',
+      },
+      leaseMonths: '24',
+      isReSwitch: false,
+      isWebDeal: false,
+      subtitle: ['24 md. rentefri delbetaling', 'Totalt etter 24. md: 4190,-'],
+      items: [
+        {
+          type: 'SUBSCRIPTION_DRAFT',
+          id: 'TELIA_X_MAX.TLF12PLEAS',
+          bundleId: '53d5a1',
+          href: 'https://stage.telia.no/mobiltelefoner/google/pixel-8a/128-gb-bay/?steg=abonnement&cartId=53d5a1',
+          items: [],
+          name: 'Telia X Max',
+          lineThrough: '',
+          quantity: {
+            modifiable: false,
+            removable: false,
+            value: 1,
+          },
+          price: {
+            monthly: 579,
+          },
+          discount: {
+            value: {
+              upfront: 0,
+              monthly: 0,
+            },
+            description: '',
+            types: [],
+          },
+          image: {
+            icon: 'infinite',
+          },
+          subtitle: ['Med bindingstid: 12 md.'],
+        },
+      ],
+    },
+    {
+      type: 'ACCESSORY',
+      subtype: 'HEADSET',
+      id: '9117688',
+      bundleId: '2c0c8b',
+      href: 'https://stage.telia.no/mobiltilbehor/hodetelefoner/apple/airpods-pro-2nd/airpods-pro-2-gen-usb‑c-hvit/',
+      brand: 'Apple',
+      brandSlug: 'apple',
+      model: 'AirPods Pro (2.gen) USB‑C',
+      modelSlug: 'airpods-pro-2nd',
+      color: 'Hvit',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/7udaFxG1eayWyr1PTfauuT/3381afb500dee1410214cc7e2a109735/AirPods_Pro_2nd-Gen_Hero_Screen__USEN.png',
+      },
+      name: 'Apple AirPods Pro (2.gen)',
+      quantity: {
+        modifiable: false,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        upfront: 2990,
+        originalSalesPrice: 2990,
+        originalSalesPriceWithoutVAT: 2392,
+      },
+      discount: {
+        value: {
+          upfront: 2000,
+          monthly: 0,
+        },
+        description: '',
+      },
+      leaseMonths: 0,
+      isReSwitch: false,
+      isWebDeal: false,
+      items: [
+        {
+          type: 'SUBSCRIPTION_DRAFT',
+          id: 'TELIA_X_BASIC.COM12LOUDSPEAKER2',
+          bundleId: '2c0c8b',
+          href:
+            'https://stage.telia.no/mobiltilbehor/hodetelefoner/apple/airpods-pro-2nd/airpods-pro-2-gen-usb‑c-hvit/?steg=abonnement&cartId=2c0c8b',
+          items: [],
+          name: 'Telia X Basis',
+          lineThrough: '',
+          quantity: {
+            modifiable: false,
+            removable: false,
+            value: 1,
+          },
+          price: {
+            monthly: 479,
+          },
+          discount: {
+            value: {
+              upfront: 0,
+              monthly: 100,
+            },
+            description: '',
+            types: [
+              {
+                id: 'sameGroup',
+                value: 100,
+                text: 'Familierabatt',
+              },
+            ],
+          },
+          image: {
+            icon: 'infinite',
+          },
+          subtitle: ['Med bindingstid: 12 md.'],
+        },
+      ],
+    },
+    {
+      type: 'ACCESSORY',
+      subtype: 'COVER',
+      id: '9118962',
+      href:
+        'https://stage.telia.no/mobiltilbehor/deksler/dbramante1928/iceland-ultra-d3o/galaxy-s24-ultra-gjennomsiktig/',
+      brand: 'Dbramante1928',
+      brandSlug: 'dbramante1928',
+      model: 'Iceland Ultra D3O Galaxy S24 Ultra',
+      modelSlug: 'iceland-ultra-d3o',
+      modelSize: 'Galaxy S24 Ultra',
+      color: 'Gjennomsiktig',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/5Pqtws7nPmwqXDJZnsZGZH/a1a48b1887da1562bad35839b6731a71/Dbramante_Iceland_Ultra_D3O_Galaxy_S24_Ultra_1.png',
+      },
+      name: 'Dbramante1928 Iceland Ultra D3O',
+      quantity: {
+        modifiable: true,
+        removable: true,
+        value: 1,
+      },
+      price: {
+        upfront: 349,
+        originalSalesPrice: 349,
+        originalSalesPriceWithoutVAT: 279.2,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+      },
+      isReSwitch: false,
+      isWebDeal: false,
+    },
+    {
+      type: 'HANDSET',
+      subtype: 'NEW',
+      id: '9121273',
+      bundleId: '055a0e',
+      href: 'https://www.telia.no/mobiltelefoner/sony/xperia-1-vi/256-gb-platinum-silver/',
+      brand: 'Sony',
+      brandSlug: 'sony',
+      model: 'Xperia 1 VI',
+      modelSlug: 'xperia-1-vi',
+      modelSize: '256 GB',
+      color: 'Platinum Silver',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/6LKNh7jxSzCDmNq31ipOap/fd3482152b668b760bcb1744ada9076d/Xperia_1_VI_Platinum_Silver_01.png',
+      },
+      name: 'Sony Xperia 1 VI',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        monthly: 699,
+        originalSalesPrice: 14990,
+        originalSalesPriceWithoutVAT: 11992,
+      },
+      discount: {
+        value: {
+          upfront: 0,
+          monthly: 0,
+        },
+        description: '',
+      },
+      isReSwitch: false,
+      isWebDeal: false,
+      subtitle: ['Telia Finance SVITSJ i 24 md.', 'Totalt etter 24. md: 16776,-'],
+      items: [
+        {
+          type: 'SUBSCRIPTION_DRAFT',
+          id: 'TELIA_MOBIL_05GB.REGULAR',
+          bundleId: '055a0e',
+          href:
+            'https://www.telia.no/mobiltelefoner/sony/xperia-1-vi/256-gb-platinum-silver/?steg=abonnement&cartId=055a0e',
+          items: [],
+          name: '10 GB',
+          lineThrough: '5 GB',
+          quantity: {
+            modifiable: false,
+            removable: false,
+            value: 1,
+          },
+          price: {
+            monthly: 299,
+          },
+          discount: {
+            value: {
+              upfront: 0,
+              monthly: 0,
+            },
+            description: '',
+            types: [
+              {
+                id: 'hardcoded',
+                value: 0,
+                text: 'Dobbel data t.o.m 20.09.24',
+                lozengeStatus: 'warning',
+              },
+            ],
+          },
+          image: {
+            icon: 'bar-chart',
+          },
+          subtitle: ['Uten bindingstid'],
+        },
+      ],
+    },
+  ];
+
+  const disclaimers: DisclaimerItem[] = [
+    {
+      name: 'Google Pixel 8a',
+      financing: 'lease',
+      monthlyPrice: 175,
+      total: 4190,
+      leaseMonths: '24',
+    },
+    {
+      name: 'Telia X Max mobilabonnement',
+      financing: 'commitment',
+      monthlyPrice: 579,
+      total: 6948,
+    },
+    {
+      name: 'Sony Xperia 1 VI',
+      financing: 'switch',
+      monthlyPrice: 699,
+      total: 16776,
+      leaseMonths: undefined,
+    },
+    {
+      name: '10 GB mobilabonnement',
+      financing: 'simonly',
+      monthlyPrice: 299,
+      total: 299,
+    },
+    {
+      name: '20 GB mobilabonnement',
+      financing: 'simonly',
+      monthlyPrice: 319,
+      total: 319,
+    },
+    {
+      name: 'Apple AirPods Pro (2.gen)',
+      financing: 'lease',
+      monthlyPrice: 0,
+      total: 990,
+      leaseMonths: 0,
+    },
+    {
+      name: 'Telia X Basis mobilabonnement',
+      financing: 'commitment',
+      monthlyPrice: 379,
+      total: 4548,
+    },
+    {
+      name: 'Dbramante1928 Iceland Ultra D3O',
+      financing: 'upfront',
+      monthlyPrice: 0,
+      total: 349,
+    },
+  ];
+
+  const handleOnOpenDisclaimer = () => {
+    console.log('Track opening disclaimer accordion here');
+  };
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={content}
+        delivery={delivery}
+        disclaimer={disclaimers}
+        totalPriceFirstInvoice={priceFirstInvoice}
+        totalPriceMonthly={pricePerMonth}
+        totalPriceUpfront={priceUpfront}
+        totalVAT={150}
+        totalPriceWithoutVAT={350}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+        onOpenDisclaimer={handleOnOpenDisclaimer}
       />
     </Container>
   );

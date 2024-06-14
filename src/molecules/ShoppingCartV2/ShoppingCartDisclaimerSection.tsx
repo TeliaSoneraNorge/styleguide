@@ -32,9 +32,8 @@ const ShoppingCartDisclaimerSection = ({ disclaimer, onOpenDisclaimer }: Props) 
   // Single disclaimer
   if (typeof disclaimer === 'string') return <div className="telia-shopping-cart-single-disclaimer">{disclaimer}</div>;
 
-  const minimumTotalPrice = disclaimer.reduce((acc, cur) => acc + cur.total, 0);
-
   // Multiple disclaimers
+  const minimumTotalPrice = disclaimer.reduce((acc, cur) => acc + cur.total, 0);
   return (
     <div
       className="telia-shopping-cart-disclaimer"
@@ -46,7 +45,7 @@ const ShoppingCartDisclaimerSection = ({ disclaimer, onOpenDisclaimer }: Props) 
       }}
     >
       <div className="telia-shopping-cart-disclaimer__header">
-        <div className="telia-shopping-cart-disclaimer__icon">
+        <div>
           {isExpanded ? (
             <ChevronUpIcon className="telia-shopping-cart-disclaimer__icon" />
           ) : (
