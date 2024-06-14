@@ -1,10 +1,11 @@
 import React from 'react';
 import Heading from '../../atoms/Heading/Heading';
 import ShoppingCartItemsSection from './ShoppingCartItemSection';
-import { ICartDelivery, ICartItem } from './types';
+import { DisclaimerItem, ICartDelivery, ICartItem } from './types';
 import ShoppingCartPaymentSection from './ShoppingCartPaymentSection';
 import ShoppingCartContinueSection from './ShoppingCartContinueSection';
 import ShoppingCartFamilyDiscountInfo from './ShoppingCartFamilyDiscountInfo';
+import ShoppingCartDisclaimerSection from './ShoppingCartDisclaimerSection';
 
 export interface ShoppingCartV2Props {
   heading?: string;
@@ -15,7 +16,7 @@ export interface ShoppingCartV2Props {
   totalPriceFirstInvoice?: number;
   totalPriceMonthly?: number;
   paymentTooltip?: string;
-  disclaimer?: string;
+  disclaimer?: string | DisclaimerItem[];
   monthlyPriceDetails?: { label: string; value: string }[];
   totalPriceUpfront?: number;
   totalVAT?: number;
@@ -26,6 +27,7 @@ export interface ShoppingCartV2Props {
   hasPaid?: boolean;
   continueSection?: React.ReactNode;
   showFamilyDiscountInfo?: boolean;
+  onOpenDisclaimer?: () => void;
 }
 
 /**
@@ -53,6 +55,7 @@ const ShoppingCartV2 = ({
   formatPrice,
   continueSection,
   showFamilyDiscountInfo,
+  onOpenDisclaimer,
 }: ShoppingCartV2Props) => {
   return (
     <form className="telia-shopping-cart">
@@ -83,7 +86,7 @@ const ShoppingCartV2 = ({
         formatPrice={formatPrice}
         hasPaid={hasPaid}
       />
-      {disclaimer && <div className="telia-shopping-cart__disclaimer">{disclaimer}</div>}
+      {disclaimer && <ShoppingCartDisclaimerSection disclaimer={disclaimer} onOpenDisclaimer={onOpenDisclaimer} />}
       {showFamilyDiscountInfo && <ShoppingCartFamilyDiscountInfo />}
       {continueSection && <ShoppingCartContinueSection section={continueSection} />}
     </form>
