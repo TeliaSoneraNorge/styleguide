@@ -45,25 +45,26 @@ const ShoppingCartDisclaimerSection = ({ disclaimer, onOpenDisclaimer }: Props) 
       }}
     >
       <div className="telia-shopping-cart-disclaimer__header">
-        <div>
+        <div className="telia-shopping-cart-disclaimer__header-left">
           {isExpanded ? (
             <ChevronUpIcon className="telia-shopping-cart-disclaimer__icon" />
           ) : (
             <ChevronDownIcon className="telia-shopping-cart-disclaimer__icon" />
           )}
+          {<span>Minste totalpris</span>}
         </div>
-        <span>Minste totalpris</span>
+        {!isExpanded && <span>{minimumTotalPrice},-</span>}
       </div>
       {isExpanded && (
         <div>
-          {disclaimer.map((disclaimerItem) => {
+          {disclaimer.map((disclaimerItem, index) => {
             const financingText = getFinancingText(
               disclaimerItem.financing,
               disclaimerItem.leaseMonths,
               disclaimerItem.monthlyPrice
             );
             return (
-              <div className="telia-shopping-cart-disclaimer__item">
+              <div className="telia-shopping-cart-disclaimer__item" key={index}>
                 <div>{disclaimerItem.name}</div>
                 <div className="telia-shopping-cart-disclaimer__item-total">{disclaimerItem.total},-</div>
                 <div className="telia-shopping-cart-disclaimer__item-subtitle">{financingText}</div>
