@@ -2,25 +2,6 @@ import React, { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from '../../atoms/Icon';
 import { DisclaimerItem } from './types';
 
-const getFinancingText = (financing: string, leaseMonths?: string | number, monthlyPrice?: number) => {
-  switch (financing) {
-    case 'commitment':
-      return `Bindingstid i 12 md. – ${monthlyPrice},-/md`;
-    case 'lease':
-      if (leaseMonths === 0) {
-        return '';
-      }
-      return `Delbetaling i ${leaseMonths} md. – ${monthlyPrice},-/md`;
-    case 'switch':
-    case 'reswitch':
-      return `Svitsj i 24 mnd – ${monthlyPrice},-/md`;
-    case 'simonly':
-      return 'Ingen bindingstid';
-    default:
-      return '';
-  }
-};
-
 interface Props {
   disclaimer: string | DisclaimerItem[];
   onOpenDisclaimer?: () => void;
@@ -58,16 +39,11 @@ const ShoppingCartDisclaimerSection = ({ disclaimer, onOpenDisclaimer }: Props) 
       {isExpanded && (
         <div>
           {disclaimer.map((disclaimerItem, index) => {
-            const financingText = getFinancingText(
-              disclaimerItem.financing,
-              disclaimerItem.leaseMonths,
-              disclaimerItem.monthlyPrice
-            );
             return (
               <div className="telia-shopping-cart-disclaimer__item" key={index}>
                 <div>{disclaimerItem.name}</div>
                 <div className="telia-shopping-cart-disclaimer__item-total">{disclaimerItem.total},-</div>
-                <div className="telia-shopping-cart-disclaimer__item-subtitle">{financingText}</div>
+                <div className="telia-shopping-cart-disclaimer__item-subtitle">{disclaimerItem.description}</div>
               </div>
             );
           })}

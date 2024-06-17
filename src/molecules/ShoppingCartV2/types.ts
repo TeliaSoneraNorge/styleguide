@@ -206,10 +206,8 @@ export interface ICartDelivery {
 
 export interface DisclaimerItem {
   name: string;
-  financing: DisclaimerItemFinancing;
-  monthlyPrice: number;
   total: number;
-  leaseMonths?: number | string;
+  description?: string;
 }
 
 type DisclaimerItemFinancing = 'lease' | 'simonly' | 'upfront' | 'commitment' | 'switch' | 'reswitch';
