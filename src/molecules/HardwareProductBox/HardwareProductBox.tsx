@@ -34,6 +34,9 @@ export interface HardwareProductProps {
     url: string;
   };
   name?: string;
+  imageBadge?: {
+    url: string;
+  };
   children?: React.ReactNode;
 }
 
@@ -46,6 +49,7 @@ const HardwareProductBox = ({
   children,
   image,
   name,
+  imageBadge,
   ...rest
 }: HardwareProductProps) => (
   <div className={classNames('hardware-product-box', className)} {...rest}>
@@ -80,8 +84,12 @@ const HardwareProductBox = ({
       {image ? (
         <div className="hardware-product-box__product-image-container">
           <img loading="lazy" className="hardware-product-box__product-image" src={`${image.url}?w=180`} alt="" />
+          {imageBadge && <img className="hardware-product-box__image" src={imageBadge.url} />}
         </div>
       ) : null}
+      {/* <div className="hardware-product-box__floater-image-container"> */}
+
+      {/* </div> */}
     </div>
     <div className="hardware-product-box__lower-container">
       <div className="hardware-product-box__name-wrapper">

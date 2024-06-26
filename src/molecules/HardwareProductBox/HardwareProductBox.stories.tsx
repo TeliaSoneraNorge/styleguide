@@ -228,3 +228,42 @@ export const DifferentHighlights = () => {
     </div>
   );
 };
+
+export const WithImageBadge = () => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'space-evenly',
+        flexWrap: 'wrap',
+        paddingTop: '2rem',
+      }}
+    >
+      {highlights.map((highlight) => (
+        <HardwareProductBox
+          {...product}
+          imageBadge={{
+            url:
+              'https://images.ctfassets.net/iz15t1lxx44v/14mfHj2s0FzYw0Jalwb7iH/23e3a87bb288834aeb840d19e51ee5d4/Airpods_2gen.png',
+          }}
+        >
+          <div>
+            <div className="hardware-product-box__product-price-decription">{product.priceDescription}</div>
+            <div className="hardware-product-box__product-price">
+              {product.price},- <span>pr md.</span>
+            </div>
+            <div className="hardware-product-box__product-price-disclaimer">
+              {product.priceDisclaimerLine1}
+              {product.priceDisclaimerLine2 && (
+                <>
+                  <br />
+                  {product.priceDisclaimerLine2}
+                </>
+              )}
+            </div>
+          </div>
+        </HardwareProductBox>
+      ))}
+    </div>
+  );
+};

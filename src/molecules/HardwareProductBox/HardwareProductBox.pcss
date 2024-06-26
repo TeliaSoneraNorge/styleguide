@@ -44,6 +44,7 @@
     right: 0.5rem;
     top: 1rem;
     border-radius: 41px;
+    z-index: 1;
 
     &--wrapper {
       display: flex;
@@ -119,7 +120,7 @@
   &__upper-container {
     min-height: 10.5rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: stretch;
     justify-content: flex-start;
     margin-bottom: 0.5rem;
@@ -133,11 +134,26 @@
       left: 100px;
     }
   }
+
+  &__image {
+    height: 4rem;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+
+    @media all and (min-width: 48em) {
+      height: 6rem;
+    }
+  }
+
   &__lower-container {
     margin-top: 0px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    object-fit: contain;
 
     .heading--level-3 {
       line-height: 1.4rem !important;
@@ -149,6 +165,7 @@
     justify-content: center;
     height: 10rem;
     width: 100%;
+    position: relative;
 
     @media all and (min-width: 48em) {
       height: 15rem;
