@@ -87,9 +87,6 @@ const HardwareProductBox = ({
           {imageBadge && <img className="hardware-product-box__image" src={imageBadge.url} />}
         </div>
       ) : null}
-      {/* <div className="hardware-product-box__floater-image-container"> */}
-
-      {/* </div> */}
     </div>
     <div className="hardware-product-box__lower-container">
       <div className="hardware-product-box__name-wrapper">
