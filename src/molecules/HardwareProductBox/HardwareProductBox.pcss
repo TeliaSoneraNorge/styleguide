@@ -44,6 +44,7 @@
     right: 0.5rem;
     top: 1rem;
     border-radius: 41px;
+    z-index: 1;
 
     &--wrapper {
       display: flex;
@@ -133,6 +134,20 @@
       left: 100px;
     }
   }
+
+  &__image {
+    height: 4rem;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+
+    @media all and (min-width: 48em) {
+      height: 6rem;
+    }
+  }
+
   &__lower-container {
     margin-top: 0px;
     display: flex;
@@ -149,6 +164,7 @@
     justify-content: center;
     height: 10rem;
     width: 100%;
+    position: relative;
 
     @media all and (min-width: 48em) {
       height: 15rem;
