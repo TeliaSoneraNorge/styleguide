@@ -39,11 +39,17 @@ const ShoppingCartDisclaimerSection = ({ disclaimer, onOpenDisclaimer }: Props) 
       {isExpanded && (
         <div>
           {disclaimer.map((disclaimerItem, index) => {
+            const descriptionsArray =
+              typeof disclaimerItem.description === 'string'
+                ? [disclaimerItem.description]
+                : disclaimerItem.description;
             return (
               <div className="telia-shopping-cart-disclaimer__item" key={index}>
                 <div>{disclaimerItem.name}</div>
                 <div className="telia-shopping-cart-disclaimer__item-total">{disclaimerItem.total},-</div>
-                <div className="telia-shopping-cart-disclaimer__item-subtitle">{disclaimerItem.description}</div>
+                {descriptionsArray?.map((description) => (
+                  <div className="telia-shopping-cart-disclaimer__item-subtitle">{description}</div>
+                ))}
               </div>
             );
           })}

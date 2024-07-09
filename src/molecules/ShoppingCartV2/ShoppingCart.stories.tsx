@@ -1456,7 +1456,7 @@ export const withMultipleDisclaimers = () => {
   const disclaimers: DisclaimerItem[] = [
     {
       name: 'Google Pixel 8a',
-      description: 'Delbetaling i 24 md. – 579,-/md',
+      description: ['Delbetaling i 24 md. – 579,-/md', 'Betale nå - 200,-'],
       total: 4190,
     },
     {
