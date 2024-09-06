@@ -106,7 +106,7 @@ export const RatingWithNumbers = ({ rating, numberOfRatings, numberOfReviews, on
   <div className="telia-rating-numbers">
     <p className="telia-rating-numbers__rating">{rating}</p>
     <p className="telia-rating-numbers__ratingNumber">{`(${numberOfRatings})`}</p>
-    {numberOfReviews && (
+    {!!numberOfReviews && (
       <Button
         onClick={onClick ? onClick : undefined}
         className="telia-rating-numbers__reviewNumber"
