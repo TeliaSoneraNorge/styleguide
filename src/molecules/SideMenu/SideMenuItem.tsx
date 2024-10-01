@@ -115,7 +115,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       {md || !collapse ? (
         <Tag
           className={`telia-side-menu-item__action-element ${
-            disabled && 'telia-side-menu-item__action-element--disabled'
+            disabled ? 'telia-side-menu-item__action-element--disabled' : ''
           }`}
           onClick={handleClick}
           href={href}
@@ -142,7 +142,7 @@ export const SideMenuItem: React.FC<Props> = (props) => {
       ) : (
         <Tag
           className={`telia-side-menu-item__action-element telia-side-menu-item__action-element--collapse ${
-            disabled && 'telia-side-menu-item__action-element--disabled'
+            disabled ? 'telia-side-menu-item__action-element--disabled' : ''
           }
           `}
           onClick={handleClick}
