@@ -62,6 +62,7 @@ type Props = {
    */
   collapse?: boolean;
   tabIndex?: number;
+  disabled?: boolean;
   dataTrackingId?: string;
   children?: React.ReactNode;
 };
@@ -83,13 +84,15 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     tag,
     dataTrackingId,
     children,
+    disabled,
   } = props;
-  const Tag = href ? 'a' : 'button';
+  const Tag = disabled ? 'div' : href ? 'a' : 'button';
   const WrapperTag = tag ? tag : 'li';
   const collapse = props.collapse ?? true;
   const md = useBreakpoint('md');
 
   const handleClick = (e: React.SyntheticEvent) => {
+    if (disabled) return;
     if (href && onClick) {
       e.preventDefault();
     }
@@ -111,7 +114,9 @@ export const SideMenuItem: React.FC<Props> = (props) => {
     >
       {md || !collapse ? (
         <Tag
-          className="telia-side-menu-item__action-element"
+          className={`telia-side-menu-item__action-element ${
+            disabled ? 'telia-side-menu-item__action-element--disabled' : ''
+          }`}
           onClick={handleClick}
           href={href}
           tabIndex={tabIndex ?? 1}
@@ -136,7 +141,10 @@ export const SideMenuItem: React.FC<Props> = (props) => {
         </Tag>
       ) : (
         <Tag
-          className="telia-side-menu-item__action-element telia-side-menu-item__action-element--collapse"
+          className={`telia-side-menu-item__action-element telia-side-menu-item__action-element--collapse ${
+            disabled ? 'telia-side-menu-item__action-element--disabled' : ''
+          }
+          `}
           onClick={handleClick}
           tabIndex={tabIndex ?? 1}
           href={href}
