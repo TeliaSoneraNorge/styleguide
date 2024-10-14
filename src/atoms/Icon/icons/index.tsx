@@ -6,7 +6,6 @@
 //
 //
 
-export { GIFIcon } from './GIFIcon';
 export { AbroadIcon } from './AbroadIcon';
 export { ActivityLevelIcon } from './ActivityLevelIcon';
 export { AddCircleIcon } from './AddCircleIcon';
@@ -132,6 +131,7 @@ export { FoodIcon } from './FoodIcon';
 export { FraudIcon } from './FraudIcon';
 export { GamesIcon } from './GamesIcon';
 export { GettingStartedIcon } from './GettingStartedIcon';
+export { GIFIcon } from './GIFIcon';
 export { GiftIcon } from './GiftIcon';
 export { GraphIcon } from './GraphIcon';
 export { GridViewIcon } from './GridViewIcon';
@@ -381,6 +381,7 @@ export { WorldOffIcon } from './WorldOffIcon';
 export { WorldQuestionIcon } from './WorldQuestionIcon';
 export { WorldIcon } from './WorldIcon';
 export { WrenchIcon } from './WrenchIcon';
+export { XIcon } from './XIcon';
 export { YoutubeIcon } from './YoutubeIcon';
 export { ZoomOutIcon } from './ZoomOutIcon';
 export { ZoomIcon } from './ZoomIcon';

@@ -420,7 +420,7 @@ const sosialLinkColumn: SocialLinkColumn = {
       color: '',
     },
     {
-      name: 'Twitter',
+      name: 'X',
       url: '/',
       color: 'light-purple',
     },
