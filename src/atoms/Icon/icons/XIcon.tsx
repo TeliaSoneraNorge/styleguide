@@ -20,7 +20,7 @@ export function XIcon(props: Props) {
   return (
     <svg
       className={cs('Icon', 'Icon--x', props.className)}
-      style={{ width: '20px', height: '18px' }}
+      style={{ width: '20px', height: '18px', color: 'white' }}
       aria-hidden={props.title ? undefined : true}
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 1200 1227"
