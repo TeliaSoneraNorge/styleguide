@@ -192,13 +192,12 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
                         href={link.url}
                         aria-label={link.name}
                       >
-                        {sosialMedia === 'x' && (
+                        {sosialMedia === 'x' ? (
                           <XIcon
                             style={{ width: '20px', height: '18px', color: 'white' }}
                             className="telia-footer__social-media-icon"
                           />
-                        )}
-                        {sosialMedia !== 'x' && (
+                        ) : (
                           <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
                         )}
                       </a>
