@@ -3,6 +3,7 @@ import { ChevronDownIcon, ChevronUpIcon } from '../..';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { library, IconLookup, IconDefinition, findIconDefinition, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fab } from '@fortawesome/free-brands-svg-icons';
+import { XIcon } from '../../atoms/Icon';
 
 library.add(fab);
 
@@ -191,7 +192,14 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
                         href={link.url}
                         aria-label={link.name}
                       >
-                        <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
+                        {sosialMedia === 'x' ? (
+                          <XIcon
+                            style={{ width: '20px', height: '16px', color: 'white' }}
+                            className="telia-footer__social-media-icon"
+                          />
+                        ) : (
+                          <FontAwesomeIcon icon={iconDefinition} className={'telia-footer__social-media-icon'} />
+                        )}
                       </a>
                     )}
                   </li>

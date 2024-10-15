@@ -90,6 +90,7 @@ async function processIcons() {
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">', '<>')
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 65 64">', '<>')
           .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 65">', '<>')
+          .replace('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1227">', '<>')
           .replaceAll('fill-rule', 'fillRule')
           .replaceAll('clip-rule', 'clipRule')
           .replace('</svg>', '</>'),
