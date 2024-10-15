@@ -194,7 +194,7 @@ const SocialMediaLink = (data: { links: Link[] | null }) => {
                       >
                         {sosialMedia === 'x' ? (
                           <XIcon
-                            style={{ width: '20px', height: '18px', color: 'white' }}
+                            style={{ width: '20px', height: '16px', color: 'white' }}
                             className="telia-footer__social-media-icon"
                           />
                         ) : (
