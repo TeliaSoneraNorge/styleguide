@@ -19,7 +19,7 @@ export const Default = () => {
     },
     productName: 'Onyx Studio 7',
     description:
-      'Bestill Onyx Studio 7 sammen med et Telia X Rask-abonnement med 12 md. avtaletid og betal kun 1,- for høyttaleren',
+      'Bestill Onyx Studio 7 sammen med et Telia X Rask-abonnement med 12 md. avtaletid og betal kun 1,- for høyttaleren.<br /><br /><i>Rabatten gjelder ved kjøp med Telia X-abonnement og 12 md avtale. Eks: Apple Homepod mini med Telia X Start kr. 1 (ordinær pris kr. 990). Minste totalpris 12 md kr. 5149.</i>',
     discountPrice: '3999,-',
     salesPrice: '1,-',
     disclaimer: 'Totalpris 6 589,- inkl. Onyx Studio 7 og Telia X Rask i 12 md. ',
