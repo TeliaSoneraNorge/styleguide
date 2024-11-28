@@ -11,6 +11,11 @@ interface Ribbon {
   text: string;
 }
 
+interface FooterRibbon {
+  text: string;
+  icon: IconDefinition;
+}
+
 export interface SubscriptionCompactAccordionProps {
   id?: string;
   isExpanded?: boolean;
@@ -35,6 +40,7 @@ export interface SubscriptionCompactAccordionProps {
   variant?: 'normal' | 'black' | 'purple';
   familyDiscountInfo?: string;
   familyDiscountInfoIcon?: IconDefinition;
+  footerRibbon?: FooterRibbon;
 }
 
 const SubscriptionCompactAccordion = ({
@@ -61,6 +67,7 @@ const SubscriptionCompactAccordion = ({
   familyDiscountInfo,
   familyDiscountInfoIcon = 'group',
   showChevron = true,
+  footerRibbon,
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -200,6 +207,14 @@ const SubscriptionCompactAccordion = ({
             </div>
           </div>
         </div>
+        {footerRibbon && (
+          <div className="subscription-compact-accordion__footer-ribbon">
+            <div>
+              <Icon className="subscription-compact-accordion__footer-ribbon-icon" icon={footerRibbon.icon} />
+            </div>
+            <div>{footerRibbon.text}</div>
+          </div>
+        )}
         {footer && (
           <div
             className={cn('subscription-compact-accordion__footer-container', {

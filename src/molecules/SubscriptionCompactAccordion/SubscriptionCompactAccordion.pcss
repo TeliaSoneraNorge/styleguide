@@ -349,6 +349,29 @@
       flex: 1 1 auto;
     }
   }
+
+  &__footer-ribbon {
+    display: flex;
+    align-items: center;
+    background: #faf0ff;
+    color: #4e0174;
+    padding: 0.3rem 0;
+    margin: 1rem calc(var(--expanded-info-padding-mobile) * -1);
+
+    @media all and (min-width: 41em) {
+      margin: 1rem calc(var(--expanded-info-padding) * -1);
+    }
+  }
+
+  &__footer-ribbon-icon {
+    width: 1.4rem !important;
+    height: 1.4rem !important;
+    margin-right: 0.5rem;
+    margin-left: var(--expanded-info-padding-mobile);
+    @media all and (min-width: 41em) {
+      margin-left: var(--expanded-info-padding);
+    }
+  }
 }
 
 .subscription-compact-accordion-expanded {

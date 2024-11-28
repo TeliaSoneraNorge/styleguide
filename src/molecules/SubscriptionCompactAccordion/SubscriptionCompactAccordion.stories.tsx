@@ -361,3 +361,28 @@ export const MultipleAccordions = () => {
     </div>
   );
 };
+
+export const FooterRibbon = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      footer={FOOTERCHILDREN}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      footerRibbon={{
+        text: 'Du får familierabatt på dette abonnementet',
+        icon: 'savings',
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
