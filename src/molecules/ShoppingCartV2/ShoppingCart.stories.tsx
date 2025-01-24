@@ -446,6 +446,22 @@ const subscriptionOnlyGroupContent: ICartItem[] = [
     },
   },
   {
+    type: 'BREAKAGE_FEE',
+    id: '',
+    items: [],
+    name: 'Bruddgebyr',
+    href: '#',
+    quantity: {
+      modifiable: false,
+      removable: false,
+      value: 1,
+    },
+    price: {
+      firstInvoice: 2049,
+    },
+    subtitle: ['Ved skifte til nytt abonnement før bindingstidens utløp'],
+  },
+  {
     type: 'SUBSCRIPTION',
     id: 'SMART_X.REGULAR',
     bundleId: '2b629a',

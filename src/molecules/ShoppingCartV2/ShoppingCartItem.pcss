@@ -3,6 +3,32 @@
     position: relative;
     background-color: white;
 
+    &__breakagefee-info {
+      position: relative;
+      font-family: 'TeliaSans-Regular', Helvetica, Roboto, Arial, sans-serif;
+      width: 20rem;
+      color: #f5e0ff !important;
+      font-size: 1rem;
+      background-color: #29003e !important;
+      top: -12rem !important;
+      left: 7.4rem !important;
+
+      &::before {
+        border-color: #29003e !important;
+      }
+    }
+
+    &__icon {
+      display: flex;
+      height: 2rem;
+      width: 2rem;
+      cursor: pointer;
+      margin: 0 0.5rem;
+      background-color: transparent;
+      border: none;
+      color: #6d02a3;
+    }
+
     &__name-wrapper {
       display: flex;
       align-items: flex-start;
@@ -10,6 +36,8 @@
     }
 
     &__link {
+      display: flex;
+      align-items: center;
       span {
         margin-right: 0.5rem;
       }
