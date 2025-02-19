@@ -569,6 +569,8 @@ export const subscriptionsOnly = () => {
         totalPriceFirstInvoice={priceFirstInvoice}
         totalPriceMonthly={pricePerMonth}
         totalPriceUpfront={priceUpfront}
+        name="Ola Nordmann"
+        showFamilyDiscountInfo
         totalVAT={150}
         totalPriceWithoutVAT={350}
         onChangeQuantity={() => {}}

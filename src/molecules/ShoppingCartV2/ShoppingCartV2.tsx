@@ -10,6 +10,8 @@ import ShoppingCartDisclaimerSection from './ShoppingCartDisclaimerSection';
 export interface ShoppingCartV2Props {
   heading?: string;
   cartItems: ICartItem[];
+  name?: string;
+  discountLink?: JSX.Element;
   delivery?: ICartDelivery;
   onChangeQuantity: (item: any, quantity: number) => void;
   onRemoveItem: (item: any) => void;
@@ -42,6 +44,8 @@ const ShoppingCartV2 = ({
   delivery,
   onChangeQuantity,
   onRemoveItem,
+  name,
+  discountLink,
   totalPriceFirstInvoice,
   totalPriceMonthly,
   paymentTooltip,
@@ -87,7 +91,7 @@ const ShoppingCartV2 = ({
         hasPaid={hasPaid}
       />
       {disclaimer && <ShoppingCartDisclaimerSection disclaimer={disclaimer} onOpenDisclaimer={onOpenDisclaimer} />}
-      {showFamilyDiscountInfo && <ShoppingCartFamilyDiscountInfo />}
+      {showFamilyDiscountInfo && <ShoppingCartFamilyDiscountInfo name={name} link={discountLink} />}
       {continueSection && <ShoppingCartContinueSection section={continueSection} />}
     </form>
   );
