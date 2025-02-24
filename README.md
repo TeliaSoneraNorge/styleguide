@@ -123,4 +123,4 @@ Remember to write a description in `VERSIONS.md` if it is a noteworthy change.
 
 ### Versioning
 
-Notify all "breaking changes" or major changes in the #styleguide Slack Channel and update VERSIONS.md.
+Notify all "breaking changes" or major changes in the #styleguide Slack Channel and update VERSIONS.md..
