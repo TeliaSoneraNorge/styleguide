@@ -85,8 +85,8 @@ const ShoppingCartSection = ({
 }: ShoppingCartItemSectionProps) => {
   return (
     <section className="telia-shopping-cart__section">
-      {_.sortBy(cartItems, [sortShoppingCart]).map((item, index) => (
-        <span key={`${item.id}-${item.bundleId}`}>
+      {_.sortBy(cartItems, [sortShoppingCart]).map((item, _index) => (
+        <div key={`${item.id}-${item.bundleId}`}>
           <ShoppingCartItemGroup
             cartItem={item}
             onChangeQuantity={onChangeQuantity}
@@ -95,12 +95,7 @@ const ShoppingCartSection = ({
             hasPaid={hasPaid}
             formatPrice={formatPrice}
           />
-          {index < cartItems.length - 1 && (
-            <div className="telia-shopping-cart__horizontal-rule-wrapper">
-              <hr className="telia-shopping-cart__horizontal-rule" />
-            </div>
-          )}
-        </span>
+        </div>
       ))}
     </section>
   );

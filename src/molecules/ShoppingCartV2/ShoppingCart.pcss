@@ -6,13 +6,16 @@
   &__section {
     &--grey {
       background-color: var(--grey-100);
+      border-top-right-radius: 8px;
+      border-top-left-radius: 8px;
     }
 
     &__body {
       background-color: var(--white);
-      &:last-of-type {
-        padding-bottom: 1rem;
-      }
+      margin-bottom: 1rem;
+      border: 2px solid #d6d6dd;
+      border-radius: 8px;
+      overflow: hidden;
     }
   }
 
@@ -97,8 +100,10 @@
 
   &__price-upfront-container {
     background-color: #fff;
-    border: 1px solid #000;
+    border: 2px solid #d6d6dd;
     padding: 1rem;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 
   &__price-monthly-details-total {
