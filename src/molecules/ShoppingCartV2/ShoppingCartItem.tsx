@@ -237,6 +237,14 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
           </span>
         </div>
       </div>
+      {cartItem.discount?.isUniqueDiscount && (
+        <div className="telia-shopping-cart__item__unique-discount">
+          <span className="telia-shopping-cart__item__unique-discount__label">{cartItem.discount.name}</span>
+          <span className="telia-shopping-cart__item__unique-discount__price">
+            -{formatPrice(_.get(cartItem.discount, 'value.upfront'))}
+          </span>
+        </div>
+      )}
     </div>
   );
 };
