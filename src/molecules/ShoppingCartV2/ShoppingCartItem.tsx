@@ -175,7 +175,8 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
   const quantity = _.get(cartItem, 'quantity.value', 1);
   const isQuantityModifiable = _.get(cartItem, 'quantity.modifiable');
   const shouldShowPricePerUnit = (!!cartItem.price.upfront || !!cartItem.price.firstInvoice) && quantity > 1;
-  const discountValueUpfront = _.get(cartItem.discount, 'value.upfront') || 0;
+  const hasUniqueDiscount = cartItem.discount?.isUniqueDiscount;
+  const discountValueUpfront = hasUniqueDiscount ? 0 : _.get(cartItem.discount, 'value.upfront') || 0;
   const isLease = cartItem.leaseMonths === 0 || !!cartItem.leaseMonths;
   const hasSubscription = !!_.find(cartItem.items, (item) => item.type.includes('SUBSCRIPTION'));
   const discountValueMonthly = _.get(cartItem.discount, 'value.monthly') || 0;
