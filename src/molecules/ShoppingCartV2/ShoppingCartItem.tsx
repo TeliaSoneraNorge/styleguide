@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import _ from 'lodash';
 import cn from 'classnames';
-import { ICartDiscountType, ICartItem, ICartItemPrice } from './types';
+import { ICartItem, ICartItemPrice } from './types';
 import { Icon } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 import Link from '../../atoms/Link';
@@ -252,6 +252,8 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
 
 interface CartItemNameProps {
   cartItem: ICartItem;
+  onShowBreakageFeeInfoClick?: () => void;
+  showBreakageFeeInfo?: boolean;
 }
 
 const CartItemDiscount = ({ cartItem }: CartItemNameProps) => {
@@ -271,14 +273,30 @@ const CartItemDiscount = ({ cartItem }: CartItemNameProps) => {
   );
 };
 
-const CartItemName = ({ cartItem }: CartItemNameProps) => (
+const CartItemName = ({ cartItem, onShowBreakageFeeInfoClick, showBreakageFeeInfo }: CartItemNameProps) => (
   <>
     <div className="telia-shopping-cart__item__name-wrapper">
       <div className="telia-shopping-cart__item__link">
         {cartItem.lineThrough && (
           <span className="telia-shopping-cart__item__price__linethrough">{cartItem.lineThrough}</span>
         )}
+
         {cartItem.href ? <Link href={cartItem.href}>{cartItem.name}</Link> : cartItem.name}
+        {cartItem.type === 'BREAKAGE_FEE' && (
+          <>
+            {showBreakageFeeInfo && (
+              <SpeechBubble
+                className="telia-shopping-cart__item__breakagefee-info"
+                text={
+                  'Bruddgebyret er lik totalrabatten du får i kampanjen. Bruddgebyret reduseres månedlig ut avtaletiden, regnet fra når avtalen er inngått.'
+                }
+              />
+            )}
+            <button onClick={onShowBreakageFeeInfoClick} type="button" className="telia-shopping-cart__item__icon">
+              <Icon icon="info" />
+            </button>
+          </>
+        )}
       </div>
       <CartItemDiscount cartItem={cartItem} />
     </div>
@@ -299,13 +317,17 @@ const ShoppingCartItem = ({
   hasPaid,
 }: ShoppingCartItemProps) => {
   const isRemovable = _.get(cartItem, 'quantity.removable');
-
+  const [showBreakageFeeInfo, setShowBreakageFeeInfo] = useState(false);
   return (
     <div className="telia-shopping-cart__item">
       <div className="telia-shopping-cart__item__name__container">
         <CartItemImage cartItem={cartItem} />
         <div className="telia-shopping-cart__item__name">
-          <CartItemName cartItem={cartItem} />
+          <CartItemName
+            showBreakageFeeInfo={showBreakageFeeInfo}
+            onShowBreakageFeeInfoClick={() => setShowBreakageFeeInfo(!showBreakageFeeInfo)}
+            cartItem={cartItem}
+          />
           <CartItemPrice cartItem={cartItem} onChangeQuantity={onChangeQuantity} hasPaid={hasPaid} />
         </div>
       </div>
