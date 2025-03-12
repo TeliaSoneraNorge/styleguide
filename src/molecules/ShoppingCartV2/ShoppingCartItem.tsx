@@ -288,7 +288,7 @@ const CartItemName = ({ cartItem, onShowBreakageFeeInfoClick, showBreakageFeeInf
               <SpeechBubble
                 className="telia-shopping-cart__item__breakagefee-info"
                 text={
-                  'Bruddgebyret er lik totalrabatten du får i kampanjen. Bruddgebyret reduseres månedlig ut avtaletiden, regnet fra når avtalen er inngått.'
+                  'Bruddgebyret er lik totalrabatten du får i kampanjen. Bruddgebyret reduseres månedlig ut avtaletiden, regnet fra når avtalen er inngått. Beløpet kommer på neste faktura.'
                 }
               />
             )}
