@@ -1524,3 +1524,70 @@ export const withMultipleDisclaimers = () => {
     </Container>
   );
 };
+
+export const withUniqueDiscount = () => {
+  const heading = 'Handlekurv';
+  const delivery = {
+    value: 'Fri frakt',
+  };
+
+  const content: ICartItem[] = [
+    {
+      type: 'WEARABLE',
+      subtype: 'NEW',
+      id: '9118118',
+      href: 'https://stage.telia.no/smartklokker/google/pixel-watch-2/pixel-watch-2-lte-obsidian/',
+      brand: 'Google',
+      brandSlug: 'google',
+      model: 'Pixel Watch 2 LTE',
+      modelSlug: 'pixel-watch-2',
+      color: 'Obsidian',
+      image: {
+        url:
+          '//images.ctfassets.net/iz15t1lxx44v/2gi4GxxOyI19g0Kf0LbtAE/adb5ae98c8a636c0c3574f66895e9dca/Pixel_Watch2_Obsidian_1.png',
+      },
+      name: 'Google Pixel Watch 2',
+      quantity: {
+        modifiable: false,
+        removable: false,
+        value: 1,
+      },
+      price: {
+        upfront: 2590,
+        upfrontWithoutVAT: 2072,
+        originalSalesPrice: 2590,
+        originalSalesPriceWithoutVAT: 2072,
+      },
+      discount: {
+        value: {
+          upfront: 350,
+          monthly: 0,
+        },
+        description: '',
+        isSmartDiscount: true,
+        smartDiscountCode: 'Web_Unique_Test',
+        isUniqueDiscount: true,
+        name: 'Galaxy Watch rabatt',
+      },
+      isReSwitch: false,
+      isWebDeal: false,
+      items: [],
+    },
+  ];
+
+  return (
+    <Container style={style} size="medium">
+      <ShoppingCartV2
+        heading={heading}
+        cartItems={content}
+        delivery={delivery}
+        totalPriceUpfront={2290}
+        onChangeQuantity={() => {}}
+        onRemoveItem={() => {}}
+        formatPrice={(price: any) => `${price},-`}
+        isAnyCartItemsQuantityModifiable
+        isAllowedToDelete
+      />
+    </Container>
+  );
+};
