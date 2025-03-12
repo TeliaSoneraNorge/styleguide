@@ -155,6 +155,10 @@ interface ICartItemDiscount {
   description?: string;
   handsetDiscountText?: string;
   types?: ICartDiscountType[];
+  isUniqueDiscount?: boolean;
+  smartDiscountCode?: string;
+  isSmartDiscount?: boolean;
+  name?: string;
 }
 
 export interface ICartItemImage {
