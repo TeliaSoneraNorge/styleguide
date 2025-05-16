@@ -114,6 +114,82 @@ export const Normal = () => {
   );
 };
 
+export const WithRibbon = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      ribbon={{
+        text: 'Mest populær',
+        backgroundColor: '#EDC8FF',
+        color: '#3F005E',
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const WithRibbonRight = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      ribbon={{
+        text: 'Mest populær',
+        backgroundColor: '#EDC8FF',
+        color: '#3F005E',
+        position: 'right',
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+export const WithRibbonLeft = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      ribbon={{
+        text: 'Mest populær',
+        backgroundColor: '#EDC8FF',
+        color: '#3F005E',
+        position: 'left',
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
 export const withFooter = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
@@ -197,6 +273,7 @@ export const WithAll = () => {
         text: 'Mest populær',
         backgroundColor: '#EDC8FF',
         color: '#3F005E',
+        position: 'right',
       }}
       isExpanded={isExpanded}
       onOpen={() => {
@@ -228,6 +305,7 @@ export const SelectedWithAll = () => {
         text: 'Mest populær',
         backgroundColor: '#EDC8FF',
         color: '#3F005E',
+        position: 'left',
       }}
       isExpanded={isExpanded}
       onOpen={() => {
