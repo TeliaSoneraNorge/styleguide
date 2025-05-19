@@ -326,6 +326,7 @@ export const Multiple = () => {
         <SubscriptionCompactAccordion
           key={index}
           {...subscription}
+          priceStriketrough={index === 0 ? 549 : undefined}
           isExpanded={expandedSubscriptionIndex === index}
           onOpen={() => {
             expandedSubscriptionIndex === index
