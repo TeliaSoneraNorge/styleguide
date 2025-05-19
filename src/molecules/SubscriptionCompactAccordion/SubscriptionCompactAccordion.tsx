@@ -9,6 +9,7 @@ interface Ribbon {
   backgroundColor: string;
   color: string;
   text: string;
+  position?: 'left' | 'right';
 }
 
 interface FooterRibbon {
@@ -108,7 +109,10 @@ const SubscriptionCompactAccordion = ({
           {ribbon ? (
             <div
               style={{ backgroundColor: ribbon.backgroundColor, color: ribbon.color }}
-              className="subscription-compact-accordion__ribbon"
+              className={cn('subscription-compact-accordion__ribbon', {
+                'subscription-compact-accordion__ribbon--left': ribbon.position === 'left',
+                'subscription-compact-accordion__ribbon--right': ribbon.position === 'right',
+              })}
             >
               {ribbon.text}
             </div>
