@@ -175,7 +175,7 @@ const SubscriptionCompactAccordion = ({
                       </span>
                     </div>
                   )}
-                  <div>
+                  <div className="subscription-compact-accordion__price-container-inner">
                     <span
                       className={cn('subscription-compact-accordion__price', {
                         'subscription-compact-accordion__price--purple': variant === 'purple',
