@@ -41,6 +41,7 @@ export interface SubscriptionCompactAccordionProps {
   variant?: 'normal' | 'black' | 'purple';
   familyDiscountInfo?: string;
   familyDiscountInfoIcon?: IconDefinition;
+  disountInfo?: React.ReactNode;
   footerRibbon?: FooterRibbon;
 }
 
@@ -57,6 +58,7 @@ const SubscriptionCompactAccordion = ({
   priceStriketrough,
   priceStriketroughInfo,
   priceInfo,
+  disountInfo,
   ribbon,
   scrollToOnOpen = false,
   footer,
@@ -211,11 +213,12 @@ const SubscriptionCompactAccordion = ({
             </div>
           </div>
         </div>
-        {footerRibbon && (
+        {disountInfo && isExpanded && disountInfo}
+        {footerRibbon && !isExpanded && (
           <div className="subscription-compact-accordion__footer-ribbon">
-            <div>
+            <>
               <Icon className="subscription-compact-accordion__footer-ribbon-icon" icon={footerRibbon.icon} />
-            </div>
+            </>
             <div>{footerRibbon.text}</div>
           </div>
         )}

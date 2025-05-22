@@ -465,3 +465,34 @@ export const FooterRibbon = () => {
     </SubscriptionCompactAccordion>
   );
 };
+
+export const DiscountInfo = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceStriketrough={699}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      footerRibbon={{
+        text: 'Du får familierabatt på dette abonnementet',
+        icon: 'savings',
+      }}
+      disountInfo={
+        <div style={{ display: 'flex', alignItems: 'center', fontStyle: 'italic', marginTop: '1rem' }}>
+          <Icon icon="check-mark" />
+          <Paragraph style={{ margin: 0 }}>50,- i rabatt de første 12 md. uten binding.</Paragraph>
+        </div>
+      }
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
