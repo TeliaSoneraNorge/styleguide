@@ -139,7 +139,9 @@
         }
       }
 
-      background-color: #f5e0ff;
+      .subscription-compact-accordion:not(.subscription-compact-accordion-expanded) & {
+        background-color: #f5e0ff;
+      }
     }
 
     &:focus {
@@ -271,7 +273,7 @@
     .subscription-compact-accordion__header-first-row,
     .subscription-compact-accordion__container-button {
       border-radius: 0.5rem;
-      background-color: var(--black);
+      background-color: var(--black) !important;
       color: var(--white);
       position: relative;
 
@@ -293,7 +295,7 @@
     .subscription-compact-accordion__header-first-row,
     .subscription-compact-accordion__container-button {
       border-radius: 0.5rem;
-      background-color: #4e0174;
+      background-color: #4e0174 !important;
       color: var(--white);
       position: relative;
 
