@@ -28,7 +28,9 @@ export interface SubscriptionCompactAccordionProps {
   discountLine?: string;
   price: SubscriptionPrice;
   priceStriketrough?: SubscriptionPrice;
+  priceStriketroughPosition?: 'left' | 'right';
   priceStriketroughInfo?: string;
+  priceSuffix?: string;
   priceInfo?: string[];
   ribbon?: Ribbon | null;
   scrollToOnOpen?: boolean;
@@ -71,6 +73,8 @@ const SubscriptionCompactAccordion = ({
   familyDiscountInfoIcon = 'group',
   showChevron = true,
   footerRibbon,
+  priceSuffix,
+  priceStriketroughPosition = 'left',
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
 
@@ -167,7 +171,7 @@ const SubscriptionCompactAccordion = ({
               )}
               <div className="subscription-compact-accordion__aside">
                 <div className="subscription-compact-accordion__price-container">
-                  {!!priceStriketrough && (
+                  {!!priceStriketrough && priceStriketroughPosition === 'left' && (
                     <div className="subscription-compact-accordion__price-striketrough-wrapper">
                       <span className="subscription-compact-accordion__price-striketrough">
                         {formatPrice(priceStriketrough)}
@@ -192,6 +196,17 @@ const SubscriptionCompactAccordion = ({
                           {info}
                         </span>
                       ))}
+                    {priceSuffix && <div className="subscription-compact-accordion__price-suffix">{priceSuffix}</div>}
+                    {!!priceStriketrough && priceStriketroughPosition === 'right' && (
+                      <div className="subscription-compact-accordion__price-striketrough-wrapper subscription-compact-accordion__price-striketrough-wrapper--right">
+                        <span className="subscription-compact-accordion__price-striketrough">
+                          {formatPrice(priceStriketrough)}
+                        </span>
+                        <span className="subscription-compact-accordion__price-striketrough-info">
+                          {priceStriketroughInfo}
+                        </span>
+                      </div>
+                    )}
                   </div>
                 </div>
                 {!!discountLine && (
