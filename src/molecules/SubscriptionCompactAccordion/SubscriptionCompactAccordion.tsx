@@ -4,6 +4,7 @@ import Heading from '../../atoms/Heading';
 import { Icon, IconDefinition } from '../../atoms/Icon';
 
 type SubscriptionPrice = string | number;
+type SubscriptionTag = 'section' | 'article' | 'aside' | 'div';
 
 interface Ribbon {
   backgroundColor: string;
@@ -23,6 +24,7 @@ export interface SubscriptionCompactAccordionProps {
   name: string;
   title: string;
   strikethrough?: string;
+  tag?: SubscriptionTag;
   tagLine?: string;
   tagLineIcon?: IconDefinition;
   discountLine?: string;
@@ -53,6 +55,7 @@ const SubscriptionCompactAccordion = ({
   name,
   title,
   strikethrough,
+  tag,
   tagLine,
   tagLineIcon,
   discountLine,
@@ -77,6 +80,7 @@ const SubscriptionCompactAccordion = ({
   priceStriketroughPosition = 'left',
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
+  const Tag: SubscriptionTag = tag || 'section';
 
   useEffect(() => {
     if (ref.current && isExpanded && scrollToOnOpen) {
@@ -88,7 +92,7 @@ const SubscriptionCompactAccordion = ({
   }, [isExpanded, scrollToOnOpen]);
 
   return (
-    <section
+    <Tag
       style={style}
       ref={ref}
       id={id}
@@ -271,7 +275,7 @@ const SubscriptionCompactAccordion = ({
           'subscription-compact-accordion__footer-border--purple': variant === 'purple',
         })}
       />
-    </section>
+    </Tag>
   );
 };
 
