@@ -114,6 +114,27 @@ export const Normal = () => {
   );
 };
 
+export const NormalAsArticle = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      tag="article"
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
 export const WithRibbon = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 
