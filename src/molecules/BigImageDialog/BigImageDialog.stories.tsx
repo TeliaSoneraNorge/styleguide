@@ -54,7 +54,8 @@ const footerStyle = {
   flex: '1',
 };
 const priceStyle = {
-  fontFamily: 'TeliaSans-Bold',
+  fontFamily: 'TeliaSans',
+  fontWeight: 700,
   fontSize: '2rem',
   lineHeight: '2.5rem',
 };
