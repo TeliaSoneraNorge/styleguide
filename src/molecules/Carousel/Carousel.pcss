@@ -50,7 +50,8 @@
                     .product-price {
                         display: grid;
                         grid-template-columns: 1fr 1fr 1fr;
-                        font-family: 'TeliaSans-Bold';
+                        font-family: 'TeliaSans';
+                        font-weight: 700;
                         font-size: 2rem;
                         margin: 0;
                         margin-bottom: 0.5rem;
@@ -61,7 +62,7 @@
 
                         .additional-info {
                             display: flex;
-                            grid-column: 3;                           
+                            grid-column: 3;
                             justify-self: left;
                         }
 
@@ -71,7 +72,7 @@
                         }
                     }
                 }
-                
+
                 &--active {
                     opacity: 1;
                     transform: translateX(0); /* Move the active slide to the center */
@@ -99,7 +100,7 @@
                 margin: 0;
                 &--right {
                     right: -5px;
-                } 
+                }
                 &--left {
                     z-index: 1;
                     left: -5px;
@@ -151,7 +152,6 @@
 
             &--current {
                 background-color: #6E6E6E;
-                
                 &:focus, &:hover, &:active {
                     cursor: default;
                     opacity: 50%;
