@@ -6,7 +6,6 @@ import { useEscapeListener } from '../../molecules/Modal/useEscapeListener';
 import { Icon } from '../../atoms/Icon';
 import { Badge } from '../../atoms/Badge';
 import Heading from '../../atoms/Heading';
-import Button from '../../atoms/Button';
 import { useBreakpoint } from '../../utils/useBreakpoint';
 
 export interface SlidingShoppingCartV2Props {
@@ -42,18 +41,15 @@ const SlidingShoppingCartV2 = ({
 
   const xs = useBreakpoint('xs');
   const isMobile = !xs;
-
   return showMobileCart ? (
     <div ref={container}>
       {isMobile && (
         <>
           <div className={cn({ 'telia-sliding-shopping-cart__overlay': shouldShowCart })} />
-          <button
+          <div
             className={cn('telia-sliding-shopping-cart-mobile', {
               'telia-sliding-shopping-cart-mobile--expanded': shouldShowCart,
             })}
-            onClick={() => (shouldShowCart ? null : setShouldShowCart(!shouldShowCart))}
-            ref={buttonRef}
           >
             <div
               className={cn('telia-sliding-shopping-cart-mobile__wrapper', {
@@ -62,11 +58,6 @@ const SlidingShoppingCartV2 = ({
             >
               {!shouldShowCart && (
                 <div className="telia-sliding-shopping-cart-mobile__wrapper--cart">
-                  {numberOfItemsInCart && (
-                    <Badge text={`${numberOfItemsInCart}`}>
-                      <Icon icon="shoppingcart" />
-                    </Badge>
-                  )}
                   <div className="telia-sliding-shopping-cart-mobile__price-wrapper">
                     <div className="telia-sliding-shopping-cart-mobile__price-header">
                       <span>Betale pr md: </span>
@@ -83,15 +74,21 @@ const SlidingShoppingCartV2 = ({
                   </div>
                 </div>
               )}
-              <Button
-                className="telia-sliding-shopping-cart-mobile__wrapper--button"
-                icon={shouldShowCart ? 'chevron-down' : 'chevron-up'}
-                kind="link"
-                onClick={() => (shouldShowCart ? setShouldShowCart(!shouldShowCart) : null)}
-              />
+
+              {!!numberOfItemsInCart && (
+                <button
+                  className="telia-sliding-shopping-cart-mobile__trigger"
+                  onClick={() => (shouldShowCart ? null : setShouldShowCart(!shouldShowCart))}
+                  ref={buttonRef}
+                >
+                  <Badge text={`${numberOfItemsInCart}`} status="ok">
+                    <Icon icon="shoppingcart" className="telia-sliding-shopping-cart-mobile__trigger-icon" />
+                  </Badge>
+                </button>
+              )}
             </div>
             {shouldShowCart && <div className="telia-sliding-shopping-cart-mobile__content">{children}</div>}
-          </button>
+          </div>
         </>
       )}
       {!isMobile && (
