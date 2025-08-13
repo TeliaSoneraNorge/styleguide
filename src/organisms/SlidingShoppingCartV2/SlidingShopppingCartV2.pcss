@@ -62,19 +62,20 @@
 }
 
 .telia-sliding-shopping-cart-mobile {
-  background-color: #EDE1D8;
+  background-color: #f9f1ec;
   color: #222;
   position: fixed;
   bottom: 0;
   z-index: 10;
   overflow: scroll;
   max-height: 40rem;
+  line-height: normal;
   left: 0;
   right: 0;
   padding: 1rem;
   font-family: 'TeliaSans-Regular', Helvetica, Arial, sans-serif;
   font-size: 1rem;
-  border: 1px solid #D6D6DD;
+  border: 2px solid #d7c3b5;
 
   &__price-wrapper {
     display: flex;
@@ -88,10 +89,10 @@
   }
 
   &__price-header {
-    display: flex; 
+    display: flex;
     flex-direction: column;
     :nth-child(1) {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
@@ -99,13 +100,12 @@
     display: flex;
     flex-direction: column;
     :nth-child(1) {
-      margin-bottom: .5rem;
+      margin-bottom: 0.5rem;
     }
   }
 
   &__price {
-      font-size: 1rem;
-      color: var(--core-purple-850);
+    font-size: 1rem;
   }
 
   &__content {
@@ -114,48 +114,53 @@
 
   &--expanded {
     background-color: white;
+    border-color: transparent;
+    padding-bottom: 0;
+  }
+
+  &__trigger {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    padding: 0;
+    border: 1px solid var(--core-purple-500);
+    border-radius: 50%;
+    width: 3.125rem;
+    height: 3.125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .telia-badge {
+      margin-top: 4px;
+      margin-right: 3px;
+      min-width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  &__trigger-icon {
+    color: var(--core-purple-500);
+    width: 1.5625rem;
+    height: 1.5625rem;
+    margin-right: 2px;
   }
 
   &__wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: -10;
+    position: relative;
+    max-width: 1244px;
+
+    &--open {
+      z-index: 10;
+    }
+
+    &--cart {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      z-index: -10;
-      position: relative;
-      .telia-badge {
-          &--root {
-              margin-right: 2rem;
-          }
-          background-color: var(--deep-purple);
-      }
-
-      &--open {
-          z-index: 10;
-          justify-content: flex-end;
-      }
-
-      &--cart {
-          display: flex;
-          align-items: center;
-      }
-
-      &--button {
-          display: flex;
-          color: #4F4741;
-          &:hover {
-              background-color: transparent !important;
-              color: black !important;
-          }
-          &:focus, &:active {
-              background-color: var(--deep-purple) !important; 
-              color: white !important;
-          }
-          .Icon {
-              height: 2rem !important;
-              width: 2rem !important;
-              margin: 0 !important;
-              top: 0 !important;
-          }
-      }
+    }
   }
 }
