@@ -8,6 +8,7 @@ declare interface AnimatedProgressBarProps {
   backgroundColor?: AnimatedProgressBarBackgroundColor;
   color?: AnimatedProgressBarColor;
   noMarginTop?: boolean;
+  noMarginBottom?: boolean;
 }
 
 declare const AnimatedProgressBar: React.FC<AnimatedProgressBarProps>;
