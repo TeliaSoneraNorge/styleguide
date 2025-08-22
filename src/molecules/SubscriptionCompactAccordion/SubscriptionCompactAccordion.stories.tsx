@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import SubscriptionCompactAccordion from './SubscriptionCompactAccordion';
 import { StatefulAccordionList } from '../AccordionList';
 import Button from '../../atoms/Button';
-import { Icon } from '../../atoms/Icon';
+import { Icon, IconDefinition } from '../../atoms/Icon';
 import Paragraph from '../../atoms/Paragraph';
 
 export default {
@@ -68,7 +68,7 @@ const SUBSCRIPTIONS = [
     title: 'Ubegrenset data',
     price: 699,
     priceInfo: ['/md.'],
-    tagLineIcon: 'speedometer-max',
+    tagLineIcon: 'speedometer-max' as IconDefinition,
   },
 ];
 
@@ -549,6 +549,29 @@ export const WithPriceStrikethroughBack = () => {
       id="smart20"
       price={499}
       priceSuffix="ord. pris"
+      priceStriketrough={699}
+      priceStriketroughPosition="right"
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
+
+export const WithPricePrefix = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      pricePrefix="fra"
       priceStriketrough={699}
       priceStriketroughPosition="right"
       priceInfo={['/md.']}

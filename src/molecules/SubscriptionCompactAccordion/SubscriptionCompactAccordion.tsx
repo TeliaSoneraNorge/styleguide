@@ -32,6 +32,7 @@ export interface SubscriptionCompactAccordionProps {
   priceStriketrough?: SubscriptionPrice;
   priceStriketroughPosition?: 'left' | 'right';
   priceStriketroughInfo?: string;
+  pricePrefix?: string;
   priceSuffix?: string;
   priceInfo?: string[];
   ribbon?: Ribbon | null;
@@ -76,6 +77,7 @@ const SubscriptionCompactAccordion = ({
   familyDiscountInfoIcon = 'group',
   showChevron = true,
   footerRibbon,
+  pricePrefix,
   priceSuffix,
   priceStriketroughPosition = 'left',
 }: SubscriptionCompactAccordionProps) => {
@@ -186,6 +188,7 @@ const SubscriptionCompactAccordion = ({
                     </div>
                   )}
                   <div className="subscription-compact-accordion__price-container-inner">
+                    {pricePrefix && <div className="subscription-compact-accordion__price-prefix">{pricePrefix}</div>}
                     <span
                       className={cn('subscription-compact-accordion__price', {
                         'subscription-compact-accordion__price--purple': variant === 'purple',
