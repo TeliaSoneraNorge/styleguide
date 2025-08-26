@@ -43,7 +43,7 @@ export interface SubscriptionCompactAccordionProps {
   style?: React.CSSProperties;
   footer?: React.ReactNode;
   children?: React.ReactNode;
-  variant?: 'normal' | 'black' | 'purple';
+  variant?: 'normal' | 'black' | 'purple' | 'dark-purple';
   familyDiscountInfo?: string;
   familyDiscountInfoIcon?: IconDefinition;
   disountInfo?: React.ReactNode;
@@ -101,9 +101,11 @@ const SubscriptionCompactAccordion = ({
       className={cn('subscription-compact-accordion', className, {
         'subscription-compact-accordion--black': variant === 'black',
         'subscription-compact-accordion--purple': variant === 'purple',
+        'subscription-compact-accordion--dark-purple': variant === 'dark-purple',
         'subscription-compact-accordion-expanded': isExpanded,
         'subscription-compact-accordion-expanded-black': isExpanded && variant === 'black',
         'subscription-compact-accordion-expanded-purple': isExpanded && variant === 'purple',
+        'subscription-compact-accordion-expanded-dark-purple': isExpanded && variant === 'dark-purple',
       })}
     >
       <button
@@ -133,6 +135,7 @@ const SubscriptionCompactAccordion = ({
             className={cn('subscription-compact-accordion__name', {
               'subscription-compact-accordion__name--black': variant === 'black',
               'subscription-compact-accordion__name--purple': variant === 'purple',
+              'subscription-compact-accordion__name--dark-purple': variant === 'dark-purple',
             })}
           >
             {name}
@@ -149,6 +152,7 @@ const SubscriptionCompactAccordion = ({
                       className={cn('subscription-compact-accordion__heading-name', {
                         'subscription-compact-accordion__heading-name--purple': variant === 'purple',
                         'subscription-compact-accordion__heading-name--black': variant === 'black',
+                        'subscription-compact-accordion__heading-name--dark-purple': variant === 'dark-purple',
                       })}
                       tag="h2"
                       size="s"
@@ -161,6 +165,7 @@ const SubscriptionCompactAccordion = ({
                     className={cn('subscription-compact-accordion__heading-name', {
                       'subscription-compact-accordion__heading-name--purple': variant === 'purple',
                       'subscription-compact-accordion__heading-name--black': variant === 'black',
+                      'subscription-compact-accordion__heading-name--dark-purple': variant === 'dark-purple',
                     })}
                     tag="h2"
                     size="s"
@@ -193,6 +198,7 @@ const SubscriptionCompactAccordion = ({
                       className={cn('subscription-compact-accordion__price', {
                         'subscription-compact-accordion__price--purple': variant === 'purple',
                         'subscription-compact-accordion__price--black': variant === 'black',
+                        'subscription-compact-accordion__price--dark-purple': variant === 'dark-purple',
                       })}
                     >
                       {formatPrice(price)}
@@ -248,6 +254,7 @@ const SubscriptionCompactAccordion = ({
           <div
             className={cn('subscription-compact-accordion__footer-container', {
               'subscription-compact-accordion__footer-container--purple': variant === 'purple',
+              'subscription-compact-accordion__footer-container--dark-purple': variant === 'dark-purple',
               'subscription-compact-accordion__footer-container--black': variant === 'black',
             })}
           >
@@ -260,6 +267,7 @@ const SubscriptionCompactAccordion = ({
         <section
           className={cn('subscription-compact-accordion__expanded-info', {
             'subscription-compact-accordion__expanded-info--black': variant === 'black',
+            'subscription-compact-accordion__expanded-info--dark-purple': variant === 'dark-purple',
             'subscription-compact-accordion__expanded-info--purple': variant === 'purple',
           })}
         >
@@ -276,6 +284,7 @@ const SubscriptionCompactAccordion = ({
         className={cn('subscription-compact-accordion__footer-border', {
           'subscription-compact-accordion__footer-border--black': variant === 'black',
           'subscription-compact-accordion__footer-border--purple': variant === 'purple',
+          'subscription-compact-accordion__footer-border--dark-purple': variant === 'dark-purple',
         })}
       />
     </Tag>

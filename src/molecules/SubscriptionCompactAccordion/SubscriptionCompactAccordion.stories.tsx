@@ -406,6 +406,32 @@ export const Purple = () => {
   );
 };
 
+export const DarkPurple = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      footer={FOOTERCHILDREN}
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      variant="dark-purple"
+    >
+      <ul>
+        <li>Fri bruk av samtaler, SMS og MMS</li>
+        <li>Roam Like Home</li>
+      </ul>
+      <Button style={{ margin: '1.5rem 0' }} kind="voca-normal" text="Velg og fortsett"></Button>
+    </SubscriptionCompactAccordion>
+  );
+};
+
 export const WithFamilyDiscount = () => {
   const [isExpanded, setIsExpanded] = useState(false);
 

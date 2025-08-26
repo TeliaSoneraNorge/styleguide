@@ -57,7 +57,8 @@
     width: 100%;
 
     &--black,
-    &--purple {
+    &--purple,
+    &--dark-purple {
       color: var(--white);
     }
   }
@@ -117,7 +118,8 @@
         &__heading-name,
         &__price {
           &--purple,
-          &--black {
+          &--black,
+          &--dark-purple {
             color: white;
           }
           color: #29003e;
@@ -126,7 +128,8 @@
 
       .subscription-compact-accordion__footer-container {
         &--purple,
-        &--black {
+        &--black,
+        &--dark-purple {
           hr {
             border-color: #d6d6dd !important;
           }
@@ -328,6 +331,34 @@
     .subscription-compact-accordion__heading-name,
     .subscription-compact-accordion__heading-striketrough {
       color: var(--white);
+    }
+  }
+
+  &--dark-purple {
+    .subscription-compact-accordion__header-first-row,
+    .subscription-compact-accordion__container-button {
+      border-radius: 0.5rem;
+      background-color: #29003e !important;
+      color: var(--white);
+      position: relative;
+
+      &:hover,
+      &:focus {
+        outline: none;
+        cursor: pointer;
+      }
+    }
+
+    .subscription-compact-accordion__icon-arrow,
+    .subscription-compact-accordion__heading-name,
+    .subscription-compact-accordion__heading-striketrough {
+      color: var(--white);
+    }
+
+    .subscription-compact-accordion__expanded-info {
+      background-color: #29003e;
+      color: var(--white);
+      fill: var(--white);
     }
   }
 
