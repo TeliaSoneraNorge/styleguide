@@ -19,6 +19,10 @@ This is a React component library of the Atomic Design components found in the T
 
 ## Development
 
+### Prerequisities
+
+Node v16 should be used.
+
 ### Getting started
 
 1. Install dependencies: `npm install`
@@ -102,7 +106,7 @@ npm unlink -g
 We use Github Actions for build and deploy and the pipelines can be found at [https://github.com/TeliaSoneraNorge/styleguide/actions](https://github.com/TeliaSoneraNorge/styleguide/actions).
 If you do not have access here and think you should have, post in the `#styleguide` channel on slack.
 
-When a new feature/branch is merged to master, a new build of Storybook is automatically deployed. 
+When a new feature/branch is merged to master, a new build of Storybook is automatically deployed.
 TODO: Add step in pipeline to post message to the Slack channel `#styleguide-deploy` to verify when the deploy has completed.
 
 ### React component library package
