@@ -54,7 +54,7 @@ export const RatingStars = ({ rating, height, width, reviewComments, children }:
             return (
               <SvgIcon
                 style={{ height: height, width: width }}
-                className="svg-icon--yellow"
+                className="svg-icon"
                 key={`fs${i}`}
                 iconName="star-filled"
               />
@@ -68,7 +68,7 @@ export const RatingStars = ({ rating, height, width, reviewComments, children }:
       ? Array(halfStars())
           .fill(null)
           .map((item, i) => {
-            return <SvgIcon className="svg-icon--yellow half-star" key={`fs${i}`} iconName="star-half" />;
+            return <SvgIcon className="svg-icon half-star" key={`fs${i}`} iconName="star-half" />;
           })
       : '';
   };
@@ -79,12 +79,7 @@ export const RatingStars = ({ rating, height, width, reviewComments, children }:
           .fill(null)
           .map((item, i) => {
             return (
-              <SvgIcon
-                style={{ height: height, width: width }}
-                className="svg-icon--yellow"
-                key={`fs${i}`}
-                iconName="star"
-              />
+              <SvgIcon style={{ height: height, width: width }} className="svg-icon" key={`fs${i}`} iconName="star" />
             );
           })
       : '';
