@@ -29,7 +29,9 @@ interface Default extends Common {
   text?: string;
 }
 
-export const Badge: React.FC<Compact | Default> = (props) => {
+export type BadgeProps = Compact | Default;
+
+export const Badge: React.FC<BadgeProps> = (props) => {
   const badge = (
     <div
       className={cn(
