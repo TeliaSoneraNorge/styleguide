@@ -15,6 +15,7 @@ type CheckboxProps = {
    */
   tabIndex?: number;
   className?: string | any;
+  rootClassName?: string;
 } & (
   | {
       checked: boolean;
@@ -32,7 +33,7 @@ type CheckboxProps = {
 
 export const Checkbox: React.FC<CheckboxProps> = (props) => {
   return (
-    <label className="telia-checkbox">
+    <label className={cs('telia-checkbox', props.rootClassName)}>
       <input
         id={props.id}
         aria-checked={

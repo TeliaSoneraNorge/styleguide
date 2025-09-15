@@ -229,3 +229,29 @@ export const AsDesigned = () => {
     </AccordionFlexible>
   );
 };
+
+export const WithImages = () => {
+  return (
+    <AccordionFlexible
+      images={[
+        {
+          url:
+            '//images.ctfassets.net/iz15t1lxx44v/3ecLceAdqydLu8ZAQEiVbR/7f5a6246f2062ec95481f6dce633c59d/Harman_Kardon_Onyx_Studio_9_Black_3-4-Right_066.webp',
+          alt: 'Harman Kardon Onyx Studio 9 Black',
+        },
+        {
+          url:
+            '//images.ctfassets.net/iz15t1lxx44v/2vq6AbzJZefd9K61m5kkHS/9728ed0fc2183a399f5c1010f640fc11/AirPods_4_Hero_Screen__USEN.png',
+          alt: 'AirPods 4',
+        },
+      ]}
+    >
+      <ul className="list">
+        <li className="list__item">Fri bruk av samtaler, SMS og MMS</li>
+        <li className="list__item">Ubegrenset fart. Helt opp til 100GB.</li>
+        <li className="list__item">Roam Like Home</li>
+      </ul>
+      <SExampleButton />
+    </AccordionFlexible>
+  );
+};
