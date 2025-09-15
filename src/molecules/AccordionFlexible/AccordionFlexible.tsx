@@ -97,7 +97,7 @@ const RenderImages = ({ images }: { images?: Image[] }) => {
 const RenderTitle = ({ text, className }: { text?: string; className?: string }) => {
   if (text) {
     if (className) {
-      return <h3 className={className}>{text}</h3>;
+      return <h3 className={cn('accordion-flexible__heading', className)}>{text}</h3>;
     }
     return <>{text}</>;
   }
@@ -176,10 +176,16 @@ const AccordionFlexible: React.FC<AccordionFlexibleProps> = ({
         aria-expanded={isExpanded}
         aria-controls={id ? `accordion-flexible-${id}` : ''}
         onClick={() => onClick()}
-        className="accordion-flexible__header-container"
+        className={cn('accordion-flexible__header-container', {
+          'accordion-flexible__header-container--expanded': isExpanded,
+        })}
       >
         <RenderBadge badge={badge} />
-        <div className={'accordion-flexible__header'}>
+        <div
+          className={cn('accordion-flexible__header', {
+            'accordion-flexible__header--with-images': Array.isArray(images) ? !!images?.length : !!images,
+          })}
+        >
           <div className="accordion-flexible__header-row">
             {!!icons && Array.isArray(icons) ? <RenderIcons icons={icons} /> : <RenderIcon icon={icons} />}
             {!!images && (

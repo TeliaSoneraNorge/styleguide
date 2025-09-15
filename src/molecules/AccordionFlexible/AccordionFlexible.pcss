@@ -46,6 +46,10 @@
       min-height: 85px;
     }
 
+    &--expanded {
+      min-height: unset;
+    }
+
     & > .telia-badge {
       display: flex;
       align-items: center;
@@ -68,7 +72,6 @@
   }
 
   &--expanded {
-    min-height: unset;
     padding-bottom: 0;
     outline: 3px solid #6d02a3;
 
@@ -85,6 +88,10 @@
 
   &__header {
     margin-top: 1.5rem;
+
+    &--with-images {
+      margin-top: 1.25rem;
+    }
 
     @media screen and (max-width: 400px) {
       margin-top: 1rem;
@@ -143,9 +150,12 @@
     }
   }
 
+  &__heading {
+    margin: 0;
+  }
+
   &__heading--left {
     color: var(--black);
-    font-weight: 700;
     font-size: 24px;
     line-height: 28px;
     font-family: 'TeliaSans';
