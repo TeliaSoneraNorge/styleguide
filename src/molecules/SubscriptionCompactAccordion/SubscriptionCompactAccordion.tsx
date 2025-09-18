@@ -48,6 +48,7 @@ export interface SubscriptionCompactAccordionProps {
   familyDiscountInfoIcon?: IconDefinition;
   disountInfo?: React.ReactNode;
   footerRibbon?: FooterRibbon;
+  fullWidthContent?: boolean;
 }
 
 const SubscriptionCompactAccordion = ({
@@ -80,6 +81,7 @@ const SubscriptionCompactAccordion = ({
   pricePrefix,
   priceSuffix,
   priceStriketroughPosition = 'left',
+  fullWidthContent = false,
 }: SubscriptionCompactAccordionProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const Tag: SubscriptionTag = tag || 'section';
@@ -180,7 +182,11 @@ const SubscriptionCompactAccordion = ({
                   <span className="subscription-compact-accordion__tagline">{tagLine}</span>
                 </div>
               )}
-              <div className="subscription-compact-accordion__aside">
+              <div
+                className={cn('subscription-compact-accordion__aside', {
+                  'subscription-compact-accordion__aside--full-width': fullWidthContent,
+                })}
+              >
                 <div className="subscription-compact-accordion__price-container">
                   {!!priceStriketrough && priceStriketroughPosition === 'left' && (
                     <div className="subscription-compact-accordion__price-striketrough-wrapper">
