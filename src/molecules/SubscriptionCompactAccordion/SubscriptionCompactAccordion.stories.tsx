@@ -610,3 +610,27 @@ export const WithPricePrefix = () => {
     </SubscriptionCompactAccordion>
   );
 };
+
+export const WithFullWidthContent = () => {
+  const [isExpanded, setIsExpanded] = useState(false);
+
+  return (
+    <SubscriptionCompactAccordion
+      name="Telia X - Normal"
+      title="20 Mbit/s"
+      id="smart20"
+      price={499}
+      pricePrefix="fra"
+      priceStriketrough={699}
+      priceStriketroughPosition="right"
+      priceInfo={['/md.']}
+      isExpanded={isExpanded}
+      onOpen={() => {
+        setIsExpanded(!isExpanded);
+      }}
+      fullWidthContent
+    >
+      {CHILDREN}
+    </SubscriptionCompactAccordion>
+  );
+};
