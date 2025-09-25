@@ -274,8 +274,10 @@ type TableProps = {
         tableIsEmpty: boolean;
         emptyTableTitle: string;
         emptyTableDescription?: string;
-        emptyTableButtonLabel?: string;
-        emptyTableButtonOnClick?: () => void;
+        emptyTableButton?: {
+          label: string;
+          onClick: () => void;
+        };
       }
     | {}
   );
@@ -293,13 +295,13 @@ export const Table: React.FC<TableProps> = (props) => {
             <div>{props.emptyTableDescription}</div>
           </div>
           {emptySvg}
-          {props?.emptyTableButtonLabel && (
+          {props?.emptyTableButton && (
             <Button
               kind="primary"
-              label={props.emptyTableButtonLabel}
-              ariaLabel={props.emptyTableButtonLabel}
+              label={props.emptyTableButton.label}
+              ariaLabel={props.emptyTableButton.label}
               type="button"
-              onClick={props.emptyTableButtonOnClick}
+              onClick={props.emptyTableButton.onClick}
             />
           )}
         </div>

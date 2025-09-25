@@ -69,8 +69,7 @@ export const emptyState = () => {
         tableIsEmpty={![].length}
         emptyTableTitle="It's empty here..."
         emptyTableDescription="There is nothing here yet."
-        emptyTableButtonLabel="Click here"
-        emptyTableButtonOnClick={() => console.log('click')}
+        emptyTableButton={{ label: 'Click here', onClick: () => console.log('click') }}
       >
         {[].map((subscriber: any, index: number) => (
           <TableBodyRow key={subscriber.subscription_id}>
