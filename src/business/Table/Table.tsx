@@ -5,6 +5,8 @@ import _ from 'lodash';
 import { Icon } from '../../atoms/Icon';
 import { Checkbox } from '../../atoms/Checkbox';
 import { emptySvg } from '../assets/emptySvg';
+import { Button } from '../Button';
+import Heading from '../../atoms/Heading';
 
 type TableBodyCellProps = {
   rightAligned?: boolean;
@@ -270,7 +272,12 @@ type TableProps = {
   (
     | {
         tableIsEmpty: boolean;
-        emptyTableLabel: string;
+        emptyTableTitle: string;
+        emptyTableDescription?: string;
+        emptyTableButton?: {
+          label: string;
+          onClick: () => void;
+        };
       }
     | {}
   );
@@ -283,8 +290,20 @@ export const Table: React.FC<TableProps> = (props) => {
     <>
       {'tableIsEmpty' in props && props.tableIsEmpty && !props.loading ? (
         <div className="data-table__empty-state">
+          <div className="data-table__empty-state__header">
+            <Heading tag="h4" text={props.emptyTableTitle} className="data-table__empty-state__header__title" />
+            <div>{props.emptyTableDescription}</div>
+          </div>
           {emptySvg}
-          <div>{props.emptyTableLabel}</div>
+          {props?.emptyTableButton && (
+            <Button
+              kind="primary"
+              label={props.emptyTableButton.label}
+              ariaLabel={props.emptyTableButton.label}
+              type="button"
+              onClick={props.emptyTableButton.onClick}
+            />
+          )}
         </div>
       ) : (
         <UniqueIdContext.Provider value={{ uniqueId }}>

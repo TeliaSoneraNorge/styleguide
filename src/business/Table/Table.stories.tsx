@@ -64,7 +64,13 @@ export const Standard = () => {
 export const emptyState = () => {
   return (
     <>
-      <Table headings={headings} tableIsEmpty={![].length} emptyTableLabel="There is nothing here yet.">
+      <Table
+        headings={headings}
+        tableIsEmpty={![].length}
+        emptyTableTitle="It's empty here..."
+        emptyTableDescription="There is nothing here yet."
+        emptyTableButton={{ label: 'Click here', onClick: () => console.log('click') }}
+      >
         {[].map((subscriber: any, index: number) => (
           <TableBodyRow key={subscriber.subscription_id}>
             {flow(
