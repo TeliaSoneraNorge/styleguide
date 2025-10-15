@@ -49,6 +49,7 @@ export interface SubscriptionCompactAccordionProps {
   disountInfo?: React.ReactNode;
   footerRibbon?: FooterRibbon;
   fullWidthContent?: boolean;
+  priceDisclaimer?: React.ReactNode;
 }
 
 const SubscriptionCompactAccordion = ({
@@ -78,6 +79,7 @@ const SubscriptionCompactAccordion = ({
   familyDiscountInfoIcon = 'group',
   showChevron = true,
   footerRibbon,
+  priceDisclaimer,
   pricePrefix,
   priceSuffix,
   priceStriketroughPosition = 'left',
@@ -227,6 +229,7 @@ const SubscriptionCompactAccordion = ({
                       </div>
                     )}
                   </div>
+                  {priceDisclaimer && priceDisclaimer}
                 </div>
                 {!!discountLine && (
                   <span className="subscription-compact-accordion__discount-line">{discountLine}</span>
