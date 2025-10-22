@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export type AlertKind = 'positive' | 'negative' | 'info' | 'warning';
+export type AlertKind = 'positive' | 'negative' | 'info' | 'warning' | 'rocket';
 
 export type AlertSize = 'large' | 'large-with-borders';
 

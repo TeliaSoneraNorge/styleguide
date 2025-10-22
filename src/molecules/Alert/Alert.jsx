@@ -31,6 +31,15 @@ const Alert = ({
 }) => {
   const alertRef = useRef();
   const positiveAlert = kind === 'positive';
+  const KIND_TO_ICON = {
+    positive: 'check-mark-circle',
+    info: 'info',
+    rocket: 'product-data-boost',
+    warning: 'alert',
+    negative: 'alert',
+  };
+
+  const icon = KIND_TO_ICON[kind];
 
   useEffect(() => {
     if (scrollTo) {
@@ -58,9 +67,9 @@ const Alert = ({
         {!hideIcon && (
           <div className="alert__icon-container">
             <Icon
-              icon={positiveAlert ? 'check-mark-circle' : 'info'}
+              icon={icon}
               style={{
-                color: positiveAlert ? colors.green700 : colors.black,
+                color: positiveAlert || kind === 'rocket' ? colors.green700 : colors.black,
                 width: iconSize === 'small' ? '1.5rem' : '2.5rem',
                 height: iconSize === 'small' ? '1.5rem' : '2.5rem',
                 marginRight: iconSize === 'small' ? '0.5rem' : '1rem',
@@ -107,7 +116,7 @@ const Alert = ({
 
 Alert.propTypes = {
   closeButtonText: PropTypes.string,
-  kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning']),
+  kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning', 'rocket']),
   size: PropTypes.oneOf(['large', 'large-with-borders']),
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
