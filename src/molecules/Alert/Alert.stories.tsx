@@ -40,12 +40,15 @@ export const PositiveLarge = () => (
 );
 
 export const PositiveLargeRocket = () => (
-  <Alert kind="rocket" size="large">
-    <p>
-      This is a positive alert with rocket icon. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua.
-    </p>
-  </Alert>
+  <>
+    <Alert kind="rocket" size="large">
+      <p>
+        This is a sticky positive alert with rocket icon. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </Alert>
+    <div style={{ height: '1200px' }} />
+  </>
 );
 
 export const PositiveLargeMinimizable = () => (
