@@ -35,6 +35,7 @@ const Alert = ({
     positive: 'check-mark-circle',
     info: 'info',
     rocket: 'product-data-boost',
+    megaphone: 'megaphone',
     warning: 'alert',
     negative: 'alert',
   };
@@ -69,7 +70,7 @@ const Alert = ({
             <Icon
               icon={icon}
               style={{
-                color: positiveAlert || kind === 'rocket' ? colors.green700 : colors.black,
+                color: positiveAlert || kind === 'rocket' || kind === 'megaphone' ? colors.green700 : colors.black,
                 width: iconSize === 'small' ? '1.5rem' : '2.5rem',
                 height: iconSize === 'small' ? '1.5rem' : '2.5rem',
                 marginRight: iconSize === 'small' ? '0.5rem' : '1rem',
@@ -116,7 +117,7 @@ const Alert = ({
 
 Alert.propTypes = {
   closeButtonText: PropTypes.string,
-  kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning', 'rocket']),
+  kind: PropTypes.oneOf(['positive', 'negative', 'info', 'warning', 'rocket', 'megaphone']),
   size: PropTypes.oneOf(['large', 'large-with-borders']),
   onOpen: PropTypes.func,
   onClose: PropTypes.func,
