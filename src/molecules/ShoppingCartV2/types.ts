@@ -155,7 +155,7 @@ interface ICartItemDiscount {
   description?: string;
   handsetDiscountText?: string;
   types?: ICartDiscountType[];
-  isUniqueDiscount?: boolean;
+  isManualDiscount?: boolean;
   smartDiscountCode?: string;
   isSmartDiscount?: boolean;
   name?: string;
