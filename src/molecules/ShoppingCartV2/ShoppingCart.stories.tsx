@@ -1582,7 +1582,7 @@ export const withUniqueDiscount = () => {
         description: '',
         isSmartDiscount: true,
         smartDiscountCode: 'Web_Unique_Test',
-        isUniqueDiscount: true,
+        isManualDiscount: true,
         name: 'Galaxy Watch rabatt',
       },
       isReSwitch: false,
