@@ -30,6 +30,24 @@ export const Positive = () => (
   </Alert>
 );
 
+export const Rocket = () => (
+  <Alert kind="rocket">
+    <p>
+      This is a rocket alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
+  </Alert>
+);
+
+export const MegaPhone = () => (
+  <Alert kind="megaphone">
+    <p>
+      This is a rocket alert. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
+      ut labore et dolore magna aliqua.
+    </p>
+  </Alert>
+);
+
 export const PositiveLarge = () => (
   <Alert kind="positive" size="large">
     <p>
@@ -37,6 +55,30 @@ export const PositiveLarge = () => (
       incididunt ut labore et dolore magna aliqua.
     </p>
   </Alert>
+);
+
+export const PositiveLargeRocket = () => (
+  <>
+    <Alert kind="rocket" size="large">
+      <p>
+        This is a sticky positive alert with rocket icon. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+        do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </Alert>
+    <div style={{ height: '1200px' }} />
+  </>
+);
+
+export const PositiveLargeMegaphone = () => (
+  <>
+    <Alert kind="megaphone" size="large">
+      <p>
+        This is a sticky positive alert with megaphone icon. Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      </p>
+    </Alert>
+    <div style={{ height: '1200px' }} />
+  </>
 );
 
 export const PositiveLargeMinimizable = () => (
