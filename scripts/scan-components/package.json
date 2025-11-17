@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "glob": "10.3.10"
+    "glob": "11.1.0"
   }
 }
