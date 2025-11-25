@@ -191,6 +191,7 @@ export interface ICartItem {
   isReSwitch?: boolean;
   isWebDeal?: boolean;
   items?: ICartItem[];
+  onlyAvailableInShops?: boolean;
 }
 
 export interface ICartDeliveryProgressBar {

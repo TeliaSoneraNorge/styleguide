@@ -8,6 +8,7 @@ import Link from '../../atoms/Link';
 import { CART_ITEM_TYPE } from './index';
 import { SpeechBubble } from '../SpeechBubble';
 import { Lozenge } from '../Lozenge';
+import ReactTooltip from 'react-tooltip';
 
 const formatPrice = (price: string | number) => {
   if (typeof price === 'number') {
@@ -243,6 +244,32 @@ const CartItemPrice = ({ cartItem, hasPaid, onChangeQuantity }: CartItemPricePro
           </span>
         </div>
       </div>
+      {cartItem.onlyAvailableInShops && (
+        <div className="telia-shopping-cart__item__only-in-shops">
+          <span className="telia-shopping-cart__item__only-in-shops__label">Hentes i butikk</span>
+          <>
+            <a
+              data-tip
+              data-for="telia-shopping-cart-tooltip"
+              className="telia-shopping-cart__item__only-in-shops__tooltip-wrapper"
+            >
+              <Icon icon="info" className="telia-shopping-cart__item__only-in-shops__tooltip-icon" />
+            </a>
+            <ReactTooltip
+              clickable
+              border={true}
+              textColor="#000"
+              className="telia-shopping-cart__tooltip"
+              place="bottom"
+              effect="solid"
+              backgroundColor="white"
+              id="telia-shopping-cart-tooltip"
+            >
+              <div>Varen må hentes i butikk. Kan ikke kombineres med varer som ikke finnes i samme butikk.</div>
+            </ReactTooltip>
+          </>
+        </div>
+      )}
       {cartItem.discount?.isManualDiscount && (
         <div className="telia-shopping-cart__item__unique-discount">
           <span className="telia-shopping-cart__item__unique-discount__label">{cartItem.discount.name}</span>
