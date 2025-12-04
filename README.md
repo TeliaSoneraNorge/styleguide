@@ -1,3 +1,8 @@
+# ⛔️ DEPRECATED
+We have a new component library now: [Teddy](https://github.com/telia-company/teddy).
+
+This component library is being phased out, please dont add new components here.
+
 # Telia Styleguide
 
 This is a React component library of the Atomic Design components found in the Telia Styleguide. This is a living styleguide, showing the components which should be used in Telia Norway's web applications to achieve a common look & feel, and therefore user experience.
