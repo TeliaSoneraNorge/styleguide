@@ -10,11 +10,22 @@ interface Props {
   link: string;
   isDisabled?: boolean;
   onClick?: (index: number) => void;
+  isCompleted?: boolean;
 }
 
-export const Step = ({ index, activeStep, numberOfSteps, label, link, isDisabled, onClick }: Props) => {
+export const Step = ({
+  index,
+  activeStep,
+  numberOfSteps,
+  label,
+  link,
+  isDisabled,
+  onClick,
+  isCompleted = false,
+}: Props) => {
   const isActive = index === activeStep;
-  const isPassed = activeStep > index;
+  const isPassed = activeStep > index || isCompleted;
+  console.log('isCompleted', index, isCompleted);
 
   return (
     <li className="step-indicator__wrapper" key={`step-indicator-step-${activeStep}`}>
@@ -23,6 +34,7 @@ export const Step = ({ index, activeStep, numberOfSteps, label, link, isDisabled
           className={classnames('step-indicator__step', {
             'step-indicator__step--active': isActive,
             'step-indicator__step--passed': isPassed,
+            'step-indicator__step--passed-active': isPassed && isActive,
             'step-indicator__step--disabled': isDisabled,
           })}
         >

@@ -33,6 +33,15 @@
         .step-indicator__label {
           color: var(--white);
         }
+
+        .step-indicator__step--passed-active {
+          background-color: var(--white);
+          border: 2px solid var(--core-purple);
+
+          .step-indicator__icon {
+            color: var(--core-purple);
+          }
+        }
       }
     }
   }
@@ -129,6 +138,14 @@
       border: 2px solid var(--core-purple);
       background-color: var(--core-purple);
       color: var(--white);
+    }
+
+    &--passed-active {
+      color: var(--white);
+
+      .step-indicator__icon {
+        color: var(--white);
+      }
     }
   }
 
