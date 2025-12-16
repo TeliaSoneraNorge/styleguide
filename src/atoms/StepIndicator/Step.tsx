@@ -25,7 +25,6 @@ export const Step = ({
 }: Props) => {
   const isActive = index === activeStep;
   const isPassed = activeStep > index || isCompleted;
-  console.log('isCompleted', index, isCompleted);
 
   return (
     <li className="step-indicator__wrapper" key={`step-indicator-step-${activeStep}`}>
