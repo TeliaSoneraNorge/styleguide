@@ -26,13 +26,23 @@ export interface Props {
   disabled?: boolean[];
   kind?: 'purple';
   onClick?: (index: number) => void;
+  completedSteps?: number[];
 }
 
 /**
  * Status: *In progress*.
  * Category: Wizard
  */
-const StepIndicator = ({ index = 0, numberOfSteps = 0, labels, links, disabled, kind, onClick }: Props) => (
+const StepIndicator = ({
+  index = 0,
+  numberOfSteps = 0,
+  labels,
+  links,
+  disabled,
+  kind,
+  onClick,
+  completedSteps,
+}: Props) => (
   <div
     className={cn('step-indicator', {
       'step-indicator__purple': kind === 'purple',
@@ -49,6 +59,7 @@ const StepIndicator = ({ index = 0, numberOfSteps = 0, labels, links, disabled, 
           link={links?.[number] ?? ''}
           isDisabled={disabled?.[number] ?? false}
           onClick={onClick}
+          isCompleted={completedSteps?.includes(number) ?? false}
         />
       ))}
     </ol>
